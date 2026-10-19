@@ -1,0 +1,182 @@
+{
+  "schema_version": "enzyme-goal-completion-audit/1",
+  "audited_at": "2026-10-19T16:32:45.989472+00:00",
+  "goal_complete": false,
+  "plan_sha256": "d603b86f6b5b129490db98bb5fccb66292a0684e3da2bb43b30cdfdc67d716fa",
+  "requirements": [
+    {
+      "plan_sections": [
+        3,
+        4
+      ],
+      "status": "private_contributions_verified_not_accepted_or_public",
+      "evidence": [
+        "delivery/checks/repository_publications.json",
+        "both PR source manifests and progress entries"
+      ]
+    },
+    {
+      "plan_sections": [
+        5
+      ],
+      "status": "bounded_first_task_implemented_and_tested",
+      "evidence": [
+        "delivery/checks/fresh_native_setup.json",
+        "reports/development_agent/portable_pair_v2.json",
+        "six frozen terminal receipts"
+      ],
+      "boundary": "Restricted permitted read/score/submit task, not unrestricted hosted generation"
+    },
+    {
+      "plan_sections": [
+        6
+      ],
+      "status": "reference_runs_and_same_host_reproduction_verified_external_review_pending",
+      "evidence": [
+        "delivery/checks/fresh_cpu_fit.json",
+        "reports/esm_reference/reproducibility.json",
+        "ESM_REFERENCE.txt"
+      ],
+      "remaining": [
+        "Independent operator reproduction",
+        "Third-party/asset rights review before redistribution"
+      ]
+    },
+    {
+      "plan_sections": [
+        7
+      ],
+      "status": "bounded_external_specialist_implemented_and_run",
+      "evidence": [
+        "research_loop.py and roles.py in the reviewed environment source",
+        "pre_evaluation_integrity.json specialist history receipts"
+      ],
+      "boundary": "Not a new molecular model or general hosted specialist/executor integration"
+    },
+    {
+      "plan_sections": [
+        8
+      ],
+      "status": "A_B_C_frozen_comparison_completed_D_design_only",
+      "evidence": [
+        "runs/formal_study/amie_v1/protocol.lock.json",
+        "reports/formal_study/summary.json"
+      ],
+      "boundary": "Tied selection quality; computational repeats, not wet-lab replicates; conventional decision-only timing unmeasured"
+    },
+    {
+      "plan_sections": [
+        9
+      ],
+      "status": "model_design_and_five_task_specifications_prepared_not_trained_or_executed",
+      "evidence": [
+        "plans/SCIENTIFIC_MODEL_DESIGN.txt",
+        "plans/application_specs.json",
+        "delivery/checks/application_specs.json"
+      ],
+      "remaining": [
+        "New protected protocol before model D",
+        "Broader task data, endpoint/reference decisions and runners remain future work"
+      ]
+    },
+    {
+      "plan_sections": [
+        10
+      ],
+      "status": "release_preparation_tested_but_required_approval_gates_unsatisfied",
+      "evidence": [
+        "all four checked package receipts",
+        "company license absent from supplied decisions",
+        "current private draft PRs have no approvals"
+      ],
+      "remaining": [
+        "Company code license/attribution",
+        "Approved maintained home for standalone tool/plugin source",
+        "Independent review/setup",
+        "Maintainer release acceptance/publication"
+      ]
+    },
+    {
+      "plan_sections": [
+        11,
+        12
+      ],
+      "status": "responsibility_and_safety_boundaries_preserved",
+      "evidence": [
+        "separate environment/evaluator/plugin components",
+        "clean original host worktree",
+        "CPU-only namespace package checks"
+      ],
+      "boundary": "No claim that competition or poultry deliveries are completed by this enzyme benchmark"
+    },
+    {
+      "plan_sections": [
+        13,
+        14
+      ],
+      "status": "initial_engineering_and_comparison_evidence_present_release_checklist_not_fully_complete",
+      "evidence": [
+        "delivery/COMPLETION_REVIEW.txt",
+        "delivery/WORK_TRACKER.txt",
+        "this audit"
+      ]
+    }
+  ],
+  "repositories": {
+    "boltzmannlabs/science-environments": {
+      "private": true,
+      "license_info": null,
+      "pull_request": {
+        "headRefOid": "3d01474b953fc254cae8155c5e88ae360976d965",
+        "isDraft": true,
+        "reviewDecision": "",
+        "reviews": [],
+        "state": "OPEN",
+        "url": "https://github.com/boltzmannlabs/science-environments/pull/1"
+      },
+      "source_files_verified": 47
+    },
+    "boltzmannlabs/science-benchmarking": {
+      "private": true,
+      "license_info": null,
+      "pull_request": {
+        "headRefOid": "2f45ce7f69b46adfc7f5a9391d2b5cdbf44eeda0",
+        "isDraft": true,
+        "reviewDecision": "",
+        "reviews": [],
+        "state": "OPEN",
+        "url": "https://github.com/boltzmannlabs/science-benchmarking/pull/1"
+      },
+      "source_files_verified": 46
+    }
+  },
+  "frozen_protocol_hash_verified": "9920342c67a7e3e627663d3ce420cb8737e43d252ca689bf0eb17e0f1ae34e93",
+  "terminal_receipts_verified": 6,
+  "frozen_python_implementation_files_verified": {
+    "scripts/study_protocol.py": "5e0386c5ca9dcfb094454cbe25e2df0c030b74044f441eccad00c6638db888a5",
+    "scripts/freeze_formal_study.py": "815c9156087c249a202ee43a23aab7096cc8eeef482daaf13f1a35d217409866",
+    "scripts/run_formal_episode.py": "1bbe57b0d2f67297b2ffb525b2d2f1a9949e5aa0559e52d8a259b33098640e77",
+    "scripts/evaluate_formal_study.py": "81ff12c2f8c85f9a1d20cb43f21b9ab181ecbba8a093284988c4c4ebdaf5a45b",
+    "scripts/verify_portable_pair.py": "ea6aac826245e5085563609279a7f6662ec4f4230a2337e060d9c079a5e14bfb",
+    "src/enzyme_benchmark/core.py": "d80d13a7bef28b1b49ddf3d46206921d4be2b885c2e31f01e59f76253139a025"
+  },
+  "independent_human_review_proved": false,
+  "independent_second_machine_reproduction_proved": false,
+  "company_license_decision_supplied": false,
+  "standalone_source_home_decision_supplied": false,
+  "current_original_host_clean": true,
+  "new_models_or_scientific_jobs_executed": 0,
+  "final_answer_dataset_opened_by_this_audit": false,
+  "existing_final_comparison_report_hashed_only": true,
+  "public_release": false,
+  "blocking_actions": [
+    "Company supplies license/attribution and maintained repository decisions",
+    "Maintainers/reviewer provide independent setup/code review and release acceptance"
+  ],
+  "later_work_not_disguised_as_done": [
+    "Trained model D",
+    "Five complete scientific task runners",
+    "Full hosted specialist/executor and subscriber integration",
+    "Experimental enzyme validation"
+  ]
+}

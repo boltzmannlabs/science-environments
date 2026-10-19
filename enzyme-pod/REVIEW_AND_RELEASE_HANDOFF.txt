@@ -1,0 +1,88 @@
+ENZYME POD - REVIEW AND RELEASE HANDOFF
+The engineering packages/comparison are prepared. The complete goal is NOT
+marked achieved while the required license and independent release gates remain.
+The live state/evidence audit is delivery/checks/goal_completion_audit.json.
+Repository heads/reviews in that audit are a timestamped observation, not a
+claim that its own publication leaves those commit IDs unchanged forever.
+
+COMPANY DECISIONS NEEDED
+1. Specify the approved license and copyright/contributor attribution for the
+   company-authored benchmark/environment and standalone tool/plugin code.
+   No license was invented from GitHub access or third-party dependency licenses.
+2. Specify the maintained company repository for Catalytic Geometry and the
+   enzyme_workflow source. Their checked local source bundles are ready for
+   review; neither was placed in an assumed new source repository.
+3. Assign an independent reviewer/operator for clean setup, source/notice review
+   and company release acceptance. A same-server rerun by this author is not
+   independent-person validation. Private drafts currently have no reviews.
+
+PRIVATE COMPANY REVIEW LINKS
+Environment source, contracts, setup and progress:
+  https://github.com/boltzmannlabs/science-environments/pull/1
+Benchmark source, references, task specs, evaluator and negative/tied report:
+  https://github.com/boltzmannlabs/science-benchmarking/pull/1
+No merge, repository visibility change or public package release is implied.
+
+STANDALONE COMPONENT REVIEW BUNDLES
+Latest exact paths/hashes are in:
+  delivery/checks/portable_geometry.json
+  delivery/checks/portable_workflow_plugin.json
+Each review_bundle contains its wheel, source-review ZIP, sanitized checks and
+dependency inventory. No model weights, raw datasets, subscriber profiles,
+provider bodies, private answer files or actual user structures are included.
+Geometry: 53 installed tests, bounded local inputs/resource envelope and
+byte-identical wheel builds. Synthetic throughput is five-atom/one-rule only.
+Plugin: 0.2.4 candidate; 182 isolated native tests with no exclusions, actual
+native registration/admission and mock observer replay. Installed 0.2.3 unchanged.
+
+INDEPENDENT OPERATOR CHECKS
+Use fresh directories/environments. Do not overwrite a subscriber installation
+or use the scored AmiE pool for development. First use only synthetic fixtures.
+
+Benchmark:
+  Follow PACKAGE_README.txt and REFERENCE_REPRODUCTION.txt in the benchmark PR.
+  Fresh install, stdlib tests and demo are credential-free. Optional CPU fit uses
+  a NEW hash-locked environment and original permitted train/development inputs.
+  Frozen coefficient bytes should match; a mismatch fails, not triggers tuning.
+
+Environment:
+  Follow NATIVE_SETUP.txt in the environment PR. Supply a separately authorized
+  exact native source revision and compatible standalone interpreter/runtime.
+  Run offline base/specialist synthetic episodes first. Check isolation, zero
+  real requests, correct selection receipts and package/source identities.
+  This does not require sharing a profile/token or opening final assay answers.
+
+Geometry:
+  Extract the inspected source-review ZIP into a NEW directory. Follow README.txt
+  to install hash-locked runtime requirements and the package in a NEW Python
+  3.12 environment. Run its synthetic demo and full tests. Review bounded gzip/
+  ZIP behaviour and actual reaction-template suitability separately.
+
+Plugin:
+  Extract the inspected source ZIP into a NEW directory and read README.txt,
+  RELEASE_NOTES.txt and SPECIALIST_INTEGRATION.txt. Install only in a separate
+  test runtime. Run examples/offline_replay.py, inspect candidate/gate/artifact
+  receipts and compare packaged resources/manifest. Native admission must run
+  BEFORE manually registering the plugin into that test process's registry.
+  Full tests and profile isolation were verified in a no-network native namespace;
+  a production subscriber authentication or hosted scientific run was NOT tested.
+
+Reviewer report should state exact source/wheel/runtime hashes, commands,
+host/Python/dependency versions, passed/failed/skipped checks, failures retained,
+privacy boundaries, notice/rights decisions and whether release is approved.
+Do not attach credentials, signed URLs or confidential test labels.
+
+SCIENTIFIC RESULT THAT MUST REMAIN VISIBLE
+The initial matched held-out task did not show a specialist selection benefit.
+Both agents selected the same sets as the simple linear reference; specialist
+cost was 93,948 extra observed tokens. The result concerns one retrospective
+growth-fitness task, not all enzyme workflows. No wet-lab improvement is claimed.
+The scored holdout stays CLOSED; model D requires a NEW protected protocol.
+
+NOT REQUIRED TO BE FALSELY COMPLETED TO RELEASE THE FIRST SLICE
+Model D is design-only. The five full applications have checked specifications,
+not trained models/complete task runners. Full hosted subscriber/specialist/tool
+integration and scientific reaction-specific validation require separate work.
+Competition and poultry deliverables are not claimed complete by this benchmark.
+Do not launch further experiments or modify deployment just to clear a release
+gate that actually requires a company decision or an independent reviewer.
