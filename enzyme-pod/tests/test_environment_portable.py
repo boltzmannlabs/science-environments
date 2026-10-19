@@ -9,6 +9,7 @@ from enzyme_environment.demo import demo
 from enzyme_environment.policy import Audit,Policy,strict_json,verify_audit
 from enzyme_environment.runtime import regular_file
 from enzyme_environment.data_views import candidate_index
+from enzyme_environment.data_views import compact_scores
 
 
 class PortableEnvironmentTests(unittest.TestCase):
@@ -59,6 +60,18 @@ class PortableEnvironmentTests(unittest.TestCase):
         index=candidate_index(rows)
         self.assertEqual(index["columns"],["candidate_id","mutation"])
         self.assertEqual(index["rows"],[["X","A1C"],["Y","A2D"]])
+
+    def test_score_matrix_is_lossless_without_rounding_or_ledger_loss(self):
+        original={"model_id":"synthetic","score_type":"prediction_not_experimental_measurement",
+            "rows":[{"candidate_id":"X","predicted_score":0.12345678901234567},{"candidate_id":"Y","predicted_score":-0.0}],
+            "accounting":{"unique_candidates_scored":2,"candidate_score_requests":2,"cache_hits":0}}
+        view=compact_scores(original)
+        restored=[dict(zip(view["row_columns"],row)) for row in view["rows"]]
+        self.assertEqual(restored,original["rows"])
+        self.assertEqual(view["accounting"],original["accounting"])
+        self.assertEqual(view["model_id"],original["model_id"])
+        self.assertEqual(view["score_type"],original["score_type"])
+        self.assertEqual(len(original["rows"]),2)
 
 
 if __name__=="__main__":unittest.main()

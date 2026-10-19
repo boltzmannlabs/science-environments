@@ -72,7 +72,7 @@ def run_episode(episode,*,allow_live=False):
     runtime={"backend":episode.backend,"max_model_requests":episode.budget.max_requests,
         "max_output_tokens":episode.budget.max_output_tokens_per_request,"agent_wall_seconds":max(1,episode.budget.max_wall_seconds-5),
         "system_message":"Use only the three permitted benchmark tools. Predictions are not measured assay outcomes or kcat. Submit exactly ten unique known IDs once, then finish. No scientific improvement claim.",
-        "prompt":"Select ten variants for the supplied objective. The complete task and a LOSSLESS candidate index are below: each full sequence is the stated mutation in the task reference. These inputs need not be read again. Obtain frozen predictions through benchmark_score in batches of at most fifty IDs; permitted practice pages may be inspected. Preserve IDs, give a short evidence-based rationale, submit once and finish.\n"+
+        "prompt":"Select ten variants for the supplied objective. The complete task and a LOSSLESS candidate index are below: each full sequence is the stated mutation in the task reference. These inputs need not be read again. Obtain frozen predictions through benchmark_score in batches of at most fifty IDs; permitted practice pages may be inspected. Score matrices use row_columns to name each entry; all exact values and accounting are retained. Preserve IDs, give a short evidence-based rationale, submit once and finish.\n"+
             json.dumps({"task":episode.task.to_dict(),"candidate_index":candidate_index(episode.candidates)},sort_keys=True)}
     started=time.monotonic()
     route,roles,research,exit_code,error=None,None,None,None,None
@@ -135,6 +135,7 @@ def run_episode(episode,*,allow_live=False):
         "budget":asdict(episode.budget),"candidate_ids":[r["candidate_id"] for r in episode.candidates],
         "condition":episode.condition,"backend":episode.backend,"source_export_sha256":hashlib.sha256((run/"source_export_manifest.json").read_bytes()).hexdigest() if (run/"source_export_manifest.json").exists() else None}
     manifest["termination_policy"]="accepted_selection/v1"
+    manifest["observation_contract"]="lossless_matrices/v2" if episode.observation_format=="compact" else "full_records/v1"
     manifest["role_parameters"]={"maximum_rounds":episode.role_rounds,"maximum_output_tokens":min(1536,episode.budget.max_output_tokens_per_request)}
     (run/"host_only/execution_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n")
     report={"success":success,"run_directory":str(run),"episode_kind":"candidate_selection","independent_scientific_evaluation":False,

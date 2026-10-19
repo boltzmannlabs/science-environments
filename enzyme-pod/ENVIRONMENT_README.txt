@@ -82,6 +82,11 @@ the task reference plus each explicit single substitution exactly reconstructs
 the original sequence. Candidate IDs are retained. Both conditions use the
 same format and allowed scientific tools. All original candidate input bytes
 remain in the private execution manifest.
+Compact score results use row_columns=[candidate_id,predicted_score] with a
+value matrix. This omits repeated field names, not numbers, precision, candidates,
+model identity or cumulative accounting. Both conditions use the same view.
+Execution manifests identify the wire contract as lossless_matrices/v2. Earlier
+profiles used full score records; their failures and source snapshots remain.
 
 The isolated native engine has three actions: benchmark_read, benchmark_score
 and one-shot benchmark_submit. There is no generic terminal, web proxy, paid

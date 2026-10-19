@@ -7,7 +7,7 @@
   "ENVIRONMENT_README.txt": {
     "import_names_rewritten": false,
     "source": "environment/ENVIRONMENT_README.txt",
-    "source_sha256": "9bc866006a83c59a880f2367468f2875d736bb074ae24e2ffa8d17642b64f029"
+    "source_sha256": "1994e15f1f42f30730b8ced22df66db8693ad805ed1e7350465a9e38bb4d1705"
   },
   "pyproject.toml": {
     "import_names_rewritten": false,
@@ -32,7 +32,7 @@
   "src/enzyme_environment/data_views.py": {
     "import_names_rewritten": false,
     "source": "src/enzyme_environment/data_views.py",
-    "source_sha256": "a1a466d392d74440a1ced0c34b6d1421b02cd472946248d1a466390db91d5dbe"
+    "source_sha256": "8a5fe7741be9e2606aef3ccd4779b726519a752230eda01611876fd5535590d3"
   },
   "src/enzyme_environment/demo.py": {
     "import_names_rewritten": false,
@@ -62,7 +62,7 @@
   "src/enzyme_environment/policy.py": {
     "import_names_rewritten": false,
     "source": "src/enzyme_environment/policy.py",
-    "source_sha256": "9a546691aa7f3c1588b2a363cebbafa56da03d7cbbe6243dd481e36eacae1fb7"
+    "source_sha256": "3c8c01d6d9367d140afcd8e16ea890be4c484e85b1910e1b543a39d50a3159d3"
   },
   "src/enzyme_environment/probes.py": {
     "import_names_rewritten": false,
@@ -82,7 +82,7 @@
   "src/enzyme_environment/runner.py": {
     "import_names_rewritten": false,
     "source": "src/enzyme_environment/runner.py",
-    "source_sha256": "23f8a55da6c6f09b5e411656f45336ceebb5cb64b5e1bb6b5874daa5ab935420"
+    "source_sha256": "2b45cf69f2240d364d69f3d77dae30972b71295bb1c1fc7f4731e137e1a78b12"
   },
   "src/enzyme_environment/runtime.py": {
     "import_names_rewritten": false,
@@ -104,6 +104,11 @@
     "source": "tests/test_benchmark_transport.py",
     "source_sha256": "f26e0e39a6062e7cc843c8ad2ca278d77e4f71a0aa0c3d0963f37bec7ef602a7"
   },
+  "tests/test_compact_scores.py": {
+    "import_names_rewritten": false,
+    "source": "tests/test_compact_scores.py",
+    "source_sha256": "28bb8254a17fbb5f9022bdb1cdd5f6359ab633d836b081ebee18e1a2dcd9c768"
+  },
   "tests/test_environment_inputs.py": {
     "import_names_rewritten": false,
     "source": "tests/test_environment_inputs.py",
@@ -112,7 +117,7 @@
   "tests/test_environment_portable.py": {
     "import_names_rewritten": false,
     "source": "tests/test_environment_portable.py",
-    "source_sha256": "ad72e730a20ff723d92d76f3947e8dc102f14dabd0f495ebb03578f65826456e"
+    "source_sha256": "111b6715399b88417b1119986c2abcfd667ffa27fe19f1393c8e9b3d196bfbda"
   },
   "tests/test_environment_runtime.py": {
     "import_names_rewritten": false,

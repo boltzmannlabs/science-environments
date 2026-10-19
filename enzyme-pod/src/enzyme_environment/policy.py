@@ -6,6 +6,7 @@ import math
 import threading
 import time
 from pathlib import Path
+from enzyme_environment.data_views import compact_scores
 
 TOOLS = (
     {"type": "function", "name": "benchmark_read", "description": "Read a permitted benchmark dataset page.",
@@ -151,6 +152,8 @@ class Policy:
                                              "candidate_score_requests": self.score_requests,
                                              "cache_hits": self.cache_hits,
                                              "unique_candidate_limit": self.max_unique_scores}}
+                    if self.compact_candidates:
+                        result=compact_scores(result)
                 else:
                     if set(args) != {"candidate_ids", "rationale"}:
                         raise ValueError("Unexpected or missing submission field")
