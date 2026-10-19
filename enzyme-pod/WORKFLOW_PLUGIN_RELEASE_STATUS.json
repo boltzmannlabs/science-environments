@@ -1,0 +1,139 @@
+{
+  "success": true,
+  "wheel_sha256": "32383416d5c20360a5f0e8ddb3dfc0e0c564013d47fb924edb86c3b793efcc4f",
+  "byte_identical_wheels": true,
+  "installed_tests": {
+    "tests": 182,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "profile_scope_case_excluded": false,
+  "native_probe": {
+    "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]",
+    "native_tool_count": 5,
+    "native_hook_count": 2,
+    "native_skill_count": 3,
+    "authorization_denial_verified": true,
+    "positive_authorization_was_fixture_only": true,
+    "catalogue_tool_count": 18,
+    "catalogue_active_routing": 13,
+    "catalogue_pending": 5,
+    "any_live_verified": false,
+    "native_admission": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "manifest",
+          "ok": true,
+          "detail": "plugin.yaml parses"
+        },
+        {
+          "name": "manifest fields",
+          "ok": true,
+          "detail": "name, version, description present"
+        },
+        {
+          "name": "requires_sci",
+          "ok": true,
+          "detail": "not declared"
+        },
+        {
+          "name": "config schema",
+          "ok": true,
+          "detail": "not declared"
+        },
+        {
+          "name": "requires_env",
+          "ok": true,
+          "detail": "all entries UPPER_SNAKE"
+        },
+        {
+          "name": "loadable",
+          "ok": true,
+          "detail": "entry: __init__.py"
+        },
+        {
+          "name": "python dependencies",
+          "ok": true,
+          "detail": "none declared"
+        },
+        {
+          "name": "capability probe",
+          "ok": true,
+          "detail": "register() ran in isolation"
+        },
+        {
+          "name": "declared tools",
+          "ok": true,
+          "detail": "matches registrations"
+        },
+        {
+          "name": "declared hooks",
+          "ok": true,
+          "detail": "matches registrations"
+        },
+        {
+          "name": "declared middleware",
+          "ok": true,
+          "detail": "matches registrations"
+        },
+        {
+          "name": "built-in tool collisions",
+          "ok": true,
+          "detail": "no collisions"
+        },
+        {
+          "name": "security scan",
+          "ok": true,
+          "detail": "safe"
+        }
+      ],
+      "warnings": []
+    },
+    "actual_remote_submissions": 0,
+    "actual_model_calls": 0,
+    "subscriber_authentication_tested": false,
+    "gpu_used": false
+  },
+  "example": {
+    "success": true,
+    "synthetic_only": true,
+    "actual_remote_submissions": 0,
+    "actual_scientific_model_runs": 0,
+    "steps": 2,
+    "supplied_mock_candidates": 2,
+    "forwarded_after_mock_quality": 1
+  },
+  "native_revision": "ef2cfdf38474d2eeb34d44ca4a4abf642cfc8d06",
+  "installed_plugin_unchanged": true,
+  "native_source_unchanged": true,
+  "original_plugin_python_logic_changed": false,
+  "release_candidate_version": "0.2.4",
+  "installed_source_version": "0.2.3",
+  "packaging_overlay": [
+    "build dependency pins",
+    "readme metadata",
+    "provides_hooks declaration instead of legacy hooks",
+    "release candidate version"
+  ],
+  "test_network_namespace_isolated": true,
+  "credentials_used": false,
+  "model_api_calls": 0,
+  "gpu_used": false,
+  "holdout_used": false,
+  "same_host": true,
+  "independent_second_machine_reproduction": false,
+  "company_license_assigned": false,
+  "public_release": false,
+  "elapsed_seconds": 15.61059224512428,
+  "source_archive_sha256": "4671d8d1aac8f139e3c88a4cce4b1aac2d385772eb9884ec555eb5b493cf8b68",
+  "scope": "Separate local add-on 0.2.4 release candidate; installed 0.2.3 unchanged, not publicly released",
+  "pending": [
+    "Company source license/attribution",
+    "Maintained component repository destination",
+    "Independent setup/review",
+    "Full hosted specialist/executor and subscriber integration",
+    "Publication approval"
+  ]
+}

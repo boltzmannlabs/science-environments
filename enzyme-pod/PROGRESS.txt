@@ -126,3 +126,14 @@ not full-enzyme performance or catalytic-activity evidence. No API/GPU or
 closed benchmark-holdout use. Tool source is NOT added here: repository
 destination, company licensing and independent review/publication remain
 gates. See COMPONENT_RELEASE_STATUS.json for sanitized evidence.
+
+WORKFLOW ADD-ON RELEASE FOLLOW-UP
+A separate local 0.2.4 release candidate preserves installed 0.2.3 Python
+logic while correcting the explicit native hook declaration. Both the
+installed add-on and original host source are unchanged. All 182 tests
+pass in an isolated native namespace, including the formerly excluded
+gateway/profile case. Actual native context registration/admission and
+a synthetic two-stage observer replay pass. Earlier offline test receipts
+are retained, not relabeled. This adds no hosted scientific execution or
+claim of subscriber-authentication testing. Source remains separate pending
+repository/license/review decisions. See WORKFLOW_PLUGIN_RELEASE_STATUS.json.
