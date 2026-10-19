@@ -20,11 +20,18 @@ IMPLEMENTED LOCALLY
   No GPU/platform submission or final-test-label access occurred.
 - Existing external enzyme_workflow plugin supports workflow tracking/handoffs;
   its full integration into this controlled comparison is not yet complete.
+- A five-model ESM reference has completed outside the agent. A read-only cache
+  uses the same host scoring policy; all 200 predictions, exact parent/mutation
+  context, 200-unique/250-request/50-hit accounting and audit checks verify.
+  This adds no GPU demand or agent access to final experimental outcomes.
+- Model design and specifications for all five required applications are written;
+  these are not claims that the five full environments have already been built.
 
 CURRENT LIMITS
 - The real run is a small development execution test, not an independent final
   accuracy comparison. This development split already informed baseline tuning.
-- Specialist integration, stronger baseline and formal comparisons remain open.
+- Specialist integration, environment exposure of the additional baseline and
+  formal comparisons remain open. The five-model reference itself is now run.
 - The local runner still requires portability/release work before another server
   can reproduce the full native-engine example without operator-specific paths.
 - This first task is retrospective variant selection, not de novo enzyme design

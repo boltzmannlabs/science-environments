@@ -1,0 +1,40 @@
+{
+  "scope": "Verified external CPU reference and host scoring integration; not a formal agent comparison",
+  "reference_method": "esm1v_five_model_masked_marginals",
+  "first_full_inference_completed": true,
+  "model_count": 5,
+  "candidate_count": 200,
+  "masked_sites_per_model": 64,
+  "elapsed_seconds": 715.7670399160124,
+  "peak_model_process_ram_mib": 3348.35546875,
+  "cpu_threads": 2,
+  "saved_probability_and_ensemble_arithmetic_verified": true,
+  "frozen_selection_files_verified": 3,
+  "pool_bound_by_parent_sequence_and_mutations": true,
+  "scoring_accounting": {
+    "unique_candidates": 200,
+    "candidate_requests": 250,
+    "cache_hits": 50
+  },
+  "audit_chain_verified": true,
+  "original_agent_source_unchanged": true,
+  "gpu_used": false,
+  "final_experimental_answers_opened": false,
+  "scientific_accuracy_evaluated": false,
+  "reference_exposed_in_live_agent_run": false,
+  "weights_in_contribution": false,
+  "default_benchmark_runtime_dependencies": [],
+  "clean_benchmark_install_tests": 11,
+  "software_tests": {
+    "benchmark": 303,
+    "plugin": 179,
+    "guarded_runner_passed": true
+  },
+  "remaining_environment_gates": [
+    "Portable native Agent-Scientist runtime setup",
+    "External specialist development and matched-budget freeze",
+    "Controlled live use of the additional frozen reference",
+    "Independent final comparison",
+    "Code, dependency and model-asset rights review before public release"
+  ]
+}
