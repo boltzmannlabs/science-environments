@@ -1,0 +1,40 @@
+EXTERNAL ENZYME SPECIALIST - IMPLEMENTED LOCAL INTERFACE
+
+Main Agent-Scientist source stays unchanged. The external harness runs a bounded
+specialist preflight, then passes its complete records to the isolated native
+coordinator. Dedicated proposer and critic roles use the current configured
+model through the SAME host request/token ledger as the coordinator.
+
+Role input: validated shared task, known candidate/mutation index and reference,
+research question, round/parent identifiers and the full previous records.
+Each previous record contains its proposal, critique and actual tool results.
+No final assay labels, arbitrary host paths or credentials are supplied.
+
+Proposal: question, claim, comparator, alternative explanation, stop condition,
+revision reason, parent ID, real evidence references and one permitted action.
+Critique: test/revise/stop decision, reason, objections and requested revision.
+These are scientific proposal records, not experimental activity measurements.
+
+The model's role response cannot execute a tool. Strict structured output and
+host semantic checks reject malformed, incomplete or ungrounded proposals.
+Only the external loop dispatches existing benchmark_read/benchmark_score
+actions through the same host Policy. There is no shell, generic web proxy,
+remote scientific submission or access to operator-held answers.
+
+Loop output: versioned records, actual observation IDs, result hashes, parent
+links, completed/failed status and explicit scientific-evidence boundaries.
+The main coordinator receives these records but remains responsible for its
+one-shot final ranked selection. A failed role does not silently become a
+successful workflow; failed/ambiguous requests are not automatically retried.
+
+Verified locally: two live rounds, four role calls and two actual score actions,
+then five native coordinator calls. Same-input/code/budget base condition also
+completed. Both selected the same ordered IDs; no selection benefit is claimed.
+The audit proves full-history delivery and actual frozen-score receipts.
+
+Pending: portable host/native runtime packaging, broader workflow-plugin/tool
+handoffs and repeated independent scientific comparison. This contract and the
+progress summary are not a claim that the full environment is portable yet.
+Comparison details are maintained in the benchmark repository, not duplicated
+as another evaluator here: enzyme-pod/DEVELOPMENT_COMPARISON.txt in
+boltzmannlabs/science-benchmarking.

@@ -1,0 +1,72 @@
+{
+  "scope": "Operator-verified live DEVELOPMENT preflight and native coordinator, not independent accuracy",
+  "pool_size": 20,
+  "selection_size": 10,
+  "inputs_code_and_budget_match": true,
+  "specialist": {
+    "research_rounds": 2,
+    "role_requests": 4,
+    "actual_observations": 2,
+    "full_prior_history_proven_in_model_request_hashes": true,
+    "actual_host_tool_receipts_verified": true
+  },
+  "measurements": {
+    "base": {
+      "elapsed_seconds": 33.26968260505237,
+      "model_requests": 5,
+      "model_usage": {
+        "input_tokens": 28268,
+        "output_tokens": 822,
+        "total_tokens": 29090
+      },
+      "guest_process_resources": {
+        "cpu_user_seconds": 5.270347,
+        "cpu_system_seconds": 0.19608699999999998,
+        "peak_process_ram_mib": 182.40234375,
+        "cpu_affinity_slots": 2,
+        "measurement_scope": "Guest agent process, not aggregate container/host usage"
+      },
+      "candidate_score_requests": 20,
+      "cache_hits": 0
+    },
+    "specialist": {
+      "elapsed_seconds": 61.062597915995866,
+      "model_requests": 9,
+      "model_usage": {
+        "input_tokens": 51343,
+        "output_tokens": 1861,
+        "total_tokens": 53204
+      },
+      "guest_process_resources": {
+        "cpu_user_seconds": 5.323713,
+        "cpu_system_seconds": 0.20710499999999998,
+        "peak_process_ram_mib": 182.65234375,
+        "cpu_affinity_slots": 2,
+        "measurement_scope": "Guest agent process, not aggregate container/host usage"
+      },
+      "candidate_score_requests": 40,
+      "cache_hits": 20
+    }
+  },
+  "ordered_selections_identical": true,
+  "selected_id_overlap": 10,
+  "additional_tokens": 24114,
+  "frozen_prediction_receipts_verified": {
+    "base": 20,
+    "specialist": 20
+  },
+  "original_agent_source_modified": false,
+  "account_settings_modified": false,
+  "competition_jobs_modified": false,
+  "local_gpu_used": false,
+  "final_test_answers_opened": false,
+  "scientific_superiority_established": false,
+  "full_portable_environment_complete": false,
+  "private_provider_traces_in_contribution": false,
+  "limitations": [
+    "One development pool; split previously used for tuning",
+    "One live run per condition, not a repeated final comparison",
+    "Guest RAM is not aggregate host/remote-provider RAM",
+    "A critic is not an experimental evaluator"
+  ]
+}

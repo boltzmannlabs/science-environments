@@ -26,12 +26,18 @@ IMPLEMENTED LOCALLY
   This adds no GPU demand or agent access to final experimental outcomes.
 - Model design and specifications for all five required applications are written;
   these are not claims that the five full environments have already been built.
+- External live specialist preflight now completed two proposal/critic/test rounds
+  before the isolated native coordinator, using one shared model/score budget.
+  With specialist: 61.06 s, 9 requests, 53,204 tokens; fresh matched base:
+  33.27 s, 5 requests, 29,090 tokens. Both chose the same ordered ten IDs.
+  Full prior history, actual score receipts and cache ledgers were verified.
 
 CURRENT LIMITS
 - The real run is a small development execution test, not an independent final
   accuracy comparison. This development split already informed baseline tuning.
-- Specialist integration, environment exposure of the additional baseline and
-  formal comparisons remain open. The five-model reference itself is now run.
+- Full workflow-plugin integration, portable specialist/native runtime,
+  environment exposure of the additional reference and formal comparisons remain
+  open. The local live specialist preflight and stronger reference are now run.
 - The local runner still requires portability/release work before another server
   can reproduce the full native-engine example without operator-specific paths.
 - This first task is retrospective variant selection, not de novo enzyme design
@@ -39,7 +45,7 @@ CURRENT LIMITS
 
 NEXT CONTRIBUTION
 Portable environment setup and examples; maintained shared-contract dependency;
-formal budgets and external specialist adapter. Original Agent-Scientist source
+formal budgets and portable external specialist adapter. Original agent source
 remains unchanged. A synthetic benchmark package has a separate clean-install
 receipt; that does not yet establish portable full environment reproduction.
 
