@@ -1,0 +1,36 @@
+PORTABLE ENVIRONMENT - LATEST PRIVATE REVIEW STATUS
+
+The source export and PORTABLE_PACKAGE_CHECKS.json document the tested build.
+This note records subsequent development profiling without rewriting old runs.
+
+Verification:
+- Six stdlib checks pass in a clean virtual environment with both local wheels.
+- Installed native Agent-Scientist offline execution passes with 200 candidates.
+- All 81 exported optional tests pass against installed environment/benchmark
+  code using the existing host pytest/HTTPX dependencies. This is not a fresh
+  installation of the upstream native SDK or a second-machine reproduction.
+- The common host terminal policy ends on accepted selection, not another chat
+  response. Full integrity, isolation, budget and audit gates still apply.
+
+Live profiling:
+- Initial specialist run failed the observed token cap after selection.
+- New-policy specialist run failed a provider connection before selection; no
+  automatic retry. One failed request has unknown additional provider usage.
+- New-policy base run passed: 200 scored, ten IDs accepted, five model requests,
+  55,663 observed tokens, 61.88 seconds. Audit replay verifies actual frozen
+  scores and accounting without final experimental answers.
+- A matched live 200-candidate pair remains incomplete. No scientific benefit
+  or completed final comparison is claimed.
+
+Authoritative comparison and retained failure ledger:
+boltzmannlabs/science-benchmarking, enzyme-pod/DEVELOPMENT_COMPARISON.txt and
+enzyme-pod/PORTABLE_DEVELOPMENT_PROFILE.json.
+
+The original Agent-Scientist checkout was independently updated; the revision
+guard stopped before requests. The benchmark now uses an owned isolated clone
+at its old pinned revision. No original checkout reset or source edit occurred.
+
+Remaining gates: provider reliability and matched profiling, frozen repeated
+scientific comparison, independent native setup, company licensing and rights,
+maintainer review and explicit public-release approval. No visibility change,
+license assignment, competition interruption or local GPU use occurred.

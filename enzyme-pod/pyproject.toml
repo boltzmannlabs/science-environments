@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boltzmann-enzyme-environment"
+version = "0.1.0"
+description = "External enzyme research roles and isolated native Agent-Scientist selection episodes"
+readme = {file = "ENVIRONMENT_README.txt", content-type = "text/plain"}
+requires-python = ">=3.11"
+dependencies = ["boltzmann-enzyme-benchmark==0.1.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "httpx>=0.28,<0.29"]
+hosted-model = ["httpx>=0.28,<0.29"]
+
+[project.scripts]
+enzyme-env = "enzyme_environment.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["enzyme_environment*"]
+
+[tool.setuptools]
+include-package-data = false

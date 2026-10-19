@@ -1,0 +1,22 @@
+# This working project contains private operator data. Export only allowlisted
+# source contributions; never publish the whole directory as a benchmark dataset.
+evaluator_private/
+model_weights/
+runtime_sources/
+agent_public/
+runs/
+reports/
+delivery/exports/
+delivery/repositories/
+delivery/checks/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+.env
+.env.*
+*.local.json

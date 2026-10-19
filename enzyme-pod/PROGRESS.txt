@@ -31,23 +31,36 @@ IMPLEMENTED LOCALLY
   With specialist: 61.06 s, 9 requests, 53,204 tokens; fresh matched base:
   33.27 s, 5 requests, 29,090 tokens. Both chose the same ordered ten IDs.
   Full prior history, actual score receipts and cache ledgers were verified.
+- A portable external environment package now installs alongside the separate
+  canonical benchmark package. Deterministic wheel builds, clean installation,
+  synthetic CLI execution and an installed native-engine offline episode pass.
+  Native runtime paths/revision are explicit operator configuration. The existing
+  native SDK is reused read-only; a new independent SDK installation is untested.
+- A 200-candidate native offline episode passes the shared accepted_selection/v1
+  terminal policy: a host-accepted ten-ID selection ends execution without an
+  unnecessary model call. Reports distinguish this from natural chat completion.
+- One larger live development profile failed its 96,000 observed-token limit
+  after a valid selection. Its final narrative response brought usage to 98,182.
+  That failed attempt is retained, not relabeled as success. Usage accounting now
+  records the response crossing a limit; the terminal-policy fix is being checked
+  separately before a new development profile. No final accuracy claim follows.
 
 CURRENT LIMITS
 - The real run is a small development execution test, not an independent final
   accuracy comparison. This development split already informed baseline tuning.
-- Full workflow-plugin integration, portable specialist/native runtime,
-  environment exposure of the additional reference and formal comparisons remain
-  open. The local live specialist preflight and stronger reference are now run.
-- The local runner still requires portability/release work before another server
-  can reproduce the full native-engine example without operator-specific paths.
+- Full workflow-plugin integration, independent native-runtime provisioning,
+  larger live profiling and frozen repeated scientific comparisons remain open.
+  The local live specialist preflight and stronger reference are now run.
+- Explicit runtime configuration removes personal paths from reusable source;
+  another-machine native SDK setup and company rights review remain release gates.
 - This first task is retrospective variant selection, not de novo enzyme design
   or proof of reaction activity.
 
 NEXT CONTRIBUTION
-Portable environment setup and examples; maintained shared-contract dependency;
-formal budgets and portable external specialist adapter. Original agent source
-remains unchanged. A synthetic benchmark package has a separate clean-install
-receipt; that does not yet establish portable full environment reproduction.
+Publish the inspected portable environment source for private review; complete
+larger matched development profiling and freeze formal budgets. Original agent
+source remains unchanged. Clean installed package execution is verified locally,
+not a second-machine native SDK reproduction or independent scientific result.
 
 RELEASE CHECKS
 Document runtime requirements, optional hosted-service dependencies, licensing,

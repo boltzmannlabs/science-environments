@@ -32,9 +32,15 @@ then five native coordinator calls. Same-input/code/budget base condition also
 completed. Both selected the same ordered IDs; no selection benefit is claimed.
 The audit proves full-history delivery and actual frozen-score receipts.
 
-Pending: portable host/native runtime packaging, broader workflow-plugin/tool
-handoffs and repeated independent scientific comparison. This contract and the
-progress summary are not a claim that the full environment is portable yet.
+Portable packaging now uses explicit runtime/episode configuration and depends
+on the separate canonical benchmark package. Both conditions terminate through
+accepted_selection/v1 once the HOST accepts ten valid IDs; no subsequent chat
+completion is requested. All other success gates still apply. A previous larger
+live run exceeding its token budget remains a retained failure, not success.
+
+Pending: independent native SDK provisioning, broader workflow-plugin/tool
+handoffs, larger matched profiling and repeated independent scientific comparison.
+Local clean-installed execution is not a second-machine reproduction.
 Comparison details are maintained in the benchmark repository, not duplicated
 as another evaluator here: enzyme-pod/DEVELOPMENT_COMPARISON.txt in
 boltzmannlabs/science-benchmarking.

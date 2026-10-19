@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "source_file_count": 31,
+  "wheel": "boltzmann_enzyme_environment-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "7bd3f6dc891f81ed38cdb33808da3155d7fb5e2c2d2210adeddc7268d22f1219",
+  "benchmark_wheel_sha256": "3ffe76fb5ffaedb74b4ef715d7b0e0d0d1b7a025a9bb4a72a303ad52f9340ad1",
+  "wheel_reproduced_byte_for_byte": true,
+  "clean_venv_stdlib_tests": 6,
+  "synthetic_cli_demo": "passed",
+  "dependency_check": "passed",
+  "installed_native_engine_offline_episode": "passed",
+  "executed_packages_from_clean_venv": true,
+  "native_runtime_reused_read_only": true,
+  "fresh_native_sdk_installation_tested": false,
+  "actual_model_requests": 0,
+  "local_gpu_used": false,
+  "operator_final_answers_used": false,
+  "original_agent_source_unchanged": true,
+  "native_runtime_metadata_unchanged": true,
+  "isolated_native_episode": {
+    "pool_size": 200,
+    "condition": "specialist",
+    "elapsed_seconds": 7.748875088989735,
+    "model_requests": 10,
+    "specialist_rounds": 2,
+    "unique_candidates_scored": 200,
+    "selection_submitted": true,
+    "guest_process_resources": {
+      "cpu_user_seconds": 5.238423,
+      "cpu_system_seconds": 0.233974,
+      "peak_process_ram_mib": 185.0390625,
+      "cpu_affinity_slots": 2,
+      "measurement_scope": "Guest agent process, not aggregate container/host usage"
+    }
+  },
+  "public_release_ready": false,
+  "remaining_gates": [
+    "Company-approved code license and rights review",
+    "Maintainer review and independent second-machine native setup",
+    "Larger development profile and frozen repeated scientific comparison",
+    "Full platform workflow and improved molecular-model deliverables remain separate"
+  ],
+  "scope": "Private review; reusable source and clean installed native-offline execution, not a public release or scientific comparison"
+}
