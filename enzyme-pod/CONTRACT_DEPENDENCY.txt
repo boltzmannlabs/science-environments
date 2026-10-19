@@ -1,0 +1,16 @@
+ENZYME ENVIRONMENT - SHARED CONTRACT DEPENDENCY
+
+Use boltzmann-enzyme-benchmark, currently private development version 0.1.0,
+from the enzyme-pod contribution to science-benchmarking.
+Import TaskContract/validate_candidates from enzyme_benchmark.contracts and
+FrozenPredictor from enzyme_benchmark.predictor.
+Contract version: enzyme-variant-selection/1.0.
+
+Do not copy a separate scorer or maintain competing task/CSV definitions.
+The environment is responsible for permitted actions, observations, cumulative
+budgets, host-only credentials, candidate state, output ownership and audit logs.
+The operator evaluator is separate and inaccessible to the tested agent.
+
+The private benchmark starter is not yet a public package on a package index.
+A local installed wheel can be used for integration tests. A clean installation
+does not establish a completed live agent comparison or molecular-model advance.

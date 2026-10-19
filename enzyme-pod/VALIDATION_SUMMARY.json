@@ -1,0 +1,32 @@
+{
+  "evidence_scope": "Operator summary of private run receipts; full portable environment reproduction is pending",
+  "run_stage": "development_only",
+  "native_agent_engine_executed": true,
+  "original_agent_source_unchanged": true,
+  "account_config_and_auth_unchanged": true,
+  "live_development": {
+    "success": true,
+    "candidate_pool_size": 20,
+    "unique_candidates_scored": 20,
+    "selected_candidates": 10,
+    "elapsed_seconds": 35.09,
+    "real_model_requests": 5,
+    "input_tokens": 28273,
+    "output_tokens": 833,
+    "total_tokens": 29106,
+    "cpu_and_ram_measured": false
+  },
+  "isolation_and_forbidden_action_checks": "passed",
+  "credentials_exposed_to_guest": false,
+  "gpu_used": false,
+  "platform_jobs_submitted": 0,
+  "final_test_answers_opened": false,
+  "formal_comparison_run": false,
+  "scientific_superiority_established": false,
+  "limitations": [
+    "Development data previously informed baseline parameter selection",
+    "This is not independent scientific accuracy validation",
+    "No specialist-versus-base or improved-model comparison is complete",
+    "Observed token caps can be crossed by one in-flight completion and are not hard billing guarantees"
+  ]
+}
