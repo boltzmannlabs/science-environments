@@ -1,0 +1,108 @@
+FRESH NATIVE SDK SETUP - OFFLINE OPERATOR CHECK
+
+Purpose: verify native Agent-Scientist integration without credentials, network
+model requests, molecular checkpoints or real experimental inputs. This is NOT
+an independent scientific comparison, and it does not reopen the scored holdout.
+
+PREREQUISITES
+Linux with bubblewrap/user namespaces; uv; system /usr/bin/python3; a standalone
+Python 3.14.7 distribution with bin/python3; an authorized checkout of the
+separate Agent-Scientist repository; and the two reviewed development wheels.
+Standalone Python provisioning is an operator prerequisite: the recorded fresh
+SDK test reused the already installed interpreter rather than downloading one.
+No existing Sci profile or authorized account is needed for this offline check.
+Do not run these setup commands inside an existing agent installation.
+
+1. NEW NATIVE SOURCE AND DEPENDENCY DIRECTORY
+From a new operator working directory, clone the separately authorized source:
+  git clone https://github.com/boltzmannlabs/Agent-Scientist.git native-agent
+  git -C native-agent switch --detach ef2cfdf38474d2eeb34d44ca4a4abf642cfc8d06
+
+Set task-specific variables to the NEW directories and the standalone interpreter:
+  export ENZYME_NATIVE_SOURCE="$PWD/native-agent"
+  export ENZYME_NATIVE_VENV="$PWD/native-venv"
+  export ENZYME_PYTHON_ROOT="/absolute/path/to/standalone-python-3.14.7"
+
+Install only the pinned upstream core, without editing source or its lock:
+  UV_PROJECT_ENVIRONMENT="$ENZYME_NATIVE_VENV" uv sync --project "$ENZYME_NATIVE_SOURCE" --python "$ENZYME_PYTHON_ROOT/bin/python3" --frozen --no-dev --no-default-groups --no-install-project --no-python-downloads --no-build --link-mode copy
+
+Install the two reviewed local wheels in native-venv (supply their local paths):
+  uv pip install --python "$ENZYME_NATIVE_VENV/bin/python" --no-index --no-deps /path/to/boltzmann_enzyme_benchmark-0.1.0-py3-none-any.whl /path/to/boltzmann_enzyme_environment-0.1.0-py3-none-any.whl
+  uv pip check --python "$ENZYME_NATIVE_VENV/bin/python"
+
+Observed pinned source metadata:
+  pyproject.toml SHA256: 1345eb98076b71ab133f7a98483e53456074c5ddf6747c9f71eec8efec5abd07
+  uv.lock SHA256:       102ce5bbfff97e438272dcefb0098054885e38a613e980f58ee62d5a8e746966
+SDK versions verified in the fresh setup include OpenAI 2.24.0, HTTPX 0.28.1,
+Pydantic 2.13.4 and pydantic-core 2.46.4. Do not replace pins with latest versions.
+The native repository may require separate access; no account token is an example.
+
+2. RUNTIME CONFIGURATION OUTSIDE THE NATIVE CHECKOUT
+Create runtime.json in the operator working directory. Substitute your actual
+absolute directories; omit profile entirely for offline execution:
+  {
+    "schema_version": "enzyme-native-runtime/1",
+    "agent_source": "/absolute/path/to/native-agent",
+    "agent_revision": "ef2cfdf38474d2eeb34d44ca4a4abf642cfc8d06",
+    "python_root": "/absolute/path/to/standalone-python-3.14.7",
+    "site_packages": "/absolute/path/to/native-venv/lib/python3.14/site-packages"
+  }
+  native-venv/bin/python -I -B -m enzyme_environment.cli check-runtime --runtime runtime.json
+
+3. SYNTHETIC INPUTS AND OFFLINE EPISODE
+  native-venv/bin/python -I -B -m enzyme_benchmark.cli demo --output synthetic-inputs
+The demo reports synthetic_model_sha256. Place that exact hash in the predictor
+field of episode.json below. The source fixture contains only synthetic outcomes;
+the native agent still receives only copied task/candidate inputs and host tools,
+not the fixture's synthetic label file or demo evaluation report.
+
+  {
+    "schema_version": "enzyme-environment-episode/1",
+    "runtime": "runtime.json",
+    "task": "synthetic-inputs/task.json",
+    "candidates": "synthetic-inputs/candidates.csv",
+    "predictor": {
+      "kind": "linear",
+      "path": "synthetic-inputs/frozen_models.synthetic.json",
+      "sha256": "<exact synthetic_model_sha256 from the demo>"
+    },
+    "output": "offline-base-result",
+    "backend": "offline",
+    "condition": "base",
+    "observation_format": "compact",
+    "role_rounds": 2,
+    "budget": {
+      "max_requests": 12,
+      "max_output_tokens_per_request": 2048,
+      "max_total_observed_tokens": 96000,
+      "max_wall_seconds": 120
+    }
+  }
+  native-venv/bin/python -I -B -m enzyme_environment.cli run --config episode.json
+
+For the specialist check, create a second configuration with condition set to
+specialist and a NEW output, for example offline-specialist-result. Every other
+task, candidate, predictor and budget setting stays the same. No --allow-live-model
+flag is present. Existing outputs are rejected rather than replaced.
+
+Expected: success true; real_model_requests 0; backend offline; selection_submitted
+true; all isolation/broker-permission checks true. The fixture reports synthetic
+token usage, not billed provider use. The fixed model name remains gpt-6.1-sol,
+but HTTP responses are scripted. Native conversation execution is real; reasoning
+in this fixture is not live and does not prove scientific performance.
+
+RESOURCE/SAFETY NOTES
+Guest: two CPU-affinity slots, 2 GiB address-space limit, no GPU nodes or general
+network, three permitted host tools. These are not aggregate host OOM guarantees.
+Dependency extraction needs a different file-size envelope from agent output:
+the local installer check used 256 MiB per file; guest output stays capped at
+8 MiB. The first extraction attempt that hit the smaller cap remains recorded.
+No global environment, original source/profile or deployment setting is changed.
+
+VERIFICATION STATUS
+A fresh upstream dependency install, new source clone and both native offline
+conditions passed on this server, using only synthetic inputs. The 68 installed
+distribution records and license metadata were inventoried. This is same-host
+verification, not an independent reviewer or second-machine rerun. Those and
+company licensing/publication review remain open. Do not use a public-release
+label for a private development package merely because this check passes.

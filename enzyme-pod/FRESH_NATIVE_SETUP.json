@@ -1,0 +1,221 @@
+{
+  "success": true,
+  "actual_model_requests": 0,
+  "credentials_used": false,
+  "real_assay_data_used": false,
+  "heldout_results_used_for_tuning": false,
+  "local_gpu_used": false,
+  "same_host": true,
+  "existing_standalone_interpreter_reused": true,
+  "independent_second_machine_reproduction": false,
+  "agent_revision": "ef2cfdf38474d2eeb34d44ca4a4abf642cfc8d06",
+  "source_lock_sha256": {
+    "pyproject.toml": "1345eb98076b71ab133f7a98483e53456074c5ddf6747c9f71eec8efec5abd07",
+    "uv.lock": "102ce5bbfff97e438272dcefb0098054885e38a613e980f58ee62d5a8e746966"
+  },
+  "fresh_native_sdk_installation_tested": true,
+  "native_sdk_from_existing_site_packages": false,
+  "installed_package_versions": {
+    "packages": {
+      "Jinja2": "3.1.6",
+      "Markdown": "3.10.2",
+      "MarkupSafe": "3.0.3",
+      "PyJWT": "2.13.0",
+      "Pygments": "2.21.0",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.14.2",
+      "boltzmann-enzyme-benchmark": "0.1.0",
+      "boltzmann-enzyme-environment": "0.1.0",
+      "browser-harness": "0.1.13",
+      "cdp-use": "1.4.5",
+      "certifi": "2026.5.20",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.1",
+      "click": "8.4.2",
+      "croniter": "6.0.0",
+      "cryptography": "50.0.1",
+      "distro": "1.9.0",
+      "fastapi": "0.133.1",
+      "fetch-use": "0.4.0",
+      "fire": "0.7.1",
+      "firecrawl-anydoc": "0.2.4",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httptools": "0.8.0",
+      "httpx": "0.28.1",
+      "idna": "3.19",
+      "jiter": "0.16.0",
+      "markdown-it-py": "4.2.0",
+      "mdurl": "0.1.2",
+      "nemo-relay": "0.9.3",
+      "openai": "2.24.0",
+      "packaging": "26.0",
+      "pathspec": "1.1.1",
+      "pillow": "12.3.0",
+      "pillow_heif": "1.6.0",
+      "prompt_toolkit": "3.0.52",
+      "psutil": "7.2.2",
+      "ptyprocess": "0.7.0",
+      "pycparser": "3.0",
+      "pydantic": "2.13.4",
+      "pydantic_core": "2.46.4",
+      "python-dateutil": "2.9.0.post0",
+      "python-dotenv": "1.2.2",
+      "python-multipart": "0.0.32",
+      "pytz": "2026.3.post1",
+      "requests": "2.33.0",
+      "resvg_py": "0.4.0",
+      "rich": "14.3.3",
+      "ruamel.yaml": "0.18.16",
+      "six": "1.17.0",
+      "sniffio": "1.3.1",
+      "snowballstemmer": "3.1.1",
+      "socksio": "1.0.0",
+      "starlette": "1.3.1",
+      "tenacity": "9.1.4",
+      "termcolor": "3.3.0",
+      "tomli_w": "1.2.0",
+      "tqdm": "4.70.0",
+      "truststore": "0.10.4",
+      "typing-inspection": "0.4.4",
+      "typing_extensions": "4.16.0",
+      "urllib3": "2.7.0",
+      "uvicorn": "0.41.0",
+      "watchfiles": "1.2.0",
+      "wcwidth": "0.8.2",
+      "websockets": "15.0.1"
+    },
+    "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]"
+  },
+  "runtime_preflight": {
+    "agent_revision": "ef2cfdf38474d2eeb34d44ca4a4abf642cfc8d06",
+    "agent_worktree_clean": true,
+    "python_version": "3.14.7",
+    "critical_dependency_metadata": {
+      "httpcore": {
+        "version": "1.0.9",
+        "metadata_sha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21"
+      },
+      "openai": {
+        "version": "2.24.0",
+        "metadata_sha256": "8ffd865c529a230b50a81b41e9338d8248d182111e7cacf2102730bedea5583f"
+      },
+      "pydantic": {
+        "version": "2.13.4",
+        "metadata_sha256": "d1e56c3412492512fb6b59a9dfc25ab7af2a8204585cd7bca000513023133394"
+      },
+      "anyio": {
+        "version": "4.14.2",
+        "metadata_sha256": "c5e6fc4dfd833319913b287be7a30d9935e9208c7ef917630621855aaac4d419"
+      },
+      "httpx": {
+        "version": "0.28.1",
+        "metadata_sha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25"
+      },
+      "pydantic-core": {
+        "version": "2.46.4",
+        "metadata_sha256": "135fa8b2f89473e9191c7078c2164e3ec6c8927a61c2379c2fddcc07f11f3bae"
+      },
+      "ruamel-yaml": {
+        "version": "0.18.16",
+        "metadata_sha256": "39376f3b128778b05ed27fcf27958feef9436df63422463865b293c1b212c978"
+      }
+    },
+    "installation_changed": false,
+    "source_modified": false
+  },
+  "native_offline_episodes": {
+    "base": {
+      "success": true,
+      "pool_size": 20,
+      "model_requests": 3,
+      "real_model_requests": 0,
+      "elapsed_seconds": 10.162875442067161,
+      "specialist_rounds": 0,
+      "selection_submitted": true,
+      "isolation_checks": {
+        "host_paths_hidden": true,
+        "private_pid_namespace": true,
+        "clean_environment": true,
+        "internet_blocked": true,
+        "lan_blocked": true,
+        "dns_blocked": true,
+        "input_readonly": true,
+        "source_readonly": true,
+        "runner_readonly": true,
+        "host_mount_roots_absent": true,
+        "cpu_affinity_limited": true,
+        "memory_limit_set": true,
+        "cpu_time_limit_set": true,
+        "no_gpu_device_nodes": true
+      },
+      "broker_permission_checks": {
+        "paid_submission_route_denied": true,
+        "paid_submission_tool_denied": true,
+        "arbitrary_file_read_denied": true,
+        "test_labels_denied": true,
+        "arbitrary_command_denied": true
+      },
+      "guest_process_resources": {
+        "cpu_user_seconds": 6.368587,
+        "cpu_system_seconds": 0.18786899999999998,
+        "peak_process_ram_mib": 185.484375,
+        "cpu_affinity_slots": 2,
+        "measurement_scope": "Guest agent process, not aggregate container/host usage"
+      }
+    },
+    "specialist": {
+      "success": true,
+      "pool_size": 20,
+      "model_requests": 7,
+      "real_model_requests": 0,
+      "elapsed_seconds": 10.086023398907855,
+      "specialist_rounds": 2,
+      "selection_submitted": true,
+      "isolation_checks": {
+        "host_paths_hidden": true,
+        "private_pid_namespace": true,
+        "clean_environment": true,
+        "internet_blocked": true,
+        "lan_blocked": true,
+        "dns_blocked": true,
+        "input_readonly": true,
+        "source_readonly": true,
+        "runner_readonly": true,
+        "host_mount_roots_absent": true,
+        "cpu_affinity_limited": true,
+        "memory_limit_set": true,
+        "cpu_time_limit_set": true,
+        "no_gpu_device_nodes": true
+      },
+      "broker_permission_checks": {
+        "paid_submission_route_denied": true,
+        "paid_submission_tool_denied": true,
+        "arbitrary_file_read_denied": true,
+        "test_labels_denied": true,
+        "arbitrary_command_denied": true
+      },
+      "guest_process_resources": {
+        "cpu_user_seconds": 6.334921,
+        "cpu_system_seconds": 0.186144,
+        "peak_process_ram_mib": 185.3046875,
+        "cpu_affinity_slots": 2,
+        "measurement_scope": "Guest agent process, not aggregate container/host usage"
+      }
+    }
+  },
+  "wheel_sha256": {
+    "benchmark": "3ffe76fb5ffaedb74b4ef715d7b0e0d0d1b7a025a9bb4a72a303ad52f9340ad1",
+    "environment": "7e655775458f6f409296b1acf536e3cc6d95a073546d183d93dc6abee03b5048"
+  },
+  "upstream_source_modified": false,
+  "fresh_source_worktree_clean": true,
+  "source_builds_disabled": true,
+  "version_or_model_substitutions": false,
+  "public_release": false,
+  "elapsed_seconds": 33.213661114219576,
+  "pinned_existing_source_unchanged": true,
+  "original_user_source_unchanged_during_setup": true,
+  "retained_setup_failure": "An earlier extraction hit the agent's 8 MiB file-size cap; a separate 256 MiB installer envelope fixed that local setup limit. Guest runtime caps/pins were not changed."
+}

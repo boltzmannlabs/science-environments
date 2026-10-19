@@ -1,0 +1,70 @@
+RIGHTS AND ATTRIBUTION - REVIEW RECORD, NOT A LEGAL CLEARANCE
+
+COMPANY-AUTHORED CODE
+The benchmark/environment contribution has no company-approved public code
+license yet. No permissive license is invented by these notes or inferred from
+private GitHub access. The company must approve the license and release through
+the maintainer process. A private PR is not a public release.
+
+THIRD-PARTY SOFTWARE
+The benchmark's default inference/contracts/evaluator use the standard library.
+Optional fitting uses NumPy, SciPy, scikit-learn, joblib, threadpoolctl and the
+resolved transitive dependencies in the supplied reproduction hash lock.
+The native environment is an external consumer of Agent-Scientist, OpenAI SDK,
+HTTPX and the separately supplied native dependency closure. It does not embed
+the original Agent-Scientist repository, SDKs, binaries or account profiles in
+its wheel. Dependency metadata and bundled native-library notices need review
+separately; one project-level license is not a clearance of all dependencies.
+See the installed-dependency inventory/check reports for exact observed versions.
+
+PROTEINGYM
+Source code/reference metadata pinned at commit:
+  144fe22b07dfaeec2b366f2346203a9838a55b4c
+Pinned repository license: MIT.
+  https://raw.githubusercontent.com/OATML-Markslab/ProteinGym/144fe22b07dfaeec2b366f2346203a9838a55b4c/LICENSE
+The repository license is not treated as an automatic license assignment to
+every original experimental dataset, model, image or other third-party asset.
+No raw ProteinGym archive/assay table is redistributed in these source packages.
+
+ORIGINAL AMIE DATA
+Wrenbeck, Azouz and Whitehead (2017), Single-mutation fitness landscapes for an
+enzyme on multiple substrates reveal specificity is globally encoded.
+  https://doi.org/10.1038/ncomms15695
+Original dataset, version 2: Normalized fitness values for amiE selections.
+  https://doi.org/10.6084/m9.figshare.3505901.v2
+The pinned Figshare v2 metadata records CC BY 4.0 for this dataset. That is an
+attribution license, not CC0. Preserve the original study/data citations and
+describe preprocessing/splits in derived benchmark reports. Do not replace the
+original authors' credit with the platform or agent name. The operator-only
+labels are not included in either source contribution.
+Pinned metadata evidence is retained privately from:
+  https://api.figshare.com/v2/articles/3505901/versions/2
+
+ESM-1V
+Upstream facebookresearch/esm source code has an MIT license at the recorded
+revision 2b369911bb5b4b0dda914521b9475cad1656b2ac:
+  https://github.com/facebookresearch/esm/blob/2b369911bb5b4b0dda914521b9475cad1656b2ac/LICENSE
+The benchmark used separately downloaded official facebook converted checkpoints,
+with five individually pinned revisions and publisher hashes. Those weights are
+not bundled in the contributions. No asset-specific license/card declaration
+was located in the retained converted-model evidence. This is an unresolved
+asset-rights review item, not a claim that the assets are proprietary, require
+payment, or inherit a commercial restriction. Do not infer asset redistribution
+permission solely from the upstream code's MIT license.
+
+NATIVE AGENT AND HOSTED SERVICES
+Agent-Scientist source/revision and dependency setup remain separate from these
+two packages. Preserve applicable upstream attribution if distributing source
+or binaries later. Hosted model use requires the operator's own authorized
+account, quota/billing arrangements and applicable service terms. Offline
+examples use synthetic responses and require no account or paid model calls.
+Credential/profile contents are never release examples.
+
+REMAINING RELEASE DECISIONS
+1. Company-approved code license and copyright/attribution details.
+2. Maintainer review of dependencies, native/bundled notices and any third-party
+   code or assets actually included in the proposed distribution artifact.
+3. Separate data/model redistribution decisions for future releases containing
+   assets; current wheels contain code only, with no weights or raw assays.
+4. Explicit maintainer approval/publication. No repository visibility change is
+   made by this review record, and it does not certify commercial compliance.
