@@ -137,3 +137,16 @@ a synthetic two-stage observer replay pass. Earlier offline test receipts
 are retained, not relabeled. This adds no hosted scientific execution or
 claim of subscriber-authentication testing. Source remains separate pending
 repository/license/review decisions. See WORKFLOW_PLUGIN_RELEASE_STATUS.json.
+
+FIVE APPLICATION TASK SPECIFICATIONS
+Machine-checkable application_specs.json and an operator-only checker now
+define all five required applications. Inputs/visibility, endpoint/units,
+allowed actions, budget policy, sources, baselines/verifiers, outputs and
+remaining data/science/code gates are explicit. Validation runs without
+reading assay answers or claiming unimplemented scientific tasks are ready.
+All five full-task execution permissions remain false; the scored AmiE
+pilot is closed. The canonical definitions live in science-benchmarking;
+the environment points there rather than copying scientific contracts.
+406 guarded benchmark tests and 28 portable source tests pass; 11 installed
+stdlib checks and byte-identical wheels pass. Frozen scoring code is
+unchanged. Model-D design now explicitly requires a NEW protected protocol.

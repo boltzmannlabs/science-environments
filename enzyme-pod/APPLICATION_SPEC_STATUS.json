@@ -1,0 +1,82 @@
+{
+  "schema_version": "enzyme-application-spec-check/1",
+  "specifications_valid": true,
+  "application_count": 5,
+  "tasks": [
+    {
+      "task_id": "biocatalyst_discovery",
+      "data_availability": "missing",
+      "open_gate_ids": [
+        "assay_matching",
+        "cross_family_panel",
+        "full_runner_and_verifier"
+      ],
+      "scientific_execution_permitted": false,
+      "reason": "Specification validation is not a scientific runner or proof that data/gates are ready"
+    },
+    {
+      "task_id": "thermostability",
+      "data_availability": "qc_metadata_only",
+      "open_gate_ids": [
+        "T50_runner_and_verifier",
+        "assay_parent_and_numbering",
+        "new_frozen_protocol",
+        "temperature_units"
+      ],
+      "scientific_execution_permitted": false,
+      "reason": "Specification validation is not a scientific runner or proof that data/gates are ready"
+    },
+    {
+      "task_id": "substrate_promiscuity",
+      "data_availability": "qc_metadata_only",
+      "open_gate_ids": [
+        "breadth_and_scale_policy",
+        "multisubstrate_runner_and_verifier",
+        "shared_position_split"
+      ],
+      "scientific_execution_permitted": false,
+      "reason": "Specification validation is not a scientific runner or proof that data/gates are ready"
+    },
+    {
+      "task_id": "substrate_specificity",
+      "data_availability": "qc_metadata_only",
+      "open_gate_ids": [
+        "contrast_and_floor",
+        "missingness_and_split",
+        "specificity_runner_and_verifier"
+      ],
+      "scientific_execution_permitted": false,
+      "reason": "Specification validation is not a scientific runner or proof that data/gates are ready"
+    },
+    {
+      "task_id": "cascade_optimization",
+      "data_availability": "missing",
+      "open_gate_ids": [
+        "cascade_runner_and_verifier",
+        "real_network_and_kinetics",
+        "units_and_mass_balance"
+      ],
+      "scientific_execution_permitted": false,
+      "reason": "Specification validation is not a scientific runner or proof that data/gates are ready"
+    }
+  ],
+  "scientific_tasks_executed": 0,
+  "answers_read": false,
+  "links_or_sources_fetched": false,
+  "scientific_correctness_certified": false,
+  "spec_sha256": "da73da48aeae8681f2a5110bc90a62298bda4160dca5dfb8fae4ca9ce6d3a95f",
+  "guarded_working_suite": {
+    "tests": 406,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "portable_source_suite": {
+    "tests": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "canonical_location": "science-benchmarking/enzyme-pod/plans/application_specs.json",
+  "benchmark_wheel_sha256": "3ffe76fb5ffaedb74b4ef715d7b0e0d0d1b7a025a9bb4a72a303ad52f9340ad1"
+}

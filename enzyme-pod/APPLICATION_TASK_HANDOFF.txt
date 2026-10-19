@@ -1,0 +1,28 @@
+FIVE APPLICATION TASK SPECIFICATIONS - CANONICAL HANDOFF
+
+The canonical machine-checkable definitions live with the independent benchmark:
+  science-benchmarking/enzyme-pod/plans/application_specs.json
+  science-benchmarking/enzyme-pod/operator_scripts/check_application_specs.py
+  science-benchmarking/enzyme-pod/plans/APPLICATION_SPECS_README.txt
+These are in the private enzyme review branch, not a claim of merged/public code.
+The schema is enzyme-application-spec/1. The environment should reference this
+one source, not maintain a second copy of scientific task/metric definitions.
+
+Covered: biocatalyst discovery, thermostability, substrate promiscuity,
+substrate specificity and cascade optimization. Each defines input artifacts,
+agent/operator visibility, endpoint/units, allowed action kinds, matched-budget
+policy, source/data availability, baseline freeze rule, independent-verifier
+metrics, output fields, limitations and open data/science/evaluation/code gates.
+
+The operator checker can validate structure and declared boundaries without
+reading assay files, fetching links, running a model or opening answers. It
+does not implement those scientific task runners or certify assay definitions.
+All five full-task execution permissions remain false. The already executed
+single-enzyme AmiE pilot is a narrower, CLOSED study, not any of these full
+applications. Do not relabel/reuse its scored pool as new development data.
+
+The host's existing Boltzmann catalogue remains authoritative for actual remote
+tool input fields and routes. These task definitions do not duplicate that API.
+New adapters must be separately implemented/tested and their methods/protocols
+frozen before independent scoring. Missing data and endpoint/reference choices
+stay explicit; a metadata file cannot grant scientific execution readiness.
