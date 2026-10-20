@@ -40,7 +40,16 @@ Implemented locally:
   sequence association and catalytic numbering maps; explicit pose selection.
   Backbone-only models cannot acquire all-atom capability. Unverified HETATMs
   do not unlock substrate identity or catalytic checks. PDB/CIF tests pass.
-- Current synthetic regression suite: 134 passing checks across state,
+- Protein-only CIF-to-PDB input projection for sequence/stability tools now
+  preserves numbering and records rounding/removed hetero atoms. The original
+  complex is retained; this is not ligand conversion or structural repair.
+  Biopython independently parsed the actual 317-residue/2,324-protein-atom CaLB
+  round trip: atom IDs, residue labels, elements, occupancy, B factors and
+  coordinates matched. Parser verification is not enzyme-function evidence.
+- Pre-submission guards now bind Boltz2 to the exact candidate/substrate and
+  bound MPNN generation by the remaining allocation. A synthetic campaign
+  cannot reach the real native scientific connector.
+- Current synthetic regression suite: 166 passing checks across state,
   identity, preparation, native policy, DiscoveryRSI and operator scoring.
 - Fresh network-free core-package install and installed upstream-loop demo pass;
   this does not certify a complete native molecular workflow.
@@ -60,6 +69,16 @@ structure has been downloaded or validated. Poll/reconcile this original job,
 never replace it because output is delayed. Diagnostic lookup returned a 404
 without JSON and does not establish that the scientific job failed.
 This operator-run parent canary is not an agent optimization or comparison.
+One actual native Agent-Scientist episode subsequently polled that same job
+through the host broker and unchanged authorized connector. It used one real
+model request, 9,641 observed tokens and one actual status request, with zero
+new scientific submissions. The response still said Output Not Yet Generated.
+This verifies live integration, not a completed molecular or comparison result.
+
+The combined file-validation approval question covers exactly the two observed
+CSV semantic caveats and one ZIP content/layout caveat. Independent file/PDB,
+catalytic-label, sequence and RDKit checks passed. Approval has not been recorded;
+other warnings/errors cannot be bypassed by approving these three caveats.
 
 Remaining:
 Complete live scientific execution, candidate/result interpretation and adaptation,
