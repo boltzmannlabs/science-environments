@@ -143,7 +143,7 @@ The restricted selection pilot below is not the full enzyme environment.
 CURRENT_TOOL_USING_RESEARCH.txt records the corrected objective, actual native
 integration progress, exact upstream revision and remaining scientific work.
 Update: structure-version/sequence handoff and guarded restart logic now pass
-327 engineering tests. One real Boltz2 parent/substrate canary is accepted and
+353 engineering tests. One real Boltz2 parent/substrate canary is accepted and
 awaiting output. No live optimization or new scientific comparison is complete.
 The live native agent-to-connector status path has now executed on that original
 job without a duplicate submission. Protein-only format handoff is also checked
@@ -170,7 +170,14 @@ Joined evidence reporting now has 24 focused checks and an isolated native
 report-page integration. It exports all candidate/receipt rows, preserves
 pose-specific failures and excludes changed artifacts from usable evidence.
 The actual parent canary report correctly shows one unresolved submission,
-zero returned observations and no shortlist. Ranking/selection remain pending.
+zero returned observations and no shortlist. A local fixed-reference runner now
+freezes panel/settings/contracts/code before screening, resumes original jobs
+and records source-backed deterministic selection and parent predictions.
+Twenty-six focused tests pass; selection fixtures use mocked audited reports,
+and the longer synthetic executor path stops before geometry at ligand identity.
+Full suite: 353 passing checks. Fresh installed package verification passes.
+Real baseline qualification, required new-tool contracts, reviewed ligand
+preparation and scientific selection/comparison remain pending; source is local.
 
 FIVE APPLICATION TASK SPECIFICATIONS
 Machine-checkable application_specs.json and an operator-only checker now
