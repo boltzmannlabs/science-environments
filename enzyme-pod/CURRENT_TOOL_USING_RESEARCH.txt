@@ -32,22 +32,42 @@ Implemented locally:
   a candidate-labelled parent input. Three real model requests; 19,345 observed
   tokens; 19.34 seconds; no scientific platform submissions or local GPU use.
 - Parent structure: CaLB chain A, 317 residues, verified S105/D187/H224.
-- Current synthetic regression suite: 91 passing checks across state,
+- Restart-safe, context-bound prepared-input uploads; duplicate sends and
+  uncertain-operation replay are blocked. Confirmed receipts are reused.
+- Verified sequence transfer with explicit parents, catalytic identity checks,
+  duplicate rejection and new-structure requirements for mutated sequences.
+- Immutable coordinate versions from validated folding/docking outputs, exact
+  sequence association and catalytic numbering maps; explicit pose selection.
+  Backbone-only models cannot acquire all-atom capability. Unverified HETATMs
+  do not unlock substrate identity or catalytic checks. PDB/CIF tests pass.
+- Current synthetic regression suite: 134 passing checks across state,
   identity, preparation, native policy, DiscoveryRSI and operator scoring.
+- Fresh network-free core-package install and installed upstream-loop demo pass;
+  this does not certify a complete native molecular workflow.
 
 Important live gate:
 The existing connector stopped an attempted parent CSV upload before upload or
 submission, because its generic parser requires explicit best-effort approval
 for sequence/SMILES semantic warnings. Independent sequence/RDKit checks passed;
 they do not override the connector's required approval. The user question is
-pending. Service authorization itself succeeded. No job ID has been created.
+pending. Service authorization itself succeeded. That CSV canary created no job.
+
+First real molecular-tool canary:
+One inline-input Boltz2 parent/substrate job passed native validation without
+errors or warnings and was accepted: doc_id 6ad7b8915906d9d5cae40555.
+The existing connector still reports Output Not Yet Generated; no completed
+structure has been downloaded or validated. Poll/reconcile this original job,
+never replace it because output is delayed. Diagnostic lookup returned a 404
+without JSON and does not establish that the scientific job failed.
+This operator-run parent canary is not an agent optimization or comparison.
 
 Remaining:
-Live scientific execution, full candidate/result interpretation and adaptation,
+Complete live scientific execution, candidate/result interpretation and adaptation,
 required quality/geometry catalogue coverage, the fixed reference workflow,
 full matched three-way comparison and a new protected activity evaluation.
 Native wiring, synthetic tests and a preparation-only model step are NOT those
 scientific deliverables. Public release/model training are separate follow-ups.
+This progress note does not imply the new local add-on source is published.
 
 No original Agent-Scientist source, deployment setting, competition process or
 closed AmiE evaluation data was modified by this implementation work.
