@@ -49,8 +49,18 @@ Implemented locally:
 - Pre-submission guards now bind Boltz2 to the exact candidate/substrate and
   bound MPNN generation by the remaining allocation. A synthetic campaign
   cannot reach the real native scientific connector.
-- Current synthetic regression suite: 249 passing checks across state,
+- Current synthetic regression suite: 294 passing checks across state,
   identity, preparation, native policy, DiscoveryRSI and operator scoring.
+- A new external ThermoMPNN adapter follows the existing Thermal_MPNN contract,
+  without editing native sources or copying its scientific input schema.
+  Exact prepared/uploaded PDBs, complete saturation grids, gap-filled zero-based
+  indices, source/download receipts and coordinate versions are checked.
+  Single-substitution lookups retain source rows; no additive multi-mutant,
+  absolute stability or melting-temperature score is invented. Forty-five
+  focused tests pass. Biopython independently matches all 317 actual CaLB
+  residue indices, including its catalytic triad. Deployed wrapper/units and
+  real stability predictions remain unverified; no new scientific job was sent.
+  The isolated native lookup replay and fresh core-package checks also pass.
 - Quality/geometry scores now retain exact structure-version IDs; a pass for
   one pose cannot validate another. Rejected sequence rows stay audited but
   cannot reappear in dependent workflow inputs. Transfers resume idempotently.
