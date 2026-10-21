@@ -2,7 +2,7 @@
 
 This directory contains the runnable SPE environment adapters, schemas, and
 Agent Scientist bridge entry points. It is the implementation-side companion
-to the benchmark package in `science-benchmarking/benchmarks/spe`.
+to the benchmark package in `science-benchmarking/benchmarks/Boltsim`.
 
 ## Reproducible local check
 
