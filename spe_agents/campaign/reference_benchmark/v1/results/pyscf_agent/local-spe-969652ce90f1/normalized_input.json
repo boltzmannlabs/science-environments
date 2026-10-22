@@ -1,0 +1,41 @@
+{
+  "atoms": [
+    {
+      "element": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "element": "H",
+      "x": 0.758602,
+      "y": 0.0,
+      "z": 0.504284
+    },
+    {
+      "element": "H",
+      "x": -0.758602,
+      "y": 0.0,
+      "z": 0.504284
+    }
+  ],
+  "basis": "6-31G(d)",
+  "charge": 0,
+  "coordinate_unit": "angstrom",
+  "method": "B3LYP",
+  "multiplicity": 1,
+  "requested_properties": [
+    "total_energy"
+  ],
+  "settings": {
+    "compute_dipole": false,
+    "compute_hirshfeld": false,
+    "compute_method_ensemble": false,
+    "compute_mulliken": false,
+    "conv_tol": 1e-09,
+    "grid_level": 5,
+    "max_cycles": 200,
+    "use_gpu": false
+  },
+  "task_id": "water-reference-v1-pyscf"
+}

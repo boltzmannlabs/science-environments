@@ -1,0 +1,21 @@
+{
+  "id": "03",
+  "slug": "conformer-energy-comparison",
+  "name": "Conformer-Energy Comparison Agent",
+  "group": "spe-core",
+  "integration_status": "unverified",
+  "description": "Calculates fixed-geometry energies for multiple conformers of the same chemical species and ranks their relative electronic energies.",
+  "capabilities": ["matched multi-structure SPE submission", "relative electronic-energy calculation", "conformer ranking"],
+  "required_inputs": ["two or more labeled conformer geometries", "common molecular identity and atom mapping", "total charge", "spin multiplicity", "common method and basis set"],
+  "optional_inputs": ["dispersion treatment", "solvation model", "reference conformer label", "relative-energy output unit"],
+  "outputs": ["absolute electronic energy for each conformer", "relative energies against the lowest or requested reference", "energy ranking", "per-conformer convergence and provenance"],
+  "tool_adapters": ["boltzmann-spe-api"],
+  "routing_keywords": ["conformer energy", "conformer energies", "conformer ranking", "relative conformer energies", "compare conformers", "lowest energy conformer"],
+  "validation_checks": ["all conformers have identical stoichiometry charge and multiplicity", "atom mappings are consistent", "all calculations use identical energy settings", "every conformer geometry is valid"],
+  "scientific_constraints": ["relative values are fixed-geometry electronic-energy differences", "failed conformers are excluded explicitly rather than silently", "unit conversion is applied only after energies share a common source unit"],
+  "acceptance_criteria": ["at least two matched conformers converge", "every ranked conformer has a finite energy", "relative energies reproduce direct subtraction from recorded absolute values", "ties and excluded structures are reported"],
+  "capability_boundaries": ["does not claim solution-phase populations", "does not include zero-point thermal or entropic corrections", "does not perform conformer generation or geometry optimization"],
+  "recovery_actions": ["retry only failed members with the same scientific settings", "increase SCF iterations consistently", "apply the same supported SCF aid to affected calculations and record the difference"],
+  "human_review_when": ["conformers differ in composition protonation tautomer or spin state", "settings cannot be made identical", "ranking depends on unconverged results", "the requested interpretation requires free energies"],
+  "max_retries": 2
+}

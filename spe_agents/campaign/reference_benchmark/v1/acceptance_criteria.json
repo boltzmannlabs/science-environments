@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "defined_before_comparison": true,
+  "scope": "water fixed-geometry B3LYP/6-31G(d) baseline only",
+  "required_equivalence": {
+    "geometry_and_atom_order": "exact SHA-256 match to archived water.xyz",
+    "charge": 0,
+    "multiplicity": 1,
+    "functional": "LibXC HYB_GGA_XC_B3LYP (ID 402), matching the PySCF B3LYP alias and its VWN-RPA convention",
+    "basis": "6-31G(d), also named 6-31G*; spherical d functions",
+    "run_type": "single-point energy; no geometry modification",
+    "scf_energy_threshold_hartree": 1e-9
+  },
+  "reference_requirements": {
+    "independent_implementation": "CP2K 2026.2 Quickstep GAPW versus PySCF",
+    "all_electron": true,
+    "cp2k_grid_convergence_max_change_hartree": 2e-6,
+    "cp2k_grid_convergence_comparison": "600 Ry versus 800 Ry with GAPW_ACCURATE_XCINT"
+  },
+  "agent_acceptance": {
+    "absolute_energy_difference_max_hartree": 5e-5,
+    "metadata_exact_match_required": true,
+    "scf_convergence_required": true,
+    "raw_output_and_hashes_required": true
+  },
+  "non_transferability": "These criteria do not apply to other systems, methods, basis sets, properties or agents."
+}

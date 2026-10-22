@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "test_id": "SPE-15-PREPARED-QMMM-001",
+  "source": {
+    "pdb_id": "2CHT",
+    "pdb_file": "campaign/reference_sources/2CHT.pdb",
+    "pdb_sha256": "b938020bbbcbe301c3a0579e4e8117b65678b77d6609cb62d2aafa00287d831e",
+    "ccd_file": "campaign/reference_sources/TSA_ideal.sdf",
+    "ccd_sha256": "862bdaa6e711dfa095fff0235121d8cc47f6886b9682c006cf3d463553a4cce6"
+  },
+  "prepared_structure": "campaign/fixtures/structures/2cht_chain_a_tsa_qmmm.pdb",
+  "prepared_structure_sha256": "9379b70ebe71b2baed0dee530a3bf98ca8d0bc60c6ff665787de32e715692fcd",
+  "protein_atoms": 1848,
+  "qm_residue": "TSA:203",
+  "qm_atoms": 28,
+  "qm_charge": 0,
+  "qm_multiplicity": 1,
+  "embedding": "electronic",
+  "mm_forcefield": "amber14",
+  "boundary": "noncovalent whole-residue QM region; zero covalent link atoms expected",
+  "preparation": {
+    "protein": "PDBFixer chain A; crystallographic construct retained; missing atoms and pH 7 hydrogens added",
+    "ligand": {
+      "crystal_heavy_atoms": 16,
+      "final_atoms_with_ccd_hydrogens": 28,
+      "formal_charge": 0,
+      "hydrogen_method": "RCSB CCD ideal TSA bond orders/protomer; heavy atoms fixed to 2CHT crystal coordinates; hydrogen positions minimized with UFF",
+      "maximum_heavy_atom_displacement_angstrom": 0.0
+    }
+  },
+  "acceptance_gate": "Amber topology, partition validation, zero unsafe boundary cuts, converged QM/MM energy and explicit energy components"
+}

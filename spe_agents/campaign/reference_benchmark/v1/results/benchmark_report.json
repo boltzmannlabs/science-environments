@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "benchmark_version": "water-b3lyp-631gd-v1",
+  "generated_at": "2026-10-19T09:54:53.955129+00:00",
+  "structure": "campaign/reference_benchmark/v1/water.xyz",
+  "structure_sha256": "199f2e085f5f86e30bafe78a5c50f9a0ef730b6696aa655a9c77e7ad59d03678",
+  "acceptance_criteria": "campaign/reference_benchmark/v1/acceptance_criteria.json",
+  "acceptance_criteria_sha256": "3353c2056473e5419da838d1fe1c3335f339a67151cd6f73b036d6680eac3c69",
+  "cp2k_version": "2026.2",
+  "cp2k_runs": [
+    {
+      "cutoff_ry": 400,
+      "return_code": 0,
+      "program_ended": true,
+      "scf_converged": true,
+      "energy_hartree": -76.39206943671238,
+      "runtime_seconds": 148.43268113886006,
+      "input_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_400Ry/water.inp",
+      "input_sha256": "368b6f01e78a1d0c771277bf8794a41872f8cb9a6ad657420ebdd395cfad7c52",
+      "output_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_400Ry/water.out",
+      "output_sha256": "d231e3e47866925dafd3636e083da60ea81143e314c12ba3e360841ebc0bd995"
+    },
+    {
+      "cutoff_ry": 600,
+      "return_code": 0,
+      "program_ended": true,
+      "scf_converged": true,
+      "energy_hartree": -76.39206912210564,
+      "runtime_seconds": 230.64605172513984,
+      "input_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_600Ry/water.inp",
+      "input_sha256": "6e0a28112eef1f96795c51213f15dffa71c9ea0dfcbe8018cd2fa940d9f3277e",
+      "output_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_600Ry/water.out",
+      "output_sha256": "d32cb359d0dd8b6bcb446504c489c6e1db4561aea0a8ca9ba2488d4cbe4700bf"
+    },
+    {
+      "cutoff_ry": 800,
+      "return_code": 0,
+      "program_ended": true,
+      "scf_converged": true,
+      "energy_hartree": -76.39206919352905,
+      "runtime_seconds": 373.81516728084534,
+      "input_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_800Ry/water.inp",
+      "input_sha256": "a8684f9667f033072c88d061fe71a877fda42a2bb91ec08362f32a49edffeebd",
+      "output_file": "campaign/reference_benchmark/v1/results/cp2k_libxc_accurate_800Ry/water.out",
+      "output_sha256": "377ed43c4ab6045c5327bb4f13ac5779a279847753249783092f878c8bb5a296"
+    }
+  ],
+  "pyscf_agent_run": {
+    "job_id": "local-spe-969652ce90f1",
+    "energy_hartree": -76.39913528131657,
+    "converged": true,
+    "scf_iterations": 7,
+    "runtime_seconds": 3.915204497985542,
+    "artifacts": [
+      {
+        "name": "normalized-input",
+        "uri": "/home/boltzmann15/Esther/agents/spe/campaign/reference_benchmark/v1/results/pyscf_agent/local-spe-969652ce90f1/normalized_input.json",
+        "sha256": "2e6796d8280e211a671dcd73dd4571cd657cfb7e982bf6effbb79d4fe42a2b6b",
+        "media_type": "application/json"
+      },
+      {
+        "name": "engine-result",
+        "uri": "/home/boltzmann15/Esther/agents/spe/campaign/reference_benchmark/v1/results/pyscf_agent/local-spe-969652ce90f1/engine_result.json",
+        "sha256": "2d630c3e0bd30f4af512c058f4759565de1f9dd3325ec15fa3a7e04fa74b7007",
+        "media_type": "application/json"
+      },
+      {
+        "name": "provenance",
+        "uri": "/home/boltzmann15/Esther/agents/spe/campaign/reference_benchmark/v1/results/pyscf_agent/local-spe-969652ce90f1/provenance.json",
+        "sha256": "81354fd229a022ab7d81abe309dd3d3876b99d30c6709830abd8f285bf3ed090",
+        "media_type": "application/json"
+      }
+    ]
+  },
+  "cp2k_600_to_800_change_hartree": 7.14234147380921e-08,
+  "pyscf_to_cp2k_absolute_difference_hartree": 0.007066087787521269,
+  "grid_convergence_pass": true,
+  "agent_energy_pass": false,
+  "status": "review",
+  "comparison_scope": "same frozen geometry, charge, multiplicity, B3LYP convention and 6-31G(d)/6-31G* basis"
+}

@@ -49,8 +49,8 @@ and the consolidated current status is in the
 
 ```text
 environments/<id>-<slug>/agent.json  # 18 active specialist scientific contracts
-src/spe_agents/                      # standalone registry, router, prompts, evaluator, CLI
-src/spe_agents/adapters.py           # versioned adapter protocol and test-only mock
+spe_agents/                          # standalone registry, router, prompts, evaluator, CLI
+spe_agents/adapters.py               # versioned adapter protocol and test-only mock
 schemas/                             # shared task/result exchange contracts
 tests/                               # contract, routing, prompt, and evaluator tests
 BASE_AGENT_INSTRUCTIONS.md           # safety and execution rules shared by all agents
@@ -62,16 +62,16 @@ ENVIRONMENTS.md                      # catalog and implementation order
 From this `spe` directory:
 
 ```bash
-PYTHONPATH=src python -m spe_agents.cli validate
-PYTHONPATH=src python -m spe_agents.cli list
-PYTHONPATH=src python -m spe_agents.cli show 10
-PYTHONPATH=src python -m spe_agents.cli route "compare conformer energies"
-PYTHONPATH=src python -m spe_agents.cli prompt 20
+PYTHONPATH=. python -m spe_agents.cli validate
+PYTHONPATH=. python -m spe_agents.cli list
+PYTHONPATH=. python -m spe_agents.cli show 10
+PYTHONPATH=. python -m spe_agents.cli route "compare conformer energies"
+PYTHONPATH=. python -m spe_agents.cli prompt 20
 python -m unittest discover -s tests -v
 python scripts/run_initial_campaign.py
 python scripts/run_live_spe_module_smoke.py
 python scripts/build_specialist_qualification_matrix.py --project-root .
-PYTHONPATH=src python -m spe_agents.benchmarking.cli \
+PYTHONPATH=. python -m spe_agents.benchmarking.cli \
   --output reports/spe_benchmark_v1/development \
   --split development \
   --approaches all \

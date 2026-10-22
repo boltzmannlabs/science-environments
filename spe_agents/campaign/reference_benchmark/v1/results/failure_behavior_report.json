@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-19T09:37:26.441872+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "failure": "missing_file",
+      "passed": true,
+      "message": "[Errno 2] No such file or directory: '/home/boltzmann15/Esther/agents/spe/campaign/fixtures/structures/intentionally_missing.xyz'"
+    },
+    {
+      "failure": "unsupported_setting",
+      "passed": true,
+      "message": "unsupported adapter settings: unsupported_setting"
+    },
+    {
+      "failure": "charge_multiplicity_mismatch",
+      "passed": true,
+      "message": "charge/multiplicity electron-count mismatch: 10 electrons cannot have multiplicity 2"
+    },
+    {
+      "failure": "mismatched_metadata",
+      "passed": true,
+      "audit": {
+        "decision": "flag",
+        "findings": [
+          {
+            "code": "settings_conflict",
+            "message": "recorded basis_set='6-31G*' conflicts with actual input 'def2-SVP'"
+          }
+        ]
+      }
+    },
+    {
+      "failure": "interrupted_job",
+      "passed": true,
+      "status": "interrupted_review",
+      "forced_termination": false,
+      "checkpoint_count": 1
+    },
+    {
+      "failure": "stale_parser_and_invalid_qmmm_topology",
+      "passed": true,
+      "status": "review",
+      "setup_error_count": 2
+    }
+  ],
+  "side_effect_check": {
+    "pre_submission_failures_created_job_directories": false,
+    "expected": false
+  }
+}

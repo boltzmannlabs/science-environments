@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "test_id": "agent_18_valid",
+  "molecule": "cyclohexane",
+  "smiles": "C1CCCCC1",
+  "geometry_status": "reproducibly generated and internally cross-checked",
+  "external_reference_status": "not independently reviewed",
+  "generator": {
+    "software": "RDKit",
+    "version": "2024.03.5",
+    "method": "ETKDGv3 followed by MMFF94 minimization",
+    "random_seed": 20261019,
+    "embedded_conformers": 300
+  },
+  "identity_checks": [
+    "Cremer-Pople theta classification from ring-atom coordinates",
+    "independent six-membered-ring torsion-pattern classification"
+  ],
+  "selected": {
+    "chair": {
+      "conformer_id": 151,
+      "mmff94_energy_kcal_mol": -3.560933551240397,
+      "ring_atom_indices": [
+        0,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "cremer_pople_Q_angstrom": 0.5530527981537827,
+      "cremer_pople_theta_degrees": 3.0351326091923603e-06,
+      "cremer_pople_phi_degrees": 29.298952072007435,
+      "ring_torsions_degrees": [
+        54.26357099203286,
+        -54.26356976340282,
+        54.26356680324607,
+        -54.26356860024296,
+        54.26357221012687,
+        -54.26357169631035
+      ],
+      "xyz_file": "campaign/fixtures/structures/cyclohexane_chair_fixed.xyz",
+      "xyz_sha256": "53698c2968096a3336807b80ab951da34309c32f4a02ec28427bc285682a045a"
+    },
+    "twist_boat": {
+      "conformer_id": 198,
+      "mmff94_energy_kcal_mol": 2.3688122488697703,
+      "ring_atom_indices": [
+        0,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "cremer_pople_Q_angstrom": 0.7173702955240696,
+      "cremer_pople_theta_degrees": 90.00000628299205,
+      "cremer_pople_phi_degrees": 209.99999834445234,
+      "ring_torsions_degrees": [
+        -29.16761956815257,
+        -29.167605838037037,
+        60.106319561768615,
+        -29.16760402845692,
+        -29.167621727364892,
+        60.1063354452259
+      ],
+      "xyz_file": "campaign/fixtures/structures/cyclohexane_twist_boat_fixed.xyz",
+      "xyz_sha256": "66010bdd674c7fc67d582fc543628d05b262343a459f6c2fff4c10a2a6b906ed"
+    }
+  },
+  "electronic_structure_comparison": {
+    "charge": 0,
+    "multiplicity": 1,
+    "method": "B3LYP",
+    "basis_set": "6-31G(d)",
+    "interpretation": "fixed-geometry electronic energy difference only",
+    "not_claimed": "a fully validated or thermochemical strain energy"
+  }
+}
