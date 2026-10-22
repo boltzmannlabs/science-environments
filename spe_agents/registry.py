@@ -7,7 +7,8 @@ from pathlib import Path
 from .models import SPEConfigurationError, SPEEnvironment
 
 
-DEFAULT_ENVIRONMENTS_DIR = Path(__file__).resolve().parents[2] / "environments"
+# Contracts are shipped beside the package in ``spe_agents/environments``.
+DEFAULT_ENVIRONMENTS_DIR = Path(__file__).resolve().parent / "environments"
 ACTIVE_ENVIRONMENT_IDS = tuple(
     f"{number:02d}" for number in range(1, 21) if number not in {13, 16}
 )
