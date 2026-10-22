@@ -9,6 +9,7 @@ import json
 import sys
 import time
 import uuid
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -78,6 +79,11 @@ class LocalBoltzmannSPEAdapter:
         "cube_grid_dimensions",
         "initial_density_path",
         "checkpoint_density",
+    }
+    _PROPERTY_ALIASES = {
+        "occupations": "orbital_occupations",
+        "electron_density_cube": "electron_density_grid",
+        "esp_cube": "electrostatic_potential_grid",
     }
 
     def __init__(
@@ -149,6 +155,12 @@ class LocalBoltzmannSPEAdapter:
 
     def submit(self, request: SPERequest) -> str:
         require_compatible_adapter(self)
+        aliases = {
+            self._PROPERTY_ALIASES.get(prop, prop)
+            for prop in request.requested_properties
+        }
+        if aliases != set(request.requested_properties):
+            request = replace(request, requested_properties=tuple(sorted(aliases)))
         self._capabilities.validate(request)
         electron_count = (
             sum(self._atomic_numbers[atom.element] for atom in request.atoms)
