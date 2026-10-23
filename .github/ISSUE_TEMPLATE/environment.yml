@@ -1,0 +1,36 @@
+name: Environment contribution
+description: Propose or improve a scientific environment
+title: "[environment] "
+labels: [environment]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and background
+      description: What scientific problem does this address and why is it needed?
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Scope and deliverables
+      description: List the environment files, tasks, tests, and evidence to deliver.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define the checks that determine completion.
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner and reviewer
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies, limitations, and blockers
