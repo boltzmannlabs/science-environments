@@ -3,7 +3,7 @@
 Backend: **PySCF+GPU4PySCF 1.7.0 + SciPy BFGS**.
 
 - Specialist qualification records: **18**
-- Qualification status: **16 pass, 2 review, 0 fail**
+- Qualification status: **18 pass, 0 review, 0 fail**
 - Live GPU specialist-linked results: **3**
 - Input packets: **18/18 valid**
 - Automated tests: **6 passed**

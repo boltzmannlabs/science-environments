@@ -24,9 +24,9 @@ CASES = {
  "10": ("live_convergence", {"input": "reports/tier1_gpu/water.json", "expected": "accept", "check": "convergence_classified"}),
  "11": ("stagnation_trace", {"input": "oscillating_energy_trace.json", "expected": "review", "check": "stagnation_detected"}),
  "12": ("gradient_validation", {"input": "reports/tier1_gpu/water.json", "expected": "accept", "check": "gradient_finite"}),
- "13": ("minimum_verification", {"input": "water_no_hessian.json", "expected": "review", "check": "minimum_evidence"}),
+ "13": ("minimum_verification", {"input": "reports/hessian/water_minimum.json", "expected": "accept", "check": "minimum_evidence"}),
  "14": ("multi_conformer", {"input": "ethane_conformers.json", "expected": "accept", "check": "consistent_relative_energies"}),
- "15": ("protein_ligand", {"input": "ligand_site_missing_topology.json", "expected": "review", "check": "complex_setup_valid"}),
+ "15": ("protein_ligand", {"input": "reports/production_qmmm/qualification.json", "expected": "accept", "check": "complex_setup_valid"}),
  "16": ("resource_recovery", {"input": "checkpoint_manifest.json", "expected": "accept", "check": "resumable_checkpoint"}),
  "17": ("final_quality", {"input": "reports/tier1_gpu/water.json", "expected": "accept", "check": "final_geometry_quality"}),
  "18": ("orchestration", {"input": "water_end_to_end.json", "expected": "accept", "check": "route_and_audit"}),
@@ -41,6 +41,10 @@ def main() -> None:
     rows = []
     gpu_water = ROOT / "reports/tier1_gpu/water.json"
     live = json.loads(gpu_water.read_text()) if gpu_water.exists() else None
+    hessian_path = ROOT / "reports/hessian/water_minimum.json"
+    hessian = json.loads(hessian_path.read_text()) if hessian_path.exists() else None
+    qmmm_path = ROOT / "reports/production_qmmm/qualification.json"
+    qmmm = json.loads(qmmm_path.read_text()) if qmmm_path.exists() else None
     for aid, (slug, payload) in CASES.items():
         fixture = ROOT / "tasks/agent_inputs" / f"agent_{aid}_{slug}.json"
         fixture.write_text(json.dumps({"agent_id": aid, "case": slug, **payload}, indent=2) + "\n")
@@ -50,12 +54,16 @@ def main() -> None:
             evidence.update({"backend": live["backend"], "energy_hartree": live["energy_hartree"], "max_gradient_hartree_per_bohr": live["max_gradient_hartree_per_bohr"], "converged": live["converged"]})
             status = "pass" if live["converged"] else "fail"
             execution = "live_gpu_engine"
-        elif aid == "13":
-            evidence["reason"] = "Hessian/frequency backend is not implemented in the pilot"
-            status, execution = "review", "contract_fixture"
-        elif aid == "15":
-            evidence["reason"] = "No frozen protein-ligand topology/reference artifact supplied"
-            status, execution = "review", "contract_fixture"
+        elif aid == "13" and hessian:
+            frequencies = hessian.get("frequencies_cm-1", [])
+            minimum = hessian.get("stationary_point") == "local_minimum"
+            evidence.update({"backend": hessian.get("backend"), "energy_hartree": hessian.get("energy_hartree"), "frequencies_cm-1": frequencies, "stationary_point": hessian.get("stationary_point"), "scf_converged": hessian.get("scf_converged"), "all_frequencies_positive": bool(frequencies) and all(float(x) > 0 for x in frequencies)})
+            status, execution = ("pass", "live_hessian_engine") if minimum and evidence["all_frequencies_positive"] and hessian.get("scf_converged") else ("review", "hessian_fixture")
+        elif aid == "15" and qmmm:
+            checks = qmmm.get("checks", {})
+            required = ("amber14_topology_created", "partition_passed", "electronic_embedding_active", "nonzero_mm_environment", "scf_converged", "energy_components_present")
+            evidence.update({"backend": qmmm.get("execution", {}).get("backend"), "qualification_id": qmmm.get("qualification_id"), "total_atoms": qmmm.get("system", {}).get("total_atoms"), "qm_atoms": qmmm.get("system", {}).get("qm_atoms"), "mm_atoms": qmmm.get("system", {}).get("mm_atoms"), "checks": checks, "warnings": qmmm.get("warnings", []), "source_sha256": qmmm.get("source_sha256"), "all_required_checks_pass": all(checks.get(k) is True for k in required)})
+            status, execution = ("pass", "live_qmmm_engine") if qmmm.get("status") == "pass" and evidence["all_required_checks_pass"] else ("review", "qmmm_fixture")
         else:
             status, execution = ("pass", "deterministic_fixture")
         row = {"agent_id": aid, "case": slug, "status": status, "execution": execution, "input": str(fixture.relative_to(ROOT)), "expected_decision": payload["expected"], "evidence": evidence, "wall_time_seconds": time.perf_counter() - started, "tokens": 0, "retries": 0}

@@ -1,7 +1,7 @@
 {
   "agent_id": "15",
   "case": "protein_ligand",
-  "input": "ligand_site_missing_topology.json",
-  "expected": "review",
+  "input": "reports/production_qmmm/qualification.json",
+  "expected": "accept",
   "check": "complex_setup_valid"
 }
