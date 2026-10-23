@@ -1,9 +1,0 @@
-{
-  "task_id": "GEO-001",
-  "expected_behavior": "Accept valid XYZ; reject malformed inputs",
-  "required_checks": {
-    "finite_coordinates": true,
-    "finite_energy": true,
-    "convergence_must_be_verified": true
-  }
-}
