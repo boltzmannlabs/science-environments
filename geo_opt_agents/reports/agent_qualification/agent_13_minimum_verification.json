@@ -1,0 +1,15 @@
+{
+  "agent_id": "13",
+  "case": "minimum_verification",
+  "status": "review",
+  "execution": "contract_fixture",
+  "input": "tasks/agent_inputs/agent_13_minimum_verification.json",
+  "expected_decision": "review",
+  "evidence": {
+    "fixture_sha256": "56ca5e485255a51103f43d12ac73daecdba95b9177a937acac50f746e97b7cb6",
+    "reason": "Hessian/frequency backend is not implemented in the pilot"
+  },
+  "wall_time_seconds": 7.014209404587746e-05,
+  "tokens": 0,
+  "retries": 0
+}

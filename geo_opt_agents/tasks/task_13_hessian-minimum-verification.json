@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-13-PILOT-001",
+  "agent_id": "13",
+  "title": "Hessian and Minimum Verification Agent",
+  "task_type": "single_step",
+  "role": "Distinguish a local minimum from a saddle point using Hessian or frequency evidence.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "not_a_minimum",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

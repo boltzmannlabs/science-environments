@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.1",
+  "system": "ethane",
+  "backend": "GPU4PySCF+SciPy-BFGS",
+  "method": "B3LYP",
+  "basis": "6-31G*",
+  "charge": 0,
+  "multiplicity": 1,
+  "initial_coordinates_angstrom": [
+    [
+      -0.763,
+      0.0,
+      0.0
+    ],
+    [
+      0.763,
+      0.0,
+      0.0
+    ],
+    [
+      -1.158,
+      0.0,
+      1.027
+    ],
+    [
+      -1.158,
+      0.889,
+      -0.514
+    ],
+    [
+      -1.158,
+      -0.889,
+      -0.514
+    ],
+    [
+      1.158,
+      0.0,
+      -1.027
+    ],
+    [
+      1.158,
+      -0.889,
+      0.514
+    ],
+    [
+      1.158,
+      0.889,
+      0.514
+    ]
+  ],
+  "final_coordinates_angstrom": [
+    [
+      -0.765420329621025,
+      -8.568738017651927e-15,
+      -0.00019623642830037016
+    ],
+    [
+      0.7654203296209297,
+      -9.593424147207646e-14,
+      0.0001962364282796258
+    ],
+    [
+      -1.1647316831365204,
+      1.200008268397827e-15,
+      1.0207284883581997
+    ],
+    [
+      -1.164391391594968,
+      0.8843003190525741,
+      -0.5107095608066937
+    ],
+    [
+      -1.1643913915950714,
+      -0.8843003190525788,
+      -0.5107095608066428
+    ],
+    [
+      1.1647316831366679,
+      1.0126406302051529e-13,
+      -1.0207284883582888
+    ],
+    [
+      1.16439139159514,
+      -0.88430031905259,
+      0.5107095608067286
+    ],
+    [
+      1.1643913915949768,
+      0.8843003190526171,
+      0.5107095608066207
+    ]
+  ],
+  "energy_hartree": -79.82901695564848,
+  "max_gradient_hartree_per_bohr": 3.499665779438388e-05,
+  "rms_gradient_hartree_per_bohr": 1.54295135535383e-05,
+  "converged": true,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "optimizer_iterations": 9,
+  "scf_energy_evaluations": 10,
+  "runtime_seconds": 97.89550993894227,
+  "history": [
+    {
+      "evaluation": 1,
+      "energy_hartree": -79.82890610768996,
+      "max_gradient_hartree_per_bohr": 0.00354262463350441
+    },
+    {
+      "evaluation": 2,
+      "energy_hartree": -79.82895849787829,
+      "max_gradient_hartree_per_bohr": 0.001725821856132681
+    },
+    {
+      "evaluation": 3,
+      "energy_hartree": -79.82898294748836,
+      "max_gradient_hartree_per_bohr": 0.001290835664324863
+    },
+    {
+      "evaluation": 4,
+      "energy_hartree": -79.82899396413202,
+      "max_gradient_hartree_per_bohr": 0.0011596099486226308
+    },
+    {
+      "evaluation": 5,
+      "energy_hartree": -79.82900297658635,
+      "max_gradient_hartree_per_bohr": 0.0006517237018123234
+    },
+    {
+      "evaluation": 6,
+      "energy_hartree": -79.82900716673859,
+      "max_gradient_hartree_per_bohr": 0.0005307999569170718
+    },
+    {
+      "evaluation": 7,
+      "energy_hartree": -79.82901214115732,
+      "max_gradient_hartree_per_bohr": 0.001024195055545185
+    },
+    {
+      "evaluation": 8,
+      "energy_hartree": -79.8290155917214,
+      "max_gradient_hartree_per_bohr": 0.0008368372920024569
+    },
+    {
+      "evaluation": 9,
+      "energy_hartree": -79.82901680907467,
+      "max_gradient_hartree_per_bohr": 0.0002909549688379087
+    },
+    {
+      "evaluation": 10,
+      "energy_hartree": -79.82901695564851,
+      "max_gradient_hartree_per_bohr": 3.499665780104522e-05
+    }
+  ],
+  "software": {
+    "python": "3.12.2",
+    "pyscf": "2.12.1"
+  }
+}

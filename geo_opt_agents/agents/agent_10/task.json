@@ -1,0 +1,20 @@
+{
+  "task_id": "GEO-010",
+  "agent_id": "GEO-10",
+  "task_type": "geometry_optimization",
+  "structure_file": "successful.log, truncated.log, high_gradient.log",
+  "charge": 0,
+  "multiplicity": 1,
+  "method": "B3LYP",
+  "basis_set": "6-31G*",
+  "max_iterations": 100,
+  "constraints": [],
+  "reference_artifact": null,
+  "expected_behavior": "Classify converged/unconverged/inconclusive",
+  "focus": "convergence",
+  "acceptance_criteria": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

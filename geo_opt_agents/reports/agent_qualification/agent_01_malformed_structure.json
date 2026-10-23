@@ -1,0 +1,14 @@
+{
+  "agent_id": "01",
+  "case": "malformed_structure",
+  "status": "pass",
+  "execution": "deterministic_fixture",
+  "input": "tasks/agent_inputs/agent_01_malformed_structure.json",
+  "expected_decision": "reject",
+  "evidence": {
+    "fixture_sha256": "93897a9838a4d537b8a7221c2096d384faaf253385906cd634e4bb3b45b1dee9"
+  },
+  "wall_time_seconds": 0.00010629696771502495,
+  "tokens": 0,
+  "retries": 0
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-03-PILOT-001",
+  "agent_id": "03",
+  "title": "Initial Conformation Agent",
+  "task_type": "single_step",
+  "role": "Detect distorted starting geometries, steric clashes, and poor conformers before optimisation.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "input_invalid",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

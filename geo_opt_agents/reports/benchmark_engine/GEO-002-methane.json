@@ -1,0 +1,13 @@
+{
+  "case": "GEO-002-methane",
+  "input": "cases/GEO-002-methane/input.xyz",
+  "execution": "GPU4PySCF+SciPy-BFGS",
+  "converged": true,
+  "energy_hartree": -40.51766094804276,
+  "max_gradient_hartree_per_bohr": 1.0364832674358837e-05,
+  "rms_gradient_hartree_per_bohr": 9.27058815794135e-06,
+  "optimizer_iterations": 2,
+  "scf_energy_evaluations": 3,
+  "runtime_seconds": 23.019700249889866,
+  "input_validation": "pass"
+}

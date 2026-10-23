@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-16-PILOT-001",
+  "agent_id": "16",
+  "title": "Runtime and Resource Recovery Agent",
+  "task_type": "single_step",
+  "role": "Diagnose runtime, memory, checkpoint, and resumability failures without silent setting changes.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "resource_failure",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

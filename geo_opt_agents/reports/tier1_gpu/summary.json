@@ -1,0 +1,53 @@
+{
+  "backend": "GPU4PySCF+SciPy-BFGS",
+  "systems": [
+    {
+      "system": "water",
+      "backend": "GPU4PySCF+SciPy-BFGS",
+      "converged": true,
+      "energy_hartree": -76.40702405124024,
+      "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+      "rms_gradient_hartree_per_bohr": 1.1542207211083418e-05,
+      "optimizer_iterations": 5,
+      "scf_energy_evaluations": 6,
+      "runtime_seconds": 45.868386189918965,
+      "failure_category": null
+    },
+    {
+      "system": "ammonia",
+      "backend": "GPU4PySCF+SciPy-BFGS",
+      "converged": true,
+      "energy_hartree": -56.54668881396338,
+      "max_gradient_hartree_per_bohr": 5.692478286678515e-05,
+      "rms_gradient_hartree_per_bohr": 2.7391322856009897e-05,
+      "optimizer_iterations": 5,
+      "scf_energy_evaluations": 6,
+      "runtime_seconds": 46.57062456686981,
+      "failure_category": null
+    },
+    {
+      "system": "methane",
+      "backend": "GPU4PySCF+SciPy-BFGS",
+      "converged": true,
+      "energy_hartree": -40.517660948309135,
+      "max_gradient_hartree_per_bohr": 9.315088265071658e-06,
+      "rms_gradient_hartree_per_bohr": 8.331668211753635e-06,
+      "optimizer_iterations": 2,
+      "scf_energy_evaluations": 3,
+      "runtime_seconds": 23.533212264068425,
+      "failure_category": null
+    },
+    {
+      "system": "ethane",
+      "backend": "GPU4PySCF+SciPy-BFGS",
+      "converged": true,
+      "energy_hartree": -79.82901695564848,
+      "max_gradient_hartree_per_bohr": 3.499665779438388e-05,
+      "rms_gradient_hartree_per_bohr": 1.54295135535383e-05,
+      "optimizer_iterations": 9,
+      "scf_energy_evaluations": 10,
+      "runtime_seconds": 97.89550993894227,
+      "failure_category": null
+    }
+  ]
+}

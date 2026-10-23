@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "id": "05",
+  "slug": "qm-method-selection",
+  "name": "QM Method Selection Agent",
+  "role": "Select supported DFT method, basis, and settings with a reproducible rationale.",
+  "task_type": "single_step",
+  "failure_category": "method_unsupported",
+  "required_inputs": [
+    "task card",
+    "initial geometry or preserved artifact",
+    "method/settings",
+    "resource limits"
+  ],
+  "required_outputs": [
+    "decision",
+    "scientific checks",
+    "evidence references",
+    "failure category",
+    "cost and reproducibility fields"
+  ],
+  "acceptance_criteria": [
+    "all mandatory checks are explicit",
+    "no unsupported scientific claim",
+    "settings and artifacts are hashable",
+    "decision is reproducible"
+  ],
+  "agent_scientist_required": false
+}

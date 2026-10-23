@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "workflow_count": 5,
+  "workflows": [
+    {
+      "workflow_id": "GEOOPT-WF-001",
+      "name": "validate-optimize-verify",
+      "steps": [
+        "01",
+        "04",
+        "05",
+        "06",
+        "09",
+        "10",
+        "12",
+        "13",
+        "17"
+      ]
+    },
+    {
+      "workflow_id": "GEOOPT-WF-002",
+      "name": "conditional-recovery",
+      "steps": [
+        "01",
+        "03",
+        "09",
+        "11",
+        "16",
+        "17",
+        "18"
+      ]
+    },
+    {
+      "workflow_id": "GEOOPT-WF-003",
+      "name": "multi-conformer-quality",
+      "steps": [
+        "03",
+        "06",
+        "10",
+        "13",
+        "14",
+        "17",
+        "18"
+      ]
+    },
+    {
+      "workflow_id": "GEOOPT-WF-004",
+      "name": "constrained-complex",
+      "steps": [
+        "01",
+        "02",
+        "08",
+        "15",
+        "17",
+        "18"
+      ]
+    },
+    {
+      "workflow_id": "GEOOPT-WF-005",
+      "name": "failure-recovery-audit",
+      "steps": [
+        "04",
+        "09",
+        "11",
+        "12",
+        "16",
+        "17",
+        "18"
+      ]
+    }
+  ]
+}

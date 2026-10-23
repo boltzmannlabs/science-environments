@@ -1,0 +1,278 @@
+{
+  "schema_version": "0.1",
+  "benchmark": "GeoOpt agent qualification",
+  "agent_count": 18,
+  "counts": {
+    "review": 2,
+    "pass": 16,
+    "fail": 0
+  },
+  "results": [
+    {
+      "agent_id": "01",
+      "case": "malformed_structure",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_01_malformed_structure.json",
+      "expected_decision": "reject",
+      "evidence": {
+        "fixture_sha256": "93897a9838a4d537b8a7221c2096d384faaf253385906cd634e4bb3b45b1dee9"
+      },
+      "wall_time_seconds": 0.00010629696771502495,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "02",
+      "case": "connectivity_valence",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_02_connectivity_valence.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "6adbc742b6d080b8514ef6b768d97c0f9c253122db2df90e77042a3d10ee2fc7"
+      },
+      "wall_time_seconds": 7.473188452422619e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "03",
+      "case": "distorted_start",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_03_distorted_start.json",
+      "expected_decision": "repair_or_review",
+      "evidence": {
+        "fixture_sha256": "7bd2660cd2be06f7d71d86e1484ed00acf8843f54031a64dfb3410b60705648c"
+      },
+      "wall_time_seconds": 7.397704757750034e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "04",
+      "case": "charge_multiplicity",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_04_charge_multiplicity.json",
+      "expected_decision": "reject",
+      "evidence": {
+        "fixture_sha256": "7e8d8e7999da32bac842e124bad97b69cde239a2a93e5a58d3b3b96cde34b624"
+      },
+      "wall_time_seconds": 7.411488331854343e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "05",
+      "case": "method_selection",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_05_method_selection.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "20df778cc9f4a88cff7ac7675f4c6d4249d6c752fe46f827067f3011486636af"
+      },
+      "wall_time_seconds": 6.94741029292345e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "06",
+      "case": "optimizer_selection",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_06_optimizer_selection.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "21892e525ee91e7773bc56151a9f56bd9e2fee40992aa368e365b6b86c9514e1"
+      },
+      "wall_time_seconds": 7.024710066616535e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "07",
+      "case": "coordinate_strategy",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_07_coordinate_strategy.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "94eb3c18445589a3f9c099109990c9cdcca1de65f187001d29341a4960e16e86"
+      },
+      "wall_time_seconds": 7.303617894649506e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "08",
+      "case": "constraint_validation",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_08_constraint_validation.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "a091543a96306bf332c93f88bd2e56dbc36d5c550f60fb7421cbc8808dcabc5b"
+      },
+      "wall_time_seconds": 6.891298107802868e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "09",
+      "case": "scf_failure",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_09_scf_failure.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "aa86e031ddbe7e79bdbc01b09b11a45e71f0f85cfb4b2b294da6957f6fe7dd63"
+      },
+      "wall_time_seconds": 6.767502054572105e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "10",
+      "case": "live_convergence",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_10_live_convergence.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "b4ae58c2e228acfb66ae17d34cf35b49c50612521d0cdeca32069df575c4e421",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 6.861216388642788e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "11",
+      "case": "stagnation_trace",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_11_stagnation_trace.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "6b1df07cd8c7f43e34e904425a3e904305c0e726a3d84355480c3fc326f91e26"
+      },
+      "wall_time_seconds": 6.901402957737446e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "12",
+      "case": "gradient_validation",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_12_gradient_validation.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "4b50bb118f75d443cfa926a7d1fa537179544403186c401b6535f27655e4969d",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 7.029995322227478e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "13",
+      "case": "minimum_verification",
+      "status": "review",
+      "execution": "contract_fixture",
+      "input": "tasks/agent_inputs/agent_13_minimum_verification.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "56ca5e485255a51103f43d12ac73daecdba95b9177a937acac50f746e97b7cb6",
+        "reason": "Hessian/frequency backend is not implemented in the pilot"
+      },
+      "wall_time_seconds": 7.014209404587746e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "14",
+      "case": "multi_conformer",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_14_multi_conformer.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "c13de92ee89900eb333210c16ed0b0d9d3e9e696ad6380f7c7c2b6050b5c0185"
+      },
+      "wall_time_seconds": 7.167598232626915e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "15",
+      "case": "protein_ligand",
+      "status": "review",
+      "execution": "contract_fixture",
+      "input": "tasks/agent_inputs/agent_15_protein_ligand.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "04f4ef5358ce420ed6a08dca5c250de4898c5ee876fb2b8702bbd9cd22d6e9ef",
+        "reason": "No frozen protein-ligand topology/reference artifact supplied"
+      },
+      "wall_time_seconds": 7.499987259507179e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "16",
+      "case": "resource_recovery",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_16_resource_recovery.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "75eb667ea388076eed254d78663d6cd82ffd1fe2941061bd3224a95c2d526d58"
+      },
+      "wall_time_seconds": 6.747501902282238e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "17",
+      "case": "final_quality",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_17_final_quality.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "e3fc567473b2132563bd67cba5bc43c0052ef1a9ffd17a443624636b5daaf536",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 7.506017573177814e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "18",
+      "case": "orchestration",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_18_orchestration.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "01d1e4032d12d8a67547a2497a2c1d99318a777558607ba9b5c22d15b4d2d15f"
+      },
+      "wall_time_seconds": 6.758305244147778e-05,
+      "tokens": 0,
+      "retries": 0
+    }
+  ]
+}

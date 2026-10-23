@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-12-PILOT-001",
+  "agent_id": "12",
+  "title": "Gradient and Force Validation Agent",
+  "task_type": "single_step",
+  "role": "Validate gradient shape, finite values, signs, units, and consistency with energy changes.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "gradient_invalid",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

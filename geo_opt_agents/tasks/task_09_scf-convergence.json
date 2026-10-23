@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-09-PILOT-001",
+  "agent_id": "09",
+  "title": "SCF Convergence Agent",
+  "task_type": "single_step",
+  "role": "Diagnose SCF failures and propose bounded recovery settings without changing the state silently.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "scf_failure",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}
