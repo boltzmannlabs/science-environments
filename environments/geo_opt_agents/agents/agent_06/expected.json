@@ -1,0 +1,9 @@
+{
+  "task_id": "GEO-006",
+  "expected_behavior": "Select supported optimizer with rationale",
+  "required_checks": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

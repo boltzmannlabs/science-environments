@@ -1,0 +1,21 @@
+Run a single-point energy (SPE) validation test.
+
+Agent environment: 12
+Test ID: SPE-12-VALID-001
+Inputs:
+- REQUIRED EXTERNAL INPUT: chemically validated square-planar [Cu(NH3)4]2+ structure with derived charge, multiplicity, and metal-compatible basis/ECP
+
+Requirements:
+1. Validate structure, atom count, charge, multiplicity, method, and basis before submission.
+2. Do not optimize or modify any input geometry.
+3. Stop for review until every validated external input is supplied.
+4. Report total electronic energy in Hartree only when execution produced one.
+5. Report convergence, runtime, warnings, and every calculation setting.
+6. Save actual input/output files and record adapter, engine, and engine version.
+7. Explain missing, invalid, unsupported, or scientifically ambiguous inputs.
+8. Never fabricate an energy or mark a non-converged job successful.
+9. Do not infer Cu charge/spin/ECP; validate the supplied square-planar model.
+
+Return structured fields: test_id, agent_name, status, energy_hartree,
+method, basis_set, charge, multiplicity, convergence, runtime, warnings,
+output_file, validation_result, provenance, and acceptance_evidence.

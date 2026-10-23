@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boltzmann-spe-agent-environments"
+version = "0.1.0"
+description = "Eighteen specialist SPE agent contracts sharing one runtime and engine integration layer"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+spe-agents = "spe_agents.cli:main"
+spe-benchmark = "spe_agents.benchmarking.cli:main"
+spe-accuracy-check = "spe_agents.benchmarking.accuracy:main"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+where = ["."]

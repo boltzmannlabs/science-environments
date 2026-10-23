@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "system": "water",
+  "backend": "GPU4PySCF+SciPy-BFGS",
+  "method": "B3LYP",
+  "basis": "6-31G*",
+  "charge": 0,
+  "multiplicity": 1,
+  "initial_coordinates_angstrom": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.758602,
+      0.0,
+      0.504284
+    ],
+    [
+      -0.758602,
+      0.0,
+      0.504284
+    ]
+  ],
+  "final_coordinates_angstrom": [
+    [
+      -2.6877720348410563e-15,
+      -7.628589859618952e-16,
+      -0.061985265702455924
+    ],
+    [
+      0.7626240543408027,
+      6.066359975744339e-16,
+      0.5352945925995306
+    ],
+    [
+      -0.7626240543408163,
+      -1.2095191515233498e-16,
+      0.5352945925995223
+    ]
+  ],
+  "energy_hartree": -76.40702405124024,
+  "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+  "rms_gradient_hartree_per_bohr": 1.1542207211083418e-05,
+  "converged": true,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully.",
+  "optimizer_iterations": 5,
+  "scf_energy_evaluations": 6,
+  "runtime_seconds": 45.868386189918965,
+  "history": [
+    {
+      "evaluation": 1,
+      "energy_hartree": -76.39913535162847,
+      "max_gradient_hartree_per_bohr": 0.08783518074596675
+    },
+    {
+      "evaluation": 2,
+      "energy_hartree": -76.40664393566948,
+      "max_gradient_hartree_per_bohr": 0.006955722773132944
+    },
+    {
+      "evaluation": 3,
+      "energy_hartree": -76.40676581902132,
+      "max_gradient_hartree_per_bohr": 0.00596303673188503
+    },
+    {
+      "evaluation": 4,
+      "energy_hartree": -76.40695343287574,
+      "max_gradient_hartree_per_bohr": 0.003263646868792325
+    },
+    {
+      "evaluation": 5,
+      "energy_hartree": -76.40702400963909,
+      "max_gradient_hartree_per_bohr": 0.00020039774337066163
+    },
+    {
+      "evaluation": 6,
+      "energy_hartree": -76.40702405124024,
+      "max_gradient_hartree_per_bohr": 2.587569180878546e-05
+    }
+  ],
+  "software": {
+    "python": "3.12.2",
+    "pyscf": "2.12.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["task_id", "decision", "checks", "provenance", "cost"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "decision": {"enum": ["accept", "review", "reject"]},
+    "checks": {"type": "object"},
+    "provenance": {"type": "object"},
+    "cost": {"type": "object"}
+  },
+  "additionalProperties": true
+}

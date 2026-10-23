@@ -1,0 +1,20 @@
+{
+  "task_id": "GEO-003",
+  "agent_id": "GEO-03",
+  "task_type": "geometry_optimization",
+  "structure_file": "water.xyz plus distorted_water.xyz",
+  "charge": 0,
+  "multiplicity": 1,
+  "method": "B3LYP",
+  "basis_set": "6-31G*",
+  "max_iterations": 100,
+  "constraints": [],
+  "reference_artifact": null,
+  "expected_behavior": "Flag 3.0 Angstrom O-H distortion",
+  "focus": "initial_geometry",
+  "acceptance_criteria": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

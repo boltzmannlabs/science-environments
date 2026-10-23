@@ -1,0 +1,21 @@
+{
+  "id": "12",
+  "slug": "metal-ligand-coordination-spe",
+  "name": "Metal-Ligand Coordination SPE Agent",
+  "group": "spe-chemistry",
+  "integration_status": "unverified",
+  "description": "Calculates supported metal complexes with explicit oxidation-state, charge, spin-state, coordination-geometry, and method-suitability checks.",
+  "capabilities": ["metal-complex SPE calculation", "oxidation and spin-state consistency checking", "coordination-geometry assessment"],
+  "required_inputs": ["metal-complex geometry", "total charge", "spin multiplicity", "metal oxidation-state assignment", "method basis and ECP specification"],
+  "optional_inputs": ["ligand charge assignments", "alternative spin states", "relativistic treatment", "dispersion and solvation settings"],
+  "outputs": ["total electronic energy with units", "electronic-state and oxidation-state audit", "coordination-geometry findings", "wavefunction diagnostics and provenance"],
+  "tool_adapters": ["boltzmann-spe-api", "boltzmann-homo-lumo-api"],
+  "routing_keywords": ["metal ligand", "metal complex energy", "coordination complex spe", "transition metal", "coordination energy"],
+  "validation_checks": ["oxidation states and ligand charges reconcile with total charge", "multiplicity is explicit", "method basis ECP and relativistic choices support every element", "coordination geometry has no obvious invalid contacts"],
+  "scientific_constraints": ["oxidation state and spin are not changed automatically", "all-electron and ECP descriptions are not mixed inconsistently", "one spin-state energy is not claimed to establish the ground state"],
+  "acceptance_criteria": ["SCF converges to the requested state", "finite energy and available spin diagnostics are extracted", "method and element coverage checks pass", "coordination and electronic-state warnings are reported"],
+  "capability_boundaries": ["does not assign oxidation state from geometry alone", "does not guarantee multireference systems are described adequately", "does not compare spin states unless matched alternative-state jobs are supplied"],
+  "recovery_actions": ["increase SCF iterations", "apply a supported level shift damping or orbital guess strategy while preserving the scientific state", "run a supported stability check"],
+  "human_review_when": ["oxidation or spin state is ambiguous", "multireference character is suspected", "metal basis ECP or relativistic treatment is unsupported", "SCF converges to the wrong state"],
+  "max_retries": 2
+}

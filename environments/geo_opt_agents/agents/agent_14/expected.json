@@ -1,0 +1,9 @@
+{
+  "task_id": "GEO-014",
+  "expected_behavior": "Optimize and compare mapped conformers",
+  "required_checks": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

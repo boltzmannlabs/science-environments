@@ -1,0 +1,21 @@
+{
+  "id": "08",
+  "slug": "electronic-state-orbital-analysis",
+  "name": "Electronic-State and Orbital Analysis Agent",
+  "group": "spe-method",
+  "integration_status": "unverified",
+  "description": "Extracts supported electronic-state information, orbital energies, HOMO-LUMO gaps, occupations, and wavefunction diagnostics from compatible SPE results.",
+  "capabilities": ["frontier-orbital extraction", "occupation and electronic-state analysis", "wavefunction diagnostic evaluation"],
+  "required_inputs": ["molecular geometry or compatible SPE artifact", "charge", "spin multiplicity", "method and basis metadata", "requested orbital or state observables"],
+  "optional_inputs": ["wavefunction file", "orbital subset", "stability analysis", "diagnostic tolerances"],
+  "outputs": ["requested orbital energies and occupations", "HOMO-LUMO or spin-resolved gaps", "available wavefunction diagnostics", "physical-solution assessment and provenance"],
+  "tool_adapters": ["boltzmann-spe-api", "boltzmann-homo-lumo-api"],
+  "routing_keywords": ["electronic state", "orbital analysis", "homo lumo", "frontier orbitals", "orbital gap", "wavefunction diagnostics"],
+  "validation_checks": ["upstream artifacts match the declared geometry and settings", "orbital occupations are present", "closed-shell and spin-resolved frontier definitions are distinguished", "energy units are explicit"],
+  "scientific_constraints": ["SCF convergence alone is not treated as proof of a physically appropriate solution", "open-shell alpha and beta orbitals are labeled separately", "orbital gaps are not described as experimental excitation energies"],
+  "acceptance_criteria": ["source SPE is converged", "requested orbital values are finite and occupation-consistent", "gap arithmetic is independently reproduced", "available stability and spin diagnostics pass or are flagged"],
+  "capability_boundaries": ["does not calculate excited states unless an explicitly supported method is added", "does not equate a Kohn-Sham gap with an optical gap", "does not invent unavailable wavefunction diagnostics"],
+  "recovery_actions": ["reparse the original output with a compatible parser", "request a supported orbital-output option and rerun with unchanged scientific settings", "run a supported wavefunction stability check"],
+  "human_review_when": ["occupations are ambiguous", "wavefunction is unstable", "spin contamination is material", "orbital data or provenance are incomplete"],
+  "max_retries": 1
+}

@@ -1,0 +1,21 @@
+{
+  "id": "15",
+  "slug": "qmmm-single-point-energy",
+  "name": "QM/MM Single-Point Energy Agent",
+  "group": "spe-chemistry",
+  "integration_status": "unverified",
+  "description": "Evaluates a prepared QM/MM system with explicit QM-region, boundary, embedding, and energy-component definitions using an available implementation.",
+  "capabilities": ["QM/MM input validation", "QM/MM single-point execution", "energy-component consistency analysis"],
+  "required_inputs": ["complete prepared system", "explicit QM atom selection", "QM-region charge and multiplicity", "QM and MM methods", "boundary and embedding scheme"],
+  "optional_inputs": ["link atoms", "frozen atoms", "electrostatic cutoffs", "component-energy convention"],
+  "outputs": ["QM/MM total energy under a declared convention", "available component energies", "QM-region and boundary record", "convergence and full provenance"],
+  "tool_adapters": ["boltzmann-qmmm-api"],
+  "routing_keywords": ["qmmm single point", "qm mm energy", "qm region energy", "embedded qm", "qmmm spe"],
+  "validation_checks": ["QM selection maps uniquely to the full system", "boundary placement and link atoms are valid", "QM charge multiplicity and MM parameters are consistent", "embedding and energy convention are supported"],
+  "scientific_constraints": ["QM region boundary and embedding are never changed automatically", "energy components are combined only according to the engine's documented convention", "the full geometry remains fixed"],
+  "acceptance_criteria": ["QM and MM inputs pass integrity checks", "QM SCF and overall job converge", "reported total and component energies are internally consistent", "partition boundary settings and engine versions are preserved"],
+  "capability_boundaries": ["requires a prepared parameterized QM/MM system", "does not optimize the structure", "does not compare results across different QM regions as if directly equivalent"],
+  "recovery_actions": ["increase supported QM SCF iterations", "apply a supported SCF aid without changing the partition", "retry transient execution or output-parsing failures"],
+  "human_review_when": ["QM region or link placement is ambiguous", "MM parameters are missing", "embedding support is unavailable", "recovery would alter the partition charge spin or boundary"],
+  "max_retries": 1
+}

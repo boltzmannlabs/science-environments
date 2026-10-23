@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-11-PILOT-001",
+  "agent_id": "11",
+  "title": "Optimisation Stagnation Agent",
+  "task_type": "single_step",
+  "role": "Detect oscillation, repeated structures, and stalled progress with a controlled recovery plan.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "optimizer_stagnation",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

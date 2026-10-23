@@ -1,0 +1,9 @@
+{
+  "task_id": "GEO-012",
+  "expected_behavior": "Accept valid; flag corrupted gradients",
+  "required_checks": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

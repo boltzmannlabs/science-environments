@@ -1,0 +1,21 @@
+{
+  "id": "07",
+  "slug": "basis-set-convergence",
+  "name": "Basis-Set Convergence Agent",
+  "group": "spe-method",
+  "integration_status": "unverified",
+  "description": "Measures how a fixed-geometry electronic energy changes across an ordered series of increasingly complete basis sets.",
+  "capabilities": ["matched basis-set SPE series", "convergence-trend analysis", "next-basis recommendation"],
+  "required_inputs": ["one fixed molecular geometry", "total charge", "spin multiplicity", "one electronic-structure method", "two or more ordered basis sets"],
+  "optional_inputs": ["convergence tolerance", "extrapolation request and formula", "dispersion treatment", "solvation model"],
+  "outputs": ["total energy for each basis set", "successive energy changes", "convergence assessment", "bounded recommendation for further calculation"],
+  "tool_adapters": ["boltzmann-spe-api"],
+  "routing_keywords": ["basis set convergence", "basis convergence", "compare basis sets", "complete basis", "cbs trend"],
+  "validation_checks": ["basis sequence is meaningful for the selected elements and method", "method geometry charge multiplicity and other settings remain fixed", "every basis is supported", "requested tolerance has explicit energy units"],
+  "scientific_constraints": ["basis order is recorded rather than guessed from labels when ambiguous", "extrapolation is performed only for a declared compatible family", "effective-core-potential changes are treated as method changes"],
+  "acceptance_criteria": ["at least two basis calculations converge", "successive changes are computed in a common unit", "trend classification is supported by recorded energies", "recommendation cites the requested tolerance and observed change"],
+  "capability_boundaries": ["does not guarantee the complete-basis-set limit from a short or mixed series", "does not change geometry between basis sets", "does not infer property convergence from energy convergence"],
+  "recovery_actions": ["retry failed members with increased SCF iterations", "apply a supported SCF aid", "recommend but do not automatically substitute a different basis"],
+  "human_review_when": ["basis families are not comparable", "heavy elements require unresolved ECP choices", "convergence is nonmonotonic or insufficient", "resource limits prevent the requested series"],
+  "max_retries": 2
+}

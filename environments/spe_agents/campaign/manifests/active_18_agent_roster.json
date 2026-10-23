@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "roster_id": "boltzmann-spe-active-18-v1",
+  "active_environment_ids": [
+    "01", "02", "03", "04", "05", "06", "07", "08", "09",
+    "10", "11", "12", "14", "15", "17", "18", "19", "20"
+  ],
+  "removed_environment_ids": ["13", "16"],
+  "id_policy": "Preserve stable environment IDs; do not renumber surviving agents.",
+  "historical_evidence_policy": "Existing 20-agent v1 and review artifacts remain archived and are excluded from active qualification gates."
+}

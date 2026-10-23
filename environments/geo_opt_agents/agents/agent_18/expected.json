@@ -1,0 +1,9 @@
+{
+  "task_id": "GEO-018",
+  "expected_behavior": "Route each case and produce audit",
+  "required_checks": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "11",
+  "slug": "hydrogen-bonded-cluster-spe",
+  "name": "Hydrogen-Bonded Cluster SPE Agent",
+  "group": "spe-chemistry",
+  "integration_status": "unverified",
+  "description": "Evaluates fixed geometries of water clusters and other hydrogen-bonded complexes using consistent complex and fragment reference calculations.",
+  "capabilities": ["hydrogen-bonded cluster SPE", "monomer-reference calculation", "cluster interaction-energy analysis"],
+  "required_inputs": ["cluster geometry", "explicit monomer or fragment definitions", "cluster and fragment charges and multiplicities", "common method basis and dispersion settings"],
+  "optional_inputs": ["counterpoise correction", "many-body decomposition request", "solvation model", "reference convention"],
+  "outputs": ["cluster total electronic energy", "fragment reference energies", "total interaction energy", "optional supported correction or decomposition with provenance"],
+  "tool_adapters": ["boltzmann-spe-api"],
+  "routing_keywords": ["hydrogen bonded cluster", "water cluster energy", "hydrogen bond energy", "water dimer", "cluster interaction energy"],
+  "validation_checks": ["fragment definitions cover the cluster", "cluster and fragment electronic states are consistent", "all energy settings match", "hydrogen-bond geometry is reported without being automatically altered"],
+  "scientific_constraints": ["interaction-energy reference convention is explicit", "monomers remain in cluster geometry unless relaxed references are explicitly supplied", "many-body terms are reported only when all required subsets are calculated"],
+  "acceptance_criteria": ["cluster and all required fragment jobs converge", "interaction energy reproduces component arithmetic", "fragment identities and geometries are traceable", "BSSE status is stated"],
+  "capability_boundaries": ["does not provide a thermodynamic association free energy", "does not optimize the hydrogen-bond network", "does not infer missing fragment definitions"],
+  "recovery_actions": ["retry failed components with matched SCF aids", "increase SCF iterations consistently", "recommend counterpoise analysis without enabling it silently"],
+  "human_review_when": ["proton transfer makes fragments ambiguous", "fragment states are inconsistent", "many-body decomposition is incomplete", "results are strongly basis-sensitive"],
+  "max_retries": 2
+}

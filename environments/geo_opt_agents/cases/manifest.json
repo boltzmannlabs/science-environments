@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.1",
+  "backend": "PySCF+GPU4PySCF",
+  "cases": [
+    {
+      "agent_id": "01",
+      "task_id": "GEO-001",
+      "inputs": "water.xyz; malformed.xyz; missing_coordinate.xyz",
+      "focus": "input_validation"
+    },
+    {
+      "agent_id": "02",
+      "task_id": "GEO-002",
+      "inputs": "ethanol.xyz plus connectivity.json",
+      "focus": "connectivity"
+    },
+    {
+      "agent_id": "03",
+      "task_id": "GEO-003",
+      "inputs": "water.xyz plus distorted_water.xyz",
+      "focus": "initial_geometry"
+    },
+    {
+      "agent_id": "04",
+      "task_id": "GEO-004",
+      "inputs": "water.xyz plus incompatible_charge.json",
+      "focus": "electronic_state"
+    },
+    {
+      "agent_id": "05",
+      "task_id": "GEO-005",
+      "inputs": "water.xyz, ethanol.xyz, charged_case.json",
+      "focus": "method_selection"
+    },
+    {
+      "agent_id": "06",
+      "task_id": "GEO-006",
+      "inputs": "water.xyz, ethanol.xyz, optimizer_options.json",
+      "focus": "optimizer_selection"
+    },
+    {
+      "agent_id": "07",
+      "task_id": "GEO-007",
+      "inputs": "ethanol.xyz plus internal_coordinates.json",
+      "focus": "coordinate_strategy"
+    },
+    {
+      "agent_id": "08",
+      "task_id": "GEO-008",
+      "inputs": "water.xyz plus constraints.json",
+      "focus": "constraints"
+    },
+    {
+      "agent_id": "09",
+      "task_id": "GEO-009",
+      "inputs": "frozen_scf_failure.json and convergence.log",
+      "focus": "scf_failure"
+    },
+    {
+      "agent_id": "10",
+      "task_id": "GEO-010",
+      "inputs": "successful.log, truncated.log, high_gradient.log",
+      "focus": "convergence"
+    },
+    {
+      "agent_id": "11",
+      "task_id": "GEO-011",
+      "inputs": "oscillating_energy_trace.json",
+      "focus": "stagnation"
+    },
+    {
+      "agent_id": "12",
+      "task_id": "GEO-012",
+      "inputs": "valid_gradient.json, nan_gradient.json, bad_shape.json",
+      "focus": "gradient_validation"
+    },
+    {
+      "agent_id": "13",
+      "task_id": "GEO-013",
+      "inputs": "minimum_frequency.json and saddle_frequency.json",
+      "focus": "minimum_verification"
+    },
+    {
+      "agent_id": "14",
+      "task_id": "GEO-014",
+      "inputs": "ethanol_conformer_1.xyz and conformer_2.xyz",
+      "focus": "multi_conformer"
+    },
+    {
+      "agent_id": "15",
+      "task_id": "GEO-015",
+      "inputs": "prepared_ligand_site.json and clash_report.json",
+      "focus": "protein_ligand"
+    },
+    {
+      "agent_id": "16",
+      "task_id": "GEO-016",
+      "inputs": "run_manifest.json checkpoint.json timeout.json",
+      "focus": "resource_recovery"
+    },
+    {
+      "agent_id": "17",
+      "task_id": "GEO-017",
+      "inputs": "optimized.xyz energy_gradient.json reference.json",
+      "focus": "final_quality"
+    },
+    {
+      "agent_id": "18",
+      "task_id": "GEO-018",
+      "inputs": "valid.json malformed.json nonconverged.json",
+      "focus": "orchestration"
+    }
+  ]
+}

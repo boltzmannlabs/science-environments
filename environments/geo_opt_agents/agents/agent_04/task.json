@@ -1,0 +1,20 @@
+{
+  "task_id": "GEO-004",
+  "agent_id": "GEO-04",
+  "task_type": "geometry_optimization",
+  "structure_file": "water.xyz plus incompatible_charge.json",
+  "charge": 0,
+  "multiplicity": 1,
+  "method": "B3LYP",
+  "basis_set": "6-31G*",
+  "max_iterations": 100,
+  "constraints": [],
+  "reference_artifact": null,
+  "expected_behavior": "Accept neutral singlet; flag incompatible state",
+  "focus": "electronic_state",
+  "acceptance_criteria": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "18",
+  "slug": "molecular-strain-energy",
+  "name": "Molecular Strain-Energy Analysis Agent",
+  "group": "spe-drug-discovery",
+  "integration_status": "unverified",
+  "description": "Compares a molecular geometry with a scientifically suitable reference geometry using a single consistent electronic-energy protocol.",
+  "capabilities": ["matched target and reference SPE", "conformational strain-energy calculation", "reference suitability audit"],
+  "required_inputs": ["target molecular geometry", "reference molecular geometry", "proof of common chemical identity", "charge and multiplicity", "common method and basis"],
+  "optional_inputs": ["reference-selection rationale", "dispersion and solvation settings", "atom mapping", "relative-energy output unit"],
+  "outputs": ["target and reference electronic energies", "defined strain energy", "reference suitability findings", "convergence and provenance"],
+  "tool_adapters": ["boltzmann-spe-api"],
+  "routing_keywords": ["strain energy", "molecular strain", "conformational strain", "bound conformation energy", "geometry strain"],
+  "validation_checks": ["target and reference share composition connectivity charge multiplicity and atom mapping", "both use identical calculation settings", "reference choice is scientifically justified", "strain-energy sign convention is explicit"],
+  "scientific_constraints": ["strain energy is defined as target electronic energy minus reference electronic energy", "geometry-dependent energy is separated from chemical-state changes", "failed structures are never included"],
+  "acceptance_criteria": ["both calculations converge", "energy difference independently reproduces the reported strain value", "chemical identity and settings match", "reference rationale and limitations are retained"],
+  "capability_boundaries": ["does not find the global minimum", "does not include reorganization entropy or solvent sampling", "does not compare different protonation tautomers or compositions as strain"],
+  "recovery_actions": ["retry failed calculations with matched SCF recovery", "repair atom mapping metadata without changing coordinates", "request a better reference rather than selecting one silently"],
+  "human_review_when": ["reference geometry is unsuitable", "chemical identities differ", "one structure requires different settings", "the target contains severe contacts or an unstable electronic solution"],
+  "max_retries": 2
+}

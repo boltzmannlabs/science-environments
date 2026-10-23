@@ -1,0 +1,27 @@
+{
+  "fixture_purpose": "historical artifact for QC behavior; not a new reference calculation",
+  "input": {
+    "structure_file": "campaign/fixtures/structures/legacy_water_b3lyp_def2_svp.xyz",
+    "method": "B3LYP",
+    "basis_set": "def2-SVP",
+    "charge": 0,
+    "multiplicity": 1
+  },
+  "result": {
+    "status": "completed",
+    "converged": true,
+    "total_energy_hartree": -76.3582824264
+  },
+  "provenance": {
+    "engine_version": "PySCF 2.12.0 / GPU4PySCF 1.5.2 (legacy deployment record)",
+    "actual_input": {
+      "structure_file": "campaign/fixtures/structures/legacy_water_b3lyp_def2_svp.xyz",
+      "method": "B3LYP",
+      "basis_set": "def2-SVP",
+      "charge": 0,
+      "multiplicity": 1
+    },
+    "source_commit": "7a802e94",
+    "source_record": "legacy test_results/water_b3lyp_def2_SVP/molecule_energy.csv"
+  }
+}

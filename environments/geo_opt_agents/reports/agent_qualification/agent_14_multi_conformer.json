@@ -1,0 +1,14 @@
+{
+  "agent_id": "14",
+  "case": "multi_conformer",
+  "status": "pass",
+  "execution": "deterministic_fixture",
+  "input": "tasks/agent_inputs/agent_14_multi_conformer.json",
+  "expected_decision": "accept",
+  "evidence": {
+    "fixture_sha256": "c13de92ee89900eb333210c16ed0b0d9d3e9e696ad6380f7c7c2b6050b5c0185"
+  },
+  "wall_time_seconds": 7.167598232626915e-05,
+  "tokens": 0,
+  "retries": 0
+}

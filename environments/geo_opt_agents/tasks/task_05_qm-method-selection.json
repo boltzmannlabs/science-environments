@@ -1,0 +1,18 @@
+{
+  "task_id": "GEOOPT-05-PILOT-001",
+  "agent_id": "05",
+  "title": "QM Method Selection Agent",
+  "task_type": "single_step",
+  "role": "Select supported DFT method, basis, and settings with a reproducible rationale.",
+  "input_fixture": "references/pilot_initial_geometry.xyz",
+  "expected_failure_category": "method_unsupported",
+  "scoring": {
+    "required_checks": [
+      "structure_valid",
+      "energy_finite",
+      "gradient_finite",
+      "convergence_classified"
+    ],
+    "numerical_tolerance": "declared per task; never inferred from pass rate"
+  }
+}

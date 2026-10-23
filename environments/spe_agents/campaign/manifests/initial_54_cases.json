@@ -1,0 +1,1346 @@
+{
+  "campaign_id": "boltzmann-spe-active-18-initial-54-v1",
+  "manifest_version": "1.0",
+  "roster": "campaign/manifests/active_18_agent_roster.json",
+  "source_manifest": "campaign/manifests/initial_60_cases.json",
+  "source_manifest_role": "frozen historical input; removed agents are filtered out",
+  "expected_agent_count": 18,
+  "expected_case_count": 54,
+  "require_three_case_coverage": true,
+  "execution_priority": [
+    "01",
+    "02",
+    "06",
+    "10",
+    "15",
+    "20",
+    "03",
+    "04",
+    "05",
+    "07",
+    "08",
+    "09",
+    "11",
+    "12",
+    "14",
+    "17",
+    "18",
+    "19"
+  ],
+  "basis_alias_policy": {
+    "6-31G(d)": "6-31G*"
+  },
+  "engine_policy": "No calculation executes until a live adapter reports compatible capabilities.",
+  "reference_policy": "Numerical tolerances remain unset until independent equivalent-setting references are supplied.",
+  "cases": [
+    {
+      "test_id": "SPE-01-VALID-001",
+      "environment_id": "01",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Verify atom counts and fixed-geometry electronic energies for water, methane, and ammonia.",
+      "calculations": [
+        {
+          "label": "water",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "methane",
+          "file": "campaign/fixtures/structures/methane.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "ammonia",
+          "file": "campaign/fixtures/structures/ammonia.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-01-INVALID-001",
+      "environment_id": "01",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Verify atom counts and fixed-geometry electronic energies for water, methane, and ammonia.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_01.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-01-REFERENCE-001",
+      "environment_id": "01",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Verify atom counts and fixed-geometry electronic energies for water, methane, and ammonia.",
+      "reference_artifact": "campaign/references/environment_01_independent.json",
+      "calculations": [
+        {
+          "label": "water",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "methane",
+          "file": "campaign/fixtures/structures/methane.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "ammonia",
+          "file": "campaign/fixtures/structures/ammonia.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-02-VALID-001",
+      "environment_id": "02",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Preserve the saved aspirin conformer and validate heteroatom handling.",
+      "calculations": [
+        {
+          "label": "aspirin-fixed-conformer",
+          "file": "campaign/fixtures/structures/aspirin_fixed_conformer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-02-INVALID-001",
+      "environment_id": "02",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Preserve the saved aspirin conformer and validate heteroatom handling.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_02.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-02-REFERENCE-001",
+      "environment_id": "02",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Preserve the saved aspirin conformer and validate heteroatom handling.",
+      "reference_artifact": "campaign/references/environment_02_independent.json",
+      "calculations": [
+        {
+          "label": "aspirin-fixed-conformer",
+          "file": "campaign/fixtures/structures/aspirin_fixed_conformer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-06-VALID-001",
+      "environment_id": "06",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Keep the water geometry and basis identical; isolate results by method.",
+      "calculations": [
+        {
+          "label": "HF",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "HF",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B3LYP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "PBE0",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "PBE0",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-06-INVALID-001",
+      "environment_id": "06",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Keep the water geometry and basis identical; isolate results by method.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_06.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-06-REFERENCE-001",
+      "environment_id": "06",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Keep the water geometry and basis identical; isolate results by method.",
+      "reference_artifact": "campaign/references/environment_06_independent.json",
+      "calculations": [
+        {
+          "label": "HF",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "HF",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B3LYP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "PBE0",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "PBE0",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-10-VALID-001",
+      "environment_id": "10",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Recompute E_int=E_AB-E_A-E_B from matching fragment geometries and state BSSE treatment.",
+      "calculations": [
+        {
+          "label": "AB",
+          "file": "campaign/fixtures/structures/water_dimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "A",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_a.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_b.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "E_AB-E_A-E_B"
+    },
+    {
+      "test_id": "SPE-10-INVALID-001",
+      "environment_id": "10",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Recompute E_int=E_AB-E_A-E_B from matching fragment geometries and state BSSE treatment.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_10.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-10-REFERENCE-001",
+      "environment_id": "10",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Recompute E_int=E_AB-E_A-E_B from matching fragment geometries and state BSSE treatment.",
+      "reference_artifact": "campaign/references/environment_10_independent.json",
+      "calculations": [
+        {
+          "label": "AB",
+          "file": "campaign/fixtures/structures/water_dimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "A",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_a.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_b.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "E_AB-E_A-E_B"
+    },
+    {
+      "test_id": "SPE-15-VALID-001",
+      "environment_id": "15",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Require prepared coordinates, topology, QM indices, link atoms, embedding, charge, and spin.",
+      "external_inputs": [
+        {
+          "description": "prepared enzyme-substrate coordinates and topology",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "validated QM atom indices, boundary/link atoms, embedding, total charge, and multiplicity",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-15-INVALID-001",
+      "environment_id": "15",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Require prepared coordinates, topology, QM indices, link atoms, embedding, charge, and spin.",
+      "external_inputs": [
+        {
+          "description": "prepared enzyme-substrate coordinates and topology",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "validated QM atom indices, boundary/link atoms, embedding, total charge, and multiplicity",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-15-REFERENCE-001",
+      "environment_id": "15",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Require prepared coordinates, topology, QM indices, link atoms, embedding, charge, and spin.",
+      "reference_artifact": "campaign/references/environment_15_independent.json",
+      "external_inputs": [
+        {
+          "description": "prepared enzyme-substrate coordinates and topology",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "validated QM atom indices, boundary/link atoms, embedding, total charge, and multiplicity",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-20-VALID-001",
+      "environment_id": "20",
+      "case_kind": "valid",
+      "mode": "audit",
+      "artifact_file": "campaign/fixtures/artifacts/water_success.json",
+      "expected_audit_decision": "accept",
+      "specialist_requirements": "Audit preserved artifacts; accept, reject, or flag from evidence without executing a new SPE."
+    },
+    {
+      "test_id": "SPE-20-INVALID-001",
+      "environment_id": "20",
+      "case_kind": "invalid",
+      "mode": "audit",
+      "artifact_file": "campaign/fixtures/artifacts/water_nonconverged.json",
+      "expected_audit_decision": "reject",
+      "specialist_requirements": "Audit preserved artifacts; accept, reject, or flag from evidence without executing a new SPE."
+    },
+    {
+      "test_id": "SPE-20-REFERENCE-001",
+      "environment_id": "20",
+      "case_kind": "reference",
+      "mode": "audit",
+      "artifact_file": "campaign/fixtures/artifacts/water_basis_conflict.json",
+      "expected_audit_decision": "flag",
+      "specialist_requirements": "Audit preserved artifacts; accept, reject, or flag from evidence without executing a new SPE."
+    },
+    {
+      "test_id": "SPE-03-VALID-001",
+      "environment_id": "03",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Compute E2-E1 from independently fixed ethanol conformers; never call it a free energy.",
+      "calculations": [
+        {
+          "label": "E1",
+          "file": "campaign/fixtures/structures/ethanol_conformer_1.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "E2",
+          "file": "campaign/fixtures/structures/ethanol_conformer_2.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-03-INVALID-001",
+      "environment_id": "03",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Compute E2-E1 from independently fixed ethanol conformers; never call it a free energy.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_03.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-03-REFERENCE-001",
+      "environment_id": "03",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Compute E2-E1 from independently fixed ethanol conformers; never call it a free energy.",
+      "reference_artifact": "campaign/references/environment_03_independent.json",
+      "calculations": [
+        {
+          "label": "E1",
+          "file": "campaign/fixtures/structures/ethanol_conformer_1.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "E2",
+          "file": "campaign/fixtures/structures/ethanol_conformer_2.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-04-VALID-001",
+      "environment_id": "04",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Validate charge, electron count, and basis compatibility for Na+.",
+      "calculations": [
+        {
+          "label": "Na+",
+          "file": "campaign/fixtures/structures/sodium_cation.xyz",
+          "charge": 1,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-SVP",
+          "basis_notation_source": "def2-SVP"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-04-INVALID-001",
+      "environment_id": "04",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Validate charge, electron count, and basis compatibility for Na+.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_04.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-04-REFERENCE-001",
+      "environment_id": "04",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Validate charge, electron count, and basis compatibility for Na+.",
+      "reference_artifact": "campaign/references/environment_04_independent.json",
+      "calculations": [
+        {
+          "label": "Na+",
+          "file": "campaign/fixtures/structures/sodium_cation.xyz",
+          "charge": 1,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-SVP",
+          "basis_notation_source": "def2-SVP"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-05-VALID-001",
+      "environment_id": "05",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Use a supported unrestricted/open-shell path and report available spin diagnostics.",
+      "calculations": [
+        {
+          "label": "CH3-radical",
+          "file": "campaign/fixtures/structures/methyl_radical.xyz",
+          "charge": 0,
+          "multiplicity": 2,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-05-INVALID-001",
+      "environment_id": "05",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Use a supported unrestricted/open-shell path and report available spin diagnostics.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_05.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-05-REFERENCE-001",
+      "environment_id": "05",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Use a supported unrestricted/open-shell path and report available spin diagnostics.",
+      "reference_artifact": "campaign/references/environment_05_independent.json",
+      "calculations": [
+        {
+          "label": "CH3-radical",
+          "file": "campaign/fixtures/structures/methyl_radical.xyz",
+          "charge": 0,
+          "multiplicity": 2,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-07-VALID-001",
+      "environment_id": "07",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Keep water geometry and method identical; report the basis trend and its limitations.",
+      "calculations": [
+        {
+          "label": "6-31G",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G",
+          "basis_notation_source": "6-31G"
+        },
+        {
+          "label": "6-31G*",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "def2-SVP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-SVP",
+          "basis_notation_source": "def2-SVP"
+        },
+        {
+          "label": "def2-TZVP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-TZVP",
+          "basis_notation_source": "def2-TZVP"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-07-INVALID-001",
+      "environment_id": "07",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Keep water geometry and method identical; report the basis trend and its limitations.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_07.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-07-REFERENCE-001",
+      "environment_id": "07",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Keep water geometry and method identical; report the basis trend and its limitations.",
+      "reference_artifact": "campaign/references/environment_07_independent.json",
+      "calculations": [
+        {
+          "label": "6-31G",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G",
+          "basis_notation_source": "6-31G"
+        },
+        {
+          "label": "6-31G*",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "def2-SVP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-SVP",
+          "basis_notation_source": "def2-SVP"
+        },
+        {
+          "label": "def2-TZVP",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "def2-TZVP",
+          "basis_notation_source": "def2-TZVP"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-08-VALID-001",
+      "environment_id": "08",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Return orbital energies, occupations, ordering, units, and HOMO-LUMO gap.",
+      "calculations": [
+        {
+          "label": "water-orbitals",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "requested_properties": [
+        "orbital_energies",
+        "occupations",
+        "homo_lumo_gap"
+      ]
+    },
+    {
+      "test_id": "SPE-08-INVALID-001",
+      "environment_id": "08",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Return orbital energies, occupations, ordering, units, and HOMO-LUMO gap.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_08.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-08-REFERENCE-001",
+      "environment_id": "08",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Return orbital energies, occupations, ordering, units, and HOMO-LUMO gap.",
+      "reference_artifact": "campaign/references/environment_08_independent.json",
+      "calculations": [
+        {
+          "label": "water-orbitals",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "requested_properties": [
+        "orbital_energies",
+        "occupations",
+        "homo_lumo_gap"
+      ]
+    },
+    {
+      "test_id": "SPE-09-VALID-001",
+      "environment_id": "09",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Return density and ESP grids with dimensions, units, labels, and valid artifact files.",
+      "calculations": [
+        {
+          "label": "water-density-esp",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "requested_properties": [
+        "electron_density_cube",
+        "esp_cube"
+      ]
+    },
+    {
+      "test_id": "SPE-09-INVALID-001",
+      "environment_id": "09",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Return density and ESP grids with dimensions, units, labels, and valid artifact files.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_09.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-09-REFERENCE-001",
+      "environment_id": "09",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Return density and ESP grids with dimensions, units, labels, and valid artifact files.",
+      "reference_artifact": "campaign/references/environment_09_independent.json",
+      "calculations": [
+        {
+          "label": "water-density-esp",
+          "file": "campaign/fixtures/structures/water.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "requested_properties": [
+        "electron_density_cube",
+        "esp_cube"
+      ]
+    },
+    {
+      "test_id": "SPE-11-VALID-001",
+      "environment_id": "11",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Use consistent monomer/dimer references and define the water-trimer interaction energy.",
+      "calculations": [
+        {
+          "label": "ABC",
+          "file": "campaign/fixtures/structures/water_trimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "A",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_a.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_b.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "C",
+          "file": "campaign/fixtures/structures/water_trimer_monomer_c.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "AB",
+          "file": "campaign/fixtures/structures/water_dimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-11-INVALID-001",
+      "environment_id": "11",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Use consistent monomer/dimer references and define the water-trimer interaction energy.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_11.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-11-REFERENCE-001",
+      "environment_id": "11",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Use consistent monomer/dimer references and define the water-trimer interaction energy.",
+      "reference_artifact": "campaign/references/environment_11_independent.json",
+      "calculations": [
+        {
+          "label": "ABC",
+          "file": "campaign/fixtures/structures/water_trimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "A",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_a.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "B",
+          "file": "campaign/fixtures/structures/water_dimer_monomer_b.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "C",
+          "file": "campaign/fixtures/structures/water_trimer_monomer_c.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "AB",
+          "file": "campaign/fixtures/structures/water_dimer.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-12-VALID-001",
+      "environment_id": "12",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Do not infer Cu charge/spin/ECP; validate the supplied square-planar model.",
+      "external_inputs": [
+        {
+          "description": "chemically validated square-planar [Cu(NH3)4]2+ structure with derived charge, multiplicity, and metal-compatible basis/ECP",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-12-INVALID-001",
+      "environment_id": "12",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Do not infer Cu charge/spin/ECP; validate the supplied square-planar model.",
+      "external_inputs": [
+        {
+          "description": "chemically validated square-planar [Cu(NH3)4]2+ structure with derived charge, multiplicity, and metal-compatible basis/ECP",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-12-REFERENCE-001",
+      "environment_id": "12",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Do not infer Cu charge/spin/ECP; validate the supplied square-planar model.",
+      "reference_artifact": "campaign/references/environment_12_independent.json",
+      "external_inputs": [
+        {
+          "description": "chemically validated square-planar [Cu(NH3)4]2+ structure with derived charge, multiplicity, and metal-compatible basis/ECP",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-14-VALID-001",
+      "environment_id": "14",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Recompute 2E_HF-E_H2-E_F2 with consistent settings and electronic states.",
+      "calculations": [
+        {
+          "label": "H2",
+          "file": "campaign/fixtures/structures/hydrogen.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "F2",
+          "file": "campaign/fixtures/structures/fluorine.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "HF",
+          "file": "campaign/fixtures/structures/hydrogen_fluoride.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "2*E_HF-E_H2-E_F2"
+    },
+    {
+      "test_id": "SPE-14-INVALID-001",
+      "environment_id": "14",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Recompute 2E_HF-E_H2-E_F2 with consistent settings and electronic states.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_14.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-14-REFERENCE-001",
+      "environment_id": "14",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Recompute 2E_HF-E_H2-E_F2 with consistent settings and electronic states.",
+      "reference_artifact": "campaign/references/environment_14_independent.json",
+      "calculations": [
+        {
+          "label": "H2",
+          "file": "campaign/fixtures/structures/hydrogen.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "F2",
+          "file": "campaign/fixtures/structures/fluorine.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "HF",
+          "file": "campaign/fixtures/structures/hydrogen_fluoride.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "2*E_HF-E_H2-E_F2"
+    },
+    {
+      "test_id": "SPE-17-VALID-001",
+      "environment_id": "17",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Use matching aspirin/water fragment geometries and do not claim a solvation free energy.",
+      "calculations": [
+        {
+          "label": "cluster",
+          "file": "campaign/fixtures/structures/aspirin_water_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "aspirin",
+          "file": "campaign/fixtures/structures/aspirin_from_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "water",
+          "file": "campaign/fixtures/structures/water_from_aspirin_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "E_cluster-E_aspirin-E_water"
+    },
+    {
+      "test_id": "SPE-17-INVALID-001",
+      "environment_id": "17",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Use matching aspirin/water fragment geometries and do not claim a solvation free energy.",
+      "calculations": [
+        {
+          "label": "deliberately-missing-input",
+          "file": "campaign/fixtures/structures/missing_agent_17.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-17-REFERENCE-001",
+      "environment_id": "17",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Use matching aspirin/water fragment geometries and do not claim a solvation free energy.",
+      "reference_artifact": "campaign/references/environment_17_independent.json",
+      "calculations": [
+        {
+          "label": "cluster",
+          "file": "campaign/fixtures/structures/aspirin_water_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "aspirin",
+          "file": "campaign/fixtures/structures/aspirin_from_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        },
+        {
+          "label": "water",
+          "file": "campaign/fixtures/structures/water_from_aspirin_cluster.xyz",
+          "charge": 0,
+          "multiplicity": 1,
+          "method": "B3LYP",
+          "basis_set": "6-31G*",
+          "basis_notation_source": "6-31G(d)"
+        }
+      ],
+      "arithmetic": "E_cluster-E_aspirin-E_water"
+    },
+    {
+      "test_id": "SPE-18-VALID-001",
+      "environment_id": "18",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Require validated chair and twist-boat identities; report their fixed-geometry energy difference.",
+      "external_inputs": [
+        {
+          "description": "independently validated fixed cyclohexane chair and twist-boat geometries",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-18-INVALID-001",
+      "environment_id": "18",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Require validated chair and twist-boat identities; report their fixed-geometry energy difference.",
+      "external_inputs": [
+        {
+          "description": "independently validated fixed cyclohexane chair and twist-boat geometries",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-18-REFERENCE-001",
+      "environment_id": "18",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Require validated chair and twist-boat identities; report their fixed-geometry energy difference.",
+      "reference_artifact": "campaign/references/environment_18_independent.json",
+      "external_inputs": [
+        {
+          "description": "independently validated fixed cyclohexane chair and twist-boat geometries",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-19-VALID-001",
+      "environment_id": "19",
+      "case_kind": "valid",
+      "mode": "calculation",
+      "specialist_requirements": "Require a versioned MLIP, applicability metadata, QM references, units, and optional force references.",
+      "external_inputs": [
+        {
+          "description": "versioned supported MACE or other MLIP model",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "fixed XYZ evaluation set with independently validated QM energies and optional forces",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-19-INVALID-001",
+      "environment_id": "19",
+      "case_kind": "invalid",
+      "mode": "calculation",
+      "expected_preflight": "reject",
+      "specialist_requirements": "Require a versioned MLIP, applicability metadata, QM references, units, and optional force references.",
+      "external_inputs": [
+        {
+          "description": "versioned supported MACE or other MLIP model",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "fixed XYZ evaluation set with independently validated QM energies and optional forces",
+          "required": true,
+          "path": null
+        }
+      ]
+    },
+    {
+      "test_id": "SPE-19-REFERENCE-001",
+      "environment_id": "19",
+      "case_kind": "reference",
+      "mode": "calculation",
+      "specialist_requirements": "Require a versioned MLIP, applicability metadata, QM references, units, and optional force references.",
+      "reference_artifact": "campaign/references/environment_19_independent.json",
+      "external_inputs": [
+        {
+          "description": "versioned supported MACE or other MLIP model",
+          "required": true,
+          "path": null
+        },
+        {
+          "description": "fixed XYZ evaluation set with independently validated QM energies and optional forces",
+          "required": true,
+          "path": null
+        }
+      ]
+    }
+  ]
+}

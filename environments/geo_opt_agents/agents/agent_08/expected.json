@@ -1,0 +1,9 @@
+{
+  "task_id": "GEO-008",
+  "expected_behavior": "Preserve oxygen atom 0 while optimizing others",
+  "required_checks": {
+    "finite_coordinates": true,
+    "finite_energy": true,
+    "convergence_must_be_verified": true
+  }
+}

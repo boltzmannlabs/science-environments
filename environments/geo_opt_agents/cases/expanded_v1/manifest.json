@@ -1,0 +1,655 @@
+{
+  "schema_version": "1.0",
+  "case_count": 36,
+  "repeat_policy": "single frozen pass plus selected independent repeats",
+  "cases": [
+    {
+      "case_id": "GEOEXP-001",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-002",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-003",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-004",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-005",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-006",
+      "molecule": "water",
+      "tier": "tier1_basic",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-001-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-007",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-008",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-009",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-010",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-011",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-012",
+      "molecule": "methane",
+      "tier": "tier1_basic",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-002-methane/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-013",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-014",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-015",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-016",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-017",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-018",
+      "molecule": "ethanol",
+      "tier": "tier2_flexible",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-003-ethanol/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-019",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-020",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-021",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-022",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-023",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-024",
+      "molecule": "benzene",
+      "tier": "tier3_conjugated",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-006-benzene/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-025",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-026",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-027",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-028",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-029",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-030",
+      "molecule": "distorted_water",
+      "tier": "adversarial",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-005-distorted-water/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-031",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "input_validation",
+      "goal": "validate structure and atom count",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-032",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "optimization",
+      "goal": "run fixed-geometry optimization",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-033",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "convergence",
+      "goal": "classify energy/gradient stopping",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-034",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "quality",
+      "goal": "validate final coordinates and provenance",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": true,
+        "convergence_must_be_verified": true
+      }
+    },
+    {
+      "case_id": "GEOEXP-035",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "recovery",
+      "goal": "diagnose bounded failure/recovery",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    },
+    {
+      "case_id": "GEOEXP-036",
+      "molecule": "malformed",
+      "tier": "adversarial",
+      "scenario": "reproducibility",
+      "goal": "compare repeated result",
+      "input_fixture": "cases/GEO-004-malformed-input/input.xyz",
+      "backend": "PySCF+GPU4PySCF",
+      "method": "B3LYP",
+      "basis_set": "6-31G*",
+      "charge": 0,
+      "multiplicity": 1,
+      "acceptance_criteria": {
+        "finite_coordinates": true,
+        "finite_energy": false,
+        "convergence_must_be_verified": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "boltzmann-spe-agent-qualification-v2",
+  "calculation_backend": "Boltzmann SPE module",
+  "external_engines_in_primary_gate": false,
+  "inherits_without_change": {
+    "water_reference_energy_hartree": -76.39913535162846,
+    "water_tolerance_hartree": 1e-10,
+    "status_semantics": "campaign/manifests/boltzmann_only_validation_policy_v1.json"
+  },
+  "objectives": [
+    "Qualify the explicit 18-agent active roster without renumbering surviving environments.",
+    "Run a complete 18-agent regression after the roster change.",
+    "Measure specialist value against a direct Boltzmann SPE baseline using the same structures and settings."
+  ],
+  "required_evidence": [
+    "valid and invalid input behavior",
+    "successful Boltzmann SPE execution where the required model is available",
+    "correct result parsing and specialist checks",
+    "reproducibility and artifact integrity",
+    "timeouts, interruptions and unsupported-setting handling",
+    "explicit PASS, REVIEW or FAIL status"
+  ],
+  "active_roster": "campaign/manifests/active_18_agent_roster.json",
+  "removed_agents": ["13", "16"],
+  "review_agents": [],
+  "baseline_comparison": {
+    "baseline": "direct Boltzmann SPE call with already prepared coordinates and settings",
+    "specialist_value_dimensions": [
+      "pre-submission validation",
+      "specialist scientific analysis",
+      "invalid-submission prevention",
+      "recovery and review-state correctness",
+      "provenance completeness"
+    ],
+    "rule": "Only observed, artifact-backed differences may be scored as added value."
+  },
+  "cp2k_policy": "optional external validation only; excluded from every v2 gate and status"
+}
