@@ -1,35 +1,36 @@
-## Summary
+## Summary and rationale
 
-<!-- What is changing and why? -->
+Describe what changes and why it is needed.
 
-## Contribution type
+## Related issue and ownership
 
-- [ ] Environment specification
-- [ ] Executable implementation
-- [ ] Evaluation/benchmark
-- [ ] Documentation/research
-- [ ] Bug fix
+Related issue:
 
-## Related issue
+Owner:
 
-<!-- Link the issue, for example: Closes #123 -->
+Requested reviewer or responsible team:
 
-## Deliverables
+## Contribution type and deliverables
 
-<!-- List files or environment artifacts added or changed. -->
+State the contribution type: research, documentation, environment specification, configuration, implementation, evaluation, bug fix or maintenance.
 
-## Validation
+List the files or scientific artifacts added or changed. For an environment status change, state the previous status, requested status and supporting evidence.
 
-<!-- Commands run and evidence obtained. -->
+## Validation and evidence
+
+Describe the checks actually performed, their results and evidence links. Explain checks not run and why. For documentation-only changes, record the relevant factual, reference and structural checks.
 
 ## Limitations and open questions
 
-<!-- State anything not validated or still blocked. -->
+Record assumptions, uncertainties, dependencies, blockers and follow-up work.
 
 ## Checklist
 
-- [ ] No secrets, restricted data, or unnecessary generated artifacts added.
-- [ ] Documentation and references are stored in the correct location.
-- [ ] Results distinguish observed evidence from fixture data.
-- [ ] Applicable tests pass.
-- [ ] Environment maturity status is accurate.
+- [ ] The PR is focused and linked to its tracking issue.
+- [ ] Applicable acceptance criteria have been checked.
+- [ ] Scientific claims are supported by sources; proposed methods and illustrative values are identified.
+- [ ] Environment status and reproducibility details are accurate where applicable.
+- [ ] No credentials, restricted data or unnecessary generated artifacts are included.
+- [ ] Appropriate reviewers have been requested.
+
+Review outcome: link completed reviews when available; do not claim approval before it is given.

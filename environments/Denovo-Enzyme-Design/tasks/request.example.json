@@ -1,0 +1,35 @@
+{
+  "task_id": "denovo_enzyme_001",
+  "reaction": {
+    "reactants": [
+      {"label": "ethyl acetate", "format": "smiles", "value": "CCOC(C)=O", "stoichiometry": 1},
+      {"label": "water", "format": "smiles", "value": "O", "stoichiometry": 1}
+    ],
+    "products": [
+      {"label": "acetic acid, identity before operating-pH normalization", "format": "smiles", "value": "CC(=O)O", "stoichiometry": 1},
+      {"label": "ethanol", "format": "smiles", "value": "CCO", "stoichiometry": 1}
+    ],
+    "intended_conversion": "Hydrolyze the ester bond to the corresponding carboxylate/acid and alcohol; normalize protonation and proton bookkeeping for the declared conditions."
+  },
+  "conditions": {
+    "pH": 7.0,
+    "temperature_C": 30.0,
+    "expression_host": "Escherichia coli",
+    "solvent": "aqueous; buffer composition must be resolved by the selected profile",
+    "salt_conditions": "profile-defined aqueous conditions; report the resolved composition"
+  },
+  "constraints": {
+    "length": {"min": 150, "max": 300},
+    "forbidden_sequence_features": [],
+    "property_targets": []
+  },
+  "execution": {
+    "final_count": 3,
+    "seed": 42,
+    "controller_mode": "fixed",
+    "max_generated": 100,
+    "max_refinements_per_lineage": 2,
+    "max_chemistry_candidates": 5,
+    "budget": {"wall_time_hours": 48, "cpu_core_hours": 500, "gpu_hours": 24}
+  }
+}
