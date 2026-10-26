@@ -1,0 +1,308 @@
+{
+  "schema_version": "0.1",
+  "benchmark": "GeoOpt agent qualification",
+  "agent_count": 18,
+  "counts": {
+    "review": 0,
+    "fail": 0,
+    "pass": 18
+  },
+  "results": [
+    {
+      "agent_id": "01",
+      "case": "malformed_structure",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_01_malformed_structure.json",
+      "expected_decision": "reject",
+      "evidence": {
+        "fixture_sha256": "93897a9838a4d537b8a7221c2096d384faaf253385906cd634e4bb3b45b1dee9"
+      },
+      "wall_time_seconds": 0.00010743085294961929,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "02",
+      "case": "connectivity_valence",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_02_connectivity_valence.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "6adbc742b6d080b8514ef6b768d97c0f9c253122db2df90e77042a3d10ee2fc7"
+      },
+      "wall_time_seconds": 7.524900138378143e-05,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "03",
+      "case": "distorted_start",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_03_distorted_start.json",
+      "expected_decision": "repair_or_review",
+      "evidence": {
+        "fixture_sha256": "7bd2660cd2be06f7d71d86e1484ed00acf8843f54031a64dfb3410b60705648c"
+      },
+      "wall_time_seconds": 0.00010622711852192879,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "04",
+      "case": "charge_multiplicity",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_04_charge_multiplicity.json",
+      "expected_decision": "reject",
+      "evidence": {
+        "fixture_sha256": "7e8d8e7999da32bac842e124bad97b69cde239a2a93e5a58d3b3b96cde34b624"
+      },
+      "wall_time_seconds": 0.00010575191117823124,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "05",
+      "case": "method_selection",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_05_method_selection.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "20df778cc9f4a88cff7ac7675f4c6d4249d6c752fe46f827067f3011486636af"
+      },
+      "wall_time_seconds": 0.00010732701048254967,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "06",
+      "case": "optimizer_selection",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_06_optimizer_selection.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "21892e525ee91e7773bc56151a9f56bd9e2fee40992aa368e365b6b86c9514e1"
+      },
+      "wall_time_seconds": 0.00011182785965502262,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "07",
+      "case": "coordinate_strategy",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_07_coordinate_strategy.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "94eb3c18445589a3f9c099109990c9cdcca1de65f187001d29341a4960e16e86"
+      },
+      "wall_time_seconds": 0.00010434002615511417,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "08",
+      "case": "constraint_validation",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_08_constraint_validation.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "a091543a96306bf332c93f88bd2e56dbc36d5c550f60fb7421cbc8808dcabc5b"
+      },
+      "wall_time_seconds": 0.00012377207167446613,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "09",
+      "case": "scf_failure",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_09_scf_failure.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "aa86e031ddbe7e79bdbc01b09b11a45e71f0f85cfb4b2b294da6957f6fe7dd63"
+      },
+      "wall_time_seconds": 0.00010602502152323723,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "10",
+      "case": "live_convergence",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_10_live_convergence.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "b4ae58c2e228acfb66ae17d34cf35b49c50612521d0cdeca32069df575c4e421",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 0.00010668998584151268,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "11",
+      "case": "stagnation_trace",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_11_stagnation_trace.json",
+      "expected_decision": "review",
+      "evidence": {
+        "fixture_sha256": "6b1df07cd8c7f43e34e904425a3e904305c0e726a3d84355480c3fc326f91e26"
+      },
+      "wall_time_seconds": 0.00011130515486001968,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "12",
+      "case": "gradient_validation",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_12_gradient_validation.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "4b50bb118f75d443cfa926a7d1fa537179544403186c401b6535f27655e4969d",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 0.00010848394595086575,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "13",
+      "case": "minimum_verification",
+      "status": "pass",
+      "execution": "live_hessian_engine",
+      "input": "tasks/agent_inputs/agent_13_minimum_verification.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "cc991eb4881946546b72f75eb8863f45635da8efaae828fe0db56b58320488d4",
+        "backend": "PySCF CPU Hessian",
+        "energy_hartree": -76.39913535146792,
+        "frequencies_cm-1": [
+          1346.870840030751,
+          4523.896983231075,
+          4717.371237494732
+        ],
+        "stationary_point": "local_minimum",
+        "scf_converged": true,
+        "all_frequencies_positive": true
+      },
+      "wall_time_seconds": 0.00011355103924870491,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "14",
+      "case": "multi_conformer",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_14_multi_conformer.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "c13de92ee89900eb333210c16ed0b0d9d3e9e696ad6380f7c7c2b6050b5c0185"
+      },
+      "wall_time_seconds": 0.00011940207332372665,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "15",
+      "case": "protein_ligand",
+      "status": "pass",
+      "execution": "live_qmmm_engine",
+      "input": "tasks/agent_inputs/agent_15_protein_ligand.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "61b62e55fdfe70f0c1a6c1657e68bfa8517c3c59badc369dddf6919722e29224",
+        "backend": "CPU",
+        "qualification_id": "GEOOPT-QMMM-PRODUCTION-001",
+        "total_atoms": 1876,
+        "qm_atoms": 28,
+        "mm_atoms": 1848,
+        "checks": {
+          "amber14_topology_created": true,
+          "partition_passed": true,
+          "qm_region_is_whole_noncovalent_residue": true,
+          "electronic_embedding_active": true,
+          "nonzero_mm_environment": true,
+          "scf_converged": true,
+          "energy_components_present": true
+        },
+        "warnings": [
+          "Non-standard residues detected: TSA. Parameterization may be required.",
+          "Non-standard residues present in system: TSA. Parameterize them for production MM force fields.",
+          "Non-standard residues detected: TSA. Parameterization may be required.",
+          "QM selection was resynchronized after preprocessing changed the PDB atom list."
+        ],
+        "source_sha256": "b637a1e59e669256aa18da1a26d9637981d48337874bf683cdd60def72dcfad5",
+        "all_required_checks_pass": true
+      },
+      "wall_time_seconds": 0.00011481903493404388,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "16",
+      "case": "resource_recovery",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_16_resource_recovery.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "75eb667ea388076eed254d78663d6cd82ffd1fe2941061bd3224a95c2d526d58"
+      },
+      "wall_time_seconds": 0.00010972097516059875,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "17",
+      "case": "final_quality",
+      "status": "pass",
+      "execution": "live_gpu_engine",
+      "input": "tasks/agent_inputs/agent_17_final_quality.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "e3fc567473b2132563bd67cba5bc43c0052ef1a9ffd17a443624636b5daaf536",
+        "backend": "GPU4PySCF+SciPy-BFGS",
+        "energy_hartree": -76.40702405124024,
+        "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+        "converged": true
+      },
+      "wall_time_seconds": 0.00010859197936952114,
+      "tokens": 0,
+      "retries": 0
+    },
+    {
+      "agent_id": "18",
+      "case": "orchestration",
+      "status": "pass",
+      "execution": "deterministic_fixture",
+      "input": "tasks/agent_inputs/agent_18_orchestration.json",
+      "expected_decision": "accept",
+      "evidence": {
+        "fixture_sha256": "01d1e4032d12d8a67547a2497a2c1d99318a777558607ba9b5c22d15b4d2d15f"
+      },
+      "wall_time_seconds": 0.00010518403723835945,
+      "tokens": 0,
+      "retries": 0
+    }
+  ]
+}

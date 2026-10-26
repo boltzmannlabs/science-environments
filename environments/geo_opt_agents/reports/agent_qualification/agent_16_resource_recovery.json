@@ -1,0 +1,14 @@
+{
+  "agent_id": "16",
+  "case": "resource_recovery",
+  "status": "pass",
+  "execution": "deterministic_fixture",
+  "input": "tasks/agent_inputs/agent_16_resource_recovery.json",
+  "expected_decision": "accept",
+  "evidence": {
+    "fixture_sha256": "75eb667ea388076eed254d78663d6cd82ffd1fe2941061bd3224a95c2d526d58"
+  },
+  "wall_time_seconds": 0.00010972097516059875,
+  "tokens": 0,
+  "retries": 0
+}

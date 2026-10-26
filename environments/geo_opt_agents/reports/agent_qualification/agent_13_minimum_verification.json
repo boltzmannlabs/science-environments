@@ -1,0 +1,24 @@
+{
+  "agent_id": "13",
+  "case": "minimum_verification",
+  "status": "pass",
+  "execution": "live_hessian_engine",
+  "input": "tasks/agent_inputs/agent_13_minimum_verification.json",
+  "expected_decision": "accept",
+  "evidence": {
+    "fixture_sha256": "cc991eb4881946546b72f75eb8863f45635da8efaae828fe0db56b58320488d4",
+    "backend": "PySCF CPU Hessian",
+    "energy_hartree": -76.39913535146792,
+    "frequencies_cm-1": [
+      1346.870840030751,
+      4523.896983231075,
+      4717.371237494732
+    ],
+    "stationary_point": "local_minimum",
+    "scf_converged": true,
+    "all_frequencies_positive": true
+  },
+  "wall_time_seconds": 0.00011355103924870491,
+  "tokens": 0,
+  "retries": 0
+}

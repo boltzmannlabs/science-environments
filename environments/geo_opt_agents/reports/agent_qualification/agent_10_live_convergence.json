@@ -1,0 +1,18 @@
+{
+  "agent_id": "10",
+  "case": "live_convergence",
+  "status": "pass",
+  "execution": "live_gpu_engine",
+  "input": "tasks/agent_inputs/agent_10_live_convergence.json",
+  "expected_decision": "accept",
+  "evidence": {
+    "fixture_sha256": "b4ae58c2e228acfb66ae17d34cf35b49c50612521d0cdeca32069df575c4e421",
+    "backend": "GPU4PySCF+SciPy-BFGS",
+    "energy_hartree": -76.40702405124024,
+    "max_gradient_hartree_per_bohr": 2.5875691811005908e-05,
+    "converged": true
+  },
+  "wall_time_seconds": 0.00010668998584151268,
+  "tokens": 0,
+  "retries": 0
+}
