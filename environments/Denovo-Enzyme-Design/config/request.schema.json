@@ -16,6 +16,18 @@
         "requested_profile_id": {"type": "string", "minLength": 1}
       }
     },
+    "assembly": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "description": "Optional user preference. Omission means resolve_from_evidence, never assume monomer. The resolved profile fixes assembly before generation.",
+      "properties": {
+        "mode": {"enum": ["resolve_from_evidence", "monomer", "homodimer"]},
+        "reference_structure": {"type": "string", "minLength": 1},
+        "reference_assembly_id": {"type": "string", "minLength": 1}
+      },
+      "dependentRequired": {"reference_assembly_id": ["reference_structure"]}
+    },
     "conditions": {
       "type": "object", "additionalProperties": false,
       "required": ["pH", "temperature_C", "expression_host", "solvent", "salt_conditions"],
@@ -24,7 +36,13 @@
         "temperature_C": {"type": "number", "exclusiveMinimum": -273.15},
         "expression_host": {"type": "string", "minLength": 1},
         "solvent": {"type": "string", "minLength": 1},
-        "salt_conditions": {"type": "string", "minLength": 1}
+        "salt_conditions": {"type": "string", "minLength": 1},
+        "protein_concentration_uM": {"type": "number", "exclusiveMinimum": 0, "description": "Concentration in micromolar under the declared basis. Omission is unresolved, not zero; resolve before making a required concentration-dependent claim."},
+        "protein_concentration_basis": {"enum": ["subunit_equivalents", "assembled_complexes"], "description": "Total concentration in subunit equivalents, or concentration of assembled complexes. The latter must not be assumed from total protein when assembly populations are unknown."}
+      },
+      "dependentRequired": {
+        "protein_concentration_uM": ["protein_concentration_basis"],
+        "protein_concentration_basis": ["protein_concentration_uM"]
       }
     },
     "constraints": {
@@ -32,6 +50,7 @@
       "required": ["length", "forbidden_sequence_features", "property_targets"],
       "properties": {
         "length": {
+          "description": "Residues per unique protein sequence, not the total residues in an assembled homodimer.",
           "type": "object", "additionalProperties": false,
           "required": ["min", "max"],
           "properties": {"min": {"type": "integer", "minimum": 1}, "max": {"type": "integer", "minimum": 1}}
@@ -44,7 +63,11 @@
       "type": "object", "additionalProperties": false,
       "required": ["final_count", "seed", "controller_mode", "max_generated", "max_refinements_per_lineage", "max_chemistry_candidates", "budget"],
       "properties": {
-        "final_count": {"type": "integer", "minimum": 1},
+        "final_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of distinct candidate assemblies; two homodimer chains count as one candidate."
+        },
         "seed": {"type": "integer", "minimum": 0},
         "controller_mode": {"enum": ["fixed", "rl_inference", "rl_training"]},
         "max_generated": {"type": "integer", "minimum": 1},

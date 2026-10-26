@@ -26,18 +26,23 @@ Denovo-Enzyme-Design/
 │   └── protocol.schema.json
 ├── tasks/
 │   ├── denovo_enzyme_001.md
-│   └── request.example.json
+│   ├── request.example.json
+│   └── homodimer.request.example.json
 └── tests/
     ├── ACCEPTANCE.md
     ├── validate_spec.py
     └── specification-validation.json
 ```
 
-The example request demonstrates the user-input contract. It is not a scientifically qualified reaction profile or a completed design run. No motifs, model weights, experimental results or invented benchmark scores are included.
+The [monomer request](tasks/request.example.json) and [homodimer request](tasks/homodimer.request.example.json) illustrate input syntax only. Conditions, design counts and budgets are illustrative, not approved run limits. Neither request supplies a qualified reaction profile or a completed design run. No motifs, model weights, experimental results or invented benchmark scores are included.
 
 ## Scope
 
-The initial supported implementation is intended for soluble, single-chain, cofactor-free enzymes with a qualified reaction profile. Metals, organic cofactors, membrane systems and multichain assemblies require separately qualified extensions. A generic reaction request does not imply universal chemistry support.
+The specified scope is soluble, cofactor-free **monomers and homodimers**. A monomer has one protein chain; a homodimer has two copies of one sequence. Each enabled assembly/reaction combination requires its own qualified profile and working capabilities. Heterodimers, larger assemblies, metals, organic cofactors and membrane systems require separately qualified extensions. No scientific runtime support is claimed by this specification.
+
+When assembly is unspecified, resolve it from biological evidence before generation; do not default to a monomer or infer it from the coordinate-file chain count. The homodimer path includes coupled sequence design, independent assembly assessment, interface checks and explicit active-site/state coverage. See [assembly requirements](ENVIRONMENT_SPEC.md#assembly-resolution-and-homodimer-contract).
+
+Contract version 2.0 adds assembly, chain and site fields to reaction profiles. Earlier profiles require explicit migration and renewed qualification for their declared scope; changing the version string is insufficient.
 
 The user supplies the conversion, conditions and requirements. The environment supplies mapped chemistry, catalytic motifs, state models, tool settings, thresholds and rewards from a versioned profile maintained by the scientific team.
 

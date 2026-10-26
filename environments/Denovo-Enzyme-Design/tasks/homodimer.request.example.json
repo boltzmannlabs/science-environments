@@ -1,0 +1,73 @@
+{
+  "task_id": "denovo_homodimer_example",
+  "reaction": {
+    "reactants": [
+      {
+        "label": "L-2-chloropropionate",
+        "format": "identifier",
+        "value": "(S)-2-chloropropanoate",
+        "stoichiometry": 1
+      },
+      {
+        "label": "water",
+        "format": "smiles",
+        "value": "O",
+        "stoichiometry": 1
+      }
+    ],
+    "products": [
+      {
+        "label": "D-lactate",
+        "format": "identifier",
+        "value": "(R)-lactate",
+        "stoichiometry": 1
+      },
+      {
+        "label": "chloride",
+        "format": "smiles",
+        "value": "[Cl-]",
+        "stoichiometry": 1
+      },
+      {
+        "label": "proton bookkeeping",
+        "format": "smiles",
+        "value": "[H+]",
+        "stoichiometry": 1
+      }
+    ],
+    "intended_conversion": "Illustrative L-DEX YL task: stereoinverting hydrolytic dehalogenation with full catalytic-cycle coverage. Resolve molecular identities and operating-pH bookkeeping before use. This is not a qualified profile."
+  },
+  "conditions": {
+    "pH": 7.0,
+    "temperature_C": 30.0,
+    "expression_host": "Escherichia coli",
+    "solvent": "aqueous; buffer composition must be resolved by the selected profile",
+    "salt_conditions": "profile-defined aqueous conditions; report the resolved composition"
+  },
+  "constraints": {
+    "length": {
+      "min": 200,
+      "max": 230
+    },
+    "forbidden_sequence_features": [],
+    "property_targets": []
+  },
+  "execution": {
+    "final_count": 1,
+    "seed": 42,
+    "controller_mode": "fixed",
+    "max_generated": 5,
+    "max_refinements_per_lineage": 2,
+    "max_chemistry_candidates": 1,
+    "budget": {
+      "wall_time_hours": 48,
+      "cpu_core_hours": 500,
+      "gpu_hours": 24
+    }
+  },
+  "assembly": {
+    "mode": "homodimer",
+    "reference_structure": "PDB:1JUD",
+    "reference_assembly_id": "1"
+  }
+}

@@ -1,11 +1,13 @@
-schema_version: "1.0"
+schema_version: "2.0"
 environment_id: denovo-enzyme-design
 maturity: Specification
 scientific_execution_included: false
 qualified_profiles_included: false
 
 scope:
-  protein_form: soluble_single_chain
+  protein_form: soluble
+  supported_assemblies: [monomer, homodimer]
+  request_assembly_fallback: resolve_from_evidence
   cofactors: none
   require_qualified_reaction_profile: true
   unsupported_science_status: PROTOCOL_REQUIRED
@@ -33,15 +35,17 @@ required_rule_groups:
   - solubility
   - aggregation
   - operating_compatibility
+  - assembly_and_interface
 
 stages:
   - id: prepare
     depends_on: []
-    capabilities: [chemical_normalization, qualified_profile_resolution]
+    capabilities: [chemical_normalization, biological_assembly_resolution, qualified_profile_resolution]
     output: 00_inputs
   - id: generate
     depends_on: [prepare]
     capabilities: [constrained_scaffold_and_sequence_generation]
+    homodimer_capabilities: [assembly_scaffold_generation, tied_sequence_design]
     output: 01_designs
   - id: sequence_screen
     depends_on: [generate]
@@ -50,10 +54,12 @@ stages:
   - id: fold
     depends_on: [sequence_screen]
     capabilities: [independent_fold_prediction, scaffold_and_catalytic_site_comparison]
+    homodimer_capabilities: [independent_full_assembly_prediction, interface_evidence_assessment, per_chain_and_site_checks]
     output: 03_folds
   - id: aggregation
     depends_on: [fold]
     capabilities: [structural_aggregation_and_hotspot_assessment]
+    homodimer_capabilities: [assembled_surface_assessment, profile_defined_dissociated_surface_assessment]
     output: 04_properties
   - id: complex
     depends_on: [aggregation]
@@ -65,17 +71,37 @@ stages:
     output: 06_states
   - id: chemistry
     depends_on: [catalytic_states]
-    capabilities: [conformational_sampling, coupled_quantum_mechanical_evaluation, reaction_path_and_transition_state_validation]
+    capabilities: [conformational_sampling, coupled_quantum_mechanical_evaluation, profile_defined_energy_or_free_energy_validation]
     output: 07_chemistry
   - id: evaluate
     depends_on: [chemistry]
     capabilities: [independent_frozen_gate_evaluation, diversity_clustering_and_ranking]
     output: 08_results
 
+assembly_contract:
+  unique_sequences_per_candidate: 1
+  length_basis: per_unique_sequence
+  candidate_count_basis: complete_assembly
+  biological_assembly_evidence: required
+  chain_and_site_mapping: required
+  homodimer_chain_sequences: identical
+  state_symmetry_and_occupancy: profile_defined
+  independent_assembly_evidence: required_for_homodimer
+  average_cannot_hide_required_site_failure: true
+  interface_confidence_is_catalysis: false
+  qualification_scope: computational_only
+  concentration_and_solution_domain: resolve_when_required_by_claim
+  concentration_basis: explicit_when_concentration_supplied
+  kinetic_comparison_basis: explicit_and_matched
+  site_rules: state_specific
+  prediction_templates_and_restraints: disclosed
+  design_provenance_and_reference_similarity: required
+
 refinement:
   capabilities: [constrained_structure_refinement, constrained_sequence_refinement]
   new_candidate_id: required
   preserve_fixed_catalytic_groups: true
+  preserve_assembly_and_tied_sequences: true
   invalidate_changed_candidate_evidence: true
 
 qualification:
@@ -98,7 +124,7 @@ controller:
   inference_policy: frozen
   held_out_policy: frozen
   actions: [generate, refine, evaluate_stage, discard, stop]
-  immutable_to_policy: [reaction, catalytic_groups, protocol, gates, reward_definition, required_stages, chemistry_reservation]
+  immutable_to_policy: [reaction, catalytic_groups, assembly, chain_mapping, site_coverage, protocol, gates, reward_definition, required_stages, chemistry_reservation]
   reward:
     per_required_rule_positive_weight: true
     weight_sum: 1.0
@@ -111,6 +137,13 @@ controller:
     terminal_incomplete: 0.0
     gamma: 1.0
     maximum_total_normalized_episode_cost: 1.0
+  assembly_decisions:
+    before_promotion: required
+    evidence_and_reason: required
+    missing_or_conflicting_evidence: unresolved
+    technical_retry: bounded_by_frozen_policy
+    method_switching_until_pass: forbidden
+    reject_or_refine_verified_failure: true
   artifacts: 09_rl
 
 budgets:
@@ -118,6 +151,7 @@ budgets:
   enforce_before_dispatch: true
   reserve_finalist_chemistry: true
   charge_retries: true
+  estimate_full_assembly_and_site_coverage: true
   relax_gates_when_exhausted: false
 
 benchmark:
