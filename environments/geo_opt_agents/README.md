@@ -7,10 +7,10 @@ fixtures, qualification reports and benchmark evidence.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Protocol configuration](config/environment.yaml)
+2. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
 3. [Task cards and results](examples/geo_opt_tasks/)
 4. [Qualification evidence](reports/agent_qualification/)
-5. [Acceptance plan](tests/ACCEPTANCE.md)
+5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
 
 ## Package structure
 
@@ -28,3 +28,22 @@ geo_opt_agents/
 
 The evaluator distinguishes convergence from minimum verification and records
 scientific, infrastructure, provenance and reporting failures separately.
+
+## Package structure
+
+```text
+geo_opt_agents/
+├── README.md
+├── ENVIRONMENT_SPEC.md
+├── config/
+│   ├── environment.yaml
+│   ├── request.schema.json
+│   └── protocol.schema.json
+├── examples/geo_opt_tasks/
+├── examples/geo_opt_results/
+├── reports/
+├── scripts/
+└── tests/
+    ├── ACCEPTANCE.md
+    └── specification-validation.json
+```

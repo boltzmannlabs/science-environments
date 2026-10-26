@@ -22,6 +22,34 @@ The 18 specialist contracts are listed in `agents/contracts.json`; the
 prototype wires the validation, SCF, orbital-identification, gap, and reporting
 checks into one deterministic path before specialist routing is expanded.
 
+## Read in this order
+
+1. [Environment specification](ENVIRONMENT_SPEC.md)
+2. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
+3. [Task inputs](tasks/) and [prototype results](results/prototype_results.json)
+4. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
+
+## Package structure
+
+```text
+homo_lumo_agents/
+├── README.md
+├── ENVIRONMENT_SPEC.md
+├── REFERENCES.md
+├── agents/contracts.json
+├── config/
+│   ├── environment.yaml
+│   ├── request.schema.json
+│   ├── protocol.json
+│   └── protocol.schema.json
+├── tasks/
+├── results/
+└── tests/
+    ├── ACCEPTANCE.md
+    ├── specification-validation.json
+    └── test_contract.py
+```
+
 ## Limitations
 
 Open-shell alpha/beta treatment, orbital visualization, production reference
