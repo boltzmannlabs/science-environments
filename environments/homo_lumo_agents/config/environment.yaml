@@ -1,0 +1,21 @@
+schema_version: "1.0"
+environment_id: homo-lumo-agents
+maturity: Implemented
+scientific_execution_included: true
+qualified_by_case: true
+contracts:
+  specification: ENVIRONMENT_SPEC.md
+  protocol: config/protocol.schema.json
+  tasks: tasks/
+  results: results/
+  specialist_contracts: agents/contracts.json
+backend:
+  initial: PySCF
+  protocol: RHF/STO-3G
+  open_shell_support: pending_qualification
+failure_categories: [invalid_input, unsupported_state, scf_nonconvergence, orbital_index_error, nonfinite_result, provenance_error, runtime_error]
+reproducibility:
+  record_engine_version: required
+  record_method_basis_charge_multiplicity: required
+  record_input_hashes: required
+  independent_repeats: required

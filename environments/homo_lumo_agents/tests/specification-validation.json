@@ -1,0 +1,8 @@
+{
+  "environment_id": "homo-lumo-agents",
+  "status": "PASS",
+  "validation_scope": "package structure, schemas, contracts and prototype checks",
+  "prototype_cases": ["HL-001-water", "HL-002-methane", "HL-003-benzene"],
+  "prototype_result": "3/3 passed with PySCF 2.12.1 RHF/STO-3G",
+  "limitations": ["closed-shell prototype only", "not an optical or fundamental gap", "open-shell and cross-method qualification pending"]
+}
