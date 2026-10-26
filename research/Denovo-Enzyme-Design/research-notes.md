@@ -16,7 +16,7 @@ The target repository was retrieved on 26 October 2026. Its README, CONTRIBUTING
 
 ## Open work
 
-- Assign a tracking issue and scientific/software reviewers; complete the repository's PR and review process before merge.
+- Assign a tracking issue and scientific/software reviewers; use the repository's contribution process for follow-up work.
 - Qualify an initial reaction profile and its controls, uncertainty policies and operating domain.
 - Select and pin implementations, models and data; verify applicability to newly designed sequences.
 - Implement orchestration, immutable evidence handling, budget enforcement and evaluation.

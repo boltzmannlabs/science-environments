@@ -57,6 +57,6 @@ This checks document links, schemas, the example request, stage dependencies and
 
 Repository location: `environments/Denovo-Enzyme-Design/`. Supporting research and sources are maintained in `research/Denovo-Enzyme-Design/`, following [CONTRIBUTING.md](../../CONTRIBUTING.md). The repository structure, contribution guidelines, PR template and license notice were read on 26 October 2026.
 
-This is a specification contribution on `feat/denovo-enzyme-design`. Issue linkage, a pull request and scientific/software review remain required before merge. Package checks do not establish a working or scientifically validated environment.
+This is a specification contribution. Issue linkage and scientific/software review remain pending. Package checks do not establish a working or scientifically validated environment.
 
 The repository's [LICENSE](../../LICENSE) states that license selection is pending; it is not a license grant. This package does not add a separate license or redistribute third-party code, weights or restricted datasets.
