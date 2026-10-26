@@ -1,0 +1,30 @@
+# Specialist Geometry-Optimisation Agents
+
+**Status: Implemented/validated evidence package.** This environment contains
+18 geometry-optimisation specialist contracts, frozen task inputs, engine
+fixtures, qualification reports and benchmark evidence.
+
+## Read in this order
+
+1. [Environment specification](ENVIRONMENT_SPEC.md)
+2. [Protocol configuration](config/environment.yaml)
+3. [Task cards and results](examples/geo_opt_tasks/)
+4. [Qualification evidence](reports/agent_qualification/)
+5. [Acceptance plan](tests/ACCEPTANCE.md)
+
+## Package structure
+
+```text
+geo_opt_agents/
+├── README.md
+├── ENVIRONMENT_SPEC.md
+├── config/environment.yaml
+├── examples/geo_opt_tasks/
+├── examples/geo_opt_results/
+├── reports/
+├── scripts/
+└── tests/
+```
+
+The evaluator distinguishes convergence from minimum verification and records
+scientific, infrastructure, provenance and reporting failures separately.
