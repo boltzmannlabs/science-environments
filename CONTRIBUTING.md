@@ -35,41 +35,17 @@ Code is not mandatory for every contribution. Documentation and scientific speci
 
 ---
 
-## 3. Standard Repository Structure
+## 3. Environment Folder Example
 
-Follow this structure where applicable. Do not create unnecessary directories or files for contributions that do not require them.
+Each environment lives under `environments/<environment-name>/`. This example shows one environment folder; research notes and references live under the matching directory in `research/`.
 
 ```text
-science-environments/
+environments/<environment-name>/
 ├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── research/
-│   ├── README.md
-│   ├── scRNAseq-environment/
-│   │   ├── research-notes.md
-│   │   └── references.md
-│   └── synthesis-route-gym/
-│       ├── research-notes.md
-│       └── references.md
-├── environments/
-│   ├── scRNAseq-environment/
-│   │   ├── README.md
-│   │   ├── ENVIRONMENT_SPEC.md
-│   │   ├── config/
-│   │   ├── tasks/
-│   │   └── tests/
-│   └── synthesis-route-gym/
-│       ├── README.md
-│       ├── ENVIRONMENT_SPEC.md
-│       ├── STATUS.md
-│       ├── config/
-│       ├── tasks/
-│       └── tests/
-├── docs/
-│   └── decisions/
-└── .github/
-    └── PULL_REQUEST_TEMPLATE.md
+├── ENVIRONMENT_SPEC.md
+├── config/
+├── tasks/
+└── tests/
 ```
 
 ### Directory guidelines
