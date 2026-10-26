@@ -1,4 +1,32 @@
-# synthesis-route-gym — preparation milestone status
+# synthesis-route-gym — environment status
+
+## Current update — 26 October 2026
+
+**Lifecycle status: In Progress.** This update tracks the Synthetic Chemistry environment contribution on `Rebolt`. The server-6 development workspace contains later local implementation; repository delivery, independent scientific review and broader integration remain separate checks. The historical preparation snapshot is preserved below.
+
+### Completed work
+
+- Reviewed Agent-Scientist and its existing chemistry connector; listed the five tools and checked access, inputs and outputs.
+- Identified sample targets, inventory sources and gaps; prepared the public development targets and a fixed inventory sample.
+- Set up AiZynthFinder, ran initial cases, captured real tool results and native route formats, and completed a bounded 20-target development baseline.
+- Defined route plausibility criteria and metrics with AI-assisted chemistry review, and separated development cases from locally reserved protected evaluation cases. Independent human SME sign-off and independent protected custody remain open.
+- Consolidated baseline results, failures and capability gaps; drafted task, route, action and observation schemas; defined environment actions, budgets, checks and scoring; and prepared the implementation backlog.
+
+These are documented development deliverables. Stock termination and route-format checks are computational evidence, not proof of a feasible synthesis or physical reagent availability.
+
+### In-progress repository work
+
+- Create the separate environment package and versioned schemas. **Local package and schema checks exist; contribution and review in this repository are in progress.**
+- Add task, inventory and route loaders with evidence storage. **Local loaders and storage checks exist; contribution and review in this repository are in progress.**
+- Confirm data and review support for condition and impurity task slices. **Narrow public development evidence exists; independent scientific review and validated outcome claims remain open.**
+
+The current tracked task is [Issue #14: add inventory and supported constraints to retrosynthesis tasks](https://github.com/boltzmannlabs/science-environments/issues/14). It distinguishes the existing local inventory and route checks from the remaining tool-specific integration and two-scenario validation.
+
+### Evidence and limits
+
+The server-6 workspace retains the source records under `agent-scientist-review-2026-10-19/`, `synthesis-benchmark-preparation/`, `synthesis-aizynthfinder-baseline/`, `synthesis-route-plausibility/`, `synthesis-evaluation-split/`, `synthesis-baseline-consolidation/`, `synthesis-route-contracts/`, `synthesis-environment-specification/`, `synthesis-environment-backlog/` and `synthesis-route-gym/IMPLEMENTATION-STATUS.md`. This status-only contribution does not copy raw tool outputs, model assets, protected answers or credentials. No repository environment code, independent chemistry sign-off or protected evaluation run is claimed by this update.
+
+## Historical preparation snapshot — 22 October 2026
 
 **Reporting cutoff:** Original Synthetic Chemistry preparation work through the development/evaluation case split.  
 **Prepared:** 22 October 2026.  
