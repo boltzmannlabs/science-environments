@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Boltzyme reaction profile contract",
+  "description": "Structural contract. Scientific qualification, cross-reference coverage, applicability and weight normalization also require semantic checks described in ENVIRONMENT_SPEC.md and tests/ACCEPTANCE.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_id", "version", "status", "scope", "reaction", "motif", "motif_map", "generator_conditions", "states", "steps", "chemistry", "rules", "tool_lock", "qualification_evidence", "execution_policy"],
+  "properties": {
+    "profile_id": {"$ref": "#/$defs/id"},
+    "version": {"$ref": "#/$defs/text"},
+    "status": {"enum": ["draft", "qualified", "deprecated"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["protein_form", "cofactors", "supported_hosts", "pH_range", "temperature_C_range", "condition_domain"],
+      "properties": {
+        "protein_form": {"const": "soluble_single_chain"},
+        "cofactors": {"const": "none"},
+        "supported_hosts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "pH_range": {"$ref": "#/$defs/range"},
+        "temperature_C_range": {"$ref": "#/$defs/range"},
+        "condition_domain": {"$ref": "#/$defs/text"}
+      }
+    },
+    "reaction": {"$ref": "#/$defs/artifact"},
+    "motif": {"$ref": "#/$defs/artifact"},
+    "motif_map": {"$ref": "#/$defs/artifact"},
+    "generator_conditions": {"$ref": "#/$defs/artifact"},
+    "states": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["state_id", "role", "model", "chemistry_definition"],
+        "properties": {
+          "state_id": {"$ref": "#/$defs/id"},
+          "role": {"enum": ["reactant", "intermediate", "product", "regenerated", "alternative"]},
+          "model": {"$ref": "#/$defs/artifact"},
+          "chemistry_definition": {"$ref": "#/$defs/artifact"}
+        }
+      }
+    },
+    "steps": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["step_id", "from_state", "to_state", "intended_bond_changes"],
+        "properties": {
+          "step_id": {"$ref": "#/$defs/id"},
+          "from_state": {"$ref": "#/$defs/id"},
+          "to_state": {"$ref": "#/$defs/id"},
+          "intended_bond_changes": {"$ref": "#/$defs/artifact"}
+        }
+      }
+    },
+    "chemistry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameterization", "qm_region_and_boundaries", "electronic_states", "method_settings", "sampling_settings", "path_search_settings", "controls", "uncertainty_policy", "allowed_barrier_types"],
+      "properties": {
+        "parameterization": {"$ref": "#/$defs/artifact"},
+        "qm_region_and_boundaries": {"$ref": "#/$defs/artifact"},
+        "electronic_states": {"$ref": "#/$defs/artifact"},
+        "method_settings": {"$ref": "#/$defs/artifact"},
+        "sampling_settings": {"$ref": "#/$defs/artifact"},
+        "path_search_settings": {"$ref": "#/$defs/artifact"},
+        "controls": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}},
+        "uncertainty_policy": {"$ref": "#/$defs/artifact"},
+        "allowed_barrier_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["electronic_energy", "free_energy"]}}
+      }
+    },
+    "rules": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/rule"}},
+    "tool_lock": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/tool"}},
+    "qualification_evidence": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "execution_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generation_presets", "refinement_presets", "cost_model", "minimum_chemistry_reservation", "diversity_and_ranking", "retry_policy", "allowed_edit_regions"],
+      "properties": {
+        "generation_presets": {"$ref": "#/$defs/artifact"},
+        "refinement_presets": {"$ref": "#/$defs/artifact"},
+        "cost_model": {"$ref": "#/$defs/artifact"},
+        "minimum_chemistry_reservation": {"$ref": "#/$defs/artifact"},
+        "diversity_and_ranking": {"$ref": "#/$defs/artifact"},
+        "retry_policy": {"$ref": "#/$defs/artifact"},
+        "allowed_edit_regions": {"$ref": "#/$defs/artifact"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "qualified"}}, "required": ["status"]},
+      "then": {"properties": {"qualification_evidence": {"minItems": 1}}}
+    }
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path_or_uri", "sha256", "description"],
+      "properties": {
+        "path_or_uri": {"$ref": "#/$defs/text"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "description": {"$ref": "#/$defs/text"}
+      }
+    },
+    "rule": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rule_id", "group", "required", "metric", "units", "state_ids", "step_ids", "reference_atoms", "acceptance", "applicability_and_uncertainty", "reward_weight", "reward_transform"],
+      "properties": {
+        "rule_id": {"$ref": "#/$defs/id"},
+        "group": {"enum": ["reaction_identity", "reactive_geometry", "protonation_and_stabilization", "states_and_chemical_steps", "fold_and_physical_integrity", "solubility", "aggregation", "operating_compatibility"]},
+        "required": {"type": "boolean"},
+        "metric": {"$ref": "#/$defs/text"},
+        "units": {"$ref": "#/$defs/text"},
+        "state_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "step_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "reference_atoms": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "acceptance": {
+          "type": "object", "additionalProperties": false,
+          "required": ["operator", "value"],
+          "properties": {
+            "operator": {"enum": ["ge", "le", "eq", "between", "in"]},
+            "value": {"type": ["number", "boolean", "string", "array"]}
+          }
+        },
+        "applicability_and_uncertainty": {"$ref": "#/$defs/artifact"},
+        "reward_weight": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "reward_transform": {
+          "oneOf": [
+            {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"const": "binary"}}},
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["kind", "lower", "upper", "higher_is_better"],
+              "properties": {
+                "kind": {"const": "bounded_linear"},
+                "lower": {"type": "number"},
+                "upper": {"type": "number"},
+                "higher_is_better": {"type": "boolean"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "tool": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tool_id", "model_weights", "dataset_snapshots", "license_access_record"],
+      "properties": {
+        "tool_id": {"$ref": "#/$defs/text"},
+        "code_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "container_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "model_weights": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+        "dataset_snapshots": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+        "license_access_record": {"$ref": "#/$defs/artifact"}
+      },
+      "anyOf": [{"required": ["code_commit"]}, {"required": ["container_digest"]}]
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "checked_at_utc": "2026-10-26T10:46:34.672087+00:00",
+  "environment_id": "denovo-enzyme-design",
+  "maturity": "Specification",
+  "validation_scope": "local specification consistency; no scientific execution",
+  "status": "PASS",
+  "checks_passed": 76,
+  "checks": [
+    {
+      "check": "required package files exist",
+      "status": "PASS"
+    },
+    {
+      "check": "request JSON Schema is structurally valid",
+      "status": "PASS"
+    },
+    {
+      "check": "request schema internal references resolve",
+      "status": "PASS"
+    },
+    {
+      "check": "protocol JSON Schema is structurally valid",
+      "status": "PASS"
+    },
+    {
+      "check": "protocol schema internal references resolve",
+      "status": "PASS"
+    },
+    {
+      "check": "example request passes structural and declared budget/range checks",
+      "status": "PASS"
+    },
+    {
+      "check": "missing reaction rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "zero shortlist count rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "zero required compute budget rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "unknown controller mode rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "reversed length bounds rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "shortlist above chemistry cap rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "chemistry cap above generation cap rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "non-finite numeric input rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "maturity remains Specification",
+      "status": "PASS"
+    },
+    {
+      "check": "no scientific implementation claimed",
+      "status": "PASS"
+    },
+    {
+      "check": "no qualified chemistry profile claimed",
+      "status": "PASS"
+    },
+    {
+      "check": "qualified reaction profile required",
+      "status": "PASS"
+    },
+    {
+      "check": "complete cost-ordered stage sequence",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede prepare",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede generate",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede sequence_screen",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede fold",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede aggregation",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede complex",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede catalytic_states",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede chemistry",
+      "status": "PASS"
+    },
+    {
+      "check": "dependencies precede evaluate",
+      "status": "PASS"
+    },
+    {
+      "check": "each stage has its own artifact location",
+      "status": "PASS"
+    },
+    {
+      "check": "scaffold and sequence generation precede sequence-property screening",
+      "status": "PASS"
+    },
+    {
+      "check": "stages specify operations independently of software selection",
+      "status": "PASS"
+    },
+    {
+      "check": "protocol and configuration agree on eight required rule groups",
+      "status": "PASS"
+    },
+    {
+      "check": "solubility, aggregation and chemistry are separate mandatory groups",
+      "status": "PASS"
+    },
+    {
+      "check": "qualification requires every mandatory rule",
+      "status": "PASS"
+    },
+    {
+      "check": "failed and unresolved evidence cannot qualify",
+      "status": "PASS"
+    },
+    {
+      "check": "hard-rule failures cannot be compensated",
+      "status": "PASS"
+    },
+    {
+      "check": "failed designs cannot fill a shortlist",
+      "status": "PASS"
+    },
+    {
+      "check": "missing raw measurements remain null",
+      "status": "PASS"
+    },
+    {
+      "check": "every required rule has positive normalized reward weight",
+      "status": "PASS"
+    },
+    {
+      "check": "bounded potential with finite-episode discount",
+      "status": "PASS"
+    },
+    {
+      "check": "episode cost normalization is bounded",
+      "status": "PASS"
+    },
+    {
+      "check": "configured reward bounds preserve terminal-outcome ordering",
+      "status": "PASS"
+    },
+    {
+      "check": "RL development and held-out evaluation are separated",
+      "status": "PASS"
+    },
+    {
+      "check": "scientific acceptance and chemistry reservation are immutable to policy",
+      "status": "PASS"
+    },
+    {
+      "check": "budgets reserve chemistry and cannot relax gates",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark uses equal compute and a frozen evaluator",
+      "status": "PASS"
+    },
+    {
+      "check": "task preserves reference section order with execution steps replacing the software list",
+      "status": "PASS"
+    },
+    {
+      "check": "task specifies required operations rather than adapter names",
+      "status": "PASS"
+    },
+    {
+      "check": "agent task contains all fourteen ordered execution steps",
+      "status": "PASS"
+    },
+    {
+      "check": "environment specification contains all fourteen ordered execution steps",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tasks/denovo_enzyme_001.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> config/environment.yaml",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> config/request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tests/ACCEPTANCE.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tests/specification-validation.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ../../research/Denovo-Enzyme-Design/research-notes.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ../../research/Denovo-Enzyme-Design/references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ../../CONTRIBUTING.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ../../LICENSE",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> config/request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> tests/ACCEPTANCE.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> ../../research/Denovo-Enzyme-Design/research-notes.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> ../../research/Denovo-Enzyme-Design/references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tests/ACCEPTANCE.md -> specification-validation.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> request.example.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: research/Denovo-Enzyme-Design/research-notes.md -> ../../environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: research/Denovo-Enzyme-Design/research-notes.md -> references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: research/Denovo-Enzyme-Design/research-notes.md -> ../../LICENSE",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: research/Denovo-Enzyme-Design/research-notes.md -> ../../environments/Denovo-Enzyme-Design/tests/ACCEPTANCE.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: research/Denovo-Enzyme-Design/references.md -> ../../environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "package contains navigable local documentation links",
+      "status": "PASS"
+    }
+  ],
+  "dependencies": {
+    "python": "3.13.7",
+    "jsonschema": "4.19.2",
+    "PyYAML": "6.0.2"
+  },
+  "file_sha256": {
+    "README.md": "8a4fee98f3a2563044e1e7c143161935c10987aa125bda019c647fd6b235da63",
+    "ENVIRONMENT_SPEC.md": "41273c31a72e07c546b13b46b478bdfbd97d6a411ae64bf127f43fce91989baa",
+    "config/environment.yaml": "551b40026a24027e7102135e548e7b06e40dcf57c2cada715b930c4347b9629b",
+    "config/request.schema.json": "98a0f6d5a244425a2811ed9bc299c24217497cdb3f786a9735100a63a3bd273f",
+    "config/protocol.schema.json": "45047d0491bfb5101f3da0fc31e293c74b2ba52534584c8bdae54e5fbc748852",
+    "tasks/denovo_enzyme_001.md": "adda300e284652e124e7be6b029ab85f5614a803ad86e130ac7e669676c81192",
+    "tasks/request.example.json": "43d7e1c6b54419ed6c70f57c86bb6e0d390579da715c25b5aca5925f07820157",
+    "tests/ACCEPTANCE.md": "63b48e0c5b1377e11159716a886729480fd8acdd594d9c875f42f176ab950340",
+    "tests/validate_spec.py": "5322fa028dbd1e93a824b96e73be17679cf5baab37ecdd8672291792e56a67e6",
+    "../../research/Denovo-Enzyme-Design/research-notes.md": "ccc06915e9d79f6fe56ec9188c93fe2ae513da23821db595e66654966e3582a6",
+    "../../research/Denovo-Enzyme-Design/references.md": "b56147ea317257a1644bb8008fa78d56f57ed4660157e93fea798244457f7fd2"
+  },
+  "not_performed": [
+    "qualification of a complete reaction profile",
+    "scientific tool installation or execution",
+    "chemical-structure validation of the example reaction",
+    "RL training or inference",
+    "computational or experimental enzyme benchmarking"
+  ]
+}
