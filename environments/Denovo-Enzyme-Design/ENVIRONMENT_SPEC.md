@@ -1,4 +1,4 @@
-# Environment specification: de novo enzyme design
+# Denovo Enzyme Design — Environment Specification
 
 **Environment ID:** `denovo-enzyme-design`
 

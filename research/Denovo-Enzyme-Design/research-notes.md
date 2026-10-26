@@ -1,4 +1,4 @@
-# De novo enzyme design — research notes
+# Denovo Enzyme Design — Research Notes
 
 ## Scope and rationale
 
@@ -10,7 +10,7 @@ These are design requirements, not measured outcomes. No qualified reaction prof
 
 ## Provenance and repository review
 
-The source is the Boltzyme developer handoff dated 22 October 2026. The package reorganizes that specification into task, input/configuration contracts and acceptance requirements. Scientific references and task-format attribution are maintained once in [references.md](references.md).
+The source is the Denovo Enzyme Design developer handoff dated 22 October 2026. The package reorganizes that specification into task, input/configuration contracts and acceptance requirements. Scientific references and task-format attribution are maintained once in [references.md](references.md).
 
 The target repository was retrieved on 26 October 2026. Its README, CONTRIBUTING.md, LICENSE and PR template were read. The environment and research directories follow the current layout. The [repository license notice](../../LICENSE) explicitly leaves license selection pending; it grants no license. Third-party assets retain their separate access and licensing requirements.
 

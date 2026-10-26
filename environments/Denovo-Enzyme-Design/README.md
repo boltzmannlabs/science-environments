@@ -1,4 +1,4 @@
-# Boltzyme: de novo enzyme design
+# Denovo Enzyme Design
 
 **Status: Specification.** This package specifies an end-to-end computational environment. It does not implement or validate the scientific pipeline.
 
@@ -53,7 +53,7 @@ This checks document links, schemas, the example request, stage dependencies and
 
 ## Contribution and licensing
 
-**Owner:** [srivani1303](https://github.com/srivani1303). **Tracking issue and reviewers:** pending assignment.
+**Owner, tracking issue and reviewers:** pending assignment.
 
 Repository location: `environments/Denovo-Enzyme-Design/`. Supporting research and sources are maintained in `research/Denovo-Enzyme-Design/`, following [CONTRIBUTING.md](../../CONTRIBUTING.md). The repository structure, contribution guidelines, PR template and license notice were read on 26 October 2026.
 

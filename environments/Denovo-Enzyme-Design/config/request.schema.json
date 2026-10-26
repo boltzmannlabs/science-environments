@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Boltzyme user request",
+  "title": "Denovo Enzyme Design user request",
   "type": "object",
   "additionalProperties": false,
   "required": ["task_id", "reaction", "conditions", "constraints", "execution"],

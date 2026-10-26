@@ -1,4 +1,4 @@
-# De novo enzyme design — references
+# Denovo Enzyme Design — References
 
 Sources support the [environment specification](../../environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md); they do not establish that the proposed environment has been implemented or validated.
 
