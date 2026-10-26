@@ -44,39 +44,44 @@ science-environments/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE
-├── docs/
-│   ├── architecture.md
-│   ├── environment-lifecycle.md
-│   └── decisions/
+├── research/
+│   ├── README.md
+│   ├── enzyme-optimization/
+│   │   ├── research-notes.md
+│   │   └── references.md
+│   └── protein-stability/
+│       ├── research-notes.md
+│       └── references.md
 ├── environments/
-│   └── <environment-name>/
+│   ├── enzyme-optimization/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── config/
+│   │   ├── tasks/
+│   │   └── tests/
+│   └── protein-stability/
 │       ├── README.md
-│       ├── ENVIRONMENT_SPEC.md
-│       ├── REFERENCES.md
-│       ├── config/
-│       ├── tasks/
-│       ├── tests/
-│       └── results/
-├── examples/
-├── .github/
-│   ├── CODEOWNERS
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── ISSUE_TEMPLATE/
-└── [project-specific dependency and validation files]
+│       └── ENVIRONMENT_SPEC.md
+├── docs/
+│   └── decisions/
+└── .github/
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
 ### Directory guidelines
 
 - `docs/`: Repository-wide documentation and architectural decisions.
+- `research/`: Research notes and references, grouped by scientific topic. Use `research-notes.md` and `references.md` within each topic directory.
 - `environments/`: Individual scientific environments and their specifications.
 - `config/`: Environment-specific configuration files.
 - `tasks/`: Task definitions, input examples and expected output contracts.
 - `tests/`: Validation tests for executable environments, where applicable.
 - `results/`: Small, necessary, versioned example results or validation summaries. Do not commit large generated datasets or unrestricted experimental outputs.
-- `examples/`: General usage examples and demonstrations.
 - `.github/`: Contribution templates, ownership and repository workflow configuration.
 
-The final structure should be adapted to the repository's agreed architecture. Avoid duplicate documentation and do not commit empty directories solely to match this example.
+Link environment specifications to the corresponding research notes and references. Keep scientific source lists in one place rather than duplicating them across research and environment directories.
+
+The agreed base structure uses `.gitkeep` files for reserved empty directories. Remove a directory's `.gitkeep` when substantive files are added. Create additional directories only when required by the contribution.
 
 ---
 
@@ -150,7 +155,8 @@ For a new environment specification, include the following where applicable:
 
 - `README.md`: Environment overview and usage status.
 - `ENVIRONMENT_SPEC.md`: Scientific objective, methodology, inputs, outputs, constraints and evaluation criteria.
-- `REFERENCES.md`: Relevant papers, datasets and software references.
+- `research/<environment-name>/research-notes.md`: Supporting scientific research, findings and open questions.
+- `research/<environment-name>/references.md`: Relevant papers, datasets and software references, linked from the environment specification.
 - Configuration files: Required settings and dependency definitions.
 - Task definitions: Input contracts and expected output formats.
 - Tests or validation reports: Evidence that the environment meets its defined requirements.
@@ -159,7 +165,7 @@ For research-only contributions, submit a structured research document with sour
 
 For documentation-only contributions, edit the appropriate Markdown file and explain the change in the PR.
 
-Do not add placeholder files, unsupported claims, fabricated results or unnecessary artifacts just to fill the directory structure.
+The initial repository outlines are explicitly marked as proposed and incomplete. When preparing a substantive deliverable, replace drafting prompts with supported content. Do not claim that an outline or `.gitkeep` file provides scientific evidence, an implementation or validation.
 
 ### Step 5: Validate the contribution
 
@@ -290,7 +296,7 @@ A contributor is assigned to design an enzyme optimization environment.
 2. Create a branch such as `feat/enzyme-optimization`.
 3. Add `environments/enzyme-optimization/README.md`.
 4. Add `environments/enzyme-optimization/ENVIRONMENT_SPEC.md`.
-5. Add `environments/enzyme-optimization/REFERENCES.md`.
+5. Add or update `research/enzyme-optimization/research-notes.md` and `research/enzyme-optimization/references.md`, and link them from the environment documents.
 6. Document the objective, scientific rationale, input and output contracts, evaluation criteria, assumptions and limitations.
 7. Validate the documentation and references.
 8. Open a PR and link the issue.
