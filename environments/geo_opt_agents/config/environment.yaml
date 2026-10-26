@@ -1,0 +1,26 @@
+schema_version: "1.0"
+environment_id: geo-opt-agents
+maturity: Implemented
+scientific_execution_included: true
+qualified_by_case: true
+contracts:
+  specification: ENVIRONMENT_SPEC.md
+  tasks: examples/geo_opt_tasks/
+  results: examples/geo_opt_results/
+  qualification: reports/agent_qualification/
+failure_categories:
+  - invalid_input
+  - invalid_connectivity
+  - unsupported_state_or_method
+  - scf_nonconvergence
+  - geometry_nonconvergence
+  - stagnation
+  - constraint_violation
+  - resource_failure
+  - provenance_error
+  - reporting_error
+reproducibility:
+  record_engine_version: required
+  record_method_basis_charge_multiplicity: required
+  record_input_hashes: required
+  independent_repeats: required

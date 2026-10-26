@@ -1,0 +1,22 @@
+schema_version: "1.0"
+environment_id: spe-agents
+maturity: Implemented
+scientific_execution_included: true
+qualified_by_case: true
+contracts:
+  specification: ENVIRONMENT_SPEC.md
+  acceptance: tests/ACCEPTANCE.md
+  benchmark: ../../benchmarking/spe_agents/
+failure_categories:
+  - invalid_input
+  - unsupported_method_or_state
+  - scf_nonconvergence
+  - missing_reference
+  - provenance_error
+  - runtime_error
+  - reporting_error
+reproducibility:
+  record_engine_version: required
+  record_method_basis_charge_multiplicity: required
+  record_input_hashes: required
+  independent_repeats: required
