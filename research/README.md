@@ -1,10 +1,10 @@
 # Research
 
-Store research notes and scientific references by topic. Link each environment specification to its corresponding research documents.
+Store research notes and scientific references by environment. Link each specification to its supporting notes and references. The linked materials should distinguish recorded evidence from planned work.
 
 | Topic | Notes | References | Environment |
 | --- | --- | --- | --- |
-| Enzyme optimization | [Research notes](enzyme-optimization/research-notes.md) | [References](enzyme-optimization/references.md) | [Environment outline](../environments/enzyme-optimization/README.md) |
-| Protein stability | [Research notes](protein-stability/research-notes.md) | [References](protein-stability/references.md) | [Environment outline](../environments/protein-stability/README.md) |
+| scRNA-seq cell type annotation | [Research notes](scRNAseq-environment/research-notes.md) | [References](scRNAseq-environment/references.md) | [Environment](../environments/scRNAseq-environment/README.md) |
+| Synthesis route planning | [Research notes](synthesis-route-gym/research-notes.md) | [References](synthesis-route-gym/references.md) | [Environment](../environments/synthesis-route-gym/README.md) |
 
-These entries are drafting outlines. No findings or verified sources have been recorded yet. Record sources, findings, uncertainties and next steps as research is completed; keep proposed methods separate from observed evidence.
+Record sources, findings, uncertainty and open questions in the topic files. Keep dated status snapshots linked to their original scope; update the environment README when its current maturity changes.

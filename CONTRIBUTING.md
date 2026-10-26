@@ -46,22 +46,26 @@ science-environments/
 ├── LICENSE
 ├── research/
 │   ├── README.md
-│   ├── enzyme-optimization/
+│   ├── scRNAseq-environment/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   └── protein-stability/
+│   └── synthesis-route-gym/
 │       ├── research-notes.md
 │       └── references.md
 ├── environments/
-│   ├── enzyme-optimization/
+│   ├── scRNAseq-environment/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   └── protein-stability/
+│   └── synthesis-route-gym/
 │       ├── README.md
-│       └── ENVIRONMENT_SPEC.md
+│       ├── ENVIRONMENT_SPEC.md
+│       ├── STATUS.md
+│       ├── config/
+│       ├── tasks/
+│       └── tests/
 ├── docs/
 │   └── decisions/
 └── .github/
@@ -71,7 +75,7 @@ science-environments/
 ### Directory guidelines
 
 - `docs/`: Repository-wide documentation and architectural decisions.
-- `research/`: Research notes and references, grouped by scientific topic. Use `research-notes.md` and `references.md` within each topic directory.
+- `research/`: Research notes and references, grouped by environment. Use `research-notes.md` and `references.md` within each environment directory.
 - `environments/`: Individual scientific environments and their specifications.
 - `config/`: Environment-specific configuration files.
 - `tasks/`: Task definitions, input examples and expected output contracts.
@@ -140,8 +144,8 @@ Use the following naming conventions:
 
 Examples:
 
-- `feat/enzyme-optimization`
-- `research/protein-stability`
+- `feat/scRNAseq-environment`
+- `research/synthesis-route-gym`
 - `docs/environment-lifecycle`
 - `feat/environment-evaluation`
 
@@ -165,7 +169,7 @@ For research-only contributions, submit a structured research document with sour
 
 For documentation-only contributions, edit the appropriate Markdown file and explain the change in the PR.
 
-The initial repository outlines are explicitly marked as proposed and incomplete. When preparing a substantive deliverable, replace drafting prompts with supported content. Do not claim that an outline or `.gitkeep` file provides scientific evidence, an implementation or validation.
+Label specifications as proposed or in progress until their requirements and evidence support a later status. Replace drafting prompts with supported content before treating a document as a finished deliverable. A `.gitkeep` file does not provide scientific evidence, an implementation or validation.
 
 ### Step 5: Validate the contribution
 
@@ -205,8 +209,8 @@ Recommended format:
 
 Examples:
 
-- `docs: add enzyme optimization specification`
-- `research: document protein stability methods`
+- `docs: add scRNA-seq environment specification`
+- `research: document synthesis route evidence`
 - `feat: add environment task definition`
 - `test: add environment validation checks`
 - `fix: correct configuration validation`
@@ -288,15 +292,15 @@ Non-code contributors must follow the same issue, branch, PR and review workflow
 
 ### Example: Scientific environment proposal
 
-A contributor is assigned to design an enzyme optimization environment.
+A contributor is assigned to develop a scRNA-seq environment specification.
 
 **Expected workflow:**
 
 1. Create or update the GitHub Issue.
-2. Create a branch such as `feat/enzyme-optimization`.
-3. Add `environments/enzyme-optimization/README.md`.
-4. Add `environments/enzyme-optimization/ENVIRONMENT_SPEC.md`.
-5. Add or update `research/enzyme-optimization/research-notes.md` and `research/enzyme-optimization/references.md`, and link them from the environment documents.
+2. Create a branch such as `feat/scRNAseq-environment`.
+3. Add or update `environments/scRNAseq-environment/README.md`.
+4. Add or update `environments/scRNAseq-environment/ENVIRONMENT_SPEC.md`.
+5. Add or update `research/scRNAseq-environment/research-notes.md` and `research/scRNAseq-environment/references.md`, and link them from the environment documents.
 6. Document the objective, scientific rationale, input and output contracts, evaluation criteria, assumptions and limitations.
 7. Validate the documentation and references.
 8. Open a PR and link the issue.

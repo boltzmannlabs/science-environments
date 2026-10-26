@@ -141,3 +141,8 @@ The evaluation should define how marker overlap is measured and account for diff
 
 Check that required outputs exist, can be parsed, and contain valid identifiers and annotations. Verify that the workflow and software configuration are recorded and that results can be reproduced within defined tolerances.
 
+## Research notes and references
+
+- [Research notes](../../research/scRNAseq-environment/research-notes.md)
+- [References](../../research/scRNAseq-environment/references.md)
+
