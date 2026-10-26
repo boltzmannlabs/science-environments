@@ -4,40 +4,18 @@ Scientific environment specifications, research, workflows, and implementations 
 
 Research notes and sources are organized by environment in `research/`. Environment requirements, configuration, tasks, and applicable tests are organized in `environments/`.
 
-## Structure
+## Example environment folder
 
 ```text
-science-environments/
+environments/scRNAseq-environment/
 ├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── research/
-│   ├── README.md
-│   ├── scRNAseq-environment/
-│   │   ├── research-notes.md
-│   │   └── references.md
-│   └── synthesis-route-gym/
-│       ├── research-notes.md
-│       └── references.md
-├── environments/
-│   ├── scRNAseq-environment/
-│   │   ├── README.md
-│   │   ├── ENVIRONMENT_SPEC.md
-│   │   ├── config/
-│   │   ├── tasks/
-│   │   └── tests/
-│   └── synthesis-route-gym/
-│       ├── README.md
-│       ├── ENVIRONMENT_SPEC.md
-│       ├── STATUS.md
-│       ├── config/
-│       ├── tasks/
-│       └── tests/
-├── docs/
-│   └── decisions/
-└── .github/
-    └── PULL_REQUEST_TEMPLATE.md
+├── ENVIRONMENT_SPEC.md
+├── config/
+├── tasks/
+└── tests/
 ```
+
+Each environment has its own folder. Research notes and references are linked from its README.
 
 Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), or [synthesis route environment](environments/synthesis-route-gym/README.md).
 
