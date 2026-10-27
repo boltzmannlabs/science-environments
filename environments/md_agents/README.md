@@ -7,9 +7,11 @@ been implemented or scientifically qualified.
 
 ## Scope
 
-The package contains 20 reusable MD execution/analysis specialists and 10
-online literature, model and dataset provenance specialists. The same contracts
-can support protein-ligand, membrane, free-energy, coarse-grained, materials,
+The package contains 20 reusable MD execution/analysis specialists, 10 online
+literature/model/dataset provenance specialists, and 20 domain-specific
+specialists for folding, interfaces, nucleic acids, free energy, QM/MM,
+learned potentials, reproducibility and qualification. The same contracts can
+support protein-ligand, membrane, free-energy, coarse-grained, materials,
 QM/MM and learned-potential environments.
 
 ## Read in this order

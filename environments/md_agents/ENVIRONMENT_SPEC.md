@@ -25,6 +25,15 @@ Literature discovery; model/checkpoint discovery; dataset discovery; download
 and cache; model compatibility; dataset integrity; scientific reproduction;
 model evaluation/selection; resource updates; and provenance/licensing.
 
+### Domain specialists (MD-31–MD-50)
+
+Folding/misfolding; protein interfaces; membrane proteins; nucleic acids;
+enzyme mechanisms; hydration; clustering; Markov state models; transition
+paths; replica exchange; PMFs; unbinding; relative affinity; QM/MM regions;
+ML-potential validation; adaptive sampling; reproducibility auditing;
+statistical convergence; benchmark dataset construction; and end-to-end
+qualification orchestration.
+
 ## Required evidence
 
 Every run records system inputs, topology/parameters, engine and version,

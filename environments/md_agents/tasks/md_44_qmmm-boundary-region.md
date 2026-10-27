@@ -1,0 +1,51 @@
+# Task: md_44_qmmm-boundary-region
+
+**Task family:** qm/mm boundary and region specialist. **Status:** specification; execution and qualification require a supported MD profile. This task follows the repository's BioDesignBench-style structure.
+
+## Description
+
+Check QM-region selection, link atoms, boundary treatment and sensitivity plans. Use the [environment specification](../ENVIRONMENT_SPEC.md) for the shared contract. Do not invent trajectories, model suitability, benchmark scores or uncertainty.
+
+## Target
+
+- **System/resource:** QM/MM topology, region map, link atoms and coupling settings.
+- **Specialist decision:** QM/MM Boundary and Region Specialist.
+- **Evidence:** preserve inputs, versions, settings, seeds, hashes, logs and outputs.
+- **Status:** return PASS, FAIL, REVIEW, NEEDS_INPUT, PROTOCOL_REQUIRED or BLOCKED based on evidence.
+
+## Design Constraints
+
+- Preserve molecular identity, topology, parameters, units, state definitions and declared analysis settings.
+- Use only supported engines, models, data and resource permissions.
+- Keep numerical, sampling, scientific, infrastructure, provenance and license failures separate.
+- A stable trajectory, high score or plausible pathway is not sufficient evidence for unsupported claims.
+
+## Required Execution Steps
+
+1. Resolve and validate the task request and required artifacts.
+2. Freeze the system, protocol, versions, seeds, resource limits and source metadata.
+3. Run the specialist operation or inspect the supplied fixture.
+4. Independently validate outputs against domain-specific acceptance rules.
+5. Record raw artifacts, decision, failure category, runtime/cost and provenance.
+6. Return unresolved or unsupported requirements explicitly.
+
+## Expected Output
+
+**Format:** md_task_bundle.
+
+Required output includes a readable report, machine-readable decision, settings and versions, units, hashes, resource use, uncertainty, limitations and exact stop reason. Missing or unconverged evidence remains unresolved and is never fabricated.
+
+## Constraints
+
+- **Compute/time:** obey declared budgets; retries and sampling extensions are bounded and recorded.
+- **Knowledge/data:** use versioned, licensed resources and declared source cutoffs.
+- **Scope:** computational evidence only; do not infer mechanism, affinity, kinetics or experimental activity from insufficient trajectory evidence.
+- **Reproducibility:** preserve native artifacts, normalized metrics, seeds, hardware, code/model/data revisions and failed attempts.
+
+## Important Instructions
+
+- Do not silently replace force fields, engines, checkpoints, datasets, topology, analysis settings or acceptance criteria.
+- Do not relax gates to obtain a pass.
+- Distinguish reproduced published results from new observations and unverified claims.
+- Preserve all task lineage and audit evidence.
+
