@@ -32,6 +32,9 @@ and 15 specialist contracts in
 [`agents/fep_agent_contracts.json`](agents/fep_agent_contracts.json). Each
 family has a uniform task card in `tasks/fep_env_*.md`, covering inputs,
 execution, independent evaluation, acceptance criteria, and failure status.
+Each of the 15 specialist agents has a corresponding detailed task card in
+`tasks/fep_ag*.md`; the 10 problem-solving agents are documented in
+`tasks/fep_ps*.md`.
 
 ## Executable calculation evidence
 
@@ -76,7 +79,7 @@ fep_ti_agents/
 ├── agents/contracts.json
 ├── agents/fep_environment_contracts.json / fep_agent_contracts.json
 ├── config/
-├── tasks/ (10 problem-solving cards + 15 environment cards)
+├── tasks/ (15 specialist cards + 10 problem-solving cards + 15 environment cards)
 ├── results/
 ├── scripts/
 └── tests/
