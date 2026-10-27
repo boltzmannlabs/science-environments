@@ -49,6 +49,25 @@ protein–ligand FEP result. Production qualification still requires a supported
 engine, molecular topology and parameters, real trajectories, frozen reference
 data, and independent repeats.
 
+## Molecular benchmark manifest
+
+[`benchmarks/sampl6/manifest.json`](benchmarks/sampl6/manifest.json) pins a
+bounded SAMPL6 OA-G3/OA-G6 pair, including structures-at-source URLs, guest
+SMILES, experimental ΔG values, the OA-G3→OA-G6 relative target (0.21 ± 0.028
+kcal/mol), and 12 controlled fault-injection cases. The manifest deliberately
+does not vendor multi-megabyte topology/trajectory files. Use the recorded
+upstream revision and URLs to retrieve them, verify hashes, and record the
+actual revision before engine execution.
+
+Validate the manifest with:
+
+```bash
+python scripts/validate_sampl6_manifest.py
+```
+
+This is a benchmark input/provenance layer; it does not claim that the
+SAMPL6 molecular simulations have already been executed.
+
 ## Package structure
 
 ```text
