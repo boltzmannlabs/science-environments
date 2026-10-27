@@ -14,7 +14,7 @@ run.
 `QMMM-PS07` trajectory failure recovery.
 
 The reusable shared recovery layer is in
-[`../problem_solving_agents`](../problem_solving_agents/). This package keeps
+[`../md_agents/recovery_agents/cross_domain`](../md_agents/recovery_agents/cross_domain/). This package keeps
 the QM/MM task contract and evidence local while reusing those runtime rules.
 
 Run the fixture validator:
