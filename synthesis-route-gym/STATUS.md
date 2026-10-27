@@ -58,12 +58,3 @@ The server-6 workspace retains the source records under `agent-scientist-review-
 1. Consolidate baseline results, failures and capability gaps.
 2. Draft task, route, action and observation schemas.
 
-## Evidence retained in the server-6 working workspace
-
-The status-only repository update does not copy raw tool outputs, model assets, reference answers or credentials. Supporting records are retained under:
-
-- `agent-scientist-review-2026-10-19/` — runtime/connector review and five-tool captures.
-- `synthesis-benchmark-preparation/` — target, inventory and source preparation.
-- `synthesis-aizynthfinder-baseline/` — pinned setup, pilot and 20-target baseline artifacts.
-- `synthesis-route-plausibility/` — criteria, metrics and review records.
-- `synthesis-evaluation-split/` — split protocol and aggregate checks; evaluator-side answers remain separate.
