@@ -29,6 +29,11 @@ Run the deterministic fixture harness:
 python scripts/run_harness.py
 ```
 
+Use `scripts/run_orchestrator.py` to exercise the routed workflow. It runs the
+shared gates first, selects only the relevant domain specialists, preserves an
+input hash, and enforces one bounded retry. The resulting audit is written to
+`results/orchestrator_results.json`.
+
 The harness tests diagnosis and safe stopping on frozen evidence packets. Real
 engine adapters and held-out scientific references remain required for domain
 qualification.
