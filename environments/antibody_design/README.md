@@ -19,7 +19,7 @@ This package uses the repository's science-environment conventions for task defi
 6. [Environment specification](ENVIRONMENT_SPEC.md): task modes, stages, evidence, comparison rules, and failure handling.
 7. [Configuration](config/environment.yaml), [DENV request schema](config/request.schema.json), [protocol schema](config/protocol.schema.json), [metric catalog](config/metric-catalog.json), and [DENV result schema](config/metrics.schema.json).
 8. [Bispecific task templates](tasks/bispecific_antibody_design.md): separate extension, not part of the initial monoclonal lane.
-9. [DENV benchmark brief](../../../DENV2_Computational_Antibody_Benchmark.md) and [antibody research findings](../../research/antibody_design/research-notes.md).
+9. [DENV benchmark brief](../../research/antibody_design/DENV2_Computational_Antibody_Benchmark.md) and [antibody research findings](../../research/antibody_design/research-notes.md).
 10. [Acceptance plan](tests/ACCEPTANCE.md) and [result format](results/README.md).
 
 The two DENV task files are alternative presentations of **one benchmark**, not two independent biological tasks. Freeze the same input package, evaluation protocol, budget, and random seed before comparing them. The general task does not prescribe implementations; implementations actually used must still be recorded in the submitted evidence.
@@ -55,6 +55,8 @@ antibody_design/
 │   ├── MONOCLONAL_ANTIBODY_TEST_CASES.md
 │   ├── test_task_variants.py
 │   ├── test_validation.py
+│   ├── test_mab_testing_criteria.py
+│   ├── make_needs_input_example.py
 │   ├── validate_spec.py
 │   └── specification-validation.json
 └── results/

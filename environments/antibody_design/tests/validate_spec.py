@@ -50,10 +50,12 @@ def main():
         "tasks/bispecific_cns_delivery_assessment.md", "tasks/bispecific_cns_shuttle_integrated_gate.md",
         "tasks/bispecific_cns_readout_comparison.md",
         "tests/ACCEPTANCE.md", "tests/MONOCLONAL_ANTIBODY_TEST_CASES.md",
-        "tests/test_task_variants.py", "tests/test_validation.py", "tests/validate_spec.py",
+        "tests/test_task_variants.py", "tests/test_validation.py",
+        "tests/test_mab_testing_criteria.py", "tests/validate_spec.py",
         "results/README.md", "results/needs-input.example.json",
         "../../research/antibody_design/research-notes.md",
         "../../research/antibody_design/references.md",
+        "../../research/antibody_design/DENV2_Computational_Antibody_Benchmark.md",
     ]
     check(all((ROOT / relative).is_file() for relative in required), "Required environment and research files exist")
 
@@ -129,6 +131,10 @@ def main():
         check(name.casefold() not in generic.casefold(), f"General task remains tool neutral: {name}")
     check("StabDDG" not in specific and "Boltz2" not in specific,
           "Tool-specific task uses the registered Stability-Binding DDG name")
+    documented_names = {item["name"].casefold() for item in config["documented_methods"]}
+    check(documented_names == {"stability-binding ddg", "prodigy", "ipsae"}
+          and "boltz" not in "".join(documented_names) and "stabddg" not in "".join(documented_names),
+          "Configuration documents only the current registered method names")
     check("docking" in config["unbound_capabilities"] and "molecular_dynamics" in config["unbound_capabilities"],
           "Undocumented implementation choices remain explicitly unbound")
 
@@ -212,5 +218,6 @@ def validation_json(path):
 
 if __name__ == "__main__":
     sys.dont_write_bytecode = True
+    sys.path.insert(0, str(ROOT))
     import validation
     main()

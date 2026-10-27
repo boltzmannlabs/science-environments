@@ -82,8 +82,10 @@ class TaskVariantParityTests(unittest.TestCase):
 
     def test_test_plan_has_complete_sequential_case_ids(self):
         case_ids = re.findall(r"\| (MAB-\d{3}) \|", TEST_PLAN.read_text())
-        self.assertEqual(case_ids, [f"MAB-{number:03d}" for number in range(1, 31)])
-        self.assertEqual(len(case_ids), len(set(case_ids)))
+        self.assertEqual(len(case_ids), len(set(case_ids)), "Duplicate case IDs")
+        self.assertEqual(case_ids, [f"MAB-{number:03d}" for number in range(1, len(case_ids) + 1)],
+                         "Case IDs must be sequential from MAB-001")
+        self.assertGreaterEqual(len(case_ids), 30, "Case matrix must cover the full criteria set")
 
     def test_test_plan_covers_both_variants_and_scientific_boundary(self):
         plan = TEST_PLAN.read_text()
@@ -91,10 +93,12 @@ class TaskVariantParityTests(unittest.TestCase):
             "denv_antibody_001.md",
             "denv_antibody_001_tools.md",
             "same antigen, reference antibody",
-            "Reference-baseline tests",
-            "Antigen–antibody complex and interface tests",
-            "Stability and developability tests",
+            "Identity and lineage",
+            "Physicochemical characterization",
+            "Target binding: the non-interchangeable endpoint hierarchy",
+            "Developability panel",
             "Scientific benchmark scenarios",
+            "Evidence boundary",
             "does not mean a designed antibody binds",
         ):
             self.assertIn(phrase, plan)

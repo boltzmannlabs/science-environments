@@ -3,7 +3,7 @@
 **Profile:** `denv_antibody_001` — DV87.1-derived paired heavy/light candidates against DENV-2 envelope Domain III (EDIII).
 
 This brief summarizes the source situation for the two task presentations in
-[environments/antibody_design/](environments/antibody_design/README.md): the
+[science-environments/environments/antibody_design/](../../environments/antibody_design/README.md): the
 method-neutral task and the tool-specific task with a named-methods block. Both share one
 biological profile, one evaluation protocol, one budget, and one hidden outcome set.
 
@@ -17,13 +17,13 @@ structural confidence, the non-interchangeable binding-endpoint hierarchy (predi
 interface confidence, Kd, kon/koff, ELISA EC50, neutralization potency, ADE risk),
 specificity, developability, and immunogenicity — before any candidate may be shortlisted.
 The full criteria set is documented in
-[environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md](environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md).
+[science-environments/environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md](../../environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md).
 
 ## Source documents
 
 The profile was assembled from the supplied dengue case files and is summarized in
-[research/antibody_design/research-notes.md](research/antibody_design/research-notes.md),
-with per-claim sources in [research/antibody_design/references.md](research/antibody_design/references.md).
+[science-environments/research/antibody_design/research-notes.md](../antibody_design/research-notes.md),
+with per-claim sources in [science-environments/research/antibody_design/references.md](../antibody_design/references.md).
 
 The documents establish:
 

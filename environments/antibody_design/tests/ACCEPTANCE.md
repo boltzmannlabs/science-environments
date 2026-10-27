@@ -21,6 +21,7 @@ The validator and tests check the following contract behaviors:
 - The tool-free task contains no named method; the tool-specific task names only the approved services; all antigen, reference-antibody, scientific, budget, evaluation, and output requirements are otherwise identical.
 - Both task variants pass the same complete-input preflight and fail on the same missing antigen or reference-antibody inputs.
 - The tool-specific protocol maps Stability-Binding DDG, PRODIGY, and ipSAE to their declared evidence roles and rejects legacy StabDDG/Boltz2 naming.
+- The monoclonal-antibody test plan documents the general mAb testing criteria applied when a reference antibody and target antigen are given — identity/lineage, physicochemical characterization, framework preservation, fold-versus-interface structure, the non-interchangeable binding endpoint hierarchy (predicted energy, Kd, kon/koff, ELISA EC50, neutralization, ADE), specificity, the developability panel including sequence liabilities, and immunogenicity — and `tests/test_mab_testing_criteria.py` verifies those criteria against both task variants.
 
 Passing these checks establishes consistency of the specification and integrity of declared files. It does not reproduce molecular predictions, verify a target's biological identity, establish binding, or validate a therapeutic claim.
 
@@ -51,6 +52,7 @@ Passing these checks establishes consistency of the specification and integrity 
 | Budget expires during a required stage | `INCOMPLETE` unless eligible candidates already form a shorter `PARTIAL` shortlist |
 | Completed evaluation returns zero candidates | `NO_QUALIFYING_DESIGNS` only when every assessed candidate has a verified required failure |
 | EC50 has no verified sample/sequence mapping | Keep it unassigned; do not use it for candidate ranking |
+| Predicted binding is presented as measured Kd, EC50, neutralization, or ADE safety | Reject the claim; endpoints are non-interchangeable and DENV functional endpoints need assay evidence |
 | Prediction is presented as neutralization or clinical performance | Reject the claim; those endpoints were not measured |
 
 ## Scientific test boundary
