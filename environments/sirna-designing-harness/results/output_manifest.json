@@ -1,0 +1,1028 @@
+{
+  "project": "siRNA Designing Harness",
+  "artifact_scope": "Only new environment/research/ADR and intentionally modified indexes; selected historical report/result copies included, raw datasets/reference/model assets not copied",
+  "artifacts": [
+    {
+      "repository_relative_path": "README.md",
+      "bytes": 2677,
+      "sha256": "8e6fe52945bbb018c3e2a54ad6ba6b7e09c4a0f182f5ee4425bf7314e3d46bc7",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "docs/decisions/sirna-designing-harness.md",
+      "bytes": 3297,
+      "sha256": "32d7df3a99f0d2c4a620c1c26cf73a7c575c712997f64b18631d31a9eed1b9f7",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/ENVIRONMENT_SPEC.md",
+      "bytes": 12785,
+      "sha256": "0d48163ac97258d35cb084836b27d8ce06ad8b570d3832dd48eca12f364a9185",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/README.md",
+      "bytes": 6760,
+      "sha256": "9cc15b5c044b0d6e59a06854d8c000b6a2560aaba267481ea72f56089b02c3d4",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/STATUS.md",
+      "bytes": 3652,
+      "sha256": "4d0521dac5bf0c8b02137907cf13501ee06b0a1bbfa9b9a167f95a73f4c1326c",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/RAS_family_seed_manifest.json",
+      "bytes": 283,
+      "sha256": "49cb54d347618e729cf299ed3855f07d229916cc0c831f2ff036d581ec018d70",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/candidate_critique.md",
+      "bytes": 68566,
+      "sha256": "529786593aed9e63f63b42392b7c0dc81b9924feef13fe2f8c7e6a81f8f30cdc",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/candidate_tool_outputs/RAS_family_hits.csv",
+      "bytes": 643,
+      "sha256": "5032dffdf56e0149f266f54a7364c71db3f2d094cb231bf90168770f53f89737",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/candidate_tool_outputs/RAS_family_seed_annotations.csv",
+      "bytes": 57005,
+      "sha256": "9d21312a6c807ee2f6337ea0488ea9713e570aae946c7394f19c9cab88b8226e",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/candidate_tool_outputs/both_strand_specificity.csv",
+      "bytes": 5005,
+      "sha256": "80df8811e0fad28f7546a6fba931c673967f05867c908743e7a157f01ee56d00",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/candidate_tool_outputs/exact_unintended_matches.csv",
+      "bytes": 2262,
+      "sha256": "7366ce1b95ac19686af9b713e15d9bf4afa2538e6ad59eec5f98a0b3810238ec",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/case_summary.json",
+      "bytes": 953,
+      "sha256": "586caeae74dd6a90f35e768fe5492487e9849789e43d5b293f921fd681d69c12",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/failed_qualification_gates.csv",
+      "bytes": 1536,
+      "sha256": "3a980ac18527070c92b224af419617846c2de65747a7415af0bd364ddefbd931",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/generation_manifest.json",
+      "bytes": 3202,
+      "sha256": "53633aed22e63069d6c5543fff29b97f2a83803d8c289c6f73df91104b2d9690",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/missing_capabilities.csv",
+      "bytes": 1000,
+      "sha256": "e12834b00d731fe1a0553d9ea63bfdaf5c5274055600159b67b4ddb3d085e3d6",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/missing_evidence.csv",
+      "bytes": 23114,
+      "sha256": "6b677e6c9fcb5890bd945cdb1f7408ae4a0ffb8276e58cf47f8b433e85de6ca9",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/mutation_arm_requirements.json",
+      "bytes": 1889,
+      "sha256": "95478fc91ead169fa83c26c28381a3b87d9d55cdedac32a9efc386b1ba6cc05c",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/qualification_results.json",
+      "bytes": 129388,
+      "sha256": "91c2a2058ac093da480cd0fc0f130998e41a951a6cd6282b3fdf5f0bf32f94b6",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/ranking_comparison.csv",
+      "bytes": 21168,
+      "sha256": "c2201b487b6f4e3bcea3ce00b86a85798549a80231d867a470afa693ca78e30b",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/ranking_uncertainty_report.md",
+      "bytes": 1107,
+      "sha256": "a1bfa8f1f4a7984b43897750d24fdc3afd3902e0fd3bdbc0c7a5c65f0a05d0df",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/reference_exact_exclusivity_subset.csv",
+      "bytes": 38525,
+      "sha256": "e79ee94b406a156a8fd2ef3d837ff66ddac73f1674626746b9c58e95e900b621",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/reference_specifications.json",
+      "bytes": 4253,
+      "sha256": "0261a6ebec0be2f1acafaa483b4d3404ff350505405ecc4afa1b480817b8612a",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/reference_verification.json",
+      "bytes": 398,
+      "sha256": "b92a38352aaffff03002cdc3defd229af25e276775c125467b3279f50a93ef16",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/reporting_execution_events.json",
+      "bytes": 1784,
+      "sha256": "cdfa9269aa7f8818d0ad9c4cf583e4349ce3a42a48543870e5f06271bb2daeac",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/scientific_report.md",
+      "bytes": 94753,
+      "sha256": "3c8e800fcc97bcccd8b0d3e1fa15635747ee7a970dc883ca8a523e242f4bf8b1",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/screen_reference_manifest.json",
+      "bytes": 1368,
+      "sha256": "a4e7f373c62f39e52c3ca855aa01d2ce42742982184ac1d5f418151534355ca0",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/shared_regions.csv",
+      "bytes": 622,
+      "sha256": "3ae352c16edfd83e7b14de92b8ff905d336eda5e35a2e9ddd007b700b78dd269",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/source_reproducibility_manifest.json",
+      "bytes": 30293,
+      "sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/source_verification_report.json",
+      "bytes": 1827,
+      "sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/specificity_diagnostics.csv",
+      "bytes": 5301,
+      "sha256": "d1dc2e5df09a9375adc4cde4007f26ba928eb6ae0d3d5c84364f57fdaceca3df",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/study_policy.json",
+      "bytes": 2684,
+      "sha256": "ad47a165bc95979deeadf5658d23590ae346a7371fe25780a358515f63a8088b",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/target_specification.json",
+      "bytes": 675,
+      "sha256": "8971b4ebe0f999a3f360aefa16fc8b26b9d386e0a0f3ae7ef43f981b982ae2b5",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/top20_sequences.csv",
+      "bytes": 4417,
+      "sha256": "d1170ee9895eded49a88e8c89d12a745f6422ba833d54396b6fae6e066054a83",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/top_shared_candidates.csv",
+      "bytes": 54273,
+      "sha256": "634698fd72bfb0a34586e5d04d65f0be429c46cf1ad0fc024ab896966dcff344",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/01_shared_design/transcript_isoform_audit.csv",
+      "bytes": 2669,
+      "sha256": "987d73fbf3f9c392111a09242adade709eab73361f939d26fd13e0820719c756",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/audit_report.txt",
+      "bytes": 76539,
+      "sha256": "3fe3e8dab2f792a22521968b763c5d7f7074c20de19cb0c63107b7deec11efee",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/audit_summary.json",
+      "bytes": 1244,
+      "sha256": "388a1188fb1c45bd3d52e5da3852b0a50e6434d60542e2616cafb8bc1ae89ad3",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/candidate_evidence_flat.csv",
+      "bytes": 239960,
+      "sha256": "2157f7f815c59245c944b8fff90d4da185de8c5edb40bcdd92c9af1a91a99875",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/evidence_semantics.json",
+      "bytes": 411,
+      "sha256": "654ebfc634b427b97ada0e6aa403be66fac7ae4ce92063895a1e15bba51e338c",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/exact_failure_alignments.csv",
+      "bytes": 5317,
+      "sha256": "664a6d43ce6a889b5d2f83b25ee919b76231b4038717a4ca5e724f190e944c0b",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/exact_failure_summary.csv",
+      "bytes": 1099,
+      "sha256": "1020b41d3e5a84c9bd510f3687c579528592c23d2f60ddcbb12a229b838dee04",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/prediction_coverage.csv",
+      "bytes": 1329,
+      "sha256": "b84571fe28772f9f4c1bf269b5fc67e1b94ac81bafacba1ca1fd2ad7f992e511",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/qualification_gaps.csv",
+      "bytes": 23995,
+      "sha256": "36ed84eb2111455eb960d54e3c29d7683fafbe3cc6e39a15df2bb9658283eaaa",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/rank_correlations.csv",
+      "bytes": 13613,
+      "sha256": "9a8ecb53264c1505d6c726584b48b14071a0473836f480e151a65a742b43aa57",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/ranking_highlights.json",
+      "bytes": 1594,
+      "sha256": "23662aa7d3e7eb9231b56db673ea63b8f78a6c6d3beeada768a928f603ed31c4",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/review_candidates14.csv",
+      "bytes": 167954,
+      "sha256": "f516adca424b128619c114b7b8c8d45fbbcdaffa5cf2c780f3b1bf8fbf53881f",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/source_output_manifest.json",
+      "bytes": 5918,
+      "sha256": "b8eafa19341394eea157c1e958c5eb989a204f034694caac957f754347c05563",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/source_verification_receipt.json",
+      "bytes": 1099,
+      "sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/02_candidate_audit/topK_overlap.csv",
+      "bytes": 135521,
+      "sha256": "ac5cf1f3e96251d74ed3f90dbc2771196397f6f4685779c2a8e360a79dfd3186",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/RAS_family_seed_evidence.csv",
+      "bytes": 39964,
+      "sha256": "cd9034dceff2e7535ca43d4ff75ec1f783a07a52ca24f47227f53bf84317fdd5",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/analysis_plan.json",
+      "bytes": 2227,
+      "sha256": "20b8e0dbcda71143ef1b1a7c13671539c2642be879d35605ec929a77500a8983",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/candidate_evidence_matrix.csv",
+      "bytes": 188496,
+      "sha256": "a1636fa7de1a6865e9f63421b39e7e203cb9984097c4299ffec96abde535bc66",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/evidence_resolution_report.md",
+      "bytes": 6652,
+      "sha256": "63691d7706d1c06137717f0173dd53d7afe3b2f1b5e0b12c27a9766b0b8df054",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/ranking_sensitivity.csv",
+      "bytes": 194903,
+      "sha256": "50df924cc98d37b5d5ada454a6f7471d69f02b82a7dee805dd9862b5bfefc7d0",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/resolution_summary.json",
+      "bytes": 10494,
+      "sha256": "54c0813041bb1bb01477e3b120984cf1065a8e62440c4d533276c0871065f509",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/sensitivity_scenarios.json",
+      "bytes": 8665,
+      "sha256": "c83c4992dde67b93d028c5f64c692fb13470d6194cec43f291152bee13dafaa3",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/source_output_manifest.json",
+      "bytes": 3336,
+      "sha256": "9f00e7c0a4b41d359d83a5b4c61292a4209a1861736e7cb19b56ee4610b39e10",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/source_verification_receipt.json",
+      "bytes": 938,
+      "sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/specificity_transcript_evidence.csv",
+      "bytes": 87576,
+      "sha256": "62d3e08ad049d4cf3c661f4000c49d4edb44ff5c7975bf5b3bfbc7d9653ae338",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/03_ranking_sensitivity/unresolved_evidence.json",
+      "bytes": 45879,
+      "sha256": "f6922f418a1d158e3a94eeaea159343ab1131e9ac1da6999cb4bd75c646e75dd",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/audit_failures.json",
+      "bytes": 205,
+      "sha256": "1ed6689ae03115fddb68325a69d335d5a74fac3a3cb396c54d56c234353ff8bd",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/audit_summary.json",
+      "bytes": 495,
+      "sha256": "6cec05c580639f7278add98493d86a16fcbe736a3ac993ef302d8eb9bcdbd7be",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/benchmark_report.md",
+      "bytes": 8987,
+      "sha256": "fdf4b4574b82bcb77d91180be04945e977bfbccc8ca4072ee20ed0d423476f6a",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/dataset_manifest.json",
+      "bytes": 52245,
+      "sha256": "e15b515bb3fc5ea9ff2bc779d79d8503544412c50cf1e8fc9c740c1744eb5a0a",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/dataset_quality_summary.json",
+      "bytes": 6785,
+      "sha256": "4d1014dafb81ed9643c02854824135d4c2ecf56fff09bb311b9cd916a83d7122",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/execution_events.json",
+      "bytes": 1993,
+      "sha256": "67679aa1c90ea869ea1e6834a947b5b35f529360fd6d44288e98041c9242db12",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/label_scale_audit.json",
+      "bytes": 3726,
+      "sha256": "6cf1b4a3f605ccdc019da7ebd2d2269151bc50a3ea16844e749cc37da68f0839",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/metadata_row_exclusions.csv",
+      "bytes": 1839,
+      "sha256": "1cb15316deb8b5aa61ec6437882e9839d6f0d9a205714a078315f198b634cbb0",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/metric_summary.csv",
+      "bytes": 34594,
+      "sha256": "cf5c38e0b933239ef073044b2cb45c3275a92a353df601459cbeeb0fabc571ba",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/overlap_and_leakage_audit.json",
+      "bytes": 20023,
+      "sha256": "8805eb441324424ece16809dda4954cc194a62a7274370df0c70cacff0d0d6aa",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/per_record_predictions.csv",
+      "bytes": 152,
+      "sha256": "ecce0f9c8be89e2a8e6a226d7f50d9561ccc76f6e0b0c180a0d3482baa353636",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/primary_original_label_verification.json",
+      "bytes": 270,
+      "sha256": "610016f51802ee9fbf528d56b60ade879b409c1ad8a2e4a3ea5c48023f116f70",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/source_output_manifest.json",
+      "bytes": 11042,
+      "sha256": "1a05409ee2773cc0e8da6b11acac6e07cde6c002b940ece119c199e3ae529c1a",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/source_verification_receipt.json",
+      "bytes": 943,
+      "sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/04_experimental_dataset_audit/split_manifest.json",
+      "bytes": 2246,
+      "sha256": "be992eeb924ab5434291810294b68f2a9f8efee997434c0826bb67ed2f3cde0c",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/candidate_score_comparison.csv",
+      "bytes": 4758,
+      "sha256": "e2daf978f64281a451d3f5776f39f88bb1fa2d1f4a8df6f26f619f1c68802475",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/common_pool_score_comparison.json",
+      "bytes": 3258,
+      "sha256": "ac39408051a70fa0948b637c9486bf14cc72e67897740e01ac7dac0391104e61",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/comparison_report.md",
+      "bytes": 12326,
+      "sha256": "35805ecce940524611acf0169aa88ea70817fc7b94270743053d8eff40c53977",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/comparison_summary.json",
+      "bytes": 998,
+      "sha256": "04fa0186d027daf95bd070ec030a67ab668e702a0d21d863b53b50c400d1cb41",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/execution_events.json",
+      "bytes": 944,
+      "sha256": "241ccd837be2c8056bb600224d835dd53d8a5d4015fff6e9243c2d8fa2c08fe0",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/literature_candidates.csv",
+      "bytes": 4746,
+      "sha256": "fa5198ed5e36fe61a2e7856f9ac4371aa525509d0c72110572c686f9e90ebbbb",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/literature_screening_log.csv",
+      "bytes": 734,
+      "sha256": "2503c35fcfc32241f535866b05e0ab39abef77327f76384a00e556673b2f9d8e",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/literature_to_harness_crosswalk.csv",
+      "bytes": 3601,
+      "sha256": "89a035196232a3e1c5a0225c3afa297599844e793db826489cc1f5541b137177",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/qualification_and_gaps.json",
+      "bytes": 1621,
+      "sha256": "5ea094cb10a45cb6ccc2bfa2d05e4e7d76ac54ce02387dbeecca03cb990a9182",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/response_quality_audit.json",
+      "bytes": 3862,
+      "sha256": "70728e943ca4809a35f62b779d93aaf97fbf48ea2dad3c8bdc06376b739fbd93",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/source_output_manifest.json",
+      "bytes": 10536,
+      "sha256": "c4a90843ab76317e39945efad07ae4bbc6ff41fd619b3374b536c7bdbf603312",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/source_sequence_diagnostics.csv",
+      "bytes": 285,
+      "sha256": "e865cc51f3cb3ec3e0f6af5dc4be6bcb078bca6356a9f7bebdb5044199064f79",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/source_verification_receipt.json",
+      "bytes": 1221,
+      "sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/study_plan.json",
+      "bytes": 2230,
+      "sha256": "a80c945701488e77d9e9f9af2fb652e303217dcb1756a28d379912f3b5666a37",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/05_literature_comparison/workflow_comparison.csv",
+      "bytes": 2240,
+      "sha256": "3230edc9f6cc85db68d63d1ca4f8f28aac8ae5ab3f86c4122dd1bbb7d09a7495",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/README.md",
+      "bytes": 5985,
+      "sha256": "782e222b24e113ba9edf9885dedd5c083049926dc8ae0880dd1d61b75659264f",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/copy_provenance.json",
+      "bytes": 72753,
+      "sha256": "b775add2e6ace51ddea3169b1d147d0d404a131c057b15ab0b63a7ee1d8624f2",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/external_artifact_index.json",
+      "bytes": 58038,
+      "sha256": "f92d39a8f5431eace893cb1348ad8124659ecf6fe7e9cfcc6c5377d3de927d99",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/snapshot_manifest.json",
+      "bytes": 17328,
+      "sha256": "8e20ce32d86d1da2ece0b68bd9e7b720e9f067ae50dbb345cdfdff424036c989",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/snapshot_verification.json",
+      "bytes": 691,
+      "sha256": "77df2ff481d85b1b0ae8caca55918d594e4a0a55fb1988f0c36cc2e119d5f886",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/KRAS/source_preservation.json",
+      "bytes": 292,
+      "sha256": "9166d8a3cf61e4f226b5cc707b060c99061b358684fa17ba6d0755f391b995d6",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/benchmark/README.md",
+      "bytes": 1178,
+      "sha256": "0160233fa51fb7e7a9a21d7784b15407dedcc16da1a867adc68e396306c29c8e",
+      "role": "FROZEN_KRAS_REPORT_RESULT_OR_PROVENANCE"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/README.md",
+      "bytes": 1728,
+      "sha256": "033d95e83c87ac76ddf5ede6dcc2a8006367dc03df0c527cffc3be17b3f56a6c",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/capability_registry.json",
+      "bytes": 3221,
+      "sha256": "e87d9c49c60c7acd628fca662a21a264e99e3766e1aa98adbecc829f6032d6da",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/environment.example.json",
+      "bytes": 916,
+      "sha256": "92abedcf1a74cd84303281937be947066d6a3e1de840ee0abb666c86cd997831",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/gates.example.json",
+      "bytes": 772,
+      "sha256": "8c7e3cfde62abccdaf28a9f3722174a4e302e993998b57e1bd03e7434e184e0a",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/objective.example.json",
+      "bytes": 564,
+      "sha256": "5a31b6375ee45240e305158df434c7d06313780488ec34f88a0fb4c0d249971b",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/config/output_contracts.json",
+      "bytes": 1672,
+      "sha256": "69485f05cee948337688ab7a2da1bc55e025bf74db3c84fc0274f14ac5a60d53",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/benchmark_snapshot_integrity.log",
+      "bytes": 662,
+      "sha256": "96e600c8a071934ba69302197a2da305d3c70f426b19bc9b17f496a833d45e78",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/benchmark_snapshot_integrity.python313.log",
+      "bytes": 647,
+      "sha256": "2e12bc493d743c402a926f38e1b1662ae44d5de40cfc59a552a5b986b7e97545",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/empty_config_expected_block.log",
+      "bytes": 3737,
+      "sha256": "e7cd810f7bddf3e20a675629025896950fee375f806a52375c4170938c953db0",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/empty_config_expected_block.python313.log",
+      "bytes": 3722,
+      "sha256": "f7138134d5cd324467ff6644bc3551b9559e562325a23948ef26a263de770d84",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/environment_tests.log",
+      "bytes": 3033,
+      "sha256": "d4455898d2def0cd1c4652d76f8fe1862f3c4e3c5b611ce44e97f361844d4975",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/environment_tests.python313.log",
+      "bytes": 3018,
+      "sha256": "606c109507b20036b1afa4ecd30da00976e68aff9550b4f36bba3279ff33a0fa",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/historical_evidence_index.json",
+      "bytes": 6915,
+      "sha256": "df29ce421b28edb3f282e2e194c23f3f9d1da56a3381718d2827158df86d258b",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/historical_receipt_verification.log",
+      "bytes": 1808,
+      "sha256": "09685accb0e2edc3c60b709c51a280c63f37704f4d9c468bb19a636cfdedf573",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/README.txt",
+      "bytes": 249,
+      "sha256": "8cd955ccae6154d93d8f797a9dcb38914481cdf8f218af9f1021b7c756e94521",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/empty_config_expected_block.log",
+      "bytes": 3737,
+      "sha256": "e7cd810f7bddf3e20a675629025896950fee375f806a52375c4170938c953db0",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/empty_config_expected_block.python313.log",
+      "bytes": 3722,
+      "sha256": "f7138134d5cd324467ff6644bc3551b9559e562325a23948ef26a263de770d84",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/environment_tests.log",
+      "bytes": 2799,
+      "sha256": "592c66f6b165cf53379d67092de93e1a18b6352a445ede46a3aee39ff9c4b5b1",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/environment_tests.python313.log",
+      "bytes": 2784,
+      "sha256": "a4681f579be7e4427f21937a90d561401e6ff4aac5034d208c2294da9fe153df",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/historical_receipt_verification.log",
+      "bytes": 1808,
+      "sha256": "09685accb0e2edc3c60b709c51a280c63f37704f4d9c468bb19a636cfdedf573",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/output_manifest.json",
+      "bytes": 17145,
+      "sha256": "0e8ab4153360a77fd6332722eddc2fccc1b54530f610f308182f9220efe113bc",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/portable_skill_tests.log",
+      "bytes": 3625,
+      "sha256": "1cbca255a9e837c1e34e50d708c8bd1053c4a8fa63429d6999c243f3bafdd3db",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/portable_skill_tests.python313.log",
+      "bytes": 3610,
+      "sha256": "f5a3c4fdf5bb35eb6b3ca97bc3772b3f381238fe3060c0a8ef5f4bd514e8db54",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/project_structure.log",
+      "bytes": 545,
+      "sha256": "b3e6bf6c2d697bb43ffa89e0fc431077f1faf2b8990c663109c83514204dffec",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/project_structure.python313.log",
+      "bytes": 530,
+      "sha256": "d26c12b855459452cf5cb393dcb635471fc211cbefe618fca189a11b245615b7",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/skill_integrity.log",
+      "bytes": 497,
+      "sha256": "965566b5623ccc9cb1a2aabe8785af07722bae86ab1a1e3578b2db48da1f4c9d",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/skill_integrity.python313.log",
+      "bytes": 482,
+      "sha256": "d7905d226093b121dc7dba7d0eb4dde843ba6efa41e615882a0176f5f4db2332",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/validation_receipt.json",
+      "bytes": 2359,
+      "sha256": "66276c42fc077b3812a437e64c3512246da62d598abb474134ecc3824abc3a0b",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/validation_receipt.python313.json",
+      "bytes": 2057,
+      "sha256": "17313a0dac9c37cbe7ebd2d863e662d9a4fe0004b4695f5e74be7fd732c249bc",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/history/20261027T095605Z/verification_receipt.json",
+      "bytes": 2835,
+      "sha256": "c95abe3b4cde0738efde631e02fc7893880a2d498e74720a7ba6ba22b6d7e451",
+      "role": "PRIOR_PROJECT_REVISION_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/portable_skill_origin.json",
+      "bytes": 384,
+      "sha256": "f4d3ad8633b6efd011a0fc16cb3387e4cd0e85230e22b070ab8d44c91d826fdd",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/portable_skill_tests.log",
+      "bytes": 3625,
+      "sha256": "d26ed183ed3a14c4154350539671a702443b178f41e73bbaa7f4efbba1b2a8cb",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/portable_skill_tests.python313.log",
+      "bytes": 3610,
+      "sha256": "f5a3c4fdf5bb35eb6b3ca97bc3772b3f381238fe3060c0a8ef5f4bd514e8db54",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/project_structure.log",
+      "bytes": 545,
+      "sha256": "2639ed26903f724420f8164439c68485fbefdf8c3066d287ea9eba7d97de93d7",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/project_structure.python313.log",
+      "bytes": 530,
+      "sha256": "6320e6bb00e4b4e1eb70682f47d51b4a49e3f487017332b7254154fa528810e0",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/skill_integrity.log",
+      "bytes": 497,
+      "sha256": "965566b5623ccc9cb1a2aabe8785af07722bae86ab1a1e3578b2db48da1f4c9d",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/skill_integrity.python313.log",
+      "bytes": 482,
+      "sha256": "d7905d226093b121dc7dba7d0eb4dde843ba6efa41e615882a0176f5f4db2332",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/validation_receipt.json",
+      "bytes": 2636,
+      "sha256": "b602099bd745ed66cbb20118fc7ecb8f3db4f924a49ed02ab89e2666867af337",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/results/validation_receipt.python313.json",
+      "bytes": 2344,
+      "sha256": "6800567aa3b322b7bec0bd83a6031af5942eeffb58d02db8e043ede25b189b75",
+      "role": "HISTORICAL_AGGREGATE_OR_CURRENT_TEST_RECEIPT"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/scripts/run.py",
+      "bytes": 9536,
+      "sha256": "f3905aac1f4442a3095547e601a17e56160e50beb5116d9efd954fd8237dda62",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/SKILL.md",
+      "bytes": 11760,
+      "sha256": "2c83d2833658c4f43594dd489df4894c186cec8874eca7b61f6742ee5ceadd2f",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/assets/LICENSE.txt",
+      "bytes": 1349,
+      "sha256": "d9ff0c801fceb36b098ab9dad289f011d6734cfc6cbaf776cfe06d2d49e68172",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/assets/portable-manifest.json",
+      "bytes": 2756,
+      "sha256": "2ff223845b2a763aedf89188dcdc8e39a56f48b481628d6c13498a69fc9af37a",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/benchmark-and-sensitivity.md",
+      "bytes": 6301,
+      "sha256": "b76a60807c410152c475b46ca332167b64d04b968490408fc4a87d2f4aa72d7b",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/current-host-example.md",
+      "bytes": 1472,
+      "sha256": "b2b186357e526e839761af007a70363b842a740f336747bc48cf38f571fcc24c",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/new-target-local-execution.md",
+      "bytes": 11878,
+      "sha256": "899b9d7c962e8f41d5032fd2bf86b7c077c97bfb3df1952b4369787eb237c957",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/portability.md",
+      "bytes": 5171,
+      "sha256": "da78d2505a0b95f0bb1812cbc7ece94482326f01f3283497814b211016b42d64",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/scientific-protocol.md",
+      "bytes": 9759,
+      "sha256": "615973f3e5250df6b83d3a1d0bff28f2022b840087dfaca178416ead5068c4c0",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/tool-adapters.md",
+      "bytes": 3181,
+      "sha256": "3eecc38ff0303d6749ffada9be2dba3d4bed8b33debcde45995c66d7fca814bb",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/references/usage.md",
+      "bytes": 4178,
+      "sha256": "d6e3accac050aa2646f332053a7b68247f861031367fb7aecf1d3b63fa734106",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/scripts/sirna_portable.py",
+      "bytes": 14708,
+      "sha256": "e19d9c3af3e699ca3137e1405a6d49e421a901f61b797cb48deb897ab6f2692b",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/scripts/test_portable.py",
+      "bytes": 9675,
+      "sha256": "84223561e0dd885e7c0f86b9b8c3e600329d2e2e71c40b34b26a72c8e7e826bb",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/scripts/transfer_skill.py",
+      "bytes": 4407,
+      "sha256": "79dc6db753734c64d690a33bae0de30ba51b6fd272d4c5bf0a73dd4be1661af9",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/templates/environment.example.json",
+      "bytes": 916,
+      "sha256": "92abedcf1a74cd84303281937be947066d6a3e1de840ee0abb666c86cd997831",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/templates/gates.example.json",
+      "bytes": 772,
+      "sha256": "8c7e3cfde62abccdaf28a9f3722174a4e302e993998b57e1bd03e7434e184e0a",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/skills/sirna-harness/templates/objective.example.json",
+      "bytes": 564,
+      "sha256": "5a31b6375ee45240e305158df434c7d06313780488ec34f88a0fb4c0d249971b",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/ISSUE_DRAFT.md",
+      "bytes": 2188,
+      "sha256": "e67c43fca2eef5984b442d2a929c91fd593e4d57506f3ee4fc13e76b29f5f598",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/PR_DRAFT.md",
+      "bytes": 2400,
+      "sha256": "33fe65b573299005e9024fd859a02da1e1dcec30789722eae34510aaaa1b4397",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/README.md",
+      "bytes": 1683,
+      "sha256": "98dab51f2871fa9ae4e4f64feda440e95c8ff05089501f4494d7a8435b0f972d",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/audit.json",
+      "bytes": 846,
+      "sha256": "f4ecd1ecc738525dd14d056632c224446cffa921f02061ee5ed222e18db7497e",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/benchmark.json",
+      "bytes": 1436,
+      "sha256": "0985fd54c3ac05e14dbf022a263386ce54b3660db0751eea8c0368bbe93fcce8",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/kras-mutation-blocked.json",
+      "bytes": 687,
+      "sha256": "17a71d2a20dacb1635329d27255987821f442b529f24a060fc0dc8df20620eb1",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/kras-shared-review.json",
+      "bytes": 911,
+      "sha256": "21924bfb0e12bc46f4df7abad2a23cbac7ddf4578780ebc477043e0c3ca6b391",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/literature-comparison.json",
+      "bytes": 1372,
+      "sha256": "253e6a8e6cad111b924aef73753ffc5cfdfd6e6a38363958a89b35facc32c0a3",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tasks/sensitivity.json",
+      "bytes": 1051,
+      "sha256": "db47940f0a05fa649bc58e86ae2264c60122841b0f0e751c4205400195a0d7e5",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tests/README.md",
+      "bytes": 1475,
+      "sha256": "0318622572619821bb6e2bf056577acbad6326c825c883be44357e725a7991d1",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tests/run_validation.py",
+      "bytes": 3257,
+      "sha256": "7c5cd640aba67ec4b57acd4cc0f4c9b84f5cb7b595492f09b4868cc2ed01b7c0",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tests/seal_benchmark.py",
+      "bytes": 5570,
+      "sha256": "a721ee37a583da669579e2b199271c9f9d70dc32ae2744c538e1dcc3b9a4bfae",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tests/seal_contribution.py",
+      "bytes": 6962,
+      "sha256": "80e3373d0087501164fafd44085cb046b776f9a6f28f645eb68849208f1671bb",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "environments/sirna-designing-harness/tests/test_environment.py",
+      "bytes": 6678,
+      "sha256": "a48554a3b88cf26090be9314b6a9dab4b1bf43ec777060781705cd05d9f4b44d",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "research/README.md",
+      "bytes": 1111,
+      "sha256": "5deb6f42b6bf2a20de050ea1de018f7793ef1fad197dcc862adc5f646d3095ec",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "research/sirna-designing-harness/references.md",
+      "bytes": 6811,
+      "sha256": "ebb23ef781882bab9bd2f40d9b63f5d2984ff725cdf805840d4d5ef857f8dda1",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    },
+    {
+      "repository_relative_path": "research/sirna-designing-harness/research-notes.md",
+      "bytes": 7082,
+      "sha256": "64800a8ad07fffaacf6caff46f8ffc7b13b713e8194d89e0a04c955994937f6c",
+      "role": "DOCUMENTATION_CONFIG_TASK_OR_ORIGINAL_HELPER"
+    }
+  ],
+  "root_receipt_and_self_excluded": true,
+  "source_historical_index_sha256": "df29ce421b28edb3f282e2e194c23f3f9d1da56a3381718d2827158df86d258b"
+}

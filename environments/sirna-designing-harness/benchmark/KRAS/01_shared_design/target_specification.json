@@ -1,0 +1,20 @@
+{
+  "experiment_id": "KRAS_shared_comparative_case_study",
+  "gene": "KRAS",
+  "organism": "Homo sapiens",
+  "primary_coordinate_reference": "NM_004985.5",
+  "declared_coverage_references": [
+    "NM_004985.5",
+    "NM_033360.4",
+    "NM_001369786.1",
+    "NM_001369787.1"
+  ],
+  "require_exact_coverage_all_four": true,
+  "reference_fasta_sha256": "ab88235bd19e809059a86916a5e5bd302e6508e92492a25ea6825e40715550b6",
+  "representation": "paired19nt RNA cores; final overhang/chemistry unspecified",
+  "target_scope": "shared declared-reference KRAS silencing, not mutation-selective",
+  "mutation": null,
+  "tissue_cell": null,
+  "delivery": null,
+  "assay_criteria": null
+}

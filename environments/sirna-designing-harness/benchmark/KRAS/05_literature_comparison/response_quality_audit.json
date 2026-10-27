@@ -1,0 +1,78 @@
+[
+  {
+    "pmcid": "PMC4416486",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4416486/",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC4416486_extract.json",
+    "sha256": "b90b5d33c30fae2762e21a5b829e587d4d50b4ab0db594be6ef9c98cec434408",
+    "content_chars": 6600,
+    "error": null,
+    "retrieved_utc": "2026-10-27T06:56:30.319400+00:00",
+    "content_quality": "PARTIAL_TEXT_NOT_COMPLETE_ARTICLE"
+  },
+  {
+    "pmcid": "PMC8033609",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8033609/",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC8033609_extract.json",
+    "sha256": "f7527df295f7e218741d90dafed76a5af50e03f1de9ba12eabf6e22624549e03",
+    "content_chars": 3246,
+    "error": null,
+    "retrieved_utc": "2026-10-27T06:56:29.704690+00:00",
+    "content_quality": "PARTIAL_TEXT_NOT_COMPLETE_ARTICLE"
+  },
+  {
+    "pmcid": "PMC4305731",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4305731/",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC4305731_extract.json",
+    "sha256": "8c26b43c8cdd5f89cf9af7eb1bc5b1063e67674d48056dd6eb9445e9d02f4255",
+    "content_chars": 100,
+    "error": null,
+    "retrieved_utc": "2026-10-27T06:56:30.369128+00:00",
+    "content_quality": "ACCESS_CHALLENGE_NOT_ARTICLE"
+  },
+  {
+    "pmcid": "PMC5538883",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5538883/",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC5538883_extract.json",
+    "sha256": "d09309f7c0f6671992830b97a762f3bc21168dfaff0cf362606a56e923aae625",
+    "content_chars": 50072,
+    "error": null,
+    "retrieved_utc": "2026-10-27T06:56:29.747066+00:00",
+    "content_quality": "ARTICLE_TEXT_RETRIEVED"
+  },
+  {
+    "name": "PMC4416486_bioc",
+    "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC4416486/unicode",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC4416486_bioc.raw",
+    "sha256": "94df25350b873830f0d491bc2fa14ca9edc83d3ae6a4e7b425d184245afd564c",
+    "bytes": 58638,
+    "content_type": "text/xml",
+    "retrieved_utc": "2026-10-27T06:57:07.527331+00:00",
+    "extracted_chars": 33693,
+    "content_quality": "ARTICLE_BODY_RECOVERED_BIOC"
+  },
+  {
+    "name": "PMC4416486_docx",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/4416486/bin/NIHMS655104-supplement-6.docx",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC4416486_docx.raw",
+    "sha256": "d8ca82b22c81a25832ccfada766a4e70f5ba8040d1bdea86e6b48e55b005d069",
+    "bytes": 1816,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_utc": "2026-10-27T06:57:06.596281+00:00",
+    "content_quality": "HTML_NOT_DOCX_SUPPLEMENT_UNAVAILABLE"
+  },
+  {
+    "name": "PMC8033609_html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8033609/?report=xml",
+    "file": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_raw/PMC8033609_html.raw",
+    "sha256": "6dc8db5d0cda3e136c2d357b4963f29da6bc64efe68ad9a6408787f19ee5b10f",
+    "bytes": 199441,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_utc": "2026-10-27T06:57:07.248288+00:00",
+    "content_quality": "ARTICLE_BODY_RECOVERED_HTML_PARSED"
+  },
+  {
+    "file": "literature_raw/PMC5538883_supplements.zip",
+    "content_quality": "ZIP_VALID_BUT_ONLY_ZERO_BYTE_GIF_NO_USEFUL_SUPPLEMENT",
+    "usable_supplementary_data": false
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "project_name": "siRNA Designing Harness",
+  "schema_version": 1,
+  "repository_implementation": "Portable technical checks and agent workflow; no backend dispatcher",
+  "capabilities": [
+    {"category":"reference_resolution","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Intake and supplied-reference checks only; authoritative retrieval/annotation via separately configured tools"},
+    {"category":"sequence_validation","readiness":"AVAILABLE_VERIFIED","repository_behavior":"Included supplied19nt pairing/coordinate/unique-site/flank helper; technical validity only"},
+    {"category":"candidate_generation","readiness":"REQUIRES_INSTALLATION","repository_behavior":"Specification for actual authorized generation; no generator/checkpoint bundled"},
+    {"category":"transparent_potency_baseline","readiness":"REQUIRES_INSTALLATION","repository_behavior":"Frozen Ridge must be independently obtained and hash/feature validated; no coefficients fabricated"},
+    {"category":"complementary_efficacy","readiness":"REQUIRES_INSTALLATION","repository_behavior":"RN.Ai/RNAiSpline/OligoFormer adapters and weights external; distinct endpoints"},
+    {"category":"structure_accessibility","readiness":"REQUIRES_INSTALLATION","repository_behavior":"ViennaRNA integration external; no folding executed by this CLI"},
+    {"category":"transcript_coverage","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Scientific mapping protocol provided; actual species/version references external"},
+    {"category":"both_strand_full_near_matching","readiness":"REQUIRES_INSTALLATION","repository_behavior":"Reference/scanner backend external; native guide-only results not silently reclassified"},
+    {"category":"seed_family_annotations","readiness":"REQUIRES_INSTALLATION","repository_behavior":"Species/annotation-specific tables external; motif counts not clinical risk"},
+    {"category":"immune_evidence","readiness":"UNAVAILABLE","repository_behavior":"No compatible validated immune model delivered; required gate remains unresolved"},
+    {"category":"delivery_assay_context","readiness":"AVAILABLE_UNVERIFIED","repository_behavior":"Explicit input/evidence contract; no biological delivery inference"},
+    {"category":"chemistry_aware_applicability","readiness":"UNAVAILABLE","repository_behavior":"No verified modification-aware efficacy model delivered"},
+    {"category":"measured_data_training_exposure","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Table audit helper and full benchmark protocol; independence not certified from file presence"},
+    {"category":"ranking_critique","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Preserved-score workflow and historical evidence; no implicit new ensemble"},
+    {"category":"qualification_reporting","readiness":"AVAILABLE_VERIFIED","repository_behavior":"Fail-closed gate helper and reporting contract; never certifies biology"}
+  ],
+  "historical_origin_host_readiness_is_not_destination_readiness": true,
+  "siRNADiscovery": "CODE_ONLY_NO_CHECKPOINT_IN_EXERCISED_ECOSYSTEM",
+  "remote_provider": "Inspect current authorized contracts; no job or upload granted by this config",
+  "biological_status": "PARTIAL"
+}

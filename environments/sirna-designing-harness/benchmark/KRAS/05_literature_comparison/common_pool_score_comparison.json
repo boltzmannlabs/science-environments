@@ -1,0 +1,106 @@
+[
+  {
+    "pool": "original20_plus_literature2",
+    "n": 22,
+    "methods": [
+      "Ridge",
+      "native_OligoFormer"
+    ],
+    "spearman_rho": 0.18125352907961603,
+    "K": 3,
+    "topK_overlap": 0,
+    "top_Ridge": [
+      "NM_004985.5_site_1264",
+      "NM_004985.5_site_1391",
+      "NM_004985.5_site_280"
+    ],
+    "top_native_OligoFormer": [
+      "NM_004985.5_site_249",
+      "NM_004985.5_site_2875",
+      "NM_004985.5_site_312"
+    ],
+    "interpretation": "Same actual successful input pool and preserved scores only; NOT measured efficacy accuracy or independent confirmation",
+    "ties": "No score boundary ties detected; literal ID tiebreak specified",
+    "missing_deeper_models": "NOT_RUN for2 literature cores; not imputed"
+  },
+  {
+    "pool": "original20_plus_literature2",
+    "n": 22,
+    "methods": [
+      "Ridge",
+      "native_OligoFormer"
+    ],
+    "spearman_rho": 0.18125352907961603,
+    "K": 5,
+    "topK_overlap": 2,
+    "top_Ridge": [
+      "NM_004985.5_site_1264",
+      "NM_004985.5_site_1391",
+      "NM_004985.5_site_280",
+      "NM_004985.5_site_312",
+      "NM_004985.5_site_5140"
+    ],
+    "top_native_OligoFormer": [
+      "NM_004985.5_site_1710",
+      "NM_004985.5_site_249",
+      "NM_004985.5_site_2875",
+      "NM_004985.5_site_312",
+      "NM_004985.5_site_5140"
+    ],
+    "interpretation": "Same actual successful input pool and preserved scores only; NOT measured efficacy accuracy or independent confirmation",
+    "ties": "No score boundary ties detected; literal ID tiebreak specified",
+    "missing_deeper_models": "NOT_RUN for2 literature cores; not imputed"
+  },
+  {
+    "pool": "conditional14_plus_literature2",
+    "n": 16,
+    "methods": [
+      "Ridge",
+      "native_OligoFormer"
+    ],
+    "spearman_rho": 0.19411764705882353,
+    "K": 3,
+    "topK_overlap": 1,
+    "top_Ridge": [
+      "NM_004985.5_site_1391",
+      "NM_004985.5_site_280",
+      "NM_004985.5_site_3954"
+    ],
+    "top_native_OligoFormer": [
+      "NM_004985.5_site_1710",
+      "NM_004985.5_site_2875",
+      "NM_004985.5_site_3954"
+    ],
+    "interpretation": "Same actual successful input pool and preserved scores only; NOT measured efficacy accuracy or independent confirmation",
+    "ties": "No score boundary ties detected; literal ID tiebreak specified",
+    "missing_deeper_models": "NOT_RUN for2 literature cores; not imputed"
+  },
+  {
+    "pool": "conditional14_plus_literature2",
+    "n": 16,
+    "methods": [
+      "Ridge",
+      "native_OligoFormer"
+    ],
+    "spearman_rho": 0.19411764705882353,
+    "K": 5,
+    "topK_overlap": 3,
+    "top_Ridge": [
+      "NM_004985.5_site_1391",
+      "NM_004985.5_site_1710",
+      "NM_004985.5_site_2417",
+      "NM_004985.5_site_280",
+      "NM_004985.5_site_3954"
+    ],
+    "top_native_OligoFormer": [
+      "NM_004985.5_site_1710",
+      "NM_004985.5_site_280",
+      "NM_004985.5_site_2875",
+      "NM_004985.5_site_342",
+      "NM_004985.5_site_3954"
+    ],
+    "interpretation": "Same actual successful input pool and preserved scores only; NOT measured efficacy accuracy or independent confirmation",
+    "ties": "No score boundary ties detected; literal ID tiebreak specified",
+    "missing_deeper_models": "NOT_RUN for2 literature cores; not imputed"
+  }
+]

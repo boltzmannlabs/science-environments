@@ -1,0 +1,1333 @@
+{
+  "copied_utc": "2026-10-27T10:01:53.877902+00:00",
+  "source_root_hint": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study",
+  "source_hint_not_portable_dependency": true,
+  "selected_files": [
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "scientific_report.md",
+      "benchmark_relative_path": "01_shared_design/scientific_report.md",
+      "source_sha256": "3c8e800fcc97bcccd8b0d3e1fa15635747ee7a970dc883ca8a523e242f4bf8b1",
+      "bytes": 94753,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "3c8e800fcc97bcccd8b0d3e1fa15635747ee7a970dc883ca8a523e242f4bf8b1"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "candidate_critique.md",
+      "benchmark_relative_path": "01_shared_design/candidate_critique.md",
+      "source_sha256": "529786593aed9e63f63b42392b7c0dc81b9924feef13fe2f8c7e6a81f8f30cdc",
+      "bytes": 68566,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "529786593aed9e63f63b42392b7c0dc81b9924feef13fe2f8c7e6a81f8f30cdc"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "top20_sequences.csv",
+      "benchmark_relative_path": "01_shared_design/top20_sequences.csv",
+      "source_sha256": "d1170ee9895eded49a88e8c89d12a745f6422ba833d54396b6fae6e066054a83",
+      "bytes": 4417,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "d1170ee9895eded49a88e8c89d12a745f6422ba833d54396b6fae6e066054a83"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "top_shared_candidates.csv",
+      "benchmark_relative_path": "01_shared_design/top_shared_candidates.csv",
+      "source_sha256": "634698fd72bfb0a34586e5d04d65f0be429c46cf1ad0fc024ab896966dcff344",
+      "bytes": 54273,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "634698fd72bfb0a34586e5d04d65f0be429c46cf1ad0fc024ab896966dcff344"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "reference_exact_exclusivity_subset.csv",
+      "benchmark_relative_path": "01_shared_design/reference_exact_exclusivity_subset.csv",
+      "source_sha256": "e79ee94b406a156a8fd2ef3d837ff66ddac73f1674626746b9c58e95e900b621",
+      "bytes": 38525,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "e79ee94b406a156a8fd2ef3d837ff66ddac73f1674626746b9c58e95e900b621"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "qualification_results.json",
+      "benchmark_relative_path": "01_shared_design/qualification_results.json",
+      "source_sha256": "91c2a2058ac093da480cd0fc0f130998e41a951a6cd6282b3fdf5f0bf32f94b6",
+      "bytes": 129388,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "91c2a2058ac093da480cd0fc0f130998e41a951a6cd6282b3fdf5f0bf32f94b6"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "missing_evidence.csv",
+      "benchmark_relative_path": "01_shared_design/missing_evidence.csv",
+      "source_sha256": "6b677e6c9fcb5890bd945cdb1f7408ae4a0ffb8276e58cf47f8b433e85de6ca9",
+      "bytes": 23114,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "6b677e6c9fcb5890bd945cdb1f7408ae4a0ffb8276e58cf47f8b433e85de6ca9"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "failed_qualification_gates.csv",
+      "benchmark_relative_path": "01_shared_design/failed_qualification_gates.csv",
+      "source_sha256": "3a980ac18527070c92b224af419617846c2de65747a7415af0bd364ddefbd931",
+      "bytes": 1536,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "3a980ac18527070c92b224af419617846c2de65747a7415af0bd364ddefbd931"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "specificity_diagnostics.csv",
+      "benchmark_relative_path": "01_shared_design/specificity_diagnostics.csv",
+      "source_sha256": "d1dc2e5df09a9375adc4cde4007f26ba928eb6ae0d3d5c84364f57fdaceca3df",
+      "bytes": 5301,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "d1dc2e5df09a9375adc4cde4007f26ba928eb6ae0d3d5c84364f57fdaceca3df"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "ranking_comparison.csv",
+      "benchmark_relative_path": "01_shared_design/ranking_comparison.csv",
+      "source_sha256": "c2201b487b6f4e3bcea3ce00b86a85798549a80231d867a470afa693ca78e30b",
+      "bytes": 21168,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "c2201b487b6f4e3bcea3ce00b86a85798549a80231d867a470afa693ca78e30b"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "ranking_uncertainty_report.md",
+      "benchmark_relative_path": "01_shared_design/ranking_uncertainty_report.md",
+      "source_sha256": "a1bfa8f1f4a7984b43897750d24fdc3afd3902e0fd3bdbc0c7a5c65f0a05d0df",
+      "bytes": 1107,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "a1bfa8f1f4a7984b43897750d24fdc3afd3902e0fd3bdbc0c7a5c65f0a05d0df"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "transcript_isoform_audit.csv",
+      "benchmark_relative_path": "01_shared_design/transcript_isoform_audit.csv",
+      "source_sha256": "987d73fbf3f9c392111a09242adade709eab73361f939d26fd13e0820719c756",
+      "bytes": 2669,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "987d73fbf3f9c392111a09242adade709eab73361f939d26fd13e0820719c756"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "shared_regions.csv",
+      "benchmark_relative_path": "01_shared_design/shared_regions.csv",
+      "source_sha256": "3ae352c16edfd83e7b14de92b8ff905d336eda5e35a2e9ddd007b700b78dd269",
+      "bytes": 622,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "3ae352c16edfd83e7b14de92b8ff905d336eda5e35a2e9ddd007b700b78dd269"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "reference_specifications.json",
+      "benchmark_relative_path": "01_shared_design/reference_specifications.json",
+      "source_sha256": "0261a6ebec0be2f1acafaa483b4d3404ff350505405ecc4afa1b480817b8612a",
+      "bytes": 4253,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "0261a6ebec0be2f1acafaa483b4d3404ff350505405ecc4afa1b480817b8612a"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "reference_verification.json",
+      "benchmark_relative_path": "01_shared_design/reference_verification.json",
+      "source_sha256": "b92a38352aaffff03002cdc3defd229af25e276775c125467b3279f50a93ef16",
+      "bytes": 398,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "b92a38352aaffff03002cdc3defd229af25e276775c125467b3279f50a93ef16"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "case_summary.json",
+      "benchmark_relative_path": "01_shared_design/case_summary.json",
+      "source_sha256": "586caeae74dd6a90f35e768fe5492487e9849789e43d5b293f921fd681d69c12",
+      "bytes": 953,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "586caeae74dd6a90f35e768fe5492487e9849789e43d5b293f921fd681d69c12"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "study_policy.json",
+      "benchmark_relative_path": "01_shared_design/study_policy.json",
+      "source_sha256": "ad47a165bc95979deeadf5658d23590ae346a7371fe25780a358515f63a8088b",
+      "bytes": 2684,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "ad47a165bc95979deeadf5658d23590ae346a7371fe25780a358515f63a8088b"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "generation_manifest.json",
+      "benchmark_relative_path": "01_shared_design/generation_manifest.json",
+      "source_sha256": "53633aed22e63069d6c5543fff29b97f2a83803d8c289c6f73df91104b2d9690",
+      "bytes": 3202,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "53633aed22e63069d6c5543fff29b97f2a83803d8c289c6f73df91104b2d9690"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "screen_reference_manifest.json",
+      "benchmark_relative_path": "01_shared_design/screen_reference_manifest.json",
+      "source_sha256": "a4e7f373c62f39e52c3ca855aa01d2ce42742982184ac1d5f418151534355ca0",
+      "bytes": 1368,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "a4e7f373c62f39e52c3ca855aa01d2ce42742982184ac1d5f418151534355ca0"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "RAS_family_seed_manifest.json",
+      "benchmark_relative_path": "01_shared_design/RAS_family_seed_manifest.json",
+      "source_sha256": "49cb54d347618e729cf299ed3855f07d229916cc0c831f2ff036d581ec018d70",
+      "bytes": 283,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "49cb54d347618e729cf299ed3855f07d229916cc0c831f2ff036d581ec018d70"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "mutation_arm_requirements.json",
+      "benchmark_relative_path": "01_shared_design/mutation_arm_requirements.json",
+      "source_sha256": "95478fc91ead169fa83c26c28381a3b87d9d55cdedac32a9efc386b1ba6cc05c",
+      "bytes": 1889,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "95478fc91ead169fa83c26c28381a3b87d9d55cdedac32a9efc386b1ba6cc05c"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "reporting_execution_events.json",
+      "benchmark_relative_path": "01_shared_design/reporting_execution_events.json",
+      "source_sha256": "cdfa9269aa7f8818d0ad9c4cf583e4349ce3a42a48543870e5f06271bb2daeac",
+      "bytes": 1784,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "cdfa9269aa7f8818d0ad9c4cf583e4349ce3a42a48543870e5f06271bb2daeac"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "missing_capabilities.csv",
+      "benchmark_relative_path": "01_shared_design/missing_capabilities.csv",
+      "source_sha256": "e12834b00d731fe1a0553d9ea63bfdaf5c5274055600159b67b4ddb3d085e3d6",
+      "bytes": 1000,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "e12834b00d731fe1a0553d9ea63bfdaf5c5274055600159b67b4ddb3d085e3d6"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "target_specification.json",
+      "benchmark_relative_path": "01_shared_design/target_specification.json",
+      "source_sha256": "8971b4ebe0f999a3f360aefa16fc8b26b9d386e0a0f3ae7ef43f981b982ae2b5",
+      "bytes": 675,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "8971b4ebe0f999a3f360aefa16fc8b26b9d386e0a0f3ae7ef43f981b982ae2b5"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "candidate_tool_outputs/both_strand_specificity.csv",
+      "benchmark_relative_path": "01_shared_design/candidate_tool_outputs/both_strand_specificity.csv",
+      "source_sha256": "80df8811e0fad28f7546a6fba931c673967f05867c908743e7a157f01ee56d00",
+      "bytes": 5005,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "80df8811e0fad28f7546a6fba931c673967f05867c908743e7a157f01ee56d00"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "candidate_tool_outputs/RAS_family_hits.csv",
+      "benchmark_relative_path": "01_shared_design/candidate_tool_outputs/RAS_family_hits.csv",
+      "source_sha256": "5032dffdf56e0149f266f54a7364c71db3f2d094cb231bf90168770f53f89737",
+      "bytes": 643,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "5032dffdf56e0149f266f54a7364c71db3f2d094cb231bf90168770f53f89737"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "candidate_tool_outputs/RAS_family_seed_annotations.csv",
+      "benchmark_relative_path": "01_shared_design/candidate_tool_outputs/RAS_family_seed_annotations.csv",
+      "source_sha256": "9d21312a6c807ee2f6337ea0488ea9713e570aae946c7394f19c9cab88b8226e",
+      "bytes": 57005,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "9d21312a6c807ee2f6337ea0488ea9713e570aae946c7394f19c9cab88b8226e"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "candidate_tool_outputs/exact_unintended_matches.csv",
+      "benchmark_relative_path": "01_shared_design/candidate_tool_outputs/exact_unintended_matches.csv",
+      "source_sha256": "7366ce1b95ac19686af9b713e15d9bf4afa2538e6ad59eec5f98a0b3810238ec",
+      "bytes": 2262,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "7366ce1b95ac19686af9b713e15d9bf4afa2538e6ad59eec5f98a0b3810238ec"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "verification_report.json",
+      "benchmark_relative_path": "01_shared_design/source_verification_report.json",
+      "source_sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79",
+      "bytes": 1827,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79"
+    },
+    {
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_relative_path": "reproducibility_manifest.json",
+      "benchmark_relative_path": "01_shared_design/source_reproducibility_manifest.json",
+      "source_sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b",
+      "bytes": 30293,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "audit_report.txt",
+      "benchmark_relative_path": "02_candidate_audit/audit_report.txt",
+      "source_sha256": "3fe3e8dab2f792a22521968b763c5d7f7074c20de19cb0c63107b7deec11efee",
+      "bytes": 76539,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "3fe3e8dab2f792a22521968b763c5d7f7074c20de19cb0c63107b7deec11efee"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "audit_summary.json",
+      "benchmark_relative_path": "02_candidate_audit/audit_summary.json",
+      "source_sha256": "388a1188fb1c45bd3d52e5da3852b0a50e6434d60542e2616cafb8bc1ae89ad3",
+      "bytes": 1244,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "388a1188fb1c45bd3d52e5da3852b0a50e6434d60542e2616cafb8bc1ae89ad3"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "candidate_evidence_flat.csv",
+      "benchmark_relative_path": "02_candidate_audit/candidate_evidence_flat.csv",
+      "source_sha256": "2157f7f815c59245c944b8fff90d4da185de8c5edb40bcdd92c9af1a91a99875",
+      "bytes": 239960,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "2157f7f815c59245c944b8fff90d4da185de8c5edb40bcdd92c9af1a91a99875"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "review_candidates14.csv",
+      "benchmark_relative_path": "02_candidate_audit/review_candidates14.csv",
+      "source_sha256": "f516adca424b128619c114b7b8c8d45fbbcdaffa5cf2c780f3b1bf8fbf53881f",
+      "bytes": 167954,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "f516adca424b128619c114b7b8c8d45fbbcdaffa5cf2c780f3b1bf8fbf53881f"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "exact_failure_alignments.csv",
+      "benchmark_relative_path": "02_candidate_audit/exact_failure_alignments.csv",
+      "source_sha256": "664a6d43ce6a889b5d2f83b25ee919b76231b4038717a4ca5e724f190e944c0b",
+      "bytes": 5317,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "664a6d43ce6a889b5d2f83b25ee919b76231b4038717a4ca5e724f190e944c0b"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "exact_failure_summary.csv",
+      "benchmark_relative_path": "02_candidate_audit/exact_failure_summary.csv",
+      "source_sha256": "1020b41d3e5a84c9bd510f3687c579528592c23d2f60ddcbb12a229b838dee04",
+      "bytes": 1099,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "1020b41d3e5a84c9bd510f3687c579528592c23d2f60ddcbb12a229b838dee04"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "rank_correlations.csv",
+      "benchmark_relative_path": "02_candidate_audit/rank_correlations.csv",
+      "source_sha256": "9a8ecb53264c1505d6c726584b48b14071a0473836f480e151a65a742b43aa57",
+      "bytes": 13613,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "9a8ecb53264c1505d6c726584b48b14071a0473836f480e151a65a742b43aa57"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "topK_overlap.csv",
+      "benchmark_relative_path": "02_candidate_audit/topK_overlap.csv",
+      "source_sha256": "ac5cf1f3e96251d74ed3f90dbc2771196397f6f4685779c2a8e360a79dfd3186",
+      "bytes": 135521,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "ac5cf1f3e96251d74ed3f90dbc2771196397f6f4685779c2a8e360a79dfd3186"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "prediction_coverage.csv",
+      "benchmark_relative_path": "02_candidate_audit/prediction_coverage.csv",
+      "source_sha256": "b84571fe28772f9f4c1bf269b5fc67e1b94ac81bafacba1ca1fd2ad7f992e511",
+      "bytes": 1329,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "b84571fe28772f9f4c1bf269b5fc67e1b94ac81bafacba1ca1fd2ad7f992e511"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "ranking_highlights.json",
+      "benchmark_relative_path": "02_candidate_audit/ranking_highlights.json",
+      "source_sha256": "23662aa7d3e7eb9231b56db673ea63b8f78a6c6d3beeada768a928f603ed31c4",
+      "bytes": 1594,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "23662aa7d3e7eb9231b56db673ea63b8f78a6c6d3beeada768a928f603ed31c4"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "qualification_gaps.csv",
+      "benchmark_relative_path": "02_candidate_audit/qualification_gaps.csv",
+      "source_sha256": "36ed84eb2111455eb960d54e3c29d7683fafbe3cc6e39a15df2bb9658283eaaa",
+      "bytes": 23995,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "36ed84eb2111455eb960d54e3c29d7683fafbe3cc6e39a15df2bb9658283eaaa"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "evidence_semantics.json",
+      "benchmark_relative_path": "02_candidate_audit/evidence_semantics.json",
+      "source_sha256": "654ebfc634b427b97ada0e6aa403be66fac7ae4ce92063895a1e15bba51e338c",
+      "bytes": 411,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "654ebfc634b427b97ada0e6aa403be66fac7ae4ce92063895a1e15bba51e338c"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "verification_receipt.json",
+      "benchmark_relative_path": "02_candidate_audit/source_verification_receipt.json",
+      "source_sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb",
+      "bytes": 1099,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb"
+    },
+    {
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_relative_path": "output_manifest.json",
+      "benchmark_relative_path": "02_candidate_audit/source_output_manifest.json",
+      "source_sha256": "b8eafa19341394eea157c1e958c5eb989a204f034694caac957f754347c05563",
+      "bytes": 5918,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "b8eafa19341394eea157c1e958c5eb989a204f034694caac957f754347c05563"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "evidence_resolution_report.md",
+      "benchmark_relative_path": "03_ranking_sensitivity/evidence_resolution_report.md",
+      "source_sha256": "63691d7706d1c06137717f0173dd53d7afe3b2f1b5e0b12c27a9766b0b8df054",
+      "bytes": 6652,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "63691d7706d1c06137717f0173dd53d7afe3b2f1b5e0b12c27a9766b0b8df054"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "candidate_evidence_matrix.csv",
+      "benchmark_relative_path": "03_ranking_sensitivity/candidate_evidence_matrix.csv",
+      "source_sha256": "a1636fa7de1a6865e9f63421b39e7e203cb9984097c4299ffec96abde535bc66",
+      "bytes": 188496,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "a1636fa7de1a6865e9f63421b39e7e203cb9984097c4299ffec96abde535bc66"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "ranking_sensitivity.csv",
+      "benchmark_relative_path": "03_ranking_sensitivity/ranking_sensitivity.csv",
+      "source_sha256": "50df924cc98d37b5d5ada454a6f7471d69f02b82a7dee805dd9862b5bfefc7d0",
+      "bytes": 194903,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "50df924cc98d37b5d5ada454a6f7471d69f02b82a7dee805dd9862b5bfefc7d0"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "unresolved_evidence.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/unresolved_evidence.json",
+      "source_sha256": "f6922f418a1d158e3a94eeaea159343ab1131e9ac1da6999cb4bd75c646e75dd",
+      "bytes": 45879,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "f6922f418a1d158e3a94eeaea159343ab1131e9ac1da6999cb4bd75c646e75dd"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "sensitivity_scenarios.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/sensitivity_scenarios.json",
+      "source_sha256": "c83c4992dde67b93d028c5f64c692fb13470d6194cec43f291152bee13dafaa3",
+      "bytes": 8665,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "c83c4992dde67b93d028c5f64c692fb13470d6194cec43f291152bee13dafaa3"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "resolution_summary.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/resolution_summary.json",
+      "source_sha256": "54c0813041bb1bb01477e3b120984cf1065a8e62440c4d533276c0871065f509",
+      "bytes": 10494,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "54c0813041bb1bb01477e3b120984cf1065a8e62440c4d533276c0871065f509"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "specificity_transcript_evidence.csv",
+      "benchmark_relative_path": "03_ranking_sensitivity/specificity_transcript_evidence.csv",
+      "source_sha256": "62d3e08ad049d4cf3c661f4000c49d4edb44ff5c7975bf5b3bfbc7d9653ae338",
+      "bytes": 87576,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "62d3e08ad049d4cf3c661f4000c49d4edb44ff5c7975bf5b3bfbc7d9653ae338"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "RAS_family_seed_evidence.csv",
+      "benchmark_relative_path": "03_ranking_sensitivity/RAS_family_seed_evidence.csv",
+      "source_sha256": "cd9034dceff2e7535ca43d4ff75ec1f783a07a52ca24f47227f53bf84317fdd5",
+      "bytes": 39964,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "cd9034dceff2e7535ca43d4ff75ec1f783a07a52ca24f47227f53bf84317fdd5"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "analysis_plan.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/analysis_plan.json",
+      "source_sha256": "20b8e0dbcda71143ef1b1a7c13671539c2642be879d35605ec929a77500a8983",
+      "bytes": 2227,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "20b8e0dbcda71143ef1b1a7c13671539c2642be879d35605ec929a77500a8983"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "verification_receipt.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/source_verification_receipt.json",
+      "source_sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d",
+      "bytes": 938,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d"
+    },
+    {
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_relative_path": "output_manifest.json",
+      "benchmark_relative_path": "03_ranking_sensitivity/source_output_manifest.json",
+      "source_sha256": "9f00e7c0a4b41d359d83a5b4c61292a4209a1861736e7cb19b56ee4610b39e10",
+      "bytes": 3336,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "9f00e7c0a4b41d359d83a5b4c61292a4209a1861736e7cb19b56ee4610b39e10"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "benchmark_report.md",
+      "benchmark_relative_path": "04_experimental_dataset_audit/benchmark_report.md",
+      "source_sha256": "fdf4b4574b82bcb77d91180be04945e977bfbccc8ca4072ee20ed0d423476f6a",
+      "bytes": 8987,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "fdf4b4574b82bcb77d91180be04945e977bfbccc8ca4072ee20ed0d423476f6a"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "dataset_manifest.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/dataset_manifest.json",
+      "source_sha256": "e15b515bb3fc5ea9ff2bc779d79d8503544412c50cf1e8fc9c740c1744eb5a0a",
+      "bytes": 52245,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "e15b515bb3fc5ea9ff2bc779d79d8503544412c50cf1e8fc9c740c1744eb5a0a"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "split_manifest.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/split_manifest.json",
+      "source_sha256": "be992eeb924ab5434291810294b68f2a9f8efee997434c0826bb67ed2f3cde0c",
+      "bytes": 2246,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "be992eeb924ab5434291810294b68f2a9f8efee997434c0826bb67ed2f3cde0c"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "per_record_predictions.csv",
+      "benchmark_relative_path": "04_experimental_dataset_audit/per_record_predictions.csv",
+      "source_sha256": "ecce0f9c8be89e2a8e6a226d7f50d9561ccc76f6e0b0c180a0d3482baa353636",
+      "bytes": 152,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "ecce0f9c8be89e2a8e6a226d7f50d9561ccc76f6e0b0c180a0d3482baa353636"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "metric_summary.csv",
+      "benchmark_relative_path": "04_experimental_dataset_audit/metric_summary.csv",
+      "source_sha256": "cf5c38e0b933239ef073044b2cb45c3275a92a353df601459cbeeb0fabc571ba",
+      "bytes": 34594,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "cf5c38e0b933239ef073044b2cb45c3275a92a353df601459cbeeb0fabc571ba"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "overlap_and_leakage_audit.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/overlap_and_leakage_audit.json",
+      "source_sha256": "8805eb441324424ece16809dda4954cc194a62a7274370df0c70cacff0d0d6aa",
+      "bytes": 20023,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "8805eb441324424ece16809dda4954cc194a62a7274370df0c70cacff0d0d6aa"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "dataset_quality_summary.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/dataset_quality_summary.json",
+      "source_sha256": "4d1014dafb81ed9643c02854824135d4c2ecf56fff09bb311b9cd916a83d7122",
+      "bytes": 6785,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "4d1014dafb81ed9643c02854824135d4c2ecf56fff09bb311b9cd916a83d7122"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "label_scale_audit.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/label_scale_audit.json",
+      "source_sha256": "6cf1b4a3f605ccdc019da7ebd2d2269151bc50a3ea16844e749cc37da68f0839",
+      "bytes": 3726,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "6cf1b4a3f605ccdc019da7ebd2d2269151bc50a3ea16844e749cc37da68f0839"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "metadata_row_exclusions.csv",
+      "benchmark_relative_path": "04_experimental_dataset_audit/metadata_row_exclusions.csv",
+      "source_sha256": "1cb15316deb8b5aa61ec6437882e9839d6f0d9a205714a078315f198b634cbb0",
+      "bytes": 1839,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "1cb15316deb8b5aa61ec6437882e9839d6f0d9a205714a078315f198b634cbb0"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "primary_original_label_verification.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/primary_original_label_verification.json",
+      "source_sha256": "610016f51802ee9fbf528d56b60ade879b409c1ad8a2e4a3ea5c48023f116f70",
+      "bytes": 270,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "610016f51802ee9fbf528d56b60ade879b409c1ad8a2e4a3ea5c48023f116f70"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "audit_summary.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/audit_summary.json",
+      "source_sha256": "6cec05c580639f7278add98493d86a16fcbe736a3ac993ef302d8eb9bcdbd7be",
+      "bytes": 495,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "6cec05c580639f7278add98493d86a16fcbe736a3ac993ef302d8eb9bcdbd7be"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "audit_failures.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/audit_failures.json",
+      "source_sha256": "1ed6689ae03115fddb68325a69d335d5a74fac3a3cb396c54d56c234353ff8bd",
+      "bytes": 205,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "1ed6689ae03115fddb68325a69d335d5a74fac3a3cb396c54d56c234353ff8bd"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "execution_events.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/execution_events.json",
+      "source_sha256": "67679aa1c90ea869ea1e6834a947b5b35f529360fd6d44288e98041c9242db12",
+      "bytes": 1993,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "67679aa1c90ea869ea1e6834a947b5b35f529360fd6d44288e98041c9242db12"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "verification_receipt.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/source_verification_receipt.json",
+      "source_sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53",
+      "bytes": 943,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53"
+    },
+    {
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_relative_path": "output_manifest.json",
+      "benchmark_relative_path": "04_experimental_dataset_audit/source_output_manifest.json",
+      "source_sha256": "1a05409ee2773cc0e8da6b11acac6e07cde6c002b940ece119c199e3ae529c1a",
+      "bytes": 11042,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "1a05409ee2773cc0e8da6b11acac6e07cde6c002b940ece119c199e3ae529c1a"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "comparison_report.md",
+      "benchmark_relative_path": "05_literature_comparison/comparison_report.md",
+      "source_sha256": "35805ecce940524611acf0169aa88ea70817fc7b94270743053d8eff40c53977",
+      "bytes": 12326,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "35805ecce940524611acf0169aa88ea70817fc7b94270743053d8eff40c53977"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "comparison_summary.json",
+      "benchmark_relative_path": "05_literature_comparison/comparison_summary.json",
+      "source_sha256": "04fa0186d027daf95bd070ec030a67ab668e702a0d21d863b53b50c400d1cb41",
+      "bytes": 998,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "04fa0186d027daf95bd070ec030a67ab668e702a0d21d863b53b50c400d1cb41"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "workflow_comparison.csv",
+      "benchmark_relative_path": "05_literature_comparison/workflow_comparison.csv",
+      "source_sha256": "3230edc9f6cc85db68d63d1ca4f8f28aac8ae5ab3f86c4122dd1bbb7d09a7495",
+      "bytes": 2240,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "3230edc9f6cc85db68d63d1ca4f8f28aac8ae5ab3f86c4122dd1bbb7d09a7495"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "candidate_score_comparison.csv",
+      "benchmark_relative_path": "05_literature_comparison/candidate_score_comparison.csv",
+      "source_sha256": "e2daf978f64281a451d3f5776f39f88bb1fa2d1f4a8df6f26f619f1c68802475",
+      "bytes": 4758,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "e2daf978f64281a451d3f5776f39f88bb1fa2d1f4a8df6f26f619f1c68802475"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "literature_candidates.csv",
+      "benchmark_relative_path": "05_literature_comparison/literature_candidates.csv",
+      "source_sha256": "fa5198ed5e36fe61a2e7856f9ac4371aa525509d0c72110572c686f9e90ebbbb",
+      "bytes": 4746,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "fa5198ed5e36fe61a2e7856f9ac4371aa525509d0c72110572c686f9e90ebbbb"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "literature_to_harness_crosswalk.csv",
+      "benchmark_relative_path": "05_literature_comparison/literature_to_harness_crosswalk.csv",
+      "source_sha256": "89a035196232a3e1c5a0225c3afa297599844e793db826489cc1f5541b137177",
+      "bytes": 3601,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "89a035196232a3e1c5a0225c3afa297599844e793db826489cc1f5541b137177"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "common_pool_score_comparison.json",
+      "benchmark_relative_path": "05_literature_comparison/common_pool_score_comparison.json",
+      "source_sha256": "ac39408051a70fa0948b637c9486bf14cc72e67897740e01ac7dac0391104e61",
+      "bytes": 3258,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "ac39408051a70fa0948b637c9486bf14cc72e67897740e01ac7dac0391104e61"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "source_sequence_diagnostics.csv",
+      "benchmark_relative_path": "05_literature_comparison/source_sequence_diagnostics.csv",
+      "source_sha256": "e865cc51f3cb3ec3e0f6af5dc4be6bcb078bca6356a9f7bebdb5044199064f79",
+      "bytes": 285,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "e865cc51f3cb3ec3e0f6af5dc4be6bcb078bca6356a9f7bebdb5044199064f79"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "literature_screening_log.csv",
+      "benchmark_relative_path": "05_literature_comparison/literature_screening_log.csv",
+      "source_sha256": "2503c35fcfc32241f535866b05e0ab39abef77327f76384a00e556673b2f9d8e",
+      "bytes": 734,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "2503c35fcfc32241f535866b05e0ab39abef77327f76384a00e556673b2f9d8e"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "qualification_and_gaps.json",
+      "benchmark_relative_path": "05_literature_comparison/qualification_and_gaps.json",
+      "source_sha256": "5ea094cb10a45cb6ccc2bfa2d05e4e7d76ac54ce02387dbeecca03cb990a9182",
+      "bytes": 1621,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "5ea094cb10a45cb6ccc2bfa2d05e4e7d76ac54ce02387dbeecca03cb990a9182"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "study_plan.json",
+      "benchmark_relative_path": "05_literature_comparison/study_plan.json",
+      "source_sha256": "a80c945701488e77d9e9f9af2fb652e303217dcb1756a28d379912f3b5666a37",
+      "bytes": 2230,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "a80c945701488e77d9e9f9af2fb652e303217dcb1756a28d379912f3b5666a37"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "response_quality_audit.json",
+      "benchmark_relative_path": "05_literature_comparison/response_quality_audit.json",
+      "source_sha256": "70728e943ca4809a35f62b779d93aaf97fbf48ea2dad3c8bdc06376b739fbd93",
+      "bytes": 3862,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "70728e943ca4809a35f62b779d93aaf97fbf48ea2dad3c8bdc06376b739fbd93"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "execution_events.json",
+      "benchmark_relative_path": "05_literature_comparison/execution_events.json",
+      "source_sha256": "241ccd837be2c8056bb600224d835dd53d8a5d4015fff6e9243c2d8fa2c08fe0",
+      "bytes": 944,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": true,
+      "copied_sha256": "241ccd837be2c8056bb600224d835dd53d8a5d4015fff6e9243c2d8fa2c08fe0"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "verification_receipt.json",
+      "benchmark_relative_path": "05_literature_comparison/source_verification_receipt.json",
+      "source_sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e",
+      "bytes": 1221,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e"
+    },
+    {
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_relative_path": "output_manifest.json",
+      "benchmark_relative_path": "05_literature_comparison/source_output_manifest.json",
+      "source_sha256": "c4a90843ab76317e39945efad07ae4bbc6ff41fd619b3374b536c7bdbf603312",
+      "bytes": 10536,
+      "copy_policy": "byte-identical, no report rewriting or scientific recalculation",
+      "source_manifest_bound": false,
+      "copied_sha256": "c4a90843ab76317e39945efad07ae4bbc6ff41fd619b3374b536c7bdbf603312"
+    }
+  ],
+  "stages": [
+    {
+      "stage": "01_shared_design",
+      "source_case_directory": "shared_arm_20261021T061324Z",
+      "source_receipt_sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79",
+      "source_manifest_sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b",
+      "source_verification_state": "PASSED",
+      "scope": "Original selected-file lineage verified; copied source receipt is historical, not verification of an entire copied run"
+    },
+    {
+      "stage": "02_candidate_audit",
+      "source_case_directory": "audit_20261021T071712Z",
+      "source_receipt_sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb",
+      "source_manifest_sha256": "b8eafa19341394eea157c1e958c5eb989a204f034694caac957f754347c05563",
+      "source_verification_state": "PASSED",
+      "scope": "Original selected-file lineage verified; copied source receipt is historical, not verification of an entire copied run"
+    },
+    {
+      "stage": "03_ranking_sensitivity",
+      "source_case_directory": "audit_resolution_20261021T085955Z",
+      "source_receipt_sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d",
+      "source_manifest_sha256": "9f00e7c0a4b41d359d83a5b4c61292a4209a1861736e7cb19b56ee4610b39e10",
+      "source_verification_state": "PASSED",
+      "scope": "Original selected-file lineage verified; copied source receipt is historical, not verification of an entire copied run"
+    },
+    {
+      "stage": "04_experimental_dataset_audit",
+      "source_case_directory": "experimental_benchmark_20261021T091059Z",
+      "source_receipt_sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53",
+      "source_manifest_sha256": "1a05409ee2773cc0e8da6b11acac6e07cde6c002b940ece119c199e3ae529c1a",
+      "source_verification_state": "PASSED",
+      "scope": "Original selected-file lineage verified; copied source receipt is historical, not verification of an entire copied run"
+    },
+    {
+      "stage": "05_literature_comparison",
+      "source_case_directory": "workflow_comparison_20261027T065430Z",
+      "source_receipt_sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e",
+      "source_manifest_sha256": "c4a90843ab76317e39945efad07ae4bbc6ff41fd619b3374b536c7bdbf603312",
+      "source_verification_state": "PASSED",
+      "scope": "Original selected-file lineage verified; copied source receipt is historical, not verification of an entire copied run"
+    }
+  ],
+  "copied_files": 85,
+  "copied_bytes": 2024591,
+  "source_snapshot_before": [
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/scientific_report.md",
+      "sha256": "3c8e800fcc97bcccd8b0d3e1fa15635747ee7a970dc883ca8a523e242f4bf8b1",
+      "bytes": 94753
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/candidate_critique.md",
+      "sha256": "529786593aed9e63f63b42392b7c0dc81b9924feef13fe2f8c7e6a81f8f30cdc",
+      "bytes": 68566
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/top20_sequences.csv",
+      "sha256": "d1170ee9895eded49a88e8c89d12a745f6422ba833d54396b6fae6e066054a83",
+      "bytes": 4417
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/top_shared_candidates.csv",
+      "sha256": "634698fd72bfb0a34586e5d04d65f0be429c46cf1ad0fc024ab896966dcff344",
+      "bytes": 54273
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/reference_exact_exclusivity_subset.csv",
+      "sha256": "e79ee94b406a156a8fd2ef3d837ff66ddac73f1674626746b9c58e95e900b621",
+      "bytes": 38525
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/qualification_results.json",
+      "sha256": "91c2a2058ac093da480cd0fc0f130998e41a951a6cd6282b3fdf5f0bf32f94b6",
+      "bytes": 129388
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/missing_evidence.csv",
+      "sha256": "6b677e6c9fcb5890bd945cdb1f7408ae4a0ffb8276e58cf47f8b433e85de6ca9",
+      "bytes": 23114
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/failed_qualification_gates.csv",
+      "sha256": "3a980ac18527070c92b224af419617846c2de65747a7415af0bd364ddefbd931",
+      "bytes": 1536
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/specificity_diagnostics.csv",
+      "sha256": "d1dc2e5df09a9375adc4cde4007f26ba928eb6ae0d3d5c84364f57fdaceca3df",
+      "bytes": 5301
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/ranking_comparison.csv",
+      "sha256": "c2201b487b6f4e3bcea3ce00b86a85798549a80231d867a470afa693ca78e30b",
+      "bytes": 21168
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/ranking_uncertainty_report.md",
+      "sha256": "a1bfa8f1f4a7984b43897750d24fdc3afd3902e0fd3bdbc0c7a5c65f0a05d0df",
+      "bytes": 1107
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/transcript_isoform_audit.csv",
+      "sha256": "987d73fbf3f9c392111a09242adade709eab73361f939d26fd13e0820719c756",
+      "bytes": 2669
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/shared_regions.csv",
+      "sha256": "3ae352c16edfd83e7b14de92b8ff905d336eda5e35a2e9ddd007b700b78dd269",
+      "bytes": 622
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/reference_specifications.json",
+      "sha256": "0261a6ebec0be2f1acafaa483b4d3404ff350505405ecc4afa1b480817b8612a",
+      "bytes": 4253
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/reference_verification.json",
+      "sha256": "b92a38352aaffff03002cdc3defd229af25e276775c125467b3279f50a93ef16",
+      "bytes": 398
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/case_summary.json",
+      "sha256": "586caeae74dd6a90f35e768fe5492487e9849789e43d5b293f921fd681d69c12",
+      "bytes": 953
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/study_policy.json",
+      "sha256": "ad47a165bc95979deeadf5658d23590ae346a7371fe25780a358515f63a8088b",
+      "bytes": 2684
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/generation_manifest.json",
+      "sha256": "53633aed22e63069d6c5543fff29b97f2a83803d8c289c6f73df91104b2d9690",
+      "bytes": 3202
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/screen_reference_manifest.json",
+      "sha256": "a4e7f373c62f39e52c3ca855aa01d2ce42742982184ac1d5f418151534355ca0",
+      "bytes": 1368
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/RAS_family_seed_manifest.json",
+      "sha256": "49cb54d347618e729cf299ed3855f07d229916cc0c831f2ff036d581ec018d70",
+      "bytes": 283
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/mutation_arm_requirements.json",
+      "sha256": "95478fc91ead169fa83c26c28381a3b87d9d55cdedac32a9efc386b1ba6cc05c",
+      "bytes": 1889
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/reporting_execution_events.json",
+      "sha256": "cdfa9269aa7f8818d0ad9c4cf583e4349ce3a42a48543870e5f06271bb2daeac",
+      "bytes": 1784
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/missing_capabilities.csv",
+      "sha256": "e12834b00d731fe1a0553d9ea63bfdaf5c5274055600159b67b4ddb3d085e3d6",
+      "bytes": 1000
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/target_specification.json",
+      "sha256": "8971b4ebe0f999a3f360aefa16fc8b26b9d386e0a0f3ae7ef43f981b982ae2b5",
+      "bytes": 675
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/candidate_tool_outputs/both_strand_specificity.csv",
+      "sha256": "80df8811e0fad28f7546a6fba931c673967f05867c908743e7a157f01ee56d00",
+      "bytes": 5005
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/candidate_tool_outputs/RAS_family_hits.csv",
+      "sha256": "5032dffdf56e0149f266f54a7364c71db3f2d094cb231bf90168770f53f89737",
+      "bytes": 643
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/candidate_tool_outputs/RAS_family_seed_annotations.csv",
+      "sha256": "9d21312a6c807ee2f6337ea0488ea9713e570aae946c7394f19c9cab88b8226e",
+      "bytes": 57005
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/candidate_tool_outputs/exact_unintended_matches.csv",
+      "sha256": "7366ce1b95ac19686af9b713e15d9bf4afa2538e6ad59eec5f98a0b3810238ec",
+      "bytes": 2262
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/verification_report.json",
+      "sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79",
+      "bytes": 1827
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z/reproducibility_manifest.json",
+      "sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b",
+      "bytes": 30293
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/audit_report.txt",
+      "sha256": "3fe3e8dab2f792a22521968b763c5d7f7074c20de19cb0c63107b7deec11efee",
+      "bytes": 76539
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/audit_summary.json",
+      "sha256": "388a1188fb1c45bd3d52e5da3852b0a50e6434d60542e2616cafb8bc1ae89ad3",
+      "bytes": 1244
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/candidate_evidence_flat.csv",
+      "sha256": "2157f7f815c59245c944b8fff90d4da185de8c5edb40bcdd92c9af1a91a99875",
+      "bytes": 239960
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/review_candidates14.csv",
+      "sha256": "f516adca424b128619c114b7b8c8d45fbbcdaffa5cf2c780f3b1bf8fbf53881f",
+      "bytes": 167954
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/exact_failure_alignments.csv",
+      "sha256": "664a6d43ce6a889b5d2f83b25ee919b76231b4038717a4ca5e724f190e944c0b",
+      "bytes": 5317
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/exact_failure_summary.csv",
+      "sha256": "1020b41d3e5a84c9bd510f3687c579528592c23d2f60ddcbb12a229b838dee04",
+      "bytes": 1099
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/rank_correlations.csv",
+      "sha256": "9a8ecb53264c1505d6c726584b48b14071a0473836f480e151a65a742b43aa57",
+      "bytes": 13613
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/topK_overlap.csv",
+      "sha256": "ac5cf1f3e96251d74ed3f90dbc2771196397f6f4685779c2a8e360a79dfd3186",
+      "bytes": 135521
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/prediction_coverage.csv",
+      "sha256": "b84571fe28772f9f4c1bf269b5fc67e1b94ac81bafacba1ca1fd2ad7f992e511",
+      "bytes": 1329
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/ranking_highlights.json",
+      "sha256": "23662aa7d3e7eb9231b56db673ea63b8f78a6c6d3beeada768a928f603ed31c4",
+      "bytes": 1594
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/qualification_gaps.csv",
+      "sha256": "36ed84eb2111455eb960d54e3c29d7683fafbe3cc6e39a15df2bb9658283eaaa",
+      "bytes": 23995
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/evidence_semantics.json",
+      "sha256": "654ebfc634b427b97ada0e6aa403be66fac7ae4ce92063895a1e15bba51e338c",
+      "bytes": 411
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/verification_receipt.json",
+      "sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb",
+      "bytes": 1099
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z/output_manifest.json",
+      "sha256": "b8eafa19341394eea157c1e958c5eb989a204f034694caac957f754347c05563",
+      "bytes": 5918
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/evidence_resolution_report.md",
+      "sha256": "63691d7706d1c06137717f0173dd53d7afe3b2f1b5e0b12c27a9766b0b8df054",
+      "bytes": 6652
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/candidate_evidence_matrix.csv",
+      "sha256": "a1636fa7de1a6865e9f63421b39e7e203cb9984097c4299ffec96abde535bc66",
+      "bytes": 188496
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/ranking_sensitivity.csv",
+      "sha256": "50df924cc98d37b5d5ada454a6f7471d69f02b82a7dee805dd9862b5bfefc7d0",
+      "bytes": 194903
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/unresolved_evidence.json",
+      "sha256": "f6922f418a1d158e3a94eeaea159343ab1131e9ac1da6999cb4bd75c646e75dd",
+      "bytes": 45879
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/sensitivity_scenarios.json",
+      "sha256": "c83c4992dde67b93d028c5f64c692fb13470d6194cec43f291152bee13dafaa3",
+      "bytes": 8665
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/resolution_summary.json",
+      "sha256": "54c0813041bb1bb01477e3b120984cf1065a8e62440c4d533276c0871065f509",
+      "bytes": 10494
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/specificity_transcript_evidence.csv",
+      "sha256": "62d3e08ad049d4cf3c661f4000c49d4edb44ff5c7975bf5b3bfbc7d9653ae338",
+      "bytes": 87576
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/RAS_family_seed_evidence.csv",
+      "sha256": "cd9034dceff2e7535ca43d4ff75ec1f783a07a52ca24f47227f53bf84317fdd5",
+      "bytes": 39964
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/analysis_plan.json",
+      "sha256": "20b8e0dbcda71143ef1b1a7c13671539c2642be879d35605ec929a77500a8983",
+      "bytes": 2227
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/verification_receipt.json",
+      "sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d",
+      "bytes": 938
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_resolution_20261021T085955Z/output_manifest.json",
+      "sha256": "9f00e7c0a4b41d359d83a5b4c61292a4209a1861736e7cb19b56ee4610b39e10",
+      "bytes": 3336
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/benchmark_report.md",
+      "sha256": "fdf4b4574b82bcb77d91180be04945e977bfbccc8ca4072ee20ed0d423476f6a",
+      "bytes": 8987
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/dataset_manifest.json",
+      "sha256": "e15b515bb3fc5ea9ff2bc779d79d8503544412c50cf1e8fc9c740c1744eb5a0a",
+      "bytes": 52245
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/split_manifest.json",
+      "sha256": "be992eeb924ab5434291810294b68f2a9f8efee997434c0826bb67ed2f3cde0c",
+      "bytes": 2246
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/per_record_predictions.csv",
+      "sha256": "ecce0f9c8be89e2a8e6a226d7f50d9561ccc76f6e0b0c180a0d3482baa353636",
+      "bytes": 152
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/metric_summary.csv",
+      "sha256": "cf5c38e0b933239ef073044b2cb45c3275a92a353df601459cbeeb0fabc571ba",
+      "bytes": 34594
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/overlap_and_leakage_audit.json",
+      "sha256": "8805eb441324424ece16809dda4954cc194a62a7274370df0c70cacff0d0d6aa",
+      "bytes": 20023
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/dataset_quality_summary.json",
+      "sha256": "4d1014dafb81ed9643c02854824135d4c2ecf56fff09bb311b9cd916a83d7122",
+      "bytes": 6785
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/label_scale_audit.json",
+      "sha256": "6cf1b4a3f605ccdc019da7ebd2d2269151bc50a3ea16844e749cc37da68f0839",
+      "bytes": 3726
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/metadata_row_exclusions.csv",
+      "sha256": "1cb15316deb8b5aa61ec6437882e9839d6f0d9a205714a078315f198b634cbb0",
+      "bytes": 1839
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/primary_original_label_verification.json",
+      "sha256": "610016f51802ee9fbf528d56b60ade879b409c1ad8a2e4a3ea5c48023f116f70",
+      "bytes": 270
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/audit_summary.json",
+      "sha256": "6cec05c580639f7278add98493d86a16fcbe736a3ac993ef302d8eb9bcdbd7be",
+      "bytes": 495
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/audit_failures.json",
+      "sha256": "1ed6689ae03115fddb68325a69d335d5a74fac3a3cb396c54d56c234353ff8bd",
+      "bytes": 205
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/execution_events.json",
+      "sha256": "67679aa1c90ea869ea1e6834a947b5b35f529360fd6d44288e98041c9242db12",
+      "bytes": 1993
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/verification_receipt.json",
+      "sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53",
+      "bytes": 943
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/experimental_benchmark_20261021T091059Z/output_manifest.json",
+      "sha256": "1a05409ee2773cc0e8da6b11acac6e07cde6c002b940ece119c199e3ae529c1a",
+      "bytes": 11042
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/comparison_report.md",
+      "sha256": "35805ecce940524611acf0169aa88ea70817fc7b94270743053d8eff40c53977",
+      "bytes": 12326
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/comparison_summary.json",
+      "sha256": "04fa0186d027daf95bd070ec030a67ab668e702a0d21d863b53b50c400d1cb41",
+      "bytes": 998
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/workflow_comparison.csv",
+      "sha256": "3230edc9f6cc85db68d63d1ca4f8f28aac8ae5ab3f86c4122dd1bbb7d09a7495",
+      "bytes": 2240
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/candidate_score_comparison.csv",
+      "sha256": "e2daf978f64281a451d3f5776f39f88bb1fa2d1f4a8df6f26f619f1c68802475",
+      "bytes": 4758
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_candidates.csv",
+      "sha256": "fa5198ed5e36fe61a2e7856f9ac4371aa525509d0c72110572c686f9e90ebbbb",
+      "bytes": 4746
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_to_harness_crosswalk.csv",
+      "sha256": "89a035196232a3e1c5a0225c3afa297599844e793db826489cc1f5541b137177",
+      "bytes": 3601
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/common_pool_score_comparison.json",
+      "sha256": "ac39408051a70fa0948b637c9486bf14cc72e67897740e01ac7dac0391104e61",
+      "bytes": 3258
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/source_sequence_diagnostics.csv",
+      "sha256": "e865cc51f3cb3ec3e0f6af5dc4be6bcb078bca6356a9f7bebdb5044199064f79",
+      "bytes": 285
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/literature_screening_log.csv",
+      "sha256": "2503c35fcfc32241f535866b05e0ab39abef77327f76384a00e556673b2f9d8e",
+      "bytes": 734
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/qualification_and_gaps.json",
+      "sha256": "5ea094cb10a45cb6ccc2bfa2d05e4e7d76ac54ce02387dbeecca03cb990a9182",
+      "bytes": 1621
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/study_plan.json",
+      "sha256": "a80c945701488e77d9e9f9af2fb652e303217dcb1756a28d379912f3b5666a37",
+      "bytes": 2230
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/response_quality_audit.json",
+      "sha256": "70728e943ca4809a35f62b779d93aaf97fbf48ea2dad3c8bdc06376b739fbd93",
+      "bytes": 3862
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/execution_events.json",
+      "sha256": "241ccd837be2c8056bb600224d835dd53d8a5d4015fff6e9243c2d8fa2c08fe0",
+      "bytes": 944
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/verification_receipt.json",
+      "sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e",
+      "bytes": 1221
+    },
+    {
+      "source_path": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/workflow_comparison_20261027T065430Z/output_manifest.json",
+      "sha256": "c4a90843ab76317e39945efad07ae4bbc6ff41fd619b3374b536c7bdbf603312",
+      "bytes": 10536
+    }
+  ],
+  "scope": "Frozen historical copies; no backend/analysis reruns; no claim that source manifests describe a complete portable copied run",
+  "reports_copied_byte_identically": true,
+  "biological_status": "PARTIAL",
+  "independent_benchmark_status": "BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET",
+  "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION"
+}

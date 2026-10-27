@@ -1,0 +1,22 @@
+{
+  "retrieval_failures_preserved": true,
+  "known_events": [
+    {
+      "event": "FullTextXML500_and_targeted_search503",
+      "response": "Retained errors; recovered original article content through authoritative BioC or articleHTML, no access-control bypass"
+    },
+    {
+      "event": "nominal_success_semantic_failure",
+      "response": "Cookie page,HTML masquerading asDOCX,partial extraction andzero-byte supplemental GIF classified unusable for full evidence"
+    },
+    {
+      "event": "minor_inspection_command_syntax_error",
+      "response": "Unmatched parenthesis in supplementary-link inspection command; no scientific output produced or substituted"
+    },
+    {
+      "event": "citation_quote_minimum_length",
+      "response": "Citation ledger rejected an isolated strand quote as too short; used literal paired-sequence passage with source label; preserved source unchanged"
+    }
+  ],
+  "new_scientific_model_runs": 0
+}

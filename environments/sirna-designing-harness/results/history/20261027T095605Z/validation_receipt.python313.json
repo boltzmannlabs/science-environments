@@ -1,0 +1,57 @@
+{
+  "verification": "PASSED",
+  "scope": "Software/structure and optionally small historical-receipt checks; no scientific model-performance or biological validation",
+  "verified_utc": "2026-10-27T08:41:57.903189+00:00",
+  "python": "3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]",
+  "python_executable": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/.venv/bin/python",
+  "software_tests_passed": 52,
+  "checks": [
+    {
+      "check": "environment_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "environment_tests.python313.log",
+      "log_sha256": "a4681f579be7e4427f21937a90d561401e6ff4aac5034d208c2294da9fe153df",
+      "software_tests": 20
+    },
+    {
+      "check": "portable_skill_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "portable_skill_tests.python313.log",
+      "log_sha256": "f5a3c4fdf5bb35eb6b3ca97bc3772b3f381238fe3060c0a8ef5f4bd514e8db54",
+      "software_tests": 32
+    },
+    {
+      "check": "project_structure",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "project_structure.python313.log",
+      "log_sha256": "d26c12b855459452cf5cb393dcb635471fc211cbefe618fca189a11b245615b7"
+    },
+    {
+      "check": "skill_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "skill_integrity.python313.log",
+      "log_sha256": "d7905d226093b121dc7dba7d0eb4dde843ba6efa41e615882a0176f5f4db2332"
+    },
+    {
+      "check": "empty_config_expected_block",
+      "status": "PASSED",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "log": "empty_config_expected_block.python313.log",
+      "log_sha256": "f7138134d5cd324467ff6644bc3551b9559e562325a23948ef26a263de770d84"
+    }
+  ],
+  "new_generation_inference_folding_screening_runs": 0,
+  "fresh_backend_deployment_verified": false,
+  "lifecycle": "In Progress",
+  "biology": "PARTIAL",
+  "github_issue_PR_review": "PENDING_AUTHENTICATION_AND_MAINTAINER_REVIEW"
+}

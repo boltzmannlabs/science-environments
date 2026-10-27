@@ -1,0 +1,20 @@
+{
+  "source_directory": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/audit_20261021T071712Z",
+  "execution_boundary": "Preserved-score calculations and evidence consolidation only; no generation, inference, folding or screening",
+  "primary_population": "The existing conditional14-candidate review panel; do not reinstate the six exact-exclusivity failures",
+  "extrapolation_sensitivity": "Compare existing compatible pools with their subsets whose preserved Ridge value is within0..100 inclusive. This is a numerical sensitivity stratum, NOT a validated biological exclusion rule.",
+  "pools": ["exact_exclusivity_review14", "investigated_panel20", "deep_assessed100_common_potency", "deep_operational_passers81"],
+  "baseline_statistics": "Reuse verified prior rank_correlations.csv and topK_overlap.csv",
+  "new_statistics": ["Spearman average tied ranks", "Kendall tau-b", "top-K exact and fractional boundary-tie overlap"],
+  "K": [3, 5, 10],
+  "small_pool_rule": "K>n is NOT_APPLICABLE; K=n overlap is explicitly non-discriminating",
+  "exact_K_tie_rule": "score descending then literal candidate_id ascending",
+  "fractional_ties": "Split remaining boundary membership equally across tied candidates; preserve both exact and fractional overlap",
+  "missing_output_sensitivity": "Describe actual coverage; compare the five common potency methods on100 versus the81 with preserved native Bench scores. No imputation, new ensemble, missing-score assignment or simulated missingness.",
+  "combined_priority": "Preserve the existing20-cohort-normalized combined score even on restrictions; no normalization or weight changes",
+  "inference": "Descriptive rankings only. No p-values, invented CIs, accuracy estimates or biological changes inferred from cohort-dependent ranks.",
+  "decision_options": ["retain current conditional research-review panel", "narrow using explicit evidence criteria", "defer ranking"],
+  "statuses": {"shared_arm": "COMPLETED", "biology": "PARTIAL", "mutation_arm": "BLOCKED_PENDING_MUTATION_SPECIFICATION"},
+  "mutation_sequence_construction": false,
+  "source_preservation": "Content-hash every source file before and after; verify prior output manifest and receipt"
+}
