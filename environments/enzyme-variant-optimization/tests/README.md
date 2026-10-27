@@ -13,6 +13,8 @@ It covers:
 - Mapping ThermoMPNN output positions to the actual structure and sequence.
 - Combined reports that retain failed checks and missing results.
 - Exact `Seq_id,Sequences,SMILES` headers when selected by the task configuration.
+- Availability derived from current catalogue entries, without separate activation for deployed tools.
+- EnzyControl, DeepAllo, and RFD3 file fields, supported formats, preserved coordinates, upload receipts, and scaffold sample limits.
 
 Run `python -m pytest -q` after the README's installation and dependency setup. DiscoveryRSI tests require the actual pinned source checkout; a missing checkout fails clearly rather than silently replacing it with a mock.
 

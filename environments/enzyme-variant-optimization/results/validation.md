@@ -4,8 +4,8 @@
 
 | Check | Result | What it establishes |
 | --- | --- | --- |
-| Portable test suite | **380 passed; 0 failed; 0 skipped** | The packaged environment handles the tested tasks, candidates, file transfers, results, and failures. |
-| Suite with optional native support | **386 passed; 0 failed; 0 skipped** | Includes six additional scripted tests of role context and host-failure reporting. |
+| Portable test suite | **427 passed; 0 failed; 0 skipped** | Includes catalogue routing and the new single-structure input adapters alongside existing task, result, and failure checks. |
+| Suite with optional native support | **433 passed; 0 failed; 0 skipped** | Includes six additional scripted tests of role context and host-failure reporting. |
 | Installed package | **Passed** | A fresh virtual environment installed the built wheel and ran its CLI. |
 | Installed research example | **Passed** | Actual pinned DiscoveryRSI code changed the next investigation using a synthetic result and recovered saved state after reopening. |
 | Installed executor example | **Passed** | A mock quality step retained one of two candidates, and the next property step received that candidate. |
@@ -33,6 +33,16 @@ Use a new output directory for each example/package check. The optional test com
 ```
 
 The exact test counts, dependency versions, source revision, and wheel hash for this check are in [validation.json](validation.json). Generated local reports, virtual environments, source checkouts, and test state are ignored by Git.
+
+The current [catalogue/API check](catalogue-check.json) resolved all 18 listed tools as active, including the five newly deployed tools, with no second activation step. Their API routes were published. This was a read-only contract check, not a scientific worker run. The separate [progress snapshot](current-progress.json) records the ongoing benchmark's aggregate status without private measurements.
+
+To repeat the catalogue/API check with a configured Agent-Scientist checkout:
+
+```bash
+.venv/bin/python scripts/check_catalogue.py --catalogue-root /absolute/path/to/Agent-Scientist/plugins/boltzmann/skills/boltzmann-tools/references --agent-source /absolute/path/to/Agent-Scientist --output .checks/my-catalogue.json
+```
+
+This command reads the catalogue and public API schema. It does not upload inputs or submit scientific jobs.
 
 ## What remains to be established
 

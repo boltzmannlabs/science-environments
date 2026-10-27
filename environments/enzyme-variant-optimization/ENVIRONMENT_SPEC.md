@@ -3,7 +3,7 @@
 ## Identity and objective
 
 - Name: Enzyme Variant Optimization.
-- Python distribution: `boltzmann-enzyme-research` (development version `0.1.0`).
+- Python distribution: `boltzmann-enzyme-research` (development version `0.1.1`).
 - Import/Agent-Scientist plugin identifier: `enzyme_research`.
 - Status: In Progress.
 - Goal: choose and investigate variants of a supplied enzyme, preserving declared catalytic requirements while evaluating task-specific activity, stability, solubility, and structure evidence.
@@ -30,6 +30,12 @@ See [tasks/README.md](tasks/README.md) for task creation and validation. Native 
 ## Actions and scientific loop
 
 The external connector handles validation, uploads, submission, status, logs, and downloads. Common operations prepare input, attach verified sequences/structures, synchronize metrics, and build a joined report. Scientific calls use the existing authorized Boltzmann connector.
+
+All listed tools, including EnzyControl, DeepAllo, RFD3, MolProbity, and Catalytic Geometry, resolve their wire names and availability from the current Agent-Scientist catalogue. The environment does not require a separate activation step. A tool disabled in that catalogue remains unavailable.
+
+Single-structure input preparation writes the selected, hash-checked coordinate bytes to the tool's file field: `pdb_path` for EnzyControl, and `input_path` for DeepAllo and RFD3. EnzyControl and DeepAllo accept PDB; RFD3 accepts PDB or CIF. Each request represents one candidate structure. The adapter retains residue mappings and ligand atoms, and does not silently rename unsupported formats or drop ligand data. Scientific settings such as chain, motif, ligand selection, seed, and sample count come from the current tool contract and task. Prepared geometry checks and generated scaffolds still require their own appropriate downstream processing.
+
+Scaffold sample counts must fit the remaining campaign allocation. EnzyControl also uses the declared task substrate. Live scaffold generation requires the campaign's prepared/uploaded file receipt.
 
 The specialist's `investigate` operation uses separate proposer and critic model requests. Each proposal includes a claim, plan, competing explanation, actual observation references, reason for revision, and one explicit scientific action. DiscoveryRSI selects and records the reviewed investigation. A later round cites preceding observations. Critique scores assess investigation quality and are never molecular activity measurements. The proposer/critic share the host model budget.
 

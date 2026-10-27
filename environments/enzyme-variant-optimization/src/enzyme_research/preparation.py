@@ -10,6 +10,13 @@ import zipfile
 
 from .contracts import ResearchError, digest, identifier, safe_data
 
+# File conversions only; required scientific parameters stay in the catalogue.
+SINGLE_STRUCTURE_INPUTS = {
+    "enzycontrol": ("pdb_path", {".pdb"}),
+    "deepallo": ("input_path", {".pdb"}),
+    "Enzyme_RFD3": ("input_path", {".pdb", ".cif"}),
+}
+
 
 def prepare_input(service, campaign, job_name, candidate_ids, *, structure_ids=None):
     state = service.store.status(campaign)
@@ -25,7 +32,9 @@ def prepare_input(service, campaign, job_name, candidate_ids, *, structure_ids=N
         raise ResearchError("Input preparation needs an active authoritative tool contract")
     selected = [candidates[c] for c in candidate_ids]
     structural_jobs = {"Solublempnn", "Thermal_MPNN", "Ligand_MPNN", "Placer", "Mol_Probity", "mol_probity",
-                       "Catalytic_Geometry", "catalytic_geometry"}
+                       "Catalytic_Geometry", "catalytic_geometry"} | set(SINGLE_STRUCTURE_INPUTS)
+    if job_name in SINGLE_STRUCTURE_INPUTS and len(candidate_ids) != 1:
+        raise ResearchError("This tool accepts one candidate structure per job; prepare each candidate separately")
     structure_ids = {} if structure_ids is None else structure_ids
     if (not isinstance(structure_ids, dict) or set(structure_ids) - set(candidate_ids)
             or any(not isinstance(value, str) for value in structure_ids.values())
@@ -35,7 +44,7 @@ def prepare_input(service, campaign, job_name, candidate_ids, *, structure_ids=N
     if job_name in structural_jobs:
         from .structures import select_structure
         coordinates = {cid: select_structure(service, campaign, cid, structure_ids.get(cid)) for cid in candidate_ids}
-        required = {"all_atom"} if job_name in {"Mol_Probity", "mol_probity", "Placer", "Catalytic_Geometry", "catalytic_geometry"} else {"structure"}
+        required = {"all_atom"} if job_name in {"Mol_Probity", "mol_probity", "Placer", "Catalytic_Geometry", "catalytic_geometry", "deepallo"} else {"structure"}
         if job_name in {"Placer", "Catalytic_Geometry", "catalytic_geometry"}:
             required.add("ligand")
         for record in coordinates.values():
@@ -87,10 +96,16 @@ def prepare_input(service, campaign, job_name, candidate_ids, *, structure_ids=N
             target = location / (key + suffix)
     elif job_name in structural_jobs:
         from .structures import checked_structure_content
-        field = "zip_path" if job_name == "Thermal_MPNN" else "input_file_path" if job_name == "Placer" else "input_path"
+        field = (SINGLE_STRUCTURE_INPUTS[job_name][0] if job_name in SINGLE_STRUCTURE_INPUTS else
+                 "zip_path" if job_name == "Thermal_MPNN" else "input_file_path" if job_name == "Placer" else "input_path")
         suffix = ".zip" if job_name in {"Solublempnn", "Thermal_MPNN", "Mol_Probity", "mol_probity", "Catalytic_Geometry", "catalytic_geometry"} else None
         data = {cid: checked_structure_content(record) for cid, record in coordinates.items()}
         extensions = {cid: Path(record["artifact"]["member"]).suffix.lower() for cid, record in coordinates.items()}
+        if job_name in SINGLE_STRUCTURE_INPUTS:
+            allowed = SINGLE_STRUCTURE_INPUTS[job_name][1]
+            if any(extension not in allowed for extension in extensions.values()):
+                raise ResearchError(job_name + " requires " + ", ".join(sorted(allowed)) +
+                                    " coordinates; supply a prepared supported structure rather than renaming or dropping ligand atoms")
         if job_name in {"Solublempnn", "Thermal_MPNN"}:
             from .protein_projection import project_protein_pdb
             for cid, extension in extensions.items():

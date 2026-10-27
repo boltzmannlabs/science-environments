@@ -93,44 +93,25 @@ reports deliberately exclude authentication tokens and signed download URLs.
 `enzyme_workflow_status` reads this local state; actual remote status still uses
 `boltzmann_status`. `enzyme_workflow_report` exports JSON and candidate CSV.
 
-Existing tools resolve their exact Node API `job_name` from the referenced section
+All listed tools resolve their exact Node API `job_name` from the referenced section
 of the original Boltzmann catalogue. They need no separate `settings.bindings`.
 Documented diagnostic collections are recorded when available; a missing Mongo
 collection does not block submission because the connector routes by job name.
 `live_verified` remains false until actual testing; routing availability is not
 proof that a backend is healthy or that a scientific result is correct.
 
-Only newly developed tools (RFD3, EnzyControl, DeepAllo, Catalytic Geometry and
-MolProbity) default to pending. Additional workflow extensions also remain pending.
-Their operator activation is a profile setting, not a deployment change:
-
-```
-plugins:
-  entries:
-    enzyme_workflow:
-      settings:
-        bindings:
-          mol_probity:
-            job_name: mol_probity
-            collection_name: mol_probity
-            backend_status: active
-            live_verified: false
-            contract_ref:
-              path: modules/<authoritative-module>.md
-              section: "## <exact section heading>"
-```
-
-An operator activates new names independently verified against the backend
-registry. Existing tools use the original catalogue, never Docker task names.
-Explicit operator bindings still take precedence, including an explicit pending
-status used to pause a tool.
+RFD3, EnzyControl, DeepAllo, Catalytic Geometry and MolProbity use this same
+catalogue resolution. Their wire job names come from their referenced entries,
+not from Docker task names. No additional profile binding is required for them.
+An explicit operator binding can still pause a tool or configure a separately
+documented extension. It is not a second activation step for deployed tools.
 
 `plugins.entries.enzyme_workflow.settings.contracts` admits additional workflow
 adapters without changing original source. Each declares `stage`, `adapter`,
 `requires` and `contract_ref` into the existing
 catalogue. Optional `adapter_source` records provenance. Duplicate input schemas
-are not accepted. Bindings are verified activation settings, not another API
-manual; they must match the authoritative module. No code or endpoint is accepted.
+are not accepted. Additional extensions need a documented catalogue reference
+and routing configuration. No code or endpoint is accepted in a binding.
 
 Enable the add-on through the host's normal plugin flow. Tool calls must pass
 through native dispatch so its hooks run; directly importing/calling a handler

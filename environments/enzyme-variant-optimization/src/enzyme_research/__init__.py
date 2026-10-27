@@ -1,6 +1,6 @@
-"""Tool-enabled research; deliberately separate from the frozen ranking pilot."""
+"""Enzyme variant optimization task runner and specialist."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def register(ctx, check_fn=None):

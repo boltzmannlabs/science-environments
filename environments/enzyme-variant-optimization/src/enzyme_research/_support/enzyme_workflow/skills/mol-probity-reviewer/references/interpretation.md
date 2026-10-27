@@ -14,4 +14,5 @@ roles, geometry and quality; catalytic strain cannot be automatically excused.
 
 Hosted outputs: candidate_summary.csv, validation_outliers.csv,
 invalid_candidates.csv, quality_thresholds_used.json, manifest.json and raw_json.
-Compute is CPU only; no NFS weights. Contract and backend activation are distinct.
+Compute is CPU only; no NFS weights. Read availability from the current catalogue;
+a published contract and a successful worker run are separate evidence.

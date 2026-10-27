@@ -24,11 +24,11 @@ sequences and prepared structures can enter at a later stage.
 Load `boltzmann:tools`. The Boltzmann connector must be authorized for the active
 subscriber profile. The separate `enzyme_workflow` plugin must be enabled.
 `enzyme_workflow_catalog` reports workflow rules and references to the original
-Boltzmann catalogue, not another input schema. Pending registrations are not executable. Read
+Boltzmann catalogue, not another input schema. A tool disabled by that catalogue is not executable. Read
 `references/workflow-contract.md` before constructing a plan.
-Existing catalogue tools need no separate activation settings. Only newly
-developed tools remain pending until their backend registration and documentation
-are available. Catalogue routing does not claim a successful live test.
+All listed tools, including RFD3, EnzyControl, DeepAllo, Catalytic Geometry and
+MolProbity, resolve their job names and availability from the current catalogue.
+They need no extra activation setting. A catalogue entry is not a worker-test result.
 
 ## How to Run
 

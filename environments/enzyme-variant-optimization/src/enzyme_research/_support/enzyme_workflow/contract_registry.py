@@ -145,6 +145,7 @@ def load_registry(overrides=None, extensions=None, *, catalog_root=None):
         registry[name].update(binding)
     for name, tool in registry.items():
         tool["tool_id"] = name
+        tool.setdefault("live_verified", False)
         document, text = _read_contract(tool["contract_ref"], catalog_root)
         tool["contract_document"] = document
         if tool["backend_status"] == "catalogue":

@@ -68,6 +68,16 @@ restart. It does not submit a scientific job. An uncertain upload is reconciled,
 not repeated. Best-effort warnings require recorded operator approval; the agent
 cannot approve them by supplying a flag.
 
+Single-structure preparation accepts EnzyControl (`enzycontrol`, file field
+`pdb_path`), DeepAllo (`deepallo`, `input_path`), and RFD3 (`Enzyme_RFD3`,
+`input_path`). Use one selected candidate per job. The first two require PDB;
+RFD3 accepts PDB or CIF. Coordinate bytes and catalytic residue mappings are
+preserved; unsupported formats are not silently renamed. Supply the remaining
+scientific parameters from the current catalogue, including EnzyControl's
+required seed. Scaffold counts must fit the campaign's remaining allocation.
+All listed tools resolve their current wire names from the canonical catalogue;
+newly deployed tools do not need another manual activation step.
+
 Advance the segment with `submit`, `poll`, `download`, then `ingest`. Pass the
 recorded campaign/workflow/step/submission IDs. Downloads refresh their signed
 link inside the host; no signed URL belongs in a plan or report. Ingestion uses

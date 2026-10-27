@@ -1,7 +1,7 @@
 """External native-engine episode reusing the audited host model transport.
 
-The transport is reused unchanged, but its policy exposes the real research
-operations rather than the old read/frozen-score/submit selection interface.
+The existing host transport exposes permitted research operations through a
+bounded policy and keeps each native step attached to its campaign record.
 """
 from __future__ import annotations
 

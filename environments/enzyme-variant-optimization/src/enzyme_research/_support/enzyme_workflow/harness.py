@@ -140,7 +140,7 @@ class Harness:
             raise WorkflowError(f"Dependencies are not complete: {waiting}")
         if tool["backend_status"] != "active":
             return {"status": "awaiting_backend_binding", "tool": step["tool"],
-                    "message": "Configure the verified Node API job_name and collection_name; no job was submitted"}
+                    "message": "This tool is unavailable under the current catalogue or explicit profile binding; no job was submitted"}
         if tool["contract_document"] is None:
             return {"status": "awaiting_authoritative_contract", "tool": step["tool"],
                     "message": "Tool is not documented in the existing Boltzmann catalogue; no job was submitted"}

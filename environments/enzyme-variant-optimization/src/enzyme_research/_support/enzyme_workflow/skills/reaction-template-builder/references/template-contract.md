@@ -1,8 +1,16 @@
 # Per-run template contract
 
-`reaction_template` is an inline JSON object or uploaded JSON storage path with
-`reaction_state`, `sources`, `checks` and optional description. The hosted tool
-assigns `template_id`, `version` and status; callers do not supply those fields.
+Build a JSON object with `reaction_state`, `sources`, `checks` and optional
+description, save it as a UTF-8 JSON file, and upload it. The current live
+`reaction_template` field takes its storage path. Upload a real binding JSON file
+for `template_binding` as well; that path is required by the current live API.
+The local worker's ability to accept objects or omit a binding does not imply
+that the API accepts the same request. The hosted tool assigns `template_id`,
+`version` and status; callers do not supply those fields.
+
+Supply numeric bounds wherever the current template parser requires them,
+including measurement-only runs. Bounds must be justified for the represented
+state; do not add arbitrary intervals to make an otherwise incomplete template run.
 
 Every check has `check_id`, `type`, `rationale`, `sources`, `evidence_level`.
 Evidence levels: `direct_experimental`, `homolog_transfer`, `mechanistic_review`,

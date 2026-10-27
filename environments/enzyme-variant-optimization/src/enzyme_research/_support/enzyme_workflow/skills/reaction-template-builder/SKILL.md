@@ -27,8 +27,10 @@ research happened. Read `references/template-contract.md` before constructing JS
 ## How to Run
 
 Resolve the mechanism with the user, research primary sources and build
-`reaction_template` and optional `template_binding`. Pass objects or uploaded JSON
-paths to the `catalytic_geometry` scientific contract via the workflow harness.
+`reaction_template` and `template_binding` JSON files. Upload both files and pass
+their storage paths to the current `Catalytic_Geometry` Node contract via the
+workflow harness. The current live API requires the binding path; worker support
+for inline objects or optional bindings does not change that API requirement.
 No template IDs or NFS writes are needed.
 
 ## Quick Reference
@@ -47,9 +49,12 @@ transition-state analogue and product geometries distinct.
    labels through generation, sequence design, folding and ligand placement.
 4. Add supported checks appropriate to this reaction, not a universal fixed panel.
    Missing hydrogens/side chains/metals require preparation or an unresolved check.
-5. Without a defensible interval use descriptive measurement mode. With justified
-   ranges use validation mode after user approval. Geometry is an acceptance
-   filter, not experimental proof or a reaction energy calculation.
+5. Measurement mode reports geometry and validation mode applies the selected
+   ranges. Supply the template fields required by the current tool, including
+   numeric bounds where its parser requires them even in measurement mode. Use
+   justified ranges; missing evidence is an incomplete scientific input, not a
+   reason to invent numbers. Geometry is not experimental proof or a reaction
+   energy calculation.
 6. Store the exact template with this experiment's output and hash. The scientific
    tool assigns template identity; do not submit reviewed/active status claims.
 

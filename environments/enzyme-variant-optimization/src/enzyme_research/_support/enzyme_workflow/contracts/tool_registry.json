@@ -1,53 +1,50 @@
 {
   "schema_version": 2,
-  "notes": "Workflow compatibility metadata only. Existing tools resolve routing from the original Boltzmann catalogue without separate activation. Newly developed tools remain pending until explicitly activated and documented. Scientific inputs and call instructions belong to the existing catalogue; no duplicate input schema is maintained here. Catalogue routing is not proof of live backend health.",
+  "notes": "Workflow capabilities and output adapters only. Tool routing and availability are read from Agent-Scientist's current canonical catalogue. All listed tools use catalogue resolution without a second activation requirement. Scientific input schemas remain in that catalogue; availability is not a worker execution test.",
   "tools": {
     "rfd3": {
       "stage": "generation",
       "adapter": "structures",
-      "backend_status": "pending",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
-      "requires": [],
-      "adapter_source": "RFD3/rfd3_validation.py; RFD3/rfd3_outputs.py",
-      "contract_ref": null
+      "backend_status": "catalogue",
+      "requires": [
+        "structure"
+      ],
+      "contract_ref": {
+        "path": "tool-contracts.v1.json",
+        "entry": "Enzyme_RFD3"
+      }
     },
     "enzycontrol": {
       "stage": "generation",
       "adapter": "structures",
-      "backend_status": "pending",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
-      "requires": [],
-      "adapter_source": "EnzyControl/platform_app/validation.py; EnzyControl/platform_app/outputs.py",
-      "contract_ref": null
+      "backend_status": "catalogue",
+      "requires": [
+        "structure"
+      ],
+      "contract_ref": {
+        "path": "tool-contracts.v1.json",
+        "entry": "enzycontrol"
+      }
     },
     "deepallo": {
       "stage": "pockets",
       "adapter": "pockets",
-      "backend_status": "pending",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
+      "backend_status": "catalogue",
       "requires": [
         "all_atom"
       ],
-      "adapter_source": "DeepAllo/deepallo_validation.py",
-      "contract_ref": null
+      "contract_ref": {
+        "path": "tool-contracts.v1.json",
+        "entry": "deepallo"
+      }
     },
     "ligandmpnn": {
       "stage": "sequence",
       "adapter": "sequences",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "structure"
       ],
-      "adapter_source": "LigandMPNN/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Ligand_MPNN"
@@ -57,13 +54,9 @@
       "stage": "sequence",
       "adapter": "sequences",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "structure"
       ],
-      "adapter_source": "ProteinMPNN/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Solublempnn"
@@ -73,11 +66,7 @@
       "stage": "generation",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "GENzyme/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Genzyme_Generation"
@@ -86,40 +75,34 @@
     "catalytic_geometry": {
       "stage": "geometry",
       "adapter": "geometry",
-      "backend_status": "pending",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
+      "backend_status": "catalogue",
       "requires": [
         "all_atom",
         "ligand",
         "mapping"
       ],
-      "adapter_source": "CatalyticGeometry/geometry_validation.py; CatalyticGeometry/geometry_outputs.py",
-      "contract_ref": null
+      "contract_ref": {
+        "path": "tool-contracts.v1.json",
+        "entry": "Catalytic_Geometry"
+      }
     },
     "mol_probity": {
       "stage": "quality",
       "adapter": "quality",
-      "backend_status": "pending",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
+      "backend_status": "catalogue",
       "requires": [
         "all_atom"
       ],
-      "adapter_source": "MolProbity/mol_probity_validation.py; MolProbity/mol_probity_outputs.py",
-      "contract_ref": null
+      "contract_ref": {
+        "path": "tool-contracts.v1.json",
+        "entry": "Mol_Probity"
+      }
     },
     "netsolp": {
       "stage": "properties",
       "adapter": "report",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "NetSolP-1.0/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Netsolp"
@@ -129,11 +112,7 @@
       "stage": "properties",
       "adapter": "report",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "catpred_pipeline/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Cat_Pred"
@@ -143,11 +122,7 @@
       "stage": "properties",
       "adapter": "report",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "kcat/main.py",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "kcat_km"
@@ -157,13 +132,9 @@
       "stage": "folding",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "sequence"
       ],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-structure-prediction.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Boltz2"
@@ -173,9 +144,6 @@
       "stage": "folding",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "sequence"
       ],
@@ -183,7 +151,6 @@
         "Bundled module records a historical Kubernetes dispatch failure. Catalogue routing does not establish current backend health; inspect actual job responses.",
         "Ingest structure ZIP with explicit CSV-based candidate label bindings."
       ],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-structure-prediction.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Protein_Structure_Prediction"
@@ -193,13 +160,9 @@
       "stage": "optimization",
       "adapter": "sequences",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "sequence"
       ],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-optimization.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Random_Controlled_Mutagenesis"
@@ -209,13 +172,9 @@
       "stage": "optimization",
       "adapter": "sequences",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "sequence"
       ],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-optimization.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Insilico_Directed_Evolution"
@@ -225,9 +184,6 @@
       "stage": "docking",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [
         "all_atom",
         "ligand"
@@ -236,7 +192,6 @@
         "Native multi-model PDB must be explicitly split into single-model candidates before ingestion.",
         "Archived source warns payload-to-output association needs a fresh live canary."
       ],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-docking.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Placer"
@@ -246,11 +201,7 @@
       "stage": "generation",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-toolbox.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Motiff_Scaffolding"
@@ -260,11 +211,7 @@
       "stage": "generation",
       "adapter": "structures",
       "backend_status": "catalogue",
-      "job_name": null,
-      "collection_name": null,
-      "live_verified": false,
       "requires": [],
-      "adapter_source": "plugins/boltzmann/skills/boltzmann-tools/references/modules/protein-toolbox.md",
       "contract_ref": {
         "path": "tool-contracts.v1.json",
         "entry": "Uncondtional_Sampling"

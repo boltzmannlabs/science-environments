@@ -19,8 +19,9 @@ compare reports before and after a justified repair.
 
 ## Prerequisites
 
-Prepared single-model protein structures and an active, verified `mol_probity`
-backend binding. Read `references/interpretation.md`. Load `boltzmann:tools` and
+Prepared single-model protein structures and the current `Mol_Probity` catalogue
+entry. The `mol_probity` workflow ID resolves that job name without a second
+activation setting. Read `references/interpretation.md`. Load `boltzmann:tools` and
 read the authoritative Boltzmann module referenced by `enzyme_workflow_catalog`.
 The workflow catalogue contains compatibility metadata, not scientific input definitions.
 

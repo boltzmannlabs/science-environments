@@ -69,6 +69,10 @@ The optional `tests/native/` checks use scripted responses to test the proposer/
 
 The `workflow_source` setting selects the executor actually used by that process. If Agent-Scientist already loaded its executor, configure that existing source. Do not mix that loaded implementation with the bundled snapshot. The environment reads tool request schemas from the canonical catalogue rather than copying a second catalogue of input fields. Tool deployment and scientific outputs remain external dependencies.
 
+All listed tools use the current catalogue for their job names and availability, including the five newly deployed enzyme tools. No second activation step is needed. Input preparation now supports one PDB for EnzyControl or DeepAllo, and one PDB/CIF for RFD3, preserving the selected file's atoms and residue labels. Other required settings are supplied according to each tool's current contract. The dated [catalogue check](results/catalogue-check.json) records the exact Agent-Scientist revision and contracts inspected for this package update.
+
+The live contract currently requires an explicit `seed` for EnzyControl. Catalytic Geometry takes uploaded JSON paths for both `reaction_template` and `template_binding`; its API requires the binding file. These API requirements differ from some local-worker options, so follow the current catalogue when submitting requests.
+
 The command-line `start` operation creates a local experiment record. Running a live investigation also needs the configured host to supply the model calls. The four registered plugin operations alone do not complete this setup. No changes to Agent-Scientist core source are required.
 
 ## Scope and evidence

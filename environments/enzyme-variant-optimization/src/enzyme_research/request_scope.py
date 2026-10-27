@@ -22,6 +22,21 @@ def validate_request_scope(state, job, data, candidate_ids, *, structure_ids=Non
             raise ResearchError("Boltz2 inputs must describe the one declared candidate sequence, not another protein or a batch of chains")
         if data.get("SMILES") != [state["task"]["substrate"]["smiles"]] or any(data.get(key) for key in ("DNA_Sequences", "RNA_Sequences")):
             raise ResearchError("This enzyme task permits only its declared substrate, not undeclared extra molecules")
+    if job in {"enzycontrol", "Enzyme_RFD3"}:
+        if len(candidate_ids) != 1:
+            raise ResearchError("Scaffold generation requires one declared input candidate per job")
+        count = data.get("n_samples", 1)
+        remaining = state["task"]["budget"]["max_unique_candidates"] - (len(known) - 1)
+        if type(count) is not int or not 1 <= count <= remaining:
+            raise ResearchError("Requested scaffold generation exceeds the campaign's remaining candidate allocation")
+        if job == "enzycontrol" and data.get("smiles") != state["task"]["substrate"]["smiles"]:
+            raise ResearchError("EnzyControl must use the task's declared substrate")
+        if state["task"]["evidence_track"] != "synthetic":
+            field = "pdb_path" if job == "enzycontrol" else "input_path"
+            receipts = [e["payload"]["data"] for e in state["events"] if e["payload"]["event"] == "input_uploaded"]
+            if not any(r["job_name"] == job and r["input_field"] == field
+                       and r["storage_path"] == data.get(field) and r["candidate_ids"] == candidate_ids for r in receipts):
+                raise ResearchError("Scaffold generation requires the prepared/uploaded structure for its declared candidate")
     if job in {"Solublempnn", "Ligand_MPNN"}:
         field = "num_seq" if job == "Solublempnn" else "num_sequences"
         count = data.get(field)

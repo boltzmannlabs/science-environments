@@ -1,521 +1,533 @@
 {
-  "captured_utc": "2026-10-27T12:49:39Z",
-  "description": "Content snapshot copied from the existing environment and executor; no running source was edited. Paths below are conceptual source-tree names, not operator filesystem paths.",
+  "schema_version": "enzyme-environment-source-snapshot/1",
+  "captured_utc": "2026-10-27T13:23:12Z",
+  "description": "Current development-source snapshot with explicit environment adaptations for catalogue resolution, input preparation, scope checks, portable packaging, and documentation. No running source was edited. Paths are conceptual source-tree names.",
   "files": {
     "src/enzyme_research/__init__.py": {
-      "adapted_for_packaging": false,
-      "sha256": "aa8433b8e936f3ad427326c252e2536e360aedbeac2d4be3e79907b47180194e",
+      "sha256": "6e799fab9e6206e93f746fa8c185c0d65633b7f4224287649c07e879779cee20",
       "source": "research_environment/src/enzyme_research/__init__.py",
-      "source_sha256": "aa8433b8e936f3ad427326c252e2536e360aedbeac2d4be3e79907b47180194e"
+      "source_sha256": "aa8433b8e936f3ad427326c252e2536e360aedbeac2d4be3e79907b47180194e",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/__init__.py": {
-      "adapted_for_packaging": false,
       "sha256": "daf3190a947b33ee08d9baefb4c2506002ed2acce43e74687ecd22d9effcc620",
       "source": "enzyme_workflow/__init__.py",
-      "source_sha256": "daf3190a947b33ee08d9baefb4c2506002ed2acce43e74687ecd22d9effcc620"
+      "source_sha256": "daf3190a947b33ee08d9baefb4c2506002ed2acce43e74687ecd22d9effcc620",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/artifacts.py": {
-      "adapted_for_packaging": false,
       "sha256": "6215eaa6a005a7dee80e5fb1bb1994ca88e7045904a9bf01f9764ce8629a8097",
       "source": "enzyme_workflow/artifacts.py",
-      "source_sha256": "6215eaa6a005a7dee80e5fb1bb1994ca88e7045904a9bf01f9764ce8629a8097"
+      "source_sha256": "6215eaa6a005a7dee80e5fb1bb1994ca88e7045904a9bf01f9764ce8629a8097",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/catpred.py": {
-      "adapted_for_packaging": false,
       "sha256": "ddf5fa1db90940615e1da4ae46a3cf0fdec5cc8dc24bda6b5fa72b783886b37c",
       "source": "enzyme_workflow/catpred.py",
-      "source_sha256": "ddf5fa1db90940615e1da4ae46a3cf0fdec5cc8dc24bda6b5fa72b783886b37c"
+      "source_sha256": "ddf5fa1db90940615e1da4ae46a3cf0fdec5cc8dc24bda6b5fa72b783886b37c",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/common.py": {
-      "adapted_for_packaging": false,
       "sha256": "259f241c2d394981199e6516569bef3cfbaad07ff8db0728ba6400ff71973f33",
       "source": "enzyme_workflow/common.py",
-      "source_sha256": "259f241c2d394981199e6516569bef3cfbaad07ff8db0728ba6400ff71973f33"
+      "source_sha256": "259f241c2d394981199e6516569bef3cfbaad07ff8db0728ba6400ff71973f33",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/connector.py": {
-      "adapted_for_packaging": false,
       "sha256": "90e2ebcacb6047afefcbebaaddffa2fab90f273589b85bd6c0ed2e185b26c41d",
       "source": "enzyme_workflow/connector.py",
-      "source_sha256": "90e2ebcacb6047afefcbebaaddffa2fab90f273589b85bd6c0ed2e185b26c41d"
+      "source_sha256": "90e2ebcacb6047afefcbebaaddffa2fab90f273589b85bd6c0ed2e185b26c41d",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/contract_registry.py": {
-      "adapted_for_packaging": false,
-      "sha256": "95666fb3a4e8a41e1ba1ec5f97bc57fbfdf2a35630caa3973820f4700f7f1658",
+      "sha256": "86e08890b8da09f151bf9e2918d67174d7a670deb2d20bfc140ad1fa555b1916",
       "source": "enzyme_workflow/contract_registry.py",
-      "source_sha256": "95666fb3a4e8a41e1ba1ec5f97bc57fbfdf2a35630caa3973820f4700f7f1658"
+      "source_sha256": "95666fb3a4e8a41e1ba1ec5f97bc57fbfdf2a35630caa3973820f4700f7f1658",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/contracts/tool_registry.json": {
-      "adapted_for_packaging": false,
-      "sha256": "ee6b1d57ce196f2d666e4ce3ebfdf868527a9bf924263986aaa437625f76169a",
+      "sha256": "89a4d20084e8f7171543418cc19750db0e6cdf08de621da7baddabb5967b73c4",
       "source": "enzyme_workflow/contracts/tool_registry.json",
-      "source_sha256": "ee6b1d57ce196f2d666e4ce3ebfdf868527a9bf924263986aaa437625f76169a"
+      "source_sha256": "ee6b1d57ce196f2d666e4ce3ebfdf868527a9bf924263986aaa437625f76169a",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/examples/offline_replay.py": {
-      "adapted_for_packaging": false,
       "sha256": "67553d5f1fdad26de4eb82c760089d985b3200fdcc21ea71c68ac1cc1390ea80",
       "source": "enzyme_workflow/examples/offline_replay.py",
-      "source_sha256": "67553d5f1fdad26de4eb82c760089d985b3200fdcc21ea71c68ac1cc1390ea80"
+      "source_sha256": "67553d5f1fdad26de4eb82c760089d985b3200fdcc21ea71c68ac1cc1390ea80",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/gates.py": {
-      "adapted_for_packaging": false,
       "sha256": "75b065367110cd459646221e65e31d34db6453dd937da253f64d3237ff3db24e",
       "source": "enzyme_workflow/gates.py",
-      "source_sha256": "75b065367110cd459646221e65e31d34db6453dd937da253f64d3237ff3db24e"
+      "source_sha256": "75b065367110cd459646221e65e31d34db6453dd937da253f64d3237ff3db24e",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/graph.py": {
-      "adapted_for_packaging": false,
       "sha256": "411a6a82f3423beb11a38e720673cc863a07a87a0635789168e53b94a79bb7f2",
       "source": "enzyme_workflow/graph.py",
-      "source_sha256": "411a6a82f3423beb11a38e720673cc863a07a87a0635789168e53b94a79bb7f2"
+      "source_sha256": "411a6a82f3423beb11a38e720673cc863a07a87a0635789168e53b94a79bb7f2",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/harness.py": {
-      "adapted_for_packaging": false,
-      "sha256": "99044f681b45a9aeb3741ced2865d12ef2da93c644981e2b4626ce872b676431",
+      "sha256": "1bc447ba16dbc6823f5453b25ebf5727e33c158fd9448502cc00c4bb17788689",
       "source": "enzyme_workflow/harness.py",
-      "source_sha256": "99044f681b45a9aeb3741ced2865d12ef2da93c644981e2b4626ce872b676431"
+      "source_sha256": "99044f681b45a9aeb3741ced2865d12ef2da93c644981e2b4626ce872b676431",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/hooks.py": {
-      "adapted_for_packaging": false,
       "sha256": "9b1c9d16b448697a9303bc42421949d5ba5bd76a16929c54986ac3d2993a2077",
       "source": "enzyme_workflow/hooks.py",
-      "source_sha256": "9b1c9d16b448697a9303bc42421949d5ba5bd76a16929c54986ac3d2993a2077"
+      "source_sha256": "9b1c9d16b448697a9303bc42421949d5ba5bd76a16929c54986ac3d2993a2077",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/inputs.py": {
-      "adapted_for_packaging": false,
       "sha256": "c679545c335672b39c341b2b7888a3c8408fa4724ed853d603b4a4714b2e644a",
       "source": "enzyme_workflow/inputs.py",
-      "source_sha256": "c679545c335672b39c341b2b7888a3c8408fa4724ed853d603b4a4714b2e644a"
+      "source_sha256": "c679545c335672b39c341b2b7888a3c8408fa4724ed853d603b4a4714b2e644a",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/plugin.yaml": {
-      "adapted_for_packaging": false,
       "sha256": "a0ef16ca88584e9a8fe6c39be2c2381c52617a267b3ea034a0c079c7abbf8204",
       "source": "enzyme_workflow/plugin.yaml",
-      "source_sha256": "a0ef16ca88584e9a8fe6c39be2c2381c52617a267b3ea034a0c079c7abbf8204"
+      "source_sha256": "a0ef16ca88584e9a8fe6c39be2c2381c52617a267b3ea034a0c079c7abbf8204",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/schemas.py": {
-      "adapted_for_packaging": false,
       "sha256": "84a898a096670226f2a9792e1ba65bb98c0340f5878b5f20249ae21c5f5a46a7",
       "source": "enzyme_workflow/schemas.py",
-      "source_sha256": "84a898a096670226f2a9792e1ba65bb98c0340f5878b5f20249ae21c5f5a46a7"
+      "source_sha256": "84a898a096670226f2a9792e1ba65bb98c0340f5878b5f20249ae21c5f5a46a7",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/enzyme-design-workflow/SKILL.md": {
-      "adapted_for_packaging": false,
-      "sha256": "72d60969c621fc2bc9275b4ca98084c3f605ebb3bf64c2fd2e4cf5efa413efdc",
+      "sha256": "0202686ee9ff281df841e7d8547cebde7ac474c6d7b606f1d345521d45e86c8e",
       "source": "enzyme_workflow/skills/enzyme-design-workflow/SKILL.md",
-      "source_sha256": "72d60969c621fc2bc9275b4ca98084c3f605ebb3bf64c2fd2e4cf5efa413efdc"
+      "source_sha256": "72d60969c621fc2bc9275b4ca98084c3f605ebb3bf64c2fd2e4cf5efa413efdc",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/enzyme-design-workflow/references/workflow-contract.md": {
-      "adapted_for_packaging": false,
-      "sha256": "097c73529c3cd9c35ef9c791bd11f60c976137b155be92f49973252038345410",
+      "sha256": "6caa0c56d8347db59f05c2391da5c8807e1fbaff256d5c6ddc40455d34728554",
       "source": "enzyme_workflow/skills/enzyme-design-workflow/references/workflow-contract.md",
-      "source_sha256": "097c73529c3cd9c35ef9c791bd11f60c976137b155be92f49973252038345410"
+      "source_sha256": "097c73529c3cd9c35ef9c791bd11f60c976137b155be92f49973252038345410",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/mol-probity-reviewer/SKILL.md": {
-      "adapted_for_packaging": false,
-      "sha256": "52d4530a1ed45779cdf0a0080eeea054dfcf895c3dc05a8960e52355cdf62cc8",
+      "sha256": "14a1cd670692ee076f353aa7f4985d0c6ecc4b6c2621db5b040e490cb1144711",
       "source": "enzyme_workflow/skills/mol-probity-reviewer/SKILL.md",
-      "source_sha256": "52d4530a1ed45779cdf0a0080eeea054dfcf895c3dc05a8960e52355cdf62cc8"
+      "source_sha256": "52d4530a1ed45779cdf0a0080eeea054dfcf895c3dc05a8960e52355cdf62cc8",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/mol-probity-reviewer/references/interpretation.md": {
-      "adapted_for_packaging": false,
-      "sha256": "6f91ee1f21df1427ce33a1e7b756cfd05e210e4f739426db88a71498e65cbcc9",
+      "sha256": "86dcda5c2a89b43f61537a7c913f1525eee35113e5eea19e7f53bd01a4d5edef",
       "source": "enzyme_workflow/skills/mol-probity-reviewer/references/interpretation.md",
-      "source_sha256": "6f91ee1f21df1427ce33a1e7b756cfd05e210e4f739426db88a71498e65cbcc9"
+      "source_sha256": "6f91ee1f21df1427ce33a1e7b756cfd05e210e4f739426db88a71498e65cbcc9",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/reaction-template-builder/SKILL.md": {
-      "adapted_for_packaging": false,
-      "sha256": "67815b8b625e9714e686e02efac6daaa79fd65b45c177d05bbd3e174fa85de29",
+      "sha256": "ccf9a7200f7c3c30187bd2d54f27ddcf8f90cb237f2a15d573fb26be5d76da79",
       "source": "enzyme_workflow/skills/reaction-template-builder/SKILL.md",
-      "source_sha256": "67815b8b625e9714e686e02efac6daaa79fd65b45c177d05bbd3e174fa85de29"
+      "source_sha256": "67815b8b625e9714e686e02efac6daaa79fd65b45c177d05bbd3e174fa85de29",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/skills/reaction-template-builder/references/template-contract.md": {
-      "adapted_for_packaging": false,
-      "sha256": "0086b9f81a71151edd84b3356bea9cb32692a7cecb3126b744e3ca20273dcff1",
+      "sha256": "c84767459c86cf06b23db5bbb986818d15f562b3609bdfcb66277c0e5f33b852",
       "source": "enzyme_workflow/skills/reaction-template-builder/references/template-contract.md",
-      "source_sha256": "0086b9f81a71151edd84b3356bea9cb32692a7cecb3126b744e3ca20273dcff1"
+      "source_sha256": "0086b9f81a71151edd84b3356bea9cb32692a7cecb3126b744e3ca20273dcff1",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/_support/enzyme_workflow/state.py": {
-      "adapted_for_packaging": false,
       "sha256": "b4bddd22dc6d9535c5a2a6670c98a21eb1d3227213a2989136193ec23edebf46",
       "source": "enzyme_workflow/state.py",
-      "source_sha256": "b4bddd22dc6d9535c5a2a6670c98a21eb1d3227213a2989136193ec23edebf46"
+      "source_sha256": "b4bddd22dc6d9535c5a2a6670c98a21eb1d3227213a2989136193ec23edebf46",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/_support/enzyme_workflow/tools.py": {
-      "adapted_for_packaging": false,
       "sha256": "3136b84c8304283acaad7e4166339d000d8665b597794b6fe5db37b0d8bc1e09",
       "source": "enzyme_workflow/tools.py",
-      "source_sha256": "3136b84c8304283acaad7e4166339d000d8665b597794b6fe5db37b0d8bc1e09"
+      "source_sha256": "3136b84c8304283acaad7e4166339d000d8665b597794b6fe5db37b0d8bc1e09",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/cli.py": {
-      "adapted_for_packaging": false,
       "sha256": "8575651c425f4d1b5404e6d01445c8c4118738c49a08bc4b7ba933c60ce14e5c",
       "source": "research_environment/src/enzyme_research/cli.py",
-      "source_sha256": "8575651c425f4d1b5404e6d01445c8c4118738c49a08bc4b7ba933c60ce14e5c"
+      "source_sha256": "8575651c425f4d1b5404e6d01445c8c4118738c49a08bc4b7ba933c60ce14e5c",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/connector.py": {
-      "adapted_for_packaging": false,
       "sha256": "96c62d3234972bd01e2c01df8bd3bff2a3befb8177b3f2778c372e876b0aa4dd",
       "source": "research_environment/src/enzyme_research/connector.py",
-      "source_sha256": "96c62d3234972bd01e2c01df8bd3bff2a3befb8177b3f2778c372e876b0aa4dd"
+      "source_sha256": "96c62d3234972bd01e2c01df8bd3bff2a3befb8177b3f2778c372e876b0aa4dd",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/context.py": {
-      "adapted_for_packaging": false,
       "sha256": "5a970ed9d8348ddfa264b3c6ef8b50daa5a8d74ae92a8ed69d892bf273f893a5",
       "source": "research_environment/src/enzyme_research/context.py",
-      "source_sha256": "5a970ed9d8348ddfa264b3c6ef8b50daa5a8d74ae92a8ed69d892bf273f893a5"
+      "source_sha256": "5a970ed9d8348ddfa264b3c6ef8b50daa5a8d74ae92a8ed69d892bf273f893a5",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/contracts.py": {
-      "adapted_for_packaging": false,
       "sha256": "304509ce4a9829fcd351e45201320e7d8445c35fcf3ea254f9e25dbda69ac4c5",
       "source": "research_environment/src/enzyme_research/contracts.py",
-      "source_sha256": "304509ce4a9829fcd351e45201320e7d8445c35fcf3ea254f9e25dbda69ac4c5"
+      "source_sha256": "304509ce4a9829fcd351e45201320e7d8445c35fcf3ea254f9e25dbda69ac4c5",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/demo.py": {
-      "adapted_for_packaging": false,
       "sha256": "d50ca9ab25b22636866403dbbf959b6eb079115146fcd92d20aab7325e0861c4",
       "source": "research_environment/src/enzyme_research/demo.py",
-      "source_sha256": "d50ca9ab25b22636866403dbbf959b6eb079115146fcd92d20aab7325e0861c4"
+      "source_sha256": "d50ca9ab25b22636866403dbbf959b6eb079115146fcd92d20aab7325e0861c4",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/discovery.py": {
-      "adapted_for_packaging": false,
       "sha256": "e50c6dbeccc703797cadb7c7de70a11cd2a1bf103b068131ec76c1d379b129a4",
       "source": "research_environment/src/enzyme_research/discovery.py",
-      "source_sha256": "e50c6dbeccc703797cadb7c7de70a11cd2a1bf103b068131ec76c1d379b129a4"
+      "source_sha256": "e50c6dbeccc703797cadb7c7de70a11cd2a1bf103b068131ec76c1d379b129a4",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/identity.py": {
-      "adapted_for_packaging": false,
       "sha256": "43153820a473c9207637e63b935d852393f7d51e10b5f48e1c999a346fe11c44",
       "source": "research_environment/src/enzyme_research/identity.py",
-      "source_sha256": "43153820a473c9207637e63b935d852393f7d51e10b5f48e1c999a346fe11c44"
+      "source_sha256": "43153820a473c9207637e63b935d852393f7d51e10b5f48e1c999a346fe11c44",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/ligands.py": {
-      "adapted_for_packaging": false,
       "sha256": "9307d0ad749608240166b2b31b9e62aa5e88b765f326e1b666de793611aad092",
       "source": "research_environment/src/enzyme_research/ligands.py",
-      "source_sha256": "9307d0ad749608240166b2b31b9e62aa5e88b765f326e1b666de793611aad092"
+      "source_sha256": "9307d0ad749608240166b2b31b9e62aa5e88b765f326e1b666de793611aad092",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/model_roles.py": {
-      "adapted_for_packaging": false,
       "sha256": "d31865a50346a47749abd30604996c866a7c11738db7d686ccf418ddfc189c4e",
       "source": "research_environment/src/enzyme_research/model_roles.py",
-      "source_sha256": "d31865a50346a47749abd30604996c866a7c11738db7d686ccf418ddfc189c4e"
+      "source_sha256": "d31865a50346a47749abd30604996c866a7c11738db7d686ccf418ddfc189c4e",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/native_connector_worker.py": {
-      "adapted_for_packaging": false,
       "sha256": "342d9cb493f9ce31c99570f267f30439c4209031bfb8d47e67884653b8d70533",
       "source": "research_environment/src/enzyme_research/native_connector_worker.py",
-      "source_sha256": "342d9cb493f9ce31c99570f267f30439c4209031bfb8d47e67884653b8d70533"
+      "source_sha256": "342d9cb493f9ce31c99570f267f30439c4209031bfb8d47e67884653b8d70533",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/native_episode.py": {
-      "adapted_for_packaging": false,
-      "sha256": "b722267f7e9117132245e7f6d89411ac2c399965a17ada0b1d7a6ed972aaba9b",
+      "sha256": "a8a8e35f1f5431b2bd4338e68ded7c182918fd6e9ee36fa744ffa15698da2e7c",
       "source": "research_environment/src/enzyme_research/native_episode.py",
-      "source_sha256": "b722267f7e9117132245e7f6d89411ac2c399965a17ada0b1d7a6ed972aaba9b"
+      "source_sha256": "b722267f7e9117132245e7f6d89411ac2c399965a17ada0b1d7a6ed972aaba9b",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/native_fixtures.py": {
-      "adapted_for_packaging": false,
       "sha256": "b7adc3ef72741f890e90313faeb9998f76c2c2aba9904f61bd8a0b1a6c444a00",
       "source": "research_environment/src/enzyme_research/native_fixtures.py",
-      "source_sha256": "b7adc3ef72741f890e90313faeb9998f76c2c2aba9904f61bd8a0b1a6c444a00"
+      "source_sha256": "b7adc3ef72741f890e90313faeb9998f76c2c2aba9904f61bd8a0b1a6c444a00",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/native_policy.py": {
-      "adapted_for_packaging": false,
       "sha256": "8cc40773401f6974f5ab8b6b7e9789b66d92a98a44cdde0c597647c63f032a1c",
       "source": "research_environment/src/enzyme_research/native_policy.py",
-      "source_sha256": "8cc40773401f6974f5ab8b6b7e9789b66d92a98a44cdde0c597647c63f032a1c"
+      "source_sha256": "8cc40773401f6974f5ab8b6b7e9789b66d92a98a44cdde0c597647c63f032a1c",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/native_worker.py": {
-      "adapted_for_packaging": false,
       "sha256": "184a0ee368f7d9b365719142de2dd789b94a7b0b5711f2210aaab5ade2c733f6",
       "source": "research_environment/src/enzyme_research/native_worker.py",
-      "source_sha256": "184a0ee368f7d9b365719142de2dd789b94a7b0b5711f2210aaab5ade2c733f6"
+      "source_sha256": "184a0ee368f7d9b365719142de2dd789b94a7b0b5711f2210aaab5ade2c733f6",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/paths.py": {
       "sha256": "6541b3dd7441dfb517993a44b0b89415d014bff93ba385f347439c3785316af7",
-      "source": "new release-packaging implementation"
+      "source": "environment release implementation"
     },
     "src/enzyme_research/plugin.py": {
-      "adapted_for_packaging": false,
       "sha256": "6675620fd2dc6a3cdf1b941626a2348cd8048d1e99858aa02bb7784d4d08de6f",
       "source": "research_environment/src/enzyme_research/plugin.py",
-      "source_sha256": "6675620fd2dc6a3cdf1b941626a2348cd8048d1e99858aa02bb7784d4d08de6f"
+      "source_sha256": "6675620fd2dc6a3cdf1b941626a2348cd8048d1e99858aa02bb7784d4d08de6f",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/plugin.yaml": {
-      "adapted_for_packaging": false,
-      "sha256": "6d0956c6f630cc5190c85c172587ca27fd2efd83a5202f686f32f11f9d40b324",
+      "sha256": "8687ffe0a7caa1a1590dbce5fa209d1933a859d33288105de29fe5b97d821d99",
       "source": "research_environment/src/enzyme_research/plugin.yaml",
-      "source_sha256": "6d0956c6f630cc5190c85c172587ca27fd2efd83a5202f686f32f11f9d40b324"
+      "source_sha256": "6d0956c6f630cc5190c85c172587ca27fd2efd83a5202f686f32f11f9d40b324",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/preparation.py": {
-      "adapted_for_packaging": false,
-      "sha256": "d7a01b245f26456097f9dc73041b63b0b98f6bfc1a87feec9642c2774da79839",
+      "sha256": "f743ea2e4ea558aeef151408403caf4d46d52c023845f6b16f7e775db8168504",
       "source": "research_environment/src/enzyme_research/preparation.py",
-      "source_sha256": "d7a01b245f26456097f9dc73041b63b0b98f6bfc1a87feec9642c2774da79839"
+      "source_sha256": "d7a01b245f26456097f9dc73041b63b0b98f6bfc1a87feec9642c2774da79839",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/protein_projection.py": {
-      "adapted_for_packaging": false,
       "sha256": "106fa29753019e5e31391663ac6662a3e5dcdc54013d94a7ea61424f33285792",
       "source": "research_environment/src/enzyme_research/protein_projection.py",
-      "source_sha256": "106fa29753019e5e31391663ac6662a3e5dcdc54013d94a7ea61424f33285792"
+      "source_sha256": "106fa29753019e5e31391663ac6662a3e5dcdc54013d94a7ea61424f33285792",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/reference.py": {
-      "adapted_for_packaging": false,
       "sha256": "98ace02a3f5093befe03388f46ae7339f6d479dd5b04cf1a1c69a1d7fa2e05ca",
       "source": "research_environment/src/enzyme_research/reference.py",
-      "source_sha256": "98ace02a3f5093befe03388f46ae7339f6d479dd5b04cf1a1c69a1d7fa2e05ca"
+      "source_sha256": "98ace02a3f5093befe03388f46ae7339f6d479dd5b04cf1a1c69a1d7fa2e05ca",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/reporting.py": {
-      "adapted_for_packaging": false,
       "sha256": "1bf1d79a2e6ee183870d3505273edb24568cfcc2877aa2462949612da63adffa",
       "source": "research_environment/src/enzyme_research/reporting.py",
-      "source_sha256": "1bf1d79a2e6ee183870d3505273edb24568cfcc2877aa2462949612da63adffa"
+      "source_sha256": "1bf1d79a2e6ee183870d3505273edb24568cfcc2877aa2462949612da63adffa",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/request_scope.py": {
-      "adapted_for_packaging": false,
-      "sha256": "ca50d2d89173f3c4b992f556a676c04141fe4612d324753a87a837a3bdee6e73",
+      "sha256": "9f0ec78ded440e954e9cb4f1e356f7c3aea0bfda7c2c6f12e6ee10eaa22f8282",
       "source": "research_environment/src/enzyme_research/request_scope.py",
-      "source_sha256": "ca50d2d89173f3c4b992f556a676c04141fe4612d324753a87a837a3bdee6e73"
+      "source_sha256": "ca50d2d89173f3c4b992f556a676c04141fe4612d324753a87a837a3bdee6e73",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/results.py": {
-      "adapted_for_packaging": false,
       "sha256": "15283b953d3f59be92f5abe7dfa2c07445a407080c749d341e4e0d23b12ee1e9",
       "source": "research_environment/src/enzyme_research/results.py",
-      "source_sha256": "15283b953d3f59be92f5abe7dfa2c07445a407080c749d341e4e0d23b12ee1e9"
+      "source_sha256": "15283b953d3f59be92f5abe7dfa2c07445a407080c749d341e4e0d23b12ee1e9",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/service.py": {
-      "adapted_for_packaging": false,
       "sha256": "be2d2a30c6042ee921338828a16939e3eac10109127bcfe2dec911070186ae9b",
       "source": "research_environment/src/enzyme_research/service.py",
-      "source_sha256": "be2d2a30c6042ee921338828a16939e3eac10109127bcfe2dec911070186ae9b"
+      "source_sha256": "be2d2a30c6042ee921338828a16939e3eac10109127bcfe2dec911070186ae9b",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/skills/enzyme-research/SKILL.md": {
-      "adapted_for_packaging": true,
-      "sha256": "13012167af81ed1b35113b42b28aee361540b1d993a72cb312ed2b87382dd81f",
+      "sha256": "ea6984e3f9d3c702a9388f7c589602a2e41862b9c4985c2d0a8500071476281c",
       "source": "research_environment/src/enzyme_research/skills/enzyme-research/SKILL.md",
-      "source_sha256": "3aa66a277b71c83a62fdad7b03807ce463d07ab43aa927cebd9b2faef9930519"
+      "source_sha256": "3aa66a277b71c83a62fdad7b03807ce463d07ab43aa927cebd9b2faef9930519",
+      "adapted_for_packaging": true
     },
     "src/enzyme_research/stability.py": {
-      "adapted_for_packaging": false,
       "sha256": "6ea73d2825aba32dcd291dbdc22de56e5411fafc9a20be1bfcc8d073460ef8c9",
       "source": "research_environment/src/enzyme_research/stability.py",
-      "source_sha256": "6ea73d2825aba32dcd291dbdc22de56e5411fafc9a20be1bfcc8d073460ef8c9"
+      "source_sha256": "6ea73d2825aba32dcd291dbdc22de56e5411fafc9a20be1bfcc8d073460ef8c9",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/stability_workflow.py": {
-      "adapted_for_packaging": false,
       "sha256": "44d81d5407263c57257a77e8f0f1f57eb2c64700bcf8c31bac9a5721a3cad67c",
       "source": "research_environment/src/enzyme_research/stability_workflow.py",
-      "source_sha256": "44d81d5407263c57257a77e8f0f1f57eb2c64700bcf8c31bac9a5721a3cad67c"
+      "source_sha256": "44d81d5407263c57257a77e8f0f1f57eb2c64700bcf8c31bac9a5721a3cad67c",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/store.py": {
-      "adapted_for_packaging": false,
       "sha256": "8f9f455195463d0112a92161a0b8556595d0e883869284a2926d2c5a20d2f62b",
       "source": "research_environment/src/enzyme_research/store.py",
-      "source_sha256": "8f9f455195463d0112a92161a0b8556595d0e883869284a2926d2c5a20d2f62b"
+      "source_sha256": "8f9f455195463d0112a92161a0b8556595d0e883869284a2926d2c5a20d2f62b",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/structures.py": {
-      "adapted_for_packaging": false,
       "sha256": "f038b0804a0f8e0b3330f41730689acbd562eccfdb7dda3ac4cc297576988750",
       "source": "research_environment/src/enzyme_research/structures.py",
-      "source_sha256": "f038b0804a0f8e0b3330f41730689acbd562eccfdb7dda3ac4cc297576988750"
+      "source_sha256": "f038b0804a0f8e0b3330f41730689acbd562eccfdb7dda3ac4cc297576988750",
+      "adapted_for_packaging": false
     },
     "src/enzyme_research/workflow.py": {
-      "adapted_for_packaging": false,
       "sha256": "ba5e7540aff79afc5c30071908f2b30babf8abf494c6904014d1a96b460d4c9f",
       "source": "research_environment/src/enzyme_research/workflow.py",
-      "source_sha256": "ba5e7540aff79afc5c30071908f2b30babf8abf494c6904014d1a96b460d4c9f"
+      "source_sha256": "ba5e7540aff79afc5c30071908f2b30babf8abf494c6904014d1a96b460d4c9f",
+      "adapted_for_packaging": false
+    },
+    "tests/README.md": {
+      "sha256": "104425130b13b4288a274800cd65bf3e448398c2281bc7b54a06a86a86b0dbd8",
+      "source": "environment release implementation"
     },
     "tests/conftest.py": {
-      "adapted_for_packaging": true,
       "sha256": "2326cbedda159ebf5e9e1686ddc860f3b0cd247cdf1169faef48747328d5901f",
       "source": "research_environment/tests/conftest.py",
-      "source_sha256": "442a9242a87e684ce091147b53802231ad9ba8200525ec25db678e21e545a44d"
+      "source_sha256": "442a9242a87e684ce091147b53802231ad9ba8200525ec25db678e21e545a44d",
+      "adapted_for_packaging": true
     },
     "tests/native/test_native_episode_failures.py": {
-      "adapted_for_packaging": false,
       "sha256": "5a66021f6be987a84eae972f21d863c447f7bce91fac12c790dfb0b1acd34817",
       "source": "research_environment/tests/test_native_episode_failures.py",
-      "source_sha256": "5a66021f6be987a84eae972f21d863c447f7bce91fac12c790dfb0b1acd34817"
+      "source_sha256": "5a66021f6be987a84eae972f21d863c447f7bce91fac12c790dfb0b1acd34817",
+      "adapted_for_packaging": false
     },
     "tests/native/test_role_context_access.py": {
-      "adapted_for_packaging": true,
       "sha256": "f2eb9c89151b45210e0f33a317d397465070686507588457680f8c6c295fea5f",
       "source": "research_environment/tests/test_role_context_access.py",
-      "source_sha256": "21ddaf979f4a98f48ef1d022cc040be5a411bb84da41abfd1d49bd7de8275015"
+      "source_sha256": "21ddaf979f4a98f48ef1d022cc040be5a411bb84da41abfd1d49bd7de8275015",
+      "adapted_for_packaging": true
     },
     "tests/test_benchmark_csv_headers_unittest.py": {
-      "adapted_for_packaging": true,
       "sha256": "87849181f7a8c59c3e32fb86498456478c0b7ed6da2c0bd6d42534edf90aa7fd",
       "source": "research_environment/tests/test_benchmark_csv_headers_unittest.py",
-      "source_sha256": "ae68fd25c7ada7e75f0d4309a7e2541e5f304f57f5a065289e16ae8c4ae31db5"
+      "source_sha256": "ae68fd25c7ada7e75f0d4309a7e2541e5f304f57f5a065289e16ae8c4ae31db5",
+      "adapted_for_packaging": true
     },
     "tests/test_canonical_preparation.py": {
-      "adapted_for_packaging": true,
       "sha256": "f193c53956494c50da5c54e9df0e0a0f1f2423ae136c217e4aee52e2be94a434",
       "source": "research_environment/tests/test_canonical_preparation.py",
-      "source_sha256": "397ef836de3196d9d084583f9e17d3220994fe401172e83e0d18fe8746ecb73c"
+      "source_sha256": "397ef836de3196d9d084583f9e17d3220994fe401172e83e0d18fe8746ecb73c",
+      "adapted_for_packaging": true
     },
     "tests/test_context_access.py": {
-      "adapted_for_packaging": false,
       "sha256": "c900c89b486fe31e1dbd31502d32894e44fb1e004bb75034b21fe2bafa23e335",
       "source": "research_environment/tests/test_context_access.py",
-      "source_sha256": "c900c89b486fe31e1dbd31502d32894e44fb1e004bb75034b21fe2bafa23e335"
+      "source_sha256": "c900c89b486fe31e1dbd31502d32894e44fb1e004bb75034b21fe2bafa23e335",
+      "adapted_for_packaging": false
     },
     "tests/test_contracts.py": {
-      "adapted_for_packaging": false,
       "sha256": "96b88a0a34b3ea4958f5e4d8d1cecf3e922274fd2999ac786bdcdb3a5cc6a6b8",
       "source": "research_environment/tests/test_contracts.py",
-      "source_sha256": "96b88a0a34b3ea4958f5e4d8d1cecf3e922274fd2999ac786bdcdb3a5cc6a6b8"
+      "source_sha256": "96b88a0a34b3ea4958f5e4d8d1cecf3e922274fd2999ac786bdcdb3a5cc6a6b8",
+      "adapted_for_packaging": false
     },
     "tests/test_coordinate_observations.py": {
-      "adapted_for_packaging": false,
       "sha256": "cc46f725a7db88d6297ac831997c4ad2a8704608dcd20b22a1d70896f205375c",
       "source": "research_environment/tests/test_coordinate_observations.py",
-      "source_sha256": "cc46f725a7db88d6297ac831997c4ad2a8704608dcd20b22a1d70896f205375c"
+      "source_sha256": "cc46f725a7db88d6297ac831997c4ad2a8704608dcd20b22a1d70896f205375c",
+      "adapted_for_packaging": false
+    },
+    "tests/test_current_tool_catalogue.py": {
+      "sha256": "c74cb3e375924041b28043aa875a5a93323ccc49903f77d6658aeb9a722ba7b2",
+      "source": "environment release implementation"
     },
     "tests/test_decision_feedback.py": {
-      "adapted_for_packaging": false,
       "sha256": "1e1825808305fd1307cec8d9e0f09a036924670df0b7614bf871247870197ded",
       "source": "research_environment/tests/test_decision_feedback.py",
-      "source_sha256": "1e1825808305fd1307cec8d9e0f09a036924670df0b7614bf871247870197ded"
+      "source_sha256": "1e1825808305fd1307cec8d9e0f09a036924670df0b7614bf871247870197ded",
+      "adapted_for_packaging": false
     },
     "tests/test_discovery.py": {
-      "adapted_for_packaging": false,
       "sha256": "715b173ff97870dc914418a0f0066fc6ca8f5d2004175e7f23081802775bfb44",
       "source": "research_environment/tests/test_discovery.py",
-      "source_sha256": "715b173ff97870dc914418a0f0066fc6ca8f5d2004175e7f23081802775bfb44"
+      "source_sha256": "715b173ff97870dc914418a0f0066fc6ca8f5d2004175e7f23081802775bfb44",
+      "adapted_for_packaging": false
     },
     "tests/test_ligand_identity.py": {
-      "adapted_for_packaging": false,
       "sha256": "1574fb3f9b44aa10c51df20d0a6fe982b7bcfaca713715fcb7220ee49149616e",
       "source": "research_environment/tests/test_ligand_identity.py",
-      "source_sha256": "1574fb3f9b44aa10c51df20d0a6fe982b7bcfaca713715fcb7220ee49149616e"
+      "source_sha256": "1574fb3f9b44aa10c51df20d0a6fe982b7bcfaca713715fcb7220ee49149616e",
+      "adapted_for_packaging": false
     },
     "tests/test_measured_library_scope.py": {
-      "adapted_for_packaging": false,
       "sha256": "6f5adec486acf7fe2c5e6747c04c8c866667e984ed7c6e74dec9bb6c81a3b5e3",
       "source": "research_environment/tests/test_measured_library_scope.py",
-      "source_sha256": "6f5adec486acf7fe2c5e6747c04c8c866667e984ed7c6e74dec9bb6c81a3b5e3"
+      "source_sha256": "6f5adec486acf7fe2c5e6747c04c8c866667e984ed7c6e74dec9bb6c81a3b5e3",
+      "adapted_for_packaging": false
     },
     "tests/test_native_action_interface.py": {
-      "adapted_for_packaging": true,
       "sha256": "5c08aa16213e0ae594a8e504d7112b30a882249fba0f1b8003de0acaf6a08e3c",
       "source": "research_environment/tests/test_native_action_interface.py",
-      "source_sha256": "62fd06ba31b4f97eb77917c468a486c7b7f8539d0e06c7b2b5bc9fe154f3e61d"
+      "source_sha256": "62fd06ba31b4f97eb77917c468a486c7b7f8539d0e06c7b2b5bc9fe154f3e61d",
+      "adapted_for_packaging": true
     },
     "tests/test_native_policy.py": {
-      "adapted_for_packaging": false,
       "sha256": "354229cdb9b08554844f66542cefcc74c7dfbff8072188e0e599bbb35700d075",
       "source": "research_environment/tests/test_native_policy.py",
-      "source_sha256": "354229cdb9b08554844f66542cefcc74c7dfbff8072188e0e599bbb35700d075"
+      "source_sha256": "354229cdb9b08554844f66542cefcc74c7dfbff8072188e0e599bbb35700d075",
+      "adapted_for_packaging": false
     },
     "tests/test_observation_semantics.py": {
-      "adapted_for_packaging": false,
       "sha256": "0dfa4681fe21c289c08fcb1c138246732153e24cb4be1ab6a6d23a8a346e3d04",
       "source": "research_environment/tests/test_observation_semantics.py",
-      "source_sha256": "0dfa4681fe21c289c08fcb1c138246732153e24cb4be1ab6a6d23a8a346e3d04"
+      "source_sha256": "0dfa4681fe21c289c08fcb1c138246732153e24cb4be1ab6a6d23a8a346e3d04",
+      "adapted_for_packaging": false
     },
     "tests/test_plugin.py": {
-      "adapted_for_packaging": false,
       "sha256": "e2e504e9a88878db0a170ad022e416f9c00fcd2bd89062e8bc2e8d0338cebded",
       "source": "research_environment/tests/test_plugin.py",
-      "source_sha256": "e2e504e9a88878db0a170ad022e416f9c00fcd2bd89062e8bc2e8d0338cebded"
+      "source_sha256": "e2e504e9a88878db0a170ad022e416f9c00fcd2bd89062e8bc2e8d0338cebded",
+      "adapted_for_packaging": false
     },
     "tests/test_preparation.py": {
-      "adapted_for_packaging": true,
       "sha256": "889258958193fcf64221a1120f0818f254bd93ff452fff7205f8baa507d0883f",
       "source": "research_environment/tests/test_preparation.py",
-      "source_sha256": "e150e6ff844ce70142495477b0adb64e563a36bc37c076a401ae306f62a04f9f"
+      "source_sha256": "e150e6ff844ce70142495477b0adb64e563a36bc37c076a401ae306f62a04f9f",
+      "adapted_for_packaging": true
     },
     "tests/test_protein_projection.py": {
-      "adapted_for_packaging": false,
       "sha256": "6649ef7d2346f3393ddac4de970ac5560df7b9923e3e782942383b714d1bd3b1",
       "source": "research_environment/tests/test_protein_projection.py",
-      "source_sha256": "6649ef7d2346f3393ddac4de970ac5560df7b9923e3e782942383b714d1bd3b1"
+      "source_sha256": "6649ef7d2346f3393ddac4de970ac5560df7b9923e3e782942383b714d1bd3b1",
+      "adapted_for_packaging": false
     },
     "tests/test_reporting.py": {
-      "adapted_for_packaging": false,
       "sha256": "e7f67c995413bac5f5ace356d040f07d751bf963d6b07b15c45b982a39ab1c81",
       "source": "research_environment/tests/test_reporting.py",
-      "source_sha256": "e7f67c995413bac5f5ace356d040f07d751bf963d6b07b15c45b982a39ab1c81"
+      "source_sha256": "e7f67c995413bac5f5ace356d040f07d751bf963d6b07b15c45b982a39ab1c81",
+      "adapted_for_packaging": false
     },
     "tests/test_request_scope.py": {
-      "adapted_for_packaging": false,
       "sha256": "f779e7eaf4ea80b9cc14e173542b0771de2c6b5e44fde24fc4a654ad0cb092b3",
       "source": "research_environment/tests/test_request_scope.py",
-      "source_sha256": "f779e7eaf4ea80b9cc14e173542b0771de2c6b5e44fde24fc4a654ad0cb092b3"
+      "source_sha256": "f779e7eaf4ea80b9cc14e173542b0771de2c6b5e44fde24fc4a654ad0cb092b3",
+      "adapted_for_packaging": false
     },
     "tests/test_scoped_validation.py": {
-      "adapted_for_packaging": false,
       "sha256": "dfc887e016c26487c248da69b04a61275477e4c9b71a0e87fdd67fafc5e657b3",
       "source": "research_environment/tests/test_scoped_validation.py",
-      "source_sha256": "dfc887e016c26487c248da69b04a61275477e4c9b71a0e87fdd67fafc5e657b3"
+      "source_sha256": "dfc887e016c26487c248da69b04a61275477e4c9b71a0e87fdd67fafc5e657b3",
+      "adapted_for_packaging": false
     },
     "tests/test_sequence_handoff.py": {
-      "adapted_for_packaging": true,
       "sha256": "d8c5401262b365ccadad450b7c78b3e964396554eda3fad9aff4bfd4ac4707e3",
       "source": "research_environment/tests/test_sequence_handoff.py",
-      "source_sha256": "c9f3a1de7ce77c49b103efdfc3171ef41b21c544210e0e7b5fee8e42799f2e52"
+      "source_sha256": "c9f3a1de7ce77c49b103efdfc3171ef41b21c544210e0e7b5fee8e42799f2e52",
+      "adapted_for_packaging": true
     },
     "tests/test_sequence_report_bindings.py": {
-      "adapted_for_packaging": false,
       "sha256": "62ff73a81bd8d1068162dc8cf3b9979d358f190f82c4522c56e0661ad6fe0456",
       "source": "research_environment/tests/test_sequence_report_bindings.py",
-      "source_sha256": "62ff73a81bd8d1068162dc8cf3b9979d358f190f82c4522c56e0661ad6fe0456"
+      "source_sha256": "62ff73a81bd8d1068162dc8cf3b9979d358f190f82c4522c56e0661ad6fe0456",
+      "adapted_for_packaging": false
     },
     "tests/test_service_tool_context.py": {
-      "adapted_for_packaging": false,
       "sha256": "4c066b33c28c0fef2530c6d289555fc8fe418500d72a854c0ab4d06579c005cc",
       "source": "research_environment/tests/test_service_tool_context.py",
-      "source_sha256": "4c066b33c28c0fef2530c6d289555fc8fe418500d72a854c0ab4d06579c005cc"
+      "source_sha256": "4c066b33c28c0fef2530c6d289555fc8fe418500d72a854c0ab4d06579c005cc",
+      "adapted_for_packaging": false
+    },
+    "tests/test_single_structure_inputs.py": {
+      "sha256": "df4dfc1babf77ab3e9a25294958405986ee31bd68037e6cb7646ab6ea7ec6d9e",
+      "source": "environment release implementation"
     },
     "tests/test_specialist_entrypoint.py": {
-      "adapted_for_packaging": false,
       "sha256": "b7db403c61ce7267f516dbc32c7ef8e310176186d1d3b14a4e9df1a61da3b9bd",
       "source": "research_environment/tests/test_specialist_entrypoint.py",
-      "source_sha256": "b7db403c61ce7267f516dbc32c7ef8e310176186d1d3b14a4e9df1a61da3b9bd"
+      "source_sha256": "b7db403c61ce7267f516dbc32c7ef8e310176186d1d3b14a4e9df1a61da3b9bd",
+      "adapted_for_packaging": false
     },
     "tests/test_stability_handoff.py": {
-      "adapted_for_packaging": true,
       "sha256": "60ee53c83d87b830396e167ac04d013f6a3d8791651ae911d83c6e7e31f80a9d",
       "source": "research_environment/tests/test_stability_handoff.py",
-      "source_sha256": "5a4228828919cbc5d8a00ac70d703f5cfcc2ad9faf64092e18841ae5558888f2"
+      "source_sha256": "5a4228828919cbc5d8a00ac70d703f5cfcc2ad9faf64092e18841ae5558888f2",
+      "adapted_for_packaging": true
     },
     "tests/test_state_connector.py": {
-      "adapted_for_packaging": false,
       "sha256": "78b49649484952cdc7c88a098cc306a90c08762d5b7449febed9c528a4890184",
       "source": "research_environment/tests/test_state_connector.py",
-      "source_sha256": "78b49649484952cdc7c88a098cc306a90c08762d5b7449febed9c528a4890184"
+      "source_sha256": "78b49649484952cdc7c88a098cc306a90c08762d5b7449febed9c528a4890184",
+      "adapted_for_packaging": false
     },
     "tests/test_structure_handoff.py": {
-      "adapted_for_packaging": true,
       "sha256": "229c2d1ec61753daa618286782dc6e25c4caecc8e33b209ebe6e1a3e756b12ea",
       "source": "research_environment/tests/test_structure_handoff.py",
-      "source_sha256": "cc1814d4eb0d3ede3b7d396497893e1ed8ff4452042849c8d876de15f9f431c7"
+      "source_sha256": "cc1814d4eb0d3ede3b7d396497893e1ed8ff4452042849c8d876de15f9f431c7",
+      "adapted_for_packaging": true
     },
     "tests/test_thermompnn_native_columns.py": {
-      "adapted_for_packaging": false,
       "sha256": "20404a5458f7a013746cb4863973bac3bec1f9fd7568234de6bd4382a33cf0c2",
       "source": "research_environment/tests/test_thermompnn_native_columns.py",
-      "source_sha256": "20404a5458f7a013746cb4863973bac3bec1f9fd7568234de6bd4382a33cf0c2"
+      "source_sha256": "20404a5458f7a013746cb4863973bac3bec1f9fd7568234de6bd4382a33cf0c2",
+      "adapted_for_packaging": false
     },
     "tests/test_unsubmitted_action_repair.py": {
-      "adapted_for_packaging": true,
       "sha256": "a8662872953fa8344bf8e8db1eae794e4fa5bfdb4cf7875be93e1a5bd4c9499a",
       "source": "research_environment/tests/test_unsubmitted_action_repair.py",
-      "source_sha256": "ddffc6f82303986cec744f4fda26daa23887ceeea2cde3a3b1e53ffb3820d902"
+      "source_sha256": "ddffc6f82303986cec744f4fda26daa23887ceeea2cde3a3b1e53ffb3820d902",
+      "adapted_for_packaging": true
     },
     "tests/test_upload_handoff.py": {
-      "adapted_for_packaging": true,
       "sha256": "b31283fdd201eac2903adf04fc2c75ba3478ea18eebbecc8c2bd8835460a1d54",
       "source": "research_environment/tests/test_upload_handoff.py",
-      "source_sha256": "0202e3f6d38995db9e391f3de2eb6622d35df768344a8d4b5f44c6f5ee9b81cb"
+      "source_sha256": "0202e3f6d38995db9e391f3de2eb6622d35df768344a8d4b5f44c6f5ee9b81cb",
+      "adapted_for_packaging": true
     },
     "tests/test_workflow_bridge.py": {
-      "adapted_for_packaging": true,
       "sha256": "93fe764d4aafab97f605249c32e5478aa21a290df94c528575266dada3f6e1f2",
       "source": "research_environment/tests/test_workflow_bridge.py",
-      "source_sha256": "745b59f5fd4f957052b2b183903654b80fb509c1a79463ba5c66eee43d797429"
+      "source_sha256": "745b59f5fd4f957052b2b183903654b80fb509c1a79463ba5c66eee43d797429",
+      "adapted_for_packaging": true
     }
-  },
-  "schema_version": "enzyme-environment-source-snapshot/1"
+  }
 }
