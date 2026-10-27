@@ -12,20 +12,6 @@ fixtures, qualification reports and benchmark evidence.
 4. [Qualification evidence](reports/agent_qualification/)
 5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
 
-## Package structure
-
-```text
-geo_opt_agents/
-├── README.md
-├── ENVIRONMENT_SPEC.md
-├── config/environment.yaml
-├── examples/geo_opt_tasks/
-├── examples/geo_opt_results/
-├── reports/
-├── scripts/
-└── tests/
-```
-
 The evaluator distinguishes convergence from minimum verification and records
 scientific, infrastructure, provenance and reporting failures separately.
 

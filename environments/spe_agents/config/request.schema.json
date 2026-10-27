@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPE task request",
+  "type": "object",
+  "required": ["task_id", "structure_file", "charge", "multiplicity", "method", "basis_set"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1}, "structure_file": {"type": "string", "minLength": 1},
+    "charge": {"type": "integer"}, "multiplicity": {"type": "integer", "minimum": 1},
+    "method": {"type": "string", "minLength": 1}, "basis_set": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}
