@@ -1,0 +1,16 @@
+{
+  "reference": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/references/gencode.v50.transcripts.fa",
+  "reference_sha256": "179bbe798a0e455d05b9456ab5f7ef51bffdcab6118d4697ea3219181c5e7c93",
+  "release": "GENCODE v50",
+  "global_seed_table": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/results/sirna_benchmark/completion_20261019T090640Z/features/global_seeds.csv",
+  "global_seed_sha256": "ff8d0f3dbdd4fc07604933227462aba2a07937d7d42de9b81579f8e65476abda",
+  "intended_scope": "all annotated KRAS transcripts; declared four-reference coverage assessed independently; other KRAS isoforms recorded as on-gene",
+  "intended_reference_count": 30,
+  "primary_full_sequence_reference_matches": 1,
+  "scanner": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/results/sirna_benchmark/completion_20261019T090640Z/exact_matches",
+  "scanner_sha256": "1e3a163056082da7203fce03221255e95aa95fb91df17f01ecf05967c285eec9",
+  "scope": "forward-reference ungapped19nt exact0/1/2 substitution windows of both strand-binding queries; non-ACGT windows skipped, no gaps/genomic variants, transcript alignment counts not expression/repression",
+  "seed_definition": "reverse complement of strand positions2..7/8/9; overlapping whole-transcript occurrences/transcript counts, not UTR-only; all annotated KRAS gene counts subtracted",
+  "shortlist_count": 20,
+  "RAS_family_hit_count": 3
+}

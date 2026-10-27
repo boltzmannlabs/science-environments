@@ -1,0 +1,163 @@
+{
+  "project": "siRNA Designing Harness",
+  "origin_case_root_hint": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study",
+  "hint_is_optional_not_a_portable_dependency": true,
+  "records": [
+    {
+      "evidence_id": "shared_design",
+      "case_directory": "shared_arm_20261021T061324Z",
+      "role": "HISTORICAL_OBSERVATION_NOT_CURRENT_PROJECT_EXECUTION",
+      "metrics": {
+        "generated_records": 5288,
+        "unique_guides": 5288,
+        "exact_shared_all_four_sites": 5243,
+        "native_assessed": 100,
+        "shared_operational_passers_within_assessed": 81,
+        "selected_shared_candidates": 20,
+        "both_strand_specificity_screened": 20,
+        "perfect_reference_gene_exclusivity_pass": 14,
+        "perfect_reference_gene_exclusivity_fail": 6,
+        "fully_qualified": 0,
+        "overall_scientific_status": "PARTIAL",
+        "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION"
+      },
+      "source_files": [
+        {
+          "relative_path": "shared_arm_20261021T061324Z/case_summary.json",
+          "sha256": "586caeae74dd6a90f35e768fe5492487e9849789e43d5b293f921fd681d69c12",
+          "bytes": 953
+        },
+        {
+          "relative_path": "shared_arm_20261021T061324Z/verification_report.json",
+          "sha256": "dd32ea38dda6cd02dfd1f965f84dbebf794bb6ab586ed229daba0b51d658be79",
+          "bytes": 1827
+        }
+      ],
+      "receipt_scope": "artifact and implementation verification, NOT biological/clinical validation",
+      "biological_validation": false
+    },
+    {
+      "evidence_id": "candidate_audit",
+      "case_directory": "audit_20261021T071712Z",
+      "role": "HISTORICAL_OBSERVATION_NOT_CURRENT_PROJECT_EXECUTION",
+      "metrics": {
+        "candidates_audited": 20,
+        "exact_diagnostic_failed_candidates": 6,
+        "exact_outside_gene_alignment_rows": 12,
+        "no_detected_perfect_outside_match_review_candidates": 14,
+        "saved_alignment_rows_reproduced": 742,
+        "family_seed_annotation_rows_reproduced": 360,
+        "overall_biological_status": "PARTIAL",
+        "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION"
+      },
+      "source_files": [
+        {
+          "relative_path": "audit_20261021T071712Z/audit_summary.json",
+          "sha256": "388a1188fb1c45bd3d52e5da3852b0a50e6434d60542e2616cafb8bc1ae89ad3",
+          "bytes": 1244
+        },
+        {
+          "relative_path": "audit_20261021T071712Z/verification_receipt.json",
+          "sha256": "d49a2f0f5ad110897b8f6cfd868c5dd6d9f446a695df41ba78f571563945fdbb",
+          "bytes": 1099
+        }
+      ],
+      "receipt_scope": "artifact integrity, literal sequence/window reproduction, matched-pool descriptive statistics; not experimental/biological validation",
+      "biological_validation": false
+    },
+    {
+      "evidence_id": "sensitivity",
+      "case_directory": "audit_resolution_20261021T085955Z",
+      "role": "HISTORICAL_OBSERVATION_NOT_CURRENT_PROJECT_EXECUTION",
+      "metrics": {
+        "decision": "RETAIN_CURRENT_CONDITIONAL_RESEARCH_REVIEW_PANEL",
+        "review_panel_size": 14,
+        "review_Ridge_extrapolations": 9,
+        "review_in_range_sensitivity_size": 5,
+        "missing_Bench_scores_in100": 19,
+        "new_generation_inference_folding_screening_runs": 0,
+        "biology": "PARTIAL",
+        "shared_arm": "COMPLETED",
+        "mutation_arm": "BLOCKED_PENDING_MUTATION_SPECIFICATION"
+      },
+      "source_files": [
+        {
+          "relative_path": "audit_resolution_20261021T085955Z/resolution_summary.json",
+          "sha256": "54c0813041bb1bb01477e3b120984cf1065a8e62440c4d533276c0871065f509",
+          "bytes": 10494
+        },
+        {
+          "relative_path": "audit_resolution_20261021T085955Z/verification_receipt.json",
+          "sha256": "adc6b939ce6c0082ae152858cf5e3e5b84b209b11723c504233f067fb598b16d",
+          "bytes": 938
+        }
+      ],
+      "receipt_scope": "Technical evidence preservation and descriptive ranking sensitivity only; not biological validation",
+      "biological_validation": false
+    },
+    {
+      "evidence_id": "independent_benchmark",
+      "case_directory": "experimental_benchmark_20261021T091059Z",
+      "role": "HISTORICAL_OBSERVATION_NOT_CURRENT_PROJECT_EXECUTION",
+      "metrics": {
+        "benchmark_status": "BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET",
+        "dataset_tables_audited": 5,
+        "record_endpoint_rows_audited": 7663,
+        "eligible_independent_test_records": 0,
+        "new_predictions": 0,
+        "computed_performance_metrics": 0,
+        "training_reference_files_verified": 6,
+        "overall_biological_status": "PARTIAL"
+      },
+      "source_files": [
+        {
+          "relative_path": "experimental_benchmark_20261021T091059Z/audit_summary.json",
+          "sha256": "6cec05c580639f7278add98493d86a16fcbe736a3ac993ef302d8eb9bcdbd7be",
+          "bytes": 495
+        },
+        {
+          "relative_path": "experimental_benchmark_20261021T091059Z/verification_receipt.json",
+          "sha256": "2bc0839f508f0319bda2970c64bb80b6745cc944226acb4b58f98047e2915e53",
+          "bytes": 943
+        }
+      ],
+      "receipt_scope": "Technical dataset/provenance/blocking verification, NOT independent biological/model-performance validation",
+      "biological_validation": false
+    },
+    {
+      "evidence_id": "workflow_comparison",
+      "case_directory": "workflow_comparison_20261027T065430Z",
+      "role": "HISTORICAL_OBSERVATION_NOT_CURRENT_PROJECT_EXECUTION",
+      "metrics": {
+        "included_shared_literature_cores": 2,
+        "literature_reported_pairs": 3,
+        "unresolved_source_pairs": 1,
+        "exact_pair_overlap_full_generated": 2,
+        "exact_pair_overlap_original20": 0,
+        "exact_pair_overlap_conditional14": 0,
+        "new_generation_runs": 0,
+        "new_predictor_inference_runs": 0,
+        "new_folding_runs": 0,
+        "new_transcriptome_screening_runs": 0,
+        "overall_biological_status": "PARTIAL",
+        "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+        "experimental_benchmark_status": "BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET"
+      },
+      "source_files": [
+        {
+          "relative_path": "workflow_comparison_20261027T065430Z/comparison_summary.json",
+          "sha256": "04fa0186d027daf95bd070ec030a67ab668e702a0d21d863b53b50c400d1cb41",
+          "bytes": 998
+        },
+        {
+          "relative_path": "workflow_comparison_20261027T065430Z/verification_receipt.json",
+          "sha256": "feb594fa321c997e485d3a244b0d9cbb01f35ef1548536aa2c2471c136b9f43e",
+          "bytes": 1221
+        }
+      ],
+      "receipt_scope": "Technical literature/provenance/mapping/preserved-score comparison, not head-to-head efficacy validation",
+      "biological_validation": false
+    }
+  ],
+  "no_raw_sequences_datasets_weights_or_article_text_copied": true
+}

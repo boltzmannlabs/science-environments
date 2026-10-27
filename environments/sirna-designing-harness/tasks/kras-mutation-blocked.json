@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "design_type": "sirna",
+  "experiment_id": "KRAS_comparative_intake_blocking_example",
+  "organism": "Homo sapiens",
+  "target": {"gene":"KRAS","primary_accession_version":"NM_004985.5","sequence_fasta":null},
+  "coverage_references": ["NM_033360.4","NM_001369786.1","NM_001369787.1"],
+  "study_mode": "comparative",
+  "mutation_specification": null,
+  "requested_count": 20,
+  "representation": "paired19nt_RNA_cores",
+  "task_mode": "INTAKE_ONLY",
+  "expected_mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "mutant_sequence_construction_authorized": false,
+  "remote_transfer_authorized": false,
+  "biological_acceptance_criteria": null
+}

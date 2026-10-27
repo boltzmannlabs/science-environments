@@ -1,0 +1,30 @@
+{
+  "study": "KRAS shared-versus-mutation-selective comparative siRNA case study",
+  "primary_coordinate_reference": "NM_004985.5",
+  "required_exact_coverage_references": ["NM_004985.5", "NM_033360.4", "NM_001369786.1", "NM_001369787.1"],
+  "design_scope": "siRNA_ONLY",
+  "representation": "19nt paired RNA cores, no arbitrary overhangs, final chemistry unspecified",
+  "shared_arm": {
+    "extra_eligibility_requirement": "every selected target core must occur exactly in every declared reference; coordinates independently mapped by sequence",
+    "potency_baseline": "unchanged deployed Sequence-feature Ridge",
+    "inherited_operational_filters": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/sirna-harness/agent_sirna_only_20261021T050544Z/policy.json",
+    "filter_scope": "declared research screening, not user-approved clinical or tissue-specific biological cutoffs",
+    "selection": "Ridge descending with stable IDs; source functionality, unique primary site, full context, exact all-four coverage and successful native operational filters; greedily select20 nonoverlapping primary intervals or fewer if unsupported",
+    "assessment_budget": 1000,
+    "batch_size": 100,
+    "assessment_stopping": "stop further native prediction batches when20 shared nonoverlapping passers exist; never rerun completed IDs",
+    "specificity": "both strands of final shortlist, exhaustive declared-scope ungapped0/1/2 substitutions; whole-transcript6/7/8nt seeds; annotate HRAS/NRAS and KRAS-related non-KRAS records; report risk without inventing biological acceptance criteria",
+    "context_variation": "assess whether full57nt efficacy inputs differ across exact-covered transcripts; identical input evidence may be reused, never assert uniform measured knockdown",
+    "corrected_OligoFormer": "separate eval-mode comparator using actual native cache for assessed candidates, no RNA-FM backbone rerun; not independent confirmation or proved biological improvement",
+    "comparators": "native Bench and frozen five-domain combined exploratory priority kept separate from Ridge and actual model endpoints"
+  },
+  "mutation_arm": {
+    "status": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+    "mutation_selective_candidates_generated": 0,
+    "no_hypothetical_variant_sequences": true
+  },
+  "no_external_prediction_sequence_upload": true,
+  "no_new_large_model_installation": true,
+  "overall_scientific_status": "PARTIAL until required experimental/context/immune/specificity acceptance evidence exists",
+  "negative_results": "retain native failed criteria, unsupported contexts, missing checkpoints and unassessed rows; no padding, threshold relaxation or fabricated values"
+}

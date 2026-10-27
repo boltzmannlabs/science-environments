@@ -1,0 +1,35 @@
+{
+  "audit_technical_status": "PASSED",
+  "source_directory": "/home/boltzmann13/IMRAN/OpenSource/Agent-RUNs/KRAS_siRNA_case_study/shared_arm_20261021T061324Z",
+  "source_files": 127,
+  "source_manifest_artifacts_verified": 123,
+  "candidates_audited": 20,
+  "exact_diagnostic_failed_candidates": 6,
+  "exact_outside_gene_alignment_rows": 12,
+  "exact_outside_genes": [
+    "ETFRF1",
+    "KRASP1"
+  ],
+  "no_detected_perfect_outside_match_review_candidates": 14,
+  "Ridge_extrapolation_flags": 14,
+  "saved_alignment_rows_reproduced": 742,
+  "family_seed_annotation_rows_reproduced": 360,
+  "matched_pool_sizes": {
+    "investigated_panel20": 20,
+    "exact_exclusivity_review14": 14,
+    "deep_assessed100_common_potency": 100,
+    "deep_operational_passers81": 81
+  },
+  "HRAS_NRAS_full_0to2mm_matches": 0,
+  "shared_arm_status": "COMPLETED",
+  "overall_biological_status": "PARTIAL",
+  "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "new_generation_runs": 0,
+  "new_predictor_inference_runs": 0,
+  "new_transcriptome_screening_runs": 0,
+  "hypothetical_mutant_sequences_constructed": 0,
+  "fully_qualified_candidates": 0,
+  "rank_correlation_comparisons": 67,
+  "topK_comparisons": 201,
+  "audit_assertion_failures": 0
+}

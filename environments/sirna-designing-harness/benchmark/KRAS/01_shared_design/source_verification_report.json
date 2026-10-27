@@ -1,0 +1,33 @@
+{
+  "verification": "PASSED",
+  "meaning": "artifact and implementation verification, NOT biological/clinical validation",
+  "checks": [
+    "all_frozen_case_artifact_hashes_and_read_only_harness_dependencies",
+    "exact_four_reference_versions_sequences_CDS_annotations_and_checksums",
+    "all_reference_sites_and_shared_blocks_independently_remapped",
+    "native_generation_lineage_all_core_pairs_coordinates_and_no_native_score_overwrite",
+    "actual_unique_Bench_batch_success_and_RN_Ai_RNAiSpline_score_lineage",
+    "corrected_eval_mode_repeatability_receipts_actual_cached_feature_hashes_and_score_lineage",
+    "twenty_nonoverlapping_shared_candidates_and_eighty_exact_context_reuse_records",
+    "both_strand_query_orientation_all_reported_hit_Hamming_distances_and_exclusivity_counts",
+    "six_optional_exclusivity_failures_and_fourteen_review_subset_no_HRAS_NRAS_near_hits_in_scope",
+    "missing_failed_NOT_RUN_separation_no_mutant_construction_or_experimental_qualification_claim",
+    "seven_comparators_common_cohort_and_eighteen_section_critical_report"
+  ],
+  "case_artifacts_hashed": 123,
+  "reproducibility_manifest_sha256": "baf368197220dcbac8dd169b0580a7098ac450828fe86bfe2f26303f45520d9b",
+  "artifact_index_sha256": "4a4eead412a2ec7a28c30b512fdeeebfb6acde5fef8539156cfccc89358f89e9",
+  "capability_categories": 15,
+  "reference_count": 4,
+  "all_candidate_pairs_verified": 5288,
+  "shared_sites_independently_verified": 5243,
+  "native_assessment_count": 100,
+  "cached_feature_hashes_verified": 200,
+  "all_reported_exact_0to2mm_alignment_rows_verified": 742,
+  "shortlist_count": 20,
+  "exact_gene_exclusivity_pass": 14,
+  "exact_gene_exclusivity_fail": 6,
+  "mutation_arm_status": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "mutation_selective_candidates_generated": 0,
+  "fully_qualified": 0
+}

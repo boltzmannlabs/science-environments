@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "design_type": "sirna",
+  "experiment_id": "KRAS_shared_review_environment",
+  "organism": "Homo sapiens",
+  "target": {"gene":"KRAS","primary_accession_version":"NM_004985.5","sequence_fasta":null},
+  "coverage_references": ["NM_033360.4","NM_001369786.1","NM_001369787.1"],
+  "study_mode": "shared",
+  "mutation_specification": null,
+  "requested_count": 20,
+  "representation": "paired19nt_RNA_cores",
+  "provider_choice": "inspect_available_tools_first",
+  "task_mode": "AUDIT_REUSE_HISTORICAL_DESIGN",
+  "cell_assay_context": null,
+  "final_chemistry_overhangs": null,
+  "delivery": null,
+  "biological_acceptance_criteria": null,
+  "remote_transfer_authorized": false,
+  "generation_inference_folding_screening_reruns_authorized": false,
+  "expected_biology": "PARTIAL",
+  "note": "An intake example, not a newly submitted/scored experiment or guaranteed20 qualified designs"
+}

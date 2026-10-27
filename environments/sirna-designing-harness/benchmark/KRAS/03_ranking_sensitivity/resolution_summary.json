@@ -1,0 +1,287 @@
+{
+  "decision": "RETAIN_CURRENT_CONDITIONAL_RESEARCH_REVIEW_PANEL",
+  "review_panel_size": 14,
+  "review_Ridge_extrapolations": 9,
+  "review_in_range_sensitivity_size": 5,
+  "in_range_sensitivity_ids": [
+    "NM_004985.5_site_1517",
+    "NM_004985.5_site_1912",
+    "NM_004985.5_site_2547",
+    "NM_004985.5_site_2875",
+    "NM_004985.5_site_4174"
+  ],
+  "primary_sensitivity_highlights": [
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "RN.Ai-Predict",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": -0.16483516483516483,
+      "scenario_spearman": -0.6,
+      "spearman_change": -0.4351648351648352,
+      "baseline_kendall_tau_b": -0.09890109890109891,
+      "scenario_kendall_tau_b": -0.39999999999999997,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 1,
+      "scenario_fractional_overlap": 1.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1517",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_2875"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    },
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "RNAiSpline",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": 0.3274725274725274,
+      "scenario_spearman": -0.49999999999999994,
+      "spearman_change": -0.8274725274725274,
+      "baseline_kendall_tau_b": 0.2527472527472528,
+      "scenario_kendall_tau_b": -0.39999999999999997,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 1,
+      "scenario_fractional_overlap": 1.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1517",
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2875"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    },
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "OligoFormer_native",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": 0.4461538461538462,
+      "scenario_spearman": -0.6,
+      "spearman_change": -1.0461538461538462,
+      "baseline_kendall_tau_b": 0.3626373626373627,
+      "scenario_kendall_tau_b": -0.39999999999999997,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 1,
+      "scenario_fractional_overlap": 1.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1517",
+        "NM_004985.5_site_2875",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    },
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "OligoFormer_corrected",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": 0.3626373626373627,
+      "scenario_spearman": -0.19999999999999998,
+      "spearman_change": -0.5626373626373626,
+      "baseline_kendall_tau_b": 0.27472527472527475,
+      "scenario_kendall_tau_b": -0.19999999999999998,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 1,
+      "scenario_fractional_overlap": 1.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1517",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_2875"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    },
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "siRNA-Bench",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": 0.3802197802197802,
+      "scenario_spearman": 0.49999999999999994,
+      "spearman_change": 0.11978021978021974,
+      "baseline_kendall_tau_b": 0.2527472527472528,
+      "scenario_kendall_tau_b": 0.39999999999999997,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 2,
+      "scenario_fractional_overlap": 2.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_2875"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    },
+    {
+      "analysis_type": "method_agreement_after_extrapolation_exclusion",
+      "scenario": "exact_exclusivity_review14_exclude_Ridge_extrapolations",
+      "base_pool": "exact_exclusivity_review14",
+      "method_a": "Ridge",
+      "method_b": "combined_frozen_v1",
+      "n_baseline": 14,
+      "n_scenario": 5,
+      "K": 3,
+      "baseline_statistics_status": "REUSED_VERIFIED_AUDIT_OUTPUT",
+      "baseline_spearman": 0.4197802197802198,
+      "scenario_spearman": -0.3,
+      "spearman_change": -0.7197802197802198,
+      "baseline_kendall_tau_b": 0.27472527472527475,
+      "scenario_kendall_tau_b": -0.19999999999999998,
+      "baseline_topK_overlap": 1,
+      "baseline_fractional_overlap": 1.0,
+      "scenario_topK_status": "DEFINED",
+      "scenario_topK_overlap": 2,
+      "scenario_fractional_overlap": 2.0,
+      "scenario_topK_ids_a": [
+        "NM_004985.5_site_1912",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_topK_ids_b": [
+        "NM_004985.5_site_1517",
+        "NM_004985.5_site_2547",
+        "NM_004985.5_site_4174"
+      ],
+      "scenario_ties_a": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "scenario_ties_b": {
+        "boundary_tie_size": 1,
+        "partial_boundary_tie": false
+      },
+      "interpretation": "Rank/cohort change only; preserved scores unchanged and no biological change inferred"
+    }
+  ],
+  "source_files": 35,
+  "source_manifest_artifacts": 33,
+  "new_sensitivity_rows": 291,
+  "preserved_RAS_family_full_near_matches": [
+    {
+      "candidate_id": "NM_004985.5_site_280",
+      "siRNA_strand_evaluated": "guide",
+      "siRNA_sequence_5to3": "UAUUGUUGGAUCAUAUUCG",
+      "binding_query_5to3_DNA": "CGAATATGATCCAACAATA",
+      "matched_reference_id": "ENST00000407852.2|ENSG00000220635.2|OTTHUMG00000014897.2|OTTHUMT00000040992.2|KRASP1-201|KRASP1|552|processed_pseudogene|",
+      "matched_transcript_id": "ENST00000407852.2",
+      "matched_gene": "KRASP1",
+      "reference_position_1based": "90",
+      "reference_end_1based": "108",
+      "target_transcript_orientation": "+ transcript-sense; genomic strand not asserted",
+      "matched_window_5to3_DNA": "CCAATATGATCCAACAATA",
+      "match_length_nt": "19",
+      "mismatch_count": "1",
+      "query_mismatch_positions_1based": "[2]",
+      "siRNA_mismatch_positions_5to3_1based": "[18]",
+      "derived_match_pattern": "=X=================",
+      "is_intended_KRAS_gene": "False",
+      "diagnostic_reproduced": "True",
+      "biological_offtarget_demonstrated": "False",
+      "evidence_source": "candidate_tool_outputs/exact_0to2mm_hits.tsv + hash-checked reference windows"
+    }
+  ],
+  "missing_Bench_scores_in100": 19,
+  "new_generation_inference_folding_screening_runs": 0,
+  "biology": "PARTIAL",
+  "shared_arm": "COMPLETED",
+  "mutation_arm": "BLOCKED_PENDING_MUTATION_SPECIFICATION"
+}

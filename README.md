@@ -16,7 +16,10 @@ science-environments/
 │   ├── scRNAseq-environment/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   └── synthesis-route-gym/
+│   ├── synthesis-route-gym/
+│   │   ├── research-notes.md
+│   │   └── references.md
+│   └── sirna-designing-harness/
 │       ├── research-notes.md
 │       └── references.md
 ├── environments/
@@ -26,13 +29,24 @@ science-environments/
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   └── synthesis-route-gym/
+│   ├── synthesis-route-gym/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── STATUS.md
+│   │   ├── config/
+│   │   ├── tasks/
+│   │   └── tests/
+│   └── sirna-designing-harness/
 │       ├── README.md
 │       ├── ENVIRONMENT_SPEC.md
 │       ├── STATUS.md
 │       ├── config/
 │       ├── tasks/
-│       └── tests/
+│       ├── tests/
+│       ├── scripts/
+│       ├── skills/
+│       ├── benchmark/
+│       └── results/
 ├── docs/
 │   └── decisions/
 └── .github/
@@ -41,7 +55,7 @@ science-environments/
 
 Each environment has its own folder. Research notes and references are maintained in the matching `research/<environment-name>/` directory and linked from its README.
 
-Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), or [synthesis route environment](environments/synthesis-route-gym/README.md).
+Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection is pending in [LICENSE](LICENSE).
 

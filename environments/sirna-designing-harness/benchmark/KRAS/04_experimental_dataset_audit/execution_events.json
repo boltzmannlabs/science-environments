@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "event": "preliminary_CSV_header_parser_defect",
+      "observed": "Original Shabalina S4 CSV has multiple blank headers. A generic DictReader silently replaced blank-named columns, yielding an invalid zero sequence-record count.",
+      "detected_by": "Cross-check against original positional CSV and retained653-record audit before independent verification",
+      "response": "Archived all preliminary derived outputs and script as preliminary_parser_draft; assigned unique positional surrogate header names without changing source bytes; required653 valid rows and671 source rows; reran dataset metadata audit only",
+      "scientific_effect": "Corrected audit counts/overlap tables; no predictor inference or independent performance result was ever produced",
+      "draft_role": "SUPERSEDED_INVALID_PARSER_DRAFT_NOT_CURRENT_RESULT"
+    },
+    {
+      "event": "scale_comparison_input_identity_check",
+      "response": "Compared normalized/unnormalized label factors only on rows with identical preserved guide/context inputs; preserved mismatch counts rather than assuming row-order equivalence"
+    },
+    {
+      "event": "preexecution_targeted_edit_retry",
+      "response": "One patch search did not match a long source line; retried with its unique substring. No original data or source artifacts were changed."
+    },
+    {
+      "event": "independent_verifier_caught_nonunique_derived_endpoint_IDs",
+      "check": "record_endpoint_IDs_unique",
+      "cause": "Dose-specific measurements shared source-row/endpoint identifiers without the dose suffix",
+      "response": "Archived failed verification and prior derived tables; added verbatim dose only to derived audit-record IDs; source IDs and all scientific values unchanged",
+      "failed_receipt": "preliminary_endpoint_ID_draft/verification_failure.json"
+    }
+  ],
+  "source_artifacts_modified": false,
+  "generation_inference_folding_screening_runs": 0,
+  "performance_metrics_computed": 0
+}

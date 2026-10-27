@@ -1,0 +1,17 @@
+{
+  "experiment_id": "KRAS_skill_vs_literature_comparison",
+  "organism": "Homo sapiens",
+  "primary_reference": "NM_004985.5",
+  "coverage_references": ["NM_033360.4", "NM_001369786.1", "NM_001369787.1"],
+  "workflow_A": "Reuse verified original local OligoFormer/Ridge/Bench KRAS evidence,20 investigated records and conditional14 review panel; no fresh generation/inference/folding/screening",
+  "workflow_B": "Fresh public web+EuropePMC discovery, original-article sequence and experimental-evidence retrieval, exact local mapping to the same reference set",
+  "source_selection": "Targeted non-exhaustive search; prioritize original shared/pan-KRAS sequence reports, trace follow-up citations, retain sequence/reporting ambiguities and mutation/modality exclusions",
+  "comparison": "Exact19nt paired-core overlap, source vs current coordinate identity, reused compatible predictor scores only, original functionality filter flags, experimental evidence granularity, coverage and unresolved qualification",
+  "new_literature_candidate_inference": "NOT_RUN: shared baseline Ridge/native OligoFormer scores already exist for retrievable matching cores; deeper models and full/seed screens absent for those candidates are not imputed or executed",
+  "experimental_performance_metrics": "NOT_APPLICABLE: positive selected literature constructs and pooled endpoint ranges are not a matched independent measured test set; no MAE/correlation or winner from this comparison",
+  "full_construct_match_policy": "Matching reported19nt guide/passenger is core-level support unless chemistry, overhangs and delivered construct are fully verified; do not transfer pooled results to individual designs",
+  "mutation_arm": "BLOCKED_PENDING_MUTATION_SPECIFICATION; published mutation-selective studies may be discussed only as out-of-scope context; no mutant reference constructed and no new mutant candidate generated",
+  "biology": "PARTIAL",
+  "sequence_transfer": "No local reference/candidate sequences submitted externally; public target terms and article identifiers only",
+  "literature_independence": "Follow-up experiments from the same research lineage are not independent laboratory or pretrained-model generalization evidence"
+}

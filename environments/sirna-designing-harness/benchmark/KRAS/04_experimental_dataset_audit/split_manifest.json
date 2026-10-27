@@ -1,0 +1,39 @@
+{
+  "status": "BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET",
+  "new_train_n": 0,
+  "new_development_n": 0,
+  "new_untouched_test_n": 0,
+  "actual_new_assignments": [],
+  "historical_split_protocol": {
+    "seed": 42,
+    "random_protocol": "70/15/15 grouped by strand-equivalent 19nt sequence; exact assignments split_assignments.csv",
+    "counts": {
+      "train": 2410,
+      "test": 517,
+      "validation": 516
+    },
+    "publication_cv_folds": 5,
+    "target_cv_folds": 5,
+    "target_train_purge": "purge equivalent sequences matching each held-out target fold",
+    "cross_study": "each publication held out; purge all test-equivalent sequences from baseline training",
+    "pretrained_models": "Frozen; these splits cannot remove historical pretraining leakage. No independently audited clean common test cohort established.",
+    "classification_threshold_percent": 70,
+    "threshold_rationale": "Prespecified operational evaluation threshold of measured source-reported inhibition >=70%; not a universal biological definition. No outcome-tuned threshold.",
+    "ranking_K": [
+      3,
+      5
+    ],
+    "bootstrap": "500 paired cluster resamples by publication, when >=2 studies; not correction for training leakage",
+    "scope": "primary dataset only; secondary used for training-overlap/context audit, labels never substituted"
+  },
+  "historical_splits_not_relabelled_independent": true,
+  "reason": "No auditable independent compatible common cohort; original-study, target, duplicate components and endpoint context not jointly resolved",
+  "future_design": [
+    "Keep full sequence/reverse-complement/core-connected duplicates in one component and purge cross-split equivalents",
+    "Use original experimental publication/study, not merely compilation publication, as group; curate aliases and repeated measurements",
+    "Target-held-out evaluation must also purge equivalent sequences and identify any target alias uncertainty",
+    "Freeze training/development choices and transformations before unlocking a new test set; do not reuse test outcomes for calibration",
+    "Score only models with compatible documented representation/chemistry and known training/development exclusion"
+  ],
+  "untouched_test_claim": false
+}

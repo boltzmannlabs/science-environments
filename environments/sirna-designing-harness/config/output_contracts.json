@@ -1,0 +1,13 @@
+{
+  "schema_version":1,
+  "project_name":"siRNA Designing Harness",
+  "minimum_design_artifacts":["run_manifest.json","target_specification.json","target_sequence.fasta","transcript_isoform_audit.csv","tool_capability_registry.json","generated_candidates.csv","candidate_assessment_matrix.csv","candidate_failures.csv","candidate_ranking.csv","ranking_comparison.csv","candidate_critique.md","qualification_results.json","missing_evidence.csv","scientific_report.md","output_manifest.json","verification_receipt.json"],
+  "candidate_fields":["candidate_id","guide_sequence","passenger_sequence","transcript_id","target_start","target_end","representation","source_job_identity","raw_scores_and_endpoints","tool_statuses","coverage","specificity_scope","qualification"],
+  "gate_fields":["name","required","status","evidence_refs","failed_criteria","missing_evidence","warnings","method_version"],
+  "gate_statuses":["PASSED","FAILED","BLOCKED_MISSING_EVIDENCE","NOT_RUN","NOT_APPLICABLE"],
+  "stage_statuses":["COMPLETED","PARTIAL","BLOCKED","NOT_APPLICABLE","FAILED"],
+  "success_boundaries":{"technical":"Does not imply working inference","computational_screening":"Does not imply experimental activity or safety","experimental_source_support":"Does not automatically transfer to another construct/context","benchmark":"Does not imply specificity, delivery or immune safety"},
+  "missing_values":"Preserve null/NOT_RUN and reasons; never replace with zero or a safe score",
+  "mutation_default":"BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "source_preservation":"Immutable originals; new versioned directories; input/output hashes; no circular manifest/receipt hashes"
+}

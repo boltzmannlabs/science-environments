@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "event": "native_tool_interface_timeout",
+      "tool": "sirna_bench_run",
+      "interface_timeout_seconds": 420,
+      "native_job": "/home/boltzmann13/.sci/profiles/imran/workspace/sirna-bench/run-e967603b433c4a21bb54801b74861fba",
+      "observed": "Original runner remained alive and execution.log progressed through50,75,100 candidates",
+      "response": "Did not resubmit. Read the same job request/result/provenance after completion and copied actual outputs",
+      "final_native_success": true,
+      "native_assessed_count": 100
+    },
+    {
+      "event": "development_syntax_correction",
+      "file": "kras_workflow.py",
+      "observed": "Extra parenthesis in global seed lookup comprehension",
+      "response": "Corrected by targeted patch before execution; actual subsequent preparation, ingestion and screen commands returned exit0"
+    },
+    {
+      "event": "specificity_diagnostic_after_screening",
+      "observed": "Frozen native operational filters allowed some exact outside-KRAS matches",
+      "response": "Kept original ranking/thresholds; added explicit optional perfect-gene-exclusivity diagnostic, retained6 failed rows and separated14 no-detected-perfect-match review candidates",
+      "biological_acceptance_threshold_invented": false,
+      "qualification_remains_blocked": true
+    },
+    {
+      "event": "prediction_extrapolation",
+      "observed": "14 of20 shortlisted raw frozen Ridge values exceed100",
+      "response": "Preserved raw scores and flagged extrapolation; did not clip them, call them measured inhibition or silently refit the model"
+    }
+  ],
+  "native_generation_submissions": 1,
+  "native_Bench_submissions": 1,
+  "mutation_selective_generation_submissions": 0,
+  "cloud_prediction_jobs": 0
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "gates": [
+    {"name": "reference_identity", "required": true, "status": "NOT_RUN", "evidence_refs": [], "failed_criteria": [], "missing_evidence": ["Exact target identity and source checksum required"], "warnings": [], "method_version": "portable_v2"},
+    {"name": "sequence_validation", "required": true, "status": "NOT_RUN", "evidence_refs": [], "failed_criteria": [], "missing_evidence": ["Actual generated candidates required"], "warnings": [], "method_version": "portable_v2"},
+    {"name": "experimental_efficacy", "required": true, "status": "BLOCKED_MISSING_EVIDENCE", "evidence_refs": [], "failed_criteria": [], "missing_evidence": ["Exact-construct measured evidence absent"], "warnings": [], "method_version": "portable_v2"}
+  ]
+}

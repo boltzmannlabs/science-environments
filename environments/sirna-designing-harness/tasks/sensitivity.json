@@ -1,0 +1,10 @@
+{
+  "task_id":"preserved-score-sensitivity",
+  "mode":"SENSITIVITY",
+  "required_inputs":["verified_score_table","method_endpoints_and_success_statuses","declared_candidate_cohorts","prespecified_K_and_ties"],
+  "actions":["reuse verified baseline metrics","restrict actual successful compatible candidate intersections","compare extrapolation exclusion and actual missing-output complete-case restrictions","preserve original composite weights and normalization","report descriptive Spearman average-tie ranks and Kendall tau-b","report exact-K and fractional boundary-tie overlap"],
+  "K":[3,5,10],
+  "small_pool_rules":{"K_gt_n":"NOT_APPLICABLE","K_eq_n":"NON_DISCRIMINATING"},
+  "prohibited":["new model inference","imputation","invented confidence intervals","reinterpreting ranking changes as biological changes","definitive winner without suitable evidence"],
+  "outputs":["evidence_resolution_report.md","candidate_evidence_matrix.csv","ranking_sensitivity.csv","unresolved_evidence.json","verification_receipt.json","output_manifest.json"]
+}

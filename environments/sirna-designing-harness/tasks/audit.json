@@ -1,0 +1,9 @@
+{
+  "task_id":"audit-completed-siRNA-run",
+  "mode":"AUDIT",
+  "required_inputs":["approved_source_run_directory","prior_manifest_and_receipt","new_output_directory"],
+  "actions":["discover actual files","verify manifest and receipt binding","snapshot source hashes","resolve every selected candidate's exact/near/seed/score/qualification evidence","verify saved diagnostic windows when preserved inputs permit","seal new outputs and compare original hashes"],
+  "prohibited":["regeneration","predictor inference","folding","transcriptome screening","writing original run","imputation"],
+  "outputs":["audit_report.md","candidate_evidence_matrix.csv","input_hashes.json","audit_failures.json","verification_receipt.json","output_manifest.json"],
+  "biology":"PARTIAL unless suitable actual additional evidence supports stronger qualification"
+}

@@ -1,0 +1,8 @@
+capability,state,reason,evidence
+siRNADiscovery,CODE_ONLY,No successful checkpoint-backed inference; not a confirming model,bench_batches/batch_1/outputs/provenance.json
+immune_safety,NOT_RUN,No compatible validated immune inference executed; required evidence absent,missing_evidence.csv
+modification_aware_inference,UNAVAILABLE,Verified models do not establish specified modified full-duplex potency,target_specification.json
+context_specific_delivery_or_PK,NOT_RUN,Biological context/data absent; PBPK not evaluated,bench_batches/batch_1/outputs/provenance.json
+NUPACK,LICENSE_RESTRICTED_NOT_INSTALLED,"Optional, not substituted for successful ViennaRNA calculations",bench_batches/batch_1/outputs/provenance.json
+RNAstructure,NOT_INSTALLED,"Optional, not a ViennaRNA failure",bench_batches/batch_1/outputs/provenance.json
+mutation_selective_design,BLOCKED_PENDING_MUTATION_SPECIFICATION,Exact mutation/context/objective not supplied; zero mutants generated,mutation_arm_requirements.json
