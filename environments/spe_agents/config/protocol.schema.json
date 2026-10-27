@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SPE protocol",
+  "type": "object",
+  "required": ["method", "basis_set", "charge", "multiplicity"],
+  "properties": {
+    "method": {"type": "string", "minLength": 1}, "basis_set": {"type": "string", "minLength": 1},
+    "charge": {"type": "integer"}, "multiplicity": {"type": "integer", "minimum": 1},
+    "scf_convergence": {"type": "number", "exclusiveMinimum": 0}, "max_cycle": {"type": "integer", "minimum": 1}
+  },
+  "additionalProperties": true
+}

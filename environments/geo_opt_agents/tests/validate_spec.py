@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).parents[1]
+required = [ROOT/'README.md', ROOT/'ENVIRONMENT_SPEC.md', ROOT/'config/environment.yaml',
+            ROOT/'config/request.schema.json', ROOT/'config/protocol.schema.json',
+            ROOT/'tasks/geo_opt_001_geometry_optimization.md', ROOT/'tasks/request.example.json',
+            ROOT/'tests/ACCEPTANCE.md']
+for path in required:
+    assert path.exists(), f'missing {path}'
+json.loads((ROOT/'config/request.schema.json').read_text())
+json.loads((ROOT/'config/protocol.schema.json').read_text())
+json.loads((ROOT/'tasks/request.example.json').read_text())
+print('PASS: Geo-Opt package structure and JSON artifacts')
