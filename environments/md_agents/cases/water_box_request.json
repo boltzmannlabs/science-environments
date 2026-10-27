@@ -1,0 +1,15 @@
+{
+  "task_id": "MD-CORE-001-water-box",
+  "environment_family": "core_md_execution",
+  "structure_file": "water_box.pdb",
+  "engine": "OpenMM",
+  "engine_version_required": "8.x",
+  "force_field": "tip3p.xml",
+  "integrator": "LangevinMiddleIntegrator",
+  "temperature_K": 300.0,
+  "timestep_fs": 1.0,
+  "minimization": true,
+  "production_steps": 1000,
+  "seed": 20261027,
+  "platform_policy": "CPU unless an explicitly equivalent GPU run is recorded"
+}
