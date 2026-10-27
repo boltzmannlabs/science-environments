@@ -1,0 +1,49 @@
+{
+  "benchmark": "qmmm-fixture-v1",
+  "results": [
+    {
+      "agent_id": "QMMM-PS01",
+      "status": "PASS",
+      "evidence": "QM region definition",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS02",
+      "status": "PASS",
+      "evidence": "boundary/link-atom validation",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS03",
+      "status": "PASS",
+      "evidence": "charge and embedding accounting",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS04",
+      "status": "PASS",
+      "evidence": "QM-region SCF convergence",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS05",
+      "status": "PASS",
+      "evidence": "coupling and force consistency",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS06",
+      "status": "PASS",
+      "evidence": "expanded-region sensitivity",
+      "case_id": "QMMM-FIXTURE-001"
+    },
+    {
+      "agent_id": "QMMM-PS07",
+      "status": "PASS",
+      "evidence": "trajectory restart compatibility",
+      "case_id": "QMMM-FIXTURE-001"
+    }
+  ],
+  "provenance_complete": true,
+  "scope": "fixture qualification; no production QM/MM engine claim"
+}
