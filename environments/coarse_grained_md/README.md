@@ -19,6 +19,12 @@ OpenMM using custom harmonic bonds and a repulsive nonbonded interaction. It
 tests that the adapter can build, minimize, run, and validate a CG system. It
 is not a protein, membrane, LLPS, or production force-field qualification.
 
+The executable `scripts/run_agent_harness.py` invokes all 20 deterministic
+specialist checks against three OpenMM CUDA smoke systems: a bead-chain
+protein proxy, a membrane-patch proxy, and a polymer/LLPS proxy. Results are
+stored under `results/agent_harness/`. Family-specific checks pass only when
+the corresponding proxy is present; reference-dependent checks remain REVIEW.
+
 ## Evidence rules
 
 Every real CG result must record resolution, mapping, force-field/model and
