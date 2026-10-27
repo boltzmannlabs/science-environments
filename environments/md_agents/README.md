@@ -24,7 +24,9 @@ QM/MM and learned-potential environments.
 
 ## Current maturity
 
-The contracts and package validator are implemented. GROMACS/OpenMM/AMBER/
-LAMMPS adapters, production trajectory references, online downloads, and MD
-benchmark results remain follow-up implementation work. Online resources must
-be versioned, licensed, hashed and compatibility-checked before execution.
+The contracts and package validator are implemented. A first actual OpenMM
+CUDA core case (water-box minimization plus short NVT production) is recorded
+under `results/core_openmm/`. GROMACS/AMBER/LAMMPS adapters, production
+trajectory references, long-timescale sampling, online downloads, and domain
+qualification remain follow-up work. Online resources must be versioned,
+licensed, hashed and compatibility-checked before execution.
