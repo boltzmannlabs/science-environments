@@ -13,5 +13,5 @@ json.loads((ROOT/'config/request.schema.json').read_text())
 json.loads((ROOT/'config/protocol.schema.json').read_text())
 json.loads((ROOT/'tasks/request.example.json').read_text())
 assert len(json.loads((ROOT/'agents/contracts.json').read_text())) == 18
-assert len(list((ROOT/'tasks').glob('*.md'))) == 18
+assert len(list((ROOT/'tasks').glob('homo_lumo_*.md'))) == 18
 print('PASS: HOMO-LUMO package structure and JSON artifacts')
