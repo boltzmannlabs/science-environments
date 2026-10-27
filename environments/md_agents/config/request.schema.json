@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MD specialist task request",
+  "type": "object",
+  "required": ["task_id", "environment_family", "system", "engine_policy", "resource_limits"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "environment_family": {"type": "string", "minLength": 1},
+    "system": {"type": "object"},
+    "engine_policy": {"type": "object"},
+    "resource_limits": {"type": "object"},
+    "online_resources": {"type": "array"}
+  },
+  "additionalProperties": true
+}
