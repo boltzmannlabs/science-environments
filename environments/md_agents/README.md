@@ -23,6 +23,22 @@ environments.
 4. [Agent contracts](agents/contracts.json)
 5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
 
+## Explicit per-agent input packets
+
+[`cases/agent_inputs.json`](cases/agent_inputs.json) contains one concrete
+packet for every registered agent (`MD-01` through `MD-62`). Each packet names
+the fixture, gives exact system/protocol/resource values, states the expected
+evidence, and defines the acceptance rule. Rebuild it after changing the
+registry with:
+
+```bash
+python scripts/build_agent_input_manifest.py
+```
+
+The packets intentionally include valid, failure, online-resource, domain, and
+orchestration cases. A fixture name is a frozen input contract; it is not a
+claim that the corresponding production engine run has already succeeded.
+
 ## Current maturity
 
 The contracts and package validator are implemented. The 12 scenario
