@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boltzmann-enzyme-research"
+version = "0.1.0"
+description = "Enzyme variant optimization environment and specialist for Agent-Scientist"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2", "biopython==1.84"]
+chemistry = ["rdkit==2025.9.3"]
+
+[project.scripts]
+enzyme-research = "enzyme_research.cli:main"
+
+[project.entry-points."sci_agent.plugins"]
+enzyme_research = "enzyme_research.plugin:register"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["enzyme_research*"]
+
+[tool.setuptools.package-data]
+enzyme_research = [
+    "plugin.yaml", "skills/**/*.md",
+    "_support/enzyme_workflow/plugin.yaml",
+    "_support/enzyme_workflow/contracts/*.json",
+    "_support/enzyme_workflow/skills/**/*.md",
+]
+
+[tool.setuptools.data-files]
+"share/enzyme-variant-optimization" = ["THIRD_PARTY_NOTICES.md", "SOURCE_PROVENANCE.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

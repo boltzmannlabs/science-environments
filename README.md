@@ -19,7 +19,10 @@ science-environments/
 │   ├── synthesis-route-gym/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   └── sirna-designing-harness/
+│   ├── sirna-designing-harness/
+│   │   ├── research-notes.md
+│   │   └── references.md
+│   └── enzyme-variant-optimization/
 │       ├── research-notes.md
 │       └── references.md
 ├── environments/
@@ -36,16 +39,27 @@ science-environments/
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   └── sirna-designing-harness/
+│   ├── sirna-designing-harness/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── STATUS.md
+│   │   ├── config/
+│   │   ├── tasks/
+│   │   ├── tests/
+│   │   ├── scripts/
+│   │   ├── skills/
+│   │   ├── benchmark/
+│   │   └── results/
+│   └── enzyme-variant-optimization/
 │       ├── README.md
 │       ├── ENVIRONMENT_SPEC.md
 │       ├── STATUS.md
+│       ├── pyproject.toml
 │       ├── config/
 │       ├── tasks/
 │       ├── tests/
+│       ├── src/
 │       ├── scripts/
-│       ├── skills/
-│       ├── benchmark/
 │       └── results/
 ├── docs/
 │   └── decisions/
@@ -56,6 +70,8 @@ science-environments/
 Each environment has its own folder. Research notes and references are maintained in the matching `research/<environment-name>/` directory and linked from its README.
 
 Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
+
+The [Enzyme Variant Optimization environment](environments/enzyme-variant-optimization/README.md) is In Progress: it packages the existing research runner, proposer/critic specialist, and portable synthetic tests. Native-runtime distribution, live pipeline qualification, independent scientific comparison, and maintainer review remain separate requirements.
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection is pending in [LICENSE](LICENSE).
 
