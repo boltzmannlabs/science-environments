@@ -30,3 +30,18 @@ under `results/core_openmm/`. GROMACS/AMBER/LAMMPS adapters, production
 trajectory references, long-timescale sampling, online downloads, and domain
 qualification remain follow-up work. Online resources must be versioned,
 licensed, hashed and compatibility-checked before execution.
+
+## GPU backend availability
+
+The host has an NVIDIA GeForce RTX 3060. The system `/usr/bin/gmx` is a
+CPU-only build, but the Conda environment `gromacs-gpu` provides GROMACS
+2024.2 built with CUDA support. Use the GPU build explicitly:
+
+```bash
+conda run -n gromacs-gpu gmx --version
+conda run -n gromacs-gpu gmx mdrun -nb gpu -pme gpu -bonded gpu -gpu_id 0
+```
+
+This verifies backend capability only. A GROMACS production case, repeat
+records, and scientific evaluator are still required before GROMACS results
+are counted as a qualified benchmark profile.

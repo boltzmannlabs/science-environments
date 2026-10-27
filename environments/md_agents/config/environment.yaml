@@ -3,6 +3,19 @@ environment_id: md-agents
 maturity: Specification
 scientific_execution_included: false
 qualified_profiles_included: false
+backends:
+  - id: openmm_cuda
+    status: executed
+    engine: OpenMM
+    platform: CUDA
+  - id: gromacs_cuda
+    status: capability_verified
+    engine: GROMACS
+    version: "2024.2-conda_forge"
+    executable: "/home/boltzmann15/anaconda3/envs/gromacs-gpu/bin/gmx"
+    gpu_platform: CUDA
+    selection: "conda run -n gromacs-gpu gmx"
+    tested_gpu: "NVIDIA GeForce RTX 3060"
 contracts:
   specification: ENVIRONMENT_SPEC.md
   request: config/request.schema.json
