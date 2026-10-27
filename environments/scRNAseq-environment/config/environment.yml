@@ -1,0 +1,29 @@
+name: scrnaseq_celltype_annotation
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.13
+  - numpy=2.1.3
+  - pandas=3.1.0
+  - scipy=1.16.3
+  - matplotlib=3.10.0
+  - scikit-learn=1.6.1
+  - python-igraph=1.0.0
+  - leidenalg=0.12.0
+  - h5py=3.14.0
+  - numba=0.61.2
+  - pip
+  - pip:
+      - scanpy==1.12.4
+      - anndata==0.13.4
+      - celltypist==1.7.1
+      - scrublet==0.2.3
+      - scikit-misc==0.5.3
+      - umap-learn==0.5.12
+      - pynndescent==0.6.0
+      - zarr==3.4.1
+
