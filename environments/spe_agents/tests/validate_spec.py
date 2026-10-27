@@ -5,11 +5,12 @@ from pathlib import Path
 ROOT = Path(__file__).parents[1]
 required = [ROOT/'README.md', ROOT/'ENVIRONMENT_SPEC.md', ROOT/'config/environment.yaml',
             ROOT/'config/request.schema.json', ROOT/'config/protocol.schema.json',
-            ROOT/'tasks/spe_001_single_point_energy.md', ROOT/'tasks/request.example.json',
+            ROOT/'tasks/request.example.json',
             ROOT/'tests/ACCEPTANCE.md']
 for path in required:
     assert path.exists(), f'missing {path}'
 json.loads((ROOT/'config/request.schema.json').read_text())
 json.loads((ROOT/'config/protocol.schema.json').read_text())
 json.loads((ROOT/'tasks/request.example.json').read_text())
+assert len(list((ROOT/'tasks').glob('*.md'))) == 18
 print('PASS: SPE package structure and JSON artifacts')
