@@ -1,0 +1,352 @@
+{
+  "schema_version": "1.0",
+  "status": "Metric vocabulary; no thresholds or models qualified",
+  "interpretation": "Descriptors are usable only when the qualified protocol supplies a compatible definition, implementation, applicability domain, scale, and evidence artifact.",
+  "metrics": [
+    {
+      "metric_id": "paired_chain_integrity",
+      "group": "identity",
+      "scope": "antibody",
+      "unit": "binary 0/1",
+      "direction": "pass predicate",
+      "boundary": "Validates record structure, not folding or biological identity."
+    },
+    {
+      "metric_id": "framework_identity_fraction",
+      "group": "framework",
+      "scope": "antibody",
+      "unit": "fraction 0-1",
+      "direction": "higher is closer to the declared reference",
+      "boundary": "Requires a declared numbering scheme and allowed edit mask."
+    },
+    {
+      "metric_id": "h_cdr1_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the heavy-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "h_cdr2_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the heavy-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "h_cdr3_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the heavy-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "l_cdr1_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the light-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "l_cdr2_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the light-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "l_cdr3_length",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "amino-acid residues",
+      "direction": "descriptive",
+      "boundary": "Derived only after the light-chain numbering scheme is frozen."
+    },
+    {
+      "metric_id": "plddt",
+      "group": "fold",
+      "scope": "antibody",
+      "unit": "declared model scale",
+      "direction": "higher confidence; no universal pass value",
+      "boundary": "Declare 0-1 or 0-100 convention and chain/residue aggregation."
+    },
+    {
+      "metric_id": "ptm",
+      "group": "fold",
+      "scope": "antibody",
+      "unit": "declared model scale",
+      "direction": "higher confidence; no universal pass value",
+      "boundary": "Record model definition and whether the score is single-chain or complex-level."
+    },
+    {
+      "metric_id": "iptm",
+      "group": "interface",
+      "scope": "antigen_antibody",
+      "unit": "declared model scale",
+      "direction": "higher confidence; no universal pass value",
+      "boundary": "Must assess the target interface and record chain order and confidence companions."
+    },
+    {
+      "metric_id": "ipsae",
+      "group": "interface",
+      "scope": "antigen_antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen implementation",
+      "boundary": "Definition, direction, chain scope, and companion inputs must be recorded."
+    },
+    {
+      "metric_id": "interface_buried_area",
+      "group": "interface",
+      "scope": "antigen_antibody",
+      "unit": "square angstroms",
+      "direction": "descriptive",
+      "boundary": "Surface-area convention and antigen construct must be recorded."
+    },
+    {
+      "metric_id": "interface_contact_count",
+      "group": "interface",
+      "scope": "antigen_antibody",
+      "unit": "contacts under declared distance rule",
+      "direction": "descriptive",
+      "boundary": "Contact cutoffs and atom/residue granularity must be frozen."
+    },
+    {
+      "metric_id": "prodigy_binding_energy",
+      "group": "binding",
+      "scope": "antigen_antibody",
+      "unit": "kcal/mol when returned by the declared method",
+      "direction": "per method's energy convention",
+      "boundary": "A computed interaction-energy estimate is not a measured Kd or ELISA EC50."
+    },
+    {
+      "metric_id": "stabddg_delta_delta_g",
+      "group": "stability",
+      "scope": "antibody",
+      "unit": "method-defined energy units",
+      "direction": "sign convention must be declared",
+      "boundary": "Do not interpret a mutation score until reference state and sign convention are known."
+    },
+    {
+      "metric_id": "aggregation_risk_score",
+      "group": "aggregation",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen model",
+      "boundary": "A prediction is not a measured aggregate fraction or formulation result."
+    },
+    {
+      "metric_id": "solubility_prediction",
+      "group": "solubility",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen model",
+      "boundary": "Do not infer a measured concentration or soluble yield."
+    },
+    {
+      "metric_id": "expression_prediction",
+      "group": "expression",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen model",
+      "boundary": "A prediction is not expression titer or manufacturing yield."
+    },
+    {
+      "metric_id": "polyreactivity_prediction",
+      "group": "polyreactivity",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen model",
+      "boundary": "A prediction does not establish experimental specificity."
+    },
+    {
+      "metric_id": "immunogenicity_prediction",
+      "group": "immunogenicity",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "per frozen model",
+      "boundary": "A prediction does not establish clinical immunogenicity or safety."
+    },
+    {
+      "metric_id": "cdr_surface_hydrophobicity",
+      "group": "developability",
+      "scope": "antibody",
+      "unit": "method-defined scale",
+      "direction": "risk descriptor; calibrated rule required",
+      "boundary": "Requires an explicitly identified variable-domain model and residue selection."
+    },
+    {
+      "metric_id": "cdr_positive_charge",
+      "group": "polyreactivity",
+      "scope": "antibody",
+      "unit": "declared charge/count convention",
+      "direction": "descriptive risk indicator",
+      "boundary": "Declare pH/protonation and which numbered CDR residues are included."
+    },
+    {
+      "metric_id": "cdr_negative_charge",
+      "group": "polyreactivity",
+      "scope": "antibody",
+      "unit": "declared charge/count convention",
+      "direction": "descriptive risk indicator",
+      "boundary": "Declare pH/protonation and which numbered CDR residues are included."
+    },
+    {
+      "metric_id": "paired_surface_charge_asymmetry",
+      "group": "polyreactivity",
+      "scope": "antibody",
+      "unit": "method-defined charge difference",
+      "direction": "descriptive risk indicator",
+      "boundary": "Calculate the heavy/light surface-charge difference with a declared model and convention."
+    },
+    {
+      "metric_id": "trajectory_rmsd",
+      "group": "dynamics",
+      "scope": "antigen_antibody",
+      "unit": "coordinate unit declared by trajectory",
+      "direction": "descriptive",
+      "boundary": "Declare alignment selection, complex/chain scope, equilibration, and sampling limits."
+    },
+    {
+      "metric_id": "trajectory_rmsf",
+      "group": "dynamics",
+      "scope": "antigen_antibody",
+      "unit": "coordinate unit declared by trajectory",
+      "direction": "descriptive",
+      "boundary": "Declare chain/residue mapping, alignment, and sampling limits."
+    },
+    {
+      "metric_id": "interface_contact_persistence",
+      "group": "dynamics",
+      "scope": "antigen_antibody",
+      "unit": "fraction 0-1 under declared contact rule",
+      "direction": "higher means more persistent under this analysis only",
+      "boundary": "Declare contact criterion, trajectory window, and uncertainty."
+    },
+    {
+      "metric_id": "measured_kd",
+      "group": "binding",
+      "scope": "antigen_antibody",
+      "unit": "M",
+      "direction": "lower indicates tighter equilibrium binding under the recorded assay conditions",
+      "boundary": "Use only for a traceable experimental measurement; record assay geometry, target construct, uncertainty, and censoring."
+    },
+    {
+      "metric_id": "measured_kon",
+      "group": "binding",
+      "scope": "antigen_antibody",
+      "unit": "M^-1 s^-1",
+      "direction": "descriptive kinetic endpoint",
+      "boundary": "Keep separate from equilibrium affinity and preserve assay/model provenance."
+    },
+    {
+      "metric_id": "measured_koff",
+      "group": "binding",
+      "scope": "antigen_antibody",
+      "unit": "s^-1",
+      "direction": "lower indicates slower dissociation under the recorded assay conditions",
+      "boundary": "Keep separate from equilibrium affinity and preserve assay/model provenance."
+    },
+    {
+      "metric_id": "measured_elisa_ec50",
+      "group": "binding",
+      "scope": "antigen_antibody",
+      "unit": "assay-specific concentration",
+      "direction": "assay-defined",
+      "boundary": "ELISA EC50 is assay-specific and is not interchangeable with Kd or functional potency."
+    },
+    {
+      "metric_id": "measured_functional_ic50",
+      "group": "function",
+      "scope": "antigen_antibody",
+      "unit": "assay-specific concentration",
+      "direction": "assay-defined",
+      "boundary": "Name the biological mechanism, assay, cell/target context, controls, and curve-fitting protocol."
+    },
+    {
+      "metric_id": "measured_neutralization_ic50",
+      "group": "function",
+      "scope": "antigen_antibody",
+      "unit": "assay-specific concentration",
+      "direction": "lower indicates greater neutralization potency only within the declared assay",
+      "boundary": "Requires a traceable neutralization experiment; cannot be inferred from binding or structure scores."
+    },
+    {
+      "metric_id": "cross_reactivity_ratio",
+      "group": "specificity",
+      "scope": "antigen_antibody",
+      "unit": "declared ratio or normalized assay scale",
+      "direction": "per frozen target panel and calculation",
+      "boundary": "Record every panel member, construct, negative result, assay limit, and normalization rule."
+    },
+    {
+      "metric_id": "variant_coverage_fraction",
+      "group": "specificity",
+      "scope": "antigen_antibody",
+      "unit": "fraction 0-1",
+      "direction": "higher means more panel members meet the declared rule",
+      "boundary": "Only interpretable against a frozen, versioned variant panel with per-member evidence."
+    },
+    {
+      "metric_id": "measured_expression_yield",
+      "group": "expression",
+      "scope": "antibody",
+      "unit": "mass per volume under declared expression conditions",
+      "direction": "assay-defined",
+      "boundary": "Report construct, host, scale, purification, replicate, and whether this is transient expression or process yield."
+    },
+    {
+      "metric_id": "measured_monomer_fraction",
+      "group": "aggregation",
+      "scope": "antibody",
+      "unit": "fraction 0-1",
+      "direction": "higher indicates more monomer in the declared assay",
+      "boundary": "Report method, buffer, concentration, temperature, timepoint, and uncertainty; not a universal formulation guarantee."
+    }
+  ],
+  "noninterchangeable_endpoints": [
+    {
+      "endpoint": "equilibrium_dissociation_constant",
+      "unit": "M",
+      "source": "experimental measurement only",
+      "cannot_be_inferred_from": [
+        "predicted_binding_energy",
+        "ipTM",
+        "ipSAE",
+        "ELISA_binding_EC50"
+      ]
+    },
+    {
+      "endpoint": "ELISA_binding_EC50",
+      "unit": "concentration declared by assay",
+      "source": "assay-specific experimental measurement",
+      "cannot_be_inferred_from": [
+        "predicted_binding_energy",
+        "ipTM",
+        "ipSAE"
+      ]
+    },
+    {
+      "endpoint": "viral_neutralization_potency",
+      "unit": "assay-specific",
+      "source": "viral neutralization experiment",
+      "cannot_be_inferred_from": [
+        "target_binding_prediction",
+        "ELISA_binding_EC50"
+      ]
+    },
+    {
+      "endpoint": "antibody_dependent_enhancement_risk",
+      "unit": "assay/context-specific",
+      "source": "appropriate experimental study",
+      "cannot_be_inferred_from": [
+        "EDIII_binding_prediction",
+        "interface_confidence"
+      ]
+    }
+  ]
+}

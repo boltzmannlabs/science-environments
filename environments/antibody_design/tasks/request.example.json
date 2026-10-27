@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "task_id": "denv_antibody_001",
+  "variant": "general",
+  "target": {
+    "organism": "DENV-2",
+    "protein": "envelope",
+    "region": "EDIII",
+    "sequence": null,
+    "structure": null,
+    "chain_ids": [],
+    "residue_map": null,
+    "strain_id": null,
+    "construct": null
+  },
+  "reference": {
+    "id": "DV87.1",
+    "format": null,
+    "sequences": null,
+    "heavy_chain_id": null,
+    "light_chain_id": null,
+    "numbering_scheme": null,
+    "region_annotation": null
+  },
+  "input_candidates": null,
+  "protocol": null,
+  "constraints": {
+    "preserve_framework": true,
+    "preserve_chain_pairing": true,
+    "lengths_from_reference": true,
+    "allowed_design_region": "annotated_CDRs",
+    "numbering_scheme": "IMGT"
+  },
+  "execution": {
+    "final_count": 10,
+    "max_candidates": 10,
+    "seed": 0,
+    "dynamics_required": true,
+    "budget": {
+      "wall_time_minutes": 120,
+      "cpu_core_hours": 2,
+      "gpu_hours": 2,
+      "remote_cost_units": 0
+    }
+  },
+  "knowledge_cutoff": "2024-09-01"
+}

@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Monoclonal antibody benchmark request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "variant",
+    "target",
+    "reference",
+    "input_candidates",
+    "protocol",
+    "constraints",
+    "execution",
+    "knowledge_cutoff"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "task_id": {
+      "const": "denv_antibody_001"
+    },
+    "variant": {
+      "enum": [
+        "general",
+        "tool_specific"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organism",
+        "protein",
+        "region",
+        "sequence",
+        "structure",
+        "chain_ids",
+        "residue_map"
+      ],
+      "properties": {
+        "organism": {
+          "const": "DENV-2"
+        },
+        "protein": {
+          "const": "envelope"
+        },
+        "region": {
+          "const": "EDIII"
+        },
+        "sequence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "structure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "chain_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "residue_map": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "strain_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "construct": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "residue_range",
+                "presentation_context"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "residue_range": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "presentation_context": {
+                  "enum": [
+                    "isolated_EDIII",
+                    "E_ectodomain",
+                    "full_E_protein",
+                    "virion_context",
+                    "other"
+                  ]
+                },
+                "context_note": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "format",
+        "sequences",
+        "heavy_chain_id",
+        "light_chain_id",
+        "numbering_scheme",
+        "region_annotation"
+      ],
+      "properties": {
+        "id": {
+          "const": "DV87.1"
+        },
+        "format": {
+          "enum": [
+            "VH_VL",
+            "Fab",
+            "full_length_IgG",
+            null
+          ]
+        },
+        "sequences": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "heavy_chain_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "light_chain_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "numbering_scheme": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "region_annotation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "input_candidates": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/artifact"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "protocol": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/artifact"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preserve_framework",
+        "preserve_chain_pairing",
+        "lengths_from_reference"
+      ],
+      "properties": {
+        "preserve_framework": {
+          "const": true
+        },
+        "preserve_chain_pairing": {
+          "const": true
+        },
+        "lengths_from_reference": {
+          "const": true
+        },
+        "allowed_design_region": {
+          "enum": [
+            "annotated_CDRs",
+            "prequalified_position_mask"
+          ]
+        },
+        "numbering_scheme": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "final_count",
+        "max_candidates",
+        "seed",
+        "dynamics_required",
+        "budget"
+      ],
+      "properties": {
+        "final_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_candidates": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dynamics_required": {
+          "type": "boolean"
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "wall_time_minutes",
+            "cpu_core_hours",
+            "gpu_hours",
+            "remote_cost_units"
+          ],
+          "properties": {
+            "wall_time_minutes": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "cpu_core_hours": {
+              "type": "number",
+              "minimum": 0
+            },
+            "gpu_hours": {
+              "type": "number",
+              "minimum": 0
+            },
+            "remote_cost_units": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "knowledge_cutoff": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}

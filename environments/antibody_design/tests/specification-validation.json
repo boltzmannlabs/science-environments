@@ -1,0 +1,401 @@
+{
+  "checked_at_utc": "2026-10-27T05:43:46.438878+00:00",
+  "environment_id": "antibody_design",
+  "maturity": "Specification",
+  "validation_scope": "local specification and synthetic contract checks; no scientific execution",
+  "status": "PASS",
+  "checks_passed": 86,
+  "checks": [
+    {
+      "check": "Required environment and research files exist",
+      "status": "PASS"
+    },
+    {
+      "check": "request schema is valid JSON Schema",
+      "status": "PASS"
+    },
+    {
+      "check": "protocol schema is valid JSON Schema",
+      "status": "PASS"
+    },
+    {
+      "check": "metrics schema is valid JSON Schema",
+      "status": "PASS"
+    },
+    {
+      "check": "generic-antibody-request schema is valid JSON Schema",
+      "status": "PASS"
+    },
+    {
+      "check": "Antibody metric catalog IDs are unique",
+      "status": "PASS"
+    },
+    {
+      "check": "Metric catalog covers paired antibody structure, interface, and stability evidence",
+      "status": "PASS"
+    },
+    {
+      "check": "Affinity, binding, neutralization, and enhancement endpoints are distinct",
+      "status": "PASS"
+    },
+    {
+      "check": "Maturity does not claim scientific validation",
+      "status": "PASS"
+    },
+    {
+      "check": "Configuration distinguishes implemented contract checks from scientific execution",
+      "status": "PASS"
+    },
+    {
+      "check": "Configuration registers the reusable monoclonal and bispecific task templates",
+      "status": "PASS"
+    },
+    {
+      "check": "Antibody assessment stages are ordered",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede prepare",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: prepare",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede reference",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: reference",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede candidates",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: candidates",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede structure",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: structure",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede interface",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: interface",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede developability",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: developability",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede dynamics",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: dynamics",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede evaluate",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: evaluate",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage dependencies precede export",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage output is unique: export",
+      "status": "PASS"
+    },
+    {
+      "check": "Antibody identity and framework rules are explicit",
+      "status": "PASS"
+    },
+    {
+      "check": "Qualification requires all rules and sequence-bound evidence",
+      "status": "PASS"
+    },
+    {
+      "check": "Example preserves the requested knowledge cutoff",
+      "status": "PASS"
+    },
+    {
+      "check": "Example does not invent antigen or antibody sequences",
+      "status": "PASS"
+    },
+    {
+      "check": "Incomplete example fails closed during preflight",
+      "status": "PASS"
+    },
+    {
+      "check": "Example preflight result binds to its exact request",
+      "status": "PASS"
+    },
+    {
+      "check": "Example preflight result lists the actual missing biological inputs",
+      "status": "PASS"
+    },
+    {
+      "check": "General task follows the benchmark task structure",
+      "status": "PASS"
+    },
+    {
+      "check": "Tool-specific task declares named methods",
+      "status": "PASS"
+    },
+    {
+      "check": "Both task variants have identical scientific requirements and outputs",
+      "status": "PASS"
+    },
+    {
+      "check": "Dengue-documented method appears: Stability-Binding DDG",
+      "status": "PASS"
+    },
+    {
+      "check": "General task remains tool neutral: Stability-Binding DDG",
+      "status": "PASS"
+    },
+    {
+      "check": "Dengue-documented method appears: PRODIGY",
+      "status": "PASS"
+    },
+    {
+      "check": "General task remains tool neutral: PRODIGY",
+      "status": "PASS"
+    },
+    {
+      "check": "Dengue-documented method appears: ipSAE",
+      "status": "PASS"
+    },
+    {
+      "check": "General task remains tool neutral: ipSAE",
+      "status": "PASS"
+    },
+    {
+      "check": "Tool-specific task uses the registered Stability-Binding DDG name",
+      "status": "PASS"
+    },
+    {
+      "check": "Undocumented implementation choices remain explicitly unbound",
+      "status": "PASS"
+    },
+    {
+      "check": "Generic schema accepts a target-only design request without a reference antibody",
+      "status": "PASS"
+    },
+    {
+      "check": "Reference-guided mode rejects a request without a supplied reference antibody",
+      "status": "PASS"
+    },
+    {
+      "check": "Every reusable design or assessment task defines an expected output contract",
+      "status": "PASS"
+    },
+    {
+      "check": "Reusable monoclonal and bispecific tasks remain tool-neutral",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/denv_antibody_001.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/denv_antibody_001_tools.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/mab_reference_guided_design.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/mab_target_only_design.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/bispecific_antibody_design.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/bispecific_cellular_mechanism_assessment.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/bispecific_cns_delivery_assessment.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tasks/bispecific_cns_readout_comparison.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/generic-antibody-request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> ../../../DENV2_Computational_Antibody_Benchmark.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/environment.yaml",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/metric-catalog.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> config/metrics.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> tests/ACCEPTANCE.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> results/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> ../../research/antibody_design/research-notes.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> ../../research/antibody_design/references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/README.md -> ../../research/antibody_design/research-notes.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> config/request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> config/metric-catalog.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> config/metrics.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> results/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/tasks/bispecific_antibody_design.md -> ../config/generic-antibody-request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/tasks/mab_target_only_design.md -> ../config/generic-antibody-request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: environments/antibody_design/tasks/mab_reference_guided_design.md -> ../config/generic-antibody-request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: research/antibody_design/research-notes.md -> references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Local link resolves: research/antibody_design/research-notes.md -> references.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Documentation links stay inside present local package files",
+      "status": "PASS"
+    },
+    {
+      "check": "Synthetic contract behavior tests pass: ............\n----------------------------------------------------------------------\nRan 12 tests in 0.269s\n\nOK\n",
+      "status": "PASS"
+    }
+  ],
+  "dependencies": {
+    "python": "3.12.13",
+    "jsonschema": "4.23.0",
+    "PyYAML": "6.0.1"
+  },
+  "file_sha256": {
+    "README.md": "2c718ef03146a43f605eda298cfe8c47808b9620e882353a9cf4c3db40cdeda9",
+    "ENVIRONMENT_SPEC.md": "28add31020606c98959ce8b09bc8ee4caec62780cce33880729cb9c2bd37476e",
+    "validation.py": "3a57d8cc7b419729fe75951fbbd40717ecad1a0e57b989606a357b61e0fc63aa",
+    "config/environment.yaml": "e02b30d1330ac9bd21f71c50ee9e879aa7715117043c2d505a28b6f9422aa795",
+    "config/generic-antibody-request.schema.json": "85873859ec0d50d218635c85b99112c50320d1668ce810e9a9648e20cc9bd7f1",
+    "config/request.schema.json": "2763a015d6eb60fae735134c006f47f4fc2e2128328765652e18708a9da7ff08",
+    "config/protocol.schema.json": "24262dd4e90093ed717df99a64d54732cc8a0ea6a98b6c617d95c9c5b061a884",
+    "config/metrics.schema.json": "835249990c142d55fa2e46cca118d98c406dd045cb4144cd2ba62e7778aa042b",
+    "config/metric-catalog.json": "21d037b3db05693f8c856275c8b97a92b83ed304e4d56566c92c1bd265bce8b3",
+    "tasks/denv_antibody_001.md": "15bbdb3e7bb5f8b08dde9c87668f490a77bfeeff6d829704b2612009247488ce",
+    "tasks/denv_antibody_001_tools.md": "7cd412500396009a7725c4c6abf6e82b6bb42238cf7e36a88fad8e12e6033c89",
+    "tasks/request.example.json": "5d072a26b0cb42008f72920283412490c6a3d36f4ba910059a3149d92e87be63",
+    "tasks/mab_reference_guided_design.md": "a8938083b519635f7677eac07efd15d45642d67332a98283d37d8e81b37acd95",
+    "tasks/mab_target_only_design.md": "476b3a10a988b9c873efaa1d0d7b1df46d0edc740a629251bdb05784244a7028",
+    "tasks/bispecific_antibody_design.md": "a28f4b5dbe9f691ee3775ada7ba84e1eba0e14e2e05fe823497de0ae6d634c94",
+    "tasks/bispecific_cellular_mechanism_assessment.md": "ae1efd27022a6dd5208b665462bead16bb746e28b9c8f70e78a560aee52af507",
+    "tasks/bispecific_cns_delivery_assessment.md": "cd98d8181ddb4bb256633d36f706f2f9e28d4b427bdc29f49232440da82104bb",
+    "tasks/bispecific_cns_shuttle_integrated_gate.md": "18fae0e495b404acb6d7ec10d044ff250f6c43d1871dafd500c52507f9837947",
+    "tasks/bispecific_cns_readout_comparison.md": "110510758ac6af61943393749e5822a3dfef480321042c4f4d4676e2dd9ca699",
+    "tests/ACCEPTANCE.md": "978b2a3676797753cc201846fec0f1af99afa055b31a815f54270b0c911b4380",
+    "tests/test_validation.py": "86e0a2debff4fc3c5b894ff92426880a680524a2c9063b414aec5e4152f6c7b7",
+    "tests/validate_spec.py": "18983f025e1c1e9e202fab1f34b3a96d329de1baab1f643e7f80cdd25684ced4",
+    "results/README.md": "95fe158a748f9e8f9873ecc69d333e956cea6f7c773a409eaf04b410fa931938",
+    "results/needs-input.example.json": "40d0be0c68ff5bf1209b60ff1f8119ae619af440048e8d0b2fea6b02c34b341f",
+    "../../research/antibody_design/research-notes.md": "e3246eb05b7676a8606fa61672243bcf825ff910c908db6e7eb7df5f00ef36de",
+    "../../research/antibody_design/references.md": "745c204651eadc5f51db578eb9d243c56e58c0f97f792ced3b494093d2c44cf6"
+  },
+  "behavior_tests": {
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.269s\n\nOK"
+  },
+  "not_performed": [
+    "biological identity validation",
+    "scientific adapter execution",
+    "antibody generation or optimization",
+    "structure/interface prediction",
+    "affinity or developability calculation",
+    "molecular dynamics",
+    "experimental binding, neutralization, or safety tests"
+  ]
+}
