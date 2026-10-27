@@ -1,0 +1,14 @@
+name: enzyme_workflow
+version: "0.2.4"
+description: Enzyme workflow tracking using the existing Boltzmann connector
+manifest_version: 2
+api_version: 1
+provides_tools:
+  - enzyme_workflow_catalog
+  - enzyme_workflow_start
+  - enzyme_workflow_next
+  - enzyme_workflow_status
+  - enzyme_workflow_report
+provides_hooks:
+  - pre_tool_call
+  - post_tool_call
