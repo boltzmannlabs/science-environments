@@ -8,11 +8,12 @@ been implemented or scientifically qualified.
 ## Scope
 
 The package contains 20 reusable MD execution/analysis specialists, 10 online
-literature/model/dataset provenance specialists, and 20 domain-specific
-specialists for folding, interfaces, nucleic acids, free energy, QM/MM,
-learned potentials, reproducibility and qualification. The same contracts can
-support protein-ligand, membrane, free-energy, coarse-grained, materials,
-QM/MM and learned-potential environments.
+literature/model/dataset provenance specialists, 20 domain-specific
+specialists, and 12 scenario specialists covering preparation, parameter,
+runtime, analysis, sampling, online-resource, infrastructure, validation and
+orchestration failures. The same contracts can support protein-ligand,
+membrane, free-energy, coarse-grained, materials, QM/MM and learned-potential
+environments.
 
 ## Read in this order
 
@@ -24,9 +25,26 @@ QM/MM and learned-potential environments.
 
 ## Current maturity
 
-The contracts and package validator are implemented. A first actual OpenMM
+The contracts and package validator are implemented. The 12 scenario
+specialists are task contracts; they are not yet independently qualified. A
+first actual OpenMM
 CUDA core case (water-box minimization plus short NVT production) is recorded
 under `results/core_openmm/`. GROMACS/AMBER/LAMMPS adapters, production
 trajectory references, long-timescale sampling, online downloads, and domain
 qualification remain follow-up work. Online resources must be versioned,
 licensed, hashed and compatibility-checked before execution.
+
+## GPU backend availability
+
+The host has an NVIDIA GeForce RTX 3060. The system `/usr/bin/gmx` is a
+CPU-only build, but the Conda environment `gromacs-gpu` provides GROMACS
+2024.2 built with CUDA support. Use the GPU build explicitly:
+
+```bash
+conda run -n gromacs-gpu gmx --version
+conda run -n gromacs-gpu gmx mdrun -nb gpu -pme gpu -bonded gpu -gpu_id 0
+```
+
+This verifies backend capability only. A GROMACS production case, repeat
+records, and scientific evaluator are still required before GROMACS results
+are counted as a qualified benchmark profile.
