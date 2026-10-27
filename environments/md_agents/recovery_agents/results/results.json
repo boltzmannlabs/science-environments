@@ -1,0 +1,77 @@
+{
+  "benchmark": "md-recovery-fixtures-v1",
+  "agents": 10,
+  "results": [
+    {
+      "agent_id": "REC-01",
+      "name": "Simulation Crash Diagnosis and Recovery",
+      "status": "PASS",
+      "evidence": "first failure and checkpoint verified",
+      "case_id": "REC-CASE-01"
+    },
+    {
+      "agent_id": "REC-02",
+      "name": "Energy Explosion and NaN Recovery",
+      "status": "PASS",
+      "evidence": "geometry evidence and bounded numerical recovery",
+      "case_id": "REC-CASE-02"
+    },
+    {
+      "agent_id": "REC-03",
+      "name": "Missing Force-Field Parameter Repair",
+      "status": "PASS",
+      "evidence": "approved source and independent topology check",
+      "case_id": "REC-CASE-03"
+    },
+    {
+      "agent_id": "REC-04",
+      "name": "Molecular Structure Repair",
+      "status": "PASS",
+      "evidence": "unambiguous mapping and count validation",
+      "case_id": "REC-CASE-04"
+    },
+    {
+      "agent_id": "REC-05",
+      "name": "Equilibration Failure Recovery",
+      "status": "PASS",
+      "evidence": "staged controls and statistical fluctuation check",
+      "case_id": "REC-CASE-05"
+    },
+    {
+      "agent_id": "REC-06",
+      "name": "Checkpoint and Restart Recovery",
+      "status": "PASS",
+      "evidence": "non-destructive compatible restart",
+      "case_id": "REC-CASE-06"
+    },
+    {
+      "agent_id": "REC-07",
+      "name": "Sampling and Convergence Troubleshooter",
+      "status": "REVIEW",
+      "evidence": "insufficient ESS; correctly withholds convergence claim",
+      "case_id": "REC-CASE-07"
+    },
+    {
+      "agent_id": "REC-08",
+      "name": "GPU/CPU and Resource Failure Recovery",
+      "status": "PASS",
+      "evidence": "supported fallback and numerical comparison",
+      "case_id": "REC-CASE-08"
+    },
+    {
+      "agent_id": "REC-09",
+      "name": "CG Force-Field and Model Failure Diagnosis",
+      "status": "PASS",
+      "evidence": "CG model checks and reference validation",
+      "case_id": "REC-CASE-09"
+    },
+    {
+      "agent_id": "REC-10",
+      "name": "False-Success and Scientific Validation Auditor",
+      "status": "PASS",
+      "evidence": "false success rejected despite zero exit code",
+      "case_id": "REC-CASE-10"
+    }
+  ],
+  "scope": "deterministic recovery-fixture qualification; not production engine qualification"
+}

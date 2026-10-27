@@ -34,6 +34,11 @@ trajectory references, long-timescale sampling, online downloads, and domain
 qualification remain follow-up work. Online resources must be versioned,
 licensed, hashed and compatibility-checked before execution.
 
+The reusable troubleshooting package in
+[recovery_agents/](recovery_agents/) contains 10 executable recovery agents
+with frozen failure fixtures and a separate harness. Its results are recovery
+fixture evidence, not a replacement for production engine qualification.
+
 ## GPU backend availability
 
 The host has an NVIDIA GeForce RTX 3060. The system `/usr/bin/gmx` is a
