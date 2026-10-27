@@ -17,7 +17,7 @@ structural confidence, the non-interchangeable binding-endpoint hierarchy (predi
 interface confidence, Kd, kon/koff, ELISA EC50, neutralization potency, ADE risk),
 specificity, developability, and immunogenicity — before any candidate may be shortlisted.
 The full criteria set is documented in
-[science-environments/environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md](../../environments/antibody_design/tests/MONOCLONAL_ANTIBODY_TEST_CASES.md).
+[science-environments/environments/antibody_design/tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md](../../environments/antibody_design/tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md).
 
 ## Source documents
 

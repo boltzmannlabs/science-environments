@@ -1,64 +1,49 @@
 # Task: bispecific_cellular_mechanism_assessment
 
-**Competency:** Cellular pharmacology and mechanism-of-action evidence  
-**Decision type:** Mechanistic inference  
-**Evidence source:** Assay quality-control and independent annotation analysis  
-**Assay modality:** Imaging-based cell-contact or synapse classification  
-**Data source:** Supplied experimental images, per-image calls, and human annotations  
-**Status:** Tool-neutral task specification; no input data or result values are bundled here.
-
 ## Description
 
-Determine whether an image-classification readout is reliable enough to support a mechanism-of-action conclusion for a bispecific antibody under the experimental conditions in the supplied task package.
+Determine whether an image-classification readout supports the proposed cellular mechanism of a bispecific antibody. Assess whether classifier labels and performance remain valid when the stimulus or antibody condition differs from the training condition.
 
-The classifier may have been trained under one cellular stimulus and applied under a different stimulus or antibody condition. Assess whether the label definitions and measured class frequencies remain comparable after that change. Distinguish model-to-expert agreement from agreement against an independent, multi-rater reference standard. Treat the classifier output as an assay-derived measurement whose validity must be demonstrated for the domain in which the biological conclusion is made.
+## Target
 
-## Required inputs
+**Assessment Subject:** The supplied bispecific candidate and its stated cellular mechanism\
+**Readout:** Imaging-based cell-contact or synapse classification\
+**Required Data:** Image-level predictions, class definitions, training/validation conditions, and decision-condition panels\
+**Reference Evidence:** Independent held-out annotations, individual rater labels, consensus method, and annotation provenance\
+**Study Metadata:** Donor/batch, biological replicates, antibody/stimulus conditions, sample selection, exclusions, and missing data
 
-The evaluation package must include:
+## Data Analysis Tool Capabilities
 
-- the classifier's training and validation conditions, label ontology, intended interpretation of each class, and the exact stimulus conditions used for the decision;
-- image-level predictions and metadata for training-condition and decision-condition panels, including antibody condition, donor/batch, replicate, stimulus, and exclusion flags;
-- independently produced annotations for held-out images, preserving each rater's labels, the consensus procedure, and annotation provenance;
-- the panel sizes, class counts, missingness, image-selection method, and whether data are independent of training and model selection;
-- the candidate bispecific's intended cellular mechanism, relevant target arms, and the specific biological claim being supported;
-- the predeclared decision threshold and uncertainty method, if one exists.
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
 
-Do not treat withheld or missing image files, labels, or replicate metadata as implicit evidence. If required inputs are unavailable, return `NEEDS_INPUT`.
+| Stage | Capability | Expected Evidence |
+| --- | --- | --- |
+| 1. Audit inputs and splits | Check image/label identifiers, conditions, donors, exclusions, and held-out status. | Matched records and leakage/missingness audit. |
+| 2. Compare annotations | Retain individual rater labels and apply the declared consensus method. | Rater agreement, disagreements, and reference-label provenance. |
+| 3. Evaluate classifier outputs | Calculate confusion counts and class-wise performance on each condition. | Precision, recall, F1, class support, and macro summaries. |
+| 4. Assess uncertainty and condition shift | Compare performance and class prevalence while respecting biological replicates. | Condition-level estimates, uncertainty, and evidence of measurement drift. |
+| 5. Interpret and report | Judge whether measurement validity supports the proposed mechanism comparison. | Supported validity category, evidence-source selections, and limitations. |
 
-## Required analysis
+## Evaluation Metrics
 
-1. Compare the classifier with independent multi-rater labels on a held-out panel from the condition it was trained to interpret.
-2. Quantify inter-rater agreement and uncertainty; report each class's prevalence and performance, not macro-F1 alone.
-3. Evaluate the classifier against independently annotated images from each decision-condition stimulus and antibody condition. Do not score model predictions against themselves or use one reviewer's agreement with model calls as the only generalization test.
-4. Test whether the same class definitions remain valid under the stimulus change. Report confusion by class, precision/recall, macro-F1, class frequency uncertainty, and any domain shift in image or biological conditions.
-5. Compare class-frequency differences with biological replicate and donor variation. Do not attribute a class-frequency change to the antibody's mechanism unless the classifier and annotation process are valid for that condition.
-6. State whether the evidence supports the intended mechanism-of-action claim, is insufficient because of confirmed measurement degradation, or is insufficient because the validation panel is too weak to establish generalization.
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Dataset independence | Held-out image count; donor/batch overlap; missing labels and exclusions by condition. | Avoid training/test overlap and do not count correlated images as independent biological replicates. |
+| Reference-label reliability | Individual-rater agreement, class-wise disagreements, and the declared consensus procedure. | Model agreement with one reviewer is not an independent multi-rater reference standard. |
+| Class-wise performance | Confusion counts, precision, recall, F1, and support for every class. | State undefined metrics explicitly; aggregate scores must not hide rare-class failure. |
+| Aggregate performance | Macro-F1 alongside class prevalence and relevant per-class results. | Interpret differences against class imbalance and the biological decision, not a universal threshold. |
+| Generalization | Condition-specific performance changes on independent annotations, with uncertainty. | Distinguish confirmed degradation from insufficient evidence; training-condition success is not cross-condition validity. |
+| Biological comparison | Class-frequency estimates, differences, donor/replicate variation, and uncertainty. | Separate classifier error from biological variation before interpreting a mechanism effect. |
 
-## Evaluation rules
+Use the supplied decision rule and uncertainty method. Keep undefined or unmeasurable metrics unresolved; do not replace them with favorable scores. Report detailed measurements in the report without changing the fixed benchmark answer fields.
 
-- Independent annotations are the reference for assessing classifier generalization; model agreement with a single expert is a limited concordance check, not proof of transportability.
-- Same-stimulus reliability and cross-stimulus reliability are separate questions. Performance on the training stimulus cannot establish validity under a mechanistically different stimulus.
-- A strong aggregate score can hide poor performance in a rare but biologically important class. Include class-wise counts and uncertainty.
-- Rater disagreements must be retained or resolved by a declared consensus rule; do not silently convert disagreement into ground truth.
-- The two antibody conditions must be compared under the same image acquisition, annotation, and classifier procedures or documented differences must be modeled.
-- A failed or underpowered validation makes mechanism evidence `UNRESOLVED`; it does not establish that the antibody lacks the mechanism.
+## Expected Output
 
-## Expected output
+**Required Files:** `mechanism_assessment.json` and `report.md`
 
-**Format:** `mechanism_assessment.json` plus `report.md`
+The report must include per-condition sample sizes, class metrics, rater agreement, uncertainty, cross-condition source identifiers, and the evidence supporting the validity judgment.
 
-The report must state the validity judgment, which independent same-condition panels form the appropriate comparator, per-condition sample sizes, per-class performance, agreement among raters, uncertainty, class-frequency estimates, and the specific reason the evidence is or is not adequate for the program decision.
-
-The structured result must contain:
-
-- `validity_assessment`: `sufficient_confirms_generalization`, `insufficient_confirmed_mechanism_driven_degradation`, or `insufficient_underpowered_single_rater_check`;
-- `same_mechanism_baseline_sources`: exactly two identifiers selected from the supplied closed list: `class_frequency_source_data_fig2ef`, `supplementary_annotation_crosscheck_dataset`, `appendix_scoring_verification_series`, `half_manual_annotation_time_reduction_experiment`, `cd19tcb_manual_check_figure`, `teplizumab_scoring_summary_entry`, `leave_one_donor_out_generalization_check`, `shap_feature_importance_comparison`;
-- `cross_condition_sources`: identifiers of the actual independently annotated decision-condition panels, or an empty list when absent;
-- per-condition confusion counts, class metrics, class prevalence, and uncertainty;
-- `limitations`: a concise list of identified data, annotation, or validation constraints.
-
-For the benchmark answer, return exactly:
+Return the benchmark answer in this format:
 
 ```text
 <EVAL_ANSWER>
@@ -66,11 +51,21 @@ For the benchmark answer, return exactly:
 </EVAL_ANSWER>
 ```
 
-The two identifiers must be copied exactly from the closed list above and selected from evidence in the mounted package. Do not reproduce task-specific answer labels or numeric values without the supplied artifacts. All counts and metrics in the internal analysis artifact must be reproducible from the provided data and documented filtering steps.
+Select exactly two distinct `same_mechanism_baseline_sources` from:
 
-## Important instructions
+- `class_frequency_source_data_fig2ef`
+- `supplementary_annotation_crosscheck_dataset`
+- `appendix_scoring_verification_series`
+- `half_manual_annotation_time_reduction_experiment`
+- `cd19tcb_manual_check_figure`
+- `teplizumab_scoring_summary_entry`
+- `leave_one_donor_out_generalization_check`
+- `shap_feature_importance_comparison`
 
-- No named software is prescribed.
-- Preserve the distinction between classifier reliability, measured synapse-class frequency, and biological mechanism.
-- Do not claim cross-condition generalization from agreement on training-condition images alone.
-- Do not recommend advancing or rejecting a bispecific solely from an unvalidated image-class frequency.
+## Important Instructions
+
+- Return `NEEDS_INPUT` when required data or annotations are missing; do not invent a judgment or source selection.
+- Agreement with one reviewer or performance on training-condition images alone does not establish cross-condition generalization.
+- An aggregate score must not conceal poor performance in a biologically important class.
+- Failed or underpowered validation leaves mechanism evidence unresolved; it does not prove that the antibody lacks the mechanism.
+- Make every reported count and metric reproducible from supplied data and documented filters.

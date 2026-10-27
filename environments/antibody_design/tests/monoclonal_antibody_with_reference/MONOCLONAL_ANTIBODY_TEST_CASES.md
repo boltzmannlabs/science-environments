@@ -1,5 +1,8 @@
 # Monoclonal-Antibody Test Plan: DENV-2 EDIII with DV87.1 Reference
 
+**Scope:** reference-guided paired-chain monoclonal antibodies only. The DENV case matrix below is a profile-level scientific test plan, not a count of implemented automated tests. Reusable contract regressions are in `tests/monoclonal_antibody_with_reference/test_reference_guided.py`; [coverage and gaps](COVERAGE.md) distinguishes software checks from unimplemented scientific verification.
+
+
 ## Purpose
 
 This test plan defines how the benchmark tasks test monoclonal-antibody candidates in the
@@ -11,11 +14,11 @@ testing program before any candidate may enter the shortlist.
 The plan applies to both presentations of task `denv_antibody_001`:
 
 - `tasks/denv_antibody_001.md`: the method-neutral task.
-- `tasks/denv_antibody_001_tools.md`: the same task with a named computational-methods block.
+- `tasks/denv_antibody_001_tools.md`: the same task with expanded evidence requirements in its capability block.
 
 Both variants must receive the same antigen, reference antibody, candidate limit, scientific
 rules, evaluator, budget, random seed, and hidden outcomes. They must produce the same result
-schema and be judged by the same scientific gates. The named-method block is the only permitted
+schema and be judged by the same scientific gates. The capability block is the only permitted
 task-content difference; naming a service never relaxes a testing criterion.
 
 The local executable tests validate the specification, the declared identities, the general
@@ -200,7 +203,7 @@ Additional rules:
 
 | Level | What it tests |
 | --- | --- |
-| Specification | Both task files exist and declare the shared identity; only the named-method block differs; schemas are valid; the test plan covers the criteria above. |
+| Specification | Both task files exist and declare the shared identity; only the capability block differs; schemas are valid; the test plan covers the criteria above. |
 | Input and preflight | Every artifact path is relative to the declared input root with matching SHA-256; missing antigen or reference inputs fail closed; identical/overlapping chain IDs and reversed construct ranges are rejected; cutoff and method-lock eligibility are enforced for both variants. |
 | Reference baseline | Exactly one reference record with ID `DV87.1`, role `reference`, no parent; its paired digest is recomputed; the same metric definitions apply to reference and candidates; the reference is excluded from all shortlist outputs. |
 | Candidate identity and lineage | Complete pairs, legal sequences, unique IDs and digests, DV87.1 parentage, framework preservation, reference-leakage rejection, stale-evidence invalidation. |
@@ -215,9 +218,9 @@ Additional rules:
 
 | ID | Test case | Expected result |
 | --- | --- | --- |
-| MAB-001 | Both task files after allowed normalization (variant line and named-method block only) | Identical scientific content and output contract. |
-| MAB-002 | Named computational service appears in the general task | Test fails. |
-| MAB-003 | Legacy `StabDDG` or `Boltz2` name appears in the named-method task or package configuration | Test fails. |
+| MAB-001 | Both task files after allowed normalization (variant line and capability block only) | Identical scientific content and output contract. |
+| MAB-002 | Named computational service appears in either task prompt | Test fails. |
+| MAB-003 | Legacy `StabDDG` or `Boltz2` name appears in the registered method inventory | Test fails. |
 | MAB-004 | Named-method protocol declares Stability-Binding DDG, PRODIGY, and ipSAE with their declared evidence roles | `CONTRACT_READY` when all other inputs pass. |
 | MAB-005 | General request uses an independently qualified complete protocol | `CONTRACT_READY` when all other inputs pass. |
 | MAB-006 | Missing antigen construct, sequence, structure, chain IDs, residue map, or strain | `NEEDS_INPUT`. |

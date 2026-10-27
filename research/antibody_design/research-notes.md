@@ -1,5 +1,8 @@
 # Monoclonal antibody design: evidence and implications for this environment
 
+**Research scope:** reference-guided monoclonal design, target-only antibody discovery, and bispecific design. **Current implementation:** all nine tasks have configuration profiles and schema/identifier checks; reference-guided paired-chain monoclonal tasks additionally have preflight and bundle-integrity tests. No family includes scientific execution. See the [environment specification](../../environments/antibody_design/ENVIRONMENT_SPEC.md) and [current coverage and gaps](../../environments/antibody_design/tests/monoclonal_antibody_with_reference/COVERAGE.md).
+
+
 **DENV task knowledge cutoff:** 2024-09-01  
 **Environment-design review updated:** 2026-10-27  
 **Scope:** Antibody sequence/structure representation, antigen-interface assessment, early developability, the supplied DENV-2 DV87.1 case, and a broader task taxonomy for an Agent-Scientist antibody environment. Post-2024 sources below inform future environment design only; they do not change the frozen cutoff or eligibility of methods in `denv_antibody_001`.
@@ -101,7 +104,7 @@ These papers support a **pipeline family**, not one universal end-to-end method:
 - Do not infer a weekly dosing interval from a single-dose biodistribution profile alone. Require exposure over the intended interval, intact analyte, target occupancy or pharmacodynamic duration, repeat-dose context where relevant, species cross-reactivity, and uncertainty adequate for that decision.
 - For small animal groups, retain individual measurements and show spread/uncertainty; do not interpret one maximum value as a durable candidate advantage.
 
-## Environment additions made from this research
+## Historical environment additions from this research (before scope narrowing)
 
 - Added a reusable target/reference schema that distinguishes target identity, construct context, epitope policy, paired reference chains, design mode, mechanism, constraints, evidence domains, budget, and cutoff.
 - Added separate tool-neutral task files for reference-guided monoclonal design and target-only discovery, so reference-based improvement is not claimed without a reference.
@@ -111,7 +114,7 @@ These papers support a **pipeline family**, not one universal end-to-end method:
 
 ## Sources and date rule
 
-The linked references are peer-reviewed works published on or before 2024-09-01. The supplied case files are treated as source material for what that case reports, not as independent validation of those results. See [references.md](references.md) for complete citations and source roles.
+The original DENV bibliography contains pre-cutoff scientific sources. Later reviews also include explicitly dated post-cutoff papers and official guidance; those inform future specifications without changing DENV eligibility. The supplied case files are treated as source material for what that case reports, not as independent validation of those results. See [references.md](references.md) for complete citations and source roles.
 
 ## Extended environment review (2026-10-27)
 
@@ -174,9 +177,9 @@ For `denv_antibody_001`, the initial answer remains a paired DV87.1-derived, fra
 
 ### Input fields that need to be active, not merely described
 
-The target-agnostic `config/generic-antibody-request.schema.json` contains target constructs and presentation context, PTM state, epitope policy, antibody format/isotype/Fc policy, editable regions, mechanism, functional assays, cross-reactivity panel, evidence domains, and compute budgets. The environment README and YAML now link this contract, and `validation.py` dispatches generic monoclonal requests through schema and artifact/protocol preflight. The generic result schema also records the Agent-Scientist model/harness/tool manifest, while a separate assay-record schema preserves external data provenance.
+The target-agnostic `config/monoclonal_reference/request.schema.json` contains target constructs and presentation context, PTM state, epitope policy, antibody format/isotype/Fc policy, editable regions, mechanism, functional assays, cross-reactivity panel, evidence domains, and compute budgets. The environment README and YAML now link this contract, and `tests/monoclonal_antibody_with_reference/validation.py` dispatches generic monoclonal requests through schema and artifact/protocol preflight. The generic result schema also records the Agent-Scientist model/harness/tool manifest, while a separate assay-record schema preserves external data provenance.
 
-The active generic schema now distinguishes seven computational modes: target-only de novo, reference-guided, affinity maturation, humanization, developability optimization, specificity optimization, and mechanism optimization. It records product format, explicit sequence scope, isotype, and Fc policy but does not claim to implement Fc engineering, format conversion, scFv, VHH/nanobody, multispecific, fusion, or conjugate design. Those remain separate extensions so the first lane stays a paired-chain monoclonal task.
+The active generic schema supports six reference-required objectives: reference-guided, affinity maturation, humanization, developability optimization, specificity optimization, and mechanism optimization. Target-only de novo is excluded. It records product format, explicit sequence scope, isotype, and Fc policy but does not claim to implement Fc engineering, format conversion, scFv, VHH/nanobody, multispecific, fusion, or conjugate design. Those remain separate extensions so the first lane stays a paired-chain monoclonal task.
 
 Recommended active input groups:
 
@@ -245,7 +248,7 @@ Use a reference-only baseline, simple mutation/retrieval baseline, and method-sp
 **P0 — contract implementation state and remaining prerequisites.**
 
 1. Keep `denv_antibody_001` as the narrow DENV-2/DV87.1 case and retain its frozen historical cutoff. Resolve missing source sequences/structures, construct and chain/residue mappings, experimental sample crosswalk, named method revisions, and qualified protocol before any scientific execution claim.
-2. The generic request schema is linked to the README/YAML and `validation.py` now checks generic request structure, referenced input hashes, protocol qualification, required evidence groups, and method revisions. Run the package's acceptance/behavior suite before promoting maturity; it was not run as part of this documentation and contract update.
+2. The generic request schema is linked to the README/YAML and `tests/monoclonal_antibody_with_reference/validation.py` now checks generic request structure, referenced input hashes, protocol qualification, required evidence groups, and method revisions. Run the package's acceptance/behavior suite before promoting maturity; it was not run as part of this documentation and contract update.
 3. Added generic result and assay-record schemas, function/specificity metric groups, assay identity/hash checks, and computational run-manifest fields. Historical assay values remain optional external evidence; no wet-lab execution is part of this environment.
 4. The actual Agent-Scientist task scheduler/tool adapter is still not included. A future runner must mount only task inputs, isolate each writable run, freeze model/harness/tool versions, validate the output bundle, preserve stop states, and keep independent grading data hidden.
 
@@ -289,3 +292,37 @@ The following sources support the new environment-design recommendations. They d
 15. LatchBio. “TxBench-Antibody-Discovery.” [Benchmark overview](https://benchmarks.bio/txbench-ab), [public repository](https://github.com/latchbio/txbench-antibody-discovery). Therapeutic-discovery task taxonomy; verify authorized access to graded inputs and ground truth.
 
 For the original DENV case sources and their role, continue to use [references.md](references.md). This consolidated list is for the extended review and is not a replacement for the source-by-source DENV evidence audit above.
+
+## Scope correction: three research cases, one implemented test family (2026-10-27)
+
+The earlier specification conflated the initial test scope with the broader environment scope. The revised specification covers (A) a target plus a supplied binding reference, (B) a target without a supplied binding reference, and (C) a bispecific architecture. The subsequent configuration update adds declaration checks for all task families; scientific scenario testing remains reference-guided monoclonal only.
+
+The [scope-review sources](references.md) support separating reference improvement, discovery, and assembly-aware evaluation. Target-only does not remove method-specific input needs. Bispecific evaluation depends on architecture and mechanism; joint engagement is not a universal assumption. These are specification conclusions, not new computational or experimental results.
+
+This environment keeps Markdown task instructions only in `tasks/`, machine-readable declarations and JSON request examples in the appropriate family folders under `config/`, testing code and criteria in `tests/`, small outputs in `results/`, and supporting research here. Additional task families require implementation and acceptance evidence before they can be registered as supported modes.
+
+## Task-specific capabilities and evaluation review (2026-10-27)
+
+The two monoclonal design tasks specify human EGFR (ERBB1): reference-guided design with cetuximab and target-only discovery with no supplied binding reference. The bispecific task specifies human HER2 (ERBB2), with zanidatamab as the reference for biparatopic domain II/domain IV recognition. Profiles and request examples carry the same identities; schemas remain reusable. The [EGFR and HER2 sources](references.md#egfr-and-her2-task-identities) support these names and domain assignments. No sequences, experimental results, or ready-to-run molecular inputs are supplied by this documentation change. In particular, two independently plausible HER2-binding components do not establish zanidatamab-like joint engagement or activity.
+
+All nine task documents now separate **tool capabilities** from **evaluation metrics**. Design tasks describe input review, candidate generation or registration, structural and interface assessment, property assessment, conditional refinement, and selection. Evidence-assessment tasks describe data validation, measurement calculation, uncertainty analysis, interpretation, and reporting. The sequence is an environment design choice; it is not a claim that a publication prescribes this workflow or that these tools are installed.
+
+The [review sources](references.md#task-evaluation-and-capability-review-2026-10-27) support these decisions:
+
+| Task | Evaluation emphasis | Source basis |
+| --- | --- | --- |
+| `mab_reference_guided_design` | Matched reference comparisons, allowable changes, structure/interface distinction, specificity, and independent property criteria. | Hie study; E1, E2, E5; existing reference/identity literature. |
+| `denv_antibody_001` | Retained reference-pairing and framework requirements, comparable predictions, distinct binding/functional evidence, and unresolved outcomes. | Existing DENV references; pre-cutoff characterization principles E1/E2. No new method eligibility or biological result is claimed. |
+| `denv_antibody_001_tools` | Same scientific criteria, with more detailed mutation-associated stability and antigen-interface evidence requirements. | Same sources as the general task. Runtime method bindings remain in configuration/protocol validation, not in the prompt's tool names. |
+| `mab_target_only_design` | Candidate origin, declared novelty comparison, diversity, control limitations, structure/interface evidence, and measured-versus-predicted distinctions. | Bennett discovery study; E1/E2/E5. Novelty requirements are an author-defined benchmark safeguard, not proof that any candidate binds. |
+| `bispecific_antibody_design` | Both arm identities, binding evidence, assembled-product integrity, and mechanism-dependent joint engagement. | FDA bispecific guidance; assembly reference 19; E1/E2. |
+| `bispecific_cellular_mechanism_assessment` | Independent annotations, class-wise performance, prevalence, uncertainty, condition shift, and biological replicate structure. | E3; study-specific labels and answer options remain defined by the original task. |
+| `bispecific_cns_delivery_assessment` | Observed concentrations, comparable units and conditions, effect sizes, compartment relevance, analyte validity, and limits of dosing inference. | CNS reference 20; E4; FDA mechanism/evidence distinctions. |
+| `bispecific_cns_readout_comparison` | Required final-timepoint ratio versus the readout that actually addresses the biological objective; replicate and compartment uncertainty. | CNS reference 20 and E4. Candidate labels and exact ratio definition come from the task, not from published outcome rankings. |
+| `bispecific_cns_shuttle_integrated_gate` | Three observed 7-day Brain means, experimental-unit counts, variability, supported limiting factors, and a separate dosing conclusion. | CNS reference 20 and E4. The 7-day selection and answer vocabulary are retained task requirements, not universal research criteria. |
+
+Common decisions are to keep predicted confidence separate from measured accuracy or affinity; avoid inventing a composite score; preserve independent property gates; and use protocol-defined acceptance criteria. For comparisons of supplied experimental data, report the experimental unit, exclusions, controls, and uncertainty without treating repeated images or technical measurements as additional independent biological samples.
+
+The three fixed benchmark answer templates are unchanged. Detailed new measurements belong in the supporting report and existing evidence artifacts; no extra answer fields or task-specific winning candidates were introduced. Scientific study timepoints remain where required, while runtime limits, compute-budget prose, implementation banners, and machine-contract explanations remain absent from task instructions.
+
+Software validation checks document structure, variant parity, and existing data contracts. It does not compute the new scientific metrics, execute generation or refinement, validate an experimental assay, or establish scientific readiness. Post-cutoff and live-document sources inform this review only; they do not silently change any request's method eligibility.

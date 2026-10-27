@@ -1,79 +1,75 @@
 # Task: mab_target_only_design
 
-**Task family:** target-conditioned de novo monoclonal antibody design and assessment  
-**Task variant:** tool-neutral  
-**Status:** benchmark specification; target inputs, design policy, and a qualified protocol must be supplied before execution.
-
-**Environment status:** secondary computational monoclonal mode. It is not the initial reference-guided lane and does not establish experimental binding or function.
-
 ## Description
 
-Starting from the supplied antigen profile and no supplied reference antibody, propose and assess a bounded set of monoclonal antibody candidates for the specified biological objective. The task is target-conditioned antibody discovery: it must produce paired heavy/light-chain candidates in a declared antibody format, and assess them against the target and the stated mechanism.
+Propose and assess paired-chain monoclonal antibody candidates targeting the **extracellular domain of human EGFR (ERBB1)**, without a supplied binding-reference antibody. Define the antibody format, permitted frameworks, accessible EGFR search region, and evaluation criteria before generating or selecting candidates.
 
-This task has no reference antibody sequence against which to claim affinity improvement, framework preservation, or lineage. The benchmark must instead define acceptable antibody sequence families, molecular format, humanization policy, and comparison controls in advance. If those inputs are absent, return `NEEDS_INPUT` or `PROTOCOL_REQUIRED`; do not fabricate a reference clone or claim superiority to one.
+The objective is to identify EGFR-binding candidates with supported structural, specificity, and developability evidence. Record whether candidates are generated, retrieved, or selected from a supplied library. Do not treat an existing EGFR-binding antibody as an undisclosed reference or claim improvement over one.
 
-## Target inputs
+## Target
 
-The run package must identify and hash:
+**Target:** Human EGFR (ERBB1), extracellular domain\
+**Reference Antibody:** None supplied; this is target-only discovery\
+**Binding Region:** Accessible extracellular EGFR surface defined in the request; no reference-antibody epitope is imposed\
+**Structure and Context:** Supplied EGFR construct and coordinates, native cell-surface presentation, chain mapping, and relevant modifications\
+**Antibody Format:** Declared paired-chain IgG, Fab, or F(ab')2 context and sequence scope\
+**Objective:** Discover and assess EGFR-binding candidates using predefined binding, specificity, and developability criteria
 
-- the target accession or stable identifier, organism, full amino-acid sequence, relevant isoform/strain/variant, and construct sequence;
-- structure coordinates for the relevant construct or a clear declaration that none is supplied, including chain IDs and sequence-to-coordinate residue mapping;
-- native biological context: soluble or cell-surface presentation, oligomeric/complex state, membrane orientation where relevant, known cofactors and post-translational modifications, and evidence for epitope accessibility;
-- intended epitope residues or region when specified; otherwise, the permissible search surface, excluded regions, and evidence needed to establish an accessible epitope;
-- disease-relevant target variants or homologs for breadth and cross-reactivity assessment;
-- intended mechanism, product format, and functional assay context.
+## Design Constraints
 
-The target construct must be biologically relevant to the intended use. A truncated isolated domain may support local structural assessment, but it cannot establish accessibility in a full-length, multimeric, glycosylated, membrane-bound, or particle-associated target unless that context is modeled or otherwise evidenced.
+- Declare framework selection, numbering convention, humanization requirements, and allowed sequence changes.
+- Preserve complete heavy/light pairing, conserved domain features, and valid domain boundaries.
+- Record candidate origins and sequence hashes; remove duplicate pairs before ranking.
+- Keep the EGFR construct, extracellular search region, and evaluation criteria fixed. Exclude held-out EGFR binders and assay labels from candidate generation and ranking.
+- Declare comparison controls or explicitly report their absence. Do not claim improvement over an unspecified reference.
+- Return up to the requested candidate count; every shortlisted candidate must satisfy all mandatory criteria.
 
-## Design constraints
+## Computational Tool Capabilities
 
-- The request must declare paired-chain IgG/Fab/F(ab')2 product context, sequence scope (`variable_domains`, `Fab_chains`, or `full_length_chains`), species origin/humanization requirement, allowed variable-domain frameworks or framework-selection policy, numbering convention, candidate count, and sequence constraints. scFv and VHH/nanobody architectures require a separate chain contract.
-- Candidates must be complete paired heavy/light antibodies unless the requested format explicitly defines another chain architecture.
-- Preserve conserved domain features, disulfide-forming residues, and valid variable-domain boundaries. Flag unusual CDR lengths, insertions, deletions, or framework changes for review.
-- Keep the candidate-generation objective and epitope policy frozen before design. Do not let held-out target binders, assay labels, or future experimental outcomes influence generation or ranking.
-- Record the model/harness, enabled tools, prompt hashes, execution backend, environment digest, isolated workspace, seed, candidate budget, and resource use in the generic result provenance.
-- Establish positive and negative controls or an explicit no-control limitation. Do not describe a candidate as improved over a reference when no reference was supplied.
-- Limit the design campaign to the frozen candidate and compute budget. Preserve diversity and lineage metadata; deduplicate paired sequences before ranking.
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
 
-## Required assessment stages
-
-| Stage | Required assessment | Decision purpose |
+| Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Resolve target and objective | Validate target sequence/construct, native state, variant scope, epitope policy, intended mechanism, format, and budget. | Ensure candidate generation addresses the intended biological molecule and use. |
-| 2. Define design space | Record framework policy, variable regions, antibody format, target epitope constraints, and allowed sequence diversity. | Make the design task reproducible and avoid uncontrolled changes in molecular format. |
-| 3. Register candidates | Validate complete chain pairing, sequence syntax, uniqueness, ancestry, and construct compatibility. | Prevent malformed or duplicate outputs from inflating the shortlist. |
-| 4. Assess antibody structures | Examine variable-domain fold, CDR conformations, chain pairing, local uncertainty, and structural integrity. | Test whether the proposed antibody is structurally plausible. |
-| 5. Assess target complexes | Examine epitope compatibility, interface geometry, steric access, confidence, and alternative poses or target states. | A plausible antibody fold does not establish correct target docking. |
-| 6. Assess function and specificity | Evaluate target-specific functional hypotheses and cross-reactivity against the frozen variant/homolog panel. | Identify candidates whose apparent binding is inconsistent with the stated objective or specificity scope. |
-| 7. Assess developability | Evaluate sequence liabilities, aggregation, solubility, stability, self-interaction, expression risk, and immunogenicity indicators. | Avoid ranking solely by predicted binding. |
-| 8. Qualify and export | Apply every mandatory rule, preserve failures and uncertainty, and report the candidate set with evidence. | Produce an auditable shortlist without unsupported claims of affinity or efficacy. |
+| 1. Validate target and design space | Review EGFR extracellular context, accessible search regions, antibody format, framework choices, and controls. | Defined input scope and any missing prerequisites. |
+| 2. Generate or select candidates | Generate or select EGFR-directed candidates from declared sources without assuming a binding reference. | Paired candidates, origin records, source provenance, and generation settings. |
+| 3. Check identity and diversity | Validate domain boundaries, chain pairing, duplicates, and relatedness. | Valid unique pairs and full-chain/CDR diversity summaries. |
+| 4. Assess structures and complexes | Evaluate antibody folds and target poses separately. | Structures, mapped interfaces, local uncertainty, and geometry checks. |
+| 5. Evaluate interaction and specificity | Assess binding hypotheses, target-panel coverage, and relevant functional evidence. | Per-candidate predictions and separately labeled supplied observations. |
+| 6. Assess developability | Check sequence, physical-property, expression, and nonspecific-interaction risks. | Distinct liability assessments and missing-evidence flags. |
+| 7. Refine and reassess | Revise candidates within the declared design space and repeat affected checks. | Traceable revisions and fresh candidate evidence. |
+| 8. Select and report | Apply the frozen criteria and report supported diversity and tradeoffs. | Evidence-supported shortlist without a reference-improvement claim. |
 
-## Evaluation metrics
+## Evaluation Metrics
 
-Report antibody-chain fold confidence and loop uncertainty separately from target-interface confidence. Include interface contacts/geometry, clashes, epitope mapping, predicted interaction scores, variant-panel coverage, and per-candidate developability flags with their score scales and limitations.
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Candidate identity and origin | Valid heavy/light pairs, domain boundaries, source artifacts, and unique sequence hashes. | Distinguish generated, retrieved, and library-derived candidates; do not invent binding-reference lineage. |
+| Diversity and novelty | Unique-pair count, full-chain/CDR similarity, comparison corpus, and similarity definition. | State the comparison scope and corpus date; diversity is not proof of binding or universal novelty. |
+| Antibody structure | Chain/CDR confidence, interdomain orientation uncertainty, clashes, and structural completeness. | Evaluate local weaknesses separately from whole-antibody confidence. |
+| Target compatibility | EGFR epitope mapping, interface contacts and area, cell-surface accessibility, pose consistency, and confidence. | Assess the relevant construct and presentation; a predicted fold does not establish a correct binding pose. |
+| Binding and controls | Interaction predictions and any supplied affinity/kinetic measurements, with control identity and conditions. | Report absent controls; no comparison to an unspecified binder or conversion of predicted scores into measured affinity. |
+| Specificity and function | EGFR recognition, declared receptor-family/off-target panel coverage, and any required mechanism-specific evidence. | Flag missing panel members or functional evidence; binding and biological activity are separate outcomes. |
+| Developability | Stability, aggregation, solubility, expression risks, self-interaction, chemical liabilities, polyreactivity, and immunogenicity indicators. | Apply each required criterion independently and preserve its applicability limits. |
+| Selection confidence | Uncertainty, method revisions, source evidence, exclusions, and performance of supplied comparison controls. | Use predefined ranking; do not tune selection on held-out outcomes or fill the shortlist with unresolved candidates. |
 
-Where experimental data are provided, distinguish measured equilibrium affinity (`Kd`), association and dissociation kinetics, avidity-dependent cell binding, biochemical binding assays, and the mechanism-specific functional endpoint. These are not interchangeable. If no experimental results are supplied, label all such endpoints `NOT_MEASURED`; do not substitute structure confidence or predicted energy.
+The supplied protocol defines thresholds, comparison controls, and ranking. Report experimental endpoints as `NOT_MEASURED` when measurements are absent; report missing required computational evidence as unresolved.
 
-Use an all-required-gates rule for qualification. When candidates trade off binding, breadth, specificity, and developability, report a multi-objective/Pareto view or the frozen priority order; do not invent an uncalibrated composite score.
+## Expected Output
 
-## Expected output
-
-**Format:** `antibody_design_bundle`  
+**Format:** `antibody_design_bundle`\
 **Directory:** `08_results/`
 
-- `designed_sequences.fasta`: eligible paired sequences with explicit heavy/light chain identifiers.
-- `metrics.json`: target/profile hashes; declared sequence scope; candidate sequences and hashes; all structure, interface, function-proxy, specificity, and developability evidence; statuses; exclusions; provenance; and resource use.
-- `assay_records`: optional hashed files containing external or historical assay evidence; the computational environment does not execute those assays.
+- `designed_sequences.fasta`: eligible paired sequences with candidate and heavy/light-chain identifiers.
+- `metrics.json`: target identity, candidate origins, sequence hashes, measurements, rule decisions, exclusions, and provenance.
 - `shortlist.csv`: ordered candidate IDs, paired-sequence hashes, and eligibility status.
-- `report.md`: design-space definition, candidate diversity, ranking rationale, uncertainty, limitations, and the evidence required next.
-- Native structures and evidence artifacts with relative paths and SHA-256 digests.
+- `report.md`: EGFR design-space definition, candidate diversity, ranking rationale, limitations, and unresolved evidence.
+- Supporting structures, scoring outputs, and any supplied assay records with relative paths and SHA-256 hashes.
 
-If target identity, relevant construct, format, or evaluation rules are missing, return a structured preflight result with no candidate sequences. A candidate set that passes computational rules remains a hypothesis until independently tested.
+If target identity, construct, format, or evaluation requirements are missing, return `NEEDS_INPUT` or `PROTOCOL_REQUIRED` without candidate outputs.
 
-## Important instructions
+## Important Instructions
 
-- This task has no reference antibody. Never invent one, report a reference-derived improvement, or use an unverified known binder as an implicit control.
-- Use the [generic target/reference request contract](../config/generic-antibody-request.schema.json); for this mode, the reference field is `null` and design mode is `de_novo`.
-- Do not invent amino-acid sequences, epitopes, assay outcomes, or acceptance thresholds.
-- Record actual computational methods and versions in run evidence; the task does not prescribe software.
-- Do not claim a model-predicted structure proves binding, function, specificity, or clinical suitability.
+- Do not invent a binding reference, target annotations, assay outcomes, or thresholds.
+- Report candidate sequences as computational proposals and retain their actual origin and method provenance.
+- Follow the request's knowledge cutoff and keep predicted binding distinct from measured affinity and function.
+- A plausible structure does not establish binding, specificity, or therapeutic suitability.

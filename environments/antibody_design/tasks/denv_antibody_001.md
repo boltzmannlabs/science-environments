@@ -1,85 +1,82 @@
 # Task: denv_antibody_001
 
-**Task variant:** `general`  
-**Task family:** monoclonal-antibody design and computational assessment  
-**Status:** specification; scientific execution requires qualified external capabilities.
+**Task variant:** `general`
 
 ## Description
 
-Develop a computationally supported shortlist of DV87.1-derived monoclonal-antibody candidates targeting Domain III of the DENV-2 envelope protein. Assess candidate quality across target recognition, structural confidence, predicted binding, stability, and developability while preserving the reference framework and heavy/light-chain pairing.
-
-The scientific intuition is that a plausible antibody candidate must satisfy several requirements together. Strong predicted binding cannot compensate for an unreliable fold, an uncertain target interface, or a major developability liability. Return up to the requested number of candidates that pass every mandatory rule in the frozen evaluation protocol.
+Perform monoclonal-antibody design and computational assessment using DV87.1 as the reference and DENV-2 envelope Domain III as the target. Produce a shortlist of unique, reference-derived antibody pairs that pass every mandatory rule in the frozen evaluation protocol. Compare candidates with the reference under the same conditions.
 
 ## Target
 
-**Name:** Dengue virus serotype 2, DENV-2  
-**Protein:** Envelope protein  
-**Target Region:** Domain III, EDIII  
-**Reference Monoclonal Antibody:** DV87.1  
-**Antigen Sequence and Structure:** Exact supplied construct and coordinate file; unresolved until provided  
-**Antibody Sequences:** Complete, correctly paired reference heavy and light chains; unresolved until provided  
-**Chains and Numbering:** Explicit antigen/heavy/light-chain assignments and sequence-to-structure mapping  
+**Name:** Dengue virus serotype 2, DENV-2\
+**Protein:** Envelope protein\
+**Target Region:** Domain III, EDIII\
+**Reference Antibody:** DV87.1\
+**Antigen Sequence and Structure:** Exact supplied construct and coordinate file\
+**Reference Sequences:** Complete, correctly paired reference heavy and light chains\
+**Chains and Numbering:** Antigen/heavy/light assignments and sequence-to-structure mapping\
 **Binding Region:** The supplied, verified EDIII annotation; do not guess residue numbering
 
 ## Design Constraints
 
 - Preserve the reference framework, chain pairing, and declared construct format.
-- Determine sequence lengths and permitted variation from verified reference annotations.
-- Use unique candidate IDs and retain the reference identity for every candidate.
-- Register supplied candidate pairs or outputs of a separately qualified design capability. Candidate generation is not implemented by this specification package.
-- Reject malformed or duplicate pairs and record framework-constraint violations.
-- Apply the same assessment definitions to the reference and candidates.
-- Freeze acceptance criteria, implementation versions, ranking, and budgets before evaluation.
-- Return fewer candidates when fewer satisfy the required criteria; never fill the shortlist with unresolved or failed candidates.
+- Derive permitted sequence changes from the supplied framework/CDR annotations.
+- Assign unique candidate IDs and record each candidate's reference parent and sequence hash. Reject malformed or duplicate pairs.
+- Freeze acceptance criteria, method versions, and ranking before evaluation; assess the reference and candidates consistently.
+- Return up to the requested candidate count; never fill the shortlist with unresolved or failed candidates.
 
-## Required Execution Steps
+## Computational Tool Capabilities
 
-| Step | Required Assessment | Scientific Intuition and Expected Evidence |
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
+
+| Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Resolve inputs | Verify target, reference, construct, chain mapping, annotations, protocol, and resource limits. | Correct identity is the foundation of every comparison; return `NEEDS_INPUT` or `PROTOCOL_REQUIRED` when necessary. |
-| 2. Establish the reference | Evaluate the reference under the frozen comparison conditions. | A claimed improvement requires a comparable baseline with recorded evidence. |
-| 3. Register candidate pairs | Check candidate identity, pairing, uniqueness, framework constraints, and provenance. | Candidate handling must preserve the intended molecular entity across stages. |
-| 4. Assess structures | Examine predicted fold/complex confidence, local uncertainty, and coordinate integrity. | A structurally plausible antibody is necessary for interpreting its predicted interface. |
-| 5. Assess target binding | Evaluate antigen-interface confidence, contacts, geometry, and predicted interaction energetics. | Correct target placement and complementary interactions support a binding hypothesis; they do not establish measured affinity. |
-| 6. Assess developability | Evaluate stability, aggregation, solubility, expression-related liabilities, polyreactivity, and immunogenicity indicators separately. | Experimental feasibility depends on several properties beyond target binding. |
-| 7. Assess dynamics | When required, assess numerical structural deviations, residue fluctuations, and interface persistence. | Dynamic evidence tests aspects of a static structural hypothesis; insufficient sampling remains unresolved. |
-| 8. Qualify and rank | Recompute frozen rule outcomes from current evidence and order eligible unique pairs. | Missing or failed mandatory evidence cannot be compensated by an unrelated favorable score. |
-| 9. Export results | Return paired sequences, metrics, ranking, provenance, limitations, and resource use. | A result must be independently inspectable and traceable to its inputs. |
+| 1. Validate inputs and baseline | Check target/reference identity, chain mapping, annotations, and comparable baseline evidence. | Verified input records, reference measurements, and missing-input list. |
+| 2. Generate or register candidates | Produce constrained reference-derived sequences or register supplied pairs. | Paired candidates, parent identity, edit trace, and unique sequence hashes. |
+| 3. Assess antibody structure | Predict or assess antibody folds, chain pairing, and CDR conformations. | Structures, local confidence, uncertain regions, and geometry checks. |
+| 4. Assess target complexes | Model or evaluate antibody–target poses in the declared target context. | Mapped interfaces, clashes, epitope compatibility, and pose uncertainty. |
+| 5. Evaluate binding and specificity | Assess interaction predictions and declared specificity/function evidence. | Comparable reference/candidate measurements and panel coverage. |
+| 6. Assess developability | Evaluate distinct physical, sequence, and interaction-related liabilities. | Property scores, localized risk flags, applicability, and uncertainty. |
+| 7. Refine when justified | Revise permitted positions and repeat affected evaluations. | Revision history and fresh evidence for the updated sequence. |
+| 8. Select and report | Apply all mandatory criteria, compare with the reference, and rank eligible pairs. | Shortlist, exclusions, unresolved evidence, and traceable results. |
 
 ## Evaluation Metrics
 
-Report the protocol-defined structural-confidence, target-interface, predicted-binding, stability, aggregation, solubility, expression, polyreactivity, immunogenicity, and applicable dynamics measurements. Include the reference comparison, units, scale, calculation method, uncertainty, and native evidence for each measurement.
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Identity and pairing | Reference-parent identity, paired-sequence hashes, permitted changes, and duplicate checks. | Preserve framework, chain pairing, and construct identity. |
+| Structure | Assess predicted fold/complex confidence, local uncertainty, and coordinate integrity. | Keep local structural confidence separate from interface confidence. |
+| Target interface | Epitope contacts, interface area, clashes, chain scope, and positional uncertainty. | Antigen–antibody interface evidence must not be replaced by heavy/light-chain interface evidence. |
+| Binding and reference comparison | Predicted interaction evidence under matched target, method, and conditions; supplied assay data reported separately. | Computational predictions do not establish measured affinity; an absolute score does not demonstrate reference improvement. |
+| Developability | Evaluate stability, aggregation, solubility, expression-related liabilities, polyreactivity, and immunogenicity indicators separately. | Record metric direction, units, applicability, and per-property uncertainty. |
+| Specificity and functional evidence | Declared target-panel results and separately supplied binding, neutralization, or enhancement-risk evidence. | Do not infer neutralization or absence of antibody-dependent enhancement from a binding prediction. |
+| Dynamics, when required | Report numerical structural deviations, residue fluctuations, and interface persistence. | State sampling limits; a stable trajectory does not establish biological activity. |
+| Selection and evidence integrity | Reference comparison, uncertainty, source artifacts, and candidate-specific rule outcomes. | Missing or failed mandatory evidence cannot be compensated by an unrelated favorable score. |
 
-Keep local structural confidence separate from interface confidence. Antigen–antibody interface evidence must not be replaced by heavy/light-chain interface evidence. Report missing numeric values as `null` with `UNRESOLVED` status and a reason. The qualified protocol supplies scientific thresholds; historical shortlist values are not thresholds.
+The supplied protocol defines thresholds and ranking. Missing numeric values are `null` with `UNRESOLVED` status and a reason. Keep the reference baseline, all evaluated candidates, and explanations of exclusions.
 
 ## Expected Output
 
-**Format:** `antibody_design_bundle`
+**Format:** `antibody_design_bundle`\
+**Directory:** `08_results/`
 
-**Required Output Files in `08_results/`:**
-
-- `designed_sequences.fasta`: shortlisted candidate pairs only, with `>candidate_id|H` and `>candidate_id|L` headers.
-- `metrics.json`: all evaluated candidate and reference records, measurements, rule decisions, evidence hashes, exclusions, shortlist, provenance, resource use, and stop reason.
+- `designed_sequences.fasta`: shortlisted pairs with `>candidate_id|H` and `>candidate_id|L` headers.
+- `metrics.json`: reference/candidate records, measurements, rule decisions, exclusions, provenance, and stop reason.
 - `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256` rows matching the FASTA and metrics.
-- `report.md`: findings, tradeoffs, unresolved questions, and requested-versus-returned counts.
+- `report.md`: reference comparison, selection rationale, limitations, and requested-versus-returned counts.
 
-Include native evidence artifacts with relative paths and SHA-256 hashes. Reference results belong in `metrics.json`; the reference cannot appear as a designed candidate. A completed negative result has an empty FASTA and a header-only shortlist. A preflight failure returns structured `metrics.json` with the missing requirements and no candidate results.
+Include supporting artifacts with relative paths and SHA-256 hashes. Reference results belong in `metrics.json`; the reference cannot appear as a designed candidate. A completed negative result has an empty FASTA and a header-only shortlist. Missing inputs or protocol requirements return `NEEDS_INPUT` or `PROTOCOL_REQUIRED` without candidate results.
 
 ## Constraints
 
-- **Candidate and time limits:** use the frozen request. The example request demonstrates a maximum of 10 candidates, a final count of up to 10, and a 120-minute wall-time budget; these are illustrative limits, not demonstrated scientific throughput.
-- **Knowledge cutoff:** use the request's cutoff, initially `2024-09-01`. Verify the availability of code, model, and dataset versions before execution. Unknown or incompatible eligibility requires `PROTOCOL_REQUIRED`.
-- **Compute:** enforce CPU, GPU, wall-time, and service budgets. Required assessments cannot be silently dropped when the budget is exhausted.
-- **Evaluation integrity:** keep historical candidate rankings and experimental outcomes hidden until computational conclusions are frozen.
-- **Scope:** computational predictions and artifact validation. No measured binding, neutralization, or clinical claim is established by this task.
+- **Knowledge Cutoff:** `2024-09-01`; verify the eligibility of method, model, and dataset versions against the request.
+- **Evaluation Integrity:** keep historical candidate rankings and experimental outcomes hidden until computational conclusions are frozen.
 
 ## Important Instructions
 
-- Do not invent biological inputs, implementation settings, confidence values, or a qualified protocol.
+- Do not invent target/reference sequences, structures, residue mappings, measurements, or acceptance thresholds.
 - Distinguish predicted binding energy, measured Kd, ELISA binding EC50, and neutralization potency.
-- Keep both chains and their pairing intact in every conversion and export.
-- Invalidate prior evidence whenever the evaluated sequence changes.
+- Keep both chains paired and invalidate prior evidence after sequence changes.
 - Use `PASS`, `FAIL`, and `UNRESOLVED` consistently; qualification requires every mandatory rule to pass.
-- Distinguish `NO_QUALIFYING_DESIGNS` from `INCOMPLETE`: unresolved work cannot establish a completed negative result.
-- Report scientific methods actually used even when this task does not prescribe them.
-- Passing file/schema validation does not establish biological validity or successful scientific execution.
+- Distinguish `NO_QUALIFYING_DESIGNS` from `INCOMPLETE`: unresolved work is not a completed negative result.
+- Report the methods and versions actually used. Computational predictions do not establish biological validity, neutralization, or safety.

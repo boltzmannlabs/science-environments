@@ -1,43 +1,46 @@
 # Task: bispecific_cns_readout_comparison
 
-**Competency:** Discovery-stage translational de-risking  
-**Decision type:** Comparative assessment  
-**Evidence source:** Biodistribution and imaging measurements  
-**Assay modality:** Whole-brain concentration, vascular/parenchymal fractionation, and tissue imaging  
-**Data source:** Real study data supplied with the task  
-**Grader type:** `all_of`  
-**Task variant:** tool-neutral
-
 ## Description
 
-Compare two non-targeted bispecific IgG shuttle candidates carrying the same antibody payload. The candidates differ in the cerebrovascular transport target engaged by the shuttle arm. Determine which candidate, if either, is supported for the stated brain-delivery objective and name the readout that governs the comparison.
+Compare two bispecific IgG shuttle candidates carrying the same antibody payload. Determine which candidate, if either, is supported for the declared brain-delivery objective and identify the readout that governs the comparison.
 
-The supplied example task profile compares `CD98hc_shuttle` with `TfR1_shuttle`. The target and construct identifiers must be bound to the run manifest; do not infer that a specific target or candidate performed better.
+## Target
 
-## Required input data
+**Candidates:** `CD98hc_shuttle` and `TfR1_shuttle`\
+**Payload:** The same supplied antibody payload\
+**Objective:** Declared total-brain exposure, parenchymal entry, cell-type delivery, or other specified endpoint\
+**Required Data:** Primary whole-brain concentration table, capillary-depletion measurements, microscopy, and their sampling timepoints\
+**Study Metadata:** Candidate identities, dose, route, species, units, individual replicates, label chemistry/stability, and analyte integrity
 
-The task package must contain:
+## Data Analysis Tool Capabilities
 
-- candidate and payload identities, shuttle target, format, dose, route, and species context;
-- the primary whole-brain concentration table with method, units, timepoints, replicate values, and final reported timepoint;
-- the vascular/parenchymal fractionation measurements and sampling time;
-- the microscopy data, spatial labels, quantification method, and timepoints;
-- label identity, chemistry, stability, and evidence for whether the signal tracks intact antibody;
-- the declared program objective: total brain exposure, parenchymal entry, cell-type delivery, or another specific endpoint.
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
 
-## Required assessment
+| Stage | Capability | Expected Evidence |
+| --- | --- | --- |
+| 1. Audit the comparison | Confirm common payload, comparable conditions, analyte identity, units, and final measurement timepoint. | Validated candidate/readout map. |
+| 2. Calculate the required ratio | Extract and aggregate the primary whole-brain observations. | Both candidate values and higher/lower fold change. |
+| 3. Evaluate readout relevance | Compare bulk signal, capillary depletion, and microscopy against the declared objective. | Governing readout and reasons the others are insufficient alone. |
+| 4. Assess uncertainty | Review replicate variability, fraction purity, spatial sampling, and label limitations. | Decision uncertainty and unresolved evidence. |
+| 5. Report the comparison | Apply the supplied decision rule to the relevant evidence. | Exact benchmark answer and supporting calculations/report. |
 
-1. Verify that the payloads and study conditions are comparable and that each readout measures the intended analyte and tissue compartment.
-2. Compute the proof-of-work fold change from the primary whole-brain quantification at the final timepoint: higher candidate's reported value divided by lower candidate's reported value. State the input values, units, and replicate aggregation in the analysis artifact.
-3. Select the governing readout that directly addresses the declared objective. Explain why the other two readouts cannot settle that objective alone.
-4. Interpret bulk whole-brain concentration as total brain-associated signal; it does not by itself distinguish vascular retention from parenchymal delivery.
-5. Interpret capillary depletion as a compartment estimate for vascular versus parenchymal material, subject to fraction purity and processing limits.
-6. Interpret microscopy as spatial evidence, subject to sampling, image quantification, and label-detection limits; do not treat representative images alone as a quantitative tissue concentration.
-7. State whether the selected readout and study design justify a candidate recommendation. If not, return `INDETERMINATE` and state the missing evidence in the sidecar analysis.
+## Evaluation Metrics
 
-## Expected response format
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Primary fold change | Higher divided by lower whole-brain value at the final reported timepoint, with source values and aggregation. | Use comparable units and a nonzero denominator; do not substitute an earlier timepoint or different readout. |
+| Replication and uncertainty | Independent sample count, individual values, variability, exclusions, and uncertainty method. | The larger point estimate alone does not establish a reliable candidate advantage. |
+| Readout relevance | Alignment of whole-brain signal, capillary depletion, or microscopy with the requested endpoint. | Select by objective and measurement validity; the readout used for the ratio need not govern the biological decision. |
+| Compartment and label validity | Fraction purity, spatial localization, image quantification, label stability, and analyte identity. | Distinguish vascular retention, parenchymal signal, and intact-antibody exposure. |
+| Recommendation support | Consistency of the selected readout, comparison conditions, and independent evidence. | Use `INDETERMINATE` when the evidence does not support a candidate choice. |
 
-The machine-readable answer is exactly the following object inside the tags. The run bundle's `report.md` must also retain the short explanation required in assessment steps 3–7; it must not add fields to this response object.
+Keep all supporting statistics and limitations in the report. Preserve the three benchmark answer fields; do not fabricate a fold change when the required values are unavailable.
+
+## Expected Output
+
+**Required Report:** `report.md`, containing calculations, governing-readout rationale, uncertainty, and limitations.
+
+Return the benchmark answer in this format, without additional fields:
 
 ```text
 <EVAL_ANSWER>
@@ -45,11 +48,9 @@ The machine-readable answer is exactly the following object inside the tags. The
 </EVAL_ANSWER>
 ```
 
-If the supplied input data do not support a candidate choice or the primary timepoint value is unavailable, the run status must be `NEEDS_INPUT` or `INDETERMINATE` according to the failure contract; do not invent the fold change.
+## Important Instructions
 
-## Important instructions
-
-- No named software is prescribed.
-- Calculate the fold change from the supplied data, using the specified primary measurement and final timepoint.
-- Whole-brain signal, parenchymal exposure, target engagement, and pharmacological effect are different claims.
-- Do not infer a dosing interval from this comparison unless a separate PK/PD task supplies the required evidence.
+- Use only supplied data for the fold change. If a required value is missing or the ratio is undefined, report the missing requirement rather than invent a number.
+- Return `INDETERMINATE` when the available evidence does not support a candidate choice; missing required inputs use `NEEDS_INPUT`.
+- Keep whole-brain signal, parenchymal exposure, target engagement, and pharmacological effect distinct.
+- Do not infer a dosing interval from this comparison.

@@ -12,11 +12,13 @@ import re
 import subprocess
 import sys
 
-from jsonschema import Draft202012Validator, FormatChecker
+from jsonschema import Draft202012Validator
+from schema_registry import schema_path, schema_validator, schema_registry, config_path
+from task_contracts import task_profile, validate_task_contract
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT = ROOT / "tests/specification-validation.json"
+REPORT = ROOT / "results/specification-validation.json"
 CHECKS = []
 
 
@@ -40,18 +42,28 @@ def local_links(documents):
 
 def main():
     required = [
-        "README.md", "ENVIRONMENT_SPEC.md", "validation.py",
-        "config/environment.yaml", "config/generic-antibody-request.schema.json",
-        "config/request.schema.json", "config/protocol.schema.json",
-        "config/metrics.schema.json", "config/metric-catalog.json", "tasks/denv_antibody_001.md",
-        "tasks/denv_antibody_001_tools.md", "tasks/request.example.json",
-        "tasks/mab_reference_guided_design.md", "tasks/mab_target_only_design.md",
-        "tasks/bispecific_antibody_design.md", "tasks/bispecific_cellular_mechanism_assessment.md",
-        "tasks/bispecific_cns_delivery_assessment.md", "tasks/bispecific_cns_shuttle_integrated_gate.md",
+        "README.md", "ENVIRONMENT_SPEC.md", "tests/monoclonal_antibody_with_reference/validation.py",
+        "config/environment.yaml", "config/README.md", "config/requirements.txt",
+        "config/monoclonal_reference/request.schema.json",
+        "config/monoclonal_reference/denv.request.schema.json", "config/shared/protocol.schema.json",
+        "config/monoclonal_reference/denv.result.schema.json", "config/shared/metric-catalog.json", "tasks/denv_antibody_001.md",
+        "tasks/denv_antibody_001_tools.md", "config/monoclonal_reference/denv.request.example.json",
+        "tasks/mab_reference_guided_design.md", "config/monoclonal_reference/request.example.json",
+        "tasks/mab_target_only_design.md",
+        "tasks/bispecific_antibody_design.md",
+        "tasks/bispecific_cellular_mechanism_assessment.md",
+        "tasks/bispecific_cns_delivery_assessment.md",
         "tasks/bispecific_cns_readout_comparison.md",
-        "tests/ACCEPTANCE.md", "tests/MONOCLONAL_ANTIBODY_TEST_CASES.md",
-        "tests/test_task_variants.py", "tests/test_validation.py",
-        "tests/test_mab_testing_criteria.py", "tests/validate_spec.py",
+        "tasks/bispecific_cns_shuttle_integrated_gate.md",
+
+        "config/monoclonal_reference/result.schema.json", "config/shared/mab-assay-record.schema.json",
+        "tests/monoclonal_antibody_with_reference/test_reference_guided.py", "tests/monoclonal_antibody_with_reference/contract_fixtures.py", "tests/monoclonal_antibody_with_reference/COVERAGE.md",
+        "tests/monoclonal_antibody_with_reference/ACCEPTANCE.md", "tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md",
+        "tests/monoclonal_antibody_with_reference/test_task_variants.py", "tests/monoclonal_antibody_with_reference/test_denv_reference.py",
+        "tests/monoclonal_antibody_with_reference/test_mab_testing_criteria.py", "tests/validate_spec.py",
+        "tests/monoclonal_antibody_with_reference/__init__.py",
+        "tests/monoclonal_antibody_with_reference/README.md",
+        "tests/monoclonal_antibody_with_reference/make_needs_input_example.py",
         "results/README.md", "results/needs-input.example.json",
         "../../research/antibody_design/research-notes.md",
         "../../research/antibody_design/references.md",
@@ -59,15 +71,77 @@ def main():
     ]
     check(all((ROOT / relative).is_file() for relative in required), "Required environment and research files exist")
 
+    required.extend(path.relative_to(ROOT).as_posix() for path in (ROOT / "config").rglob("*") if path.is_file())
+    required.extend(path.relative_to(ROOT).as_posix() for path in (ROOT / "tests").rglob("*.py"))
+    required = sorted(set(required))
+    registry = schema_registry()
+    def verify_refs(node, resolver):
+        if isinstance(node, dict):
+            if "$ref" in node:
+                resolver.lookup(node["$ref"])
+            for child in node.values():
+                verify_refs(child, resolver)
+        elif isinstance(node, list):
+            for child in node:
+                verify_refs(child, resolver)
+    for path in sorted((ROOT / "config").rglob("*.schema.json")):
+        schema = validation_json(path)
+        Draft202012Validator.check_schema(schema)
+        verify_refs(schema, registry.resolver(base_uri=schema["$id"]))
+        check(True, f"Schema and local references resolve: {path.relative_to(ROOT)}")
     schema_data = {}
-    for name in ("request", "protocol", "metrics", "generic-antibody-request"):
-        schema = validation_json(ROOT / "config" / f"{name}.schema.json")
+    for name in ("request", "protocol", "metrics", "generic-antibody-request",
+                 "generic-antibody-metrics", "mab-assay-record"):
+        schema = validation_json(schema_path(name))
         Draft202012Validator.check_schema(schema)
         schema_data[name] = schema
         check(True, f"{name} schema is valid JSON Schema")
 
     config = yaml.safe_load((ROOT / "config/environment.yaml").read_text())
-    catalog = validation_json(ROOT / "config/metric-catalog.json")
+    # Verify every task profile independently of legacy reference-bundle settings.
+    check(len(config["task_profiles"]) == 9, "All nine task profiles are registered")
+    for task in config["task_profiles"]:
+        profile = task_profile(task)
+        check(profile["scientific_execution_included"] is False and
+              profile["scientific_thresholds_supplied"] is False,
+              f"Profile does not claim scientific execution or supplied thresholds: {task}")
+        check(profile["task_file"].startswith("tasks/") and (ROOT / profile["task_file"]).is_file(),
+              f"Profile task file exists: {task}")
+        for kind in ("request", "result"):
+            check(config_path(profile[f"{kind}_schema"]).is_file(), f"Profile {kind} schema exists: {task}")
+        example_path = ROOT / profile.get("request_example", "config/monoclonal_reference/denv.request.example.json")
+        profile_example = validation_json(example_path)
+        if "variant" in profile:
+            profile_example["variant"] = profile["variant"]
+        check(validate_task_contract(profile_example, task)["status"] == "CONTRACT_VALID",
+              f"Incomplete example satisfies declared contract only: {task}")
+    for relative in config["contracts"].values():
+        check(relative.startswith("config/") and (ROOT / relative).is_file(),
+              f"Configured contract exists under config: {relative}")
+    for relative in [*config["task_templates"].values(), *config["task_variants"].values()]:
+        check(relative.startswith("tasks/") and Path(relative).suffix == ".md" and (ROOT / relative).is_file(),
+              f"Configured Markdown task exists under tasks: {relative}")
+    for relative in config["request_examples"].values():
+        check(config_path(relative).suffix == ".json",
+              f"Configured JSON request example exists under config: {relative}")
+    validation_config = config["validation"]
+    check(validation_config["entrypoint"] == "tests/monoclonal_antibody_with_reference/validation.py" and
+          validation_config["package_check"] == "tests/validate_spec.py" and
+          validation_config["test_directory"] == "tests",
+          "All configured validation and scenario testing lives under tests")
+    check((ROOT / validation_config["requirements"]).is_file() and
+          validation_config["requirements"] == "config/requirements.txt" and
+          ROOT / validation_config["report"] == REPORT,
+          "Validation dependencies and report use config and results respectively")
+    check(all(path.relative_to(ROOT).parts[0] == "tests" for path in ROOT.rglob("*.py")),
+          "All Python testing and validation code is confined to tests")
+    check({path.name for path in ROOT.iterdir() if path.is_dir() and not path.name.startswith(".")
+           and path.name != "__pycache__"} == {"config", "tasks", "tests", "results"},
+          "Environment uses the documented config, tasks, tests, and results directories")
+    check({path.relative_to(ROOT / "tests").parts[0] for path in (ROOT / "tests").rglob("test_*.py")} ==
+          {"monoclonal_antibody_with_reference", "test_configurations.py"},
+          "Scenario tests remain monoclonal; shared configuration checks live directly under tests")
+    catalog = validation_json(ROOT / "config/shared/metric-catalog.json")
     metric_ids = {metric["metric_id"] for metric in catalog["metrics"]}
     check(len(metric_ids) == len(catalog["metrics"]), "Antibody metric catalog IDs are unique")
     check({"plddt", "iptm", "ipsae", "stabddg_delta_delta_g"} <= metric_ids,
@@ -79,11 +153,42 @@ def main():
     check(config["maturity"] == "Specification", "Maturity does not claim scientific validation")
     check(config["scientific_execution_included"] is False and config["contract_validation_included"] is True,
           "Configuration distinguishes implemented contract checks from scientific execution")
-    check(set(config["task_templates"]) == {"reference_guided_monoclonal", "target_only_monoclonal",
-                                             "bispecific_design", "bispecific_cellular_mechanism_assessment",
-                                             "bispecific_cns_delivery_assessment", "bispecific_cns_shuttle_integrated_gate",
-                                             "bispecific_cns_readout_comparison"},
-          "Configuration registers the reusable monoclonal and bispecific task templates")
+    expected_templates = {"reference_guided_monoclonal", "target_only_monoclonal",
+                          "bispecific_design", "bispecific_cellular_mechanism_assessment",
+                          "bispecific_cns_delivery_assessment", "bispecific_cns_readout_comparison",
+                          "bispecific_cns_shuttle_integrated_gate"}
+    check(set(config["task_templates"]) == expected_templates,
+          "Catalog retains all seven reusable task specifications")
+    check(config["task_status"]["reference_guided_monoclonal"] == "active_specification" and
+          all(config["task_status"][name] == "contract_schema_implemented"
+              for name in expected_templates - {"reference_guided_monoclonal"}),
+          "Catalog distinguishes reference-bundle validation from other family contract checks")
+    check(set(config["scope"]["active_design_modes"]) == validation.REFERENCE_GUIDED_MODES,
+          "Executable objectives still require a supplied monoclonal reference")
+    expected_task_paths = set(config["task_templates"].values()) | set(config["task_variants"].values())
+    check({path.relative_to(ROOT).as_posix() for path in (ROOT / "tasks").iterdir()} ==
+          expected_task_paths and all(path.is_file() and path.suffix == ".md"
+                                     for path in (ROOT / "tasks").iterdir()),
+          "Tasks contains exactly the nine registered Markdown task files")
+    for relative in sorted(expected_task_paths):
+        task_text = (ROOT / relative).read_text()
+        headings = set(re.findall(r"^## (.+)$", task_text, re.M))
+        check({"Description", "Target", "Evaluation Metrics", "Expected Output", "Important Instructions"} <= headings,
+              f"Task has consistent reader-facing sections: {relative}")
+        capability_heading = "Data Analysis Tool Capabilities" if "assessment/" in config["task_profiles"].get(
+            Path(relative).stem, "") else "Computational Tool Capabilities"
+        check(capability_heading in headings, f"Task has appropriate tool capabilities: {relative}")
+        check(task_text.index("## " + capability_heading) < task_text.index("## Evaluation Metrics"),
+              f"Task presents workflow before evaluation: {relative}")
+        check(not re.search(r"Stability-Binding|PRODIGY|ipSAE|StabDDG|Boltz2?|AlphaFold|"
+                            r"RFdiffusion|ProteinMPNN|ESMFold", task_text, re.I),
+              f"Task describes capabilities without software names: {relative}")
+        check(not re.search(r"Machine-readable contract|Implementation status|Environment status|"
+                            r"Task family:|Competency:|Grader type:|Scientific Intuition", task_text, re.I),
+              f"Task omits implementation boilerplate: {relative}")
+        check(not re.search(r"budget|wall[- ]time|time limit|compute limit|resource limit|"
+                            r"\bCPU\b|\bGPU\b|\d+[- ]minute", task_text, re.I),
+              f"Task omits runtime and compute-budget criteria: {relative}")
     stages = config["stages"]
     expected = ["prepare", "reference", "candidates", "structure", "interface",
                 "specificity_function", "developability", "dynamics", "evaluate", "export"]
@@ -100,37 +205,35 @@ def main():
           config["qualification"]["evidence_bound_to_sequence_hash"],
           "Qualification requires all rules and sequence-bound evidence")
 
-    example = validation.read_json(ROOT / "tasks/request.example.json")
+    example = validation.read_json(ROOT / "config/monoclonal_reference/denv.request.example.json")
     validation.validate_request(example)
     check(example["knowledge_cutoff"] == "2024-09-01", "Example preserves the requested knowledge cutoff")
     check(example["target"]["sequence"] is None and example["reference"]["sequences"] is None,
           "Example does not invent antigen or antibody sequences")
-    check(validation.preflight(example, ROOT / "tasks")["status"] == "NEEDS_INPUT",
+    check(validation.preflight(example, ROOT / "config/monoclonal_reference")["status"] == "NEEDS_INPUT",
           "Incomplete example fails closed during preflight")
-    preflight_result = validation.preflight(example, ROOT / "tasks")
+    preflight_result = validation.preflight(example, ROOT / "config/monoclonal_reference")
     needs_input = validation.read_json(ROOT / "results/needs-input.example.json")
-    Draft202012Validator(schema_data["metrics"]).validate(needs_input)
-    check(needs_input["provenance"]["request_sha256"] == hashlib.sha256((ROOT / "tasks/request.example.json").read_bytes()).hexdigest(),
+    schema_validator("metrics").validate(needs_input)
+    check(needs_input["provenance"]["request_sha256"] == hashlib.sha256((ROOT / "config/monoclonal_reference/denv.request.example.json").read_bytes()).hexdigest(),
           "Example preflight result binds to its exact request")
     check(needs_input["missing_requirements"] == preflight_result["missing_requirements"],
           "Example preflight result lists the actual missing biological inputs")
 
     task_paths = [ROOT / "tasks/denv_antibody_001.md", ROOT / "tasks/denv_antibody_001_tools.md"]
     generic, specific = (path.read_text() for path in task_paths)
-    expected_headings = ["Description", "Target", "Design Constraints", "Required Execution Steps",
+    expected_headings = ["Description", "Target", "Design Constraints", "Computational Tool Capabilities",
                          "Evaluation Metrics", "Expected Output", "Constraints", "Important Instructions"]
     check(re.findall(r"^## (.+)$", generic, re.M) == expected_headings,
           "General task follows the benchmark task structure")
-    check("## Available Computational Methods" in specific, "Tool-specific task declares named methods")
-    normalized = re.sub(r"\*\*Task variant:\*\* `[^`]+`", "**Task variant:** `shared`", specific)
-    normalized = re.sub(r"## Available Computational Methods\n.*?(?=## Required Execution Steps\n)", "", normalized, flags=re.S)
-    normalized_generic = re.sub(r"\*\*Task variant:\*\* `[^`]+`", "**Task variant:** `shared`", generic)
-    check(normalized == normalized_generic, "Both task variants have identical scientific requirements and outputs")
-    for name in ("Stability-Binding DDG", "PRODIGY", "ipSAE"):
-        check(name.casefold() in specific.casefold(), f"Dengue-documented method appears: {name}")
-        check(name.casefold() not in generic.casefold(), f"General task remains tool neutral: {name}")
-    check("StabDDG" not in specific and "Boltz2" not in specific,
-          "Tool-specific task uses the registered Stability-Binding DDG name")
+    normalized = []
+    for text in (generic, specific):
+        text = re.sub(r"\*\*Task variant:\*\* `[^`]+`", "**Task variant:** `shared`", text)
+        normalized.append(re.sub(r"## Computational Tool Capabilities\n.*?(?=## Evaluation Metrics\n)",
+                                 "", text, flags=re.S))
+    check(normalized[0] == normalized[1], "Both task variants have identical scientific requirements and outputs")
+    check("verified energy-change sign convention" in specific and "interface confidence inputs" in specific,
+          "Tools variant specifies evidence requirements without software names")
     documented_names = {item["name"].casefold() for item in config["documented_methods"]}
     check(documented_names == {"stability-binding ddg", "prodigy", "ipsae"}
           and "boltz" not in "".join(documented_names) and "stabddg" not in "".join(documented_names),
@@ -138,56 +241,36 @@ def main():
     check("docking" in config["unbound_capabilities"] and "molecular_dynamics" in config["unbound_capabilities"],
           "Undocumented implementation choices remain explicitly unbound")
 
-    generic_schema = schema_data["generic-antibody-request"]
-    generic_validator = Draft202012Validator(generic_schema, format_checker=FormatChecker())
-    generic_artifact = {"path": "inputs/example.dat", "sha256": "a" * 64,
-                        "media_type": "application/octet-stream", "source": "declared example"}
-    generic_request = {
-        "schema_version": "1.0", "task_id": "mab_target_only_001", "design_mode": "de_novo",
-        "target": {"target_id": "target-x", "name": "Target X", "organism": "organism-x",
-                   "accession": None, "sequence": generic_artifact,
-                   "constructs": [{"construct_id": "construct-x", "sequence": generic_artifact,
-                                   "presentation_context": "unknown", "chain_ids": [],
-                                   "residue_mapping": None, "post_translational_modifications": []}],
-                   "epitope_policy": {"mode": "open_search", "residues": [], "evidence": None}},
-        "antibody": {"format": "full_length_IgG", "sequence_scope": "variable_domains",
-                     "reference": None, "desired_isotype": "IgG1",
-                     "light_chain_type": "kappa", "fc_policy": "to_be_decided"},
-        "objective": {"mechanism": "binding_only", "desired_effect": "target binding",
-                      "specificity_scope": "declared target panel"},
-        "constraints": {"preserve_heavy_light_pairing": True, "framework_policy": "preserve",
-                        "numbering_scheme": "IMGT", "editable_regions": [], "max_mutations_per_chain": None,
-                        "max_candidates": 10},
-        "evaluation": {"protocol": generic_artifact, "requested_count": 1, "seed": 1,
-                       "required_evidence_domains": ["identity", "structure", "interface", "specificity"]},
-        "budget": {"wall_time_minutes": 120, "cpu_hours": 4, "gpu_hours": 4},
-        "knowledge_cutoff": "2024-09-01"
-    }
-    check(not list(generic_validator.iter_errors(generic_request)),
-          "Generic schema accepts a target-only design request without a reference antibody")
-    reference_guided = json.loads(json.dumps(generic_request))
-    reference_guided["design_mode"] = "reference_guided"
-    check(bool(list(generic_validator.iter_errors(reference_guided))),
-                "Reference-guided mode rejects a request without a supplied reference antibody")
-
-    template_docs = [ROOT / relative for relative in (
-        "tasks/mab_reference_guided_design.md", "tasks/mab_target_only_design.md",
-        "tasks/bispecific_antibody_design.md", "tasks/bispecific_cellular_mechanism_assessment.md",
-        "tasks/bispecific_cns_delivery_assessment.md", "tasks/bispecific_cns_shuttle_integrated_gate.md",
-        "tasks/bispecific_cns_readout_comparison.md")]
-    check(all(re.search(r"^## Expected (?:output|response format)$", path.read_text(), re.I | re.M)
-              for path in template_docs),
-          "Every reusable design or assessment task defines an expected output contract")
-    check(all(not re.search(r"\b(StabDDG|Boltz2?|PRODIGY|ipSAE)\b", path.read_text(), re.I)
-              for path in template_docs),
-          "Reusable monoclonal and bispecific tasks remain tool-neutral")
+    generic_request = validation_json(ROOT / "config/monoclonal_reference/request.example.json")
+    validation.validate_generic_request(generic_request)
+    check(validation.preflight(generic_request, ROOT / "config/monoclonal_reference")["status"] == "NEEDS_INPUT",
+          "Reusable reference-guided example reports missing input artifacts")
+    generic_validator = schema_validator("generic-antibody-request")
+    missing_reference = json.loads(json.dumps(generic_request))
+    missing_reference["antibody"]["reference"] = None
+    check(bool(list(generic_validator.iter_errors(missing_reference))),
+          "Active schema rejects a request without a reference")
+    target_only = json.loads(json.dumps(generic_request))
+    target_only["design_mode"] = "de_novo"
+    check(bool(list(generic_validator.iter_errors(target_only))),
+          "Active schema rejects target-only design")
+    check(set(schema_data["generic-antibody-request"]["properties"]["design_mode"]["enum"]) ==
+          set(schema_data["generic-antibody-metrics"]["properties"]["design_mode"]["enum"]) ==
+          validation.REFERENCE_GUIDED_MODES,
+          "Request and result schemas agree on reference-required objectives")
+    template = ROOT / config["task_templates"]["reference_guided_monoclonal"]
+    check(bool(re.search(r"^## Expected output$", template.read_text(), re.I | re.M)),
+          "Reference-guided task defines the output contract")
+    check(not re.search(r"\b(StabDDG|Boltz2?|PRODIGY|ipSAE)\b", template.read_text(), re.I),
+          "Reusable reference-guided task remains tool-neutral")
 
     documents = list(ROOT.rglob("*.md")) + list((ROOT.parent.parent / "research/antibody_design").rglob("*.md"))
     check(local_links(documents) > 0, "Documentation links stay inside present local package files")
 
     test_env = dict(os.environ)
     test_env["PYTHONDONTWRITEBYTECODE"] = "1"
-    result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"],
+    result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", validation_config["test_directory"],
+                             "-t", "tests", "-p", "test_*.py"],
                             cwd=ROOT, text=True, capture_output=True, env=test_env)
     check(result.returncode == 0, "Synthetic contract behavior tests pass: " + result.stderr[-500:])
 
@@ -197,7 +280,8 @@ def main():
               "status": "PASS", "checks_passed": len(CHECKS), "checks": CHECKS,
               "dependencies": {"python": sys.version.split()[0],
                                "jsonschema": importlib.metadata.version("jsonschema"),
-                               "PyYAML": importlib.metadata.version("PyYAML")},
+                               "PyYAML": importlib.metadata.version("PyYAML"),
+                               "referencing": importlib.metadata.version("referencing")},
               "file_sha256": {relative: hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
                               for relative in required if (ROOT / relative).is_file()},
               "behavior_tests": {"return_code": result.returncode,
@@ -218,6 +302,6 @@ def validation_json(path):
 
 if __name__ == "__main__":
     sys.dont_write_bytecode = True
-    sys.path.insert(0, str(ROOT))
-    import validation
+    sys.path.insert(0, str(ROOT / "tests"))
+    from monoclonal_antibody_with_reference import validation
     main()

@@ -1,6 +1,12 @@
 # Acceptance and Validation Plan
 
-The detailed scientific and contract test matrix for the supplied DENV-2 EDIII antigen and DV87.1 reference antibody is in [MONOCLONAL_ANTIBODY_TEST_CASES.md](MONOCLONAL_ANTIBODY_TEST_CASES.md). It applies identically to `denv_antibody_001.md` and `denv_antibody_001_tools.md`; the presence of the named-method section cannot change biological inputs, evidence requirements, thresholds, budget, ranking, or expected outputs.
+The detailed scientific and contract test matrix for the supplied DENV-2 EDIII antigen and DV87.1 reference antibody is in [MONOCLONAL_ANTIBODY_TEST_CASES.md](MONOCLONAL_ANTIBODY_TEST_CASES.md). It applies identically to `denv_antibody_001.md` and `denv_antibody_001_tools.md`; the detail in the capability section cannot change biological inputs, evidence requirements, thresholds, budget, ranking, or expected outputs.
+
+## Active release scope
+
+The scientific scenario suite remains reference-guided, paired-chain monoclonal antibody design, including the two DENV prompt variants. Shared configuration checks in `test_configurations.py` validate the profiles and declarations for all nine tasks. Target-only and bispecific profiles have dedicated schemas, while the reference-only preflight/bundle validator continues to reject those modes. Scientific behavior for the additional families is outside this suite.
+
+The primary software acceptance suite is `test_reference_guided.py`, exercised through the public `preflight` and `validate_bundle` entry points. It uses synthetic inputs and checks the reusable contract independently of DENV task identity. See [COVERAGE.md](COVERAGE.md) for implemented checks and remaining gaps.
 
 ## Package checks
 
@@ -18,10 +24,10 @@ The validator and tests check the following contract behaviors:
 - A ranked shortlist includes eligible candidates only and cannot include DV87.1.
 - The paired FASTA, ordered CSV, requested count, status, artifacts, and resource use must agree.
 - Synthetic fixtures are rejected by ordinary result validation unless an explicit test-only flag is set.
-- The tool-free task contains no named method; the tool-specific task names only the approved services; all antigen, reference-antibody, scientific, budget, evaluation, and output requirements are otherwise identical.
+- Both prompts describe capabilities without software names; the tools variant expands the required method evidence; all antigen, reference-antibody, scientific, budget, evaluation, and output requirements are otherwise identical.
 - Both task variants pass the same complete-input preflight and fail on the same missing antigen or reference-antibody inputs.
 - The tool-specific protocol maps Stability-Binding DDG, PRODIGY, and ipSAE to their declared evidence roles and rejects legacy StabDDG/Boltz2 naming.
-- The monoclonal-antibody test plan documents the general mAb testing criteria applied when a reference antibody and target antigen are given — identity/lineage, physicochemical characterization, framework preservation, fold-versus-interface structure, the non-interchangeable binding endpoint hierarchy (predicted energy, Kd, kon/koff, ELISA EC50, neutralization, ADE), specificity, the developability panel including sequence liabilities, and immunogenicity — and `tests/test_mab_testing_criteria.py` verifies those criteria against both task variants.
+- The monoclonal-antibody test plan in `tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md` documents the general mAb testing criteria applied when a reference antibody and target antigen are given — identity/lineage, physicochemical characterization, framework preservation, fold-versus-interface structure, the non-interchangeable binding endpoint hierarchy (predicted energy, Kd, kon/koff, ELISA EC50, neutralization, ADE), specificity, the developability panel including sequence liabilities, and immunogenicity — and `tests/monoclonal_antibody_with_reference/test_mab_testing_criteria.py` verifies those criteria against both task variants.
 
 Passing these checks establishes consistency of the specification and integrity of declared files. It does not reproduce molecular predictions, verify a target's biological identity, establish binding, or validate a therapeutic claim.
 

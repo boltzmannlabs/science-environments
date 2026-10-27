@@ -11,16 +11,16 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-import validation  # noqa: E402
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "tests"))
+from monoclonal_antibody_with_reference import validation  # noqa: E402
 
-example = validation.read_json(ROOT / "tasks/request.example.json")
-result = validation.preflight(example, ROOT / "tasks")
+example = validation.read_json(ROOT / "config/monoclonal_reference/denv.request.example.json")
+result = validation.preflight(example, ROOT / "config/monoclonal_reference")
 if result["status"] != "NEEDS_INPUT":
     raise SystemExit(f"Expected NEEDS_INPUT, got {result['status']}")
 
-request_hash = hashlib.sha256((ROOT / "tasks/request.example.json").read_bytes()).hexdigest()
+request_hash = hashlib.sha256((ROOT / "config/monoclonal_reference/denv.request.example.json").read_bytes()).hexdigest()
 record = {
     "schema_version": "1.0",
     "task_id": "denv_antibody_001",

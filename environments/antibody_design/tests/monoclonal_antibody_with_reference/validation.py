@@ -7,40 +7,20 @@ import csv
 from datetime import date
 import hashlib
 import json
-import math
 from pathlib import Path
 import re
 import sys
 
-from jsonschema import Draft202012Validator, FormatChecker, ValidationError
+from jsonschema import ValidationError
 import yaml
 
-ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from contract_io import require, read_json, sha256, _finite, _artifact_entries, artifact_path
+from schema_registry import schema_validator
+
+ROOT = Path(__file__).resolve().parents[2]
 PREFLIGHT_STATUSES = {"NEEDS_INPUT", "PROTOCOL_REQUIRED", "BLOCKED"}
-
-
-def require(condition, message):
-    if not condition:
-        raise ValueError(message)
-
-
-def _unique_keys(pairs):
-    result = {}
-    for key, value in pairs:
-        require(key not in result, f"Duplicate JSON key: {key}")
-        result[key] = value
-    return result
-
-
-def read_json(path):
-    def invalid_constant(value):
-        raise ValueError(f"Non-finite JSON number: {value}")
-    return json.loads(Path(path).read_text(), object_pairs_hook=_unique_keys,
-                      parse_constant=invalid_constant)
-
-
-def sha256(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def sequence_hash(sequences):
@@ -72,45 +52,9 @@ def _read_protein_sequence_artifact(artifact, root):
     return sequence
 
 
-def _finite(value):
-    if isinstance(value, float):
-        require(math.isfinite(value), "Non-finite numeric value")
-    elif isinstance(value, dict):
-        for item in value.values():
-            _finite(item)
-    elif isinstance(value, list):
-        for item in value:
-            _finite(item)
-
-
 def validate_schema(value, name):
     _finite(value)
-    schema = read_json(ROOT / "config" / f"{name}.schema.json")
-    Draft202012Validator(schema, format_checker=FormatChecker()).validate(value)
-
-
-def _artifact_entries(value):
-    if isinstance(value, dict):
-        if {"path", "sha256"} <= set(value):
-            yield value
-            return
-        for child in value.values():
-            yield from _artifact_entries(child)
-    elif isinstance(value, list):
-        for child in value:
-            yield from _artifact_entries(child)
-
-
-def artifact_path(artifact, root):
-    root = Path(root).resolve()
-    relative = Path(artifact["path"])
-    require(not relative.is_absolute() and ".." not in relative.parts,
-            "Artifact paths must stay beneath their declared root")
-    path = (root / relative).resolve()
-    require(path.is_relative_to(root), "Artifact symlink escapes the declared root")
-    require(path.is_file(), f"Missing artifact: {artifact['path']}")
-    require(sha256(path) == artifact["sha256"], f"Artifact hash mismatch: {artifact['path']}")
-    return path
+    schema_validator(name).validate(value)
 
 
 REFERENCE_GUIDED_MODES = {
@@ -124,8 +68,8 @@ def validate_generic_request(request):
     mode = request["design_mode"]
     antibody = request["antibody"]
     reference = antibody["reference"]
-    require((reference is not None) == (mode in REFERENCE_GUIDED_MODES),
-            "Reference-guided design modes require a reference; de_novo must not supply one")
+    require(mode in REFERENCE_GUIDED_MODES and reference is not None,
+            "This environment requires a reference-guided monoclonal request")
     require(request["evaluation"]["requested_count"] <= request["constraints"]["max_candidates"],
             "Requested count exceeds the candidate budget")
     if antibody["format"] == "full_length_IgG":
@@ -153,13 +97,12 @@ def validate_generic_request(request):
     if epitope["mode"] == "defined_region":
         require(bool(epitope.get("region")), "Defined-region epitope policy requires a region")
 
-    if reference is not None:
-        heavy_id, light_id = reference.get("heavy_chain_id"), reference.get("light_chain_id")
-        require(not heavy_id or not light_id or heavy_id != light_id,
-                "Reference heavy and light chain IDs must differ")
-        declared_numbering = request["constraints"].get("numbering_scheme")
-        require(not declared_numbering or declared_numbering == reference["numbering_scheme"],
-                "Reference and edit-mask numbering schemes must match")
+    heavy_id, light_id = reference.get("heavy_chain_id"), reference.get("light_chain_id")
+    require(not heavy_id or not light_id or heavy_id != light_id,
+            "Reference heavy and light chain IDs must differ")
+    declared_numbering = request["constraints"].get("numbering_scheme")
+    require(not declared_numbering or declared_numbering == reference["numbering_scheme"],
+            "Reference and edit-mask numbering schemes must match")
 
     objective = request["objective"]
     if objective["mechanism"] != "binding_only":
@@ -179,12 +122,7 @@ def validate_generic_request(request):
                 "Mechanism optimization requires a declared functional endpoint")
         require("function" in request["evaluation"]["required_evidence_domains"],
                 "Mechanism optimization requires function evidence")
-    if mode == "de_novo":
-        require(target.get("variant_panel") is not None or objective.get("cross_reactivity_panel") is not None,
-                "Target-only discovery requires a declared specificity panel")
-
     required_by_mode = {
-        "de_novo": {"identity", "structure", "interface", "binding", "specificity", "developability"},
         "reference_guided": {"identity", "framework", "structure", "interface", "binding", "developability"},
         "affinity_maturation": {"identity", "framework", "structure", "interface", "binding", "developability"},
         "humanization": {"identity", "framework", "structure", "binding", "developability", "immunogenicity"},
@@ -217,7 +155,7 @@ def validate_generic_protocol(protocol, request, root):
     require(required_groups <= declared_groups,
             f"Protocol omits required evidence groups: {sorted(required_groups - declared_groups)}")
 
-    catalog = read_json(ROOT / "config/metric-catalog.json")
+    catalog = read_json(ROOT / "config/shared/metric-catalog.json")
     metric_catalog = {item["metric_id"]: item for item in catalog["metrics"]}
     methods = {method["method_id"]: method for method in protocol["methods"]}
     require(len(methods) == len(protocol["methods"]), "Duplicate method IDs")
@@ -273,7 +211,7 @@ def validate_protocol(protocol, request, root):
     require(protocol["task_id"] == request["task_id"], "Protocol task ID does not match the request")
     require(protocol["knowledge_cutoff"] == request["knowledge_cutoff"], "Knowledge cutoff changed")
     config = yaml.safe_load((ROOT / "config/environment.yaml").read_text())
-    catalog = read_json(ROOT / "config/metric-catalog.json")
+    catalog = read_json(ROOT / "config/shared/metric-catalog.json")
     metric_catalog = {item["metric_id"]: item for item in catalog["metrics"]}
     required_groups = set(config["required_rule_groups"])
     if request["execution"]["dynamics_required"]:
@@ -339,9 +277,8 @@ def preflight_generic(request, root):
             missing_inputs.append(f"{artifact['path']}: {exc}")
     sequence_artifacts = [request["target"]["sequence"]]
     sequence_artifacts.extend(item["sequence"] for item in request["target"]["constructs"])
-    if request["antibody"]["reference"] is not None:
-        reference = request["antibody"]["reference"]
-        sequence_artifacts.extend([reference["heavy_sequence"], reference["light_sequence"]])
+    reference = request["antibody"]["reference"]
+    sequence_artifacts.extend([reference["heavy_sequence"], reference["light_sequence"]])
     for artifact in sequence_artifacts:
         if (artifact["path"], artifact["sha256"]) not in validated_artifacts:
             continue
@@ -411,7 +348,7 @@ def _expected_state(value, rule):
     return "PASS" if passed else "FAIL"
 
 
-def _validate_records(metrics, protocol, bundle, *, reference_id="DV87.1", reference_required=True):
+def _validate_records(metrics, protocol, bundle, *, reference_id="DV87.1"):
     rules = {r["rule_id"]: r for r in protocol["rules"]}
     records, pairs = {}, set()
     for record in metrics["records"]:
@@ -438,29 +375,14 @@ def _validate_records(metrics, protocol, bundle, *, reference_id="DV87.1", refer
                 artifact_path(artifact, bundle)
     references = [r for r in records.values() if r["role"] == "reference"]
     candidates = [r for r in records.values() if r["role"] == "candidate"]
-    if reference_required:
-        require(len(references) == 1 and references[0]["candidate_id"] == reference_id,
-                "Exactly one declared reference record is required")
-        require(references[0]["parent_id"] is None, "Reference cannot have a candidate parent")
-        require(all(r["parent_id"] == reference_id for r in candidates),
-                "Candidate reference lineage is invalid")
-    else:
-        require(not references, "A de novo task cannot introduce an undeclared reference record")
-        candidate_ids = {r["candidate_id"] for r in candidates}
-        require(all(r["parent_id"] is None or
-                    (r["parent_id"] in candidate_ids and r["parent_id"] != r["candidate_id"])
-                    for r in candidates),
-                "De novo candidate lineage references an unknown candidate")
-        parents = {r["candidate_id"]: r["parent_id"] for r in candidates}
-        for candidate_id in parents:
-            lineage, current = set(), candidate_id
-            while current is not None:
-                require(current not in lineage, "De novo candidate lineage contains a cycle")
-                lineage.add(current)
-                current = parents.get(current)
+    require(len(references) == 1 and references[0]["candidate_id"] == reference_id,
+            "Exactly one declared reference record is required")
+    require(references[0]["parent_id"] is None, "Reference cannot have a candidate parent")
+    require(all(r["parent_id"] == reference_id for r in candidates),
+            "Candidate reference lineage is invalid")
     required_ids = {key for key, rule in rules.items() if rule["required"]}
     eligible = [r for r in candidates if all(v["state"] == "PASS" for v in r["rules"] if v["rule_id"] in required_ids)]
-    if eligible and reference_required:
+    if eligible:
         require(all(v["state"] != "UNRESOLVED" for v in references[0]["rules"] if v["rule_id"] in required_ids),
                 "Reference evidence is incomplete")
     def order(record):
@@ -640,18 +562,16 @@ def validate_generic_bundle(bundle, request_path, input_root=None, *, allow_synt
             "Run results cannot hide missing preflight requirements")
 
     reference = request["antibody"]["reference"]
-    reference_id = reference["antibody_id"] if reference else None
+    reference_id = reference["antibody_id"]
     records, candidates, eligible, required_ids = _validate_records(
-        metrics, protocol, bundle, reference_id=reference_id,
-        reference_required=reference is not None)
-    if reference is not None:
-        reference_record = records[reference_id]
-        require(reference_record["sequences"]["heavy"] ==
-                _read_protein_sequence_artifact(reference["heavy_sequence"], input_root),
-                "Reference heavy-chain sequence differs from the supplied reference artifact")
-        require(reference_record["sequences"]["light"] ==
-                _read_protein_sequence_artifact(reference["light_sequence"], input_root),
-                "Reference light-chain sequence differs from the supplied reference artifact")
+        metrics, protocol, bundle, reference_id=reference_id)
+    reference_record = records[reference_id]
+    require(reference_record["sequences"]["heavy"] ==
+            _read_protein_sequence_artifact(reference["heavy_sequence"], input_root),
+            "Reference heavy-chain sequence differs from the supplied reference artifact")
+    require(reference_record["sequences"]["light"] ==
+            _read_protein_sequence_artifact(reference["light_sequence"], input_root),
+            "Reference light-chain sequence differs from the supplied reference artifact")
     require(len(candidates) <= request["constraints"]["max_candidates"],
             "Candidate budget exceeded")
     expected = [r["candidate_id"] for r in eligible[:metrics["requested_count"]]]

@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "task_id": "mab_reference_guided_001",
+  "design_mode": "reference_guided",
+  "target": {
+    "target_id": "EGFR",
+    "name": "Human EGFR (ERBB1)",
+    "organism": "Homo sapiens",
+    "sequence": {
+      "path": "inputs/target.fasta",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "media_type": "text/plain",
+      "source": "NOT SUPPLIED: replace with verified file provenance and SHA-256"
+    },
+    "constructs": [
+      {
+        "construct_id": "EGFR-ECD-to-be-supplied",
+        "sequence": {
+          "path": "inputs/construct.fasta",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "media_type": "text/plain",
+          "source": "NOT SUPPLIED: replace with verified file provenance and SHA-256"
+        },
+        "presentation_context": "cell_surface",
+        "context_details": "Human EGFR extracellular domain; exact construct, glycan context, structural mapping, and artifact files must be supplied.",
+        "chain_ids": [],
+        "residue_mapping": null,
+        "post_translational_modifications": []
+      }
+    ],
+    "epitope_policy": {
+      "mode": "defined_region",
+      "residues": [],
+      "evidence": null,
+      "region": "EGFR extracellular domain III, cetuximab-associated binding region"
+    },
+    "accession": "P00533"
+  },
+  "antibody": {
+    "format": "full_length_IgG",
+    "sequence_scope": "variable_domains",
+    "reference": {
+      "antibody_id": "cetuximab",
+      "heavy_sequence": {
+        "path": "inputs/reference-heavy.fasta",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "media_type": "text/plain",
+        "source": "NOT SUPPLIED: replace with verified file provenance and SHA-256"
+      },
+      "light_sequence": {
+        "path": "inputs/reference-light.fasta",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "media_type": "text/plain",
+        "source": "NOT SUPPLIED: replace with verified file provenance and SHA-256"
+      },
+      "species_origin": "Human-mouse chimeric",
+      "numbering_scheme": "IMGT",
+      "region_annotations": {
+        "path": "inputs/reference-regions.json",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "media_type": "text/plain",
+        "source": "NOT SUPPLIED: replace with verified file provenance and SHA-256"
+      }
+    },
+    "desired_isotype": "IgG1",
+    "light_chain_type": "unknown",
+    "fc_policy": "to_be_decided"
+  },
+  "objective": {
+    "mechanism": "binding_only",
+    "desired_effect": "Assess cetuximab-derived EGFR-binding candidates against a matched cetuximab baseline while preserving the declared domain III recognition and developability requirements.",
+    "specificity_scope": "Human EGFR; an independently specified receptor-family/off-target panel is required for any specificity claim."
+  },
+  "constraints": {
+    "preserve_heavy_light_pairing": true,
+    "framework_policy": "preserve",
+    "numbering_scheme": "IMGT",
+    "editable_regions": [],
+    "max_mutations_per_chain": null,
+    "max_candidates": 1
+  },
+  "evaluation": {
+    "protocol": null,
+    "requested_count": 1,
+    "seed": 1,
+    "required_evidence_domains": [
+      "identity",
+      "framework",
+      "structure",
+      "interface",
+      "binding",
+      "developability"
+    ]
+  },
+  "budget": {
+    "wall_time_minutes": 120,
+    "cpu_hours": 2,
+    "gpu_hours": 2,
+    "remote_cost_limit": 0
+  },
+  "knowledge_cutoff": "2024-09-01",
+  "notes": "EGFR-specific incomplete request example. Reference: cetuximab. Artifact hashes remain placeholders; no biological sequences, verified structures, qualified protocol, or scientific results are supplied."
+}

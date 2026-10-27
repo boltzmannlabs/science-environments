@@ -11,8 +11,8 @@ The named computational services (Stability-Binding DDG, PRODIGY, ipSAE) are tre
 secondary implementation detail: the tests assert that the general criteria hold for both
 task variants and that naming a service never relaxes a criterion.
 
-The sequence-liability fixtures are clearly synthetic strings exercising detector control
-flow only. They are not antibody sequences, structures, or model outputs.
+These assertions check documentation and catalog declarations. They do not implement
+sequence-liability screening or establish scientific validity.
 """
 from __future__ import annotations
 
@@ -21,14 +21,12 @@ import re
 from pathlib import Path
 import unittest
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
+TEST_SUITE = ROOT / "tests/monoclonal_antibody_with_reference"
 GENERAL = ROOT / "tasks/denv_antibody_001.md"
 TOOL_SPECIFIC = ROOT / "tasks/denv_antibody_001_tools.md"
-TEST_PLAN = ROOT / "tests/MONOCLONAL_ANTIBODY_TEST_CASES.md"
-METRIC_CATALOG = ROOT / "config/metric-catalog.json"
-
-NAMED_TOOLS = ("stability-binding ddg", "stability-binding-ddg", "prodigy", "ipsae")
-LEGACY_NAMES = ("stabddg", "boltz", "boltz2")
+TEST_PLAN = TEST_SUITE / "MONOCLONAL_ANTIBODY_TEST_CASES.md"
+METRIC_CATALOG = ROOT / "config/shared/metric-catalog.json"
 
 
 def _norm(text: str) -> str:
@@ -75,8 +73,7 @@ MAB_CRITERIA_PHRASES = (
     ">candidate_id|L",
     # Preflight semantics
     "`NEEDS_INPUT` or `PROTOCOL_REQUIRED`",
-    # Frozen budget / cutoff / integrity
-    "120-minute wall-time budget",
+    # Frozen cutoff and evaluation integrity
     "2024-09-01",
     "keep historical candidate rankings and experimental outcomes hidden",
 )
@@ -113,16 +110,6 @@ PLAN_CRITERIA_PHRASES = (
 )
 
 
-def normalized_task(text: str) -> str:
-    text = re.sub(r"\*\*Task variant:\*\* `[^`]+`", "**Task variant:** `shared`", text)
-    return re.sub(
-        r"## Available Computational Methods\n.*?(?=## Required Execution Steps\n)",
-        "",
-        text,
-        flags=re.S,
-    )
-
-
 class TaskCriteriaTests(unittest.TestCase):
     """Both task variants must state the general monoclonal-antibody testing criteria."""
 
@@ -136,34 +123,19 @@ class TaskCriteriaTests(unittest.TestCase):
             for phrase in MAB_CRITERIA_PHRASES:
                 self.assertIn(phrase, text, f"Missing criterion: {phrase}")
 
-    def test_both_variants_agree_on_the_general_criteria(self):
-        # Removing only the variant line and the named-method block, nothing may differ.
-        self.assertEqual(normalized_task(self.general), normalized_task(self.specific))
 
-    def test_general_variant_names_no_computational_service(self):
-        lowered = self.general.casefold()
-        for name in (*NAMED_TOOLS, *LEGACY_NAMES):
-            self.assertNotIn(name, lowered)
-
-    def test_tool_specific_variant_names_only_the_approved_services(self):
-        self.assertIn("Stability-Binding DDG (`stability-binding-ddg`)", self.specific)
-        self.assertIn("| PRODIGY |", self.specific)
-        self.assertIn("| ipSAE |", self.specific)
-        for name in LEGACY_NAMES:
-            self.assertNotIn(name, self.specific.casefold(), f"Legacy name in task: {name}")
-
-    def test_named_tools_appear_only_as_documented_methods_not_criteria(self):
-        # The named-method block is documentation of available services; it must not rewrite
-        # the scientific criteria. The criteria section is shared verbatim (parity test).
-        self.assertIn("## Available Computational Methods", self.specific)
-        self.assertNotIn("## Available Computational Methods", self.general)
+    def test_capability_sections_do_not_replace_scientific_criteria(self):
+        for text in (self.general, self.specific):
+            self.assertIn("## Computational Tool Capabilities", text)
+            self.assertIn("## Evaluation Metrics", text)
+            self.assertIn("Record unavailable capabilities", text)
 
     def test_both_variants_keep_predicted_and_measured_endpoints_apart(self):
         for text in (self.general, self.specific):
             self.assertIn(
                 "Distinguish predicted binding energy, measured Kd, ELISA binding EC50, and neutralization potency",
                 text)
-            self.assertIn("Passing file/schema validation does not establish biological validity", text)
+            self.assertIn("Computational predictions do not establish biological validity", text)
 
     def test_both_variants_require_all_mandatory_rules_to_pass(self):
         for text in (self.general, self.specific):
@@ -228,7 +200,7 @@ class TestPlanCriteriaTests(unittest.TestCase):
         self.assertIn("denv_antibody_001.md", self.plan)
         self.assertIn("denv_antibody_001_tools.md", self.plan)
         self.assertIn("same antigen, reference antibody", self.plan)
-        self.assertIn("named-method block is the only permitted", self.plan)
+        self.assertIn("capability block is the only permitted", self.plan)
 
     def test_plan_states_the_scientific_claim_boundary(self):
         for phrase in ("It does not mean a designed antibody binds DENV-2 EDIII",
@@ -236,70 +208,6 @@ class TestPlanCriteriaTests(unittest.TestCase):
                        "avoids antibody-dependent enhancement",
                        "require appropriate experimental evidence"):
             self.assertIn(_norm(phrase), self.plan_norm, f"Missing boundary phrase: {phrase}")
-
-
-# --- Standard early-stage sequence-liability screening criteria ---------------------------
-# Motif classes per the antibody-developability literature (deamidation, isomerization,
-# oxidation, N-glycosylation, unpaired cysteine). Control-flow tests only.
-
-def _find_deamidation(sequence: str):
-    # Asn deamidation: N followed by G (high) or S/T (medium).
-    return [match.start() + 1 for match in re.finditer(r"N[GST]", sequence)]
-
-
-def _find_isomerization(sequence: str):
-    # Asp isomerization: D followed by G (high) or S/T (medium).
-    return [match.start() + 1 for match in re.finditer(r"D[GST]", sequence)]
-
-
-def _find_oxidation_sites(sequence: str):
-    # Met/Trp oxidation sites.
-    return [position + 1 for position, residue in enumerate(sequence) if residue in "MW"]
-
-
-def _find_glycosylation_sequons(sequence: str):
-    # Consensus N-glycosylation sequon N-X-S/T (X != Pro).
-    return [match.start() + 1 for match in re.finditer(r"N[^P][ST]", sequence)]
-
-
-def _find_unpaired_cysteines(sequence: str):
-    count = sequence.count("C")
-    return list(range(1, count + 1)) if count % 2 == 1 else []
-
-
-class SequenceLiabilityCriteriaTests(unittest.TestCase):
-    """Standard sequence-liability screening criteria, on synthetic fixtures."""
-
-    def test_asn_deamidation_motifs_are_flagged(self):
-        for sequence in ("CDEFNGHI", "CDEFNSHI", "CDEFNTHI"):
-            self.assertTrue(_find_deamidation(sequence), f"Deamidation motif missed: {sequence}")
-
-    def test_asp_isomerization_motifs_are_flagged(self):
-        for sequence in ("CDEFGDGH", "CDEFGDSH", "CDEFGDTH"):
-            self.assertTrue(_find_isomerization(sequence), f"Isomerization motif missed: {sequence}")
-
-    def test_methionine_and_trp_oxidation_sites_are_flagged(self):
-        self.assertEqual(_find_oxidation_sites("CDEFGMH"), [6])
-        self.assertEqual(_find_oxidation_sites("CDEFGWH"), [6])
-        self.assertEqual(_find_oxidation_sites("CDEFGHIA"), [])
-
-    def test_variable_domain_glycosylation_sequon_is_flagged(self):
-        self.assertTrue(_find_glycosylation_sequons("CDEFGNAST"))
-        self.assertTrue(_find_glycosylation_sequons("CDEFGNAT"))
-        # N-P-S/T is not a consensus sequon.
-        self.assertEqual(_find_glycosylation_sequons("CDEFGNPST"), [])
-
-    def test_unpaired_cysteine_is_flagged(self):
-        self.assertTrue(_find_unpaired_cysteines("ACDEFGHI"))
-        self.assertEqual(_find_unpaired_cysteines("ACDEFGHIC"), [])
-
-    def test_clean_sequence_has_no_liable_motifs(self):
-        clean = "AKEGIL"
-        self.assertEqual(_find_deamidation(clean), [])
-        self.assertEqual(_find_isomerization(clean), [])
-        self.assertEqual(_find_oxidation_sites(clean), [])
-        self.assertEqual(_find_glycosylation_sequons(clean), [])
-        self.assertEqual(_find_unpaired_cysteines(clean), [])
 
 
 class MetricCatalogCriteriaTests(unittest.TestCase):

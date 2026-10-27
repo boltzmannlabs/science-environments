@@ -1,0 +1,13 @@
+schema_version: '1.0'
+scientific_execution_included: false
+scientific_thresholds_supplied: false
+task_id: mab_target_only_design
+family: monoclonal_target_only
+task_file: tasks/mab_target_only_design.md
+request_schema: config/monoclonal_target_only/request.schema.json
+result_schema: config/monoclonal_target_only/result.schema.json
+validation_level: schema_and_identifiers
+request_example: config/monoclonal_target_only/request.example.json
+target_name: Human EGFR (ERBB1) extracellular domain
+target_accession: P00533
+reference_antibody: null

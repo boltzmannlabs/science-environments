@@ -1,0 +1,11 @@
+schema_version: '1.0'
+scientific_execution_included: false
+scientific_thresholds_supplied: false
+task_id: denv_antibody_001_tools
+family: monoclonal_reference
+task_file: tasks/denv_antibody_001_tools.md
+request_schema: config/monoclonal_reference/denv.request.schema.json
+result_schema: config/monoclonal_reference/denv.result.schema.json
+validation_level: bundle_integrity
+request_task_id: denv_antibody_001
+variant: tool_specific
