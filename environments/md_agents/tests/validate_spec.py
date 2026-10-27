@@ -18,5 +18,5 @@ assert sum(x['group'] == 'core' for x in contracts) == 20
 assert sum(x['group'] == 'online' for x in contracts) == 10
 assert sum(x['group'] == 'domain' for x in contracts) == 20
 assert sum(x['group'] == 'scenario' for x in contracts) == 12
-assert len(list((ROOT/'tasks').glob('*.md'))) == 62
+assert len(list((ROOT/'tasks').glob('md_*.md'))) == 62
 print('PASS: MD package, schemas and 62-agent registry')
