@@ -1,0 +1,17 @@
+[
+{"id":"FEP-AG01","name":"Alchemical Mapping Auditor","problem":"Incorrect atom mapping","expected_recovery":"Validate correspondence, stereochemistry, and dummy atoms"},
+{"id":"FEP-AG02","name":"Transformation Feasibility Agent","problem":"Invalid transformation","expected_recovery":"Validate endpoints, charges, and chemical consistency"},
+{"id":"FEP-AG03","name":"Force-Field and Parameter Auditor","problem":"Missing or incompatible parameters","expected_recovery":"Audit topology and approved parameter sources"},
+{"id":"FEP-AG04","name":"Lambda Schedule Optimizer","problem":"Unstable or poorly spaced windows","expected_recovery":"Recommend justified windows from diagnostics"},
+{"id":"FEP-AG05","name":"Charge, Restraint and Correction Auditor","problem":"Corrections or standard-state errors","expected_recovery":"Audit charges, restraints, and corrections"},
+{"id":"FEP-AG06","name":"Simulation Failure Diagnostician","problem":"Crashes, NaNs, failed replicas","expected_recovery":"Diagnose first failure and safe recovery"},
+{"id":"FEP-AG07","name":"Phase-Space Overlap Auditor","problem":"Poor neighboring-window overlap","expected_recovery":"Quantify overlap and request sampling/windows"},
+{"id":"FEP-AG08","name":"Convergence and Hysteresis Auditor","problem":"Drift or replica disagreement","expected_recovery":"Assess blocks, replicas, hysteresis, and uncertainty"},
+{"id":"FEP-AG09","name":"Binding-Site Water and Slow-State Investigator","problem":"Trapped water or slow pocket rearrangement","expected_recovery":"Identify slow states and sampling gaps"},
+{"id":"FEP-AG10","name":"Adaptive Sampling Controller","problem":"Compute allocated to easy windows","expected_recovery":"Prioritize evidence-based additional sampling"},
+{"id":"FEP-AG11","name":"Free-Energy Estimator Auditor","problem":"Estimator, sign, unit, or uncertainty error","expected_recovery":"Recompute with checked assumptions"},
+{"id":"FEP-AG12","name":"Thermodynamic Cycle Auditor","problem":"Missing or inconsistent legs","expected_recovery":"Check closure and reference states"},
+{"id":"FEP-AG13","name":"Relative Affinity Ranking Auditor","problem":"Unsupported ranking conclusion","expected_recovery":"Compare uncertainty and trusted references"},
+{"id":"FEP-AG14","name":"Scientific False-Success Auditor","problem":"Technical completion but invalid science","expected_recovery":"Reject failed overlap/convergence/provenance"},
+{"id":"FEP-AG15","name":"Independent Qualification Agent","problem":"Insufficient final evidence","expected_recovery":"Apply frozen criteria and issue PASS/REVIEW/FAIL"}
+]

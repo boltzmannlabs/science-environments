@@ -26,14 +26,38 @@ FEP-PS06 hysteresis and cycle closure; FEP-PS07 estimators and uncertainty;
 FEP-PS08 charge-changing corrections; FEP-PS09 restraints and standard state;
 and FEP-PS10 final result qualification.
 
+The package also records 15 environment families in
+[`agents/fep_environment_contracts.json`](agents/fep_environment_contracts.json)
+and 15 specialist contracts in
+[`agents/fep_agent_contracts.json`](agents/fep_agent_contracts.json). Each
+family has a uniform task card in `tasks/fep_env_*.md`, covering inputs,
+execution, independent evaluation, acceptance criteria, and failure status.
+
+## Executable calculation evidence
+
+Run the reproducible smoke calculation with:
+
+```bash
+python scripts/run_toy_ti.py
+```
+
+It samples an 11-window harmonic alchemical path twice, computes the TI
+estimate, adjacent-window overlap, and error against an analytic reference.
+The evidence is written to `results/toy_ti/toy_results.json`. This validates
+the calculation/evaluator path only; it is explicitly **not** a qualified
+protein–ligand FEP result. Production qualification still requires a supported
+engine, molecular topology and parameters, real trajectories, frozen reference
+data, and independent repeats.
+
 ## Package structure
 
 ```text
 fep_ti_agents/
 ├── README.md / ENVIRONMENT_SPEC.md / REFERENCES.md
 ├── agents/contracts.json
+├── agents/fep_environment_contracts.json / fep_agent_contracts.json
 ├── config/
-├── tasks/
+├── tasks/ (10 problem-solving cards + 15 environment cards)
 ├── results/
 ├── scripts/
 └── tests/
