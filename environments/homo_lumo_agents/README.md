@@ -55,3 +55,6 @@ homo_lumo_agents/
 Open-shell alpha/beta treatment, orbital visualization, production reference
 qualification, and three-arm agent comparisons are specified but not yet
 qualified. Results must not be compared across incompatible methods or bases.
+
+Problem-solving contracts are in [problem_solving/](problem_solving/), with
+shared recovery logic under `../md_agents/recovery_agents/cross_domain/`.

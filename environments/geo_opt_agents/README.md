@@ -33,3 +33,6 @@ geo_opt_agents/
     ├── ACCEPTANCE.md
     └── specification-validation.json
 ```
+
+Problem-solving contracts are in [problem_solving/](problem_solving/), with
+shared recovery logic under `../md_agents/recovery_agents/cross_domain/`.

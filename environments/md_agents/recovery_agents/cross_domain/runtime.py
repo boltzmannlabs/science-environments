@@ -3,7 +3,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-CONTRACTS = json.loads((Path(__file__).parent/'agents/contracts.json').read_text())
+ROOT = Path(__file__).resolve().parents[3]  # environments/
+CONTRACT_FILES = [
+    Path(__file__).parent/'contracts.json',
+    ROOT/'spe_agents/problem_solving/contracts.json',
+    ROOT/'geo_opt_agents/problem_solving/contracts.json',
+    ROOT/'homo_lumo_agents/problem_solving/contracts.json',
+    ROOT/'qmmm_agents/problem_solving/contracts.json',
+    ROOT/'fep_ti_agents/problem_solving/contracts.json',
+]
+CONTRACTS = [item for path in CONTRACT_FILES for item in json.loads(path.read_text())]
 
 def _status(agent_id: str, case: dict) -> tuple[str, str]:
     if not case.get('immutable_inputs') or not case.get('first_failure'):

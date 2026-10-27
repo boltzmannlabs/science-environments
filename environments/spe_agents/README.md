@@ -39,3 +39,6 @@ spe_agents/
 
 The detailed benchmark reports are maintained in the benchmarking repository;
 this package documents the executable environment contract and maturity.
+
+Problem-solving contracts are in [problem_solving/](problem_solving/), with
+shared recovery logic under `../md_agents/recovery_agents/cross_domain/`.
