@@ -12,10 +12,11 @@ for path in [ROOT/'config/request.schema.json', ROOT/'config/protocol.schema.jso
     json.loads(path.read_text())
 json.loads((ROOT/'tasks/request.example.json').read_text())
 contracts = json.loads((ROOT/'agents/contracts.json').read_text())
-assert len(contracts) == 50
-assert [x['id'] for x in contracts] == [f'MD-{i:02d}' for i in range(1, 51)]
+assert len(contracts) == 62
+assert [x['id'] for x in contracts] == [f'MD-{i:02d}' for i in range(1, 63)]
 assert sum(x['group'] == 'core' for x in contracts) == 20
 assert sum(x['group'] == 'online' for x in contracts) == 10
 assert sum(x['group'] == 'domain' for x in contracts) == 20
-assert len(list((ROOT/'tasks').glob('*.md'))) == 50
-print('PASS: MD package, schemas and 50-agent registry')
+assert sum(x['group'] == 'scenario' for x in contracts) == 12
+assert len(list((ROOT/'tasks').glob('*.md'))) == 62
+print('PASS: MD package, schemas and 62-agent registry')
