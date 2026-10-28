@@ -138,6 +138,32 @@ def test_plugin_rejects_unexpected_profile_runtime_fields(tmp_path,monkeypatch):
         module._ChemistryClient()._start()
 
 
+def test_plugin_accepts_profile_runtime_without_localretro(tmp_path,monkeypatch):
+    module=plugin();plugin_dir=tmp_path/'profile-plugin';plugin_dir.mkdir()
+    root=tmp_path/'package';(root/'src/synthesis_route_gym').mkdir(parents=True)
+    python=tmp_path/'python';python.write_text('test');python.chmod(0o755)
+    (plugin_dir/'runtime.json').write_text(json.dumps({
+        'SRG_PACKAGE_ROOT':str(root),'SRG_CHEMISTRY_PYTHON':str(python),
+        'SRG_BACKEND_TIMEOUT_SECONDS':'120'}))
+    monkeypatch.setattr(module,'__file__',str(plugin_dir/'__init__.py'))
+    for key in module.RUNTIME_KEYS:monkeypatch.delenv(key,raising=False)
+    captured={};monkeypatch.setattr(module.subprocess,'Popen',lambda args,**kw:captured.update(args=args,**kw))
+    module._ChemistryClient()._start()
+    assert captured['args'][0]==str(python)
+    assert 'REBOLT_ROOT' not in captured['env']
+    assert 'REBOLT_PYTHON' not in captured['env']
+
+
+def test_plugin_rejects_partial_localretro_runtime(tmp_path,monkeypatch):
+    module=plugin();plugin_dir=tmp_path/'profile-plugin';plugin_dir.mkdir()
+    (plugin_dir/'runtime.json').write_text(json.dumps({
+        'SRG_PACKAGE_ROOT':'/tmp/package','SRG_CHEMISTRY_PYTHON':'/usr/bin/python3',
+        'SRG_BACKEND_TIMEOUT_SECONDS':'120','REBOLT_ROOT':'/tmp/model'}))
+    monkeypatch.setattr(module,'__file__',str(plugin_dir/'__init__.py'))
+    with pytest.raises(RuntimeError,match='configuration'):
+        module._ChemistryClient()._start()
+
+
 def test_plugin_normal_cross_runtime_preserves_other_tools(monkeypatch):
     module=plugin()
     monkeypatch.setenv('SRG_CHEMISTRY_PYTHON',sys.executable)
