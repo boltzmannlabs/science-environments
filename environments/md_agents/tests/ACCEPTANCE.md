@@ -2,9 +2,25 @@
 
 ## Package checks
 
-Validate JSON schemas, the 30-agent registry, task links and contract IDs with
+Validate JSON schemas, the 62-agent registry, task links and contract IDs with
 `python3 tests/validate_spec.py`. These checks do not establish a working MD
 engine or scientific qualification.
+
+## Executable core test
+
+The frozen `MD-CORE-001-water-box` packet is exercised with OpenMM 8.2 using
+the command below. The runtime test independently checks the four recorded
+JSON results, finite energies, atom count, trajectory frames, hashes and CUDA
+platform selection:
+
+```bash
+python scripts/run_core_openmm.py --repeat 1
+python -m pytest -q tests/test_core_execution.py
+```
+
+The recovery fixture test is separate and must preserve a `REVIEW` decision
+when effective sample size is insufficient; it must not convert that case to a
+false `PASS`.
 
 ## Required before execution
 

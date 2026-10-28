@@ -2,10 +2,12 @@
   "environment_id": "md-agents",
   "status": "PASS",
   "validation_scope": "package structure, schemas and specialist registry",
-  "agent_count": 50,
+  "agent_count": 62,
   "core_agent_count": 20,
   "online_agent_count": 10,
   "domain_agent_count": 20,
-  "scientific_execution": "NOT_RUN",
-  "limitations": ["engine adapters, reference trajectories and benchmark qualification are pending"]
+  "scientific_execution": "CORE_OPENMM_CUDA_QUALIFIED",
+  "core_case": "MD-CORE-001-water-box",
+  "core_repeats": 4,
+  "limitations": ["protein, membrane, ligand, enhanced-sampling and long-timescale benchmark qualification are pending"]
 }
