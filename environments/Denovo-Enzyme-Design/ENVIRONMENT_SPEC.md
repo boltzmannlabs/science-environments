@@ -2,7 +2,7 @@
 
 **Environment ID:** `denovo-enzyme-design`
 
-**Status:** Specification
+**Status:** In Progress — execution controller included; scientific qualification remains profile-specific.
 
 **Intended runtime claim:** computational qualification under a named reaction profile. This specification delivers no qualified enzyme or experimentally established catalysis.
 
@@ -10,52 +10,77 @@
 
 Given an intended substrate-to-product conversion, operating conditions and design constraints, produce up to K diverse, newly designed enzyme candidates. Every returned qualified candidate must pass its applicable chemistry, fold, solubility, aggregation and user-required gates.
 
-One reusable environment serves multiple **qualified reaction profiles**. A profile supplies the scientific mechanism, catalytic motif, state models, supported representations, thresholds and validated calculation settings. The specified scope is soluble, cofactor-free monomers and homodimers. A homodimer contains two copies of one protein sequence. Heterodimers, larger assemblies, membrane systems and cofactor-dependent chemistry require qualified extensions. Unsupported science returns `PROTOCOL_REQUIRED` before generation. These are specification requirements, not delivered scientific runtime capabilities.
+This is a reusable enzyme-design environment, not an implementation dedicated to the enzyme in an example. Resolve the reaction, reference evidence, catalytic roles, assembly, cofactors, design size and conditions anew for each target. Keep all target-specific maps and values in the run's inputs and profiles. Shared code provides stage progression, evidence handling, capability selection, review and repair. A prior pilot supplies reusable engineering evidence only within its tested applicability; its biological settings and outputs cannot silently transfer to a new target.
+
+One reusable environment uses a **generation-readiness contract** for exploratory generation and a **full reaction profile** for final qualification. These supply the mechanism, motif, assembly, supported representations and stage-specific evaluation settings as they become necessary. Scope is soluble, cofactor-free monomers and homodimers; a homodimer contains two copies of one protein sequence. Heterodimers, larger assemblies, membrane systems and cofactor-dependent chemistry require extensions. Unsupported prerequisites block the affected stage. Missing later evaluation capabilities do not prohibit earlier scientifically justified work, but they prevent qualification.
 
 ## 2. Inputs: user versus environment
 
 | User supplies | Environment prepares |
 | --- | --- |
 | Reactant/product SMILES, molecular files or unambiguous identifiers; intended stereochemistry | Normalized participants, stoichiometry, atom maps, reaction steps and compatible profile |
-| Operating pH, temperature and expression host; relevant solvent/salt conditions and protein concentration, when known | Applicability checks, concentration basis and required protonation/state alternatives |
-| Length range per unique sequence, prohibited features and required/preferred property targets | Fixed catalytic identities/atoms and candidate-independent reference geometry |
+| Operating requirements, when specified; relevant concentration and its basis, when known | Evidence-backed research conditions when unspecified, applicability checks and protonation/state alternatives |
+| Sequence restrictions and property targets, when specified | Supported sequence bounds, fixed catalytic identities/atoms and reference geometry |
 | Assembly preference and reference identifier, if known | Evidence-based biological assembly, chain mapping, interface requirements and active-site/state coverage |
 | Requested shortlist size and approved compute budget, or explicit service defaults | Generation/evaluation quotas, implementation version lock and a chemistry reservation |
 
-Validate against [request.schema.json](config/request.schema.json). Do not silently replace an ambiguous structure, infer an unspecified stereoisomer or claim a required endpoint has been resolved. Missing essential user information produces `NEEDS_INPUT`; unavailable scientific preparation produces `PROTOCOL_REQUIRED`; unavailable infrastructure produces `BLOCKED`.
+The agent resolves the request before validating it against [request.schema.json](config/request.schema.json); the schema is not a requirement for the user to manually supply every field. Preserve explicit requirements. An essential ambiguity that remains after evidence retrieval produces `NEEDS_INPUT`; scientific or infrastructure gaps that remain after bounded recovery produce `BLOCKED` or `PARTIAL` with an explicit reason. An unresolved stereoisomer or incompatible user requirement must not be silently replaced.
 
 The monomer example uses ester hydrolysis; the homodimer example uses the L-DEX YL conversion. Both are syntax examples, not qualified profiles or authorization to spend their illustrative budgets. Missing `assembly` means `resolve_from_evidence`. The environment prepares the scientific assembly data; the user need not manually supply symmetry operators or chain maps.
 
 Protein concentration, when supplied, must include its basis: total subunit equivalents or assembled complexes. Omission is unresolved, not zero. Resolve it when a required assembly or kinetic claim depends on it; otherwise explicitly limit the claim. Assembly populations can depend on concentration, solution conditions and ligand occupancy. A reference's dimer assignment does not establish dimer stability under every requested condition.
 
-## 3. Reaction-profile preparation and preflight
+### Autonomous resolution and preparation
 
-A scientific owner qualifies each profile against appropriate references and controls before enabling it. [protocol.schema.json](config/protocol.schema.json) specifies its minimum contract. The developer implements loading and checks; the agent must not invent mechanisms, catalytic coordinates or numerical chemistry thresholds.
+The agent owns routine preparation, method selection and evidence review. Resolve settings in this order: explicit user requirements, an existing run/service policy, then documented reference evidence and compatible modeling assumptions. Select the seed, candidate quotas, sequence bounds, file formats and scheduling within policy without asking for individual approval. For unspecified operating targets, choose documented reference-study conditions compatible with the intended conversion and methods; record them as adopted research conditions, not user requirements or experimentally verified properties of a new design. Scientific uncertainty still requires evidence rather than an arbitrary default.
 
-Before generating candidates, materialize and hash the following runtime inputs:
+Use the fallback pilot in `config/environment.yaml` when no task-specific policy exists. Record setup and campaign costs separately within the same authorized total, including controls and retries. Controller active time and explicit job time consume the local allowance; any explicit calendar deadline and stricter external limits remain binding. Historical expired allowances do not restart. Scientific CPU/GPU and external-service costs require execution-harness reservation and metering; local process time cannot establish remote usage. Check estimated requirements before dispatch and report unknown cost or capacity honestly. Limits do not weaken scientific gates or authorize new spending.
+
+A missing full profile starts progressive preparation: reuse artifacts, retrieve evidence, test capabilities and review the inputs needed for the next stage. A reviewed generation contract permits exploratory candidates even while later state calculations and gates remain incomplete. Adapter fixtures remain development evidence and do not enter candidate success counts. Exploratory candidates retain their status until the full chemistry, protein-quality and assembly requirements pass. An unresolved future check is never converted to PASS merely to advance the workflow.
+
+Search actual schemas, official sources, local installations, runtimes and weights, then verify applicable output behavior. Reuse tested runtimes and adapters; repair isolated dependencies within policy. Preserve an explicitly prescribed tool condition: an unavailable exact implementation remains a blocker for that condition, without blocking independent work. A reconstructed custom component must be labeled and tested as a new implementation. Agent-selected execution permits compatibility-preserving alternatives, with scientific constraints and evidence standards unchanged. Share prepared inputs and validated infrastructure across paired tests; keep candidate outcomes and evaluation sessions separate.
+
+The persistent controller invokes execution and independent review, then applies an actionable decision: accept, retry, repair, reject, blocked or needs-input. Review checks artifact identity, mappings, applicability, uncertainty, controls and resources. Accept means the stage's contract was met, not that every final enzyme rule passed. A repair identifies its target, preserves intent and invalidates affected downstream evidence; retries and repairs consume bounded allowances automatically. Resume from current artifact hashes and recorded job state. A narrative approval cannot turn FAIL or UNRESOLVED into PASS. Ask only for an essential unresolved goal ambiguity, incompatible explicit requirements or access/resources outside authorization.
+
+The controller enforces this question boundary: `needs_input` requires a reviewed structured reason, the specific unresolved item and recorded resolution attempts. Routine or malformed questions return to internal repair. Missing chemistry profiles are agent preparation work. Whole-run requests must execute through the controller; stage workers return their assigned result and must not start another controller. See the [runtime response contract](runtime/CONTRACTS.md#reviewer-and-repair-responses).
+
+Record resolved values, their source, assumptions and claim limitations in `resolution_decisions.json`; carry its hash into the frozen inputs. Optional property characterization can report supported benefits or missing evidence without becoming a new user-approval step. Mandatory chemistry and protein-quality gates remain binding. Reuse historical preparation reports as evidence; apply the current policy rather than perpetuating old requests for routine approvals.
+
+## 3. Stage-specific scientific preparation
+
+The agent first prepares [generation.schema.json](config/generation.schema.json): a consistent reaction; evidence-based assembly, chain/site mapping and occupancy; a supported motif; fixed/designable constraints; pinned generator behavior; and readiness evidence. `status: ready` requires current artifact verification and independent scientific review. It authorizes exploratory generation, not activity claims or final qualification. Do not invent catalytic coordinates or shorten a task merely to fit a failing runtime.
+
+Generation contract version 1.1 includes `request_sha256`, calculated from the resolved request with the runtime's canonical object hashing. Earlier generation profiles require an agent-led applicability review before migration; editing a version/hash is insufficient. The complete chemistry profile retains its separate version 2.0. Target-specific unsupported chemistry requires capability development and testing; do not remove a metal, cofactor or partner to force it into an enabled route.
+
+Build the full [protocol.schema.json](config/protocol.schema.json) progressively for state preparation, chemistry and final qualification. Freeze each assessment's methods and acceptance rules before using it to judge candidate outcomes, with reference/control evidence. Complete state/site coverage and qualified chemistry methods are required for their calculations; every required rule and current evidence is required before qualification. Record the review and controls in `qualification_evidence`. Routine review is agent-owned; a human name is neither a scientific substitute nor a default entry requirement.
+
+Materialize and hash generation inputs first; add later scientific artifacts before the stage that uses them:
 
 ```text
 00_inputs/
   request.json                 resolved user intent and defaults
-  reaction.json                participants, atom maps, states and steps
+  resolution_decisions.json    sources, adopted settings, assumptions and review
+  reaction.json                participants, stereochemistry, atom mapping and bond changes
+  generation.json              reviewed generation-readiness contract
+  evaluation_plan.json         predeclared objective, mandatory groups and control-based calibration
   assembly.json                kind, copy count, sequence groups and provenance
   chain_map.json               entity/operator/chain/residue/atom correspondence
   active_sites.json            site membership and state/occupancy requirements
   molecules/                   reactant/product/intermediate SDFs
   motif.pdb                    fixed catalytic reference
   motif_map.json               stable atom/residue identities and roles
-  states/                      required state structures and bond definitions
+  states/                      add before state/chemistry evaluation
   generation_constraints.json  fixed identities, geometry and designable regions
-  chemistry_protocol.json     supported parameterization and QM/MM settings
-  gates.json                   explicit acceptance rule for each criterion
+  chemistry_protocol.json     add control-tested settings before chemistry evaluation
+  gates.json                   freeze each assessment's rules before candidate scoring
   reward_spec.json             bounded reward transform for each required rule
   rl_config.json               controller mode, action limits and policy identity
   implementation_versions.json immutable code/container/model/data identifiers
 ```
 
-These are generated runtime artifacts, not files the user must manually provide. A complete profile is an environment dependency. This package defines its contract but includes no fabricated qualified profile.
+These are generated artifacts, not a user input checklist. Generation does not depend on a completed catalytic-cycle calculation. Final qualification still requires the complete qualified profile and current candidate evidence; this package includes no fabricated qualified profile.
 
-Preflight checks atom-map round trips; complete state/step coverage; residue/ligand representation; implementation, model and license access; predictor applicability; compatibility of model components; and sufficient reserved chemistry resources. Freeze the profile, gate/reward definitions and implementation lock for the run. Publish the resolved task to the agent only after these checks.
+Before each stage, check its molecular and artifact mappings, supported representations, method access, applicability, component compatibility and resource reservation. Complete state/step coverage is required where that stage consumes states, rather than as a universal generation gate. Preserve reaction and assembly identity throughout. Unsupported prerequisites trigger repair or an explicit stage-specific incomplete result; independent useful work may continue within the same policy.
 
 Fixed catalytic groups mean preserved residue identities and declared state-specific constraints. They do not mean immobile atoms or identical protonation and covalent bonds throughout the catalytic cycle.
 
@@ -73,26 +98,26 @@ Resolve the biological assembly using curated records and primary evidence, incl
 
 The profile's `assembly` block fixes kind, copy count, sequence groups, reference/chain-map evidence, design symmetry, active-site definitions and state policy. Homodimers additionally require an interface-evaluation protocol. Chain labels are identifiers, not biochemical roles; compare equivalent chains through recorded mappings without changing atom or site identity. Length limits apply per sequence; estimate computation using the full assembly and required site/state calculations.
 
-Do not assume two independent active sites. The catalytic map must establish whether sites are chain-local or span the interface, their multiplicity, and occupancy/partner states. Identical sequences do not require perfectly symmetric coordinates or simultaneous ligand occupancy throughout catalysis. C2 generation is permitted when justified; asymmetric designs or states require a compatible qualified profile. Any representative-site calculation requires predeclared, validated equivalence evidence and an explicit mapping; otherwise evaluate each required site separately.
+Do not assume two independent active sites. The catalytic map must establish whether sites are chain-local or span the interface, their multiplicity, and occupancy/partner states. Identical sequences do not require perfectly symmetric coordinates or simultaneous ligand occupancy throughout catalysis. C2 generation is permitted when justified; asymmetric generation or states require compatible reviewed inputs for the affected stage. Any representative-site calculation requires predeclared, validated equivalence evidence and an explicit mapping; otherwise evaluate each required site separately.
 
 Apply each site's rules in its declared state. An empty or resting partner site must satisfy its own state requirements; it need not exhibit substrate-attack geometry at the same instant as the reacting site.
 
-Before enabling the profile, qualify interface and site criteria on matched references/controls. Record relative placement, interface confidence where available, contacts/burial, packing/clashes and relevant exposure or assembly alternatives; no universal interface-score cutoff is supplied. Structural confidence alone establishes neither solution oligomerization nor catalytic activity. A copied or symmetry-imposed dimer is a generation model, not independent confirmation. Do not require a homodimer subunit to fold stably in isolation unless that is an explicit, supported task objective.
+Before accepting interface or site evidence for qualification, qualify its criteria on matched references/controls. Record relative placement, interface confidence where available, contacts/burial, packing/clashes and relevant exposure or assembly alternatives; no universal interface-score cutoff is supplied. Structural confidence alone establishes neither solution oligomerization nor catalytic activity. A copied or symmetry-imposed dimer is a generation model, not independent confirmation. Do not require a homodimer subunit to fold stably in isolation unless that is an explicit, supported task objective.
 
 ## 4. End-to-end execution
 
-Execution is defined by required operations and evidence. Implementations must satisfy these contracts regardless of which software is selected. Steps 1–4 form preflight; steps 5–11 screen candidates in increasing computational cost; step 12 governs optional iteration; steps 13–14 finalize the run.
+Execution is defined by required operations and evidence. Steps 1–4 establish generation readiness; steps 5–11 progressively generate and assess candidates; step 12 supplies recovery and optional refinement throughout; steps 13–14 finalize the run. A dependency is checked when its stage needs it, while final qualification remains strict.
 
 | Step | Exact operation | Required result or decision |
 | --- | --- | --- |
-| 1. Resolve the request | Extract the desired conversion, conditions, sequence constraints, hard/preferred property targets, final count K and resource limits. Resolve essential ambiguities and record accepted defaults. | A complete request; otherwise `NEEDS_INPUT`. No generation starts. |
+| 1. Resolve the request | Extract the conversion and explicit requirements. Resolve routine settings from policy and evidence; record assumptions and limits. Ask only for essential ambiguities that remain unresolved. | A complete resolved request or specific `NEEDS_INPUT`; no candidate generation before preflight. |
 | 2. Normalize the reaction | Validate molecular identities, stereochemistry, stoichiometry and proton/charge bookkeeping. Map corresponding atoms between reactants and products and identify the intended bond changes. | A chemically consistent reaction definition; inconsistent or ambiguous inputs return for clarification. |
-| 3. Select the scientific profile | Resolve the biological assembly and match reaction, operating conditions and assembly to a qualified profile. Confirm chain/site mappings, interface requirements and complete state/step coverage. | Compatible profile; unresolved assembly or unsupported scientific scope returns `PROTOCOL_REQUIRED`. |
-| 4. Prepare and freeze the task | Materialize reaction and assembly inputs, chains, sites, waters and states. Freeze sequence ties, fixed/designable regions, interface/chemistry gates, rewards and implementation versions. Reserve resources for full-assembly and site evaluation. | Immutable `00_inputs/`; scientific omissions produce `PROTOCOL_REQUIRED`, unavailable required capabilities `BLOCKED`. |
-| 5. Generate candidates | Generate the monomer or full homodimer scaffold with mapped motifs. For a homodimer, design one shared sequence in the context of both chains and the interface. Verify copy count, sequence ties, chain integrity, mapping and clashes. | Valid candidate assemblies in `01_designs/`; identical sequences alone do not establish a valid interface. |
-| 6. Apply early sequence/property filters | Validate and deduplicate unique sequences; verify both homodimer copies match. Assess solubility and applicable thermal/pH endpoints within their calibrated domains. Preserve distinct assembly hypotheses under separate candidate identities. | Eligible candidates and exclusions in `02_sequences/`; no double reward or candidate count for identical copies. |
-| 7. Verify independent folding and assembly | Predict the declared full assembly independently of the generated coordinates. Assess each chain, motif/site recovery and, for homodimers, relative placement, interface confidence/packing and required alternative assemblies. Record any restraints and their limitations. | Fold, assembly/interface and site gates pass; evidence in `03_folds/`. A good monomer fold alone cannot qualify a dimer. |
-| 8. Assess aggregation and consolidated properties | Assess hotspots on the assembled surface and dissociated surfaces when required by the profile. Distinguish a buried functional interface from an exposed aggregation risk. Combine with separate solubility and operating-condition evidence. | Required property gates pass with applicable context; evidence in `04_properties/`. |
+| 3. Prepare generation readiness | Resolve assembly, reaction, motif, chain/site mapping and generator compatibility. Reuse preparation and test missing capabilities; independently review readiness evidence. | Reviewed generation contract; only missing generation prerequisites block generation. Full evaluation-profile work continues progressively. |
+| 4. Freeze generation inputs and evaluation intent | Hash the resolved request, motif, sequence ties, fixed/designable regions, generator settings and implementation versions. Predeclare objectives, required rule groups and control-based calibration. | Immutable generation inputs and evaluation plan; reserve each job's resources before dispatch. |
+| 5. Generate candidates | Generate the monomer or full homodimer scaffold with mapped motifs. For a homodimer, design one shared sequence in the context of both chains and the interface. Verify copy count, sequence ties, chain integrity, mapping and clashes. A verified sequence with unresolved backbone integrity may be accepted in explicitly scoped `accepted_sequence_only` mode, with a hashed defect report. | Immutable exploratory candidate identity and generation provenance in `01_designs/`; sequence-only scope does not assert a physically valid assembly or interface. |
+| 6. Apply early sequence/property filters | Independently validate and deduplicate unique sequences, verify homodimer sequence ties and assess sequence-only solubility and applicable thermal/pH endpoints even if the generated backbone needs preparation. Preserve distinct assembly hypotheses under separate candidate identities. | Eligible sequence evidence and exclusions in `02_sequences/`; no fold, interface, aggregation or catalysis PASS follows from a sequence prediction. |
+| 7. Independently predict and assess the structure | Predict the declared assembly from the verified sequence; repairing defective generated coordinates is not a prerequisite for a sequence-input predictor. Preserve the generated scaffold and register each prediction as a separate assessment model. Verify every chain's sequence and mapping, then check completeness, peptide geometry, chirality, clashes and catalytic sites against matched controls. Prepare candidate/reference models when the chosen assessment needs it; disclose source coordinates and restraints. | Reviewed, hash-bound assessment models in `03_folds/`. Downstream structural results use these exact versions. Failed model geometry blocks dependent promotion; it does not erase sequence evidence. A copied or restrained dimer is not independent folding or interface evidence. |
+| 8. Assess aggregation and consolidated properties | Assess hotspots on the assembled surface and dissociated surfaces when required by the profile. Distinguish a buried functional interface from an exposed aggregation risk. Combine with separate solubility and operating-condition evidence. | Separate property outcomes and applicability in `04_properties/`. Unresolved evidence remains explicit and prevents final qualification. |
 | 9. Assess the substrate complex | Place substrate in each required site with the complete assembly and declared partner-site occupancy. Check reactive poses, access, contacts, interchain conflicts and unintended interface obstruction. | Supported site-specific poses in `05_complexes/`; pose confidence alone cannot qualify a design. |
 | 10. Check every catalytic state | Build each required reaction/partner state with stable chain/site/atom mappings. Check state-specific bonds, catalytic identities, waters and contacts. Apply declared asymmetric occupancy or justified site-equivalence rules. | Complete state, step and site coverage in `06_states/`; missing coverage stays unresolved. |
 | 11. Evaluate finalist chemistry | Evaluate the required chemical steps/sites in the qualified full-assembly context, retaining partner-chain effects. Validate paths, barriers, controls, convergence and uncertainty as specified in section 5. | Per-site/per-step evidence in `07_chemistry/`; no averaging away a required site failure. |
@@ -100,7 +125,7 @@ Execution is defined by required operations and evidence. Implementations must s
 | 13. Independently qualify and rank | Recompute all required rule decisions across chains, sites, interface and chemistry. Cluster qualifying assemblies with chain-permutation-aware mapping and rank under frozen criteria. | Up to K distinct qualified assemblies; a passing partner cannot compensate for a failed required site. |
 | 14. Package results and stop | Export unique sequences, full assemblies, chain/site mappings, all gate evidence, decisions, limitations and actual resource use. Report requested/returned assembly counts and stop reason. | Final bundle in `08_results/`, controller records in `09_rl/` and explicit run status. |
 
-For each screening stage, save normalized metrics, native evidence, `promoted_ids.json` and `exclusions.json`. A verified hard failure blocks promotion; an unresolved requirement cannot become PASS. Use a qualified alternative assessment where available or return the missing-evidence status. Candidate refinement is optional and preserves the fixed chemistry. Resource limits constrain iteration and never weaken acceptance.
+For each screening stage, save normalized metrics, native evidence, `promoted_ids.json` and `exclusions.json`. A verified disqualifying failure blocks dependent promotion. Missing prerequisite evidence blocks its dependent stage; unresolved final criteria may remain while independent useful assessments proceed. They never become PASS by proceeding. Technical recovery preserves the scientific task; candidate refinement creates a new lineage and invalidates affected scores. Limits constrain iteration and never weaken acceptance.
 
 Record scaffold-generation provenance, retained reference regions, sequence identity with alignment coverage, and chain/assembly structural similarity. A new sequence on a retained scaffold is scaffold redesign. De novo scaffold generation can recover a known fold; a novel fold is not mandatory, and low sequence identity alone proves neither structural novelty nor activity. Apply any task-specific novelty criterion only if declared before generation.
 
@@ -152,15 +177,15 @@ Expand these into individual mechanism-specific rules. Every required state, ste
 
 Qualification is `all(required_rules == PASS)` with current, valid evidence. Cluster qualifying candidates using frozen sequence/structure criteria; apply a declared Pareto-ranking and deterministic tie-break. Never fill the shortlist with failed or incomplete candidates. Report a shortfall when fewer than K qualify.
 
-## 7. RL controller
+## 7. Fixed controller and optional RL extension
 
-Support `fixed`, `rl_inference` and `rl_training` controller modes. Fixed execution provides the baseline. RL training is confined to development tasks; production and held-out evaluation use a frozen checkpoint. The scientific procedures and acceptance rules remain fixed.
+The implemented controller uses `fixed` execution with agent review and bounded recovery. `rl_inference` and `rl_training` remain specified extensions; they are not implemented or validated by the fixed controller. The following episode/reward contract applies when those extensions are implemented. RL training is confined to development tasks; production and held-out evaluation use a frozen checkpoint. Scientific acceptance rules remain fixed.
 
 One RL episode is a candidate lineage within a campaign budget. `reset(task, seed)` returns its initial observation; `step(action)` returns observation, scalar reward, per-rule reward components, action mask, terminated/truncated flags and artifact references.
 
 **Observation:** current candidate/parent, profile identity, rule outcomes/uncertainty, completed/pending stages and remaining resources. **Actions:** choose an approved generation preset, refine permitted positions, run an eligible stage, discard or stop. Mask changes to chemistry, fixed catalytic groups, assembly/copy count, sequence ties, site coverage, gate/reward definitions, mandatory stages and reserved chemistry resources.
 
-Assembly evidence is reviewed at preflight and before every stage promotion. Check artifact/candidate identity, chains/sites, applicability, uncertainty and contradictory evidence. Technical retries and additional assessments must be bounded and listed in the frozen execution policy; map them to the existing stage-evaluation action. Do not switch methods until one passes. Verified failures lead to discard or permitted refinement; unresolved evidence cannot advance through its gate. Repairs must preserve the frozen inputs; a change to assembly identity or the scientific profile requires a new, separately qualified run configuration. Record decision, evidence references, reason, next action and resource cost in `trajectory.jsonl`. This review also applies in fixed mode and does not require trained RL.
+Assembly evidence is reviewed before each relevant stage promotion. Check artifact/candidate identity, chains/sites, applicability, uncertainty and contradictory evidence. Technical retries and additional assessments must be bounded. An execution failure can justify an allowed compatible alternative; a valid adverse scientific result cannot justify switching evaluators until a passing score appears. Repairs preserve intent and invalidate affected evidence. A change to reaction, assembly identity or explicit user constraints requires a separate run configuration. Record the decision, evidence, next action and resource cost in `trajectory.jsonl`. This review applies in fixed mode without trained RL.
 
 Every required rule receives a frozen positive weight and a bounded score qᵢ ∈ [0,1]. Define Φ(s) = Σwᵢqᵢ(s), with Σwᵢ = 1. Normalize across the resolved rules, including assembly/site rules; adding an identical chain or reusing evidence must not multiply rewards. Unresolved evidence contributes zero to this conservative reward potential while its raw metric remains null.
 
@@ -180,9 +205,19 @@ At each completed action: ingest current evidence, recompute per-rule scores, ca
 
 ## 8. Developer interfaces and runtime behavior
 
+The [local controller](runtime/controller.py) invokes the existing harness through the [agent bridge](runtime/agents.py). Initialize once, then use `run` to execute or resume and `status` to inspect durable progress. `doctor` checks the local invocation configuration without submitting scientific jobs. Initialization does not import success flags or renew expired historical allowances.
+
+```bash
+python3 runtime/controller.py init --run-dir /path/to/run --request 'Design a de novo enzyme for the specified conversion' --input /path/to/reference --agent-config /path/to/agent-config.json --policy /path/to/run-policy.json
+python3 runtime/controller.py run --run-dir /path/to/run
+python3 runtime/controller.py status --run-dir /path/to/run
+```
+
+One execution response is followed by an independent review response. Actionable repair/retry decisions are handled inside the controller's bounded loop. Review receives the current output and artifact identities, not permission to edit acceptance criteria. Fresh execution attempts retain previous outputs and failure evidence. External scientific jobs must be tracked through the execution harness; a detached shell or visible session is not job-completion evidence.
+
 | Component | Contract |
 | --- | --- |
-| Request resolver / registry | Validate intent, resolve or reject a supported profile, materialize/hash immutable run inputs |
+| Request resolver / registry | Resolve intent, prepare the generation contract and evaluation plan, materialize/hash stage inputs |
 | Execution adapter | Input: run/candidate/stage IDs, artifact hashes, profile/implementation lock, seed and resource limits. Output: job status, native/normalized metrics, applicability, uncertainty, artifact hashes, cost and typed errors |
 | Candidate store | Candidate/parent IDs, unique-sequence and full-assembly hashes, copy count, chain/site/atom maps, stage state, rule evidence and accumulated resource use |
 | Scheduler | Stage dependencies, promotion limits, concurrency, idempotency, retry limits, cancellation and chemistry reservation |
@@ -191,7 +226,7 @@ At each completed action: ingest current evidence, recompute per-rule scores, ca
 
 Cache keys include input content, assembly/copy count, chain/site mappings, occupancy, symmetry/restraint policy, settings, code/model/data revisions and seed. A shared-sequence edit updates both homodimer copies and invalidates all affected assembly, property, complex and chemistry evidence. Geometry or occupancy edits also invalidate dependent results even if the sequence is unchanged. Store requested versus actual resource consumption and charge retries. Resume from validated artifacts, never solely from a success flag. A declared timeout/cancellation preserves completed evidence and marks unfinished work unresolved.
 
-Scientific input failures use `NEEDS_INPUT` or `PROTOCOL_REQUIRED`; infrastructure failures use `BLOCKED`. Completed runs report `QUALIFIED` when K qualify, `PARTIAL` when 1..K−1 qualify, or `NO_QUALIFYING_DESIGNS` when zero qualify. `CANCELLED` is a separate run status. `stop_reason` records budget, timeout, user cancellation, completion or error.
+After eligible recovery, an essential intent ambiguity uses `NEEDS_INPUT`; a missing scientific prerequisite uses reason `PROTOCOL_REQUIRED`; missing scientific or execution capability yields `BLOCKED` or `PARTIAL` according to retained progress. Identify the affected stage and retain completed work. `PARTIAL` may have zero qualified designs when useful exploratory work exists but required evaluation is incomplete. A completed full evaluation with zero passing designs uses `NO_QUALIFYING_DESIGNS`; all requested designs passing uses `QUALIFIED`. Always report requested, generated, evaluated and qualified counts separately. Budget exhaustion, cancellation, timeout and errors retain explicit stop reasons. None of these incomplete statuses imply scientific success.
 
 ## 9. Final output contract
 
@@ -200,6 +235,7 @@ Scientific input failures use `NEEDS_INPUT` or `PROTOCOL_REQUIRED`; infrastructu
   report.md                    readable results, limits and shortfall reasons
   designed_sequences.fasta     one unique sequence per qualified candidate
   assemblies.json              candidate-to-chain/copy/site and structure mapping
+  assessment_models.json       reviewed prediction versions and generated-scaffold provenance
   shortlist.csv                ordered IDs, ranks and qualifying metrics
   structures/                  full qualified biological assemblies, when any exist
   evaluation.json              candidate rules, decisions and exclusions
@@ -224,7 +260,7 @@ Benchmark fixed execution, rule-based refinement and frozen RL under identical r
 
 Report qualifying designs per task/budget, diversity, failed/unresolved fraction, wall time, CPU/GPU usage and full-chemistry counts. Report RL training cost separately. Where reliable published measurements exist, assess agreement with activity evidence; computational qualification and measured catalytic performance remain separate endpoints.
 
-Release status advances from Specification to Implemented only when the adapters/controller exist, and to Validated only for a named supported scope with recorded evidence. The [acceptance plan](tests/ACCEPTANCE.md) separates package checks performed now from those future requirements.
+The package remains In Progress until the required scientific adapters and complete execution path are available. Validated applies only to a named supported scope with recorded scientific evidence. The [acceptance plan](tests/ACCEPTANCE.md) separates package/controller checks from reaction qualification and enzyme benchmarks.
 
 ## 11. References and provenance
 

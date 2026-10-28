@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-10-26T13:02:13.459674+00:00",
+  "checked_at_utc": "2026-10-28T05:08:05.969270+00:00",
   "environment_id": "denovo-enzyme-design",
-  "maturity": "Specification",
+  "maturity": "In Progress",
   "validation_scope": "local specification consistency; no scientific execution",
   "status": "PASS",
-  "checks_passed": 129,
+  "checks_passed": 186,
   "checks": [
     {
       "check": "required package files exist",
@@ -24,6 +24,14 @@
     },
     {
       "check": "protocol schema internal references resolve",
+      "status": "PASS"
+    },
+    {
+      "check": "generation JSON Schema is structurally valid",
+      "status": "PASS"
+    },
+    {
+      "check": "generation schema internal references resolve",
       "status": "PASS"
     },
     {
@@ -227,7 +235,99 @@
       "status": "PASS"
     },
     {
-      "check": "maturity remains Specification",
+      "check": "synthetic monomer generation contract does not require full chemistry qualification",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer ready label without readiness evidence rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer readiness evidence accepted as syntax only, not scientific proof",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: motif required",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: current request binding required",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: generation constraints required",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: generation occupancy policy required",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: site-to-chain consistency",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: tool identity uniqueness",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation check: full chemistry fields not silently accepted as generation readiness",
+      "status": "PASS"
+    },
+    {
+      "check": "monomer generation cannot silently change requested assembly",
+      "status": "PASS"
+    },
+    {
+      "check": "synthetic homodimer generation contract does not require full chemistry qualification",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer ready label without readiness evidence rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer readiness evidence accepted as syntax only, not scientific proof",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: motif required",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: current request binding required",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: generation constraints required",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: generation occupancy policy required",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: site-to-chain consistency",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: tool identity uniqueness",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation check: full chemistry fields not silently accepted as generation readiness",
+      "status": "PASS"
+    },
+    {
+      "check": "homodimer generation cannot silently change requested assembly",
+      "status": "PASS"
+    },
+    {
+      "check": "maturity distinguishes controller implementation from scientific qualification",
+      "status": "PASS"
+    },
+    {
+      "check": "execution controller is declared separately from scientific adapters",
       "status": "PASS"
     },
     {
@@ -239,7 +339,7 @@
       "status": "PASS"
     },
     {
-      "check": "qualified reaction profile required",
+      "check": "generation readiness and complete qualification have separate admission contracts",
       "status": "PASS"
     },
     {
@@ -252,6 +352,46 @@
     },
     {
       "check": "unspecified assembly never defaults to monomer",
+      "status": "PASS"
+    },
+    {
+      "check": "enzyme identity and biology are resolved per request, never inherited from a pilot",
+      "status": "PASS"
+    },
+    {
+      "check": "autonomy fallback resolves to a schema-valid execution policy with consistent counts and budgets",
+      "status": "PASS"
+    },
+    {
+      "check": "exploratory generation does not inherit the complete final-qualification gate",
+      "status": "PASS"
+    },
+    {
+      "check": "profile preparation permits bounded tests only with their own dependencies and resource checks",
+      "status": "PASS"
+    },
+    {
+      "check": "agent review requires current evidence and cannot waive qualification",
+      "status": "PASS"
+    },
+    {
+      "check": "fallback caps include preparation and do not authorize new service spending or automatic extensions",
+      "status": "PASS"
+    },
+    {
+      "check": "persistent recovery requires current evidence and downstream invalidation",
+      "status": "PASS"
+    },
+    {
+      "check": "review distinguishes sequence-only generation acceptance from physical-integrity acceptance",
+      "status": "PASS"
+    },
+    {
+      "check": "whole-run controller enforces structured escalation and internal resolution of routine questions",
+      "status": "PASS"
+    },
+    {
+      "check": "setup accounting does not renew expired budgets or pretend to meter remote work",
       "status": "PASS"
     },
     {
@@ -307,6 +447,18 @@
       "status": "PASS"
     },
     {
+      "check": "every stage declares its own prerequisites",
+      "status": "PASS"
+    },
+    {
+      "check": "independent sequence folding can precede generated-coordinate repair",
+      "status": "PASS"
+    },
+    {
+      "check": "structural promotion requires reviewed and version-bound assessment models",
+      "status": "PASS"
+    },
+    {
       "check": "protocol and configuration agree on nine required rule groups",
       "status": "PASS"
     },
@@ -344,6 +496,10 @@
     },
     {
       "check": "homodimer sequence copies must match",
+      "status": "PASS"
+    },
+    {
+      "check": "RL extension is not represented as implemented fixed-controller behavior",
       "status": "PASS"
     },
     {
@@ -395,6 +551,10 @@
       "status": "PASS"
     },
     {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> runtime/controller.py",
+      "status": "PASS"
+    },
+    {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tasks/denovo_enzyme_001.md",
       "status": "PASS"
     },
@@ -411,6 +571,10 @@
       "status": "PASS"
     },
     {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> config/generation.schema.json",
+      "status": "PASS"
+    },
+    {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> config/protocol.schema.json",
       "status": "PASS"
     },
@@ -420,6 +584,14 @@
     },
     {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tests/specification-validation.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> tests/runtime-validation.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> runtime/CONTRACTS.md",
       "status": "PASS"
     },
     {
@@ -443,6 +615,14 @@
       "status": "PASS"
     },
     {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ENVIRONMENT_SPEC.md#autonomous-resolution-and-preparation",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> runtime/CONTRACTS.md",
+      "status": "PASS"
+    },
+    {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/README.md -> ../../CONTRIBUTING.md",
       "status": "PASS"
     },
@@ -455,7 +635,23 @@
       "status": "PASS"
     },
     {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> runtime/CONTRACTS.md#reviewer-and-repair-responses",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> config/generation.schema.json",
+      "status": "PASS"
+    },
+    {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> runtime/controller.py",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/ENVIRONMENT_SPEC.md -> runtime/agents.py",
       "status": "PASS"
     },
     {
@@ -471,11 +667,39 @@
       "status": "PASS"
     },
     {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/runtime/CONTRACTS.md -> ../config/request.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/runtime/CONTRACTS.md -> ../config/generation.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/runtime/CONTRACTS.md -> ../config/protocol.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/runtime/CONTRACTS.md -> ../ENVIRONMENT_SPEC.md#9-final-output-contract",
+      "status": "PASS"
+    },
+    {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/tests/ACCEPTANCE.md -> specification-validation.json",
       "status": "PASS"
     },
     {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../runtime/controller.py",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../config/generation.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../runtime/CONTRACTS.md#start-and-resume",
       "status": "PASS"
     },
     {
@@ -488,6 +712,10 @@
     },
     {
       "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../ENVIRONMENT_SPEC.md",
+      "status": "PASS"
+    },
+    {
+      "check": "local link resolves: environments/Denovo-Enzyme-Design/tasks/denovo_enzyme_001.md -> ../runtime/CONTRACTS.md",
       "status": "PASS"
     },
     {
@@ -529,20 +757,27 @@
     "PyYAML": "6.0.2"
   },
   "file_sha256": {
-    "README.md": "3f3942f5bbb7e1e2acc645c089c9c8374dc26ddad9fb4b2f8d19dfb33e203abb",
-    "ENVIRONMENT_SPEC.md": "24a1865f1032dcc19c2044fb8625dcc878b19089831eae3dce274bb396c0a22b",
-    "config/environment.yaml": "344944b51212f0059d79255162bfda057a94cf5dcd5711c56b8471d34f012202",
-    "config/request.schema.json": "2ad9a4cbf6aa9f9eecf23a6ad375c17768b867311a19e54559ac408ca34c446f",
+    "README.md": "9f55651e1d6d3939e0bd48fe5d317c367fdad848b4f7cc4b0e04c1641808c031",
+    "ENVIRONMENT_SPEC.md": "7081910a0f117d2c7119bc374adf4daaf51eef23727732631499e66a474b86d9",
+    "config/environment.yaml": "9ef82e77d5514f636933265f3749595aa59265262cc95bea6b13ec5c5f4f4a93",
+    "config/request.schema.json": "30555feede5ac6747e95942536f5b51cf88b8d882d9346aab22ca84f322fcca1",
     "config/protocol.schema.json": "bbc18bf5cd8b4b55f5f256e8401a833e2ef2a380be4cb0f6d51005b0d7fbc095",
-    "tasks/denovo_enzyme_001.md": "bee7c010d12a3387de0de431fdad3df8a5c99652409493e94b297e53f1c01481",
+    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3",
+    "tasks/denovo_enzyme_001.md": "98142150778d0694c9b49cc16c7b1de34403749850b04aa8c701a032a9ed6347",
     "tasks/request.example.json": "83c7cc9822cec4805936941f7f5d06218d54d5b7663079ed8370edc1eab9b258",
-    "tests/ACCEPTANCE.md": "732cfc128a2a80020662938c27631c9a40db55dd3d3ef47f578b6708186d26a9",
+    "tests/ACCEPTANCE.md": "b7a3e4ffd6c45335abd434318c189fb3bf23698414d17e809361d8c42c5e52d7",
     "tasks/homodimer.request.example.json": "cd9c69f0f18e15cffd03817e45a973fc965b3b291f512dbfa1f1bd5c318a4e1e",
-    "tests/validate_spec.py": "aa8684407a151c87f88cf7a12c9b18f826dfe51697a4dc86357809826b15bff1",
+    "runtime/CONTRACTS.md": "2864fb454785d646732b46aeb3516fe9acdd6401e00b87897e56418a17edf2b9",
+    "runtime/controller.py": "1faf052c00e1d12024b97deedcae2f69631fb33f35281b9015ccb2a2ae744b06",
+    "runtime/agents.py": "0e05831a7e7f11c330a56d610dc045967da5fd1969210fa71825cbb28fce406d",
+    "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
+    "runtime/reporting.py": "19c58201300690e55989f7a037ec16fcbbb5e7eb54866cb34ae131a59b6cc4ca",
+    "tests/validate_spec.py": "e0139451324baa5364a5c46a342fae2c8a646117364ddd7cf6222ff9c9e10a0c",
     "../../research/Denovo-Enzyme-Design/research-notes.md": "228281bed0164e76184426cb9cbf9ba0c1223969b8f3325e2ac1491ffe82e6f0",
     "../../research/Denovo-Enzyme-Design/references.md": "93174a902abb813dc31dca79429200fc21b4c8ec041af6573ad8e30fa4790378"
   },
   "not_performed": [
+    "live harness enforcement of autonomous preparation, agent review or fallback resource limits",
     "coordinate-artifact validation, assembly reconstruction or scientific interface assessment",
     "execution or scientific qualification of either assembly route",
     "qualification of a complete reaction profile",

@@ -1,6 +1,7 @@
 schema_version: "2.0"
 environment_id: denovo-enzyme-design
-maturity: Specification
+maturity: In Progress
+execution_controller_included: true
 scientific_execution_included: false
 qualified_profiles_included: false
 
@@ -9,15 +10,89 @@ scope:
   supported_assemblies: [monomer, homodimer]
   request_assembly_fallback: resolve_from_evidence
   cofactors: none
-  require_qualified_reaction_profile: true
-  unsupported_science_status: PROTOCOL_REQUIRED
+  generation_requires_reviewed_generation_contract: true
+  qualification_requires_qualified_reaction_profile: true
+  unsupported_science_status: BLOCKED
+  missing_scientific_prerequisite_reason: PROTOCOL_REQUIRED
   user_information_status: NEEDS_INPUT
   infrastructure_status: BLOCKED
 
 contracts:
   request: config/request.schema.json
+  generation: config/generation.schema.json
   protocol: config/protocol.schema.json
   task: tasks/denovo_enzyme_001.md
+
+autonomy:
+  policy_version: "2.0"
+  user_interface: short_scientific_request_and_available_inputs
+  request_schema_applies_to: agent_resolved_execution_request
+  routine_human_approval: false
+  scientific_preparation_owner: agent
+  scientific_target: resolved_separately_for_each_request
+  example_biology_is_default: false
+  cross_target_profile_reuse: applicability_review_and_current_request_binding_required
+  stage_review_owner: agent_with_evidence_evaluator
+  review_required_before_next_stage: true
+  review_uses_current_artifact_hashes_and_rule_evidence: true
+  missing_profile_action: prepare_and_test_draft
+  preparation_tasks_without_qualified_profile:
+    - reference_and_reaction_preparation
+    - bounded_adapter_fixture_tests
+    - bounded_reference_and_control_calculations
+  preparation_requires_test_specific_inputs_and_resource_checks: true
+  preparation_outputs_are_qualified_designs: false
+  generation_entry: reviewed_generation_contract
+  full_profile_required_for: final_qualification
+  late_missing_capability: finish_eligible_work_then_partial
+  scientific_status_is_a_dispatch_permission: false
+  reuse_existing_harness: true
+  dependency_setup: isolated_runtimes_with_existing_access
+  missing_adapter_action: implement_and_test_within_policy
+  tool_discovery: catalog_schemas_official_sources_local_runtimes_and_weights
+  tool_selection: compatible_methods_with_recorded_rationale
+  prescribed_tool_replacement: preserve_explicit_test_condition
+  defaults_precedence: explicit_user_requirements_then_run_policy_then_evidence_backed_assumptions
+  scientific_defaults: documented_reference_conditions_and_method_applicability
+  require_default_provenance: true
+  qualification_requires_actual_evidence: true
+  reviewer_opinion_can_override_failed_or_unresolved_gate: false
+  optional_characterization_missing_blocks_run: false
+  user_question_reasons:
+    - essential_goal_or_reaction_ambiguity_unresolvable_from_evidence
+    - required_access_or_resources_outside_existing_authorization
+    - incompatible_explicit_user_requirements
+  missing_capability_action: finish_independent_work_then_report_specific_blocker
+  resolution_record: resolution_decisions.json
+  review_record: trajectory.jsonl
+  review_actions: [accept, accept_sequence_only, retry, repair, reject, blocked, needs_input]
+  persistent_recovery: true
+  whole_run_entrypoint: runtime/controller.py
+  user_questions_require_structured_reviewed_reason: true
+  routine_question_action: bounded_internal_repair
+  resume_requires_current_input_and_artifact_hashes: true
+  repair_invalidates_affected_downstream_evidence: true
+  fallback_pilot:
+    purpose: conservative_local_development_ceiling_not_completion_estimate
+    controller_mode: fixed
+    seed: 42
+    final_count: 1
+    max_generated: 2
+    max_refinements_per_lineage: 0
+    max_chemistry_candidates: 1
+    budget:
+      wall_time_hours: 2
+      cpu_core_hours: 16
+      gpu_hours: 1
+    max_concurrent_scientific_jobs: 1
+    external_service_use: within_existing_authorized_entitlements_and_caps_only
+    additional_service_spend_usd: 0
+    includes_preparation_controls_retries_and_candidate_work: true
+    setup_accounting: separate_within_same_total_limits
+    wall_accounting: active_controller_and_job_time
+    respect_explicit_absolute_deadline: true
+    expired_historical_allowance_is_reusable: false
+    automatically_extend_limits: false
 
 version_policy:
   immutable_code_or_container_reference: required
@@ -40,42 +115,53 @@ required_rule_groups:
 stages:
   - id: prepare
     depends_on: []
-    capabilities: [chemical_normalization, biological_assembly_resolution, qualified_profile_resolution]
+    capabilities: [chemical_normalization, biological_assembly_resolution, generation_readiness_resolution]
+    entry_requirement: resolvable_scientific_intent_and_existing_access
     output: 00_inputs
   - id: generate
     depends_on: [prepare]
     capabilities: [constrained_scaffold_and_sequence_generation]
     homodimer_capabilities: [assembly_scaffold_generation, tied_sequence_design]
+    entry_requirement: reviewed_generation_contract_and_verified_generator_inputs
     output: 01_designs
+    sequence_only_fallback: accept_reviewed_sequence_identity_with_hashed_geometry_defect_report_without_claiming_structure_integrity
   - id: sequence_screen
     depends_on: [generate]
     capabilities: [sequence_validation, solubility_prediction, thermal_endpoint_prediction, pH_endpoint_prediction]
+    entry_requirement: designed_sequences_and_declared_assembly_mapping_even_if_backbone_geometry_unresolved
     output: 02_sequences
   - id: fold
-    depends_on: [sequence_screen]
+    depends_on: [generate, sequence_screen]
     capabilities: [independent_fold_prediction, scaffold_and_catalytic_site_comparison]
     homodimer_capabilities: [independent_full_assembly_prediction, interface_evidence_assessment, per_chain_and_site_checks]
+    entry_requirement: eligible_sequences_and_compatible_prediction_method;_independent_sequence_prediction_does_not_require_repaired_generated_coordinates
+    exit_requirement: reviewed_sequence_bound_assessment_models_or_matched_structure_preparation;_downstream_structural_evidence_must_use_the_reviewed_model_versions
     output: 03_folds
   - id: aggregation
     depends_on: [fold]
     capabilities: [structural_aggregation_and_hotspot_assessment]
     homodimer_capabilities: [assembled_surface_assessment, profile_defined_dissociated_surface_assessment]
+    entry_requirement: mapped_structures_and_applicable_property_methods
     output: 04_properties
   - id: complex
     depends_on: [aggregation]
     capabilities: [enzyme_substrate_complex_prediction, reactive_pose_assessment]
+    entry_requirement: screened_assembly_without_known_disqualifying_failure_and_prepared_substrate
     output: 05_complexes
   - id: catalytic_states
     depends_on: [complex]
     capabilities: [state_ensemble_assessment, protonation_assessment, catalytic_geometry_evaluation]
+    entry_requirement: mapped_complexes_and_evidence_backed_mechanistic_state_definitions
     output: 06_states
   - id: chemistry
     depends_on: [catalytic_states]
     capabilities: [conformational_sampling, coupled_quantum_mechanical_evaluation, profile_defined_energy_or_free_energy_validation]
+    entry_requirement: prepared_states_and_control_tested_chemistry_method
     output: 07_chemistry
   - id: evaluate
     depends_on: [chemistry]
     capabilities: [independent_frozen_gate_evaluation, diversity_clustering_and_ranking]
+    entry_requirement: current_evidence_and_full_profile_for_any_qualification_claim
     output: 08_results
 
 assembly_contract:
@@ -117,6 +203,7 @@ qualification:
 
 controller:
   default_mode: fixed
+  implemented_modes: [fixed]
   supported_modes: [fixed, rl_inference, rl_training]
   rl_learning_method: profile_defined_with_action_masking
   episode_unit: candidate_lineage
@@ -147,10 +234,16 @@ controller:
   artifacts: 09_rl
 
 budgets:
-  source: resolved_request_and_qualified_profile
+  source: resolved_request_run_policy_or_autonomy_fallback
+  respect_stricter_allocation_and_entitlement_limits: true
+  policy_limits_are_completion_estimates: false
   enforce_before_dispatch: true
   reserve_finalist_chemistry: true
   charge_retries: true
+  setup_and_campaign_accounting: separate_within_explicit_total
+  local_controller_limits: active_wall_time_attempts_and_subprocess_timeouts
+  scientific_job_limits: existing_harness_reservation_and_metering_required
+  remote_costs_inferred_from_local_process_time: false
   estimate_full_assembly_and_site_coverage: true
   relax_gates_when_exhausted: false
 

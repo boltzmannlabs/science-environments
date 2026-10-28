@@ -66,6 +66,80 @@ def expect_invalid(request: dict, schema: dict, name: str) -> None:
         raise AssertionError(name)
 
 
+def validate_generation(profile: dict, schema: dict, request: dict | None = None) -> None:
+    """Validate generation contract semantics; referenced artifacts need runtime review."""
+    Draft202012Validator(schema).validate(profile)
+    if not finite_numbers(profile):
+        raise ValueError('non-finite generation profile value')
+    assembly = profile['assembly']
+    chains = assembly['sequence_groups'][0]['chain_ids']
+    if len(set(chains)) != assembly['subunit_count']:
+        raise ValueError('generation assembly chain count mismatch')
+    sites = assembly['active_sites']
+    if len({site['site_id'] for site in sites}) != len(sites):
+        raise ValueError('duplicate generation site identity')
+    if any(not set(site['chain_ids']).issubset(chains) for site in sites):
+        raise ValueError('generation site references absent chain')
+    tools = profile['tool_lock']
+    if len({tool['tool_id'] for tool in tools}) != len(tools):
+        raise ValueError('duplicate generation implementation identity')
+    if request is not None:
+        expected = hashlib.sha256(json.dumps(request, sort_keys=True, allow_nan=False).encode()).hexdigest()
+        if profile['request_sha256'] != expected:
+            raise ValueError('generation profile belongs to another resolved request')
+        mode = request.get('assembly', {}).get('mode', 'resolve_from_evidence')
+        if mode != 'resolve_from_evidence' and mode != assembly['kind']:
+            raise ValueError('requested assembly differs from generation contract')
+
+
+def check_generation_contracts(schemas: dict) -> None:
+    for kind in ['monomer', 'homodimer']:
+        full = synthetic_protocol(schemas['protocol'], kind)
+        profile = {key: copy.deepcopy(full[key]) for key in [
+            'profile_id', 'version', 'reaction', 'assembly', 'motif', 'motif_map',
+            'generator_conditions', 'tool_lock']}
+        profile.update(schema_version='1.1', request_sha256='0' * 64, status='draft', readiness_evidence=[],
+                       generation_constraints=copy.deepcopy(full['generator_conditions']))
+        profile['assembly']['generation_state_policy'] = profile['assembly'].pop('state_policy')
+        profile['assembly'].pop('interface_protocol', None)
+        validate_generation(profile, schemas['generation'])
+        require(True, f'synthetic {kind} generation contract does not require full chemistry qualification')
+        profile['status'] = 'ready'
+        try:
+            validate_generation(profile, schemas['generation'])
+        except (ValidationError, ValueError):
+            require(True, f'{kind} ready label without readiness evidence rejected')
+        else:
+            raise AssertionError('ready without evidence accepted')
+        profile['readiness_evidence'] = [copy.deepcopy(full['reaction'])]
+        validate_generation(profile, schemas['generation'])
+        require(True, f'{kind} readiness evidence accepted as syntax only, not scientific proof')
+        for label, change in [
+            ('motif required', lambda p: p.pop('motif')),
+            ('current request binding required', lambda p: p.pop('request_sha256')),
+            ('generation constraints required', lambda p: p.pop('generation_constraints')),
+            ('generation occupancy policy required', lambda p: p['assembly'].pop('generation_state_policy')),
+            ('site-to-chain consistency', lambda p: p['assembly']['active_sites'][0].update(chain_ids=['unknown'])),
+            ('tool identity uniqueness', lambda p: p['tool_lock'].append(copy.deepcopy(p['tool_lock'][0]))),
+            ('full chemistry fields not silently accepted as generation readiness', lambda p: p.update(chemistry=full['chemistry'])),
+        ]:
+            bad = copy.deepcopy(profile)
+            change(bad)
+            try:
+                validate_generation(bad, schemas['generation'])
+            except (ValidationError, ValueError):
+                require(True, f'{kind} generation check: {label}')
+            else:
+                raise AssertionError(label)
+        mismatch = read_json('tasks/request.example.json' if kind == 'homodimer' else 'tasks/homodimer.request.example.json')
+        try:
+            validate_generation(profile, schemas['generation'], mismatch)
+        except ValueError:
+            require(True, f'{kind} generation cannot silently change requested assembly')
+        else:
+            raise AssertionError('requested assembly mismatch accepted')
+
+
 def validate_protocol(protocol: dict, schema: dict, request: dict | None = None) -> None:
     """Check contract semantics only; do not certify artifacts or enzyme chemistry."""
     Draft202012Validator(schema).validate(protocol)
@@ -276,16 +350,18 @@ def main() -> None:
     required_files = [
         'README.md', 'ENVIRONMENT_SPEC.md',
         'config/environment.yaml', 'config/request.schema.json',
-        'config/protocol.schema.json', 'tasks/denovo_enzyme_001.md',
+        'config/protocol.schema.json', 'config/generation.schema.json', 'tasks/denovo_enzyme_001.md',
         'tasks/request.example.json', 'tests/ACCEPTANCE.md',
         'tasks/homodimer.request.example.json',
+        'runtime/CONTRACTS.md',
+        'runtime/controller.py', 'runtime/agents.py', 'runtime/contracts.py', 'runtime/reporting.py',
         'tests/validate_spec.py',
         '../../research/Denovo-Enzyme-Design/research-notes.md',
         '../../research/Denovo-Enzyme-Design/references.md',
     ]
     require(all((ROOT / name).is_file() for name in required_files), 'required package files exist')
 
-    schemas = {name: read_json(f'config/{name}.schema.json') for name in ['request', 'protocol']}
+    schemas = {name: read_json(f'config/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
     for name, schema in schemas.items():
         Draft202012Validator.check_schema(schema)
         require(True, f'{name} JSON Schema is structurally valid')
@@ -322,15 +398,62 @@ def main() -> None:
     for bad, name in cases:
         expect_invalid(bad, schemas['request'], name)
     check_assembly_contracts(schemas)
+    check_generation_contracts(schemas)
 
     config = yaml.safe_load((ROOT/'config/environment.yaml').read_text())
-    require(config['maturity'] == 'Specification', 'maturity remains Specification')
+    require(config['maturity'] == 'In Progress', 'maturity distinguishes controller implementation from scientific qualification')
+    require(config['execution_controller_included'] is True, 'execution controller is declared separately from scientific adapters')
     require(config['scientific_execution_included'] is False, 'no scientific implementation claimed')
     require(config['qualified_profiles_included'] is False, 'no qualified chemistry profile claimed')
-    require(config['scope']['require_qualified_reaction_profile'] is True, 'qualified reaction profile required')
+    require(config['scope']['generation_requires_reviewed_generation_contract']
+            and config['scope']['qualification_requires_qualified_reaction_profile'],
+            'generation readiness and complete qualification have separate admission contracts')
     require(config['schema_version'] == '2.0', 'configuration uses explicit assembly contract version')
     require(config['scope']['supported_assemblies'] == ['monomer', 'homodimer'], 'specified assembly scope is monomer and homodimer')
     require(config['scope']['request_assembly_fallback'] == 'resolve_from_evidence', 'unspecified assembly never defaults to monomer')
+    autonomy = config['autonomy']
+    fallback = autonomy['fallback_pilot']
+    require(autonomy['scientific_target'] == 'resolved_separately_for_each_request'
+            and not autonomy['example_biology_is_default'],
+            'enzyme identity and biology are resolved per request, never inherited from a pilot')
+    fallback_request = copy.deepcopy(request)
+    fallback_request['execution'] = {key: copy.deepcopy(fallback[key]) for key in request['execution']}
+    validate_request(fallback_request, schemas['request'])
+    require(True, 'autonomy fallback resolves to a schema-valid execution policy with consistent counts and budgets')
+    require(autonomy['generation_entry'] == 'reviewed_generation_contract'
+            and autonomy['full_profile_required_for'] == 'final_qualification'
+            and not autonomy['preparation_outputs_are_qualified_designs'],
+            'exploratory generation does not inherit the complete final-qualification gate')
+    require({'bounded_adapter_fixture_tests', 'bounded_reference_and_control_calculations'}.issubset(
+                autonomy['preparation_tasks_without_qualified_profile'])
+            and autonomy['preparation_requires_test_specific_inputs_and_resource_checks'],
+            'profile preparation permits bounded tests only with their own dependencies and resource checks')
+    require(autonomy['review_required_before_next_stage']
+            and autonomy['review_uses_current_artifact_hashes_and_rule_evidence']
+            and autonomy['qualification_requires_actual_evidence']
+            and not autonomy['reviewer_opinion_can_override_failed_or_unresolved_gate'],
+            'agent review requires current evidence and cannot waive qualification')
+    require(fallback['additional_service_spend_usd'] == 0
+            and fallback['includes_preparation_controls_retries_and_candidate_work']
+            and not fallback['automatically_extend_limits']
+            and config['budgets']['respect_stricter_allocation_and_entitlement_limits'],
+            'fallback caps include preparation and do not authorize new service spending or automatic extensions')
+    require(autonomy['policy_version'] == '2.0'
+            and autonomy['persistent_recovery']
+            and autonomy['resume_requires_current_input_and_artifact_hashes']
+            and autonomy['repair_invalidates_affected_downstream_evidence'],
+            'persistent recovery requires current evidence and downstream invalidation')
+    require(set(autonomy['review_actions']) == {'accept', 'accept_sequence_only', 'retry', 'repair', 'reject', 'blocked', 'needs_input'},
+            'review distinguishes sequence-only generation acceptance from physical-integrity acceptance')
+    require(autonomy['whole_run_entrypoint'] == 'runtime/controller.py'
+            and autonomy['user_questions_require_structured_reviewed_reason']
+            and autonomy['routine_question_action'] == 'bounded_internal_repair',
+            'whole-run controller enforces structured escalation and internal resolution of routine questions')
+    require(fallback['setup_accounting'] == 'separate_within_same_total_limits'
+            and fallback['respect_explicit_absolute_deadline']
+            and not fallback['expired_historical_allowance_is_reusable']
+            and not config['budgets']['remote_costs_inferred_from_local_process_time'],
+            'setup accounting does not renew expired budgets or pretend to meter remote work')
     stages = config['stages']
     expected = ['prepare', 'generate', 'sequence_screen', 'fold', 'aggregation', 'complex', 'catalytic_states', 'chemistry', 'evaluate']
     require([s['id'] for s in stages] == expected, 'complete cost-ordered stage sequence')
@@ -341,6 +464,12 @@ def main() -> None:
     require(len({s['output'] for s in stages}) == len(stages), 'each stage has its own artifact location')
     require(stages[1]['capabilities'] == ['constrained_scaffold_and_sequence_generation'], 'scaffold and sequence generation precede sequence-property screening')
     require(all(stage.get('capabilities') and 'backends' not in stage for stage in stages), 'stages specify operations independently of software selection')
+    require(all(stage.get('entry_requirement') for stage in stages), 'every stage declares its own prerequisites')
+    fold = next(stage for stage in stages if stage['id'] == 'fold')
+    require('does_not_require_repaired_generated_coordinates' in fold['entry_requirement'],
+            'independent sequence folding can precede generated-coordinate repair')
+    require('reviewed_model_versions' in fold['exit_requirement'],
+            'structural promotion requires reviewed and version-bound assessment models')
 
     rule_groups = set(schemas['protocol']['$defs']['rule']['properties']['group']['enum'])
     require(set(config['required_rule_groups']) == rule_groups and len(rule_groups) == 9, 'protocol and configuration agree on nine required rule groups')
@@ -356,6 +485,7 @@ def main() -> None:
     require(config['assembly_contract']['homodimer_chain_sequences'] == 'identical', 'homodimer sequence copies must match')
 
     control = config['controller']
+    require(control['implemented_modes'] == ['fixed'], 'RL extension is not represented as implemented fixed-controller behavior')
     reward = control['reward']
     require(reward['per_required_rule_positive_weight'] and reward['weight_sum'] == 1, 'every required rule has positive normalized reward weight')
     require(reward['score_range'] == [0, 1] and reward['gamma'] == 1, 'bounded potential with finite-episode discount')
@@ -393,7 +523,7 @@ def main() -> None:
     report = {
         'checked_at_utc': datetime.now(timezone.utc).isoformat(),
         'environment_id': config['environment_id'],
-        'maturity': 'Specification',
+        'maturity': config['maturity'],
         'validation_scope': 'local specification consistency; no scientific execution',
         'status': 'PASS',
         'checks_passed': len(checks),
@@ -401,6 +531,7 @@ def main() -> None:
         'dependencies': {'python': sys.version.split()[0], 'jsonschema': version('jsonschema'), 'PyYAML': version('PyYAML')},
         'file_sha256': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in required_files},
         'not_performed': [
+            'live harness enforcement of autonomous preparation, agent review or fallback resource limits',
             'coordinate-artifact validation, assembly reconstruction or scientific interface assessment',
             'execution or scientific qualification of either assembly route',
             'qualification of a complete reaction profile',

@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Denovo Enzyme Design user request",
+  "title": "Denovo Enzyme Design resolved execution request",
+  "description": "The agent resolves a short user request into this contract using explicit requirements, run policy and documented scientific assumptions. The user need not supply every field manually. Validate before candidate dispatch; incomplete preparation drafts are not runnable requests.",
   "type": "object",
   "additionalProperties": false,
   "required": ["task_id", "reaction", "conditions", "constraints", "execution"],

@@ -1,0 +1,127 @@
+{
+  "scope": "software_behavior_and_harness_transport_only",
+  "recorded_at": "2026-10-28T05:08:29.465448+00:00",
+  "tests_run": 39,
+  "tests_successful": true,
+  "failures": [],
+  "errors": [],
+  "live_harness_smoke": {
+    "live_harness_smoke": "PASS",
+    "exit_code": 0,
+    "timed_out": false,
+    "elapsed_seconds": 26.796516344882548,
+    "error": null,
+    "response": {
+      "status": "completed",
+      "scope": "software_transport_only",
+      "artifacts": [],
+      "usage": {
+        "external_cpu_core_hours": 0,
+        "gpu_hours": 0,
+        "service_spend_usd": 0
+      }
+    },
+    "scientific_jobs": 0,
+    "recorded_at": "2026-10-27T05:22:05.887328+00:00",
+    "tested_agent_bridge_sha256": "b67a6b6fe65c9cec4faa18b0dca5510094684d8f0c43d3a0305436ab2619f0eb",
+    "scope_note": "Historical live transport test; the updated clarification prompt has not been rerun against a live model."
+  },
+  "versions": {
+    "python": "3.13.7",
+    "jsonschema": "4.19.2",
+    "PyYAML": "6.0.2",
+    "numpy": "2.5.1"
+  },
+  "file_sha256": {
+    "config/environment.yaml": "9ef82e77d5514f636933265f3749595aa59265262cc95bea6b13ec5c5f4f4a93",
+    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3",
+    "runtime/CONTRACTS.md": "2864fb454785d646732b46aeb3516fe9acdd6401e00b87897e56418a17edf2b9",
+    "runtime/agents.py": "0e05831a7e7f11c330a56d610dc045967da5fd1969210fa71825cbb28fce406d",
+    "runtime/assessment.py": "ed55abc057a6b9abc6f25fe9a2c7777bc49139e60c9a7ed5cc9bd254742a634c",
+    "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
+    "runtime/controller.py": "1faf052c00e1d12024b97deedcae2f69631fb33f35281b9015ccb2a2ae744b06",
+    "runtime/reporting.py": "19c58201300690e55989f7a037ec16fcbbb5e7eb54866cb34ae131a59b6cc4ca",
+    "runtime/structure_preparation.py": "a4e43e30b9a0e3e030e492433588c3cf4e8bfd522c6e6ff207bf8e0b03300edf",
+    "tests/test_agents.py": "735d123581411417ddd3d794bf9dfda6b3d650740ffe546ff55e532498d269e6",
+    "tests/test_assessment.py": "c8ef153495b73b4c460e597cc34f7942c83d04a09ead3f6904cc9a34b1a92474",
+    "tests/test_contracts.py": "d3a5f47db44c4c8582ffcd96deaa1efeec8f494fdf1584a5ba3cb5e191421486",
+    "tests/test_controller.py": "a6f2b7b21f8857de7a57931ecbbd103b8182573b477ef2cd18966489205269f1",
+    "tests/test_structure_preparation.py": "99d7dab2a0f7ee7584a4ada8fe724b0dbd4a94b71f649a96fba5b645b369ae2a"
+  },
+  "not_validated": [
+    "Target-specific catalytic-state geometry and chemical barriers",
+    "Complete target-specific scientific adapters and controls",
+    "End-to-end enzyme activity or property improvements",
+    "Remote provider resource enforcement"
+  ],
+  "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py'",
+  "elapsed_seconds": 23.982,
+  "clarification_regressions": [
+    "Routine and misclassified questions return to internal repair and stage execution continues",
+    "Essential unresolved intent and access boundaries retain structured user questions",
+    "Repeated routine questions exhaust bounded repair without becoming user approval requests"
+  ],
+  "live_preparation_review": {
+    "scope": "Historical live read-only platform discovery at the recorded bridge hash; not a test of later deadline/request-binding changes",
+    "status": "completed",
+    "routine_user_questions": 0,
+    "scientific_submissions": 0,
+    "evidence": "LDEX_Environment_Test/fast_pilot_20261027/platform_preflight_receipt.json",
+    "tested_bridge_sha256": "e9c4c53d86b312c1a897a1eb7689b445b5b91ef6943c567adde481a1733a7026"
+  },
+  "request_isolation_regression": "A generation profile with a different resolved-request binding is rejected before generation despite reviewer acceptance.",
+  "call_budget_regression": "Actual deadline and SCI turn budget are provided to workers; writing a response requires reserved time and a final tool turn.",
+  "live_artifact_review": {
+    "scope": "Read-only review of external pilot evidence; not a full scientific controller run",
+    "status": "completed",
+    "decision": "integration_only",
+    "qualified_designs": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 112.50852257711813,
+    "tested_bridge_sha256": "102b0cdae34576640436c6eadb7fa000a9ba85b734c256b4ba87b6e0b3a39983",
+    "recorded_at": "2026-10-27T06:15:23.328841+00:00",
+    "evidence": "LDEX_Environment_Test/fast_pilot_20261027/independent_review_retry_receipt.json",
+    "prior_failure_preserved": true
+  },
+  "structure_preparation_alignment_tests": {
+    "scope": "Software rotations and independent artifact placement controls; not catalytic qualification",
+    "proper_rotation_required": true,
+    "named_backbone_anchors_for_missing_CB": true,
+    "historical_evidence_preserved": true,
+    "placement_evidence": "LDEX_Environment_Test/geometry_adapter_20261027/template_reflection_diagnostic_v2/result.json",
+    "actual_adapter_placement_evidence": "LDEX_Environment_Test/geometry_adapter_20261027/adapter_placement_verification/result.json",
+    "complete_preparation": "Not validated; CPU-only regression timed out during candidate missing-atom optimization at 180 seconds"
+  },
+  "optimization_review": {
+    "source_commit": "a8dec6d100baa6854b1fc127d6cfa8bba339cac7",
+    "source_tree": "9b5c9a4bb64ef227f0cd909069c42855927338c8",
+    "source_path": "environments/enzyme-variant-optimization",
+    "source_modified": false,
+    "adapted_patterns": [
+      "Separate sequence identity and coordinate versions",
+      "Bind downstream evidence and exports to exact reviewed models",
+      "Preserve remote uncertainty after controller termination"
+    ],
+    "validation_scope": "Synthetic software regressions only; no scientific service or model requests; no enzyme qualification"
+  },
+  "skipped": [
+    {
+      "test": "test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget",
+      "reason": "OpenMM isolated runtime not in this interpreter"
+    }
+  ],
+  "tests_passed": 38,
+  "additional_runtime_check": {
+    "command": "python -B -m unittest test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget -v",
+    "working_directory": "tests",
+    "tests_run": 1,
+    "tests_successful": true,
+    "elapsed_seconds": 0.337,
+    "scope": "OpenMM API restoration software test rerun in its installed runtime on the publication snapshot; no model or service job",
+    "interpreter": "OpenMM-enabled isolated Python runtime; installation prefix omitted from portable command"
+  },
+  "publication_validation": {
+    "base_commit": "a8dec6d100baa6854b1fc127d6cfa8bba339cac7",
+    "scope": "Isolated latest-main checkout with only the de novo environment changes; software validation only"
+  }
+}
