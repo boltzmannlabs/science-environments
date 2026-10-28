@@ -6,6 +6,23 @@
 
 Launch, monitor, checkpoint and resume a declared MD job. Use the [environment specification](../ENVIRONMENT_SPEC.md) for the shared contract. Do not invent trajectories, model suitability, benchmark scores or online-resource evidence.
 
+## Exact Input Files
+
+Use [MD-CORE-001-water-box](../inputs/MD-CORE-001-water-box/task.json). The
+structure and request hashes are frozen in that packet; do not substitute a
+different water box.
+
+## Runtime and Execution
+
+OpenMM 8.2, `tip3p.xml`, CUDA when available, 300 K, 1 fs, 250 minimization
+iterations and 1,000 production steps:
+
+```bash
+python scripts/run_core_openmm.py --repeat 1
+```
+
+Repeat with IDs 2–4 and preserve each JSON, DCD and log output.
+
 ## Target
 
 - **System/resource:** Frozen protocol, resource limits and execution manifest.
@@ -35,6 +52,9 @@ Launch, monitor, checkpoint and resume a declared MD job. Use the [environment s
 
 Required output includes a readable report, machine-readable decision, settings and versions, units, hashes, resource use, limitations and exact stop reason. Missing or unconverged evidence remains unresolved and is never fabricated.
 
+For this case, the independent evaluator requires 1,482 atoms, 10 trajectory
+frames, finite energies, input hashes, trajectory/log hashes, and status `PASS`.
+
 ## Constraints
 
 - **Compute/time:** obey declared budgets; retries and downloads are bounded and recorded.
@@ -49,4 +69,3 @@ Required output includes a readable report, machine-readable decision, settings 
 - Do not relax gates to obtain a pass.
 - Distinguish reproduced published results from new observations and unverified claims.
 - Preserve all task lineage and audit evidence.
-

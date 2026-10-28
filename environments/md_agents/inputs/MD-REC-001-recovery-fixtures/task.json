@@ -1,0 +1,11 @@
+{
+  "task_id": "MD-REC-001-recovery-fixtures",
+  "agent_ids": ["MD-11", "MD-18", "MD-19", "MD-20"],
+  "description": "Run deterministic recovery checks against preserved failure evidence without changing the original case.",
+  "input_files": {"fixtures": "../../recovery_agents/cases/fixtures.json", "contracts": "../../recovery_agents/contracts.json", "cross_domain_contracts": "../../recovery_agents/cross_domain/contracts.json"},
+  "runtime": {"harness": "python recovery_agents/scripts/run_recovery_harness.py", "python": "3.12", "retry_limit": 1, "network": false, "walltime_limit_s": 30},
+  "execution": {"command": "python recovery_agents/scripts/run_recovery_harness.py", "working_directory": "environments/md_agents", "output_file": "recovery_agents/results/results.json"},
+  "expected_outputs": ["recovery_agents/results/results.json"],
+  "acceptance": {"required_agents": 10, "false_success_rejected": true, "insufficient_ess_returns_review": true, "original_evidence_preserved": true},
+  "limitations": "Fixture qualification tests diagnosis and evidence handling; it is not a production MD trajectory benchmark."
+}
