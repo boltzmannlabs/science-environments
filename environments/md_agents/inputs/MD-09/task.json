@@ -1,0 +1,18 @@
+{
+  "task_id": "MD-09",
+  "agent_id": "MD-09",
+  "agent_name": "Thermostat and Barostat",
+  "group": "core",
+  "input": {
+    "fixture": "alanine_dipeptide_box.pdb",
+    "parameters": {
+      "thermostat": "Langevin",
+      "barostat": "MonteCarlo",
+      "temperature_K": 300,
+      "pressure_bar": 1
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

@@ -1,0 +1,27 @@
+{
+  "task_id": "MD-25",
+  "agent_id": "MD-25",
+  "agent_name": "Model Compatibility",
+  "group": "online",
+  "input": {
+    "fixture": "lfm_checkpoint_metadata.json",
+    "parameters": {
+      "model_elements": [
+        "H",
+        "C",
+        "N",
+        "O"
+      ],
+      "system_elements": [
+        "H",
+        "C",
+        "N",
+        "O",
+        "S"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}
