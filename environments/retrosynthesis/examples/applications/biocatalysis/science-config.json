@@ -1,0 +1,36 @@
+{
+  "schema_version": "srg-science-config-v1",
+  "application_config": {
+    "schema_version": "srg-application-config-v1",
+    "biocatalytic_records": [
+      {
+        "record_id": "RHEA:58148",
+        "reactants": [
+          "CCOC(C)=O",
+          "O"
+        ],
+        "products": [
+          "CCO",
+          "CC(=O)[O-]",
+          "[H+]"
+        ],
+        "enzyme_name": "ethyl acetate hydrolase",
+        "enzyme_class": "3.1.1.113",
+        "cofactors": [],
+        "conditions": [],
+        "source_url": "https://www.rhea-db.org/rhea/58148",
+        "source_locator": "RHEA:58148 displayed reaction participants and EC3.1.1.113; public page extracted 2026-10-27",
+        "evidence_kind": "curated_database",
+        "notes": "Public database reaction identity, cross-checked against IUBMB enzyme-class nomenclature. No enzyme preparation, cofactors, operating conditions, quantities, activity or yield supplied.",
+        "enzyme_availability": "unknown",
+        "enzyme_availability_source": null,
+        "enzyme_availability_locator": null
+      }
+    ]
+  },
+  "source_access_mode": "evidence_retrieval",
+  "scientific_limits": {
+    "retrieval_calls": 1,
+    "observation_calls": 0
+  }
+}

@@ -1,0 +1,1076 @@
+{
+  "components": {
+    "schemas": {
+      "ActionRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "inspect",
+              "expand",
+              "propose_route",
+              "validate",
+              "predict_conditions",
+              "rank_routes",
+              "submit"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "arguments": {
+            "additionalProperties": true,
+            "title": "Arguments",
+            "type": "object"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "title": "ActionRequest",
+        "type": "object"
+      },
+      "AssessmentRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "route": {
+            "$ref": "#/components/schemas/RouteCandidate"
+          },
+          "task": {
+            "$ref": "#/components/schemas/Task"
+          }
+        },
+        "required": [
+          "task",
+          "route"
+        ],
+        "title": "AssessmentRequest",
+        "type": "object"
+      },
+      "Budget": {
+        "additionalProperties": false,
+        "properties": {
+          "max_actions": {
+            "default": 200,
+            "maximum": 100000.0,
+            "minimum": 1.0,
+            "title": "Max Actions",
+            "type": "integer"
+          },
+          "max_expansions": {
+            "default": 1000,
+            "maximum": 100000.0,
+            "minimum": 1.0,
+            "title": "Max Expansions",
+            "type": "integer"
+          },
+          "max_llm_tokens": {
+            "default": 100000,
+            "minimum": 1.0,
+            "title": "Max Llm Tokens",
+            "type": "integer"
+          },
+          "max_wall_seconds": {
+            "default": 1800,
+            "exclusiveMinimum": 0.0,
+            "title": "Max Wall Seconds",
+            "type": "number"
+          },
+          "top_k": {
+            "default": 10,
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Top K",
+            "type": "integer"
+          }
+        },
+        "title": "Budget",
+        "type": "object"
+      },
+      "ConditionCandidate": {
+        "additionalProperties": false,
+        "properties": {
+          "additive": {
+            "title": "Additive",
+            "type": "string"
+          },
+          "aryl halide": {
+            "title": "Aryl Halide",
+            "type": "string"
+          },
+          "base": {
+            "title": "Base",
+            "type": "string"
+          },
+          "candidate_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "ligand": {
+            "title": "Ligand",
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "aryl halide",
+          "ligand",
+          "additive",
+          "base"
+        ],
+        "title": "ConditionCandidate",
+        "type": "object"
+      },
+      "ConditionRankingRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/ConditionCandidate"
+            },
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "Candidates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidates"
+        ],
+        "title": "ConditionRankingRequest",
+        "type": "object"
+      },
+      "Constraints": {
+        "additionalProperties": false,
+        "properties": {
+          "available_equipment": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Available Equipment",
+            "type": "array"
+          },
+          "forbidden_operations": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Forbidden Operations",
+            "type": "array"
+          },
+          "forbidden_smarts": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Forbidden Smarts",
+            "type": "array"
+          },
+          "forbidden_smiles": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Forbidden Smiles",
+            "type": "array"
+          },
+          "max_steps": {
+            "default": 8,
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Max Steps",
+            "type": "integer"
+          },
+          "require_complete_conditions": {
+            "default": false,
+            "title": "Require Complete Conditions",
+            "type": "boolean"
+          }
+        },
+        "title": "Constraints",
+        "type": "object"
+      },
+      "EpisodeRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "seed": {
+            "default": 0,
+            "maximum": 4294967295.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "type": "integer"
+          },
+          "task": {
+            "$ref": "#/components/schemas/Task"
+          }
+        },
+        "required": [
+          "task"
+        ],
+        "title": "EpisodeRequest",
+        "type": "object"
+      },
+      "EvidenceRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "conditions_scope": {
+            "default": "unknown",
+            "enum": [
+              "unknown",
+              "same",
+              "different"
+            ],
+            "title": "Conditions Scope",
+            "type": "string"
+          },
+          "evidence_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "literature_exact",
+              "literature_analogue",
+              "measured",
+              "proxy",
+              "predicted",
+              "unresolved"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "locator": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Locator",
+            "type": "string"
+          },
+          "notes": {
+            "default": "",
+            "title": "Notes",
+            "type": "string"
+          },
+          "product": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product"
+          },
+          "reactants": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Reactants",
+            "type": "array"
+          },
+          "source": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Source",
+            "type": "string"
+          },
+          "verified_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified By"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "kind",
+          "source",
+          "locator"
+        ],
+        "title": "EvidenceRecord",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "InventoryItem": {
+        "additionalProperties": false,
+        "properties": {
+          "available_mmol": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Available Mmol"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Z]{3}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currency"
+          },
+          "price_per_mmol": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Price Per Mmol"
+          },
+          "quoted_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quoted At"
+          },
+          "smiles": {
+            "title": "Smiles",
+            "type": "string"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "smiles"
+        ],
+        "title": "InventoryItem",
+        "type": "object"
+      },
+      "MaterialUse": {
+        "additionalProperties": false,
+        "properties": {
+          "amount_mmol": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Amount Mmol"
+          },
+          "smiles": {
+            "title": "Smiles",
+            "type": "string"
+          }
+        },
+        "required": [
+          "smiles"
+        ],
+        "title": "MaterialUse",
+        "type": "object"
+      },
+      "ReactionStep": {
+        "additionalProperties": false,
+        "properties": {
+          "condition_inputs": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Condition Inputs"
+          },
+          "conditions": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Conditions",
+            "type": "array"
+          },
+          "conditions_complete": {
+            "default": false,
+            "title": "Conditions Complete",
+            "type": "boolean"
+          },
+          "evidence_ids": {
+            "default": [],
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            "title": "Evidence Ids",
+            "type": "array"
+          },
+          "operations": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Operations",
+            "type": "array"
+          },
+          "predicted_yield": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Yield"
+          },
+          "product": {
+            "title": "Product",
+            "type": "string"
+          },
+          "product_amount_mmol": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product Amount Mmol"
+          },
+          "proposal_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proposal Score"
+          },
+          "reactants": {
+            "items": {
+              "$ref": "#/components/schemas/MaterialUse"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Reactants",
+            "type": "array"
+          },
+          "reagents": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/MaterialUse"
+            },
+            "maxItems": 100,
+            "title": "Reagents",
+            "type": "array"
+          },
+          "required_equipment": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Required Equipment",
+            "type": "array"
+          },
+          "source_tool": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Source Tool",
+            "type": "string"
+          },
+          "source_version": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Source Version",
+            "type": "string"
+          },
+          "step_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Step Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "step_id",
+          "product",
+          "reactants",
+          "source_tool",
+          "source_version"
+        ],
+        "title": "ReactionStep",
+        "type": "object"
+      },
+      "RouteCandidate": {
+        "additionalProperties": false,
+        "properties": {
+          "parent_route_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_.:-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Route Id"
+          },
+          "route_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Route Id",
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/ReactionStep"
+            },
+            "maxItems": 100,
+            "title": "Steps",
+            "type": "array"
+          },
+          "target": {
+            "title": "Target",
+            "type": "string"
+          }
+        },
+        "required": [
+          "route_id",
+          "target",
+          "steps"
+        ],
+        "title": "RouteCandidate",
+        "type": "object"
+      },
+      "SmallMoleculeHandoff": {
+        "additionalProperties": false,
+        "properties": {
+          "budget": {
+            "$ref": "#/components/schemas/Budget"
+          },
+          "candidate_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/Constraints"
+          },
+          "inventory": {
+            "items": {
+              "$ref": "#/components/schemas/InventoryItem"
+            },
+            "maxItems": 100000,
+            "title": "Inventory",
+            "type": "array"
+          },
+          "seed": {
+            "default": 0,
+            "maximum": 4294967295.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "type": "integer"
+          },
+          "smiles": {
+            "title": "Smiles",
+            "type": "string"
+          },
+          "source_job_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Source Job Id",
+            "type": "string"
+          },
+          "source_tool": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Source Tool",
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "smiles",
+          "source_job_id",
+          "source_tool",
+          "inventory"
+        ],
+        "title": "SmallMoleculeHandoff",
+        "type": "object"
+      },
+      "Task": {
+        "additionalProperties": false,
+        "properties": {
+          "budget": {
+            "$ref": "#/components/schemas/Budget"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/Constraints"
+          },
+          "evidence": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRecord"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "inventory": {
+            "items": {
+              "$ref": "#/components/schemas/InventoryItem"
+            },
+            "maxItems": 100000,
+            "title": "Inventory",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "1.0",
+            "default": "1.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "target_amount_mmol": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Amount Mmol"
+          },
+          "task_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "title": "Task Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "target",
+          "inventory"
+        ],
+        "title": "Task",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "title": "Retrosynthesis",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/v1/conditions/rank": {
+      "post": {
+        "operationId": "rank_conditions_v1_conditions_rank_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConditionRankingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Rank Conditions"
+      }
+    },
+    "/v1/episodes": {
+      "post": {
+        "operationId": "create_episode_v1_episodes_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EpisodeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Episode"
+      }
+    },
+    "/v1/episodes/{episode_id}": {
+      "delete": {
+        "operationId": "delete_episode_v1_episodes__episode_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "schema": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "title": "Episode Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Episode"
+      },
+      "get": {
+        "operationId": "read_episode_v1_episodes__episode_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "schema": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "title": "Episode Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Read Episode"
+      }
+    },
+    "/v1/episodes/{episode_id}/actions": {
+      "post": {
+        "operationId": "action_v1_episodes__episode_id__actions_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "episode_id",
+            "required": true,
+            "schema": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "title": "Episode Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Action"
+      }
+    },
+    "/v1/handoffs/small-molecule": {
+      "post": {
+        "operationId": "handoff_v1_handoffs_small_molecule_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SmallMoleculeHandoff"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Handoff"
+      }
+    },
+    "/v1/health": {
+      "get": {
+        "operationId": "health_v1_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/v1/routes/assess": {
+      "post": {
+        "operationId": "assess_v1_routes_assess_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssessmentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Assess"
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
+}

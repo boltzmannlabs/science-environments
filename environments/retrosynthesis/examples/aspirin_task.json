@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task_id": "aspirin-inventory-demo",
+  "target": "CC(=O)Oc1ccccc1C(=O)O",
+  "inventory": [
+    {
+      "smiles": "O=C(O)c1ccccc1O",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    },
+    {
+      "smiles": "CC(=O)OC(C)=O",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    },
+    {
+      "smiles": "CC(=O)O",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    },
+    {
+      "smiles": "O=P(O)(O)O",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    },
+    {
+      "smiles": "O",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    },
+    {
+      "smiles": "CCO",
+      "available_mmol": null,
+      "price_per_mmol": null,
+      "currency": null,
+      "source": null,
+      "quoted_at": null
+    }
+  ],
+  "target_amount_mmol": null,
+  "constraints": {
+    "max_steps": 3,
+    "forbidden_smiles": [],
+    "forbidden_smarts": [],
+    "available_equipment": [],
+    "forbidden_operations": [],
+    "require_complete_conditions": false
+  },
+  "budget": {
+    "max_actions": 80,
+    "max_expansions": 12,
+    "max_wall_seconds": 600.0,
+    "max_llm_tokens": 200000,
+    "top_k": 3
+  },
+  "evidence": []
+}

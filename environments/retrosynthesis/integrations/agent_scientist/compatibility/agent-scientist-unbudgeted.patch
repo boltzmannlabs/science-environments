@@ -1,0 +1,198 @@
+diff --git a/agent/agent_init.py b/agent/agent_init.py
+index 8bfc4685..d1ba409a 100644
+--- a/agent/agent_init.py
++++ b/agent/agent_init.py
+@@ -1405,7 +1405,7 @@ def _apply_agent_section(agent, _agent_cfg):
+     agent._execution_guidance = _agent_section.get("execution_guidance", "auto")
+ 
+     # Wall-clock run budget from config — only when the constructor arg was not given.
+-    if agent.run_budget_seconds is None:
++    if agent.run_budget_seconds is None and not agent.unbudgeted_run:
+         agent.run_budget_seconds = _normalize_run_budget_seconds(
+             _agent_section.get("run_budget_seconds")
+         )
+@@ -2336,7 +2336,7 @@ _USAGE_STATE: Dict[str, Any] = {
+ 
+ # Constructor params stored verbatim under the same name.
+ _PASSTHROUGH_PARAMS = (
+-    "model", "max_iterations", "save_trajectories", "verbose_logging", "quiet_mode",
++    "model", "max_iterations", "unbudgeted_run", "save_trajectories", "verbose_logging", "quiet_mode",
+     "tool_progress_mode", "ephemeral_system_prompt", "platform", "skip_context_files",
+     "load_soul_identity", "pass_session_id", "log_prefix_chars",
+     # OpenRouter provider preferences
+@@ -2369,7 +2369,7 @@ _CALLBACK_PARAMS = (
+ def init_agent(
+     agent, base_url: str = None, api_key: str = None, provider: str = None, api_mode: str = None,
+     acp_command: str = None, acp_args: list[str] | None = None, command: str = None,
+-    args: list[str] | None = None, model: str = "", max_iterations: int = sys.maxsize,
++    args: list[str] | None = None, model: str = "", max_iterations: int | None = sys.maxsize,
+     enabled_toolsets: List[str] = None, disabled_toolsets: List[str] = None,
+     save_trajectories: bool = False, verbose_logging: bool = False, quiet_mode: bool = False,
+     tool_progress_mode: str = "all", ephemeral_system_prompt: str = None,
+@@ -2397,6 +2397,7 @@ def init_agent(
+     load_soul_identity: bool = False, skip_memory: bool = False,
+     skip_background_review: bool = False, session_db=None, parent_session_id: str = None,
+     iteration_budget: "IterationBudget" = None, run_budget_seconds: Optional[float] = None,
++    unbudgeted_run: bool = False,
+     fallback_model: Dict[str, Any] = None, credential_pool=None, checkpoints_enabled: bool = False,
+     checkpoint_max_snapshots: int = 20, checkpoint_max_total_size_mb: int = 500,
+     checkpoint_max_file_size_mb: int = 10, pass_session_id: bool = False,
+@@ -2406,6 +2407,12 @@ def init_agent(
+ ):
+     _install_safe_stdio()
+ 
++    if unbudgeted_run and run_budget_seconds is not None:
++        raise ValueError("Unbudgeted runs require absent wall-time ceilings")
++    if unbudgeted_run and (max_iterations is not None or
++            (iteration_budget is not None and iteration_budget.max_total is not None)):
++        raise ValueError("Unbudgeted runs require absent iteration ceilings")
++
+     _params = locals()
+     for _name in _PASSTHROUGH_PARAMS:
+         setattr(agent, _name, _params[_name])
+diff --git a/agent/conversation_loop.py b/agent/conversation_loop.py
+index 4391effd..d22443bc 100644
+--- a/agent/conversation_loop.py
++++ b/agent/conversation_loop.py
+@@ -1633,7 +1633,8 @@ def _run_conversation_turn(
+         s.api_call_count = int(codex_result.get("api_calls") or 0)
+         s.active_system_prompt = _sync_failover_system_message(agent, None, s.active_system_prompt)
+ 
+-    while (s.api_call_count < agent.max_iterations and agent.iteration_budget.remaining > 0) or agent._budget_grace_call:
++    while ((agent.max_iterations is None or s.api_call_count < agent.max_iterations)
++           and (agent.iteration_budget.remaining is None or agent.iteration_budget.remaining > 0)) or agent._budget_grace_call:
+         if _run_phase(begin_iteration, agent, s).action == "break":
+             break
+         _run_phase(prepare_iteration, agent, s)
+diff --git a/agent/iteration_budget.py b/agent/iteration_budget.py
+index d2e81ce1..a73c6475 100644
+--- a/agent/iteration_budget.py
++++ b/agent/iteration_budget.py
+@@ -26,7 +26,7 @@ class IterationBudget:
+     """Thread-safe iteration counter; ``execute_code`` (programmatic tool calling)
+     iterations are refunded via :meth:`refund` so they don't eat into the budget."""
+ 
+-    def __init__(self, max_total: int):
++    def __init__(self, max_total: int | None):
+         self.max_total = max_total
+         self._used = 0
+         self._lock = threading.Lock()
+@@ -34,7 +34,7 @@ class IterationBudget:
+     def consume(self) -> bool:
+         """Try to consume one iteration.  Returns True if allowed."""
+         with self._lock:
+-            if self._used >= self.max_total:
++            if self.max_total is not None and self._used >= self.max_total:
+                 return False
+             self._used += 1
+             return True
+@@ -51,9 +51,9 @@ class IterationBudget:
+             return self._used
+ 
+     @property
+-    def remaining(self) -> int:
++    def remaining(self) -> int | None:
+         with self._lock:
+-            return max(0, self.max_total - self._used)
++            return None if self.max_total is None else max(0, self.max_total - self._used)
+ 
+ 
+ __all__ = ["IterationBudget"]
+diff --git a/agent/turn_finalizer.py b/agent/turn_finalizer.py
+index c93a6fa5..133425d0 100644
+--- a/agent/turn_finalizer.py
++++ b/agent/turn_finalizer.py
+@@ -128,7 +128,8 @@ def _resolve_budget_fallback(
+     """Iteration-budget exhaustion. Returns ``(final_response, _turn_exit_reason,
+     preserved_verification_fallback, interrupted)``."""
+     budget_exhausted = (
+-        api_call_count >= agent.max_iterations or agent.iteration_budget.remaining <= 0
++        (agent.max_iterations is not None and api_call_count >= agent.max_iterations)
++        or (agent.iteration_budget.remaining is not None and agent.iteration_budget.remaining <= 0)
+     )
+     preserved_verification_fallback = False
+     if (
+@@ -346,7 +347,7 @@ def _log_turn_exit(agent, messages, final_response, api_call_count, _turn_exit_r
+     # foreground stream — the fork shares the parent's session_id and often its model (#118693).
+     _turn_origin = getattr(agent, "_turn_origin", None)
+     _diag_msg = (
+-        "Turn ended: reason=%s model=%s api_calls=%d/%d budget=%d/%d "
++        "Turn ended: reason=%s model=%s api_calls=%d/%s budget=%d/%s "
+         "tool_turns=%d last_msg_role=%s response_len=%d session=%s"
+         + (" origin=%s" if _turn_origin else "")
+     )
+@@ -573,7 +574,8 @@ def finalize_turn(
+         final_response is not None
+         and not failed
+         and not interrupted
+-        and (api_call_count < agent.max_iterations or str(_turn_exit_reason).startswith("text_response("))
++        and (agent.max_iterations is None or api_call_count < agent.max_iterations
++             or str(_turn_exit_reason).startswith("text_response("))
+     )
+ 
+     _rollback_interrupted_preflight_display(agent, interrupted)
+diff --git a/agent/turn_iteration_prep.py b/agent/turn_iteration_prep.py
+index 30f26ec4..612c99e4 100644
+--- a/agent/turn_iteration_prep.py
++++ b/agent/turn_iteration_prep.py
+@@ -66,6 +66,7 @@ def _maybe_inject_iteration_budget_warning(agent: Any, messages: Any) -> bool:
+     if (
+         ratio is None
+         or budget is None
++        or budget.max_total is None
+         or budget.max_total <= 1
+         or budget.max_total >= sys.maxsize
+         or getattr(agent, "_iteration_budget_warning_injected", False)
+diff --git a/agent/turn_loop_errors.py b/agent/turn_loop_errors.py
+index ab255971..e713fdf9 100644
+--- a/agent/turn_loop_errors.py
++++ b/agent/turn_loop_errors.py
+@@ -146,10 +146,11 @@ def handle_outer_loop_error(
+ 
+     # Local errors are deterministic: stop early instead of retrying until the budget is
+     # gone; a small per-turn cap prevents infinite spinning.
+-    _outer_error_cap = min(_MAX_OUTER_LOOP_ERRORS, max(1, agent.max_iterations))
++    _outer_error_cap = (_MAX_OUTER_LOOP_ERRORS if agent.max_iterations is None
++                        else min(_MAX_OUTER_LOOP_ERRORS, max(1, agent.max_iterations)))
+     if (
+         _is_local_processing_error
+-        or api_call_count >= agent.max_iterations - 1
++        or (agent.max_iterations is not None and api_call_count >= agent.max_iterations - 1)
+         or _outer_error_count >= _outer_error_cap
+     ):
+         # finalize_turn stamps failure_reason=loop_error from the exit reason so the desktop
+diff --git a/agent/turn_truncation.py b/agent/turn_truncation.py
+index 601f9ed0..b9f1571e 100644
+--- a/agent/turn_truncation.py
++++ b/agent/turn_truncation.py
+@@ -620,7 +620,8 @@ def continue_codex_incomplete(
+         if agent._try_activate_fallback(reason=FailoverReason.incomplete_response):
+             # The trigger may have consumed the turn budget; without a grace call the loop
+             # exits before the fallback is ever asked.
+-            if api_call_count >= agent.max_iterations or agent.iteration_budget.remaining <= 0:
++            if ((agent.max_iterations is not None and api_call_count >= agent.max_iterations)
++                    or (agent.iteration_budget.remaining is not None and agent.iteration_budget.remaining <= 0)):
+                 agent._budget_grace_call = True
+             agent._codex_incomplete_retries = 0
+             agent._codex_reasoning_only_streak = 0
+diff --git a/run_agent.py b/run_agent.py
+index 28bfe912..ef5f2158 100644
+--- a/run_agent.py
++++ b/run_agent.py
+@@ -265,7 +265,7 @@ class AIAgent(
+         base_url: str = None, api_key: str = None, provider: str = None, api_mode: str = None,
+         acp_command: str = None, acp_args: list[str] | None = None, command: str = None, args: list[str] | None = None,
+         model: str = "",
+-        max_iterations: int = sys.maxsize,  # unlimited tool-calling iterations by default (shared with subagents)
++        max_iterations: int | None = sys.maxsize,  # None explicitly removes the iteration ceiling
+         tool_delay: float = None,  # deprecated: accepted for compatibility, ignored
+         enabled_toolsets: List[str] = None, disabled_toolsets: List[str] = None,
+         save_trajectories: bool = False, verbose_logging: bool = False, quiet_mode: bool = False,
+@@ -295,6 +295,7 @@ class AIAgent(
+         skip_memory: bool = False, skip_background_review: bool = False,
+         session_db=None, parent_session_id: str = None,
+         iteration_budget: "IterationBudget" = None, run_budget_seconds: Optional[float] = None,
++        unbudgeted_run: bool = False,
+         fallback_model: Dict[str, Any] = None, credential_pool=None,
+         checkpoints_enabled: bool = False, checkpoint_max_snapshots: int = 20,
+         checkpoint_max_total_size_mb: int = 500, checkpoint_max_file_size_mb: int = 10,

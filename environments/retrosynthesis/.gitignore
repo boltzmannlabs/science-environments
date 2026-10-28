@@ -1,0 +1,21 @@
+# Export sources with scripts/prepare_base_release.py.
+.venv*/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage*.json
+htmlcov/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+*.pem
+*.key
+auth.json
+credentials.json
+*.log
+# Scientific records, evaluator data and source snapshots stay local.
+artifacts/
