@@ -77,7 +77,7 @@ bash scripts/build_benzamidine_complex.sh
 python scripts/run_parameterized_complex.py
 ```
 
-The original public structures remain in `cases/real_systems/`; derived repairs,
+The original public structures remain in `inputs/real_systems/`; derived repairs,
 topologies, trajectories and logs are written to `results/`.
 
 ## Current maturity

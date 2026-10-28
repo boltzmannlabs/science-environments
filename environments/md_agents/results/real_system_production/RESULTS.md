@@ -4,7 +4,7 @@
 
 The source structures are public RCSB PDB entries: 1YRF (villin headpiece),
 1BNA (DNA duplex), 1BRS (barnase–barstar), and 3PTB (trypsin–benzamidine).
-Original inputs are preserved in `cases/real_systems/`. Derived repaired inputs
+Original inputs are preserved in `inputs/real_systems/`. Derived repaired inputs
 are written to `results/real_system_smoke/` using PDBFixer. OpenMM 8.2 with the
 Amber14 force field and CUDA was used for bounded 100-step production smoke
 runs after minimization.
