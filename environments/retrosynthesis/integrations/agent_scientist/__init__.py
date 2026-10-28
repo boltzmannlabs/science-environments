@@ -23,6 +23,26 @@ NORMAL_ACTIONS = frozenset({
     'predict_route_impurities', 'retrieve_application_sources',
     'generate_routes', 'import_routes', 'close'})
 _clients = []
+RUNTIME_KEYS = frozenset({'SRG_PACKAGE_ROOT', 'SRG_CHEMISTRY_PYTHON',
+    'REBOLT_ROOT', 'REBOLT_PYTHON', 'SRG_BACKEND_TIMEOUT_SECONDS'})
+
+
+def _installed_runtime():
+    """Read setup-owned settings beside the profile plugin, never tool arguments."""
+    path = Path(__file__).with_name('runtime.json')
+    if not path.exists():
+        return {}
+    try:
+        if path.is_symlink() or path.stat().st_size > 4096:
+            raise ValueError('Invalid runtime file')
+        settings = json.loads(path.read_text(encoding='utf-8'))
+        if (not isinstance(settings, dict) or set(settings) != RUNTIME_KEYS or
+                any(not isinstance(value, str) or not value for value in settings.values()) or
+                any(not Path(settings[key]).is_absolute() for key in RUNTIME_KEYS - {'SRG_BACKEND_TIMEOUT_SECONDS'})):
+            raise ValueError('Invalid runtime settings')
+        return settings
+    except (OSError, ValueError, UnicodeError) as exc:
+        raise RuntimeError('Invalid retrosynthesis runtime configuration') from exc
 
 
 def _close_clients():
@@ -39,10 +59,12 @@ class _ChemistryClient:
         self.lock = RLock()
 
     def _start(self):
-        python = Path(os.environ.get('SRG_CHEMISTRY_PYTHON') or sys.executable).expanduser()
+        installed = _installed_runtime()
+        python = Path(os.environ.get('SRG_CHEMISTRY_PYTHON') or
+                      installed.get('SRG_CHEMISTRY_PYTHON') or sys.executable).expanduser()
         if not python.is_absolute() or not python.is_file() or not os.access(python, os.X_OK):
             raise RuntimeError('Chemistry runtime unavailable; configure SRG_CHEMISTRY_PYTHON')
-        root = os.environ.get('SRG_PACKAGE_ROOT')
+        root = os.environ.get('SRG_PACKAGE_ROOT') or installed.get('SRG_PACKAGE_ROOT')
         source = Path(root).expanduser().resolve() / 'src' if root else Path(__file__).resolve().parents[2] / 'src'
         if root and not (source / 'synthesis_route_gym').is_dir():
             raise RuntimeError('Chemistry package source unavailable; check SRG_PACKAGE_ROOT')
@@ -54,6 +76,8 @@ class _ChemistryClient:
                    'MKL_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'CUDA_VISIBLE_DEVICES',
                    'REBOLT_ROOT', 'REBOLT_PYTHON', 'SRG_BACKEND_TIMEOUT_SECONDS')
         environment = {key: os.environ[key] for key in allowed if key in os.environ}
+        environment = {**{key: value for key, value in installed.items() if key in allowed},
+                       **environment}
         self.process = subprocess.Popen([str(python), '-I', '-c', bootstrap, source_arg],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
             env=environment, start_new_session=True)

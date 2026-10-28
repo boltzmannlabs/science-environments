@@ -27,8 +27,32 @@ The `retrosynthesis` command is the new CLI entry point.
 - [Configuration](config/README.md) and [task contracts](tasks/README.md)
 - [Research notes](../../research/retrosynthesis/research-notes.md) and [references](../../research/retrosynthesis/references.md)
 - [Validation status](results/README.md) and [historical snapshot](STATUS.md)
+- [Managed LocalRetro setup and evidence](results/LOCALRETRO_SETUP.md)
 
 ## Install and run a local example
+
+For a server that already has the REBOLT LocalRetro model and its compatible
+Python runtime, install the model assets, skill and Agent Scientist plugin in
+one command from this directory:
+
+```sh
+python3 scripts/setup_retrosynthesis.py install
+```
+
+The installer finds the existing local REBOLT copy on this server, verifies the
+checkpoint and all three template hashes, copies the needed assets into the
+Agent Scientist profile, installs the chemistry package if needed and enables
+the plugin. Start a new `sci` conversation afterward. A different machine can
+pass `--existing-rebolt-root` and `--existing-rebolt-python` when it already has
+the same approved assets and compatible runtime. See the
+[integration guide](integrations/agent_scientist/README.md) for details.
+
+The checkpoint and templates are not distributed in this GitHub repository.
+Their provenance and redistribution terms need review before a public model
+download can be offered. The installer reports missing or mismatched assets
+instead of selecting a different checkpoint. It treats the separately supplied
+REBOLT source code as trusted local code and refuses to enable a second copy of
+the older `synthesis-route-gym` plugin alongside `retrosynthesis`.
 
 From the repository root, with Python 3.10 or newer:
 

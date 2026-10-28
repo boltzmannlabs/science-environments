@@ -104,6 +104,40 @@ def plugin():
     return module
 
 
+def test_plugin_uses_installed_profile_runtime_without_shell_exports(tmp_path, monkeypatch):
+    module=plugin()
+    root=tmp_path/'package';(root/'src/synthesis_route_gym').mkdir(parents=True)
+    runtime=tmp_path/'chemistry';runtime.write_text('python');runtime.chmod(0o755)
+    model=tmp_path/'model';model.mkdir()
+    heavy=tmp_path/'heavy';heavy.write_text('python')
+    plugin_dir=tmp_path/'profile-plugin';plugin_dir.mkdir()
+    (plugin_dir/'runtime.json').write_text(json.dumps({
+        'SRG_PACKAGE_ROOT':str(root), 'SRG_CHEMISTRY_PYTHON':str(runtime),
+        'REBOLT_ROOT':str(model), 'REBOLT_PYTHON':str(heavy),
+        'SRG_BACKEND_TIMEOUT_SECONDS':'300'}))
+    monkeypatch.setattr(module,'__file__',str(plugin_dir/'__init__.py'))
+    for key in ('SRG_PACKAGE_ROOT','SRG_CHEMISTRY_PYTHON','REBOLT_ROOT','REBOLT_PYTHON',
+                'SRG_BACKEND_TIMEOUT_SECONDS'):
+        monkeypatch.delenv(key,raising=False)
+    captured={}
+    monkeypatch.setattr(module.subprocess,'Popen',lambda args,**kw:captured.update(args=args,**kw))
+    module._ChemistryClient()._start()
+    assert captured['args'][0]==str(runtime)
+    assert captured['args'][-1]==str(root/'src')
+    assert captured['env']['REBOLT_ROOT']==str(model)
+    assert captured['env']['REBOLT_PYTHON']==str(heavy)
+    assert captured['env']['SRG_BACKEND_TIMEOUT_SECONDS']=='300'
+
+
+def test_plugin_rejects_unexpected_profile_runtime_fields(tmp_path,monkeypatch):
+    module=plugin();plugin_dir=tmp_path/'profile-plugin';plugin_dir.mkdir()
+    (plugin_dir/'runtime.json').write_text(json.dumps({'SRG_CHEMISTRY_PYTHON':'/usr/bin/python3',
+        'unexpected':'do not execute'}))
+    monkeypatch.setattr(module,'__file__',str(plugin_dir/'__init__.py'))
+    with pytest.raises(RuntimeError,match='configuration'):
+        module._ChemistryClient()._start()
+
+
 def test_plugin_normal_cross_runtime_preserves_other_tools(monkeypatch):
     module=plugin()
     monkeypatch.setenv('SRG_CHEMISTRY_PYTHON',sys.executable)

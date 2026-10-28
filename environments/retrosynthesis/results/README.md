@@ -1,5 +1,10 @@
 # Validation status
 
+The [managed LocalRetro setup check](LOCALRETRO_SETUP.md) records installation
+into an isolated Agent Scientist profile and actual LocalRetro predictions
+without manual model-path variables. The public repository still excludes the
+checkpoint and templates while redistribution rights are unresolved.
+
 The renamed monorepo installation passed **2,650 tests**, with **13 optional skips** and **94.57% coverage**, plus fresh installation and actual Agent Scientist/LocalRetro integration checks. See [migration verification](MIGRATION_VERIFICATION.md). GitHub publication and tests from the published revision remain pending.
 
 The pre-migration base release passed **2,646 tests**, with **13 optional skips** and **94.57% package coverage**. Actual Agent Scientist plugin-discovery and LocalRetro bridge checks passed. The [base verification report](../docs/BASE_RELEASE_VERIFICATION.md) records scope, reproduction instructions and limitations.
