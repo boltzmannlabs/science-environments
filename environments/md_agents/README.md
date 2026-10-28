@@ -1,9 +1,9 @@
 # Molecular Dynamics Specialist Agents
 
-**Status: Specification.** This package defines a reusable MD specialist-agent
-core and online-resource discovery contracts. It does not claim that 50 MD
-environments, production trajectories, or the Langevin Flow Maps method have
-been implemented or scientifically qualified.
+**Status: Implemented / partially validated.** This package contains executable
+input harnesses, engine adapters, recovery agents, and bounded OpenMM/CUDA
+real-system runs. It does not claim that all 50 MD environments or long-time
+production/FEP workflows have been scientifically qualified.
 
 ## Scope
 
@@ -22,6 +22,7 @@ environments.
 3. [Task registry](tasks/)
 4. [Agent contracts](agents/contracts.json)
 5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
+6. [Real-system execution results](results/real_system_production/RESULTS.md)
 
 ## Explicit per-agent input packets
 
@@ -41,14 +42,12 @@ claim that the corresponding production engine run has already succeeded.
 
 ## Current maturity
 
-The contracts and package validator are implemented. The 12 scenario
-specialists are task contracts; they are not yet independently qualified. A
-first actual OpenMM
-CUDA core case (water-box minimization plus short NVT production) is recorded
-under `results/core_openmm/`. GROMACS/AMBER/LAMMPS adapters, production
-trajectory references, long-timescale sampling, online downloads, and domain
-qualification remain follow-up work. Online resources must be versioned,
-licensed, hashed and compatibility-checked before execution.
+The contracts, packet harness, native fixture adapters, and package validator
+are implemented. A real-system batch (villin, DNA, barnase–barstar, and
+trypsin–benzamidine) is recorded under `results/real_system_production/`.
+The trypsin ligand uses AmberTools GAFF2/AM1-BCC with explicit TIP3P solvation
+and counterions. These are bounded execution records; long-timescale sampling,
+FEP uncertainty, and independent domain qualification remain follow-up work.
 
 The reusable troubleshooting package in
 [recovery_agents/](recovery_agents/) contains 10 executable recovery agents
