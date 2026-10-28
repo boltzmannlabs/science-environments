@@ -127,9 +127,11 @@ else:
                 'candidate_manifest_sha256':candidate_ref['sha256'],'checks':[
                 {'rule_id':'software_fixture','status':'UNRESOLVED',
                  'reason':'No molecular calculation runs in controller tests'}]}
-            if mode.startswith('independent_') and stage=='fold':
+            if stage=='fold' and mode not in {'sequence_only','missing_fold_models','preparation_only'}:
                 evidence.update(assessment_models=bundle['assessment_models'],structural_integrity_ready=True)
-            if mode.startswith('independent_') and stage not in {'sequence_screen','fold'}:
+            if stage=='fold' and mode=='preparation_only':
+                evidence.update(structure_preparation=bundle['stage_evidence'],structural_integrity_ready=True)
+            if stage not in {'sequence_screen','fold'}:
                 evidence['assessment_models_sha256']=hashlib.sha256(json.dumps(
                     bundle['assessment_models'],sort_keys=True,allow_nan=False).encode()).hexdigest()
                 if mode=='independent_stale_downstream': evidence['assessment_models_sha256']='0'*64
@@ -194,7 +196,7 @@ class ControllerIntegrationTests(unittest.TestCase):
         path = run / 'fixture_calls.jsonl'
         return [json.loads(s) for s in path.read_text().splitlines()] if path.exists() else []
 
-    def make_bundle(self, request_budget=None):
+    def make_bundle(self, request_budget=None, assembly_kind='monomer'):
         evidence = self.artifact('software_evidence.txt', 'Software fixture, not molecular evidence.')
         request = json.loads((ENVIRONMENT / 'tasks/request.example.json').read_text())
         request['task_id'] = 'software_controller_fixture'
@@ -219,6 +221,15 @@ class ControllerIntegrationTests(unittest.TestCase):
                                            'catalytic_map': evidence}],
                          'generation_state_policy': evidence},
         }
+        chains = ('A',) if assembly_kind == 'monomer' else ('A', 'B')
+        if assembly_kind == 'homodimer':
+            request['assembly']['mode'] = 'homodimer'
+            generation['request_sha256'] = object_hash(request)
+            generation['assembly'].update(kind='homodimer', subunit_count=2,
+                sequence_groups=[{'sequence_id': 'test_sequence', 'chain_ids': list(chains)}],
+                design_symmetry='C2',
+                active_sites=[{'site_id': 'site_' + chain, 'chain_ids': [chain], 'catalytic_map': evidence}
+                              for chain in chains])
         plan = {'required_groups': sorted(GROUPS), 'calibration_basis': 'reference_controls_only',
                 'target_objective': 'SOFTWARE TEST ONLY', 'request_sha256': object_hash(request)}
         sequence = self.artifact('software_sequence.fasta', '>software_only\nACD\n')
@@ -242,7 +253,7 @@ class ControllerIntegrationTests(unittest.TestCase):
                 'evaluation'),
         }
         self.bundle['assessment_models'] = [assessment_fixture(self.fixture, candidate,
-                                                  self.bundle['prepare'][2]['sha256'])]
+                                                  self.bundle['prepare'][2]['sha256'], chains)]
         (self.fixture / 'bundle.json').write_text(json.dumps(self.bundle))
 
     def test_automatic_repair_and_resume_preserve_accepted_work_and_budget(self):
@@ -487,7 +498,87 @@ class ControllerIntegrationTests(unittest.TestCase):
         self.assertEqual(result['stages']['sequence_screen'], 'accepted')
         self.assertNotEqual(result['stages']['fold'], 'accepted')
         self.assertFalse(any(c['stage']=='aggregation' for c in self.calls(run)))
-        self.assertIn('structural preparation', (run/'trajectory.jsonl').read_text())
+        self.assertIn('FOLD_EVIDENCE_REQUIRED', (run/'trajectory.jsonl').read_text())
+
+    def test_ordinary_generation_cannot_skip_fold_evidence_in_either_tool_condition(self):
+        for condition in ('agent_selected', 'tools_specified'):
+            for mode in ('missing_fold_models', 'preparation_only'):
+                with self.subTest(condition=condition, mode=mode):
+                    run = self.create_run(mode, condition=condition, name=condition + '_' + mode,
+                        policy={'max_stage_attempts': 1, 'max_review_attempts': 1, 'max_repairs_per_stage': 1})
+                    result = Controller(run).run()
+                    self.assertEqual(result['stages']['generate'], 'accepted')
+                    self.assertEqual(result['stages']['sequence_screen'], 'accepted')
+                    self.assertNotEqual(result['stages']['fold'], 'accepted')
+                    self.assertEqual(result['qualified_design_count'], 0)
+                    self.assertFalse(any(c['stage'] in {'aggregation','complex','chemistry'} for c in self.calls(run)))
+                    self.assertIn('FOLD_EVIDENCE_REQUIRED', (run/'trajectory.jsonl').read_text())
+
+    def test_fold_requires_nonempty_models_and_actual_method_and_integrity_records(self):
+        run = self.create_run()
+        Controller(run).run(max_stages=3)
+        controller = Controller(run)
+        evidence = {'stage': 'fold', 'candidate_manifest_sha256': self.bundle['candidate_manifest']['sha256'],
+                    'checks': [], 'assessment_models': self.bundle['assessment_models'],
+                    'structural_integrity_ready': True}
+        model = self.bundle['assessment_models'][0]
+        cases = [({'assessment_models': value}, 'FOLD_EVIDENCE_REQUIRED') for value in ([], None, {})]
+        cases += [({'structural_integrity_ready': False}, 'independent integrity review'),
+                  ({'assessment_models': [{k:v for k,v in model.items() if k != 'method_validation'}]}, 'METHOD_VALIDATION_REQUIRED')]
+        failed = json.loads(Path(model['method_validation']['path']).read_text())
+        failed['status'] = 'FAIL'
+        cases.append(({'assessment_models': [{**model, 'method_validation': self.artifact('failed_method.json', failed)}]},
+                      'METHOD_CONTROL_FAILED'))
+        for index, (change, error) in enumerate(cases):
+            with self.subTest(change=change):
+                ref = self.artifact(f'bad_fold_{index}.json', {**evidence, **change}, 'stage_evidence')
+                with self.assertRaisesRegex(ValueError, error):
+                    controller.validate_output('fold', {'status':'completed', 'artifacts':[self.bundle['candidate_manifest'], ref]})
+
+    def test_saved_acceptance_without_fold_evidence_is_invalidated_before_dispatch(self):
+        run = self.create_run('missing_fold_models', policy={'max_stage_attempts': 1, 'max_review_attempts': 1,
+                                                           'max_repairs_per_stage': 1})
+        Controller(run).run(max_stages=3)
+        controller = Controller(run)
+        evidence = self.artifact('legacy_fold.json', {'stage': 'fold', 'checks': [],
+            'candidate_manifest_sha256': self.bundle['candidate_manifest']['sha256']}, 'stage_evidence')
+        controller.state['stages']['fold'].update(status='accepted', artifacts=[self.bundle['candidate_manifest'], evidence])
+        controller.state['qualified_candidates'] = ['software_candidate']  # Deliberately invalid saved software state.
+        controller.save()
+        result = Controller(run).run()
+        self.assertNotEqual(result['stages']['fold'], 'accepted')
+        self.assertEqual(result['qualified_design_count'], 0)
+        self.assertFalse(any(c['stage'] == 'aggregation' for c in self.calls(run)))
+        self.assertIn('evidence_invalidated', (run/'trajectory.jsonl').read_text())
+        self.assertEqual((run/'08_results/designed_sequences.fasta').read_text(), '')
+
+    def test_downstream_and_final_qualification_cannot_omit_accepted_fold(self):
+        run = self.create_run()
+        summary = Controller(run).run(max_stages=3)
+        controller = Controller(run)
+        evidence = self.artifact('premature_aggregation.json', {'stage': 'aggregation', 'checks': [],
+            'candidate_manifest_sha256': self.bundle['candidate_manifest']['sha256'],
+            'assessment_models_sha256': object_hash(self.bundle['assessment_models'])}, 'stage_evidence')
+        with self.assertRaisesRegex(ValueError, 'FOLD_EVIDENCE_REQUIRED'):
+            controller.validate_output('aggregation', {'status':'completed', 'artifacts':[self.bundle['candidate_manifest'], evidence]})
+        evaluation = self.artifact('premature_qualification.json', {'qualification_requested': True,
+            'evaluation_plan_sha256': self.bundle['prepare'][2]['sha256'],
+            'assessment_models_sha256': object_hash(self.bundle['assessment_models'])}, 'evaluation')
+        with self.assertRaisesRegex(ValueError, 'FOLD_EVIDENCE_REQUIRED'):
+            controller.validate_output('evaluate', {'status':'completed', 'artifacts':[evaluation]})
+        summary['qualified_candidates'] = ['software_candidate']
+        with self.assertRaisesRegex(ValueError, 'Qualified export requires a reviewed assessment model'):
+            write_bundle(run, controller.state, summary)
+        self.assertEqual((run/'08_results/designed_sequences.fasta').read_text(), '')
+
+    def test_ordinary_homodimer_uses_the_same_fold_gate_with_both_chains(self):
+        self.make_bundle(assembly_kind='homodimer')
+        run = self.create_run()
+        result = Controller(run).run(max_stages=4)
+        self.assertEqual(result['stages']['generate'], 'accepted')
+        self.assertEqual(result['stages']['fold'], 'accepted', result)
+        self.assertEqual(len(Controller(run).assessment_models()), 1)
+        self.assertEqual(result['qualified_design_count'], 0)
 
     def test_independent_sequence_fold_advances_with_a_separate_reviewed_model(self):
         run = self.create_run('independent_fold')

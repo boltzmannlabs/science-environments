@@ -124,9 +124,12 @@ startup_validation:
   dependent_capability_controls: require_working_simpler_control_or_explicit_independent_diagnostic_rationale
 
 method_validation:
-  assessment_contract_version: "2.0"
+  assessment_contract_version: "2.1"
   evidence_schema_version: "1.0"
   required_before_structural_promotion: true
+  independent_models_required_for_all_generation_routes: true
+  preparation_alone_passes_fold: false
+  revalidate_before_resume_downstream_and_qualification: true
   exploratory_control_and_candidate_predictions_allowed: true
   control_failure_is_candidate_failure: false
   evidence_bound_to_method_settings_plan_and_applicability: true
@@ -186,7 +189,7 @@ stages:
     capabilities: [independent_fold_prediction, scaffold_and_catalytic_site_comparison]
     homodimer_capabilities: [independent_full_assembly_prediction, interface_evidence_assessment, per_chain_and_site_checks]
     entry_requirement: eligible_sequences_and_compatible_prediction_method;_independent_sequence_prediction_does_not_require_repaired_generated_coordinates
-    exit_requirement: reviewed_sequence_bound_assessment_models_or_matched_structure_preparation;_downstream_structural_evidence_must_use_the_reviewed_model_versions
+    exit_requirement: reviewed_independent_sequence_bound_assessment_models_for_every_candidate;_method_controls_and_integrity_required;_preparation_alone_is_insufficient;_downstream_evidence_uses_reviewed_model_versions
     output: 03_folds
   - id: aggregation
     depends_on: [fold]
@@ -255,7 +258,8 @@ qualification:
 controller:
   default_mode: fixed
   implemented_modes: [fixed]
-  supported_modes: [fixed, rl_inference, rl_training]
+  supported_modes: [fixed]
+  specified_extension_modes: [rl_inference, rl_training]
   rl_learning_method: profile_defined_with_action_masking
   episode_unit: candidate_lineage
   training_split: development_only

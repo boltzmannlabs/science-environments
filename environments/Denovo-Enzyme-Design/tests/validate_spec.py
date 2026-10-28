@@ -418,11 +418,15 @@ def main() -> None:
             and startup['execution_gate_denial_action'] == 'stop_and_preserve_exact_error_without_alternate_route',
             'startup recovery uses actual inputs and preserves genuine execution approval boundaries')
     method = config['method_validation']
-    require(method['assessment_contract_version'] == '2.0'
+    require(method['assessment_contract_version'] == '2.1'
             and method['required_before_structural_promotion']
             and method['exploratory_control_and_candidate_predictions_allowed']
             and not method['control_failure_is_candidate_failure'],
             'control qualification gates promotion without blocking exploratory predictions or rejecting candidates by inference')
+    require(method['independent_models_required_for_all_generation_routes']
+            and not method['preparation_alone_passes_fold']
+            and method['revalidate_before_resume_downstream_and_qualification'],
+            'every generation route requires independently assessed models before structural promotion and reuse')
     require(method['evidence_bound_to_method_settings_plan_and_applicability']
             and method['enzyme_specific_rules_location'] == 'run_profile_not_environment_constants'
             and method['candidate_native_interface_identity_required'] == 'only_if_explicitly_frozen_in_task',
@@ -500,7 +504,9 @@ def main() -> None:
     require(config['assembly_contract']['homodimer_chain_sequences'] == 'identical', 'homodimer sequence copies must match')
 
     control = config['controller']
-    require(control['implemented_modes'] == ['fixed'], 'RL extension is not represented as implemented fixed-controller behavior')
+    require(control['implemented_modes'] == control['supported_modes'] == ['fixed']
+            and control['specified_extension_modes'] == ['rl_inference', 'rl_training'],
+            'RL extension is not represented as implemented fixed-controller behavior')
     reward = control['reward']
     require(reward['per_required_rule_positive_weight'] and reward['weight_sum'] == 1, 'every required rule has positive normalized reward weight')
     require(reward['score_range'] == [0, 1] and reward['gamma'] == 1, 'bounded potential with finite-episode discount')

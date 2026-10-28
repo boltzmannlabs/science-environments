@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-10-28T11:51:43.094572+00:00",
+  "checked_at_utc": "2026-10-28T12:26:12.193777+00:00",
   "environment_id": "denovo-enzyme-design",
   "maturity": "In Progress",
   "validation_scope": "local specification consistency; no scientific execution",
   "status": "PASS",
-  "checks_passed": 191,
+  "checks_passed": 192,
   "checks": [
     {
       "check": "required package files exist",
@@ -360,6 +360,10 @@
     },
     {
       "check": "control qualification gates promotion without blocking exploratory predictions or rejecting candidates by inference",
+      "status": "PASS"
+    },
+    {
+      "check": "every generation route requires independently assessed models before structural promotion and reuse",
       "status": "PASS"
     },
     {
@@ -777,22 +781,22 @@
     "PyYAML": "6.0.2"
   },
   "file_sha256": {
-    "README.md": "81a5d94cde4c65819731db03cf62834cd599157afe29058d9f06084a751a9fec",
-    "ENVIRONMENT_SPEC.md": "9f297301e822624dc43456b448ed050a52f5af03653f17ad96d7fd965775d1e0",
-    "config/environment.yaml": "b2a4ab08a4485911a5cf03d58d37fb6d0d737be904ee1f92af922f5fdf6e3d87",
+    "README.md": "00fd5ba899c0cdaaa802613f4b99d37e2af121f838dfc08def0df10a6acc2743",
+    "ENVIRONMENT_SPEC.md": "8444faf1462a90ad42ab0befad2717fe004b4a3ea17f4b2f2b21dbfa8018d279",
+    "config/environment.yaml": "a73a820a6b910d53d7c2441f64e0ca00ba742aeb3d21a34b32692526ba9f1893",
     "config/request.schema.json": "30555feede5ac6747e95942536f5b51cf88b8d882d9346aab22ca84f322fcca1",
     "config/protocol.schema.json": "bbc18bf5cd8b4b55f5f256e8401a833e2ef2a380be4cb0f6d51005b0d7fbc095",
     "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3",
     "tasks/denovo_enzyme_001.md": "c8565101669a65a02c5e11b35cc2d38e1a4a083a426fddf5608fa7251e79c7cf",
     "tasks/request.example.json": "83c7cc9822cec4805936941f7f5d06218d54d5b7663079ed8370edc1eab9b258",
-    "tests/ACCEPTANCE.md": "80208f559129dca40d54697521dca9669d077d57305b8694fc09548cf403803d",
+    "tests/ACCEPTANCE.md": "48c48a29c01ca630869da6ca2c2f59eedb9d774fe40acee98d39c6f9c01e366e",
     "tasks/homodimer.request.example.json": "cd9c69f0f18e15cffd03817e45a973fc965b3b291f512dbfa1f1bd5c318a4e1e",
-    "runtime/CONTRACTS.md": "c8e2c6dfd895a2d1c0fa8606519be8b0474860613b9a43b4578a6453c7709d86",
-    "runtime/controller.py": "b91e09c10e2ab656a3ce9d66b60ce953959bc27b61d89cb12836a2d035684219",
-    "runtime/agents.py": "b5f95ef5c5685b50cedbd39cc632443a971c16efecfb752f2b029da317f40093",
+    "runtime/CONTRACTS.md": "14d1bed11357113eb4ffb327f76993d9106fb5e0885a3b8b687bfb7a0eb1f4cc",
+    "runtime/controller.py": "9f63ee6b6d2832a2141378a147f36b9f2eef978e8c8438e772fa6277edaf4223",
+    "runtime/agents.py": "484b5703de47c6fdbd741851fcd53e0b7c47dc3e6a1f7341988bda773db67f9e",
     "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
-    "runtime/reporting.py": "e5620eb030adb57086ad7699c70c0f5ab692da5b7b6c87d51bf688ef5e2653c2",
-    "tests/validate_spec.py": "17c2cf663b341c049b730a928f4723dd0ca02675e3fc26cd93afdc982cf1917e",
+    "runtime/reporting.py": "c1e6b04197803a24ca60236504d031df46f50d44b5f57531981e69cb658edfa4",
+    "tests/validate_spec.py": "9986a1dbf14ea296bdb7f258d2488e50ea5b441c9cdc0308f418ac286e5cdecf",
     "../../research/Denovo-Enzyme-Design/research-notes.md": "228281bed0164e76184426cb9cbf9ba0c1223969b8f3325e2ac1491ffe82e6f0",
     "../../research/Denovo-Enzyme-Design/references.md": "93174a902abb813dc31dca79429200fc21b4c8ec041af6573ad8e30fa4790378"
   },

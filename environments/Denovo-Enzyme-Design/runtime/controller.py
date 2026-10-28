@@ -245,6 +245,18 @@ class Controller:
         refs = {r['kind']: r for r in fold['artifacts']}
         return self.data('stage_evidence', refs).get('assessment_models', [])
 
+    def require_assessment_models(self, candidates: list) -> list:
+        fold = self.state['stages']['fold']
+        if fold['status'] != 'accepted':
+            raise ValueError('FOLD_EVIDENCE_REQUIRED: no accepted independent fold assessment')
+        # Reuse the admission check on the current files, including on restart
+        # and before final qualification; a saved status is not evidence.
+        self.validate_output('fold', {'status': 'completed', 'artifacts': fold['artifacts']})
+        models = self.assessment_models()
+        if not {c['candidate_id'] for c in candidates}.issubset({m['candidate_id'] for m in models}):
+            raise ValueError('FOLD_EVIDENCE_REQUIRED: downstream candidate lacks a reviewed assessment model')
+        return models
+
     def finish(self, status: str, reason: str):
         self.state.update(status=status, reason=reason)
         if status in TERMINAL:
@@ -304,7 +316,7 @@ class Controller:
             },
             'requirements': [
                 'Work only on this assigned stage; do not start a nested controller or launch another campaign.',
-                'Generation may yield a reviewed sequence-only candidate despite defective coordinates. Sequence screening and independent folding may use the unchanged FASTA without repairing those coordinates first. To advance beyond fold, supply assessment_models with sequence/input provenance and matched geometry evidence, or the existing matched preparation contract. Never use defective generated coordinates as an accepted assessment model.',
+                'Generation may yield a reviewed sequence-only candidate despite defective coordinates. Sequence screening and independent folding may use the unchanged FASTA without repairing those coordinates first. Every generation route requires independent assessment_models with sequence/input provenance, method controls and reviewed integrity evidence before fold acceptance. Preparation or minimization alone cannot pass fold. Never use defective generated coordinates as an accepted assessment model.',
                 'Own routine parameter choices, tool discovery, internal review and bounded repair.',
                 'Only the current stage prerequisites apply; do not require final qualification before generation.',
                 'Read the generation/full-profile schemas and runtime response contracts.',
@@ -453,44 +465,16 @@ class Controller:
             if evidence.get('candidate_manifest_sha256') != refs['candidate_manifest']['sha256']:
                 raise ValueError('Stage evidence is not bound to the current candidate manifest')
             verify_nested(evidence, self.root)
-            if stage == 'fold' and 'assessment_models' in evidence:
+            if stage == 'fold':
+                if not isinstance(evidence.get('assessment_models'), list) or not evidence['assessment_models']:
+                    raise ValueError('FOLD_EVIDENCE_REQUIRED: every generation route needs independent assessment models; preparation alone cannot pass fold')
                 check_assessment_models(evidence['assessment_models'], manifest['candidates'],
                                         self.data('generation_profile')['assembly'],
                                         merged['evaluation_plan']['sha256'], self.root)
                 if evidence.get('structural_integrity_ready') is not True:
                     raise ValueError('Predicted assessment models still require independent integrity review')
-            elif stage == 'fold' and self.state['stages']['generate']['status'] == 'accepted_sequence_only':
-                preparation = evidence.get('structure_preparation')
-                if not isinstance(preparation, dict):
-                    raise ValueError('Sequence-only generation requires hashed matched structural preparation before fold')
-                prepared = load_json(verify_artifact(preparation, self.root))
-                canonical = self.data('candidate_manifest', refs)['candidates']
-                generation = self.data('generation_profile')
-                source_hashes = prepared.get('inputs_sha256', {})
-                allowed_controls = {generation['motif']['sha256'], generation['assembly']['reference_assembly']['sha256']}
-                if (source_hashes.get('reference') not in allowed_controls
-                        or len(canonical) != 1 or source_hashes.get('input') != canonical[0]['structure']['sha256']
-                        or source_hashes.get('fasta') != canonical[0]['sequence']['sha256']):
-                    raise ValueError('Matched structural preparation is not bound to this candidate and its generation reference')
-                if (prepared.get('status') != 'STRUCTURAL_PREPARATION_EXECUTED_NOT_QUALIFIED'
-                        or prepared.get('supported_cis_links_preserved_after_preparation') is not True
-                        or not {'candidate', 'reference'}.issubset(prepared.get('ca_chirality_opposite_to_observed_reference', {}))
-                        or any(v for group in prepared.get('ca_chirality_opposite_to_observed_reference', {}).values()
-                               for v in group.values())
-                        or not {'candidate', 'reference'}.issubset(prepared.get('output_sha256', {}))
-                        or not {'candidate_after', 'reference_after'}.issubset(prepared)):
-                    raise ValueError('Independent candidate/reference structural preparation is incomplete')
-                for name in ('candidate', 'reference'):
-                    if not prepared[name + '_after']:
-                        raise ValueError('Missing prepared structural geometry: ' + name)
-                    product = prepared.get('prepared_files', {}).get(name)
-                    if not isinstance(product, dict) or product.get('sha256') != prepared['output_sha256'][name]:
-                        raise ValueError('Prepared model lacks verifiable file provenance')
-                    verify_artifact(product, self.root)
-                if evidence.get('structural_integrity_ready') is not True:
-                    raise ValueError('Prepared geometry has not passed independently reviewed physical-integrity assessment')
-            models = self.assessment_models()
-            if models and STAGES.index(stage) > STAGES.index('fold'):
+            if STAGES.index(stage) > STAGES.index('fold'):
+                models = self.require_assessment_models(manifest['candidates'])
                 if evidence.get('assessment_models_sha256') != object_hash(models):
                     raise ValueError('Downstream evidence is not bound to the reviewed assessment models')
         if stage == 'evaluate':
@@ -500,10 +484,9 @@ class Controller:
             if not isinstance(evaluation.get('qualification_requested'), bool):
                 raise ValueError('Evaluation must distinguish a partial report from final qualification')
             if evaluation['qualification_requested']:
-                models = self.assessment_models()
-                if self.state['stages']['generate']['status'] == 'accepted_sequence_only' and not models:
-                    raise ValueError('Sequence-only generation needs reviewed independent assessment models for qualification')
-                if models and evaluation.get('assessment_models_sha256') != object_hash(models):
+                manifest = self.data('candidate_manifest', merged)
+                models = self.require_assessment_models(manifest['candidates'])
+                if evaluation.get('assessment_models_sha256') != object_hash(models):
                     raise ValueError('Qualification must use the reviewed assessment model versions')
                 assessed = {m['candidate_id']: m['structure'] for m in models}
                 protocol = self.data('qualified_profile', merged)
@@ -542,7 +525,7 @@ class Controller:
                     mapping = load_json(verify_artifact(candidate['assembly_map'], self.root))
                     if (mapping.get('candidate_id') != candidate['candidate_id']
                             or mapping.get('sequence_sha256') != candidate['sequence']['sha256']
-                            or mapping.get('structure_sha256') != assessed.get(candidate['candidate_id'], candidate['structure'])['sha256']
+                            or mapping.get('structure_sha256') != assessed[candidate['candidate_id']]['sha256']
                             or set(mapping.get('chain_ids', [])) != set(a['sequence_groups'][0]['chain_ids'])
                             or set(mapping.get('site_ids', [])) != set(site_map(a))):
                         raise ValueError('Qualified candidate lacks a current sequence/structure/site assembly map')
@@ -592,13 +575,8 @@ class Controller:
                     if path.suffix == '.json':
                         verify_nested(load_json(path), self.root)
                 if stage == 'fold':
-                    models = self.assessment_models()
-                    if models:
-                        refs = {r['kind']: r for r in item['artifacts']}
-                        check_assessment_models(models, self.data('candidate_manifest', refs)['candidates'],
-                                                self.data('generation_profile')['assembly'],
-                                                self.artifacts()['evaluation_plan']['sha256'], self.root)
-            except (ValueError, OSError) as exc:
+                    self.validate_output('fold', {'status': 'completed', 'artifacts': item['artifacts']})
+            except (ValueError, OSError, KeyError, TypeError) as exc:
                 return stage, str(exc)
         return None
 

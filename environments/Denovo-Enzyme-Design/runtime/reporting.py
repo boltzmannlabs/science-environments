@@ -67,9 +67,11 @@ def write_bundle(root: Path, state: dict, summary: dict) -> None:
             if ref['kind'] == 'stage_evidence':
                 models = load_json(verify_artifact(ref, root)).get('assessment_models', [])
     assessed = {m['candidate_id']: m['structure'] for m in models}
+    qualified = set(summary['qualified_candidates'])
+    if not qualified.issubset(assessed):
+        raise ValueError('Qualified export requires a reviewed assessment model for every selected candidate')
     write('assessment_models.json', {'models': models,
           'scope': 'Reviewed computational assessment models; generated scaffolds remain in the candidate manifest.'})
-    qualified = set(summary['qualified_candidates'])
     evaluation = read('evaluation', {'candidates': [], 'unresolved': [summary['reason']]})
     evaluation.update(run_id=state['run_id'], status=summary['status'], stop_reason=summary['reason'],
                       requested_count=request.get('execution', {}).get('final_count'),
@@ -95,7 +97,7 @@ def write_bundle(root: Path, state: dict, summary: dict) -> None:
                 elif line.strip():
                     seq.append(line.strip())
             fasta.write(f'>{key}\n' + ''.join(seq) + '\n')
-            selected = assessed.get(identity, candidate['structure'])
+            selected = assessed[identity]
             source = verify_artifact(selected, root)
             target = out / 'structures' / (key + source.suffix)
             target.parent.mkdir(exist_ok=True)

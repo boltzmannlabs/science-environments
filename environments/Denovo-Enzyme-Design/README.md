@@ -14,6 +14,8 @@ Recovery distinguishes startup/integration problems, failed method controls, and
 
 Configured smart-mode approval counts for the approved operation; a second manual prompt is unnecessary unless explicitly requested. Remote polling preserves the original provider/job IDs, and invalidated structure/chemistry exports move to marked history. The default agent-selected mode chooses suitable tools and records their actual contracts and versions; it does not require a fixed tool list.
 
+Every generation route requires independent, sequence-bound assessment models with applicable method controls and reviewed integrity evidence before `fold` can be accepted. Preparation or minimization alone cannot meet that requirement. Restart, downstream stages and final qualification recheck the same evidence; qualified exports cannot fall back to generated coordinates. This is assessment contract 2.1, with unchanged evidence-field formats. Preserve earlier runs and use an explicit versioned continuation when adopting the updated runtime; old acceptance flags are not validation.
+
 ## Read in this order
 
 1. [Agent task](tasks/denovo_enzyme_001.md): the task-facing description, 14 required execution steps, constraints and expected deliverable, organized like the supplied BioDesignBench example.
