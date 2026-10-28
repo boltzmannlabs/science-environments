@@ -12,6 +12,8 @@ minimization and 1,000 production steps. The run selected the CUDA platform.
 |---:|---:|---:|---:|---:|---|
 | 1 | 1482 | 10 | 10.749413 | -21389.130825 | PASS |
 | 2 | 1482 | 10 | 13.001009 | -21470.591976 | PASS |
+| 3 | 1482 | 10 | 13.175203 | -21598.430966 | PASS |
+| 4 | 1482 | 10 | 12.903751 | -21563.430142 | PASS |
 
 Each JSON result records input/structure/trajectory/log SHA-256 hashes, engine
 version, platform, seed, energies and runtime. The two trajectories are not
