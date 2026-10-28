@@ -27,7 +27,7 @@ Synthesis planning, FEP and molecular-dynamics simulation remain outside scope. 
 
 1. Qualify a model using the installed skill and actual scientific tool outputs, with explicit resource allowance and dated job/artifact evidence.
 2. Approve and freeze the first real case's dataset, identities, assay endpoint, cohort, scoring and protected evaluator deployment. The [Moonshot dossier](tasks/covid-moonshot/README.md) records preparation gaps; it has not been run.
-3. Execute the matched base-agent comparison under the [protocol](benchmark/PROTOCOL.md), then obtain scientific review.
+3. Execute the matched base-agent comparison under the [protocol](tests/COMPARISON_PROTOCOL.md), then obtain scientific review.
 4. Link a tracking issue and obtain maintainer/software review before publication or merge. The [local contribution draft](results/contribution-draft.md) is prepared; no issue or PR was published.
 
 Additional enhancement proposals—automatic observation, chemical-graph policies, richer uncertainty and selection algorithms—require separate design agreement. They are not implied implemented by the general specification.

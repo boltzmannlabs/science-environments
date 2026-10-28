@@ -8,7 +8,7 @@ Can an agent prioritize compounds with improved measured Mpro inhibition relativ
 
 This would exercise the general environment on one specific target. It measures retrospective selection within a library. It cannot establish experimental improvement of newly generated analogues, antiviral efficacy, selectivity, or drug-development success.
 
-The [source review](../../../../research/small-molecule-lead-optimization/moonshot-task-review.md) records the accessible files, licence evidence, and assay/identity limitations. The [general comparison protocol](../../benchmark/PROTOCOL.md) defines the information to settle before comparing the base agent and environment-assisted agent.
+The [source review](../../../../research/small-molecule-lead-optimization/moonshot-task-review.md) records the accessible files, licence evidence, and assay/identity limitations. The [general comparison protocol](../../tests/COMPARISON_PROTOCOL.md) defines the information to settle before comparing the base agent and environment-assisted agent.
 
 ## Source candidate
 

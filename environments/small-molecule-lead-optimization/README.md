@@ -33,6 +33,6 @@ The installed agent discovers `leadopt_campaign` and the `leadopt_env:lead-optim
 
 [COVID Moonshot](tasks/covid-moonshot/README.md) is a proposed retrospective measured-library task. Its source, assay and cohort review is unfinished. Such a task tests prioritization of recorded compounds; its labels cannot establish experimental improvement for newly generated analogues.
 
-The [comparison protocol](benchmark/PROTOCOL.md) separates software reliability from scientific performance. No base-agent comparison has run and no improved-compound or error-free-execution claim is made.
+The [comparison protocol](tests/COMPARISON_PROTOCOL.md) separates software reliability from scientific performance. No base-agent comparison has run and no improved-compound or error-free-execution claim is made.
 
 This remains a local contribution on the feature branch. Issue linkage and maintainer/scientific review are outstanding; see [STATUS.md](STATUS.md). Repository license selection is pending in [LICENSE](../../LICENSE).

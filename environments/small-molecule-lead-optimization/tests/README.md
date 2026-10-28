@@ -38,7 +38,7 @@ Data-integrity errors are distinct from advisory findings. The environment may r
 
 The installed skill still needs model-driven qualification with the intended runtime and actual scientific tool results. Live checks need dated request/job/artifact evidence and validated result-to-candidate associations. This implementation uses explicit agent records and does not automatically intercept calls; tests cannot establish complete accounting for unrecorded activity.
 
-Scientific comparison requires a separately approved task, matched starting information/tools/resource boundaries, a frozen protocol, repeated runs and appropriate baselines. Use the [comparison protocol](../benchmark/PROTOCOL.md). A different predictor does not automatically provide independent evidence; reuse of the search scorer cannot be labelled transfer to another predictor.
+Scientific comparison requires a separately approved task, matched starting information/tools/resource boundaries, a frozen protocol, repeated runs and appropriate baselines. Use the [comparison protocol](COMPARISON_PROTOCOL.md). A different predictor does not automatically provide independent evidence; reuse of the search scorer cannot be labelled transfer to another predictor.
 
 The offline evaluator binds a submission receipt to preregistered final rules and reference identities. It does not deploy an access sandbox or verify prior model exposure. Real protected answers must remain outside the tested agent's filesystem and tools. Public data exposure, censored measurements, molecular forms and assay compatibility require separate review.
 

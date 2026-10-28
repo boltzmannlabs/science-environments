@@ -43,4 +43,4 @@ Use the current installed Boltzmann catalogue and complete generated module for 
 
 Final objective/constraint signatures and source version belong in the task's `evaluation` object before the run. The offline evaluator reads a frozen submission, a separately retained digest receipt and evaluator-owned reference records. Reference identities and task/source versions must match. Evaluator references are never exposed through the plugin tool.
 
-Checksums do not isolate hidden answers. For an independent benchmark, the host/operator must keep reference files and evaluator access outside the tested agent's readable environment. The public synthetic example demonstrates software behavior only. The [comparison protocol](../benchmark/PROTOCOL.md) describes the scientific requirements still pending.
+Checksums do not isolate hidden answers. For an independent benchmark, the host/operator must keep reference files and evaluator access outside the tested agent's readable environment. The public synthetic example demonstrates software behavior only. The [comparison protocol](../tests/COMPARISON_PROTOCOL.md) describes the scientific requirements still pending.

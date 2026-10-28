@@ -74,7 +74,6 @@ science-environments/
 │       ├── tests/
 │       ├── src/
 │       ├── scripts/
-│       ├── benchmark/
 │       └── results/
 ├── docs/
 │   └── decisions/

@@ -42,6 +42,6 @@ COVID Moonshot Mpro is the proposed first task. First review source versions, mo
 
 Protected reference answers must reside outside the tested agent's access when independent scoring is claimed. Public measurements cannot provide experimental scores for new structures.
 
-The [Moonshot preparation dossier](covid-moonshot/README.md) records verified sources and unresolved data/protocol decisions. The [comparison protocol](../benchmark/PROTOCOL.md) defines the base-agent comparison requirements.
+The [Moonshot preparation dossier](covid-moonshot/README.md) records verified sources and unresolved data/protocol decisions. The [comparison protocol](../tests/COMPARISON_PROTOCOL.md) defines the base-agent comparison requirements.
 
 See the [specification](../ENVIRONMENT_SPEC.md) and [research notes](../../../research/small-molecule-lead-optimization/research-notes.md).
