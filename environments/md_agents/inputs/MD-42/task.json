@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-42",
+  "agent_id": "MD-42",
+  "agent_name": "Ligand Unbinding Pathway Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "benzamidine_trypsin_unbinding.dcd",
+    "parameters": {
+      "contact_cutoff_A": 4.5,
+      "unbound_distance_A": 15,
+      "replicas": 5
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

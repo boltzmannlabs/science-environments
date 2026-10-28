@@ -1,0 +1,20 @@
+{
+  "task_id": "MD-34",
+  "agent_id": "MD-34",
+  "agent_name": "Nucleic Acid Dynamics Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "dna_duplex_12mer.pdb",
+    "parameters": {
+      "forcefield": "parmbsc1",
+      "metrics": [
+        "base_pairing",
+        "stacking",
+        "helical_rise"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

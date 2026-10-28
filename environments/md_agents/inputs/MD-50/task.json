@@ -1,0 +1,20 @@
+{
+  "task_id": "MD-50",
+  "agent_id": "MD-50",
+  "agent_name": "End-to-End MD Qualification Orchestrator",
+  "group": "domain",
+  "input": {
+    "fixture": "md_end_to_end_bundle.json",
+    "parameters": {
+      "cases": [
+        "valid_water",
+        "nan_energy",
+        "missing_parameter"
+      ],
+      "retry_limit": 1
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}
