@@ -11,6 +11,24 @@ does not impose that restriction on ordinary conversations.
 
 ## Normal plugin setup
 
+The recommended setup on a machine with the existing LocalRetro assets and
+runtime is one command from the environment root:
+
+```sh
+python3 scripts/setup_retrosynthesis.py install
+```
+
+This installs the plugin and skill in the main Agent Scientist profile, copies
+the four verified model inputs into that profile and enables the plugin. It
+stores the trusted runtime paths in the profile plugin's private `runtime.json`.
+Restart Agent Scientist after installation. The model is not embedded in the
+public source release. On another machine with an approved REBOLT copy, use
+`--existing-rebolt-root` and `--existing-rebolt-python` to select it. The
+installer rejects missing or digest-mismatched assets.
+
+The settings below remain available for operators who manage their own
+scientific runtime or need an explicit override.
+
 Install the gym and chemistry dependencies in a Python 3.10+ environment using
 [the base release guide](../../docs/BASE_RELEASE.md). The plugin itself imports
 only Python's standard library. It starts a persistent local chemistry process
