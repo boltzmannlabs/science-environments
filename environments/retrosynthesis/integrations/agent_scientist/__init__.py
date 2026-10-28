@@ -25,6 +25,7 @@ NORMAL_ACTIONS = frozenset({
 _clients = []
 RUNTIME_KEYS = frozenset({'SRG_PACKAGE_ROOT', 'SRG_CHEMISTRY_PYTHON',
     'REBOLT_ROOT', 'REBOLT_PYTHON', 'SRG_BACKEND_TIMEOUT_SECONDS'})
+BASE_RUNTIME_KEYS = RUNTIME_KEYS - {'REBOLT_ROOT', 'REBOLT_PYTHON'}
 
 
 def _installed_runtime():
@@ -36,9 +37,9 @@ def _installed_runtime():
         if path.is_symlink() or path.stat().st_size > 4096:
             raise ValueError('Invalid runtime file')
         settings = json.loads(path.read_text(encoding='utf-8'))
-        if (not isinstance(settings, dict) or set(settings) != RUNTIME_KEYS or
+        if (not isinstance(settings, dict) or set(settings) not in (BASE_RUNTIME_KEYS, RUNTIME_KEYS) or
                 any(not isinstance(value, str) or not value for value in settings.values()) or
-                any(not Path(settings[key]).is_absolute() for key in RUNTIME_KEYS - {'SRG_BACKEND_TIMEOUT_SECONDS'})):
+                any(not Path(settings[key]).is_absolute() for key in set(settings) - {'SRG_BACKEND_TIMEOUT_SECONDS'})):
             raise ValueError('Invalid runtime settings')
         return settings
     except (OSError, ValueError, UnicodeError) as exc:
