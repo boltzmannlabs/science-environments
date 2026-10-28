@@ -1,0 +1,236 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source tleap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./tleap.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/amino12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminoct12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminont12.lib
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.water.tip3p done
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/atomic_ions.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/solvents.lib
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/benzamidine.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Mol2 file: /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/benzamidine.mol2
+Reading MOLECULE named BEN
+Loading PDB file: /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_protein_no_waters.pdb
+  Added missing heavy atom: .R<TYR 5>.A<OH 14>
+  Added missing heavy atom: .R<TYR 14>.A<OH 14>
+  Added missing heavy atom: .R<TYR 22>.A<OH 14>
+  Added missing heavy atom: .R<TRP 34>.A<CH2 16>
+  Added missing heavy atom: .R<TYR 42>.A<OH 14>
+  Added missing heavy atom: .R<ARG 49>.A<NH1 17>
+  Added missing heavy atom: .R<ARG 49>.A<NH2 20>
+  Added missing heavy atom: .R<TYR 76>.A<OH 14>
+  Added missing heavy atom: .R<ARG 99>.A<NH1 17>
+  Added missing heavy atom: .R<ARG 99>.A<NH2 20>
+  Added missing heavy atom: .R<TRP 121>.A<CH2 16>
+  Added missing heavy atom: .R<TYR 131>.A<OH 14>
+  Added missing heavy atom: .R<TYR 152>.A<OH 14>
+  Added missing heavy atom: .R<TYR 165>.A<OH 14>
+  Added missing heavy atom: .R<TRP 193>.A<CH2 16>
+  Added missing heavy atom: .R<TYR 206>.A<OH 14>
+  Added missing heavy atom: .R<TYR 212>.A<OH 14>
+  Added missing heavy atom: .R<TRP 215>.A<CH2 16>
+  total atoms in file: 1611
+  Leap added 1621 missing atoms according to residue templates:
+       18 Heavy
+       1603 H / lone pairs
+Checking 'COMPLEX'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (6.000000) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.880 angstroms between nonbonded atoms HH and HD22
+-------  .R<TYR 212>.A<HH 15> and .R<ASN 83>.A<HD22 12>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.305 angstroms between nonbonded atoms HG and SG
+-------  .R<CYS 210>.A<HG 9> and .R<CYS 109>.A<SG 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.785 angstroms between nonbonded atoms HG and SG
+-------  .R<CYS 197>.A<HG 9> and .R<CYS 173>.A<SG 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.487 angstroms between nonbonded atoms HG and HE2
+-------  .R<SER 177>.A<HG 9> and .R<HIE 40>.A<HE2 13>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.496 angstroms between nonbonded atoms H and HG3
+-------  .R<ARG 99>.A<H 2> and .R<ARG 99>.A<HG3 10>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.332 angstroms between nonbonded atoms H and HB2
+-------  .R<SER 98>.A<H 2> and .R<ASN 97>.A<HB2 6>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.305 angstroms between nonbonded atoms HE and HE22
+-------  .R<ARG 49>.A<HE 15> and .R<GLN 47>.A<HE22 15>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.476 angstroms between nonbonded atoms HH21 and HE21
+-------  .R<ARG 49>.A<HH21 21> and .R<GLN 47>.A<HE21 14>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.327 angstroms between nonbonded atoms HZ2 and HG
+-------  .R<LYS 43>.A<HZ2 19> and .R<SER 20>.A<HG 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.369 angstroms between nonbonded atoms SG and HG
+-------  .R<CYS 41>.A<SG 8> and .R<CYS 25>.A<HG 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.417 angstroms between nonbonded atoms HD1 and HD21
+-------  .R<TRP 34>.A<HD1 10> and .R<ASN 31>.A<HD21 11>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.188 angstroms between nonbonded atoms H and HD22
+-------  .R<GLN 33>.A<H 2> and .R<ASN 31>.A<HD22 12>
+Checking parameters for unit 'COMPLEX'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 13
+Unit is OK.
+  Solute vdw bounding box:              46.230 41.478 51.550
+  Total bounding box for atom centers:  66.230 61.478 71.550
+  Solvent unit box:                     18.774 18.774 18.774
+  Total vdw box size:                   69.529 64.737 74.743 angstroms.
+  Volume: 336429.575 A^3 
+  Total mass 161642.416 amu,  Density 0.798 g/cc
+  Added 7672 residues.
+Adding 6 counter ions to "COMPLEX". 7666 solvent molecules will remain.
+0: Placed Cl- in COMPLEX at (-24.24, 11.61, -25.64).
+0: Placed Cl- in COMPLEX at (17.01, 1.60, -11.20).
+0: Placed Cl- in COMPLEX at (-21.95, -24.62, 32.35).
+0: Placed Cl- in COMPLEX at (19.89, -28.34, -30.00).
+0: Placed Cl- in COMPLEX at (19.52, -24.86, -5.12).
+0: Placed Cl- in COMPLEX at (29.71, -7.55, 34.67).
+Checking 'COMPLEX'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.880 angstroms between nonbonded atoms HH and HD22
+-------  .R<TYR 212>.A<HH 15> and .R<ASN 83>.A<HD22 12>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.305 angstroms between nonbonded atoms HG and SG
+-------  .R<CYS 210>.A<HG 9> and .R<CYS 109>.A<SG 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.785 angstroms between nonbonded atoms HG and SG
+-------  .R<CYS 197>.A<HG 9> and .R<CYS 173>.A<SG 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.487 angstroms between nonbonded atoms HG and HE2
+-------  .R<SER 177>.A<HG 9> and .R<HIE 40>.A<HE2 13>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.496 angstroms between nonbonded atoms H and HG3
+-------  .R<ARG 99>.A<H 2> and .R<ARG 99>.A<HG3 10>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.332 angstroms between nonbonded atoms H and HB2
+-------  .R<SER 98>.A<H 2> and .R<ASN 97>.A<HB2 6>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.305 angstroms between nonbonded atoms HE and HE22
+-------  .R<ARG 49>.A<HE 15> and .R<GLN 47>.A<HE22 15>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.476 angstroms between nonbonded atoms HH21 and HE21
+-------  .R<ARG 49>.A<HH21 21> and .R<GLN 47>.A<HE21 14>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.327 angstroms between nonbonded atoms HZ2 and HG
+-------  .R<LYS 43>.A<HZ2 19> and .R<SER 20>.A<HG 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.369 angstroms between nonbonded atoms SG and HG
+-------  .R<CYS 41>.A<SG 8> and .R<CYS 25>.A<HG 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.417 angstroms between nonbonded atoms HD1 and HD21
+-------  .R<TRP 34>.A<HD1 10> and .R<ASN 31>.A<HD21 11>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.188 angstroms between nonbonded atoms H and HD22
+-------  .R<GLN 33>.A<H 2> and .R<ASN 31>.A<HD22 12>
+Checking parameters for unit 'COMPLEX'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 12
+Unit is OK.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 643 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	BEN	1
+	CASN	1
+	NILE	1
+	WAT	7666
+  )
+ (no restraints)
+Writing pdb file: /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_benzamidine.parameterized.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NILE -> ILE
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASN -> ASN
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 27; Notes = 0.

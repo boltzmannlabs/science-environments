@@ -1,0 +1,13 @@
+{
+  "fixture": "ligand_pair_fep_replicas.json",
+  "task_id": "MD-43",
+  "parameters": {
+    "ligands": [
+      "LIG_A",
+      "LIG_B"
+    ],
+    "replicas": 4,
+    "target": "relative_affinity"
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}

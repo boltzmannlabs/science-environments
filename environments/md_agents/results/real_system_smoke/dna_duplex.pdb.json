@@ -1,0 +1,13 @@
+{
+  "system": "dna_duplex.pdb",
+  "status": "PASS",
+  "engine": "OpenMM",
+  "engine_version": "8.2",
+  "original_input": "/home/boltzmann15/github/science-environments/environments/md_agents/cases/real_systems/dna_duplex.pdb",
+  "atoms": 998,
+  "energy_kj_mol": -9892.553786918761,
+  "wall_time_s": 4.8,
+  "repaired_input": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_smoke/dna_duplex.pdb.repaired.pdb",
+  "repair": "PDBFixer missing atoms/hydrogens; heterogens removed in derived copy",
+  "physical_sanity": "PASS"
+}

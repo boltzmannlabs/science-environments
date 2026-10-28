@@ -1,0 +1,13 @@
+{
+  "system": "villin_headpiece.pdb",
+  "status": "PASS",
+  "engine": "OpenMM",
+  "engine_version": "8.2",
+  "original_input": "/home/boltzmann15/github/science-environments/environments/md_agents/cases/real_systems/villin_headpiece.pdb",
+  "atoms": 762,
+  "energy_kj_mol": -3081.1640277065053,
+  "wall_time_s": 3.92,
+  "repaired_input": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_smoke/villin_headpiece.pdb.repaired.pdb",
+  "repair": "PDBFixer missing atoms/hydrogens; heterogens removed in derived copy",
+  "physical_sanity": "PASS"
+}
