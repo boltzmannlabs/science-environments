@@ -1,0 +1,11 @@
+{
+  "task_id": "MD-CORE-001-water-box",
+  "agent_ids": ["MD-01", "MD-05", "MD-06", "MD-07", "MD-08", "MD-09", "MD-10", "MD-14", "MD-18", "MD-19", "MD-20"],
+  "description": "Minimize and run a short explicit-water MD simulation, then independently audit trajectory and provenance.",
+  "input_files": {"structure": "../../cases/water_box.pdb", "request": "../../cases/water_box_request.json", "structure_sha256": "6f168a8bce7313592124fa771d123ff5e3f35cc73ab971210dbbc905d4d61596", "request_sha256": "20097060322465784ee8b34870a7dd23b4e0ad24df150a348031f247a427fdbe"},
+  "runtime": {"engine": "OpenMM", "engine_version": "8.2", "platform_policy": "CUDA if available; record selected platform", "force_field": "tip3p.xml", "temperature_K": 300.0, "timestep_fs": 1.0, "minimization_max_iterations": 250, "production_steps": 1000, "report_interval_steps": 100, "seed": 20261027, "repeat_ids": [1,2,3,4], "walltime_limit_s": 120},
+  "execution": {"command": "python scripts/run_core_openmm.py --repeat <repeat_id>", "working_directory": "environments/md_agents", "output_directory": "results/core_openmm"},
+  "expected_outputs": ["results/core_openmm/repeat_<repeat_id>.json", "results/core_openmm/repeat_<repeat_id>.dcd", "results/core_openmm/repeat_<repeat_id>.log"],
+  "acceptance": {"status": "PASS", "atom_count": 1482, "trajectory_frames": 10, "finite_energies": true, "input_hashes_present": true, "trajectory_hash_present": true, "independent_repeats_required": true},
+  "limitations": "Short water-box qualification only; not protein, membrane, ligand, free-energy, or long-timescale qualification."
+}
