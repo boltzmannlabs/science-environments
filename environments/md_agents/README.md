@@ -23,6 +23,16 @@ environments.
 4. [Agent contracts](agents/contracts.json)
 5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
 6. [Real-system execution results](results/real_system_production/RESULTS.md)
+7. [Runtime contracts](runtime/CONTRACTS.md) and [results index](results/README.md)
+
+## Package layout
+
+The package follows the repository environment layout: specification and
+configuration at the root, one concrete task packet per agent under `inputs/`,
+execution-facing task descriptions under `tasks/`, runtime facades under
+`runtime/`, and versioned evidence under `results/`. The executable adapters
+and fixture-generation utilities are under `scripts/`; independent checks are
+under `tests/`.
 
 ## Explicit per-agent input packets
 
