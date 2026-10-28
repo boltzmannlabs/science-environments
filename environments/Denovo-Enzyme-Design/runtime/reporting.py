@@ -5,14 +5,44 @@ import csv
 import json
 from pathlib import Path
 import shutil
+import uuid
 
 from contracts import load_json, object_hash, verify_artifact
 
 
+def archive_replaced_exports(root: Path, out: Path, signature: str) -> None:
+    manifest = out / 'manifest.json'
+    if manifest.exists() and load_json(manifest).get('export_signature') == signature:
+        return
+    if not any((out / name).exists() for name in ('structures', 'chemistry')):
+        return
+    history_root = root / 'result_history'
+    if history_root.is_symlink():
+        raise ValueError('Result history must be a local directory, not a symlink')
+    history_root.mkdir(exist_ok=True)
+    history = history_root / uuid.uuid4().hex
+    shutil.copytree(out, history, symlinks=True)
+    (history / 'SUPERSEDED.json').write_text(json.dumps({
+        'status': 'SUPERSEDED',
+        'reason': 'Qualified candidates or accepted artifact versions changed',
+        'scope': 'Historical export only; read qualification from the current 08_results bundle.'
+    }, indent=2) + '\n')
+    for name in ('structures', 'chemistry'):
+        path = out / name
+        if path.is_symlink():
+            path.unlink()
+        elif path.is_dir():
+            shutil.rmtree(path)
+
+
 def write_bundle(root: Path, state: dict, summary: dict) -> None:
     out = root / '08_results'
+    if out.is_symlink():
+        raise ValueError('Result bundle must be a local directory, not a symlink')
     out.mkdir(exist_ok=True)
     refs = summary['artifacts']
+    export_signature = object_hash({'qualified_ids': summary['qualified_candidates'], 'artifacts': refs})
+    archive_replaced_exports(root, out, export_signature)
 
     def read(kind, default):
         if kind not in refs:
@@ -88,9 +118,11 @@ def write_bundle(root: Path, state: dict, summary: dict) -> None:
         write('chemistry/evidence.json', {'candidates': {identity: {name: value for name, value in
               metric_rows.get(identity, {}).items() if name in chemical_rules} for identity in qualified}})
     write('manifest.json', {'run_id': state['run_id'], 'condition': state['condition'],
+          'export_signature': export_signature,
           'input_files': state['inputs'], 'policy_sha256': state['policy_sha256'],
           'implementation_sha256': state['implementation_sha256'], 'accepted_artifacts': refs,
           'assessment_models': models,
+          'execution_approval_block': summary.get('execution_approval_block'),
           'seed': request.get('execution', {}).get('seed'), 'usage': state['usage'],
           'outstanding_jobs': summary['outstanding_jobs'], 'unreconciled_call': summary['unreconciled_call']})
     (out / 'report.md').write_text(

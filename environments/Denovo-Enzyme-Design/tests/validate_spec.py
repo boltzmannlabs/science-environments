@@ -412,6 +412,21 @@ def main() -> None:
     require(config['scope']['supported_assemblies'] == ['monomer', 'homodimer'], 'specified assembly scope is monomer and homodimer')
     require(config['scope']['request_assembly_fallback'] == 'resolve_from_evidence', 'unspecified assembly never defaults to monomer')
     autonomy = config['autonomy']
+    startup = config['startup_validation']
+    require(startup['use_actual_run_inputs']
+            and startup['unchanged_failing_invocation_retry'] == 'forbidden'
+            and startup['execution_gate_denial_action'] == 'stop_and_preserve_exact_error_without_alternate_route',
+            'startup recovery uses actual inputs and preserves genuine execution approval boundaries')
+    method = config['method_validation']
+    require(method['assessment_contract_version'] == '2.0'
+            and method['required_before_structural_promotion']
+            and method['exploratory_control_and_candidate_predictions_allowed']
+            and not method['control_failure_is_candidate_failure'],
+            'control qualification gates promotion without blocking exploratory predictions or rejecting candidates by inference')
+    require(method['evidence_bound_to_method_settings_plan_and_applicability']
+            and method['enzyme_specific_rules_location'] == 'run_profile_not_environment_constants'
+            and method['candidate_native_interface_identity_required'] == 'only_if_explicitly_frozen_in_task',
+            'method validation is bound to the current run without universal native-interface or target-specific defaults')
     fallback = autonomy['fallback_pilot']
     require(autonomy['scientific_target'] == 'resolved_separately_for_each_request'
             and not autonomy['example_biology_is_default'],

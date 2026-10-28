@@ -9,7 +9,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'runtime'))
 from assessment import INTEGRITY_CHECKS, check_assessment_models, pdb_chain_sequences
-from contracts import load_json
+from contracts import load_json, object_hash
 
 
 def artifact(root, name, value):
@@ -38,6 +38,16 @@ def assessment_fixture(root, candidate, plan_hash, chains=('A',)):
         'method': 'software_fixture', 'version': 'test-only', 'settings': {'synthetic': True},
         'raw_output': raw})
     control = artifact(root, 'geometry_fixture.txt', 'Synthetic contract receipt; no physical measurements.')
+    method_validation = artifact(root, 'method_validation_fixture.json', {
+        'schema_version': '1.0', 'method': 'software_fixture', 'version': 'test-only',
+        'settings_sha256': object_hash({'synthetic': True}), 'evaluation_plan_sha256': plan_hash,
+        'status': 'PASS', 'synthetic_only': True,
+        'applicability': {'status': 'PASS', 'assembly_kind': 'monomer' if len(chains) == 1 else 'homodimer',
+                         'candidate_information_basis': 'synthetic_sequence_only',
+                         'control_information_basis': 'synthetic_sequence_only',
+                         'rationale': 'Software test only; no inference or scientific validation', 'evidence': [control]},
+        'controls': [{'control_id': 'fixture_positive', 'kind': 'positive', 'status': 'PASS',
+                      'expected_outcome': 'Synthetic contract behavior only', 'evidence': [control]}]})
     report = artifact(root, 'integrity_fixture.json', {
         'candidate_id': candidate['candidate_id'], 'revision': candidate['revision'],
         'sequence_sha256': candidate['sequence']['sha256'], 'structure_sha256': structure['sha256'],
@@ -48,7 +58,7 @@ def assessment_fixture(root, candidate, plan_hash, chains=('A',)):
             'sequence_sha256': candidate['sequence']['sha256'],
             'generated_structure_sha256': candidate['structure']['sha256'],
             'basis': 'independent_sequence_prediction', 'structure': structure,
-            'prediction_record': provenance, 'integrity_report': report}
+            'prediction_record': provenance, 'method_validation': method_validation, 'integrity_report': report}
 
 
 class AssessmentTests(unittest.TestCase):
@@ -60,7 +70,7 @@ class AssessmentTests(unittest.TestCase):
                           'sequence': artifact(self.root, 'sequence.fasta', '>fixture\nACD\n'),
                           'structure': artifact(self.root, 'generated.pdb', 'REMARK invalid fixture\n')}
         self.model = assessment_fixture(self.root, self.candidate, 'a' * 64, ('A', 'B'))
-        self.assembly = {'sequence_groups': [{'chain_ids': ['A', 'B']}]}
+        self.assembly = {'kind': 'homodimer', 'sequence_groups': [{'chain_ids': ['A', 'B']}]}
 
     def validate(self, model=None):
         return check_assessment_models([model or self.model], [self.candidate],
@@ -81,7 +91,7 @@ class AssessmentTests(unittest.TestCase):
                     self.validate(model)
 
     def test_other_revision_relabeling_and_stale_raw_output_are_rejected(self):
-        for key, value in [('revision', 2), ('sequence_sha256', '0' * 64),
+        for key, value in [('revision', 2), ('revision', True), ('sequence_sha256', '0' * 64),
                            ('structure', self.candidate['structure'])]:
             with self.subTest(key=key):
                 with self.assertRaises(ValueError):
@@ -98,6 +108,38 @@ class AssessmentTests(unittest.TestCase):
             with self.subTest(change=change):
                 model = {**self.model, 'integrity_report': artifact(self.root, 'bad_report.json', {**original, **change})}
                 with self.assertRaises(ValueError):
+                    self.validate(model)
+
+    def test_method_control_failure_is_distinct_from_candidate_failure(self):
+        original = load_json(Path(self.model['method_validation']['path']))
+        for status in ('FAIL', 'UNRESOLVED'):
+            with self.subTest(status=status):
+                model = {**self.model, 'method_validation': artifact(self.root, 'control_failure.json', {**original, 'status': status})}
+                expected = 'METHOD_CONTROL_FAILED' if status == 'FAIL' else 'METHOD_CONTROL_UNRESOLVED'
+                with self.assertRaisesRegex(ValueError, expected):
+                    self.validate(model)
+        self.assertEqual(self.candidate['revision'], 1)
+
+    def test_control_settings_and_candidate_information_scope_cannot_be_guessed(self):
+        original = load_json(Path(self.model['method_validation']['path']))
+        changes = [({'settings_sha256': '0' * 64}, 'METHOD_VALIDATION_BINDING_MISMATCH'),
+                   ({'controls': []}, 'METHOD_CONTROL_UNRESOLVED'),
+                   ({'applicability': {**original['applicability'], 'status': 'UNRESOLVED'}}, 'METHOD_APPLICABILITY_UNRESOLVED'),
+                   ({'applicability': {**original['applicability'], 'assembly_kind': 'monomer'}}, 'METHOD_APPLICABILITY_UNRESOLVED')]
+        for change, expected in changes:
+            with self.subTest(change=change):
+                model = {**self.model, 'method_validation': artifact(self.root, 'unmatched_control.json', {**original, **change})}
+                with self.assertRaisesRegex(ValueError, expected):
+                    self.validate(model)
+
+    def test_integrity_errors_identify_unresolved_failed_or_stale_evidence(self):
+        original = load_json(Path(self.model['integrity_report']['path']))
+        for change, expected in [({'status': 'UNRESOLVED'}, 'STRUCTURAL_INTEGRITY_UNRESOLVED'),
+                                 ({'status': 'FAIL'}, 'STRUCTURAL_INTEGRITY_FAILED'),
+                                 ({'structure_sha256': '0' * 64}, 'ASSESSMENT_IDENTITY_MISMATCH')]:
+            with self.subTest(change=change):
+                model = {**self.model, 'integrity_report': artifact(self.root, 'precise_failure.json', {**original, **change})}
+                with self.assertRaisesRegex(ValueError, expected):
                     self.validate(model)
 
 

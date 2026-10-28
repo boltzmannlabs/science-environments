@@ -13,7 +13,7 @@ import unittest
 
 ENVIRONMENT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ENVIRONMENT / 'runtime'))
-from controller import Controller, initialize
+from controller import Controller, initialize, check_poll_response
 from contracts import GROUPS, object_hash
 from test_assessment import assessment_fixture
 from reporting import write_bundle
@@ -45,7 +45,11 @@ if mode in {'misclassified_question','essential_question','access_question'}:
         'why_unresolved':'Synthetic evidence cannot resolve this explicit choice or access boundary',
         'resolution_attempts':[{'source':'synthetic request and policy',
                                 'finding':'Two incompatible alternatives or unavailable required access'}]}
-if role=='repair':
+if mode=='approval_reviewer' and role=='reviewer' or mode=='approval_repair' and role=='repair':
+    result={'status':'blocked','artifacts':[],'usage':usage,
+            'failure':{'category':'execution_approval','message':'Synthetic gate timeout',
+                       'blocked_command':['synthetic-never-executed'], 'approval_request_id':'fixture-only'}}
+elif role=='repair':
     if task.get('mode')=='reconcile':
         receipt_path=Path(task['interrupted_call']['directory'])/'receipt.json'
         receipt=json.loads(receipt_path.read_text())
@@ -61,6 +65,7 @@ elif role=='reviewer':
     decision='accept'
     if (mode=='sequence_only' or mode.startswith('independent_')) and stage=='generate': decision='accept_sequence_only'
     if mode=='repair_once' and not (root/'repair_complete').exists(): decision='repair'
+    if mode=='approval_repair': decision='repair'
     if mode=='blocked_chemistry' and stage=='chemistry': decision='blocked'
     if mode=='technical_reject': decision='reject'
     if asking: decision='needs_input'
@@ -68,7 +73,11 @@ elif role=='reviewer':
             'reviewed_sha256':task['output_sha256'],'usage':usage}
     if input_request: result['input_request']=input_request
 else:
-    if asking:
+    if mode=='approval_block':
+        result={'status':'blocked','artifacts':[],'usage':usage,
+                'failure':{'category':'execution_approval','message':'Synthetic tool-gate timeout; command did not run',
+                           'blocked_command':['synthetic-never-executed'], 'approval_request_id':'fixture-only'}}
+    elif asking:
         result={'status':'needs_input','artifacts':[],'usage':usage,
                 'failure':{'category':'routine_setting','message':'Synthetic unresolved setting'}}
         if input_request: result['input_request']=input_request
@@ -78,7 +87,7 @@ else:
     elif mode=='technical_reject':
         result={'status':'failed','artifacts':[],'usage':usage,
                 'failure':{'category':'technical','message':'No design work executed'}}
-    elif mode=='pending_once' and stage=='generate' and task.get('mode')!='poll':
+    elif mode.startswith('pending_') and stage=='generate' and task.get('mode')!='poll':
         result={'status':'pending','artifacts':[],'usage':usage,
                 'job_handles':[{'provider':'software_fixture','id':'test_job_1'}]}
     elif (mode=='pending_once' and stage=='generate' and task.get('mode')=='poll'
@@ -135,6 +144,18 @@ else:
             artifacts.append(bundle['prepare'][0])
         result={'status':'completed','summary':'Software-only stage output',
                 'artifacts':artifacts,'usage':usage,'job_handles':[]}
+if role=='executor' and task.get('mode')=='poll':
+    result['polled_job_handles']=task['job_handles']
+    if mode=='pending_approval_block':
+        result={'status':'blocked','artifacts':[],'usage':usage,'job_handles':[],
+                'failure':{'category':'execution_approval','message':'Synthetic polling approval timeout',
+                           'blocked_command':['synthetic-read-only-poll']}}
+    if mode=='pending_wrong_job':
+        result['polled_job_handles']=[{'provider':'software_fixture','id':'different_job'}]
+    if mode=='pending_wrong_provider':
+        result['polled_job_handles']=[{'provider':'different_provider','id':'test_job_1'}]
+    if mode=='pending_missing_receipt':
+        result.pop('polled_job_handles')
 response_path.write_text(json.dumps(result))
 '''
 
@@ -162,8 +183,8 @@ class ControllerIntegrationTests(unittest.TestCase):
         return {'backend': 'command', 'argv': [sys.executable, str(self.script),
                 '{task_file}', '{response_file}', '{role}', str(self.fixture), mode]}
 
-    def create_run(self, mode='late_unresolved', policy=None, condition='agent_selected'):
-        run = self.root / 'run'
+    def create_run(self, mode='late_unresolved', policy=None, condition='agent_selected', name='run'):
+        run = self.root / name
         initialize(run, 'SOFTWARE TEST ONLY: exercise a fictional workflow', [],
                    self.config(mode), {'active_seconds': 90, 'call_timeout_seconds': 5,
                                       'poll_seconds': 0, **(policy or {})}, condition)
@@ -345,6 +366,60 @@ class ControllerIntegrationTests(unittest.TestCase):
         self.assertEqual(result['qualified_design_count'], 0)
         self.assertFalse(any(c['stage'] == 'generate' for c in self.calls(run)), result)
 
+    def test_wrong_or_missing_poll_identity_retains_original_job_without_resubmitting(self):
+        for mode in ('pending_wrong_job', 'pending_wrong_provider', 'pending_missing_receipt'):
+            with self.subTest(mode=mode):
+                run = self.create_run(mode, name=mode)
+                result = Controller(run).run(max_stages=2)
+                self.assertNotEqual(result['stages']['generate'], 'accepted')
+                self.assertEqual(result['outstanding_jobs']['generate'],
+                                 [{'provider': 'software_fixture', 'id': 'test_job_1'}])
+                calls = [c for c in self.calls(run) if c['stage'] == 'generate' and c['role'] == 'executor']
+                self.assertEqual([c['mode'] for c in calls], ['execute', 'poll'])
+                self.assertIn('poll_receipt_rejected', (run/'trajectory.jsonl').read_text()
+                              + (run/'state.json').read_text())
+
+    def test_partial_poll_batch_cannot_drop_or_replace_an_original_job(self):
+        handles = [{'provider': 'fixture', 'id': 'a'}, {'provider': 'fixture', 'id': 'b'}]
+        check_poll_response(handles, {'status': 'pending', 'polled_job_handles': handles,
+                                      'job_handles': list(reversed(handles))})
+        for remaining in ([], handles[:1], [*handles, {'provider': 'fixture', 'id': 'c'}]):
+            with self.subTest(remaining=remaining), self.assertRaises(ValueError):
+                check_poll_response(handles, {'status': 'pending', 'polled_job_handles': handles,
+                                              'job_handles': remaining})
+        with self.assertRaises(ValueError):
+            check_poll_response(handles, {'status': 'completed', 'polled_job_handles': handles,
+                                          'job_handles': handles})
+
+    def test_poll_approval_timeout_cannot_clear_original_remote_handles(self):
+        run = self.create_run('pending_approval_block')
+        result = Controller(run).run(max_stages=2)
+        self.assertEqual(result['outstanding_jobs']['generate'],
+                         [{'provider': 'software_fixture', 'id': 'test_job_1'}])
+        self.assertIn('EXECUTION_APPROVAL_REQUIRED', result['reason'])
+        calls = [c for c in self.calls(run) if c['stage'] == 'generate']
+        self.assertEqual([(c['role'], c['mode']) for c in calls], [('executor', 'execute'), ('executor', 'poll')])
+
+    def test_saved_poll_receipt_recovery_enforces_original_job_identity(self):
+        for mode, accepted in (('pending_valid', True), ('pending_wrong_job', False)):
+            with self.subTest(mode=mode):
+                run = self.create_run(mode, name=mode)
+                controller = Controller(run)
+                handles = [{'provider': 'software_fixture', 'id': 'test_job_1'}]
+                pending = {'status': 'pending', 'job_handles': handles}
+                controller.state['stages']['generate'].update(
+                    status='running', response=pending, job_handles=handles)
+                # Save an actual subprocess receipt, then simulate restart before
+                # applying that receipt to the stage or acknowledging the call.
+                controller.call('executor', controller.task('generate', 'poll', job_handles=handles))
+                recovered = Controller(run)
+                self.assertEqual(recovered.reconcile(), accepted)
+                stage = recovered.state['stages']['generate']
+                self.assertEqual(stage['job_handles'], [] if accepted else handles)
+                self.assertEqual(stage['response']['status'], 'completed' if accepted else 'pending')
+                self.assertIsNone(recovered.state['inflight'])
+                self.assertEqual(len(self.calls(run)), 1)
+
     def test_technical_rejection_is_not_a_completed_negative_design_experiment(self):
         run = self.create_run('technical_reject')
         result = Controller(run).run()
@@ -456,6 +531,24 @@ class ControllerIntegrationTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(exported.read_bytes()).hexdigest(), model['structure']['sha256'])
         self.assertEqual(assembly['generated_structure'], candidate['structure'])
         self.assertNotEqual(assembly['structure_sha256'], candidate['structure']['sha256'])
+        # Re-exporting identical evidence is idempotent; invalidation archives the
+        # old bundle and removes stale structures/chemistry from current results.
+        old_bytes = exported.read_bytes()
+        write_bundle(run, state, summary)
+        self.assertFalse((run/'result_history').exists())
+        summary['qualified_candidates'] = []
+        summary['reason'] = 'Synthetic evidence invalidation'
+        write_bundle(run, state, summary)
+        self.assertFalse((run/'08_results/structures').exists())
+        self.assertFalse((run/'08_results/chemistry').exists())
+        self.assertEqual((run/'08_results/designed_sequences.fasta').read_text(), '')
+        histories = list((run/'result_history').iterdir())
+        self.assertEqual(len(histories), 1)
+        self.assertEqual((histories[0]/assembly['structure']).read_bytes(), old_bytes)
+        self.assertEqual(json.loads((histories[0]/'SUPERSEDED.json').read_text())['status'], 'SUPERSEDED')
+        self.assertTrue((histories[0]/'chemistry/evidence.json').is_file())
+        write_bundle(run, state, summary)
+        self.assertEqual(list((run/'result_history').iterdir()), histories)
 
     def test_changed_prediction_evidence_cannot_be_reused_after_restart(self):
         run = self.create_run('independent_fold', policy={'max_repairs_per_stage': 1})
@@ -474,6 +567,22 @@ class ControllerIntegrationTests(unittest.TestCase):
         self.assertEqual(result['stages']['generate'], 'awaiting_reconciliation')
         self.assertEqual(result['outstanding_jobs']['generate'], item['job_handles'])
         self.assertFalse(any(c['role'] == 'executor' for c in self.calls(run)))
+
+    def test_execution_gate_denial_never_dispatches_repair_or_an_alternate_launch(self):
+        for mode, roles in [('approval_block', ['executor']),
+                            ('approval_reviewer', ['executor', 'reviewer']),
+                            ('approval_repair', ['executor', 'reviewer', 'repair'])]:
+            with self.subTest(mode=mode):
+                run = self.root / mode
+                initialize(run, 'SOFTWARE TEST ONLY: execution approval boundary', [], self.config(mode),
+                           {'active_seconds': 90, 'call_timeout_seconds': 5, 'poll_seconds': 0})
+                result = Controller(run).run()
+                self.assertEqual(result['status'], 'BLOCKED', result)
+                self.assertEqual([c['role'] for c in self.calls(run)], roles)
+                self.assertEqual(result['execution_approval_block']['failure']['approval_request_id'], 'fixture-only')
+                self.assertIn('EXECUTION_APPROVAL_REQUIRED', result['reason'])
+                self.assertEqual(Controller(run).run(), result)
+                self.assertEqual([c['role'] for c in self.calls(run)], roles)
 
 
 if __name__ == '__main__':

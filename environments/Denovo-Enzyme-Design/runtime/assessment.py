@@ -8,13 +8,61 @@ from __future__ import annotations
 import math
 from pathlib import Path
 
-from contracts import _fasta_sequence, _indexed, load_json, verify_artifact, verify_nested
+from contracts import _fasta_sequence, _indexed, load_json, object_hash, verify_artifact, verify_nested
 
 RESIDUES = dict(zip(
     'ALA CYS ASP GLU PHE GLY HIS ILE LYS LEU MET ASN PRO GLN ARG SER THR VAL TRP TYR'.split(),
     'ACDEFGHIKLMNPQRSTVWY'))
 INTEGRITY_CHECKS = {'atom_completeness', 'peptide_geometry', 'ca_stereochemistry',
                     'clashes', 'catalytic_mapping', 'assembly_geometry'}
+
+
+def check_method_validation(ref: dict, provenance: dict, assembly: dict,
+                            evaluation_plan_sha256: str, base: Path) -> None:
+    """Check control evidence and applicability before promoting a prediction.
+
+    The reviewer evaluates scientific adequacy; a passing JSON record alone
+    cannot establish that a method is accurate for a new enzyme or input regime.
+    """
+    if not isinstance(ref, dict):
+        raise ValueError('METHOD_VALIDATION_REQUIRED: agent must prepare method/control evidence')
+    report = load_json(verify_artifact(ref, base))
+    if (report.get('schema_version') != '1.0'
+            or report.get('method') != provenance['method']
+            or report.get('version') != provenance['version']
+            or report.get('settings_sha256') != object_hash(provenance['settings'])
+            or report.get('evaluation_plan_sha256') != evaluation_plan_sha256):
+        raise ValueError('METHOD_VALIDATION_BINDING_MISMATCH: controls concern different settings or evaluation intent')
+    status = report.get('status')
+    if status != 'PASS':
+        category = 'FAILED' if status == 'FAIL' else 'UNRESOLVED'
+        raise ValueError(f'METHOD_CONTROL_{category}: repair or qualify the assessment method; this does not reject the candidate')
+    verify_nested(report, base)
+    application = report.get('applicability', {})
+    if (application.get('status') != 'PASS'
+            or application.get('assembly_kind') != assembly['kind']
+            or any(not isinstance(application.get(k), str) or not application[k].strip()
+                   for k in ('candidate_information_basis', 'control_information_basis', 'rationale'))):
+        raise ValueError('METHOD_APPLICABILITY_UNRESOLVED: establish support for the candidate assembly and information basis')
+    evidence = application.get('evidence')
+    if not isinstance(evidence, list) or not evidence:
+        raise ValueError('METHOD_APPLICABILITY_UNRESOLVED: missing applicability evidence')
+    for item in evidence:
+        if not verify_artifact(item, base).stat().st_size:
+            raise ValueError('METHOD_APPLICABILITY_UNRESOLVED: empty applicability evidence')
+    controls = _indexed(report.get('controls', []), 'control_id')
+    if not controls or not any(c.get('kind') == 'positive' for c in controls.values()):
+        raise ValueError('METHOD_CONTROL_UNRESOLVED: include an applicable known-positive reference or benchmark control')
+    for control in controls.values():
+        if (control.get('status') != 'PASS'
+                or control.get('kind') not in {'positive', 'negative'}
+                or not isinstance(control.get('expected_outcome'), str)
+                or not control['expected_outcome'].strip()
+                or not isinstance(control.get('evidence'), list) or not control['evidence']):
+            raise ValueError('METHOD_CONTROL_UNRESOLVED: every required control needs its expected outcome and passing evidence')
+        for item in control['evidence']:
+            if not verify_artifact(item, base).stat().st_size:
+                raise ValueError('METHOD_CONTROL_UNRESOLVED: empty control evidence')
 
 
 def pdb_chain_sequences(path: Path) -> dict[str, str]:
@@ -65,7 +113,7 @@ def check_assessment_models(models: list, candidates: list, assembly: dict,
     expected_chains = set(assembly['sequence_groups'][0]['chain_ids'])
     for identity, model in by_id.items():
         candidate = known[identity]
-        if (model.get('revision') != candidate['revision']
+        if (type(model.get('revision')) is not int or model.get('revision') != candidate['revision']
                 or model.get('sequence_sha256') != candidate['sequence']['sha256']
                 or model.get('generated_structure_sha256') != candidate['structure']['sha256']
                 or model.get('basis') != 'independent_sequence_prediction'):
@@ -90,13 +138,19 @@ def check_assessment_models(models: list, candidates: list, assembly: dict,
         verify_nested(provenance, base)
         if not verify_artifact(provenance['raw_output'], base).stat().st_size:
             raise ValueError('Independent prediction raw output is empty')
+        check_method_validation(model.get('method_validation'), provenance, assembly,
+                                evaluation_plan_sha256, base)
         report = load_json(verify_artifact(model['integrity_report'], base))
-        if (report.get('candidate_id') != identity or report.get('revision') != candidate['revision']
+        if (report.get('candidate_id') != identity or type(report.get('revision')) is not int
+                or report.get('revision') != candidate['revision']
                 or report.get('sequence_sha256') != candidate['sequence']['sha256']
                 or report.get('structure_sha256') != model['structure']['sha256']
-                or report.get('evaluation_plan_sha256') != evaluation_plan_sha256
-                or report.get('status') != 'PASS'):
-            raise ValueError('Assessment geometry report is failed, stale or bound to another model')
+                or report.get('evaluation_plan_sha256') != evaluation_plan_sha256):
+            raise ValueError('ASSESSMENT_IDENTITY_MISMATCH: integrity report belongs to another model, revision or plan')
+        if report.get('status') != 'PASS':
+            if report.get('status') == 'FAIL':
+                raise ValueError('STRUCTURAL_INTEGRITY_FAILED: inspect candidate-specific geometry evidence')
+            raise ValueError('STRUCTURAL_INTEGRITY_UNRESOLVED: prediction exists but physical assessment is incomplete')
         verify_nested(report, base)
         checks = _indexed(report.get('checks', []), 'check_id')
         if not INTEGRITY_CHECKS.issubset(checks):

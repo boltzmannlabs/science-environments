@@ -1,7 +1,7 @@
 {
   "scope": "software_behavior_and_harness_transport_only",
-  "recorded_at": "2026-10-28T05:08:29.465448+00:00",
-  "tests_run": 39,
+  "recorded_at": "2026-10-28T11:52:41.772449+00:00",
+  "tests_run": 47,
   "tests_successful": true,
   "failures": [],
   "errors": [],
@@ -24,29 +24,28 @@
     "scientific_jobs": 0,
     "recorded_at": "2026-10-27T05:22:05.887328+00:00",
     "tested_agent_bridge_sha256": "b67a6b6fe65c9cec4faa18b0dca5510094684d8f0c43d3a0305436ab2619f0eb",
-    "scope_note": "Historical live transport test; the updated clarification prompt has not been rerun against a live model."
+    "scope_note": "Historical live transport test at its recorded bridge hash; latest startup/control-validation instructions have not run against a live model."
   },
   "versions": {
     "python": "3.13.7",
     "jsonschema": "4.19.2",
-    "PyYAML": "6.0.2",
-    "numpy": "2.5.1"
+    "PyYAML": "6.0.2"
   },
   "file_sha256": {
-    "config/environment.yaml": "9ef82e77d5514f636933265f3749595aa59265262cc95bea6b13ec5c5f4f4a93",
-    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3",
-    "runtime/CONTRACTS.md": "2864fb454785d646732b46aeb3516fe9acdd6401e00b87897e56418a17edf2b9",
-    "runtime/agents.py": "0e05831a7e7f11c330a56d610dc045967da5fd1969210fa71825cbb28fce406d",
-    "runtime/assessment.py": "ed55abc057a6b9abc6f25fe9a2c7777bc49139e60c9a7ed5cc9bd254742a634c",
     "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
-    "runtime/controller.py": "1faf052c00e1d12024b97deedcae2f69631fb33f35281b9015ccb2a2ae744b06",
-    "runtime/reporting.py": "19c58201300690e55989f7a037ec16fcbbb5e7eb54866cb34ae131a59b6cc4ca",
+    "runtime/assessment.py": "9aeb30d21e8880bac2b5452a56a0449537e86e21210dfb750b07d65857e725fd",
+    "runtime/agents.py": "b5f95ef5c5685b50cedbd39cc632443a971c16efecfb752f2b029da317f40093",
+    "runtime/reporting.py": "e5620eb030adb57086ad7699c70c0f5ab692da5b7b6c87d51bf688ef5e2653c2",
     "runtime/structure_preparation.py": "a4e43e30b9a0e3e030e492433588c3cf4e8bfd522c6e6ff207bf8e0b03300edf",
-    "tests/test_agents.py": "735d123581411417ddd3d794bf9dfda6b3d650740ffe546ff55e532498d269e6",
-    "tests/test_assessment.py": "c8ef153495b73b4c460e597cc34f7942c83d04a09ead3f6904cc9a34b1a92474",
+    "runtime/controller.py": "b91e09c10e2ab656a3ce9d66b60ce953959bc27b61d89cb12836a2d035684219",
+    "tests/test_structure_preparation.py": "99d7dab2a0f7ee7584a4ada8fe724b0dbd4a94b71f649a96fba5b645b369ae2a",
     "tests/test_contracts.py": "d3a5f47db44c4c8582ffcd96deaa1efeec8f494fdf1584a5ba3cb5e191421486",
-    "tests/test_controller.py": "a6f2b7b21f8857de7a57931ecbbd103b8182573b477ef2cd18966489205269f1",
-    "tests/test_structure_preparation.py": "99d7dab2a0f7ee7584a4ada8fe724b0dbd4a94b71f649a96fba5b645b369ae2a"
+    "tests/test_agents.py": "735d123581411417ddd3d794bf9dfda6b3d650740ffe546ff55e532498d269e6",
+    "tests/test_assessment.py": "1739fab7dd602ae2790665303841c5d98c7c30f20646a57c671058da940bbe5b",
+    "tests/test_controller.py": "e2af46a1e1bbbed104b2582b11aeccad55b1f6eaa364e2648a2ebf9bdf82e531",
+    "config/environment.yaml": "b2a4ab08a4485911a5cf03d58d37fb6d0d737be904ee1f92af922f5fdf6e3d87",
+    "runtime/CONTRACTS.md": "c8e2c6dfd895a2d1c0fa8606519be8b0474860613b9a43b4578a6453c7709d86",
+    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3"
   },
   "not_validated": [
     "Target-specific catalytic-state geometry and chemical barriers",
@@ -55,7 +54,7 @@
     "Remote provider resource enforcement"
   ],
   "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py'",
-  "elapsed_seconds": 23.982,
+  "elapsed_seconds": 29.041,
   "clarification_regressions": [
     "Routine and misclassified questions return to internal repair and stage execution continues",
     "Essential unresolved intent and access boundaries retain structured user questions",
@@ -93,35 +92,61 @@
     "complete_preparation": "Not validated; CPU-only regression timed out during candidate missing-atom optimization at 180 seconds"
   },
   "optimization_review": {
-    "source_commit": "a8dec6d100baa6854b1fc127d6cfa8bba339cac7",
+    "source_commit": "538cb74d70f5c6779afc33f02ec7b761849d73bf",
     "source_tree": "9b5c9a4bb64ef227f0cd909069c42855927338c8",
     "source_path": "environments/enzyme-variant-optimization",
     "source_modified": false,
     "adapted_patterns": [
       "Separate sequence identity and coordinate versions",
       "Bind downstream evidence and exports to exact reviewed models",
-      "Preserve remote uncertainty after controller termination"
+      "Preserve remote uncertainty after controller termination",
+      "Require original provider/job identity on poll completion and restart",
+      "Archive superseded exports before rebuilding current results"
     ],
-    "validation_scope": "Synthetic software regressions only; no scientific service or model requests; no enzyme qualification"
+    "validation_scope": "Synthetic software regressions only; no scientific service or model requests; no enzyme qualification",
+    "files_reviewed": [
+      "README.md",
+      "STATUS.md",
+      "src/enzyme_research/store.py",
+      "src/enzyme_research/connector.py",
+      "src/enzyme_research/workflow.py",
+      "src/enzyme_research/service.py",
+      "src/enzyme_research/context.py",
+      "src/enzyme_research/native_policy.py",
+      "src/enzyme_research/discovery.py",
+      "src/enzyme_research/reporting.py",
+      "tests/test_state_connector.py",
+      "tests/test_unsubmitted_action_repair.py"
+    ],
+    "remaining_harness_requirement": "Provider submission reservations, job-status authenticity and host-level tool-action enforcement require harness integration; controller response validation does not replace them."
   },
   "skipped": [
     {
-      "test": "test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget",
+      "test": "test_bounded_internal_context_restores_openmm_api_after_over_budget (test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget)",
       "reason": "OpenMM isolated runtime not in this interpreter"
     }
   ],
-  "tests_passed": 38,
+  "tests_passed": 46,
   "additional_runtime_check": {
     "command": "python -B -m unittest test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget -v",
     "working_directory": "tests",
     "tests_run": 1,
     "tests_successful": true,
-    "elapsed_seconds": 0.337,
-    "scope": "OpenMM API restoration software test rerun in its installed runtime on the publication snapshot; no model or service job",
-    "interpreter": "OpenMM-enabled isolated Python runtime; installation prefix omitted from portable command"
+    "elapsed_seconds": 0.359,
+    "scope": "Historical OpenMM API restoration software check preserved from earlier review; not rerun in this publication check",
+    "interpreter": "OpenMM-enabled isolated Python runtime; installation prefix omitted from portable command",
+    "preserved_from_report_recorded_at": "2026-10-28T11:15:35.839427+00:00"
   },
-  "publication_validation": {
-    "base_commit": "a8dec6d100baa6854b1fc127d6cfa8bba339cac7",
-    "scope": "Isolated latest-main checkout with only the de novo environment changes; software validation only"
-  }
+  "invocation_note": "Equivalent unittest discovery executed in a report-recording wrapper in an isolated checkout of the latest main plus only the de novo environment changes.",
+  "recovery_regressions": [
+    "Execution approval blocks stop executor, reviewer and repair without alternate dispatch; repeated run preserves terminal result.",
+    "Failed method controls remain distinct from candidate integrity failures and unresolved evidence.",
+    "Method settings, assembly applicability and current evaluation-plan bindings are required before structural promotion.",
+    "Mismatched or absent poll identities cannot replace the original jobs or promote returned artifacts.",
+    "Saved polling receipts undergo the same identity checks after restart.",
+    "An execution-approval timeout while polling cannot erase outstanding remote handles.",
+    "Evidence invalidation archives old structure/chemistry exports and empties the current qualified FASTA; unchanged exports are idempotent."
+  ],
+  "policy_update_scope": "Target-independent startup, method-control, operator, motif-geometry and per-operation smart-approval instructions. No model inference, provider job or live approval integration run in this review.",
+  "scientific_jobs_this_validation": 0
 }

@@ -10,6 +10,10 @@ Accept a requested chemical conversion and design requirements; generate enzyme 
 
 Generation profiles are bound to the current resolved request by hash. Reusing another enzyme's profile requires a new applicability review and request binding. The controller rejects stale bindings before generation; the reviewer must still verify the actual biology. A matching hash alone cannot establish scientific correctness.
 
+Recovery distinguishes startup/integration problems, failed method controls, and candidate-specific defects. Agents test startup components together, resolve routine failures within the run policy, and validate prediction methods on applicable controls before structural promotion. Exploratory predictions can run while those controls are being established. A failed control does not by itself reject a design. Genuine execution-tool approval blocks are preserved and cannot be bypassed by automatic repair. These rules are target-independent; see the [runtime contracts](runtime/CONTRACTS.md).
+
+Configured smart-mode approval counts for the approved operation; a second manual prompt is unnecessary unless explicitly requested. Remote polling preserves the original provider/job IDs, and invalidated structure/chemistry exports move to marked history. The default agent-selected mode chooses suitable tools and records their actual contracts and versions; it does not require a fixed tool list.
+
 ## Read in this order
 
 1. [Agent task](tasks/denovo_enzyme_001.md): the task-facing description, 14 required execution steps, constraints and expected deliverable, organized like the supplied BioDesignBench example.

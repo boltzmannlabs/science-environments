@@ -66,6 +66,36 @@ def user_input_error(value: object) -> str | None:
     return None
 
 
+def job_identities(handles: object, *, allow_empty: bool = False) -> set[tuple[str, str]]:
+    if not isinstance(handles, list) or (not handles and not allow_empty):
+        raise ValueError('Remote work needs a nonempty list of original job handles')
+    identities = set()
+    for handle in handles:
+        if not isinstance(handle, dict) or any(
+                not isinstance(handle.get(k), str) or not handle[k].strip() for k in ('provider', 'id')):
+            raise ValueError('Each remote job needs its actual provider and ID')
+        identity = (handle['provider'], handle['id'])
+        if identity in identities:
+            raise ValueError('Duplicate remote job identity')
+        identities.add(identity)
+    return identities
+
+
+def check_poll_response(handles: list, result: dict) -> None:
+    expected = job_identities(handles)
+    if job_identities(result.get('polled_job_handles')) != expected:
+        raise ValueError('Poll receipt does not identify exactly the original jobs')
+    remaining = job_identities(result.get('job_handles', []), allow_empty=True)
+    if result.get('status') == 'pending':
+        if remaining != expected:
+            raise ValueError('Pending poll cannot replace or discard original job handles')
+    elif result.get('status') in {'completed', 'failed'}:
+        if remaining:
+            raise ValueError('Terminal poll must not leave outstanding jobs unresolved')
+    else:
+        raise ValueError('Poll must report pending, completed or failed for the original jobs')
+
+
 def default_policy() -> dict:
     fallback = yaml.safe_load((ROOT / 'config/environment.yaml').read_text())['autonomy']['fallback_pilot']
     budget = fallback['budget']
@@ -235,6 +265,7 @@ class Controller:
             'outstanding_jobs': {s: v.get('job_handles', []) for s, v in self.state['stages'].items()
                                  if v.get('job_handles')},
             'unreconciled_call': self.state.get('unreconciled_call') or self.state.get('inflight'),
+            'execution_approval_block': self.state.get('execution_approval_block'),
             'resource_scope': 'Local waited CPU plus agent-reported usage; external limits require harness enforcement.',
             'scientific_scope': 'Computational evidence only; control-flow tests do not demonstrate enzyme activity.',
         }
@@ -250,6 +281,7 @@ class Controller:
         return self.finish('PARTIAL' if useful else 'BLOCKED', reason)
 
     def task(self, stage: str, mode: str = 'execute', **extra) -> dict:
+        configuration = yaml.safe_load((ROOT / 'config/environment.yaml').read_text())
         return {
             'run_id': self.state['run_id'], 'run_dir': str(self.root), 'stage': stage,
             'mode': mode, 'scientific_request': self.state['request'],
@@ -260,7 +292,9 @@ class Controller:
             'assessment_models': self.assessment_models(),
             'expected_artifact_kinds': EXPECTED[stage], 'limits_remaining': self.remaining(),
             'stage_history': self.state['stages'][stage]['history'],
-            'autonomy_policy': yaml.safe_load((ROOT / 'config/environment.yaml').read_text())['autonomy'],
+            'autonomy_policy': configuration['autonomy'],
+            'startup_policy': configuration['startup_validation'],
+            'method_validation_policy': configuration['method_validation'],
             'user_input_contract': {
                 'allowed_reason_items': USER_INPUT_ITEMS,
                 'required_fields': ['reason_code', 'item', 'question', 'why_unresolved', 'resolution_attempts'],
@@ -282,6 +316,9 @@ class Controller:
                 'Do not launch detached local jobs. Remote jobs need durable handles and idempotency keys.',
                 'Report external CPU hours, GPU device-hours and scientific service spend; unknown is not zero.',
                 'Claims about catalytic performance require matched controls and valid chemistry evidence.',
+                'Validate the combined startup path on the actual input before expensive inference; standalone import tests are insufficient.',
+                'Distinguish technical startup failure, method-control failure, unresolved assessment and verified candidate failure. Method selection uses controls, not the highest candidate score.',
+                'Report a genuine execution-tool denial or approval timeout as failure.category execution_approval with the exact tool error, blocked command and receipt when available. Do not retry it through another command or harness.',
             ], **extra,
         }
 
@@ -311,7 +348,31 @@ class Controller:
         self.state['inflight']['local_accounted'] = True
         self.event('agent_finished', stage=stage, role=role, call_id=call_id,
                    exit_code=receipt['exit_code'], timed_out=receipt['timed_out'])
+        response = receipt.get('response') or {}
+        failure = response.get('failure')
+        if isinstance(failure, dict) and failure.get('category') == 'execution_approval':
+            try:
+                self.account_external(response, call_id)
+            except ValueError as exc:
+                self.state['stages'][stage]['accounting_error'] = str(exc)
+            if task.get('mode') != 'poll':
+                self.state['stages'][stage]['job_handles'] = response.get(
+                    'job_handles', self.state['stages'][stage].get('job_handles', []))
+            self.ack_call()
+            self.check_execution_gate(stage, response, role)
         return receipt
+
+    def check_execution_gate(self, stage: str, response: dict, role: str = 'executor'):
+        failure = response.get('failure')
+        if not isinstance(failure, dict) or failure.get('category') != 'execution_approval':
+            return
+        self.state['execution_approval_block'] = {
+            'stage': stage, 'role': role, 'failure': failure,
+            'artifacts': response.get('artifacts', []),
+            'deadline_utc': self.state['policy'].get('deadline_utc'),
+            'recovery': 'Supported execution-gate approval is required; recheck limits without automatic renewal.'}
+        self.event('execution_approval_blocked', stage=stage, role=role, failure=failure)
+        raise ValueError('EXECUTION_APPROVAL_REQUIRED: preserve the denial; no automatic retry or alternate launch route')
 
     def ack_call(self):
         self.state['inflight'] = None
@@ -627,8 +688,28 @@ class Controller:
             if saved:
                 self.state['usage']['cpu_core_hours'] += saved['cpu_seconds'] / 3600
         if saved and saved['exit_code'] == 0 and saved.get('response'):
+            result = saved['response']
+            failure = result.get('failure')
+            if isinstance(failure, dict) and failure.get('category') == 'execution_approval':
+                try:
+                    self.account_external(result, saved.get('call_id', interrupted['id']))
+                except ValueError as exc:
+                    item['accounting_error'] = str(exc)
+                if interrupted.get('mode') != 'poll':
+                    item['job_handles'] = result.get('job_handles', item.get('job_handles', []))
+                self.ack_call()
+                self.check_execution_gate(stage, result, interrupted['role'])
             if interrupted['role'] == 'executor':
                 result = saved['response']
+                if interrupted.get('mode') == 'poll':
+                    try:
+                        self.account_external(result, saved.get('call_id', interrupted['id']))
+                        check_poll_response(item.get('job_handles'), result)
+                    except ValueError as exc:
+                        item['poll_identity_error'] = str(exc)
+                        self.event('poll_receipt_rejected', stage=stage, error=str(exc))
+                        self.ack_call()
+                        return False
                 item['response'] = result
                 item['pending_since'] = interrupted['started'] + saved['elapsed_seconds'] if result.get('status') == 'pending' else None
                 item['job_handles'] = result.get('job_handles', [])
@@ -745,6 +826,7 @@ class Controller:
                     item['accounting_error'] = str(exc)
                     self.save()
                 self.ack_call()
+            self.check_execution_gate(stage, response)
             if response.get('status') == 'pending':
                 if not self.poll(stage, response):
                     return self.stop_partial(f'{stage}: pending job cannot be reconciled within policy')
@@ -828,8 +910,10 @@ class Controller:
     def poll(self, stage: str, response: dict) -> bool:
         item = self.state['stages'][stage]
         handles = response.get('job_handles')
-        if not isinstance(handles, list) or not handles or any(
-                not h.get('provider') or not h.get('id') for h in handles):
+        try:
+            job_identities(handles)
+        except ValueError as exc:
+            item['poll_identity_error'] = str(exc)
             return False
         item['job_handles'] = handles
         item['polls'] = item.get('polls', 0) + 1
@@ -846,7 +930,9 @@ class Controller:
         self.save()
         receipt = self.call('executor', self.task(stage, 'poll', job_handles=handles,
             response_contract={'status': 'pending|completed|failed', 'artifacts': 'Stage outputs',
-                               'job_handles': 'Same existing jobs', 'usage': 'Incremental measured usage since previous response'},
+                               'polled_job_handles': 'Required exact original provider/id pairs, including on completion',
+                               'job_handles': 'All original jobs while any remain pending; empty only after all are terminal',
+                               'usage': 'Incremental measured usage since previous response'},
             polling_instruction='Poll existing jobs only; never submit a replacement while their state is unknown.'))
         result = receipt.get('response')
         if receipt['exit_code'] != 0 or result is None:
@@ -856,6 +942,13 @@ class Controller:
             self.ack_call()
             return True
         self.account_external(result, receipt.get('call_id'))
+        try:
+            check_poll_response(handles, result)
+        except ValueError as exc:
+            item['poll_identity_error'] = str(exc)
+            item['history'].append({'event': 'poll_receipt_rejected', 'error': str(exc)})
+            self.ack_call()
+            return False
         item['response'] = result
         item['job_handles'] = result.get('job_handles', []) if result.get('status') == 'pending' else []
         item['pending_since'] = time.time() if result.get('status') == 'pending' else None
