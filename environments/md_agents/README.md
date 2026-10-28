@@ -50,6 +50,36 @@ The packets intentionally include valid, failure, online-resource, domain, and
 orchestration cases. A fixture name is a frozen input contract; it is not a
 claim that the corresponding production engine run has already succeeded.
 
+## Run the environment
+
+From this directory, with OpenMM, MDTraj, PyArrow and the test dependencies
+installed:
+
+```bash
+python scripts/materialize_agent_fixtures.py
+python scripts/run_agent_harness.py --live
+python scripts/render_qualification_report.py
+python -m pytest -q tests
+```
+
+The harness executes all 62 packets. `MD-10` runs the live OpenMM CUDA water
+box; the other packets use their declared native adapter and independent
+evaluator. Adapter `PASS` means the input was consumed successfully. It does
+not by itself establish a scientific result. Use `--strict` to return a
+nonzero exit code while any packet remains scientifically unresolved.
+
+Real-system preparation and bounded CUDA execution are reproducible with:
+
+```bash
+python scripts/run_real_system_smoke.py
+python scripts/run_real_system_production.py
+bash scripts/build_benzamidine_complex.sh
+python scripts/run_parameterized_complex.py
+```
+
+The original public structures remain in `cases/real_systems/`; derived repairs,
+topologies, trajectories and logs are written to `results/`.
+
 ## Current maturity
 
 The contracts, packet harness, native fixture adapters, and package validator
@@ -63,6 +93,24 @@ The reusable troubleshooting package in
 [recovery_agents/](recovery_agents/) contains 10 executable recovery agents
 with frozen failure fixtures and a separate harness. Its results are recovery
 fixture evidence, not a replacement for production engine qualification.
+
+## Evidence status
+
+The current report records 62 packet executions, 61 successful native adapter
+loads, and one live OpenMM CUDA execution. Qualification is intentionally more
+conservative: only independently supported checks are marked `PASS`; unresolved
+trajectory, sampling, reference, recovery or provenance requirements remain
+`REVIEW`. See [agent qualification report](results/agent_qualification_report.md)
+and [real-system results](results/real_system_production/RESULTS.md).
+
+## Limitations
+
+This package does not claim long-timescale MD, converged free energies,
+production FEP, enhanced-sampling qualification, QM/MM validation, learned
+potential validation, or online-resource reproduction. Synthetic fixtures are
+diagnostic inputs and are never treated as published reference systems.
+Scientific claims require versioned systems, parameters, seeds, trajectories,
+reference observables and independent evaluators.
 
 ## GPU backend availability
 
