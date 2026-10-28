@@ -29,10 +29,11 @@ environments.
 
 The package follows the repository environment layout: specification and
 configuration at the root, one concrete task packet per agent under `inputs/`,
-execution-facing task descriptions under `tasks/`, runtime facades under
-`runtime/`, and versioned evidence under `results/`. The executable adapters
-and fixture-generation utilities are under `scripts/`; independent checks are
-under `tests/`.
+real public molecular systems under `inputs/real_systems/`, diagnostic fixtures
+under `inputs/fixtures/`, task descriptions under `tasks/`, runtime facades
+under `runtime/`, and versioned evidence under `results/`. The executable
+adapters and fixture-generation utilities are under `scripts/`; independent
+checks are under `tests/`.
 
 ## Explicit per-agent input packets
 
