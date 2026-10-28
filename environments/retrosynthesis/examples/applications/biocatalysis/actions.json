@@ -1,0 +1,53 @@
+[
+  {
+    "action": "propose_route",
+    "arguments": {
+      "route": {
+        "route_id": "bio-hydrolysis",
+        "target": "CCO",
+        "steps": [
+          {
+            "step_id": "hydrolysis",
+            "product": "CCO",
+            "reactants": [
+              {
+                "smiles": "CCOC(C)=O"
+              },
+              {
+                "smiles": "O"
+              }
+            ],
+            "source_tool": "source_record_projection",
+            "source_version": "srg10-v1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "action": "retrieve_application_sources",
+    "arguments": {
+      "application": "biocatalytic_synthesis",
+      "route_id": "bio-hydrolysis",
+      "step_id": "hydrolysis"
+    }
+  },
+  {
+    "action": "application_report",
+    "arguments": {
+      "application": "biocatalytic_synthesis",
+      "route_ids": [
+        "bio-hydrolysis"
+      ],
+      "step_id": "hydrolysis"
+    }
+  },
+  {
+    "action": "submit",
+    "arguments": {
+      "route_ids": [
+        "bio-hydrolysis"
+      ]
+    }
+  }
+]

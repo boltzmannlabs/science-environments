@@ -16,7 +16,7 @@ science-environments/
 │   ├── scRNAseq-environment/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   ├── synthesis-route-gym/
+│   ├── retrosynthesis/
 │   │   ├── research-notes.md
 │   │   └── references.md
 │   ├── sirna-designing-harness/
@@ -35,7 +35,7 @@ science-environments/
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   ├── synthesis-route-gym/
+│   ├── retrosynthesis/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
 │   │   ├── STATUS.md
@@ -83,7 +83,7 @@ science-environments/
 
 Each environment has its own folder. Research notes and references are maintained in the matching `research/<environment-name>/` directory and linked from its README.
 
-Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
+Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [retrosynthesis environment](environments/retrosynthesis/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
 
 The [Enzyme Variant Optimization environment](environments/enzyme-variant-optimization/README.md) is In Progress: it packages the existing research runner, proposer/critic specialist, and portable synthetic tests. Native-runtime distribution, live pipeline qualification, independent scientific comparison, and maintainer review remain separate requirements.
 
