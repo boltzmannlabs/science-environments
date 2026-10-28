@@ -55,7 +55,7 @@ def main() -> None:
     for packet_path in packets:
         packet = json.loads(packet_path.read_text())
         fixture = packet["input"]["fixture"]
-        target = ROOT / fixture
+        target = ROOT / "inputs" / "fixtures" / fixture
         ext = target.suffix.lower()
         if target.exists() and ext != ".parquet":
             continue

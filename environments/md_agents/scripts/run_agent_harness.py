@@ -45,7 +45,7 @@ def packet_result(packet_path: Path, live: bool = False) -> dict:
         # Fixtures may be kept in the package's explicit cases/ directory or
         # referenced by a path relative to the package root.  Presence alone
         # is not a scientific pass; it only enables the next adapter stage.
-        candidates = (ROOT / fixture, ROOT / "cases" / fixture)
+        candidates = (ROOT / fixture, ROOT / "inputs" / "fixtures" / fixture, ROOT / "cases" / fixture)
         candidate = next((p for p in candidates if p.exists()), None)
         if candidate is not None:
             result["evidence"].append(f"fixture exists: {candidate.relative_to(ROOT)}")
