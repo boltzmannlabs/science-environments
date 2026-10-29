@@ -1,4 +1,4 @@
-"""Command-line policy selection stays explicit until measured promotion."""
+"""SynthChem is preferred while other search policies remain selectable."""
 import json
 import pytest
 from synthesis_route_gym.cli import _parser, execute
@@ -13,9 +13,9 @@ def task_file(tmp_path):
     return path
 
 
-def test_search_options_preserve_breadth_first_default():
+def test_search_options_prefer_synthchem_portfolio():
     args = _parser().parse_args(['plan','--task','task.json','--output','out.json'])
-    assert args.search_policy == 'breadth_first'
+    assert args.search_policy == 'synthchem_portfolio'
     assert args.expansion_top_k == 10
     assert args.max_frontier_states is None  # Host resolves legacy 10000 only for budgeted tasks.
 

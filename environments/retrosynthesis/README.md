@@ -112,10 +112,18 @@ plugin use; see the integration guide before using an unpatched installation.
 
 ## Local route generation
 
-The `plan` command runs a complete configured search. The default is
-**breadth-first search with LocalRetro proposals**. Other policies are
-`best_first`, `synthchem_astar`, `synthchem_mcts` and `synthchem_portfolio`.
+The `plan` command runs a complete configured search. The default is the
+**SynthChem A*/MCTS portfolio with LocalRetro proposals**. Other policies are
+`breadth_first`, `best_first`, `synthchem_astar` and `synthchem_mcts`.
 Creating a task session does not automatically start search.
+
+In normal Agent Scientist sessions, the main-profile agent may also register
+one-step precursor hypotheses with `propose_expansion`. SynthChem search can
+combine these with model proposals, use them only when the model has no result,
+or run agent-only. It reports unresolved intermediates for another reasoning
+and search turn. `graft_route` replaces a selected intermediate preparation
+using stored routes. All of these remain predicted chemistry until independently
+supported. See the [integration guide](integrations/agent_scientist/README.md).
 
 LocalRetro needs an existing compatible REBOLT checkout, checkpoint/templates
 and chemistry interpreter. Supply their paths explicitly:

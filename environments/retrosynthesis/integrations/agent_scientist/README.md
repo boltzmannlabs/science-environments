@@ -96,7 +96,9 @@ The persistent benchmark checkpoints do not provide normal-plugin recovery.
 | Action | Arguments and behavior |
 |---|---|
 | `inspect` | Inspect the same task, routes, findings and resources. |
-| `generate_routes` | Optional `search_policy`, `expansion_top_k`, and budgeted `max_frontier_states`; generate same-session drafts without submitting. |
+| `generate_routes` | SynthChem portfolio by default; optional `search_policy`, `proposal_mode`, `expansion_top_k`, and budgeted `max_frontier_states`. Returns drafts and unresolved intermediate products without submitting. |
+| `propose_expansion` | Register bounded, exact-product, one-step main-agent precursor hypotheses. The action is metered; source and evidence authority are assigned by the host. |
+| `graft_route` | Replace one exact intermediate preparation in a stored parent route using a stored donor route; keep both originals and inspect the new revision. |
 | `import_routes` | Required `format` and `payload`; optional `provenance`; convert supported completed artifacts into predicted candidates. |
 | `propose_route` | Store a canonical `route` proposal or explicit revision. |
 | `validate` | Check an existing `route_id` against graph, inventory and constraints. |
@@ -111,8 +113,15 @@ above. Advanced scientific configurations have explicit CLI/Python interfaces;
 do not invent normal-tool arguments for them. Follow current capability/error
 responses and the tool schema.
 
-Search policies are `breadth_first` (default), `best_first`, `synthchem_astar`,
-`synthchem_mcts` and `synthchem_portfolio`; SynthChem requires the `search` extra.
+Search policies are `synthchem_portfolio` (default), `synthchem_astar`,
+`synthchem_mcts`, `breadth_first` and `best_first`; SynthChem requires the `search` extra.
+For SynthChem search, `proposal_mode` can be `hybrid` (default), `agent_fallback`,
+`agent_only` or `model_only`. Agent hypotheses are entered through
+`propose_expansion` by the main Agent Scientist conversation. The chemistry
+host does not start a separate LLM. A missing model can be handled with an
+explicit agent hypothesis, and `unresolved_products` identifies intermediates
+that need more work before another search. Repeated searches share the session's
+resource ledger. Only successful, same-session proposal events feed the pool.
 `expansion_top_k` is 1–100. An unbudgeted search rejects an explicit
 `max_frontier_states`. Creating a session does not start search.
 

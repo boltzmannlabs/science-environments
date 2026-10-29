@@ -89,7 +89,8 @@ def run_native_phase(pool, name, stock, *, seed, depth, max_nodes, quota, route_
         pass
 
     options = {'reaction_model':ExpansionModel(),'mol_inventory':Inventory(),
-        'limit_reaction_model_calls':max(1,pool.max_calls*4),'limit_iterations':max(20,quota*20),
+        'limit_reaction_model_calls':max(1,(pool.max_calls or 0)*4+pool.local_product_count*4),
+        'limit_iterations':max(20,quota*20),
         'time_limit_s':max(.001,pool.phase_deadline-time.monotonic()),'limit_graph_nodes':max_nodes,
         'max_expansion_depth':2*depth if name=='astar' else depth,
         'prevent_repeat_mol_in_trees':True,'random_state':random.Random(seed)}
@@ -119,7 +120,7 @@ def run_native_phase(pool, name, stock, *, seed, depth, max_nodes, quota, route_
         'graph_nodes':len(graph),'iterations':iterations,'backend_expansion_actions':pool.calls-before,
         'allocated_expansion_actions':quota,'search_seconds':ended-started,
         'phase_total_seconds':time.monotonic()-started,'extracted_routes':len(raw),
-        'node_capacity_pruned':search.capacity_pruned,'termination':pool.admission_reason(backend=True)
+        'node_capacity_pruned':search.capacity_pruned,'termination':pool.admission_reason(backend=not pool.has_local_proposals)
             or ('graph_node_limit' if len(graph)>=max_nodes else 'iteration_limit_or_frontier_exhausted'),
         'heuristic':'h=0; positive step cost' if name=='astar' else 'UCT stock-fraction estimate; terminal solution reward'}
     return report,raw,errors

@@ -41,9 +41,9 @@ def test_cli_routes_native_policy_with_exact_limits(tmp_path, monkeypatch, algor
                                             'expansion_top_k': 4, 'max_graph_nodes': 500})]
 
 
-def test_cli_keeps_legacy_default_and_declares_native_graph_limit(capsys):
+def test_cli_prefers_synthchem_and_declares_native_graph_limit(capsys):
     args = _parser().parse_args(['plan', '--task', 'task.json', '--output', 'out.json'])
-    assert args.search_policy == 'breadth_first'
+    assert args.search_policy == 'synthchem_portfolio'
     assert args.expansion_backend == 'localretro' and args.aizynth_config is None
     with pytest.raises(SystemExit) as stopped:
         _parser().parse_args(['plan', '--help'])

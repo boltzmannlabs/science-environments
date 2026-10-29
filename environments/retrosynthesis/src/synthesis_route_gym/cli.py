@@ -70,7 +70,7 @@ def _parser():
         if command == "plan":
             child.add_argument("--search-policy", choices=("breadth_first", "best_first",
                                "synthchem_portfolio", "synthchem_astar", "synthchem_mcts"),
-                               default="breadth_first", help="Explicit fixed policy; legacy default is retained")
+                               default="synthchem_portfolio", help="SynthChem portfolio by default; older policies remain selectable")
             child.add_argument("--expansion-backend", choices=("localretro", "aizynthfinder"),
                                default="localretro", help="Single-step proposal source; independent of search policy")
             child.add_argument("--aizynth-config", help="Host model configuration required for the aizynthfinder backend")

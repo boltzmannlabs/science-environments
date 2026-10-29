@@ -21,7 +21,7 @@ NORMAL_ACTIONS = frozenset({
     'retrieve_biocatalysis', 'score_cn_conditions', 'predict_reaction_yield',
     'application_report', 'condition_options', 'observe_route_condition',
     'predict_route_impurities', 'retrieve_application_sources',
-    'generate_routes', 'import_routes', 'close'})
+    'generate_routes', 'import_routes', 'propose_expansion', 'graft_route', 'close'})
 _clients = []
 RUNTIME_KEYS = frozenset({'SRG_PACKAGE_ROOT', 'SRG_CHEMISTRY_PYTHON',
     'REBOLT_ROOT', 'REBOLT_PYTHON', 'SRG_BACKEND_TIMEOUT_SECONDS'})
@@ -160,10 +160,12 @@ def register(ctx):
         name='srg_action', toolset='synthesis_route_gym',
         schema={'name': 'srg_action', 'description':
             'Optional synthesis workspace alongside existing retrosynthesis tools. Reset a task; import_routes '
-            '(format, payload, optional provenance) records existing outputs; generate_routes '
-            '(search_policy: breadth_first/best_first/synthchem_astar/synthchem_mcts/synthchem_portfolio, '
-            'optional expansion_top_k) generates drafts without submitting. Inspect, validate, rank and '
-            'submit route IDs. Close releases a session. All chemistry remains predicted until supported.',
+            '(format, payload, optional provenance) records existing outputs; generate_routes defaults to '
+            'SynthChem A*/MCTS portfolio, with breadth_first/best_first and individual A*/MCTS optional. '
+            'propose_expansion records metered main-agent precursor hypotheses for hybrid, fallback or agent-only '
+            'search; graft_route replaces one exact intermediate preparation using stored routes. '
+            'Inspect, validate, rank and submit route IDs. Close releases a session. '
+            'All generated chemistry remains predicted until supported.',
             'parameters': {'type': 'object', 'properties': {
                 'action': {'type': 'string', 'enum': sorted(NORMAL_ACTIONS)},
                 'arguments': {'type': 'object', 'description':
@@ -171,7 +173,10 @@ def register(ctx):
                     'import_routes: format=srg-route-candidates-v1 with a list of RouteCandidate objects, '
                     'or format=rebolt-scored-paths-v1 with parsed downloaded topN/path/idx JSON; '
                     'optional provenance uses job_name, doc_id, artifact_id, source_version. '
-                    'generate_routes: optional search_policy and expansion_top_k. '
+                    'generate_routes: optional search_policy, expansion_top_k and SynthChem proposal_mode '
+                    '(hybrid, agent_fallback, agent_only, model_only); returns unresolved_products for iteration. '
+                    'propose_expansion: product and candidates with reactants, status=hypothesis, optional rationale. '
+                    'graft_route: parent_route_id, donor_route_id and intermediate. '
                     'propose_route: route. validate: route_id. rank_routes/submit: route_ids. '
                     'inspect/close: empty object.'},
                 'session_id': {'type': 'string', 'description': 'Returned by reset; required for subsequent normal-session actions.'}},

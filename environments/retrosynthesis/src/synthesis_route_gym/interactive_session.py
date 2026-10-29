@@ -24,9 +24,11 @@ SEARCH_POLICIES = frozenset({'breadth_first', 'best_first', 'synthchem_astar',
 
 class _DraftWorkflow:
     """Reuse search while leaving final submission to the normal main agent."""
-    def __init__(self, env):
+    def __init__(self, env, proposal_bank=None, model_bank=None):
         self.env = env
         self.route_ids = []
+        self.proposal_bank = proposal_bank or {}
+        self.model_bank = model_bank or {}
 
     def __getattr__(self, name):
         return getattr(self.env, name)
@@ -62,7 +64,7 @@ class InteractiveSessions:
 
     def handle(self, request):
         from .agent_runner import ACTIONS
-        allowed = ACTIONS | {'generate_routes', 'import_routes', 'close'}
+        allowed = ACTIONS | {'generate_routes', 'import_routes', 'propose_expansion', 'graft_route', 'close'}
         if (not isinstance(request, dict) or set(request) - {'profile', 'action', 'arguments', 'session_id'}
                 or not isinstance(request.get('profile'), str) or not request['profile']
                 or len(request['profile']) > 4096 or request.get('action') not in allowed
@@ -110,9 +112,17 @@ class InteractiveSessions:
 
     @staticmethod
     def _search(env, args):
-        if set(args) - {'search_policy', 'expansion_top_k', 'max_frontier_states'}:
+        from .chemistry import canonical_smiles
+        if set(args) - {'search_policy', 'expansion_top_k', 'max_frontier_states', 'proposal_mode'}:
             raise ValueError('Unsupported search arguments')
-        policy, width = args.get('search_policy', 'breadth_first'), args.get('expansion_top_k', 10)
+        policy, width = args.get('search_policy', 'synthchem_portfolio'), args.get('expansion_top_k', 10)
+        synthchem = isinstance(policy, str) and policy.startswith('synthchem_')
+        proposal_mode = args.get('proposal_mode', 'hybrid')
+        if not isinstance(proposal_mode, str) or proposal_mode not in {
+                'hybrid', 'agent_fallback', 'agent_only', 'model_only'}:
+            raise ValueError('Invalid SynthChem proposal mode')
+        if 'proposal_mode' in args and not synthchem:
+            raise ValueError('Proposal mode is available only for SynthChem search')
         nodes = args.get('max_frontier_states', 10000)
         if (policy not in SEARCH_POLICIES or type(width) is not int or not 1 <= width <= 100
                 or type(nodes) is not int or not 1 <= nodes <= 100000):
@@ -121,12 +131,28 @@ class InteractiveSessions:
             if 'max_frontier_states' in args:
                 raise ValueError('Unbudgeted search cannot impose a frontier ceiling')
             nodes = None
-        view = _DraftWorkflow(env)
+        proposal_bank, model_bank = {}, {}
+        for event in env.export()['events']:
+            if event['action'] == 'expand' and event['status'] == 'ok':
+                product = canonical_smiles(event['arguments']['smiles'])
+                width = event['arguments'].get('top_k', 10)
+                if (isinstance(product, str) and type(width) is int
+                        and width >= model_bank.get(product, {}).get('top_k', -1)):
+                    model_bank = {**model_bank, product: {
+                        'top_k': width, 'predictions': event['result']['predictions']}}
+                continue
+            if event['action'] != 'propose_expansion' or event['status'] != 'ok':
+                continue
+            product = event['result']['product']
+            proposal_bank = {**proposal_bank, product: [*proposal_bank.get(product, []),
+                *event['result']['predictions']]}
+        view = _DraftWorkflow(env, proposal_bank, model_bank)
         event_start = len(env.export()['events'])
-        if policy.startswith('synthchem_'):
+        if synthchem:
             from .synthchem_search import run_synthchem_workflow
             result = run_synthchem_workflow(view, algorithm=policy.removeprefix('synthchem_'),
-                                           expansion_top_k=width, max_graph_nodes=nodes)
+                                           expansion_top_k=width, max_graph_nodes=nodes,
+                                           proposal_mode=proposal_mode)
         else:
             from .fixed_search import run_best_first_workflow
             from .planning import run_fixed_workflow
@@ -140,6 +166,9 @@ class InteractiveSessions:
         return {'search_policy': policy, 'route_ids': view.route_ids, 'submitted': False,
                 'stop_reason': stop, 'search_stop_reason': result.get('stop_reason'),
                 'backend_failures': failures, 'observation': env.dispatch('inspect', {}),
+                **({'proposal_mode': proposal_mode,
+                    'unresolved_products': result.get('proposal_pool', {}).get('unresolved_products', [])}
+                   if synthchem else {}),
                 'scope': 'Predicted draft routes; main agent owns revision and final submission'}
 
     @staticmethod

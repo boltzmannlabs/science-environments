@@ -1,4 +1,5 @@
 """Public-input, budget and failure behavior for the SynthChem proposal adapter."""
+from types import SimpleNamespace
 from synthesis_route_gym.environment import SynthesisRouteEnv
 from synthesis_route_gym.schemas import Task, InventoryItem, Budget
 from synthesis_route_gym.synthchem_pool import EnvironmentProposalPool
@@ -66,3 +67,81 @@ def test_successful_empty_model_response_can_be_cached():
     p=EnvironmentProposalPool(env(lambda s,k:{'status':'ok','predictions':[]}),10,100,1.0)
     assert p.expand('CCO')==p.expand('CCO')==[]
     assert p.manifest()['cache_hits']==1
+
+
+def _with_agent_rows(environment, proposals):
+    return SimpleNamespace(
+        proposal_bank=proposals,
+        task=environment.task,
+        search_status=environment.search_status,
+        expansion_cache_identity=environment.expansion_cache_identity,
+        dispatch=environment.dispatch,
+    )
+
+
+def _agent_row(product, reactants):
+    return {'product': product, 'reactants': reactants,
+            'source': {'tool': 'submitted_hypothesis', 'version': 'host-registered-v1'}}
+
+
+def test_agent_only_pool_uses_registered_hypotheses_without_model_calls():
+    environment = env()
+    wrapped = _with_agent_rows(environment, {'CCO': [_agent_row('CCO', ['CC', 'O'])]})
+    pool = EnvironmentProposalPool(wrapped, 2, 100, 1.0, proposal_mode='agent_only')
+    assert pool.expand('CCO')[0]['source']['tool'] == 'submitted_hypothesis'
+    assert environment.export()['usage']['expansions'] == 0
+    assert pool.manifest()['backend_calls'] == 0
+
+
+def test_hybrid_pool_keeps_both_sources_and_deduplicates_same_reaction():
+    environment = env(good)
+    proposals = {'CCO': [_agent_row('CCO', ['C', 'CO']),
+                         _agent_row('CCO', ['CC', 'O'])]}
+    wrapped = _with_agent_rows(environment, proposals)
+    pool = EnvironmentProposalPool(wrapped, 2, 100, 1.0, proposal_mode='hybrid')
+    rows = pool.expand('CCO')
+    assert len(rows) == 2
+    assert {row['source']['tool'] for row in rows} == {'expand', 'submitted_hypothesis'}
+    assert pool.manifest()['backend_calls'] == 1
+    assert pool.manifest()['agent_proposals_used'] == 1
+
+
+def test_agent_fallback_uses_model_when_available_and_agent_when_empty():
+    proposals = {'CCO': [_agent_row('CCO', ['C', 'CO'])]}
+    model = EnvironmentProposalPool(_with_agent_rows(env(good), proposals), 2, 100, 1.0,
+                                    proposal_mode='agent_fallback')
+    assert {row['source']['tool'] for row in model.expand('CCO')} == {'expand'}
+    no_model = EnvironmentProposalPool(_with_agent_rows(env(), proposals), 2, 100, 1.0,
+                                       proposal_mode='agent_fallback')
+    assert {row['source']['tool'] for row in no_model.expand('CCO')} == {'submitted_hypothesis'}
+    assert no_model.manifest()['unresolved_products'] == []
+
+
+def test_pool_reports_unresolved_products_for_main_agent_revision():
+    pool = EnvironmentProposalPool(_with_agent_rows(env(), {}), 2, 100, 1.0,
+                                   proposal_mode='hybrid')
+    assert pool.expand('CCO') == []
+    assert pool.manifest()['unresolved_products'] == ['CCO']
+
+
+def test_historical_model_result_refreshes_for_wider_request_if_budget_allows():
+    environment = env(good, budget=Budget(max_actions=8, max_expansions=2))
+    first = environment.dispatch('expand', {'smiles': 'CCO', 'top_k': 1})
+    wrapped = _with_agent_rows(environment, {})
+    wrapped.model_bank = {'CCO': {'top_k': 1, 'predictions': first['result']['predictions']}}
+    pool = EnvironmentProposalPool(wrapped, 2, 100, 1.0)
+    assert pool.expand('CCO')
+    assert pool.manifest()['backend_calls'] == 1
+    assert environment.export()['usage']['expansions'] == 2
+
+
+def test_historical_model_result_survives_exhausted_backend_allowance():
+    environment = env(good, budget=Budget(max_actions=8, max_expansions=1))
+    first = environment.dispatch('expand', {'smiles': 'CCO', 'top_k': 1})
+    wrapped = _with_agent_rows(environment, {})
+    wrapped.model_bank = {'CCO': {'top_k': 1, 'predictions': first['result']['predictions']}}
+    pool = EnvironmentProposalPool(wrapped, 2, 100, 1.0)
+    assert pool.expand('CCO')
+    assert pool.manifest()['backend_calls'] == 0
+    assert pool.manifest()['historical_model_reuses'] == 1
+    assert environment.export()['usage']['expansions'] == 1

@@ -160,3 +160,28 @@ def test_oversized_extracted_route_is_rejected_without_losing_other_candidates()
     candidates,rejected=_collect(e,[{'steps':tuple([step]*101),'review_penalty':0},
         {'steps':(step,),'review_penalty':0}],'astar',{})
     assert len(candidates)==1 and rejected[0]['reason']=='invalid_route_contract'
+
+
+def test_agent_only_native_search_builds_two_step_route_without_model_backend():
+    task = Task(task_id='agent-native', target='CCOC(C)=O',
+                inventory=tuple(InventoryItem(smiles=s) for s in ('C=C', 'O', 'CC(=O)O')),
+                budget=Budget(max_actions=20, max_expansions=8, max_wall_seconds=30))
+    environment = SynthesisRouteEnv(task)
+    agent_source = {'tool':'submitted_hypothesis', 'version':'host-registered-v1'}
+    proposals = {'CCOC(C)=O': [{'product':'CCOC(C)=O', 'reactants':['CCO','CC(=O)O'],
+                                'source':agent_source}],
+                 'CCO': [{'product':'CCO', 'reactants':['C=C','O'], 'source':agent_source}]}
+
+    class AgentEnvironment:
+        proposal_bank = proposals
+
+        def __getattr__(self, name):
+            return getattr(environment, name)
+
+    result = run_synthchem_workflow(AgentEnvironment(), algorithm='portfolio',
+                                    proposal_mode='agent_only')
+    assert result['accepted_route_ids']
+    assert result['proposal_pool']['backend_calls'] == 0
+    assert environment.export()['usage']['expansions'] == 0
+    assert {step['source_tool'] for step in result['episode']['routes'][0]['steps']} == {'submitted_hypothesis'}
+    assert result['episode']['assessments'][0]['solved'] is False

@@ -8,7 +8,7 @@
 
 Enable Agent Scientist to propose, import, compare and improve synthesis routes from available starting materials to a target molecule. Normal Agent Scientist keeps its existing tools, skills and workflow autonomy. This environment is an optional common workspace. A separate controlled runner supports matched scientific comparisons.
 
-The default local route search is breadth-first search using LocalRetro proposals. Best-first and SynthChem A*, MCTS and portfolio policies are also implemented. External reaction models require explicitly configured assets; missing models fail visibly. Creating a session does not automatically run a search. Normal local searches produce drafts for inspection and explicit submission.
+The default local route search is the SynthChem A*/MCTS portfolio using configured LocalRetro proposals. Breadth-first, best-first and individual SynthChem A*/MCTS policies remain selectable. In normal Agent Scientist sessions, metered one-step hypotheses can be combined with model proposals or searched alone; the chemistry host never launches an LLM. External reaction models require explicitly configured assets; missing models fail visibly. Creating a session does not automatically run a search. Normal local searches produce drafts for inspection and explicit submission.
 
 ## Inputs and validation
 
