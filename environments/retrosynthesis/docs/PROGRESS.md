@@ -1,5 +1,10 @@
 # Optimization execution tracker
 
+Current local route-generation work after the base release makes SynthChem
+portfolio the preferred default and adds metered one-step hypotheses plus
+intermediate grafting. This user-directed product choice does not change the
+historical accepted-step count or establish a search or specialist win.
+
 Scope: local work, using Agent Scientist's main-profile LLM for every research
 role. The user has prioritized a usable base release before the full benchmark.
 No commit, push or deployment is authorized by local release preparation. The working MVP and the completed optimization program are different

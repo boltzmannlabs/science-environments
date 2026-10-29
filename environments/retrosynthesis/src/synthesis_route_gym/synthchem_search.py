@@ -7,7 +7,7 @@ from .validation import assess_route
 from .synthchem_pool import EnvironmentProposalPool
 from .synthchem_native import require_native, run_native_phase
 
-VERSION = 'srg-synthchem-portfolio-v1'
+VERSION = 'srg-synthchem-portfolio-v2'
 
 def _eligible(a):
     return (a.graph_valid and a.inventory_complete and a.constraint_compliant
@@ -78,17 +78,19 @@ def _submit(env, rows):
     return response['result']['accepted_route_ids'],'submitted'
 
 def run_synthchem_workflow(env, *, algorithm='portfolio', expansion_top_k=10,
-                           max_graph_nodes=10000, finalization_reserve_seconds=None):
+                           max_graph_nodes=10000, finalization_reserve_seconds=None,
+                           proposal_mode='hybrid'):
     """Native phases share total expansion/time allowance; node caps are per phase.
 
     Host submission checks inventory, quantity, constraints and graph integrity.
     Accepted routes retain predicted chemistry and are not experimentally solved.
     """
     if env.task.budget.regime == 'unbudgeted':
-        return _unbudgeted_workflow(env, algorithm, expansion_top_k)
+        return _unbudgeted_workflow(env, algorithm, expansion_top_k, proposal_mode)
     reserve = _options(env,algorithm,expansion_top_k,max_graph_nodes,finalization_reserve_seconds)
     require_native()
-    pool = EnvironmentProposalPool(env,expansion_top_k,min(max_graph_nodes,10000),reserve)
+    pool = EnvironmentProposalPool(env,expansion_top_k,min(max_graph_nodes,10000),reserve,
+                                   proposal_mode=proposal_mode)
     stock = frozenset(i.smiles for i in env.task.inventory if i.available_mmol != 0)
     phases = ['astar','mcts'] if algorithm=='portfolio' else [algorithm]
     searches, collected, rejected = [], {}, []
@@ -101,12 +103,12 @@ def run_synthchem_workflow(env, *, algorithm='portfolio', expansion_top_k=10,
         for index,name in enumerate(phases):
             remaining = pool.max_calls-pool.calls
             pool.set_phase(pool.max_calls,pool.deadline)
-            if remaining<=0 or pool.stopped:
-                reason = pool.admission_reason(backend=True) or 'backend_call_quota'
+            if (remaining<=0 and not pool.has_local_proposals) or pool.stopped:
+                reason = pool.admission_reason(backend=not pool.has_local_proposals) or 'backend_call_quota'
                 searches.append({'algorithm':name,'status':'not_run','reason':reason})
                 continue
             left = len(phases)-index
-            quota = max(1,remaining//left)
+            quota = max(1,remaining//left,pool.local_product_count//left)
             duration = max(0,pool.deadline-time.monotonic())/left
             deadline = time.monotonic()+duration
             pool.set_phase(pool.calls+quota,deadline-min(1.0,duration*.1))
@@ -132,11 +134,11 @@ def run_synthchem_workflow(env, *, algorithm='portfolio', expansion_top_k=10,
             'No supplied routes, literature seeds or learned search heuristic are used.']}
 
 
-def _unbudgeted_workflow(env, algorithm, width):
+def _unbudgeted_workflow(env, algorithm, width, proposal_mode):
     from .synthchem_unbounded import UnboundedNativePhase
     if algorithm not in ('portfolio','astar','mcts') or type(width) is not int or not 1 <= width <= 100:
         raise ValueError('Invalid native search algorithm or expansion width')
-    pool = EnvironmentProposalPool(env,width,None,0)
+    pool = EnvironmentProposalPool(env,width,None,0,proposal_mode=proposal_mode)
     stock = frozenset(i.smiles for i in env.task.inventory if i.available_mmol != 0)
     names = ['astar','mcts'] if algorithm == 'portfolio' else [algorithm]
     phases, collected, rejected = [], {}, []

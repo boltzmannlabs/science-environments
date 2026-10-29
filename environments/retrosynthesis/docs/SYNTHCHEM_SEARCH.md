@@ -27,7 +27,8 @@ The [Syntheseus dependency](https://github.com/microsoft/syntheseus) is MIT.
 4. Convert routes into SRG schemas. Preserve disconnected salts and repeated
    reactants; recheck graph, inventory, quantity and task constraints.
 5. Expose explicit CLI policies and existing LocalRetro/AiZynthFinder bindings.
-   Preserve the old default and main-profile research LLM settings.
+   Make the SynthChem portfolio the normal route-generation default while
+   preserving the main-profile research LLM settings.
 6. Run native synthetic/E2E tests, full regression and bounded real-model checks;
    preserve failures and obtain separate code/accounting review.
 
@@ -61,10 +62,33 @@ errors, calls, time and hashes. Inventory-complete predictions are not experimen
 
 Install the optional native engine with `pip install -e '.[test,api,search]'`.
 The CLI accepts `--search-policy synthchem_portfolio`, `synthchem_astar` or
-`synthchem_mcts`. The default remains `breadth_first`.
+`synthchem_mcts`. The current default is `synthchem_portfolio`.
 `--max-frontier-states` sets the graph-node limit per native phase; the portfolio
 has separate A* and MCTS graphs. Cache/accounting is shared inside a portfolio
 episode, not across independent runs.
+
+The current `plan` and normal-session `generate_routes` default to
+`synthchem_portfolio`. The older breadth-first and best-first policies remain
+selectable. In normal Agent Scientist sessions, metered `propose_expansion`
+events add exact-product, unverified precursor hypotheses to the same-session
+pool. `proposal_mode` selects `hybrid`, `agent_fallback`, `agent_only` or
+`model_only`; `hybrid` is the default. The chemistry worker starts no LLM.
+Successful model expansions also remain available within the same session for
+later search retries. Reuse consumes no additional backend expansion, including
+when the expansion allowance is spent; a wider requested top-k refreshes the
+model result while the backend allowance remains available. Failed expansions
+are retried instead of being cached as successes.
+`unresolved_products` supports another main-agent reasoning turn. Stored donor
+routes can replace an exact intermediate subtree through `graft_route`; the
+original comparator stays intact. The source-proposal ensemble remains one
+configured scientific backend plus optional main-agent hypotheses per search.
+This changes the route controller version to `srg-synthchem-portfolio-v2`.
+The task's expansion allowance counts backend `expand` actions; agent proposal
+registration counts environment actions, and graph nodes have their own bound.
+An `agent_only` retry can therefore use already registered hypotheses after
+the backend expansion allowance is exhausted, subject to remaining actions,
+time and graph limits. Host provenance identifies a submitted hypothesis, not
+the identity of the caller or a verified default-profile model.
 
 Example using existing AiZynthFinder template assets:
 

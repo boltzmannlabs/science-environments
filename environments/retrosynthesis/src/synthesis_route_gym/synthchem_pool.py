@@ -14,10 +14,18 @@ from .resource_policy import remaining
 MAX_CACHE_BYTES = 32_000_000
 
 
+PROPOSAL_MODES = frozenset({'hybrid', 'agent_fallback', 'agent_only', 'model_only'})
+
+
 class EnvironmentProposalPool:
     """Episode-local successful-response cache; uncached expansion is host-metered."""
-    def __init__(self, env, width, max_entries, reserve):
+    def __init__(self, env, width, max_entries, reserve, *, proposal_mode='hybrid'):
+        if proposal_mode not in PROPOSAL_MODES:
+            raise ValueError('Invalid proposal mode')
         self.env, self.width, self.max_entries = env, width, max_entries
+        self.proposal_mode = proposal_mode
+        self.agent_proposals = getattr(env, 'proposal_bank', {})
+        self.model_proposals = getattr(env, 'model_bank', {})
         self.reserve = reserve
         usage = env.search_status()['usage']
         self.max_calls = remaining(env.task.budget.max_expansions, usage['expansions'])
@@ -27,9 +35,11 @@ class EnvironmentProposalPool:
         self.calls, self.cache_bytes = 0, 0
         self.cache = {}
         self.metrics = dict.fromkeys(('backend_calls','unresolved_backend_calls','cache_hits',
-            'failed_expansions','rejected_predictions','cache_capacity_skips'),0)
+            'failed_expansions','rejected_predictions','cache_capacity_skips',
+            'agent_proposals_used','source_deduplications','historical_model_reuses'),0)
         self.backend_seconds = 0.0
         self.failures = ()
+        self.unresolved_products = ()
 
     def _count(self, key, amount=1):
         self.metrics = {**self.metrics,key:self.metrics[key]+amount}
@@ -57,7 +67,22 @@ class EnvironmentProposalPool:
 
     @property
     def stopped(self):
-        return self.admission_reason(backend=True) is not None
+        return self.admission_reason(backend=not self.has_local_proposals) is not None
+
+    @property
+    def has_agent_proposals(self):
+        return self.proposal_mode != 'model_only' and bool(self.agent_proposals)
+
+    @property
+    def has_local_proposals(self):
+        return (self.has_agent_proposals or
+                (self.proposal_mode != 'agent_only' and bool(self.model_proposals)))
+
+    @property
+    def local_product_count(self):
+        agent = set(self.agent_proposals) if self.proposal_mode != 'model_only' else set()
+        model = set(self.model_proposals) if self.proposal_mode != 'agent_only' else set()
+        return len(agent | model)
 
     def _accepted_predictions(self, product, predictions):
         rows, seen = [], set()
@@ -82,29 +107,70 @@ class EnvironmentProposalPool:
                 'input_review_required':deficit,'search_cost_basis':'step_plus_structural_count_warning_not_feasibility'})
         return rows
 
+    def _merge_sources(self, model_rows, agent_rows):
+        if self.proposal_mode == 'model_only':
+            sources = (model_rows,)
+        elif self.proposal_mode == 'agent_only':
+            sources = (agent_rows,)
+        elif self.proposal_mode == 'agent_fallback':
+            sources = (model_rows if model_rows else agent_rows,)
+        else:
+            sources = (model_rows, agent_rows)
+        result, seen = [], set()
+        for index in range(max((len(rows) for rows in sources), default=0)):
+            for rows in sources:
+                if index >= len(rows):
+                    continue
+                row = rows[index]
+                key = (row['product'], tuple(sorted(row['reactants'])))
+                if key in seen:
+                    self._count('source_deduplications')
+                    continue
+                seen.add(key)
+                result.append(row)
+                if row['source']['tool'] == 'submitted_hypothesis':
+                    self._count('agent_proposals_used')
+                if len(result) >= self.width:
+                    return result
+        return result
+
     def expand(self, smiles):
         product = canonical_smiles(smiles)
         args = {'smiles':product,'top_k':self.width}
-        key = self.env.expansion_cache_identity(args)
+        key = self.env.expansion_cache_identity(args) + ':' + self.proposal_mode
         if self.admission_reason() is not None:
             return []
         if key in self.cache:
             self._count('cache_hits')
             return deepcopy(self.cache[key])
-        if self.admission_reason(backend=True) is not None:
+        agent_rows = [] if self.proposal_mode == 'model_only' else self._accepted_predictions(
+            product, self.agent_proposals.get(product, ()))
+        model_rows, model_succeeded = [], False
+        historical = self.model_proposals.get(product) if self.proposal_mode != 'agent_only' else None
+        backend_allowed = self.admission_reason(backend=True) is None
+        if historical is not None and (historical['top_k'] >= self.width or not backend_allowed):
+            model_succeeded = True
+            model_rows = self._accepted_predictions(product,historical['predictions'])[:self.width]
+            self._count('historical_model_reuses')
+        elif self.proposal_mode != 'agent_only' and backend_allowed:
+            self.calls += 1
+            response = self.env.dispatch('expand',args)
+            envelope = response['result'].get('tool_result',{})
+            self._count('backend_calls',envelope.get('usage',{}).get('backend_calls',1))
+            self._count('unresolved_backend_calls',int(not envelope))
+            self.backend_seconds += envelope.get('usage',{}).get('elapsed_seconds',0.0)
+            if response['status'] == 'ok':
+                model_succeeded = True
+                model_rows = self._accepted_predictions(product,response['result']['predictions'])
+            else:
+                self._count('failed_expansions')
+                self.failures = (*self.failures,{'product':product,'status':response['status'],
+                    'code':envelope.get('error',{}).get('code') if envelope.get('error') else None})
+        rows = self._merge_sources(model_rows, agent_rows)
+        if not rows:
+            self.unresolved_products = tuple(dict.fromkeys((*self.unresolved_products, product)))[:50]
+        if not model_succeeded and not rows:
             return []
-        self.calls += 1
-        response = self.env.dispatch('expand',args)
-        envelope = response['result'].get('tool_result',{})
-        self._count('backend_calls',envelope.get('usage',{}).get('backend_calls',1))
-        self._count('unresolved_backend_calls',int(not envelope))
-        self.backend_seconds += envelope.get('usage',{}).get('elapsed_seconds',0.0)
-        if response['status'] != 'ok':
-            self._count('failed_expansions')
-            self.failures = (*self.failures,{'product':product,'status':response['status'],
-                'code':envelope.get('error',{}).get('code') if envelope.get('error') else None})
-            return []
-        rows = self._accepted_predictions(product,response['result']['predictions'])
         size = len(json.dumps(rows,allow_nan=False).encode())+len(key)
         if (self.max_entries is None or len(self.cache)<self.max_entries) and self.cache_bytes+size<=MAX_CACHE_BYTES:
             self.cache = {**self.cache,key:deepcopy(rows)}
@@ -116,6 +182,7 @@ class EnvironmentProposalPool:
     def manifest(self):
         return {**self.metrics,'expansion_actions':self.calls,'cached_products':len(self.cache),
             'cache_bytes':self.cache_bytes,'backend_seconds':self.backend_seconds,
+            'proposal_mode':self.proposal_mode,'unresolved_products':list(self.unresolved_products),
             'failures':list(self.failures),'cache_scope':'episode_and_host_expansion_identity',
             'backend_call_count_scope':'known envelope calls plus one reserved per missing envelope; unresolved count explicit',
             'supplied_route_seeds':0,'evidence_seeds':0}

@@ -14,12 +14,31 @@ session through `srg_action` and retain its returned session ID. Inspect state
 before choosing the next action. Existing platform submission, polling, download
 and chemistry protocols remain governed by their existing skills and permissions.
 
-Choose the appropriate route-generation source: existing platform retrosynthesis,
-the environment's configured local search, or explicit incremental expansions.
-The CLI local-search default is breadth-first with LocalRetro proposals;
-SynthChem A*, MCTS and portfolio are selectable. Creating a session does not
-start search. Do not assume a scientific backend exists just because a tool is
-registered: preserve unavailable/error results and explain missing configuration.
+Prefer the environment's SynthChem A*/MCTS portfolio for local route generation.
+It is the default `generate_routes` search policy; breadth-first, best-first and
+individual SynthChem A*/MCTS remain optional. Existing platform retrosynthesis
+results can also be imported. Creating a session does not start search. A model
+backend such as LocalRetro must be configured for model proposals; preserve
+unavailable/error results and explain missing configuration.
+
+Use the main-profile conversation for SynthChem-style agent assistance. When
+`generate_routes` reports `unresolved_products`, reason about the exact
+intermediate and, if you have a defensible precursor hypothesis, call
+`propose_expansion` with `product`, `candidates` containing `reactants`,
+`status="hypothesis"` and an optional short rationale. Then rerun
+`generate_routes` in the same session. The default `proposal_mode="hybrid"`
+combines model and registered agent hypotheses. `agent_fallback`, `agent_only`
+and `model_only` are explicit alternatives. Do not put citations, scores or
+asserted evidence into an agent proposal. The host validates identity and
+constraints, charges the registration action, and labels it as an unverified
+submitted hypothesis. If no plausible disconnection is available, report
+the gap instead of inventing one.
+
+To replace a selected intermediate preparation in a stored comparator, store
+the alternative as a separate route and call `graft_route` with
+`parent_route_id`, `donor_route_id` and the exact `intermediate` SMILES.
+Inspect and validate the new revision before submission. Grafting preserves
+the source and uncertainty of each stored step; it cannot establish a reaction.
 
 Use the normal plugin's supported `import_routes` contract for an existing tool's
 completed route artifact. A job ID or completion status alone is not a route.

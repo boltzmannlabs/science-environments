@@ -182,7 +182,8 @@ def test_plugin_normal_cross_runtime_preserves_other_tools(monkeypatch):
         result=json.loads(handler({'action':'submit','session_id':sid,'arguments':{'route_ids':['r1']}}))
         assert result['observation']['status']=='ok'
         assert 'existing_retrosynthesis' in registered
-        assert {'import_routes','generate_routes'}<=set(tool['schema']['parameters']['properties']['action']['enum'])
+        assert {'import_routes','generate_routes','propose_expansion','graft_route'}<=set(
+            tool['schema']['parameters']['properties']['action']['enum'])
         assert json.loads(handler({'action':'terminal'}))['success'] is False
     finally:module._close_clients()
 
@@ -363,7 +364,7 @@ def test_empty_search_after_failed_prediction_is_not_frontier_success():
     host=InteractiveSessions(expand=lambda target_smiles,top_k=10: {'status':'unavailable','predictions':[],
         'diagnostic':'synthetic backend unavailable'})
     sid=reset(host)
-    result=call(host,'generate_routes',{},sid)
+    result=call(host,'generate_routes',{'search_policy':'breadth_first'},sid)
     assert result['route_ids']==[]
     assert result['stop_reason']=='backend_failure'
     assert result['backend_failures']
@@ -413,5 +414,5 @@ def test_missing_assets_remain_unavailable_not_pinned(tmp_path):
 def test_failed_expansion_keeps_nested_backend_error_code():
     host=InteractiveSessions(expand=lambda target_smiles,top_k=10:{'status':'unavailable','predictions':[]})
     sid=reset(host)
-    result=call(host,'generate_routes',{},sid)
+    result=call(host,'generate_routes',{'search_policy':'breadth_first'},sid)
     assert result['backend_failures'][0]['code']=='backend_unavailable'

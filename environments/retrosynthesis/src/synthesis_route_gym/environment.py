@@ -10,7 +10,6 @@ import queue
 from uuid import uuid4
 from .episode_store import EpisodeStore
 from .scientific_execution import SCIENTIFIC_ACTIONS, ACCOUNTED_SCIENTIFIC_ACTIONS, APPLICATION_ACTIONS, ACCOUNTING_ALIASES, ScientificLimits, execute_scientific, science_checkpoint
-from .chemistry import canonical_smiles
 from .schemas import RouteCandidate, Task
 from .validation import assess_route
 
@@ -340,6 +339,9 @@ class SynthesisRouteEnv:
         if action == "inspect":
             from .observation import compact_observation
             return "ok", compact_observation(self, args)
+        if action == "propose_expansion":
+            from .agent_expansions import validate_agent_expansions
+            return "ok", validate_agent_expansions(self.task, args, self._events)
         if action == "propose_route":
             route = RouteCandidate.model_validate(args["route"])
             ids = {r.route_id for r in self._routes}
@@ -348,6 +350,18 @@ class SynthesisRouteEnv:
             assessment = self._assess(route).model_dump(mode="json")
             self._routes = self._routes + (route,)
             return "ok", {"route_id": route.route_id, "assessment": assessment}
+        if action == "graft_route":
+            if set(args) != {'parent_route_id', 'donor_route_id', 'intermediate'}:
+                raise ValueError('Graft requires parent, donor and intermediate')
+            from .route_graft import graft_intermediate
+            route = graft_intermediate(self.task, self._route(args['parent_route_id']),
+                                       self._route(args['donor_route_id']), args['intermediate'])
+            if any(existing.route_id == route.route_id for existing in self._routes):
+                raise ValueError('Grafted route already exists')
+            assessment = self._assess(route).model_dump(mode='json')
+            self._routes = self._routes + (route,)
+            return 'ok', {'route_id': route.route_id, 'parent_route_id': route.parent_route_id,
+                          'donor_route_id': args['donor_route_id'], 'assessment': assessment}
         if action == "validate":
             return "ok", self._assess(self._route(args["route_id"])).model_dump(mode="json")
         if action == "rank_routes":

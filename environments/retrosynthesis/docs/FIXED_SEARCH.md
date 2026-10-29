@@ -1,5 +1,11 @@
 # SRG-05 fixed-search implementation and comparison
 
+This document records the earlier development decision to retain breadth-first
+as the default. The current normal-session and `plan` defaults are SynthChem
+portfolio following a later user priority change; breadth-first remains an
+explicit benchmark comparator. No scientific superiority is implied by the
+default change.
+
 Status: implemented and validated in the declared development pilot; no accepted-route
 improvement demonstrated. Owner: search and benchmark maintainers.
 The legacy `planning.run_fixed_workflow` remains unchanged for regression and
