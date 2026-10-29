@@ -1,6 +1,6 @@
 # FEP/TI Specialist Agents
 
-**Status: Specification with fixture validation.** This environment defines
+**Lifecycle: In Progress — executable toy calculation and fixture validation.** This environment defines
 ten FEP/TI problem-solving specialists, their inputs/outputs, acceptance
 criteria, and evidence rules. It does not claim a production free-energy
 calculation without real windows, trajectories, overlap, convergence,
@@ -9,11 +9,12 @@ uncertainty, and reference evidence.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Configuration and schemas](config/)
-3. [Agent contracts](agents/contracts.json)
-4. [Task cards](tasks/)
-5. [Fixture results](results/fixture_results.json)
-6. [Acceptance tests](tests/)
+2. [Status](STATUS.md), [models and tools](MODELS_AND_TOOLS.md), and [implementation report](IMPLEMENTATION_REPORT.md)
+3. [Configuration and schemas](config/)
+4. [Agent contracts](agents/contracts.json)
+5. [Task registry](tasks/README.md) and [benchmark](benchmark/README.md)
+6. [Fixture results](results/fixture_results.json)
+7. [Provenance](SOURCE_PROVENANCE.json) and [acceptance tests](tests/README.md)
 
 Shared diagnosis, retry, audit, and provenance logic is in
 [`../md_agents/recovery_agents/cross_domain`](../md_agents/recovery_agents/cross_domain/).

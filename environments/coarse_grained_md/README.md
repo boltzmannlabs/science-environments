@@ -1,6 +1,6 @@
 # Coarse-Grained Molecular Dynamics Environment
 
-**Status: Specification with a toy executable profile.** This environment
+**Lifecycle: In Progress — executable toy profile and partially validated.** This environment
 defines reusable contracts for multiple coarse-grained (CG) resolutions and
 engines. It does not claim that all CG force fields, membranes, phase
 separation systems, or parameterization workflows are qualified.
@@ -25,12 +25,13 @@ is in [cg_agents/](cg_agents/) and is exercised by the harness below.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Configuration](config/environment.yaml) and [example request](tasks/request.example.json)
-3. [Agent contracts](agents/contracts.json)
-4. [Task cards](tasks/)
-5. [Executable runtime](cg_agents/) and [harness](scripts/run_agent_harness.py)
-6. [Harness evidence](results/agent_harness/results.json)
-7. [Tests](tests/)
+2. [Status](STATUS.md), [models and tools](MODELS_AND_TOOLS.md), and [implementation report](IMPLEMENTATION_REPORT.md)
+3. [Configuration](config/environment.yaml) and [example request](tasks/request.example.json)
+4. [Agent contracts](agents/contracts.json)
+5. [Task registry](tasks/README.md) and [benchmark](benchmark/README.md)
+6. [Executable runtime](cg_agents/) and [harness](scripts/run_agent_harness.py)
+7. [Harness evidence](results/agent_harness/results.json)
+8. [Provenance](SOURCE_PROVENANCE.json) and [tests](tests/README.md)
 
 The related MD contracts are in
 [`../md_agents`](../md_agents/), while benchmark comparison reports are
