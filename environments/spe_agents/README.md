@@ -1,6 +1,6 @@
 # Specialist Single-Point Energy (SPE) Agents
 
-**Status: Implemented/validated evidence package.** This environment defines
+**Lifecycle: In Progress — executable and partially scientifically validated.** This environment defines
 specialist single-point-energy tasks, their input/output contracts, and versioned
 benchmark evidence. It does not imply that every backend is available on every
 machine.
@@ -8,10 +8,11 @@ machine.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
-3. [Task-facing description](tasks/spe_001_single_point_energy.md) and [example request](tasks/request.example.json)
-4. [Task and result evidence](../../benchmarking/spe_agents/README.md)
-5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
+2. [Status](STATUS.md), [models and tools](MODELS_AND_TOOLS.md), and [implementation report](IMPLEMENTATION_REPORT.md)
+3. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
+4. [Task registry](tasks/README.md) and [example request](tasks/request.example.json)
+5. [Benchmark](benchmark/README.md) and [provenance](SOURCE_PROVENANCE.json)
+6. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
 
 The environment separates scientific failures (invalid state, unsupported
 method, non-convergence) from infrastructure and provenance failures. Results

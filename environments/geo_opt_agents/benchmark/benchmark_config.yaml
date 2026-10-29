@@ -1,0 +1,8 @@
+name: geo_opt_agents
+version: 1
+tracks: [baseline, constrained, nonconvergence, derivative, minimum, recovery, orchestration]
+qualification:
+  require_finite_coordinates: true
+  require_finite_energy: true
+  require_verified_convergence: true
+  adapter_pass_is_scientific_pass: false

@@ -1,6 +1,6 @@
 # HOMO–LUMO Calculation Environment
 
-**Status: Implemented (prototype); validation in progress.**
+**Lifecycle: In Progress — executable prototype and partially scientifically validated.**
 
 This environment calculates the orbital-energy HOMO–LUMO gap with PySCF and
 validates input, SCF convergence, orbital occupations, units, and provenance.
@@ -25,9 +25,11 @@ checks into one deterministic path before specialist routing is expanded.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
-3. [Task inputs](tasks/) and [prototype results](results/prototype_results.json)
-4. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
+2. [Status](STATUS.md), [models and tools](MODELS_AND_TOOLS.md), and [implementation report](IMPLEMENTATION_REPORT.md)
+3. [Environment configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
+4. [Task registry](tasks/README.md) and [prototype results](results/prototype_results.json)
+5. [Benchmark](benchmark/README.md), [provenance](SOURCE_PROVENANCE.json), and [validation evidence](tests/specification-validation.json)
+6. [Acceptance plan](tests/ACCEPTANCE.md)
 
 ## Package structure
 
