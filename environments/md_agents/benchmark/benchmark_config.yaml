@@ -1,0 +1,16 @@
+name: md_agents
+version: 1
+packet_count: 62
+tracks:
+  - packet_adapter
+  - core_openmm_cuda
+  - real_system_bounded
+  - recovery_fixtures
+qualification:
+  adapter_pass_is_scientific_pass: false
+  unresolved_status: REVIEW
+  require_independent_evaluator: true
+provenance:
+  preserve_inputs: true
+  record_engine_versions: true
+  record_seeds: true

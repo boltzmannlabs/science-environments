@@ -1,6 +1,6 @@
 # Molecular Dynamics Specialist Agents
 
-**Status: Implemented / partially validated.** This package contains executable
+**Lifecycle: In Progress — executable / partially scientifically validated.** This package contains executable
 input harnesses, engine adapters, recovery agents, and bounded OpenMM/CUDA
 real-system runs. It does not claim that all 50 MD environments or long-time
 production/FEP workflows have been scientifically qualified.
@@ -18,19 +18,24 @@ environments.
 ## Read in this order
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
-2. [Configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
-3. [Task registry](tasks/)
-4. [Agent contracts](agents/contracts.json)
-5. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
-6. [Real-system execution results](results/real_system_production/RESULTS.md)
-7. [Runtime contracts](runtime/CONTRACTS.md) and [results index](results/README.md)
+2. [Status and maturity](STATUS.md)
+3. [Models and tools](MODELS_AND_TOOLS.md)
+4. [Implementation report](IMPLEMENTATION_REPORT.md)
+5. [Configuration](config/environment.yaml), [request schema](config/request.schema.json), and [protocol schema](config/protocol.schema.json)
+6. [Task registry](tasks/README.md)
+7. [Benchmark protocol](benchmark/README.md)
+8. [Agent contracts](agents/contracts.json)
+9. [Acceptance plan](tests/ACCEPTANCE.md) and [validation evidence](tests/specification-validation.json)
+10. [Real-system execution results](results/real_system_production/RESULTS.md)
+11. [Runtime contracts](runtime/CONTRACTS.md) and [results index](results/README.md)
 
 ## Package layout
 
 The package follows the repository environment layout: specification and
 configuration at the root, one concrete task packet per agent under `inputs/`,
 real public molecular systems under `inputs/real_systems/`, diagnostic fixtures
-under `inputs/fixtures/`, task descriptions under `tasks/`, runtime facades
+under `inputs/fixtures/`, task descriptions under `tasks/`, benchmark definitions
+under `benchmark/`, documentation and evaluation protocol under `docs/`, runtime facades
 under `runtime/`, and versioned evidence under `results/`. The executable
 adapters and fixture-generation utilities are under `scripts/`; independent
 checks are under `tests/`.
