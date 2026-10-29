@@ -1,0 +1,64 @@
+{
+  "schema_version": "enzyme-progress-snapshot/1",
+  "captured_at_utc": "2026-10-27T13:24:00Z",
+  "source_updated_at_utc": "2026-10-27T13:23:22.351003+00:00",
+  "source_report_sha256": "9fd26e7f397b69435d2d415a82a26f03c751d915193f51272d74718b0e03df1b",
+  "reported_state": "running",
+  "requested_runs": 9,
+  "terminal_runs": 6,
+  "scientific_submissions": 4,
+  "accepted_jobs": 4,
+  "completed_jobs": 3,
+  "sealed_selections": 4,
+  "evaluator_runs": 4,
+  "run_statuses": [
+    {
+      "approach": "fixed",
+      "repeat": 1,
+      "status": "running_fixed_operator"
+    },
+    {
+      "approach": "fixed",
+      "repeat": 2,
+      "status": "ready"
+    },
+    {
+      "approach": "fixed",
+      "repeat": 3,
+      "status": "ready"
+    },
+    {
+      "approach": "specialist",
+      "repeat": 1,
+      "status": "agent_execution_failed"
+    },
+    {
+      "approach": "specialist",
+      "repeat": 3,
+      "status": "agent_execution_failed"
+    },
+    {
+      "approach": "base",
+      "repeat": 1,
+      "status": "sealed_evaluated"
+    },
+    {
+      "approach": "base",
+      "repeat": 2,
+      "status": "sealed_evaluated"
+    },
+    {
+      "approach": "base",
+      "repeat": 3,
+      "status": "sealed_evaluated"
+    },
+    {
+      "approach": "specialist",
+      "repeat": 2,
+      "status": "sealed_evaluated"
+    }
+  ],
+  "scientific_comparison_complete": false,
+  "experimental_measurements_included": false,
+  "scope": "Aggregate progress only; no private labels, individual activities, account identifiers, or final comparative claim"
+}

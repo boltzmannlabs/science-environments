@@ -1,0 +1,161 @@
+{
+  "scope": "software_behavior_and_harness_transport_only",
+  "recorded_at": "2026-10-28T12:26:47.210916+00:00",
+  "tests_run": 52,
+  "tests_successful": true,
+  "failures": [],
+  "errors": [],
+  "live_harness_smoke": {
+    "live_harness_smoke": "PASS",
+    "exit_code": 0,
+    "timed_out": false,
+    "elapsed_seconds": 26.796516344882548,
+    "error": null,
+    "response": {
+      "status": "completed",
+      "scope": "software_transport_only",
+      "artifacts": [],
+      "usage": {
+        "external_cpu_core_hours": 0,
+        "gpu_hours": 0,
+        "service_spend_usd": 0
+      }
+    },
+    "scientific_jobs": 0,
+    "recorded_at": "2026-10-27T05:22:05.887328+00:00",
+    "tested_agent_bridge_sha256": "b67a6b6fe65c9cec4faa18b0dca5510094684d8f0c43d3a0305436ab2619f0eb",
+    "scope_note": "Historical live transport test at its recorded bridge hash; latest startup/control-validation instructions have not run against a live model."
+  },
+  "versions": {
+    "python": "3.13.7",
+    "jsonschema": "4.19.2",
+    "PyYAML": "6.0.2"
+  },
+  "file_sha256": {
+    "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
+    "runtime/assessment.py": "9aeb30d21e8880bac2b5452a56a0449537e86e21210dfb750b07d65857e725fd",
+    "runtime/agents.py": "484b5703de47c6fdbd741851fcd53e0b7c47dc3e6a1f7341988bda773db67f9e",
+    "runtime/reporting.py": "c1e6b04197803a24ca60236504d031df46f50d44b5f57531981e69cb658edfa4",
+    "runtime/structure_preparation.py": "a4e43e30b9a0e3e030e492433588c3cf4e8bfd522c6e6ff207bf8e0b03300edf",
+    "runtime/controller.py": "9f63ee6b6d2832a2141378a147f36b9f2eef978e8c8438e772fa6277edaf4223",
+    "tests/test_structure_preparation.py": "99d7dab2a0f7ee7584a4ada8fe724b0dbd4a94b71f649a96fba5b645b369ae2a",
+    "tests/test_contracts.py": "d3a5f47db44c4c8582ffcd96deaa1efeec8f494fdf1584a5ba3cb5e191421486",
+    "tests/test_agents.py": "735d123581411417ddd3d794bf9dfda6b3d650740ffe546ff55e532498d269e6",
+    "tests/test_assessment.py": "1739fab7dd602ae2790665303841c5d98c7c30f20646a57c671058da940bbe5b",
+    "tests/test_controller.py": "fc3bb977665939ea1d175f079c7884efa55376b4412e1b4a8a77acb39460a42c",
+    "config/environment.yaml": "a73a820a6b910d53d7c2441f64e0ca00ba742aeb3d21a34b32692526ba9f1893",
+    "runtime/CONTRACTS.md": "14d1bed11357113eb4ffb327f76993d9106fb5e0885a3b8b687bfb7a0eb1f4cc",
+    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3"
+  },
+  "not_validated": [
+    "Target-specific catalytic-state geometry and chemical barriers",
+    "Complete target-specific scientific adapters and controls",
+    "End-to-end enzyme activity or property improvements",
+    "Remote provider resource enforcement"
+  ],
+  "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py'",
+  "elapsed_seconds": 36.673,
+  "clarification_regressions": [
+    "Routine and misclassified questions return to internal repair and stage execution continues",
+    "Essential unresolved intent and access boundaries retain structured user questions",
+    "Repeated routine questions exhaust bounded repair without becoming user approval requests"
+  ],
+  "live_preparation_review": {
+    "scope": "Historical live read-only platform discovery at the recorded bridge hash; not a test of later deadline/request-binding changes",
+    "status": "completed",
+    "routine_user_questions": 0,
+    "scientific_submissions": 0,
+    "evidence": "LDEX_Environment_Test/fast_pilot_20261027/platform_preflight_receipt.json",
+    "tested_bridge_sha256": "e9c4c53d86b312c1a897a1eb7689b445b5b91ef6943c567adde481a1733a7026"
+  },
+  "request_isolation_regression": "A generation profile with a different resolved-request binding is rejected before generation despite reviewer acceptance.",
+  "call_budget_regression": "Actual deadline and SCI turn budget are provided to workers; writing a response requires reserved time and a final tool turn.",
+  "live_artifact_review": {
+    "scope": "Read-only review of external pilot evidence; not a full scientific controller run",
+    "status": "completed",
+    "decision": "integration_only",
+    "qualified_designs": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 112.50852257711813,
+    "tested_bridge_sha256": "102b0cdae34576640436c6eadb7fa000a9ba85b734c256b4ba87b6e0b3a39983",
+    "recorded_at": "2026-10-27T06:15:23.328841+00:00",
+    "evidence": "LDEX_Environment_Test/fast_pilot_20261027/independent_review_retry_receipt.json",
+    "prior_failure_preserved": true
+  },
+  "structure_preparation_alignment_tests": {
+    "scope": "Software rotations and independent artifact placement controls; not catalytic qualification",
+    "proper_rotation_required": true,
+    "named_backbone_anchors_for_missing_CB": true,
+    "historical_evidence_preserved": true,
+    "placement_evidence": "LDEX_Environment_Test/geometry_adapter_20261027/template_reflection_diagnostic_v2/result.json",
+    "actual_adapter_placement_evidence": "LDEX_Environment_Test/geometry_adapter_20261027/adapter_placement_verification/result.json",
+    "complete_preparation": "Not validated; CPU-only regression timed out during candidate missing-atom optimization at 180 seconds"
+  },
+  "optimization_review": {
+    "source_commit": "538cb74d70f5c6779afc33f02ec7b761849d73bf",
+    "source_tree": "9b5c9a4bb64ef227f0cd909069c42855927338c8",
+    "source_path": "environments/enzyme-variant-optimization",
+    "source_modified": false,
+    "adapted_patterns": [
+      "Separate sequence identity and coordinate versions",
+      "Bind downstream evidence and exports to exact reviewed models",
+      "Preserve remote uncertainty after controller termination",
+      "Require original provider/job identity on poll completion and restart",
+      "Archive superseded exports before rebuilding current results"
+    ],
+    "validation_scope": "Synthetic software regressions only; no scientific service or model requests; no enzyme qualification",
+    "files_reviewed": [
+      "README.md",
+      "STATUS.md",
+      "src/enzyme_research/store.py",
+      "src/enzyme_research/connector.py",
+      "src/enzyme_research/workflow.py",
+      "src/enzyme_research/service.py",
+      "src/enzyme_research/context.py",
+      "src/enzyme_research/native_policy.py",
+      "src/enzyme_research/discovery.py",
+      "src/enzyme_research/reporting.py",
+      "tests/test_state_connector.py",
+      "tests/test_unsubmitted_action_repair.py"
+    ],
+    "remaining_harness_requirement": "Provider submission reservations, job-status authenticity and host-level tool-action enforcement require harness integration; controller response validation does not replace them."
+  },
+  "skipped": [
+    {
+      "test": "test_bounded_internal_context_restores_openmm_api_after_over_budget (test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget)",
+      "reason": "OpenMM isolated runtime not in this interpreter"
+    }
+  ],
+  "tests_passed": 51,
+  "additional_runtime_check": {
+    "command": "python -B -m unittest test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget -v",
+    "working_directory": "tests",
+    "tests_run": 1,
+    "tests_successful": true,
+    "elapsed_seconds": 0.359,
+    "scope": "Historical OpenMM API restoration software check preserved from earlier review; not rerun in this publication check",
+    "interpreter": "OpenMM-enabled isolated Python runtime; installation prefix omitted from portable command",
+    "preserved_from_report_recorded_at": "2026-10-28T11:15:35.839427+00:00"
+  },
+  "invocation_note": "Equivalent unittest discovery executed in a report-recording wrapper in an isolated checkout of published main plus only de novo environment changes.",
+  "recovery_regressions": [
+    "Execution approval blocks stop executor, reviewer and repair without alternate dispatch; repeated run preserves terminal result.",
+    "Failed method controls remain distinct from candidate integrity failures and unresolved evidence.",
+    "Method settings, assembly applicability and current evaluation-plan bindings are required before structural promotion.",
+    "Mismatched or absent poll identities cannot replace the original jobs or promote returned artifacts.",
+    "Saved polling receipts undergo the same identity checks after restart.",
+    "An execution-approval timeout while polling cannot erase outstanding remote handles.",
+    "Evidence invalidation archives old structure/chemistry exports and empties the current qualified FASTA; unchanged exports are idempotent."
+  ],
+  "policy_update_scope": "Assessment contract 2.1 requires independent models for all generation routes, restart, downstream evidence, qualification and qualified exports. Preparation remains supporting evidence. RL remains specified only; no scientific inference, live model/approval integration or training executed.",
+  "scientific_jobs_this_validation": 0,
+  "fold_admission_regressions": [
+    "Ordinary generation without assessment models cannot advance in either tool-selection condition, even with reviewer acceptance.",
+    "Preparation-only evidence cannot pass independent fold assessment.",
+    "Empty/malformed models, missing or failed method controls and missing integrity review are rejected.",
+    "Saved acceptance without required model records is invalidated before downstream dispatch.",
+    "Downstream assessment and final qualification require current accepted fold evidence.",
+    "Qualified export cannot fall back to generated coordinates.",
+    "Valid synthetic monomer and full homodimer model records pass the same admission contract."
+  ]
+}

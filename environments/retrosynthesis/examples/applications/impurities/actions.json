@@ -1,0 +1,53 @@
+[
+  {
+    "action": "propose_route",
+    "arguments": {
+      "route": {
+        "route_id": "impurity-hydrolysis",
+        "target": "CCO",
+        "steps": [
+          {
+            "step_id": "hydrolysis",
+            "product": "CCO",
+            "reactants": [
+              {
+                "smiles": "CCOC(C)=O"
+              },
+              {
+                "smiles": "O"
+              }
+            ],
+            "source_tool": "benign_public_reaction_projection_for_model_diagnostic",
+            "source_version": "srg10-v1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "action": "predict_route_impurities",
+    "arguments": {
+      "route_id": "impurity-hydrolysis",
+      "step_id": "hydrolysis",
+      "top_k": 3
+    }
+  },
+  {
+    "action": "application_report",
+    "arguments": {
+      "application": "impurity_analysis",
+      "route_ids": [
+        "impurity-hydrolysis"
+      ],
+      "step_id": "hydrolysis"
+    }
+  },
+  {
+    "action": "submit",
+    "arguments": {
+      "route_ids": [
+        "impurity-hydrolysis"
+      ]
+    }
+  }
+]

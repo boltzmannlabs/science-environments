@@ -1,6 +1,6 @@
-# References: monoclonal-antibody design environment
+# References: antibody design environment
 
-All references below were published on or before the benchmark's 2024-09-01 knowledge cutoff. They ground the specific environment requirements shown; they do not validate the supplied dengue candidates.
+The original numbered references below predate the DENV benchmark's 2024-09-01 cutoff. The later scope-review section labels additional sources by date; it does not change that benchmark's method eligibility or validate its candidates.
 
 1. Lefranc M-P, Pommié C, Ruiz M, et al. “IMGT unique numbering for immunoglobulin and T cell receptor variable domains and Ig superfamily V-like domains.” *Developmental & Comparative Immunology*. 2003;27(1):55–77. [PubMed 12477501](https://pubmed.ncbi.nlm.nih.gov/12477501/). **Supports:** declaring an antibody numbering convention and mapping framework/CDRs across chain types.
 2. Zhao N, Han B, Zhao C, Xu J, Gong X. “ABAG-docking benchmark: a non-redundant structure benchmark dataset for antibody-antigen computational docking.” *Briefings in Bioinformatics*. 2024;25(2):bbae048. [PubMed 38385879](https://pubmed.ncbi.nlm.nih.gov/38385879/). **Supports:** benchmarking antibody–antigen docking across varied, difficulty-labeled cases.
@@ -30,3 +30,38 @@ All references below were published on or before the benchmark's 2024-09-01 know
 - `inputs/Dengue_Wetlab_results.pptx`
 
 These project records informed the DV87.1/DENV-2/EDIII task scope, named-method inventory, reported funnel, and unresolved result mappings. They are supplied project materials rather than independent scientific citations.
+
+## Three-family scope review (2026-10-27)
+
+- **Reference-based optimization:** Hie BL et al. “Efficient evolution of human antibodies from general protein language models.” *Nature Biotechnology* 42, 275–283 (2024); published online 24 April 2023. [Primary study](https://pubmed.ncbi.nlm.nih.gov/37095349/). Supports the distinction between proposals derived from existing antibodies and experimentally established improvement. Pre-DENV-cutoff source; no claim that this method is installed or qualified here.
+- **Target-only discovery:** Bennett NR et al. “Atomically accurate de novo design of antibodies with RFdiffusion.” *Nature* 649, 183–193 (2026); published online 5 November 2025. [Primary study](https://www.nature.com/articles/s41586-025-09721-5). Supports treating discovery without a known binding reference as a distinct research case, with additional context and empirical evaluation. **Post-DENV-cutoff:** background for future task specifications only.
+- **Bispecific terminology and evaluation:** FDA, *Bispecific Antibody Development Programs: Guidance for Industry*, May 2021. [Official guidance](https://www.fda.gov/media/123313/download). Supports distinguishing two binding specificities from ordinary bivalency and making joint-engagement requirements mechanism-dependent. Used as scientific context, not a claim of regulatory compliance.
+- **Bispecific assembly evidence:** see Gong et al. (reference 19), rechecked against the [primary study](https://pubmed.ncbi.nlm.nih.gov/33397191/). Supports evaluating parental compatibility and assembled-molecule properties separately from individual binding arms.
+
+The task-family requirements are the environment authors' synthesis of these sources and repository constraints. None of these publications proves that the local environment implements the reported scientific methods.
+
+## Task evaluation and capability review (2026-10-27)
+
+### EGFR and HER2 task identities
+
+- **Human HER2 / ERBB2:** [UniProt P04626](https://www.uniprot.org/uniprotkb/P04626/entry) identifies the human target. A protein accession does not specify the experimental construct or provide verified task input artifacts.
+- **Human EGFR / ERBB1:** [UniProt P00533](https://www.uniprot.org/uniprotkb/P00533/entry) identifies the human target for both monoclonal tasks.
+- **Cetuximab reference:** [EGFR–cetuximab Fab structure, PDB 1YY9](https://www.rcsb.org/structure/1YY9) supports the reference-guided task's EGFR extracellular domain III context. Structure availability alone does not supply a matched candidate evaluation baseline.
+- **Zanidatamab reference:** [An anti-HER2 biparatopic antibody that induces unique HER2 clustering and complement-dependent cytotoxicity](https://doi.org/10.1038/s41467-023-37029-3), *Nature Communications* (2023), describes recognition of HER2 extracellular domains II and IV and trans engagement. This supports the reference identity and domain assignments, not equivalence of a newly designed molecule or proof of its function.
+
+The target-only EGFR task intentionally has no supplied binding-reference antibody. These identifiers specialize three task specifications; reusable schemas and other task targets retain their broader scope.
+
+### Evaluation sources
+
+The following sources support the revised evaluation criteria. The task workflows are an author-defined synthesis, not implementations supplied or certified by these publications. Numerical results and candidate rankings from papers are not benchmark answers and have not been copied into the tasks.
+
+| ID | Source | Use and boundary |
+| --- | --- | --- |
+| E1 | ICH Q6B, *Specifications: Test Procedures and Acceptance Criteria for Biotechnological/Biological Products* (1999). [Official EMA document](https://www.ema.europa.eu/en/documents/scientific-guideline/ich-q-6-b-test-procedures-and-acceptance-criteria-biotechnologicalbiological-products-step-5_en.pdf). | Distinguish identity, physicochemical characterization, biological activity, and justified acceptance criteria. Manufacturing specifications are not imported as universal computational design thresholds. |
+| E2 | Jain et al., *Biophysical properties of the clinical-stage antibody landscape* (2017). [Primary study](https://pubmed.ncbi.nlm.nih.gov/28096333/). | Supports separate biophysical risk measurements. Published panel flags are not universal pass/fail cutoffs or proof of clinical suitability. |
+| E3 | *Metrics reloaded: recommendations for image analysis validation* (2024). [Primary methods publication](https://doi.org/10.1038/s41592-023-02151-z). | Supports problem-aware metric selection, class-prevalence awareness, reference-label uncertainty, and reporting beyond one aggregate score. |
+| E4 | Percie du Sert et al., *The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research* (2020). [Primary guideline](https://pmc.ncbi.nlm.nih.gov/articles/PMC7610696/). | Supports explicit experimental units, sample counts, exclusions, controls, and variability in analysis of supplied animal-study data. It does not establish validity of an individual study. |
+| E5 | EMBL-EBI, *Evaluating AlphaFold2's predicted structures using confidence scores*. [Official technical guide](https://www.ebi.ac.uk/training/online/courses/alphafold/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/). | Explains local confidence versus relative-position uncertainty. This is current technical background; the live page is not evidence that a particular method revision was available before a benchmark cutoff. |
+| E6 | *DockQ v2: improved automatic quality measure for protein multimers, nucleic acids, and small molecules* (2024). [Primary methods publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC11467047/). | Supports requiring a model/reference comparison when claiming structural accuracy, rather than treating predicted confidence as observed accuracy. Post-2024-09-01 publication; not a new eligible DENV method. |
+
+Also reused: the FDA bispecific guidance and Hie/Bennett studies in the scope review above; the assembly study in reference 19; and the CNS pharmacokinetic/fractionation study in reference 20. Later discovery research supports the target-only task distinction without changing the frozen DENV cutoff. Every scientific run still needs its own eligible, qualified method versions and justified evaluation rules.

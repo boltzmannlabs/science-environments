@@ -1,80 +1,77 @@
 # Task: bispecific_antibody_design
 
-**Task family:** bispecific monoclonal antibody design and integrated assessment  
-**Task variant:** tool-neutral  
-**Status:** benchmark specification; target profiles and a qualified format-specific protocol must be supplied before execution.
-
 ## Description
 
-Design and assess a bounded set of bispecific antibody candidates that engage two declared targets or epitopes in one molecular product. The task must begin with a biological rationale for the two binding arms and state whether the desired action requires simultaneous engagement, target bridging, co-blockade, receptor clustering, cell redirection, tissue transport, or another defined mechanism.
+Design and assess **HER2-directed biparatopic antibody candidates** using **zanidatamab** as the reference antibody. The two binding specificities recognize **extracellular domain II and extracellular domain IV of human HER2 (ERBB2)** in one molecular product.
 
-The two arms are not independent binders in the final product. Candidate assessment must account for arm specificity, simultaneous binding geometry, valency, chain assembly, molecular format, target context, and the intended functional readout. A strong score for one arm does not compensate for a failed second arm or an incompatible overall geometry.
+This task concerns two distinct regions of the same antigen. Compare candidates with the supplied zanidatamab reference evidence, evaluating both binding components and the assembled molecule. A candidate must not be described as equivalent to zanidatamab merely because it recognizes the same two HER2 domains.
 
-## Required inputs
+## Target
 
-Provide exact, hashed profiles for **Target A** and **Target B**, including organism, sequence, construct, structure or explicit structure absence, chain/residue mapping, native presentation context, oligomeric state, post-translational modifications, disease-relevant variants, and epitope policy. State whether both targets are on one cell, on different cells, in circulation, in a tissue barrier, or in another spatial context.
+**Target:** Human HER2 (ERBB2), extracellular domain\
+**Reference Antibody:** Zanidatamab, a HER2-directed biparatopic antibody\
+**Specificity A:** HER2 extracellular domain II\
+**Specificity B:** HER2 extracellular domain IV\
+**Target Context:** Supplied HER2 constructs and structures, domain/residue mapping, cell-surface accessibility, and receptor arrangement\
+**Reference Inputs:** Verified zanidatamab component identities, architecture, domain assignments, and available comparison evidence\
+**Architecture:** Explicitly declared chain composition, pairing, valency, linker/hinge, and Fc policy; document any difference from the reference\
+**Objective:** Retain both HER2 specificities in a defined molecular product and assess joint engagement, assembly, and developability against the reference
 
-The request must also declare:
+## Design Constraints
 
-- the intended biological mechanism and whether simultaneous occupancy is required;
-- the bispecific architecture, chain composition, valency for each target, linker/hinge policy where applicable, and intended Fc/isotype behavior;
-- the reference format or parental arm sequences if supplied; if none are supplied, state that the task is de novo and provide an allowed antibody-family/framework policy;
-- desired target selectivity, homolog/variant panel, and any acceptable cross-reactivity;
-- whether Fc effector function should be active, enhanced, attenuated, or irrelevant, and why;
-- the functional assays, controls, target-expression context, and candidate/resource limits;
-- the frozen qualification rules, method revisions, output format, and knowledge cutoff.
+- Represent the complete molecule and chain assembly; do not assume every format uses four chains.
+- Preserve the domain II/domain IV binding assignments and declared chain composition and valency. Record any permitted changes relative to the zanidatamab reference.
+- Assess each arm independently, then assess whole-molecule geometry, assembly, and developability.
+- Evaluate joint engagement in the declared receptor arrangement; distinguish affinity, avidity, and occupancy. Do not assume that binding two HER2 domains means both are engaged on the same receptor molecule.
+- Check chain mispairing, incomplete assembly, steric occlusion, linker incompatibility, and loss of either specificity.
+- Require verified reference-component evidence for reference-derived claims. If zanidatamab inputs are missing, report the gap instead of inventing its sequences or architecture.
+- Shortlist only candidates meeting all mandatory arm-level and whole-molecule criteria. A strong first arm cannot compensate for a failed second arm.
 
-## Design constraints
+## Computational Tool Capabilities
 
-- Represent the full bispecific molecule and its chain-pairing/assembly rules, not just isolated variable domains.
-- Preserve the declared arm-to-target assignment and distinguish Target A binding from Target B binding in every record.
-- Evaluate each arm separately, then evaluate the assembled molecule for simultaneous engagement and the task's required geometry.
-- Check for chain mispairing, unintended homodimers, incomplete assembly, linker/hinge incompatibility, steric occlusion, aggregation risk, and loss of either arm's activity.
-- Keep valency, avidity, affinity, and cell-surface occupancy distinct. State the target-density and assay context needed to interpret a functional result.
-- If the mechanism depends on Fc receptors or immune-cell recruitment, include Fc design, glycosylation/production context, relevant receptor engagement, and a mechanism-specific assay. If the Fc is intentionally silent, verify that the requested action does not rely on Fc activity.
-- Do not infer safety, pharmacokinetics, tissue delivery, or clinical dose interval from a binding score or one biodistribution measurement.
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
 
-## Required assessment stages
-
-| Stage | Required assessment | Decision purpose |
+| Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Resolve both targets | Verify each target, construct, state, epitope, chain map, and biological co-localization or spatial relationship. | A dual binder is useful only if both targets exist in the relevant context and can be engaged as intended. |
-| 2. Freeze molecular format | Record architecture, chain stoichiometry, arm valency, linkers/hinges, Fc behavior, and assembly constraints. | Interpret candidate geometry and expression in the context of the final molecule. |
-| 3. Register parental arms and candidates | Verify chain identity, arm assignment, sequence lineage, and construct completeness. | Prevent arm swapping or incomplete records from producing false dual-binding claims. |
-| 4. Assess each arm | Evaluate fold, CDR uncertainty, target-interface evidence, binding evidence, and selectivity for both targets independently. | Confirm that each specificity is supported on its own. |
-| 5. Assess the assembled complex | Evaluate simultaneous target engagement, inter-target geometry, steric accessibility, avidity effects, and assembly plausibility. | Isolated arm compatibility does not prove a productive bispecific complex. |
-| 6. Assess mechanism | Measure or analyze the mechanism-specific outcome under the declared cell, target-density, stimulus, and effector conditions. | Binding and co-engagement are not equivalent to cell killing, agonism, blockade, transport, or another function. |
-| 7. Assess product risks | Evaluate stability, aggregation, solubility, expression/assembly, polyspecificity, immunogenicity, and relevant Fc risks. | Screen the complete construct for liabilities created by combining the two arms. |
-| 8. Assess translation when requested | Evaluate exposure, tissue distribution, target-mediated disposition, durability, and safety evidence using suitable assays and controls. | Do not turn a single tissue or timepoint readout into a dosing commitment. |
-| 9. Qualify and export | Apply all required gates, preserve unresolved evidence, and provide the complete molecular and evidence bundle. | Support a decision that is traceable to both arms and the intended use. |
+| 1. Validate HER2, reference, and architecture | Check HER2 domain II/IV assignments, zanidatamab reference evidence, named chains, valency, and intended mechanism. | Target/epitope records, chain map, and architecture constraints. |
+| 2. Generate or register complete candidates | Create or register HER2 biparatopic candidates within the declared architecture and reference-change policies. | Complete chain sets, HER2 domain assignments, reference/change records, and construct hashes. |
+| 3. Assess each arm | Evaluate each binding component against its assigned HER2 domain and corresponding reference evidence. | Separate evidence for each specificity, including uncertainties. |
+| 4. Assess assembly and geometry | Evaluate pairing, stoichiometry, steric compatibility, and joint engagement when required. | Whole-molecule assembly checks and mechanism-relevant geometry evidence. |
+| 5. Assess function | Analyze supplied mechanism-specific measurements and applicable computational evidence. | Endpoint definitions, controls, target-expression context, and unresolved requirements. |
+| 6. Assess product properties | Evaluate whole-molecule stability, aggregation, solubility, expression/assembly, and nonspecific interactions. | Product-level risks alongside individual-arm results. |
+| 7. Refine and reassess | Revise permitted components while retaining target assignments and architecture constraints. | Updated chains and repeat assessment of affected arms and the assembled molecule. |
+| 8. Select and report | Apply every required arm-level and product-level criterion. | Shortlist supported by both specificities and whole-molecule evidence. |
 
-## Evaluation metrics
+## Evaluation Metrics
 
-Report each target arm's structure and binding evidence separately; paired-chain and full-construct integrity; dual-target or ternary-complex evidence; simultaneous occupancy or geometry where required; cell-based function; target density and effector/stimulus context; cross-reactivity; assembly and developability; and any PK/distribution measurements requested.
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Molecular identity | Chain completeness, stoichiometry, HER2 domain assignments, zanidatamab comparison records, and construct hashes. | The candidate must represent one defined molecule with two distinct specificities. |
+| Arm-level binding | Separate domain II and domain IV binding evidence, compared with the corresponding zanidatamab reference data under matched conditions. | Evaluate both arms separately; avidity, intrinsic affinity, and occupancy must not be interchanged. |
+| Assembly integrity | Predicted pairing/steric conflicts and any supplied measurements of correctly assembled product, fragments, or aggregates. | Keep assembly predictions separate from measured product composition; do not assume a four-chain format. |
+| Joint engagement | HER2 receptor geometry, membrane accessibility, and supplied concurrent-binding evidence relative to the zanidatamab reference. | Do not infer reference-like joint engagement from two isolated domain-binding results; verify the declared receptor arrangement. |
+| Mechanism | Declared HER2 functional endpoint, matched reference/control evidence, receptor density, and relevant effector/Fc context. | Binding or a dual-target structure alone does not establish the proposed biological effect. |
+| Specificity and developability | Panel coverage and whole-molecule stability, aggregation, solubility, expression/assembly, polyreactivity, and relevant immunogenicity descriptors. | Product-level liabilities remain mandatory even when both isolated arms look favorable. |
+| Selection and uncertainty | Comparison basis, method revisions, source data, uncertainty, failures, and missing requirements. | A passing arm cannot compensate for a failed mandatory arm or product criterion. |
 
-For functional classifiers, provide the independent annotation protocol, number and expertise of raters, consensus definition, per-class confusion matrices, class prevalence, macro- and per-class metrics, confidence intervals, and performance on held-out examples from each relevant stimulus or assay domain. An expert's agreement with model predictions is not independent ground truth. Agreement measured on the model's training-condition images does not by itself show that class meaning is preserved under a mechanistically different stimulus.
+Use architecture- and mechanism-appropriate criteria from the supplied protocol. Record unsupported endpoints explicitly; do not turn predictive scores into claims of function, delivery, or safety.
 
-For delivery studies, report the analyte, label chemistry, dose, timepoints, tissue processing, assay quantification method, replicate counts, individual observations, means, uncertainty, and control arms. Whole-organ concentration alone does not distinguish vascular retention from parenchymal exposure. Use orthogonal tissue fractionation and spatial evidence where available, and identify label behavior that could decouple measured signal from intact antibody.
+## Expected Output
 
-All numeric values must be read from supplied data and retain units. If data artifacts are absent, do not fabricate proof-of-work values; return `NEEDS_INPUT`. If replicate data are small or variable, report that limitation and avoid claiming a clean rank order unless the frozen decision rule supports it.
-
-## Expected output
-
-**Format:** `bispecific_design_bundle`  
+**Format:** `bispecific_design_bundle`\
 **Directory:** `08_results/`
 
-- `designed_sequences.fasta`: all chains for each eligible molecule, with candidate, chain, and arm identifiers.
-- `metrics.json`: both target profiles; construct/assembly map; arm-level and whole-molecule evidence; functional and developability metrics; failures; uncertainty; and resource/provenance records.
-- `shortlist.csv`: rank, candidate ID, paired/full-construct sequence digest, both arm statuses, and overall eligibility.
-- `report.md`: mechanism rationale, format choice, arm-by-arm and whole-product evidence, limitations, and recommended next evidence.
-- Native structures, assay tables, annotation records, and analysis outputs with relative paths and SHA-256 hashes.
+- `designed_sequences.fasta`: all chains of eligible molecules with candidate, chain, and arm identifiers.
+- `metrics.json`: target/epitope profiles, chain and arm assignments, arm-level and whole-molecule evidence, decisions, limitations, and provenance.
+- `shortlist.csv`: rank, candidate ID, construct digest, both arm statuses, and overall eligibility.
+- `report.md`: comparison with zanidatamab, HER2 domain II/IV evidence, architecture differences, selection decisions, and missing evidence.
+- Supporting structures, annotation records, scoring outputs, and supplied assay data with relative paths and SHA-256 hashes.
 
-When this task is configured as evidence-only assessment rather than sequence design, omit candidate sequence generation and return the decision/evidence fields requested by that task profile. Never state an assay-derived number unless it is calculated from the supplied artifact and accompanied by its source column, filter, and replicate denominator.
+Return `NEEDS_INPUT` or `PROTOCOL_REQUIRED` when required inputs or evaluation rules are missing. Preserve failed and unresolved outcomes.
 
-## Important instructions
+## Important Instructions
 
-- Use the [generic target/reference request contract](../config/generic-antibody-request.schema.json) as a starting point, then add a reviewed bispecific architecture and two-target profile before execution.
-- If no parental arms, target structures, assay tables, or model-validation data are supplied, report the corresponding evidence as unresolved.
-- Do not equate predicted interface confidence with simultaneous binding or mechanism of action.
-- Do not infer a weekly or longer dosing interval from a single-dose biodistribution time course alone.
-- This task does not prescribe software or experimental protocols. Report only methods actually used and their recorded revisions.
+- Do not invent zanidatamab sequences, HER2 annotations, reference measurements, or qualification thresholds.
+- Report methods and revisions actually used and follow the request's knowledge cutoff.
+- Do not equate predicted interface confidence with simultaneous engagement, functional activity, tissue delivery, or safety.
+- Assess supplied experimental evidence without claiming that this task performed the experiments.

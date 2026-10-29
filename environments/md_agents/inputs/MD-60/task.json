@@ -1,0 +1,18 @@
+{
+  "task_id": "MD-60",
+  "agent_id": "MD-60",
+  "agent_name": "Compute and Resource Constraint Scenarios",
+  "group": "scenario",
+  "input": {
+    "fixture": "gpu_oom_run.json",
+    "parameters": {
+      "device": "CUDA:0",
+      "memory_GB": 8,
+      "requested_GB": 12,
+      "fallback": "CPU-4threads"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

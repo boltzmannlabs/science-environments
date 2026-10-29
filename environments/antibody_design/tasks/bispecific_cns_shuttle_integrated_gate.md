@@ -1,43 +1,48 @@
 # Task: bispecific_cns_shuttle_integrated_gate
 
-**Competency:** Discovery-stage translational de-risking  
-**Decision type:** Integrated advancement gate  
-**Evidence source:** Biodistribution and pharmacokinetic measurements  
-**Assay modality:** Organ time-course concentrations with a tissue-associated label  
-**Data source:** Real study data supplied with the task  
-**Grader type:** `all_of`  
-**Task variant:** tool-neutral
-
 ## Description
 
-Compare three independently engineered bispecific CNS-shuttle candidates carrying the same declared payload. Select one candidate only if the supplied data support a comparative brain-durability advantage. Also decide whether the data support committing to the requested dosing interval.
+Compare three bispecific CNS-shuttle candidates carrying the same payload. Determine whether the supplied data support a comparative brain-durability advantage and whether they justify the requested dosing-interval commitment.
 
-The study package must define each shuttle's two binding specificities, molecular format, species cross-reactivity, payload equivalence, and the relevant target expression in brain endothelium and peripheral tissues. Candidate labels in the answer are `Shuttle-1`, `Shuttle-2`, and `Shuttle-3`; the control is not an eligible advancement pick.
+## Target
 
-## Required input data
+**Candidates:** `Shuttle-1`, `Shuttle-2`, and `Shuttle-3`; the control is not an eligible selection\
+**Required Readout:** Each shuttle's observed arithmetic mean at the 7-day Brain timepoint, in `%ID/g`\
+**Required Data:** Individual-animal organ measurements, timepoints, replicate identifiers, units, and documented exclusions\
+**Study Metadata:** Binding specificities, molecular formats, payload equivalence, species cross-reactivity, target expression, dose, route, label chemistry, processing, and calibration\
+**Decision Criteria:** Supplied brain-durability definition and dosing-interval rule, with relevant exposure and pharmacodynamic evidence
 
-The task input package must contain the individual animal measurements and metadata for each candidate and control, including:
+## Data Analysis Tool Capabilities
 
-- organ, timepoint, animal/replicate ID, measured value, units, and any exclusion flag;
-- dose, route, label identity and chemistry, sample processing, quantification method, and assay calibration;
-- intact-antibody or label-stability evidence across the study interval;
-- target expression and species-cross-reactivity context;
-- the prespecified definition of “brain durability” and decision rule for a dosing interval.
+Use verified capabilities supplied by the execution environment in the following order. Record unavailable capabilities and leave their required evidence unresolved.
 
-The expected brain readout is each shuttle's observed mean at the 7-day Brain timepoint in `%ID/g`. Compute it from the delivered individual-level data after applying only documented filters. Do not infer it from the study description or use another timepoint, control, or organ as a substitute.
+| Stage | Capability | Expected Evidence |
+| --- | --- | --- |
+| 1. Audit records | Verify shuttle/control identity, Brain labels, 7-day observations, units, and exclusions. | Correctly matched candidate–sample records. |
+| 2. Calculate the three means | Aggregate eligible individual-animal Brain measurements for each shuttle. | Arithmetic mean `%ID/g`, independent sample count, and retained observations. |
+| 3. Compare uncertainty | Assess variability and differences under the supplied decision rule. | Candidate comparison without an assumed winner. |
+| 4. Review durability evidence | Assess label/analyte integrity and the relevance of measured tissue signal. | Supported durability interpretation and limiting factors. |
+| 5. Assess the interval conclusion | Review supplied exposure, target-engagement, and pharmacodynamic evidence. | Evidence for or against the requested interval commitment. |
+| 6. Report the decision | Separate advancement recommendation from dosing support. | Exact benchmark answer and reproducible analysis report. |
 
-## Required assessment
+## Evaluation Metrics
 
-1. Verify candidate-to-arm identity, common payload, dose, route, label comparability, tissue/timepoint definitions, and replicate counts.
-2. For each shuttle, select Brain records at 7 days, report the exact replicate count and calculate the arithmetic mean `%ID/g` from the delivered values. Preserve individual observations in the analysis artifact.
-3. Compare the three means alongside individual-animal values and uncertainty. Do not call the largest mean a defensible winner if the study's variability or prespecified decision rule does not distinguish it.
-4. Evaluate whether the label tracks intact shuttle or payload. If label catabolism or non-residualizing behavior can change signal independently of intact antibody retention, state how that limits a durability claim.
-5. Assess whether the sampling window, target-mediated uptake, brain compartment, serum exposure, and pharmacodynamic evidence are sufficient for a weekly or longer interval commitment.
-6. Separate a comparative advancement hypothesis from evidence for repeat-dose exposure, target engagement, pharmacodynamic persistence, safety, and clinical dosing.
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Required observed means | Arithmetic mean `%ID/g` for each shuttle’s Brain observations at 7 days. | Use only documented filters; preserve every included observation and its replicate identity. |
+| Variability and comparison | Independent sample counts, within-group variability, between-candidate differences, and uncertainty. | Apply the prespecified rule; the highest sample mean is not automatically a defensible winner. |
+| Label-related limitation | Supplied evidence for label stability, catabolism, and whether signal tracks intact molecule. | Select label bias only when supported; do not infer it from candidate ranking. |
+| Biological limitation | Sample size, biological variation, control behavior, and study comparability. | Keep uncertainty from limited data distinct from a demonstrated absence of benefit. |
+| Dosing support | Exposure duration, compartment relevance, target engagement, pharmacodynamics, and repeat-dose evidence. | Use `NOT_SUPPORTED` when the evidence cannot justify weekly or longer dosing. |
+| Integrated recommendation | Consistency of the requested means, decision rule, limitations, and interval conclusion. | The control is not a candidate; permit `INDETERMINATE` even when all three means are available. |
 
-## Expected response format
+Keep the existing candidate names, answer fields, units, and 7-day observation requirement. Detailed statistics belong in the report; missing observations must not be replaced with zeros or inferred values.
 
-Return the specified JSON inside the tags below. Numeric fields must be computed from the supplied data; do not fill them from a narrative or fabricate missing observations.
+## Expected Output
+
+**Required Report:** `report.md`, containing the three calculations, candidate comparison, recommendation rationale, and limitations.
+
+Return the benchmark answer in this format, without additional fields:
 
 ```text
 <EVAL_ANSWER>
@@ -45,11 +50,10 @@ Return the specified JSON inside the tags below. Numeric fields must be computed
 </EVAL_ANSWER>
 ```
 
-`INDETERMINATE` is appropriate when the data do not distinguish the candidates. Use `NOT_SUPPORTED` when the data do not establish a dosing interval. Choose the limiting factor only when supported by the labeling method and replicate-level evidence.
+## Important Instructions
 
-## Important instructions
-
-- No named software is prescribed.
-- Report the three requested readouts even when no candidate qualifies.
-- A single-dose tissue signal does not by itself establish intact-molecule brain retention or a repeat-dose interval.
-- If the input table is absent, return `NEEDS_INPUT` in the run status and do not emit invented numeric fields.
+- Compute all three means from the supplied Brain observations; do not substitute another organ, timepoint, control, or narrative estimate.
+- Return `NEEDS_INPUT` when required tables are absent. Do not fabricate numeric fields.
+- Use `INDETERMINATE` when candidates cannot be distinguished and `NOT_SUPPORTED` when dosing evidence is insufficient.
+- Select the limiting factor from the actual label and replicate evidence. Report the three observed means even when no candidate is selected, provided the data support their calculation.
+- Single-dose tissue persistence alone does not establish intact-molecule retention, repeat-dose efficacy, or clinical dosing.

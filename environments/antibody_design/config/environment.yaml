@@ -1,100 +1,189 @@
-schema_version: "1.0"
+schema_version: '1.0'
 environment_id: antibody_design
 maturity: Specification
 scientific_execution_included: false
 contract_validation_included: true
 qualified_profiles_included: false
-
 scope:
   reusable_profile: target_agnostic_monoclonal_antibody
   initial_release: paired_chain_monoclonal
-  active_design_modes: [reference_guided, affinity_maturation, humanization, developability_optimization, specificity_optimization, mechanism_optimization]
-  secondary_design_modes: [de_novo]
   paired_heavy_light_required: true
-  formats: [full_length_IgG, Fab, "F(ab')2"]
-  sequence_scopes: [variable_domains, Fab_chains, full_length_chains]
-  separate_architecture_extensions: [scFv, VHH, nanobody, multispecific, fusion, conjugate]
-  task_id: denv_antibody_001
-  target: DENV-2 envelope EDIII
-  reference_antibody: DV87.1
-  antibody_form: paired_heavy_light
-  framework_preservation: required
-
+  formats:
+  - full_length_IgG
+  - Fab
+  - F(ab')2
+  sequence_scopes:
+  - variable_domains
+  - Fab_chains
+  - full_length_chains
+  separate_architecture_extensions:
+  - scFv
+  - VHH
+  - nanobody
+  - multispecific
+  - fusion
+  - conjugate
+  contract_families:
+  - monoclonal_reference
+  - monoclonal_target_only
+  - bispecific_design
+  - bispecific_assessment
+  active_design_modes:
+  - reference_guided
+  - affinity_maturation
+  - humanization
+  - developability_optimization
+  - specificity_optimization
+  - mechanism_optimization
+  legacy_bundle_excluded_modes:
+  - de_novo
+  - bispecific
+profiles:
+  denv_antibody_001:
+    target: DENV-2 envelope EDIII
+    reference_antibody: DV87.1
+    antibody_form: paired_heavy_light
+    framework_preservation: required
+    request_example: config/monoclonal_reference/denv.request.example.json
+    request_schema: config/monoclonal_reference/denv.request.schema.json
+    result_schema: config/monoclonal_reference/denv.result.schema.json
 contracts:
-  request: config/request.schema.json
-  generic_request: config/generic-antibody-request.schema.json
-  protocol: config/protocol.schema.json
-  metrics: config/metrics.schema.json
-  generic_metrics: config/generic-antibody-metrics.schema.json
-  assay_record: config/mab-assay-record.schema.json
-  metric_catalog: config/metric-catalog.json
-
+  request: config/monoclonal_reference/denv.request.schema.json
+  metrics: config/monoclonal_reference/denv.result.schema.json
+  generic-antibody-request: config/monoclonal_reference/request.schema.json
+  generic-antibody-metrics: config/monoclonal_reference/result.schema.json
+  protocol: config/shared/protocol.schema.json
+  mab-assay-record: config/shared/mab-assay-record.schema.json
 task_variants:
   general: tasks/denv_antibody_001.md
   tool_specific: tasks/denv_antibody_001_tools.md
-
 task_templates:
   reference_guided_monoclonal: tasks/mab_reference_guided_design.md
   target_only_monoclonal: tasks/mab_target_only_design.md
   bispecific_design: tasks/bispecific_antibody_design.md
   bispecific_cellular_mechanism_assessment: tasks/bispecific_cellular_mechanism_assessment.md
   bispecific_cns_delivery_assessment: tasks/bispecific_cns_delivery_assessment.md
-  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_cns_shuttle_integrated_gate.md
   bispecific_cns_readout_comparison: tasks/bispecific_cns_readout_comparison.md
-generic_request_schema: config/generic-antibody-request.schema.json
-
+  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_cns_shuttle_integrated_gate.md
+request_examples:
+  reference_guided_monoclonal: config/monoclonal_reference/request.example.json
+  denv_profile: config/monoclonal_reference/denv.request.example.json
+  mab_target_only_design: config/monoclonal_target_only/request.example.json
+  bispecific_antibody_design: config/bispecific_design/request.example.json
+  bispecific_cellular_mechanism_assessment: config/bispecific_assessment/cellular_mechanism.request.example.json
+  bispecific_cns_delivery_assessment: config/bispecific_assessment/cns_delivery.request.example.json
+  bispecific_cns_readout_comparison: config/bispecific_assessment/cns_readout.request.example.json
+  bispecific_cns_shuttle_integrated_gate: config/bispecific_assessment/cns_integrated.request.example.json
+validation:
+  entrypoint: tests/monoclonal_antibody_with_reference/validation.py
+  package_check: tests/validate_spec.py
+  test_directory: tests
+  requirements: config/requirements.txt
+  report: results/specification-validation.json
+  contract_entrypoint: tests/task_contracts.py
 task_status:
-  initial_mab_lane: active_specification
-  target_only_monoclonal: secondary_specification
-  bispecific_templates: separate_extension_not_in_initial_mab_lane
-
+  reference_guided_monoclonal: active_specification
+  denv_profile: reference_guided_example
+  target_only_monoclonal: contract_schema_implemented
+  bispecific_design: contract_schema_implemented
+  bispecific_cellular_mechanism_assessment: contract_schema_implemented
+  bispecific_cns_delivery_assessment: contract_schema_implemented
+  bispecific_cns_readout_comparison: contract_schema_implemented
+  bispecific_cns_shuttle_integrated_gate: contract_schema_implemented
 documented_methods:
-  - {name: Stability-Binding DDG, capability: stability_assessment, revision: null}
-  - {name: PRODIGY, capability: binding_energy_estimation, revision: null}
-  - {name: ipSAE, capability: interface_confidence, revision: null}
-# No antibody-antigen complex generator, docking, developability, or molecular-dynamics
-# implementation is named by the task documents; those capabilities stay unbound.
-unbound_capabilities: [candidate_generation, complex_prediction, docking, developability, molecular_dynamics]
-
+- name: Stability-Binding DDG
+  capability: stability_assessment
+  revision: null
+- name: PRODIGY
+  capability: binding_energy_estimation
+  revision: null
+- name: ipSAE
+  capability: interface_confidence
+  revision: null
+unbound_capabilities:
+- candidate_generation
+- complex_prediction
+- docking
+- developability
+- molecular_dynamics
 required_rule_groups:
+- identity
+- framework
+- developability
+- fold
+- interface
+- binding
+- stability
+- aggregation
+- solubility
+- expression
+- polyreactivity
+- immunogenicity
+conditional_rule_groups:
+  dynamics: execution.dynamics_required
+generic_evidence_domain_groups:
+  identity:
   - identity
+  framework:
   - framework
-  - developability
+  structure:
   - fold
+  interface:
   - interface
+  binding:
   - binding
+  function:
+  - function
+  specificity:
+  - specificity
+  developability:
   - stability
   - aggregation
   - solubility
   - expression
   - polyreactivity
+  immunogenicity:
   - immunogenicity
-conditional_rule_groups:
-  dynamics: execution.dynamics_required
-
-generic_evidence_domain_groups:
-  identity: [identity]
-  framework: [framework]
-  structure: [fold]
-  interface: [interface]
-  binding: [binding]
-  function: [function]
-  specificity: [specificity]
-  developability: [stability, aggregation, solubility, expression, polyreactivity]
-  immunogenicity: [immunogenicity]
-
 stages:
-  - {id: prepare, depends_on: [], output: 00_inputs}
-  - {id: reference, depends_on: [prepare], output: 01_reference}
-  - {id: candidates, depends_on: [reference], output: 02_candidates}
-  - {id: structure, depends_on: [candidates], output: 03_structures}
-  - {id: interface, depends_on: [structure], output: 04_interfaces}
-  - {id: specificity_function, depends_on: [interface], output: 04_specificity_function}
-  - {id: developability, depends_on: [specificity_function], output: 05_developability}
-  - {id: dynamics, depends_on: [developability], output: 06_dynamics}
-  - {id: evaluate, depends_on: [dynamics], output: 07_evaluation}
-  - {id: export, depends_on: [evaluate], output: 08_results}
-
+- id: prepare
+  depends_on: []
+  output: 00_inputs
+- id: reference
+  depends_on:
+  - prepare
+  output: 01_reference
+- id: candidates
+  depends_on:
+  - reference
+  output: 02_candidates
+- id: structure
+  depends_on:
+  - candidates
+  output: 03_structures
+- id: interface
+  depends_on:
+  - structure
+  output: 04_interfaces
+- id: specificity_function
+  depends_on:
+  - interface
+  output: 04_specificity_function
+- id: developability
+  depends_on:
+  - specificity_function
+  output: 05_developability
+- id: dynamics
+  depends_on:
+  - developability
+  output: 06_dynamics
+- id: evaluate
+  depends_on:
+  - dynamics
+  output: 07_evaluation
+- id: export
+  depends_on:
+  - evaluate
+  output: 08_results
 qualification:
   required_rule_combiner: all
   missing_raw_value: null
@@ -105,7 +194,6 @@ qualification:
   artifact_hashes_required: true
   unique_paired_sequences_required: true
   reference_in_shortlist: forbidden
-
 benchmark:
   shared_task_inputs: true
   shared_evaluation_protocol: true
@@ -116,13 +204,33 @@ benchmark:
   install_or_run_scientific_tools_during_validation: false
   model_and_tool_access: declared_by_run_manifest
   scientific_claim_boundary: computational_predictions_only_unless_separately_evidenced
-
 output:
   format: antibody_design_bundle
   directory: 08_results
-  required_files: [designed_sequences.fasta, metrics.json, shortlist.csv, report.md]
+  required_files:
+  - designed_sequences.fasta
+  - metrics.json
+  - shortlist.csv
+  - report.md
   fasta_header: candidate_id|H_or_L
-  csv_columns: [rank, candidate_id, sequence_sha256]
+  csv_columns:
+  - rank
+  - candidate_id
+  - sequence_sha256
   empty_shortlist_allowed: true
-  generic_metrics_schema: config/generic-antibody-metrics.schema.json
-  measured_assay_records_schema: config/mab-assay-record.schema.json
+  generic_metrics_schema: config/monoclonal_reference/result.schema.json
+  measured_assay_records_schema: config/shared/mab-assay-record.schema.json
+metric_catalog: config/shared/metric-catalog.json
+task_profiles:
+  mab_reference_guided_design: config/monoclonal_reference/profile.yaml
+  denv_antibody_001: config/monoclonal_reference/denv.general.yaml
+  denv_antibody_001_tools: config/monoclonal_reference/denv.tool_specific.yaml
+  mab_target_only_design: config/monoclonal_target_only/profile.yaml
+  bispecific_antibody_design: config/bispecific_design/profile.yaml
+  bispecific_cellular_mechanism_assessment: config/bispecific_assessment/cellular_mechanism.yaml
+  bispecific_cns_delivery_assessment: config/bispecific_assessment/cns_delivery.yaml
+  bispecific_cns_readout_comparison: config/bispecific_assessment/cns_readout.yaml
+  bispecific_cns_shuttle_integrated_gate: config/bispecific_assessment/cns_integrated.yaml
+reference_bundle_settings_scope: scope.formats, scope.sequence_scopes, scope.active_design_modes,
+  stages, qualification, and output describe the reference-guided bundle validator;
+  other families use task_profiles.

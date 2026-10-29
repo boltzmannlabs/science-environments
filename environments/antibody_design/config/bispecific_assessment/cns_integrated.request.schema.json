@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.science-environments.local/antibody_design/bispecific_assessment/cns_integrated.request.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "case_type",
+    "candidate_ids",
+    "objective",
+    "datasets",
+    "decision_protocol",
+    "budget",
+    "knowledge_cutoff"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "task_id": {
+      "const": "bispecific_cns_shuttle_integrated_gate"
+    },
+    "case_type": {
+      "const": "evidence_assessment"
+    },
+    "candidate_ids": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Shuttle-1",
+          "Shuttle-2",
+          "Shuttle-3"
+        ]
+      },
+      "maxItems": 3
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "datasets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "study_metadata",
+        "organ_timecourse",
+        "label_characterization"
+      ],
+      "properties": {
+        "study_metadata": {
+          "anyOf": [
+            {
+              "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "organ_timecourse": {
+          "anyOf": [
+            {
+              "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "label_characterization": {
+          "anyOf": [
+            {
+              "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "decision_protocol": {
+      "anyOf": [
+        {
+          "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "budget": {
+      "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/budget"
+    },
+    "knowledge_cutoff": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "title": "bispecific_cns_shuttle_integrated_gate input data contract"
+}

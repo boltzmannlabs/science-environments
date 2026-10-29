@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.science-environments.local/antibody_design/bispecific_assessment/cellular_mechanism.result.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "status",
+    "request_sha256",
+    "answer",
+    "evidence",
+    "report",
+    "missing_requirements",
+    "limitations",
+    "validation_scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "task_id": {
+      "const": "bispecific_cellular_mechanism_assessment"
+    },
+    "status": {
+      "enum": [
+        "NEEDS_INPUT",
+        "INDETERMINATE",
+        "ASSESSED"
+      ]
+    },
+    "request_sha256": {
+      "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/digest"
+    },
+    "answer": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/answer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+      }
+    },
+    "report": {
+      "anyOf": [
+        {
+          "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "missing_requirements": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "validation_scope": {
+      "const": "declared_contract_only"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "NEEDS_INPUT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "answer": {
+            "type": "null"
+          },
+          "missing_requirements": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "ASSESSED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "answer": {
+            "$ref": "#/$defs/answer"
+          },
+          "evidence": {
+            "minItems": 1
+          },
+          "report": {
+            "$ref": "https://schemas.science-environments.local/antibody_design/shared/definitions.schema.json#/$defs/artifact"
+          },
+          "missing_requirements": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ],
+  "title": "bispecific_cellular_mechanism_assessment response envelope",
+  "$defs": {
+    "answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validity_assessment",
+        "same_mechanism_baseline_sources"
+      ],
+      "properties": {
+        "validity_assessment": {
+          "enum": [
+            "sufficient_confirms_generalization",
+            "insufficient_confirmed_mechanism_driven_degradation",
+            "insufficient_underpowered_single_rater_check"
+          ]
+        },
+        "same_mechanism_baseline_sources": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "class_frequency_source_data_fig2ef",
+              "supplementary_annotation_crosscheck_dataset",
+              "appendix_scoring_verification_series",
+              "half_manual_annotation_time_reduction_experiment",
+              "cd19tcb_manual_check_figure",
+              "teplizumab_scoring_summary_entry",
+              "leave_one_donor_out_generalization_check",
+              "shap_feature_importance_comparison"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

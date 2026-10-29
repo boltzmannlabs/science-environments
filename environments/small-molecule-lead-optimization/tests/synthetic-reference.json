@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "task_digest": "16ddd46e9b74872fba59523aed6ce2851ffa59202a66d717f53b01962590f0ea",
+  "source_version": "synthetic-v1",
+  "provenance": "Public artificial test labels. No holdout or real chemistry claims.",
+  "candidates": [
+    {
+      "id": "lead",
+      "representation": "synthetic:lead",
+      "form_id": "lead-form",
+      "source": "Artificial software fixture; not a chemical structure"
+    },
+    {
+      "id": "candidate-a",
+      "representation": "synthetic:candidate-a",
+      "form_id": "candidate-a-form",
+      "source": "Artificial software fixture; not a chemical structure"
+    },
+    {
+      "id": "candidate-b",
+      "representation": "synthetic:candidate-b",
+      "form_id": "candidate-b-form",
+      "source": "Artificial software fixture; not a chemical structure"
+    }
+  ],
+  "observations": [
+    {
+      "id": "lead-fixture-final",
+      "candidate_id": "lead",
+      "form_id": "lead-form",
+      "endpoint": "fixture_quality",
+      "unit": "arbitrary_fixture_units",
+      "method": "fixture-final",
+      "method_version": "1",
+      "context": "artificial-only",
+      "kind": "synthetic",
+      "value": 2,
+      "qualifier": "=",
+      "status": "completed",
+      "source": "Invented fixture value, not a measurement"
+    },
+    {
+      "id": "candidate-a-fixture-final",
+      "candidate_id": "candidate-a",
+      "form_id": "candidate-a-form",
+      "endpoint": "fixture_quality",
+      "unit": "arbitrary_fixture_units",
+      "method": "fixture-final",
+      "method_version": "1",
+      "context": "artificial-only",
+      "kind": "synthetic",
+      "value": 3,
+      "qualifier": "=",
+      "status": "completed",
+      "source": "Invented fixture value, not a measurement"
+    },
+    {
+      "id": "candidate-b-fixture-final",
+      "candidate_id": "candidate-b",
+      "form_id": "candidate-b-form",
+      "endpoint": "fixture_quality",
+      "unit": "arbitrary_fixture_units",
+      "method": "fixture-final",
+      "method_version": "1",
+      "context": "artificial-only",
+      "kind": "synthetic",
+      "value": 0,
+      "qualifier": "=",
+      "status": "completed",
+      "source": "Invented fixture value, not a measurement"
+    }
+  ]
+}

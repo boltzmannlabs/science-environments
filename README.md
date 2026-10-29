@@ -13,39 +13,82 @@ science-environments/
 ├── LICENSE
 ├── research/
 │   ├── README.md
+│   ├── formulation_dissolution/
+│   │   ├── research-notes.md
+│   │   └── references.md
 │   ├── scRNAseq-environment/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   ├── synthesis-route-gym/
+│   ├── retrosynthesis/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   └── sirna-designing-harness/
+│   ├── sirna-designing-harness/
+│   │   ├── research-notes.md
+│   │   └── references.md
+│   ├── enzyme-variant-optimization/
+│   │   ├── research-notes.md
+│   │   └── references.md
+│   └── small-molecule-lead-optimization/
 │       ├── research-notes.md
 │       └── references.md
 ├── environments/
+│   ├── formulation_dissolution/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── STATUS.md
+│   │   ├── MODELS_AND_TOOLS.md
+│   │   ├── pyproject.toml
+│   │   ├── configs/
+│   │   ├── tasks/
+│   │   ├── tests/
+│   │   ├── scripts/
+│   │   ├── benchmark/
+│   │   └── results/
 │   ├── scRNAseq-environment/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   ├── synthesis-route-gym/
+│   ├── retrosynthesis/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
 │   │   ├── STATUS.md
 │   │   ├── config/
 │   │   ├── tasks/
 │   │   └── tests/
-│   └── sirna-designing-harness/
+│   ├── sirna-designing-harness/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── STATUS.md
+│   │   ├── config/
+│   │   ├── tasks/
+│   │   ├── tests/
+│   │   ├── scripts/
+│   │   ├── skills/
+│   │   ├── benchmark/
+│   │   └── results/
+│   ├── enzyme-variant-optimization/
+│   │   ├── README.md
+│   │   ├── ENVIRONMENT_SPEC.md
+│   │   ├── STATUS.md
+│   │   ├── pyproject.toml
+│   │   ├── config/
+│   │   ├── tasks/
+│   │   ├── tests/
+│   │   ├── src/
+│   │   ├── scripts/
+│   │   └── results/
+│   └── small-molecule-lead-optimization/
 │       ├── README.md
 │       ├── ENVIRONMENT_SPEC.md
 │       ├── STATUS.md
+│       ├── pyproject.toml
 │       ├── config/
 │       ├── tasks/
 │       ├── tests/
+│       ├── src/
 │       ├── scripts/
-│       ├── skills/
-│       ├── benchmark/
 │       └── results/
 ├── docs/
 │   └── decisions/
@@ -55,8 +98,18 @@ science-environments/
 
 Each environment has its own folder. Research notes and references are maintained in the matching `research/<environment-name>/` directory and linked from its README.
 
+<<<<<<< HEAD
 Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA environment implements portable technical validation and candidate-property reporting, including a source-bound recorded KRAS14 case that passes the declared technical gates. Its repository lifecycle remains In Progress pending separately configured backend deployment and maintainer review; technical and biological evaluation scopes remain distinct.
+=======
+Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [retrosynthesis environment](environments/retrosynthesis/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
+
+The [Enzyme Variant Optimization environment](environments/enzyme-variant-optimization/README.md) is In Progress: it packages the existing research runner, proposer/critic specialist, and portable synthetic tests. Native-runtime distribution, live pipeline qualification, independent scientific comparison, and maintainer review remain separate requirements.
+
+The [Small-Molecule Lead Optimization environment](environments/small-molecule-lead-optimization/README.md) is In Progress: a general environment with a local Agent-Scientist plugin, versioned records, advisory checks, persistent campaigns, an offline evaluator, and synthetic/native integration tests. Live scientific qualification, the real case study, issue linkage, and a matched base-agent comparison remain outstanding.
+>>>>>>> origin/main
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection is pending in [LICENSE](LICENSE).
+
+The [Formulation Dissolution environment](environments/formulation_dissolution/README.md) is In Progress: it reuses the existing evidence-first investigation, six empirical dissolution models, synthetic grouped-holdout checks and a bounded assumption-conditional research grid. Controlled lot measurements, calibrated product prediction, experimental formulation validation and maintainer review remain outstanding. See its model/tool inventory and execution receipts for the implemented scope.
 
 Reserved empty directories use `.gitkeep` files so they appear on GitHub. Environment status and evidence should match the linked documents.

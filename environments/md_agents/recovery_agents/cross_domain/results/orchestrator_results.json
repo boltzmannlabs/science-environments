@@ -1,0 +1,656 @@
+{
+  "benchmark": "problem-solving-orchestrator-v1",
+  "cases": [
+    {
+      "case_id": "PS-VALID-001",
+      "domain": "spe",
+      "input_sha256": "1bd97f075bd2a9a4c5862d371ec0896ad8f27e11ba347c9eae6029b44dc97bc4",
+      "selected_agents": [
+        "PS-01",
+        "PS-02",
+        "PS-03",
+        "PS-04",
+        "PS-05",
+        "PS-06",
+        "SPE-PS01",
+        "SPE-PS02",
+        "SPE-PS03",
+        "SPE-PS04",
+        "SPE-PS05",
+        "SPE-PS06"
+      ],
+      "max_retries": 1,
+      "status": "PASS",
+      "results": [
+        {
+          "agent_id": "PS-01",
+          "name": "Failure Log Analyzer",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-02",
+          "name": "Root-Cause Investigator",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-03",
+          "name": "Safe Recovery Planner",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-04",
+          "name": "Execution and Retry Controller",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-05",
+          "name": "Independent Result Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-06",
+          "name": "Provenance and Regression Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS01",
+          "name": "SCF Convergence Recovery",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS02",
+          "name": "Basis and Method Compatibility",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS03",
+          "name": "Charge and Spin Diagnosis",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS04",
+          "name": "Geometry and Input Validation",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS05",
+          "name": "Numerical Precision Auditor",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "SPE-PS06",
+          "name": "Energy Reference and Regression Validator",
+          "group": "spe",
+          "case_id": "PS-VALID-001",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        }
+      ],
+      "original_input_preserved": true,
+      "retry_performed": false
+    },
+    {
+      "case_id": "PS-VALID-002",
+      "domain": "geo_opt",
+      "input_sha256": "305c059e2e752658269fc6e70d143dfc5e3d9014426cd3eaa27e9e7847e8a7ef",
+      "selected_agents": [
+        "PS-01",
+        "PS-02",
+        "PS-03",
+        "PS-04",
+        "PS-05",
+        "PS-06",
+        "GEO-PS01",
+        "GEO-PS02",
+        "GEO-PS03",
+        "GEO-PS04",
+        "GEO-PS05",
+        "GEO-PS06"
+      ],
+      "max_retries": 1,
+      "status": "PASS",
+      "results": [
+        {
+          "agent_id": "PS-01",
+          "name": "Failure Log Analyzer",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-02",
+          "name": "Root-Cause Investigator",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-03",
+          "name": "Safe Recovery Planner",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-04",
+          "name": "Execution and Retry Controller",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-05",
+          "name": "Independent Result Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-06",
+          "name": "Provenance and Regression Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS01",
+          "name": "Optimization Failure Diagnosis",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS02",
+          "name": "Distorted Geometry Repair",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS03",
+          "name": "Gradient and Hessian Consistency Auditor",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS04",
+          "name": "Local Minimum Verification",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS05",
+          "name": "Constraint and Symmetry Recovery",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "GEO-PS06",
+          "name": "Geometry Regression and Reference Validator",
+          "group": "geo_opt",
+          "case_id": "PS-VALID-002",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        }
+      ],
+      "original_input_preserved": true,
+      "retry_performed": false
+    },
+    {
+      "case_id": "PS-VALID-003",
+      "domain": "homo_lumo",
+      "input_sha256": "be9ea312e0571af71d696268e976d8c1ac45df40295055895cb79615a018106c",
+      "selected_agents": [
+        "PS-01",
+        "PS-02",
+        "PS-03",
+        "PS-04",
+        "PS-05",
+        "PS-06",
+        "HL-PS01",
+        "HL-PS02",
+        "HL-PS03",
+        "HL-PS04",
+        "HL-PS05",
+        "HL-PS06"
+      ],
+      "max_retries": 1,
+      "status": "PASS",
+      "results": [
+        {
+          "agent_id": "PS-01",
+          "name": "Failure Log Analyzer",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-02",
+          "name": "Root-Cause Investigator",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-03",
+          "name": "Safe Recovery Planner",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-04",
+          "name": "Execution and Retry Controller",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-05",
+          "name": "Independent Result Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-06",
+          "name": "Provenance and Regression Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS01",
+          "name": "Orbital Identification",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS02",
+          "name": "Orbital Occupation Diagnosis",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS03",
+          "name": "Gap Calculation Auditor",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS04",
+          "name": "SCF and Electronic-State Recovery",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS05",
+          "name": "Orbital Localization and Character Analyzer",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "HL-PS06",
+          "name": "Conformer and State Consistency",
+          "group": "homo_lumo",
+          "case_id": "PS-VALID-003",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        }
+      ],
+      "original_input_preserved": true,
+      "retry_performed": false
+    },
+    {
+      "case_id": "PS-VALID-004",
+      "domain": "qmmm",
+      "input_sha256": "b53b521aa87495e84fcf62f53a8f7772ffc839e072868e179c748a45d509ffba",
+      "selected_agents": [
+        "PS-01",
+        "PS-02",
+        "PS-03",
+        "PS-04",
+        "PS-05",
+        "PS-06",
+        "QMMM-PS01",
+        "QMMM-PS02",
+        "QMMM-PS03",
+        "QMMM-PS04",
+        "QMMM-PS05",
+        "QMMM-PS06",
+        "QMMM-PS07"
+      ],
+      "max_retries": 1,
+      "status": "PASS",
+      "results": [
+        {
+          "agent_id": "PS-01",
+          "name": "Failure Log Analyzer",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-02",
+          "name": "Root-Cause Investigator",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-03",
+          "name": "Safe Recovery Planner",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-04",
+          "name": "Execution and Retry Controller",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-05",
+          "name": "Independent Result Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-06",
+          "name": "Provenance and Regression Auditor",
+          "group": "shared",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS01",
+          "name": "QM Region Selection Auditor",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS02",
+          "name": "Boundary and Link-Atom Repair",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS03",
+          "name": "Charge and Embedding Consistency",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS04",
+          "name": "SCF-in-QM/MM Recovery",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS05",
+          "name": "Coupling and Force Consistency",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS06",
+          "name": "QM Region Sensitivity Analyzer",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "QMMM-PS07",
+          "name": "QM/MM Trajectory Failure Recovery",
+          "group": "qmmm",
+          "case_id": "PS-VALID-004",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        }
+      ],
+      "original_input_preserved": true,
+      "retry_performed": false
+    },
+    {
+      "case_id": "PS-REVIEW-005",
+      "domain": "fep_ti",
+      "input_sha256": "cc6db8de3ae16e4c4d306fa0c5e1fca30a923d6dddbd2e61db59e4e04894693a",
+      "selected_agents": [
+        "PS-01",
+        "PS-02",
+        "PS-03",
+        "PS-04",
+        "PS-05",
+        "PS-06",
+        "FEP-PS01",
+        "FEP-PS02",
+        "FEP-PS03",
+        "FEP-PS04",
+        "FEP-PS05",
+        "FEP-PS06",
+        "FEP-PS07",
+        "FEP-PS08",
+        "FEP-PS09",
+        "FEP-PS10"
+      ],
+      "max_retries": 1,
+      "status": "REVIEW",
+      "results": [
+        {
+          "agent_id": "PS-01",
+          "name": "Failure Log Analyzer",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-02",
+          "name": "Root-Cause Investigator",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-03",
+          "name": "Safe Recovery Planner",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-04",
+          "name": "Execution and Retry Controller",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-05",
+          "name": "Independent Result Auditor",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "PS-06",
+          "name": "Provenance and Regression Auditor",
+          "group": "shared",
+          "case_id": "PS-REVIEW-005",
+          "status": "PASS",
+          "evidence": "diagnosis, bounded action, verification, and provenance gates present"
+        },
+        {
+          "agent_id": "FEP-PS01",
+          "name": "Alchemical Mapping Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS02",
+          "name": "Transformation Feasibility",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS03",
+          "name": "Lambda Schedule Optimizer",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS04",
+          "name": "Phase-Space Overlap Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS05",
+          "name": "Free-Energy Convergence",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS06",
+          "name": "Hysteresis and Cycle-Closure Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS07",
+          "name": "Statistical Uncertainty and Estimator Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS08",
+          "name": "Charge-Changing Transformation Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS09",
+          "name": "Restraint and Standard-State Auditor",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        },
+        {
+          "agent_id": "FEP-PS10",
+          "name": "Free-Energy Result Qualification",
+          "group": "fep_ti",
+          "case_id": "PS-REVIEW-005",
+          "status": "REVIEW",
+          "evidence": "FEP overlap evidence intentionally insufficient"
+        }
+      ],
+      "original_input_preserved": true,
+      "retry_performed": false
+    }
+  ],
+  "scope": "routed fixture workflow; not production engine qualification"
+}

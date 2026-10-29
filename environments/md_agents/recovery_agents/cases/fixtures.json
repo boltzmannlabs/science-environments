@@ -1,0 +1,12 @@
+[
+ {"case_id":"REC-CASE-01","agent_id":"REC-01","system_type":"gromacs","first_failure":"LINCS warning at step 480","checkpoint_valid":true},
+ {"case_id":"REC-CASE-02","agent_id":"REC-02","system_type":"openmm","geometry_checked":true,"bounded_fix":"minimize_then_half_timestep"},
+ {"case_id":"REC-CASE-03","agent_id":"REC-03","system_type":"atomistic","approved_parameter_source":true,"topology_valid_after_repair":true},
+ {"case_id":"REC-CASE-04","agent_id":"REC-04","system_type":"cg","mapping_ambiguous":false,"counts_valid_after_repair":true},
+ {"case_id":"REC-CASE-05","agent_id":"REC-05","system_type":"openmm","staged_equilibration":true,"fluctuations_within_limits":true},
+ {"case_id":"REC-CASE-06","agent_id":"REC-06","system_type":"gromacs","checkpoint_valid":true,"restart_settings_match":true,"original_preserved":true},
+ {"case_id":"REC-CASE-07","agent_id":"REC-07","system_type":"cg","replicas":3,"effective_sample_size":42,"required_ess":100},
+ {"case_id":"REC-CASE-08","agent_id":"REC-08","system_type":"openmm","fallback_supported":true,"numerical_equivalence_checked":true,"within_resource_limit":true},
+ {"case_id":"REC-CASE-09","agent_id":"REC-09","system_type":"cg","mapping_checked":true,"interactions_checked":true,"reference_observables_available":true,"revised_setup_validated":true},
+ {"case_id":"REC-CASE-10","agent_id":"REC-10","system_type":"cg","exit_code":0,"physical_checks_pass":false,"provenance_complete":true}
+]

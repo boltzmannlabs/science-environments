@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-08",
+  "agent_id": "MD-08",
+  "agent_name": "Integrator and Timestep",
+  "group": "core",
+  "input": {
+    "fixture": "water_box.pdb",
+    "parameters": {
+      "integrator": "LangevinMiddle",
+      "timestep_fs": 2,
+      "constraints": "HBonds"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

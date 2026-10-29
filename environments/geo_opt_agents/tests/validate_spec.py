@@ -12,5 +12,5 @@ for path in required:
 json.loads((ROOT/'config/request.schema.json').read_text())
 json.loads((ROOT/'config/protocol.schema.json').read_text())
 json.loads((ROOT/'tasks/request.example.json').read_text())
-assert len(list((ROOT/'tasks').glob('*.md'))) == 18
+assert len(list((ROOT/'tasks').glob('geo_opt_*.md'))) == 18
 print('PASS: Geo-Opt package structure and JSON artifacts')

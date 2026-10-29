@@ -1,0 +1,14 @@
+{
+  "fixture": "dataset_request_peptide_forces.json",
+  "task_id": "MD-23",
+  "parameters": {
+    "format": "parquet",
+    "required_fields": [
+      "coordinates",
+      "forces",
+      "energy"
+    ],
+    "max_download_GB": 1
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}

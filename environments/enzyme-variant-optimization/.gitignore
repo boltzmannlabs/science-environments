@@ -1,0 +1,16 @@
+.venv/
+.runtime/
+.runs/
+.checks/
+runtime/
+runs/
+evaluator_private/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+*.sqlite*
+config/*.local.json
+*.log

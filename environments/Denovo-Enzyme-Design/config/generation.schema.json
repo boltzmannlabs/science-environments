@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Denovo Enzyme Design generation-readiness contract",
+  "description": "Stage-specific input contract. Ready authorizes exploratory generation only after current artifact and scientific readiness review; it is not enzyme qualification. Full reaction-profile version 2.0 remains required for final qualification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_sha256",
+    "profile_id",
+    "version",
+    "status",
+    "reaction",
+    "assembly",
+    "motif",
+    "motif_map",
+    "generator_conditions",
+    "generation_constraints",
+    "tool_lock",
+    "readiness_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "request_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "object_hash of the current resolved request, assigned by the agent after applicability review; prevents accidental reuse of another target's preparation."
+    },
+    "profile_id": {
+      "$ref": "#/$defs/id"
+    },
+    "version": {
+      "$ref": "#/$defs/text"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "ready"
+      ]
+    },
+    "assembly": {
+      "$ref": "#/$defs/assembly"
+    },
+    "tool_lock": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/tool"
+      }
+    },
+    "readiness_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "reaction": {
+      "$ref": "#/$defs/artifact"
+    },
+    "motif": {
+      "$ref": "#/$defs/artifact"
+    },
+    "motif_map": {
+      "$ref": "#/$defs/artifact"
+    },
+    "generator_conditions": {
+      "$ref": "#/$defs/artifact"
+    },
+    "generation_constraints": {
+      "$ref": "#/$defs/artifact",
+      "description": "Mapped fixed/designable groups, allowed length range, assembly/copy/sequence ties, geometry requirements and stage-specific checks; must preserve explicit user constraints."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "ready"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "readiness_evidence": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+    },
+    "ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path_or_uri",
+        "sha256",
+        "description"
+      ],
+      "properties": {
+        "path_or_uri": {
+          "$ref": "#/$defs/text"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "description": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_id",
+        "model_weights",
+        "dataset_snapshots",
+        "license_access_record"
+      ],
+      "properties": {
+        "tool_id": {
+          "$ref": "#/$defs/text"
+        },
+        "code_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "container_digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "model_weights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "dataset_snapshots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "license_access_record": {
+          "$ref": "#/$defs/artifact"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "code_commit"
+          ]
+        },
+        {
+          "required": [
+            "container_digest"
+          ]
+        }
+      ]
+    },
+    "assembly": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "subunit_count",
+        "unique_sequence_count",
+        "sequence_groups",
+        "reference_assembly",
+        "chain_map",
+        "assembly_evidence",
+        "design_symmetry",
+        "active_sites",
+        "generation_state_policy"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "monomer",
+            "homodimer"
+          ]
+        },
+        "subunit_count": {
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "unique_sequence_count": {
+          "const": 1
+        },
+        "sequence_groups": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sequence_id",
+              "chain_ids"
+            ],
+            "properties": {
+              "sequence_id": {
+                "$ref": "#/$defs/id"
+              },
+              "chain_ids": {
+                "$ref": "#/$defs/ids"
+              }
+            }
+          }
+        },
+        "reference_assembly": {
+          "$ref": "#/$defs/artifact"
+        },
+        "chain_map": {
+          "$ref": "#/$defs/artifact"
+        },
+        "assembly_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/artifact"
+          }
+        },
+        "design_symmetry": {
+          "enum": [
+            "C1",
+            "C2",
+            "asymmetric"
+          ]
+        },
+        "active_sites": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "site_id",
+              "chain_ids",
+              "catalytic_map"
+            ],
+            "properties": {
+              "site_id": {
+                "$ref": "#/$defs/id"
+              },
+              "chain_ids": {
+                "$ref": "#/$defs/ids"
+              },
+              "catalytic_map": {
+                "$ref": "#/$defs/artifact"
+              }
+            }
+          }
+        },
+        "generation_state_policy": {
+          "$ref": "#/$defs/artifact",
+          "description": "Generation input occupancy, partner context, preserved site identities and allowed symmetry; complete catalytic-cycle state qualification is deferred to its evaluation stage."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "monomer"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subunit_count": {
+                "const": 1
+              },
+              "design_symmetry": {
+                "const": "C1"
+              },
+              "sequence_groups": {
+                "items": {
+                  "properties": {
+                    "chain_ids": {
+                      "maxItems": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "homodimer"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subunit_count": {
+                "const": 2
+              },
+              "design_symmetry": {
+                "enum": [
+                  "C2",
+                  "asymmetric"
+                ]
+              },
+              "sequence_groups": {
+                "items": {
+                  "properties": {
+                    "chain_ids": {
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

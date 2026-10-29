@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-18",
+  "agent_id": "MD-18",
+  "agent_name": "Statistical and Uncertainty Analysis",
+  "group": "core",
+  "input": {
+    "fixture": "alanine_dipeptide_replicas.json",
+    "parameters": {
+      "replicas": 3,
+      "block_length_ps": 20,
+      "confidence": 0.95
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

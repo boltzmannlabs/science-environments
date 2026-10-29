@@ -1,0 +1,15 @@
+schema_version: '1.0'
+scientific_execution_included: false
+scientific_thresholds_supplied: false
+task_id: bispecific_cns_delivery_assessment
+family: bispecific_assessment
+task_file: tasks/bispecific_cns_delivery_assessment.md
+request_schema: config/bispecific_assessment/cns_delivery.request.schema.json
+result_schema: config/bispecific_assessment/cns_delivery.result.schema.json
+validation_level: schema_and_identifiers
+required_datasets:
+- study_metadata
+- individual_measurements
+- label_characterization
+request_example: config/bispecific_assessment/cns_delivery.request.example.json
+response_wrapper: null

@@ -1,0 +1,17 @@
+{
+  "environment": "md_agents",
+  "version": "2026-10-29",
+  "source_policy": "Public structures and explicitly declared synthetic diagnostic fixtures",
+  "public_systems": [
+    {"id": "1YRF", "name": "villin headpiece", "source": "RCSB PDB"},
+    {"id": "1BNA", "name": "DNA duplex", "source": "RCSB PDB"},
+    {"id": "1BRS", "name": "barnase-barstar", "source": "RCSB PDB"},
+    {"id": "3PTB", "name": "trypsin-benzamidine", "source": "RCSB PDB"}
+  ],
+  "engines": [
+    {"name": "OpenMM", "version": "8.2", "role": "bounded CUDA execution"},
+    {"name": "GROMACS", "version": "2024.2", "role": "available adapter; not yet qualified"}
+  ],
+  "credentials_included": false,
+  "generated_outputs": "results/"
+}

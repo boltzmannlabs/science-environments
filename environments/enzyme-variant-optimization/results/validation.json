@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-27",
+  "dependencies": {
+    "biopython": "1.84",
+    "iniconfig": "2.3.1",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "13.0.0",
+    "pluggy": "1.7.0",
+    "pygments": "2.21.0",
+    "pytest": "8.4.2",
+    "rdkit": "2025.9.3",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1"
+  },
+  "dependency_consistency_passed": true,
+  "limitations": [
+    "Optional native-host tests require separately supplied support modules; they use scripted responses.",
+    "No model requests, scientific jobs, hidden assay labels, model checkpoints or GPU runs are part of these checks.",
+    "Public release needs native dependency distribution, license selection and review."
+  ],
+  "package_check": {
+    "success": true,
+    "python": "3.12.12",
+    "installed": {
+      "version": "0.1.1",
+      "entry_points": {
+        "enzyme-research": "enzyme_research.cli:main",
+        "enzyme_research": "enzyme_research.plugin:register"
+      }
+    },
+    "wheel_sha256": "41f58515230dd0a108dcc3e00c482f453ee8fac117d271a50e4eb7d2648bd0e8",
+    "resources_present": [
+      "enzyme_research/_support/enzyme_workflow/contracts/tool_registry.json",
+      "enzyme_research/_support/enzyme_workflow/examples/offline_replay.py",
+      "enzyme_research/plugin.yaml",
+      "enzyme_research/skills/enzyme-research/SKILL.md"
+    ],
+    "source_notices_packaged": true,
+    "installed_research_demo_passed": true,
+    "installed_executor_replay_passed": true,
+    "restart_recovered": true,
+    "upstream_revision": "7389e0b58ae50486ab35aa3dcbfa2fa15fea1a91",
+    "synthetic_only": true,
+    "network_installs_during_check": 0,
+    "real_model_requests": 0,
+    "scientific_platform_jobs": 0,
+    "local_gpu_used": false,
+    "scientific_comparison_complete": false
+  },
+  "platform": {
+    "machine": "x86_64",
+    "system": "Linux"
+  },
+  "python": "3.12.12",
+  "schema_version": "enzyme-environment-validation/1",
+  "source_manifest_sha256": "b621b7575878da497d932b1d752dde4db52f41fc5e518db44bd200360af19873",
+  "synthetic_task_creator_and_local_start_passed": true,
+  "tests": {
+    "portable": {
+      "tests": 427,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "duration_seconds": 6.858,
+      "timestamp_utc": "2026-10-27T13:18:56.164041+00:00",
+      "junit_sha256": "082abc2829b4e52fa3f6b264192bd6228813be528b33a2b84c315b79d18d12e6"
+    },
+    "with_optional_native_support": {
+      "tests": 433,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "duration_seconds": 6.951,
+      "timestamp_utc": "2026-10-27T13:19:37.688832+00:00",
+      "junit_sha256": "a7b58711ed9a535f6364905457a43a697a7224c90d4eb7ba9a208d889cadc577"
+    }
+  },
+  "validation_scope": "Package, synthetic workflow, and contract checks; scientific progress is separately recorded in current-progress.json",
+  "full_three_arm_scientific_comparison_complete": false,
+  "benchmark_progress": "current-progress.json",
+  "catalogue_check": "catalogue-check.json"
+}

@@ -1,0 +1,10 @@
+name: enzyme_research
+version: "0.1.1"
+description: Tool-using enzyme research with external DiscoveryRSI integration
+manifest_version: 2
+api_version: 1
+provides_tools:
+  - enzyme_research_start
+  - enzyme_research_next
+  - enzyme_research_status
+  - enzyme_research_report
