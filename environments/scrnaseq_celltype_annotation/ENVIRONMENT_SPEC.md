@@ -1,8 +1,8 @@
-# scRNA Cell Type Annotation Environment v1
+# scrnaseq_celltype_annotation v1
 
 ## 1. Environment Overview
 
-**Environment Name:** Cell Type Annotation Environment  
+**Environment Name:** scrnaseq_celltype_annotation  
 **Version:** v1  
 **Omics Domain:** Single-cell transcriptomics  
 **Status:** Specification
