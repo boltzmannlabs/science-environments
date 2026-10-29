@@ -25,6 +25,12 @@ Record workflow modes DESIGN/AUDIT/SENSITIVITY/BENCHMARK, explicit mutation bloc
 
 The project is portable and technically testable but not standalone scientific inference. In Progress is the honest lifecycle. Missing assets, rights, biological context, independent data and review remain explicit. New-host backend deployment and domain-specific extensions require separate work.
 
+## Technical validation extension
+
+Add a portable recorded-evidence report as a real executable component, not just revised wording. Its seven mandatory categories bind exact supplied pairs to reference mapping, actual required-model statuses, configured property filters, raw native filter interpretation, a distinct earlier-job comparison and input hashes. The aggregate success label is `PASSED_DECLARED_TECHNICAL_GATES`; explicit failures and missing technical evidence cannot become passes.
+
+The recorded KRAS14 snapshot is bounded, source-hashed and includes only small exact-reference views and selected native/earlier-job tables. It is separate from the unchanged historical85-file benchmark. The executed portable replay produces14 technical passes and property tables, preserving nine Ridge extrapolation flags, four passenger-seed annotations and raw gate/POTS limitations. No new model execution occurs during packaging. This reporting scope does not change historical biological qualification fields.
+
 ## Contribution workflow
 
-Local feature branch `feat/sirna-designing-harness`. GitHub CLI was not authenticated; issue discovery/creation and PR submission were blocked. Local drafts exist, but issue-first governance is not claimed satisfied. Owner/reviewer assignment, commit/PR/approval/merge are pending; no remote write is performed automatically. The repository-wide license is not changed.
+Current branch: `feat/sirna-technical-validation-environment`. Authenticated read-only issue lookup succeeded and found no siRNA-titled issue. No remote issue/PR creation was authorized/performed. Local drafts document purpose, deliverables, acceptance and ownership gaps; issue-first governance, owner/reviewer assignment, commit/PR/approval/merge remain pending. Earlier project receipts were copied into a versioned history folder before updates. The repository-wide license is unchanged.

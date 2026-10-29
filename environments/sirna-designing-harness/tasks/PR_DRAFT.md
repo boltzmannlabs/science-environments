@@ -1,32 +1,40 @@
 ## Summary and rationale
 
-Add **siRNA Designing Harness** following the repository environment/research layout. Transfer lessons from the verified KRAS case, evidence audits, ranking sensitivity, independent-data audit and literature comparison into a portable agent workflow with executable technical checks.
+Update the existing siRNA Designing Harness as an executable design-and-technical-validation research environment. Lead reports with passed declared technical gates and predicted/calculated properties, while retaining raw model/gate evidence and candidate-specific flags.
 
 ## Related issue and ownership
 
-Related issue: pending; GitHub CLI was unauthenticated, so existing-issue discovery/creation could not be completed. `ISSUE_DRAFT.md` records intended scope and acceptance criteria. The repository's issue-first step remains outstanding; this is a local review draft.
-
-Owner: pending maintainer assignment.
-Requested reviewer/team: scientific and software review pending; no approval claimed.
+Related issue: pending creation/direction. Authenticated read-only search found no siRNA-titled issue; no remote write was performed. See [ISSUE_DRAFT.md](ISSUE_DRAFT.md). Owner and scientific/software reviewers remain pending maintainer assignment. Local branch: `feat/sirna-technical-validation-environment`.
 
 ## Contribution type and deliverables
 
-Research + environment specification + task/config definitions + technical implementation + tests. Lifecycle: In Progress, not fully validated or a self-contained predictor service. See `README.md`, `ENVIRONMENT_SPEC.md`, `STATUS.md`, `config/`, `tasks/`, `scripts/`, `tests/`, bundled original skill, `results/` and matching research directory.
+Implementation + environment specification + configuration/task contracts + tests + source-bound recorded evidence.
+
+- Add standard-library `technical-report` and `verify-technical-case` commands.
+- Enforce seven mandatory technical categories with failure-before-missing precedence.
+- Include bounded actual KRAS14 inputs/native outputs, derived exact reference views and a distinct earlier-job comparison.
+- Deliver the executed14-pass technical report with properties and preserved flags.
+- Update README/spec/status, research references, task/config contracts and scoped validation/sealing.
+- Preserve earlier receipts under `results/history/`; do not alter the original85-file historical benchmark or portable skill payload.
+
+Repository lifecycle remains In Progress. The implemented technical component and its declared test acceptance are documented separately from new-host backend deployment and maintainer review.
 
 ## Validation and evidence
 
-See `results/validation_receipt.json` for actually executed checks and interpreter versions; `results/verification_receipt.json` and `results/output_manifest.json` bind the project contribution. Historical source summaries/receipt hashes are separate from newly executed tests. No model inference, folding, generation or transcriptome screening is part of this repository build.
+See `results/validation_receipt.json` and `results/validation_receipt.python313.json` for actual commands, counts and logs; `results/technical_validation_KRAS14/` for the executed report replay; and `results/verification_receipt.json` / `results/output_manifest.json` for final contribution integrity. New technical-report tests exercise success, explicit failure, missing evidence, unsafe paths, changed bytes, duplicate keys/IDs, source preservation and no-overwrite behavior.
+
+No model generation/inference/folding/screening or biological experiment is run by this repository build. Recorded scientific evidence remains distinct from fresh portable software checks.
 
 ## Limitations and open questions
 
-Scientific integrations/assets are external. Independent model-performance validation remains blocked; biology remains PARTIAL. Mutation-selective design requires an explicit mutation/reference/sparing objective. Local file/integrity checks do not prove scientific inference or safety. License selection, issue/PR and human review remain pending. No commit, push, merge or remote PR creation is claimed.
+Scientific integrations and their licenses/checkpoints/indexes remain external. Native POTS and raw-gate metadata limitations are preserved. Technical validation covers the declared computational checks; biological efficacy, safety and delivery are separate stages. Mutation-selective objectives need exact input specification. Repository license selection and maintainer governance remain pending.
 
 ## Checklist
 
-- [ ] Linked to an authenticated tracking issue.
-- [ ] Maintainer has reviewed current acceptance-criterion results.
-- [ ] Scientific and software reviewers have approved.
+- [ ] Remote tracking issue linked and owner assigned.
+- [ ] Maintainer reviewed current acceptance-criterion evidence.
+- [ ] Scientific and software reviewers requested and approvals obtained.
 - [ ] Repository-wide license decision resolved as appropriate.
 - [ ] PR opened and linked; no unrelated changes included.
 
-Local technical evidence is recorded in the receipts rather than using these review boxes to imply maintainer approval.
+No commit, push, remote PR, review approval or merge is claimed by this local update.

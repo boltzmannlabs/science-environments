@@ -1,0 +1,2552 @@
+{
+  "schema_version": 1,
+  "environment": "siRNA Designing Harness",
+  "experiment_id": "KRAS_shared_comparative_case_study",
+  "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+  "submitted_count": 14,
+  "technical_pass_count": 14,
+  "evidence_origin": "RECORDED_LOCAL_SIRNA_BENCH_RUN",
+  "source_job": "run-d68bc6039d8b49089c2fb7c069e1823e",
+  "reproducibility_source_job": "run-31cdc0e38a914bdf92b57f22153cdf99",
+  "execution_scope": "Deterministic technical review of recorded evidence; zero new scientific jobs",
+  "technical_scope": [
+    "sequence_integrity",
+    "reference_mapping",
+    "model_execution",
+    "configured_properties",
+    "native_filter_integrity",
+    "reproducibility",
+    "provenance"
+  ],
+  "policy": {
+    "schema_version": 1,
+    "required_technical_gates": [
+      "sequence_integrity",
+      "reference_mapping",
+      "model_execution",
+      "configured_properties",
+      "native_filter_integrity",
+      "reproducibility",
+      "provenance"
+    ],
+    "gc_min": 0.3,
+    "gc_max": 0.7,
+    "min_RN_Ai_percent": 50.0,
+    "min_RNAiSpline_probability": 0.5,
+    "duplex_min_kcal_mol": -45.0,
+    "duplex_max_kcal_mol": -25.0,
+    "max_native_guide_full_hits": 10,
+    "max_seed_occurrence_fold": 2.0,
+    "max_native_POTS_percentile": 90.0,
+    "min_guide_seed_viability_annotation": 50.0,
+    "reproducibility_absolute_tolerance": 1e-06,
+    "scope_note": "Inherited research-operational thresholds; no clinical or context-specific biological acceptance inferred. Native POTS percentile-direction limitation remains a review flag."
+  },
+  "input_bindings": [
+    {
+      "role": "references",
+      "path": "inputs/references.json",
+      "sha256": "c5aa54534ba8ee6611b0439d4c2902f04dd1a48ce58344907f1258e82a99e75a"
+    },
+    {
+      "role": "candidates",
+      "path": "inputs/candidates.csv",
+      "sha256": "e86214c6e724e4f363ce6e376f85f9305dc0ff8d60d0e83fc902d883426d9761"
+    },
+    {
+      "role": "bench_results",
+      "path": "native/final_ranked_candidates.csv",
+      "sha256": "f39dbafe04efcecfc6eb2af8ff9166d3ec2ea186fdbb2612d91c62d9e2996a7a"
+    },
+    {
+      "role": "bench_gates",
+      "path": "native/09_filter_decisions.csv",
+      "sha256": "fab785447c8529df08f5cc5c704e3f5282cb5382434d9b89c1694d2ecb737027"
+    },
+    {
+      "role": "reproducibility_results",
+      "path": "inputs/earlier_results_selected14.csv",
+      "sha256": "0e4ddba34225319bff93608bb47920fb5edab44f220e6ae0005d4cb478551547"
+    },
+    {
+      "role": "supplemental_annotations",
+      "path": "inputs/supplemental_annotations.csv",
+      "sha256": "1706010bd25a360d10505992bf9c2a4c4d53f1fe6efc23dd58789f77e83cf2bc"
+    }
+  ],
+  "bundle_sha256": "74df85ed19424d3112d703cd31253a8f7ca25b94de3f77a19aad4c7dd26cc1db",
+  "policy_sha256": "bd17ec2ebeade0d4328863fa1a2bb540cc870c977267d34c705d5019f50aa93f",
+  "scope_note": "Technical validation covers declared computational checks; biological efficacy, safety and delivery are separate evaluation stages.",
+  "candidates": [
+    {
+      "candidate_id": "NM_004985.5_site_280",
+      "guide_sequence": "UAUUGUUGGAUCAUAUUCG",
+      "passenger_sequence": "CGAAUAUGAUCCAACAAUA",
+      "target_start": "280",
+      "target_end": "298",
+      "source_Ridge_literal": "106.6131*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 87.22,
+        "eff_RNAiSpline": 0.6897,
+        "guide_target_duplex_delta_g_kcal_mol": -26.5,
+        "target_site_mean_unpaired_prob": 0.584567172631579,
+        "rank_score": 1.1135,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.975,
+        "pots_seed_percentile": 35.64453125,
+        "seed_tox_viability_avg_human": 81.1
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_280",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_280",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_280",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_280",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_280",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "1",
+        "candidate_id": "NM_004985.5_site_280",
+        "guide_sequence": "UAUUGUUGGAUCAUAUUCG",
+        "passenger_sequence": "CGAAUAUGAUCCAACAAUA",
+        "target_start": "280",
+        "target_end": "298",
+        "region_primary": "CDS",
+        "Ridge_predicted_percent": "106.6131025423868",
+        "RN_Ai_score": "87.22",
+        "RNAiSpline_score": "0.6897",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "1",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "0",
+        "passenger_unintended_2mm_alignments": "3",
+        "guide_seed_viability_annotation": "81.1",
+        "passenger_seed_viability_annotation": "69.8",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "106.6131* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 1/0/0/3; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_1391",
+      "guide_sequence": "UAUAAUAGUUUCCAUUGCC",
+      "passenger_sequence": "GGCAAUGGAAACUAUUAUA",
+      "target_start": "1391",
+      "target_end": "1409",
+      "source_Ridge_literal": "104.8076*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 88.44,
+        "eff_RNAiSpline": 0.6847,
+        "guide_target_duplex_delta_g_kcal_mol": -27.1,
+        "target_site_mean_unpaired_prob": 0.6186460421052631,
+        "rank_score": 1.6062,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.803,
+        "pots_seed_percentile": 13.00048828125,
+        "seed_tox_viability_avg_human": 95.0
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_1391",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1391",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1391",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1391",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1391",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "2",
+        "candidate_id": "NM_004985.5_site_1391",
+        "guide_sequence": "UAUAAUAGUUUCCAUUGCC",
+        "passenger_sequence": "GGCAAUGGAAACUAUUAUA",
+        "target_start": "1391",
+        "target_end": "1409",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "104.80763209597012",
+        "RN_Ai_score": "88.44",
+        "RNAiSpline_score": "0.6847",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "30",
+        "passenger_unintended_2mm_alignments": "3",
+        "guide_seed_viability_annotation": "95.0",
+        "passenger_seed_viability_annotation": "75.6",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "104.8076* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/30/0/3; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_3954",
+      "guide_sequence": "UAAAUAUCCCCUCAUAAGC",
+      "passenger_sequence": "GCUUAUGAGGGGAUAUUUA",
+      "target_start": "3954",
+      "target_end": "3972",
+      "source_Ridge_literal": "103.2610*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 90.8,
+        "eff_RNAiSpline": 0.6841,
+        "guide_target_duplex_delta_g_kcal_mol": -29.7,
+        "target_site_mean_unpaired_prob": 0.5893469684210526,
+        "rank_score": 1.3573,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 1.567,
+        "pots_seed_percentile": 1.165771484375,
+        "seed_tox_viability_avg_human": 97.1
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_3954",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3954",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3954",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3954",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3954",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "3",
+        "candidate_id": "NM_004985.5_site_3954",
+        "guide_sequence": "UAAAUAUCCCCUCAUAAGC",
+        "passenger_sequence": "GCUUAUGAGGGGAUAUUUA",
+        "target_start": "3954",
+        "target_end": "3972",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "103.26102833083826",
+        "RN_Ai_score": "90.8",
+        "RNAiSpline_score": "0.6841",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "0",
+        "passenger_unintended_2mm_alignments": "2",
+        "guide_seed_viability_annotation": "97.1",
+        "passenger_seed_viability_annotation": "84.7",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "103.2610* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/0/0/2; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_1710",
+      "guide_sequence": "UAAUAAGCUAUAACUGGCC",
+      "passenger_sequence": "GGCCAGUUAUAGCUUAUUA",
+      "target_start": "1710",
+      "target_end": "1728",
+      "source_Ridge_literal": "102.0053*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 87.59,
+        "eff_RNAiSpline": 0.6824,
+        "guide_target_duplex_delta_g_kcal_mol": -29.5,
+        "target_site_mean_unpaired_prob": 0.5991505578947368,
+        "rank_score": 1.4172,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.868,
+        "pots_seed_percentile": 23.529052734375,
+        "seed_tox_viability_avg_human": 92.9
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_1710",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1710",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1710",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1710",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1710",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "4",
+        "candidate_id": "NM_004985.5_site_1710",
+        "guide_sequence": "UAAUAAGCUAUAACUGGCC",
+        "passenger_sequence": "GGCCAGUUAUAGCUUAUUA",
+        "target_start": "1710",
+        "target_end": "1728",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "102.00533214101146",
+        "RN_Ai_score": "87.59",
+        "RNAiSpline_score": "0.6824",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "8",
+        "passenger_unintended_2mm_alignments": "0",
+        "guide_seed_viability_annotation": "92.9",
+        "passenger_seed_viability_annotation": "50.9",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "102.0053* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/8/0/0; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_2417",
+      "guide_sequence": "UUGACAAAUAAGUGUAUCC",
+      "passenger_sequence": "GGAUACACUUAUUUGUCAA",
+      "target_start": "2417",
+      "target_end": "2435",
+      "source_Ridge_literal": "101.9337*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 88.94,
+        "eff_RNAiSpline": 0.6873,
+        "guide_target_duplex_delta_g_kcal_mol": -27.0,
+        "target_site_mean_unpaired_prob": 0.6427963368421054,
+        "rank_score": 1.244,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 1.554,
+        "pots_seed_percentile": 18.048095703125,
+        "seed_tox_viability_avg_human": 98.2
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_2417",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2417",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2417",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2417",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2417",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "5",
+        "candidate_id": "NM_004985.5_site_2417",
+        "guide_sequence": "UUGACAAAUAAGUGUAUCC",
+        "passenger_sequence": "GGAUACACUUAUUUGUCAA",
+        "target_start": "2417",
+        "target_end": "2435",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "101.93369879773549",
+        "RN_Ai_score": "88.94",
+        "RNAiSpline_score": "0.6873",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "2",
+        "passenger_unintended_2mm_alignments": "2",
+        "guide_seed_viability_annotation": "98.2",
+        "passenger_seed_viability_annotation": "68.0",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "101.9337* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/2/0/2; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_4256",
+      "guide_sequence": "UUAAAUAGAGCCUAGAAUG",
+      "passenger_sequence": "CAUUCUAGGCUCUAUUUAA",
+      "target_start": "4256",
+      "target_end": "4274",
+      "source_Ridge_literal": "101.7049*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 90.47,
+        "eff_RNAiSpline": 0.6828,
+        "guide_target_duplex_delta_g_kcal_mol": -27.2,
+        "target_site_mean_unpaired_prob": 0.5301611215789473,
+        "rank_score": 1.5213,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.959,
+        "pots_seed_percentile": 1.885986328125,
+        "seed_tox_viability_avg_human": 90.2
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_4256",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4256",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4256",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4256",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4256",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "6",
+        "candidate_id": "NM_004985.5_site_4256",
+        "guide_sequence": "UUAAAUAGAGCCUAGAAUG",
+        "passenger_sequence": "CAUUCUAGGCUCUAUUUAA",
+        "target_start": "4256",
+        "target_end": "4274",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "101.70490855234065",
+        "RN_Ai_score": "90.47",
+        "RNAiSpline_score": "0.6828",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "2",
+        "passenger_unintended_2mm_alignments": "27",
+        "guide_seed_viability_annotation": "90.2",
+        "passenger_seed_viability_annotation": "73.7",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "101.7049* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/2/0/27; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_1494",
+      "guide_sequence": "AUGGUUGCUAUAAUAAUCC",
+      "passenger_sequence": "GGAUUAUUAUAGCAACCAU",
+      "target_start": "1494",
+      "target_end": "1512",
+      "source_Ridge_literal": "100.7198*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 89.68,
+        "eff_RNAiSpline": 0.6857,
+        "guide_target_duplex_delta_g_kcal_mol": -27.3,
+        "target_site_mean_unpaired_prob": 0.5835702789473685,
+        "rank_score": 0.9967,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.938,
+        "pots_seed_percentile": 60.040283203125,
+        "seed_tox_viability_avg_human": 90.0
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_1494",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1494",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1494",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1494",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1494",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "7",
+        "candidate_id": "NM_004985.5_site_1494",
+        "guide_sequence": "AUGGUUGCUAUAAUAAUCC",
+        "passenger_sequence": "GGAUUAUUAUAGCAACCAU",
+        "target_start": "1494",
+        "target_end": "1512",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "100.7198178599586",
+        "RN_Ai_score": "89.68",
+        "RNAiSpline_score": "0.6857",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "21",
+        "passenger_unintended_2mm_alignments": "1",
+        "guide_seed_viability_annotation": "90.0",
+        "passenger_seed_viability_annotation": "63.2",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "100.7198* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/21/0/1; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_3802",
+      "guide_sequence": "UUACAUAGAAGUUUCCUUG",
+      "passenger_sequence": "CAAGGAAACUUCUAUGUAA",
+      "target_start": "3802",
+      "target_end": "3820",
+      "source_Ridge_literal": "100.4076*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 89.88,
+        "eff_RNAiSpline": 0.6865,
+        "guide_target_duplex_delta_g_kcal_mol": -26.7,
+        "target_site_mean_unpaired_prob": 0.5536166315789474,
+        "rank_score": 1.4303,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.654,
+        "pots_seed_percentile": 16.56494140625,
+        "seed_tox_viability_avg_human": 78.4
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_3802",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3802",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3802",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3802",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3802",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "8",
+        "candidate_id": "NM_004985.5_site_3802",
+        "guide_sequence": "UUACAUAGAAGUUUCCUUG",
+        "passenger_sequence": "CAAGGAAACUUCUAUGUAA",
+        "target_start": "3802",
+        "target_end": "3820",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "100.40764074291847",
+        "RN_Ai_score": "89.88",
+        "RNAiSpline_score": "0.6865",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "3",
+        "passenger_unintended_2mm_alignments": "6",
+        "guide_seed_viability_annotation": "78.4",
+        "passenger_seed_viability_annotation": "92.3",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "100.4076* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/3/0/6; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_3668",
+      "guide_sequence": "UGAAUAUCUGACAUACACC",
+      "passenger_sequence": "GGUGUAUGUCAGAUAUUCA",
+      "target_start": "3668",
+      "target_end": "3686",
+      "source_Ridge_literal": "100.2017*",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 89.06,
+        "eff_RNAiSpline": 0.6844,
+        "guide_target_duplex_delta_g_kcal_mol": -29.8,
+        "target_site_mean_unpaired_prob": 0.36462453157894736,
+        "rank_score": 0.9419,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.751,
+        "pots_seed_percentile": 32.01904296875,
+        "seed_tox_viability_avg_human": 69.8
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_3668",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3668",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3668",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3668",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_3668",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "9",
+        "candidate_id": "NM_004985.5_site_3668",
+        "guide_sequence": "UGAAUAUCUGACAUACACC",
+        "passenger_sequence": "GGUGUAUGUCAGAUAUUCA",
+        "target_start": "3668",
+        "target_end": "3686",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "100.20174472154835",
+        "RN_Ai_score": "89.06",
+        "RNAiSpline_score": "0.6844",
+        "Ridge_extrapolation_flag": "True",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "0",
+        "passenger_unintended_2mm_alignments": "0",
+        "guide_seed_viability_annotation": "69.8",
+        "passenger_seed_viability_annotation": "46.3",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RIDGE_EXTRAPOLATION",
+          "detail": "100.2017* retained, not clipped or treated as measured inhibition"
+        },
+        {
+          "flag": "PASSENGER_SEED_ANNOTATION_LT50",
+          "detail": "46.3; reused source-scaffold annotation, not exact-duplex toxicity"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_2547",
+      "guide_sequence": "UAAUAUGGAAGAAGAGUCC",
+      "passenger_sequence": "GGACUCUUCUUCCAUAUUA",
+      "target_start": "2547",
+      "target_end": "2565",
+      "source_Ridge_literal": "99.7293",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 87.83,
+        "eff_RNAiSpline": 0.676,
+        "guide_target_duplex_delta_g_kcal_mol": -29.7,
+        "target_site_mean_unpaired_prob": 0.7111382068421053,
+        "rank_score": 1.445,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.898,
+        "pots_seed_percentile": 25.140380859375,
+        "seed_tox_viability_avg_human": 88.0
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_2547",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2547",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2547",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2547",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2547",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "10",
+        "candidate_id": "NM_004985.5_site_2547",
+        "guide_sequence": "UAAUAUGGAAGAAGAGUCC",
+        "passenger_sequence": "GGACUCUUCUUCCAUAUUA",
+        "target_start": "2547",
+        "target_end": "2565",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "99.72929014049728",
+        "RN_Ai_score": "87.83",
+        "RNAiSpline_score": "0.676",
+        "Ridge_extrapolation_flag": "False",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "10",
+        "passenger_unintended_2mm_alignments": "3",
+        "guide_seed_viability_annotation": "88.0",
+        "passenger_seed_viability_annotation": "44.0",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "PASSENGER_SEED_ANNOTATION_LT50",
+          "detail": "44.0; reused source-scaffold annotation, not exact-duplex toxicity"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/10/0/3; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_1912",
+      "guide_sequence": "UUGAUUUGUCAGCAGGACC",
+      "passenger_sequence": "GGUCCUGCUGACAAAUCAA",
+      "target_start": "1912",
+      "target_end": "1930",
+      "source_Ridge_literal": "99.7080",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 87.28,
+        "eff_RNAiSpline": 0.6842,
+        "guide_target_duplex_delta_g_kcal_mol": -33.5,
+        "target_site_mean_unpaired_prob": 0.5163983631578947,
+        "rank_score": 1.1325,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 1.243,
+        "pots_seed_percentile": 11.944580078125,
+        "seed_tox_viability_avg_human": 80.0
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_1912",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1912",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1912",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1912",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1912",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "11",
+        "candidate_id": "NM_004985.5_site_1912",
+        "guide_sequence": "UUGAUUUGUCAGCAGGACC",
+        "passenger_sequence": "GGUCCUGCUGACAAAUCAA",
+        "target_start": "1912",
+        "target_end": "1930",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "99.70797415945259",
+        "RN_Ai_score": "87.28",
+        "RNAiSpline_score": "0.6842",
+        "Ridge_extrapolation_flag": "False",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "2",
+        "passenger_unintended_2mm_alignments": "0",
+        "guide_seed_viability_annotation": "80.0",
+        "passenger_seed_viability_annotation": "61.3",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/2/0/0; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_4174",
+      "guide_sequence": "UUAAUGCCUAAGUCUAUGU",
+      "passenger_sequence": "ACAUAGACUUAGGCAUUAA",
+      "target_start": "4174",
+      "target_end": "4192",
+      "source_Ridge_literal": "99.6074",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 83.94,
+        "eff_RNAiSpline": 0.677,
+        "guide_target_duplex_delta_g_kcal_mol": -27.8,
+        "target_site_mean_unpaired_prob": 0.6858776736842106,
+        "rank_score": 0.9442,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 0.631,
+        "pots_seed_percentile": 55.462646484375,
+        "seed_tox_viability_avg_human": 61.2
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_4174",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4174",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4174",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4174",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_4174",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "12",
+        "candidate_id": "NM_004985.5_site_4174",
+        "guide_sequence": "UUAAUGCCUAAGUCUAUGU",
+        "passenger_sequence": "ACAUAGACUUAGGCAUUAA",
+        "target_start": "4174",
+        "target_end": "4192",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "99.6074149122926",
+        "RN_Ai_score": "83.94",
+        "RNAiSpline_score": "0.677",
+        "Ridge_extrapolation_flag": "False",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "7",
+        "passenger_unintended_2mm_alignments": "0",
+        "guide_seed_viability_annotation": "61.2",
+        "passenger_seed_viability_annotation": "75.5",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/7/0/0; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_2875",
+      "guide_sequence": "UUAAAUUCUCCUUCCACUG",
+      "passenger_sequence": "CAGUGGAAGGAGAAUUUAA",
+      "target_start": "2875",
+      "target_end": "2893",
+      "source_Ridge_literal": "99.0907",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 90.1,
+        "eff_RNAiSpline": 0.6864,
+        "guide_target_duplex_delta_g_kcal_mol": -28.9,
+        "target_site_mean_unpaired_prob": 0.5710490894736843,
+        "rank_score": 1.2767,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 1.346,
+        "pots_seed_percentile": 3.47900390625,
+        "seed_tox_viability_avg_human": 82.6
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_2875",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2875",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2875",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2875",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_2875",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "13",
+        "candidate_id": "NM_004985.5_site_2875",
+        "guide_sequence": "UUAAAUUCUCCUUCCACUG",
+        "passenger_sequence": "CAGUGGAAGGAGAAUUUAA",
+        "target_start": "2875",
+        "target_end": "2893",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "99.09067418822107",
+        "RN_Ai_score": "90.1",
+        "RNAiSpline_score": "0.6864",
+        "Ridge_extrapolation_flag": "False",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "52",
+        "passenger_unintended_2mm_alignments": "23",
+        "guide_seed_viability_annotation": "82.6",
+        "passenger_seed_viability_annotation": "44.5",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "PASSENGER_SEED_ANNOTATION_LT50",
+          "detail": "44.5; reused source-scaffold annotation, not exact-duplex toxicity"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/52/0/23; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    },
+    {
+      "candidate_id": "NM_004985.5_site_1517",
+      "guide_sequence": "UAGCAUGUAAAUAUAGCCC",
+      "passenger_sequence": "GGGCUAUAUUUACAUGCUA",
+      "target_start": "1517",
+      "target_end": "1535",
+      "source_Ridge_literal": "98.8299",
+      "technical_status": "PASSED_DECLARED_TECHNICAL_GATES",
+      "gates": [
+        {
+          "name": "sequence_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Exact supplied19nt RNA pairing and native output identity"
+        },
+        {
+          "name": "reference_mapping",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Primary exact unique/full-flank mapping plus every declared coverage reference"
+        },
+        {
+          "name": "model_execution",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Actual required-model statuses; not checkpoint presence"
+        },
+        {
+          "name": "configured_properties",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Explicit operational property/annotation bounds; no clinical cutoffs inferred"
+        },
+        {
+          "name": "native_filter_integrity",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Raw native Booleans, explicit failures and missing-evidence fields reviewed"
+        },
+        {
+          "name": "reproducibility",
+          "required": true,
+          "status": "PASSED",
+          "detail": "Recorded earlier-job comparison for identical candidate/reference endpoints; not independent efficacy validation"
+        },
+        {
+          "name": "provenance",
+          "required": true,
+          "status": "PASSED",
+          "detail": "SHA-256 bindings, source job identities and supplemental-to-candidate sequence identity checked"
+        }
+      ],
+      "properties": {
+        "eff_RN.Ai-Predict": 92.0,
+        "eff_RNAiSpline": 0.6835,
+        "guide_target_duplex_delta_g_kcal_mol": -29.7,
+        "target_site_mean_unpaired_prob": 0.6210482842105263,
+        "rank_score": 1.0684,
+        "full_length_offtarget_hits": 0.0,
+        "seed_occurrence_fold_over_expected": 1.178,
+        "pots_seed_percentile": 42.81005859375,
+        "seed_tox_viability_avg_human": 86.1
+      },
+      "raw_model_statuses": {
+        "RN.Ai-Predict": "ok",
+        "RNAiSpline": "ok",
+        "siRNADiscovery": "code_only"
+      },
+      "raw_native_gate_records": [
+        {
+          "candidate_id": "NM_004985.5_site_1517",
+          "gate": "A_input_integrity",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "orientation_documentation",
+          "evaluated_criteria": "valid_representation; orientation; target_mapping; guide_length_ok"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1517",
+          "gate": "B_computational_suitability",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "siRNADiscovery: no pretrained checkpoint",
+          "evaluated_criteria": "gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1517",
+          "gate": "B_seed_toxicity_flag",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "",
+          "evaluated_criteria": "seed_viability_avg_human"
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1517",
+          "gate": "C_experimental_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no experimental measurements supplied",
+          "evaluated_criteria": ""
+        },
+        {
+          "candidate_id": "NM_004985.5_site_1517",
+          "gate": "D_translational_evidence",
+          "passed": "True",
+          "failed_criteria": "",
+          "missing_evidence": "no PK/PD data or validated model inputs",
+          "evaluated_criteria": ""
+        }
+      ],
+      "reused_supplemental_annotations": {
+        "final_rank": "14",
+        "candidate_id": "NM_004985.5_site_1517",
+        "guide_sequence": "UAGCAUGUAAAUAUAGCCC",
+        "passenger_sequence": "GGGCUAUAUUUACAUGCUA",
+        "target_start": "1517",
+        "target_end": "1535",
+        "region_primary": "3prime_UTR",
+        "Ridge_predicted_percent": "98.82985195812338",
+        "RN_Ai_score": "92.0",
+        "RNAiSpline_score": "0.6835",
+        "Ridge_extrapolation_flag": "False",
+        "guide_unintended_0mm_alignments": "0",
+        "passenger_unintended_0mm_alignments": "0",
+        "guide_unintended_1mm_alignments": "0",
+        "passenger_unintended_1mm_alignments": "0",
+        "guide_unintended_2mm_alignments": "0",
+        "passenger_unintended_2mm_alignments": "1",
+        "guide_seed_viability_annotation": "86.1",
+        "passenger_seed_viability_annotation": "27.3",
+        "perfect_reference_gene_exclusivity": "PASSED",
+        "biological_qualification": "BLOCKED_MISSING_EVIDENCE"
+      },
+      "reproducibility_absolute_differences": {
+        "eff_RN.Ai-Predict": 0.0,
+        "eff_RNAiSpline": 0.0,
+        "guide_target_duplex_delta_g_kcal_mol": 0.0,
+        "target_site_mean_unpaired_prob": 0.0,
+        "rank_score": 0.0
+      },
+      "review_flags": [
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "A_input_integrity",
+          "detail": "orientation_documentation"
+        },
+        {
+          "flag": "NATIVE_MISSING_EVIDENCE",
+          "gate": "B_computational_suitability",
+          "detail": "siRNADiscovery: no pretrained checkpoint"
+        },
+        {
+          "flag": "PASSENGER_SEED_ANNOTATION_LT50",
+          "detail": "27.3; reused source-scaffold annotation, not exact-duplex toxicity"
+        },
+        {
+          "flag": "RECORDED_NEAR_MATCH_OPPORTUNITIES",
+          "detail": "Reused guide1/2mm and passenger1/2mm transcript-alignment counts: 0/0/0/1; no fresh broader scan in this report"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "C_experimental_evidence",
+          "native_passed_literal": "True",
+          "detail": "no experimental measurements supplied"
+        },
+        {
+          "flag": "SEPARATE_SCOPE_MISSING_EVIDENCE",
+          "gate": "D_translational_evidence",
+          "native_passed_literal": "True",
+          "detail": "no PK/PD data or validated model inputs"
+        },
+        {
+          "flag": "NATIVE_PRIORITY_POLICY_LIMITATION",
+          "detail": "Native POTS percentile-direction convention retained; priority is operational, not calibrated efficacy"
+        }
+      ]
+    }
+  ]
+}

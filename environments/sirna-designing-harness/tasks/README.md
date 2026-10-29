@@ -1,16 +1,31 @@
 # Agent task contracts
 
-These JSON files specify tasks for Agent Scientist; they do not submit backend jobs. The technical CLI can validate the objective fields or display contracts, but does not impersonate a generator, predictor, literature service or experimental assay.
+These JSON files define scientific tasks for Agent Scientist. They do not automatically submit jobs. The repository-executable technical report consumes recorded outputs from configured scientific tools.
 
-| Task | Scope | Expected boundary |
+| Task | Scope | Execution boundary |
 |---|---|---|
-| `kras-shared-review.json` | Previously authorized four-reference human KRAS objective | Reuse verified historical evidence unless new work is explicitly authorized |
-| `kras-mutation-blocked.json` | Comparative intake without a specified mutation | Shared work may proceed; mutation arm remains blocked, no mutant constructed |
-| `audit.json` | Inspect actual completed artifacts, new output directory | No generation/inference/folding/screening repeats; source hashes unchanged |
-| `sensitivity.json` | Preserved compatible scores | No imputation, new weights or biological claims from rank changes |
-| `benchmark.json` | Measured dataset/provenance audit before testing | Fail closed if no auditable independent compatible test cohort |
-| `literature-comparison.json` | Original-source selection versus computational priority | Pooled source ranges are not individual benchmark labels |
+| [technical-validation.json](technical-validation.json) | Supplied pairs, recorded Bench properties/gates, references and earlier-job evidence | Executable portable `technical-report`; no model dispatch |
+| [kras-shared-review.json](kras-shared-review.json) | Four-reference human KRAS design objective | Approved existing generators/assessment tools; explicit execution authorization |
+| [kras-mutation-blocked.json](kras-mutation-blocked.json) | Comparative intake without an exact mutation | Shared work can proceed; no hypothetical mutant construction |
+| [audit.json](audit.json) | Completed artifacts in a new audit directory | No generation/inference/folding/screening repeats unless separately authorized |
+| [sensitivity.json](sensitivity.json) | Compatible preserved scores | No imputation, new weights or biological claims from changed ranks |
+| [benchmark.json](benchmark.json) | Measured-data and exposure audit | Independent test eligibility must be established before inference |
+| [literature-comparison.json](literature-comparison.json) | Original-source versus computational prioritization | Preserve endpoint/context distinctions and actual source evidence |
 
-The associated `output_contracts.json` defines named minimum artifacts and status semantics. Do not invent expected numeric outputs for a new target. Experimental endpoints, reported sequences, labels and source identities must come from actual inspected artifacts.
+## Technical validation
 
-`ISSUE_DRAFT.md` and `PR_DRAFT.md` are local review text because GitHub CLI authentication was unavailable. They are not claims of remote issue/PR creation, ownership assignment or review approval.
+The [output contracts](../config/output_contracts.json) define `PASSED_DECLARED_TECHNICAL_GATES` and the properties/flags that accompany it. The command verifies mandatory categories rather than relabelling every native Boolean. Missing required technical evidence blocks; explicit failure wins over missing. Experimental/translational raw gate rows are preserved as a separate scope.
+
+The included recorded task can be exercised locally:
+
+```bash
+python3 -B scripts/run.py technical-report \
+  --bundle results/case_studies/KRAS_14_technical_validation/bundle.json \
+  --out /absolute/path/to/NEW-report-directory
+```
+
+A task definition is not a new target's expected numerical answer. Preserve every supplied sequence and source literal. Scientific generation/evaluation remains agent-orchestrated using separately configured tools and reviewed contracts.
+
+## Contribution drafts
+
+[ISSUE_DRAFT.md](ISSUE_DRAFT.md) and [PR_DRAFT.md](PR_DRAFT.md) are local review text. Current read-only GitHub lookup succeeded and found no siRNA-titled issue; no remote issue/PR, assignee, reviewer approval or merge is claimed. Obtain direction to perform those remote contribution actions.

@@ -17,6 +17,16 @@ The historical case used human KRAS NM_004985.5 with NM_033360.4, NM_001369786.1
 
 The source receipts and aggregate summaries are hash-bound in the environment's historical evidence index. These counts are observations of one case, not universally expected outcomes or a new run's test answers.
 
+## Recorded repeat and technical-validation milestone
+
+A later local repeat used the same four frozen exact-version references and new OligoFormer/Bench runs. It reproduced the 5,288-guide pool, 100-candidate assessment, 81 operational passers, 20-site operational panel and14-site no-perfect-outside-gene-match subset. Every reported alignment Hamming distance was independently checked in that run. Reference reuse, new inference and cached reference seed-count lookups were explicitly distinguished. [R9]
+
+The user then supplied those exact14 pairs for a separate siRNA-Bench run. Both required efficacy models returned14 scores; all14 passed the inherited operational filters. RN.Ai predictions ranged83.94–92.00 and RNAiSpline probabilities0.6760–0.6897. Recorded values reproduced the earlier assessment exactly. Native Bench prioritized site1391 first rather than the Ridge-leading site280. Agreement/repeatability on this preselected cohort is not independent model-accuracy evidence. [R10]
+
+The repository now includes a bounded source-bound snapshot and an executable standard-library technical report. Its seven mandatory categories are sequence integrity, reference mapping, actual model statuses, configured properties, native filter integrity, earlier-job reproducibility and provenance. The included record passes those technical gates. Raw native gate fields and candidate-specific flags remain visible: nine Ridge extrapolations, four low passenger-seed source annotations, native orientation-metadata gaps and the inherited POTS percentile-direction issue. The report does not rewrite those underlying findings. [R9,R10]
+
+Technical validation covers the declared computational checks; biological efficacy, safety and delivery are separate evaluation stages. The success-first technical headline is appropriate for the environment's defined research deliverable, without replacing the legacy scientific qualification records.
+
 ## Literature workflow and discrepancy
 
 The original Pecot article reports shared/pan-KRAS Seq #2 and Seq #3 pairs. Both were recovered in the full generated pool at primary positions 342–360 and 254–272, respectively, but neither entered the original 20 or conditional 14. Thus generation coverage and downstream prioritization disagree; absent panel membership is not failed generation or proof of inactivity. [R5,R6]

@@ -1,79 +1,101 @@
 # siRNA Designing Harness
 
-**Lifecycle: In Progress.** This repository contribution implements a portable technical-check environment and an Agent Scientist workflow specification. It is **not** a newly bundled end-to-end predictor or a biologically validated design service. Scientific backends, licenses, weights and references must be separately configured and verified.
+**Scope: siRNA design and technical validation.** The environment connects an Agent Scientist design workflow with portable sequence checks, recorded siRNA-Bench evidence review, candidate-property reporting and reproducibility/provenance checks.
 
-## Purpose
+**Technical reporting component: implemented and tested.** The included recorded KRAS assessment returns **14 of 14 candidates passed the declared technical gates**. Reports lead with this achieved milestone and each candidate's predicted/calculated properties, then retain candidate-specific review flags.
 
-Take an explicitly specified human transcript through reference-verified siRNA design, compatible computational assessment, critical ranking and evidence-qualified reporting. Support four operating modes: **DESIGN**, **AUDIT**, **SENSITIVITY**, and **BENCHMARK**. Keep successful computational screening separate from experimental efficacy and biological qualification.
+**Repository lifecycle: In Progress.** Scientific backends are separately installed/authorized integrations; the repository does not bundle models or submit jobs. Maintainer review and new-host scientific deployment remain separate from the implemented technical reporting component.
 
-The default exercised envelope is human RefSeq coding mRNA and paired 19-nt RNA cores, not order-ready chemically specified duplexes. Other species, strand lengths, modified/asymmetric constructs and mismatch-selective models require separate validated adapters.
+## Quick start — runnable without scientific dependencies
 
-## Quick start: no installation or model download
-
-Python 3.10+ is sufficient for the included standard-library technical helpers:
+Python 3.10+ and its standard library are sufficient. From this directory:
 
 ```bash
-cd environments/sirna-designing-harness
-python3 scripts/run.py --help
-python3 scripts/run.py describe
-python3 scripts/run.py check-project
-python3 scripts/run.py check-skill
-python3 scripts/run.py verify-benchmark
-python3 scripts/run.py preflight --config config/environment.example.json
-python3 scripts/run.py validate-objective --objective tasks/kras-shared-review.json
+python3 -B scripts/run.py describe
+python3 -B scripts/run.py check-project
+python3 -B scripts/run.py check-skill
+python3 -B scripts/run.py verify-benchmark
+python3 -B scripts/run.py verify-technical-case
+python3 -B scripts/run.py technical-report \
+  --bundle results/case_studies/KRAS_14_technical_validation/bundle.json \
+  --policy config/technical_gate_policy.json \
+  --out /absolute/path/to/NEW-report-directory
 python3 -B tests/run_validation.py --scratch /absolute/approved/scratch
 ```
 
-The preflight template intentionally reports missing assets and exits 2. Objective validation checks intake, **not** authoritative reference identity. Most examples are not runnable scientific jobs until explicitly configured. Do not install into SCI's runtime or use auto-approval to bypass scientific execution permissions.
+`technical-report` reads recorded evidence, verifies checksums and computes technical gate decisions. It does not execute models. It refuses an existing output directory. The expected included-case result is `PASSED_DECLARED_TECHNICAL_GATES`, with 14 submitted and 14 technical passes.
 
-For real design, load `skills/sirna-harness/SKILL.md` into the intended SCI profile using its local operating manual. Configure approved existing tools separately. See [configuration guide](config/README.md) and [task contracts](tasks/README.md). The portable skill installer refuses existing destinations; this repository does not modify profiles automatically.
+A successfully executed example is included at [results/technical_validation_KRAS14/technical_report.md](results/technical_validation_KRAS14/technical_report.md). The matching JSON preserves raw gates, model statuses, properties, flags and reproducibility differences. This is a deterministic report replay of actual recorded runs, not fresh prediction or a synthetic result.
 
-## Project structure
+## The design workflow
+
+1. Define the organism, exact transcript.version, isoform objective and experiment.
+2. Verify reference identity, orientation, annotations and source provenance.
+3. Discover approved scientific tools and execute the selected generator once.
+4. Preserve generated pairs and native scores; select a declared assessment cohort.
+5. Evaluate compatible candidates through separately configured siRNA-Bench/tools.
+6. Review both-strand/isoform evidence, apply declared filters and rank transparently.
+7. Produce a technical gate report with properties and candidate-specific flags.
+8. Hand off the defined next evidence requirements for the intended application.
+
+DESIGN, TECHNICAL_VALIDATION, AUDIT, SENSITIVITY and BENCHMARK contracts are in [tasks/](tasks/README.md). The bundled [workflow skill](skills/sirna-harness/SKILL.md) describes scientific orchestration; it is not an installed predictor. Use [config/README.md](config/README.md) to distinguish portable reporting from external deployment.
+
+The exercised scope is human RefSeq NM_ coding-mRNA references and exact paired 19-nt RNA cores. CDS and UTR target sites are allowed according to the declared objective. Other species, lengths, modifications and mismatch-selective models require reviewed adapters. Final overhangs and chemistry are not silently inferred.
+
+## What a technical pass means
+
+The new command enforces seven mandatory categories:
+
+- Exact supplied sequence identity and 19-nt guide/passenger complementarity.
+- Unique primary target mapping, complete source flanks and all declared reference coverage.
+- Actual successful statuses for required efficacy models.
+- Explicit numeric property/annotation criteria in [technical_gate_policy.json](config/technical_gate_policy.json).
+- Review of native passed, failed and missing-evidence fields.
+- Agreement with a distinct recorded earlier job within the declared tolerance.
+- SHA-256-bound evidence inputs and retained source-job provenance.
+
+Missing mandatory evidence cannot pass; an explicit failure takes precedence over missing evidence. Metadata-only orientation gaps are retained and distinguished from independently verified pairing/mapping. Native experimental/translational Booleans are not reinterpreted as evidence where measurements are absent.
+
+**Scope statement:** Technical validation covers the declared computational checks; biological efficacy, safety and delivery are separate evaluation stages.
+
+## Properties and review flags
+
+Reports show RN.Ai-Predict's predicted percent endpoint, RNAiSpline effective-class probability, calculated duplex energy and accessibility, native priority and the original Ridge annotation. These endpoints retain separate meanings.
+
+The included KRAS14 report preserves nine Ridge extrapolation flags, four low passenger-seed source annotations, native missing-evidence fields and the known POTS percentile-direction limitation. A technical pass never removes these flags or converts a source-scaffold annotation into measured duplex toxicity. Native priority is operational, not a calibrated efficacy probability.
+
+## Included evidence
+
+- [Recorded KRAS14 assessment](results/case_studies/README.md): bounded actual inputs/native outputs, four small derived reference records, an earlier-job comparison and source hashes. The portable report reproduces the declared technical result without the original host or models.
+- [Historical KRAS archive](benchmark/KRAS/README.md): the unchanged 85-file snapshot spanning design, candidate audit, ranking sensitivity, independent-data audit and literature comparison. Its source receipts remain historical and byte-identical.
+
+The earlier full repeat generated 5,288 guides, assessed 100, obtained 81 operational passers, selected 20 nonoverlapping sites and retained 14 after the explicit perfect-outside-gene-match diagnostic. A later standalone Bench run assessed those exact 14. These observations are documented in the [central evidence list](../../research/sirna-designing-harness/references.md), not assumed test answers for new targets.
+
+No scientific job is rerun to package or replay these records. The `benchmark/` name does not imply an independent measured efficacy benchmark. Mutation-selective work requires an exact mutation/reference and WT-sparing objective; no hypothetical mutant is included.
+
+## Repository structure
 
 ```text
 sirna-designing-harness/
   README.md
   ENVIRONMENT_SPEC.md
   STATUS.md
-  config/                 # dependency/capability contracts and incomplete templates
-  tasks/                  # design/audit/sensitivity/benchmark contracts
-  tests/                  # software and structural validation, no fabricated efficacy
-  scripts/                # executable technical environment interface
-  skills/sirna-harness/    # original portable workflow and stdlib helpers; own MIT notice
-  benchmark/KRAS/         # frozen reports/result tables from five historical KRAS stages
-  results/                # project tests/receipts; earlier project receipts preserved in history/
+  config/                  # explicit gate policy, dependencies and output contracts
+  tasks/                   # design, technical validation, audit and evaluation contracts
+  tests/                   # executable positive/negative tests and sealing
+  scripts/                 # technical checks, reports and bounded evidence importer
+  skills/sirna-harness/     # original portable workflow/helpers and their MIT notice
+  benchmark/KRAS/          # unchanged historical report/result archive
+  results/
+    case_studies/          # source-bound recorded KRAS14 evidence
+    technical_validation_KRAS14/  # executed technical report replay
+    history/               # prior project receipts retained before updates
 ```
 
-Research is maintained in [research-notes.md](../../research/sirna-designing-harness/research-notes.md) and the central [references.md](../../research/sirna-designing-harness/references.md). See [architecture decision](../../docs/decisions/sirna-designing-harness.md).
+Research lives in [research-notes.md](../../research/sirna-designing-harness/research-notes.md) and [references.md](../../research/sirna-designing-harness/references.md). See the [environment specification](ENVIRONMENT_SPEC.md), [status/evidence](STATUS.md) and [architecture decision](../../docs/decisions/sirna-designing-harness.md).
 
-## Included KRAS reports and results
+## Contribution and rights
 
-Browse [benchmark/KRAS/README.md](benchmark/KRAS/README.md) for the shared-target report, candidate evidence tables, exact-match failures, ranking sensitivity, blocked experimental-data audit and literature comparison. The 85 selected source files are copied byte-identically with source/copy hashes. The snapshot is intentionally partial; large/raw source artifacts are retained externally and indexed. Historical receipts are labelled `source_*` so they are not confused with current snapshot verification.
+Work is on `feat/sirna-technical-validation-environment`. Authenticated read-only issue lookup found no siRNA-titled issue at update time. No remote issue, PR, assignment, commit, push or merge was requested/performed; [local issue](tasks/ISSUE_DRAFT.md) and [PR](tasks/PR_DRAFT.md) drafts document the outstanding governance steps. Previous unauthenticated lookup claims are retained only in historical receipts where applicable, not asserted as the current state.
 
-Run `python3 scripts/run.py verify-benchmark` without original data/model dependencies to verify the included snapshot. No scientific analyses are rerun. The `benchmark` folder name does not imply independent experimental validation.
-
-## Evidence and present limitations
-
-The verified historical KRAS study generated 5,288 unique cores, deep-assessed 100, investigated 20, and retained a conditional 14-candidate review subset. The literature comparison recovered two shared-KRAS paired cores already in the full pool but absent from that shortlist. One source-supported core carried an inherited palindrome heuristic flag. This motivates criterion review, not silent threshold changes or a superiority claim. [Evidence and sources](../../research/sirna-designing-harness/references.md).
-
-Historical independent experimental validation remains `BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET`. The shared computational arm remains complete; overall biology remains `PARTIAL`. The mutation arm remains `BLOCKED_PENDING_MUTATION_SPECIFICATION`. No hypothetical mutant is included or constructed by the technical CLI.
-
-## What is executable here
-
-- Structural/project contract checks.
-- Portable skill payload integrity checks.
-- Environment file/checksum preflight, without invoking backends.
-- Objective format/scope checks.
-- Supplied 19-nt pair/coordinate/unique-site/flank validation.
-- Fail-closed gate review and minimal measured-table audit.
-- Optional read-only historical-receipt verification with an explicitly supplied evidence root.
-
-What is **not** executed by `scripts/run.py`: candidate generation, learned-model inference, folding, transcriptome/seed screening, literature crawling, biological experiments, or an independent efficacy benchmark. Those are agent-orchestrated tasks using separately installed/authorized scientific tools. A missing required assessment blocks its conclusion, not unrelated valid checks.
-
-## Validation and contribution status
-
-Current software/structure checks and reproduction commands are recorded in [STATUS.md](STATUS.md) and `results/validation_receipt.json` after execution. These are technical checks, not predictor-accuracy or biological validation.
-
-Local branch: `feat/sirna-designing-harness`. GitHub CLI was unauthenticated while preparing this contribution; issue discovery/creation and PR creation could not be completed. Draft [issue](tasks/ISSUE_DRAFT.md) and [PR](tasks/PR_DRAFT.md) are supplied. No owner/reviewer approval, remote submission, commit, push or merge is claimed. The issue-first governance step is outstanding; this is a local review draft, not a fully completed repository contribution.
-
-Repository-wide license selection remains pending. The copied original skill/helpers retain their separate MIT notice; no license is asserted for the whole repository. No third-party code, weights, reference indices, raw papers, experimental datasets or credentials are bundled.
+Repository-wide license selection remains pending. The original bundled helpers retain their separate MIT notice. No third-party scientific implementation, model weights, embeddings, transcriptome indices, raw papers, restricted datasets or credentials are distributed. Four small original-accession sequence views are explicitly derived reference inputs for the recorded replay, not a bundled screening database.

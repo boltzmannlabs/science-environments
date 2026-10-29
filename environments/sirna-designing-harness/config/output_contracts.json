@@ -9,5 +9,17 @@
   "success_boundaries":{"technical":"Does not imply working inference","computational_screening":"Does not imply experimental activity or safety","experimental_source_support":"Does not automatically transfer to another construct/context","benchmark":"Does not imply specificity, delivery or immune safety"},
   "missing_values":"Preserve null/NOT_RUN and reasons; never replace with zero or a safe score",
   "mutation_default":"BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "technical_validation_contract": {
+    "implemented_command": "technical-report",
+    "success_status": "PASSED_DECLARED_TECHNICAL_GATES",
+    "failure_status": "FAILED_DECLARED_TECHNICAL_GATES",
+    "missing_status": "BLOCKED_MISSING_TECHNICAL_EVIDENCE",
+    "required_gates": ["sequence_integrity", "reference_mapping", "model_execution", "configured_properties", "native_filter_integrity", "reproducibility", "provenance"],
+    "artifacts": ["technical_report.md", "technical_report.json", "technical_candidates.csv", "output_manifest.json", "verification_receipt.json"],
+    "candidate_report_fields": ["technical_status", "properties", "raw_model_statuses", "raw_native_gate_records", "review_flags", "reused_supplemental_annotations", "reproducibility_absolute_differences"],
+    "source_model_endpoints": {"RN.Ai-Predict": "predicted source-percent endpoint", "RNAiSpline": "effective-class probability", "Ridge": "source annotation retained, not recomputed by this CLI", "Bench priority": "native operational utility; known POTS direction limitation retained"},
+    "presentation": "Lead with achieved technical gate status and predicted/calculated properties; retain candidate flags and one explicit scope statement. Never alter historical gates or receipts.",
+    "scope_note": "Technical validation covers declared computational checks; biological efficacy, safety and delivery are separate evaluation stages."
+  },
   "source_preservation":"Immutable originals; new versioned directories; input/output hashes; no circular manifest/receipt hashes"
 }

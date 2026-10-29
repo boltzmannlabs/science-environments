@@ -1,10 +1,34 @@
 {
+  "implementation_files": {
+    "scripts/run.py": "944fb3af335f8c4aeeddff5c1c707f49b0b36bfcc8e532d5fd266eba13efa308",
+    "scripts/import_recorded_assessment.py": "89c7bc385219a7b36f459e5795df9409bf862bc103038184f86ef4fce2e35560",
+    "scripts/technical_reporting.py": "bd5d3b0f71e9f957d017a917c520ec4ffebe2f4c89f18b8fd4ce9a0dfdd610be",
+    "tests/seal_benchmark.py": "a721ee37a583da669579e2b199271c9f9d70dc32ae2744c538e1dcc3b9a4bfae",
+    "tests/seal_contribution.py": "2b3d906db4abd4e72e3d76628f28c625be25f1e2b1393aa3a0145f65f9b1e701",
+    "tests/test_environment.py": "a48554a3b88cf26090be9314b6a9dab4b1bf43ec777060781705cd05d9f4b44d",
+    "tests/run_validation.py": "2edb3ca53bda1b0586d343b7105d5009290c96e445f0fb7429bb8af13474075e",
+    "tests/test_technical_reporting.py": "5ddd8b13232565b8529dedef1565159cd47e8fb4a8afdf92762b1215ede48c68",
+    "config/technical_gate_policy.json": "bd17ec2ebeade0d4328863fa1a2bb540cc870c977267d34c705d5019f50aa93f",
+    "config/gates.example.json": "8c7e3cfde62abccdaf28a9f3722174a4e302e993998b57e1bd03e7434e184e0a",
+    "config/capability_registry.json": "dd1dcacedaf56529f652aa2029d84062d6b3394ab3606d322178ff67a67e5bf3",
+    "config/environment.example.json": "92abedcf1a74cd84303281937be947066d6a3e1de840ee0abb666c86cd997831",
+    "config/output_contracts.json": "770f1c7c56656cbac44d4dd2febf25afbb0fa9c54f2044a1f77e46ab48a8d5a5",
+    "config/objective.example.json": "5a31b6375ee45240e305158df434c7d06313780488ec34f88a0fb4c0d249971b",
+    "tasks/benchmark.json": "0985fd54c3ac05e14dbf022a263386ce54b3660db0751eea8c0368bbe93fcce8",
+    "tasks/literature-comparison.json": "253e6a8e6cad111b924aef73753ffc5cfdfd6e6a38363958a89b35facc32c0a3",
+    "tasks/kras-shared-review.json": "21924bfb0e12bc46f4df7abad2a23cbac7ddf4578780ebc477043e0c3ca6b391",
+    "tasks/technical-validation.json": "0da712cb75d5cd0ef3484a52a2f5804a6f736e5108506a4743e6ebe138abfce8",
+    "tasks/audit.json": "f4ecd1ecc738525dd14d056632c224446cffa921f02061ee5ed222e18db7497e",
+    "tasks/sensitivity.json": "db47940f0a05fa649bc58e86ae2264c60122841b0f0e751c4205400195a0d7e5",
+    "tasks/kras-mutation-blocked.json": "17a71d2a20dacb1635329d27255987821f442b529f24a060fc0dc8df20620eb1"
+  },
+  "technical_case_snapshot_sha256": "a6870bef0903bdbe65bbf321eb382021f644563b666b2def16e3225a19c74d69",
   "verification": "PASSED",
-  "scope": "Software/structure and optionally small historical-receipt checks; no scientific model-performance or biological validation",
-  "verified_utc": "2026-10-27T10:07:10.028579+00:00",
+  "scope": "Portable technical software/contracts plus recorded evidence replay; scientific models are not rerun by these checks",
+  "verified_utc": "2026-10-29T10:29:00.238910+00:00",
   "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]",
   "python_executable": "/home/boltzmann13/.sci/tools/python-3.14.7+20260901-linux-x64/bin/python3",
-  "software_tests_passed": 54,
+  "software_tests_passed": 100,
   "checks": [
     {
       "check": "environment_tests",
@@ -12,8 +36,17 @@
       "returncode": 0,
       "expected_returncode": 0,
       "log": "environment_tests.log",
-      "log_sha256": "d4455898d2def0cd1c4652d76f8fe1862f3c4e3c5b611ce44e97f361844d4975",
+      "log_sha256": "46faa24ce05215b479abf939af2c13b4ec8eb1ffd697ad6429022ad28dd5cd35",
       "software_tests": 22
+    },
+    {
+      "check": "technical_report_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_report_tests.log",
+      "log_sha256": "1f9ea6b69e7197cf6e004409817b732d11dd76895c2ac92bac1076b483d125e3",
+      "software_tests": 46
     },
     {
       "check": "portable_skill_tests",
@@ -21,7 +54,7 @@
       "returncode": 0,
       "expected_returncode": 0,
       "log": "portable_skill_tests.log",
-      "log_sha256": "d26ed183ed3a14c4154350539671a702443b178f41e73bbaa7f4efbba1b2a8cb",
+      "log_sha256": "53ff6fa8a6f355d45d78818ba62ff64823edf670905cf285b686e5f3e59a8502",
       "software_tests": 32
     },
     {
@@ -30,7 +63,7 @@
       "returncode": 0,
       "expected_returncode": 0,
       "log": "project_structure.log",
-      "log_sha256": "2639ed26903f724420f8164439c68485fbefdf8c3066d287ea9eba7d97de93d7"
+      "log_sha256": "4cd38c30920eb5045f550ab21d573f31ac75a9be41b0f9892150c197d362e189"
     },
     {
       "check": "skill_integrity",
@@ -47,6 +80,23 @@
       "expected_returncode": 0,
       "log": "benchmark_snapshot_integrity.log",
       "log_sha256": "96e600c8a071934ba69302197a2da305d3c70f426b19bc9b17f496a833d45e78"
+    },
+    {
+      "check": "technical_case_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_case_integrity.log",
+      "log_sha256": "55549d9c775a98ccf407f15ec477209f7a21cf4535173f0c9214a3a725f8a674"
+    },
+    {
+      "check": "recorded_technical_report_replay",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "recorded_technical_report_replay.log",
+      "log_sha256": "f58667efd3ce1fbf4c1fa48f825d2f6d338aefb2eb4aa1c716856c531abe292e",
+      "technical_pass_count": 14
     },
     {
       "check": "empty_config_expected_block",
@@ -67,8 +117,9 @@
     }
   ],
   "new_generation_inference_folding_screening_runs": 0,
+  "recorded_KRAS14_technical_passes": 14,
   "fresh_backend_deployment_verified": false,
+  "technical_component": "IMPLEMENTED_AND_TESTED",
   "lifecycle": "In Progress",
-  "biology": "PARTIAL",
-  "github_issue_PR_review": "PENDING_AUTHENTICATION_AND_MAINTAINER_REVIEW"
+  "github_issue_PR_review": "PENDING_REMOTE_ISSUE_PR_AND_MAINTAINER_REVIEW"
 }

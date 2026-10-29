@@ -1,24 +1,26 @@
 {
   "verification": "PASSED",
-  "scope": "Local project structure/helper tests/evidence packaging only; not scientific-backend or biological validation",
-  "verified_utc": "2026-10-27T10:07:34.016175+00:00",
+  "scope": "Portable technical environment implementation/tests, recorded evidence replay and packaging integrity",
+  "verified_utc": "2026-10-29T10:30:46.398086+00:00",
   "project_name": "siRNA Designing Harness",
   "environment": "environments/sirna-designing-harness",
+  "technical_component": "IMPLEMENTED_AND_TESTED",
+  "technical_case_status": "PASSED_DECLARED_TECHNICAL_GATES",
+  "technical_case_passes": 14,
   "lifecycle": "In Progress",
-  "biology": "PARTIAL",
-  "branch": "feat/sirna-designing-harness",
+  "branch": "feat/sirna-technical-validation-environment",
   "interpreter_test_receipts": [
     {
       "receipt": "validation_receipt.json",
       "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]",
-      "software_tests_passed": 54,
-      "sha256": "b602099bd745ed66cbb20118fc7ecb8f3db4f924a49ed02ab89e2666867af337"
+      "software_tests_passed": 100,
+      "sha256": "a70629091f6b5adeead3e45673427d98a90fefe50de1caa533c8b5a869b9d210"
     },
     {
       "receipt": "validation_receipt.python313.json",
       "python": "3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]",
-      "software_tests_passed": 54,
-      "sha256": "6800567aa3b322b7bec0bd83a6031af5942eeffb58d02db8e043ede25b189b75"
+      "software_tests_passed": 100,
+      "sha256": "e16dc21482da84335339e252366f8eb394be8b8d4b80a45eb4e081fdd027aee2"
     }
   ],
   "command_checks": [
@@ -29,8 +31,8 @@
         "missing_required_files": [],
         "errors": [],
         "unexpected_payloads": [],
-        "json_files_parsed": 73,
-        "local_markdown_links_checked": 52,
+        "json_files_parsed": 92,
+        "local_markdown_links_checked": 82,
         "capability_categories": 15,
         "scope": "Local structure/contracts only; external URL reachability and scientific readiness not tested"
       }
@@ -59,26 +61,57 @@
         "scientific_runs": 0,
         "meaning": "Frozen report/result snapshot integrity only; no inference or independent experimental validation"
       }
+    },
+    {
+      "command": "verify-technical-case",
+      "result": {
+        "status": "PASSED",
+        "files_verified": 9,
+        "errors": [],
+        "scope": "Bounded recorded assessment snapshot integrity; not new model execution",
+        "new_scientific_jobs": 0
+      }
     }
   ],
   "historical_small_summary_receipt_files_verified": 10,
-  "benchmark_source_files_copied": 85,
-  "benchmark_snapshot_verification_sha256": "77df2ff481d85b1b0ae8caca55918d594e4a0a55fb1988f0c36cc2e119d5f886",
-  "files_hashed": 170,
-  "total_artifact_bytes": 2455782,
-  "output_manifest_sha256": "07fa1504949d606d2494ead3270291512de31e067d4656130623b34aaa8863a2",
+  "historical_benchmark_source_files_preserved": 85,
+  "recorded_technical_case_reference_views": 4,
+  "files_hashed": 240,
+  "total_artifact_bytes": 2956236,
+  "output_manifest_sha256": "b7dba50a91b95bfa44ef5d0ed936c3d436e6ebb4f98a565be062e1b944e22463",
   "unrelated_tracked_files_changed": false,
-  "tracked_index_files_intentionally_modified": [
+  "tracked_files_intentionally_updated": [
     "README.md",
-    "research/README.md"
+    "docs/decisions/sirna-designing-harness.md",
+    "environments/sirna-designing-harness/ENVIRONMENT_SPEC.md",
+    "environments/sirna-designing-harness/README.md",
+    "environments/sirna-designing-harness/STATUS.md",
+    "environments/sirna-designing-harness/config/README.md",
+    "environments/sirna-designing-harness/config/capability_registry.json",
+    "environments/sirna-designing-harness/config/output_contracts.json",
+    "environments/sirna-designing-harness/results/environment_tests.log",
+    "environments/sirna-designing-harness/results/environment_tests.python313.log",
+    "environments/sirna-designing-harness/results/portable_skill_tests.log",
+    "environments/sirna-designing-harness/results/portable_skill_tests.python313.log",
+    "environments/sirna-designing-harness/results/project_structure.log",
+    "environments/sirna-designing-harness/results/project_structure.python313.log",
+    "environments/sirna-designing-harness/results/validation_receipt.json",
+    "environments/sirna-designing-harness/results/validation_receipt.python313.json",
+    "environments/sirna-designing-harness/scripts/run.py",
+    "environments/sirna-designing-harness/tasks/ISSUE_DRAFT.md",
+    "environments/sirna-designing-harness/tasks/PR_DRAFT.md",
+    "environments/sirna-designing-harness/tasks/README.md",
+    "environments/sirna-designing-harness/tests/README.md",
+    "environments/sirna-designing-harness/tests/run_validation.py",
+    "environments/sirna-designing-harness/tests/seal_contribution.py",
+    "research/sirna-designing-harness/references.md",
+    "research/sirna-designing-harness/research-notes.md"
   ],
   "new_generation_inference_folding_screening_runs": 0,
   "new_remote_jobs_or_uploads": 0,
-  "third_party_assets_copied": false,
-  "independent_validation": "BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET",
-  "mutation_arm": "BLOCKED_PENDING_MUTATION_SPECIFICATION",
+  "third_party_implementations_or_models_copied": false,
   "governance": {
-    "issue_lookup": "BLOCKED_GITHUB_CLI_UNAUTHENTICATED",
+    "issue_lookup": "AUTHENTICATED_NO_SIRNA_TITLE_MATCH",
     "remote_issue_created": false,
     "PR_created": false,
     "owner_reviewer_assignment": "PENDING",
@@ -86,5 +119,5 @@
     "commit_push_merge_performed": false,
     "repository_license_selection": "PENDING"
   },
-  "definition_of_done": "Local artifact/technical acceptance complete; issue/PR/review/merge and scientific deployment/qualification explicitly outstanding"
+  "definition_of_done": "Local technical environment acceptance complete; remote issue/PR/review/merge and separately configured backend deployment remain explicit"
 }

@@ -1,0 +1,56 @@
+ARGV: ["/home/boltzmann13/.sci/tools/python-3.14.7+20260901-linux-x64/bin/python3", "-B", "/home/boltzmann13/IMRAN/science-environments/environments/sirna-designing-harness/tests/test_technical_reporting.py", "--scratch", "/home/boltzmann13/.sci/profiles/imran/cache/scratch/sirna-env-final-default"]
+RETURN_CODE: 0
+STDOUT:
+
+STDERR:
+test_absolute_evidence_path_refused (__main__.TechnicalReportTests.test_absolute_evidence_path_refused) ... ok
+test_changed_bytes_without_new_binding_refused (__main__.TechnicalReportTests.test_changed_bytes_without_new_binding_refused) ... ok
+test_cli_explicit_failed_status_exit2 (__main__.TechnicalReportTests.test_cli_explicit_failed_status_exit2) ... ok
+test_code_only_model_is_never_successful_inference (__main__.TechnicalReportTests.test_code_only_model_is_never_successful_inference) ... ok
+test_duplicate_candidate_refused (__main__.TechnicalReportTests.test_duplicate_candidate_refused) ... ok
+test_duplicate_csv_headers_refused (__main__.TechnicalReportTests.test_duplicate_csv_headers_refused) ... ok
+test_duplicate_json_keys_refused (__main__.TechnicalReportTests.test_duplicate_json_keys_refused) ... ok
+test_evaluation_leaves_originals_unchanged (__main__.TechnicalReportTests.test_evaluation_leaves_originals_unchanged) ... ok
+test_experimental_True_with_missing_is_retained_not_promoted (__main__.TechnicalReportTests.test_experimental_True_with_missing_is_retained_not_promoted) ... ok
+test_explicit_property_failure_fails (__main__.TechnicalReportTests.test_explicit_property_failure_fails) ... ok
+test_failed_criteria_override_native_True (__main__.TechnicalReportTests.test_failed_criteria_override_native_True) ... ok
+test_failure_precedes_missing (__main__.TechnicalReportTests.test_failure_precedes_missing) ... ok
+test_fixture_origin_is_explicit (__main__.TechnicalReportTests.test_fixture_origin_is_explicit) ... ok
+test_mandatory_gates_cannot_be_removed (__main__.TechnicalReportTests.test_mandatory_gates_cannot_be_removed) ... ok
+test_missing_coverage_in_one_reference_fails (__main__.TechnicalReportTests.test_missing_coverage_in_one_reference_fails) ... ok
+test_missing_native_row_refused (__main__.TechnicalReportTests.test_missing_native_row_refused) ... ok
+test_missing_numeric_evidence_blocks (__main__.TechnicalReportTests.test_missing_numeric_evidence_blocks) ... ok
+test_native_explicit_failure_fails (__main__.TechnicalReportTests.test_native_explicit_failure_fails) ... ok
+test_native_sequence_change_fails (__main__.TechnicalReportTests.test_native_sequence_change_fails) ... ok
+test_nonfinite_JSON_policy_refused (__main__.TechnicalReportTests.test_nonfinite_JSON_policy_refused) ... ok
+test_nonfinite_numeric_evidence_cannot_pass (__main__.TechnicalReportTests.test_nonfinite_numeric_evidence_cannot_pass) ... ok
+test_orientation_gap_independently_checked_but_preserved (__main__.TechnicalReportTests.test_orientation_gap_independently_checked_but_preserved) ... ok
+test_pair_error_fails (__main__.TechnicalReportTests.test_pair_error_fails) ... ok
+test_path_traversal_refused (__main__.TechnicalReportTests.test_path_traversal_refused) ... ok
+test_positive_report_serialization_and_manifest (__main__.TechnicalReportTests.test_positive_report_serialization_and_manifest) ... ok
+test_recorded_case_has14_positive_technical_passes (__main__.TechnicalReportTests.test_recorded_case_has14_positive_technical_passes) ... ok
+test_recorded_near_match_counts_remain_visible (__main__.TechnicalReportTests.test_recorded_near_match_counts_remain_visible) ... ok
+test_recorded_snapshot_hashes (__main__.TechnicalReportTests.test_recorded_snapshot_hashes) ... ok
+test_reference_DNA_conversion_requires_literal_approval (__main__.TechnicalReportTests.test_reference_DNA_conversion_requires_literal_approval) ... ok
+test_reference_alphabet_is_not_silently_repaired (__main__.TechnicalReportTests.test_reference_alphabet_is_not_silently_repaired) ... ok
+test_reference_gene_metadata_conflict_refused (__main__.TechnicalReportTests.test_reference_gene_metadata_conflict_refused) ... ok
+test_repeated_primary_site_fails_unique_mapping (__main__.TechnicalReportTests.test_repeated_primary_site_fails_unique_mapping) ... ok
+test_report_output_never_overwritten (__main__.TechnicalReportTests.test_report_output_never_overwritten) ... ok
+test_reproducibility_mismatch_fails (__main__.TechnicalReportTests.test_reproducibility_mismatch_fails) ... ok
+test_reproducibility_missing_value_blocks (__main__.TechnicalReportTests.test_reproducibility_missing_value_blocks) ... ok
+test_required_gate_missing_blocks (__main__.TechnicalReportTests.test_required_gate_missing_blocks) ... ok
+test_required_model_NOT_RUN_blocks (__main__.TechnicalReportTests.test_required_model_NOT_RUN_blocks) ... ok
+test_risk_flags_survive_positive_headline (__main__.TechnicalReportTests.test_risk_flags_survive_positive_headline) ... ok
+test_same_job_as_own_reproducibility_refused (__main__.TechnicalReportTests.test_same_job_as_own_reproducibility_refused) ... ok
+test_shared_scope_notes_are_not_repeated_per_candidate (__main__.TechnicalReportTests.test_shared_scope_notes_are_not_repeated_per_candidate) ... ok
+test_snapshot_tamper_detected (__main__.TechnicalReportTests.test_snapshot_tamper_detected) ... ok
+test_supplemental_sequence_identity_mismatch_fails (__main__.TechnicalReportTests.test_supplemental_sequence_identity_mismatch_fails) ... ok
+test_symlink_evidence_refused (__main__.TechnicalReportTests.test_symlink_evidence_refused) ... ok
+test_unknown_native_missing_evidence_blocks (__main__.TechnicalReportTests.test_unknown_native_missing_evidence_blocks) ... ok
+test_wrong_transcript_token_fails (__main__.TechnicalReportTests.test_wrong_transcript_token_fails) ... ok
+test_zero_coordinate_fails (__main__.TechnicalReportTests.test_zero_coordinate_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.705s
+
+OK

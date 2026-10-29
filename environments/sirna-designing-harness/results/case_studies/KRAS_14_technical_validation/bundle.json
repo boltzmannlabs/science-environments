@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "experiment_id": "KRAS_shared_comparative_case_study",
+  "target_gene": "KRAS",
+  "evidence_origin": "RECORDED_LOCAL_SIRNA_BENCH_RUN",
+  "source_job": "run-d68bc6039d8b49089c2fb7c069e1823e",
+  "reproducibility_source_job": "run-31cdc0e38a914bdf92b57f22153cdf99",
+  "primary_reference": "NM_004985.5",
+  "coverage_references": [
+    "NM_004985.5",
+    "NM_033360.4",
+    "NM_001369786.1",
+    "NM_001369787.1"
+  ],
+  "strand_orientation": "guide_and_passenger_5to3",
+  "allow_DNA_reference_comparison": true,
+  "inputs": {
+    "references": {
+      "path": "inputs/references.json",
+      "sha256": "c5aa54534ba8ee6611b0439d4c2902f04dd1a48ce58344907f1258e82a99e75a"
+    },
+    "candidates": {
+      "path": "inputs/candidates.csv",
+      "sha256": "e86214c6e724e4f363ce6e376f85f9305dc0ff8d60d0e83fc902d883426d9761"
+    },
+    "bench_results": {
+      "path": "native/final_ranked_candidates.csv",
+      "sha256": "f39dbafe04efcecfc6eb2af8ff9166d3ec2ea186fdbb2612d91c62d9e2996a7a"
+    },
+    "bench_gates": {
+      "path": "native/09_filter_decisions.csv",
+      "sha256": "fab785447c8529df08f5cc5c704e3f5282cb5382434d9b89c1694d2ecb737027"
+    },
+    "reproducibility_results": {
+      "path": "inputs/earlier_results_selected14.csv",
+      "sha256": "0e4ddba34225319bff93608bb47920fb5edab44f220e6ae0005d4cb478551547"
+    },
+    "supplemental_annotations": {
+      "path": "inputs/supplemental_annotations.csv",
+      "sha256": "1706010bd25a360d10505992bf9c2a4c4d53f1fe6efc23dd58789f77e83cf2bc"
+    }
+  },
+  "reference_scope": "Four exact human RefSeq transcript versions; no full GENCODE transcriptome copied",
+  "known_limitations": [
+    "Native POTS percentile-direction limitation retained",
+    "Native raw passed booleans with missing evidence are preserved",
+    "Passenger annotations are recorded supporting evidence, not a fresh Bench passenger model",
+    "No measured endpoint or biological acceptance inferred"
+  ]
+}

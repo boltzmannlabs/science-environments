@@ -1,0 +1,17 @@
+{
+  "mode": "TECHNICAL_VALIDATION",
+  "task_id": "recorded-sirna-bench-technical-report",
+  "objective": "Verify supplied candidate pairs and recorded computational evidence; report successful declared technical gates with properties and candidate-specific flags.",
+  "inputs": {
+    "bundle": "results/case_studies/KRAS_14_technical_validation/bundle.json",
+    "policy": "config/technical_gate_policy.json",
+    "output_directory": "Choose a NEW external run directory or a new results subdirectory; existing destinations are refused."
+  },
+  "required_technical_gates": ["sequence_integrity", "reference_mapping", "model_execution", "configured_properties", "native_filter_integrity", "reproducibility", "provenance"],
+  "outputs": ["technical_report.md", "technical_report.json", "technical_candidates.csv", "output_manifest.json", "verification_receipt.json"],
+  "success_label": "PASSED_DECLARED_TECHNICAL_GATES",
+  "execution": "Portable deterministic evidence review; no model/backend dispatch",
+  "example_evidence": "Actual recorded KRAS14 assessment; source job and earlier-job identities plus input hashes are bound by the bundle.",
+  "prohibited": ["altering supplied sequences", "turning missing native experimental/translational evidence into a scientific pass", "removing mandatory technical gates", "claiming source checkpoints or a copied result are a new backend execution", "hiding extrapolation or passenger annotations", "treating repeated predictions as independent measured validation"],
+  "scope_note": "Technical validation covers declared computational checks; biological efficacy, safety and delivery are separate evaluation stages."
+}

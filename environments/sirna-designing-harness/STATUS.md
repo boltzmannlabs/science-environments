@@ -1,40 +1,56 @@
 # siRNA Designing Harness — status
 
-## Current maturity
+## Achieved technical milestone
 
-**Lifecycle: In Progress.** The repository implements a technical-check interface, portable agent skill and scientific task/config specifications. Scientific backend deployment is external and not validated by this project build. Biological status remains **PARTIAL**.
+**Technical component: Implemented and tested.** The environment now provides executable sequence/evidence checks and technical property reporting, alongside the Agent Scientist scientific workflow contracts.
+
+**Recorded KRAS14 result: 14 of14 candidates passed the declared technical gates.** The portable replay retains each pair, predicted/calculated properties, source-job identity, earlier-job comparison and review flags. See [technical report](results/technical_validation_KRAS14/technical_report.md).
+
+**Repository lifecycle: In Progress.** New-host scientific backend deployment and maintainer integration/review are separate remaining work; they do not negate the completed technical component.
 
 ## Delivered scope
 
-- Required environment and matching research structure.
-- Self-contained scientific workflow, tool boundaries, evidence gates and output contracts.
-- DESIGN/AUDIT/SENSITIVITY/BENCHMARK task definitions and literature-comparison contract.
-- Portable original skill/helpers, with their own license/manifest; no third-party scientific assets.
-- Small hash-bound historical KRAS summaries, source paths and blockers, plus a bounded `benchmark/KRAS/` snapshot of 85 selected report/result files with copy provenance and an external-artifact index.
-- Executable technical checks and positive/negative software tests.
+- Required environment/research layout, specifications, configuration, task contracts and linked sources.
+- Executable `technical-report` and `verify-technical-case` commands, standard library only.
+- Seven mandatory technical categories with explicit failure/missing precedence.
+- Bounded real KRAS14 recorded evidence, four exact reference views and a distinct earlier-job comparison.
+- Success-first candidate property reporting with raw native gates and flags preserved.
+- Original workflow skill/helpers and unchanged85-file historical KRAS snapshot.
+- Versioned prior receipts and superseded report layout under `results/history/20261029T100703Z/`.
 
-## Validation
+## Actual validation
 
-Technical validation **PASSED** on Python 3.14.7 and Python 3.13.7. Each interpreter executed 22 environment tests plus 32 bundled helper tests (54 per interpreter), including the new frozen benchmark-snapshot integrity and status-boundary checks. The default run also verified 10 small historical summary/receipt files and selected aggregates, with no source writes. Blank configuration produced its expected explicit blocker rather than false readiness.
+Current final implementation passed **100 software tests on Python3.14.7 and100 on Python3.13.7**:
 
-Evidence: `results/validation_receipt.json`, `results/validation_receipt.python313.json` and their command logs. Final contribution integrity is recorded in `results/verification_receipt.json` and `results/output_manifest.json` after sealing. The earlier 52-test project receipts/logs are preserved in `results/history/20261027T095605Z/`; current receipts additionally cover the frozen benchmark snapshot. Historical results are not current model-test results. No fresh generation/inference/folding/transcriptome screening or biological experiment was performed.
+| Suite | Passed per interpreter |
+|---|---:|
+| Existing environment/contract tests |22|
+| Dedicated technical-report positive/negative tests |46|
+| Original portable helper tests |32|
 
-## Historical evidence boundaries
+Both runs also passed project/link/JSON checks, original skill integrity, historical snapshot integrity, new recorded-case integrity and a real CLI report replay returning14 technical passes. The blank deployment template returned its intended explicit missing-configuration blocker. The default run additionally reverified10 original small historical summary/receipt files without writing to them.
 
-The original shared-target computational milestone is complete. Fourteen conditional candidates were retained, not biologically qualified. The literature comparison supplies two separately labelled source-supported comparator cores, not a new merged qualified shortlist. Independent model validation remains `BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET`; mutation-selective work remains `BLOCKED_PENDING_MUTATION_SPECIFICATION`. Source-reported efficacy is not safety/delivery/immune validation.
+Tests cover pairing/output identity, exact reference/coverage mapping, explicit model statuses and numeric bounds, native failed/missing fields, supplemental sequence identity, distinct-job reproducibility, checksums, unsafe paths/symlinks, duplicate data keys/IDs, no-overwrite output, candidate risk preservation and grouped rather than per-candidate repeated scope notes.
+
+Actual evidence: `results/validation_receipt.json`, `results/validation_receipt.python313.json` and named command logs. Each receipt binds the tested implementation/config/task bytes and recorded-case snapshot. The final project manifest/receipt are `results/output_manifest.json` and `results/verification_receipt.json`; verify with `python3 -B tests/seal_contribution.py --verify-only` after sealing.
+
+The earlier54-test project and intermediate97-test update receipts are retained as historical revisions, not current validation claims. Packaging and tests perform zero new scientific generation/inference/folding/screening jobs.
+
+## Reporting scope
+
+Technical validation covers the declared computational checks; biological efficacy, safety and delivery are separate evaluation stages. The current report preserves nine Ridge extrapolation flags, four low passenger-seed source annotations, near-match opportunities, native metadata gaps and the POTS convention limitation. The historical experimental-data audit and mutation arm retain their original scoped outcomes; no historical qualification record is rewritten to obtain the technical pass.
 
 ## Contribution governance and licensing
 
-- Working branch: `feat/sirna-designing-harness`; no routine edits committed to main.
-- GitHub issue lookup failed because CLI authentication was unavailable. Existing issue status is unknown; remote issue/PR creation not performed. Local drafts do not satisfy the missing issue-first step.
-- Owner and scientific/software reviewers pending maintainer assignment.
-- No commit, push, PR, approval or merge claimed.
-- Repository-wide license remains pending. Original bundled helpers retain their separate MIT notice; no third-party license rights are implied.
+- Current branch: `feat/sirna-technical-validation-environment`.
+- Authenticated read-only GitHub issue lookup succeeded; no siRNA-titled issue matched.
+- No remote issue/PR, owner/reviewer assignment, commit, push, approval or merge was requested/performed. Local task/PR drafts document the outstanding workflow steps.
+- Repository-wide license selection remains pending; the bundled original helper MIT notice is separate.
+- No third-party predictor implementation, weights, embeddings, transcriptome indices, raw papers, restricted experimental datasets or credentials are added. Small derived reference views are explicitly included for offline evidence replay.
 
-## Remaining work
+## Next integration work
 
-1. Resolve tracking issue and maintainer review before integration.
-2. Independently install/authorize and exercise scientific backends on the intended deployment host.
-3. Define context/chemistry/delivery/specificity acceptance criteria and obtain suitable experimental evidence.
-4. Resolve checkpoint exposure and an auditable compatible independent benchmark before performance claims.
-5. Review heuristic false-exclusion hypotheses prospectively; do not tune thresholds from this selected case alone.
+1. Create/link a tracking issue with maintainer direction and assign reviewers.
+2. Review/merge the focused local contribution through the repository workflow.
+3. Configure and validate scientific integrations on each destination host as needed.
+4. Define application-specific follow-up evaluation without weakening mandatory technical gates or hiding candidate flags.

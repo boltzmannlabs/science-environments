@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "required_technical_gates": [
+    "sequence_integrity",
+    "reference_mapping",
+    "model_execution",
+    "configured_properties",
+    "native_filter_integrity",
+    "reproducibility",
+    "provenance"
+  ],
+  "gc_min": 0.3,
+  "gc_max": 0.7,
+  "min_RN_Ai_percent": 50.0,
+  "min_RNAiSpline_probability": 0.5,
+  "duplex_min_kcal_mol": -45.0,
+  "duplex_max_kcal_mol": -25.0,
+  "max_native_guide_full_hits": 10,
+  "max_seed_occurrence_fold": 2.0,
+  "max_native_POTS_percentile": 90.0,
+  "min_guide_seed_viability_annotation": 50.0,
+  "reproducibility_absolute_tolerance": 0.000001,
+  "scope_note": "Inherited research-operational thresholds; no clinical or context-specific biological acceptance inferred. Native POTS percentile-direction limitation remains a review flag."
+}

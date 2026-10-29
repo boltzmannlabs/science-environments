@@ -1,0 +1,101 @@
+{
+  "verification": "PASSED",
+  "scope": "Portable technical software/contracts plus recorded evidence replay; scientific models are not rerun by these checks",
+  "verified_utc": "2026-10-29T10:23:19.750965+00:00",
+  "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]",
+  "python_executable": "/home/boltzmann13/.sci/tools/python-3.14.7+20260901-linux-x64/bin/python3",
+  "software_tests_passed": 97,
+  "checks": [
+    {
+      "check": "environment_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "environment_tests.log",
+      "log_sha256": "b79147c6393bb0889b3d689fca0f74ce2adbb5adc9ea141e82d1ad941cde1fb3",
+      "software_tests": 22
+    },
+    {
+      "check": "technical_report_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_report_tests.log",
+      "log_sha256": "d545025435408784185ec0bc495702e0e0e721d98f4f425e12d22dcc79fa5a3a",
+      "software_tests": 43
+    },
+    {
+      "check": "portable_skill_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "portable_skill_tests.log",
+      "log_sha256": "271c02f192d6b655c99bb91457efd061f69a789a231329c33dc8ae48988f342f",
+      "software_tests": 32
+    },
+    {
+      "check": "project_structure",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "project_structure.log",
+      "log_sha256": "e24c5de502f381f70358b5a4ac30f0eff46091b54b559f518c87e058a13dc457"
+    },
+    {
+      "check": "skill_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "skill_integrity.log",
+      "log_sha256": "965566b5623ccc9cb1a2aabe8785af07722bae86ab1a1e3578b2db48da1f4c9d"
+    },
+    {
+      "check": "benchmark_snapshot_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "benchmark_snapshot_integrity.log",
+      "log_sha256": "96e600c8a071934ba69302197a2da305d3c70f426b19bc9b17f496a833d45e78"
+    },
+    {
+      "check": "technical_case_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_case_integrity.log",
+      "log_sha256": "55549d9c775a98ccf407f15ec477209f7a21cf4535173f0c9214a3a725f8a674"
+    },
+    {
+      "check": "recorded_technical_report_replay",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "recorded_technical_report_replay.log",
+      "log_sha256": "308cba039e3a5110720f8d0f40f3652ebf86d0bfaa825423b26dd5126d65fe96",
+      "technical_pass_count": 14
+    },
+    {
+      "check": "empty_config_expected_block",
+      "status": "PASSED",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "log": "empty_config_expected_block.log",
+      "log_sha256": "e7cd810f7bddf3e20a675629025896950fee375f806a52375c4170938c953db0"
+    },
+    {
+      "check": "historical_receipt_verification",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "historical_receipt_verification.log",
+      "log_sha256": "09685accb0e2edc3c60b709c51a280c63f37704f4d9c468bb19a636cfdedf573",
+      "source_summary_receipt_files_verified": 10
+    }
+  ],
+  "new_generation_inference_folding_screening_runs": 0,
+  "recorded_KRAS14_technical_passes": 14,
+  "fresh_backend_deployment_verified": false,
+  "technical_component": "IMPLEMENTED_AND_TESTED",
+  "lifecycle": "In Progress",
+  "github_issue_PR_review": "PENDING_REMOTE_ISSUE_PR_AND_MAINTAINER_REVIEW"
+}

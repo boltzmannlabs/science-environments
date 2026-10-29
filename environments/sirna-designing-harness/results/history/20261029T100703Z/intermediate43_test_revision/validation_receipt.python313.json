@@ -1,0 +1,92 @@
+{
+  "verification": "PASSED",
+  "scope": "Portable technical software/contracts plus recorded evidence replay; scientific models are not rerun by these checks",
+  "verified_utc": "2026-10-29T10:23:23.305928+00:00",
+  "python": "3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]",
+  "python_executable": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/.venv/bin/python",
+  "software_tests_passed": 97,
+  "checks": [
+    {
+      "check": "environment_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "environment_tests.python313.log",
+      "log_sha256": "ecf78e79a1454cc7defeda5f04c9cbbcf70a21b621c410701c3bfa53834c2627",
+      "software_tests": 22
+    },
+    {
+      "check": "technical_report_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_report_tests.python313.log",
+      "log_sha256": "dce5a150b1e8c33a7661d29a17ac315921c39c33ef740330d8d27321c136c908",
+      "software_tests": 43
+    },
+    {
+      "check": "portable_skill_tests",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "portable_skill_tests.python313.log",
+      "log_sha256": "00217201bd74dcace3d33c81e84f7854f90547cbff47ace354054de3d113caec",
+      "software_tests": 32
+    },
+    {
+      "check": "project_structure",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "project_structure.python313.log",
+      "log_sha256": "36cebd210c945bb196e01b36ddc04493a372ac6be4a8ca62185f73e5e84e8ba5"
+    },
+    {
+      "check": "skill_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "skill_integrity.python313.log",
+      "log_sha256": "d7905d226093b121dc7dba7d0eb4dde843ba6efa41e615882a0176f5f4db2332"
+    },
+    {
+      "check": "benchmark_snapshot_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "benchmark_snapshot_integrity.python313.log",
+      "log_sha256": "2e12bc493d743c402a926f38e1b1662ae44d5de40cfc59a552a5b986b7e97545"
+    },
+    {
+      "check": "technical_case_integrity",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "technical_case_integrity.python313.log",
+      "log_sha256": "50429e5fcf209417186de2173fd038c7acbed783cbda65ce27547b43f4326978"
+    },
+    {
+      "check": "recorded_technical_report_replay",
+      "status": "PASSED",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "log": "recorded_technical_report_replay.python313.log",
+      "log_sha256": "5f478c855dd0ee4c05ae666518d51708e8cedfe6d434decd4016f7add2cab590",
+      "technical_pass_count": 14
+    },
+    {
+      "check": "empty_config_expected_block",
+      "status": "PASSED",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "log": "empty_config_expected_block.python313.log",
+      "log_sha256": "f7138134d5cd324467ff6644bc3551b9559e562325a23948ef26a263de770d84"
+    }
+  ],
+  "new_generation_inference_folding_screening_runs": 0,
+  "recorded_KRAS14_technical_passes": 14,
+  "fresh_backend_deployment_verified": false,
+  "technical_component": "IMPLEMENTED_AND_TESTED",
+  "lifecycle": "In Progress",
+  "github_issue_PR_review": "PENDING_REMOTE_ISSUE_PR_AND_MAINTAINER_REVIEW"
+}

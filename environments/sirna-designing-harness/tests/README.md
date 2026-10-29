@@ -1,19 +1,40 @@
-# Technical validation
+# Technical validation and reproduction
 
-Run from the environment directory:
+From the environment directory:
 
 ```bash
 python3 -B tests/run_validation.py --scratch /absolute/approved/scratch
 ```
 
-Optional read-only verification of expected originating case summaries/receipts:
+A second available interpreter can use `--tag python313` to retain separate receipts/logs. Optional approved original-case checks:
 
 ```bash
-python3 -B tests/run_validation.py --scratch /absolute/approved/scratch --evidence-root /absolute/approved/KRAS_siRNA_case_study
+python3 -B tests/run_validation.py \
+  --scratch /absolute/approved/scratch \
+  --evidence-root /absolute/approved/KRAS_siRNA_case_study
 ```
 
-Use `--tag python313` to record another interpreter without overwriting the default receipt/logs. The runner executes the environment tests, bundled original helper tests, project structure, skill payload integrity, frozen KRAS benchmark-snapshot integrity and an intentional missing-configuration blocker. It writes actual return codes, command logs and `results/validation_receipt[.tag].json`.
+The runner executes environment tests, dedicated technical-report tests, original helper tests, project checks, skill integrity, old/new snapshot checks and the actual technical-report CLI. It also exercises the intentionally incomplete deployment template. Current counts are in [STATUS.md](../STATUS.md) and the actual receipts, not inferred from file presence. Implementation/config/task hashes bind the exact tested revision.
 
-The software fixtures are explicitly NOT biological targets, measurements, model outputs or proposed siRNAs. The default tests do not need original case data, GPU, a network, models or a SCI installation. Optional historical verification reads only the expected small summary/receipt files and selected aggregates; no original verifier or scientific pipeline is executed.
+Dedicated tests are also runnable alone:
 
-`seal_contribution.py` validates final receipts, local links, JSON, payload size and allowed changed paths, then writes the small contribution output manifest and verification receipt. It also records unrelated tracked-file preservation. Do not interpret any technical receipt as whole-environment scientific or biological validation.
+```bash
+python3 -B tests/test_technical_reporting.py --scratch /absolute/approved/scratch
+python3 -B scripts/run.py verify-technical-case
+python3 -B scripts/run.py technical-report \
+  --bundle results/case_studies/KRAS_14_technical_validation/bundle.json \
+  --out /absolute/path/to/NEW-report-directory
+```
+
+Negative mutations are marked `SOFTWARE_FIXTURE_NOT_SCIENTIFIC_RESULT`. They test refusal/blocking behavior, not new biological designs or invented experimental results. The real recorded positive case is separately labelled. Test fixtures and CLI replay outputs go to the chosen scratch directory; original evidence is never overwritten. Reusing an existing report destination must fail.
+
+The default tests need no GPU, model installation, network, SCI installation or original source root. The optional history command reads expected small summary/receipt files; no old verifier or scientific pipeline is executed.
+
+After all writers finish:
+
+```bash
+python3 -B tests/seal_contribution.py
+python3 -B tests/seal_contribution.py --verify-only
+```
+
+Sealing requires both passing current test receipts, unchanged tested implementation/config/task hashes, valid report/recorded-case bindings, the focused feature branch, allowed changed paths, no staging, payload bounds and intact original skill/benchmark evidence. It records the portable technical milestone and pending governance separately. Historical receipts remain under `results/history/`.

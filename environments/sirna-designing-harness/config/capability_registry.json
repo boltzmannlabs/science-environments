@@ -1,7 +1,7 @@
 {
   "project_name": "siRNA Designing Harness",
   "schema_version": 1,
-  "repository_implementation": "Portable technical checks and agent workflow; no backend dispatcher",
+  "repository_implementation": "Portable technical checks, evidence-bound property/gate reporting and agent workflow; no scientific-backend dispatcher",
   "capabilities": [
     {"category":"reference_resolution","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Intake and supplied-reference checks only; authoritative retrieval/annotation via separately configured tools"},
     {"category":"sequence_validation","readiness":"AVAILABLE_VERIFIED","repository_behavior":"Included supplied19nt pairing/coordinate/unique-site/flank helper; technical validity only"},
@@ -17,7 +17,7 @@
     {"category":"chemistry_aware_applicability","readiness":"UNAVAILABLE","repository_behavior":"No verified modification-aware efficacy model delivered"},
     {"category":"measured_data_training_exposure","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Table audit helper and full benchmark protocol; independence not certified from file presence"},
     {"category":"ranking_critique","readiness":"AVAILABLE_WITH_ADAPTER","repository_behavior":"Preserved-score workflow and historical evidence; no implicit new ensemble"},
-    {"category":"qualification_reporting","readiness":"AVAILABLE_VERIFIED","repository_behavior":"Fail-closed gate helper and reporting contract; never certifies biology"}
+    {"category":"qualification_reporting","readiness":"AVAILABLE_VERIFIED","repository_behavior":"Fail-closed gate helper plus executed technical-report command; success-first properties/flags with seven mandatory checks, distinct earlier-job comparison and raw gate preservation"}
   ],
   "historical_origin_host_readiness_is_not_destination_readiness": true,
   "siRNADiscovery": "CODE_ONLY_NO_CHECKPOINT_IN_EXERCISED_ECOSYSTEM",

@@ -1,0 +1,73 @@
+{
+  "source_files": [
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_bench14/run_20261029T071758Z/candidates.csv",
+      "sha256": "e86214c6e724e4f363ce6e376f85f9305dc0ff8d60d0e83fc902d883426d9761",
+      "bytes": 1770
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_bench14/run_20261029T071758Z/native_outputs/final_ranked_candidates.csv",
+      "sha256": "f39dbafe04efcecfc6eb2af8ff9166d3ec2ea186fdbb2612d91c62d9e2996a7a",
+      "bytes": 6673
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_bench14/run_20261029T071758Z/native_outputs/09_filter_decisions.csv",
+      "sha256": "fab785447c8529df08f5cc5c704e3f5282cb5382434d9b89c1694d2ecb737027",
+      "bytes": 8318
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/final_filtered_sequences.csv",
+      "sha256": "1706010bd25a360d10505992bf9c2a4c4d53f1fe6efc23dd58789f77e83cf2bc",
+      "bytes": 2979
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/bench_batches/batch_1/outputs/final_ranked_candidates.csv",
+      "sha256": "55fc0018be2f5beecb92342c93de085ad73305d73a11936acd48a977737d8933",
+      "bytes": 41436
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/reference_specifications.json",
+      "sha256": "0261a6ebec0be2f1acafaa483b4d3404ff350505405ecc4afa1b480817b8612a",
+      "bytes": 4253
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/references/NM_004985.5.fasta",
+      "sha256": "ab88235bd19e809059a86916a5e5bd302e6508e92492a25ea6825e40715550b6",
+      "bytes": 5472
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/references/NM_033360.4.fasta",
+      "sha256": "d0b991227e88818c4f002e1f34696bc19c89b892749415e3c956ce9793a24152",
+      "bytes": 5598
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/references/NM_001369786.1.fasta",
+      "sha256": "2d6e61349904a816902407738e37a471522d30ed9134c3c2f3931750bc0b9e5d",
+      "bytes": 5588
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/references/NM_001369787.1.fasta",
+      "sha256": "cd7f8a8a744c6b754806c90d5de7bda8e468088baf9cf56f2743d570fc491e6d",
+      "bytes": 5462
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_bench14/run_20261029T071758Z/native_outputs/provenance.json",
+      "sha256": "d9d6ec1a119407bdd97dbe868e57b1cadc6bd04f2df53f21a6be52ab733bd53e",
+      "bytes": 695
+    },
+    {
+      "original_path": "/home/boltzmann13/.sci/profiles/imran/workspace/kras_repeat/run_20261029T064101Z/bench_batches/batch_1/request.json",
+      "sha256": "2fd5b0ac65ca4181dd16e2c62885e5f5d64b68bbb9c9fa4f8c412947c10bbc8e",
+      "bytes": 454
+    }
+  ],
+  "source_assessment_manifest_sha256": "0a2b1720ac4c869c92d92c1afc26dd413dc09eca798f43093edba3eb015a136c",
+  "source_prior_manifest_sha256": "791b0cf6c4a36a0d1799bde1d81a39dcb0bcbf2d95ba6a70ab2f7f3f7213ed78",
+  "copies": "candidates and native outputs copied byte-identically; reference JSON and earlier/supplemental selected14 CSVs are explicit derived views",
+  "derivations": {
+    "references": "Original DNA-letter sequences and accession/source metadata preserved from the four original single-record FASTAs; explicit RNA comparison only during reporting",
+    "earlier_results": "Rows selected by exact14 candidate IDs from earlier100-candidate output; field values unchanged",
+    "supplemental_annotations": "Exact14 rows from prior filtered panel; values unchanged"
+  },
+  "new_generation_inference_folding_screening_runs": 0
+}

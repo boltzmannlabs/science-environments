@@ -1,6 +1,6 @@
 # siRNA Designing Harness — environment specification
 
-**Lifecycle:** In Progress. **Implemented surface:** portable technical CLI, workflow skill, task/config contracts and tests. **Not established:** self-contained scientific-backend deployment, independent predictor generalization or biological qualification.
+**Lifecycle:** In Progress. **Implemented technical surface:** portable CLI, evidence-bound technical validation/property reports, workflow skill, task/config contracts and positive/negative tests. The included recorded KRAS14 case passes all declared technical gates. Backend deployment and repository review have separate status; this report surface does not dispatch scientific jobs.
 
 ## 1. Scientific objective and exclusions
 
@@ -11,6 +11,7 @@ Support auditable siRNA research from a precisely identified target to a conditi
 | Mode | Actual unit | Supported conclusion |
 |---|---|---|
 | DESIGN | exact transcript version, generated core pair and mapped site | compatible computed features and conditional research ranking |
+| TECHNICAL_VALIDATION | supplied core pair, exact references and recorded Bench evidence | declared technical gate result, properties, flags and provenance |
 | AUDIT | preserved source artifact, candidate record and reference window | technical evidence/lineage consistency; not new inference |
 | SENSITIVITY | matched candidate cohort and preserved endpoint-specific scores | ranking/cohort sensitivity, not biological change |
 | BENCHMARK | source sequence/construct × assay endpoint × dose/time/cell/study | measured-endpoint evaluation only after independence and compatibility gates |
@@ -51,7 +52,7 @@ A permissive operational rule may retain perfect outside-gene matches; flag that
 
 ## 8. Selection and sensitivity protocol
 
-Use declared frozen ranking/filter policy, diverse mapped sites and actual compatible tools; never force the requested count. Numerical order is exploratory. Compare methods on identical successful cohorts with explicit K/ties and separate source/score scales. Existing cohort-normalized composites must not be silently reweighted or renormalized.
+Use declared frozen ranking/filter policy, diverse mapped sites and actual compatible tools; never force the requested count. Numerical order is exploratory. Compare methods on identical successful cohorts with explicit K/ties and separate source/score scales. Inspect the executed scoring implementation rather than assuming cohort normalization. The recorded Bench score uses fixed component contributions; the historical five-domain comparator uses its own declared cohort treatment. Neither may be silently reweighted or renormalized.
 
 Excluding Ridge extrapolations is a numerical sensitivity analysis, not automatic biological exclusion. Preserve missingness and operational-selection effects; K > n is NOT_APPLICABLE, K = n set overlap is non-discriminating. Correlated predictors and shared checkpoints are not independent validation. No definitive winner from score agreement alone.
 
@@ -71,7 +72,11 @@ If no auditable compatible independent cohort exists, return BLOCKED_NO_AUDITABL
 
 Gates use literal Boolean `required` and PASSED/FAILED/BLOCKED_MISSING_EVIDENCE/NOT_RUN/NOT_APPLICABLE plus evidence_refs, failed_criteria, missing_evidence, warnings and method_version. Required failure precedes required missing. Required NOT_APPLICABLE cannot evade evidence. Native pass booleans are reviewed with their missing/failed fields.
 
-Technical helper success never confers full biological qualification. Distinguish computational screening completion from biological PARTIAL. Missing independent efficacy, specificity acceptance, immune assessment, final construct, delivery and assay evidence block dependent conclusions.
+The technical reporting aggregate is `PASSED_DECLARED_TECHNICAL_GATES`, `FAILED_DECLARED_TECHNICAL_GATES` or `BLOCKED_MISSING_TECHNICAL_EVIDENCE`. Seven mandatory categories are sequence integrity, reference mapping, actual model execution, configured properties, native filter integrity, reproducibility and provenance. These cannot be removed to obtain a pass. An explicit failure takes precedence over missing technical evidence.
+
+Reports lead with achieved technical passes, predicted/calculated properties and source identity, then candidate-specific flags and next evidence. Native gate rows remain unchanged: missing orientation metadata may be distinguished from independently established pairing/mapping; experimental/translational `True` Booleans with missing measurements do not become scientific passes. Required missing computational evidence remains blocked. A distinct earlier job is required for the report's reproducibility category; copying a result as its own comparator is refused.
+
+Technical validation covers the declared computational checks; biological efficacy, safety and delivery are separate evaluation stages. This scope statement need not be repeated as a negative headline for each candidate.
 
 ## 12. Mutation arm
 
@@ -80,6 +85,14 @@ Keep BLOCKED_PENDING_MUTATION_SPECIFICATION unless exact nucleotide mutation or 
 ## 13. Outputs, persistence and verification
 
 Per scientific task: target/source specification; raw retrievals; capability registry; generated and assessment tables; filters/NOT_RUN; ranking/critique; specificity/coverage; literature crosswalk; qualification/missing evidence; methods/source/checkpoint provenance; report; input/output hashes and independent receipt. The full lists are in the bundled skill and task contracts. Raw source data and large generated outputs remain outside Git. This repository retains aggregate historical summaries and a bounded `benchmark/KRAS/` snapshot of selected existing reports/candidate/ranking/qualification tables. Copies are byte-identical, include provenance and renamed historical source receipts/manifests, and are explicitly not complete original-run archives or a successful independent benchmark. Large/raw/intermediate artifacts are indexed rather than redistributed. Snapshot verification requires no original scientific backend.
+
+### Portable technical-report contract
+
+`technical-report --bundle <bundle.json> --policy <policy.json> --out <NEW-directory>` consumes six hash-bound evidence inputs: explicit reference records, supplied candidate CSV, native Bench results, native gate rows, a distinct earlier-job result table and supplemental annotations. Paths must be relative to the bundle, contain no traversal and resolve to nonsymlink files. Unique JSON/CSV keys, candidate-cohort identity, literal strand orientation and explicit DNA-reference comparison are checked.
+
+The reference view preserves the supplied alphabet and accession.version; RNA comparison is explicit and does not modify inputs. The supplied cores and native output strands must match exactly. Primary coordinates are positive1-based inclusive, uniquely mapped with19nt flanks; every declared coverage reference must contain the core. Required efficacy statuses must be actual `ok` records. Missing/nonfinite properties, unknown missing computational evidence and failed native criteria cannot pass. The optional code-only model stays a flagged optional gap rather than fabricated inference.
+
+The command writes `technical_report.md`, `technical_report.json`, `technical_candidates.csv`, `output_manifest.json` and `verification_receipt.json`. The CSV/JSON expose technical outcome and properties; raw gate records, scope flags and earlier-job differences stay in JSON. `results/case_studies/KRAS_14_technical_validation/` is a bounded recorded example; `results/technical_validation_KRAS14/` is its newly executed portable report replay. Its small derived exact-reference JSON is explicitly included; full transcriptome/reference indices, models and source papers remain external.
 
 Seal outputs after writers stop. Manifests exclude self/root receipt to avoid circular hashes. Audit input files before/after; do not call an old verifier that writes into originals. Archive failed/superseded artifacts with honest roles. Synthetic software fixtures are not biological designs or measurements.
 
@@ -92,7 +105,7 @@ Seal outputs after writers stop. Manifests exclude self/root receipt to avoid ci
 - No private data, weights, third-party implementation, credentials or raw publication text are added.
 - Scientific and governance blockers are explicit.
 
-Passing these establishes the implemented technical surface only. Lifecycle remains In Progress pending backend packaging/deployment validation, approved scientific acceptance criteria and review. Independent predictor validation remains blocked; biology remains PARTIAL.
+Passing these establishes the implemented technical surface and the declared recorded-case technical gate result. Lifecycle remains In Progress pending destination backend deployment/packaging and maintainer review. Independent measured performance and application-specific biological criteria are separate evaluation scopes, not silently added prerequisites for reporting a completed technical milestone.
 
 ## 15. Research, rights and review
 

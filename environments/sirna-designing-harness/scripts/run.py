@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""siRNA Designing Harness: technical checks only; never dispatches scientific jobs."""
+"""siRNA design and technical validation: portable checks/reports; no backend dispatch."""
 from __future__ import annotations
 import argparse,hashlib,json,os,re,subprocess,sys
 from pathlib import Path
@@ -14,9 +14,10 @@ def sha(path):
    h.update(b)
  return h.hexdigest()
 def load(path):return json.loads(Path(path).read_text(encoding='utf-8'))
-def describe():return {'project_name':'siRNA Designing Harness','lifecycle':'In Progress','implemented_surface':'Portable technical checks and agent workflow/task contracts','scientific_backend_dispatch':False,'biological_validation':False,'independent_benchmark_status':'BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET','mutation_arm_default':'BLOCKED_PENDING_MUTATION_SPECIFICATION','scientific_modes':['DESIGN','AUDIT','SENSITIVITY','BENCHMARK'],'third_party_assets_bundled':False}
+def describe():return {'project_name':'siRNA Designing Harness','display_scope':'siRNA design and technical validation','lifecycle':'In Progress','implemented_surface':'Portable technical checks, evidence-bound candidate property reports and agent workflow/task contracts','technical_success_label':'PASSED_DECLARED_TECHNICAL_GATES','technical_report_command':'technical-report','scientific_backend_dispatch':False,'biological_validation':False,'independent_benchmark_status':'BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET','mutation_arm_default':'BLOCKED_PENDING_MUTATION_SPECIFICATION','scientific_modes':['DESIGN','TECHNICAL_VALIDATION','AUDIT','SENSITIVITY','BENCHMARK'],'third_party_assets_bundled':False}
 def project_check():
  required=['README.md','ENVIRONMENT_SPEC.md','STATUS.md','config/README.md','config/environment.example.json','config/objective.example.json','config/gates.example.json','config/capability_registry.json','config/output_contracts.json','tasks/README.md','tasks/kras-shared-review.json','tasks/kras-mutation-blocked.json','tasks/audit.json','tasks/sensitivity.json','tasks/benchmark.json','tasks/literature-comparison.json','tasks/ISSUE_DRAFT.md','tasks/PR_DRAFT.md','scripts/run.py','tests/run_validation.py','tests/test_environment.py','skills/sirna-harness/SKILL.md','skills/sirna-harness/assets/LICENSE.txt','skills/sirna-harness/assets/portable-manifest.json','results/historical_evidence_index.json','results/portable_skill_origin.json','benchmark/README.md','benchmark/KRAS/README.md','benchmark/KRAS/copy_provenance.json','benchmark/KRAS/external_artifact_index.json','benchmark/KRAS/snapshot_manifest.json','benchmark/KRAS/snapshot_verification.json','tests/seal_benchmark.py']
+ required += ['scripts/technical_reporting.py','config/technical_gate_policy.json','tasks/technical-validation.json','tests/test_technical_reporting.py','results/case_studies/KRAS_14_technical_validation/bundle.json','results/case_studies/KRAS_14_technical_validation/snapshot_manifest.json']
  missing=[p for p in required if not (ENV/p).is_file()];errors=[];json_count=0
  for path in ENV.rglob('*.json'):
   if path.is_symlink():errors.append('Symlink JSON refused: '+str(path));continue
@@ -82,7 +83,8 @@ def verify_benchmark():
  return {'status':'FAILED' if errors else 'PASSED','copied_source_files':receipt['copied_source_files'],'snapshot_files_verified':len(expected),'errors':errors,'biological_status':'PARTIAL','independent_benchmark_status':'BLOCKED_NO_AUDITABLE_INDEPENDENT_DATASET','mutation_arm_status':'BLOCKED_PENDING_MUTATION_SPECIFICATION','scientific_runs':0,'meaning':'Frozen report/result snapshot integrity only; no inference or independent experimental validation'}
 def main():
  parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
- for name in ['describe','check-project','check-skill','verify-benchmark']:sub.add_parser(name)
+ for name in ['describe','check-project','check-skill','verify-benchmark','verify-technical-case']:sub.add_parser(name)
+ p=sub.add_parser('technical-report');p.add_argument('--bundle',required=True);p.add_argument('--policy',default=str(ENV/'config/technical_gate_policy.json'));p.add_argument('--out',required=True)
  p=sub.add_parser('verify-history');p.add_argument('--evidence-root',required=True)
  p=sub.add_parser('preflight');p.add_argument('--config',required=True)
  p=sub.add_parser('validate-objective');p.add_argument('--objective',required=True)
@@ -95,6 +97,12 @@ def main():
   elif args.command=='check-project':result=project_check()
   elif args.command=='verify-benchmark':result=verify_benchmark()
   elif args.command=='verify-history':result=verify_history(args.evidence_root)
+  elif args.command=='technical-report':
+   from technical_reporting import write_report
+   result=write_report(args.bundle,args.policy,args.out)
+  elif args.command=='verify-technical-case':
+   from technical_reporting import verify_case
+   result=verify_case(ENV/'results/case_studies/KRAS_14_technical_validation')
   else:
    if args.command=='check-skill':cmd=[sys.executable,'-B',str(SKILL/'scripts/transfer_skill.py'),'check','--source',str(SKILL)]
    else:
@@ -102,7 +110,7 @@ def main():
     for key,value in vars(args).items():
      if key!='command':cmd.extend(['--'+key.replace('_','-'),str(value)])
    env=os.environ.copy();env['PYTHONDONTWRITEBYTECODE']='1';return subprocess.run(cmd,env=env,check=False).returncode
-  print(json.dumps(result,indent=2,allow_nan=False));return 2 if result.get('status') in {'FAILED','BLOCKED_MISSING_EVIDENCE'} else 0
+  print(json.dumps(result,indent=2,allow_nan=False));return 2 if result.get('status') in {'FAILED','BLOCKED_MISSING_EVIDENCE','FAILED_DECLARED_TECHNICAL_GATES','BLOCKED_MISSING_TECHNICAL_EVIDENCE'} else 0
  except (ValueError,OSError,KeyError,TypeError) as e:
   print(json.dumps({'status':'FAILED','error_type':type(e).__name__,'error':str(e)},indent=2));return 2
 if __name__=='__main__':raise SystemExit(main())
