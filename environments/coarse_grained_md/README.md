@@ -7,6 +7,9 @@ separation systems, or parameterization workflows are qualified.
 
 ## Environment families
 
+Qualification decisions use the shared conservative evidence gate in
+[`../shared_qualification`](../shared_qualification/).
+
 The task registry covers mapping/preparation, biomolecular CG MD, membranes,
 liquid-liquid phase separation, polymers/soft matter, colloids, lipid
 nanoparticles, atomistic-to-CG validation, force-field development, and

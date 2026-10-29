@@ -7,6 +7,10 @@ production/FEP workflows have been scientifically qualified.
 
 ## Scope
 
+All environment decisions use the shared conservative evidence gate in
+[`../shared_qualification`](../shared_qualification/). It prevents adapter
+success from being reported as scientific qualification.
+
 The package contains 20 reusable MD execution/analysis specialists, 10 online
 literature/model/dataset provenance specialists, 20 domain-specific
 specialists, and 12 scenario specialists covering preparation, parameter,

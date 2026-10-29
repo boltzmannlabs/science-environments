@@ -8,6 +8,9 @@ uncertainty, and reference evidence.
 
 ## Read in this order
 
+Qualification uses the shared conservative evidence gate in
+[`../shared_qualification`](../shared_qualification/).
+
 1. [Environment specification](ENVIRONMENT_SPEC.md)
 2. [Status](STATUS.md), [models and tools](MODELS_AND_TOOLS.md), and [implementation report](IMPLEMENTATION_REPORT.md)
 3. [Configuration and schemas](config/)

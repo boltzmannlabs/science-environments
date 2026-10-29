@@ -9,6 +9,9 @@ fundamental electronic gap.
 
 ## Quick start
 
+Qualification uses the shared conservative evidence gate in
+[`../shared_qualification`](../shared_qualification/).
+
 ```bash
 python scripts/run_homo_lumo.py --tasks tasks/water.json tasks/methane.json tasks/benzene.json \
   --output results/prototype_results.json
