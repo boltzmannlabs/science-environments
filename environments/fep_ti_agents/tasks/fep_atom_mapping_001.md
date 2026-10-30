@@ -62,6 +62,20 @@ coordinates alone do not provide complete bond-order or stereochemistry
 metadata, so this is an input/mapping validation result—not a completed FEP
 simulation.
 
+## Local molecular execution
+
+The branch also includes a bounded native OpenMM molecular TI proof:
+
+```bash
+python scripts/run_molecular_ti.py \
+  --output results/molecular_ti_local_001.json
+```
+
+It runs two replicas across 11 lambda windows with explicit endpoint bonded
+parameters and records platform, seeds, energies, derivatives, and lambda
+coverage. It establishes local alchemical execution, but is not a
+protein–ligand production FEP qualification.
+
 ## Constraints
 
 No production simulation is allowed for this task. Do not infer stereochemical
