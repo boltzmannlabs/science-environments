@@ -76,6 +76,17 @@ parameters and records platform, seeds, energies, derivatives, and lambda
 coverage. It establishes local alchemical execution, but is not a
 protein–ligand production FEP qualification.
 
+The downloaded SAMPL6 guest endpoints can be parameterized and smoke-tested
+locally with:
+
+```bash
+python scripts/run_sampl6_endpoint_smoke.py
+```
+
+This uses AmberTools GAFF2/AM1-BCC and OpenMM CUDA for 100-step endpoint runs.
+It verifies the real guest parameterization and engine path; it does not claim
+that the two endpoint runs constitute a relative FEP estimate.
+
 ## Constraints
 
 No production simulation is allowed for this task. Do not infer stereochemical
