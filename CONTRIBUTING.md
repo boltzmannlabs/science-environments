@@ -1,399 +1,415 @@
-# Science Environments — Contribution and Workflow Guidelines
+# Contributing to Science-Environments
 
 ## 1. Purpose
 
-This document defines the mandatory workflow for contributing to the `science-environments` repository.
+This document defines the standard contribution workflow for the Science-Environments repository.
 
-All contributors must follow these guidelines, regardless of whether their contribution involves code, scientific research, environment design, configuration, evaluation, or documentation.
+It applies to all contributors working on:
+- Scientific research and feasibility studies.
+- Environment specifications and design.
+- Scientific tasks and workflows.
+- Configuration and dependencies.
+- Source code, scripts and tests.
+- Benchmarks and evaluation.
+- Documentation and repository structure.
 
-Our goals are to maintain:
+Every contribution must follow the same GitHub workflow to ensure consistency, traceability, reproducibility and maintainability.
 
-- A consistent repository structure.
-- Clear ownership and task tracking.
-- Reproducible scientific workflows.
-- Reviewable and traceable contributions.
-- Reliable integration of environments into the Agent Scientist ecosystem.
-
-**Core principle:** Every contribution must have a defined purpose, a documented deliverable, appropriate validation, and a review trail.
-
----
-
-## 2. Scope of Contributions
-
-The repository accepts the following types of contributions:
-
-1. New scientific environment specifications.
-2. Scientific task definitions and workflows.
-3. Research notes and scientific references.
-4. Environment configurations and dependency definitions.
-5. Evaluation criteria and validation protocols.
-6. Reproducibility documentation.
-7. Executable environment implementations and supporting tests.
-8. Bug reports, documentation updates, and improvements.
-
-Code is not mandatory for every contribution. Documentation and scientific specifications must follow the same review and traceability process as code.
+**Core principle:** Every contribution must be documented, validated and reviewed before merging into `main`.
 
 ---
 
-## 3. Environment Folder Example
+## 2. Repository Architecture
 
-Each environment lives under `environments/<environment-name>/`. This example shows one environment folder; research notes and references live under the matching directory in `research/`.
+The repository maintains a separation between research activities and environment implementation.
 
 ```text
-environments/<environment-name>/
+science-environments/
+│
 ├── README.md
-├── ENVIRONMENT_SPEC.md
-├── config/
-├── tasks/
-└── tests/
+├── CONTRIBUTING.md
+├── LICENSE
+│
+├── research/
+│   ├── README.md
+│   └── <research-topic>/
+│       ├── research-notes.md
+│       └── references.md
+│
+├── environments/
+│   └── <environment-name>/
+│       ├── README.md
+│       ├── ENVIRONMENT_SPEC.md
+│       ├── STATUS.md
+│       ├── MODELS_AND_TOOLS.md
+│       ├── config/
+│       ├── tasks/
+│       ├── tests/
+│       ├── scripts/
+│       ├── src/
+│       ├── benchmark/
+│       └── results/
+│
+├── docs/
+│   └── decisions/
+│
+└── .github/
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
-### Directory guidelines
+The above represents the general organization. Not every environment must contain every directory or document.
 
-- `docs/`: Repository-wide documentation and architectural decisions.
-- `research/`: Research notes and references, grouped by environment. Use `research-notes.md` and `references.md` within each environment directory.
-- `environments/`: Individual scientific environments and their specifications.
-- `config/`: Environment-specific configuration files.
-- `tasks/`: Task definitions, input examples and expected output contracts.
-- `tests/`: Validation tests for executable environments, where applicable.
-- `results/`: Small, necessary, versioned example results or validation summaries. Do not commit large generated datasets or unrestricted experimental outputs.
-- `.github/`: Contribution templates, ownership and repository workflow configuration.
+### 2.1 Research Directory
 
-Link environment specifications to the corresponding research notes and references. Keep scientific source lists in one place rather than duplicating them across research and environment directories.
+Location: `research/`
 
-The agreed base structure uses `.gitkeep` files for reserved empty directories. Remove a directory's `.gitkeep` when substantive files are added. Create additional directories only when required by the contribution.
+The research directory contains scientific investigations and preparatory work required to understand and design an environment.
+
+Expected documents:
+
+| File | Purpose |
+|---|---|
+| `research-notes.md` | Research findings, problem definition, methodology, observations and feasibility |
+| `references.md` | Scientific papers, publications, datasets, documentation and external resources |
+
+**Guidelines:**
+- Keep research findings separate from implementation.
+- Include references for scientific claims.
+- Document assumptions and limitations.
+- Record relevant findings and unresolved questions.
+- Update research documentation when significant findings change.
+
+### 2.2 Environments Directory
+
+Location: `environments/`
+
+This directory contains the actual scientific environments and their supporting components.
+
+Expected documentation:
+
+| File | Purpose |
+|---|---|
+| `README.md` | Environment overview, setup and usage instructions |
+| `ENVIRONMENT_SPEC.md` | Detailed technical and scientific environment specification |
+| `STATUS.md` | Current development status, completed work, blockers and pending activities |
+| `MODELS_AND_TOOLS.md` | Models, tools, versions and their roles, where applicable |
+
+Expected directories, where applicable:
+
+| Directory | Purpose |
+|---|---|
+| `config/` | Environment and execution configurations |
+| `tasks/` | Scientific task definitions and execution workflows |
+| `tests/` | Validation and testing resources |
+| `scripts/` | Utility and execution scripts |
+| `src/` | Environment implementation and source code |
+| `benchmark/` | Benchmark definitions and evaluation resources |
+| `results/` | Relevant experimental results and evaluation outputs |
+| `skills/` | Agent skills and reusable capabilities, where applicable |
+
+**Guidelines:**
+- Maintain a clear separation between environment components.
+- Document dependencies and required versions.
+- Provide reproducible execution instructions.
+- Keep task definitions and expected outputs understandable.
+- Avoid committing temporary files, caches and unnecessary generated artifacts.
+
+### 2.3 Documentation and Decisions
+
+Location: `docs/decisions/`
+
+This directory maintains important decisions related to repository architecture, scientific methodology and environment design.
+
+Decision records should include:
+
+- Decision title and date.
+- Context and problem statement.
+- Options considered.
+- Final decision.
+- Reasoning behind the decision.
+- Consequences and trade-offs.
+- Relevant references.
+
+Create a decision record when a change has long-term architectural, scientific or organizational implications. Routine updates do not require a decision record.
 
 ---
 
-## 4. Mandatory Contribution Workflow
+## 3. Standard Contribution Workflow
 
-Every planned contribution must follow these stages.
+All contributors must follow the eight stages below.
 
-### Step 1: Create or identify a GitHub Issue
+### Step 1: Create or Select a GitHub Issue
 
-Before starting work, create a GitHub Issue or identify the existing issue associated with the task.
+Before starting work, create a new Issue or identify an existing Issue.
 
-The issue must contain:
+Every Issue should define:
 
-- Task title and objective.
-- Background and rationale.
-- Scope and expected deliverables.
+- Objective and problem statement.
+- Scope of work.
+- Expected outcome.
 - Acceptance criteria.
-- Assigned owner.
-- Reviewer or responsible team, where known.
-- Dependencies and blockers, if any.
-
-For research or design tasks, specify the document or scientific artifact that must be delivered.
-
-Do not begin duplicate work without checking existing issues and discussions.
-
-### Step 2: Confirm the contribution type
-
-Identify the type of work before choosing the implementation approach.
+- Affected research topic or environment.
+- Dependencies and references, where applicable.
 
 Examples:
+- Add research documentation for retrosynthesis.
+- Update the enzyme variant optimization specification.
+- Introduce a new scientific task.
+- Update environment dependencies.
+- Add benchmark evaluation criteria.
 
-- Documentation-only contribution.
-- Scientific research or literature review.
-- Environment specification.
-- Configuration or dependency change.
-- Executable implementation.
-- Evaluation or benchmark design.
-- Bug fix.
+### Step 2: Create a Working Branch
 
-Define acceptance criteria appropriate to the contribution type. Do not require executable tests for a purely editorial change, but do require appropriate factual, structural and reference checks.
+Always create a separate branch from the latest `main`.
 
-### Step 3: Create a working branch
+```bash
+git checkout main
+git pull origin main
+git checkout -b <branch-name>
+```
 
-Never make routine contributions directly to `main`.
+Branch naming conventions:
 
-Use the following naming conventions:
+| Type | Prefix | Example |
+|---|---|---|
+| New feature/environment | `feat/` | `feat/add-new-environment` |
+| Documentation | `docs/` | `docs/update-research-notes` |
+| Bug fix | `fix/` | `fix/configuration-error` |
+| Configuration | `config/` | `config/update-dependencies` |
+| Repository maintenance | `chore/` | `chore/update-folder-structure` |
 
-| Contribution | Branch naming pattern |
-|---|---|
-| New environment | `feat/<environment-name>` |
-| Documentation | `docs/<topic>` |
-| Scientific research | `research/<topic>` |
-| Bug fix | `fix/<issue>` |
-| Evaluation design | `feat/<evaluation-topic>` |
-| Maintenance | `chore/<task>` |
+Rules:
+- Use descriptive branch names.
+- Avoid spaces.
+- Keep branches focused on one task.
+- Do not make direct commits to `main`.
 
-Examples:
+### Step 3: Make the Changes
 
-- `feat/scRNAseq-environment`
-- `research/synthesis-route-gym`
-- `docs/environment-lifecycle`
-- `feat/environment-evaluation`
+Implement the changes within the appropriate repository directory.
 
-Keep branches focused on one logical contribution.
+**For research contributions:**
+- Update the relevant `research/<topic>/` directory.
+- Maintain `research-notes.md`.
+- Update `references.md`.
+- Document findings, assumptions and limitations.
+- Update the research index if a new topic is introduced.
 
-### Step 4: Prepare the deliverable
+**For environment contributions:**
+- Update the appropriate `environments/<environment-name>/` directory.
+- Maintain `README.md`.
+- Update `ENVIRONMENT_SPEC.md`.
+- Update `STATUS.md`.
+- Update configurations, tasks, tests and supporting files as required.
+- Update `MODELS_AND_TOOLS.md` when relevant.
 
-Create or modify the files required by the issue.
+**For repository-level contributions:**
+- Follow the established root-level structure.
+- Update relevant documentation.
+- Record significant architectural decisions in `docs/decisions/`.
 
-For a new environment specification, include the following where applicable:
+### Step 4: Validate Locally
 
-- `README.md`: Environment overview and usage status.
-- `ENVIRONMENT_SPEC.md`: Scientific objective, methodology, inputs, outputs, constraints and evaluation criteria.
-- `research/<environment-name>/research-notes.md`: Supporting scientific research, findings and open questions.
-- `research/<environment-name>/references.md`: Relevant papers, datasets and software references, linked from the environment specification.
-- Configuration files: Required settings and dependency definitions.
-- Task definitions: Input contracts and expected output formats.
-- Tests or validation reports: Evidence that the environment meets its defined requirements.
+Before creating a Pull Request, contributors must verify their changes.
 
-For research-only contributions, submit a structured research document with sources, findings, uncertainties and recommended next steps.
+**Research validation:**
+- [ ] Research notes are complete and understandable.
+- [ ] Scientific claims have appropriate references.
+- [ ] References are accessible and correctly cited.
+- [ ] Assumptions and limitations are documented.
+- [ ] Research findings are placed in the correct directory.
 
-For documentation-only contributions, edit the appropriate Markdown file and explain the change in the PR.
+**Environment validation:**
+- [ ] Folder structure follows repository conventions.
+- [ ] Required documentation is present.
+- [ ] Configuration files have valid syntax.
+- [ ] Dependencies and versions are documented.
+- [ ] Setup instructions are accurate.
+- [ ] Tasks and input/output specifications are documented.
+- [ ] Environment execution has been tested, where applicable.
+- [ ] Tests and benchmark definitions are verified, where applicable.
+- [ ] Expected results and known limitations are documented.
 
-Label specifications as proposed or in progress until their requirements and evidence support a later status. Replace drafting prompts with supported content before treating a document as a finished deliverable. A `.gitkeep` file does not provide scientific evidence, an implementation or validation.
+**Repository validation:**
+- [ ] No unrelated files are included.
+- [ ] No credentials or sensitive information are committed.
+- [ ] No unnecessary generated files or caches are included.
+- [ ] Relevant README and index documents are updated.
 
-### Step 5: Validate the contribution
+If execution is not applicable or cannot be performed, document the reason and indicate which validation checks were completed.
 
-Before opening a PR, verify the deliverable against its acceptance criteria.
+### Step 5: Open a Pull Request
 
-**Documentation and research contributions:**
+After local validation, push the working branch.
 
-- Check spelling, clarity and Markdown formatting.
-- Verify that referenced links and citations are relevant and accessible.
-- Distinguish established facts from hypotheses and proposed methods.
-- Record limitations and unresolved questions.
-- Confirm that the document is stored in the correct location.
+```bash
+git add .
+git commit -m "docs: update retrosynthesis research notes"
+git push origin <branch-name>
+```
 
-**Environment specifications:**
-
-- Confirm that objectives, inputs, outputs and evaluation criteria are defined.
-- Identify dependencies and relevant version constraints where known.
-- Document assumptions, failure cases and reproducibility requirements.
-- Make clear whether the environment is specified, implemented or validated.
-
-**Executable contributions:**
-
-- Run applicable tests and validation checks.
-- Check dependency installation and configuration.
-- Record relevant test results and reproduction instructions.
-- Do not claim successful validation if the checks have not been performed.
-
-Validation requirements must match the type and maturity of the contribution.
-
-### Step 6: Commit changes
-
-Use clear, descriptive commit messages.
-
-Recommended format:
-
-`<type>: <short description>`
-
-Examples:
-
-- `docs: add scRNA-seq environment specification`
-- `research: document synthesis route evidence`
-- `feat: add environment task definition`
-- `test: add environment validation checks`
-- `fix: correct configuration validation`
-
-Keep commits focused. Do not include unrelated changes, secrets, credentials, private data or unapproved large files.
-
-### Step 7: Open a Pull Request
-
-Open a PR against `main` and link the associated GitHub Issue.
+Create a Pull Request targeting `main`.
 
 Every PR must include:
 
-1. Summary of the change.
-2. Reason for the change.
+1. Summary of changes.
+2. Related GitHub Issue.
 3. Contribution type.
-4. Files and deliverables added or modified.
-5. Validation performed and evidence obtained.
-6. Known limitations or open questions.
-7. Related issue reference.
-8. Confirmation that applicable acceptance criteria have been met.
+4. Files and directories modified.
+5. Validation performed.
+6. Validation evidence, where applicable.
+7. Known limitations or pending work.
 
-Use the repository's PR template.
+Use the existing `.github/PULL_REQUEST_TEMPLATE.md`.
 
-A documentation-only PR is valid. Mark it as documentation-only when appropriate and explain how its quality and accuracy were checked.
+Link the relevant Issue:
 
-### Step 8: Review and address feedback
+`Closes #ISSUE_NUMBER`
 
-The assigned reviewer must verify that:
+### Step 6: Review and Approval
 
-- The contribution addresses the original issue.
-- The deliverables meet the acceptance criteria.
-- Scientific claims are appropriately supported.
-- Documentation and file placement follow repository conventions.
-- Required validation has been completed.
-- No critical unresolved issues remain.
+Every Pull Request must undergo manual review.
 
-Scientific content should receive review from an appropriate scientific or domain expert when needed.
+Reviewers should verify:
 
-The contributor must address review comments and push updates to the same branch. Request re-review when the changes are ready.
+- Scientific correctness and relevance.
+- Repository structure and naming conventions.
+- Completeness of documentation.
+- Dependency and configuration correctness.
+- Reproducibility, where applicable.
+- Task definitions and input/output specifications.
+- Validation evidence.
 
-### Step 9: Merge and close the task
+For research contributions, the reviewer should assess the quality of scientific findings and references.
 
-A PR may be merged when:
+For environment contributions, the reviewer should assess the implementation, execution requirements and reproducibility.
 
-- Required approvals are obtained.
-- Applicable automated checks pass.
-- Acceptance criteria are satisfied.
-- Blocking review comments are resolved.
+At least one relevant reviewer must approve the PR.
 
-Use the repository's approved merge strategy and branch-protection rules.
+All required review comments must be resolved before merging.
 
-After merging, ensure the linked issue is closed and the deliverable's status is updated accurately.
+### Step 7: Merge and Close the Issue
+
+Once approval is obtained:
+
+- Verify that review comments are resolved.
+- Ensure the PR targets `main`.
+- Resolve merge conflicts.
+- Use Squash and Merge as the recommended merge strategy.
+- Confirm the changes are available in `main`.
+- Close the associated Issue.
+- Delete the merged working branch.
+
+Only reviewed and approved contributions should enter `main`.
+
+### Step 8: Update Repository Records
+
+After merging:
+
+- Update the root README when repository-level changes affect navigation or overview.
+- Update `research/README.md` when new research topics are introduced.
+- Update the relevant environment documentation.
+- Update environment status.
+- Record significant decisions in `docs/decisions/`.
+- Update the changelog or version information when a meaningful release warrants it.
+- Communicate important changes to the team.
+
+Not every contribution requires a release or version increment.
+
+---
+
+## 4. Commit Message Convention
+
+Use the following format:
+
+```text
+<type>: <short description>
+```
+
+Examples:
+
+```bash
+git commit -m "feat: add new scientific environment"
+git commit -m "docs: update research findings"
+git commit -m "fix: correct environment configuration"
+git commit -m "config: update dependency versions"
+git commit -m "chore: reorganize repository structure"
+```
+
+Avoid generic messages such as:
+
+- update
+- changes
+- final
+- new files
+- modifications
+
+Commit messages must clearly communicate the purpose of the change.
 
 ---
 
 ## 5. Pull Request Requirements
 
-Every PR must answer the following questions:
+All contributors must use the existing Pull Request template.
 
-1. What is changing?
-2. Why is the change necessary?
-3. Which issue does it address?
-4. What files or artifacts are being delivered?
-5. How was the contribution validated?
-6. What limitations remain?
-7. Who reviewed the contribution?
+The following information is mandatory:
 
-Do not submit PRs containing unrelated changes or work that cannot be meaningfully reviewed.
+- Summary and purpose.
+- Related Issue.
+- Type of contribution.
+- Files changed.
+- Validation performed.
+- Evidence, where applicable.
+- Known limitations.
 
-Keep PRs as small and focused as practical.
-
----
-
-## 6. Workflow for Contributors Who Do Not Write Code
-
-Code is not required for scientific research, workflow planning or environment design.
-
-Non-code contributors must follow the same issue, branch, PR and review workflow.
-
-### Example: Scientific environment proposal
-
-A contributor is assigned to develop a scRNA-seq environment specification.
-
-**Expected workflow:**
-
-1. Create or update the GitHub Issue.
-2. Create a branch such as `feat/scRNAseq-environment`.
-3. Add or update `environments/scRNAseq-environment/README.md`.
-4. Add or update `environments/scRNAseq-environment/ENVIRONMENT_SPEC.md`.
-5. Add or update `research/scRNAseq-environment/research-notes.md` and `research/scRNAseq-environment/references.md`, and link them from the environment documents.
-6. Document the objective, scientific rationale, input and output contracts, evaluation criteria, assumptions and limitations.
-7. Validate the documentation and references.
-8. Open a PR and link the issue.
-9. Obtain the required review.
-10. Merge after approval.
-
-No Python implementation is required for this specification-only contribution.
-
-However, the environment must not be described as executable or validated until the corresponding implementation and validation have actually been completed.
+Pull Requests must be focused and should not combine unrelated changes.
 
 ---
 
-## 7. Environment Lifecycle and Status
+## 6. Repository Governance Rules
 
-Use explicit statuses to prevent confusion about implementation maturity.
-
-| Status | Meaning |
+| Area | Standard |
 |---|---|
-| Proposed | The idea has been identified but not fully specified. |
-| Specification | The scientific requirements and expected behaviour are documented. |
-| In Progress | Implementation or other required work is underway. |
-| Implemented | The required implementation exists. |
-| Validated | The defined validation criteria have been satisfied and evidence is available. |
-| Deprecated | The environment is no longer recommended for new use. |
-
-Do not mark an environment as validated based solely on documentation review or successful execution of an unverified example.
-
-Status changes should be reflected in the environment's README or the repository's agreed tracking mechanism.
-
----
-
-## 8. GitHub Issues, Labels and Ownership
-
-Use existing repository labels where available. Standard labels should include:
-
-- `environment`
-- `documentation`
-- `research`
-- `evaluation`
-- `bug`
-- `enhancement`
-- `needs-review`
-- `blocked`
-
-Each issue must have a clear owner or responsible team.
-
-Use CODEOWNERS or explicit reviewer assignments to route contributions to the appropriate maintainers. Scientific review and software review may require different reviewers.
-
-If a contributor encounters a blocker, they must update the issue with the problem, its impact and the support required rather than leaving the task silently incomplete.
+| Default branch | `main` |
+| Direct push to main | Not permitted |
+| Issue tracking | Required for significant changes |
+| Branch creation | Mandatory |
+| Commit messages | Meaningful and descriptive |
+| Research documentation | Required for research contributions |
+| Environment documentation | Required for environment contributions |
+| Local validation | Required before PR |
+| Pull Request | Mandatory |
+| Manual review | Mandatory |
+| Approval | Minimum one relevant approval |
+| Merge strategy | Squash and Merge recommended |
+| Branch cleanup | After successful merge |
 
 ---
 
-## 9. Reproducibility and Scientific Integrity
+## 7. Definition of Done
 
-Every environment must document reproducibility requirements appropriate to its maturity.
+A contribution is considered complete only when:
 
-Where applicable, record:
-
-- Software and dependency versions.
-- Model names and versions.
-- Dataset sources and versions.
-- Configuration parameters.
-- Random seeds.
-- Hardware and runtime requirements.
-- Execution instructions.
-- Expected outputs and evaluation metrics.
-- Known limitations and sources of uncertainty.
-
-Do not commit credentials, API keys, restricted datasets or sensitive information.
-
-Do not fabricate experimental measurements, benchmark scores or validation results. Clearly distinguish predicted results, observed results and illustrative examples.
-
-When exact reproducibility is not possible, document the reason and the steps needed to approximate the original conditions.
+- [ ] Associated Issue is created or identified.
+- [ ] Working branch is created.
+- [ ] Changes follow repository structure.
+- [ ] Relevant documentation is updated.
+- [ ] Local validation is completed.
+- [ ] Pull Request is created.
+- [ ] Required review and approval are completed.
+- [ ] Review comments are resolved.
+- [ ] Changes are merged into `main`.
+- [ ] Associated Issue is closed.
+- [ ] Relevant repository records are updated.
 
 ---
 
-## 10. Definition of Done
+## 8. Final Guidelines
 
-A task is complete only when the applicable criteria below have been satisfied.
+The `main` branch must always represent the stable and reviewed state of the Science-Environments repository.
 
-- [ ] A GitHub Issue exists and describes the task.
-- [ ] The deliverable is available in the correct repository location.
-- [ ] The contribution follows the relevant documentation and naming conventions.
-- [ ] Acceptance criteria have been checked.
-- [ ] Supporting references and evidence are included where required.
-- [ ] Applicable validation has been performed.
-- [ ] A PR has been opened and linked to the issue.
-- [ ] Required reviewers have approved the changes.
-- [ ] Applicable automated checks have passed.
-- [ ] The PR has been merged.
-- [ ] The issue and environment status have been updated accurately.
+All contributors must follow this workflow regardless of whether their contribution involves research, documentation, configuration, scientific workflows or implementation.
 
-Not every checkbox applies to every contribution. Validation and review requirements must reflect the actual scope of the task.
+No contribution should be merged without appropriate documentation, validation and review.
 
----
-
-## 11. Rules for All Contributors
-
-1. Do not push routine changes directly to `main`.
-2. Do not submit work without a defined purpose and deliverable.
-3. Do not create duplicate environments without checking existing work.
-4. Do not claim implementation or validation that has not occurred.
-5. Do not commit secrets, restricted data or unnecessary generated artifacts.
-6. Do not merge changes before required reviews and checks are complete.
-7. Do not leave blockers or unresolved review feedback undocumented.
-8. Keep contributions focused, evidence-based and traceable.
-9. Use Markdown for specifications, research notes and documentation when appropriate.
-10. Follow the same review standards regardless of whether the contribution contains code.
-
----
-
-## 12. Final Principle
-
-The `science-environments` repository must function as a reliable collection of well-defined scientific tasks and environments, not merely a collection of code and documents.
-
-Every contribution must be traceable to a task, stored consistently, reviewed by the appropriate people and assigned an accurate maturity status.
-
-**Issue → Branch → Deliverable → Validation → Pull Request → Review → Merge → Status Update**
-
-All contributors are expected to follow this workflow.
+**Every contribution must be traceable, reproducible, documented and reviewed.**
