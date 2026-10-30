@@ -49,6 +49,19 @@ as diagnostics. Unknown atoms, duplicate mappings, or element mismatches
 return `FAIL`; incomplete mappings return `REVIEW`. The output must include
 input SHA-256 hashes and `silent_repair: false`.
 
+The downloaded SAMPL6 complexes can be checked with:
+
+```bash
+python scripts/validate_sampl6_mapping.py \
+  --input tasks/inputs/fep_atom_mapping_001 \
+  --output results/fep_atom_mapping_001_sampl6.json
+```
+
+This validates the GST guest atom names/elements in the real source PDBs. PDB
+coordinates alone do not provide complete bond-order or stereochemistry
+metadata, so this is an input/mapping validation result—not a completed FEP
+simulation.
+
 ## Constraints
 
 No production simulation is allowed for this task. Do not infer stereochemical

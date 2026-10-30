@@ -1,0 +1,44 @@
+{
+  "task_id": "fep_atom_mapping_001",
+  "qualification": "REVIEW",
+  "guest_residue": "GST",
+  "mapped_atom_names": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8",
+    "H9",
+    "O1",
+    "O2"
+  ],
+  "element_mismatches": [],
+  "warnings": [
+    {
+      "type": "unmapped_guest_atoms",
+      "a": [],
+      "b": [
+        "H10",
+        "H11"
+      ]
+    }
+  ],
+  "provenance": {
+    "source": "SAMPL6 manifest URLs",
+    "input_sha256": {
+      "OA-G3_complex.pdb": "745e28ba79cf381d6043eb07b5806616e1782b5ee2fbb1066f49a024679a92a7",
+      "OA-G6_complex.pdb": "d0369d41fea4b5e4660372850832421ac2bf0018c3f78bff51764908184a85e2"
+    },
+    "silent_repair": false
+  },
+  "limitation": "PDB guest coordinates provide no complete bond-order/stereochemistry metadata; topology validation remains required."
+}
