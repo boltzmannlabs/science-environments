@@ -1,0 +1,9 @@
+{
+  "task_id": "fep_lambda_schedule_001",
+  "charge_change": false,
+  "lambda_electrostatics": [1.0, 0.8, 0.6, 0.4, 0.2, 0.0],
+  "lambda_sterics": [1.0, 1.0, 0.8, 0.6, 0.3, 0.0],
+  "softcore": {"enabled": true, "alpha": 0.5, "power": 1},
+  "max_adjacent_gap": 0.3,
+  "sampling_budget_windows": 6
+}
