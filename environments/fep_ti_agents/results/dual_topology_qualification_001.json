@@ -8,6 +8,12 @@
     "lambda_coverage": true,
     "independent_replicas": true
   },
+  "sampling_checks": {
+    "complex_overlap_proxy_present": true,
+    "solvent_overlap_proxy_present": true,
+    "complex_replica_uncertainty_present": true,
+    "solvent_replica_uncertainty_present": true
+  },
   "complex_estimate_kj_mol": -198.79773943722248,
   "solvent_estimate_kj_mol": -5.797734297811971,
   "relative_binding_estimate_kj_mol": -193.00000513941052,

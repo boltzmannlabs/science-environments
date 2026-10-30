@@ -99,11 +99,26 @@ def _run_leg(complex_leg: bool, lambdas, replicas: int, steps: int, seed: int):
             })
             del context, integrator
     means = [float(np.mean([r["mean_dU_dlambda_kj_mol"] for r in records if r["lambda"] == lam])) for lam in lambdas]
+    sigmas = [float(np.mean([r["std_dU_dlambda_kj_mol"] for r in records if r["lambda"] == lam])) for lam in lambdas]
+    overlaps = []
+    for i in range(len(lambdas) - 1):
+        # Gaussian Bhattacharyya overlap proxy for adjacent dU/dlambda samples.
+        variance = sigmas[i] ** 2 + sigmas[i + 1] ** 2
+        coefficient = float(np.sqrt(2 * sigmas[i] * sigmas[i + 1] / variance) * np.exp(-0.25 * (means[i] - means[i + 1]) ** 2 / variance)) if variance > 0 else 0.0
+        overlaps.append(coefficient)
+    replica_estimates = []
+    for replica in sorted({r["replica"] for r in records}):
+        replica_means = [next(r["mean_dU_dlambda_kj_mol"] for r in records if r["replica"] == replica and r["lambda"] == lam) for lam in lambdas]
+        replica_estimates.append(float(np.trapezoid(replica_means, lambdas)))
     estimate = float(np.trapezoid(means, lambdas))
     return {
         "leg": "complex" if complex_leg else "solvent",
         "estimate_kj_mol": estimate,
-        "windows": [{"lambda": float(lam), "mean_dU_dlambda_kj_mol": means[i]} for i, lam in enumerate(lambdas)],
+        "replica_estimates_kj_mol": replica_estimates,
+        "replica_stderr_kj_mol": float(np.std(replica_estimates, ddof=1) / np.sqrt(len(replica_estimates))) if len(replica_estimates) > 1 else 0.0,
+        "adjacent_overlap_proxy_min": float(min(overlaps)) if overlaps else 0.0,
+        "windows": [{"lambda": float(lam), "mean_dU_dlambda_kj_mol": means[i], "mean_std_dU_dlambda_kj_mol": sigmas[i]} for i, lam in enumerate(lambdas)],
+        "adjacent_overlap_proxy": overlaps,
         "records": records,
         "finite": all(np.isfinite(r["mean_energy_kj_mol"]) and np.isfinite(r["mean_dU_dlambda_kj_mol"]) for r in records),
     }, platform_obj
