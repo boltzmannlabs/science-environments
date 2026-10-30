@@ -1,0 +1,7 @@
+{
+  "name": "GAFF2/AM1-BCC + TIP3P",
+  "supported_atom_types": ["c3", "n3", "h1"],
+  "bonded_parameters": ["c3-c3", "n3-c3", "n3-h1"],
+  "water_model": "TIP3P",
+  "ion_model": "Joung-Cheatham"
+}
