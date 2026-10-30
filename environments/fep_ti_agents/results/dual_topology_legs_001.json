@@ -1,0 +1,411 @@
+{
+  "task_id": "fep_dual_topology_legs_001",
+  "status": "PASS",
+  "scope": "bounded dual-topology OpenMM TI qualification fixture; not converged SAMPL6 production FEP",
+  "engine": {
+    "name": "OpenMM",
+    "version": "8.2",
+    "platform": "CUDA",
+    "host": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42"
+  },
+  "protocol": {
+    "windows": 9,
+    "replicas": 2,
+    "steps_per_window": 200,
+    "temperature_K": 300,
+    "timestep_ps": 0.001,
+    "integration": "trapezoid over dU/dlambda"
+  },
+  "complex": {
+    "leg": "complex",
+    "estimate_kj_mol": -198.79773943722248,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 179.87074209526182
+      },
+      {
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 89.21274802982808
+      },
+      {
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": -30.124668968841434
+      },
+      {
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": -150.4428308844566
+      },
+      {
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": -217.95996372401714
+      },
+      {
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -296.31726697683337
+      },
+      {
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -358.6268259167671
+      },
+      {
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -440.6425398021936
+      },
+      {
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -550.8318766042589
+      }
+    ],
+    "records": [
+      {
+        "replica": 0,
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 188.7032876253128,
+        "std_dU_dlambda_kj_mol": 160.70804481766623,
+        "mean_energy_kj_mol": 556.9562409281731,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 87.70628871917725,
+        "std_dU_dlambda_kj_mol": 483.592416183479,
+        "mean_energy_kj_mol": 586.8579159259796,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": -18.687208890914917,
+        "std_dU_dlambda_kj_mol": 563.1980887379077,
+        "mean_energy_kj_mol": 681.968094778061,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": -153.35774538516998,
+        "std_dU_dlambda_kj_mol": 539.7765682188995,
+        "mean_energy_kj_mol": 698.5694548606873,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": -198.29954615831375,
+        "std_dU_dlambda_kj_mol": 425.7374722744509,
+        "mean_energy_kj_mol": 636.7311113357543,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -296.80455389022825,
+        "std_dU_dlambda_kj_mol": 429.8829924730841,
+        "mean_energy_kj_mol": 624.5981608390808,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -358.70732122063635,
+        "std_dU_dlambda_kj_mol": 400.89303359194724,
+        "mean_energy_kj_mol": 591.8865795135498,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -447.5512725830078,
+        "std_dU_dlambda_kj_mol": 334.04073440345,
+        "mean_energy_kj_mol": 505.21658511161803,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -550.8412216037511,
+        "std_dU_dlambda_kj_mol": 274.39041328879335,
+        "mean_energy_kj_mol": 440.51544718611984,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 171.03819656521082,
+        "std_dU_dlambda_kj_mol": 172.37065681278827,
+        "mean_energy_kj_mol": 572.765775668621,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 90.7192073404789,
+        "std_dU_dlambda_kj_mol": 479.4516291213165,
+        "mean_energy_kj_mol": 572.3570921421051,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": -41.56212904676795,
+        "std_dU_dlambda_kj_mol": 535.4235213838415,
+        "mean_energy_kj_mol": 650.3454328536988,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": -147.52791638374327,
+        "std_dU_dlambda_kj_mol": 561.8348348486411,
+        "mean_energy_kj_mol": 734.5689833641052,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": -237.62038128972054,
+        "std_dU_dlambda_kj_mol": 473.45585777933735,
+        "mean_energy_kj_mol": 643.7061447143554,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -295.8299800634384,
+        "std_dU_dlambda_kj_mol": 424.4034557484949,
+        "mean_energy_kj_mol": 626.7328106880188,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -358.54633061289786,
+        "std_dU_dlambda_kj_mol": 376.5195579809757,
+        "mean_energy_kj_mol": 559.4155333518981,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -433.73380702137945,
+        "std_dU_dlambda_kj_mol": 335.98639244625554,
+        "mean_energy_kj_mol": 524.445310640335,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -550.8225316047668,
+        "std_dU_dlambda_kj_mol": 262.51150713511004,
+        "mean_energy_kj_mol": 421.0553297597653,
+        "samples": 10
+      }
+    ],
+    "finite": true
+  },
+  "solvent": {
+    "leg": "solvent",
+    "estimate_kj_mol": -5.797734297811971,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 235.353955078125
+      },
+      {
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 181.0049929857254
+      },
+      {
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": 125.60487682819367
+      },
+      {
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": 65.57958393096925
+      },
+      {
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": 1.8371758460998535
+      },
+      {
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -63.8041885137558
+      },
+      {
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -134.9173794269562
+      },
+      {
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -202.35607720613478
+      },
+      {
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -274.01567273139955
+      }
+    ],
+    "records": [
+      {
+        "replica": 0,
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 233.69168252944945,
+        "std_dU_dlambda_kj_mol": 172.0460573147538,
+        "mean_energy_kj_mol": 59.50423357410218,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 181.93961243629457,
+        "std_dU_dlambda_kj_mol": 104.59482276131672,
+        "mean_energy_kj_mol": 68.66947565078735,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": 125.28347158432007,
+        "std_dU_dlambda_kj_mol": 90.18065783714734,
+        "mean_energy_kj_mol": 81.51459369659423,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": 65.24343032836914,
+        "std_dU_dlambda_kj_mol": 38.782955520637394,
+        "mean_energy_kj_mol": 89.6268404006958,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": 1.053736114501953,
+        "std_dU_dlambda_kj_mol": 7.474917485582812,
+        "mean_energy_kj_mol": 89.41338882446288,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -63.486941528320315,
+        "std_dU_dlambda_kj_mol": 53.55920122140447,
+        "mean_energy_kj_mol": 94.84956588745118,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -135.77381699085237,
+        "std_dU_dlambda_kj_mol": 100.19936510412073,
+        "mean_energy_kj_mol": 89.16306266784667,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -202.349524307251,
+        "std_dU_dlambda_kj_mol": 119.22752014227015,
+        "mean_energy_kj_mol": 70.13299646377564,
+        "samples": 10
+      },
+      {
+        "replica": 0,
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -274.15150556564333,
+        "std_dU_dlambda_kj_mol": 166.87036259143125,
+        "mean_energy_kj_mol": 46.59462723876349,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.0,
+        "mean_dU_dlambda_kj_mol": 237.01622762680054,
+        "std_dU_dlambda_kj_mol": 150.1030207418053,
+        "mean_energy_kj_mol": 50.989439848525215,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.125,
+        "mean_dU_dlambda_kj_mol": 180.07037353515625,
+        "std_dU_dlambda_kj_mol": 118.16192467444587,
+        "mean_energy_kj_mol": 70.78111658096313,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.25,
+        "mean_dU_dlambda_kj_mol": 125.92628207206727,
+        "std_dU_dlambda_kj_mol": 86.22807085146052,
+        "mean_energy_kj_mol": 80.23578853607178,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.375,
+        "mean_dU_dlambda_kj_mol": 65.91573753356934,
+        "std_dU_dlambda_kj_mol": 49.61129234684986,
+        "mean_energy_kj_mol": 93.17514877319336,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.5,
+        "mean_dU_dlambda_kj_mol": 2.620615577697754,
+        "std_dU_dlambda_kj_mol": 8.064332938076078,
+        "mean_energy_kj_mol": 90.00668144226074,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.625,
+        "mean_dU_dlambda_kj_mol": -64.12143549919128,
+        "std_dU_dlambda_kj_mol": 35.183000375936636,
+        "mean_energy_kj_mol": 89.50941677093506,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.75,
+        "mean_dU_dlambda_kj_mol": -134.06094186306,
+        "std_dU_dlambda_kj_mol": 66.32886822233482,
+        "mean_energy_kj_mol": 84.41401195526123,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 0.875,
+        "mean_dU_dlambda_kj_mol": -202.3626301050186,
+        "std_dU_dlambda_kj_mol": 105.54869482293127,
+        "mean_energy_kj_mol": 61.44746942520142,
+        "samples": 10
+      },
+      {
+        "replica": 1,
+        "lambda": 1.0,
+        "mean_dU_dlambda_kj_mol": -273.87983989715576,
+        "std_dU_dlambda_kj_mol": 192.87080852400192,
+        "mean_energy_kj_mol": 62.003713472443636,
+        "samples": 10
+      }
+    ],
+    "finite": true
+  },
+  "relative_binding_estimate_kj_mol": -193.00000513941052,
+  "checks": {
+    "dual_topology": true,
+    "complex_leg_finite": true,
+    "solvent_leg_finite": true,
+    "lambda_coverage": true,
+    "independent_replicas": true
+  },
+  "limitations": [
+    "short bounded sampling",
+    "harmonic fixture rather than parameterized SAMPL6 dual topology",
+    "no experimental comparison",
+    "independent qualification is limited to machine-checkable evidence"
+  ]
+}
