@@ -1,0 +1,29 @@
+{
+  "task_id": "fep_failure_recovery_001",
+  "plans": [
+    {
+      "case_id": "FEP-T06-recoverable-lincs",
+      "action": "restart_from_last_valid_checkpoint",
+      "retry_limit": 1,
+      "rollback": "original immutable input"
+    },
+    {
+      "case_id": "FEP-T06-nan-no-checkpoint",
+      "action": "stop_no_safe_restart",
+      "retry_limit": 0,
+      "rollback": "original immutable input"
+    },
+    {
+      "case_id": "FEP-T07-scheduler-restart",
+      "action": "restart_from_last_valid_checkpoint",
+      "retry_limit": 1,
+      "rollback": "original immutable input"
+    },
+    {
+      "case_id": "FEP-T07-incompatible-checkpoint",
+      "action": "stop_no_safe_restart",
+      "retry_limit": 0,
+      "rollback": "original immutable input"
+    }
+  ]
+}

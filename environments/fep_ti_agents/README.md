@@ -40,6 +40,26 @@ Each of the 15 specialist agents has a corresponding detailed task card in
 `tasks/fep_ag*.md`; the 10 problem-solving agents are documented in
 `tasks/fep_ps*.md`.
 
+### FEP-AG06 failure diagnosis evidence
+
+The executable failure-recovery task is defined in
+[`tasks/fep_ag06_failure_diagnosis.md`](tasks/fep_ag06_failure_diagnosis.md).
+Run it with:
+
+```bash
+python scripts/diagnose_fep_failure.py \
+  tasks/inputs/fep_failure_recovery_001/failure_cases.json \
+  --output-dir results/fep_failure_recovery_001
+```
+
+The frozen input contains four explicit window/replica failures: a compatible
+constraint failure, a non-finite energy without a checkpoint, a scheduler
+interruption, and a protocol-mismatched checkpoint. The resulting report is
+`results/fep_failure_recovery_001/failure_report.json`. Only compatible,
+bounded checkpoint restarts receive a PASS case status; unsafe cases receive
+FAIL and the batch remains REVIEW. This evidence covers diagnosis and retry
+planning, not production trajectory generation or converged free energy.
+
 ## Executable calculation evidence
 
 Run the reproducible smoke calculation with:

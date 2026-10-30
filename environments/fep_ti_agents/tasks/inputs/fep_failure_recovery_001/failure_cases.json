@@ -1,0 +1,55 @@
+{
+  "task_id": "fep_failure_recovery_001",
+  "engine": {"name": "openmm", "version": "8.2.0", "protocol_sha256": "fixture-protocol-v1"},
+  "retry_policy": {"max_retries": 1, "allowed_corrections": ["restart_from_last_valid_checkpoint", "reduce_timestep"]},
+  "cases": [
+    {
+      "case_id": "FEP-T06-recoverable-lincs",
+      "window": "lambda_0.50",
+      "replica": 0,
+      "log": "step 0 PE -120.0\nstep 100 PE -119.8\nWARNING: constraint failure at step 120\nFatal error: simulation terminated",
+      "checkpoint": {"present": true, "valid": true, "step": 100, "protocol_sha256": "fixture-protocol-v1"},
+      "energy_samples": [-120.0, -119.8, -119.7],
+      "trajectory_frames": 101,
+      "expected": "PASS",
+      "expected_cause": "constraint_failure",
+      "expected_action": "restart_from_last_valid_checkpoint"
+    },
+    {
+      "case_id": "FEP-T06-nan-no-checkpoint",
+      "window": "lambda_0.70",
+      "replica": 0,
+      "log": "step 0 PE -88.0\nstep 40 PE nan\nFatal error: non-finite energy",
+      "checkpoint": {"present": false, "valid": false},
+      "energy_samples": [-88.0, null],
+      "trajectory_frames": 40,
+      "expected": "FAIL",
+      "expected_cause": "non_finite_energy",
+      "expected_action": "stop_no_safe_restart"
+    },
+    {
+      "case_id": "FEP-T07-scheduler-restart",
+      "window": "lambda_0.30",
+      "replica": 1,
+      "log": "step 0 PE -101.0\nstep 250 PE -100.9\nScheduler walltime limit reached",
+      "checkpoint": {"present": true, "valid": true, "step": 250, "protocol_sha256": "fixture-protocol-v1"},
+      "energy_samples": [-101.0, -100.9],
+      "trajectory_frames": 251,
+      "expected": "PASS",
+      "expected_cause": "scheduler_interruption",
+      "expected_action": "restart_from_last_valid_checkpoint"
+    },
+    {
+      "case_id": "FEP-T07-incompatible-checkpoint",
+      "window": "lambda_0.90",
+      "replica": 0,
+      "log": "step 0 PE -75.0\nFatal error: checkpoint protocol mismatch",
+      "checkpoint": {"present": true, "valid": true, "step": 0, "protocol_sha256": "different-protocol"},
+      "energy_samples": [-75.0],
+      "trajectory_frames": 1,
+      "expected": "FAIL",
+      "expected_cause": "checkpoint_incompatible",
+      "expected_action": "stop_no_safe_restart"
+    }
+  ]
+}
