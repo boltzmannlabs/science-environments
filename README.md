@@ -13,9 +13,6 @@ science-environments/
 ├── LICENSE
 ├── research/
 │   ├── README.md
-│   ├── formulation_dissolution/
-│   │   ├── research-notes.md
-│   │   └── references.md
 │   ├── scRNAseq-environment/
 │   │   ├── research-notes.md
 │   │   └── references.md
@@ -32,18 +29,6 @@ science-environments/
 │       ├── research-notes.md
 │       └── references.md
 ├── environments/
-│   ├── formulation_dissolution/
-│   │   ├── README.md
-│   │   ├── ENVIRONMENT_SPEC.md
-│   │   ├── STATUS.md
-│   │   ├── MODELS_AND_TOOLS.md
-│   │   ├── pyproject.toml
-│   │   ├── configs/
-│   │   ├── tasks/
-│   │   ├── tests/
-│   │   ├── scripts/
-│   │   ├── benchmark/
-│   │   └── results/
 │   ├── scRNAseq-environment/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
@@ -106,6 +91,6 @@ The [Small-Molecule Lead Optimization environment](environments/small-molecule-l
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection is pending in [LICENSE](LICENSE).
 
-The [Formulation Dissolution environment](environments/formulation_dissolution/README.md) is In Progress: it reuses the existing evidence-first investigation, six empirical dissolution models, synthetic grouped-holdout checks and a bounded assumption-conditional research grid. Controlled lot measurements, calibrated product prediction, experimental formulation validation and maintainer review remain outstanding. See its model/tool inventory and execution receipts for the implemented scope.
+The [Formulation Dissolution environment](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/environments/formulation_dissolution) and its [research notes and references](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/research/formulation_dissolution) are maintained on the `Rebolt` branch. The environment is In Progress: it reuses the existing evidence-first investigation, six empirical dissolution models, synthetic grouped-holdout checks and a bounded assumption-conditional research grid. Controlled lot measurements, calibrated product prediction, experimental formulation validation and maintainer review remain outstanding. See its model/tool inventory and execution receipts for the implemented scope.
 
 Reserved empty directories use `.gitkeep` files so they appear on GitHub. Environment status and evidence should match the linked documents.

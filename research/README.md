@@ -4,7 +4,7 @@ Store research notes and scientific references by environment. Link each specifi
 
 | Topic | Notes | References | Environment |
 | --- | --- | --- | --- |
-| Formulation dissolution (in progress) | [Research notes](formulation_dissolution/research-notes.md) | [References](formulation_dissolution/references.md) | [Environment](../environments/formulation_dissolution/README.md) |
+| Formulation dissolution (in progress; Rebolt branch) | [Research notes](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/research-notes.md) | [References](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/references.md) | [Environment](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/environments/formulation_dissolution) |
 | scRNA-seq cell type annotation | [Research notes](scRNAseq-environment/research-notes.md) | [References](scRNAseq-environment/references.md) | [Environment](../environments/scRNAseq-environment/README.md) |
 | Synthesis route planning | [Research notes](synthesis-route-gym/research-notes.md) | [References](synthesis-route-gym/references.md) | [Environment](../environments/synthesis-route-gym/README.md) |
 | siRNA Designing Harness | [Research notes](sirna-designing-harness/research-notes.md) | [References](sirna-designing-harness/references.md) | [Environment](../environments/sirna-designing-harness/README.md) |
