@@ -1,0 +1,34 @@
+{
+  "task_id": "fep_system_preparation_001",
+  "status": "PASS",
+  "legs": [
+    {
+      "system": "OA-G3",
+      "leg": "complex",
+      "status": "PASS",
+      "errors": [],
+      "atom_count": 7974
+    },
+    {
+      "system": "OA-G3",
+      "leg": "solvent",
+      "status": "PASS",
+      "errors": [],
+      "atom_count": 2942
+    }
+  ],
+  "thresholds": {
+    "temperature_target_K": 300.0,
+    "temperature_mean_tolerance_K": 5.0,
+    "temperature_std_max_K": 10.0,
+    "pressure_target_bar": 1.0,
+    "pressure_mean_tolerance_bar": 100.0,
+    "pressure_std_max_bar": 200.0,
+    "density_target_g_cm3": 1.0,
+    "density_mean_tolerance_g_cm3": 0.08,
+    "density_std_max_g_cm3": 0.08,
+    "final_force_max_kj_mol_nm": 10.0
+  },
+  "source_revision": "c661d3985af7fa0ba8c64a1774cfb2363cd31bda",
+  "immutable_input": true
+}

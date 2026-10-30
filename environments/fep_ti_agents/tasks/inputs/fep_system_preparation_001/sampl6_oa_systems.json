@@ -1,0 +1,21 @@
+{
+  "task_id": "fep_system_preparation_001",
+  "benchmark": "SAMPL6-host-guest-relative-v1",
+  "source_revision": "c661d3985af7fa0ba8c64a1774cfb2363cd31bda",
+  "thresholds": {
+    "temperature_target_K": 300.0,
+    "temperature_mean_tolerance_K": 5.0,
+    "temperature_std_max_K": 10.0,
+    "pressure_target_bar": 1.0,
+    "pressure_mean_tolerance_bar": 100.0,
+    "pressure_std_max_bar": 200.0,
+    "density_target_g_cm3": 1.0,
+    "density_mean_tolerance_g_cm3": 0.08,
+    "density_std_max_g_cm3": 0.08,
+    "final_force_max_kj_mol_nm": 10.0
+  },
+  "legs": [
+    {"system": "OA-G3", "leg": "complex", "topology_atoms": 7974, "coordinate_atoms": 7974, "box_nm": [6.2, 6.2, 6.2], "total_charge": 0, "neutralized": true, "minimization": {"converged": true, "final_force_kj_mol_nm": 1.8}, "equilibration": {"temperature_mean_K": 300.4, "temperature_std_K": 2.1, "pressure_mean_bar": 4.0, "pressure_std_bar": 72.0, "density_mean_g_cm3": 0.99, "density_std_g_cm3": 0.02, "nvt_complete": true, "npt_complete": true}},
+    {"system": "OA-G3", "leg": "solvent", "topology_atoms": 2942, "coordinate_atoms": 2942, "box_nm": [4.5, 4.5, 4.5], "total_charge": 0, "neutralized": true, "minimization": {"converged": true, "final_force_kj_mol_nm": 2.2}, "equilibration": {"temperature_mean_K": 299.8, "temperature_std_K": 2.5, "pressure_mean_bar": -8.0, "pressure_std_bar": 80.0, "density_mean_g_cm3": 1.01, "density_std_g_cm3": 0.02, "nvt_complete": true, "npt_complete": true}}
+  ]
+}
