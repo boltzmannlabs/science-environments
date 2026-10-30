@@ -14,3 +14,7 @@ free energy. Production protein–ligand, ABFE, charge-changing, mutation, and
 reference qualification remain follow-up work requiring a parameterized
 SAMPL6 hybrid topology, long trajectories, and independent scientific
 evaluators.
+
+FEP-AG02 is now executable through `scripts/validate_transformation.py` with
+an exact SAMPL6-derived fixture, machine-readable assessment, chemical-change
+CSV, Markdown report, and PASS/REVIEW/FAIL qualification output.
