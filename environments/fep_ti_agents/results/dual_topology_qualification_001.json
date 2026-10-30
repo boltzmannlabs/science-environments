@@ -1,0 +1,28 @@
+{
+  "task_id": "fep_dual_topology_legs_001",
+  "qualification": "PASS",
+  "independent_checks": {
+    "dual_topology": true,
+    "complex_leg_finite": true,
+    "solvent_leg_finite": true,
+    "lambda_coverage": true,
+    "independent_replicas": true
+  },
+  "sampling_checks": {
+    "complex_overlap_proxy_present": true,
+    "solvent_overlap_proxy_present": true,
+    "complex_replica_uncertainty_present": true,
+    "solvent_replica_uncertainty_present": true
+  },
+  "complex_estimate_kj_mol": -198.79773943722248,
+  "solvent_estimate_kj_mol": -5.797734297811971,
+  "relative_binding_estimate_kj_mol": -193.00000513941052,
+  "evidence_scope": "bounded dual-topology OpenMM TI qualification fixture; not converged SAMPL6 production FEP",
+  "limitations": [
+    "short bounded sampling",
+    "harmonic fixture rather than parameterized SAMPL6 dual topology",
+    "no experimental comparison",
+    "independent qualification is limited to machine-checkable evidence"
+  ],
+  "interpretation": "PASS means the bounded dual-topology fixture executed with finite complex and solvent legs, complete lambda coverage, and independent replicas; it is not a claim of converged SAMPL6 production FEP."
+}

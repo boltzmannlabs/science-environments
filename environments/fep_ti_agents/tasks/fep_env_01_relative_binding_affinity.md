@@ -1,6 +1,6 @@
 # FEP-ENV-01 — Protein–Ligand Relative Binding Affinity
 
-**Purpose:** Estimate a ligand A→B relative binding free energy from matched complex and solvent legs.
+**Purpose:** Estimate a ligand A→B relative binding free energy from matched complex and solvent legs. The repository currently provides a bounded dual-topology qualification fixture; it does not claim a production protein–ligand estimate.
 
 **Inputs:** mapped ligand pair, validated topology/parameters, protein complex and solvent systems, charge/multiplicity, lambda protocol, replicas, seeds, and reference data.
 

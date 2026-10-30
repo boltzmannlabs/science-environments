@@ -1,0 +1,264 @@
+{
+  "task_id": "fep_molecular_ti_local_001",
+  "status": "PASS",
+  "scope": "bounded native OpenMM molecular TI proof; not protein-ligand production FEP",
+  "engine": {
+    "name": "OpenMM",
+    "version": "8.2",
+    "platform": "CUDA",
+    "host": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42"
+  },
+  "protocol": {
+    "windows": 11,
+    "replicas": 2,
+    "steps_per_window": 400,
+    "temperature_K": 300,
+    "timestep_ps": 0.001,
+    "endpoint": "water-like 3-atom molecule; O-H 0.096 -> 0.100 nm"
+  },
+  "estimate_kj_mol": -0.15082684582532363,
+  "finite_energy": true,
+  "finite_derivative": true,
+  "lambda_coverage": true,
+  "windows": [
+    {
+      "lambda": 0.0,
+      "mean_dU_dlambda": -0.08172722835959646,
+      "replica_std": 0.06156183577991977
+    },
+    {
+      "lambda": 0.1,
+      "mean_dU_dlambda": -0.19575241753411213,
+      "replica_std": 0.00278688014244724
+    },
+    {
+      "lambda": 0.2,
+      "mean_dU_dlambda": -0.5190439284189176,
+      "replica_std": 0.30356986833905514
+    },
+    {
+      "lambda": 0.30000000000000004,
+      "mean_dU_dlambda": 0.0731812914082711,
+      "replica_std": 0.2330453088096014
+    },
+    {
+      "lambda": 0.4,
+      "mean_dU_dlambda": -0.22457948622575474,
+      "replica_std": 0.12505056179710877
+    },
+    {
+      "lambda": 0.5,
+      "mean_dU_dlambda": -0.2027325566710657,
+      "replica_std": 0.24447178312351792
+    },
+    {
+      "lambda": 0.6000000000000001,
+      "mean_dU_dlambda": -0.12489604195931006,
+      "replica_std": 0.01457145566597301
+    },
+    {
+      "lambda": 0.7000000000000001,
+      "mean_dU_dlambda": -0.2707133970477007,
+      "replica_std": 0.11865278879504362
+    },
+    {
+      "lambda": 0.8,
+      "mean_dU_dlambda": -0.04056802635665645,
+      "replica_std": 0.0022186411419175545
+    },
+    {
+      "lambda": 0.9,
+      "mean_dU_dlambda": 0.10735905463599307,
+      "replica_std": 0.2795428775388791
+    },
+    {
+      "lambda": 1.0,
+      "mean_dU_dlambda": -0.13931867180836918,
+      "replica_std": 0.07198651133371564
+    }
+  ],
+  "records": [
+    {
+      "replica": 0,
+      "lambda": 0.0,
+      "mean_dU_dlambda": -0.14328906413951623,
+      "std_dU_dlambda": 2.6988666849862653,
+      "mean_energy_kj_mol": 0.4174278814956779,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.1,
+      "mean_dU_dlambda": -0.1929655373916649,
+      "std_dU_dlambda": 2.851016075686595,
+      "mean_energy_kj_mol": 0.9206141754155397,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.2,
+      "mean_dU_dlambda": -0.8226137967579727,
+      "std_dU_dlambda": 3.4281868315094655,
+      "mean_energy_kj_mol": 0.6029672345088329,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.30000000000000004,
+      "mean_dU_dlambda": -0.1598640174013303,
+      "std_dU_dlambda": 3.9870193336567414,
+      "mean_energy_kj_mol": 0.9312924404141085,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.4,
+      "mean_dU_dlambda": -0.09952892442864598,
+      "std_dU_dlambda": 1.625694308957698,
+      "mean_energy_kj_mol": 0.5674223466790863,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.5,
+      "mean_dU_dlambda": -0.4472043397945836,
+      "std_dU_dlambda": 1.8858403131049695,
+      "mean_energy_kj_mol": 0.2634743462636834,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.6000000000000001,
+      "mean_dU_dlambda": -0.11032458629333705,
+      "std_dU_dlambda": 3.123159240825198,
+      "mean_energy_kj_mol": 0.8242891472909832,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.7000000000000001,
+      "mean_dU_dlambda": -0.3893661858427443,
+      "std_dU_dlambda": 2.9237525496073213,
+      "mean_energy_kj_mol": 0.46404641897830745,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.8,
+      "mean_dU_dlambda": -0.03834938521473889,
+      "std_dU_dlambda": 2.1192494443003635,
+      "mean_energy_kj_mol": 0.6507192379009211,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 0.9,
+      "mean_dU_dlambda": -0.17218382290288603,
+      "std_dU_dlambda": 3.5467440724581007,
+      "mean_energy_kj_mol": 0.5540814520769345,
+      "samples": 20
+    },
+    {
+      "replica": 0,
+      "lambda": 1.0,
+      "mean_dU_dlambda": -0.06733216047465355,
+      "std_dU_dlambda": 3.9281029381910417,
+      "mean_energy_kj_mol": 1.4249531123927823,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.0,
+      "mean_dU_dlambda": -0.02016539257967669,
+      "std_dU_dlambda": 2.6022114550811444,
+      "mean_energy_kj_mol": 0.3322591229720274,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.1,
+      "mean_dU_dlambda": -0.19853929767655937,
+      "std_dU_dlambda": 3.6707495937673915,
+      "mean_energy_kj_mol": 0.5436905167720397,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.2,
+      "mean_dU_dlambda": -0.21547406007986245,
+      "std_dU_dlambda": 2.6963088672500906,
+      "mean_energy_kj_mol": 0.3769466562422167,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.30000000000000004,
+      "mean_dU_dlambda": 0.3062266002178725,
+      "std_dU_dlambda": 3.6590774249172333,
+      "mean_energy_kj_mol": 0.7257438613145581,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.4,
+      "mean_dU_dlambda": -0.3496300480228635,
+      "std_dU_dlambda": 2.013835645640623,
+      "mean_energy_kj_mol": 0.5528811940486775,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.5,
+      "mean_dU_dlambda": 0.041739226452452205,
+      "std_dU_dlambda": 1.8530291873239357,
+      "mean_energy_kj_mol": 0.5010196239454672,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.6000000000000001,
+      "mean_dU_dlambda": -0.13946749762528307,
+      "std_dU_dlambda": 2.480896377148107,
+      "mean_energy_kj_mol": 0.5019836866646074,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.7000000000000001,
+      "mean_dU_dlambda": -0.15206060825265705,
+      "std_dU_dlambda": 3.2601319537683917,
+      "mean_energy_kj_mol": 0.6760065512789879,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.8,
+      "mean_dU_dlambda": -0.042786667498574,
+      "std_dU_dlambda": 2.38609605427684,
+      "mean_energy_kj_mol": 0.24390737694047857,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 0.9,
+      "mean_dU_dlambda": 0.3869019321748722,
+      "std_dU_dlambda": 2.834542244882278,
+      "mean_energy_kj_mol": 0.43231135075002386,
+      "samples": 20
+    },
+    {
+      "replica": 1,
+      "lambda": 1.0,
+      "mean_dU_dlambda": -0.21130518314208482,
+      "std_dU_dlambda": 2.8077976668283853,
+      "mean_energy_kj_mol": 0.5025277693550834,
+      "samples": 20
+    }
+  ],
+  "limitations": [
+    "bonded-only alchemical interpolation",
+    "no solvent or protein",
+    "short bounded sampling",
+    "no experimental reference"
+  ]
+}

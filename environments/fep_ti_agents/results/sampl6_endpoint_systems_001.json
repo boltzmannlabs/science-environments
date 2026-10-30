@@ -1,0 +1,56 @@
+{
+  "task_id": "fep_sampl6_endpoint_systems_001",
+  "status": "PASS",
+  "source": {
+    "repository": "https://github.com/samplchallenges/SAMPL6",
+    "revision": "c661d3985af7fa0ba8c64a1774cfb2363cd31bda",
+    "systems": "host_guest/SAMPLing/OA-G3-0 and OA-G6-0 OPENMM complex/solvent XML"
+  },
+  "engine": {
+    "name": "OpenMM",
+    "version": "8.2",
+    "platform": "CUDA",
+    "host": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42"
+  },
+  "protocol": {
+    "minimization_iterations": 5,
+    "steps": 10,
+    "temperature_K": 300,
+    "timestep_ps": 0.002
+  },
+  "records": [
+    {
+      "guest": "OA-G3-0",
+      "leg": "complex",
+      "particles": 7974,
+      "steps": 10,
+      "final_energy_kj_mol": -121871.72222478013,
+      "finite_energy": true
+    },
+    {
+      "guest": "OA-G3-0",
+      "leg": "solvent",
+      "particles": 2942,
+      "steps": 10,
+      "final_energy_kj_mol": -44093.55215399084,
+      "finite_energy": true
+    },
+    {
+      "guest": "OA-G6-0",
+      "leg": "complex",
+      "particles": 7976,
+      "steps": 10,
+      "final_energy_kj_mol": -122531.82695927133,
+      "finite_energy": true
+    },
+    {
+      "guest": "OA-G6-0",
+      "leg": "solvent",
+      "particles": 2944,
+      "steps": 10,
+      "final_energy_kj_mol": -43781.719542178704,
+      "finite_energy": true
+    }
+  ],
+  "interpretation": "Endpoint systems execute with finite energies; this is not a free-energy estimate and does not establish lambda-window sampling or binding qualification."
+}

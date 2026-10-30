@@ -1,0 +1,40 @@
+{
+  "task_id": "fep_atom_mapping_001",
+  "status": "PASS",
+  "scope": "bounded real SAMPL6 guest endpoint preparation and OpenMM smoke simulations; not relative FEP",
+  "engine": {
+    "openmm": "8.2",
+    "platform": "CUDA",
+    "host": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42"
+  },
+  "results": [
+    {
+      "label": "G3",
+      "atoms": 17,
+      "platform": "CUDA",
+      "steps": 100,
+      "final_energy_kj_mol": 126.89547962724646,
+      "finite_energy": true,
+      "seed": 20261030
+    },
+    {
+      "label": "G6",
+      "atoms": 19,
+      "platform": "CUDA",
+      "steps": 100,
+      "final_energy_kj_mol": 135.20737771408494,
+      "finite_energy": true,
+      "seed": 20261031
+    }
+  ],
+  "source_sha256": {
+    "OA-G6_complex.pdb": "d0369d41fea4b5e4660372850832421ac2bf0018c3f78bff51764908184a85e2",
+    "OA-G3_complex.pdb": "745e28ba79cf381d6043eb07b5806616e1782b5ee2fbb1066f49a024679a92a7"
+  },
+  "limitations": [
+    "No alchemical dual-topology mapping",
+    "No host/solvent complex simulation",
+    "100-step smoke runs",
+    "No free-energy estimate"
+  ]
+}

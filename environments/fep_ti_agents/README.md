@@ -1,6 +1,6 @@
 # FEP/TI Specialist Agents
 
-**Lifecycle: In Progress — executable toy calculation and fixture validation.** This environment defines
+**Lifecycle: In Progress — executable bounded dual-topology legs and fixture validation.** This environment defines
 ten FEP/TI problem-solving specialists, their inputs/outputs, acceptance
 criteria, and evidence rules. It does not claim a production free-energy
 calculation without real windows, trajectories, overlap, convergence,
@@ -74,6 +74,30 @@ python scripts/validate_sampl6_manifest.py
 
 This is a benchmark input/provenance layer; it does not claim that the
 SAMPL6 molecular simulations have already been executed.
+
+### Bounded dual-topology complex and solvent legs
+
+Run the executable dual-topology fixture and its independent qualification:
+
+```bash
+python scripts/run_dual_topology_legs.py \
+  --output results/dual_topology_legs_001.json
+python scripts/qualify_dual_topology.py \
+  results/dual_topology_legs_001.json \
+  --output results/dual_topology_qualification_001.json
+```
+
+The recorded CUDA run uses nine lambda windows, two independent replicas and
+200 integration steps per window. The independent report is `PASS` for finite
+complex/solvent legs, complete lambda coverage and replica execution. Its
+relative value is a bounded harmonic-fixture estimate, not a SAMPL6 binding
+free energy; production SAMPL6 qualification remains pending.
+
+The pinned SAMPL6 OpenMM endpoint systems were also executed for both guests
+and both legs. The evidence is in
+`results/sampl6_endpoint_systems_001.json`; all four endpoint runs completed
+on CUDA with finite energies. Endpoint execution is not substituted for an
+alchemical free-energy calculation.
 
 ## Package structure
 
