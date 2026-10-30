@@ -1,9 +1,0 @@
-[
-{"id":"QMMM-PS01","name":"QM Region Selection Auditor","problem":"Important catalytic residues, ligands, or cofactors omitted","expected_recovery":"Propose chemically justified region alternatives"},
-{"id":"QMMM-PS02","name":"Boundary and Link-Atom Repair","problem":"Invalid boundary or link atoms","expected_recovery":"Validate supported boundary treatment"},
-{"id":"QMMM-PS03","name":"Charge and Embedding Consistency","problem":"Inconsistent charge or electrostatic embedding","expected_recovery":"Reconcile charge accounting and embedding"},
-{"id":"QMMM-PS04","name":"SCF-in-QM/MM Recovery","problem":"QM-region SCF failure","expected_recovery":"Apply bounded convergence recovery"},
-{"id":"QMMM-PS05","name":"Coupling and Force Consistency","problem":"Energy/force coupling inconsistency","expected_recovery":"Validate decomposition and forces"},
-{"id":"QMMM-PS06","name":"QM Region Sensitivity Analyzer","problem":"Result depends on QM-region definition","expected_recovery":"Compare expanded regions"},
-{"id":"QMMM-PS07","name":"QM/MM Trajectory Failure Recovery","problem":"Coupled trajectory instability or failure","expected_recovery":"Inspect first failure and safe restart"}
-]

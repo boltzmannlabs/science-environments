@@ -1,8 +1,0 @@
-name: homo_lumo_agents
-version: 1
-tracks: [closed_shell, charged, open_shell, near_degenerate, conformer, reference]
-qualification:
-  require_scf_convergence: true
-  require_occupation_consistency: true
-  require_unit_checked_gap: true
-  adapter_pass_is_scientific_pass: false

@@ -1,5 +1,0 @@
-source leaprc.gaff2
-M = loadmol2 /home/boltzmann15/github/science-environments/environments/fep_ti_agents/results/sampl6_endpoint_smoke/G3.mol2
-loadamberparams /home/boltzmann15/github/science-environments/environments/fep_ti_agents/results/sampl6_endpoint_smoke/G3.frcmod
-saveamberparm M /home/boltzmann15/github/science-environments/environments/fep_ti_agents/results/sampl6_endpoint_smoke/G3.prmtop /home/boltzmann15/github/science-environments/environments/fep_ti_agents/results/sampl6_endpoint_smoke/G3.inpcrd
-quit

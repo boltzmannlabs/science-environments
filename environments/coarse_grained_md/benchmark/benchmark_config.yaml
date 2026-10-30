@@ -1,7 +1,0 @@
-name: coarse_grained_md
-version: 1
-tracks: [mapping, protein_proxy, membrane_proxy, polymer_llps_proxy, validation]
-qualification:
-  require_mapping_evidence: true
-  require_reference_observables: true
-  adapter_pass_is_scientific_pass: false
