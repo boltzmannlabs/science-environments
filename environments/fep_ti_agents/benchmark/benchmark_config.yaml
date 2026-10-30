@@ -1,8 +1,0 @@
-name: fep_ti_agents
-version: 1
-tracks: [toy_ti, sampl6_manifest, mapping, overlap, convergence, cycle, qualification]
-qualification:
-  require_window_trajectories: true
-  require_overlap_and_uncertainty: true
-  require_independent_evaluator: true
-  adapter_pass_is_scientific_pass: false

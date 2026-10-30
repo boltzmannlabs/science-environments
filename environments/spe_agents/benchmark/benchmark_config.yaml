@@ -1,8 +1,0 @@
-name: spe_agents
-version: 1
-tracks: [baseline, electronic_state, method_basis, recovery, regression]
-qualification:
-  require_finite_energy: true
-  require_scf_convergence: true
-  require_independent_reference: true
-  adapter_pass_is_scientific_pass: false
