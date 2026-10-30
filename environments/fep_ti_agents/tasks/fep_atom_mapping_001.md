@@ -20,7 +20,7 @@ Inputs are under `tasks/inputs/fep_atom_mapping_001/`:
 - `expected_outputs.json`: machine-checkable acceptance requirements.
 
 The upstream SAMPL6 source and revision are pinned in
-`benchmarks/sampl6/manifest.json`. These small MOL2 files are a validation
+`benchmark/sampl6/manifest.json`. These small MOL2 files are a validation
 fixture; they do not replace the upstream host/guest topology or production
 trajectory files.
 

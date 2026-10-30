@@ -58,7 +58,7 @@ data, and independent repeats.
 
 ## Molecular benchmark manifest
 
-[`benchmarks/sampl6/manifest.json`](benchmarks/sampl6/manifest.json) pins a
+[`benchmark/sampl6/manifest.json`](benchmark/sampl6/manifest.json) pins a
 bounded SAMPL6 OA-G3/OA-G6 pair, including structures-at-source URLs, guest
 SMILES, experimental ΔG values, the OA-G3→OA-G6 relative target (0.21 ± 0.028
 kcal/mol), and 12 controlled fault-injection cases. The manifest deliberately

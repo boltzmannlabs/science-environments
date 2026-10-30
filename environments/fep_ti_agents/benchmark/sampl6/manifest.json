@@ -1,0 +1,18 @@
+{
+  "benchmark": "SAMPL6-host-guest-relative-v1",
+  "status": "source-pinned-manifest; endpoint execution recorded; production FEP pending",
+  "source": {
+    "repository": "https://github.com/samplchallenges/SAMPL6",
+    "revision": "master",
+    "reference_measurements": "https://raw.githubusercontent.com/samplchallenges/SAMPL6/master/host_guest/Analysis/ExperimentalMeasurements/experimental_measurements.json",
+    "license_note": "Use the upstream repository's terms and cite SAMPL6; do not redistribute restricted artifacts."
+  },
+  "systems": [
+    {"id":"SAMPL6-OA-G3","host":"octa-acid","guest":"5-hexenoic acid","smiles":"C=CCCCC(O)=O","experimental_dg_kcal_mol":-5.18,"experimental_uncertainty_kcal_mol":0.02,"complex_structure_url":"https://raw.githubusercontent.com/samplchallenges/SAMPL6/master/host_guest/SAMPLing/OA-G3-0/PDB/complex.pdb","solvent_structure_url":"https://raw.githubusercontent.com/samplchallenges/SAMPL6/master/host_guest/SAMPLing/OA-G3-0/PDB/solvent.pdb"},
+    {"id":"SAMPL6-OA-G6","host":"octa-acid","guest":"4-methylpentanoic acid","smiles":"OC(CCC(C)C)=O","experimental_dg_kcal_mol":-4.97,"experimental_uncertainty_kcal_mol":0.02,"complex_structure_url":"https://raw.githubusercontent.com/samplchallenges/SAMPL6/master/host_guest/SAMPLing/OA-G6-0/PDB/complex.pdb","solvent_structure_url":"https://raw.githubusercontent.com/samplchallenges/SAMPL6/master/host_guest/SAMPLing/OA-G6-0/PDB/solvent.pdb"}
+  ],
+  "relative_target": {"transformation":"OA-G3 -> OA-G6","experimental_delta_delta_g_kcal_mol":0.21,"uncertainty_kcal_mol":0.028,"combination":"DG(OA-G6) - DG(OA-G3)"},
+  "fault_injection_cases": [
+    {"id":"FEP-T01","variant":"valid_neutral_pair","expected":"PASS"},{"id":"FEP-T02","variant":"large_transformation_map","expected":"REVIEW"},{"id":"FEP-T03","variant":"charge_changed_endpoint","expected":"REVIEW"},{"id":"FEP-T04","variant":"poor_window_overlap","expected":"REVIEW"},{"id":"FEP-T05","variant":"undersampled_replicas","expected":"REVIEW"},{"id":"FEP-T06","variant":"nonfinite_replica","expected":"FAIL_OR_RECOVER"},{"id":"FEP-T07","variant":"missing_parameters","expected":"FAIL"},{"id":"FEP-T08","variant":"forward_reverse_disagreement","expected":"REVIEW"},{"id":"FEP-T09","variant":"cycle_sign_error","expected":"FAIL"},{"id":"FEP-T10","variant":"technical_success_inadequate_sampling","expected":"REVIEW"},{"id":"FEP-T11","variant":"protonation_tautomer_dependence","expected":"REVIEW"},{"id":"FEP-T12","variant":"independent_starting_configurations","expected":"PASS_OR_REVIEW"}
+  ]
+}
