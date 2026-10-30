@@ -1,0 +1,56 @@
+# Task: fep_atom_mapping_001
+
+**Task family:** Free Energy Perturbation  
+**Module:** FEP/TI  
+**Agent:** FEP-AG01 Alchemical Mapping Auditor  
+**Status:** implemented on feature branch; scientific benchmark qualification pending
+
+## Description
+
+Validate the supplied atom correspondence for the SAMPL6 OA-G3 → OA-G6
+relative transformation before any alchemical simulation is launched.
+
+## Target and exact inputs
+
+Inputs are under `tasks/inputs/fep_atom_mapping_001/`:
+
+- `ligand_a.mol2` and `ligand_b.mol2`: frozen ligand heavy-atom fixtures.
+- `atom_map.json`: supplied correspondence and immutability declaration.
+- `transformation.json`: endpoint names, charges, benchmark and expected behavior.
+- `expected_outputs.json`: machine-checkable acceptance requirements.
+
+The upstream SAMPL6 source and revision are pinned in
+`benchmarks/sampl6/manifest.json`. These small MOL2 files are a validation
+fixture; they do not replace the upstream host/guest topology or production
+trajectory files.
+
+## Required execution steps
+
+1. Parse both MOL2 files and reject malformed or empty structures.
+2. Validate mapped atom IDs and one-to-one correspondence.
+3. Compare mapped element identities.
+4. Compare mapped bond pairs and report bond-order changes.
+5. Report unmapped atoms and duplicate mappings.
+6. Preserve input hashes and never silently rewrite the mapping.
+7. Return `PASS`, `REVIEW`, or `FAIL` with machine-readable diagnostics.
+
+Run:
+
+```bash
+python scripts/validate_atom_mapping.py \
+  --input tasks/inputs/fep_atom_mapping_001 \
+  --output results/fep_atom_mapping_001.json
+```
+
+## Expected output and acceptance
+
+The valid fixture returns `PASS` while retaining expected bond-order changes
+as diagnostics. Unknown atoms, duplicate mappings, or element mismatches
+return `FAIL`; incomplete mappings return `REVIEW`. The output must include
+input SHA-256 hashes and `silent_repair: false`.
+
+## Constraints
+
+No production simulation is allowed for this task. Do not infer stereochemical
+validity from a MOL2 file that contains no stereochemical metadata; report that
+limitation. Do not silently repair atom maps or change endpoint charges.
