@@ -363,7 +363,12 @@ def main() -> None:
     expected_entries = {'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
                         'config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results'}
     require({p.name for p in ROOT.iterdir()} == expected_entries, 'environment has exactly the requested top-level layout')
-    for name in ('tasks', 'tests', 'benchmark', 'results'):
+    task_directory = ROOT / 'tasks'
+    require(task_directory.is_dir(), 'tasks directory exists')
+    require(all(path.is_file() and not path.is_symlink() and path.suffix == '.md'
+                for path in task_directory.iterdir()),
+            'tasks contains only Markdown task definitions, not execution artifacts')
+    for name in ('tests', 'benchmark', 'results'):
         directory = ROOT / name
         entries = list(directory.iterdir()) if directory.is_dir() else []
         reserved = not entries or (len(entries) == 1 and entries[0].name == '.gitkeep'

@@ -6,7 +6,7 @@
 
 Tracking: [issue #86](https://github.com/boltzmannlabs/science-environments/issues/86). Publish the latest execution-policy and scientific-contract changes together with the standard environment layout. The CLI is `scripts/run.py`, supporting code is in `src/`, schemas/examples are in `config/`, and validation entrypoints are in `scripts/`. The generic agent instruction is `src/TASK.md`.
 
-`tasks/`, `tests/`, `benchmark/` and `results/` contain only empty `.gitkeep` markers. They contain no scientific tasks, test suite, benchmark outputs or run results. Run outputs belong in a separate user-selected run directory.
+`tasks/` contains [eight published in-silico reproduction tasks](tasks/README.md). `tests/`, `benchmark/` and `results/` retain only empty `.gitkeep` markers. Run outputs belong in a separate user-selected run directory.
 
 ## Preserved implementation and test history
 
@@ -30,10 +30,16 @@ Both scripts accept an optional `--report` path outside the environment; they le
 ## Acceptance
 
 - Schemas, examples, documentation links and the requested top-level entries resolve.
-- The four reserved directories contain no substantive files.
+- `tasks/` contains Markdown task definitions; `tests/`, `benchmark/` and `results/` contain only empty `.gitkeep` markers.
 - Initialization freezes executable and instruction dependencies; resume uses the frozen `scripts/run.py`.
 - Evidence binding, independent assessment, invalidation, recovery and resource boundaries remain intact.
 - Scientific qualification needs applicable controls and all mandatory chemistry, folding, assembly and property evidence. Software checks, confidence, docking and classical MD do not replace that evidence.
+
+## Literature reproduction tasks
+
+The task catalogue covers AME, RFdiffusion2 retro-aldolase and cysteine-hydrolase design, serine hydrolases, Riff-Diff retro-aldolases and MBHases, modern Kemp eliminases, and historical Kemp QM/MM calculations. Each task identifies published computational steps, inputs, reference values, comparison procedures and outputs. Experimental observations are supporting context. Some campaign-specific computational baselines require supplementary-data extraction before quantitative comparison.
+
+These task definitions establish no scientific result and do not configure scientific adapters or change execution permissions, budgets or qualification gates. The validator accepts Markdown task definitions while preserving the other reserved directories.
 
 ## Remaining requirements
 

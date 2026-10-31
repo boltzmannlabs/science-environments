@@ -21,7 +21,7 @@ Denovo-Enzyme-Design/
 └── results/
 ```
 
-`tasks/`, `tests/`, `benchmark/` and `results/` are reserved and contain only empty `.gitkeep` files so Git preserves them. Earlier task/test material remains in Git history. The reusable agent instruction lives in `src/TASK.md`; illustrative requests live in `config/`. Do not treat those examples as approved biological or resource defaults.
+`tasks/` contains [eight published in-silico reproduction tasks](tasks/README.md). Each defines the source computational workflow, inputs, numerical references and comparison procedure; experimental results are supporting context. `tests/`, `benchmark/` and `results/` remain reserved and contain only empty `.gitkeep` files so Git preserves them. Earlier task/test material remains in Git history. The reusable agent instruction lives in `src/TASK.md`; illustrative requests live in `config/`. Do not treat those examples as approved biological or resource defaults.
 
 ## Read and run
 
@@ -36,7 +36,7 @@ python3 -B /path/to/new-run/environment_snapshot/scripts/run.py run --run-dir /p
 python3 -B /path/to/new-run/environment_snapshot/scripts/run.py status --run-dir /path/to/new-run
 ```
 
-New runs freeze code, instructions, tool policy and input identity. Resume through that snapshot. Earlier runs must retain their original runtime and accounting; a folder reorganization does not migrate or renew them. Keep scientific results in the separate run directory so the requested empty package directories stay empty.
+New runs freeze code, instructions, tool policy and input identity. Resume through that snapshot. Earlier runs must retain their original runtime and accounting; a folder reorganization does not migrate or renew them. Supply the task index, selected reproduction task and prepared manifests through repeated `--input` arguments so their identities are recorded. Keep scientific results in the separate run directory; `tasks/` holds task definitions while the other reserved directories retain only their `.gitkeep` files.
 
 ## Validation
 
