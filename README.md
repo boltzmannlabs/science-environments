@@ -22,7 +22,7 @@ science-environments/
 │   ├── sirna-designing-harness/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   ├── enzyme-variant-optimization/
+│   ├── enzyme-variant-engineering/
 │   │   ├── research-notes.md
 │   │   └── references.md
 │   └── small-molecule-lead-optimization/
@@ -53,16 +53,13 @@ science-environments/
 │   │   ├── skills/
 │   │   ├── benchmark/
 │   │   └── results/
-│   ├── enzyme-variant-optimization/
+│   ├── enzyme-variant-engineering/
 │   │   ├── README.md
 │   │   ├── ENVIRONMENT_SPEC.md
 │   │   ├── STATUS.md
-│   │   ├── pyproject.toml
-│   │   ├── config/
 │   │   ├── tasks/
 │   │   ├── tests/
-│   │   ├── src/
-│   │   ├── scripts/
+│   │   ├── specialist/
 │   │   └── results/
 │   └── small-molecule-lead-optimization/
 │       ├── README.md
@@ -85,7 +82,7 @@ Each environment has its own folder. Research notes and references are maintaine
 
 Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
 
-The [Enzyme Variant Optimization environment](environments/enzyme-variant-optimization/README.md) is In Progress: it packages the existing research runner, proposer/critic specialist, and portable synthetic tests. Native-runtime distribution, live pipeline qualification, independent scientific comparison, and maintainer review remain separate requirements.
+The [Enzyme Variant Optimization environment](environments/enzyme-variant-engineering/README.md) is a minimal native-SCI contribution: a process specification, a real BglB activity/stability case, task-specific scientific evaluation, and a saved failure-focused specialist. It reuses Agent-Scientist's existing tool calls, enzyme input validations, sessions and delegation; no replacement runner is included. Base/assisted scientific runs, comparison evidence and maintainer review remain outstanding.
 
 The [Small-Molecule Lead Optimization environment](environments/small-molecule-lead-optimization/README.md) is In Progress: a general environment with a local Agent-Scientist plugin, versioned records, advisory checks, persistent campaigns, an offline evaluator, and synthetic/native integration tests. Live scientific qualification, the real case study, issue linkage, and a matched base-agent comparison remain outstanding.
 
