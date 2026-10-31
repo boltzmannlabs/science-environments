@@ -128,14 +128,26 @@ def sha(path):
 def parse_backbone(path):
     """Read observed PDB positions only; reject duplicate/alternate ambiguous atoms."""
     atoms, names, chains = {}, {}, {}
+    models = 0
     for row in Path(path).read_text().splitlines():
+        if row.startswith('MODEL '):
+            models += 1
+            if models > 1:
+                raise ValueError('Select a single model before structure preparation')
         if not row.startswith('ATOM  '):
             continue
+        if len(row) < 54 or not row[21].strip():
+            raise ValueError('Incomplete PDB atom record or blank chain identifier')
+        if row[26] != ' ' or row[16] != ' ':
+            raise ValueError('Normalize insertion codes and alternate locations with a reversible mapping first')
         chain, position, name = row[21], int(row[22:26]), row[12:16].strip()
+        residue = row[17:20].strip()
+        if (chain, position) in names and names[chain, position] != residue:
+            raise ValueError('Conflicting residue identities at one mapped position')
+        names[chain, position] = residue
+        chains.setdefault(chain, set()).add(position)
         if name not in BACKBONE:
             continue
-        if row[16] not in ' A':
-            raise ValueError('Unsupported alternate backbone location')
         key = (chain, position, name)
         if key in atoms:
             raise ValueError('Duplicate backbone atom: ' + str(key))
@@ -151,15 +163,21 @@ def parse_backbone(path):
 
 
 def angle(a, b, c):
-    x, y = a-b, c-b
+    x, y = np.asarray(a,dtype=float)-b, np.asarray(c,dtype=float)-b
+    if not np.isfinite([x,y]).all() or min(np.linalg.norm(x),np.linalg.norm(y)) <= 1e-12:
+        raise ValueError('Undefined bond angle: degenerate atomic geometry')
     return float(np.degrees(np.arccos(np.clip(np.dot(x, y)/(np.linalg.norm(x)*np.linalg.norm(y)), -1, 1))))
 
 
 def dihedral(a, b, c, d):
-    x, y, z = a-b, c-b, d-c
+    x, y, z = np.asarray(a,dtype=float)-b, np.asarray(c,dtype=float)-b, np.asarray(d,dtype=float)-c
+    if not np.isfinite([x,y,z]).all() or np.linalg.norm(y) <= 1e-12:
+        raise ValueError('Undefined dihedral: degenerate atomic geometry')
     y = y/np.linalg.norm(y)
     x -= np.dot(x, y)*y
     z -= np.dot(z, y)*y
+    if min(np.linalg.norm(x),np.linalg.norm(z)) <= 1e-12:
+        raise ValueError('Undefined dihedral: collinear atomic geometry')
     return float(np.degrees(np.arctan2(np.dot(np.cross(y, x), z), np.dot(x, z))))
 
 
@@ -216,7 +234,7 @@ def verify_mapping(input_path, reference_path, sequence_path, mapping):
             if not ref_row or abs(ref_row['omega_deg'])>=35 or not candidate_row:
                 raise ValueError('Cis link not supported by observed reference')
             if names[chain,right]!='PRO' or ref_names[chain,right]!='PRO':
-                raise ValueError('Cis mapping requires reference and candidate proline')
+                raise ValueError('This preparation adapter supports cis-before-Pro only; a validated non-Pro cis link needs another preparation route')
     return seq, input_stats, ref_stats
 
 
@@ -232,6 +250,7 @@ def _positions_nm(topology, positions):
 
 def _ca_chirality(path):
     """Signed N-C-CB tetrahedron at non-Gly CA, with no enzyme-specific labels."""
+    parse_backbone(path)
     residues={}
     for row in Path(path).read_text().splitlines():
         if not row.startswith('ATOM  '):
@@ -240,6 +259,8 @@ def _ca_chirality(path):
         atom=row[12:16].strip()
         item=residues.setdefault(key, {'resname':row[17:20].strip()})
         if atom in ('N','CA','C','CB'):
+            if atom in item:
+                raise ValueError('Duplicate stereocentre atom at '+str(key))
             item[atom]=np.array([float(row[j:j+8]) for j in (30,38,46)])
     result={}
     for key, atoms in residues.items():
@@ -247,12 +268,15 @@ def _ca_chirality(path):
             continue
         if not all(atom in atoms for atom in ('N','CA','C','CB')):
             raise ValueError('Missing non-Gly stereocentre atoms at '+str(key))
-        result[key]=float(np.linalg.det(np.stack([atoms[atom]-atoms['CA']
-                              for atom in ('N','C','CB')])))
+        volume=float(np.linalg.det(np.stack([atoms[atom]-atoms['CA'] for atom in ('N','C','CB')])))
+        if not math.isfinite(volume) or abs(volume) <= 1e-8:
+            raise ValueError('Undefined C-alpha handedness: degenerate stereocentre at '+str(key))
+        result[key]=volume
     return result
 
 
 def prepare(path, reference, mapping, output, max_iterations):
+    from importlib.metadata import version, PackageNotFoundError
     from pdbfixer import PDBFixer
     import openmm as mm
     from openmm import unit
@@ -348,7 +372,13 @@ def prepare(path, reference, mapping, output, max_iterations):
     with output.open('w') as f:PDBFile.writeFile(topology,state.getPositions(),f,keepIds=True)
     print('prepare: wrote '+str(output),flush=True)
     del context, integrator
+    def installed_version(name):
+        try:
+            return version(name)
+        except PackageNotFoundError:
+            return 'undisclosed: distribution metadata unavailable'
     return {'initial_total_potential_kj_mol':initial_energy,'final_total_potential_kj_mol':energy,
+            'tool_versions':{'OpenMM':installed_version('OpenMM'),'PDBFixer':installed_version('pdbfixer')},
             'template_alignment':'named_N_CA_C_for_missing_CB_and_proper_rotations_only',
             'missing_atom_preparation_mode':mode,
             'internal_missing_atom_optimization':{'max_iterations_per_minimization':mapping.get('internal_missing_atom_max_iterations',25),
@@ -359,7 +389,7 @@ def prepare(path, reference, mapping, output, max_iterations):
             'execution_platform':'CPU, 2 threads, including PDBFixer internal preparation',
             'total_potential_includes_restraints':True, 'minimizer_max_iterations':max_iterations,
             'heavy_atom_count':sum(a.element.symbol!='H' for a in atoms), 'atom_count':len(atoms),
-            'model':'OpenMM 8.6 Amber14 local vacuum cutoff 1 nm; *not* a solvent free energy or a folded-state energy; no ligand; pH-dependent protonation provisional',
+            'model':'OpenMM Amber14 local vacuum cutoff 1 nm; *not* a solvent free energy or a folded-state energy; no ligand; pH-dependent protonation provisional',
             'backbone_restraint_k_kj_mol_nm2':mapping.get('backbone_restraint_k_kj_mol_nm2',2500.0),
             'cis_backbone_restraint_k_kj_mol_nm2':mapping.get('cis_backbone_restraint_k_kj_mol_nm2',2500.0),
             'cis_torsion_k_kj_mol':mapping.get('cis_torsion_k_kj_mol',1000.0)}

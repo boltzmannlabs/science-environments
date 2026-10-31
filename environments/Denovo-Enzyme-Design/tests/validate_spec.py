@@ -462,6 +462,41 @@ def main() -> None:
             and autonomy['resume_requires_current_input_and_artifact_hashes']
             and autonomy['repair_invalidates_affected_downstream_evidence'],
             'persistent recovery requires current evidence and downstream invalidation')
+    tool_policy = config['tool_execution']
+    require(tool_policy['policy_version'] == '1.1'
+            and tool_policy['completed_scientific_stage_requires_execution_evidence_artifact']
+            and tool_policy['prediction_stages'] == ['generate', 'sequence_screen', 'fold', 'aggregation', 'chemistry'],
+            'runtime evidence is mandatory and support scripts cannot replace prediction stages')
+    fresh = config['fresh_run']
+    require(not config['startup_validation']['hosted_private_internals_required']
+            and 'actual_service_schema_and_access' in config['startup_validation']['hosted_checks']
+            and config['startup_validation']['local_runtime_checks'] == 'only_for_a_permitted_local_executor_or_explicit_development_scope',
+            'hosted readiness uses service contracts without forcing local model internals')
+    require(fresh['default_condition'] == 'agent_selected'
+            and fresh['use_new_run_directory_and_frozen_environment']
+            and not fresh['resume_old_session_or_controller_state']
+            and not fresh['inherit_old_candidates_predictions_or_pass_flags']
+            and fresh['old_allowances'] == 'not_reusable'
+            and not fresh['fallback_pilot_is_main_campaign'],
+            'fresh runs isolate their environment and evidence without reusing old acceptance or allocations')
+    require(tool_policy['real_execution_required']
+            and not tool_policy['discovery_is_execution']
+            and not tool_policy['fixture_or_mock_is_scientific_result']
+            and not tool_policy['agent_opinion_is_measurement']
+            and not tool_policy['scientific_qualification_from_exit_code_alone'],
+            'scientific execution requires actual receipts and outputs, not discovery, mocks or agent opinion')
+    require(tool_policy['primary_providers'] == ['boltzmann', 'tooluniverse']
+            and tool_policy['profiles']['agent_selected']['execution_routes'] ==
+                ['boltzmann', 'tooluniverse', 'local_python_support', 'external_chemistry']
+            and 'prescribed_tool' in tool_policy['profiles']['tools_specified']['execution_routes'],
+            'platform-based agent selection and exact prescribed tools remain separate conditions')
+    require(not tool_policy['external_chemistry']['other_prediction_stages_may_use_this_exception']
+            and not tool_policy['local_python']['descriptors_replace_property_predictions']
+            and tool_policy['local_python']['network_and_subprocess_escape_from_provider_policy'] == 'forbidden',
+            'bounded Python and chemistry exceptions cannot replace unrelated prediction executors')
+    require(tool_policy['run_isolation']['freeze_condition_policy_runtime_and_instructions_at_init']
+            and not tool_policy['run_isolation']['hot_reload_shared_markdown'],
+            'runs freeze execution conditions and instructions instead of reloading shared Markdown')
     require(set(autonomy['review_actions']) == {'accept', 'accept_sequence_only', 'retry', 'repair', 'reject', 'blocked', 'needs_input'},
             'review distinguishes sequence-only generation acceptance from physical-integrity acceptance')
     require(autonomy['whole_run_entrypoint'] == 'runtime/controller.py'

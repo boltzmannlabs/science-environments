@@ -192,6 +192,7 @@
       "required": ["rule_id", "group", "required", "metric", "units", "state_ids", "step_ids", "reference_atoms", "acceptance", "applicability_and_uncertainty", "reward_weight", "reward_transform", "chain_ids", "site_ids"],
       "properties": {
         "rule_id": {"$ref": "#/$defs/id"},
+        "request_target_index": {"type": "integer", "minimum": 0, "description": "Zero-based index in resolved_request.constraints.property_targets. Required user targets must each map to a required rule with the same endpoint, units, operator and value."},
         "group": {"enum": ["reaction_identity", "reactive_geometry", "protonation_and_stabilization", "states_and_chemical_steps", "fold_and_physical_integrity", "solubility", "aggregation", "operating_compatibility", "assembly_and_interface"]},
         "required": {"type": "boolean"},
         "metric": {"$ref": "#/$defs/text"},
@@ -247,9 +248,43 @@
         "container_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
         "model_weights": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
         "dataset_snapshots": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
-        "license_access_record": {"$ref": "#/$defs/artifact"}
+        "license_access_record": {"$ref": "#/$defs/artifact"},
+        "service_provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "provider",
+            "service_id",
+            "reported_version",
+            "retrieved_at",
+            "contract",
+            "reproducibility_limitations"
+          ],
+          "properties": {
+            "provider": {
+              "$ref": "#/$defs/text"
+            },
+            "service_id": {
+              "$ref": "#/$defs/text"
+            },
+            "reported_version": {
+              "$ref": "#/$defs/text",
+              "description": "Actual reported backend/version identity, or undisclosed with the gap explained; never invent a commit or weight hash."
+            },
+            "retrieved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "contract": {
+              "$ref": "#/$defs/artifact"
+            },
+            "reproducibility_limitations": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
       },
-      "anyOf": [{"required": ["code_commit"]}, {"required": ["container_digest"]}]
+      "anyOf": [{"required": ["code_commit"]}, {"required": ["container_digest"]}, {"required": ["service_provenance"]}]
     }
   }
 }

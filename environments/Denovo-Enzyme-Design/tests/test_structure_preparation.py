@@ -8,7 +8,7 @@ import importlib.util
 import numpy as np
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'runtime'))
-from structure_preparation import audit, verify_mapping, _ca_chirality, _proper_rotation_overlay, _bounded_missing_atom_optimization
+from structure_preparation import audit, verify_mapping, _ca_chirality, _proper_rotation_overlay, _bounded_missing_atom_optimization, parse_backbone, angle, dihedral
 
 
 def minimal_pair(path):
@@ -25,6 +25,28 @@ def minimal_pair(path):
 
 
 class StructurePreparationInputTests(unittest.TestCase):
+    def test_ambiguous_pdb_records_are_not_silently_remapped(self):
+        with tempfile.TemporaryDirectory() as root:
+            p = Path(root) / 'ambiguous.pdb'
+            minimal_pair(p)
+            original = p.read_text()
+            row = original.splitlines()[0]
+            cases = [original.replace(row, row[:26] + 'A' + row[27:], 1),
+                     original.replace(row, row[:16] + 'A' + row[17:], 1),
+                     'MODEL        1\n' + original + 'ENDMDL\nMODEL        2\n' + original,
+                     original.replace('ALA A   1', 'GLY A   1', 1)]
+            for content in cases:
+                p.write_text(content)
+                with self.subTest(content=content[:90]), self.assertRaises(ValueError):
+                    parse_backbone(p)
+
+    def test_undefined_geometry_cannot_be_reported_as_a_cis_peptide(self):
+        with self.assertRaisesRegex(ValueError, 'Undefined dihedral'):
+            dihedral([0,0,0], [1,0,0], [2,0,0], [3,0,0])
+        with self.assertRaisesRegex(ValueError, 'Undefined bond angle'):
+            angle([0,0,0], [0,0,0], [1,0,0])
+        self.assertAlmostEqual(abs(dihedral([0,1,0], [0,0,0], [1,0,0], [1,1,0])), 0)
+
     @unittest.skipUnless(importlib.util.find_spec('openmm'), 'OpenMM isolated runtime not in this interpreter')
     def test_bounded_internal_context_restores_openmm_api_after_over_budget(self):
         import openmm as mm

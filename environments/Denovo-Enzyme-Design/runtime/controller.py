@@ -21,7 +21,7 @@ from assessment import check_assessment_models
 from reporting import write_bundle
 from contracts import (ROOT, STAGES, EXPECTED, GROUPS, load_json, digest, object_hash,
                        verify_artifact, verify_nested, check_generation, check_request,
-                       check_candidates, qualified_ids)
+                       check_candidates, qualified_ids, check_execution_evidence, check_request_targets)
 
 DEFAULT_POLICY = {
     'active_seconds': 7200, 'cpu_core_hours': 16, 'gpu_hours': 1,
@@ -35,7 +35,10 @@ TERMINAL = {'QUALIFIED', 'PARTIAL', 'NO_QUALIFYING_DESIGNS', 'BLOCKED',
 IMPLEMENTATION_FILES = ['runtime/controller.py', 'runtime/agents.py', 'runtime/contracts.py', 'runtime/reporting.py',
                         'runtime/assessment.py', 'runtime/structure_preparation.py',
                         'config/environment.yaml', 'config/request.schema.json',
-                        'config/generation.schema.json', 'config/protocol.schema.json']
+                        'config/generation.schema.json', 'config/protocol.schema.json',
+                        'README.md', 'ENVIRONMENT_SPEC.md', 'runtime/CONTRACTS.md',
+                        'tasks/denovo_enzyme_001.md', 'tasks/request.example.json',
+                        'tasks/homodimer.request.example.json']
 USER_INPUT_ITEMS = {
     'essential_goal_or_reaction_ambiguity_unresolvable_from_evidence':
         ['reaction', 'substrate', 'product', 'stereochemistry', 'scientific_objective'],
@@ -104,6 +107,13 @@ def default_policy() -> dict:
             'service_spend_usd': fallback['additional_service_spend_usd']}
 
 
+def execution_policy(configuration: dict, condition: str) -> dict:
+    """Resolve a scientific tool policy separately from resource authorization."""
+    policy = dict(configuration['tool_execution'])
+    profiles = policy.pop('profiles')
+    return {**policy, 'condition': condition, 'profile': profiles[condition]}
+
+
 def atomic_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + '.tmp')
@@ -157,6 +167,16 @@ def initialize(root: Path, request: str, inputs: list[Path], agent_config: dict,
             raise ValueError(f'Input must be a file or manifest: {path}')
         refs.append({'path': str(path.resolve()), 'sha256': digest(path)})
     root.mkdir(parents=True, exist_ok=False)
+    implementation = {name: digest(ROOT / name) for name in IMPLEMENTATION_FILES}
+    snapshot = root / 'environment_snapshot'
+    for name, expected in implementation.items():
+        target = snapshot / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / name, target)
+        if digest(target) != expected:
+            raise ValueError('Environment changed while capturing the run; do not dispatch this incomplete run')
+    configuration = yaml.safe_load((snapshot / 'config/environment.yaml').read_text())
+    tools_policy = execution_policy(configuration, condition)
     state = {
         'format_version': 1, 'run_id': uuid.uuid4().hex, 'status': 'READY',
         'request': request, 'inputs': refs, 'condition': condition,
@@ -169,7 +189,10 @@ def initialize(root: Path, request: str, inputs: list[Path], agent_config: dict,
                   'service_spend_usd': 0, 'setup_active_seconds': 0,
                   'campaign_active_seconds': 0},
         'inflight': None, 'qualified_candidates': [], 'events': 0,
-        'implementation_sha256': {name: digest(ROOT / name) for name in IMPLEMENTATION_FILES},
+        'implementation_sha256': implementation,
+        'environment_snapshot': 'environment_snapshot',
+        'tool_execution_policy': tools_policy,
+        'tool_execution_policy_sha256': object_hash(tools_policy),
     }
     atomic_json(root / 'state.json', state)
     return state
@@ -179,6 +202,7 @@ class Controller:
     def __init__(self, root: Path):
         self.root = root.resolve()
         self.state = load_json(self.root / 'state.json')
+        self.environment_root = self.root / 'environment_snapshot'
 
     def save(self):
         atomic_json(self.root / 'state.json', self.state)
@@ -216,9 +240,19 @@ class Controller:
 
     def verify_run(self):
         s = self.state
+        if (s.get('environment_snapshot') != 'environment_snapshot'
+                or set(s['implementation_sha256']) != set(IMPLEMENTATION_FILES)):
+            raise ValueError('Run lacks this frozen environment contract; use its original runtime or a new versioned continuation')
         for name, expected in s['implementation_sha256'].items():
             if digest(ROOT / name) != expected:
-                raise ValueError('Controller or scientific contracts changed; migration requires a new versioned run')
+                raise ValueError('Shared environment changed; resume with this run\'s environment_snapshot/runtime/controller.py or use a new versioned continuation')
+            target = self.environment_root / name
+            if target.is_symlink() or digest(target) != expected:
+                raise ValueError('Frozen environment snapshot changed; do not replace it with current shared instructions')
+        configuration = yaml.safe_load((self.environment_root / 'config/environment.yaml').read_text())
+        if (s.get('tool_execution_policy') != execution_policy(configuration, s['condition'])
+                or object_hash(s['tool_execution_policy']) != s.get('tool_execution_policy_sha256')):
+            raise ValueError('Frozen tool execution policy or comparison condition changed')
         if object_hash(s['policy']) != s['policy_sha256']:
             raise ValueError('Run limits changed outside the recorded run')
         if object_hash([s['request'], s['inputs'], s['condition']]) != s['intent_sha256']:
@@ -293,35 +327,47 @@ class Controller:
         return self.finish('PARTIAL' if useful else 'BLOCKED', reason)
 
     def task(self, stage: str, mode: str = 'execute', **extra) -> dict:
-        configuration = yaml.safe_load((ROOT / 'config/environment.yaml').read_text())
+        self.verify_run()
+        configuration = yaml.safe_load((self.environment_root / 'config/environment.yaml').read_text())
         return {
             'run_id': self.state['run_id'], 'run_dir': str(self.root), 'stage': stage,
             'mode': mode, 'scientific_request': self.state['request'],
             'input_files': self.state['inputs'], 'condition': self.state['condition'],
-            'environment_spec': str(ROOT / 'ENVIRONMENT_SPEC.md'),
-            'contracts_file': str(ROOT / 'runtime' / 'CONTRACTS.md'),
-            'schemas_dir': str(ROOT / 'config'), 'accepted_artifacts': self.artifacts(),
+            'environment_spec': str(self.environment_root / 'ENVIRONMENT_SPEC.md'),
+            'contracts_file': str(self.environment_root / 'runtime' / 'CONTRACTS.md'),
+            'schemas_dir': str(self.environment_root / 'config'), 'accepted_artifacts': self.artifacts(),
+            'environment_snapshot': str(self.environment_root),
+            'environment_files_sha256': dict(self.state['implementation_sha256']),
+            'tool_execution_policy': self.state['tool_execution_policy'],
+            'frozen_intent_sha256': self.state['intent_sha256'],
+            'execution_evidence_required': stage not in {'prepare', 'evaluate'},
             'assessment_models': self.assessment_models(),
-            'expected_artifact_kinds': EXPECTED[stage], 'limits_remaining': self.remaining(),
+            'expected_artifact_kinds': EXPECTED[stage] + (
+                ['execution_evidence'] if stage not in {'prepare', 'evaluate'} else []),
+            'limits_remaining': self.remaining(),
             'stage_history': self.state['stages'][stage]['history'],
             'autonomy_policy': configuration['autonomy'],
             'startup_policy': configuration['startup_validation'],
+            'fresh_run_policy': configuration['fresh_run'],
             'method_validation_policy': configuration['method_validation'],
             'user_input_contract': {
                 'allowed_reason_items': USER_INPUT_ITEMS,
                 'required_fields': ['reason_code', 'item', 'question', 'why_unresolved', 'resolution_attempts'],
                 'resolution_attempts': 'Nonempty list of inspected source/finding objects; reviewer verifies applicability',
-                'routine_questions': 'Resolve omitted research settings, profile preparation, defaults, tool installation and review internally',
+                'routine_questions': 'Resolve omitted research settings, profile preparation, defaults, permitted tool setup and review internally',
                 'invalid_request_action': 'bounded_internal_repair',
             },
             'requirements': [
                 'Work only on this assigned stage; do not start a nested controller or launch another campaign.',
                 'Generation may yield a reviewed sequence-only candidate despite defective coordinates. Sequence screening and independent folding may use the unchanged FASTA without repairing those coordinates first. Every generation route requires independent assessment_models with sequence/input provenance, method controls and reviewed integrity evidence before fold acceptance. Preparation or minimization alone cannot pass fold. Never use defective generated coordinates as an accepted assessment model.',
                 'Own routine parameter choices, tool discovery, internal review and bounded repair.',
+                'For a fresh run, discover ready executors and plan a diverse candidate batch within current quotas. Reuse only reviewed reference inputs, not old candidate acceptance flags, inference patches or expired allowances. Complete eligible work when a later capability is missing; retain its unresolved requirement.',
                 'Only the current stage prerequisites apply; do not require final qualification before generation.',
                 'Read the generation/full-profile schemas and runtime response contracts.',
                 'Preserve reaction, assembly, explicit length limits, catalytic groups and requested objectives.',
-                'Use reusable verified runtimes; assess compatible accelerators before a CPU-only fallback.',
+                'Use only the frozen tool execution routes. Agent-selected prediction uses Boltzmann or ToolUniverse; local Python supports preparation and checks, not automatic predictor installation or training. External chemistry requires the recorded exception and existing authorization.',
+                'Must use real tools: retain actual execution receipts and hashed raw outputs. Catalog discovery, mocks, downloaded weights and agent reasoning are not scientific execution or measurements.',
+                'Read only this run\'s frozen instructions. Shared Markdown edits cannot change the condition, permitted executors or active run policy.',
                 'Preserve an exact prescribed-tool condition; record compatible alternatives only when permitted.',
                 'Write outputs to new immutable attempt paths, never overwrite accepted artifacts or historical inputs.',
                 'Before any external job, verify the existing entitlement and resource reservation.',
@@ -414,13 +460,14 @@ class Controller:
             raise TimeoutError('Reported work exceeded its resource allocation; further dispatch disabled')
 
     def validate_output(self, stage: str, response: dict) -> dict:
+        self.verify_run()
         if response.get('status') != 'completed':
             raise ValueError('Stage execution did not complete')
         artifacts = response.get('artifacts', [])
         refs = {r['kind']: r for r in artifacts}
         if len(refs) != len(artifacts) or not set(EXPECTED[stage]).issubset(refs):
             raise ValueError('Duplicate or missing stage output artifact kinds')
-        allowed = set(EXPECTED[stage]) | {'stage_report', 'capability_registry'}
+        allowed = set(EXPECTED[stage]) | {'stage_report', 'capability_registry', 'execution_evidence'}
         if stage in {'chemistry', 'evaluate'}:
             allowed.add('qualified_profile')
         if not set(refs).issubset(allowed):
@@ -506,7 +553,8 @@ class Controller:
                         raise ValueError('Qualified profile changed the reference assembly mapping')
                 if a['design_symmetry'] != b['design_symmetry']:
                     raise ValueError('Qualified profile changed the generation symmetry contract')
-                site_map = lambda x: {s['site_id']: sorted(s['chain_ids']) for s in x['active_sites']}
+                site_map = lambda x: {s['site_id']: (sorted(s['chain_ids']), s['catalytic_map']['sha256'])
+                                      for s in x['active_sites']}
                 if site_map(a) != site_map(b):
                     raise ValueError('Qualified profile changed required catalytic sites')
                 conditions = self.data('resolved_request', merged)['conditions']
@@ -517,6 +565,7 @@ class Controller:
                     raise ValueError('Final profile does not support the requested operating conditions')
                 if evaluation.get('protocol_sha256') != merged['qualified_profile']['sha256']:
                     raise ValueError('Final evaluation is not bound to the qualified protocol')
+                check_request_targets(protocol, self.data('resolved_request', merged))
                 manifest = self.data('candidate_manifest', merged)
                 passed = set(qualified_ids(evaluation, manifest, protocol, self.root))
                 for candidate in manifest['candidates']:
@@ -531,6 +580,12 @@ class Controller:
                         raise ValueError('Qualified candidate lacks a current sequence/structure/site assembly map')
             elif not evaluation.get('unresolved'):
                 raise ValueError('A partial evaluation must list its missing evidence')
+        if stage not in {'prepare', 'evaluate'}:
+            if 'execution_evidence' not in refs:
+                raise ValueError('EXECUTION_EVIDENCE_REQUIRED: actual scientific executions must be recorded')
+            check_execution_evidence(self.data('execution_evidence', refs), stage,
+                self.state['tool_execution_policy'], self.state['intent_sha256'],
+                refs['candidate_manifest']['sha256'], self.root)
         return refs
 
     def track_candidates(self, response: dict):
@@ -935,6 +990,8 @@ class Controller:
         return True
 
     def finalize(self) -> dict:
+        self.validate_output('evaluate', {'status': 'completed',
+                             'artifacts': self.state['stages']['evaluate']['artifacts']})
         refs = self.artifacts()
         evaluation = self.data('evaluation', refs)
         if not evaluation['qualification_requested']:
@@ -990,7 +1047,10 @@ def main() -> int:
                                 load_json(args.agent_config) if args.agent_config else {'backend': 'sci'},
                                 load_json(args.policy) if args.policy else None, args.condition)
             result = {'run_id': result['run_id'], 'status': result['status'],
-                      'next': f'Run this CLI with run --run-dir {args.run_dir}'}
+                      'next': 'Resume with the frozen controller; do not reload shared instructions',
+                      'resume_argv': [sys.executable,
+                          str(args.run_dir.resolve() / 'environment_snapshot/runtime/controller.py'),
+                          'run', '--run-dir', str(args.run_dir.resolve())]}
         elif args.command == 'run':
             if args.max_stages is not None and args.max_stages < 1:
                 raise ValueError('--max-stages must be positive')

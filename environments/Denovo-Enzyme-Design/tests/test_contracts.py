@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import yaml
+from jsonschema import Draft202012Validator, ValidationError
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +28,118 @@ fixtures = module('specification_test_fixtures', ROOT / 'tests/validate_spec.py'
 
 
 class RuntimeEvidenceTests(unittest.TestCase):
+    def test_required_user_properties_cannot_be_omitted_or_relaxed(self):
+        request = copy.deepcopy(self.request)
+        request['constraints']['property_targets'] = [
+            {'endpoint': 'melting_temperature', 'units': 'degC', 'operator': 'ge', 'value': 65, 'required': True}]
+        contracts.check_request(request)
+        with self.assertRaisesRegex(ValueError, 'omits a required'):
+            contracts.check_request_targets(self.protocol, request)
+        protocol = copy.deepcopy(self.protocol)
+        rule = next(r for r in protocol['rules'] if r['group'] == 'operating_compatibility')
+        rule.update(request_target_index=0, metric='melting_temperature', units='degC',
+                    acceptance={'operator': 'ge', 'value': 65})
+        contracts.check_request_targets(protocol, request)
+        for change in ({'required': False}, {'metric': 'optimum_temperature'}, {'units': 'kelvin'},
+                       {'acceptance': {'operator': 'ge', 'value': 55}}, {'request_target_index': 1}):
+            failed = copy.deepcopy(protocol)
+            next(r for r in failed['rules'] if r['group'] == 'operating_compatibility').update(change)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                contracts.check_request_targets(failed, request)
+        request['constraints']['property_targets'][0]['required'] = False
+        contracts.check_request_targets(self.protocol, request)
+
+    def test_ordered_property_target_must_be_numeric(self):
+        for value in (True, 'high'):
+            request = copy.deepcopy(self.request)
+            request['constraints']['property_targets'] = [
+                {'endpoint': 'thermal_endpoint', 'units': 'degC', 'operator': 'ge', 'value': value, 'required': True}]
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'finite numeric'):
+                contracts.check_request(request)
+
+    def test_hosted_tool_lock_records_provenance_without_inventing_a_commit(self):
+        tool = copy.deepcopy(self.protocol['tool_lock'][0])
+        tool.pop('code_commit')
+        tool['service_provenance'] = {
+            'provider': 'synthetic_provider', 'service_id': 'synthetic_tool',
+            'reported_version': 'undisclosed', 'retrieved_at': '2026-10-29T00:00:00Z',
+            'contract': self.artifact('SYNTHETIC SERVICE CONTRACT; no actual service'),
+            'reproducibility_limitations': 'Synthetic test: private backend has no available source/weight digest.'}
+        for name in ('generation.schema.json', 'protocol.schema.json'):
+            schema = contracts.load_json(ROOT / 'config' / name)
+            validator = Draft202012Validator({'$defs': schema['$defs'], '$ref': '#/$defs/tool'}, format_checker=contracts.FORMAT_CHECKER)
+            with self.subTest(schema=name):
+                validator.validate(tool)
+                missing = copy.deepcopy(tool)
+                del missing['service_provenance']['contract']
+                with self.assertRaises(ValidationError):
+                    validator.validate(missing)
+                for timestamp in ('yesterday', '2026-02-30T00:00:00Z', '2026-10-29T00:00:00'):
+                    invalid_date = copy.deepcopy(tool)
+                    invalid_date['service_provenance']['retrieved_at'] = timestamp
+                    with self.subTest(timestamp=timestamp), self.assertRaises(ValidationError):
+                        validator.validate(invalid_date)
+
+    def test_each_site_needs_a_directed_reactant_to_product_path(self):
+        contracts.check_protocol(self.protocol, self.base)
+        backwards = copy.deepcopy(self.protocol)
+        backwards['steps'][0].update(from_state='product', to_state='reactant')
+        with self.assertRaisesRegex(ValueError, 'directed reactant-to-product'):
+            contracts.check_protocol(backwards, self.base)
+        missing_reactant = copy.deepcopy(self.protocol)
+        missing_reactant['states'][0]['role'] = 'intermediate'
+        with self.assertRaisesRegex(ValueError, 'directed reactant-to-product'):
+            contracts.check_protocol(missing_reactant, self.base)
+
+    def test_execution_receipts_routes_and_exception_scope(self):
+        cfg=yaml.safe_load((ROOT/'config/environment.yaml').read_text())['tool_execution']
+        policy={k:v for k,v in cfg.items() if k!='profiles'}
+        policy.update(condition='agent_selected',profile=cfg['profiles']['agent_selected'])
+        ref=self.artifact('SYNTHETIC CONTRACT EXAMPLE; no provider job or molecular calculation')
+        record={'route':'boltzmann','tool_id':'synthetic_example','tool_version':'test',
+                'purpose':'model_prediction','status':'completed','parameters':{},
+                'job_id':'synthetic_not_a_job','receipt':ref,'inputs':[ref],'raw_outputs':[ref]}
+        evidence={'stage':'fold','condition':'agent_selected','policy_sha256':contracts.object_hash(policy),
+                  'candidate_manifest_sha256':'1'*64,'records':[record]}
+        def check(value, stage='fold', p=policy):
+            contracts.check_execution_evidence(value,stage,p,'2'*64,'1'*64,self.base)
+        check(evidence)
+        synchronous=copy.deepcopy(evidence)
+        synchronous['records'][0].pop('job_id')
+        synchronous['records'][0]['invocation']=ref
+        check(synchronous)
+        empty = self.artifact('')
+        changes=[{'route':'unrestricted_local'}, {'route':'local_python_support'},
+                 {'route':'external_chemistry','purpose':'chemistry_calculation'},
+                 {'raw_outputs':[]}, {'receipt':{**ref,'sha256':'0'*64}}, {'status':'pending'},
+                 {'receipt':empty}, {'raw_outputs':[empty]}, {'job_id':'','invocation':empty}]
+        for change in changes:
+            value=copy.deepcopy(evidence);value['records'][0].update(change)
+            with self.subTest(change=change),self.assertRaises(ValueError):check(value)
+        for field,value in [('policy_sha256','0'*64),('candidate_manifest_sha256','0'*64),('records',[])]:
+            with self.subTest(field=field),self.assertRaises(ValueError):check({**evidence,field:value})
+        support=copy.deepcopy(evidence)
+        support['records'][0].update(route='local_python_support',purpose='output_validation')
+        with self.assertRaisesRegex(ValueError,'support scripts alone'):check(support)
+        construction=copy.deepcopy(support)
+        construction['stage']='catalytic_states'
+        check(construction,'catalytic_states')
+        chemistry=copy.deepcopy(evidence);chemistry['stage']='chemistry'
+        chemistry['records'][0].update(route='external_chemistry',purpose='chemistry_calculation',
+            justification='Synthetic unavailable-capability example',capability_gap_evidence=ref,method_and_controls=ref)
+        check(chemistry,'chemistry')
+        empty_chemistry = copy.deepcopy(chemistry)
+        empty_chemistry['records'][0]['method_and_controls'] = empty
+        with self.assertRaisesRegex(ValueError, 'chemistry exception evidence is empty'):
+            check(empty_chemistry, 'chemistry')
+        prescribed={**policy,'condition':'tools_specified','profile':cfg['profiles']['tools_specified']}
+        ex=copy.deepcopy(evidence)
+        ex.update(condition='tools_specified',policy_sha256=contracts.object_hash(prescribed))
+        ex['records'][0]['route']='prescribed_tool'
+        with self.assertRaisesRegex(ValueError,'prescribed-request binding'):check(ex,p=prescribed)
+        ex['records'][0]['prescribed_intent_sha256']='2'*64
+        check(ex,p=prescribed)
+
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)

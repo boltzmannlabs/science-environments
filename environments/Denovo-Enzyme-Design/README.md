@@ -14,9 +14,15 @@ Recovery distinguishes startup/integration problems, failed method controls, and
 
 Configured smart-mode approval counts for the approved operation; a second manual prompt is unnecessary unless explicitly requested. Remote polling preserves the original provider/job IDs, and invalidated structure/chemistry exports move to marked history. The default agent-selected mode chooses suitable tools and records their actual contracts and versions; it does not require a fixed tool list.
 
+**Must use real tools.** Scientific predictions and calculations require actual execution receipts and hashed raw outputs. Catalog searches, downloaded weights, mock results, descriptors and agent opinions cannot stand in for a prediction. New `agent_selected` runs use Boltzmann or ToolUniverse executors, with small Python scripts for preparation/checks/analysis and a documented external-chemistry exception. `tools_specified` runs preserve their prescribed implementations, including explicitly specified local tools. The [execution policy](ENVIRONMENT_SPEC.md#tool-execution-and-run-isolation) defines the limits; exact tools and versions belong in each run's capability registry.
+
+**Keep paired runs isolated.** New controller runs freeze their condition, execution policy, runtime and instructions in `environment_snapshot/`. Resume through that snapshot's `runtime/controller.py`; workers receive its Markdown paths. Editing the shared repository does not migrate an existing run. Earlier runs without a snapshot must use their recorded runtime/instructions or an explicit versioned continuation, preserving evidence, unresolved jobs and cumulative usage. Changing a comparison's tool policy creates a new condition and must be reported as such.
+
 Every generation route requires independent, sequence-bound assessment models with applicable method controls and reviewed integrity evidence before `fold` can be accepted. Preparation or minimization alone cannot meet that requirement. Restart, downstream stages and final qualification recheck the same evidence; qualified exports cannot fall back to generated coordinates. This is assessment contract 2.1, with unchanged evidence-field formats. Preserve earlier runs and use an explicit versioned continuation when adopting the updated runtime; old acceptance flags are not validation.
 
 ## Read in this order
+
+For a **fresh run**, start a new harness session and controller directory using `agent_selected`. Review any reused reference inputs; leave historical candidates, PASS flags and inference patches in their original runs. Discover ready platform executors before spending on generation, then plan a diverse batch within the current budget. The default small pilot tests integration; it is not a production campaign. See [fresh-start instructions](runtime/CONTRACTS.md#fresh-start).
 
 1. [Agent task](tasks/denovo_enzyme_001.md): the task-facing description, 14 required execution steps, constraints and expected deliverable, organized like the supplied BioDesignBench example.
 2. [Environment specification](ENVIRONMENT_SPEC.md): inputs through final evaluation, including chemistry, RL, interfaces, failure handling and benchmarking.
@@ -58,6 +64,7 @@ Denovo-Enzyme-Design/
     ├── test_controller.py
     ├── test_structure_preparation.py
     ├── runtime-validation.json
+    ├── scientific-review.md
     ├── validate_spec.py
     └── specification-validation.json
 ```
@@ -82,9 +89,11 @@ Resource policy is set once for a run. The fallback remains a small pilot: two g
 
 Candidate revisions and evidence remain bound to the accepted generation outputs. Repairs invalidate dependent results; independent predictions are recorded as assessment evidence. Durable receipts support restart reconciliation, and the final report lists outstanding remote jobs because a local timeout does not prove remote cancellation.
 
-Reuse the shared preparation package for paired tests and retain previous reports as historical evidence. Apply the current autonomy policy when continuing; an older report's request for routine approval does not create a new approval requirement.
+Reuse applicable shared preparation for paired tests and retain previous reports as historical evidence. Apply each run's frozen autonomy and execution policy when continuing; an older report's request for routine approval does not create a new approval requirement. Policy upgrades require an explicit versioned continuation.
 
 ## Validate this specification package
+
+The [scientific/code review](tests/scientific-review.md) records the latest consistency corrections and remaining validation boundaries. Passing package tests does not establish that a designed sequence folds, forms its intended assembly or catalyses the reaction.
 
 From this directory, with Python, PyYAML, jsonschema and NumPy available:
 

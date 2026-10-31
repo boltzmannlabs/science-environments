@@ -170,6 +170,40 @@
         },
         "license_access_record": {
           "$ref": "#/$defs/artifact"
+        },
+        "service_provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "provider",
+            "service_id",
+            "reported_version",
+            "retrieved_at",
+            "contract",
+            "reproducibility_limitations"
+          ],
+          "properties": {
+            "provider": {
+              "$ref": "#/$defs/text"
+            },
+            "service_id": {
+              "$ref": "#/$defs/text"
+            },
+            "reported_version": {
+              "$ref": "#/$defs/text",
+              "description": "Actual reported backend/version identity, or undisclosed with the gap explained; never invent a commit or weight hash."
+            },
+            "retrieved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "contract": {
+              "$ref": "#/$defs/artifact"
+            },
+            "reproducibility_limitations": {
+              "$ref": "#/$defs/text"
+            }
+          }
         }
       },
       "anyOf": [
@@ -181,6 +215,11 @@
         {
           "required": [
             "container_digest"
+          ]
+        },
+        {
+          "required": [
+            "service_provenance"
           ]
         }
       ]

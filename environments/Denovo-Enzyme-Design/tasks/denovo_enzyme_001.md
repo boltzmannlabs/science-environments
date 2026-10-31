@@ -12,7 +12,11 @@ For a whole-run user request, initialize and run the controller using the existi
 
 Resolve unspecified settings from run policy and reference evidence, recording assumptions. Use the configured fallback pilot limits when no task-specific policy exists. Choose routine parameters and evaluate stage outcomes yourself; do not ask the user to approve seeds, mappings, method choices or every transition. Preserve explicit requirements and prescribed-tool test conditions. Ask only when an essential goal ambiguity or access/resource requirement cannot be resolved within existing authorization. Continue independent preparation work before reporting the precise remaining blocker.
 
+Follow the run's frozen [tool execution policy](../ENVIRONMENT_SPEC.md#tool-execution-and-run-isolation). **Must use real tools**, saving execution receipts, hashed inputs and raw outputs; discovery, mocks and agent opinions are not calculations. `agent_selected` discovers scientific executors through Boltzmann or ToolUniverse. `tools_specified` retains its prescribed implementations, including explicitly named local tools. Small Python scripts may prepare, map, check and analyse data; they may not install/train replacement predictors as a fallback. External chemistry requires the recorded capability gap, validated method and existing authorization. Use the instruction paths supplied in the controller task, never a moving shared Markdown file. A policy change requires an explicit versioned continuation.
+
 ## Target
+
+For a fresh campaign, use a new session and run directory with the current frozen environment. Reuse verified reference inputs only after applicability review; generate new candidates and new evidence. Do not import old PASS flags, model patches or expired allocations. Discover ready executors first and size a diverse batch within the current quota; avoid spending the whole budget repeatedly repairing one unsupported route. A missing later capability remains explicit while eligible work continues.
 
 Resolve these fields independently for the requested enzyme. Example identifiers, residue positions, lengths and conditions are not defaults. Keep the reusable environment unchanged when switching targets; create or qualify the corresponding run profile and capability bindings.
 

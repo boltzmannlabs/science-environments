@@ -7,13 +7,17 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ENVIRONMENT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ENVIRONMENT / 'runtime'))
 from controller import Controller, initialize, check_poll_response
+import controller as controller_module
 from contracts import GROUPS, object_hash
 from test_assessment import assessment_fixture
 from reporting import write_bundle
@@ -158,6 +162,24 @@ if role=='executor' and task.get('mode')=='poll':
         result['polled_job_handles']=[{'provider':'different_provider','id':'test_job_1'}]
     if mode=='pending_missing_receipt':
         result.pop('polled_job_handles')
+if (role=='executor' and result.get('status')=='completed' and stage not in {'prepare','evaluate'}
+        and mode!='missing_execution'):
+    # Synthetic provider-contract records for software tests only. These are
+    # deliberately not provider attestations or evidence of molecular execution.
+    marker=response_path.parent/'synthetic_execution_receipt.txt'
+    marker.write_text('SOFTWARE FIXTURE ONLY: no hosted call or molecular prediction occurred.')
+    marker_ref={'path':str(marker),'sha256':hashlib.sha256(marker.read_bytes()).hexdigest()}
+    manifest=next(a for a in result['artifacts'] if a['kind']=='candidate_manifest')
+    execution={'stage':stage,'condition':task['condition'],
+       'policy_sha256':hashlib.sha256(json.dumps(task['tool_execution_policy'],sort_keys=True,allow_nan=False).encode()).hexdigest(),
+       'candidate_manifest_sha256':manifest['sha256'],
+       'records':[{'route':'boltzmann','tool_id':'SYNTHETIC_CONTRACT_FIXTURE',
+          'tool_version':'software_test_only','purpose':'model_prediction','status':'completed',
+          'parameters':{},'job_id':'SYNTHETIC_NO_PROVIDER_JOB',
+          'receipt':marker_ref,'inputs':[marker_ref],'raw_outputs':[marker_ref]}]}
+    out=response_path.parent/'execution_evidence.json';out.write_text(json.dumps(execution))
+    result['artifacts'].append({'kind':'execution_evidence','path':str(out),
+                              'sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
 response_path.write_text(json.dumps(result))
 '''
 
@@ -192,9 +214,75 @@ class ControllerIntegrationTests(unittest.TestCase):
                                       'poll_seconds': 0, **(policy or {})}, condition)
         return run
 
+    def test_tool_conditions_use_distinct_frozen_policies_and_instruction_paths(self):
+        for condition in ('agent_selected', 'tools_specified'):
+            with self.subTest(condition=condition):
+                run = self.create_run(condition=condition, name=condition)
+                task = Controller(run).task('prepare')
+                policy = task['tool_execution_policy']
+                self.assertEqual(policy['condition'], condition)
+                self.assertTrue(policy['real_execution_required'])
+                self.assertEqual(policy['primary_providers'], ['boltzmann', 'tooluniverse'])
+                self.assertEqual('prescribed_tool' in policy['profile']['execution_routes'],
+                                 condition == 'tools_specified')
+                for key in ('environment_spec', 'contracts_file', 'schemas_dir'):
+                    self.assertTrue(Path(task[key]).is_relative_to(run / 'environment_snapshot'))
+                    self.assertTrue(Path(task[key]).exists())
+                self.assertFalse(self.calls(run))
+
+    def test_frozen_condition_or_tool_policy_cannot_change_before_dispatch(self):
+        for field in ('condition', 'tool_execution_policy'):
+            run = self.create_run(name=field)
+            state_path = run / 'state.json'
+            state = json.loads(state_path.read_text())
+            if field == 'condition':
+                state[field] = 'tools_specified'
+            else:
+                state[field]['profile']['execution_routes'].append('unrestricted_local')
+            state_path.write_text(json.dumps(state))
+            with self.assertRaisesRegex(ValueError, 'Frozen tool execution policy'):
+                Controller(run).task('prepare')
+            self.assertFalse(self.calls(run))
+
+    def test_changed_snapshot_instructions_prevent_dispatch(self):
+        run = self.create_run()
+        p = run / 'environment_snapshot/ENVIRONMENT_SPEC.md'
+        p.write_text(p.read_text() + '\nChanged instruction in a test fixture.\n')
+        with self.assertRaisesRegex(ValueError, 'Frozen environment snapshot changed'):
+            Controller(run).task('prepare')
+        self.assertFalse(self.calls(run))
+
+    def test_shared_instruction_change_can_resume_using_original_snapshot(self):
+        shared = self.root / 'synthetic_shared_environment'
+        for name in controller_module.IMPLEMENTATION_FILES:
+            target = shared / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ENVIRONMENT / name, target)
+        with patch.object(controller_module, 'ROOT', shared):
+            run = self.create_run()
+            shared_spec = shared / 'ENVIRONMENT_SPEC.md'
+            before = shared_spec.read_text()
+            shared_spec.write_text(before + '\nNew shared policy; existing run must not adopt it.\n')
+            with self.assertRaisesRegex(ValueError, 'resume with this run'):
+                Controller(run).task('prepare')
+        self.assertEqual((run / 'environment_snapshot/ENVIRONMENT_SPEC.md').read_text(), before)
+        # Exercise the preserved executable, not only a matching hash dictionary.
+        result = subprocess.run([sys.executable,
+            str(run / 'environment_snapshot/runtime/controller.py'), 'doctor', '--run-dir', str(run)],
+            capture_output=True, text=True, timeout=15)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(json.loads(result.stdout)['controller_ready'])
+        self.assertFalse(self.calls(run))
+
     def calls(self, run):
         path = run / 'fixture_calls.jsonl'
         return [json.loads(s) for s in path.read_text().splitlines()] if path.exists() else []
+
+    def test_completed_scientific_stage_without_execution_records_is_not_accepted(self):
+        run=self.create_run('missing_execution', policy={'max_stage_attempts':1, 'max_repairs_per_stage':1})
+        result=Controller(run).run()
+        self.assertNotEqual(result['stages']['generate'], 'accepted')
+        self.assertFalse(any(c['stage']=='sequence_screen' for c in self.calls(run)))
 
     def make_bundle(self, request_budget=None, assembly_kind='monomer'):
         evidence = self.artifact('software_evidence.txt', 'Software fixture, not molecular evidence.')

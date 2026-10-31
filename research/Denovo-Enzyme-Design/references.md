@@ -41,3 +41,18 @@ Reviewed 26 October 2026. Labels describe the scientific contribution; they do n
 | [Concentration-dependent monomer–dimer equilibrium](https://doi.org/10.1021/bi961347a) | Gallagher and Huber (1997): an experimental example showing concentration and solution conditions can affect assembly populations. It does not determine the equilibrium of L-DEX YL. |
 | [Enzyme activity reporting requirements](https://www.beilstein-institut.de/en/projects/strenda/guidelines/) | Official reporting guidelines require conditions, units and whether activity is relative to a subunit or oligomeric form. Reporting completeness is not validation of a measurement or prediction. |
 | [Sampled free-energy pathways in enzyme reactions](https://doi.org/10.1021/ct600240y) | Hu, Lu and Yang (2007): energy-path optimization and free-energy estimation are distinct; environment sampling and convergence affect the latter. Supports route-specific validation rather than labeling a static barrier as free energy. |
+
+## Execution diagnostics
+
+Additional structural-validation sources checked 29 October 2026:
+
+- [MolProbity validation guide](https://molprobity.lbl.gov/help/): non-Pro cis peptides are rare and require strong supporting evidence; they are not categorically impossible. This informs the declared limitation of the development preparation adapter.
+- [MolProbity: more and better reference data for improved all-atom structure validation](https://pmc.ncbi.nlm.nih.gov/articles/PMC5734394/): geometric validation covers complementary checks; one valid torsion, a low RMSD or a successful minimization cannot establish overall structural correctness.
+
+Inspected on 27 October 2026; claims apply to the pinned source and retained local attempts.
+
+| Source | Use |
+| --- | --- |
+| [Prescribed generator sampler at d365cbf](https://github.com/RosettaCommons/RFdiffusion2/blob/d365cbf4db3958814a9f8e4f6f94fa309dfebc2b/rf_diffusion/inference/model_runners.py) | Legacy symmetry branches read `idx_pdb` before local assignment; the local failure log matches this path. This is not a claim that every version lacks homodimer support. |
+| [Agent-selected sampler at 86507b6](https://github.com/RosettaCommons/RFdiffusion/blob/86507b6538f51fce57b5a72477165f03999ed7ae/rfdiffusion/inference/model_runners.py) | The final sampling branch copies predicted coordinates and subsequently applies symmetry. Investigate motif geometry at this boundary. |
+| [Agent-selected output writer at 86507b6](https://github.com/RosettaCommons/RFdiffusion/blob/86507b6538f51fce57b5a72477165f03999ed7ae/scripts/run_inference.py) | Saves final denoised coordinates and input-derived residue labels. Residue-label retention alone does not establish coordinate retention. |

@@ -2,12 +2,13 @@
 from __future__ import annotations
 
 import hashlib
+from datetime import datetime
 import json
 import math
 from pathlib import Path
 import re
 from typing import Any
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 GROUPS = {'reaction_identity', 'reactive_geometry', 'protonation_and_stabilization',
@@ -19,6 +20,20 @@ EXPECTED = {'prepare': ['resolved_request', 'generation_profile', 'evaluation_pl
             'generate': ['candidate_manifest'],
             **{s: ['candidate_manifest', 'stage_evidence'] for s in STAGES[2:-1]},
             'evaluate': ['evaluation']}
+
+# jsonschema's date-time validator otherwise depends on an optional package.
+# This runtime accepts an explicit ISO timestamp with seconds and a timezone.
+FORMAT_CHECKER = FormatChecker()
+
+
+@FORMAT_CHECKER.checks('date-time', raises=ValueError)
+def _timestamp_with_timezone(value):
+    if not isinstance(value, str):
+        return True  # The schema's type constraint handles non-string values.
+    text = value.upper()
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})', text):
+        return False
+    return datetime.fromisoformat(text.replace('Z', '+00:00')).tzinfo is not None
 
 
 def load_json(path: Path) -> Any:
@@ -70,7 +85,65 @@ def verify_nested(value: Any, base: Path) -> None:
 
 
 def schema_check(value: dict, name: str) -> None:
-    Draft202012Validator(load_json(ROOT / 'config' / name)).validate(value)
+    Draft202012Validator(load_json(ROOT / 'config' / name), format_checker=FORMAT_CHECKER).validate(value)
+
+
+def check_execution_evidence(value: dict, stage: str, policy: dict,
+                             intent_sha256: str, manifest_sha256: str, base: Path) -> None:
+    """Check declared routes and receipt bindings; provider authenticity needs review."""
+    if (not isinstance(value, dict) or value.get('stage') != stage
+            or value.get('condition') != policy['condition']
+            or value.get('candidate_manifest_sha256') != manifest_sha256
+            or value.get('policy_sha256') != object_hash(policy)):
+        raise ValueError('EXECUTION_EVIDENCE_REQUIRED: stage/condition/policy binding mismatch')
+    records = value.get('records')
+    if not isinstance(records, list) or not records:
+        raise ValueError('EXECUTION_EVIDENCE_REQUIRED: completed scientific stages need execution records')
+    prediction_executed = False
+    for record in records:
+        if not isinstance(record, dict) or record.get('status') != 'completed':
+            raise ValueError('EXECUTION_EVIDENCE_REQUIRED: missing completed operation')
+        route = record.get('route')
+        if route not in policy['profile']['execution_routes']:
+            raise ValueError('EXECUTION_POLICY_VIOLATION: executor route not permitted')
+        for key in ('tool_id', 'tool_version', 'purpose'):
+            if not isinstance(record.get(key), str) or not record[key].strip():
+                raise ValueError(f'EXECUTION_EVIDENCE_REQUIRED: missing {key}')
+        if not isinstance(record.get('parameters'), dict):
+            raise ValueError('EXECUTION_EVIDENCE_REQUIRED: record actual parameters')
+        command = record.get('command')
+        command_ok = (isinstance(command, list) and bool(command)
+                      and all(isinstance(a, str) and a for a in command))
+        job_ok = isinstance(record.get('job_id'), str) and bool(record['job_id'].strip())
+        if not (command_ok or job_ok):
+            if not verify_artifact(record.get('invocation'), base).stat().st_size:
+                raise ValueError('EXECUTION_EVIDENCE_REQUIRED: captured invocation is empty')
+        if not verify_artifact(record.get('receipt'), base).stat().st_size:
+            raise ValueError('EXECUTION_EVIDENCE_REQUIRED: execution receipt is empty')
+        for key in ('inputs', 'raw_outputs'):
+            if not isinstance(record.get(key), list) or not record[key]:
+                raise ValueError(f'EXECUTION_EVIDENCE_REQUIRED: nonempty {key} required')
+            for ref in record[key]:
+                verify_artifact(ref, base)
+        if not any(verify_artifact(ref, base).stat().st_size for ref in record['raw_outputs']):
+            raise ValueError('EXECUTION_EVIDENCE_REQUIRED: raw outputs are all empty')
+        if route == 'local_python_support' and record['purpose'] not in policy['local_python']['allowed_purposes']:
+            raise ValueError('EXECUTION_POLICY_VIOLATION: local support cannot replace a predictor')
+        if route == 'external_chemistry':
+            if stage not in {'complex', 'catalytic_states', 'chemistry'} or record['purpose'] != 'chemistry_calculation':
+                raise ValueError('EXECUTION_POLICY_VIOLATION: chemistry exception cannot provide other predictors')
+            if not isinstance(record.get('justification'), str) or not record['justification'].strip():
+                raise ValueError('EXECUTION_EVIDENCE_REQUIRED: external chemistry justification missing')
+            for key in ('capability_gap_evidence', 'method_and_controls'):
+                if not verify_artifact(record.get(key), base).stat().st_size:
+                    raise ValueError('EXECUTION_EVIDENCE_REQUIRED: chemistry exception evidence is empty')
+        if route == 'prescribed_tool' or (route == 'external_chemistry' and policy['condition'] == 'tools_specified'):
+            if record.get('prescribed_intent_sha256') != intent_sha256:
+                raise ValueError('EXECUTION_POLICY_VIOLATION: missing prescribed-request binding')
+        if route != 'local_python_support' and record['purpose'] in {'model_prediction', 'chemistry_calculation'}:
+            prediction_executed = True
+    if stage in policy['prediction_stages'] and not prediction_executed:
+        raise ValueError('EXECUTION_EVIDENCE_REQUIRED: support scripts alone cannot complete a scientific prediction stage')
 
 
 def check_generation(value: dict, base: Path) -> None:
@@ -100,6 +173,34 @@ def check_request(value: dict) -> None:
         raise ValueError('Inconsistent candidate quotas')
     if e['controller_mode'] != 'fixed':
         raise ValueError('This runtime implements fixed execution; RL needs a separate integration')
+    for target in value['constraints']['property_targets']:
+        if target['operator'] in {'ge', 'le'} and not _numeric(target['value']):
+            raise ValueError('Ordered property targets require finite numeric values')
+        if target['units'] == 'boolean' and (target['operator'] != 'eq' or type(target['value']) is not bool):
+            raise ValueError('Boolean property targets require boolean equality')
+        if type(target['value']) is bool and target['units'] != 'boolean':
+            raise ValueError('Boolean property targets require boolean units')
+
+
+def check_request_targets(protocol: dict, request: dict) -> None:
+    """Bind every explicit hard target to an unchanged required evidence rule."""
+    targets = request['constraints']['property_targets']
+    covered = set()
+    for rule in protocol['rules']:
+        index = rule.get('request_target_index')
+        if index is None:
+            continue
+        if type(index) is not int or not 0 <= index < len(targets):
+            raise ValueError('Property rule refers to an unknown request target')
+        target = targets[index]
+        if (rule['metric'] != target['endpoint'] or rule['units'] != target['units']
+                or rule['acceptance']['operator'] != target['operator']
+                or not _equal(rule['acceptance']['value'], target['value'])
+                or (target['required'] and not rule['required'])):
+            raise ValueError('Property rule changes the requested endpoint, units or acceptance criterion')
+        covered.add(index)
+    if any(t['required'] and i not in covered for i, t in enumerate(targets)):
+        raise ValueError('Final profile omits a required user property target')
 
 
 def _indexed(items: list[dict], field: str) -> dict:
@@ -192,6 +293,18 @@ def check_protocol(value: dict, base: Path) -> None:
         raise ValueError('Active-site chemical-step coverage is incomplete')
     if {step[end] for step in steps.values() for end in ['from_state', 'to_state']} != set(states):
         raise ValueError('Declared chemical states lack step coverage')
+    for site in sites:
+        starts = {key for key, s in states.items() if site in s['site_ids'] and s['role'] == 'reactant'}
+        products = {key for key, s in states.items() if site in s['site_ids'] and s['role'] == 'product'}
+        reachable = set(starts)
+        while True:
+            next_states = {s['to_state'] for s in steps.values()
+                           if site in s['site_ids'] and s['from_state'] in reachable}
+            if next_states.issubset(reachable):
+                break
+            reachable.update(next_states)
+        if not starts or not products or not products.intersection(reachable):
+            raise ValueError('Each active site needs a directed reactant-to-product chemical path')
     required = [rule for rule in rules.values() if rule['required']]
     if {rule['group'] for rule in required} != GROUPS:
         raise ValueError('Mandatory scientific rule-group coverage is incomplete')

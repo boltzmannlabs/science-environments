@@ -19,6 +19,10 @@ These checks validate this specification package only. They do not validate exte
 
 ## Stage entry and release requirements
 
+Execution-policy checks cover separate `agent_selected` and `tools_specified` policies, mandatory real-tool evidence instructions, bounded Python/chemistry exceptions, and frozen run instruction paths. Runtime regressions reject changed snapshot files, policies or conditions before dispatch, and exercise the preserved controller after a simulated shared-Markdown edit. These software checks do not attest hosted execution or enforce host-level tool/network permissions; those require harness controls and actual provider receipts.
+
+Execution-record tests must reject a completed scientific stage with missing receipts/raw outputs, stale stage/policy/candidate bindings, forbidden declared routes, or misuse of the Python/chemistry exceptions. Synchronous calls with captured invocations and responses must work without fabricated job IDs. Fresh-run configuration must select a new agent-selected context, preserve historical evidence separately and avoid inheriting candidates or accepted gates. These are software-contract checks with explicitly synthetic records, not real scientific jobs.
+
 Generation requires a reviewed generation contract and compatible execution capability. Full reaction-profile qualification is not a universal entry gate. Preparation, reference tests and exploratory candidates may advance when their own dependencies pass; complete chemistry, property and assembly evidence is still required for final qualification.
 
 1. For repository release, link the contribution issue and complete the applicable PR/review process. These repository-governance steps are separate from authorized local preparation and scientific execution. The repository structure, rules and pending-license notice were read on 26 October 2026.
@@ -44,6 +48,7 @@ Generation requires a reviewed generation contract and compatible execution capa
 | Saved fold acceptance lacks required models or method/integrity evidence | Revalidate and invalidate fold/dependent evidence before further dispatch or qualification; do not trust the saved acceptance flag. |
 | Downstream stage, final qualification or qualified export lacks reviewed fold models | Reject promotion/export; generated coordinates and preparation records cannot substitute for accepted independent models. |
 | Startup components pass separately but combined execution fails | Check actual input parsing, mappings, checkpoint, device/runtime, logging and instrumentation jointly where possible. Version and test corrections; retain failures and cumulative accounting. |
+| Hosted tool does not expose inference internals | Use actual service contracts, receipts, applicable bounded controls and output audits. Record unavailable provenance; do not require local model installation or a private inference trace merely to submit a job. |
 | Abbreviated sampling produces distorted coordinates | Retain as integration evidence; test a supported quality-assessment schedule before drawing conclusions about generator suitability. Initial diffusion noise is not a final-model failure. |
 | Fixed ligand-contact atoms remain near ligand but far from their backbone | Check all relevant motif covalent bonds, peptide links and masks together; selected preserved distances do not establish complete geometry. Version a task-specific motif choice and retest; do not impose whole-residue fixing on every enzyme. |
 | Assembly flag parses but combined motif/occupancy output is unsuitable | Verify effective runtime operator, copy indexing and enforcement path; test simpler controls before dependent campaigns. Keep capability unresolved on failure; two chains or identical placeholder sequences are insufficient. |
@@ -64,7 +69,7 @@ Generation requires a reviewed generation contract and compatible execution capa
 | Review finds failed or unresolved scientific evidence | Reject verified disqualifying failure; missing prerequisite blocks dependent work. Neither opinion nor continued independent assessment turns UNRESOLVED into PASS. |
 | No task-specific compute budget | Apply configured local fallback ceilings and existing entitlements; no new paid-service authorization is inferred |
 | Requested job exceeds effective limits or has unknown required paid access | Complete independent work; report the precise resource/access blocker, without silently extending limits |
-| Earlier preparation report asks for routine approvals | Preserve the historical report; continue under the current autonomy policy |
+| Earlier preparation report asks for routine approvals | Preserve the historical report; apply that run's frozen autonomy policy, using an explicit versioned continuation for policy upgrades |
 | Reviewer requests a routine setting or gives no structured reason | Redirect to bounded internal repair; record the question and correction, then continue when resolved. |
 | Reviewer confirms essential ambiguity or access outside policy | Require a structured reason, affected item and source/finding resolution attempts; retain the accepted question in the report. |
 | Routine question persists through the repair allowance | Return the actual blocker or partial result; do not escalate a routine decision to the user or loop indefinitely. |
@@ -121,6 +126,8 @@ These tests are acceptance requirements, not completed molecular validation:
 | Unsupported or contradictory evidence at a gate | Preserve UNRESOLVED; record review reason and bounded permitted action |
 
 ## Required scientific and benchmark evidence
+
+The [29 October scientific/code review](scientific-review.md) adds regressions for required user-property coverage, directed chemical-path coverage, honest hosted provenance, ambiguous PDB records and undefined geometric measurements. Numerical and schema fixtures test error handling; they do not supply scientific controls for an enzyme.
 
 Demonstrate the monomer and homodimer routes separately for their declared supported profiles, with qualified chemistry controls and each required property adapter. Verify parameter/state transfer, QM/MM boundaries, route-appropriate path or free-energy validation, uncertainty and applicability. Record method, model, hardware, seed and resource identifiers. Biological activity comparisons require declared concentration/normalization bases and matched conditions; no inferred whole-cycle rate follows automatically from a chemical-step barrier.
 

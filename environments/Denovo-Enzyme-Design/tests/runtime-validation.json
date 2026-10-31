@@ -1,7 +1,7 @@
 {
-  "scope": "software_behavior_and_harness_transport_only",
-  "recorded_at": "2026-10-28T12:26:47.210916+00:00",
-  "tests_run": 52,
+  "scope": "software_behavior_and_scientific_consistency_review_only",
+  "recorded_at": "2026-10-29T10:23:01.316799+00:00",
+  "tests_run": 64,
   "tests_successful": true,
   "failures": [],
   "errors": [],
@@ -29,32 +29,46 @@
   "versions": {
     "python": "3.13.7",
     "jsonschema": "4.19.2",
-    "PyYAML": "6.0.2"
+    "PyYAML": "6.0.2",
+    "numpy": "2.5.1",
+    "rdkit": "2026.3.5"
   },
   "file_sha256": {
-    "runtime/contracts.py": "38d8545542380f7fe1fb1ce96db49cc11fb0d6ad02517a36f489cdfe5634138a",
+    "ENVIRONMENT_SPEC.md": "073667eda8d91152f01b464a1ae77ad69bc59b2ab8c985d696c7b4e33dd15b36",
+    "README.md": "6fd9173dc46f0091c6e323d9263a9c833bcc11a8c89da1db77b666075c095301",
+    "config/environment.yaml": "78a7de9b344979f0fbb33cf2e479ff405b00593fe430edd7afda4c65752f987c",
+    "config/generation.schema.json": "7678dc99eb7dc1f0a4b05b2902775368538d727256cc0c8819453f52640780da",
+    "config/protocol.schema.json": "e81e7dcfb7a40f6937e66a8ff83c87d695c840d2e0f251ff1e0fec6233444e0e",
+    "config/request.schema.json": "30555feede5ac6747e95942536f5b51cf88b8d882d9346aab22ca84f322fcca1",
+    "runtime/CONTRACTS.md": "bcc6c373c3107489bd3ce0dcf7da0991a9af52b4fb0b5f6122a9a88987195d57",
+    "runtime/agents.py": "1c556e0dd109d2e458fd0ece715bb4aa370f7597a44a00ac1e6b38ae36a7255c",
     "runtime/assessment.py": "9aeb30d21e8880bac2b5452a56a0449537e86e21210dfb750b07d65857e725fd",
-    "runtime/agents.py": "484b5703de47c6fdbd741851fcd53e0b7c47dc3e6a1f7341988bda773db67f9e",
+    "runtime/contracts.py": "158e5c2d22961de451ede39a897dbb9c339d0e3d9d9f7c5e525ba3de6c2643d0",
+    "runtime/controller.py": "d926f63db07c149f485359dc7928b2418eda6a2988a6b73567a86668f70034c5",
     "runtime/reporting.py": "c1e6b04197803a24ca60236504d031df46f50d44b5f57531981e69cb658edfa4",
-    "runtime/structure_preparation.py": "a4e43e30b9a0e3e030e492433588c3cf4e8bfd522c6e6ff207bf8e0b03300edf",
-    "runtime/controller.py": "9f63ee6b6d2832a2141378a147f36b9f2eef978e8c8438e772fa6277edaf4223",
-    "tests/test_structure_preparation.py": "99d7dab2a0f7ee7584a4ada8fe724b0dbd4a94b71f649a96fba5b645b369ae2a",
-    "tests/test_contracts.py": "d3a5f47db44c4c8582ffcd96deaa1efeec8f494fdf1584a5ba3cb5e191421486",
+    "runtime/structure_preparation.py": "ba2f129e9f0a9d2d64437b93af3a013245a7d68f4383832d6928c500bde4ece7",
+    "tasks/denovo_enzyme_001.md": "262b387fb45566389a5751432bf1b02d30d07ace3663bbd455a0928e5fd333b6",
+    "tasks/homodimer.request.example.json": "cd9c69f0f18e15cffd03817e45a973fc965b3b291f512dbfa1f1bd5c318a4e1e",
+    "tasks/request.example.json": "83c7cc9822cec4805936941f7f5d06218d54d5b7663079ed8370edc1eab9b258",
+    "tests/ACCEPTANCE.md": "55f0710dd838c8b04214e22ca76f3a0946032578fb02ad3c74547f2758be7b25",
+    "tests/scientific-review.md": "58d8cb0f567322b5a49ddcc33333bf5200cbf01d0226292b27383455cc7c2e91",
     "tests/test_agents.py": "735d123581411417ddd3d794bf9dfda6b3d650740ffe546ff55e532498d269e6",
     "tests/test_assessment.py": "1739fab7dd602ae2790665303841c5d98c7c30f20646a57c671058da940bbe5b",
-    "tests/test_controller.py": "fc3bb977665939ea1d175f079c7884efa55376b4412e1b4a8a77acb39460a42c",
-    "config/environment.yaml": "a73a820a6b910d53d7c2441f64e0ca00ba742aeb3d21a34b32692526ba9f1893",
-    "runtime/CONTRACTS.md": "14d1bed11357113eb4ffb327f76993d9106fb5e0885a3b8b687bfb7a0eb1f4cc",
-    "config/generation.schema.json": "df35ee08572a1fb4beca651eb82dce9582ec0af3e9c12328d46b1a6598d1d8b3"
+    "tests/test_contracts.py": "6bd1f188ab08aade1a0a874acf86debf5ebd4279256620f0ff1d453f807f8044",
+    "tests/test_controller.py": "3f40bc1aeb26e634b1fdbd442a5dae3ba203c9e60955519c3a1f1decbcd1571b",
+    "tests/test_structure_preparation.py": "42ce8999e6daf8a0f4d80290f2bd4db70cde9be69069bb4a700289d089f5175c",
+    "tests/validate_spec.py": "34410e47d6add2e3e0108cec2108e5aa2915cd0f907b379cc45c3a16abc749de"
   },
   "not_validated": [
     "Target-specific catalytic-state geometry and chemical barriers",
     "Complete target-specific scientific adapters and controls",
     "End-to-end enzyme activity or property improvements",
-    "Remote provider resource enforcement"
+    "Remote provider resource enforcement",
+    "Host-level provider allowlists and Python/network/subprocess restrictions",
+    "Live application of tool execution policy to Boltzmann or ToolUniverse services"
   ],
-  "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py'",
-  "elapsed_seconds": 36.673,
+  "command": "/usr/bin/python3 -m unittest discover -s tests -p 'test_*.py' -v",
+  "elapsed_seconds": 67.691,
   "clarification_regressions": [
     "Routine and misclassified questions return to internal repair and stage execution continues",
     "Essential unresolved intent and access boundaries retain structured user questions",
@@ -126,7 +140,7 @@
       "reason": "OpenMM isolated runtime not in this interpreter"
     }
   ],
-  "tests_passed": 51,
+  "tests_passed": 63,
   "additional_runtime_check": {
     "command": "python -B -m unittest test_structure_preparation.StructurePreparationInputTests.test_bounded_internal_context_restores_openmm_api_after_over_budget -v",
     "working_directory": "tests",
@@ -137,7 +151,7 @@
     "interpreter": "OpenMM-enabled isolated Python runtime; installation prefix omitted from portable command",
     "preserved_from_report_recorded_at": "2026-10-28T11:15:35.839427+00:00"
   },
-  "invocation_note": "Equivalent unittest discovery executed in a report-recording wrapper in an isolated checkout of published main plus only de novo environment changes.",
+  "invocation_note": "Executed in the local de novo environment. Real local subprocess software fixtures only; no live agent, provider, scientific model or experimental job was launched.",
   "recovery_regressions": [
     "Execution approval blocks stop executor, reviewer and repair without alternate dispatch; repeated run preserves terminal result.",
     "Failed method controls remain distinct from candidate integrity failures and unresolved evidence.",
@@ -147,7 +161,7 @@
     "An execution-approval timeout while polling cannot erase outstanding remote handles.",
     "Evidence invalidation archives old structure/chemistry exports and empties the current qualified FASTA; unchanged exports are idempotent."
   ],
-  "policy_update_scope": "Assessment contract 2.1 requires independent models for all generation routes, restart, downstream evidence, qualification and qualified exports. Preparation remains supporting evidence. RL remains specified only; no scientific inference, live model/approval integration or training executed.",
+  "policy_update_scope": "Execution policy 1.1 requires bound execution artifacts and checks declared routes, receipts and raw-output hashes. Fresh runs isolate current intent and environment. Hosted readiness uses service contracts without requiring private model internals. Existing fold contract 2.1 is unchanged. No scientific inference or live provider enforcement was tested.",
   "scientific_jobs_this_validation": 0,
   "fold_admission_regressions": [
     "Ordinary generation without assessment models cannot advance in either tool-selection condition, even with reviewer acceptance.",
@@ -157,5 +171,144 @@
     "Downstream assessment and final qualification require current accepted fold evidence.",
     "Qualified export cannot fall back to generated coordinates.",
     "Valid synthetic monomer and full homodimer model records pass the same admission contract."
-  ]
+  ],
+  "execution_policy_regressions": [
+    "Agent-selected and prescribed conditions receive distinct frozen execution policies and instruction paths.",
+    "Changing a saved policy or condition prevents dispatch.",
+    "Changing copied Markdown prevents dispatch.",
+    "After a simulated shared-Markdown update, the copied controller still passes offline doctor checks with the original run policy.",
+    "A completed scientific stage without execution records is not accepted or advanced to sequence screening.",
+    "Forbidden declared routes, stale policy/candidate bindings, missing outputs, and support-only prediction claims are rejected.",
+    "Synchronous invocations work without invented job IDs; chemistry and prescribed-tool exceptions require their evidence bindings.",
+    "Permitted deterministic state construction can use support scripts without claiming a prediction."
+  ],
+  "scientific_consistency_review": {
+    "report": "tests/scientific-review.md",
+    "regressions": [
+      "Required user-property criteria cannot be omitted, weakened or replaced by a different endpoint.",
+      "Each active site requires a directed reactant-to-product chemical path before profile qualification.",
+      "Hosted service provenance is accepted without fictitious code commits; captured dates are validated without optional date-time dependencies.",
+      "Empty receipts, captured invocations and chemistry-exception evidence, and wholly empty raw outputs, are rejected.",
+      "Ambiguous PDB numbering/alternate locations and multiple models are rejected before local preparation.",
+      "Undefined geometric measurements cannot be misclassified as cis peptide geometry."
+    ],
+    "other_fixes": [
+      "Freeze per-site catalytic map identity at final qualification",
+      "Recheck qualification contract during finalization",
+      "Report installed preparation-library versions",
+      "Clarify template-free assessment and cis-Pro preparation scope",
+      "Distinguish reportable partial outcomes from successful qualification"
+    ],
+    "example_identity_checks": {
+      "scope": "Example identity and net-balance checks only; no mechanistic, kinetic or enzyme validation",
+      "checks": [
+        {
+          "example": "request.example.json",
+          "element_and_charge_balance": "PASS",
+          "identities": [
+            {
+              "side": "reactants",
+              "label": "ethyl acetate",
+              "formula": "C4H8O2",
+              "chiral_centers": [],
+              "smiles": "CCOC(C)=O"
+            },
+            {
+              "side": "reactants",
+              "label": "water",
+              "formula": "H2O",
+              "chiral_centers": [],
+              "smiles": "O"
+            },
+            {
+              "side": "products",
+              "label": "acetic acid, identity before operating-pH normalization",
+              "formula": "C2H4O2",
+              "chiral_centers": [],
+              "smiles": "CC(=O)O"
+            },
+            {
+              "side": "products",
+              "label": "ethanol",
+              "formula": "C2H6O",
+              "chiral_centers": [],
+              "smiles": "CCO"
+            }
+          ],
+          "totals": [
+            {
+              "C": 4,
+              "O": 3,
+              "H": 10
+            },
+            0
+          ]
+        },
+        {
+          "example": "homodimer.request.example.json",
+          "element_and_charge_balance": "PASS",
+          "identities": [
+            {
+              "side": "reactants",
+              "label": "L-2-chloropropionate",
+              "formula": "C3H4ClO2-",
+              "chiral_centers": [
+                [
+                  1,
+                  "S"
+                ]
+              ],
+              "path": "LDEX_Environment_Test/shared_preparation/reaction/molecules/s_2_chloropropanoate.sdf",
+              "sha256": "f81f89a7c06553398f4d0ded23f07b00ffcc1c81545173b10d3e78c4e0101b6c"
+            },
+            {
+              "side": "reactants",
+              "label": "water",
+              "formula": "H2O",
+              "chiral_centers": [],
+              "smiles": "O"
+            },
+            {
+              "side": "products",
+              "label": "D-lactate",
+              "formula": "C3H5O3-",
+              "chiral_centers": [
+                [
+                  1,
+                  "R"
+                ]
+              ],
+              "path": "LDEX_Environment_Test/shared_preparation/reaction/molecules/r_lactate.sdf",
+              "sha256": "06c2164dbeca37d3a160625632e8e4ad7d92bcccd4309630d31e49e35fff6b15"
+            },
+            {
+              "side": "products",
+              "label": "chloride",
+              "formula": "Cl-",
+              "chiral_centers": [],
+              "smiles": "[Cl-]"
+            },
+            {
+              "side": "products",
+              "label": "proton bookkeeping",
+              "formula": "H+",
+              "chiral_centers": [],
+              "smiles": "[H+]"
+            }
+          ],
+          "totals": [
+            {
+              "C": 3,
+              "Cl": 1,
+              "O": 3,
+              "H": 6
+            },
+            -1
+          ]
+        }
+      ]
+    },
+    "live_scientific_inference_jobs": 0,
+    "earlier_timestamp_test_failure": "Both hosted-schema timestamp checks initially exposed missing optional jsonschema date-time support. A standard-library validator fixed the issue; the final full suite passed."
+  }
 }

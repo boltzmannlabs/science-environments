@@ -47,10 +47,10 @@ autonomy:
   late_missing_capability: finish_eligible_work_then_partial
   scientific_status_is_a_dispatch_permission: false
   reuse_existing_harness: true
-  dependency_setup: isolated_runtimes_with_existing_access
-  missing_adapter_action: implement_and_test_within_policy
-  tool_discovery: catalog_schemas_official_sources_local_runtimes_and_weights
-  tool_selection: compatible_methods_with_recorded_rationale
+  dependency_setup: only_within_frozen_tool_execution_policy
+  missing_adapter_action: repair_transport_within_policy_or_report_capability_gap
+  tool_discovery: connected_catalogs_and_verified_executor_contracts
+  tool_selection: frozen_condition_specific_execution_policy
   prescribed_tool_replacement: preserve_explicit_test_condition
   defaults_precedence: explicit_user_requirements_then_run_policy_then_evidence_backed_assumptions
   scientific_defaults: documented_reference_conditions_and_method_applicability
@@ -94,9 +94,73 @@ autonomy:
     expired_historical_allowance_is_reusable: false
     automatically_extend_limits: false
 
+tool_execution:
+  policy_version: "1.1"
+  real_execution_required: true
+  completed_scientific_stage_requires_execution_evidence_artifact: true
+  runtime_checks: [stage_condition_policy_binding, permitted_declared_route, job_command_or_captured_invocation, hashed_receipt_inputs_and_raw_outputs, python_purpose_scope, chemistry_exception_scope]
+  prediction_stages: [generate, sequence_screen, fold, aggregation, chemistry]
+  real_execution_evidence:
+    - actual_provider_tool_identity_and_version_or_disclosed_backend_version_gap
+    - hashed_inputs_and_recorded_parameters
+    - actual_job_id_local_command_or_captured_invocation_and_execution_receipt
+    - terminal_status_and_hashed_raw_outputs
+    - independently_reviewed_applicability_controls_and_uncertainty
+  discovery_is_execution: false
+  fixture_or_mock_is_scientific_result: false
+  agent_opinion_is_measurement: false
+  scientific_qualification_from_exit_code_alone: false
+  primary_providers: [boltzmann, tooluniverse]
+  provider_membership_implies_hosted_execution: false
+  local_python:
+    allowed_purposes: [input_preparation, format_conversion, atom_residue_chain_mapping, numerical_geometry_checks, output_validation, result_analysis]
+    model_installation_training_or_inference_reimplementation: forbidden_as_automatic_fallback
+    network_and_subprocess_escape_from_provider_policy: forbidden
+    descriptors_replace_property_predictions: false
+  external_chemistry:
+    permitted_when: required_chemistry_capability_unavailable_through_both_providers
+    requirements: [recorded_capability_search, named_method_and_version, scientific_justification, validated_inputs_and_controls, existing_access_and_resource_authorization, independent_review]
+    other_prediction_stages_may_use_this_exception: false
+  model_internal_changes: separately_versioned_explicit_development_scope_only
+  profiles:
+    agent_selected:
+      selection: discover_and_select_by_capability
+      execution_routes: [boltzmann, tooluniverse, local_python_support, external_chemistry]
+      local_model_setup: forbidden_as_automatic_fallback
+      missing_capability: finish_independent_work_then_report_specific_gap
+    tools_specified:
+      selection: exact_tools_from_frozen_request_and_input_manifests
+      execution_routes: [boltzmann, tooluniverse, prescribed_tool, local_python_support, external_chemistry]
+      local_model_setup: only_for_explicitly_prescribed_implementations_within_run_scope
+      substitution: only_if_explicitly_permitted_by_frozen_test_condition
+      external_chemistry: must_also_preserve_prescribed_test_condition
+  run_isolation:
+    freeze_condition_policy_runtime_and_instructions_at_init: true
+    hot_reload_shared_markdown: false
+    migration: explicit_versioned_continuation_preserving_evidence_and_usage
+    benchmark_condition_change: new_condition_not_continuation_of_original_comparison
+  enforcement_boundary: controller_pins_and_passes_policy_harness_enforces_tool_network_and_subprocess_access_reviewer_checks_execution_evidence
+
+fresh_run:
+  default_condition: agent_selected
+  use_new_run_directory_and_frozen_environment: true
+  resume_old_session_or_controller_state: false
+  reuse_reference_inputs: only_after_identity_and_applicability_review
+  inherit_old_candidates_predictions_or_pass_flags: false
+  old_uncertain_remote_jobs: retain_for_nonduplication_not_automatically_cancelled
+  old_allowances: not_reusable
+  workflow: discover_ready_executors_then_bounded_generation_and_evaluation
+  candidate_sampling: plan_diverse_batch_within_frozen_quotas_and_budget
+  fallback_pilot_is_main_campaign: false
+  repeated_rescue_of_one_candidate: only_when_evidence_supports_bounded_repair
+  missing_late_capability: complete_eligible_work_and_report_partial
+
 startup_validation:
   scope: agent_performs_and_records_joint_startup_checks_before_expensive_inference
   use_actual_run_inputs: true
+  hosted_checks: [actual_service_schema_and_access, input_validation_and_mapping, supported_assembly_and_state_inputs, output_and_receipt_contract, job_status_and_resource_limits]
+  hosted_private_internals_required: false
+  local_runtime_checks: only_for_a_permitted_local_executor_or_explicit_development_scope
   checks_when_applicable:
     - request_and_launch_policy_schema
     - input_parsing_and_feature_construction
@@ -119,7 +183,7 @@ startup_validation:
   motif_mask_validation: preserve_declared_fixed_atoms_and_check_final_covalent_compatibility
   whole_residue_fixing: run_specific_reviewed_choice_not_universal_default
   assembly_capability_validation: demonstrate_compatible_symmetry_motif_and_occupancy_under_supported_sampling
-  requested_operator_activation: verify_effective_runtime_operator_copy_indices_and_enforcement_path_before_model_forward
+  requested_operator_activation: inspect_local_runtime_if_accessible_otherwise_service_contract_and_bounded_output_controls
   fixed_motif_geometry_scope: all_relevant_covalent_bonds_and_peptide_links_not_selected_contact_distances
   dependent_capability_controls: require_working_simpler_control_or_explicit_independent_diagnostic_rationale
 
@@ -149,8 +213,10 @@ method_validation:
   sequence_property_work: execute_applicable_sequence_based_assessments_independently_of_fold_promotion
 
 version_policy:
-  immutable_code_or_container_reference: required
-  model_weight_checksums: required_when_used
+  immutable_code_or_container_reference: required_for_accessible_local_implementations
+  hosted_service_provenance: provider_service_reported_version_timestamp_hashed_contract_and_reproducibility_limitations
+  unknown_hosted_backend_version: disclose_never_fabricate_review_comparability_and_claim_limits
+  model_weight_checksums: required_when_used_and_accessible_otherwise_disclose_hosted_gap
   dataset_snapshot_identifiers: required_when_used
   runtime_input_and_evidence_hashes: required
   inherited_model_latest_tags: forbidden
@@ -246,6 +312,8 @@ refinement:
 
 qualification:
   required_rule_combiner: all
+  explicit_required_property_targets: each_bound_to_unchanged_required_rule_by_request_target_index
+  chemical_path_coverage: directed_reactant_to_product_path_for_each_active_site
   evidence_must_be_current: true
   allowed_rule_states: [PASS, FAIL, UNRESOLVED]
   missing_raw_value: null
@@ -253,7 +321,8 @@ qualification:
   fail_can_qualify: false
   score_compensation_across_hard_rules: false
   return_failed_to_fill_shortlist: false
-  successful_run_statuses: [QUALIFIED, PARTIAL, NO_QUALIFYING_DESIGNS]
+  scientific_qualification_status: QUALIFIED
+  reportable_outcome_statuses: [QUALIFIED, PARTIAL, NO_QUALIFYING_DESIGNS]
 
 controller:
   default_mode: fixed
