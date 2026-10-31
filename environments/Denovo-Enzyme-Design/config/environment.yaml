@@ -21,7 +21,7 @@ contracts:
   request: config/request.schema.json
   generation: config/generation.schema.json
   protocol: config/protocol.schema.json
-  task: tasks/denovo_enzyme_001.md
+  task: src/TASK.md
 
 autonomy:
   policy_version: "2.0"
@@ -67,7 +67,7 @@ autonomy:
   review_record: trajectory.jsonl
   review_actions: [accept, accept_sequence_only, retry, repair, reject, blocked, needs_input]
   persistent_recovery: true
-  whole_run_entrypoint: runtime/controller.py
+  whole_run_entrypoint: scripts/run.py
   user_questions_require_structured_reviewed_reason: true
   routine_question_action: bounded_internal_repair
   resume_requires_current_input_and_artifact_hashes: true

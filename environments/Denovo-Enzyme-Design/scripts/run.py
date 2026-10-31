@@ -16,6 +16,10 @@ import time
 import uuid
 import yaml
 
+# CLI entrypoint; implementation modules live in the sibling src directory.
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+
 from agents import invoke
 from assessment import check_assessment_models
 from reporting import write_bundle
@@ -32,13 +36,13 @@ DEFAULT_POLICY = {
 }
 TERMINAL = {'QUALIFIED', 'PARTIAL', 'NO_QUALIFYING_DESIGNS', 'BLOCKED',
             'NEEDS_INPUT', 'BUDGET_EXHAUSTED'}
-IMPLEMENTATION_FILES = ['runtime/controller.py', 'runtime/agents.py', 'runtime/contracts.py', 'runtime/reporting.py',
-                        'runtime/assessment.py', 'runtime/structure_preparation.py',
+IMPLEMENTATION_FILES = ['scripts/run.py', 'src/agents.py', 'src/contracts.py', 'src/reporting.py',
+                        'src/assessment.py', 'src/structure_preparation.py',
                         'config/environment.yaml', 'config/request.schema.json',
                         'config/generation.schema.json', 'config/protocol.schema.json',
-                        'README.md', 'ENVIRONMENT_SPEC.md', 'runtime/CONTRACTS.md',
-                        'tasks/denovo_enzyme_001.md', 'tasks/request.example.json',
-                        'tasks/homodimer.request.example.json']
+                        'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md', 'src/CONTRACTS.md',
+                        'src/TASK.md', 'config/request.example.json',
+                        'config/homodimer.request.example.json']
 USER_INPUT_ITEMS = {
     'essential_goal_or_reaction_ambiguity_unresolvable_from_evidence':
         ['reaction', 'substrate', 'product', 'stereochemistry', 'scientific_objective'],
@@ -245,7 +249,7 @@ class Controller:
             raise ValueError('Run lacks this frozen environment contract; use its original runtime or a new versioned continuation')
         for name, expected in s['implementation_sha256'].items():
             if digest(ROOT / name) != expected:
-                raise ValueError('Shared environment changed; resume with this run\'s environment_snapshot/runtime/controller.py or use a new versioned continuation')
+                raise ValueError('Shared environment changed; resume with this run\'s environment_snapshot/scripts/run.py or use a new versioned continuation')
             target = self.environment_root / name
             if target.is_symlink() or digest(target) != expected:
                 raise ValueError('Frozen environment snapshot changed; do not replace it with current shared instructions')
@@ -334,7 +338,7 @@ class Controller:
             'mode': mode, 'scientific_request': self.state['request'],
             'input_files': self.state['inputs'], 'condition': self.state['condition'],
             'environment_spec': str(self.environment_root / 'ENVIRONMENT_SPEC.md'),
-            'contracts_file': str(self.environment_root / 'runtime' / 'CONTRACTS.md'),
+            'contracts_file': str(self.environment_root / 'src' / 'CONTRACTS.md'),
             'schemas_dir': str(self.environment_root / 'config'), 'accepted_artifacts': self.artifacts(),
             'environment_snapshot': str(self.environment_root),
             'environment_files_sha256': dict(self.state['implementation_sha256']),
@@ -1049,7 +1053,7 @@ def main() -> int:
             result = {'run_id': result['run_id'], 'status': result['status'],
                       'next': 'Resume with the frozen controller; do not reload shared instructions',
                       'resume_argv': [sys.executable,
-                          str(args.run_dir.resolve() / 'environment_snapshot/runtime/controller.py'),
+                          str(args.run_dir.resolve() / 'environment_snapshot/scripts/run.py'),
                           'run', '--run-dir', str(args.run_dir.resolve())]}
         elif args.command == 'run':
             if args.max_stages is not None and args.max_stages < 1:

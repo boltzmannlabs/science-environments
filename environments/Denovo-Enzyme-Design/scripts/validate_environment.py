@@ -18,7 +18,7 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT = ROOT / 'tests/specification-validation.json'
+REPORT = None
 checks: list[dict[str, str]] = []
 
 
@@ -131,7 +131,7 @@ def check_generation_contracts(schemas: dict) -> None:
                 require(True, f'{kind} generation check: {label}')
             else:
                 raise AssertionError(label)
-        mismatch = read_json('tasks/request.example.json' if kind == 'homodimer' else 'tasks/homodimer.request.example.json')
+        mismatch = read_json('config/request.example.json' if kind == 'homodimer' else 'config/homodimer.request.example.json')
         try:
             validate_generation(profile, schemas['generation'], mismatch)
         except ValueError:
@@ -269,7 +269,7 @@ def synthetic_protocol(schema: dict, kind: str) -> dict:
 
 
 def check_assembly_contracts(schemas: dict) -> None:
-    request = read_json('tasks/homodimer.request.example.json')
+    request = read_json('config/homodimer.request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'homodimer request is structurally valid; scientific inputs remain unqualified')
     implicit = copy.deepcopy(request)
@@ -335,7 +335,7 @@ def check_assembly_contracts(schemas: dict) -> None:
         else:
             raise AssertionError(name)
     for protocol, req, name in [
-        (base, read_json('tasks/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
+        (base, read_json('config/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
         (synthetic_protocol(schemas['protocol'], 'monomer'), request, 'explicit homodimer request cannot silently use a monomer profile'),
     ]:
         try:
@@ -348,18 +348,29 @@ def check_assembly_contracts(schemas: dict) -> None:
 
 def main() -> None:
     required_files = [
-        'README.md', 'ENVIRONMENT_SPEC.md',
+        'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
         'config/environment.yaml', 'config/request.schema.json',
-        'config/protocol.schema.json', 'config/generation.schema.json', 'tasks/denovo_enzyme_001.md',
-        'tasks/request.example.json', 'tests/ACCEPTANCE.md',
-        'tasks/homodimer.request.example.json',
-        'runtime/CONTRACTS.md',
-        'runtime/controller.py', 'runtime/agents.py', 'runtime/contracts.py', 'runtime/reporting.py',
-        'tests/validate_spec.py',
+        'config/protocol.schema.json', 'config/generation.schema.json', 'src/TASK.md',
+        'config/request.example.json', 'STATUS.md',
+        'config/homodimer.request.example.json',
+        'src/CONTRACTS.md',
+        'scripts/run.py', 'src/agents.py', 'src/contracts.py', 'src/reporting.py',
+        'scripts/validate_environment.py', 'scripts/check_regressions.py',
         '../../research/Denovo-Enzyme-Design/research-notes.md',
         '../../research/Denovo-Enzyme-Design/references.md',
     ]
     require(all((ROOT / name).is_file() for name in required_files), 'required package files exist')
+    expected_entries = {'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
+                        'config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results'}
+    require({p.name for p in ROOT.iterdir()} == expected_entries, 'environment has exactly the requested top-level layout')
+    for name in ('tasks', 'tests', 'benchmark', 'results'):
+        directory = ROOT / name
+        entries = list(directory.iterdir()) if directory.is_dir() else []
+        reserved = not entries or (len(entries) == 1 and entries[0].name == '.gitkeep'
+                                  and entries[0].is_file() and not entries[0].is_symlink()
+                                  and entries[0].stat().st_size == 0)
+        require(directory.is_dir() and reserved, f'{name} is reserved with at most an empty .gitkeep')
+
 
     schemas = {name: read_json(f'config/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
     for name, schema in schemas.items():
@@ -371,7 +382,7 @@ def main() -> None:
                 target = target[part.replace('~1', '/').replace('~0', '~')]
         require(True, f'{name} schema internal references resolve')
 
-    request = read_json('tasks/request.example.json')
+    request = read_json('config/request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'example request passes structural and declared budget/range checks')
     for basis in ['subunit_equivalents', 'assembled_complexes']:
@@ -499,7 +510,7 @@ def main() -> None:
             'runs freeze execution conditions and instructions instead of reloading shared Markdown')
     require(set(autonomy['review_actions']) == {'accept', 'accept_sequence_only', 'retry', 'repair', 'reject', 'blocked', 'needs_input'},
             'review distinguishes sequence-only generation acceptance from physical-integrity acceptance')
-    require(autonomy['whole_run_entrypoint'] == 'runtime/controller.py'
+    require(autonomy['whole_run_entrypoint'] == 'scripts/run.py'
             and autonomy['user_questions_require_structured_reviewed_reason']
             and autonomy['routine_question_action'] == 'bounded_internal_repair',
             'whole-run controller enforces structured escalation and internal resolution of routine questions')
@@ -555,7 +566,7 @@ def main() -> None:
     require(config['budgets']['reserve_finalist_chemistry'] and not config['budgets']['relax_gates_when_exhausted'], 'budgets reserve chemistry and cannot relax gates')
     require(config['benchmark']['equal_total_compute'] and config['benchmark']['independent_frozen_evaluator'], 'benchmark uses equal compute and a frozen evaluator')
 
-    task = (ROOT/'tasks/denovo_enzyme_001.md').read_text()
+    task = (ROOT/'src/TASK.md').read_text()
     expected_sections = ['Description', 'Target', 'Design Constraints', 'Required Execution Steps', 'Expected Output', 'Constraints', 'Important Instructions']
     require(re.findall(r'^## (.+)$', task, re.M) == expected_sections, 'task preserves reference section order with execution steps replacing the software list')
     require('Execution is defined by required operations' in task, 'task specifies required operations rather than adapter names')
@@ -572,7 +583,7 @@ def main() -> None:
             if link.startswith(('https://', 'http://', '#', 'mailto:')):
                 continue
             target = (document.parent / link.split('#', 1)[0]).resolve()
-            require(target.is_file() or target == REPORT.resolve(), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
+            require(target.is_file() or (REPORT is not None and target == REPORT.resolve()), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
             local_links += 1
     require(local_links > 0, 'package contains navigable local documentation links')
 
@@ -597,11 +608,21 @@ def main() -> None:
             'computational or experimental enzyme benchmarking',
         ],
     }
-    REPORT.parent.mkdir(exist_ok=True)
-    REPORT.write_text(json.dumps(report, indent=2)+'\n')
+    if REPORT is not None:
+        REPORT.parent.mkdir(parents=True, exist_ok=True)
+        REPORT.write_text(json.dumps(report, indent=2)+'\n')
     print(f"PASS: {len(checks)} specification checks; no scientific workflows executed.")
-    print(f'Report: {REPORT}')
+    if REPORT is not None:
+        print(f'Report: {REPORT}')
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--report', type=Path, help='Optional output outside the environment directory')
+    args = parser.parse_args()
+    if args.report is not None:
+        REPORT = args.report.resolve()
+        if REPORT == ROOT or ROOT in REPORT.parents:
+            parser.error('--report must be outside the environment to preserve its empty directories')
     main()

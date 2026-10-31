@@ -22,7 +22,7 @@ The target repository was retrieved on 26 October 2026. Its README, CONTRIBUTING
 - Connect and validate the scientific adapters through the implemented controller; verify actual resource reservation, metering and evaluation.
 - Validate the full computational workflow before benchmarking fixed and frozen RL execution under equal resource limits.
 
-The [acceptance plan](../../environments/Denovo-Enzyme-Design/tests/ACCEPTANCE.md) separates completed specification checks from these future implementation and scientific requirements.
+The [acceptance plan](../../environments/Denovo-Enzyme-Design/STATUS.md#acceptance) separates completed specification checks from these future implementation and scientific requirements.
 
 ## Homodimer research and resulting requirements — 26 October 2026
 
@@ -97,7 +97,7 @@ Evidence inspected: `LDEX_Environment_Test/tools_specified/integration_session/r
 
 ## Bounded scientific integration pilot — 27 October 2026
 
-Local evidence is retained under `LDEX_Environment_Test/fast_pilot_20261027/`, separately from reusable environment code. Two actual full-size apo scaffold jobs produced two 232-residue chains each, followed by tied sequence design. Generation took 290.97 and 294.83 seconds; sequence design took 5.78 and 5.63 seconds. These are individual model runtimes, not total elapsed pilot time. Inputs, output coordinates, sequences, failed calls and pinned runtime/model hashes remain in that evidence directory.
+Local evidence is retained under `LDEX_Environment_Test/fast_pilot_20261027/`, separately from reusable environment code. Two actual full-size apo scaffold jobs produced two 232-residue chains each, followed by tied sequence design. Generation took 290.97 and 294.83 seconds; sequence design took 5.78 and 5.63 seconds. These are individual model runtimes, not total elapsed pilot time. Inputs, output coordinates, sequences, failed calls and pinned src/model hashes remain in that evidence directory.
 
 Tracing the first run confirmed motif backbone movement at the final sampling step; earlier sampled steps retained the motif backbone. Joint nine-residue motif CA RMSD was 3.19 Å. A bounded second run retained local backbone context around the same catalytic identities and reduced that CA RMSD to 0.17 Å. The second design retained 40 reference backbone residues per chain and generated the remaining 192; all nine designated catalytic residue identities survived sequence design. This supports that input adjustment for further testing, not universal applicability or catalytic qualification. Symmetry was imposed by generation and is not independent assembly evidence.
 
