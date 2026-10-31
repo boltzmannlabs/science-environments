@@ -2,6 +2,7 @@
 import argparse
 import csv
 import hashlib
+import io
 import json
 import math
 from pathlib import Path
@@ -69,10 +70,10 @@ def number(value):
 
 def published_reference(path=REFERENCE):
     path = Path(path)
-    if hashlib.sha256(path.read_bytes()).hexdigest() != REFERENCE_SHA256:
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != REFERENCE_SHA256:
         raise ValueError('Published S1 source checksum changed; qualify a new version explicitly')
-    with path.open(newline='') as handle:
-        records = list(csv.DictReader(handle))
+    records = list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'), newline='')))
     indexed = {row['mutant']: row for row in records}
     if len(indexed) != len(records) or 'BglB' not in indexed:
         raise ValueError('Source mutant identities are duplicated or the reference is missing')
@@ -148,16 +149,16 @@ def summarize(rows, reference):
 
 def evaluate(selection, reference_path=REFERENCE):
     selection = Path(selection)
-    with selection.open(newline='') as handle:
-        reader = csv.DictReader(handle)
-        if reader.fieldnames != FIELDS:
-            raise ValueError('Expected CSV header: '+','.join(FIELDS))
-        rows = list(reader)
-    rows = validate_selection(rows, parent_sequence())
+    raw = selection.read_bytes()
+    reader = csv.DictReader(io.StringIO(raw.decode('utf-8-sig'), newline=''))
+    if reader.fieldnames != FIELDS:
+        raise ValueError('Expected CSV header: '+','.join(FIELDS))
+    parent = parent_sequence()
+    rows = validate_selection(list(reader), parent)
     result = summarize(rows, published_reference(reference_path))
-    result.update(selection_sha256=hashlib.sha256(selection.read_bytes()).hexdigest(),
+    result.update(selection_sha256=hashlib.sha256(raw).hexdigest(),
                   reference_sha256=REFERENCE_SHA256,
-                  parent_sequence_sha256=hashlib.sha256(parent_sequence().encode()).hexdigest(),
+                  parent_sequence_sha256=hashlib.sha256(parent.encode()).hexdigest(),
                   design_constraints_valid=True)
     return result
 

@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import evaluate as case
 
@@ -167,6 +168,34 @@ class ScientificOutputChecks(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             selection=Path(directory)/'wrong.csv';selection.write_text('id,sequence\n')
             with self.assertRaises(ValueError):case.evaluate(selection)
+
+    def test_selection_hash_describes_the_bytes_actually_parsed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            selection=Path(directory)/'fixture.csv'
+            with selection.open('w',newline='') as handle:
+                writer=csv.DictWriter(handle,fieldnames=case.FIELDS)
+                writer.writeheader();writer.writerow(design())
+            initial=selection.read_bytes()
+            original=case.published_reference
+            def change_selection_then_read_reference(path):
+                selection.write_text('changed after the selection snapshot was read\n')
+                return original(path)
+            with patch.object(case,'published_reference',side_effect=change_selection_then_read_reference):
+                result=case.evaluate(selection)
+            self.assertEqual(result['selection_sha256'],hashlib.sha256(initial).hexdigest())
+            self.assertEqual(result['candidates'][0]['mutation'],'N220Y')
+            self.assertNotEqual(selection.read_bytes(),initial)
+
+    def test_reference_is_parsed_from_its_verified_snapshot_not_reopened(self):
+        source=case.REFERENCE.read_bytes()
+        with tempfile.TemporaryDirectory() as directory:
+            reference=Path(directory)/'fixture.csv'
+            reference.write_text('different file contents after the source snapshot\n')
+            with patch.object(Path,'read_bytes',return_value=source) as read:
+                indexed=case.published_reference(reference)
+                self.assertEqual(read.call_count,1)
+            self.assertEqual(len(indexed),129)
+            self.assertEqual(indexed['BglB']['kcatkm'],'174000')
 
     def test_cli_evaluates_a_fixture_without_overwriting_an_earlier_result(self):
         with tempfile.TemporaryDirectory() as directory:

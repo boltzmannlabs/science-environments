@@ -42,6 +42,8 @@ published values. It reports measured/unmeasured coverage, point-rule outcomes,
 and parent-relative ratios with explicit denominators. It never reranks a sealed
 selection or calls a predictor. An unknown result cannot be counted as a success.
 Reference values come from the source's `BglB` row, not invented model scores.
+The selection and reference checksums describe the same captured bytes that are
+parsed; a file changed during evaluation is not silently reread for a new hash.
 
 Manual scientific review still checks `report.md`, `evidence.json`, `usage.json`,
 native artifacts and method suitability. The small CSV evaluator does not verify
