@@ -40,7 +40,7 @@ Bispecificity can involve different antigens or distinct epitopes on one antigen
 
 ## 3. Case A: reference antibody and target supplied
 
-The active [reference-guided task](tasks/mab_reference_guided_design.md) targets human EGFR (ERBB1) with cetuximab as its reference antibody. Its reusable request contract accepts target context, exact paired reference sequences, molecular format, sequence scope, reference annotations, objective, edit policy, protocol, seed, and budget.
+The active [reference-guided task](tasks/monoclonal_reference/mab_reference_guided_design.md) targets human EGFR (ERBB1) with cetuximab as its reference antibody. Its reusable request contract accepts target context, exact paired reference sequences, molecular format, sequence scope, reference annotations, objective, edit policy, protocol, seed, and budget.
 
 The current reference-required objectives are `reference_guided`, `affinity_maturation`, `humanization`, `developability_optimization`, `specificity_optimization`, and `mechanism_optimization`. These labels specify different evaluation questions; they do not indicate six implemented design algorithms. Supported product contexts are IgG, Fab, and F(ab')2, with variable-domain or compatible chain-level sequence scopes. VHH and scFv require different representation contracts and are not accepted formats in the present validator.
 
@@ -53,13 +53,13 @@ Required distinctions:
 
 Published reference-based antibody optimization includes experimental assessment of proposed variants; it does not establish that a model score alone demonstrates improvement. This motivates keeping computational predictions and measured comparisons separate. [Hie et al.](https://pubmed.ncbi.nlm.nih.gov/37095349/)
 
-The existing `denv_antibody_001` profile is one reference-guided example, with [general](tasks/denv_antibody_001.md) and [capability-detailed](tasks/denv_antibody_001_tools.md) presentations. Both retain identical scientific requirements and budgets. The DENV profile does not define the entire environment.
+The existing `denv_antibody_001` profile is one reference-guided example, with [general](tasks/monoclonal_reference/denv_antibody_001.md) and [capability-detailed](tasks/monoclonal_reference/denv_antibody_001_tools.md) presentations. Both retain identical scientific requirements and budgets. The DENV profile does not define the entire environment.
 
 ## 4. Case B: target supplied without a binding-antibody reference
 
 This case addresses discovery rather than modification of a known binder. “Target only” describes the absence of a supplied binding reference; it does not mean an antigen name or sequence is sufficient for every design method.
 
-The current [target-only task](tasks/mab_target_only_design.md) specifies human EGFR (ERBB1), with no supplied binding-reference antibody or imposed reference epitope.
+The current [target-only task](tasks/monoclonal_target_only/mab_target_only_design.md) specifies human EGFR (ERBB1), with no supplied binding-reference antibody or imposed reference epitope.
 
 The task must declare target identity and construct, presentation context, available structural information, epitope constraints or uncertainty, requested antibody format, framework/scaffold assumptions, evidence requirements, and budget. Method-specific missing inputs must be reported instead of inferred. A framework template is not a binding-reference baseline.
 
@@ -67,11 +67,11 @@ Candidates need origin records, sequence identity, independent evaluation, and e
 
 Recent de novo antibody work combines computational proposals with experimental screening and characterization. Its published results support studying this case, not assuming arbitrary targets are solved or that every antibody format transfers unchanged. [Bennett et al., published online 2025](https://www.nature.com/articles/s41586-025-09721-5)
 
-**Implemented contract:** the [target-only profile](config/monoclonal_target_only/profile.yaml) requires explicit reference absence and candidate-origin declarations. Its dedicated schemas support the [task](tasks/mab_target_only_design.md); the reference-required schema still rejects `de_novo`. Scientific generation, protocol qualification, and independent evaluation remain unimplemented.
+**Implemented contract:** the [target-only profile](config/monoclonal_target_only/profile.yaml) requires explicit reference absence and candidate-origin declarations. Its dedicated schemas support the [task](tasks/monoclonal_target_only/mab_target_only_design.md); the reference-required schema still rejects `de_novo`. Scientific generation, protocol qualification, and independent evaluation remain unimplemented.
 
 ## 5. Case C: bispecific antibody design
 
-The current [bispecific design task](tasks/bispecific_antibody_design.md) specifies HER2 biparatopic design with zanidatamab as the reference antibody and binding specificities for extracellular domains II and IV. The reference name alone does not supply molecular inputs or establish equivalent geometry or activity. The broader family contract also supports two different antigens.
+The current [bispecific design task](tasks/bispecific_design/bispecific_antibody_design.md) specifies HER2 biparatopic design with zanidatamab as the reference antibody and binding specificities for extracellular domains II and IV. The reference name alone does not supply molecular inputs or establish equivalent geometry or activity. The broader family contract also supports two different antigens.
 
 The task must define the two binding specificities, intended mechanism, architecture, chain identities, valencies, and supplied parental evidence. If only one parental binder is available, the missing binding component remains a separate discovery requirement.
 

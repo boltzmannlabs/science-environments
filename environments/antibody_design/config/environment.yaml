@@ -55,16 +55,16 @@ contracts:
   protocol: config/shared/protocol.schema.json
   mab-assay-record: config/shared/mab-assay-record.schema.json
 task_variants:
-  general: tasks/denv_antibody_001.md
-  tool_specific: tasks/denv_antibody_001_tools.md
+  general: tasks/monoclonal_reference/denv_antibody_001.md
+  tool_specific: tasks/monoclonal_reference/denv_antibody_001_tools.md
 task_templates:
-  reference_guided_monoclonal: tasks/mab_reference_guided_design.md
-  target_only_monoclonal: tasks/mab_target_only_design.md
-  bispecific_design: tasks/bispecific_antibody_design.md
-  bispecific_cellular_mechanism_assessment: tasks/bispecific_cellular_mechanism_assessment.md
-  bispecific_cns_delivery_assessment: tasks/bispecific_cns_delivery_assessment.md
-  bispecific_cns_readout_comparison: tasks/bispecific_cns_readout_comparison.md
-  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_cns_shuttle_integrated_gate.md
+  reference_guided_monoclonal: tasks/monoclonal_reference/mab_reference_guided_design.md
+  target_only_monoclonal: tasks/monoclonal_target_only/mab_target_only_design.md
+  bispecific_design: tasks/bispecific_design/bispecific_antibody_design.md
+  bispecific_cellular_mechanism_assessment: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md
+  bispecific_cns_delivery_assessment: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md
+  bispecific_cns_readout_comparison: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md
+  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md
 request_examples:
   reference_guided_monoclonal: config/monoclonal_reference/request.example.json
   denv_profile: config/monoclonal_reference/denv.request.example.json

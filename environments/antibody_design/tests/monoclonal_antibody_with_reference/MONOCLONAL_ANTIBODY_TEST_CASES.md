@@ -13,8 +13,8 @@ testing program before any candidate may enter the shortlist.
 
 The plan applies to both presentations of task `denv_antibody_001`:
 
-- `tasks/denv_antibody_001.md`: the method-neutral task.
-- `tasks/denv_antibody_001_tools.md`: the same task with expanded evidence requirements in its capability block.
+- `tasks/monoclonal_reference/denv_antibody_001.md`: the method-neutral task.
+- `tasks/monoclonal_reference/denv_antibody_001_tools.md`: the same task with expanded evidence requirements in its capability block.
 
 Both variants must receive the same antigen, reference antibody, candidate limit, scientific
 rules, evaluator, budget, random seed, and hidden outcomes. They must produce the same result

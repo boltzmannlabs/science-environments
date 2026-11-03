@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-10-27T13:11:51.424836+00:00",
+  "checked_at_utc": "2026-11-03T12:52:39.486540+00:00",
   "environment_id": "antibody_design",
   "maturity": "Specification",
   "validation_scope": "local specification and synthetic contract checks; no scientific execution",
   "status": "PASS",
-  "checks_passed": 263,
+  "checks_passed": 272,
   "checks": [
     {
       "check": "Required environment and research files exist",
@@ -123,6 +123,10 @@
       "status": "PASS"
     },
     {
+      "check": "Task folder matches configuration family: mab_reference_guided_design",
+      "status": "PASS"
+    },
+    {
       "check": "Profile request schema exists: mab_reference_guided_design",
       "status": "PASS"
     },
@@ -140,6 +144,10 @@
     },
     {
       "check": "Profile task file exists: denv_antibody_001",
+      "status": "PASS"
+    },
+    {
+      "check": "Task folder matches configuration family: denv_antibody_001",
       "status": "PASS"
     },
     {
@@ -163,6 +171,10 @@
       "status": "PASS"
     },
     {
+      "check": "Task folder matches configuration family: denv_antibody_001_tools",
+      "status": "PASS"
+    },
+    {
       "check": "Profile request schema exists: denv_antibody_001_tools",
       "status": "PASS"
     },
@@ -180,6 +192,10 @@
     },
     {
       "check": "Profile task file exists: mab_target_only_design",
+      "status": "PASS"
+    },
+    {
+      "check": "Task folder matches configuration family: mab_target_only_design",
       "status": "PASS"
     },
     {
@@ -203,6 +219,10 @@
       "status": "PASS"
     },
     {
+      "check": "Task folder matches configuration family: bispecific_antibody_design",
+      "status": "PASS"
+    },
+    {
       "check": "Profile request schema exists: bispecific_antibody_design",
       "status": "PASS"
     },
@@ -220,6 +240,10 @@
     },
     {
       "check": "Profile task file exists: bispecific_cellular_mechanism_assessment",
+      "status": "PASS"
+    },
+    {
+      "check": "Task folder matches configuration family: bispecific_cellular_mechanism_assessment",
       "status": "PASS"
     },
     {
@@ -243,6 +267,10 @@
       "status": "PASS"
     },
     {
+      "check": "Task folder matches configuration family: bispecific_cns_delivery_assessment",
+      "status": "PASS"
+    },
+    {
       "check": "Profile request schema exists: bispecific_cns_delivery_assessment",
       "status": "PASS"
     },
@@ -263,6 +291,10 @@
       "status": "PASS"
     },
     {
+      "check": "Task folder matches configuration family: bispecific_cns_readout_comparison",
+      "status": "PASS"
+    },
+    {
       "check": "Profile request schema exists: bispecific_cns_readout_comparison",
       "status": "PASS"
     },
@@ -280,6 +312,10 @@
     },
     {
       "check": "Profile task file exists: bispecific_cns_shuttle_integrated_gate",
+      "status": "PASS"
+    },
+    {
+      "check": "Task folder matches configuration family: bispecific_cns_shuttle_integrated_gate",
       "status": "PASS"
     },
     {
@@ -319,39 +355,39 @@
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/mab_reference_guided_design.md",
+      "check": "Configured Markdown task exists under tasks: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/mab_target_only_design.md",
+      "check": "Configured Markdown task exists under tasks: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/bispecific_antibody_design.md",
+      "check": "Configured Markdown task exists under tasks: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Configured Markdown task exists under tasks: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Configured Markdown task exists under tasks: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Configured Markdown task exists under tasks: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Configured Markdown task exists under tasks: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/denv_antibody_001.md",
+      "check": "Configured Markdown task exists under tasks: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Configured Markdown task exists under tasks: tasks/denv_antibody_001_tools.md",
+      "check": "Configured Markdown task exists under tasks: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
@@ -399,7 +435,7 @@
       "status": "PASS"
     },
     {
-      "check": "Environment uses the documented config, tasks, tests, and results directories",
+      "check": "Environment contains required directories and only supported optional source/script directories",
       "status": "PASS"
     },
     {
@@ -439,223 +475,223 @@
       "status": "PASS"
     },
     {
-      "check": "Tasks contains exactly the nine registered Markdown task files",
+      "check": "Task family folders contain exactly the nine Markdown files registered by profiles and catalog",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/bispecific_antibody_design.md",
+      "check": "Task has consistent reader-facing sections: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/bispecific_antibody_design.md",
+      "check": "Task has appropriate tool capabilities: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/bispecific_antibody_design.md",
+      "check": "Task presents workflow before evaluation: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/bispecific_antibody_design.md",
+      "check": "Task describes capabilities without software names: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/bispecific_antibody_design.md",
+      "check": "Task omits implementation boilerplate: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_antibody_design.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task has consistent reader-facing sections: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task has appropriate tool capabilities: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task presents workflow before evaluation: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task describes capabilities without software names: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task omits implementation boilerplate: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_cellular_mechanism_assessment.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task has consistent reader-facing sections: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task has appropriate tool capabilities: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task presents workflow before evaluation: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task describes capabilities without software names: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task omits implementation boilerplate: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_cns_delivery_assessment.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task has consistent reader-facing sections: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task has appropriate tool capabilities: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task presents workflow before evaluation: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task describes capabilities without software names: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task omits implementation boilerplate: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_cns_readout_comparison.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task has consistent reader-facing sections: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task has appropriate tool capabilities: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task presents workflow before evaluation: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task describes capabilities without software names: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task omits implementation boilerplate: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_cns_shuttle_integrated_gate.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/denv_antibody_001.md",
+      "check": "Task has consistent reader-facing sections: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/denv_antibody_001.md",
+      "check": "Task has appropriate tool capabilities: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/denv_antibody_001.md",
+      "check": "Task presents workflow before evaluation: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/denv_antibody_001.md",
+      "check": "Task describes capabilities without software names: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/denv_antibody_001.md",
+      "check": "Task omits implementation boilerplate: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/denv_antibody_001.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/denv_antibody_001_tools.md",
+      "check": "Task has consistent reader-facing sections: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/denv_antibody_001_tools.md",
+      "check": "Task has appropriate tool capabilities: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/denv_antibody_001_tools.md",
+      "check": "Task presents workflow before evaluation: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/denv_antibody_001_tools.md",
+      "check": "Task describes capabilities without software names: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/denv_antibody_001_tools.md",
+      "check": "Task omits implementation boilerplate: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/denv_antibody_001_tools.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/mab_reference_guided_design.md",
+      "check": "Task has consistent reader-facing sections: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/mab_reference_guided_design.md",
+      "check": "Task has appropriate tool capabilities: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/mab_reference_guided_design.md",
+      "check": "Task presents workflow before evaluation: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/mab_reference_guided_design.md",
+      "check": "Task describes capabilities without software names: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/mab_reference_guided_design.md",
+      "check": "Task omits implementation boilerplate: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/mab_reference_guided_design.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task has consistent reader-facing sections: tasks/mab_target_only_design.md",
+      "check": "Task has consistent reader-facing sections: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task has appropriate tool capabilities: tasks/mab_target_only_design.md",
+      "check": "Task has appropriate tool capabilities: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task presents workflow before evaluation: tasks/mab_target_only_design.md",
+      "check": "Task presents workflow before evaluation: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task describes capabilities without software names: tasks/mab_target_only_design.md",
+      "check": "Task describes capabilities without software names: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits implementation boilerplate: tasks/mab_target_only_design.md",
+      "check": "Task omits implementation boilerplate: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Task omits runtime and compute-budget criteria: tasks/mab_target_only_design.md",
+      "check": "Task omits runtime and compute-budget criteria: tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
@@ -859,19 +895,19 @@
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/mab_reference_guided_design.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/monoclonal_reference/mab_reference_guided_design.md",
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/denv_antibody_001.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/monoclonal_reference/denv_antibody_001.md",
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/denv_antibody_001_tools.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/monoclonal_reference/denv_antibody_001_tools.md",
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/mab_target_only_design.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
@@ -879,11 +915,11 @@
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/mab_target_only_design.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/monoclonal_target_only/mab_target_only_design.md",
       "status": "PASS"
     },
     {
-      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/bispecific_antibody_design.md",
+      "check": "Local link resolves: environments/antibody_design/ENVIRONMENT_SPEC.md -> tasks/bispecific_design/bispecific_antibody_design.md",
       "status": "PASS"
     },
     {
@@ -1055,7 +1091,7 @@
       "status": "PASS"
     },
     {
-      "check": "Synthetic contract behavior tests pass: ............................................................................................\n----------------------------------------------------------------------\nRan 92 tests in 7.052s\n\nOK\n",
+      "check": "Synthetic contract behavior tests pass: ............................................................................................\n----------------------------------------------------------------------\nRan 92 tests in 6.932s\n\nOK\n",
       "status": "PASS"
     }
   ],
@@ -1069,40 +1105,40 @@
     "../../research/antibody_design/DENV2_Computational_Antibody_Benchmark.md": "134621152657a8fce5d2ec2df36dd8b4cbe9b993d68c34cec46866f94234e3d0",
     "../../research/antibody_design/references.md": "1b163c82a4064854172d18011c1db0efd5cb308525e25225467bcba6ad1b7450",
     "../../research/antibody_design/research-notes.md": "f408997355a6f03045897b9a1849fd10a46f086400ce8ddacea084b5f0c08be7",
-    "ENVIRONMENT_SPEC.md": "e166e20b71871830285f18fa064817c79b94eb5a22220c48917695039540a5f2",
-    "README.md": "15d23c7a0176dc994ba24ae3ea03f8ef169f93643e1669ebb285e7e67d01c305",
-    "config/README.md": "bc24876238045f6b4697119d7affa8204d46edca243575cec2e07490456b9c29",
+    "ENVIRONMENT_SPEC.md": "1e6c59ce5562befd12d46b0ec7e5f925172dd83132d8d2dcc4b9ef512db1b225",
+    "README.md": "102d8ac64e9bfe1d06a384b5858ec147b91b83b64eca77dbdc801b636f690d12",
+    "config/README.md": "8cb1d0c0cf7494eb917e2321724226e0d9f3df0f243bfb6f82e7c4b994f891ad",
     "config/bispecific_assessment/cellular_mechanism.request.example.json": "6baa426f69972939effdae34d3163745e17f24abf004d3e372f34d4c977868e7",
     "config/bispecific_assessment/cellular_mechanism.request.schema.json": "a3cbe1021c76c3b1e3b5c03cf4d18bcf5c26dd1a4442042294d4f0b69be598be",
     "config/bispecific_assessment/cellular_mechanism.result.schema.json": "200a501bcd1ada7be6a666466745cc4ef490461ad5388987a2bb41b0b01e566f",
-    "config/bispecific_assessment/cellular_mechanism.yaml": "89e3518e89ade4ad52547f134fb423c95b9a42f6090f06cfde632ed29241f00b",
+    "config/bispecific_assessment/cellular_mechanism.yaml": "50cdb655cdda5fdd923658d49b50589ff6ec5e6ca638fa3d98ee21b9d49c4e99",
     "config/bispecific_assessment/cns_delivery.request.example.json": "5d21e4ff4844c95cc1db910391c4ae434508ea538253f9fd6043d6077449a62b",
     "config/bispecific_assessment/cns_delivery.request.schema.json": "7af594e535021c78b6d466ef47e14828d4bf720caaf57c416295fd3d7d5b467f",
     "config/bispecific_assessment/cns_delivery.result.schema.json": "945f9862bb19c05d28e77d10dbba478836500b2a2876010820fee4ef4c4753c7",
-    "config/bispecific_assessment/cns_delivery.yaml": "267d046827358e8488d2d9802e788af3fe6f57ade33584080b50125718b69bdc",
+    "config/bispecific_assessment/cns_delivery.yaml": "51df9b339bd2c4c24815ba83d260869e6ac3acb823030e34c3648737f3a4904c",
     "config/bispecific_assessment/cns_integrated.request.example.json": "36b1c4f27cb81c260d95b0d585efcdb012c3c9743a527e4b8774fc9b978496a4",
     "config/bispecific_assessment/cns_integrated.request.schema.json": "8624f8df6d141688be795d2e024bd3875ba0c170aa8879885af234d07df4d839",
     "config/bispecific_assessment/cns_integrated.result.schema.json": "0d4ccb0fa8f0b5a258db76fa73bdcab6a4a849fae8d2df7435c507061b34a081",
-    "config/bispecific_assessment/cns_integrated.yaml": "168d34be893e4eaf9193581c32824923f26a10f783b20927788c9ffcc0f545f7",
+    "config/bispecific_assessment/cns_integrated.yaml": "0a82023543328afb0166177b9d44fdfc6f3d6da35a0102d75ce88c33344e3c92",
     "config/bispecific_assessment/cns_readout.request.example.json": "0e96d388e675b59c3e9cbeb9a5cafa5c03ee392b5789cf86f1cc026f988bead0",
     "config/bispecific_assessment/cns_readout.request.schema.json": "cae2f58dc1a22da5ebcf68f3ec73b3e550600f955e6bb884be74be3f7ee8eddf",
     "config/bispecific_assessment/cns_readout.result.schema.json": "16cc49ba798aa65ad500121d95fc4a0cd03cbf5f78e8a1779797fac8d587cf3e",
-    "config/bispecific_assessment/cns_readout.yaml": "586bb193011abe367ee584f4d16e4e30ab6d464920508b05f769d1142e49454c",
-    "config/bispecific_design/profile.yaml": "de959a2a82b1d0b81b6062cbd553cf82ba1d10689e6e844cd0229fd5c5575d18",
+    "config/bispecific_assessment/cns_readout.yaml": "49c4ae36ef3e31bc07c348d5b39c2f687ce6bcc51d060cd5a9c2fa0e2a2431de",
+    "config/bispecific_design/profile.yaml": "8cedfc6cf39634f0a136ecf7a79719dd2d4426460de036c2f68536e872c1143d",
     "config/bispecific_design/request.example.json": "3ca42c61fa2dfb27506d759fdecbebe964c244210ab9744627d2e436a6c1f645",
     "config/bispecific_design/request.schema.json": "262c6769c1f30dd47494c9e6df62736428693bf1c5dcc034cfa23d47509d44b2",
     "config/bispecific_design/result.schema.json": "9d14f44eec369180262c403e44a970e00ba756923f300485dae50079d5298bf5",
-    "config/environment.yaml": "bade2c57886adda9eccdeb905d8fa32045dc0e71324ae9ce4972cd9c48815eec",
-    "config/monoclonal_reference/denv.general.yaml": "798cbc4043f63b2ce9f241922431efe5d47f3637541b5dcd840de4ec2ae1a923",
+    "config/environment.yaml": "8a8d740cf145e3a53129eb5d0ffa757a206bfcee92225d3ac7734205edafee5f",
+    "config/monoclonal_reference/denv.general.yaml": "6f09845cd7d8d262aa6d7e8a98549a29410a7d97a59cd158ca12a51865979fb5",
     "config/monoclonal_reference/denv.request.example.json": "5d072a26b0cb42008f72920283412490c6a3d36f4ba910059a3149d92e87be63",
     "config/monoclonal_reference/denv.request.schema.json": "a4c6fb9403cdfd2cbba4d8cf16d6672ee72f0be81750c2f17a9b03ed47696d41",
     "config/monoclonal_reference/denv.result.schema.json": "19d8162de890d819a5602438299888f3f249ab0f8c2ad0e3c0f2bd5d49e690df",
-    "config/monoclonal_reference/denv.tool_specific.yaml": "52ce7cf4e833eae654402493b2edbed38db7db3477dc727dd6279e3075fc590e",
-    "config/monoclonal_reference/profile.yaml": "d2bf67cdb95fdf2d0353aa2529e9fd31c31f21c005101b74e8a528a6e5d1b822",
+    "config/monoclonal_reference/denv.tool_specific.yaml": "c639215f721a3b4c0c18ca05710f799ab680a8dfab942ffa2d8811f34191fe6a",
+    "config/monoclonal_reference/profile.yaml": "0066e4082e7c8693cedb74e119a071f4ec8a57102752c09aff2e639bf2046f40",
     "config/monoclonal_reference/request.example.json": "2187e6c0479b37ea51095069aebfda989011525d71538b9efa101b5dd9ad7d01",
     "config/monoclonal_reference/request.schema.json": "243ce5c2ab9cfffcc2cb700782d2cae78df1e8eaad96046e4fc1ed5a686a5113",
     "config/monoclonal_reference/result.schema.json": "69a347540c99acae054d39323b86246f14d4856255143af0f4f854403c0d294e",
-    "config/monoclonal_target_only/profile.yaml": "8621c2141313d269ef221204c0bd7aa1bb25446c8b76aef3c1379cc81a012854",
+    "config/monoclonal_target_only/profile.yaml": "2b3f0cc663e1a689dbbbdbfb31f9ab2f2afbbb6b3a57757c6975474002b8de0a",
     "config/monoclonal_target_only/request.example.json": "4416dd34e410f25e45e8d29133625bf426ba6677118f49963733b50750f9c2e6",
     "config/monoclonal_target_only/request.schema.json": "fc9dc6efe851c7f8c71f3202d31d726c0aa1a584029b37c9b3712ed15aaf6fbd",
     "config/monoclonal_target_only/result.schema.json": "130b8dca4599e255a8dd5e2ccee7ee2dfb4e882b8ae93c4a72111abf51c52ba8",
@@ -1113,37 +1149,37 @@
     "config/shared/protocol.schema.json": "6f15df5b77296680cc74897377177396d86f5e9b6feb9960392126ceb957bb82",
     "results/README.md": "44153be306df89ac063dfbf6a9210f2d8b811e27f2861c0539800bc3960f8f95",
     "results/needs-input.example.json": "b141ff264547c4caefd23b3209db1ddd8adc3909b0a9ab80a2f3d898e5439664",
-    "tasks/bispecific_antibody_design.md": "dbcac114b9760fc7338b73b7c2fc36344451ef05be0520ac3ab4ba917387ce94",
-    "tasks/bispecific_cellular_mechanism_assessment.md": "88fa2da6098ebc8cbee6ebe2a28dc356dfd91c3e6edbb775e805d5f5d39f8ba8",
-    "tasks/bispecific_cns_delivery_assessment.md": "5a3241d98b46f6c0bb0985e0d7ec1a8facc3a3bc089137d28830d6f39cde2f66",
-    "tasks/bispecific_cns_readout_comparison.md": "66da584bb9929f45f852f88b9271e9d0a6429920d900f5751dceb5647ce76ff5",
-    "tasks/bispecific_cns_shuttle_integrated_gate.md": "1433fcce73e6001c0f4eda5759189714fc1ee2eeba7a17ee459ea59f466cac74",
-    "tasks/denv_antibody_001.md": "9372e16246889a2b3c2683cf162b6e6e98d77e4d5413a26075ee640d6c3559e8",
-    "tasks/denv_antibody_001_tools.md": "6b9a16c9b96899da4b3ba9d482af9ad6f3dd11398efba00d4fb09c9e994e0a0f",
-    "tasks/mab_reference_guided_design.md": "f026a3586152a9e36514e883d4f52bf675c5ea869786ace8fed89f7e3bd24501",
-    "tasks/mab_target_only_design.md": "b3a510ca12f6c44efc2afefae1a93668d5ce0d2c8a46ccc045fd44c06e8512c0",
+    "tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md": "88fa2da6098ebc8cbee6ebe2a28dc356dfd91c3e6edbb775e805d5f5d39f8ba8",
+    "tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md": "5a3241d98b46f6c0bb0985e0d7ec1a8facc3a3bc089137d28830d6f39cde2f66",
+    "tasks/bispecific_assessment/bispecific_cns_readout_comparison.md": "66da584bb9929f45f852f88b9271e9d0a6429920d900f5751dceb5647ce76ff5",
+    "tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md": "1433fcce73e6001c0f4eda5759189714fc1ee2eeba7a17ee459ea59f466cac74",
+    "tasks/bispecific_design/bispecific_antibody_design.md": "dbcac114b9760fc7338b73b7c2fc36344451ef05be0520ac3ab4ba917387ce94",
+    "tasks/monoclonal_reference/denv_antibody_001.md": "9372e16246889a2b3c2683cf162b6e6e98d77e4d5413a26075ee640d6c3559e8",
+    "tasks/monoclonal_reference/denv_antibody_001_tools.md": "6b9a16c9b96899da4b3ba9d482af9ad6f3dd11398efba00d4fb09c9e994e0a0f",
+    "tasks/monoclonal_reference/mab_reference_guided_design.md": "f026a3586152a9e36514e883d4f52bf675c5ea869786ace8fed89f7e3bd24501",
+    "tasks/monoclonal_target_only/mab_target_only_design.md": "b3a510ca12f6c44efc2afefae1a93668d5ce0d2c8a46ccc045fd44c06e8512c0",
     "tests/contract_io.py": "544e43250af15a2395184462b9d1bd83162e0bd325ae72677fe8ec3f47c929cc",
     "tests/monoclonal_antibody_with_reference/ACCEPTANCE.md": "f06a1dd34201a4162f41f03241e664e991d3432080313bf816cc56e168363cec",
     "tests/monoclonal_antibody_with_reference/COVERAGE.md": "87b1898234220f4d766779a89293562fa4e43657090f5780552cd4d86c4865c2",
-    "tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md": "665ed1d4dc40ee8bc18797adbf657fd8ce2229ed7e0d078c84c801a2e970db4f",
+    "tests/monoclonal_antibody_with_reference/MONOCLONAL_ANTIBODY_TEST_CASES.md": "ec2acb469e681041798b13cde0f2054e24d2ca93a80fa589411ea102e031f7eb",
     "tests/monoclonal_antibody_with_reference/README.md": "010c5f46ab3cf54fc4f4821e78f1003ee1a4f7353228bf9ca8c9f67d55e98401",
     "tests/monoclonal_antibody_with_reference/__init__.py": "1b19c75ef8c307fb88642253b1f4d124560befa62338f6d9af00094921d36333",
     "tests/monoclonal_antibody_with_reference/contract_fixtures.py": "2b05d850af7679b944ec7b0448143ad282c395c57a9928e7b522f40b18e562e2",
     "tests/monoclonal_antibody_with_reference/make_needs_input_example.py": "c6769e2bbaebeedf046e1200455fe985ce6b202ad2546e7f12e701544ceb2b57",
     "tests/monoclonal_antibody_with_reference/test_denv_reference.py": "63e99e0bf9fe6732301c8ff98222b90cd5342bba663ea77c6851530d26c1d4c0",
-    "tests/monoclonal_antibody_with_reference/test_mab_testing_criteria.py": "2fbad78323c497ec29428f2c11911a9db85a638bdbbd2c14294c8f0fb679e7d3",
+    "tests/monoclonal_antibody_with_reference/test_mab_testing_criteria.py": "f05d7d912d3ae0af2700dc8aea2c8d5e415e13a6d6be4b6cb4cd5abf65cb3329",
     "tests/monoclonal_antibody_with_reference/test_reference_guided.py": "3a5c616f195cce8661c6a130b9ead17cb7e33216dab0669360e1b7980c80226c",
-    "tests/monoclonal_antibody_with_reference/test_task_variants.py": "131de3d4b08d19c2a031d8ecc113ddeba593b0ba5b6040c7748ab12b0a3b0bbc",
+    "tests/monoclonal_antibody_with_reference/test_task_variants.py": "8e8ec51fab4d3c495202607294ab17d478281cb35f5e51ef4cf0e723cd4e7552",
     "tests/monoclonal_antibody_with_reference/validation.py": "d300348aa349205e45dd05c6118655c33a54d3eca4b9047bdb828be98cbe5e1c",
     "tests/schema_registry.py": "661bc3c1204e57dc192e6554952187f6233a77a205a73ea323cd90a1698dbf1a",
     "tests/task_contracts.py": "4e0ba6e43acfd8e01a147fe8756680387bd3839ff828d5b7f630aa58d026a7b5",
     "tests/test_configurations.py": "e9da092b5abc588d55875f4b95c515c97dabb7fc409eea393dbc5ceb97aeddd5",
-    "tests/validate_spec.py": "c948efd2f0555602d1f993ce22d259fec9180d95b9d4b00faa5637d015551ea1"
+    "tests/validate_spec.py": "680a59ea2345e1f193940b52fc5276e2d7a319fbb428e5518b2eb25b8b73e4b9"
   },
   "behavior_tests": {
     "return_code": 0,
     "stdout": "",
-    "stderr": "............................................................................................\n----------------------------------------------------------------------\nRan 92 tests in 7.052s\n\nOK"
+    "stderr": "............................................................................................\n----------------------------------------------------------------------\nRan 92 tests in 6.932s\n\nOK"
   },
   "not_performed": [
     "biological identity validation",

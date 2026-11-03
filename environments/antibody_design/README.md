@@ -24,7 +24,11 @@ antibody_design/
 │   ├── monoclonal_target_only/   # Target-only monoclonal configurations
 │   ├── bispecific_design/        # Bispecific design configurations
 │   └── bispecific_assessment/    # Cellular and CNS assessment configurations
-├── tasks/                        # Nine Markdown task specifications only
+├── tasks/                        # Nine Markdown tasks grouped like config/
+│   ├── monoclonal_reference/     # Three reference-guided task specifications
+│   ├── monoclonal_target_only/   # One target-only design task
+│   ├── bispecific_design/        # One bispecific design task
+│   └── bispecific_assessment/    # Four cellular and CNS assessment tasks
 ├── tests/                        # Validation code, fixtures, and automated checks
 │   └── monoclonal_antibody_with_reference/
 └── results/                      # Example outputs and validation reports
@@ -34,7 +38,7 @@ The tree shows the main files and directories.
 
 - **`ENVIRONMENT_SPEC.md`** defines the environment's scope, scientific requirements, evidence expectations, and current implementation boundaries.
 - **`config/`** contains task profiles, request/result schemas, JSON input examples, and validation dependencies. Each family has its own configuration; common definitions are shared. See the [configuration guide](config/README.md).
-- **`tasks/`** contains the nine task instructions as Markdown files. Each describes the objective, required inputs, constraints, evaluation requirements, and expected outputs.
+- **`tasks/`** groups the nine Markdown task instructions into the same four family folders as `config/`. Each task describes the objective, required inputs, constraints, evaluation requirements, and expected outputs. Its configuration profile points to the matching task file.
 - **`tests/`** contains all testing and validation code. The dedicated monoclonal suite covers a supplied antigen and reference antibody; shared checks validate configurations across all task families.
 - **`results/`** holds small example outputs and generated validation summaries. Expected output formats are described in the [results guide](results/README.md).
 

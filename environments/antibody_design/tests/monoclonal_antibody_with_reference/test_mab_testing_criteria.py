@@ -23,8 +23,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 TEST_SUITE = ROOT / "tests/monoclonal_antibody_with_reference"
-GENERAL = ROOT / "tasks/denv_antibody_001.md"
-TOOL_SPECIFIC = ROOT / "tasks/denv_antibody_001_tools.md"
+GENERAL = ROOT / "tasks/monoclonal_reference/denv_antibody_001.md"
+TOOL_SPECIFIC = ROOT / "tasks/monoclonal_reference/denv_antibody_001_tools.md"
 TEST_PLAN = TEST_SUITE / "MONOCLONAL_ANTIBODY_TEST_CASES.md"
 METRIC_CATALOG = ROOT / "config/shared/metric-catalog.json"
 

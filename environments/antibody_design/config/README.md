@@ -86,4 +86,4 @@ Only the reference family has the existing `preflight` and `bundle` checks. The 
 
 Canonical schemas now live in family folders; the former flat schema paths were removed. Use the catalog or the validation CLI rather than hardcoded old paths. Schema IDs are stable identifiers resolved by `tests/schema_registry.py` from local files; they are not download URLs. Unknown references fail without network retrieval.
 
-When adding a task, put its Markdown in `tasks/` and its JSON request example in the appropriate `config/` family folder, register its profile, and add relevant contract checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
+When adding a task, put its Markdown in `tasks/<family>/` and its profile and JSON request example in the matching `config/<family>/` folder. Register the profile and task path in `environment.yaml`, and add relevant contract checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
