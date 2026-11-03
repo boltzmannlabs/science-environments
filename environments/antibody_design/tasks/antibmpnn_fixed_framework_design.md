@@ -4,7 +4,7 @@
 
 Design and assess **humanized J3 (huJ3) VHH candidates against HIV-1 gp120** using **AntiBMPNN** for fixed-backbone sequence design and **AlphaFold 3** for monomer and antibody–antigen complex assessment. Execute two configurations: **AB-H3**, using the six-site CDR3 design mask, and **AB-H1**, redesigning CDR1.
 
-Preserve the supplied framework sequence and canonical framework backbone. Generate candidates independently, analyze their sequence frequencies and physical descriptors, and compare their structural assessments with the native parent. Published finalized sequences and mutation identities are withheld.
+Preserve the supplied framework sequence and canonical framework backbone. Generate candidates independently, analyze their sequence frequencies and physical descriptors, and compare their structural assessments with the native parent. Prior output sequences and mutation identities are not provided.
 
 ## Target
 
@@ -41,11 +41,11 @@ Use the following tools and capabilities in order. Record unavailable capabiliti
 | 6. Assess target complexes | Use **AlphaFold 3** for each selected candidate–gp120 pair and the native control complex. | Five complex structures per pair, interface confidence, ranking scores, contact maps, clashes, and selected complexes. |
 | 7. Select and report | Apply framework, sequence, and structural-completeness requirements before ranking. | Separate configuration shortlists, native comparisons, exclusions, numerical results, and unresolved evidence. |
 
-For the initial environment evaluation, request **1,000 AntiBMPNN sequence draws per configuration**, sampling temperature **0.1**, batch size **10**, the supplied zero-noise model, and inference coordinate noise **0.0**. This fixed-backbone task profile differs from the paper's reported **BN 0.5, T 0.1** profile. Record training-noise and inference-noise settings separately, along with actual random seeds or any seed limitations.
+For the initial environment evaluation, request **1,000 AntiBMPNN sequence draws per configuration**, sampling temperature **0.1**, batch size **10**, the supplied zero-noise model, and inference coordinate noise **0.0**. Record training-noise and inference-noise settings separately, along with actual random seeds or any seed limitations.
 
-For the larger sampling profile, request **32,768 draws** with batch size **8** and verify the actual output count. The paper reports **147 clusters** for its example; new random runs are not required to reproduce that count.
+For the larger sampling profile, request **32,768 draws** with batch size **8** and verify the actual output count.
 
-Use **five AlphaFold 3 samples per sequence or complex** with a declared reconstruction seed of **1** for the initial evaluation. Select monomers by highest mean pLDDT and complexes by highest ranking score. Keep all samples and record MSA/template settings. Original article inputs and seeds are not fully released, so these reconstruction settings do not guarantee historical numerical identity.
+Use **five AlphaFold 3 samples per sequence or complex** with a declared reconstruction seed of **1** for the initial evaluation. Select monomers by highest mean pLDDT and complexes by highest ranking score. Keep all samples and record MSA/template settings. Record all actual inputs, seeds, and modeling settings.
 
 ## Evaluation Metrics
 
@@ -57,8 +57,6 @@ Use **five AlphaFold 3 samples per sequence or complex** with a declared reconst
 | Recovery and physical descriptors | Unchanged-identity fraction, volume, hydrophilicity, and charge at pH 7.4. | State the residue set, denominator, and calculation method. |
 | Monomer confidence | Per-sample mean pLDDT, local/CDR confidence, missing coordinates, and geometry. | Select the highest-mean-pLDDT monomer. Confidence is not a binding threshold. |
 | Complex assessment | Per-sample AlphaFold 3 ranking score, interchain uncertainty, contacts, clashes, and pose consistency. | Select the highest-ranking-score complex and retain its interface uncertainty. |
-| Native structural references | huJ3 monomer pLDDT **91.75** and complex ranking score **0.9187**. | Compare the same native parent and declared antigen construct under recorded reconstruction settings. |
-| Native experimental reference | huJ3 ELISA EC50 **2.9 nM**. | Keep experimental EC50 separate from structural confidence and SPR KD. |
 | Evidence completeness | Five monomer and five complex samples per selected sequence, correct chain mappings, native outputs, method versions, and provenance. | Missing structures or unresolved mappings leave evaluation incomplete. |
 
 Rank eligible candidates separately for each configuration by decreasing selected complex ranking score, then decreasing selected monomer mean pLDDT, then decreasing sequence frequency, with candidate ID as the tie-breaker. This is a confidence ranking rather than an affinity ranking.
@@ -78,9 +76,10 @@ Keep the native parent out of the designed shortlist. Report missing inputs as `
 
 ## Important Instructions
 
-- Article: Sun et al., *AntiBMPNN: Structure-Guided Graph Neural Networks for Precision Antibody Engineering*, Advanced Science, DOI `10.1002/advs.202504278`.
-- Use the supplied sequence-redacted article. Do not retrieve published output sequences, mutation identities, example output tables, or historical variant libraries during design.
-- Execute AntiBMPNN and both AlphaFold 3 stages on newly generated candidates. Sequence generation or published-score lookup alone does not complete this task.
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+
+- Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
+- Execute AntiBMPNN and both AlphaFold 3 stages on newly generated candidates. Sequence generation or precomputed-score lookup alone does not complete this task.
 - Keep the six-site CDR3 mask distinct from other design intervals described in the study. Design positions are input constraints, not disclosed output mutations.
 - Freeze generated outputs, structural candidate selection, and rankings before evaluator comparison with held-out outcomes.
 - Record actual methods, model versions, parameters, seed limitations, MSA/template settings, structural mappings, units, and provenance. Structural confidence does not establish experimental affinity or neutralization.

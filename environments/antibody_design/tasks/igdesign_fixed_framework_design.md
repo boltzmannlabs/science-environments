@@ -4,7 +4,7 @@
 
 Design and assess **Bimagrumab-derived antibody candidates against ACVR2B** using **IgDesign** and **IgMPNN**. Execute two configurations: **IG-H3**, redesigning HCDR3 only, and **IG-H123**, redesigning HCDR1, HCDR2, and HCDR3. Assess structural self-consistency using **ABodyBuilder2**, with **ABodyBuilder3** and **ESMFold** for the expanded predictor comparison.
 
-Preserve the supplied framework sequence, framework backbone, and heavy/light pairing. Evaluate the native parent alongside independently generated candidates. Published finalized sequences and mutation identities are withheld.
+Preserve the supplied framework sequence, framework backbone, and heavy/light pairing. Evaluate the native parent alongside independently generated candidates. Prior output sequences and mutation identities are not provided.
 
 ## Target
 
@@ -43,7 +43,7 @@ Use the following tools and capabilities in order. Record unavailable capabiliti
 
 For the initial environment evaluation, request **2 decoding orders × 2 IgMPNN samples × 2 language-model samples = 8 candidate draws per configuration**. Use sampling temperatures **0.5/0.5** and seed **0**. Generate HCDR3 before HCDR1 and HCDR2 in the three-loop configuration. Use the supplied ACVR2B-holdout models. Fold all successfully reconstructed unique candidates and the native parent with ABodyBuilder2.
 
-For the expanded comparison, use **10 × 10 × 10** sampling draws and execute the additional structure predictors on a predeclared matched candidate set. For ESMFold, join VH and VL using **25 glycine residues**, then exclude the linker and restore chain correspondence before Fv evaluation. The paper's intended **100 H3 and 100 H123 designs per antigen** is an experimental library size, not a generation-draw count.
+For the expanded comparison, use **10 × 10 × 10** sampling draws and execute the additional structure predictors on a predeclared matched candidate set. For ESMFold, join VH and VL using **25 glycine residues**, then exclude the linker and restore chain correspondence before Fv evaluation.
 
 ## Evaluation Metrics
 
@@ -52,11 +52,9 @@ For the expanded comparison, use **10 × 10 × 10** sampling draws and execute t
 | Identity and allowed edits | Paired sequences, observed-residue numbering, sequence lengths, framework edits, and sequence hashes. | Require unchanged pairing and zero substitutions outside the configuration-specific mask. |
 | Framework backbone | Canonical input coordinates and sequence-substitution records; independent predicted framework movement. | Require unchanged canonical framework coordinates. Keep prediction movement as a separate assessment. |
 | Generation behavior | Requested draws, successful reconstructions, unique candidates, native recoveries, and generation scores. | Distinguish sampling scores from binding evidence. |
-| Structural self-consistency | Whole-Fv-aligned Cα RMSDs for each heavy-chain CDR, HCDR123, and Fv, in Å. | Follow the paper's Fv alignment and consistently handle missing residues. |
+| Structural self-consistency | Whole-Fv-aligned Cα RMSDs for each heavy-chain CDR, HCDR123, and Fv, in Å. | Use whole-Fv alignment and consistently handle missing residues. |
 | Structure quality | Chain pairing, sequence correspondence, missing coordinates, local confidence, and clashes. | Require a valid paired structure and residue correspondence before accepting its RMSD. |
 | Predictor coverage | Completed ABodyBuilder2, ABodyBuilder3, ProtT5-embedding variant, and ESMFold assessments. | ABodyBuilder2 completes the initial structural branch; report additional predictor branches separately. |
-| Native structural references | Native H3 RMSD: ABodyBuilder2 **0.298792 Å**, ABodyBuilder3 **0.877217 Å**, ESMFold **0.576831 Å**; native ABodyBuilder2 Fv RMSD **0.435010 Å**. | Compare the native baseline under recorded versions and mappings. Historical equality is not guaranteed across model versions. |
-| Native experimental reference | Native parent KD **1.907143 nM**. | Keep this experimental reference separate from candidate structural predictions. |
 | Evidence completeness | Method versions, parameters, atom correspondence, units, input provenance, exclusions, and uncertainty. | All mandatory criteria must pass; preserve missing and failed evaluations. |
 
 Rank eligible non-native candidates by increasing ABodyBuilder2 H3 RMSD for IG-H3 and HCDR123 RMSD for IG-H123, then Fv RMSD and candidate ID. No universal binding threshold is asserted; this ranks structural consistency rather than affinity.
@@ -76,9 +74,10 @@ Keep the native parent out of the designed shortlist. Report missing inputs as `
 
 ## Important Instructions
 
-- Article: Shanehsazzadeh et al., *IgDesign: In vitro validated antibody design against multiple therapeutic antigens using inverse folding*, DOI `10.1101/2023.12.08.570889`, version 2.
-- Use the supplied sequence-redacted article. Do not retrieve published designed sequences, mutation identities, or historical output libraries during generation.
-- Generate candidates independently and run the structural predictors. A published-results lookup alone does not complete this task.
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+
+- Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
+- Generate candidates independently and run the structural predictors. A precomputed-results lookup alone does not complete this task.
 - Keep the supplied ACVR2B model and target provenance explicit; do not transfer results to another antigen without a separate evaluation.
 - Freeze candidate selection and ranking before inspecting held-out experimental outcomes.
 - Record actual methods, model versions, parameters, seeds, structural mappings, units, and provenance. Structural confidence and self-consistency do not establish experimental binding.

@@ -2,9 +2,9 @@
 
 ## Description
 
-Design and assess VHH antibody candidates against **influenza hemagglutinin** and **respiratory syncytial virus (RSV) site III** using the published **RFantibody** workflow. Use **RFdiffusion** for CDR backbone design, **ProteinMPNN** for CDR sequence design, **antibody-tuned RoseTTAFold2** for structural assessment, and **Rosetta** for interface assessment when included in the evaluation protocol.
+Design and assess VHH antibody candidates against **influenza hemagglutinin** and **respiratory syncytial virus (RSV) site III** using the **RFantibody** workflow. Use **RFdiffusion** for CDR backbone design, **ProteinMPNN** for CDR sequence design, **antibody-tuned RoseTTAFold2** for structural assessment, and **Rosetta** for interface assessment when included in the evaluation protocol.
 
-Preserve the supplied antibody framework sequence and internal framework backbone. Generate candidates independently and assess each target in a separate campaign. Published finalized sequences and mutation identities are withheld.
+Preserve the supplied antibody framework sequence and internal framework backbone. Generate candidates independently and assess each target in a separate campaign. Prior output sequences and mutation identities are not provided.
 
 ## Target
 
@@ -50,8 +50,6 @@ For the initial environment evaluation, request **2 backbones × 2 sequences per
 | Interface confidence | RoseTTAFold2 mean interchain predicted aligned error, in Å. | Require **< 10 Å** under the declared task protocol. |
 | Structural consistency | Target-aligned antibody and CDR Cα RMSDs; framework-aligned antibody and per-CDR Cα RMSDs, in Å. | Require target-aligned antibody RMSD **< 2 Å** as the declared interpretation of the generic consistency filter. Retain the other measurements. |
 | Interface quality | Target contacts, hotspot correspondence, buried area, clashes, and Rosetta interface energy when assessed. | Define the scoring protocol before evaluation. Apply the reported **−20** Rosetta energy threshold only with its matching energy protocol. |
-| Published structural references | Influenza lead CDR3 RMSD **0.8 Å** and VHH backbone RMSD **1.45 Å** against cryo-EM. | Historical reference outcomes only; sequence-specific comparison belongs to the evaluator after outputs are frozen. |
-| Published experimental references | Influenza lead SPR KD **78 nM**; RSV site-III lead SPR KD **1.4 µM**. | Keep experimental references separate from new-candidate predictions. |
 | Evidence completeness | Requested draws, successful structures, unique sequences, filters, method versions, and uncertainty. | Every mandatory criterion must pass; report missing stages and genuine zero-pass outcomes. |
 
 Rank eligible candidates separately for each target by increasing interchain predicted aligned error, then increasing target-aligned antibody RMSD, with candidate ID as the tie-breaker. This is a structural ranking, not an experimental affinity claim.
@@ -64,16 +62,17 @@ Rank eligible candidates separately for each target by increasing interchain pre
 - `designed_sequences.fasta`: eligible full-length VHH candidates with target and candidate identifiers.
 - `metrics.json`: reference and candidate measurements, framework checks, tool versions, parameters, rule decisions, exclusions, provenance, and stop reason.
 - `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256,case_id` rows, ranked separately for HA and RSV.
-- `report.md`: execution counts, structural results, ranking rationale, reference comparisons, limitations, and unresolved evidence.
+- `report.md`: execution counts, structural results, ranking rationale, native-baseline comparisons, limitations, and unresolved evidence.
 - Supporting input records, generated structures, predicted complexes, confidence outputs, scoring results, and execution logs with relative paths and SHA-256 hashes.
 
-Keep historical designs out of the generated shortlist. Report missing inputs as `NEEDS_INPUT`, missing evaluation requirements as `PROTOCOL_REQUIRED`, and distinguish incomplete evaluation from a completed result with no qualifying candidates.
+Keep prior designs out of the generated shortlist. Report missing inputs as `NEEDS_INPUT`, missing evaluation requirements as `PROTOCOL_REQUIRED`, and distinguish incomplete evaluation from a completed result with no qualifying candidates.
 
 ## Important Instructions
 
-- Article: Bennett et al., *Atomically accurate de novo design of antibodies with RFdiffusion*, Nature, DOI `10.1038/s41586-025-09721-5`.
-- Use the supplied sequence-redacted article and supplementary material. Do not retrieve published finalized sequences, mutation identities, or historical output libraries during design.
-- Execute RFdiffusion, ProteinMPNN, and antibody-tuned RoseTTAFold2 on newly generated candidates. Published-score lookup alone does not complete this task.
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+
+- Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
+- Execute RFdiffusion, ProteinMPNN, and antibody-tuned RoseTTAFold2 on newly generated candidates. Precomputed-score lookup alone does not complete this task.
 - Freeze generated outputs and rankings before evaluator comparison with held-out designs or experimental outcomes.
-- Record actual methods, model versions, parameters, seeds, structural mappings, units, and provenance. Distinguish paper settings from task-specific settings.
+- Record actual methods, model versions, parameters, seeds, structural mappings, units, and provenance. Record the settings actually used in this task.
 - A confident complex or favorable interface score does not establish experimental binding or neutralization.
