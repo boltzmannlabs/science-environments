@@ -2,86 +2,78 @@
 
 ## Description
 
-Design and structurally assess antigen-binding VHH candidates using the published **RFantibody** pipeline: **RFdiffusion → ProteinMPNN → antibody-tuned RoseTTAFold2 (RF2)**. Execute two independent cases: **RF-HA**, targeting influenza hemagglutinin, and **RF-RSV**, targeting respiratory syncytial virus site III. Preserve the supplied VHH framework sequence and internal framework backbone in every canonical design.
+Design and assess VHH antibody candidates against **influenza hemagglutinin** and **respiratory syncytial virus (RSV) site III** using the published **RFantibody** workflow. Use **RFdiffusion** for CDR backbone design, **ProteinMPNN** for CDR sequence design, **antibody-tuned RoseTTAFold2** for structural assessment, and **Rosetta** for interface assessment when included in the evaluation protocol.
 
-The objective is to test actual structure generation, constrained sequence design, structural prediction, and filtering. Run the molecular tools and retain their native outputs. Compare observed results with the appropriate published references without assigning historical experimental affinities to newly generated candidates.
+Preserve the supplied antibody framework sequence and internal framework backbone. Generate candidates independently and assess each target in a separate campaign. Published finalized sequences and mutation identities are withheld.
 
 ## Target
 
-**Targets:** Influenza hemagglutinin and RSV site III, in separate runs\
-**Reference Antibody:** Bundled VHH scaffold `h-NbBCII10.pdb`\
-**Binding Regions:** HA hotspots `B146,B170,B177`; RSV hotspots `T305,T456`, using the supplied input chain identifiers\
-**Structure and Context:** RFantibody `scripts/examples/example_inputs/flu_HA.pdb` and `rsv_site3.pdb`; preserve input antigen sequences and record output chain mapping\
-**Reference Inputs:** `scripts/examples/example_inputs/h-NbBCII10.pdb`, including its framework/CDR labels\
-**Antibody Format:** Single-domain VHH; design H1, H2, and H3 without introducing a light chain\
-**Objective:** Generate antigen-specific CDR designs, assess structural consistency and interfaces, and independently verify strict framework preservation
+**Targets:** Influenza hemagglutinin and RSV site III\
+**Reference Antibody:** Supplied NbBCII10 VHH scaffold\
+**Binding Regions:** Supplied target hotspots: HA B146, B170, B177; RSV T305, T456\
+**Structure and Context:** Supplied antigen and framework structures with verified chain mapping and CDR annotations\
+**Reference Inputs:** Native scaffold sequence, framework backbone, antigen coordinates, and target-specific hotspot mapping\
+**Antibody Format:** Single-domain VHH\
+**Objective:** Generate CDR designs and evaluate framework preservation, structural consistency, and antigen interfaces
 
 ## Design Constraints
 
-- Keep the framework amino-acid sequence unchanged. Permit CDR lengths `H1:7,H2:6,H3:5-13` and edits only within those loops.
-- Keep framework N/CA/C/O coordinates unchanged up to whole-antibody rigid-body motion and the declared numerical tolerance. Use **0.01 Å** for both framework backbone RMSD and maximum aligned atom displacement in this task; this is a task-specific audit tolerance.
-- Map framework residues using the HLT annotations and ordered framework correspondence. Variable loop lengths make raw PDB residue-number matching insufficient.
-- Audit generated diffusion coordinates and subsequent canonical design artifacts. Framework conditioning alone does not prove exact coordinate preservation. Report `constraint_failed` if the actual generated framework violates the tolerance; do not overwrite coordinates to manufacture a pass.
-- Keep independent RF2 predictions as evaluation artifacts. Their framework movement is a separate measurement from the canonical design constraint.
-- Use distinct case/candidate IDs, sequence hashes, output directories, and antigen provenance. Do not reuse the HA designs as RSV designs.
-- Return up to three eligible unique candidates per target after applying every mandatory criterion. A zero-candidate shortlist is an acceptable completed evaluation when all candidates fail.
+- Preserve every framework amino acid and its internal backbone geometry. Whole-antibody rigid-body movement is permitted.
+- Design only HCDR1, HCDR2, and HCDR3. Use lengths of **7**, **6**, and **5–13 residues**, respectively, for the declared initial profile.
+- Preserve antigen sequence and maintain the case-specific target and hotspot mapping throughout evaluation.
+- Verify framework preservation from the actual generated structures. Framework conditioning alone does not establish exact preservation.
+- Use a declared framework audit tolerance of **0.01 Å** for both aligned backbone RMSD and maximum backbone-atom displacement. This is a task-specific numerical tolerance.
+- Keep independently predicted structures separate from canonical designs. Report predicted framework movement without replacing the fixed design backbone.
+- Assign unique candidate IDs and sequence hashes. Return up to three eligible unique candidates per target without filling the shortlist with failed or unresolved designs.
 
 ## Computational Tool Capabilities
 
-Use the following published tools in order. The complete checked command sequence is in [runbook Sections 3–4](../ANTIBODY_STRUCTURAL_CASE_STUDY_RUNBOOK.md#4-rfantibody-cases-rf-ha-and-rf-rsv); preserve the pinned command interface.
+Use the following tools and capabilities in order. Record unavailable capabilities and leave their required evidence unresolved.
 
 | Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Validate inputs and baseline | Parse scaffold, antigen chains, HLT/CDR annotations, hotspot identities, and framework atoms. | Input hashes, observed sequences, framework map, design mask, and verified hotspot residues. |
-| 2. Generate CDR backbones | Run `uv run rfdiffusion` separately for HA and RSV using the scaffold and case-specific hotspots. | Backbone quivers, extracted PDBs, diffusion logs, candidate tags, and framework-coordinate audit. |
-| 3. Design CDR sequences | Run `uv run proteinmpnn` on each backbone with only `H1,H2,H3` designable. | Sequence quivers, full-length sequences, sequence masks, and zero framework-sequence changes. |
-| 4. Predict target complexes | Run `uv run rf2` on the actual generated sequences and backbone contexts. | RF2 prediction quivers, extracted structures, confidence values, and structural-consistency metrics. |
-| 5. Extract and assess metrics | Run `qvscorefile`, `qvextract`, and `qvls`; inspect the actual sibling `.sc` score table. | Traceable backbone-to-sequence-to-prediction mapping, all native RMSD/pAE columns, and normalized metrics. |
-| 6. Assess interfaces when enabled | Run an explicitly recorded Rosetta interface-analysis protocol on prediction copies. | Interface energy, buried area, score-function/protocol identity, and native scoring outputs. |
-| 7. Select and report | Apply the declared framework and RF2 filters, then rank eligible unique candidates. | Per-target shortlist, exclusions, published-reference comparisons, and unresolved evidence. |
+| 1. Validate inputs and baseline | Verify scaffold identity, framework/CDR boundaries, antigen chains, and hotspot mapping. | Verified reference sequences, structural inputs, residue correspondence, and edit masks. |
+| 2. Generate CDR backbones | Use **RFdiffusion** with the supplied framework and target-specific hotspots. | Generated structures, loop lengths, target poses, and framework-preservation measurements. |
+| 3. Design CDR sequences | Use **ProteinMPNN** on the generated backbones with only the declared CDRs designable. | Full candidate sequences, allowed-position edits, and zero framework substitutions. |
+| 4. Assess structural consistency | Use **antibody-tuned RoseTTAFold2** to predict the generated antibody–target complexes. | Predicted structures, interface uncertainty, and antibody/CDR consistency measurements. |
+| 5. Assess interfaces | Use **Rosetta** when required by the declared scoring protocol. Assess contacts, clashes, and buried surface area. | Protocol-specific interface scores, interface geometry, and score-function identity. |
+| 6. Select and report | Apply framework and structural criteria independently for HA and RSV. | Eligible candidates, exclusions, ranking rationale, numerical results, and unresolved evidence. |
 
-**Source:** [RFantibody](https://github.com/RosettaCommons/RFantibody), inspected commit `3e5a5bb1cb98befde9fc049ae3ff58cabb491f67`. Use `bash include/download_weights.sh` and `uv sync` in its own environment before execution. Resolve actual paths through `AGENT_AB_ROOT=/home/boltzmann12/Srivani/Agent_Sci_Ab`.
-
-**Required initial execution profile:** Run **2 diffusion backbones × 2 MPNN sequences per backbone per target**, yielding four requested sequence draws per target. Use diffusion **50 steps**, MPNN temperature **0.2**, MPNN coordinate augmentation **0.0**, RF2 **10 recycles**, RF2 hotspot-show proportion **0.0**, deterministic generation flags where supported, and RF2 seed **1**. These small counts and explicit zero augmentation form the runbook's smoke/adaptation profile; record actual successful and unique counts.
-
-**Larger comparison profile:** The repository HA pipeline requests **1,000 backbones × 4 sequences**. The article reports screens of **9,000 designs per target** in high-throughput campaigns. Do not equate these scales or claim exact historical reproduction from the initial profile. The RSV VHH-only loop specification is an adaptation of the repository's RSV example.
+For the initial environment evaluation, request **2 backbones × 2 sequences per backbone per target**. Use **50 diffusion steps**, ProteinMPNN temperature **0.2**, coordinate augmentation **0.0**, and **10 RoseTTAFold2 recycles**. Use a hotspot-conditioning proportion of **0.0** during RoseTTAFold2 evaluation and record the actual random seeds. This is a small task evaluation profile rather than the original experimental campaign size.
 
 ## Evaluation Metrics
 
 | Criterion | Measurements and Evidence | Evaluation Rule |
 | --- | --- | --- |
-| Framework sequence | Residue identities outside annotated H1/H2/H3, framework correspondence, and candidate hashes. | Require zero framework substitutions and complete correspondence. |
-| Canonical framework backbone | Framework N/CA/C/O RMSD and maximum displacement after proper framework-only Kabsch alignment. | Require both ≤ **0.01 Å**. Report a strict-constraint failure separately from prediction quality. |
-| Interface confidence | RF2 `interaction_pae`, in Å. | Require **< 10 Å**, following the repository's pAE guidance. |
-| Structural consistency | `target_aligned_antibody_rmsd`, `target_aligned_cdr_rmsd`, `framework_aligned_antibody_rmsd`, `framework_aligned_cdr_rmsd`, and per-loop equivalents, in Å. | Use `target_aligned_antibody_rmsd < 2 Å` as the task's explicit interpretation of the repository's generic RMSD filter. Retain every native RMSD column. |
-| Pose and geometry | Antigen contacts, hotspot correspondence, missing coordinates, interface clashes, and uncertain loops. | Record findings and atom selections. Declare any additional acceptance thresholds before examining outcomes. |
-| Rosetta interface assessment | Protocol-specific interface energy in REU and buried surface area in Å². | Optional for the initial profile. The repository mentions ddG < −20; apply that only when reproducing the same defined ddG protocol. Do not transfer it to another energy calculation. |
-| Counts and selection | Requested draws, generated backbones, sequence outputs, unique sequences, prediction successes, and filter passes. | Keep all counts separate. Missing required metrics leave a candidate unresolved. |
-| Published structural reference | A particular influenza design has CDR3 RMSD **0.8 Å** and VHH backbone RMSD **1.45 Å** versus cryo-EM. | Treat these as historical reference outcomes. An evaluator may compare the held-out design after outputs are frozen; the design agent must not recover its sequence. |
-| Published experimental references | Influenza lead SPR KD **78 nM**; RSV site-III lead SPR KD **1.4 µM**. | Record as experimental references only. Do not attach either value to a newly generated candidate. |
+| Framework sequence | Framework identities, residue correspondence, and candidate sequence hashes. | Require zero framework substitutions. |
+| Framework backbone | Framework N, Cα, C, and O RMSD and maximum atom displacement after framework alignment. | Require both ≤ **0.01 Å** on the canonical design. |
+| Interface confidence | RoseTTAFold2 mean interchain predicted aligned error, in Å. | Require **< 10 Å** under the declared task protocol. |
+| Structural consistency | Target-aligned antibody and CDR Cα RMSDs; framework-aligned antibody and per-CDR Cα RMSDs, in Å. | Require target-aligned antibody RMSD **< 2 Å** as the declared interpretation of the generic consistency filter. Retain the other measurements. |
+| Interface quality | Target contacts, hotspot correspondence, buried area, clashes, and Rosetta interface energy when assessed. | Define the scoring protocol before evaluation. Apply the reported **−20** Rosetta energy threshold only with its matching energy protocol. |
+| Published structural references | Influenza lead CDR3 RMSD **0.8 Å** and VHH backbone RMSD **1.45 Å** against cryo-EM. | Historical reference outcomes only; sequence-specific comparison belongs to the evaluator after outputs are frozen. |
+| Published experimental references | Influenza lead SPR KD **78 nM**; RSV site-III lead SPR KD **1.4 µM**. | Keep experimental references separate from new-candidate predictions. |
+| Evidence completeness | Requested draws, successful structures, unique sequences, filters, method versions, and uncertainty. | Every mandatory criterion must pass; report missing stages and genuine zero-pass outcomes. |
 
-Require the framework audit and both declared RF2 thresholds for shortlist eligibility. Rank passing candidates by increasing `interaction_pae`, then increasing `target_aligned_antibody_rmsd`, with candidate ID as a deterministic tie-breaker. This ranking is a task protocol, not a claim about the paper's historical selection algorithm.
+Rank eligible candidates separately for each target by increasing interchain predicted aligned error, then increasing target-aligned antibody RMSD, with candidate ID as the tie-breaker. This is a structural ranking, not an experimental affinity claim.
 
 ## Expected Output
 
 **Format:** `antibody_design_bundle`\
 **Directory:** `08_results/rfantibody_fixed_framework_design/`
 
-- `designed_sequences.fasta`: eligible full-length VHH sequences with case/candidate identifiers.
-- `metrics.json`: all reference and candidate records; tool commits/checkpoint hashes; parameters; structural scores; framework audits; rule decisions; exclusions; and stop reason.
-- `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256,case_id` rows, with ranks evaluated separately for HA and RSV.
-- `report.md`: per-target execution counts, structural-filter results, framework preservation, reference comparisons, ranking rationale, and unresolved evidence.
-- `runs/RF-HA/` and `runs/RF-RSV/`: manifests, input copies/hashes, residue maps, design masks, resolved parameters, logs, quivers, extracted structures, `.sc` tables, normalized `metrics.csv`, and any Rosetta outputs.
-- Supporting artifacts must have relative paths and SHA-256 hashes. Preserve failed candidates in evaluation records.
+- `designed_sequences.fasta`: eligible full-length VHH candidates with target and candidate identifiers.
+- `metrics.json`: reference and candidate measurements, framework checks, tool versions, parameters, rule decisions, exclusions, provenance, and stop reason.
+- `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256,case_id` rows, ranked separately for HA and RSV.
+- `report.md`: execution counts, structural results, ranking rationale, reference comparisons, limitations, and unresolved evidence.
+- Supporting input records, generated structures, predicted complexes, confidence outputs, scoring results, and execution logs with relative paths and SHA-256 hashes.
 
-Keep the scaffold and historical leads out of the designed shortlist. Report missing molecular inputs as `NEEDS_INPUT`, missing required evaluation definitions as `PROTOCOL_REQUIRED`, and distinguish `constraint_failed`, `evaluation_incomplete`, and `complete_for_declared_profile`. Completion requires actual new outputs from all three molecular stages for both targets and a report of any unsuccessful stage.
+Keep historical designs out of the generated shortlist. Report missing inputs as `NEEDS_INPUT`, missing evaluation requirements as `PROTOCOL_REQUIRED`, and distinguish incomplete evaluation from a completed result with no qualifying candidates.
 
 ## Important Instructions
 
-- Article: [Bennett et al., *Atomically accurate de novo design of antibodies with RFdiffusion*](../articles_sequence_pages_removed/rfantibody_article_sequence_pages_removed.pdf), DOI `10.1038/s41586-025-09721-5`; online 2025, Nature volume 649, 2026. Use the local page-filtered article and [supplement](../articles_sequence_pages_removed/rfantibody_supplement_sequence_pages_removed.pdf).
-- Read [runbook Sections 4 and 8.3–8.4](../ANTIBODY_STRUCTURAL_CASE_STUDY_RUNBOOK.md#4-rfantibody-cases-rf-ha-and-rf-rsv) before execution. The inspected Rosetta helper has an author-local XML path and an undefined filter reference; use an audited adapter or the explicitly labelled InterfaceAnalyzer recipe rather than assuming the helper is turnkey.
-- During the design phase, do not read historical output-sequence datasets, deposited final-design sequences, unedited papers, output-bearing figure panels, or evaluator backups. Unblind only after freezing generated outputs and rankings.
-- Record whether each setting is paper-reported, repository-default, smoke, or adaptation. Preserve differences between the current repository interface and the original article workflow.
-- Keep historical lead rankings and experimental outcomes out of new-candidate selection; use them only for the frozen reference comparison.
-- Record actual model/tool versions, checkpoint SHA-256 hashes, seeds, hardware, units, atom maps, and execution date. Missing observations remain missing.
-- A high-confidence complex or favorable Rosetta score does not establish experimental affinity or neutralization.
+- Article: Bennett et al., *Atomically accurate de novo design of antibodies with RFdiffusion*, Nature, DOI `10.1038/s41586-025-09721-5`.
+- Use the supplied sequence-redacted article and supplementary material. Do not retrieve published finalized sequences, mutation identities, or historical output libraries during design.
+- Execute RFdiffusion, ProteinMPNN, and antibody-tuned RoseTTAFold2 on newly generated candidates. Published-score lookup alone does not complete this task.
+- Freeze generated outputs and rankings before evaluator comparison with held-out designs or experimental outcomes.
+- Record actual methods, model versions, parameters, seeds, structural mappings, units, and provenance. Distinguish paper settings from task-specific settings.
+- A confident complex or favorable interface score does not establish experimental binding or neutralization.
