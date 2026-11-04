@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "check": "files",
+      "status": "PASS",
+      "detail": "14 core files present; task/config examples identical"
+    },
+    {
+      "check": "application_tasks",
+      "status": "PASS",
+      "detail": "10 application tasks: house sections, steps tables, index entries, matching examples, schema-enum alignment"
+    },
+    {
+      "check": "schemas",
+      "status": "PASS",
+      "detail": "2 schemas well-formed; 10 applications; 5 ranking dimensions"
+    },
+    {
+      "check": "examples",
+      "status": "PASS",
+      "detail": "2 example briefs structurally valid + marked illustrative"
+    },
+    {
+      "check": "yaml_invariants",
+      "status": "PASS",
+      "detail": "invariants present; 10 provenance-tagged frozen gates"
+    },
+    {
+      "check": "benchmarks",
+      "status": "PASS",
+      "detail": "benchmark numbers match spec; 6 provenance hashes verified"
+    },
+    {
+      "check": "runtime_import",
+      "status": "PASS",
+      "detail": "immune_scan + rank_by_requirements behave on fixtures (veto, ordering, stability)"
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}

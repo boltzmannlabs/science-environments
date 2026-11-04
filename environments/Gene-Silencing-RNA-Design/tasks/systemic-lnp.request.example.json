@@ -1,0 +1,19 @@
+{
+  "brief_id": "systemic-lnp_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "TTR"
+  },
+  "application": "systemic_lnp",
+  "objective": "non-conjugate systemic exposure; patisiran is the reference modality \u2014 illustrative syntax only",
+  "priorities": {
+    "weights": {}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true
+  },
+  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+}

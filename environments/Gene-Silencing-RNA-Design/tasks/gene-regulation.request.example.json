@@ -1,0 +1,19 @@
+{
+  "brief_id": "gene-regulation_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "MYC"
+  },
+  "application": "gene_regulation",
+  "objective": "transient reduction of a regulator with direct-versus-downstream endpoint separation \u2014 illustrative syntax only",
+  "priorities": {
+    "weights": {}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true
+  },
+  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+}

@@ -1,0 +1,19 @@
+{
+  "brief_id": "genetic-disease-allele-selective_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "HTT"
+  },
+  "application": "genetic_disease_allele_selective",
+  "objective": "mutant-selective lowering with wild-type sparing; requires a reference-verified variant before any design \u2014 illustrative syntax only",
+  "priorities": {
+    "weights": {}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true
+  },
+  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+}

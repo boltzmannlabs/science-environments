@@ -1,0 +1,10 @@
+{
+  "brief_id": "hif1an_exploratory_example",
+  "mode": "exploratory",
+  "target": {"organism": "human", "gene": "HIF1AN", "transcript": "NM_001530.4"},
+  "application": "metabolic_liver_galnac",
+  "objective": "explore: user supplied target only; agent proposes the brief",
+  "priorities": {"weights": {"efficacy": 0.35, "specificity": 0.25, "immune": 0.15, "seed_tox": 0.15, "stability": 0.10}},
+  "constraints": {"review_window": 100, "panel_size": 6, "seed_distinct": true},
+  "success_criteria": "illustrative syntax only — explorer ends by proposing a brief for confirmation"
+}

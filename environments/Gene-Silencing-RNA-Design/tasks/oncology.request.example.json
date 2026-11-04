@@ -1,0 +1,19 @@
+{
+  "brief_id": "oncology_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "KRAS"
+  },
+  "application": "oncology",
+  "objective": "tumor-associated knockdown study without assuming tumor-selective delivery or dependence \u2014 illustrative syntax only",
+  "priorities": {
+    "weights": {}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true
+  },
+  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+}

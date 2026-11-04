@@ -1,0 +1,19 @@
+{
+  "brief_id": "genetic-disease-total-lowering_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "TTR"
+  },
+  "application": "genetic_disease_total_lowering",
+  "objective": "total-transcript lowering for a loss-tolerable target; explicitly distinct from allele-selective design \u2014 illustrative syntax only",
+  "priorities": {
+    "weights": {}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true
+  },
+  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+}

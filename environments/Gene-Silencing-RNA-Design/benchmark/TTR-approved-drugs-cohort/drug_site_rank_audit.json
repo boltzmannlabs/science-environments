@@ -1,0 +1,26 @@
+{
+  "transcript": "ENST00000237014.8",
+  "transcript_len": 616,
+  "pool_size": 598,
+  "generator": "OligoFormer/RNA-FM (release-acceptance-supervised run)",
+  "drug_sites": {
+    "patisiran": {
+      "guide": "AUGGAAUACUCUUGGUUAC",
+      "target_site_19nt": "GUAACCAAGAGUAUUCCAU",
+      "site_index_0based": 517,
+      "window_id": "ENST00000237014.8_site_518",
+      "oligoformer_score": 0.851,
+      "rank_in_pool": 107,
+      "percentile": 82.1
+    },
+    "vutrisiran": {
+      "guide": "UCUUGGUUACAUGAAAUCCCAUC",
+      "target_site_19nt": "GGAUUUCAUGUAACCAAGA",
+      "site_index_0based": 508,
+      "window_id": "ENST00000237014.8_site_509",
+      "oligoformer_score": 0.8978,
+      "rank_in_pool": 62,
+      "percentile": 89.6
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "brief_id": "ttr_design_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "TTR", "transcript": "ENST00000237014.8"},
+  "application": "genetic_disease_total_lowering",
+  "objective": "total-lowering computational candidates for research review",
+  "priorities": {
+    "hard_vetoes": ["immune_ugugu"],
+    "weights": {"efficacy": 0.40, "specificity": 0.30, "immune": 0.15, "seed_tox": 0.10, "stability": 0.05},
+    "min_standards": {"rnai": 75}
+  },
+  "constraints": {"review_window": 100, "panel_size": 6, "seed_distinct": true},
+  "success_criteria": "illustrative syntax only — not an approved run"
+}
