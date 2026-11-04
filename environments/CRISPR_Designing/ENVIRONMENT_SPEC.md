@@ -1,91 +1,129 @@
-# Task: base_editing_grna_001
+# CRISPR Design Environment Specification
 
-## Description
+**Version:** 1.0  
+**Scope:** Computational CRISPR design, evaluation, benchmarking, and reporting  
+**Basis:** Application task specifications created for this environment
 
-Design and prioritize guide RNAs for CRISPR base editing of a user-specified genetic target. Generate compatible candidates, predict editing efficacy, assess bystander edits and rank guide–editor combinations using the available evidence.
+## 1. Purpose
 
-## User-Specified Inputs
+This environment supports application-aware CRISPR design through one shared execution contract and task-specific requirements. It must preserve traceability from the confirmed target and reference through candidate generation, evidence collection, gates, ranking, and reporting.
 
-| Input                           | What to provide                                                                                    |
-| ------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Project                         | Select an available tool project, such as `Demo`.                                                |
-| Experiment name                 | User-defined name for this run.                                                                    |
-| Organism                        | Supported species containing the target gene.                                                      |
-| Gene ID                         | Identifier accepted by the CRISPR Base Editing tool.                                               |
-| Reference genome                | Assembly/version matching genomic coordinates and the Bowtie index.                                |
-| Transcript                      | Transcript accession/version; provide one or accept the tool's resolved transcript and record it.  |
-| Editing mode                    | ABE or CBE.                                                                                        |
-| Base editor                     | Supported editor subtype for efficacy and bystander prediction.                                    |
-| Cell type                       | Supported prediction context, such as HEK293T.                                                     |
-| Variant and desired change      | Required for variant-correction tasks; omit for general gene-level guide design.                   |
-| Bowtie genome index             | Matching the selected organism and reference assembly; identify an available index or provide one. |
-| Bowtie mismatch limit           | Search limit from 0 to 3; use 3 unless the user specifies another supported limit.                 |
-| Shortlist size                  | Requested number of guide–editor combinations; if omitted, return all passing combinations.       |
-| Additional rejection thresholds | Optional user-defined limits for bystanders or off-target matches; none apply by default.          |
+All outputs are computational predictions. They must not be presented as experimentally demonstrated editing, knockout, activation, repression, knockdown, deletion, or phenotype.
 
-## Design Constraints
+## 2. Supported Tasks
 
-- **Search Scope:** The current design tool scans exonic regions and NGG PAM sites. Report this scope with every run; a zero-result search applies only to this scope.
-- **Guide:** 20-nt protospacer, as required by the current design and prediction input format. Use another length or PAM profile only if the tools explicitly support it.
-- **Base Conversion:** ABE predicts A→G; CBE predicts C→T on the editable strand. Account for complementary-strand changes when mapping a desired variant correction.
-- **Editing Window:** Use the selected editor's configured window. The tool interface specifies ABE positions 4–7 and CBE positions 4–8.
-- **Prediction Input:** Each FASTA sequence must be exactly 50 nt: 19-nt upstream flank + 20-nt protospacer + 3-nt PAM + 8-nt downstream flank. Build the context in the orientation expected by the predictor; verify that the extracted guide and PAM match the design output.
-- **FASTA Format:** A, C, G and T only; no gaps or ambiguous bases; unique record identifiers.
-- **Off-Target Search:** Use Bowtie against an indexed genome matching the selected organism and reference assembly. Search for matches with 0–3 mismatches, exclude the intended locus using its genomic coordinates, and report the search settings.
-- **Shortlist Size:** User-defined. If no cap is provided, report all candidates passing the design filters. Count guide–editor combinations separately from unique spacer sequences.
-- **Unwanted-Edit Thresholds:** None are hard rejection rules by default. Report bystanders and Bowtie matches; rank them using declared criteria. Apply rejection cutoffs only if the user specifies them.
+| Task ID | Application | Design focus |
+|---|---|---|
+| `crispr_design_gene_knockout_001` | Gene knockout | Coding-region guides, transcript/exon coverage, predicted coding consequence |
+| `crispr_design_base_editing_002` | Base editing | Desired nucleotide change, editor-window compatibility, bystander inventory |
+| `crispr_design_crispra_crispri_003` | CRISPRa / CRISPRi | Effector-specific guide placement relative to transcript/TSS and promoter |
+| `crispr_design_paired_guide_deletion_004` | Paired-guide deletion | Guide pairs flanking an interval, geometry, predicted boundaries |
+| `crispr_design_cas13_rna_targeting_005` | Cas13 RNA targeting | Transcript targeting, isoform coverage, transcriptome matches |
+| `crispr_design_guide_optimization_006` | Guide optimization/reranking | Constraint-preserving optimization of a supplied candidate set |
+| `crispr_design_prime_editing_007` | Prime editing | Edit encoding and traceable pegRNA spacer/PBS/RTT components |
+| `crispr_design_multiplex_editing_008` | Multiplex editing | Guide-set coverage, set-level specificity, diversity and compatibility |
 
-## Tools
+The task selected by the request defines its application-specific evidence and deliverables. Those requirements extend—but do not replace—the shared contract below.
 
-| Tool                                    | Purpose                                                                | Inputs                                                                     |
-| --------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| CRISPR Base Editing                     | Enumerate exon-targeting guides and simulate eligible base conversions | Project, experiment name, gene ID, ABE/CBE mode                            |
-| CRISPR Base Editing Efficacy Prediction | Predict the fraction of reads containing an editing event              | Project, experiment name, 50-nt FASTA, cell type, base editor, editor kind |
-| CRISPR Bystander Effect Prediction      | Assess potential bystander edits and report available counts/positions | Project, experiment name, 50-nt FASTA, cell type, base editor, editor kind |
-| Bowtie                                  | Search the reference genome for guide sequence matches                 | Guide sequence, matching genome index, mismatch limit (0–3)               |
+## 3. Shared Design Principles
 
-## Workflow
+- Resolve the task, target, mode, reference, and relevant nuclease/editor/effector before design. Do not silently assume missing essentials.
+- Verify reference assembly, sequence, annotation/transcript version, coordinates, strand, and allele where applicable.
+- Record tool, model, database, and configuration versions.
+- Keep evidence dimensions separately visible. Composite scores must be explainable and reproducible.
+- Apply frozen hard gates before ranking. Ranking cannot rescue a gate failure.
+- Preserve input candidates, generated candidates, candidate identifiers, transformations, and lineage.
+- Mark unavailable evidence as unavailable—not as a favorable value.
+- Clearly distinguish predictions, published evidence, measured benchmark outcomes, and unsupported claims.
 
-1. Resolve the gene, reference genome and transcript. For variant correction, verify the reference and mutant alleles and intended change.
-2. Run **CRISPR Base Editing** and retain guide, PAM, editable-position, coordinate and simulated-sequence outputs.
-3. **Create the eligible shortlist:** retain each guide–editor combination only if its PAM is compatible and at least one relevant editable base falls within that editor's configured window. For variant correction, map the variant's genomic coordinate and alternate base to each guide's strand and position; retain only combinations that can perform the specified change. Record excluded combinations and reasons.
-4. Prepare and validate the required 50-nt FASTA contexts, keeping mutant and reference contexts separate where relevant. Give each record a unique ID and retain a mapping from that ID to guide, allele, editor, transcript and genomic coordinates.
-5. Run **CRISPR Base Editing Efficacy Prediction** and **CRISPR Bystander Effect Prediction** for supported editor/cell-type combinations.
-6. Run **Bowtie** for each unique spacer against the matching genome index. Exclude the intended locus by coordinates, record 0–3 mismatch matches and apply the selected Cas enzyme's PAM rules when interpreting them.
-7. **Rank and select final designs:** first require design compatibility and, for correction tasks, target-variant compatibility. Then sort by predicted editing-event fraction (higher first), number of additional editable bystander bases in the assessed window (lower first), Bowtie exact-match count (lower first), then 1-, 2- and 3-mismatch match counts (lower first), and guide ID for a stable tie-break. Exclude the intended locus from all off-target counts. The efficacy score is a general editing-event estimate, not necessarily the intended-correction rate. Report each metric separately; do not combine them into an unlabeled score. Return the user-requested number and report unique spacers separately from guide–editor combinations.
+## 4. Shared Run Contract
 
-## Expected Output
+Every run must create a fresh run directory and follow this lifecycle:
 
-**Format:** `design_bundle`
+| Stage | Required action | Record/output |
+|---|---|---|
+| 1. Route and brief | Identify task; confirm objective, target, mode, and required constraints | `confirmed_brief.json` |
+| 2. Reference validation | Verify reference identifiers, versions, sequence/coordinates, and relevant annotation | `reference_validation.json` |
+| 3. Application preparation | Prepare task-specific windows, transcript/variant/interval/coverage rules | `application_readiness.json` |
+| 4. Candidate generation | Run configured generator; preserve provenance and candidate lineage | `candidate_pool.csv` |
+| 5. E1 — validity | Validate sequence format, guide length, PAM/system compatibility, and coordinate mapping | `validation_evidence.csv` |
+| 6. E2 — activity/fit | Assess task-relevant activity or compatibility | `activity_evidence.csv` |
+| 7. E3 — quality/context | Assess applicable sequence quality, composition, context, edit encoding, or coverage | `quality_evidence.csv` |
+| 8. E4 — specificity | Assess relevant genomic or transcriptomic near matches and off-target evidence | `specificity_evidence.csv` |
+| 9. E5 — application layer | Add application-specific annotations and pair/edit/transcript/set-level evidence | Task-specific tables |
+| 10. R1 — gates | Apply frozen shared gates and brief-confirmed vetoes | `gate_log.json` |
+| 11. R2/R3 — ranking | Rank eligible candidates with disclosed weights; assess sensitivity and diversity/tradeoffs | `ranked_candidates.csv`, `ranking_stability.json` |
+| 12. Delivery | Produce results, evidence, provenance, caveats, and report | `provenance.json`, `report.md` |
 
-**Run status:** `COMPLETED_WITH_CANDIDATES`, `NO_COMPATIBLE_GUIDES`, `UNSUPPORTED_TARGET` or `BLOCKED`. Use `NO_COMPATIBLE_GUIDES` only after a complete search with supported inputs returns no candidate within the stated exonic/NGG/editor-window scope. Use `UNSUPPORTED_TARGET` when the organism, target, editor or model is outside tool support. Use `BLOCKED` when required data, indexes or tools are unavailable.
+Evidence records should contain candidate ID, metric, value/unit, method, version, parameters, source, evidence tier, and status wherever applicable.
 
-**Required Output Files:**
+## 5. Task-Specific Requirements
 
-- `designed_sequences.fasta` — unique 20-nt guide spacers, written 5′→3′.
-- `prediction_inputs.fasta` — validated 50-nt contexts submitted for prediction.
-- `off_target_matches.tsv` — Bowtie matches with mismatch positions/counts, PAM/context, genomic coordinates and intended-site exclusion status.
-- `record_map.tsv` — prediction FASTA record ID mapped to guide, allele, editor, transcript and genomic coordinates.
-- `metrics.json` — project/experiment; target/reference/transcript; guide/editor combinations; PAMs, coordinates, editable-base counts and positions; original and simulated sequences; GC content; exon/protein annotations where available; efficacy and bystander outputs; Bowtie search settings and match counts; ranking components; tool versions and missing-data notes.
+### 5.1 Gene knockout
 
-Report unique spacer counts separately from guide–editor combination counts.
+Report coding-exon position, transcript coverage, predicted coding consequence, paralog context, and guide diversity. Do not equate predicted frameshift/disruption with demonstrated knockout.
 
-## Constraints
+### 5.2 Base editing
 
-- **Time Limit:** Set by the user before execution.
-- **Tool Scope:** Use only supported organisms, editors, Cas variants, cell types and prediction contexts. Record the active PAM and target-region restrictions.
-- **Off-Target Assessment:** Requires a Bowtie index for the selected reference genome. If unavailable, report specificity as not assessed and do not label candidates as specificity-screened.
-- **Experimental Validation:** Outside the scope of this computational task.
+Normalize the requested variant and confirm REF/ALT against the selected reference. Record editor, strand, editing-window position, intended-edit compatibility, bystanders, and predicted consequences. A high guide score alone is insufficient.
 
-## Important Instructions
+### 5.3 CRISPRa / CRISPRi
 
-- For variant correction, assess the mutant allele; do not rely on a reference-only prediction.
-- The guide-design tool takes a gene ID. If a variant creates or removes a PAM or guide match, the standard gene-level enumeration may miss that allele-specific site; include it only if a supported custom-sequence design path is available, otherwise report this scope limitation.
-- A simulated edited sequence does not mean all eligible bases will be edited together.
-- The predicted fraction of reads with an editing event is not automatically the intended-correction rate.
-- Interpret bystander counts within the reported editor/window scope; they do not prove no editing outside that scope.
-- Keep each guide–editor–cell-type prediction as a separate result. Do not compare scores as calibrated probabilities across unsupported or differently configured models.
-- Bowtie mismatch hits are sequence matches, not measured off-target editing. They do not establish zero off-target risk.
-- Do not claim off-target safety, functional rescue or experimental validation from computational outputs.
-- Use null for unavailable results and explain why. Return fewer designs when appropriate.
-- Report “no compatible guides within the configured search scope,” rather than implying that no guide could exist under any editor, PAM or target-region profile.
+Treat activation and interference as distinct modes. Record effector, transcript and selected TSS, coordinate convention, promoter-relative placement, isoform coverage, and context-data availability. Do not claim measured expression change.
+
+### 5.4 Paired-guide deletion
+
+Evaluate each guide and the pair. Report orientation, spacing, predicted boundaries, interval size, pair-level risks, and transcript consequences. Do not infer deletion efficiency by multiplying guide scores unless a validated model is specified.
+
+### 5.5 Cas13 RNA targeting
+
+Verify the target transcript and system. Report isoform coverage, transcriptome matches, and supported RNA context/accessibility evidence. Do not apply DNA PAM assumptions indiscriminately or claim measured knockdown.
+
+### 5.6 Guide optimization / reranking
+
+Retain the baseline candidates and scores. Define hard constraints versus soft objectives and the optimization method. Track candidate lineage, report rank changes and Pareto tradeoffs, and do not silently relax gates or substitute the target.
+
+### 5.7 Prime editing
+
+Verify the normalized edit and reference allele. Keep spacer, PBS, and RTT components separately traceable; check that each candidate encodes the requested edit. Report optional nicking-guide scope and byproduct uncertainty. Do not claim successful edit installation.
+
+### 5.8 Multiplex editing
+
+Report individual-guide evidence and set-level evaluation. Include target coverage, uncovered targets, set-level specificity, redundancy/diversity, compatibility assumptions, and set size. Individual guide scores do not establish combined editing outcomes.
+
+## 6. Gates and Ranking
+
+- Define and version each gate, threshold/rule, and evidence source before ranking.
+- Record every pass/fail and exclusion reason.
+- User-confirmed vetoes may tighten criteria. Changes to shared gates require a documented proposal and approval.
+- Disclose ranking dimensions, weights, normalization, and composite-score calculation.
+- Perform the task-specified weight sensitivity analysis (including ±25% where required).
+- Preserve meaningful alternatives and report tradeoffs; do not hide conflicting objectives inside one score.
+- Do not call a candidate "best," "safe," or "validated" without specifying the evidence and scope.
+
+## 7. Benchmarking
+
+Benchmarking must identify the named reference paper or dataset, release, candidate set, assay, and measured versus predicted fields. Compare like with like: application, nuclease/editor, target type, biological context, and metric. Report mismatches and missing measures explicitly.
+
+Environment predictions must remain distinguishable from reference-reported experimental results. Similarity to a reference set alone does not establish general validation.
+
+## 8. Standard Outputs and Provenance
+
+Each run should contain:
+
+```text
+runs/<run_id>/
+├── confirmed_brief.json
+├── reference_validation.json
+├── application_readiness.json
+├── candidate_pool.csv
+├── evidence/
+│   ├── validation_evidence.csv
+│   ├── activity_evidence.csv
+│   ├── quality_evidence.csv
+│   └── specificity_evidence.csv
+├── gate_log.json
+├── ranking_stability.json
+├── provenance.json
+├── report.md
+└── <task-specific output files>
