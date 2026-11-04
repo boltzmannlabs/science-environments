@@ -1,4 +1,4 @@
-# Task 1 — Retrosynthesis vs. Literature: 14-Step "Inside-Out" Total Synthesis of Hispidospermidin
+# Task 1 — Retrosynthesis: 14-Step "Inside-Out" Total Synthesis of Hispidospermidin
 
 **Environment:** `task1_retrosynthesis_hispidospermidin`
 **Tool under test:** Retrosynthesis planner
