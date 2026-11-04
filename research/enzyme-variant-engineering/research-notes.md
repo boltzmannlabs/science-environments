@@ -11,7 +11,9 @@ Est30-mediated MHET hydrolysis provides a defined starting enzyme and small-mole
 reaction. PDB 1TQH provides an experimental structural reference, but its covalent
 intermediate must not be mistaken for a prepared noncovalent MHET reactant complex.
 The exact construct and intended chemical state are qualified during the task.
-See the [assignment](../../environments/enzyme-variant-engineering/tasks/est30-mhet/TASK.md).
+The environment and assignment are temporarily removed pending a revised
+structure. These research notes and references are retained; the earlier task
+remains recoverable from Git history.
 
 ## Method and evidence choices
 
