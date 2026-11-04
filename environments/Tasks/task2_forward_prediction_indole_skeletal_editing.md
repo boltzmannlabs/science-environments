@@ -26,7 +26,7 @@
 
 ## 3. Ground Truth from the Paper
 
-> ⚠️ Full text not accessible from the benchmark-authoring machine. Fill `ground_truth/` from the paper + SI before running.
+
 
 Verified at abstract/indexing level:
 - Transformation: **single-carbon skeletal editing of indoles in tryptamine derivatives**, enabled by **photoreaction of a pendant amide** (photochemical activation; intramolecular).
