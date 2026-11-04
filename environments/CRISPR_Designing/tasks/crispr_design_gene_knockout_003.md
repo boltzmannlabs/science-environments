@@ -15,7 +15,7 @@ Application-specific requirements: coding-region and exon relevance; transcript-
 
 Target
 
-Resolved per request — never defaulted.
+Resolved per request — never defaulted.Example gene (KIF11) and any example values are illustrative, not defaults.
 
 Reference: exact versioned human transcript and genome assembly; transcript and target-region sequence hashed into provenance.
 
