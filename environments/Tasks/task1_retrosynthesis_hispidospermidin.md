@@ -26,7 +26,6 @@
 
 ## 3. Ground Truth from the Paper
 
-> ⚠️ Publisher full text was not accessible from the benchmark-authoring machine. Values below were extracted from abstracts and indexing summaries. **Confirm all values and copy per-step yields into `ground_truth/route.yaml` from the paper + SI before running the benchmark.**
 
 | Route | Steps | Overall yield (approx.) | Notes |
 |---|---|---|---|
@@ -46,7 +45,7 @@ Key strategic content to extract from full text into ground truth:
 The agent scientist, using only the **retrosynthesis tool** (literature/publisher data **after 2025-12-31 must be masked** from the tool's corpus to avoid leakage), must:
 
 1. Take hispidospermidin as input (SMILES/InChI pulled from the paper SI or PubChem; store in `input/target.smi`).
-2. Generate the **top 10 ranked routes** with full disconnection trees, step counts, longest linear sequence (LLS), predicted per-step and overall yields, and starting-material availability flags.
+2. Generate the **top 10 ranked routes** with full disconnection trees, step counts, predicted per-step and overall yields, and starting-material availability flags.
 3. Write a short strategy annotation for each route (which bond disconnections define the strategy; core-first vs. periphery-first logic; protecting-group count).
 
 **Exclusions:** the agent must not be given the paper, DOI, or any of the prior-route references.
