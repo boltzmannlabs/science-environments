@@ -76,8 +76,12 @@ Keep the native parent out of the designed shortlist. Report missing inputs as `
 
 ## Important Instructions
 
-- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+- Scientific source: Sun et al., *AntiBMPNN: Structure-Guided Graph Neural Networks for Precision Antibody Engineering*, Advanced Science, 2025. DOI: [10.1002/advs.202504278](https://doi.org/10.1002/advs.202504278).
+- Source and protocol boundaries: the huJ3 parent, declared CDR masks, and gp120 construct identify the molecular inputs. The zero-inference-noise initial profile is a fixed-backbone task adaptation; distinguish it from the source's reported BN 0.5 and sampling temperature 0.1, and record training-noise and runtime-noise settings separately.
+- Reproducibility limits: verify the actual random-seed behavior of the supplied AntiBMPNN version. Original AlphaFold 3 seeds, MSAs, templates, and exact antigen inputs are not fully specified in the released example; record the reconstruction settings actually used and do not promise historical numerical identity. Monomer and complex confidence do not establish experimental affinity.
+- Held-out evaluation: citations establish methodological provenance. Prior output sequences, reported mutations, precomputed frequency tables, and historical structural/experimental result tables must not guide generation or selection. Freeze new outputs and rankings before evaluator comparison.
 
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
 - Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
 - Execute AntiBMPNN and both AlphaFold 3 stages on newly generated candidates. Sequence generation or precomputed-score lookup alone does not complete this task.
 - Keep the six-site CDR3 mask distinct from other design intervals described in the study. Design positions are input constraints, not disclosed output mutations.

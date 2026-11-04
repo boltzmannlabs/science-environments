@@ -69,8 +69,12 @@ Keep prior designs out of the generated shortlist. Report missing inputs as `NEE
 
 ## Important Instructions
 
-- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+- Scientific source: Bennett et al., *Atomically accurate de novo design of antibodies with RFdiffusion*, Nature, online 2025; volume 649, 2026. DOI: [10.1038/s41586-025-09721-5](https://doi.org/10.1038/s41586-025-09721-5).
+- Source and protocol boundaries: the RFantibody workflow supplies the molecular design and assessment methods. The small sampling budget, strict framework tolerance, and declared filtering interpretation are task settings; record their provenance separately from source-reported methods.
+- Reproducibility limits: framework conditioning does not guarantee exact coordinate preservation. Audit each generated canonical design. Model versions, random sampling, target constructs, and scoring protocols can change results; this task does not promise reproduction of a historical lead or screening campaign.
+- Held-out evaluation: use citations to establish methodological provenance. Prior design sequences, reported mutation identities, and historical result tables must remain unavailable as generation inputs; evaluator comparison occurs after outputs and rankings are frozen.
 
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
 - Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
 - Execute RFdiffusion, ProteinMPNN, and antibody-tuned RoseTTAFold2 on newly generated candidates. Precomputed-score lookup alone does not complete this task.
 - Freeze generated outputs and rankings before evaluator comparison with held-out designs or experimental outcomes.

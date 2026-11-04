@@ -74,8 +74,12 @@ Keep the native parent out of the designed shortlist. Report missing inputs as `
 
 ## Important Instructions
 
-- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
+- Scientific source: Shanehsazzadeh et al., *IgDesign: In vitro validated antibody design against multiple therapeutic antigens using inverse folding*, bioRxiv, version 2. DOI: [10.1101/2023.12.08.570889](https://doi.org/10.1101/2023.12.08.570889). The structural evaluation follows Appendix A.4 and the sampling context follows Appendix C.
+- Source and protocol boundaries: the supplied ACVR2B-holdout models and processed antibody–antigen structure define this task's model/input provenance. The reduced initial sampling budget is a task setting. Do not describe this single-target execution as reproduction of every therapeutic-antigen campaign.
+- Reproducibility limits: preserve whole-Fv Cα alignment, predictor identity, observed-residue mapping, and missing-residue handling. Different model versions and sampling settings can produce different sequences and RMSDs. Completing ABodyBuilder2 alone does not establish completion of the expanded predictor comparison.
+- Held-out evaluation: citations document the scientific methods. Prior designed sequences, reported mutation identities, experimental labels, and historical result tables are withheld during generation and ranking. Compare against held-out evidence only after current-run outputs are frozen.
 
+- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
 - Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
 - Generate candidates independently and run the structural predictors. A precomputed-results lookup alone does not complete this task.
 - Keep the supplied ACVR2B model and target provenance explicit; do not transfer results to another antigen without a separate evaluation.
