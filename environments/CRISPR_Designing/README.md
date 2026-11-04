@@ -1,16 +1,23 @@
-# CRISPR Base-Editing Guide Design Environment
+# CRISPR Design Environment
 
-This environment describes a reusable workflow for designing and prioritizing base-editing guide RNAs for supported genetic targets.
+This environment describes a reusable, application-aware workflow for designing, evaluating and prioritizing CRISPR candidates across supported editing and gene-regulation tasks.
 
 ## Contents
 
-- `ENVIRONMENT_SPEC.md` — environment purpose, supported scope, workflow, tool contracts and output requirements.
-- `config/tool_profile.json` — known tool and sequence-format settings supplied for this environment.
-- `tasks/base_editing_grna_001.md` — reusable task definition and user inputs.
-- `tests/ACCEPTANCE.md` — checks required before the workflow is considered implemented.
+- `ENVIRONMENT_SPEC.md` — environment purpose, supported scope, shared workflow, evaluation stages and output requirements.
+- `tasks/crispr_design_gene_knockout_001.md` — gene knockout gRNA design task.
+- `tasks/crispr_design_base_editing_002.md` — base-editing guide design task.
+- `tasks/crispr_design_crispra_crispri_003.md` — CRISPRa/i guide design task.
+- `tasks/crispr_design_paired_guide_deletion_004.md` — paired-guide deletion design task.
+- `tasks/crispr_design_cas13_rna_targeting_005.md` — Cas13 RNA-targeting guide design task.
+- `tasks/crispr_design_guide_optimization_006.md` — guide optimization and reranking task.
+- `tasks/crispr_design_prime_editing_007.md` — prime-editing design task.
+- `tasks/crispr_design_multiplex_editing_008.md` — multiplex editing design task.
 
 ## Current scope
 
-The supplied design interface scans exonic regions for 20-nt protospacers with NGG PAMs. It supports ABE and CBE modes with editor-specific windows. Prediction tools take 50-nt FASTA records in the specified flank/guide/PAM layout. Bowtie is used for reference-genome sequence-match screening when a matching index is available.
+The environment supports computational CRISPR design and candidate prioritization for gene knockout, base editing, CRISPRa/i, paired-guide deletion, Cas13 RNA targeting, guide optimization, prime editing and multiplex editing.
 
-Tool support varies by organism, editor subtype and cell type. Record the selected reference and tool settings for each run. A result of `NO_COMPATIBLE_GUIDES` applies only to the configured search scope.
+Each task defines its application-specific inputs, candidate-generation requirements, evaluation criteria and expected outputs. The shared workflow assesses candidate validity, activity or application fit, quality, specificity and relevant contextual evidence before filtering and ranking candidates.
+
+Tool support and evaluation evidence vary by CRISPR system, target, organism and application. Record the selected reference, tool settings, dataset and evidence sources for each run. Missing evidence should not be treated as favorable evidence, and computational predictions should not be interpreted as experimental validation.
