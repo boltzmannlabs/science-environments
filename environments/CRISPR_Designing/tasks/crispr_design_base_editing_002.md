@@ -1,4 +1,3 @@
-
 Task: crispr_design_base_editing_002
 
 Task family: application-aware CRISPR design — Base-editing guide design. Status: Proposed; computational scope only. Shares the environment battery, ranking contract, and gates with all application tasks; only the application-specific requirements differ.
