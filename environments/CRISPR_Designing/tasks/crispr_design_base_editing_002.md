@@ -12,7 +12,7 @@ Application-specific requirements: editor compatibility; editing-window assessme
 
 ## Target
 
-Resolved per request — never defaulted.
+Resolved per request — never defaulted.Example gene (KIF11), variant, editor, and nucleotide conversion are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript and genome assembly; target sequence hashed into provenance.
 - **Variant:** user-confirmed reference and alternate alleles with genomic coordinates.
