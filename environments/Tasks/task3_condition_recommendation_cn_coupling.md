@@ -25,7 +25,7 @@
 
 ## 3. Ground Truth from the Paper
 
-> ⚠️ Transcribe from the open-access full text (accessible via nature.com link) into `ground_truth/` before running. Verified at abstract level so far:
+
 
 - Transformation: **benzamide + sulfonamide → arylated/amidated C–N coupled product via Smiles rearrangement**, transition-metal-free.
 - Claims: broad substrate scope across functional groups, scalability demonstrated, access to key building blocks.
