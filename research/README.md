@@ -1,14 +1,9 @@
-# Research
+# BolChem research
 
-Store research notes and scientific references by environment. Link each specification to its supporting notes and references. The linked materials should distinguish recorded evidence from planned work.
+Owner/evaluator supporting material for the BolChem task specifications.
 
-| Topic | Notes | References | Environment |
-| --- | --- | --- | --- |
-| BolChem task specifications | [Research notes](bolchem/research-notes.md) | [References](bolchem/references.md) | [Environment](../environments/bolchem/README.md) |
-| Formulation dissolution (in progress; Rebolt branch) | [Research notes](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/research-notes.md) | [References](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/references.md) | [Environment](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/environments/formulation_dissolution) |
-| scRNA-seq cell type annotation | [Research notes](scRNAseq-environment/research-notes.md) | [References](scRNAseq-environment/references.md) | [Environment](../environments/scRNAseq-environment/README.md) |
-| Synthesis route planning | [Research notes](synthesis-route-gym/research-notes.md) | [References](synthesis-route-gym/references.md) | [Environment](../environments/synthesis-route-gym/README.md) |
-| Enzyme variant optimization | [Research notes](enzyme-variant-engineering/research-notes.md) | [References](enzyme-variant-engineering/references.md) | [Environment](../environments/enzyme-variant-engineering/README.md) |
-| Small-molecule lead optimization (in progress; BoltChem branch) | [Research notes](https://github.com/boltzmannlabs/science-environments/blob/BoltChem/research/small-molecule-lead-optimization/research-notes.md) | [References](https://github.com/boltzmannlabs/science-environments/blob/BoltChem/research/small-molecule-lead-optimization/references.md) | [Environment](https://github.com/boltzmannlabs/science-environments/tree/BoltChem/environments/small-molecule-lead-optimization) |
+- [Research notes](bolchem/research-notes.md).
+- [References](bolchem/references.md).
+- [Environment](../environments/bolchem/README.md).
 
-Record sources, findings, uncertainty and open questions in the topic files. Keep dated status snapshots linked to their original scope; update the environment README when its current maturity changes.
+These documents are review context, not execution-agent prompts or candidate inputs.

@@ -28,8 +28,8 @@ potency, experimental ADMET, synthesis success or clinical utility.
 Exact inputs, inequalities, fingerprint definitions, selection, sampling,
 accounting, failure handling and output fields are maintained in:
 
-- [tasks/de-novo.md](tasks/de-novo.md).
-- [tasks/optimization.md](tasks/optimization.md).
+- [small-molecule-de-novo-design/tasks/p38alpha-design.md](small-molecule-de-novo-design/tasks/p38alpha-design.md).
+- [small-molecule-optimization/tasks/drd2-optimization.md](small-molecule-optimization/tasks/drd2-optimization.md).
 
 Keep these agent-facing task files free of literature identity, historical
 reference outcomes and prescribed reference algorithms. Keep evidence and

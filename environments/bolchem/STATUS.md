@@ -32,16 +32,21 @@ claimed by documentation review.
 - Base: available `origin/main` snapshot `85ebef7517534010df31f4b8e12e1676e3455e41`.
 - A newer remote main was observed, but fetching was denied by automatic approval
   review under the user's earlier fetch/pull restriction. No fetch/pull succeeded.
-  Refresh/rebase is pending explicit authorization before a PR or merge.
+  A future review branch must start from an authorized current main snapshot.
 - Issue #46 is open and provides parent tracking for the wider optimization effort;
   this documentation increment does not complete or close its runtime requirements.
 - The branch was first published without the prepared content. On 5 November
   the owner then authorized committing and pushing this specification increment
   using verified account `Ankith116`. Consult branch history for publication state.
   No PR, maintainer approval, merge or issue closure is claimed.
+- The owner then requested a working snapshot containing only BolChem material.
+  Inherited environment/research files are removed from this branch snapshot by
+  an ordinary commit; their history and the main branch are preserved. Prepare
+  a fresh branch from main and transfer only BolChem folders for a later PR.
 
 ## Dated work record
 
 | Date | Work | Evidence / next step |
 | --- | --- | --- |
 | 2026-11-05 | Created an isolated branch, organized the reviewed task specifications and completed document checks; the owner subsequently authorized content publication. | Input/scorer bundles, scientific execution and maintainer review remain pending. |
+| 2026-11-05 | Organized unchanged tasks into `small-molecule-de-novo-design/tasks/` and `small-molecule-optimization/tasks/`, and prepared the owner-requested BolChem-only working snapshot. | Publication authorized; future PR must transfer only our folders to a fresh branch from main. |

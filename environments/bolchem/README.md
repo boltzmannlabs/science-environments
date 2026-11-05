@@ -9,8 +9,8 @@ BolChem defines two computational assignments for Agent Scientist:
 
 | Task | Objective | Primary assessment |
 | --- | --- | --- |
-| [De novo design](tasks/de-novo.md) | Design molecules for p38α using the supplied 1A9U structure for final docking. | Mean derived Smina score across the complete ten-slot panel, with molecular properties and coverage. |
-| [Constrained optimization](tasks/optimization.md) | Improve supplied starting molecules for DRD2 while preserving similarity. | Unique molecules satisfying all frozen activity, QED and similarity conditions; an explicit ADMET variant may add conditions. |
+| [De novo design](small-molecule-de-novo-design/tasks/p38alpha-design.md) | Design molecules for p38α using the supplied 1A9U structure for final docking. | Mean derived Smina score across the complete ten-slot panel, with molecular properties and coverage. |
+| [Constrained optimization](small-molecule-optimization/tasks/drd2-optimization.md) | Improve supplied starting molecules for DRD2 while preserving similarity. | Unique molecules satisfying all frozen activity, QED and similarity conditions; an explicit ADMET variant may add conditions. |
 
 Each task permits the agent to choose its generation and search workflow within
 common input, scoring and resource constraints. This contribution contains task
@@ -20,7 +20,7 @@ scientific benchmark.
 ## What to give the execution agent
 
 Supply **one task Markdown plus its prepared, authorized input/scorer bundle and
-execution limits**. The two files under `tasks/` contain no literature names,
+execution limits**. The two module-scoped task files contain no literature names,
 citations, links or prescribed reference search algorithm. Keep owner/evaluator
 research, comparison outputs and archived candidate solutions outside that context.
 
@@ -30,6 +30,17 @@ and financial/compute limits are not packaged here. Resolve their declared
 the Markdown as installing or validating an environment.
 
 ## Contribution contents
+
+```text
+bolchem/
+├── small-molecule-de-novo-design/
+│   ├── README.md
+│   └── tasks/p38alpha-design.md
+├── small-molecule-optimization/
+│   ├── README.md
+│   └── tasks/drd2-optimization.md
+└── [shared specifications, status and review material]
+```
 
 - [Environment contract](ENVIRONMENT_SPEC.md).
 - [Models and tool boundaries](MODELS_AND_TOOLS.md).
