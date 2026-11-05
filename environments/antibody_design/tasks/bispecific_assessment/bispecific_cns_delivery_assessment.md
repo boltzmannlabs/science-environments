@@ -39,6 +39,8 @@ Use verified capabilities supplied by the execution environment in the following
 
 Use the supplied study protocol for aggregation, uncertainty, and decisions. Do not infer missing measurements or extrapolate beyond the observed study without an explicitly qualified model.
 
+Published reference evidence and evaluation details: [benchmark](../../benchmark/bispecific_assessment/bispecific_cns_delivery_assessment.md).
+
 ## Expected Output
 
 **Required Files:** `bispecific_delivery_assessment.json` and `report.md`
