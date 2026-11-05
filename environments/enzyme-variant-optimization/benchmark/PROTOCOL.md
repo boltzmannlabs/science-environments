@@ -61,6 +61,8 @@ The paths above describe reviewer-owned run artifacts, not tool submission paylo
 
 Report each approach's workflow completion, actual generated unique sequences, supported final candidates, signed parent-relative metric changes, mandatory failures and unresolved evidence. Add runtime, queue time, model usage, scientific-resource usage, cost with original units, and repeat variability where available. A single repeat is a case comparison, not a general performance claim.
 
+Assess recovery from the recorded diagnostics, corrections, tool changes and output checks under the shared [environment requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery). Distinguish execution failures, task-ineligible outputs, justified recovery, unresolved blockers and operator interventions. Report these observations for both approaches without treating a retry or successful job status as scientific improvement.
+
 Only a fully observed eligible selection receives an aggregate numerical score. No qualifying selection and missing evidence are different outcomes. Numerical improvement in a computational endpoint does not establish experimental improvement. Retain unfavorable and incomplete results.
 
 ## Reference information

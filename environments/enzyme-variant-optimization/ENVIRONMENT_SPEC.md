@@ -39,6 +39,16 @@ Use the current CSV headers and types required by each tool. Do not impose one u
 
 Catalytic acceptance ranges require evidence for that reaction and structural state. If justified ranges are unavailable, report measurements descriptively. If an interface requires bounds even for measurement mode, use an available genuinely descriptive calculation or record the capability as unavailable; never invent permissive ranges. A required descriptive assessment may complete without a catalytic pass/fail verdict. Do not rank activity by geometry alone.
 
+## Execution errors and recovery
+
+Handling execution errors and invalid outputs is part of the workflow for both Agent-Scientist alone and specialist-assisted runs. The agent independently determines whether a problem comes from its inputs, a tool contract, service behavior or an unresolved dependency, using actual diagnostics and available evidence. The environment defines acceptance requirements; it does not prescribe an error-specific fix or add a retry service around SCI.
+
+When an error is recoverable, investigate the cause, correct the inputs or preparation according to the current contract, and execute the justified corrected request. If a completed job returns outputs that violate the task's requirements, investigate why and whether that tool can satisfy those requirements. If it can, correct its use and retry; if it cannot, select and execute a compatible alternative. Preserve the scientific objective and protected constraints. Do not force an output to qualify by relaxing those constraints, silently editing rejected candidates or bypassing validation. Check actual returned outputs before continuing; successful job status alone is insufficient.
+
+Record the original failure or output violation, supporting diagnostics, the reason for the chosen correction or tool change, replacement job IDs and verification results in the existing `jobs.json` and `decisions.md`; retain cumulative usage in `usage.json`. Repeated identical attempts without a supported correction are not recovery. Accepted, pending or ambiguously submitted work remains associated with its original ID and is not duplicated because a status check timed out. SCI supplies execution, validation, status and session mechanisms.
+
+Both approaches receive the same recovery requirements. The agent chooses corrections and alternatives without an operator supplying per-error solutions during normal execution. Preserve unsuccessful recovery attempts and report genuine blockers explicitly. Recovery attempts do not replace required scientific stages, and missing evidence remains incomplete work.
+
 ## Specialist contribution
 
 In the assisted approach the parent agent delegates an initial design review and reviews after actual result batches to the native saved proposer and critic. The proposer identifies a supported next experiment; the critic tests the reasoning and recommends an actionable correction. The parent selects and executes the next scientific action using its normal tools.

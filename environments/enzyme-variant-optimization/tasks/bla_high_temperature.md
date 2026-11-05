@@ -90,6 +90,8 @@ Freeze the primary endpoint, eligibility criteria and tie-breakers before design
 
 ## Important Instructions
 
+- Apply the shared [execution-error and output-recovery requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery).
+
 - Scientific source: [Computational design of α-amylase from Bacillus licheniformis to increase its activity and stability at high temperatures](https://doi.org/10.1016/j.csbj.2024.02.005). Do not combine inconsistent condition statements or silently repair reported numerical units. Historical comparison requires checking the supplement and exact inputs.
 - Do not retrieve published winners, mutation identities or outcome tables, read `benchmark/REFERENCE_VALUES.md`, or inspect other-arm results during design. Research reaction chemistry using permitted primary sources and record unintended exposure.
 - In agent-alone mode do not delegate. In assisted mode use the reviewed native proposer then critic for bounded initial/result-batch reviews; the parent executes tools and includes all calls in the shared budget.

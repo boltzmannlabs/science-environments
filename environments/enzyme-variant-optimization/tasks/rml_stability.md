@@ -90,6 +90,8 @@ Freeze the common final stability endpoint, functional safeguards and tie-breake
 
 ## Important Instructions
 
+- Apply the shared [execution-error and output-recovery requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery).
+
 - Scientific source: [Computer-Aided Design to Improve the Thermal Stability of Rhizomucor miehei Lipase](https://doi.org/10.3390/foods13244023). Establish source construct/model identity without retrieving winner mutations; the task does not reproduce experimental oil conversion or half-life assays.
 - Do not access published winning sequences/mutations, outcome tables, `benchmark/REFERENCE_VALUES.md` or the other approach's results during design. Use permitted primary sources for parent identity and chemistry, and log unintended outcome exposure.
 - Agent-alone runs do not delegate. Assisted runs use the reviewed native proposer then critic for initial/result-batch advice; the parent executes tools and includes advisory calls in the same budget.

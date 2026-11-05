@@ -90,6 +90,8 @@ Freeze the primary endpoint, safeguards and tie-breakers before design. Rank eli
 
 ## Important Instructions
 
+- Apply the shared [execution-error and output-recovery requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery).
+
 - Scientific source: [Computationally designed libraries for rapid enzyme stabilization](https://doi.org/10.1093/protein/gzt061). Its experimental screening informed mutation combinations; this computational task does not reproduce that experimental step or establish measured melting temperatures.
 - Do not retrieve published winners, their mutation identities or outcome tables, read `benchmark/REFERENCE_VALUES.md`, or inspect the other approach's results during design. Use permitted primary sources for chemistry; record unintended outcome exposure.
 - In agent-alone mode do not delegate. In assisted mode use the reviewed native proposer then critic for bounded initial/result-batch reviews; the parent executes tools and counts all calls in the same budget.

@@ -90,6 +90,8 @@ Freeze the primary endpoint, eligibility rules and tie-breakers before design. R
 
 ## Important Instructions
 
+- Apply the shared [execution-error and output-recovery requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery).
+
 - Scientific source: [Computational design of highly efficient thermostable MHET hydrolases and dual enzyme system for PET recycling](https://doi.org/10.1038/s42003-023-05523-5). This task adapts the problem, not a promise to reproduce its exact methods or values.
 - Do not retrieve published winning sequences, mutations or outcome tables, read `benchmark/REFERENCE_VALUES.md`, or inspect the other approach's results during design. Research reaction chemistry using permitted primary sources; record unintended exposure.
 - Old local Est30 runs used different generation requirements and are not results for this task version. Est30 is not an unseen rediscovery test.

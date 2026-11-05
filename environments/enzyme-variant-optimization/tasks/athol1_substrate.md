@@ -90,6 +90,8 @@ Freeze the primary endpoint, eligibility requirements and tie-breakers before de
 
 ## Important Instructions
 
+- Apply the shared [execution-error and output-recovery requirements](../ENVIRONMENT_SPEC.md#execution-errors-and-recovery).
+
 - Scientific source: [SubTuner leverages physics-based modeling to complement AI in enzyme engineering toward non-native substrates](https://doi.org/10.1016/j.checat.2025.101334). This case requires extra chemical preparation; missing advanced resources remain explicit rather than replaced by a different endpoint after seeing results.
 - Do not retrieve published winners, mutation identities or outcome tables, read `benchmark/REFERENCE_VALUES.md`, or inspect other-arm results during design. Use permitted primary chemistry sources and record unintended exposure.
 - In agent-alone mode do not delegate. In assisted mode use the reviewed native proposer then critic for bounded initial/result-batch advice; the parent executes tools and counts advisory usage within the same budget.
