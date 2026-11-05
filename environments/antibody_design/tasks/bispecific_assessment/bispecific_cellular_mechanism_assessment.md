@@ -37,6 +37,8 @@ Use verified capabilities supplied by the execution environment in the following
 
 Use the supplied decision rule and uncertainty method. Keep undefined or unmeasurable metrics unresolved; do not replace them with favorable scores. Report detailed measurements in the report without changing the fixed benchmark answer fields.
 
+Published reference evidence and evaluation details: [benchmark](../../benchmark/bispecific_assessment/bispecific_cellular_mechanism_assessment.md).
+
 ## Expected Output
 
 **Required Files:** `mechanism_assessment.json` and `report.md`

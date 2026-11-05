@@ -1,10 +1,12 @@
 # Reference-Guided Monoclonal Test Suite
 
+The DENV prompt variants referenced by these regression checks are retired fixtures under `tests/fixtures/retired_tasks/`. The active monoclonal tasks are the five documents in `tasks/monoclonal_antibody_design/`; this suite does not establish their scientific performance.
+
 This is the environment's only scenario test directory. The tested scenario requires **both a supplied antigen and a supplied paired heavy/light-chain monoclonal reference antibody**. The existing DENV example is a profile of this scenario.
 
 Target-only design, bispecific design, and bispecific assessments have no scenario suites here. Tests that reject those modes within a reference-guided request protect this suite's boundary; they do not test those other workflows. Task instructions remain under `tasks/`, and configuration contracts remain under `config/`.
 
-All reference-guided monoclonal test code, fixtures, validation, and acceptance documentation live in this directory. The shared helpers one level above serve multiple task families: schema loading, file integrity, configuration checks, and the package runner. They do not establish scientific capability.
+Reference-guided test code, synthetic fixtures, validation and acceptance documentation live in this directory. Historical prompt fixtures are stored separately in `../fixtures/retired_tasks/`. The shared helpers one level above serve multiple task families: schema loading, file integrity, configuration checks, and the package runner. They do not establish scientific capability.
 
 | File | Purpose |
 | --- | --- |

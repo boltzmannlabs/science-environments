@@ -1,5 +1,7 @@
 # Monoclonal-Antibody Test Plan: DENV-2 EDIII with DV87.1 Reference
 
+The DENV prompt variants referenced by these regression checks are retired fixtures under `tests/fixtures/retired_tasks/`. The active monoclonal tasks are the five documents in `tasks/monoclonal_antibody_design/`; this suite does not establish their scientific performance.
+
 **Scope:** reference-guided paired-chain monoclonal antibodies only. The DENV case matrix below is a profile-level scientific test plan, not a count of implemented automated tests. Reusable contract regressions are in `tests/monoclonal_antibody_with_reference/test_reference_guided.py`; [coverage and gaps](COVERAGE.md) distinguishes software checks from unimplemented scientific verification.
 
 
@@ -13,8 +15,8 @@ testing program before any candidate may enter the shortlist.
 
 The plan applies to both presentations of task `denv_antibody_001`:
 
-- `tasks/denv_antibody_001.md`: the method-neutral task.
-- `tasks/denv_antibody_001_tools.md`: the same task with expanded evidence requirements in its capability block.
+- `tests/fixtures/retired_tasks/denv_antibody_001.md`: the method-neutral task.
+- `tests/fixtures/retired_tasks/denv_antibody_001_tools.md`: the same task with expanded evidence requirements in its capability block.
 
 Both variants must receive the same antigen, reference antibody, candidate limit, scientific
 rules, evaluator, budget, random seed, and hidden outcomes. They must produce the same result

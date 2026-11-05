@@ -7,8 +7,8 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[2]
-GENERAL = ROOT / "tasks/denv_antibody_001.md"
-TOOL_SPECIFIC = ROOT / "tasks/denv_antibody_001_tools.md"
+GENERAL = ROOT / "tests/fixtures/retired_tasks/denv_antibody_001.md"
+TOOL_SPECIFIC = ROOT / "tests/fixtures/retired_tasks/denv_antibody_001_tools.md"
 
 
 def normalized_task(text: str) -> str:
