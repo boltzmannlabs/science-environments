@@ -38,6 +38,8 @@ Use verified capabilities supplied by the execution environment in the following
 
 Keep the existing candidate names, answer fields, units, and 7-day observation requirement. Detailed statistics belong in the report; missing observations must not be replaced with zeros or inferred values.
 
+Published reference evidence and evaluation details: [benchmark](../../benchmark/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md).
+
 ## Expected Output
 
 **Required Report:** `report.md`, containing the three calculations, candidate comparison, recommendation rationale, and limitations.
