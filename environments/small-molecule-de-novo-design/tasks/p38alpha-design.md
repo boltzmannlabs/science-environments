@@ -2,15 +2,19 @@
 
 ## Description
 
-Design new small molecules for the human **p38α protein**. Use its supplied
-**1A9U three-dimensional structure** for the common final docking assessment.
+Design new small molecules for the human **p38α protein**. Retrieve its
+**1A9U three-dimensional structure** from RCSB PDB for the common docking assessment.
 Assess molecular properties as well as docking performance. Choose suitable generation,
 screening and search strategies using authorized tools. Multiple workflows may
 be combined within one shared budget. Return a complete evaluation panel and
 an evidence-backed shortlist, preserving failures and resource use.
 
-Execution requires the supplied input bundle, scoring interface and frozen limits.
-No particular generation model or search algorithm is required.
+Prepare the required public inputs and scoring setup as part of the task when
+they are not already available. Freeze the setup and resource limits before
+scientific generation. Do not ask routine setup questions during a run: resolve
+what the task specifies, and report a blocker and stop if an essential decision
+or capability remains unresolved. No particular generation model or search
+algorithm is required.
 
 ## Objective and target
 
@@ -23,36 +27,74 @@ docking scores while reporting drug-likeness, lipophilicity, synthetic-accessibi
 and natural-product-likeness descriptors. These are distinct measurements; no
 single composite reward defines success.
 
-There is one target: **p38α**. **1A9U identifies its supplied 3D structure** used
+There is one target: **p38α**. **1A9U identifies its 3D structure** used
 for docking; no gene analysis is required. Keep the same target structure and
 binding-site definition across runs. Do not add protein targets or alternative
 structures. Generation methods may use other permitted inputs and need not use
 the structure. Keep `p38_1a9u` only as an internal tracking ID in manifests/results.
 
-## Required inputs
+## Inputs and automatic preparation
+
+The operator supplies the task and, before scientific execution, property
+constraints (or explicitly none), resource limits, and any additional choices
+that cannot be resolved from the task. Discover and use suitable Boltzmann tools
+available and authorized in the active Agent Scientist profile; the operator
+need not list them individually. Check actual access before submitting jobs.
+Permitted local tools may be used for the specified preparation and evaluation.
+Do not invent numeric
+property cutoffs or budgets. The agent creates the records below; the operator
+does not need to create these files manually. A verified existing bundle may be
+reused instead of preparing another copy.
 
 | Input | Required contents |
 | --- | --- |
-| `target_inputs.json` | Protein name p38α, structure ID 1A9U, internal tracking ID, local structure/sequence/control paths, hashes and allowed generation information |
-| Structural bundle | Supplied 1A9U coordinates, fixed prepared target protein, reference ligand coordinates and sequence/chain maps |
-| `scorer_manifest.json` | Smina executable/version/hash, preparation adapter, docking settings, descriptor/model files, identity policy and scoring interface |
-| `execution_manifest.json` | Repeats, final-panel policy, permitted inputs/tools, generation/scoring/service/compute/reasoning limits and stopping rules |
-| Evaluator interface | Separately controlled final-assessment interface and output-freeze procedure |
+| `target_inputs.json` | Agent records protein name, 1A9U, local structure/sequence/control paths, hashes and allowed generation information. |
+| Structural bundle | Agent retrieves public 1A9U coordinates and prepares a fixed target protein, reference-ligand coordinates and sequence/chain maps. |
+| `scorer_manifest.json` | Agent records the verified Smina executable/version/hash, preparation adapter, docking settings, descriptor/model files, identity policy and scoring interface. |
+| `execution_manifest.json` | Agent records the operator-provided limits, applicable permissions, available tools, repeats, constraints, panel policy and stopping rules before generation. |
+| Evaluator interface | A separately controlled final-assessment interface and output-freeze procedure are required for an independent comparison. |
+
+Retrieve the structure and relevant public entity and chemical-component records
+from RCSB PDB; preserve originals, source locations, retrieval time and hashes.
+Inspect the protein chain, bound-ligand identity and coordinates, alternate
+locations and missing regions. Select and prepare the target and binding-site
+control only when justified by the task and records; record the selection,
+preparation, software versions and uncertainties. If the correct site or control
+cannot be established, stop with a specific blocker rather than guess.
+
+Check the local scoring tools and assets; obtain and configure permitted public
+software and model assets when feasible. Verify the actual required version and
+perform a small preparation/scorer readiness check before generation, accounting
+for its resource use. Do not treat an installed executable as proof that the
+whole scoring pipeline works. Record unavailable software, failed downloads,
+access restrictions and any missing assets. Use an authorized existing platform
+connector for hosted operations; do not expose credentials.
+
+For a comparison, prepare and freeze one verified target and scoring bundle and
+reuse it across all arms. An execution agent may prepare the initial bundle, but
+it must not change the frozen bundle between arms. Record hashes and any setup
+costs separately. Search feedback is allowed within the declared budget; final
+independent evaluation remains separately controlled. If it is unavailable, a
+run may report a clearly labeled self-assessment where feasible, but cannot
+claim an independent comparison.
 
 Verify construct sequence, observed/missing coordinates, chain mapping and
 reference ligand identity. Keep observed records, supplied prepared inputs and
 any further derived preparation separate. Never overwrite source inputs or
 silently replace a supplied target protein.
 
-The supplied bound molecule locates the docking site and provides a fresh control.
+The verified bound molecule locates the docking site and provides a fresh control.
 Its molecular graph
 must not be used as editable starting leads or inserted into generated candidates.
 Use only the declared information when conditioning generation. Protein-sequence,
 structure-conditioned and other authorized generation routes are allowed; pocket
 conditioning is not required. Record any pocket extraction or coordinate transform.
 
-Missing inputs/assets are `NEEDS_INPUT`; unresolved rules/limits are
-`PROTOCOL_REQUIRED`.
+Attempt permitted preparation first. If an essential input or asset still
+cannot be obtained or validated, stop and report `NEEDS_INPUT`; unresolved
+scientific choices or limits are `PROTOCOL_REQUIRED`. Do not pause for routine
+interactive questions. Preserve the completed preparation and clearly explain
+what is needed for a later run.
 
 ## Workflow freedom
 
@@ -110,20 +152,20 @@ new-candidate shortlist. An empty shortlist is valid.
 
 ## Common docking evaluation
 
-Use the supplied pinned Smina evaluator for every endpoint, case control and
+Use the verified pinned Smina evaluator for every endpoint, case control and
 comparison arm. Its primary settings are:
 
 | Setting | Value |
 | --- | --- |
 | Smina version | 2020.12.10, verified executable/build identity in manifest |
-| Target protein input | Supplied prepared p38α structure from 1A9U; rigid primary assessment |
-| Box reference | Corresponding supplied site-control ligand coordinates |
+| Target protein input | Frozen prepared p38α structure from 1A9U; rigid primary assessment |
+| Box reference | Corresponding verified site-control ligand coordinates |
 | Autobox addition | 10 angstrom, using the executable's native option semantics |
 | Seed | 1000 |
 | Exhaustiveness | 9 |
 
 Keep the same case box for every molecule; candidates cannot define their own
-boxes. Use the supplied preparation interface consistently for candidates and
+boxes. Use the frozen preparation interface consistently for candidates and
 controls. Retain hydrogens, protonation, stereochemistry, embedding and atom-map
 decisions in provenance. Record unsupported/uncontrolled stochastic behavior.
 
@@ -161,7 +203,7 @@ pose against which to claim pose accuracy.
 | `control_measurements` | Fresh descriptor/docking controls and supported identity/pose checks |
 | `resource_use` | Draws, internal/external scoring, cache hits, jobs, credits, compute/runtime and reasoning use |
 
-Use the supplied descriptor implementations and model files; hosted predictions
+Use the verified descriptor implementations and model files; hosted predictions
 with similar names are not interchangeable. Record identity/tautomer/stereo rules.
 Do not substitute structural diversity or source novelty for the defined uniqueness
 statistics. Training-source overlap is a separate diagnostic when verifiable.
@@ -186,6 +228,14 @@ compute/wall time, repeats and model usage in the execution manifest. Ten endpoi
 molecules do not imply ten docking calls: include all internal search evaluations,
 controls, failures and repeats. Reserve final endpoint/control assessment allowance
 before spending the remainder on search.
+
+The operator must provide the limits and property constraints before the run;
+the agent records them and checks that they are enforceable. When constraints
+are explicitly absent, report properties without inventing cutoffs. Apply any
+declared constraints consistently and report both constraint satisfaction and
+the complete-panel primary metric without silently removing records. If required
+limits are missing, prepare what can be prepared within authorized resources,
+then stop before generation or other work requiring an unapproved allowance.
 
 Verify and reserve a maximum for each hard-limited resource before submission,
 including outstanding parallel work. Unresolved acceptance retains its reservation.

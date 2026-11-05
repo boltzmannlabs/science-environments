@@ -4,14 +4,18 @@
 
 ## Objective
 
-Generate molecular candidates for one p38α target. The supplied 1A9U structure supports common final docking with Smina. Ten final records form the evaluation panel; an up-to-three shortlist is separate.
+Generate molecular candidates for one p38α target. The agent retrieves and prepares the public 1A9U structure for common final docking with Smina. Ten final records form the evaluation panel; an up-to-three shortlist is separate.
 
 ## Inputs, constraints and outputs
 
 The [task definition](tasks/p38alpha-design.md) specifies the required inputs, scientific objectives,
 metrics, budget handling, failure states and output artifacts. The agent chooses
-among authorized workflows; mandatory assessment rules remain fixed. Prepared
-inputs, scoring assets, evaluator and execution limits are required before a run.
+among authorized workflows; mandatory assessment rules remain fixed. The operator
+provides constraints and limits upfront; the agent discovers suitable authorized
+Boltzmann tools in the active profile and prepares and verifies the
+inputs, scoring assets and records. Freeze a common bundle and provide a separately
+controlled evaluator for independent comparisons. Unresolved essential inputs
+or capabilities stop execution with a recorded blocker, not an interactive query.
 
 ## Reproducibility and evaluation
 
