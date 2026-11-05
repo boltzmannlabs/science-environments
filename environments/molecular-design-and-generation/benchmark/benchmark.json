@@ -1,0 +1,256 @@
+{
+  "name": "molecular-design-and-generation",
+  "tasks": [
+    {
+      "id": "task_001",
+      "file": "task_001_caii_fragment_screening.md",
+      "doi": "https://doi.org/10.3389/fchem.2025.1627793",
+      "pmc": "PMC12528100",
+      "pdbs": [
+        "3IGP"
+      ],
+      "pass_bar": "≥1 hit with docking ≤ −8.0 kcal/mol (engine-relative), a top-3 MM-GBSA ΔG ranking among triaged hits (paper reference: S1 −46.28 kcal/mol), and a non-toxic (ProTox-II class 4–5) profile.",
+      "expected_outputs": [
+        "pharmacophore_models.json",
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Dock + ΔG",
+          "published_value": "e.g., S1 −8.004 kcal/mol; ΔG_bind −46.28 kcal/mol (Table 5)"
+        },
+        {
+          "metric": "Hit triage",
+          "published_value": "S6–S8 (sulfonamide) + S1, S2, S15, S16 (non-sulfonamide)"
+        },
+        {
+          "metric": "Toxicity",
+          "published_value": "Table 8 classes: S8 4, S15 4, S16 5 (S1/S2 also class 4); paper text flags \"unacceptable toxicities for S2, S3, S6, S7, S11, and S12\" and ADME deviations for S1–S3, S7, S11, S14; overall acceptable hits: S8, S15, S16"
+        },
+        {
+          "metric": "Validation",
+          "published_value": "100 ns MD stability (RMSD/RMSF/Rg/SASA/H-bonds)"
+        }
+      ]
+    },
+    {
+      "id": "task_002",
+      "file": "task_002_rock2_pharmacophore.md",
+      "doi": "https://doi.org/10.1371/journal.pone.0323781",
+      "pmc": "PMC12074392",
+      "pdbs": [
+        "7P6N"
+      ],
+      "pass_bar": "≥2 candidates at −9.89 kcal/mol or better (Glide SP-anchored; compare engine-relative — paper top-2: −9.939/−9.894) with acceptable ADMET and stable MD.",
+      "expected_outputs": [
+        "pharmacophore_model.json",
+        "screening_results.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "md_analysis.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Top hits",
+          "published_value": "ZINC287819616 −9.939; ZINC513417492 −9.894 kcal/mol"
+        },
+        {
+          "metric": "Top-10 range",
+          "published_value": "−9.939 to −9.082 kcal/mol (Table 2; abstract quotes −11.55 to −9.91 — use table values)"
+        },
+        {
+          "metric": "ADMET",
+          "published_value": "Both hits pass all OSIRIS risks; drug-likeness 6.09/7.17, drug score 0.75/0.66; HIA+, BBB+"
+        },
+        {
+          "metric": "MD",
+          "published_value": "150 ns; stable RMSD/RMSF/Rg/SASA/H-bonds; PCA compact"
+        }
+      ]
+    },
+    {
+      "id": "task_003",
+      "file": "task_003_khkc_pharmacophore_vs.md",
+      "doi": "https://doi.org/10.3389/fphar.2025.1531512",
+      "pmc": "PMC12009819",
+      "pdbs": [
+        "3NC9",
+        "6W0Z",
+        "8OME",
+        "8UG3"
+      ],
+      "pass_bar": "≥1 compound with a primary-engine docking score < −7.76 kcal/mol (Glide XP reference value for PF-06835919) and acceptable ADMET.",
+      "expected_outputs": [
+        "pharmacophore_model.json",
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Top-10 docking scores",
+          "published_value": "−7.79 to −9.10 kcal/mol (all beat PF-06835919 at −7.76)"
+        },
+        {
+          "metric": "MM-GBSA ΔG",
+          "published_value": "−57.06 to −70.69 kcal/mol (PF-06835919 −56.71; LY-3522348 −45.15)"
+        },
+        {
+          "metric": "Hypothesis validation (30 actives + 15 decoys)",
+          "published_value": "ROC 0.81; AUC 0.62; RIE 1.50; BEDROC 1.000/1.000/0.977 (α = 160.9/20.0/8.0); EF 7.5 (50% of actives); top-50 hit rate 52%"
+        },
+        {
+          "metric": "VS-workflow enrichment (top-10 hits + 18 inactives)",
+          "published_value": "ROC 1.0; BEDROC 1.0; RIE 4.54; accumulation-curve AUC 0.89; EF 4.6"
+        },
+        {
+          "metric": "AutoDock 4.2 cross-check",
+          "published_value": "Hits −7.4 to −8.5 vs reference −7.3 kcal/mol (hit 4 −7.0, below the reference)"
+        },
+        {
+          "metric": "Final hits",
+          "published_value": "Molecules 1, 2, 4–6 (MD-validated; e.g., hit 1 PubChem 6622312)"
+        }
+      ]
+    },
+    {
+      "id": "task_004",
+      "file": "task_004_foxm1_hsp70_dual_vs.md",
+      "doi": "https://doi.org/10.4103/1735-5362.359431",
+      "pmc": "PMC9872178",
+      "pdbs": [
+        "3G73",
+        "4IO8"
+      ],
+      "pass_bar": "≥1 compound docking better than FDI-6 on FoxM1 AND VER-155008 on Hsp70 with acceptable ADMET.",
+      "expected_outputs": [
+        "analog_library.csv",
+        "pharmacophore_models.json",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Reference docking",
+          "published_value": "FDI-6 −2.7 kcal/mol (FoxM1); VER-155008 −1.77 kcal/mol (Hsp70)"
+        },
+        {
+          "metric": "Final dual hits",
+          "published_value": "ZINC8448537, ZINC1152745, ZINC199847048, ZINC199676474, ZINC6110690"
+        },
+        {
+          "metric": "Best dual ligand",
+          "published_value": "ZINC1152745 (−4.27 kcal/mol FoxM1; −3.291 kcal/mol Hsp70; stable on both targets)"
+        },
+        {
+          "metric": "ADMET",
+          "published_value": "QikProp descriptors + DataWarrior toxicity risks + Osiris drug-likeness"
+        },
+        {
+          "metric": "MD/MM-PBSA",
+          "published_value": "100 ns stable on both proteins; ZINC1152745 ΔG_bind −79.406 (FoxM1) / −79.103 (Hsp70) kJ/mol vs FDI-6 −65.805 / VER-155008 −28.331 (units not stated in the paper; kJ/mol inferred from the g_mmpbsa/GROMACS analysis — derived)"
+        }
+      ]
+    },
+    {
+      "id": "task_005",
+      "file": "task_005_fgfr2_similarity_sbvs.md",
+      "doi": "https://doi.org/10.1038/s41598-024-69850-1",
+      "pmc": "PMC11339395",
+      "pdbs": [
+        "6LVK"
+      ],
+      "pass_bar": "≥1 candidate docking at −11.7 kcal/mol or better with full ADMET/PAINS pass.",
+      "expected_outputs": [
+        "analog_library.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Top-10 docking scores",
+          "published_value": "−12.4 to −11.6 kcal/mol (best: CID 137049257 −12.4)"
+        },
+        {
+          "metric": "Reference scores",
+          "published_value": "Zoligratinib −9.7, AZD4547 −9.0, Erdafitinib −8.5, Infigratinib −8.4 kcal/mol"
+        },
+        {
+          "metric": "Lead",
+          "published_value": "CID 507883: −11.7 kcal/mol, >80% similarity to Zoligratinib, sole compound passing ADMET/PAINS"
+        },
+        {
+          "metric": "MD",
+          "published_value": "200 ns; RMSD 0.42 nm (complex) vs 0.33 (apo) / 0.35 (Zoligratinib); PCA + FEL stable"
+        }
+      ]
+    },
+    {
+      "id": "task_006",
+      "file": "task_006_gsk3b_pharmacophore_admet.md",
+      "doi": "https://doi.org/10.1038/s41598-026-56505-6",
+      "pmc": "PMC13396737",
+      "pdbs": [
+        "3GB2"
+      ],
+      "pass_bar": "≥1 candidate docking below −6.80 kcal/mol (same-engine Vina anchor — the paper's own co-crystal benchmark) with ≤1 Lipinski violation, BBB permeant, PAINS 0, MM-GBSA below the −8.75 kcal/mol co-crystal reference, and stable 100 ns MD.",
+      "expected_outputs": [
+        "pharmacophore_models.json",
+        "screening_results.csv",
+        "docking_scores.csv",
+        "admet_bbb_panel.csv",
+        "md_analysis.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Co-crystal benchmark",
+          "published_value": "−6.80 kcal/mol (3GB2 ligand, Vina 1.1.2)"
+        },
+        {
+          "metric": "Hit docking range",
+          "published_value": "−7.00 to −7.39 kcal/mol (SB1 −7.16, LB1 −7.28, LB2 −7.00, LB3 −7.39)"
+        },
+        {
+          "metric": "Redock RMSD",
+          "published_value": "1.45 Å"
+        },
+        {
+          "metric": "Screen funnel",
+          "published_value": "21,777,093 ZINCPharmer → 1,085 LB + 36 SB → 957 + 22 beat −6.80 → 4 ADME/BBB survivors"
+        },
+        {
+          "metric": "Pharmacophore ROC AUC",
+          "published_value": "0.8233 (LB) / 0.8200 (SB)"
+        },
+        {
+          "metric": "ADME/BBB (Table 1)",
+          "published_value": "4 hits: 0 Lipinski violations, oral-bioavailability score 0.55, BBB permeant, high GI absorption, PAINS 0, SA 2.2–3.7; MW 293.32–353.48, LogP 2.80–3.89, TPSA 65.24–73.06 Å²"
+        },
+        {
+          "metric": "Toxicity (ProTox-3.0)",
+          "published_value": "SB1 LD50 2500 mg/kg, class 5, respiratory toxicity 0.82; LB1 LD50 521 mg/kg, class 4, respiratory 0.69 + nephrotoxicity 0.59"
+        },
+        {
+          "metric": "MD 100 ns",
+          "published_value": "Backbone RMSD ≈0.18–0.23 Å; ligand RMSD (production phase) SB1 ≈1.115 / LB1 ≈0.721 / Co ≈1.081 Å; H-bonds SB1 3–6, LB1 0–3, Co 0–2"
+        },
+        {
+          "metric": "MM/GBSA ΔG",
+          "published_value": "SB1 −27.68 ± 7.20, LB1 −25.74 ± 3.41 vs Co −8.75 ± 6.93 kcal/mol; MM/PBSA SB1 −26.85 ± 5.43, LB1 −22.24 ± 3.91 vs Co −7.58 ± 5.32"
+        },
+        {
+          "metric": "Hit count note",
+          "published_value": "Results mention \"six prioritized hits\" but Table 2 scores four (SB1, LB1–LB3) — paper-internal conflict"
+        }
+      ]
+    }
+  ]
+}

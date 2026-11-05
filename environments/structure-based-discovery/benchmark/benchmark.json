@@ -1,0 +1,277 @@
+{
+  "name": "structure-based-discovery",
+  "tasks": [
+    {
+      "id": "task_001",
+      "file": "task_001_egfr_pharmacophore_vs.md",
+      "doi": "https://doi.org/10.1371/journal.pone.0311527",
+      "pmc": "PMC11627428",
+      "pdbs": [
+        "3W2O",
+        "3W2Q",
+        "5D41",
+        "5Y9T",
+        "7AEI"
+      ],
+      "pass_bar": "≥1 hit out-docking R85/known inhibitors with acceptable ADMET (QikProp ranges: QPlogHERG < −5, QPlogPo/w −2.0 to 6.5, QPlogBB −3.0 to 1.2, QPlogKhsa −1.5 to 1.5; MW < 500).",
+      "expected_outputs": [
+        "pharmacophore_model.json",
+        "screening_results.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Hit docking range",
+          "published_value": "−7.691 to −7.338 kcal/mol"
+        },
+        {
+          "metric": "Reference inhibitors",
+          "published_value": "R85 −7.18, osimertinib −6.94, afatinib −6.41, gefitinib −6.25, erlotinib −5.60 kcal/mol"
+        },
+        {
+          "metric": "Top compounds",
+          "published_value": "MCULE-6473175764, CSC048452634, CSC070083626 (best QPPCaco among hits: 939.9/1255.9/712.3)"
+        },
+        {
+          "metric": "MM/GBSA ΔG",
+          "published_value": "−47.92 / −36.16 / −48.69 kcal/mol"
+        },
+        {
+          "metric": "MD",
+          "published_value": "200 ns; stable RMSD/RMSF for all three"
+        }
+      ]
+    },
+    {
+      "id": "task_002",
+      "file": "task_002_trkb_pharmacophore_vs.md",
+      "doi": "https://doi.org/10.1177/11779322231158254",
+      "pmc": "PMC9989394",
+      "pdbs": [
+        "1WWB"
+      ],
+      "pass_bar": "≥1 candidate docking better than 7,8-DHF (−7.1 kcal/mol; published hits reach −9.6) with High GI absorption and an acceptable ADMET profile.",
+      "expected_outputs": [
+        "pharmacophore_model.json",
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "md_report.md",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Docking (Table 2)",
+          "published_value": "6 hits −9.6 to −8.8 kcal/mol vs 7,8-DHF −7.1; best: 91637738 −9.6, 91641310 −9.3, 91639858 −9.3, 91639334 −9.2, 91640550 −9.0, 91639725 −8.8"
+        },
+        {
+          "metric": "Library",
+          "published_value": "691 unique ligands after drug-likeness filters"
+        },
+        {
+          "metric": "ADMET (Table 4)",
+          "published_value": "All 6 hits: High GI absorption, BBB non-permeant, ESOL/Ali soluble (Silicos-IT poorly soluble); consensus LogP 1.95–2.41; TPSA 107.8–127.77 Å; SA 3.88–4.12; 7,8-DHF inhibits CYP1A2/2D6/3A4 vs hits inhibiting ≤1 CYP"
+        },
+        {
+          "metric": "Interactions (Table 3)",
+          "published_value": "Hits: H-bonds Asp370 (2.86 Å), Leu361 (top-2: 2.25/2.2 Å; hits 3–6: 2.18–2.24 Å); 7,8-DHF: Ala363 (2.68 Å), Thr306 (2.19 Å)"
+        },
+        {
+          "metric": "MD (1 ns NAMD)",
+          "published_value": "Ligand RMSD comp 1 0.2–0.8 Å / comp 2 0.6–1.8 Å (backbone drifts to ~5.3 Å in both); PCA PC1–3: 69.5% (comp 1) / 79.3% (comp 2); H-bonds 6 (comp 1) / 10 (comp 2)"
+        },
+        {
+          "metric": "Paper-internal conflicts",
+          "published_value": "P-gp text self-contradicts (calls both compound groups \"potential substrates\"; Table 4 marks only 1/3/6 as substrates); compound-1 H-bond text cites \"Figure 9\", which is compound 2's graph; Table 1 also duplicates one acceptor row"
+        }
+      ]
+    },
+    {
+      "id": "task_003",
+      "file": "task_003_mmp9_sbvs.md",
+      "doi": "https://doi.org/10.1371/journal.pone.0346627",
+      "pmc": "PMC13175377",
+      "pdbs": [
+        "2OVX"
+      ],
+      "pass_bar": "≥1 candidate docking at −9.96 kcal/mol or better (Glide SP-anchored; compare engine-relative) with Lipinski pass, PAINS 0, Ames-negative, MM-GBSA below −45.17 kcal/mol (MMPBSA.py-anchored; compare engine-relative), and stable 200 ns MD relative to the co-crystal reference.",
+      "expected_outputs": [
+        "pharmacophore_model.json",
+        "screening_results.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "md_energies.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Top hit",
+          "published_value": "CHEMBL3990662: −9.96 kcal/mol Glide SP; H-bonds Arg424 (1.98 Å), Thr426 (2.56), Tyr423 (2.78), Gly186 (2.12); Zn²⁺ π-cation; hydrophobic Leu418, His401, Leu188"
+        },
+        {
+          "metric": "Top-10 range",
+          "published_value": "−9.28 to −9.96 kcal/mol (Table 2; CHEMBL1181759 listed 9th at −9.58, out of descending order — paper quirk)"
+        },
+        {
+          "metric": "Screen funnel",
+          "published_value": "25,083 ChEMBL → 278 hits (≥4 features, score ≥ 1.5) → top 10 docked"
+        },
+        {
+          "metric": "Pharmacophore validation",
+          "published_value": "ROC AUC 0.70"
+        },
+        {
+          "metric": "Redock RMSD",
+          "published_value": "0.217 Å (co-crystal ligand)"
+        },
+        {
+          "metric": "Drug-likeness (Table 3)",
+          "published_value": "all 10 Lipinski-Yes; PAINS 0 except CHEMBL1194647 and CHEMBL547206 (1 alert each); Brenk 0 for all; TPSA 53.7–146 Å², LogP 0.82–3.90, LogS −2.8 to −5.6"
+        },
+        {
+          "metric": "ADMETLab (Table 4)",
+          "published_value": "HIA+ and BBB+ for all 10; PPB+ only 4/10 (CHEMBL3990662, CHEMBL1184827, CHEMBL1194647, CHEMBL1181759); Ames-positive (avoid): CHEMBL1181759, CHEMBL547206; Ames \"Yellow\" (moderate/uncertain): CHEMBL1184827, CHEMBL3990207, CHEMBL3991298; use table values — the text quotes clearance numbers as \"PPB\" (paper-internal mix-up)"
+        },
+        {
+          "metric": "MD 200 ns",
+          "published_value": "hit RMSD ~1.4–1.8 Å (rising to ~2.1–2.3 Å after ~170 ns) vs co-crystal ~2.6–2.9 Å; RMSF mostly 0.4–1.0 Å; Rg ~14.7–15.2 Å; PCA PC1 24.76% (hit) vs 51.88% (co-crystal); FEL 4.5–6.7 kcal/mol"
+        },
+        {
+          "metric": "MM/GBSA",
+          "published_value": "hit −45.17 vs co-crystal −43.78 kcal/mol; MM/PBSA −12.08 vs −6.21"
+        },
+        {
+          "metric": "Decomposition note",
+          "published_value": "per-residue MM/GBSA residues (Gly77, His117, Val114, Leu134, Tyr139, Arg140) never match the docking active-site residues (His401/405/411, Arg424, Tyr423, Gly186, Leu188) — unreconciled in the paper"
+        }
+      ]
+    },
+    {
+      "id": "task_004",
+      "file": "task_004_pi5p4k_allosteric_docking.md",
+      "doi": "https://doi.org/10.1038/s41598-025-07480-x",
+      "pmc": "PMC12485083",
+      "pdbs": [
+        "7QPN"
+      ],
+      "pass_bar": "≥1 hit docking better than the same-engine DVF redock score (paper reference: −9.26 AutoDock 4.2 / −10.4 PyRx kcal/mol) with MM-PBSA ΔG below −68.44 kJ/mol and stable 250 ns MD.",
+      "expected_outputs": [
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "md_energies.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Reference docking",
+          "published_value": "DVF −9.26 kcal/mol (AutoDock 4.2) / −10.4 (PyRx)"
+        },
+        {
+          "metric": "Hit docking range",
+          "published_value": "−7.31 to −11.1 kcal/mol (AutoDock 4.2); −7.06 to −10.0 (PyRx)"
+        },
+        {
+          "metric": "Redock RMSD",
+          "published_value": "0.45 Å (AutoDock 4.2) vs co-crystal pose"
+        },
+        {
+          "metric": "MM-PBSA ΔG",
+          "published_value": "Hits II −103.64, III −163.67, IV −150.65 kJ/mol vs DVF −68.44 ± 1.80"
+        },
+        {
+          "metric": "MD",
+          "published_value": "250 ns; complexed protein RMSD <0.4 nm, ligand RMSD <0.15 nm; PCA/FEL stable"
+        },
+        {
+          "metric": "Hits",
+          "published_value": "4 pyrrole-pyrimidine-core hits (Hit I–IV; Table 1 lists IUPAC names only — mapping CHEMBL2418346/47 to specific hits is derived, not stated in the paper)"
+        }
+      ]
+    },
+    {
+      "id": "task_005",
+      "file": "task_005_pi3ka_docking_dynamics.md",
+      "doi": "https://doi.org/10.1039/D2RA03451D",
+      "pmc": "PMC9346375",
+      "pdbs": [
+        "4JPS"
+      ],
+      "pass_bar": "≥1 hit with docking score ≤ −3.941 kcal/mol in the engine used (Vina/Diffdock equivalent of the Glide XP reference) and MMGBSA-style ΔG ≤ −42.58 (Copanlisib reference) with acceptable ADMET.",
+      "expected_outputs": [
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "Library",
+          "published_value": "36,324 ChemDiv kinase inhibitors"
+        },
+        {
+          "metric": "Cascade",
+          "published_value": "HTVS → 1000 → SP → 30 → XP → top 10; redock RMSD 1.1327 Å"
+        },
+        {
+          "metric": "Reference",
+          "published_value": "Copanlisib: XP −3.941 kcal/mol, MMGBSA −42.58, IFD −2244.06"
+        },
+        {
+          "metric": "Top hits",
+          "published_value": "6943: −11.973 / MMGBSA −62.97; 34100: −11.312 / −55.18 (leads; IFD −2252.79 / −2245.53)"
+        },
+        {
+          "metric": "MD",
+          "published_value": "100 ns; RMSD 6943 1.2–1.6 Å; 34100 2–3 Å; Copanlisib 2–4 Å"
+        }
+      ]
+    },
+    {
+      "id": "task_006",
+      "file": "task_006_dual_kinase_pharmacophore.md",
+      "doi": "https://doi.org/10.3389/fphar.2025.1534707",
+      "pmc": "PMC11926154",
+      "pdbs": [
+        "2OH4",
+        "3EFK"
+      ],
+      "pass_bar": "≥1 candidate with docking scores below −60 kJ/mol against both kinases and acceptable ADMET.",
+      "expected_outputs": [
+        "pharmacophore_models.json",
+        "screening_ranking.csv",
+        "docking_scores.csv",
+        "admet_panel.csv",
+        "metrics.json"
+      ],
+      "evaluation_metrics": [
+        {
+          "metric": "LibDock cutoffs",
+          "published_value": "VEGFR-2 >142.5 (1,667 hits), c-Met >142.6 (3,529 hits)"
+        },
+        {
+          "metric": "Docking quality",
+          "published_value": "All 18 dual hits with docking scores below −60 kJ/mol; redock RMSD 0.8199 Å (GIG) / 0.2934 Å (MT4)"
+        },
+        {
+          "metric": "Pharmacophores",
+          "published_value": "2OH4_01 EF 15.3, AUC 0.940; 3EFK_01 EF 15.3, AUC 0.960"
+        },
+        {
+          "metric": "Final dual hits",
+          "published_value": "compound17924, compound4312"
+        },
+        {
+          "metric": "MM/PBSA ΔG",
+          "published_value": "VEGFR-2: 17924 −134.072 vs GIG −88.638; c-Met: 17924 −118.564 vs MT4 −23.696 kJ/mol; 4312 −94.904 (VEGFR-2) / −81.097 (c-Met)"
+        },
+        {
+          "metric": "MD",
+          "published_value": "100 ns; c-Met RMSD 17924 0.2834 / 4312 0.2498 vs MT4 0.3568 nm"
+        }
+      ]
+    }
+  ]
+}
