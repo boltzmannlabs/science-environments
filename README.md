@@ -17,7 +17,8 @@ science-environments/
 │   │   ├── research-notes.md
 │   │   └── references.md
 │   ├── formulation-optimisation-gym-environments/
-│   └── impurity-retrosynthesis/
+│   ├── impurity-retrosynthesis/
+│   └── retro_environment/        # target-specific research notes and references
 ├── environments/
 │   ├── formulation_dissolution/
 │   │   ├── README.md
@@ -41,7 +42,8 @@ science-environments/
 │   │   ├── skills/
 │   │   └── tools/
 │   ├── formulation-optimisation-gym-environments/
-│   └── impurity-retrosynthesis/
+│   ├── impurity-retrosynthesis/
+│   └── retro_environment/        # target-specific computational route audit
 ├── synthesis-route-gym/
 ├── docs/
 │   └── decisions/
@@ -51,7 +53,7 @@ science-environments/
 
 The tree shows directories and primary entry points; the environment also retains its top-level Python modules, reports, source provenance, and third-party notices.
 
-Start with the [Formulation Dissolution environment](environments/formulation_dissolution/README.md) or the [research index](research/README.md). The environment is In Progress; its [status](environments/formulation_dissolution/STATUS.md), [model and tool inventory](environments/formulation_dissolution/MODELS_AND_TOOLS.md), and [test instructions](environments/formulation_dissolution/tests/README.md) describe the implemented scope and outstanding validation.
+Start with the [Formulation Dissolution environment](environments/formulation_dissolution/README.md), the [retro_environment case study](environments/retro_environment/README.md), or the [research index](research/README.md). The retro_environment is a model-output audit, not an experimentally verified synthesis. The formulation environment is In Progress; its [status](environments/formulation_dissolution/STATUS.md), [model and tool inventory](environments/formulation_dissolution/MODELS_AND_TOOLS.md), and [test instructions](environments/formulation_dissolution/tests/README.md) describe its implemented scope and outstanding validation.
 
 The [Impurity Retrosynthesis evidence environment](environments/impurity-retrosynthesis/README.md) provides conservative route-export auditing, synthetic-fixture tests and a [literature benchmark](environments/impurity-retrosynthesis/benchmark/README.md) without publishing profile-scoped raw outputs or claiming experimental validation. Its [research notes](research/impurity-retrosynthesis/research-notes.md), [current status](environments/impurity-retrosynthesis/STATUS.md) and [source review](research/impurity-retrosynthesis/references.md) distinguish model predictions from primary patent reports.
 
