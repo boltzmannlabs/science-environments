@@ -16,7 +16,8 @@ science-environments/
 │   ├── formulation_dissolution/
 │   │   ├── research-notes.md
 │   │   └── references.md
-│   └── formulation-optimisation-gym-environments/
+│   ├── formulation-optimisation-gym-environments/
+│   └── impurity-retrosynthesis/
 ├── environments/
 │   ├── formulation_dissolution/
 │   │   ├── README.md
@@ -40,7 +41,7 @@ science-environments/
 │   │   ├── skills/
 │   │   └── tools/
 │   ├── formulation-optimisation-gym-environments/
-│   └── retrosynthesis/
+│   └── impurity-retrosynthesis/
 ├── synthesis-route-gym/
 ├── docs/
 │   └── decisions/
@@ -51,5 +52,7 @@ science-environments/
 The tree shows directories and primary entry points; the environment also retains its top-level Python modules, reports, source provenance, and third-party notices.
 
 Start with the [Formulation Dissolution environment](environments/formulation_dissolution/README.md) or the [research index](research/README.md). The environment is In Progress; its [status](environments/formulation_dissolution/STATUS.md), [model and tool inventory](environments/formulation_dissolution/MODELS_AND_TOOLS.md), and [test instructions](environments/formulation_dissolution/tests/README.md) describe the implemented scope and outstanding validation.
+
+The [Impurity Retrosynthesis evidence environment](environments/impurity-retrosynthesis/README.md) provides conservative route-export auditing, synthetic-fixture tests and a [literature benchmark](environments/impurity-retrosynthesis/benchmark/README.md) without publishing profile-scoped raw outputs or claiming experimental validation. Its [research notes](research/impurity-retrosynthesis/research-notes.md), [current status](environments/impurity-retrosynthesis/STATUS.md) and [source review](research/impurity-retrosynthesis/references.md) distinguish model predictions from primary patent reports.
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection remains pending in [LICENSE](LICENSE).

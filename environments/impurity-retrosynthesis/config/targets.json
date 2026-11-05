@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "planning_basis": {"isolated_mass_g_each": 100, "minimum_purity_percent": 95, "currency": "INR"},
+  "targets": [
+    {"label": "Ibuprofen EP Impurity A", "cas": "66622-47-7", "candidate_smiles": "CC(C)CC1=CC(=CC=C1)C(C)C(=O)O", "identity_status": "provisional PubChem name/CAS match; stereochemistry unspecified"},
+    {"label": "Ibuprofen EP Impurity M", "cas": "60057-62-7", "candidate_smiles": "CC(C)CC1=CC=C(C=C1)C(C)(C(=O)O)O", "identity_status": "provisional PubChem name/CAS match; stereochemistry unspecified"},
+    {"label": "Osimertinib Impurity A", "cas": "1421373-98-9", "candidate_smiles": null, "identity_status": "hold; CAS maps to AZ5104/Impurity 3, supplied label A not verified"}
+  ]
+}

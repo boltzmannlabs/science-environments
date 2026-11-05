@@ -1,0 +1,9 @@
+# Status
+
+In Progress. This package implements conservative graph/identity and evidence-field auditing; route-specific chemistry remains a reviewer task. Published results are derived summaries of two completed service jobs (A: 12 paths/38 reaction nodes; M: 7 paths/21 nodes), NOT raw platform exports. Third target: no service job, because CAS 1421373-98-9 resolves to AZ5104/metabolite M6 and the supplied designation "Osimertinib Impurity A" lacks an authoritative mapping. WO2013014448A1 Example 59 names the CAS-associated N-H indole product; this still does not establish the impurity label.
+
+All 19 original model roots matched provisional PubChem-derived target SMILES in the local RDKit screen. None of the 59 reaction-labelled nodes had nonempty citation or procedure fields in the export. Ten nodes contained an element absent from *listed* immediate inputs, which could be supplied by omitted reagents; that is not whole-reaction atom-balance failure. No route was validated, optimized, scaled or priced in INR. Patent CN108794319B and WO2003043625A1 report direct A-product syntheses but do not validate the exact exported routes.
+
+Not complete: verified third identity, complete atom mapping, condition-specific precedent, starting-material/pack availability, isolated yields, ≥95% analytical validation, safety review, and low/base/high INR estimates. No scorecard ranking, lead/backup recommendation or physical experiment is claimed.
+
+Repository publication status is determined by actual GitHub read-back, not this static document. The remote repository's contribution guidance requires an Issue and PR/reviewer approval before a release into `main`; this package is not marked maintainer-approved. Branch-specific publication, if it succeeds, is not equivalent to a merged or scientifically approved environment.
