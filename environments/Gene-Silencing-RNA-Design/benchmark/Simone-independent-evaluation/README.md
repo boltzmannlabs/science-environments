@@ -13,3 +13,15 @@ Context quality: 320 in-domain, 2 N-padded (transcript-end clamps). Full per-rec
 predictions in `predictions.csv`; metrics in `metrics.json`. Frozen gates, no tuning.
 Reading: first auditable independent measured-performance number for this stack; ~0.12 AUC
 generalization gap vs the exposed Mix-469 cohort (descriptive replay, source workspace).
+
+## Benchmark metrics
+
+| Metric | Value |
+|---|---|
+| n scored / pos / neg | 322 / 241 / 81 |
+| **AUC** (cutoff label >= 0.7) | **0.7021** |
+| Pearson | 0.5074 |
+| Spearman | 0.393 |
+| Context quality | 321 in-domain / 2 N-padded |
+
+Reference context: exposed Mix-469 replay — RN.Ai AUC 0.8195 (descriptive, not like-for-like); generalization gap ≈ 0.12 AUC.

@@ -88,8 +88,16 @@ All benchmarks ran under frozen `engine-v1.0.0_protocol-v1.0` gates with no tuni
 | Descriptive replay | Mix-469 | exposed | OligoFormer AUC 0.8437 · RN.Ai 0.8195 (published refs 0.8163/0.818 — not like-for-like) |
 | Same-side battery | 7 approved siRNA drugs (FDA GINAS/EPAR-verified sequences + decoded modification maps) vs our TTR top-20 | anchor | efficacy bands coincide (RN.Ai median 84.3 vs 84.5); all drugs UGUGU-free; gates flag 6/20 of ours |
 | Generator vs approved sites | TTR pool (598 windows) | anchor | vutrisiran site #62/598 (89.6th pct) · patisiran #107/598 (82.1st pct) |
-| Case study (DESIGN end-to-end) | HIF1AN NM_001530.4 vs 100 clean measured siRNAs | clean | generator's first clean validation: OligoFormer AUC **0.760**/P 0.635; measured-top-10 at median **97.5th percentile** of our ranking; frozen off-target gate saturates for this target (v1.1 backlog) |
-| Explorer post-hoc | HIF1AN exploratory loop | clean, blind selection | 3/18 gate-re-anchored clean candidates measured **0.92/0.92/0.87** (base rate 0.785) |
+| Case study (DESIGN end-to-end) | HIF1A NM_001530.4 vs 100 clean measured siRNAs | clean | generator's first clean validation: OligoFormer AUC **0.760**/P 0.635; measured-top-10 at median **97.5th percentile** of our ranking; frozen off-target gate saturates for this target (v1.1 backlog) |
+| Explorer post-hoc | HIF1A exploratory loop | clean, blind selection | 3/18 gate-re-anchored clean candidates measured **0.92/0.92/0.87** (base rate 0.785) |
+| Oncology case studies | HPSE (n=106) + HK2 (n=95) measured siRNAs | clean | rank-recovery median **94.5th/95.1st pct**; per-sequence AUC 0.58–0.72 (target-dependent) |
+| Gene-regulation case study | MYC (n=7) measured siRNAs | clean | rank-recovery median **92.6th pct**; discrimination degenerate at n=7 (percentile-only) |
+| Functional-genomics panels | seed-distinct panels on 3 pools | clean, overlap-limited | panel picks measured **0.92/0.91** where tiling overlaps (base 0.80) |
+| Inflammation scanner | 13 published IFN-inducers (Hornung/Judge/Goodchild) | curated public | frozen UGUGU rule: **specificity 1.00, sensitivity 0.10** — hazard filter; incompleteness measured, not tuned |
+| Allele ΔΔG | 26 published allele-guides (Pfister/Sibley/Miller/Alves/Hu) | curated public | ΔΔG direction confirmed: selective **6.7** vs weak **4.7** kcal/mol; Pearson 0.42 (n=5 subset) |
+| Neuro EVALUATE | 26 Pfister HTT guides vs reporter IC50 | curated public | context-free RN.Ai Spearman **0.296** (degraded-input lower bound) |
+| Bootstrap CIs (2026-11-05) | all gene-level AUCs | — | HIF1A OF [0.615–0.877], RN.Ai [0.639–0.901] exclude 0.5; **HPSE OF [0.465–0.703] includes 0.5** (disclosed) |
+| **Large-pool head-to-head (v2)** | 4 genes · 16,802 windows · 308 measured siRNAs; manual vs sub-agent filtering with identical finalist budgets (locus-scoped E4a v1.2.1) | clean, pre-registered | pooled ordering: manual **0.569** [0.476–0.662] vs sub-agent **0.591** [0.488–0.693] — CI-overlap tie at predictor ceiling; sub-agent +0.14 AUC on HK2; panel results in the case folder |
 
 Computational benchmark results are not biological validation; no wet-lab measurement exists for any generated candidate.
 
@@ -103,4 +111,4 @@ Computational benchmark results are not biological validation; no wet-lab measur
 
 ## 9. Failure handling
 
-A broken tool blocks only its dependent dimension (`NOT_RUN(reason)`). Known: E4e RNAhybrid binary incompatibility (quarantined; backlog). Gate saturation (HIF1AN off-target) is diagnosed and surfaced — under DESIGN it yields an honest no-deliverable outcome; under EXPLORATORY it triggers proposed re-anchoring. Recovery never invents scores, pads candidates or silently changes thresholds.
+A broken tool blocks only its dependent dimension (`NOT_RUN(reason)`). Known: E4e RNAhybrid binary incompatibility (quarantined; backlog). Gate saturation (HIF1A off-target) is diagnosed and surfaced — under DESIGN it yields an honest no-deliverable outcome; under EXPLORATORY it triggers proposed re-anchoring. Recovery never invents scores, pads candidates or silently changes thresholds.

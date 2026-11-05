@@ -37,7 +37,7 @@ def rule_score(g):
     s += 0.3 if len(set(g[i:i+7] for i in range(0, 3))) > 1 else 0.0              # trivial diversity guard
     return round(s, 3)
 
-def explore(pool_path, transcript_fa, panel_size=6, tier_cap=60, verbose=True):
+def explore(pool_path, transcript_fa, panel_size=6, tier_cap=60, verbose=True, target_gene=None):
     pool = list(csv.DictReader(open(pool_path)))
     for p in pool: p["score"] = float(p["oligoformer_native_score"])
     pool.sort(key=lambda r: -r["score"])
@@ -90,7 +90,8 @@ def explore(pool_path, transcript_fa, panel_size=6, tier_cap=60, verbose=True):
     for r in survivors:
         if len(clean) >= max(panel_size * 3, 18): break
         if evaluated >= tier_cap: break
-        hits = len(full_length_hits(r["guide_sequence"], None))
+        hits = len([h for h in full_length_hits(r["guide_sequence"], None, target_gene=target_gene)
+                    if not h.is_intended_target])  # v1.2.1: locus-scoped E4a (scope-explicit)
         evaluated += 1
         r["full_len_hits"] = hits
         if hits <= 10: clean.append(r)
@@ -106,7 +107,7 @@ def explore(pool_path, transcript_fa, panel_size=6, tier_cap=60, verbose=True):
         K = min(40, len(survivors))
         step = max(1, len(survivors) // K)
         sample = survivors[::step][:K]
-        shits = [len(full_length_hits(r["guide_sequence"], None)) for r in sample]
+        shits = [len([h for h in full_length_hits(r["guide_sequence"], None, target_gene=target_gene) if not h.is_intended_target]) for r in sample]
         evaluated += len(shits)
         for r, h in zip(sample, shits): r["full_len_hits"] = h
         srt = sorted(shits)
@@ -121,7 +122,7 @@ def explore(pool_path, transcript_fa, panel_size=6, tier_cap=60, verbose=True):
         for r in survivors:
             if len(clean) >= max(panel_size * 3, 18) or evaluated >= tier_cap + 80: break
             if r.get("full_len_hits") is None:
-                r["full_len_hits"] = len(full_length_hits(r["guide_sequence"], None))
+                r["full_len_hits"] = len([h for h in full_length_hits(r["guide_sequence"], None, target_gene=target_gene) if not h.is_intended_target])
                 evaluated += 1
             if r["full_len_hits"] <= q25 and r not in clean:
                 r["rel_gate_only"] = True
@@ -173,7 +174,10 @@ if __name__ == "__main__":
     ap.add_argument("--pool", required=True, help="generation all_ranked_candidates.csv")
     ap.add_argument("--transcript", required=True, help="RNA transcript FASTA")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--target-gene", default=None, help="gene symbol for locus-scoped E4a (v1.2.1); REQUIRED for correct off-target semantics — warn if omitted")
     a = ap.parse_args()
-    rep = explore(a.pool, a.transcript)
+    if a.target_gene is None:
+        print("WARNING (v1.2.1): --target-gene omitted; E4a will count SAME-GENE isoform hits as off-targets (scope loss).", file=sys.stderr)
+    rep = explore(a.pool, a.transcript, target_gene=a.target_gene)
     json.dump(rep, open(a.out, "w"), indent=2)
     print(json.dumps({k: v for k, v in rep.items() if k not in ("clean_candidates", "variants")}, indent=2))

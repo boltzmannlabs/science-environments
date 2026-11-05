@@ -1,0 +1,250 @@
+{
+  "cohort": "published allele-selective siRNAs (Pfister HTT 2009, Sibley 2011, Miller 2008?, Alves, Hu; curated 2026-11-05)",
+  "method": "RNAduplex 37C; dG(perfect=mutant site) vs dG(weakest single-base mismatch at published position); frozen convention, no tuning",
+  "n_total": 26,
+  "n_kd_pct": 5,
+  "n_ic50_dr": 21,
+  "kd_subset": {
+    "pearson_ddg_vs_selectivity": 0.423,
+    "spearman": 0.2,
+    "selective_ddg_median": 6.7,
+    "weak_ddg_median": 4.7
+  },
+  "caveats": "mismatch base not always published -> weakest-penalty of 3 alternatives (favors mismatch stability = conservative lower bound on discrimination); HTT rows reporter-IC50-based; small n",
+  "rows": [
+    {
+      "id": "Pfister_HTT_01",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.0,
+      "ddg_weakest_mismatch": 6.2,
+      "selectivity": 1.6,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_02",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -32.7,
+      "ddg_weakest_mismatch": 3.9,
+      "selectivity": 1.2,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_05",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -38.6,
+      "ddg_weakest_mismatch": 5.7,
+      "selectivity": 2.1,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_06",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.8,
+      "ddg_weakest_mismatch": 5.2,
+      "selectivity": 0.87,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_07",
+      "gene": "HTT",
+      "mismatch_pos": 16,
+      "dg_match": -42.9,
+      "ddg_weakest_mismatch": 6.6,
+      "selectivity": 0.99,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_08",
+      "gene": "HTT",
+      "mismatch_pos": 16,
+      "dg_match": -39.9,
+      "ddg_weakest_mismatch": 6.6,
+      "selectivity": 1.1,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_09",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -38.6,
+      "ddg_weakest_mismatch": 5.2,
+      "selectivity": 1.9,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_10",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.2,
+      "ddg_weakest_mismatch": 5.2,
+      "selectivity": 1.2,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_11",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -39.5,
+      "ddg_weakest_mismatch": 5.2,
+      "selectivity": 1.6,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_14",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -34.8,
+      "ddg_weakest_mismatch": 5.2,
+      "selectivity": 4.5,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_16",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.4,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 0.11,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_17",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -37.4,
+      "ddg_weakest_mismatch": 6.7,
+      "selectivity": 3.7,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_18",
+      "gene": "HTT",
+      "mismatch_pos": 16,
+      "dg_match": -37.0,
+      "ddg_weakest_mismatch": 6.2,
+      "selectivity": 0.7,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_19",
+      "gene": "HTT",
+      "mismatch_pos": 16,
+      "dg_match": -39.0,
+      "ddg_weakest_mismatch": 6.2,
+      "selectivity": 0.41,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_20",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -36.3,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 5.9,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_21",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.5,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 15.0,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_22",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -31.4,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 11.0,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_23",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.7,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 31.0,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_24",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -35.7,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 2.7,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_25",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -31.0,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 17.0,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Pfister_HTT_26",
+      "gene": "HTT",
+      "mismatch_pos": 10,
+      "dg_match": -37.7,
+      "ddg_weakest_mismatch": 6.7,
+      "selectivity": 4.9,
+      "sel_type": "IC50_discrimination_ratio"
+    },
+    {
+      "id": "Sibley_siRNA-p1314",
+      "gene": "SNCA",
+      "mismatch_pos": 13,
+      "dg_match": -34.8,
+      "ddg_weakest_mismatch": 3.7,
+      "selectivity": 48.0,
+      "sel_type": "mut_minus_wt_pct"
+    },
+    {
+      "id": "Sibley_siRNA-p4",
+      "gene": "LRRK2",
+      "mismatch_pos": 4,
+      "dg_match": -31.9,
+      "ddg_weakest_mismatch": 4.7,
+      "selectivity": 38.0,
+      "sel_type": "mut_minus_wt_pct"
+    },
+    {
+      "id": "Miller_siC10",
+      "gene": "ATXN3",
+      "mismatch_pos": 10,
+      "dg_match": -39.1,
+      "ddg_weakest_mismatch": 6.9,
+      "selectivity": 86.19999999999999,
+      "sel_type": "mut_minus_wt_pct"
+    },
+    {
+      "id": "Miller_siC7/8",
+      "gene": "ATXN3",
+      "mismatch_pos": 7,
+      "dg_match": -39.4,
+      "ddg_weakest_mismatch": 6.7,
+      "selectivity": 66.60000000000001,
+      "sel_type": "mut_minus_wt_pct"
+    },
+    {
+      "id": "Miller_siA9/C12",
+      "gene": "MAPT",
+      "mismatch_pos": 9,
+      "dg_match": -28.1,
+      "ddg_weakest_mismatch": 4.2,
+      "selectivity": 87.3,
+      "sel_type": "mut_minus_wt_pct"
+    }
+  ]
+}

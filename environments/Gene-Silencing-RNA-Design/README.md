@@ -32,7 +32,7 @@ Gene-Silencing-RNA-Design/
 │   ├── candidate.schema.json
 │   ├── thresholds.v1.0.frozen.json
 │   ├── ttr_design.example.json
-│   └── hif1an_exploratory.example.json
+│   └── hif1a_exploratory.example.json
 ├── runtime/
 │   ├── CONTRACTS.md
 │   ├── immune_scan.py
@@ -53,10 +53,12 @@ Gene-Silencing-RNA-Design/
 │   └── validation.json
 ├── benchmark/
 │   ├── README.md
+│   ├── WORKFLOWS_AND_VALIDATION.md   (per-benchmark workflows, tools, validation, arms)
+│   ├── HeadToHead-LargePool/         (manual-vs-sub-agent definitive comparison)
 │   ├── PROVENANCE.sha256
 │   ├── Simone-independent-evaluation/
 │   ├── TTR-approved-drugs-cohort/
-│   └── HIF1AN-case-study/
+│   └── HIF1A-case-study/
 └── results/
 ```
 

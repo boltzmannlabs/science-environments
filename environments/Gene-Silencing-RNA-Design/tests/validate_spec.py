@@ -35,7 +35,7 @@ def check_files():
     missing = [f for f in need if not os.path.isfile(os.path.join(ENV, f))]
     assert not missing, f"missing: {missing}"
     for pair in [("config/ttr_design.example.json", "tasks/ttr_design.example.json"),
-                 ("config/hif1an_exploratory.example.json", "tasks/hif1an_exploratory.example.json")]:
+                 ("config/hif1a_exploratory.example.json", "tasks/hif1a_exploratory.example.json")]:
         assert read(pair[0]) == read(pair[1]), f"example drift: {pair}"
     return f"{len(need)} core files present; task/config examples identical"
 
@@ -79,7 +79,7 @@ def check_schemas():
     return "2 schemas well-formed; 10 applications; 5 ranking dimensions"
 
 def check_examples():
-    for f in ["config/ttr_design.example.json", "config/hif1an_exploratory.example.json"]:
+    for f in ["config/ttr_design.example.json", "config/hif1a_exploratory.example.json"]:
         b = json.loads(read(f))
         for k in ["brief_id", "target", "application", "objective", "priorities", "constraints"]:
             assert k in b, f"{f}: missing {k}"
@@ -105,15 +105,31 @@ def check_benchmarks():
     t = json.loads(read("benchmark/TTR-approved-drugs-cohort/drug_site_rank_audit.json"))
     ranks = {k: v["rank_in_pool"] for k, v in t["drug_sites"].items()}
     assert ranks == {"patisiran": 107, "vutrisiran": 62}, f"rank audit mismatch: {ranks}"
-    h = json.loads(read("benchmark/HIF1AN-case-study/benchmark_join.json"))["metrics"]
-    assert h["OligoFormer"]["auc"] == 0.76 and h["RN.Ai"]["auc"] == 0.7803, "HIF1AN metrics mismatch"
+    h = json.loads(read("benchmark/HIF1A-case-study/benchmark_join.json"))["metrics"]
+    assert h["OligoFormer"]["auc"] == 0.76 and h["RN.Ai"]["auc"] == 0.7803, "HIF1A metrics mismatch"
+    hp = json.loads(read("benchmark/Oncology-HPSE-HK2-cohorts/HPSE_benchmark_join.json"))
+    hk = json.loads(read("benchmark/Oncology-HPSE-HK2-cohorts/HK2_benchmark_join.json"))
+    myc = json.loads(read("benchmark/Gene-regulation-MYC-cohort/MYC_benchmark_join.json"))
+    assert hp["OligoFormer"]["auc"] == 0.5838 and hk["OligoFormer"]["auc"] == 0.6445, "oncology metrics mismatch"
+    assert myc["top10_measured_percentiles"]["median"] == 92.6, "MYC percentile mismatch"
+    assert "0.92" in read("benchmark/Functional-genomics-panels/panel_benchmark.json"), "panel benchmark missing"
+    inf = json.loads(read("benchmark/Inflammation-IFN-cohort/inflammation_scanner_benchmark.json"))
+    assert inf["specificity"] == 1.0 and inf["sensitivity"] == 0.1, "inflammation scanner metrics mismatch"
+    al = json.loads(read("benchmark/Allele-selective-duplex/allele_ddg_benchmark.json"))
+    assert al["kd_subset"]["selective_ddg_median"] == 6.7, "allele ddg mismatch"
+    ne = json.loads(read("benchmark/Neuro-HTT-evaluate/neuro_htt_evaluate_benchmark.json"))
+    assert ne["spearman_rnai_vs_neglog10_ic50"] == 0.296, "neuro metrics mismatch"
+    hp = json.loads(read("benchmark/HeadToHead-LargePool/stage1_metrics.json"))
+    assert hp["metrics"]["pooled"]["A"]["auc"] == 0.5685 and hp["metrics"]["pooled"]["B"]["auc"] == 0.5908, "large-pool AUC mismatch"
+    pp = json.loads(read("benchmark/HeadToHead-LargePool/stage2_panels.json"))
+    assert pp["armB_subagent"]["seed_distinct"] is True and pp["armB_subagent"]["e4a_locus_max"] == 0, "panel mismatch"
     prov = dict(l.split(maxsplit=1)[::-1] for l in
                 read("benchmark/PROVENANCE.sha256").strip().splitlines())
     for rel, want in prov.items():
         p = os.path.join(ENV, "benchmark", rel.strip())
         got = hashlib.sha256(open(p, "rb").read()).hexdigest()
         assert got == want.strip(), f"provenance mismatch: {rel}"
-    return "benchmark numbers match spec; 6 provenance hashes verified"
+    return f"benchmark numbers match spec; {len(prov)} provenance hashes verified"
 
 def check_runtime_import():
     mods = []
