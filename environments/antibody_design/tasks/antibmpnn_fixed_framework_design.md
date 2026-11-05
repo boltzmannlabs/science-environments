@@ -1,89 +1,79 @@
-# Task: antibmpnn_fixed_framework_design
+# Task: huj3_gp120_fixed_framework_design
 
 ## Description
 
-Design and assess **humanized J3 (huJ3) VHH candidates against HIV-1 gp120** using **AntiBMPNN** for fixed-backbone sequence design and **AlphaFold 3** for monomer and antibody–antigen complex assessment. Execute two configurations: **AB-H3**, using the six-site CDR3 design mask, and **AB-H1**, redesigning CDR1.
+Design humanized J3 (huJ3) VHH variants against HIV-1 C1086 gp120 while preserving the parent framework sequence and canonical backbone. Evaluate the generated candidates using only three physicochemical predictions: residue-volume descriptors, hydrophilicity descriptors, and net charge.
 
-Preserve the supplied framework sequence and canonical framework backbone. Generate candidates independently, analyze their sequence frequencies and physical descriptors, and compare their structural assessments with the native parent. Prior output sequences and mutation identities are not provided.
+Calculate the same properties for the native parent under matched conditions. Choose suitable computational methods independently and retain actual calculation outputs for later comparison.
 
 ## Target
 
-**Target:** HIV-1 C1086 gp120 construct represented by PDB 7RI1 polymer entity 1, **382 residues**\
-**Reference Antibody:** Humanized J3 (huJ3)\
-**Binding Region:** J3-associated gp120 interface with verified antigen mapping\
-**Structure and Context:** Supplied huJ3 structure, chain B, **121 residues**, continuously numbered 1–121\
-**Reference Inputs:** Native huJ3 sequence and backbone; verified gp120 construct and chain mapping\
+**Target:** HIV-1 C1086 gp120\
+**Reference Antibody:** The supplied 121-residue humanized J3 parent\
+**Binding Region:** J3-associated gp120 interface\
+**Structure and Context:** PDB 7RI1 polymer entity 1, author chain A\
+**Reference Inputs:** Supplied parent sequence, native antigen coordinates and construct sequence, residue mapping, and a sequence-matched parent structural model\
 **Antibody Format:** Single-domain VHH\
-**Objective:** Generate constrained CDR variants and assess sequence frequencies, monomer structures, and gp120 complexes
+**Objective:** Generate constrained CDR variants and predict their residue-volume descriptors, hydrophilicity descriptors, and charge
 
 ## Design Constraints
 
-- Use one-based positions in the supplied observed huJ3 chain sequence. Verify correspondence with the structure before generation.
-- For AB-H3, allow changes only at **97, 101, 103, 104, 105, and 106**. Preserve every other residue, including the native motif at **98–100**.
-- For AB-H1, allow changes only at **26–33**. Preserve all other positions and keep the full length at **121 residues**.
-- Preserve framework amino-acid identities and canonical backbone coordinates. Use zero coordinate noise for the initial fixed-backbone evaluation.
-- Keep AlphaFold 3 predictions separate from the canonical design. Report predicted framework movement without replacing the fixed input backbone.
-- Keep the same antigen construct across candidates and controls. PDB 7RI1 contains llama J3; do not substitute that antibody for the humanized huJ3 parent.
-- Assign unique candidate IDs and sequence hashes. Distinguish generated draws, unique sequences, native recoveries, and structurally evaluated candidates.
-- Return up to three eligible unique non-native candidates per configuration without filling the shortlist with failed or unresolved candidates.
+- Use this native parent input sequence:
+
+  ```text
+  EVQLVESGGGLVQPGGSLRLSCAASGSIFNQYAMAWFRQAPGKEREFVAGMGAVPHYGEFVKGRFTISRDNSKNTVYLQMNSLRAEDTAVYYCARSKSTYISYNSNGYDYWGQGTLVTVSS
+  ```
+
+- The antibody deposited in 7RI1 differs from this humanized parent. Preserve the supplied parent sequence outside the permitted design positions.
+- Build or validate a sequence-matched parent structure, then freeze it as the canonical backbone before design.
+- Use one-based parent positions. Run separate configurations allowing edits at CDR1 positions **26–33**, or CDR3 positions **97, 101, 103, 104, 105, and 106**.
+- Preserve every other residue, including positions **98–100**, and retain the parent sequence length.
+- Preserve the canonical backbone and framework identities. Record protected-position and coordinate-preservation checks as input/design validity checks.
+- Keep the antigen construct, numbering, missing-residue treatment, and parent/candidate calculation conditions consistent.
+- Declare generation budget, sampling settings, selection rule, descriptor definitions, and charge-calculation conditions before inspecting results.
 
 ## Computational Tool Capabilities
 
-Use the following tools and capabilities in order. Record unavailable capabilities and leave their required evidence unresolved.
+Choose suitable available capabilities independently. If a required capability is missing, use an appropriate open-source implementation and execute the calculation. Record actual methods and versions in the output.
 
 | Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Validate inputs and baseline | Verify huJ3 identity, antigen construct, native backbone, chain mapping, and design boundaries. | Verified reference records, residue correspondence, and separate CDR1/CDR3 masks. |
-| 2. Generate constrained sequences | Use **AntiBMPNN** to sample the declared CDR positions while preserving the remaining sequence and backbone. | Full candidate sequences, edit traces, model identity, sampling parameters, and actual draw counts. |
-| 3. Assess sequence frequencies | Use the **AntiBMPNN** frequency-based assessment to group candidates and calculate recovery and physical descriptors. | Unique-sequence counts, frequencies, substitutions, recovery definitions, volume, hydrophilicity, and charge at pH 7.4. |
-| 4. Select structural candidates | Select the three most frequent eligible non-native unique candidates per configuration, or all if fewer exist. | Frozen candidate set, frequency ranking, mask compliance, and duplicate exclusions. |
-| 5. Assess monomer structures | Use **AlphaFold 3** for each selected candidate and the native huJ3 control. | Five monomer structures per sequence, confidence outputs, local uncertainty, and the selected monomer. |
-| 6. Assess target complexes | Use **AlphaFold 3** for each selected candidate–gp120 pair and the native control complex. | Five complex structures per pair, interface confidence, ranking scores, contact maps, clashes, and selected complexes. |
-| 7. Select and report | Apply framework, sequence, and structural-completeness requirements before ranking. | Separate configuration shortlists, native comparisons, exclusions, numerical results, and unresolved evidence. |
-
-For the initial environment evaluation, request **1,000 AntiBMPNN sequence draws per configuration**, sampling temperature **0.1**, batch size **10**, the supplied zero-noise model, and inference coordinate noise **0.0**. Record training-noise and inference-noise settings separately, along with actual random seeds or any seed limitations.
-
-For the larger sampling profile, request **32,768 draws** with batch size **8** and verify the actual output count.
-
-Use **five AlphaFold 3 samples per sequence or complex** with a declared reconstruction seed of **1** for the initial evaluation. Select monomers by highest mean pLDDT and complexes by highest ranking score. Keep all samples and record MSA/template settings. Record all actual inputs, seeds, and modeling settings.
+| 1. Prepare inputs | Retrieve and validate native inputs, map residues, and establish the frozen parent backbone. | Input sequences, coordinates, residue maps, preparation notes, and hashes. |
+| 2. Generate candidates | Generate complete sequences within each permitted edit mask using the fixed structural context. | Candidate sequences, canonical structures, edit traces, and actual generation settings. |
+| 3. Check design validity | Verify protected identities, sequence length, framework preservation, and duplicate handling. | Validity decisions and reasons for exclusions. |
+| 4. Predict physicochemical properties | Calculate the three requested properties for each generated candidate and the native parent. | Region-specific descriptor and charge records, calculation conditions, and raw outputs. |
+| 5. Compare and report | Apply the predeclared selection rule and summarize candidate-minus-parent differences. | Complete measurements, shortlist, exclusions, and unresolved calculations. |
 
 ## Evaluation Metrics
 
-| Criterion | Measurements and Evidence | Evaluation Rule |
+| Property | Required Prediction | Calculation Scope and Reporting |
 | --- | --- | --- |
-| Identity and allowed edits | Full sequence, residue correspondence, substitutions, length, and sequence hash. | Require zero out-of-mask substitutions and unchanged antibody length. |
-| Framework backbone | Canonical input coordinates, coordinate-noise setting, and independently predicted framework movement. | Require unchanged canonical framework coordinates and initial inference noise **0.0**. |
-| Sampling and frequencies | Requested draws, actual outputs, unique sequences, cluster frequencies, and native recoveries. | Exclude native input/control records from generated-draw counts. |
-| Recovery and physical descriptors | Unchanged-identity fraction, volume, hydrophilicity, and charge at pH 7.4. | State the residue set, denominator, and calculation method. |
-| Monomer confidence | Per-sample mean pLDDT, local/CDR confidence, missing coordinates, and geometry. | Select the highest-mean-pLDDT monomer. Confidence is not a binding threshold. |
-| Complex assessment | Per-sample AlphaFold 3 ranking score, interchain uncertainty, contacts, clashes, and pose consistency. | Select the highest-ranking-score complex and retain its interface uncertainty. |
-| Evidence completeness | Five monomer and five complex samples per selected sequence, correct chain mappings, native outputs, method versions, and provenance. | Missing structures or unresolved mappings leave evaluation incomplete. |
+| Residue-volume descriptor | Calculate the physical-descriptor component representing residue volume. | Report CDR1 and the full CDR3 analysis segment separately. Record the amino-acid coefficient table, normalization, aggregation rule, and descriptor scale. This descriptor must remain distinguishable from a geometric molecular-volume calculation. |
+| Hydrophilicity descriptor | Calculate the physical-descriptor component representing hydrophilicity. | Use the same segment boundaries and descriptor definition for parent and candidates. Record the coefficient table and normalization; identify any alternative hydropathy measure separately. |
+| Net charge | Calculate segment charge under the declared physiological-pH condition. | Record the exact pH, ionization constants, terminal-group treatment, method, and charge in elementary-charge units. Use identical conditions for parent and candidates. |
 
-Rank eligible candidates separately for each configuration by decreasing selected complex ranking score, then decreasing selected monomer mean pLDDT, then decreasing sequence frequency, with candidate ID as the tie-breaker. This is a confidence ranking rather than an affinity ranking.
+Use one-based positions **26–33** for CDR1 analysis and **94–110** for the full CDR3 analysis segment. Keep calculations over the designable mask separate from calculations over the full segment. Whole-antibody descriptors may be supplied separately, with their scope clearly labeled.
+
+For every property, retain the candidate result, freshly calculated parent result, difference, units or descriptor scale, calculation conditions, method version, sequence hash, and raw-artifact path. Missing results must remain explicitly unavailable. Do not assume that increasing or decreasing a descriptor is beneficial without a declared objective.
 
 ## Expected Output
 
 **Format:** `antibody_design_bundle`\
-**Directory:** `08_results/antibmpnn_fixed_framework_design/`
+**Directory:** `08_results/huj3_gp120_fixed_framework_design/<run_id>/` outside the task-definition directory
 
-- `designed_sequences.fasta`: eligible full-length VHH candidates with candidate and configuration identifiers.
-- `metrics.json`: native and candidate records, sequence hashes, sampling parameters, frequencies, physical descriptors, structural measurements, framework checks, rule decisions, exclusions, provenance, and stop reason.
-- `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256,case_id` rows, ranked separately for AB-H3 and AB-H1.
-- `report.md`: generation counts, structural candidate selection, native comparison, numerical results, ranking rationale, limitations, and unresolved evidence.
-- Supporting native input records, design masks, generated sequences, frequency summaries, all predicted structures and confidence outputs, and execution logs with relative paths and SHA-256 hashes.
-
-Keep the native parent out of the designed shortlist. Report missing inputs as `NEEDS_INPUT`, missing evaluation requirements as `PROTOCOL_REQUIRED`, and distinguish incomplete evaluation from a completed result with no qualifying candidates.
+- `designed_sequences.fasta`: generated full-length candidate sequences with configuration identifiers.
+- `property_predictions.csv`: candidate and parent property results, segment boundaries, differences, units/scales, conditions, and missing-result status.
+- `metrics.json`: the three requested property predictions, input/design validity checks, methods, parameters, hashes, and exclusions.
+- `shortlist.csv`: eligible unique candidates selected using the declared property-based rule.
+- `report.md`: input preparation, actual execution, property comparisons, selection rationale, and limitations.
+- Supporting structures, residue maps, native calculation outputs, and execution logs.
 
 ## Important Instructions
 
-- Scientific source: Sun et al., *AntiBMPNN: Structure-Guided Graph Neural Networks for Precision Antibody Engineering*, Advanced Science, 2025. DOI: [10.1002/advs.202504278](https://doi.org/10.1002/advs.202504278).
-- Source and protocol boundaries: the huJ3 parent, declared CDR masks, and gp120 construct identify the molecular inputs. The zero-inference-noise initial profile is a fixed-backbone task adaptation; distinguish it from the source's reported BN 0.5 and sampling temperature 0.1, and record training-noise and runtime-noise settings separately.
-- Reproducibility limits: verify the actual random-seed behavior of the supplied AntiBMPNN version. Original AlphaFold 3 seeds, MSAs, templates, and exact antigen inputs are not fully specified in the released example; record the reconstruction settings actually used and do not promise historical numerical identity. Monomer and complex confidence do not establish experimental affinity.
-- Held-out evaluation: citations establish methodological provenance. Prior output sequences, reported mutations, precomputed frequency tables, and historical structural/experimental result tables must not guide generation or selection. Freeze new outputs and rankings before evaluator comparison.
-
-- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
-- Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
-- Execute AntiBMPNN and both AlphaFold 3 stages on newly generated candidates. Sequence generation or precomputed-score lookup alone does not complete this task.
-- Keep the six-site CDR3 mask distinct from other design intervals described in the study. Design positions are input constraints, not disclosed output mutations.
-- Freeze generated outputs, structural candidate selection, and rankings before evaluator comparison with held-out outcomes.
-- Record actual methods, model versions, parameters, seed limitations, MSA/template settings, structural mappings, units, and provenance. Structural confidence does not establish experimental affinity or neutralization.
+- Use actual calculations. Keep all generated sequences traceable to the native parent and their permitted edits.
+- Use only the three listed physicochemical properties as comparison objectives.
+- Do not consult prior designed candidate sequences, output mutation lists, historical rankings, or precomputed outcome tables during generation or selection.
+- Keep generated outputs frozen before an independent evaluator performs later comparisons.
+- Record actual calculation definitions and conditions so subsequent comparisons can establish whether the same quantities were evaluated.
+- Run long calculations in a persistent screen session with logging enabled and record how to attach to it.
+- Keep execution artifacts outside this task-definition directory and preserve native inputs.
