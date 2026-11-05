@@ -23,7 +23,7 @@ def test_task_files_use_canonical_naming():
     for fname in env_lib.task_files():
         assert re.match(r"^task_\d{3}_[a-z0-9_]+\.md$", fname), fname
     ids = [f[5:8] for f in env_lib.task_files()]
-    assert ids == ["001", "002", "003", "004", "005", "006"], ids
+    assert ids == [f"{i:03d}" for i in range(1, len(ids) + 1)], ids
 
 
 if __name__ == "__main__":

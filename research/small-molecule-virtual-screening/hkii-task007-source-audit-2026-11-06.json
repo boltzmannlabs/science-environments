@@ -1,0 +1,317 @@
+{
+  "audit_date": "2026-11-06",
+  "audit_scope": "Document-to-source verification; no scientific execution or live GitHub inspection",
+  "task_file": "environments/structure-based-discovery/tasks/task_007_hkii_antidengue_virtual_screening.md",
+  "task_sha256": "6bad2b7a9f50179c98e26df07035f10067f5a1cad198175b789ccf67ecc17d6f",
+  "sources": [
+    {
+      "url": "https://www.mdpi.com/2673-6284/10/1/1",
+      "local_audit_copy": "/tmp/hkii-2021.pdf",
+      "sha256": "e49bc35aa80a1c7665e2363ce66210d6399a76d5261e2e4a412fdf90c303e223",
+      "pages": 28
+    },
+    {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9245486/fullTextXML",
+      "local_audit_copy": "/tmp/hkii-2021.xml",
+      "sha256": "177a00e15d70d1bf6110f99849806f66f865a55d2c4e76f66d2a684558bfb6b3",
+      "article_version": "PMC9245486.1"
+    }
+  ],
+  "checked_claim_groups": [
+    {
+      "claim_group": "bibliography",
+      "source": "front/article-meta",
+      "checked_values": {
+        "doi": "10.3390/biotech10010001",
+        "pmcid": "PMC9245486",
+        "volume": "10",
+        "issue": "1",
+        "article": "1",
+        "epub_date": "2020-12-28",
+        "journal_year": "2021"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "docking scores, reference baseline and reported contacts",
+      "source": "Table 10",
+      "checked_values": {
+        "reference": "−7.2",
+        "candidates": [
+          "−7.2",
+          "−7.0",
+          "−6.10"
+        ],
+        "hbonds": [
+          "7",
+          "5",
+          "2"
+        ]
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "docking scores, reference baseline and reported contacts",
+      "source": "Table 11",
+      "checked_values": {
+        "reference": "−7.9",
+        "candidates": [
+          "−7.8",
+          "−7.4",
+          "−7.0"
+        ],
+        "hbonds": [
+          "11",
+          "9",
+          "5"
+        ]
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "docking scores, reference baseline and reported contacts",
+      "source": "Table 12",
+      "checked_values": {
+        "reference": "−6.0",
+        "candidates": [
+          "−6.8",
+          "−6.3",
+          "−6.3"
+        ],
+        "hbonds": [
+          "4",
+          "3",
+          "1"
+        ]
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "ADME candidate ranges and binary entries",
+      "source": "Table 4",
+      "checked_values": {
+        "Intestinal absorption (human)": {
+          "minimum": "59.316",
+          "maximum": "59.79"
+        },
+        "BBB permeability": {
+          "minimum": "-0.9",
+          "maximum": "-0.786"
+        },
+        "CNS permeability": {
+          "minimum": "-3.552",
+          "maximum": "-3.192"
+        }
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "ADME candidate ranges and binary entries",
+      "source": "Table 5",
+      "checked_values": {
+        "Intestinal absorption (human)": {
+          "minimum": "0",
+          "maximum": "26.376"
+        },
+        "BBB permeability": {
+          "minimum": "-1.032",
+          "maximum": "-0.928"
+        },
+        "CNS permeability": {
+          "minimum": "-3.604",
+          "maximum": "-3.46"
+        }
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "ADME candidate ranges and binary entries",
+      "source": "Table 6",
+      "checked_values": {
+        "Intestinal absorption (human)": {
+          "minimum": "86.764",
+          "maximum": "87.984"
+        },
+        "BBB permeability": {
+          "minimum": "-0.265",
+          "maximum": "-0.025"
+        },
+        "CNS permeability": {
+          "minimum": "-3.254",
+          "maximum": "-3.147"
+        }
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "toxicity labels and LD50 ranges",
+      "source": "Table 7",
+      "checked_values": {
+        "candidate_count": 3,
+        "reported_class": 6,
+        "LD50_mg_kg": [
+          14388,
+          2300,
+          14388
+        ],
+        "listed_endpoint_entries": "Inactive"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "toxicity labels and LD50 ranges",
+      "source": "Table 8",
+      "checked_values": {
+        "candidate_count": 3,
+        "reported_class": 6,
+        "LD50_mg_kg": [
+          15900,
+          5500,
+          15900
+        ],
+        "listed_endpoint_entries": "Inactive"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "toxicity labels and LD50 ranges",
+      "source": "Table 9",
+      "checked_values": {
+        "candidate_count": 3,
+        "reported_class": 6,
+        "LD50_mg_kg": [
+          15900,
+          5500,
+          15900
+        ],
+        "listed_endpoint_entries": "Inactive"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "H-bond donor discrepancy",
+      "source": "Table 2 and Results 3.1.1",
+      "checked_values": {
+        "BG6_analogue_HBD": [
+          6,
+          6,
+          6
+        ],
+        "paper_stated_filter": "HBD <5"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "docking setup",
+      "source": "Methods 2.2.2",
+      "checked_values": {
+        "centre": [
+          43.567,
+          35.439,
+          36.27
+        ],
+        "box_A": [
+          26,
+          24,
+          22
+        ],
+        "unexplained_value": "measurement of space (1.000)",
+        "Vina_version_seed_exhaustiveness": "not specified"
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "MD method and version conflict",
+      "source": "Methods 2.3 and Results 3.3",
+      "checked_values": {
+        "methods_version": "5",
+        "results_version": "4.6.5",
+        "forcefield": "gromos96 54a7",
+        "water": "SPC",
+        "equilibration_ps": 100,
+        "production_ns": 20,
+        "short_range_cutoff_nm": "1.0",
+        "statistics_energy_interval_steps": 10
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "RMSD and hydrogen-bond narrative",
+      "source": "Results 3.3; PDF pages 18–24",
+      "checked_values": {
+        "prose_RMSD_A": {
+          "GLC": "±5.0",
+          "BG6": "±4.0",
+          "2DG": "±0.5"
+        },
+        "MD_average_hbonds_candidate_reference": {
+          "GLC": [
+            6,
+            4
+          ],
+          "BG6": [
+            7,
+            5
+          ],
+          "2DG": [
+            3,
+            6
+          ]
+        },
+        "independently_recomputed": false
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "visual plot check",
+      "source": "Publisher PDF pages 19, 21 and 22; Figures 5, 7 and 8",
+      "checked_values": {
+        "Figures_7A_8A": "curves around 0.4–0.5, axis labelled RMSD (Å), inconsistent with prose 4/5 Å",
+        "digitised": false,
+        "unit_correction_inferred": false
+      },
+      "status": "source_checked"
+    },
+    {
+      "claim_group": "task format",
+      "source": "Live Boltchem branch at b3297f85eeb66d973f78bfa5f96604909dd1569a and saved delivery",
+      "checked_values": {
+        "nine_sections_match": true,
+        "ordered_target_sideheadings_match": true,
+        "live_branch_checked": true,
+        "existing_live_task_numbers": [
+          "task_001",
+          "task_002",
+          "task_003",
+          "task_004",
+          "task_005",
+          "task_006"
+        ]
+      },
+      "status": "source_checked"
+    }
+  ],
+  "derived_task_requirements": [
+    "query-specific one-sided docking acceptance criteria",
+    "optional rather than mandatory MD",
+    "240-minute working-time limit",
+    "output filenames, packaging and directory",
+    "Boltzmann-only execution restriction and platform capability mapping",
+    "new-run provenance and completeness requirements"
+  ],
+  "unresolved": [
+    "Abstract chain B/C-terminal versus tables/methods chain A/N-terminal",
+    "Table 10 score versus one Results sentence",
+    "GROMACS version 5 versus 4.6.5",
+    "RMSD figure/prose discrepancy and unspecified raw units",
+    "Hydrogen-bond descriptions differ between abstract, tables, prose and captions",
+    "Class-6 toxicity label alongside LD50 2300 mg/kg",
+    "ADME service attribution and model/endpoint equivalence",
+    "Complete historical input library and raw pose/trajectory files not linked",
+    "2NZT coordinate ligand identities and query database identifiers not independently checked",
+    "Live platform schemas, access, engine versions and exact USRCAT support unverified"
+  ],
+  "full_scientific_reproducibility_certified": false,
+  "live_branch_inspected": "b3297f85eeb66d973f78bfa5f96604909dd1569a",
+  "github_pushed_at_audit_time": false
+}

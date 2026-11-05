@@ -1,5 +1,7 @@
 # Status
 
+**2026-11-06 addition:** [task_007 — HKII anti-dengue virtual screening](tasks/task_007_hkii_antidengue_virtual_screening.md), BioTech DOI 10.3390/biotech10010001 (PMC9245486), added under this existing environment. The original PDF/XML and all numerical task anchors were checked; source conflicts, incomplete historical data and unverified exact platform capabilities remain explicit in the task and its linked source audit. MD is optional. No scientific jobs were run. The existing single-score grader is not sufficient to certify task_007. Tasks 001–006 are preserved. The historical six-task status below applies to the earlier roster.
+
 **Qualified** (2026-11-05). All 6 tasks passed the full audit chain: extraction audit → verbatim audit → rule-compliance validation → exhaustive per-doc critique → closing re-audit. The replacement task (task_003, MMP-9) additionally passed an independent second-agent re-audit (one medium finding rejected after table-column verification — the paper's Table 4 shows BBB+ for all 10 compounds; two completeness findings applied).
 
 Layout rebuilt to the BioDesignBench format (v2.0.0): `config/`, `tasks/`, `tests/`, `scripts/`, `src/`, `benchmark/`, `results/` — `python3 scripts/validate_environment.py` exits 0.

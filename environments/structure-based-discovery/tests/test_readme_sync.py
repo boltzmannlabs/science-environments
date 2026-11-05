@@ -23,7 +23,15 @@ def test_root_readme_counts():
     root_path = os.path.join(os.path.dirname(env_lib.env_dir()), os.pardir, "README.md")
     root_path = os.path.normpath(root_path)
     root = open(root_path, encoding="utf-8").read()
-    assert root.count("| 6 |") == 2, "root README should list 6 tasks for each environment"
+    name = os.path.basename(env_lib.env_dir())
+    assert f"environments/{name}/README.md" in root, \
+        f"root README should link to the {name} environment"
+    if f"| [{name}](environments/{name}/) |" in root:
+        rows = [line for line in root.splitlines()
+                if line.startswith(f"| [{name}](environments/{name}/) |")]
+        assert len(rows) == 1, f"root README duplicates {name}"
+        assert rows[0].split("|")[-2].strip() == str(len(env_lib.task_files())), \
+            f"root README count differs from {name} task files"
 
 
 if __name__ == "__main__":

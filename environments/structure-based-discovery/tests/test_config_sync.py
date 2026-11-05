@@ -13,7 +13,7 @@ def test_environment_json_matches_task_docs():
     assert env, "config/environment.json missing (run scripts/gen_config.py)"
     files = env_lib.task_files()
     assert [t["file"] for t in env["tasks"]] == files, "config task list != tasks/*.md"
-    assert env["task_count"] == len(files) == 6
+    assert env["task_count"] == len(files)
     for fname in files:
         parsed = env_lib.parse_task(os.path.join(env_lib.tasks_dir(), fname))
         entry = next(t for t in env["tasks"] if t["file"] == fname)
@@ -33,7 +33,7 @@ def test_benchmark_json_matches_config():
 
 def test_papers_csv_rows():
     rows = env_lib.load_papers_csv()
-    assert len(rows) == 6, f"papers.csv has {len(rows)} rows"
+    assert len(rows) == len(env_lib.task_files()), f"papers.csv has {len(rows)} rows"
     for row in rows:
         assert re.match(r"^10\.\d{4,9}/\S+$", "10." + row["doi"].split("doi.org/10.")[-1]) or \
                row["doi"].startswith("https://doi.org/10."), row["doi"]

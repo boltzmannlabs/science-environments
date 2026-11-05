@@ -28,6 +28,9 @@ Every task follows the same five-stage chain (paper-verbatim parameters, engine-
 | task_004 | PI5P4Kγ allosteric site (cancer) | Sci Rep 2025 · PMC12485083 | beat same-engine DVF redock (−9.26 AutoDock 4.2 / −10.4 PyRx) + MM-PBSA < −68.44 kJ/mol |
 | task_005 | PI3Kα (NSCLC) | RSC Adv 2022 · PMC9346375 | ≤ −3.941 kcal/mol (Glide XP reference; engine-relative) + MMGBSA ≤ −42.58 |
 | task_006 | VEGFR-2 + c-Met (cancer, dual) | Front Pharmacol 2025 · PMC11926154 | < −60 kJ/mol against both kinases + acceptable ADMET |
+| task_007 | Human HKII (anti-dengue discovery) | BioTech 2021 · PMC9245486 | GLC/BG6/2DG-group Vina anchors ≤ −7.2/−7.8/−6.8 kcal/mol; documented ADME/toxicity; MD optional |
+
+**Task 007 qualification:** added as a documentation-level specification. Its optional-MD scope overrides the general workflow description above. Exact USRCAT screening, platform endpoint equivalence and effective docking controls remain unverified, and the paper has unresolved internal conflicts. The existing single-score grader is insufficient for its three-group criteria and must not certify this task before qualification. Tasks 001–006 retain their existing specifications.
 
 Machine-readable anchors: `config/environment.json` and `benchmark/benchmark.json` (generated from `tasks/*.md` by `scripts/gen_config.py` — the task docs are the single source of truth).
 
@@ -68,7 +71,7 @@ structure-based-discovery/
 ├── STATUS.md            # qualification state
 ├── MODELS_AND_TOOLS.md  # platform tool registry, engine anchoring
 ├── config/              # environment.json + environment.yaml (generated/hand)
-├── tasks/               # task_001..006 documents (source of truth)
+├── tasks/               # task_001..007 documents (source of truth)
 ├── tests/               # static validators (pytest-compatible)
 ├── scripts/             # gen_config.py, validate_environment.py, grade_run.py
 ├── src/                 # env_lib.py (parsing, validation, grading)
