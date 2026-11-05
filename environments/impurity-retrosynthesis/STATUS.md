@@ -1,9 +1,15 @@
 # Status
 
-In Progress. This package implements conservative graph/identity and evidence-field auditing; route-specific chemistry remains a reviewer task. Published results are derived summaries of two completed service jobs (A: 12 paths/38 reaction nodes; M: 7 paths/21 nodes), NOT raw platform exports. Third target: no service job, because CAS 1421373-98-9 resolves to AZ5104/metabolite M6 and the supplied designation "Osimertinib Impurity A" lacks an authoritative mapping. WO2013014448A1 Example 59 names the CAS-associated N-H indole product; this still does not establish the impurity label.
+Research prototype: local graph audit implemented and exercised; chemical/process validation remains outside the software's guarantees.
 
-All 19 original model roots matched provisional PubChem-derived target SMILES in the local RDKit screen. None of the 59 reaction-labelled nodes had nonempty citation or procedure fields in the export. Ten nodes contained an element absent from *listed* immediate inputs, which could be supplied by omitted reagents; that is not whole-reaction atom-balance failure. No route was validated, optimized, scaled or priced in INR. Patent CN108794319B and WO2003043625A1 report direct A-product syntheses but do not validate the exact exported routes.
+## Implemented
 
-Not complete: verified third identity, complete atom mapping, condition-specific precedent, starting-material/pack availability, isolated yields, ≥95% analytical validation, safety review, and low/base/high INR estimates. No scorecard ranking, lead/backup recommendation or physical experiment is claimed.
+Read-only export parsing, original route-ID preservation, RDKit structure/root matching, missing listed-element-source flags, citation/procedure-field checks, conservative hold decisions, and synthetic-fixture tests. Published historical summaries retain 19 paths and 59 reaction-labelled nodes for ibuprofen impurities A and M.
 
-Repository publication status is determined by actual GitHub read-back, not this static document. The remote repository's contribution guidance requires an Issue and PR/reviewer approval before a release into `main`; this package is not marked maintainer-approved. Branch-specific publication, if it succeeds, is not equivalent to a merged or scientifically approved environment.
+## Case-study status
+
+Racemic ibuprofen was also run and compared with literature, as confirmed by the project owner. The corresponding numerical export/report was not available in the publication checkout during this update; its completion is recorded explicitly in the results register, not silently counted among the existing A/M rows. The earlier unexecuted-target statement referred only to the proposed osimertinib label/CAS pair and must not be interpreted as saying the racemic ibuprofen task was unexecuted.
+
+## Remaining qualification
+
+Exact-step precedent, complete atom mapping, supplier availability, measured isolated yield/purity, process safety, scale-up and source-backed INR costing are not established by the software audit. Racemic ibuprofen numerical benchmark metrics await linking to its original run artifacts. Repository publication is not scientific approval.

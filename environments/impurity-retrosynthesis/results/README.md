@@ -1,7 +1,14 @@
-# Historical screening results (derived; no raw service outputs)
+# Results and case-study register
 
-Two Boltzmann retrosynthesis jobs completed for the two provisional ibuprofen impurity structures; a third job was not submitted pending name/identity reconciliation. `screening_summary.json` and `screening_routes.csv` are sanitized aggregates from that run; original model export JSON files were not copied into this public repository. The CSV retains source route IDs and model pathway rank fields only as model outputs with unverified calibration and unknown cost units. No personal home path, signed storage link, key or experimental dataset is included.
+| Case | Execution and literature comparison | Evidence available in this package |
+|---|---|---|
+| Ibuprofen impurity A | Completed computational run and literature comparison | 12 paths / 38 reaction-labelled nodes in screening_summary.json and screening_routes.csv |
+| Ibuprofen impurity M | Completed computational run and literature comparison | 7 paths / 21 reaction-labelled nodes in screening_summary.json and screening_routes.csv |
+| Racemic ibuprofen | Completed run and literature comparison, confirmed by project owner | Completion recorded in case_studies.json; original export, reference mapping and numerical metrics not present in this checkout |
+| Osimertinib impurity label/CAS proposal | Historical proposal held for identity reconciliation; not the racemic ibuprofen task | No generated paths in the published snapshot |
 
-Columns `missing_element_source` mark a product element absent from its *listed* precursors at any step; omitted reagents may supply it. `no_citation`/`no_procedure` flag empty fields in the original export, not absence of all possible literature. All routes remain `Hold pending evidence`; no yield, purity, labor, waste or 100 g INR cost was experimentally determined or quoted.
+The A/M aggregates cover only their two exported route sets. They do not count racemic ibuprofen and must not be presented as totals for all completed project tasks. Racemic ibuprofen is the para-isobutyl parent compound and must not be conflated with meta-substituted impurity A or alpha-hydroxy impurity M. Lack of a linked artifact is a reproducibility gap, not evidence that the owner-confirmed run did not happen.
 
-The target identity status and reference-level corrections are documented under `../../../research/impurity-retrosynthesis/`. Summary source records are original platform route keys and derived chemical checks, not artificial chemical outcomes. For reproducing a full screen, supply your own authorized original export to the CLI as explained in `../README.md`.
+All model-generated values remain distinct from measured results. No literature superiority, experimental yields, purity qualification or 100 g INR estimate is inferred for racemic ibuprofen from the available A/M summaries. Link its original result/report and exact literature comparison before reporting numerical performance.
+
+Raw account-scoped service exports, local machine paths, credentials and signed links are excluded. The audit flags missing element sources among *listed* precursors only, not full atom-balance failure. See [research notes](../../../research/impurity-retrosynthesis/research-notes.md) for scientific interpretation.

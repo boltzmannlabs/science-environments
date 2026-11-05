@@ -2,7 +2,7 @@
 
 ## Scientific task and separation of evidence
 
-For each of three targets separately, screen generated synthesis routes for target connectivity, chemically credible disconnections, exact vs analogous experimental precedent, feedstock availability, 100 g isolated/≥95% purity feasibility, hazard, and uncertainty-aware INR costs. The environment deliberately abstains when target identity, sources, yields, pricing or conditions are unresolved. A model pathway score is not experimental evidence.
+For each independently specified target, screen generated synthesis routes for target connectivity, chemically credible disconnections, exact vs analogous experimental precedent, feedstock availability, 100 g isolated/≥95% purity feasibility, hazard, and uncertainty-aware INR costs. The environment deliberately abstains when target identity, sources, yields, pricing or conditions are unresolved. A model pathway score is not experimental evidence.
 
 Input contract: an authorized UTF-8 JSON export with a top-level object mapping original route keys to nested `path` objects; graph nodes contain `smile`, `children`, optional `reaction_name`, `procedure`, `uspto_link`, model scores, and a platform `building_block` flag. A target SMILES is supplied externally and independently reviewed. Original route IDs are retained exactly. A complete reaction scheme including reagents, byproducts and conditions is NOT assured by this format.
 
