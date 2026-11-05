@@ -2,6 +2,14 @@
 
 Scientific environment specifications, research, workflows, and implementations for the **Agent Scientist ecosystem**.
 
+## BolChem specification contribution
+
+[BolChem](environments/bolchem/README.md) defines de novo p38α design and constrained
+DRD2 optimization tasks. Status: **Specification**; related issue: **#46**.
+Only the selected task file and its prepared input/scorer bundle belong in the
+execution-agent context. Runtime implementation and scientific validation remain
+separate work.
+
 This repository maintains a structured collection of scientific environments. Each environment contains its documentation, specifications, configuration, tasks, tests, scripts, source code, benchmarks, and results, as applicable.
 
 ## Repository Structure

@@ -4,6 +4,7 @@ Store research notes and scientific references by environment. Link each specifi
 
 | Topic | Notes | References | Environment |
 | --- | --- | --- | --- |
+| BolChem task specifications | [Research notes](bolchem/research-notes.md) | [References](bolchem/references.md) | [Environment](../environments/bolchem/README.md) |
 | Formulation dissolution (in progress; Rebolt branch) | [Research notes](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/research-notes.md) | [References](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/references.md) | [Environment](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/environments/formulation_dissolution) |
 | scRNA-seq cell type annotation | [Research notes](scRNAseq-environment/research-notes.md) | [References](scRNAseq-environment/references.md) | [Environment](../environments/scRNAseq-environment/README.md) |
 | Synthesis route planning | [Research notes](synthesis-route-gym/research-notes.md) | [References](synthesis-route-gym/references.md) | [Environment](../environments/synthesis-route-gym/README.md) |
