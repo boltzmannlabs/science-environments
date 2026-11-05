@@ -47,8 +47,11 @@ Markdown-only packaging contribution.
 
 ## Git workflow state
 
-Local branch: `Bolchem`, created in a separate worktree from available main snapshot
-`85ebef7517534010df31f4b8e12e1676e3455e41`. It now tracks `origin/Bolchem`, not main.
+The original local branch `Bolchem` was created in a separate worktree from available
+main snapshot `85ebef7517534010df31f4b8e12e1676e3455e41` and initially tracked
+`origin/Bolchem`. The local branch was subsequently renamed `Boltchem`; no upstream
+was configured at the time of the rename. The owner then authorized publication
+of the corrected branch. The existing remote branch has not been renamed or deleted.
 The branch was initially published without the new content; the owner subsequently
 authorized committing and pushing this specification increment. Actual publication
 is recorded in branch history. No PR, maintainer approval or merge is claimed.

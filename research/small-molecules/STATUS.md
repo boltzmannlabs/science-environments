@@ -11,7 +11,7 @@ Owner: Ankith116. Related issue: #46. Human reviewer: not assigned.
 - Incorporated earlier protocol, execution and independent-critic document reviews.
 - Placed the deliverables in the repository's environment/research structure.
 - Performed the document checks recorded in
-  [specification-validation.md](results/specification-validation.md).
+  [specification-validation.md](specification-validation.md).
 
 ## Remaining execution dependencies
 
@@ -28,7 +28,8 @@ claimed by documentation review.
 
 ## Contribution tracking
 
-- Local branch: `Bolchem`, as requested; distinct from the existing `BoltChem` branch.
+- Local branch: `Boltchem` (corrected spelling). The existing remote `Bolchem`
+  has not been renamed or deleted; `BoltChem` is also a distinct Git name.
 - Base: available `origin/main` snapshot `85ebef7517534010df31f4b8e12e1676e3455e41`.
 - A newer remote main was observed, but fetching was denied by automatic approval
   review under the user's earlier fetch/pull restriction. No fetch/pull succeeded.
@@ -50,3 +51,8 @@ claimed by documentation review.
 | --- | --- | --- |
 | 2026-11-05 | Created an isolated branch, organized the reviewed task specifications and completed document checks; the owner subsequently authorized content publication. | Input/scorer bundles, scientific execution and maintainer review remain pending. |
 | 2026-11-05 | Organized unchanged tasks into `small-molecule-de-novo-design/tasks/` and `small-molecule-optimization/tasks/`, and prepared the owner-requested BolChem-only working snapshot. | Publication authorized; future PR must transfer only our folders to a fresh branch from main. |
+
+The two modules were subsequently moved directly under `environments/` at the
+owner's request. Shared review material is retained in `research/small-molecules/`.
+The owner authorized publication of the corrected `Boltchem` branch; consult
+branch history for its publication state.

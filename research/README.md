@@ -1,9 +1,5 @@
-# BolChem research
+# Small-molecule research
 
-Owner/evaluator supporting material for the BolChem task specifications.
-
-- [Research notes](bolchem/research-notes.md).
-- [References](bolchem/references.md).
-- [Environment](../environments/bolchem/README.md).
-
-These documents are review context, not execution-agent prompts or candidate inputs.
+- [Research notes](small-molecules/research-notes.md).
+- [References](small-molecules/references.md).
+- [Shared specification](small-molecules/shared-specification.md).

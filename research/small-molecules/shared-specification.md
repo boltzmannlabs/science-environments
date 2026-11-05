@@ -28,13 +28,13 @@ potency, experimental ADMET, synthesis success or clinical utility.
 Exact inputs, inequalities, fingerprint definitions, selection, sampling,
 accounting, failure handling and output fields are maintained in:
 
-- [small-molecule-de-novo-design/tasks/p38alpha-design.md](small-molecule-de-novo-design/tasks/p38alpha-design.md).
-- [small-molecule-optimization/tasks/drd2-optimization.md](small-molecule-optimization/tasks/drd2-optimization.md).
+- [small-molecule-de-novo-design/tasks/p38alpha-design.md](../../environments/small-molecule-de-novo-design/tasks/p38alpha-design.md).
+- [small-molecule-optimization/tasks/drd2-optimization.md](../../environments/small-molecule-optimization/tasks/drd2-optimization.md).
 
 Keep these agent-facing task files free of literature identity, historical
 reference outcomes and prescribed reference algorithms. Keep evidence and
-scientific provenance in [owner-only research](../../research/bolchem/research-notes.md)
-and the [reference index](REFERENCES.md).
+scientific provenance in [owner-only research](research-notes.md)
+and the [reference index](references.md).
 
 ## Inputs and dependencies
 
@@ -45,7 +45,7 @@ resource ceilings and a separately controlled evaluator.
 
 The specific required manifests and fields are defined by each task. No empty
 configuration files or invented assets are supplied as substitutes. Software,
-model and capability limitations are recorded in [MODELS_AND_TOOLS.md](MODELS_AND_TOOLS.md).
+model and capability limitations are recorded in [MODELS_AND_TOOLS.md](models-and-tools.md).
 
 The de novo target structure is an input for docking; it does not require a
 pocket-conditioned generator. Optimization uses an activity predictor and needs
@@ -104,6 +104,6 @@ are not repository deliverables.
 - No credentials, generated candidate outcomes, large data or unrelated changes
   enter the contribution.
 
-See [validation evidence](results/specification-validation.md) and
+See [validation evidence](specification-validation.md) and
 [remaining work](STATUS.md). A future implementation has separate installation,
 interface, input/scorer qualification and scientific comparison acceptance criteria.

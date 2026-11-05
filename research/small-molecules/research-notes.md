@@ -6,7 +6,7 @@ Owner: Ankith116. Related issue: #46. Updated 5 November 2026.
 ## Defined deliverable
 
 Two task contracts plus owner documentation, maintained under
-[environments/bolchem](../../environments/bolchem/README.md).
+[de novo environment](../../environments/small-molecule-de-novo-design/README.md) and [optimization environment](../../environments/small-molecule-optimization/README.md).
 The source list is [references.md](references.md). Agent-facing tasks intentionally
 omit literature names, links, historical candidate outcomes and reference-algorithm
 instructions. The agent chooses the workflow; the objective and evaluator remain
