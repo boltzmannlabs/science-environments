@@ -1,82 +1,77 @@
-# Task: rfantibody_fixed_framework_design
+# Task: vhh_ha_rsv_fixed_framework_design
 
 ## Description
 
-Design and assess VHH antibody candidates against **influenza hemagglutinin** and **respiratory syncytial virus (RSV) site III** using the **RFantibody** workflow. Use **RFdiffusion** for CDR backbone design, **ProteinMPNN** for CDR sequence design, **antibody-tuned RoseTTAFold2** for structural assessment, and **Rosetta** for interface assessment when included in the evaluation protocol.
+Design VHH candidates against influenza hemagglutinin and respiratory syncytial virus fusion protein site III. Run separate antigen campaigns while preserving the parent framework sequence and internal framework backbone geometry.
 
-Preserve the supplied antibody framework sequence and internal framework backbone. Generate candidates independently and assess each target in a separate campaign. Prior output sequences and mutation identities are not provided.
+Evaluate only aggregation propensity, humanness, interface interaction energy, and predicted cross-target specificity. Choose suitable computational methods independently and retain actual results for later comparison.
 
 ## Target
 
-**Targets:** Influenza hemagglutinin and RSV site III\
-**Reference Antibody:** Supplied NbBCII10 VHH scaffold\
-**Binding Regions:** Supplied target hotspots: HA B146, B170, B177; RSV T305, T456\
-**Structure and Context:** Supplied antigen and framework structures with verified chain mapping and CDR annotations\
-**Reference Inputs:** Native scaffold sequence, framework backbone, antigen coordinates, and target-specific hotspot mapping\
+**Targets:** Influenza hemagglutinin and RSV fusion protein site III\
+**Reference Antibody:** PDB 3EAK chain A, observed variable-domain residues 1–127\
+**Binding Regions:** Hemagglutinin B521, B545, and B552 in 5VLI; the interprotomer region containing A305 and B456 in 7LUC\
+**Structure and Context:** 5VLI antigen chains A and B; 7LUC antigen chains A, B, and C\
+**Reference Inputs:** Native scaffold sequence and coordinates, antigen records, and verified chain/residue mappings\
 **Antibody Format:** Single-domain VHH\
-**Objective:** Generate CDR designs and evaluate framework preservation, structural consistency, and antigen interfaces
+**Objective:** Generate constrained CDR variants and predict aggregation propensity, humanness, interface interaction energy, and cross-target specificity
 
 ## Design Constraints
 
-- Preserve every framework amino acid and its internal backbone geometry. Whole-antibody rigid-body movement is permitted.
-- Design only HCDR1, HCDR2, and HCDR3. Use lengths of **7**, **6**, and **5–13 residues**, respectively, for the declared initial profile.
-- Preserve antigen sequence and maintain the case-specific target and hotspot mapping throughout evaluation.
-- Verify framework preservation from the actual generated structures. Framework conditioning alone does not establish exact preservation.
-- Use a declared framework audit tolerance of **0.01 Å** for both aligned backbone RMSD and maximum backbone-atom displacement. This is a task-specific numerical tolerance.
-- Keep independently predicted structures separate from canonical designs. Report predicted framework movement without replacing the fixed design backbone.
-- Assign unique candidate IDs and sequence hashes. Return up to three eligible unique candidates per target without filling the shortlist with failed or unresolved designs.
+- Extract the observed variable domain from 3EAK chain A; exclude duplicate scaffold chains and cloning tags.
+- Use one-based parent positions for native design regions: CDR1 **26–35**, CDR2 **55–60**, and CDR3 **102–117**. Preserve every framework residue outside these regions.
+- Request output loop lengths of **7**, **6**, and **5–13 residues**, respectively. Map protected residues explicitly when loop lengths change.
+- Preserve framework sequence and internal framework backbone coordinates. Whole-antibody rigid-body movement is permitted. Declare the coordinate-preservation tolerance before evaluation.
+- Use the specified native antigen chains and verify target sites against author residue numbering. Record missing regions, modifications, and preparation choices.
+- Keep canonical designs separate from any assessment structures prepared for interface scoring. Do not change canonical framework coordinates during scoring preparation.
+- Declare the generation budget, property definitions, comparison panel, and selection rule before inspecting results.
+- Assess HA candidates against RSV and RSV candidates against HA as the minimum cross-target comparison. Record any additional native decoy targets.
 
 ## Computational Tool Capabilities
 
-Use the following tools and capabilities in order. Record unavailable capabilities and leave their required evidence unresolved.
+Choose suitable available capabilities independently. If a required capability is missing, use an appropriate open-source implementation and execute the calculation. Record actual methods and versions in the output.
 
 | Stage | Capability | Expected Evidence |
 | --- | --- | --- |
-| 1. Validate inputs and baseline | Verify scaffold identity, framework/CDR boundaries, antigen chains, and hotspot mapping. | Verified reference sequences, structural inputs, residue correspondence, and edit masks. |
-| 2. Generate CDR backbones | Use **RFdiffusion** with the supplied framework and target-specific hotspots. | Generated structures, loop lengths, target poses, and framework-preservation measurements. |
-| 3. Design CDR sequences | Use **ProteinMPNN** on the generated backbones with only the declared CDRs designable. | Full candidate sequences, allowed-position edits, and zero framework substitutions. |
-| 4. Assess structural consistency | Use **antibody-tuned RoseTTAFold2** to predict the generated antibody–target complexes. | Predicted structures, interface uncertainty, and antibody/CDR consistency measurements. |
-| 5. Assess interfaces | Use **Rosetta** when required by the declared scoring protocol. Assess contacts, clashes, and buried surface area. | Protocol-specific interface scores, interface geometry, and score-function identity. |
-| 6. Select and report | Apply framework and structural criteria independently for HA and RSV. | Eligible candidates, exclusions, ranking rationale, numerical results, and unresolved evidence. |
-
-For the initial environment evaluation, request **2 backbones × 2 sequences per backbone per target**. Use **50 diffusion steps**, ProteinMPNN temperature **0.2**, coordinate augmentation **0.0**, and **10 RoseTTAFold2 recycles**. Use a hotspot-conditioning proportion of **0.0** during RoseTTAFold2 evaluation and record the actual random seeds. This is a small task evaluation profile rather than the original experimental campaign size.
+| 1. Prepare inputs | Retrieve native scaffold and antigen structures and verify chain/residue mappings. | Sequences, coordinates, preparation records, and input hashes. |
+| 2. Generate candidates | Generate CDR sequences and conformations while preserving the framework sequence and internal backbone geometry. | Candidate sequences, canonical structures, edit traces, and generation settings. |
+| 3. Check design validity | Verify permitted edits, loop lengths, framework preservation, and sequence–structure correspondence. | Validity decisions and reasons for exclusions. |
+| 4. Predict aggregation and humanness | Calculate spatial surface aggregation propensity and human-repertoire-based sequence humanness. | Candidate-level property outputs, residue-level contributions where supported, and calculation definitions. |
+| 5. Assess target and decoy interactions | Prepare antibody–antigen poses and calculate matched interface energies and cross-target interaction profiles. | On-target and decoy assessment structures, energy outputs, specificity profiles, and panel coverage. |
+| 6. Compare and report | Apply the predeclared property-based selection rule separately for each antigen. | Complete predictions, shortlist, exclusions, and unresolved calculations. |
 
 ## Evaluation Metrics
 
-| Criterion | Measurements and Evidence | Evaluation Rule |
+| Property | Required Prediction | Calculation Scope and Reporting |
 | --- | --- | --- |
-| Framework sequence | Framework identities, residue correspondence, and candidate sequence hashes. | Require zero framework substitutions. |
-| Framework backbone | Framework N, Cα, C, and O RMSD and maximum atom displacement after framework alignment. | Require both ≤ **0.01 Å** on the canonical design. |
-| Interface confidence | RoseTTAFold2 mean interchain predicted aligned error, in Å. | Require **< 10 Å** under the declared task protocol. |
-| Structural consistency | Target-aligned antibody and CDR Cα RMSDs; framework-aligned antibody and per-CDR Cα RMSDs, in Å. | Require target-aligned antibody RMSD **< 2 Å** as the declared interpretation of the generic consistency filter. Retain the other measurements. |
-| Interface quality | Target contacts, hotspot correspondence, buried area, clashes, and Rosetta interface energy when assessed. | Define the scoring protocol before evaluation. Apply the reported **−20** Rosetta energy threshold only with its matching energy protocol. |
-| Evidence completeness | Requested draws, successful structures, unique sequences, filters, method versions, and uncertainty. | Every mandatory criterion must pass; report missing stages and genuine zero-pass outcomes. |
+| Aggregation propensity | Calculate a spatial surface aggregation-propensity score for each candidate. | Record the structure used, solvent-exposure treatment, residue contributions where available, aggregation definition, and native score scale. Keep sequence-only aggregation estimates separately identified. |
+| Humanness | Calculate a human-repertoire prevalence-based humanness score. | Record peptide-window definition, subject-prevalence criterion, repertoire snapshot, sequence scope, and aggregation rule. Report whole-VHH and CDR-specific results where supported. |
+| Interface interaction energy | Calculate the energy difference between the bound complex and separated antibody/antigen partners under one consistent scoring protocol. | Preserve the energy definition, scoring units, sign convention, partner selections, preparation/refinement conditions, and structure hash. Keep component energies when available. |
+| Predicted cross-target specificity | Calculate each candidate's interaction profile against its intended target and the declared native decoy panel. | Retain per-target results, method and decision criterion, panel coverage, and on-target versus decoy comparisons. If the method supports positive-interaction classification, report positive fractions and their normalization with explicit denominators. Unsupported classifications remain unavailable. |
 
-Rank eligible candidates separately for each target by increasing interchain predicted aligned error, then increasing target-aligned antibody RMSD, with candidate ID as the tie-breaker. This is a structural ranking, not an experimental affinity claim.
+Record every candidate-level result, calculation method/version, units or score scale, conditions, and raw-artifact path. Summarize distributions separately for HA and RSV, retaining sample counts and the individual observations. Keep pooled summaries distinct from results for particular candidates.
+
+Predeclare the scoring and ranking rules. Different humanness definitions, aggregation measures, interaction-energy scales, or specificity criteria must remain distinguishable during later comparisons. If a normalized specificity result has a zero denominator, report it as undefined.
 
 ## Expected Output
 
 **Format:** `antibody_design_bundle`\
-**Directory:** `08_results/rfantibody_fixed_framework_design/`
+**Directory:** `08_results/vhh_ha_rsv_fixed_framework_design/<run_id>/` outside the task-definition directory
 
-- `designed_sequences.fasta`: eligible full-length VHH candidates with target and candidate identifiers.
-- `metrics.json`: reference and candidate measurements, framework checks, tool versions, parameters, rule decisions, exclusions, provenance, and stop reason.
-- `shortlist.csv`: ordered `rank,candidate_id,sequence_sha256,case_id` rows, ranked separately for HA and RSV.
-- `report.md`: execution counts, structural results, ranking rationale, native-baseline comparisons, limitations, and unresolved evidence.
-- Supporting input records, generated structures, predicted complexes, confidence outputs, scoring results, and execution logs with relative paths and SHA-256 hashes.
-
-Keep prior designs out of the generated shortlist. Report missing inputs as `NEEDS_INPUT`, missing evaluation requirements as `PROTOCOL_REQUIRED`, and distinguish incomplete evaluation from a completed result with no qualifying candidates.
+- `designed_sequences.fasta`: generated full-length VHH candidates with antigen and candidate identifiers.
+- `property_predictions.csv`: aggregation, humanness, and interface-energy predictions with units/scales, calculation conditions, and missing-result status.
+- `specificity_predictions.csv`: candidate-by-target predictions, target identities, scoring definitions, declared classifications where supported, and panel coverage.
+- `metrics.json`: the four requested property assessments, input/design validity checks, methods, parameters, hashes, and exclusions.
+- `shortlist.csv`: eligible unique candidates selected separately for each antigen using the declared rule.
+- `report.md`: input preparation, actual execution, property distributions, target/decoy comparisons, selection rationale, and limitations.
+- Supporting canonical designs, assessment structures, residue maps, native calculation outputs, and execution logs.
 
 ## Important Instructions
 
-- Scientific source: Bennett et al., *Atomically accurate de novo design of antibodies with RFdiffusion*, Nature, online 2025; volume 649, 2026. DOI: [10.1038/s41586-025-09721-5](https://doi.org/10.1038/s41586-025-09721-5).
-- Source and protocol boundaries: the RFantibody workflow supplies the molecular design and assessment methods. The small sampling budget, strict framework tolerance, and declared filtering interpretation are task settings; record their provenance separately from source-reported methods.
-- Reproducibility limits: framework conditioning does not guarantee exact coordinate preservation. Audit each generated canonical design. Model versions, random sampling, target constructs, and scoring protocols can change results; this task does not promise reproduction of a historical lead or screening campaign.
-- Held-out evaluation: use citations to establish methodological provenance. Prior design sequences, reported mutation identities, and historical result tables must remain unavailable as generation inputs; evaluator comparison occurs after outputs and rankings are frozen.
-
-- Report only measurements produced in the current run. Save actual tool logs and native result artifacts; missing observations must remain unresolved, never filled with assumed or copied values.
-- Use only the supplied native inputs and independently generated candidates. Do not retrieve prior output sequences, mutation identities, or historical result tables.
-- Execute RFdiffusion, ProteinMPNN, and antibody-tuned RoseTTAFold2 on newly generated candidates. Precomputed-score lookup alone does not complete this task.
-- Freeze generated outputs and rankings before evaluator comparison with held-out designs or experimental outcomes.
-- Record actual methods, model versions, parameters, seeds, structural mappings, units, and provenance. Record the settings actually used in this task.
-- A confident complex or favorable interface score does not establish experimental binding or neutralization.
+- Execute actual calculations and retain native outputs for every reported prediction.
+- Use only the four listed properties as comparison objectives. Supporting structures and validity checks establish that the inputs and designs comply with the task.
+- Do not consult prior designed candidate libraries, output mutation lists, historical rankings, or precomputed outcome tables during generation or selection.
+- Freeze generated outputs before an independent evaluator performs later comparisons.
+- Preserve method and construct differences so an evaluator can determine which quantities support direct numerical comparison.
+- Run long calculations in a persistent screen session with logging enabled and record how to attach to it.
+- Keep execution artifacts outside this task-definition directory and preserve native inputs.
