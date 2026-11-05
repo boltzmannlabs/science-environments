@@ -54,17 +54,32 @@ contracts:
   generic-antibody-metrics: config/monoclonal_reference/result.schema.json
   protocol: config/shared/protocol.schema.json
   mab-assay-record: config/shared/mab-assay-record.schema.json
-task_variants:
-  general: tasks/denv_antibody_001.md
-  tool_specific: tasks/denv_antibody_001_tools.md
+# Document-only evaluation prompts; these do not register executable profiles.
+paper_benchmark_tasks:
+  mab_her2_reference_optimization: tasks/monoclonal_antibody_design/mab_her2_reference_optimization.md
+  mab_pdl1_epitope_design: tasks/monoclonal_antibody_design/mab_pdl1_epitope_design.md
+  mab_pd1_epitope_design: tasks/monoclonal_antibody_design/mab_pd1_epitope_design.md
+  mab_lcat_cdr_design: tasks/monoclonal_antibody_design/mab_lcat_cdr_design.md
+  mab_gal3bp_reference_design: tasks/monoclonal_antibody_design/mab_gal3bp_reference_design.md
+paper_benchmark_references:
+  mab_her2_reference_optimization: benchmark/monoclonal_antibody_design/mab_her2_reference_optimization.md
+  mab_pdl1_epitope_design: benchmark/monoclonal_antibody_design/mab_pdl1_epitope_design.md
+  mab_pd1_epitope_design: benchmark/monoclonal_antibody_design/mab_pd1_epitope_design.md
+  mab_lcat_cdr_design: benchmark/monoclonal_antibody_design/mab_lcat_cdr_design.md
+  mab_gal3bp_reference_design: benchmark/monoclonal_antibody_design/mab_gal3bp_reference_design.md
+bispecific_benchmark_references:
+  bispecific_antibody_design: benchmark/bispecific_design/bispecific_antibody_design.md
+  bispecific_cellular_mechanism_assessment: benchmark/bispecific_assessment/bispecific_cellular_mechanism_assessment.md
+  bispecific_cns_delivery_assessment: benchmark/bispecific_assessment/bispecific_cns_delivery_assessment.md
+  bispecific_cns_readout_comparison: benchmark/bispecific_assessment/bispecific_cns_readout_comparison.md
+  bispecific_cns_shuttle_integrated_gate: benchmark/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md
+task_variants: {}
 task_templates:
-  reference_guided_monoclonal: tasks/mab_reference_guided_design.md
-  target_only_monoclonal: tasks/mab_target_only_design.md
-  bispecific_design: tasks/bispecific_antibody_design.md
-  bispecific_cellular_mechanism_assessment: tasks/bispecific_cellular_mechanism_assessment.md
-  bispecific_cns_delivery_assessment: tasks/bispecific_cns_delivery_assessment.md
-  bispecific_cns_readout_comparison: tasks/bispecific_cns_readout_comparison.md
-  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_cns_shuttle_integrated_gate.md
+  bispecific_design: tasks/bispecific_design/bispecific_antibody_design.md
+  bispecific_cellular_mechanism_assessment: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md
+  bispecific_cns_delivery_assessment: tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md
+  bispecific_cns_readout_comparison: tasks/bispecific_assessment/bispecific_cns_readout_comparison.md
+  bispecific_cns_shuttle_integrated_gate: tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md
 request_examples:
   reference_guided_monoclonal: config/monoclonal_reference/request.example.json
   denv_profile: config/monoclonal_reference/denv.request.example.json
@@ -82,9 +97,9 @@ validation:
   report: results/specification-validation.json
   contract_entrypoint: tests/task_contracts.py
 task_status:
-  reference_guided_monoclonal: active_specification
-  denv_profile: reference_guided_example
-  target_only_monoclonal: contract_schema_implemented
+  reference_guided_monoclonal: retained_contract_only
+  denv_profile: retained_contract_only
+  target_only_monoclonal: retained_contract_only
   bispecific_design: contract_schema_implemented
   bispecific_cellular_mechanism_assessment: contract_schema_implemented
   bispecific_cns_delivery_assessment: contract_schema_implemented

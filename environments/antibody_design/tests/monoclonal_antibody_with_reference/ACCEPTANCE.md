@@ -1,10 +1,12 @@
 # Acceptance and Validation Plan
 
+The DENV prompt variants referenced by these regression checks are retired fixtures under `tests/fixtures/retired_tasks/`. The active monoclonal tasks are the five documents in `tasks/monoclonal_antibody_design/`; this suite does not establish their scientific performance.
+
 The detailed scientific and contract test matrix for the supplied DENV-2 EDIII antigen and DV87.1 reference antibody is in [MONOCLONAL_ANTIBODY_TEST_CASES.md](MONOCLONAL_ANTIBODY_TEST_CASES.md). It applies identically to `denv_antibody_001.md` and `denv_antibody_001_tools.md`; the detail in the capability section cannot change biological inputs, evidence requirements, thresholds, budget, ranking, or expected outputs.
 
 ## Active release scope
 
-The scientific scenario suite remains reference-guided, paired-chain monoclonal antibody design, including the two DENV prompt variants. Shared configuration checks in `test_configurations.py` validate the profiles and declarations for all nine tasks. Target-only and bispecific profiles have dedicated schemas, while the reference-only preflight/bundle validator continues to reject those modes. Scientific behavior for the additional families is outside this suite.
+The software scenario suite covers retained reference-guided, paired-chain monoclonal contracts, including the two retired DENV prompt variants. Shared configuration checks in `test_configurations.py` validate nine contract profiles: four retained monoclonal profiles and five active bispecific profiles. These are separate from the ten active task documents. Target-only and bispecific profiles have dedicated schemas, while the reference-only preflight/bundle validator continues to reject those modes. Scientific behavior for the additional families is outside this suite.
 
 The primary software acceptance suite is `test_reference_guided.py`, exercised through the public `preflight` and `validate_bundle` entry points. It uses synthetic inputs and checks the reusable contract independently of DENV task identity. See [COVERAGE.md](COVERAGE.md) for implemented checks and remaining gaps.
 

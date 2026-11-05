@@ -56,6 +56,8 @@ Use verified capabilities supplied by the execution environment in the following
 
 Use architecture- and mechanism-appropriate criteria from the supplied protocol. Record unsupported endpoints explicitly; do not turn predictive scores into claims of function, delivery, or safety.
 
+Published reference evidence and evaluation details: [benchmark](../../benchmark/bispecific_design/bispecific_antibody_design.md).
+
 ## Expected Output
 
 **Format:** `bispecific_design_bundle`\
