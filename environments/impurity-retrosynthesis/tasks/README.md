@@ -1,12 +1,13 @@
-# Task: evidence-gated route review
+# Active tasks and expected outcomes
 
-Each case supplies a confirmed target structure, authorized route export, intended isolated mass/purity, and cost currency. Review cases separately; no fixed target roster is required.
+We are screening synthesis paths and benchmarking them against literature for the following distinct cases. The 100 g isolated / ≥95% purity / INR basis is a planning objective, not a demonstrated result.
 
-1. Confirm regioisomer, stereochemistry and form against a reliable identity source.
-2. Run scripts/audit_exports.py with explicit target SMILES and a new output path.
-3. Review every source route ID for reaction chemistry, complete reagents, atom mapping, exact/analogous precedent, availability, isolation, impurities and safety.
-4. Compare like-for-like substrates and outcomes with literature; retain source citations and reported-versus-measured labels.
-5. Rank only after critical gates pass. Cost only with sourced quantities, yields, recoveries and supplier pack prices; otherwise state the gap.
-6. Record completion separately from artifact availability. A user-confirmed run without a linked export must not receive invented metrics or be called unexecuted.
+| Task | Work and status | Expected outcome |
+|---|---|---|
+| [001: Ibuprofen impurity A](task_001_ibuprofen_impurity_a.md) | 12 paths/38 nodes screened; direct-product patents compared | All-route identity/chemistry review, exact-versus-analogue map, justified lead/hold, cost and validation gaps |
+| [002: Ibuprofen impurity M](task_002_ibuprofen_impurity_m.md) | 7 paths/21 nodes screened; bibliography and OH-retention relevance assessed | Evidence for hydroxy-target outcome, compatible synthesis/isolation, documented lead/hold and costing gaps |
+| [003: Racemic ibuprofen](task_003_racemic_ibuprofen.md) | Run and literature comparison completed per project owner; artifacts not linked | Recover exact run outputs/comparators; publish original numerical comparison without substituting impurity data |
 
-Case-specific target definitions and status belong in config and results, not general workflow instructions. Physical experiments require qualified safety review.
+The original osimertinib name/CAS proposal remains a separate held identity question, not Task 003. Its patent context is in the benchmark reference table; no paths are reported for it.
+
+Every task must deliver an identity audit, every-route comparison, cited literature assessment, risk/validation plan, and a reasoned recommendation or hold. A 100 g INR model requires real inputs and prices; missing quantities remain unknown. No physical execution is authorized by a task document.
