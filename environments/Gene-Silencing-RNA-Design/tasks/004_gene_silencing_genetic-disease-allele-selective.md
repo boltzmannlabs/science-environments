@@ -13,7 +13,7 @@ Application-specific requirements: BLOCK until variant verified (ClinVar/dbSNP +
 Resolved per request — never defaulted. Example gene (HTT) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [004_004_genetic-disease-allele-selective.request.example.json](004_004_genetic-disease-allele-selective.request.example.json) illustrates syntax only.
+- **Brief:** [004_genetic-disease-allele-selective.request.example.json](../config/004_genetic-disease-allele-selective.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu; variant_unverified = BLOCKED_PENDING_MUTATION_SPECIFICATION.
 - **Default weight emphasis:** efficacy .30 / specificity .25 / immune .15 / seed_tox .10 / stability .20 incl. allele_margin .20.
 

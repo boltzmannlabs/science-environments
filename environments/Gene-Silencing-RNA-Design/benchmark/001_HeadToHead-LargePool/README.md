@@ -52,7 +52,9 @@ Full report: source workspace `14_large_pool_benchmark/LARGE_POOL_REPORT.md`
 | Run-1 (v1) | E4a no-scope (gene symbol unmatched) — superseded, archived | 2026-11-05 |
 | Run-2 (v2) | locus-scoped v1.2.1; 4 genes; identical finalist budgets (40/arm/gene) | 2026-11-05 |
 
-## Per-gene ordering metrics (M1)
+## Benchmark metrics
+
+### Per-gene ordering metrics (M1)
 
 | Gene | pool | A surv | B surv | A AUC | B AUC |
 |---|---|---|---|---|---|

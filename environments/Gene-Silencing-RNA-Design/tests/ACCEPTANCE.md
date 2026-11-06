@@ -1,19 +1,38 @@
 # Acceptance and validation plan
 
-## Specification-package checks
+## Specification-package checks (11 checks)
 
-Run `python3 tests/validate_spec.py` from the environment directory (stdlib only). It records actual results to [validation.json](validation.json) for:
+Run `python3 tests/validate_spec.py` from the environment directory (stdlib only). It records actual results to [validation.json](validation.json):
 
-- Required package files, config/task example duplication, and local Markdown links.
-- JSON Schema well-formedness for the requirement-brief and candidate contracts; both example briefs validate against the brief schema.
-- `environment.yaml` invariants: frozen-threshold file exists and carries 10 provenance-tagged gates; endpoint blending forbidden; endpoint-blending=forbidden; evidence ceiling correct; review-only/inactive applications present; backlog items listed; known E4e defect recorded.
-- Benchmark artifacts parse and their headline numbers match the ENVIRONMENT_SPEC §7 table (Simone 0.7021; HIF1A 0.760/0.7803; TTR ranks #62/#107); PROVENANCE.sha256 rows match the shipped files.
-- Runtime scripts import and behave on synthetic fixtures (`test_runtime.py`): immune scanner canonical behaviors (UGUGU motif, clean 19-mer, ≥21-nt class flag, invalid-character rejection); requirement ranking (vetoes, cohort-percentile ordering, perturbation stability fields, seed-distinct panel).
+| # | Check | What it verifies |
+|---|---|---|
+| 1 | `files` | 17 core files present; config↔tasks example-JSON byte identity |
+| 2 | `application_tasks` | 10 task MDs: house sections, steps tables, task-index entries, example-request alignment with schema enum, weight ranges [0,1], organism=human, review_window bounds, benchmark-status stated; results-tree number-first naming |
+| 3 | `schemas` | 2 JSON schemas well-formed; 10-app enum; 5-dim weights; organism/guide-pattern/required-fields constraints |
+| 4 | `examples` | 2 general example briefs: all required fields + 5-dim weights + illustrative markers |
+| 5 | `yaml_invariants` | environment.yaml policy tokens; 10 frozen gates with provenance tags from the declared set; YAML contract paths point to real files |
+| 6 | `benchmarks` | All 10 case-folder metric values match published numbers; 19 provenance SHA-256 hashes verified |
+| 7 | `runtime_import` | All 3 runtime scripts (immune_scan, rank_by_requirements, explore_design) import; immune-scan motif behaviors; ranking veto/ordering/stability; explore has v1.2.1 `target_gene` param |
+| 8 | `cross_references` | Every relative markdown/JSON link in all READMEs, spec, tasks, benchmark docs resolves to a real file |
+| 9 | `benchmark_readmes` | Every benchmark case README has Published reference + Run configuration + Benchmark metrics sections with tables |
+| 10 | `benchmark_runs_structure` | BENCHMARK_RUNS.md has the iteration pattern (published/config/results, Run-1/Run-2, FUTURE slots); published sources cited; none-exists markers present |
+| 11 | `results_tree` | Results/README + PROVENANCE present; application dirs number-first; no empty run folders |
 
-These checks validate this specification package only. They do not validate external backends, model predictions, database access or biological efficacy.
+## Runtime behavior tests (11 unit tests)
+
+Run `python3 -m unittest discover -s tests -p 'test_*.py'`:
+
+| Test class | Tests | What they verify |
+|---|---|---|
+| `TestImmuneScan` | 6 | UGUGU motif detection; clean 19-mer no flags; TLR3 ≥21-nt class; invalid-char rejection; both-strand flag propagation; DNA T→U silent conversion |
+| `TestRequirementRanking` | 3 | Hard-veto removes UGUGU + min-standard filters low RN.Ai; stability report present with disclosure text; panel respects max size |
+| `TestExploreDesign` | 3 | Module importable; `target_gene` parameter present (v1.2.1 scope-explicit); required signature parameters |
+
+These checks validate this specification package and runtime-script behavior on synthetic fixtures only. They do not validate external backends, model predictions, database access or biological efficacy.
 
 ## Scientific validation status
 
-- Component-level backend validation (11/12 pass; live integration micro-run reproducing a known candidate's values exactly; E4e RNAhybrid defect documented) was executed in the source workspace on 2026-11-04 and is summarized in [STATUS](../STATUS.md).
-- Computational benchmarks on public data are included in [benchmark/](../benchmark/) with no-tuning attestation; they are not biological validation.
+- **Component-level backend validation** (liveness audit: mutation tests, label separation, positive/negative controls, live-API round-trip; e2e: 11/12 pass + integration micro-run reproducing known values exactly; E4e RNAhybrid defect documented) — executed 2026-11-04/05, summarized in [STATUS](../STATUS.md).
+- **Computational benchmarks on public data** — included in [benchmark/](../benchmark/) with no-tuning attestation; they are not biological validation.
+- **Head-to-head manual-vs-sub-agent** — definitive large-pool comparison in [benchmark/001_HeadToHead-LargePool](../benchmark/001_HeadToHead-LargePool/README.md) with run-iteration structure in [BENCHMARK_RUNS.md](../benchmark/BENCHMARK_RUNS.md).
 - For repository release: link the contribution issue and complete the applicable PR/review process; owner/reviewers currently pending.

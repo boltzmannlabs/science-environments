@@ -31,8 +31,7 @@ Gene-Silencing-RNA-Design/
 │   ├── requirement_brief.schema.json
 │   ├── candidate.schema.json
 │   ├── thresholds.v1.0.frozen.json
-│   ├── 001_design.request.example.json
-│   └── 001_exploratory.request.example.json
+│   └── 001..011_*.request.example.json   (all 12 example briefs, number-first)
 ├── runtime/
 │   ├── CONTRACTS.md
 │   ├── immune_scan.py

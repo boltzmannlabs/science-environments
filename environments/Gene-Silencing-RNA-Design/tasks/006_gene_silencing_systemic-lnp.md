@@ -13,7 +13,7 @@ Application-specific requirements: TLR3 >=21-nt class-effect flag interpreted as
 Resolved per request — never defaulted. Example gene (TTR) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [006_006_systemic-lnp.request.example.json](006_006_systemic-lnp.request.example.json) illustrates syntax only.
+- **Brief:** [006_systemic-lnp.request.example.json](../config/006_systemic-lnp.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .35 / specificity .25 / immune .25 / seed_tox .10 / stability .05.
 

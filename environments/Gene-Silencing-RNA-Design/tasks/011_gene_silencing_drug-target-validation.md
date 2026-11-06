@@ -13,7 +13,7 @@ Application-specific requirements: target-relevance context via OpenTargets; pro
 Resolved per request — never defaulted. Example gene (BCL2) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [011_011_drug-target-validation.request.example.json](011_011_drug-target-validation.request.example.json) illustrates syntax only.
+- **Brief:** [011_drug-target-validation.request.example.json](../config/011_drug-target-validation.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .35 / specificity .35 / seed_tox .10 / immune .10 / stability .10.
 
