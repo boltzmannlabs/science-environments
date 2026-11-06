@@ -1,19 +1,35 @@
 {
-  "brief_id": "metabolic-liver-galnac_example",
+  "brief_id": "pcsk9_galnac_example",
   "mode": "design",
   "target": {
     "organism": "human",
-    "gene": "PCSK9"
+    "gene": "PCSK9",
+    "transcript": "NM_000559?resolve-to-GENCODE-at-intake",
+    "sequence_supplied": false
   },
   "application": "metabolic_liver_galnac",
-  "objective": "hepatic target-lowering hypothesis in the GalNAc-siRNA reference modality \u2014 illustrative syntax only",
+  "objective": "Hepatic PCSK9 lowering in the GalNAc-siRNA reference modality; ESC/ESC+ chemistry rule cards as context annotations; benchmarked frame (HIF1A case study, generator clean AUC 0.760)",
   "priorities": {
-    "weights": {}
+    "hard_vetoes": [
+      "immune_ugugu"
+    ],
+    "weights": {
+      "efficacy": 0.35,
+      "specificity": 0.2,
+      "seed_tox": 0.2,
+      "immune": 0.2,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 75,
+      "viability": 60
+    }
   },
   "constraints": {
     "review_window": 100,
     "panel_size": 6,
-    "seed_distinct": true
+    "seed_distinct": true,
+    "delivery_context": "galnac"
   },
-  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+  "success_criteria": "PCSK9 mRNA >=70% in primary hepatocytes at 10 nM; LDL-relevant readouts remain separate downstream evidence \u2014 illustrative syntax only; not an approved run."
 }

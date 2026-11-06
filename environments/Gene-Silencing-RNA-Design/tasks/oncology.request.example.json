@@ -1,19 +1,35 @@
 {
-  "brief_id": "oncology_example",
+  "brief_id": "oncology_kras_example",
   "mode": "design",
   "target": {
     "organism": "human",
-    "gene": "KRAS"
+    "gene": "KRAS",
+    "transcript": "ENST00000411926?resolve-at-intake",
+    "sequence_supplied": false
   },
   "application": "oncology",
-  "objective": "tumor-associated knockdown study without assuming tumor-selective delivery or dependence \u2014 illustrative syntax only",
+  "objective": "Knockdown candidates for a tumor-associated KRAS-dependence study; isoform coverage decision and paralog/pseudogene screen required before panel delivery",
   "priorities": {
-    "weights": {}
+    "hard_vetoes": [
+      "immune_ugugu",
+      "paralog_full_length_hits"
+    ],
+    "weights": {
+      "efficacy": 0.35,
+      "specificity": 0.35,
+      "seed_tox": 0.15,
+      "immune": 0.1,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 70
+    }
   },
   "constraints": {
-    "review_window": 100,
+    "review_window": 150,
     "panel_size": 6,
-    "seed_distinct": true
+    "seed_distinct": true,
+    "delivery_context": "in_vitro_only"
   },
-  "success_criteria": "illustrative syntax only \u2014 not an approved run"
+  "success_criteria": "mRNA knockdown >=70% at 10 nM in the declared tumor line, >=4/6 panel members, with seed-distinct concordance across >=2 independent sites \u2014 illustrative syntax only; not an approved run."
 }
