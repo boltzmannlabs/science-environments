@@ -272,68 +272,6 @@
           "published_value": "100 ns; c-Met RMSD 17924 0.2834 / 4312 0.2498 vs MT4 0.3568 nm"
         }
       ]
-    },
-    {
-      "id": "task_007",
-      "file": "task_007_hkii_antidengue_virtual_screening.md",
-      "doi": "https://doi.org/10.3390/biotech10010001",
-      "pmc": "PMC9245486",
-      "pdbs": [
-        "2NZT"
-      ],
-      "pass_bar": "Report workflow outcomes for all 3 reference-query groups. Complete the applicable screening, filtering, docking, candidate-selection and candidate/reference dynamics stages before claiming complete execution. Report missing candidates, inputs, capabilities or results explicitly.",
-      "expected_outputs": [
-        "input_manifest.json",
-        "workflow_plan.json",
-        "screening_results.csv",
-        "property_results.csv",
-        "binding_results.csv",
-        "candidate_results.csv",
-        "dynamics_results.csv",
-        "artifact_manifest.csv",
-        "workflow_assessment.json",
-        "report.md"
-      ],
-      "evaluation_metrics": [
-        {
-          "metric": "Input and preparation records",
-          "measurements_and_evidence": "Compound identities, library membership, reference definitions and preparation conditions",
-          "evaluation_rule": "Associate reported results with the supplied inputs and documented preparation"
-        },
-        {
-          "metric": "Screening results",
-          "measurements_and_evidence": "Similarity results, ranks and selected compound counts for each query group",
-          "evaluation_rule": "Report all three groups and distinguish query entries from unique compounds"
-        },
-        {
-          "metric": "Property-based selection",
-          "measurements_and_evidence": "Drug-likeness values, ADME/toxicity predictions, units and filtering decisions",
-          "evaluation_rule": "Explain candidate retention using the stated criteria and available predictions"
-        },
-        {
-          "metric": "Reference docking",
-          "measurements_and_evidence": "Redocked GLC/BG6 poses and reference docking results",
-          "evaluation_rule": "Report the reference conformations and binding results alongside candidate results"
-        },
-        {
-          "metric": "Candidate ranking",
-          "measurements_and_evidence": "Candidate scores, poses, interactions and corresponding reference comparisons",
-          "evaluation_rule": "Support the reported top candidates and selected group leaders with binding evidence"
-        },
-        {
-          "metric": "Dynamics results",
-          "measurements_and_evidence": "Equilibration/production duration, backbone RMSD, residue RMSF, distances and hydrogen-bond behaviour",
-          "evaluation_rule": "Report 100 ps equilibration and 20 ns production for selected candidate/reference systems, with comparisons and consistent definitions/units"
-        },
-        {
-          "metric": "Workflow completion",
-          "measurements_and_evidence": "Completed stages, scientific outputs and remaining requirements",
-          "evaluation_rule": "Distinguish completed execution from incomplete or unavailable stages"
-        }
-      ],
-      "task_format": "capability_workflow",
-      "grading_mode": "manual_review_required",
-      "evaluator_file": "benchmark/task_007_hkii_antidengue_virtual_screening.md"
     }
   ]
 }

@@ -19,7 +19,7 @@
 10. PI5P4Kγ task_004 — Scientific Reports (2025). doi:10.1038/s41598-025-07480-x · PMC12485083 · https://pmc.ncbi.nlm.nih.gov/articles/PMC12485083/
 11. PI3Kα task_005 — RSC Advances (2022). doi:10.1039/D2RA03451D · PMC9346375 · https://pmc.ncbi.nlm.nih.gov/articles/PMC9346375/
 12. VEGFR-2 + c-Met task_006 — Frontiers in Pharmacology (2025). doi:10.3389/fphar.2025.1534707 · PMC11926154 · https://pmc.ncbi.nlm.nih.gov/articles/PMC11926154/
-13. HKII task_007 — Tanbin S, Ahmad Fuad FA, Abdul Hamid AA. BioTech 2021, 10(1), 1 (published 28 December 2020). "Virtual Screening for Potential Inhibitors of Human Hexokinase II for the Development of Anti-Dengue Therapeutics." doi:10.3390/biotech10010001 · PMC9245486 · https://pmc.ncbi.nlm.nih.gov/articles/PMC9245486/ · [source audit](hkii-task007-source-audit-2026-11-06.json). Documentation-level addition; exact platform execution remains unverified.
+13. Retired HKII task_007 — Tanbin S, Ahmad Fuad FA, Abdul Hamid AA. BioTech 2021, 10(1), 1 (published 28 December 2020). "Virtual Screening for Potential Inhibitors of Human Hexokinase II for the Development of Anti-Dengue Therapeutics." doi:10.3390/biotech10010001 · PMC9245486 · https://pmc.ncbi.nlm.nih.gov/articles/PMC9245486/ · [source audit](hkii-task007-source-audit-2026-11-06.json). Documentation-level addition; exact platform execution remains unverified.
 
 ## Retired papers (provenance records)
 
@@ -39,3 +39,5 @@
 - NCBI E-utilities / Europe PMC `EXT_ID:… AND SRC:MED` for PMC-ID resolution
 - Boltzmann platform tools (task execution): `Vina_basic_docking`, `Diffdock`, `pharmacophoreHypothesis`, `Pharmacophore_Screening`, `Similarity_Screening`, `Property_Prediction`, `MDS_openMM`, `Binding_affinity_Prediction` — registry per environment in `environments/<env>/MODELS_AND_TOOLS.md`
 - Reference task-format and repository-structure exemplars: boltzmannlabs/science-environments `antibody_design` environment and CONTRIBUTING.md
+
+14. D2R hit-identification task_001 — Kim S, Jo WH, Cha JO, Kim MS. PLOS One 2026. DOI: 10.1371/journal.pone.0355997 · PMC13524263. Active task: environments/hit-identification/tasks/task_001_d2r_peripheral_candidate_prioritisation.md.

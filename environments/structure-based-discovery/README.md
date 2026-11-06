@@ -12,9 +12,6 @@ Structure-based drug discovery environment covering pharmacophore screening, mol
 | [task_004](tasks/task_004_pi5p4k_allosteric_docking.md) | PI5P4Kγ allosteric site (cancer) | [Sci Rep 2025](https://doi.org/10.1038/s41598-025-07480-x) · [PMC12485083](https://pmc.ncbi.nlm.nih.gov/articles/PMC12485083/) |
 | [task_005](tasks/task_005_pi3ka_docking_dynamics.md) | PI3Kα (NSCLC) | [RSC Adv 2022](https://doi.org/10.1039/D2RA03451D) · [PMC9346375](https://pmc.ncbi.nlm.nih.gov/articles/PMC9346375/) |
 | [task_006](tasks/task_006_dual_kinase_pharmacophore.md) | VEGFR-2 + c-Met (cancer) | [Front Pharmacol 2025](https://doi.org/10.3389/fphar.2025.1534707) · [PMC11926154](https://pmc.ncbi.nlm.nih.gov/articles/PMC11926154/) |
-| [task_007](tasks/task_007_hkii_antidengue_virtual_screening.md) | Human hexokinase II (anti-dengue discovery; screening, filtering, docking and 20 ns dynamics) | [BioTech 2021](https://doi.org/10.3390/biotech10010001) · [PMC9245486](https://pmc.ncbi.nlm.nih.gov/articles/PMC9245486/) |
-
-Task 007 is an agent-facing capability workflow: the agent discovers and selects relevant suite tools while preserving the scientific sequence and constraints. Publication identity, historical results, tool provenance and source conflicts are retained in its [evaluator specification](benchmark/task_007_hkii_antidengue_virtual_screening.md), which must not be included in the agent execution bundle. Scientific capability coverage remains to be verified. The legacy single-score grading helper refuses to certify this task; it requires evidence-based scientific review.
 
 ## Layout
 

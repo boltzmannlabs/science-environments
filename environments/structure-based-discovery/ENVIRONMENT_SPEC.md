@@ -28,17 +28,12 @@ Every task follows the same five-stage chain (paper-verbatim parameters, engine-
 | task_004 | PI5P4Kγ allosteric site (cancer) | Sci Rep 2025 · PMC12485083 | beat same-engine DVF redock (−9.26 AutoDock 4.2 / −10.4 PyRx) + MM-PBSA < −68.44 kJ/mol |
 | task_005 | PI3Kα (NSCLC) | RSC Adv 2022 · PMC9346375 | ≤ −3.941 kcal/mol (Glide XP reference; engine-relative) + MMGBSA ≤ −42.58 |
 | task_006 | VEGFR-2 + c-Met (cancer, dual) | Front Pharmacol 2025 · PMC11926154 | < −60 kJ/mol against both kinases + acceptable ADMET |
-| task_007 | Human HKII (anti-dengue discovery) | BioTech 2021 · PMC9245486 | Evidence-based review of three-group screening, filtering, docking, controls and 20 ns dynamics |
-
-**Task 007 format and qualification:** the agent-facing task states the scientific workflow and constraints without publication identity, prescribed tools or historical answers. The agent must discover relevant Boltzmann capabilities and justify its selections. The task requires 3D shape/feature screening, property filtering before docking, group-specific candidate selection and 100 ps restrained equilibration followed by 20 ns production for selected candidate/reference systems. Its [evaluator specification](benchmark/task_007_hkii_antidengue_virtual_screening.md) retains publication provenance, historical evidence and conflicts separately. Capability coverage and scientific execution remain unverified; scientific review is required and the legacy single-score grader refuses certification. Execution-context budgets apply to this task. These task-specific rules override the older fixed-tool workflow and formatting rules below; tasks 001–006 retain their existing specifications.
 
 Machine-readable anchors: `config/environment.json` and `benchmark/benchmark.json` (generated from `tasks/*.md` by `scripts/gen_config.py` — the task docs are the single source of truth).
 
 ## Task-document format (mandatory, enforced by `tests/`)
 
 Nine sections in exact order: Description · Target · Design Constraints · Computational Tool Capabilities (three tiers: Boltzmann platform tools / Other standard tools / Paper tools (verbatim)) · Evaluation Metrics (published values, verbatim) · Expected Output (file table + quantitative Pass bar) · Constraints (Time Limit 240 minutes + Reference Policy) · Important Instructions · Publication (DOI + PMC links).
-
-Task 007 instead uses eight agent-facing sections, omitting Publication and replacing tool tables/published values with capabilities, evidence requirements, evaluation rules and a completion rule. Its source identifiers are resolved from the same-named evaluator Markdown file under `benchmark/`. Give the execution agent only the task and prepared scientific inputs; evaluator files and generated source-reference metadata are owner-only.
 
 Verbatim policy: every paper-sourced claim must match the paper exactly; anything not in the paper carries an explicit "(derived)" or "RCSB metadata" label; platform docking arg `exhaustivness` (sic) is the real API spelling and must not be "corrected".
 
@@ -73,7 +68,7 @@ structure-based-discovery/
 ├── STATUS.md            # qualification state
 ├── MODELS_AND_TOOLS.md  # platform tool registry, engine anchoring
 ├── config/              # environment.json + environment.yaml (generated/hand)
-├── tasks/               # task_001..007 documents (source of truth)
+├── tasks/               # task_001..006 documents (source of truth)
 ├── tests/               # static validators (pytest-compatible)
 ├── scripts/             # gen_config.py, validate_environment.py, grade_run.py
 ├── src/                 # env_lib.py (parsing, validation, grading)
