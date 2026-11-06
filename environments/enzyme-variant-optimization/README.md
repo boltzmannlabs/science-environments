@@ -38,7 +38,7 @@ This naming pattern applies to all five tasks. There is no environment `tests/` 
 | [tasks/](tasks/README.md) | Numbered scientific assignments. |
 | [scripts/](scripts/README.md) | Existing launch prompts and thin evaluation entry point. |
 | [src/](src/README.md) | Reviewed generated workflow code/skills and the retained offline evaluator. |
-| [benchmark/](benchmark/README.md) | Original paper values and comparisons between task/config versions, when verified. |
+| [benchmark/](benchmark/README.md) | Five source-verified paper reference documents and comparisons between task/config versions. |
 | [results/](results/README.md) | Reviewed original Agent-Scientist execution evidence. |
 
 ## Tasks and versions
@@ -64,7 +64,7 @@ Use an available native SCI installation and access to the required scientific c
 
 The JSON profiles document settings; they are not an automatic SCI configuration loader. Default prompts select task_002 RML/v1. Freeze the effective profile and actual SCI settings with each run. Current ongoing campaigns retain their original frozen environment and paths.
 
-Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results are reserved for reviewed shareable outputs. Benchmark and result READMEs explain future contents without inventing reference extraction, completed results or comparisons.
+Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results are reserved for reviewed shareable outputs. Benchmark documents contain published reference values; comparison and result READMEs identify pending reviewed run evidence.
 
 ## Offline comparison helper
 

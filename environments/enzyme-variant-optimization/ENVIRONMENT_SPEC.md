@@ -155,7 +155,7 @@ Only a fully observed eligible selection receives an aggregate numerical score. 
 
 ### Reference information
 
-Task-specific reference values under [benchmark](benchmark/README.md) are operator/evaluator material. Keep that file and target-study winner data out of tested-agent inputs. Published values are literature observations, never new-run outputs. Current benchmark folders are placeholders pending source verification and reviewed comparisons.
+Task-specific reference values under [benchmark](benchmark/README.md) are operator/evaluator material. Keep those reference files and target-study winner data out of tested-agent inputs. Published values are literature observations, never new-run outputs. Each numbered benchmark document records source-verified paper values and comparison limits; run-version comparisons remain pending reviewed evidence.
 
 ### Comparisons across configuration versions
 
