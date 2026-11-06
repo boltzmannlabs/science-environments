@@ -8,7 +8,7 @@
 
 The agent-facing task defines the scientific problem and evidence requirements without naming a publication, prescribing software or exposing published hits/scores. The agent must independently discover and select verified capabilities from the Boltzmann small-molecule discovery suite.
 
-Evaluate input identity/provenance, binding-site validity, independent candidate generation across all three query groups, contemporaneous reference controls, justified property filters, evidence-backed prioritisation, artifact completeness and honest completion status. Scientific completion and evidence quality require manual evaluation; a single docking-score threshold or the presence of output files cannot certify success.
+Evaluate input identity/provenance, binding-site validity, independent library-analogue retrieval across all three query groups, contemporaneous reference controls, justified property filters, evidence-backed prioritisation, artifact completeness and honest completion status. This is screening of existing library members, not de novo molecular design; conformer preparation must preserve compound identity. Scientific completion and evidence quality require manual evaluation; a single docking-score threshold or the presence of output files cannot certify success.
 
 Compare scores only within compatible engines/protocols and chemical identities. The historical numerical results below are contextual reference evidence, not universal thresholds for an independently chosen method. The reported box does not overlap native-frame 2NZT in the retained execution audit; the agent must establish a valid site in the actual prepared coordinate frame.
 

@@ -303,7 +303,7 @@
         {
           "metric": "Screening coverage",
           "measurements_and_evidence": "Counts and rankings by query group, three-dimensional shape/feature evidence, conformer handling and filter attrition",
-          "evaluation_rule": "Reconcile entry counts and unique identities separately, preserve the requested screening method and explain exclusions; do not force a predetermined retained yield"
+          "evaluation_rule": "Verify candidate membership in the fixed library, reconcile entry counts and unique identities separately, preserve the requested screening method and explain exclusions; do not force a predetermined retained yield"
         },
         {
           "metric": "Property-based selection",
