@@ -10,8 +10,9 @@ Generate molecular candidates for one p38α target. The agent retrieves and prep
 
 The [task definition](tasks/p38alpha-design.md) specifies the required inputs, scientific objectives,
 metrics, budget handling, failure states and output artifacts. The agent chooses
-among authorized workflows; mandatory assessment rules remain fixed. The operator
-provides constraints and limits upfront; the agent discovers suitable authorized
+among authorized workflows; mandatory assessment rules remain fixed. The task
+states the property constraints, and the operator may provide resource limits;
+the agent discovers suitable authorized
 Boltzmann tools in the active profile and prepares and verifies the
 inputs, scoring assets and records. Freeze a common bundle and provide a separately
 controlled evaluator for independent comparisons. Unresolved essential inputs

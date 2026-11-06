@@ -9,8 +9,8 @@ Generate molecular candidates for one p38α target. The agent retrieves and prep
 - [Owner/evaluator reference index](REFERENCES.md).
 - [Shared status](../../research/small-molecules/STATUS.md).
 
-Give the execution agent the task, property constraints (or explicitly none),
-and resource limits. It discovers suitable authorized Boltzmann tools in the
+Give the execution agent the task. The task specifies QED and LogP constraints;
+the operator may also provide resource limits. The agent discovers suitable authorized Boltzmann tools in the
 active Agent Scientist profile and prepares or reuses and verifies the
 input and scoring bundle. A separately controlled evaluator and a frozen shared
 bundle are needed for a fair independent comparison. This is a specification;

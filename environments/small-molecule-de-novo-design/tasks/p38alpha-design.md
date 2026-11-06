@@ -6,11 +6,11 @@ Design new small molecules for the human **p38α protein**. Retrieve its
 **1A9U three-dimensional structure** from RCSB PDB for the common docking assessment.
 Assess molecular properties as well as docking performance. Choose suitable generation,
 screening and search strategies using authorized tools. Multiple workflows may
-be combined within one shared budget. Return a complete evaluation panel and
+be combined, with shared resource accounting. Return a complete evaluation panel and
 an evidence-backed shortlist, preserving failures and resource use.
 
 Prepare the required public inputs and scoring setup as part of the task when
-they are not already available. Freeze the setup and resource limits before
+they are not already available. Freeze the setup and any specified limits before
 scientific generation. Do not ask routine setup questions during a run: resolve
 what the task specifies, and report a blocker and stop if an essential decision
 or capability remains unresolved. No particular generation model or search
@@ -27,6 +27,25 @@ docking scores while reporting drug-likeness, lipophilicity, synthetic-accessibi
 and natural-product-likeness descriptors. These are distinct measurements; no
 single composite reward defines success.
 
+## Property constraints
+
+The shortlisted candidates must meet both task-defined criteria:
+
+| Property | Required value | Qualification method |
+| --- | --- | --- |
+| QED | At least 0.5, inclusive | RDKit QED; dimensionless. |
+| Lipophilicity | RDKit LogP from 0 to 5, inclusive | RDKit Crippen MolLogP; dimensionless. |
+
+Check these values for each candidate. Use valid values returned by a generation
+tool only if its documented definition, implementation and molecular identity
+match the frozen assessment method; otherwise calculate the assessment values
+with RDKit. A Boltzmann Lipophilicity property model may guide generation or
+screening where available. Record its model name, version, scale and output
+separately, and do not assume its score equals RDKit LogP. Missing or failed
+property measurements are unresolved, not passes. These thresholds are
+task-defined screening criteria, not evidence of measured activity or a claim
+that any reference study used the same cutoffs.
+
 There is one target: **p38α**. **1A9U identifies its 3D structure** used
 for docking; no gene analysis is required. Keep the same target structure and
 binding-site definition across runs. Do not add protein targets or alternative
@@ -35,14 +54,12 @@ the structure. Keep `p38_1a9u` only as an internal tracking ID in manifests/resu
 
 ## Inputs and automatic preparation
 
-The operator supplies the task and, before scientific execution, property
-constraints (or explicitly none), resource limits, and any additional choices
+The operator supplies the task and any additional choices
 that cannot be resolved from the task. Discover and use suitable Boltzmann tools
 available and authorized in the active Agent Scientist profile; the operator
 need not list them individually. Check actual access before submitting jobs.
 Permitted local tools may be used for the specified preparation and evaluation.
-Do not invent numeric
-property cutoffs or budgets. The agent creates the records below; the operator
+Do not invent additional numeric property cutoffs or budgets. The agent creates the records below; the operator
 does not need to create these files manually. A verified existing bundle may be
 reused instead of preparing another copy.
 
@@ -51,7 +68,7 @@ reused instead of preparing another copy.
 | `target_inputs.json` | Agent records protein name, 1A9U, local structure/sequence/control paths, hashes and allowed generation information. |
 | Structural bundle | Agent retrieves public 1A9U coordinates and prepares a fixed target protein, reference-ligand coordinates and sequence/chain maps. |
 | `scorer_manifest.json` | Agent records the verified Smina executable/version/hash, preparation adapter, docking settings, descriptor/model files, identity policy and scoring interface. |
-| `execution_manifest.json` | Agent records the operator-provided limits, applicable permissions, available tools, repeats, constraints, panel policy and stopping rules before generation. |
+| `execution_manifest.json` | Agent records any operator-provided limits, applicable permissions, available tools, repeats, constraints, panel policy and stopping rules before generation. |
 | Evaluator interface | A separately controlled final-assessment interface and output-freeze procedure are required for an independent comparison. |
 
 Retrieve the structure and relevant public entity and chemical-component records
@@ -73,7 +90,7 @@ connector for hosted operations; do not expose credentials.
 For a comparison, prepare and freeze one verified target and scoring bundle and
 reuse it across all arms. An execution agent may prepare the initial bundle, but
 it must not change the frozen bundle between arms. Record hashes and any setup
-costs separately. Search feedback is allowed within the declared budget; final
+costs separately. Search feedback is allowed within any declared budget; final
 independent evaluation remains separately controlled. If it is unavailable, a
 run may report a clearly labeled self-assessment where feasible, but cannot
 claim an independent comparison.
@@ -92,7 +109,7 @@ conditioning is not required. Record any pocket extraction or coordinate transfo
 
 Attempt permitted preparation first. If an essential input or asset still
 cannot be obtained or validated, stop and report `NEEDS_INPUT`; unresolved
-scientific choices or limits are `PROTOCOL_REQUIRED`. Do not pause for routine
+scientific choices or specified but unenforceable limits are `PROTOCOL_REQUIRED`. Do not pause for routine
 interactive questions. Preserve the completed preparation and clearly explain
 what is needed for a later run.
 
@@ -101,7 +118,7 @@ what is needed for a later run.
 Choose generation methods, libraries, proposal screening, evaluation allocation
 and follow-up actions. You may use docking feedback during search within its
 allowance, or generate first and assess afterward. Explain choices from actual
-observations. All methods, retries and parent/child activity share total limits.
+observations. All methods, retries and parent/child activity share any specified limits.
 
 Use existing Agent Scientist wrappers/connectors for Boltzmann jobs. Verify tool
 contracts and actual model availability. Permitted local packages may supplement
@@ -142,7 +159,8 @@ search pool and any additional best-of-pool report distinct from the frozen pane
 The ten-slot panel is the complete evaluation output. From that frozen panel,
 display up to **three** shortlisted candidates per run. Each must be valid,
 connected, unique, different from the control, have verified molecular identity,
-and have successful final Smina, QED and SA measurements. Missing values make it
+and have successful final Smina, QED, LogP and SA measurements, with QED >= 0.5
+and LogP between 0 and 5 inclusive. Missing values make it
 ineligible for the shortlist, with a reason; retain its full panel record and do
 not replace it silently.
 Order by higher derived Smina score, then higher QED, lower SA score and ascending
@@ -223,19 +241,16 @@ Uniqueness never establishes biological selectivity.
 
 ## Budgets and stopping
 
-Freeze raw-attempt limits, search/final docking limits, job/financial ceilings,
-compute/wall time, repeats and model usage in the execution manifest. Ten endpoint
-molecules do not imply ten docking calls: include all internal search evaluations,
-controls, failures and repeats. Reserve final endpoint/control assessment allowance
-before spending the remainder on search.
-
-The operator must provide the limits and property constraints before the run;
-the agent records them and checks that they are enforceable. When constraints
-are explicitly absent, report properties without inventing cutoffs. Apply any
-declared constraints consistently and report both constraint satisfaction and
-the complete-panel primary metric without silently removing records. If required
-limits are missing, prepare what can be prepared within authorized resources,
-then stop before generation or other work requiring an unapproved allowance.
+Record any operator-provided raw-attempt limits, search/final docking limits,
+job/financial ceilings, compute/wall time, repeats and model usage in the execution
+manifest. Numeric limits are not specified for this initial run; record them as
+unspecified rather than inventing them. Record the planned stopping rule and use
+one run unless otherwise specified. Ten endpoint molecules do not imply ten
+docking calls: include internal search evaluations, controls, failures and repeats.
+When a limit is supplied, reserve final endpoint/control assessment allowance
+before spending the remainder on search. Apply the task property constraints
+consistently and report both constraint satisfaction and the complete-panel
+primary metric without silently removing records.
 
 Verify and reserve a maximum for each hard-limited resource before submission,
 including outstanding parallel work. Unresolved acceptance retains its reservation.
@@ -243,7 +258,7 @@ Unbounded hidden work cannot enter a hard draw/oracle track; use only separately
 declared enforceable allowances. Unknown counters stay null and prevent matched-
 budget claims. Do not treat filtered CSV row counts as raw attempt counts.
 
-Stop on exhausted limits, unresolved acceptance or missing mandatory capability.
+Stop on exhausted specified limits, unresolved acceptance or missing mandatory capability.
 Record seed limitations, actual counts and stop reason. Do not replenish poor or
 invalid endpoints beyond the declared limits.
 
