@@ -6,7 +6,7 @@ The `antibody_design` environment organizes antibody-design research into clearl
 
 | Family | Description |
 | --- | --- |
-| Monoclonal antibody design | Five paper-based tasks for HER2, PD-L1, PD-1, LCAT and Gal-3BP, each with an identified reference antibody, scaffold or comparator. |
+| Monoclonal antibody design | Five paper-based tasks for HER2, PD-L1, PD-1, LCAT and Gal-3BP, plus two restored fixed-framework VHH tasks for HA/RSV and gp120. |
 | Bispecific design | HER2 biparatopic design using zanidatamab as the reference, with domain II/domain IV assignments and evidence for each arm and the assembled molecule. |
 | Bispecific assessment | Supplied evidence is assessed through cellular-mechanism, CNS-delivery, CNS-readout comparison, and integrated CNS-assessment tasks. |
 
@@ -26,12 +26,14 @@ antibody_design/
 │   ├── bispecific_design/        # Bispecific design configurations
 │   └── bispecific_assessment/    # Cellular and CNS assessment configurations
 ├── tasks/                        # Task instructions only
-│   ├── monoclonal_antibody_design/  # The five active monoclonal tasks
+│   ├── monoclonal_antibody_design/  # Five benchmarked tasks and two fixed-framework prompts
 │   │   ├── mab_her2_reference_optimization.md
 │   │   ├── mab_pdl1_epitope_design.md
 │   │   ├── mab_pd1_epitope_design.md
 │   │   ├── mab_lcat_cdr_design.md
-│   │   └── mab_gal3bp_reference_design.md
+│   │   ├── mab_gal3bp_reference_design.md
+│   │   ├── rfantibody_fixed_framework_design.md
+│   │   └── antibmpnn_fixed_framework_design.md
 │   ├── bispecific_design/        # One bispecific design task
 │   └── bispecific_assessment/    # Four cellular and CNS assessment tasks
 ├── src/                          # README placeholder only
@@ -56,9 +58,9 @@ The tree shows the main files and directories.
 - **`status.md`** summarizes current contents and remaining implementation work.
 - **`ENVIRONMENT_SPEC.md`** defines the environment's scope, scientific requirements, evidence expectations, and current implementation boundaries.
 - **`config/`** contains task profiles, request/result schemas, JSON input examples, and validation dependencies. Each family has its own configuration; common definitions are shared. See the [configuration guide](config/README.md).
-- **`tasks/monoclonal_antibody_design/`** contains only the five current monoclonal tasks. Each defines the objective, reference context, constraints, evaluation criteria and expected outputs. The older reference/target-only prompt folders have been removed from `tasks/`.
+- **`tasks/monoclonal_antibody_design/`** contains five benchmarked monoclonal tasks and two standalone fixed-framework VHH prompts. Each defines the objective, reference context, constraints, evaluation criteria and expected outputs. The older reference/target-only prompt folders have been removed from `tasks/`.
 - **`tests/`** contains all testing and validation code. The dedicated monoclonal suite covers a supplied antigen and reference antibody; shared checks validate configurations across all task families.
-- **`benchmark/`** contains ten matching benchmark documents with metrics, available reference values and task-specific interpretation. The folders and filenames mirror `tasks/`. The [benchmark index](benchmark/README.md) maps every task to its reference document.
+- **`benchmark/`** contains ten matching benchmark documents with metrics, available reference values and task-specific interpretation. The folders and filenames mirror the benchmarked tasks. The [benchmark index](benchmark/README.md) maps those tasks to their reference documents; separate benchmarks are not supplied for the two restored VHH prompts.
 - **`src/`, `scripts/` and `skills/`** each contain one README placeholder. Specialist implementation, execution scripts and agent skills are not included in the current environment.
 - **`results/`** holds small example outputs and generated validation summaries. Expected output formats are described in the [results guide](results/README.md).
 
@@ -78,6 +80,15 @@ These five prompts test scientific planning and evidence reporting without presc
 
 The `paper_benchmark_tasks` and `paper_benchmark_references` catalogs pair each task with its benchmark document. They do not add executable profiles or automatic scientific graders. Prepare the specified inputs before execution; framework-conditioned and scFv tasks do not automatically satisfy the existing reference-guided bundle schema. Published candidate scores, dataset averages and selection thresholds are labelled separately, with unverified values left unavailable.
 
+### Fixed-framework VHH tasks
+
+| Task | Design objective |
+| --- | --- |
+| [HA/RSV fixed-framework design](tasks/monoclonal_antibody_design/rfantibody_fixed_framework_design.md) | Separate antigen campaigns with a preserved 3EAK framework and variable-length CDRs. |
+| [huJ3 gp120 fixed-framework design](tasks/monoclonal_antibody_design/antibmpnn_fixed_framework_design.md) | Restricted CDR substitutions on the supplied huJ3 parent with matched physicochemical comparisons. |
+
+These task documents are restored verbatim from commits `2722422b7c4e06ece6c3466b92778368ec5298a5` and `42d68fe8d701cc262664d81193575678ec649ae9`, respectively. The `fixed_framework_tasks` catalog registers their document identities and locations. They have no executable profiles or separate benchmark documents; their original capability-based instructions and output requirements remain intact.
+
 ## Bispecific benchmarks
 
 | Task | Benchmark reference |
@@ -92,6 +103,6 @@ Three assessment prompts adapt public TxBench-Ab examples. Their benchmarks dist
 
 ## Current implementation
 
-The environment is at **Specification** maturity. The five current monoclonal tasks are evaluation prompts with separate published benchmarks. Existing monoclonal schemas and validation routines remain available for contract regression checks; their older prompts are retained only as test fixtures. Bispecific task profiles are unchanged.
+The environment is at **Specification** maturity. Five monoclonal tasks have separate published benchmarks, and two restored fixed-framework VHH prompts define their own evaluation requirements. Existing monoclonal schemas and validation routines remain available for contract regression checks; their older prompts are retained only as test fixtures. Bispecific task profiles are unchanged.
 
 Scientific execution requires external workflows. Passing these software checks does not establish antibody binding, function, safety, or improvement. Detailed requirements and remaining gaps are documented in the [environment specification](ENVIRONMENT_SPEC.md) and [coverage review](tests/monoclonal_antibody_with_reference/COVERAGE.md).

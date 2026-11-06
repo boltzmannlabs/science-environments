@@ -1,6 +1,6 @@
 # Antibody Design Benchmarks
 
-Reference metrics, reported values and task-specific interpretation for the ten antibody tasks. Benchmark folders and filenames match their corresponding files under `tasks/`.
+Reference metrics, reported values and task-specific interpretation for the ten benchmarked antibody tasks. Benchmark folders and filenames match their corresponding files under `tasks/`. The two restored fixed-framework VHH prompts have no separate benchmark documents and retain their own evaluation requirements.
 
 ## Task Benchmarks
 

@@ -211,10 +211,27 @@ def main():
                         if "task_file" in (profile := task_profile(task))}
     task_files = [path for path in (ROOT / "tasks").rglob("*") if path.is_file()]
     paper_task_paths = validate_paper_benchmark_tasks(config)
+    fixed_tasks = config.get("fixed_framework_tasks", {})
+    fixed_task_paths = set(fixed_tasks.values())
+    check(len(fixed_task_paths) == len(fixed_tasks) and
+          not (set(fixed_tasks) & (set(config["task_profiles"]) |
+                                   set(config.get("paper_benchmark_tasks", {})))) and
+          not (fixed_task_paths & (expected_task_paths | paper_task_paths)),
+          "Fixed-framework prompts have unique IDs and paths separate from profiles and benchmarks")
+    for task_id, relative in fixed_tasks.items():
+        path = ROOT / relative
+        valid_path = Path(relative).parent.as_posix() == "tasks/monoclonal_antibody_design"
+        text = path.read_text() if valid_path and path.is_file() else ""
+        headings = set(re.findall(r"^## (.+)$", text, re.M))
+        check(text.startswith(f"# Task: {task_id}\n") and
+              {"Description", "Target", "Design Constraints", "Computational Tool Capabilities",
+               "Evaluation Metrics", "Expected Output", "Important Instructions"} <= headings,
+              f"Fixed-framework task has its declared identity and required sections: {task_id}")
     check({path.relative_to(ROOT).as_posix() for path in task_files} ==
-          expected_task_paths | paper_task_paths and expected_task_paths == registered_tasks and
+          expected_task_paths | paper_task_paths | fixed_task_paths and
+          expected_task_paths == registered_tasks and
           all(path.suffix == ".md" for path in task_files),
-          "Task folders match the registered profiles and document-only paper benchmark catalog")
+          "Task folders match registered profiles, paper benchmarks and fixed-framework prompts")
     for relative in sorted(expected_task_paths):
         task_text = (ROOT / relative).read_text()
         headings = set(re.findall(r"^## (.+)$", task_text, re.M))

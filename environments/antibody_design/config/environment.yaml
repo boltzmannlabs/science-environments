@@ -55,6 +55,9 @@ contracts:
   protocol: config/shared/protocol.schema.json
   mab-assay-record: config/shared/mab-assay-record.schema.json
 # Document-only evaluation prompts; these do not register executable profiles.
+fixed_framework_tasks:
+  vhh_ha_rsv_fixed_framework_design: tasks/monoclonal_antibody_design/rfantibody_fixed_framework_design.md
+  huj3_gp120_fixed_framework_design: tasks/monoclonal_antibody_design/antibmpnn_fixed_framework_design.md
 paper_benchmark_tasks:
   mab_her2_reference_optimization: tasks/monoclonal_antibody_design/mab_her2_reference_optimization.md
   mab_pdl1_epitope_design: tasks/monoclonal_antibody_design/mab_pdl1_epitope_design.md
