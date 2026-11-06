@@ -14,4 +14,4 @@ This catalog links to papers rather than redistributing publisher PDFs. Evidence
 
 Existing research used Crossref/OpenAlex bibliographic queries, Europe PMC and Google Patents text queries. Publisher access limits, incomplete patent screening and lack of chemical-structure search prevent exhaustive absence/novelty conclusions. P1/P2 are negative screening records, not validated route precedents.
 
-See [machine-readable catalog](papers.json) and [results comparison](../results/achievements_and_comparison.md).
+See [machine-readable catalog](papers.json) and [results comparison](../../results/Task%20-%2001/achievements_and_comparison.md).
