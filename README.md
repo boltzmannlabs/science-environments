@@ -97,6 +97,8 @@ Contains GitHub-specific contribution and review resources.
 
 ## Environment Documentation Requirements
 
+The [Impurity Retrosynthesis environment](environments/impurity-retrosynthesis/README.md) includes target-specific tasks, named literature comparators, achieved computational metrics, and sanitized result summaries. It is a research prototype, not an experimentally validated synthesis or cost estimator. See its [status](environments/impurity-retrosynthesis/STATUS.md) and [research notes](research/impurity-retrosynthesis/research-notes.md).
+
 Every environment should maintain clear and consistent documentation.
 
 Before considering an environment ready for review, ensure the following are addressed:

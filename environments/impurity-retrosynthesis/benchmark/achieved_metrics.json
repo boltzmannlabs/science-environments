@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "metric_type": "computational audit and documentary comparison; not experimental performance",
+  "targets": {
+    "A": {
+      "cas": "66622-47-7",
+      "route_count": 12,
+      "reaction_nodes": 38,
+      "root_matches": 12,
+      "nodes_with_missing_listed_element_source": 9,
+      "nodes_with_traceable_citation": 0,
+      "nodes_with_procedure": 0
+    },
+    "M": {
+      "cas": "60057-62-7",
+      "route_count": 7,
+      "reaction_nodes": 21,
+      "root_matches": 7,
+      "nodes_with_missing_listed_element_source": 1,
+      "nodes_with_traceable_citation": 0,
+      "nodes_with_procedure": 0
+    }
+  },
+  "racemic_ibuprofen": {
+    "completion": "completed_owner_confirmed",
+    "route_count": null,
+    "reaction_nodes": null,
+    "literature_comparator_mapping": null,
+    "metrics_status": "original artifacts not linked"
+  },
+  "experimental_comparison": {
+    "project_measured_yield": null,
+    "project_measured_purity": null,
+    "inr_100g_cost": null,
+    "yield_improvement_vs_literature": null,
+    "chemical_superiority_demonstrated": false
+  },
+  "literature_reported_only": {
+    "CN108794319B": {
+      "example_step_yields_percent": [
+        82.3,
+        60.3,
+        95
+      ],
+      "claimed_final_purity_percent": 99.8,
+      "caveat": "patent-reported; translated example inconsistencies; not reproduced in project"
+    },
+    "WO2013014448A1_example_59": {
+      "reported_isolated_mg": 76,
+      "reported_yield_percent": 27,
+      "caveat": "discovery-scale literature result; no corresponding model run"
+    }
+  }
+}
