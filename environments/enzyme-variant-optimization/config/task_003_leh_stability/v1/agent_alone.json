@@ -9,7 +9,8 @@
     "model": "gpt-6.1-sol",
     "reasoning_effort": "xhigh",
     "response_token_limit": null,
-    "selection_status": "observed_RML_LEH_settings_reused_as_starting_profile"
+    "selection_status": "observed_RML_LEH_settings_reused_as_starting_profile",
+    "provider": "openai-codex"
   },
   "execution": {
     "runtime": "Agent-Scientist",
@@ -61,7 +62,7 @@
   "provenance": {
     "status": "draft_not_executed_from_this_profile",
     "historical_run_mapping": null,
-    "model_settings_source": "Observed RML/LEH native-session settings, reused prospectively.",
+    "model_settings_source": "Observed current RML/LEH native sessions: gpt-6.1-sol via openai-codex with xhigh reasoning; reused prospectively.",
     "other_settings_source": "Proposed starting defaults from shared environment constraints and authorized resource policies; not observed settings for an unrun case.",
     "required_before_launch": "Review and freeze effective settings; record the actual run ID and configuration hash in run evidence."
   }
