@@ -4,6 +4,8 @@
 
 This review covers the task_007 rewrite, its evaluator metadata and supporting parser/validation/grading changes. It is a document and implementation review, not a scientific execution or capability certification.
 
+Subsequent workflow edit: the agent-facing task now concentrates on the source workflow, scientific constraints, metrics and outputs. Detailed implementation and additional execution checks are retained as owner guidance, rather than a separate task workflow stage. Source-reported reference redocking, 3D library screening, property assessment, docking, selection and dynamics remain specified. Earlier findings below remain a review history; they do not imply that every additional check is prescribed in the current task.
+
 Sources checked:
 
 - Tanbin et al., DOI [10.3390/biotech10010001](https://doi.org/10.3390/biotech10010001), original 28-page PDF and PMC9245486 XML: Methods 2.1–2.3, Results 3.1–3.3, Tables 1–12 and figure evidence retained in the earlier source audit.

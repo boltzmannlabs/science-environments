@@ -18,6 +18,10 @@ The current workflow includes 3D shape/feature screening, up to 100 analogues pe
 
 The source audit linked below applies to the earlier paper-anchored task version, not to the current capability-based prompt. Exact tool availability, historical data completeness and paper reproducibility remain separate from task-format validation.
 
+### Execution guidance
+
+Additional input and execution checks belong in the run prompt or evaluator review, rather than being presented as scientific workflow stages reported by the source. These include checking coordinate-frame/box overlap, distinguishing pose-to-crystal from pose-to-best-mode displacement, establishing endpoint equivalence from model definitions, checking accepted-job state before retries and verifying duration against raw logs/trajectories. The agent-facing task retains the source-reported reference redocking and molecular-dynamics analyses, without prescribing their software implementation or adding a separate binding-site-validity stage.
+
 ### Workflow-fidelity review
 
 | Requirement | Source location | Agent-facing treatment |
