@@ -11,9 +11,9 @@ BASE = Path(__file__).resolve().parents[1]
 
 class TestComparisons(unittest.TestCase):
     def test_metrics_match_routes(self):
-        routes = json.loads((BASE / 'results/Task - 01/route_summary.json').read_text())['routes']
-        audit = json.loads((BASE / 'results/Task - 01/top0_validation.json').read_text())
-        m = json.loads((BASE / 'benchmark/Task - 01/achieved_metrics.json').read_text())
+        routes = json.loads((BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json').read_text())['routes']
+        audit = json.loads((BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/top0_validation.json').read_text())
+        m = json.loads((BASE / 'benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json').read_text())
         self.assertEqual(m['routes_generated'], len(routes))
         self.assertEqual(m['reaction_node_occurrences_across_routes'], sum(r['explicit_tree_steps'] for r in routes))
         self.assertEqual(m['selected_route_expected_product_rank1_count'], sum(s['forward_product_rank'] == 1 for s in audit['steps']))
@@ -23,8 +23,8 @@ class TestComparisons(unittest.TestCase):
         self.assertFalse(m['literature_superiority_demonstrated'])
 
     def test_csv_all_routes(self):
-        routes = json.loads((BASE / 'results/Task - 01/route_summary.json').read_text())['routes']
-        with (BASE / 'results/Task - 01/route_yield_comparison.csv').open(newline='') as f:
+        routes = json.loads((BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json').read_text())['routes']
+        with (BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/route_yield_comparison.csv').open(newline='') as f:
             rows = list(csv.DictReader(f))
         self.assertEqual(len(rows), len(routes))
         for row, r in zip(rows, routes):
@@ -33,7 +33,7 @@ class TestComparisons(unittest.TestCase):
             self.assertEqual(row['measured_target_yield_pct'], 'not measured')
 
     def test_literature_is_not_same_substrate(self):
-        refs = json.loads((BASE / 'benchmark/Task - 01/papers.json').read_text())['references']
+        refs = json.loads((BASE / 'benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.json').read_text())['references']
         self.assertEqual(len(refs), 5)
         self.assertTrue(all(not r['same_substrate'] for r in refs))
         numeric = [r for r in refs if r['experimental_yield_pct'] is not None]
@@ -42,10 +42,10 @@ class TestComparisons(unittest.TestCase):
 
     def test_task_folder_layout(self):
         for section in ('tasks', 'benchmark', 'results'):
-            self.assertTrue((BASE / section / 'Task - 01' / 'README.md').is_file())
+            self.assertTrue((BASE / section / 'task-01-fluorinated-quinoline-retrosynthesis' / 'README.md').is_file())
             loose = [f.name for f in (BASE / section).iterdir() if f.is_file() and f.name != 'README.md']
             self.assertEqual(loose, [], f'Task-specific files at section root: {section}')
-        objective = (BASE / 'tasks/Task - 01/README.md').read_text()
+        objective = (BASE / 'tasks/task-01-fluorinated-quinoline-retrosynthesis/README.md').read_text()
         self.assertIn('Overall objective', objective)
         self.assertIn('Acceptance criteria', objective)
         self.assertIn('Actual outcomes', objective)

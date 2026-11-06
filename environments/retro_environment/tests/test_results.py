@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 class TestRouteSnapshot(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.routes = json.loads((ROOT / 'results/Task - 01/route_summary.json').read_text())
-        cls.audit = json.loads((ROOT / 'results/Task - 01/top0_validation.json').read_text())
+        cls.routes = json.loads((ROOT / 'results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json').read_text())
+        cls.audit = json.loads((ROOT / 'results/task-01-fluorinated-quinoline-retrosynthesis/top0_validation.json').read_text())
 
     def test_target_and_unique_routes(self):
         self.assertEqual(self.routes['schema_version'], 1)

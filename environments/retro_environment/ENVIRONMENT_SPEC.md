@@ -6,7 +6,7 @@ Can an agent generate routes to the supplied fluorinated quinoline ether and dis
 
 ## Inputs / outputs
 
-Input: exact target SMILES in `results/Task - 01/route_summary.json`; authorized Boltzmann retrosynthesis route JSON for optional local rebuilding. Each route has `starting_materials`, a reaction-node tree, model ranking and `reaction_yield`. The original raw account export is **not** included.
+Input: exact target SMILES in `results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json`; authorized Boltzmann retrosynthesis route JSON for optional local rebuilding. Each route has `starting_materials`, a reaction-node tree, model ranking and `reaction_yield`. The original raw account export is **not** included.
 
 Outputs: sanitized JSON for all 16 routes, top0 review JSON, research and source documents, and a rendered DOCX with molecular structures. No user-identifying service IDs, signed URLs, keys, or source-site page dumps are distributed.
 

@@ -12,10 +12,10 @@ No target-specific measured yield or selectivity exists; exact same-target exper
 
 ## Comparison tables
 
-- [Tool versus literature and all-route yields](../../results/Task%20-%2001/achievements_and_comparison.md).
-- [All-route numeric CSV](../../results/Task%20-%2001/route_yield_comparison.csv).
-- [All generated route steps and inputs](../../results/Task%20-%2001/route_summary.json).
-- [Selected route reaction-level audit](../../results/Task%20-%2001/top0_validation.json).
+- [Tool versus literature and all-route yields](../../results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md).
+- [All-route numeric CSV](../../results/task-01-fluorinated-quinoline-retrosynthesis/route_yield_comparison.csv).
+- [All generated route steps and inputs](../../results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json).
+- [Selected route reaction-level audit](../../results/task-01-fluorinated-quinoline-retrosynthesis/top0_validation.json).
 
 The literature 32% isolated deprotection yield belongs to a different compound. Neither model percentages nor their illustrative products may be called observed target yield or an improvement over that reference.
 

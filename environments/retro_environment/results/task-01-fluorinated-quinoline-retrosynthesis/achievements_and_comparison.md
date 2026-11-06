@@ -31,8 +31,8 @@ The percentage product below multiplies step model yields under an illustrative 
 | top8 | 5 | 77.30, 70.90, 74.74, 48.42, 61.63 | 12.23 |
 | top9 | 4 | 69.41, 69.88, 77.30, 52.63 | 19.73 |
 | top10 | 4 | 51.22, 71.82, 72.08, 65.11 | 17.26 |
-| top11 | 3 | 73.33, 53.83, 72.57 | 28.64 | 
-| top12 | 3 | 68.65, 60.09, 74.79 | 30.85 | 
+| top11 | 3 | 73.33, 53.83, 72.57 | 28.64 |
+| top12 | 3 | 68.65, 60.09, 74.79 | 30.85 |
 | top13 | 5 | 66.71, 51.48, 65.95, 70.94, 58.26 | 9.36 |
 | top14 | 3 | 62.48, 50.08, 68.73 | 21.51 |
 | top15 | 4 | 77.30, 74.51, 76.34, 49.63 | 21.82 |
@@ -41,9 +41,9 @@ The percentage product below multiplies step model yields under an illustrative 
 
 | Step | Tool output (model-only) | Literature comparator | Conclusion |
 |---|---|---|---|
-| 1: TBS protection | Forward score 0.999999812; mapping confidence 0.27964; condition-tool yield 81.26%; TBAF/THF, 20–30 °C | [L1](../../benchmark/Task%20-%2001/papers.md): protection class only; no same-substrate yield extracted | Reject fluoride condition for forming/retaining TBS ether. High score did not establish compatible conditions. |
-| 2: aryl ether formation | Protected product ranked last, forward score 0; mapping confidence 0.21971; condition-tool yield 77.94%; pyridine/THF, no coupling catalyst | [L2](../../benchmark/Task%20-%2001/papers.md): Ullmann-type diaryl-ether class only; exact pairing not established | Unresolved central step; model yield not credible evidence of feasible coupling. |
-| 3: deprotection | Forward score 0.999999837; mapping confidence 0.66765; condition-tool yield 62.02%; TBAF/THF, 20–30 °C | [L3](../../benchmark/Task%20-%2001/papers.md): TBAF/THF, 0 °C to room temperature, 45 min; 32% isolated yield for a DIFFERENT compound | Plausible class analogy only; 62.02% versus 32% is NOT a matched yield improvement. |
+| 1: TBS protection | Forward score 0.999999812; mapping confidence 0.27964; condition-tool yield 81.26%; TBAF/THF, 20–30 °C | [L1](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): protection class only; no same-substrate yield extracted | Reject fluoride condition for forming/retaining TBS ether. High score did not establish compatible conditions. |
+| 2: aryl ether formation | Protected product ranked last, forward score 0; mapping confidence 0.21971; condition-tool yield 77.94%; pyridine/THF, no coupling catalyst | [L2](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): Ullmann-type diaryl-ether class only; exact pairing not established | Unresolved central step; model yield not credible evidence of feasible coupling. |
+| 3: deprotection | Forward score 0.999999837; mapping confidence 0.66765; condition-tool yield 62.02%; TBAF/THF, 20–30 °C | [L3](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): TBAF/THF, 0 °C to room temperature, 45 min; 32% isolated yield for a DIFFERENT compound | Plausible class analogy only; 62.02% versus 32% is NOT a matched yield improvement. |
 
 The condition-tool yields above are a different prediction output from the retrosynthesis step-yield fields in the all-route table; they are not substituted into one another.
 
@@ -56,6 +56,6 @@ No matched experimental accuracy, yield improvement, selectivity improvement, pu
 - [All routes](route_summary.json)
 - [Selected-route tool audit](top0_validation.json)
 - [Numeric CSV](route_yield_comparison.csv)
-- [Metric definitions and values](../../benchmark/Task%20-%2001/achieved_metrics.json)
-- [Literature catalog](../../benchmark/Task%20-%2001/papers.md)
+- [Metric definitions and values](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json)
+- [Literature catalog](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md)
 - [Existing DOCX structure report](retro_benchmark_report.docx)
