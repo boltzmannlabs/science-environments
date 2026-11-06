@@ -1,0 +1,120 @@
+{
+  "task_id": "ranolazine_er_dissolution_investigation",
+  "case_id": "D-0092-2024",
+  "status": "insufficient_data_for_optimization",
+  "roles": {
+    "Recall Research Agent": {
+      "status": "FDA_recall_listed",
+      "source_ids": [
+        "FDA-RES-D-0092-2024"
+      ],
+      "finding": "Glenmark 500 mg lot and reported dissolution issue documented; specific causal factor unknown"
+    },
+    "Evidence Retrieval Agent": {
+      "status": "public_sources_verified_gaps_remain",
+      "source_hashes_match": {
+        "FDA-RES-D-0092-2024": true,
+        "FDA-SPL-0cf58732-c242-49b0-8e3f-248778b4458d": true,
+        "FDA-DAILYMED-0cf58732-c242-49b0-8e3f-248778b4458d": true
+      },
+      "unknowns": [
+        "dissolution_method_and_criteria",
+        "measured_profiles",
+        "batch_formula_and_material_attributes",
+        "process_and_storage_history"
+      ],
+      "source_ids": [
+        "FDA-RES-D-0092-2024",
+        "FDA-SPL-0cf58732-c242-49b0-8e3f-248778b4458d",
+        "FDA-DAILYMED-0cf58732-c242-49b0-8e3f-248778b4458d"
+      ]
+    },
+    "Formulation Analysis Agent": {
+      "status": "insufficient_data",
+      "compatibility": "insufficient_data",
+      "conclusion": "qualitative labeling only; no batch-specific ingredient fractions or process setpoints"
+    },
+    "Dissolution Modeling Agent": {
+      "status": "insufficient_data",
+      "openpkflow": {
+        "version": "2.9.0",
+        "purpose": "OpenPKFlow software smoke test only; no recalled-lot fitting"
+      },
+      "osp_particle_dissolution": "not_run_missing_particle_distribution_solubility_and_case_profile",
+      "prediction": "not_available",
+      "uncertainty": "not_calibrated"
+    },
+    "Experimental Design and Bayesian Optimization Agent": {
+      "status": "not_run_missing_verified_objective_bounds_and_measurements",
+      "next_step": "request controlled dissolution SOP, failing/passing lot results and batch/process records",
+      "physical_experiments": "approval_required"
+    },
+    "Independent Validation Agent": {
+      "status": "accept_public_provenance_only",
+      "auditor": "accept",
+      "verifier_findings": [],
+      "limitations": [
+        "FDA recall listing does not identify root cause",
+        "no optimized formulation can be validated"
+      ]
+    }
+  },
+  "reported_facts": [
+    {
+      "text": "FDA enforcement reason: Failed Dissolution Specifications: Out of specification for dissolution.",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "reason_for_recall"
+    },
+    {
+      "text": "Recalling firm: Glenmark Pharmaceuticals Inc., USA",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "recalling_firm"
+    },
+    {
+      "text": "Product: Ranolazine Extended-Release Tablets 500mg, 60 Tablets per bottle, Rx Only, Manufactured by: Glenmark Pharmaceuticals Limited, Plot No. 2, Phase-2, Pharma Zone SEZ, Pithampur Dist - Dhar, Madhya Pradesh - 454775, India, Manufactured for: Glenmark Pharmaceuticals Inc., USA, Mahwah, NJ 07430, NDC 68462-319-60.",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "product_description"
+    },
+    {
+      "text": "Lot/code as reported: Lot # 17230388, Exp. 01/31/2025",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "code_info"
+    },
+    {
+      "text": "FDA report date: 20231115",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "report_date"
+    },
+    {
+      "text": "Labeled inactive ingredients (qualitative only): carmine, copolymer based ethyl acrylate and methacrylic acid, FD&C Yellow #6/sunset yellow FCF aluminum lake, hypromellose, lactose monohydrate, magnesium stearate, microcrystalline cellulose, polyethylene glycol, polysorbate 80, sodium hydroxide, sodium lauryl sulfate, titanium dioxide and triacetin. Additional inactive ingredients for the 500 mg tablet include D&C Yellow #10 aluminum lake; additional inactive ingredients for the 1000 mg tablet include FD&C Red #40/allura red ac aluminum lake.",
+      "label": "literature_reported",
+      "source_id": "FDA-SPL-0cf58732-c242-49b0-8e3f-248778b4458d",
+      "field": "description"
+    },
+    {
+      "text": "Labeled strength",
+      "value": 500,
+      "unit": "mg",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0092-2024",
+      "field": "product_description"
+    },
+    {
+      "text": "DailyMed currently served SPL ID and package NDC corroborate public label identity; no recalled-lot formula or QC method established",
+      "label": "literature_reported",
+      "source_id": "FDA-DAILYMED-0cf58732-c242-49b0-8e3f-248778b4458d",
+      "field": "setId+code"
+    }
+  ],
+  "hypotheses": [],
+  "candidate_compositions": [],
+  "predicted_dissolution_profiles": [],
+  "objective_scores": null,
+  "validation": "not_established",
+  "source_type": "public FDA/NLM labeling and recall; NOT lot-level experimental dataset"
+}

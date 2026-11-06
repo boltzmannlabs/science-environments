@@ -1,0 +1,6 @@
+# Task index
+
+1. Verify FDA recall/label and cross-check DailyMed: [case report](../scripts/formulation-optimization-gym/RANOLAZINE_500MG_INVESTIGATION.md), [FDA importer](../scripts/formulation-optimization-gym/import_fda.py), [DailyMed importer](../scripts/formulation-optimization-gym/import_dailymed.py).
+2. Run evidence-led Glenmark case triage: [local six-role coordinator](../scripts/formulation-optimization-gym/agents/investigation_coordinator.py), [result](../scripts/formulation-optimization-gym/data/processed/D-0092-2024.investigation.json).
+3. Run assumption-conditional **different-product research** simulation: [simulation report](../scripts/formulation-optimization-gym/EXPLORATORY_SIMULATIONS.md), [script](../scripts/formulation-optimization-gym/evaluation/exploratory_scenarios.py), [results](../scripts/formulation-optimization-gym/data/processed/ranolazine_research_scenario_results.json).
+4. Independently audit and benchmark: [scenario audit code](../scripts/formulation-optimization-gym/evaluation/exploratory_verifier.py), [benchmark harness](../scripts/formulation-optimization-gym/evaluation/holdout_benchmark.py). The product holdout benchmark has no measured dataset and remains `not_evaluated`.
