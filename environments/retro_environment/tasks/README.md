@@ -1,3 +1,0 @@
-# Evaluation task
-
-Given the exact SMILES in `results/route_summary.json`, reconstruct and compare all 16 model-generated pathways. For the selected top0 route, contrast forward-predicted products, atom-map coherence, impurity hypotheses and chemical plausibility of condition recommendations. Benchmark reaction-family analogies against references in `../../research/retro_environment/references.md` without asserting exact-target validation. Report experimental status, missing precedent, starting-material availability (unknown), route-step discrepancy, predicted-versus-measured yields, and proposed tests. Success is an honest scientific audit, **not** a laboratory synthesis.

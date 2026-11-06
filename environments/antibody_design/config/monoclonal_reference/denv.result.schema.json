@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.science-environments.local/antibody_design/monoclonal_reference/denv.result.schema.json",
+  "title": "Monoclonal antibody result metrics",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "variant",
+    "run_id",
+    "run_status",
+    "requested_count",
+    "stop_reason",
+    "missing_requirements",
+    "records",
+    "shortlist",
+    "provenance",
+    "resources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "task_id": {
+      "const": "denv_antibody_001"
+    },
+    "variant": {
+      "enum": [
+        "general",
+        "tool_specific"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+    },
+    "run_status": {
+      "enum": [
+        "NEEDS_INPUT",
+        "PROTOCOL_REQUIRED",
+        "BLOCKED",
+        "QUALIFIED",
+        "PARTIAL",
+        "NO_QUALIFYING_DESIGNS",
+        "INCOMPLETE",
+        "CANCELLED"
+      ]
+    },
+    "requested_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "stop_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "missing_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      },
+      "minItems": 0
+    },
+    "shortlist": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_sha256",
+        "protocol_sha256",
+        "scientific_execution",
+        "synthetic_fixture",
+        "knowledge_cutoff"
+      ],
+      "properties": {
+        "request_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protocol_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scientific_execution": {
+          "type": "boolean"
+        },
+        "synthetic_fixture": {
+          "type": "boolean"
+        },
+        "knowledge_cutoff": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wall_time_minutes",
+        "cpu_core_hours",
+        "gpu_hours",
+        "remote_cost_units"
+      ],
+      "properties": {
+        "wall_time_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cpu_core_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "gpu_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "remote_cost_units": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "value",
+        "state",
+        "method_id",
+        "units",
+        "scale",
+        "scope",
+        "sequence_sha256",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED"
+          ]
+        },
+        "method_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "units": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "enum": [
+            "antibody",
+            "antigen_antibody"
+          ]
+        },
+        "sequence_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact"
+          },
+          "minItems": 0
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "role",
+        "parent_id",
+        "sequences",
+        "sequence_sha256",
+        "rules"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "role": {
+          "enum": [
+            "reference",
+            "candidate"
+          ]
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sequences": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heavy",
+            "light"
+          ],
+          "properties": {
+            "heavy": {
+              "type": "string",
+              "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$"
+            },
+            "light": {
+              "type": "string",
+              "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$"
+            }
+          }
+        },
+        "sequence_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/measurement"
+          },
+          "minItems": 0
+        }
+      }
+    }
+  }
+}

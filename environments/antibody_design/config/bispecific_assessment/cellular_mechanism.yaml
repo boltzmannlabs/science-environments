@@ -1,0 +1,16 @@
+schema_version: '1.0'
+scientific_execution_included: false
+scientific_thresholds_supplied: false
+task_id: bispecific_cellular_mechanism_assessment
+family: bispecific_assessment
+task_file: tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md
+request_schema: config/bispecific_assessment/cellular_mechanism.request.schema.json
+result_schema: config/bispecific_assessment/cellular_mechanism.result.schema.json
+validation_level: schema_and_identifiers
+required_datasets:
+- classifier_manifest
+- image_predictions
+- independent_annotations
+- condition_metadata
+request_example: config/bispecific_assessment/cellular_mechanism.request.example.json
+response_wrapper: EVAL_ANSWER

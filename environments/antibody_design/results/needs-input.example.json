@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "task_id": "denv_antibody_001",
+  "variant": "general",
+  "run_id": "example-preflight",
+  "run_status": "NEEDS_INPUT",
+  "requested_count": 10,
+  "stop_reason": "Example preflight stops before any candidate work: the exact DENV-2 EDIII antigen and DV87.1 reference inputs are not supplied, so biological identity is unresolved.",
+  "missing_requirements": [
+    "target.strain_id",
+    "target.construct",
+    "target.sequence",
+    "target.structure",
+    "target.chain_ids",
+    "target.residue_map",
+    "reference.format",
+    "reference.sequences",
+    "reference.heavy_chain_id",
+    "reference.light_chain_id",
+    "reference.numbering_scheme",
+    "reference.region_annotation",
+    "protocol"
+  ],
+  "records": [],
+  "shortlist": [],
+  "provenance": {
+    "request_sha256": "5d072a26b0cb42008f72920283412490c6a3d36f4ba910059a3149d92e87be63",
+    "protocol_sha256": null,
+    "scientific_execution": false,
+    "synthetic_fixture": false,
+    "knowledge_cutoff": "2024-09-01"
+  },
+  "resources": {
+    "wall_time_minutes": 0,
+    "cpu_core_hours": 0,
+    "gpu_hours": 0,
+    "remote_cost_units": 0
+  }
+}
