@@ -22,8 +22,8 @@ Suggests panel logic surfaces top-tier reagents where measurement exists.
 
 ## Benchmark metrics
 
-| Gene Pool | Panel / Top-150 Overlap with Tiling | Measured Labels of Panel Picks | Cohort Base Positive Rate |
-|:---|:---:|:---|:---:|
+| Gene pool | Panel/top-150 overlap with tiling | Measured labels of panel picks | Cohort base pos-rate |
+|---|---|---|
 | HPSE | 0/6 | — (tiling sparse) | 0.72 |
 | HK2 | 0/6 | — | 0.77 |
-| HIF1A | 2/6 | **0.92, 0.91** (both effective) | 0.80 |
+| HIF1A | 2/6 | **0.92, 0.91** (both effective) | 0.8 |

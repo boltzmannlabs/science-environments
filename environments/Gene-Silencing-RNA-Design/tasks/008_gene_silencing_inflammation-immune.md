@@ -1,6 +1,6 @@
 # Task: gene_silencing_inflammation-immune_008
 
-**Task family:** application-aware siRNA design — **Inflammation / immune-modulation siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Inflammation / immune-modulation siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-A UGUGU-containing candidate is unusable in this application regardless of efficacy score. Application benchmark status: BENCHMARKED — published IFN-induction cohort (n=13 labeled): frozen UGUGU rule specificity 1.00 / sensitivity 0.10 (hazard filter; incompleteness measured, scanner NOT tuned). See ../../benchmark/Inflammation-IFN-cohort/README.md.
+A UGUGU-containing candidate is unusable in this application regardless of efficacy score. Application benchmark status: BENCHMARKED — published IFN-induction cohort (n=13 labeled): frozen UGUGU rule specificity 1.00 / sensitivity 0.10 (hazard filter; incompleteness measured, scanner NOT tuned). See ../../benchmark/008_Inflammation-IFN-cohort/README.md.

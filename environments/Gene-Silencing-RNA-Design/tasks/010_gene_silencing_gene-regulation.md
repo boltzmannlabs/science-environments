@@ -1,6 +1,6 @@
 # Task: gene_silencing_gene-regulation_010
 
-**Task family:** application-aware siRNA design — **Gene-expression regulation siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Gene-expression regulation siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-Transient knockdown is not permanent editing and not evidence of a direct regulatory interaction. Application benchmark status: BENCHMARKED (small cohort) — MYC n=7 measured siRNAs joined post-hoc: rank-recovery median 92.6th pct; discrimination metrics degenerate at this n (percentile-only reporting). See ../../benchmark/Gene-regulation-MYC-cohort/README.md.
+Transient knockdown is not permanent editing and not evidence of a direct regulatory interaction. Application benchmark status: BENCHMARKED (small cohort) — MYC n=7 measured siRNAs joined post-hoc: rank-recovery median 92.6th pct; discrimination metrics degenerate at this n (percentile-only reporting). See ../../benchmark/010_Gene-regulation-MYC-cohort/README.md.

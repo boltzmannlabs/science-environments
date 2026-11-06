@@ -1,6 +1,6 @@
 # Task: gene_silencing_metabolic-liver-galnac_005
 
-**Task family:** application-aware siRNA design — **Metabolic / liver siRNA design (GalNAc context)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Metabolic / liver siRNA design (GalNAc context)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-Chemistry/delivery layers are annotations from published rule cards, never predictions; no sequence-based delivery predictor exists — state it, do not approximate it. Application benchmark status: BENCHMARKED in this frame: all-7-approved-drugs same-side cohort and the HIF1A end-to-end case study (generator clean AUC 0.760; measured-top-10 at median 97.5th pct) — ../../benchmark/HIF1A-case-study/README.md.
+Chemistry/delivery layers are annotations from published rule cards, never predictions; no sequence-based delivery predictor exists — state it, do not approximate it. Application benchmark status: BENCHMARKED in this frame: all-7-approved-drugs same-side cohort and the HIF1A end-to-end case study (generator clean AUC 0.760; measured-top-10 at median 97.5th pct) — ../../benchmark/005_HIF1A-case-study/README.md.

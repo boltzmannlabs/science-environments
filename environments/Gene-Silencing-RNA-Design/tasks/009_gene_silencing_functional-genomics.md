@@ -1,6 +1,6 @@
 # Task: gene_silencing_functional-genomics_009
 
-**Task family:** application-aware siRNA design — **Functional-genomics siRNA panel design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Functional-genomics siRNA panel design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 

@@ -12,7 +12,7 @@ Protocol versions are frozen with hashes (`engine-v1.0.0` → `v1.1.0` requireme
 
 ## Read in this order
 
-1. [Agent task](tasks/gene_silencing_rna_001.md): task-facing description, required execution steps, constraints and expected deliverable.
+1. [Agent task](tasks/001_gene_silencing_rna.md): task-facing description, required execution steps, constraints and expected deliverable.
 2. [Environment specification](ENVIRONMENT_SPEC.md): modes, inputs, brief contract, battery stages, ranking, benchmarking and scope gates.
 3. [Environment configuration](config/environment.yaml), [requirement-brief contract](config/requirement_brief.schema.json) and [candidate contract](config/candidate.schema.json); frozen gates in [thresholds.v1.0.frozen.json](config/thresholds.v1.0.frozen.json).
 4. [Runtime contracts](runtime/CONTRACTS.md): isolated backends, exact invocations, operational rules.
@@ -40,8 +40,8 @@ Gene-Silencing-RNA-Design/
 │   └── explore_design.py
 ├── tasks/
 │   ├── README.md                     (task index + benchmark status per application)
-│   ├── gene_silencing_rna_001.md     (general routing task, all modes)
-│   ├── gene_silencing_<application>_002..011.md   (ten application tasks: oncology ·
+│   ├── 001_gene_silencing_rna.md     (general routing task, all modes)
+│   ├── 002..011_gene_silencing_<application>.md   (ten application tasks: oncology ·
 │   │                                  genetic-disease total/allele · metabolic-liver-GalNAc ·
 │   │                                  systemic-LNP · neuro-CNS · inflammation · functional-
 │   │                                  genomics · gene-regulation · drug-target-validation)
@@ -54,11 +54,11 @@ Gene-Silencing-RNA-Design/
 ├── benchmark/
 │   ├── README.md
 │   ├── WORKFLOWS_AND_VALIDATION.md   (per-benchmark workflows, tools, validation, arms)
-│   ├── HeadToHead-LargePool/         (manual-vs-sub-agent definitive comparison)
+│   ├── 001_HeadToHead-LargePool/         (manual-vs-sub-agent definitive comparison)
 │   ├── PROVENANCE.sha256
-│   ├── Simone-independent-evaluation/
-│   ├── TTR-approved-drugs-cohort/
-│   └── HIF1A-case-study/
+│   ├── 000_Simone-independent-evaluation/
+│   ├── 003_TTR-approved-drugs-cohort/
+│   └── 005_HIF1A-case-study/
 └── results/
 ```
 

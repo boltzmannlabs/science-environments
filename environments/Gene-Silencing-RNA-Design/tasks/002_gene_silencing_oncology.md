@@ -1,6 +1,6 @@
 # Task: gene_silencing_oncology_002
 
-**Task family:** application-aware siRNA design — **Oncology siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Oncology siRNA design**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-A candidate whose seed hits a viability-depleting 6mer may look effective for the wrong reason — flag and deconvolute; never report seed-toxicity as efficacy. Application benchmark status: BENCHMARKED end-to-end on two clean public cohorts — HPSE (n=106) and HK2 (n=95) measured siRNAs: rank-recovery median 94.5th/95.1st pct; per-sequence AUC 0.58-0.72 (target-dependent; deep review windows advised). See ../../benchmark/Oncology-HPSE-HK2-cohorts/README.md.
+A candidate whose seed hits a viability-depleting 6mer may look effective for the wrong reason — flag and deconvolute; never report seed-toxicity as efficacy. Application benchmark status: BENCHMARKED end-to-end on two clean public cohorts — HPSE (n=106) and HK2 (n=95) measured siRNAs: rank-recovery median 94.5th/95.1st pct; per-sequence AUC 0.58-0.72 (target-dependent; deep review windows advised). See ../../benchmark/002_Oncology-HPSE-HK2-cohorts/README.md.

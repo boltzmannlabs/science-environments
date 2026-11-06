@@ -1,6 +1,6 @@
 # Task: gene_silencing_genetic-disease-allele-selective_004
 
-**Task family:** application-aware siRNA design — **Genetic-disease siRNA design (allele-selective)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Genetic-disease siRNA design (allele-selective)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-Construct zero hypothetical mutants; shared-reference silencing is not mutant-selective and carries no wild-type-sparing guarantee. Application benchmark status: BENCHMARKED (duplex-discrimination arm) — 26 published allele-guides: RNAduplex delta-delta-G direction confirmed (selective 6.7 vs weak 4.7 kcal/mol; Pearson 0.42 on n=5 subset). Variant-verified DESIGN arm remains unexecuted. See ../../benchmark/Allele-selective-duplex/README.md.
+Construct zero hypothetical mutants; shared-reference silencing is not mutant-selective and carries no wild-type-sparing guarantee. Application benchmark status: BENCHMARKED (duplex-discrimination arm) — 26 published allele-guides: RNAduplex delta-delta-G direction confirmed (selective 6.7 vs weak 4.7 kcal/mol; Pearson 0.42 on n=5 subset). Variant-verified DESIGN arm remains unexecuted. See ../../benchmark/004_Allele-selective-duplex/README.md.

@@ -38,18 +38,18 @@ contracts:
   requirement_brief: config/requirement_brief.schema.json
   candidate: config/candidate.schema.json
   task_index: tasks/README.md
-  general_task: tasks/gene_silencing_rna_001.md
+  general_task: tasks/001_gene_silencing_rna.md
   application_tasks:
-    - tasks/gene_silencing_oncology_002.md
-    - tasks/gene_silencing_genetic-disease-total-lowering_003.md
-    - tasks/gene_silencing_genetic-disease-allele-selective_004.md
-    - tasks/gene_silencing_metabolic-liver-galnac_005.md
-    - tasks/gene_silencing_systemic-lnp_006.md
-    - tasks/gene_silencing_neuro-cns_007.md
-    - tasks/gene_silencing_inflammation-immune_008.md
-    - tasks/gene_silencing_functional-genomics_009.md
-    - tasks/gene_silencing_gene-regulation_010.md
-    - tasks/gene_silencing_drug-target-validation_011.md
+    - tasks/002_gene_silencing_oncology.md
+    - tasks/003_gene_silencing_genetic-disease-total-lowering.md
+    - tasks/004_gene_silencing_genetic-disease-allele-selective.md
+    - tasks/005_gene_silencing_metabolic-liver-galnac.md
+    - tasks/006_gene_silencing_systemic-lnp.md
+    - tasks/007_gene_silencing_neuro-cns.md
+    - tasks/008_gene_silencing_inflammation-immune.md
+    - tasks/009_gene_silencing_functional-genomics.md
+    - tasks/010_gene_silencing_gene-regulation.md
+    - tasks/011_gene_silencing_drug-target-validation.md
 
 autonomy:
   policy_version: "1.2"

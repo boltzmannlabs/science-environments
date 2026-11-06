@@ -1,6 +1,6 @@
 # Task: gene_silencing_genetic-disease-total-lowering_003
 
-**Task family:** application-aware siRNA design — **Genetic-disease siRNA design (total lowering)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](gene_silencing_rna_001.md) for mode routing.
+**Task family:** application-aware siRNA design — **Genetic-disease siRNA design (total lowering)**. **Status:** In Progress; protocol v1.2, frozen gates, computational scope only. Shares the environment battery, ranking contract and gates with all application tasks; only the application-specific requirements differ. Start from the [general task](001_gene_silencing_rna.md) for mode routing.
 
 ## Description
 
@@ -48,4 +48,4 @@ Antiviral/pathogen/pest work is review-only; plant/pest inactive; human models n
 
 ## Important Instructions
 
-If wild-type function is essential (e.g., cardiac TTR), the wild-type-sparing question must be surfaced even in a total-lowering request. Application benchmark status: BENCHMARKED end-to-end: approved-drug site-rank audit (vutrisiran #62/598, patisiran #107/598), same-side battery vs all 7 approved drugs, TTR top-20 gate audit — ../../benchmark/TTR-approved-drugs-cohort/README.md.
+If wild-type function is essential (e.g., cardiac TTR), the wild-type-sparing question must be surfaced even in a total-lowering request. Application benchmark status: BENCHMARKED end-to-end: approved-drug site-rank audit (vutrisiran #62/598, patisiran #107/598), same-side battery vs all 7 approved drugs, TTR top-20 gate audit — ../../benchmark/003_TTR-approved-drugs-cohort/README.md.
