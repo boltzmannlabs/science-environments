@@ -1,0 +1,38 @@
+{
+ "task_id": "pbmc3k_qc_filtering",
+ "reference": "v3 run (Scanpy 1.12.5) plus manual NK/CD8 split; curated baseline, not independently reviewed ground truth",
+ "graders": [
+  {
+   "name": "qc",
+   "weight": 1.0,
+   "params": {
+    "required_file": "cell_qc.csv",
+    "input_cells": {
+     "mode": "exact",
+     "value": 2700
+    },
+    "qc_passing_cells": {
+     "mode": "range",
+     "min": 2400,
+     "max": 2690
+    },
+    "retained_cells": {
+     "mode": "range",
+     "min": 2400,
+     "max": 2690
+    },
+    "doublets_removed": {
+     "mode": "range",
+     "min": 0,
+     "max": 150
+    },
+    "genes_after_filter": {
+     "mode": "range",
+     "min": 10000,
+     "max": 33000
+    },
+    "excluded_f1_full_credit": 0.7
+   }
+  }
+ ]
+}
