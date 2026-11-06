@@ -1,27 +1,11 @@
-# Antibody Design Status
+# Antibody Design Environment Status
 
-**Maturity:** Specification
+**Current release:** Monoclonal antibody design task specifications and benchmark references.
 
-## Current Contents
+**Maturity:** Specification.
 
-| Component | Status |
-| --- | --- |
-| Monoclonal tasks | Five active prompts in `tasks/monoclonal_antibody_design/`, each with a reference antibody, scaffold or published comparator. |
-| Bispecific tasks | One design prompt and four evidence-assessment prompts. |
-| Benchmarks | Ten matching documents with metrics, available reference values and task-specific interpretation. |
-| Configuration | Shared schemas and nine contract profiles: four retained monoclonal profiles and five active bispecific profiles. |
-| Validation | Contract validators and regression tests under `tests/`; retired prompts remain in `tests/fixtures/retired_tasks/`. |
-| Source, scripts and skills | Each folder contains only `readme.md`. No specialist implementation is included. |
-| Results | A missing-input example and a stored specification-validation report. No completed antibody-design run is supplied. |
+Five monoclonal tasks are available: HER2 interaction optimization, PD-L1 epitope-targeted scFv design, PD-1 framework-guided CDR design, LCAT CDR-H3 reconstruction and Gal-3BP interface refinement. Each has a matching benchmark document with published metrics, reference values and comparison guidance.
 
-## Validation Scope
+Bispecific and multispecific task collections, broader de novo design workflows, execution scripts, reusable skills and task results are planned for future releases.
 
-Existing checks assess schemas, declarations, provenance and output consistency. They do not establish the scientific performance of the ten active tasks. The five current monoclonal prompts have no dedicated executable profiles or automatic scientific graders.
-
-The stored validation report is historical and was not regenerated for the documentation changes. Documentation checks cover local links, folder descriptions and task/benchmark correspondence; they are separate from scientific execution.
-
-## Remaining Implementation
-
-Scientific execution requires configured external tools, verified task inputs, task-compatible output validation and independent evaluation. Published benchmark measurements and agent-reported observations retain their stated evidence scope.
-
-See the [environment specification](ENVIRONMENT_SPEC.md), [task overview](README.md) and [benchmark index](benchmark/README.md).
+See the [environment specification](ENVIRONMENT_SPEC.md) for the full intended scope and the [task catalog](README.md#tasks-and-benchmarks) for current availability.

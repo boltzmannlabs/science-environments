@@ -1,3 +1,3 @@
-# Scripts
+# Antibody Design Scripts
 
-Reserved for antibody-design utility and execution scripts. No scripts are currently included.
+Utility and execution scripts for antibody design will be published here, with usage instructions and dependencies. Planned scripts support input preparation, workflow execution, result collection and reproducible analysis.
