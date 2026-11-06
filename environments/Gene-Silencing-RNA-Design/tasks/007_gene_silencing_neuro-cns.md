@@ -13,7 +13,7 @@ Application-specific requirements: MANDATORY ask-first isoform selection (e.g., 
 Resolved per request — never defaulted. Example gene (MAPT) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [neuro-cns.request.example.json](neuro-cns.request.example.json) illustrates syntax only.
+- **Brief:** [007_007_neuro-cns.request.example.json](007_007_neuro-cns.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .35 / specificity .30 / immune .20 / seed_tox .10 / stability .05.
 

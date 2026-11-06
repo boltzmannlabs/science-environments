@@ -18,7 +18,7 @@ Resolved per request — never defaulted. Keep the reusable environment unchange
 - **Allele objective (if claimed):** reference-verified variant + explicit mutant-vs-WT objective before any design.
 - **Inputs:** `00_inputs/requirement_brief.json`, `00_inputs/transcript.fa`, and for EVALUATE mode the candidate CSV ([contract](../config/candidate.schema.json)).
 
-The example briefs ([design](ttr_design.example.json), [exploratory](hif1an_exploratory.example.json)) illustrate syntax only; they are not approved runs.
+The example briefs ([design](001_design.request.example.json), [exploratory](hif1an_exploratory.example.json)) illustrate syntax only; they are not approved runs.
 
 ## Design Constraints
 

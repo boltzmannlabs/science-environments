@@ -13,7 +13,7 @@ Application-specific requirements: chemistry rule cards (ESC/ESC+ 2'-F/2'-OMe/PS
 Resolved per request — never defaulted. Example gene (PCSK9) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [metabolic-liver-galnac.request.example.json](metabolic-liver-galnac.request.example.json) illustrates syntax only.
+- **Brief:** [005_005_metabolic-liver-galnac.request.example.json](005_005_metabolic-liver-galnac.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .35 / specificity .20 / seed_tox .20 / immune .20 / stability .05.
 

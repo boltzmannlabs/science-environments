@@ -13,7 +13,7 @@ Application-specific requirements: seed-distinctness maximization across the pan
 Resolved per request — never defaulted. Example gene (KIF11) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [functional-genomics.request.example.json](functional-genomics.request.example.json) illustrates syntax only.
+- **Brief:** [009_009_functional-genomics.request.example.json](009_009_functional-genomics.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu; seed collision within the panel.
 - **Default weight emphasis:** specificity .40 / efficacy .30 / seed_tox .15 / immune .10 / stability .05.
 

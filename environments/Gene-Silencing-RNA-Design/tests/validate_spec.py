@@ -34,8 +34,8 @@ def check_files():
             "tests/ACCEPTANCE.md"]
     missing = [f for f in need if not os.path.isfile(os.path.join(ENV, f))]
     assert not missing, f"missing: {missing}"
-    for pair in [("config/ttr_design.example.json", "tasks/ttr_design.example.json"),
-                 ("config/hif1a_exploratory.example.json", "tasks/hif1a_exploratory.example.json")]:
+    for pair in [("config/001_design.request.example.json", "tasks/001_design.request.example.json"),
+                 ("config/001_exploratory.request.example.json", "tasks/001_exploratory.request.example.json")]:
         assert read(pair[0]) == read(pair[1]), f"example drift: {pair}"
     return f"{len(need)} core files present; task/config examples identical"
 
@@ -58,7 +58,7 @@ def check_application_tasks():
         assert "| Step | What must happen | Required result |" in md, f"{slug}: steps table"
         assert app in md, f"{slug}: application key missing"
         assert f"{num}_gene_silencing_{slug}.md" in idx, f"{slug}: not in task index"
-        req = json.loads(read(f"tasks/{slug}.request.example.json"))
+        req = json.loads(read(f"tasks/{num}_{slug}.request.example.json"))
         assert req["application"] == app, f"{slug}: example application mismatch"
         assert "illustrative syntax only" in req["success_criteria"], f"{slug}: example not marked"
         assert "benchmark status" in md.lower(), f"{slug}: benchmark status unstated"
@@ -79,7 +79,7 @@ def check_schemas():
     return "2 schemas well-formed; 10 applications; 5 ranking dimensions"
 
 def check_examples():
-    for f in ["config/ttr_design.example.json", "config/hif1a_exploratory.example.json"]:
+    for f in ["config/001_design.request.example.json", "config/001_exploratory.request.example.json"]:
         b = json.loads(read(f))
         for k in ["brief_id", "target", "application", "objective", "priorities", "constraints"]:
             assert k in b, f"{f}: missing {k}"

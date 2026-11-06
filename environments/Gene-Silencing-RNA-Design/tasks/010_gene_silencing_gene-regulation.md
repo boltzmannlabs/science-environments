@@ -13,7 +13,7 @@ Application-specific requirements: family-member resolution; network-feedback no
 Resolved per request — never defaulted. Example gene (MYC) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [gene-regulation.request.example.json](gene-regulation.request.example.json) illustrates syntax only.
+- **Brief:** [010_010_gene-regulation.request.example.json](010_010_gene-regulation.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .35 / specificity .35 / seed_tox .10 / immune .10 / stability .10.
 

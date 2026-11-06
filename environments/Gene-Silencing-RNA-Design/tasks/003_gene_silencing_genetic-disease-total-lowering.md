@@ -13,7 +13,7 @@ Application-specific requirements: wild-type-function review question raised at 
 Resolved per request — never defaulted. Example gene (TTR) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [genetic-disease-total-lowering.request.example.json](genetic-disease-total-lowering.request.example.json) illustrates syntax only.
+- **Brief:** [003_003_genetic-disease-total-lowering.request.example.json](003_003_genetic-disease-total-lowering.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu.
 - **Default weight emphasis:** efficacy .40 / specificity .30 / immune .15 / seed_tox .10 / stability .05.
 

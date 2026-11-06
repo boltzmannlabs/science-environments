@@ -13,7 +13,7 @@ Application-specific requirements: isoform decision (all expressed vs specific) 
 Resolved per request — never defaulted. Example gene (KRAS) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [oncology.request.example.json](oncology.request.example.json) illustrates syntax only.
+- **Brief:** [002_002_oncology.request.example.json](002_002_oncology.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu + paralog_full_length_hits.
 - **Default weight emphasis:** efficacy .35 / specificity .35 / seed_tox .15 / immune .10 / stability .05.
 

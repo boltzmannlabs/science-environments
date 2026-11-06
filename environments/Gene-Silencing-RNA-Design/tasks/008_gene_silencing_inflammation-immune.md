@@ -13,7 +13,7 @@ Application-specific requirements: exact family-member resolution before design 
 Resolved per request — never defaulted. Example gene (TNF) and any example values are illustrative, not defaults.
 
 - **Reference:** exact versioned transcript (RNA alphabet), hashed into provenance.
-- **Brief:** [inflammation-immune.request.example.json](inflammation-immune.request.example.json) illustrates syntax only.
+- **Brief:** [008_008_inflammation-immune.request.example.json](008_008_inflammation-immune.request.example.json) illustrates syntax only.
 - **Default vetoes:** immune_ugugu AND gu_top_decile (confound control).
 - **Default weight emphasis:** efficacy .30 / specificity .25 / immune .30 / seed_tox .10 / stability .05.
 
