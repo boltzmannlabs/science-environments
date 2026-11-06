@@ -1,25 +1,20 @@
-# Implementation Status
+# Environment Status
 
-## Implemented locally
+## Implemented
 
-- A capability-based full workflow with mandatory tool-generated variants and a results-driven sequence revision.
-- Five standalone case-study task specifications in the antibody task format, each with its own full workflow, parent/target, design constraints, execution limits, evaluation table, output artifacts and instructions.
-- Shared starting limits, separate native SCI run prompts and a fair comparison protocol.
-- An offline numerical comparison helper and tests. It checks comparable measurement records; it does not validate molecular science or execute models.
-- Companion proposer and critic definitions in a separate Agent-Scientist working branch, not copied into this environment.
+- Shared scientific workflow, protected constraints, recovery/output verification, required tool-based revision, evidence requirements and completion criteria.
+- Five numbered case specifications and task/version/approach configuration profiles. RML/LEH model settings are recorded; the other three models remain unselected.
+- Existing agent-alone/assisted launch prompts and offline numerical comparison helper. Common comparison instructions are in `ENVIRONMENT_SPEC.md`.
+- The requested source/skill, benchmark-comparison and results layout. Explanatory READMEs identify missing future content; no v2 settings or completed results are invented.
 
-## Before scientific comparison
+## In progress
 
-Prepare the exact shared parent and chemical input bundle for the selected task and freeze a compatible final scoring protocol. Confirm actual tool access through SCI's normal mechanisms. The BLA historical comparison additionally requires checking the supplementary per-variant values and reported energy units. The RML parent construct/model and all relevant ligand states must be established from source inputs rather than assumed from an enzyme name.
+- RML and LEH scientific execution and evidence review in their separate frozen run workspace. Individual jobs, failures, permissions and usage belong in those run records.
+- Independent scientific evaluation and compatible comparison after required candidate-specific evidence is complete. No completed four-run comparison or enzyme improvement is claimed here.
 
-Run and review both approaches before reporting specialist benefit. Old Est30 runs used different generation requirements and are not results for this version. Est30 has already been discussed in prior sessions and should not be advertised as an unseen rediscovery benchmark.
+## Future enhancements
 
-## Validation boundary
-
-Software test results are recorded in [results](results/README.md). Passing them proves only the behaviors exercised by those checks. No new scientific run, improved enzyme, completed two-arm comparison, public release or upstream merge is claimed here.
-
-## Development branch
-
-The environment's persistent working branch is `team/enzyme-variant-optimization`, created from `dev`. The owner confirmed `dev` as the destination for a later pull request; this working-branch publication does not merge the environment into `dev` or `main`. Continue environment development on this branch and open the PR only when requested after the work is ready.
-
-The separate Agent-Scientist proposer/critic contribution remains local. Native SCI infrastructure and the installed user profile are unchanged.
+- Promote reviewed agent/environment-generated workflow code and skills into `src/`, with usage, dependencies and task/version provenance.
+- Verify original paper values and populate `benchmark/<task>/comparisions/` with evidence-backed version comparisons.
+- Add genuinely selected v2/later settings and reviewed original results, retaining negative and incomplete outcomes.
+- Select models and validate scientific execution for the remaining three tasks; resolve outstanding advanced-evaluator and historical-comparability requirements.

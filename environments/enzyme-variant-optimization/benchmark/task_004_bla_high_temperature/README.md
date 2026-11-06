@@ -1,0 +1,5 @@
+# BLA high-temperature performance: original benchmark
+
+Source-verified paper values for [this task](../../tasks/task_004_bla_high_temperature.md) will be stored here with units and conditions.
+Keep published measurements separate from predictions, and withhold winner/outcome data from design agents.
+Version comparisons belong in `comparisions/`; no completed benchmark is supplied yet.

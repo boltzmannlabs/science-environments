@@ -1,55 +1,79 @@
 # Enzyme Variant Optimization
 
-An end-to-end workflow for improving an existing enzyme by generating and evaluating new sequence variants. Agent-Scientist chooses suitable tools from Boltzmann, ToolUniverse or both. The environment defines the scientific work and required evidence; SCI supplies tool discovery, input validation, execution, job tracking and subagent delegation.
+An Agent-Scientist environment for improving an existing enzyme through actual tool-based generation, property screening, candidate-specific structural/chemical assessment, results-driven revision, re-evaluation and evidence review. Agent-alone and specialist-assisted runs follow the same scientific requirements. A completed workflow may find no supported improvement.
 
-The workflow is **prepare → evaluate the parent → generate variants with tools → screen properties → assess structures and catalytic features → optimize → re-evaluate → compare**. A list of mutations proposed by the language model alone does not complete the generation stage.
-
-## Start here
-
-1. Choose a case in [tasks](tasks/README.md), then read the [workflow specification](ENVIRONMENT_SPEC.md).
-2. Prepare one shared parent input bundle and freeze the task conditions, design limits and final evaluation method before comparing approaches. SCI can prepare these inputs using its existing tools.
-3. Run a fresh SCI conversation with the [agent-alone prompt](scripts/RUN_AGENT_ALONE.txt). For an independent assisted run, use the [specialist prompt](scripts/RUN_WITH_SPECIALIST.txt) with the same public inputs and limits.
-4. Keep the two runs separate. An evaluator checks evidence and compares their sealed selections using the [benchmark protocol](benchmark/PROTOCOL.md).
-
-The prompts select the RML case by default. Change the task path and run directory together to select another case. These are complete design assignments, not readiness checks. Scientific execution requires the selected tools and normal platform authorization; reading these files does not submit jobs.
-
-For a scientific run, start SCI with this environment as its working directory:
-
-```bash
-cd environments/enzyme-variant-optimization
-sci
-```
-
-Paste the appropriate run prompt into a fresh conversation. Its `./` input/result paths are narrowly scoped user grants for read-only specialist handoffs; create those directories before the first consultation. Do not replace them with a grant to the whole repository.
-
-## Folder guide
+## Environment structure
 
 ```text
 enzyme-variant-optimization/
 ├── README.md
-├── ENVIRONMENT_SPEC.md       # Full scientific workflow and completion rules
-├── STATUS.md                 # What is implemented and what remains untested
-├── MODELS_AND_TOOLS.md        # Required capabilities and tool-selection guidance
-├── config/workflow.json      # Shared stages, budgets and task index
-├── tasks/                    # Five agent-facing case studies
-├── tests/                    # Evaluation-helper and package tests
-├── scripts/                  # Run prompts and a comparison command
-├── src/evaluation.py          # Small offline numerical comparison helper
-├── benchmark/                # Evaluation protocol and operator reference values
-└── results/                  # Evidence policy and validation records
+├── ENVIRONMENT_SPEC.md
+├── STATUS.md
+├── MODELS_AND_TOOLS.md
+├── config/
+│   └── task_001_<case>/
+│       ├── v1/
+│       │   ├── agent_alone.json
+│       │   └── agent_with_specialist.json
+│       └── v2/README.md
+├── tasks/task_001_<case>.md
+├── scripts/
+├── src/
+│   ├── evaluation.py
+│   └── skills/
+├── benchmark/
+│   └── task_001_<case>/comparisions/
+└── results/
+    └── task_001_<case>/v1/
 ```
 
-Supporting literature is in [research](../../research/enzyme-variant-optimization/research-notes.md). The proposer and critic belong in the [Agent-Scientist repository](https://github.com/boltzmannlabs/agent-scientist), under `examples/specialists/enzyme-variant-optimization/` in the companion local branch. That contribution is not yet published or merged. No specialist definitions or copies of SCI's tool catalogue live here.
+This naming pattern applies to all five tasks. There is no environment `tests/` directory. `comparisions/` uses the requested folder spelling. Hidden `.gitignore` rules protect local/private artifacts.
 
-## Local checks
+| Location | Information |
+| --- | --- |
+| [ENVIRONMENT_SPEC.md](ENVIRONMENT_SPEC.md) | Shared workflow stages, protected constraints, evidence, recovery, comparison protocol and completion criteria. |
+| [STATUS.md](STATUS.md) | Implemented work, work in progress and future enhancements. |
+| [MODELS_AND_TOOLS.md](MODELS_AND_TOOLS.md) | Required capabilities, method families, selection criteria and limitations. SCI discovery/contracts define current APIs. |
+| [config/](config/README.md) | Task/version/approach settings: LLM, parameters, budgets, concurrency, limits and exclusions. |
+| [tasks/](tasks/README.md) | Numbered scientific assignments. |
+| [scripts/](scripts/README.md) | Existing launch prompts and thin evaluation entry point. |
+| [src/](src/README.md) | Reviewed generated workflow code/skills and the retained offline evaluator. |
+| [benchmark/](benchmark/README.md) | Original paper values and comparisons between task/config versions, when verified. |
+| [results/](results/README.md) | Reviewed original Agent-Scientist execution evidence. |
 
-The comparison helper and its tests need Python 3.10 or newer and the standard library only:
+## Tasks and versions
+
+| ID | Case | Configuration |
+| --- | --- | --- |
+| `task_001_est30_mhet` | [Est30 and MHET](tasks/task_001_est30_mhet.md) | [Versions](config/task_001_est30_mhet/README.md) |
+| `task_002_rml_stability` | [RML stability](tasks/task_002_rml_stability.md) | [Versions](config/task_002_rml_stability/README.md) |
+| `task_003_leh_stability` | [LEH stability](tasks/task_003_leh_stability.md) | [Versions](config/task_003_leh_stability/README.md) |
+| `task_004_bla_high_temperature` | [BLA high-temperature performance](tasks/task_004_bla_high_temperature.md) | [Versions](config/task_004_bla_high_temperature/README.md) |
+| `task_005_athol1_substrate` | [AtHOL1 substrate expansion](tasks/task_005_athol1_substrate.md) | [Versions](config/task_005_athol1_substrate/README.md) |
+
+Each executable configuration version includes both approaches. A later version represents a deliberate settings change, such as a different LLM or budget. Repeated executions retain the version and get distinct run IDs. The v2 folders currently explain future contents rather than claiming selected settings. The three tasks without a selected LLM require that selection before launch.
+
+## Prerequisites and start
+
+Use an available native SCI installation and access to the required scientific capabilities. Assisted runs additionally require the reviewed native saved `enzyme-variant-proposer` and `enzyme-variant-critic`; SCI owns their models, tools, permissions and lifecycle. Check current tool contracts and setup requirements before execution. Opening the environment does not authorize scientific submissions, installations or GPU work.
+
+1. Read the chosen task, [shared specification](ENVIRONMENT_SPEC.md) and configuration version/approach.
+2. Prepare and freeze the exact public parent, chemistry, mappings, protected features and final evaluation protocol. Record actual model/settings, explicit budget policies and authorized amendments in the run.
+3. Start `sci` with this environment as its working directory. Use the corresponding prompt in `scripts/`, replace `RUN_ID` and select matching task/config/input/output paths.
+4. Keep approaches and repeats isolated, retain native artifacts/failures/unknown IDs, exclude MLDE, and seal selections before independent evaluation.
+
+The JSON profiles document settings; they are not an automatic SCI configuration loader. Default prompts select task_002 RML/v1. Freeze the effective profile and actual SCI settings with each run. Current ongoing campaigns retain their original frozen environment and paths.
+
+Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results are reserved for reviewed shareable outputs. Benchmark and result READMEs explain future contents without inventing reference extraction, completed results or comparisons.
+
+## Offline comparison helper
+
+Python 3.10+ and the standard library are sufficient for the retained helper. From the repository root:
 
 ```bash
-python -B -m unittest discover -s environments/enzyme-variant-optimization/tests -v
 python -B environments/enzyme-variant-optimization/scripts/evaluate_results.py --help
 ```
 
-Run these commands from the repository root. No Docker image, model checkpoint or GPU is required for these checks. Scientific tools have their own dependencies and compute requirements. Technical checks do not establish that a variant is better.
+Input schemas and scientific limits are in the [common comparison protocol](ENVIRONMENT_SPEC.md#common-comparison-protocol). The helper compares already-reviewed measurements and sealed selections; it does not generate structures or establish experimental improvement.
 
-See [status](STATUS.md) for current readiness. The repository's [license notice](../../LICENSE) still governs reuse; this environment does not grant additional rights to external software, papers or model weights.
+Supporting literature remains in [research notes](../../research/enzyme-variant-optimization/research-notes.md). Repository [licensing](../../LICENSE) and external tool/data licenses continue to apply.

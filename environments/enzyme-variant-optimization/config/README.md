@@ -1,0 +1,9 @@
+# Task configuration versions
+
+Each numbered task owns v1, v2 and later reviewed settings versions. An executable version has `agent_alone.json` and `agent_with_specialist.json`; an unselected version has a short README instead of invented settings. Repeated runs of one version get distinct run IDs.
+
+Profiles record the LLM, parameters, budgets, concurrency, sequence limits and delegation. RML/LEH v1 model settings are taken from observed native sessions and reused prospectively; these files are not retroactive frozen receipts. The other three tasks have no selected model/effort and require that choice before launch. Null response-token limit means no explicit environment override.
+
+Unbounded token/credit budgets are explicit, not missing decisions. Declare wall-time policy in the frozen run plan. Record owner-authorized scientific-attempt/request increases without resetting accounting or relaxing scientific constraints, concurrency or evaluator reserve.
+
+SCI does not automatically load or enforce these JSON profiles. Read the selected profile, select corresponding native settings, and retain the effective configuration, actual parameters, hashes and amendments with each run. No new execution or permission service is introduced. MLDE and aliases resolving to it are excluded from every profile.

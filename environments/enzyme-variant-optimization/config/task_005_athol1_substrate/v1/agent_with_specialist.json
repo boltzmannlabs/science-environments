@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "task_id": "task_005_athol1_substrate",
+  "config_version": "v1",
+  "approach": "agent_with_specialist",
+  "record_type": "prospective_configuration_not_run_receipt",
+  "task_file": "tasks/task_005_athol1_substrate.md",
+  "llm": {
+    "model": null,
+    "reasoning_effort": null,
+    "response_token_limit": null,
+    "selection_status": "not_selected_freeze_before_execution"
+  },
+  "execution": {
+    "runtime": "Agent-Scientist",
+    "max_turns": 1000,
+    "max_concurrent_scientific_jobs": 2,
+    "acceptance_unknown_occupies_slot": true,
+    "evaluator_attempt_reserve": 1
+  },
+  "budgets": {
+    "aggregate_model_tokens": {
+      "mode": "unbounded"
+    },
+    "platform_credits": {
+      "mode": "unbounded"
+    },
+    "scientific_attempts": {
+      "initial_limit": 60,
+      "increase_policy": "Record owner-authorized increases without resetting cumulative usage."
+    },
+    "model_requests": {
+      "initial_limit": 1200,
+      "include_specialists": true,
+      "increase_policy": "Record owner-authorized increases without resetting cumulative usage."
+    },
+    "wall_time": {
+      "mode": "declare_in_frozen_run_plan"
+    }
+  },
+  "design_limits": {
+    "initial_unique_variants_target": 12,
+    "unique_sequences_including_parent": 24,
+    "maximum_substitutions_per_variant": 8,
+    "indels_allowed": false,
+    "minimum_results_driven_revision_rounds": 1,
+    "maximum_sequence_revision_rounds": 2,
+    "minimum_initial_variant_structures": 5,
+    "every_final_candidate_requires_own_assessment": true,
+    "maximum_final_candidates": 5
+  },
+  "tool_exclusions": [
+    "MLDE"
+  ],
+  "delegation": {
+    "enabled": true,
+    "saved_roles": [
+      "enzyme-variant-proposer",
+      "enzyme-variant-critic"
+    ],
+    "parent_executes_scientific_tools": true
+  },
+  "accounting": "Include all parent, specialist, failed and continuation usage; preserve actual effective settings and amendments."
+}
