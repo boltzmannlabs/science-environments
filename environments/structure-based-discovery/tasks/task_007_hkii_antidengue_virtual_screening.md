@@ -4,8 +4,6 @@
 
 Identify and prioritise small-molecule candidates against human hexokinase II through reference-guided screening, drug-likeness and ADME/toxicity assessment, molecular docking and molecular-dynamics validation. Screen candidates related to three reference queries, rank retained compounds by binding evidence, select finalists and compare their dynamics with matched reference controls.
 
-Independently discover and select suitable capabilities from the Boltzmann small-molecule discovery suite. Execute the workflow step by step and support every conclusion with retained inputs, results and artifacts.
-
 ## Target
 
 **Name:** Human hexokinase II (HKII)\
