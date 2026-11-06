@@ -21,6 +21,3 @@ This folder contains the actual comparators and observed computational metrics, 
 
 Racemic ibuprofen: run and literature comparison completed according to the project owner; numerical output and exact comparator mapping are not available in this checkout, so metrics are null rather than zero. It is excluded from the A/M totals above. Osimertinib is an original held proposal, not the racemic task.
 
-## Comparison rules
-
-Use identical substrate/product identity, stereochemical/form requirements, starting-material boundary and output scale. A similar reaction class is not exact-substrate precedent. Do not compare model rank against experimental yield, reinterpret path_cost as INR, or transfer a patent yield to an unlike model route. Future chemical superiority claims need measured isolated yields, purity, safety, sourcing and like-for-like costs. No weighted scientific ranking was computed here.
