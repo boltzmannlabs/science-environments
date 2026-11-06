@@ -1,122 +1,109 @@
-# Task 007 — Structure-based discovery of human hexokinase II inhibitors for anti-dengue therapeutics
+# Task: hkii_antidengue_virtual_screening
 
 ## Description
 
-Identify candidate inhibitors of human hexokinase II (HKII) for anti-dengue therapeutics by screening analogues of alpha-D-glucose (GLC), beta-D-glucose-6-phosphate (BG6) and 2-deoxyglucose (2DG), assessing drug-likeness and ADME/toxicity, and docking candidates into HKII with AutoDock Vina. Select three ranked candidates per query and compare them with the corresponding reference. The paper assesses one finalist per query by 20 ns molecular dynamics; MD is optional for this task under the user's environment requirements (task adaptation, derived).
+Identify and prioritise small-molecule candidates against human hexokinase II through reference-guided screening, drug-likeness and ADME/toxicity assessment, molecular docking and molecular-dynamics validation. Screen candidates related to three reference queries, rank retained compounds by binding evidence, select finalists and compare their dynamics with matched reference controls.
+
+Independently discover and select suitable capabilities from the Boltzmann small-molecule discovery suite. Execute the workflow step by step and support every conclusion with retained inputs, results and artifacts.
 
 ## Target
 
-**Name:** Human hexokinase II (HKII)
-**Protein:** Human hexokinase II; host metabolic enzyme, not a dengue-virus protein
-**Disease:** Dengue
-**Objective:** Identify HKII-binding candidates meeting the query-specific published Vina score anchors of −7.2, −7.8 and −6.8 kcal/mol for GLC-, BG6- and 2DG-derived candidates, respectively (benchmark criterion derived from Tables 10–12).
-**Binding Region:** Chain A, N-terminal domain, following the headings of Tables 10–12 and Methods section 2.2.2.
-**Data:** Query SDF structures from PubChem; ZINC compounds retrieved through USRCAT. Reported screening: 23.1 million molecules → 100 hits per query → 300 initial hits → 165 retained overall. Tables 1–3 give selected-compound identities, similarities and physicochemical properties; Tables 4–6 give ADME predictions; Tables 7–9 give toxicity predictions; Tables 10–12 give docking scores and interactions. The availability statement says data are in the article; no complete historical library snapshot, all-hit archive or raw pose/trajectory deposit is linked. Save the actual library and its provenance; new retrievals are not the original dataset snapshot.
-**PDB:** 2NZT
-**Structure and Context:** The paper describes two chains with N- and C-terminal domains. Its abstract mentions chain B/C-terminal results, whereas the tabulated docking scores are explicitly labelled chain A/N-terminal. Use the tabulated site for the task anchors and preserve this discrepancy in the run report.
-**Reference Inputs:** Alpha-D-glucose (GLC), beta-D-glucose-6-phosphate (BG6) and 2-deoxyglucose (2DG); SDF structures with validated stereochemistry. Methods section 2.1.1 labels CHEBI identifiers as “PubChem ID” and misorders molecular formulae; resolve and record actual database identifiers before preparation.
+**Name:** Human hexokinase II (HKII)\
+**Protein:** Human HKII, a host metabolic enzyme\
+**Disease:** Dengue; computational prioritisation for a host-directed therapeutic strategy\
+**Objective:** Return an evidence-backed, ranked candidate set for each reference-query group, with reference comparisons and explicit limitations\
+**Binding Region:** Chain A N-terminal glucose/glucose-6-phosphate binding region; establish its location in the actual prepared structure\
+**Data:** A run-supplied frozen compound library and provenance manifest, with stable identifiers and structures; retain exact membership and do not replace the benchmark library without an explicit run specification\
+**PDB:** 2NZT\
+**Structure and Context:** Inspect the supplied structure, co-crystallised components, chemical states, missing atoms/residues and preparation changes before binding assessment\
+**Reference Inputs:** Alpha-D-glucose (GLC), beta-D-glucose-6-phosphate (BG6) and 2-deoxy-D-glucose; independently validate their structures, identifiers, stereochemistry and chemical states
 
 ## Design Constraints
 
-- **Workflow:** validate 2NZT and the three query structures → USRCAT analogue screening of 23.1 million molecules → 100 hits per query (300 total) → similarity/drug-likeness/ADME/toxicity selection (165 retained overall) → AutoDock Vina docking → three ranked candidates per query → optional 20 ns MD of one finalist per query against its reference. The article reports docking results for nine analogues plus three references; it does not provide a complete docking-score table for all 165 retained compounds. Record actual stage counts and do not claim complete historical results from these selected tables.
-- **Docking settings:** paper grid centre X = 43.567, Y = 35.439, Z = 36.27; box dimensions 26 × 24 × 22 Å. Centre coordinates are interpreted in Å for Vina (derived); the paper does not separately attach units to the centre tuple. It also gives an unexplained “measurement of space (1.000)” without naming an API parameter or unit; do not reinterpret this as a validated grid-spacing setting. Record the effective platform configuration. The paper does not specify exhaustiveness, random seed or Vina version; record actual settings rather than attributing defaults to the paper.
-- **Receptor preparation:** retain a copy of the original complex; document chain/domain selection, removed waters and heteroatoms, hydrogen/charge preparation, and the prepared receptor actually submitted to docking. Use only preparation supplied through Boltzmann.
-- **Reference validation:** the paper states that GLC and BG6 were extracted from the native complex and redocked, but gives no numerical pose-to-crystal RMSD or acceptance cutoff. Verify the actual PDB ligand identities before redocking; no independent audit of the 2NZT coordinates is claimed here. Process references and candidates with the same receptor/settings. Any reference-RMSD calculation requires a verified platform capability; Vina's pose-to-best-mode RMSD is not pose-to-crystal RMSD.
-- **Drug-likeness:** the paper states HBD <5, HBA <10, MW <500 g/mol and logP <5. Report actual properties and individual violations. Table 2 gives six H-bond donors for the BG6 analogues, conflicting with the claim that all hits pass without violations; do not silently change those values.
-- **ADME/toxicity:** record endpoint, units, model identity, prediction and available confidence. The Methods attributes ADME to SwissADME, while the Results includes endpoints not established as SwissADME outputs. Do not assign an endpoint or threshold to a model without evidence.
-- **MD as secondary validation, optional:** Methods section 2.3 specifies GROMACS 5, GROMOS96 54a7, SPC water in a cubic box, ligand topology files from ATB, a 1.0 nm short-range Coulomb cutoff, statistical/energy data stored every 10 steps, v-rescale temperature coupling, Berendsen pressure coupling, 100 ps equilibration with heavy-atom restraints, LINCS bond constraints including hydrogen atoms and 20 ns production. Results section 3.3 instead names GROMACS 4.6.5 — paper-internal version conflict. Numerical temperature, pressure, integration timestep, salt concentration and box padding are not supplied in these methods; do not invent them. Use only an available Boltzmann MD workflow and record effective settings; OpenMM or changed force fields are adaptations, not exact GROMACS reproductions.
-- **No additional QSAR, DFT, model training or wet lab:** these are task-scope constraints (derived). The paper uses pretrained prediction services; computational predictions do not establish enzyme inhibition or antiviral efficacy.
+- **Execution scope:** Perform scientific workflow stages through verified capabilities in the Boltzmann small-molecule discovery suite. Choose appropriate methods and tools from the available inventory and document the choices.
+- **Input integrity:** Preserve original inputs, assign stable compound identifiers, record chemical states and retain an auditable record of exclusions and transformations. Validate and freeze the reference chemical states before screening. Retrieve missing public input records by verified identifiers where possible; unresolved library membership or reference identity requires NEEDS_INPUT. Do not silently change stereochemistry or molecular identity.
+- **Structure preparation:** Preserve the original complex and extract relevant bound reference structures before preparing a docking copy. Remove bound small molecules and waters from that copy, assign chemically appropriate hydrogens/charges and perform energy minimisation. Validate ligand geometry and compatible input representations. Inspect missing atoms/residues and record all structural repairs, minimisation settings and coordinate transformations; unsupported required preparation remains unresolved.
+- **Candidate generation:** Evaluate all three reference-query groups using three-dimensional molecular-shape similarity with atom-feature information, including hydrogen-bonding and aromatic features. Select up to 100 ranked nonreference analogues per query for property triage, retaining group membership and duplicate records transparently. Record the score definition and conformer procedure. A two-dimensional similarity result alone does not establish completion of this stage.
+- **Binding-site validity:** Establish the assessment region from the actual prepared structure and relevant reference evidence. Use a 26 × 24 × 22 Å search region at the specified binding site and derive its centre in the actual coordinate frame. Verify that the region contains the intended protein/ligand site. Record unsupported controls or any separately declared adaptation; an empty or incorrectly located region is not a valid binding assessment.
+- **Drug-likeness:** Assess the initial criteria of molecular weight <500 g/mol, hydrogen-bond donors <5, hydrogen-bond acceptors <10 and logP <5. Retain all reference compounds as controls irrespective of these filters. Record individual violations and exclusions. Any justified exception policy must be declared before reviewing screening/filtering outcomes; do not silently relax the criteria to obtain a desired hit count.
+- **ADME/toxicity:** Assess solubility, absorption, distribution, metabolism/excretion and toxicity evidence relevant to the retained candidates. Include endpoint-level acute toxicity, organ toxicity, cytotoxicity, mutagenicity and immunotoxicity coverage where available. State endpoint definitions, units, prediction models, selection rules and unavailable coverage. Declare the required endpoint coverage before selection. Completion requires actual ADME and toxicity evidence supporting the selection rules; an unavailable required endpoint is an execution gap, not a favourable prediction.
+- **Reference controls:** Process candidates and references under comparable preparation and assessment settings. Assess reference pose recovery where a suitable crystallographic reference exists, using consistent atom identities and the common receptor coordinate frame. A pose-to-best-mode displacement is not a pose-to-crystal recovery measurement. Keep score, pose and interaction evidence distinct.
+- **Candidate prioritisation:** Dock the property-triaged candidates and all three references. Rank candidates using docking scores, poses and interaction evidence; report the top three supported candidates per query group and select one leading candidate per group for dynamics. If a group has insufficient qualifying candidates, report the shortfall without manufacturing favourable results or forcing selection counts.
+- **Dynamics validation:** Prepare compatible candidate/reference systems, perform 100 ps equilibration with heavy atoms restrained to their initial positions and 20 ns production for each selected leading candidate and its matched reference. The full three-group comparison comprises three candidate complexes and three reference complexes when qualifying leads exist. Record and justify parameterisation, force field, solvent, thermodynamic conditions, timestep, restraint, equilibration, production, output sampling and analysis settings. Analyse backbone RMSD, residue RMSF, protein–ligand distances and hydrogen-bond behaviour using consistent definitions. Shorter trajectories or preparation attempts do not satisfy the requested production duration.
+- **Interpretation:** Computational binding or property predictions support prioritisation; they do not establish inhibition, antiviral efficacy or clinical safety. The workflow is computational only.
 
 ## Computational Tool Capabilities
 
-Workflow stages and the evidence required from each. All scientific execution must use the Boltzmann small-molecule suite. Undocumented exact capabilities require verification; an unavailable required stage is reported as blocked rather than silently replaced.
+Inspect the current suite inventory, input contracts, output artifacts and method limitations before selecting tools. Record unavailable capabilities and leave their required evidence unresolved.
 
 | Stage | Capability | Expected Evidence |
-|---|---|---|
-| 1. Validate inputs and baseline | Boltzmann receptor/ligand preparation; public PDB and compound records as data sources | Original and prepared structures, resolved query identities, provenance and preparation settings |
-| 2. Analogue screening | Boltzmann similarity screening; verify exact USRCAT availability before claiming the paper's shape-screening method | Complete library manifest, query membership, method, scores, ranked candidates and filter counts; 2D similarity is not interchangeable with USRCAT |
-| 3. Drug-likeness and ADME/toxicity | `Property_Prediction`, limited to verified available endpoints | Full property panel, model identities, units, pass/fail rules and unavailable endpoints |
-| 4. Docking | Boltzmann AutoDock Vina docking; verify the current schema and effective engine/settings | Candidate and reference scores, downloadable poses and available interaction records |
-| 5. MD validation, optional | Boltzmann GROMACS workflow, if its required parameterisation and controls are available | Prepared topology, simulation settings, trajectory and RMSD/RMSF/hydrogen-bond summaries; explicit omission reason if not run |
-| 6. Select and report | Rank on the verified Vina protocol and report coverage against each query-specific anchor | Final ranked candidates, all Expected Output files, coverage and limitations |
-
-**Boltzmann platform tools:**
-
-| Tool | Role | Key Arguments |
-|---|---|---|
-| `Similarity_Screening` | Retrieve and rank analogues of the three reference queries; exact USRCAT method support requires verification | Query structure, library and method-specific controls; verify current schema |
-| `Vina_basic_docking` | Existing task-document name for Vina docking; verify the current platform endpoint before use | Receptor, candidate/reference structures, centre coordinates and independent box dimensions; verify exposed controls |
-| `Property_Prediction` | Drug-likeness and available ADME/toxicity endpoints | Compound structures and an explicit list of verified models/endpoints |
-| `MDS_Gromacs`, if available | Catalogued GROMACS workflow; exact endpoint, version and parameterisation controls must be verified | Prepared complex, force field, water model, equilibration and 20 ns production |
-| `MDS_openMM` | Optional MD adaptation if separately selected; not the source paper's engine | Prepared complex, supported parameterisation and 20 ns duration; verify current schema and identify engine change |
-
-This table is a documentation-based platform mapping (derived), not a validated API payload. The Key Arguments column describes required information rather than asserting JSON key names. Older task documents use the spelling `exhaustivness`; use it only if confirmed by the current schema. Live account access, engine versions, independent box controls, exact USRCAT screening and endpoint-model equivalence have not been established. The local user manual describes Similarity Screening as 2D screening, which does not establish support for USRCAT's shape/atom-type method. DiffDock, binding-affinity prediction and MM/GBSA are not required: they are not stages of this paper's workflow.
-
-**Other standard tools:** paper dependencies listed below are provenance only; scientific execution remains restricted to Boltzmann.
-
-**Paper tools (verbatim):** USRCAT, SwissADME, ProTox-II, Open Babel (also misspelled OpenBable/Open Bable in the text), PyMOL, MGLTools 1.5.7, Avogadro, AutoDock Vina, GROMACS (Methods: version 5; Results: 4.6.5), Automated Topology Builder (ATB), VMD and Xmgrace. Provenance only; this list does not establish Boltzmann availability.
+| --- | --- | --- |
+| 1. Audit and prepare inputs | Validate the target, reference structures and library; prepare compatible scientific inputs | Original/prepared input records, identifiers, chemical states, provenance, exclusions and preparation settings |
+| 2. Generate and screen candidates | Find and rank three-dimensional shape/feature analogues for each reference-query group | Library membership, conformer handling, query-specific rankings, method/settings and stage counts |
+| 3. Assess properties and risks | Apply drug-likeness criteria and assess ADME/toxicity before docking selection | Endpoint-level results, units, model identities, declared filters, exclusions and missing coverage |
+| 4. Assess binding and controls | Dock retained candidates and references at the validated target region, then select ranked candidates and group leaders | Effective region and preparation settings, docking scores, poses, reference checks, interaction evidence and selection rationale |
+| 5. Validate dynamics | Prepare and simulate selected candidate/reference systems with the required equilibration and production durations | Parameterisation records, completed durations, trajectories, RMSD/RMSF, distance and hydrogen-bond summaries |
+| 6. Integrate evidence and report | Rank candidates using the recorded evidence and assess workflow completeness | Finalists by query group, reference comparisons, tool-selection rationale, complete artifacts and limitations |
 
 ## Evaluation Metrics
 
-| Metric | Published value |
-|---|---|
-| Initial screening | 23.1 million molecules → 100 analogues per query → 300 total initial hits → 165 retained overall; historical counts, not evidence of a deposited complete dataset |
-| GLC analogue docking, Table 10 | Top-three scores −7.2, −7.0 and −6.10 kcal/mol; GLC reference −7.2 kcal/mol |
-| BG6 analogue docking, Table 11 | Top-three scores −7.8, −7.4 and −7.0 kcal/mol; BG6 reference −7.9 kcal/mol |
-| 2DG analogue docking, Table 12 | Top-three scores −6.8, −6.3 and −6.3 kcal/mol; 2DG reference −6.0 kcal/mol |
-| Score consistency | Table 10 gives the leading GLC analogue −7.2 kcal/mol, while one Results sentence says −7.0 kcal/mol; Table 10 is the anchor |
-| Docking interactions, leading GLC analogue | Table 10: 7 H-bonds; Glu260, Gln291, Phe156, Asn208, Lys173 and Asp209 listed as interacting residues |
-| Docking interactions, leading BG6 analogue | Table 11: 11 H-bonds; Gly87, Asn89, Thr232, Arg91, Asp84 and Lys173 listed as interacting residues |
-| Docking interactions, leading 2DG analogue | Table 12: 4 H-bonds; Asp209, Asn208, Glu294, Thr172, Thr232 and Lys173 listed as interacting residues; residue-list length is not an H-bond count |
-| Interaction interpretation | Counts and residue names above are Table 10–12 transcriptions, not independently verified contacts or compulsory atom-level grading criteria; figure captions give different contact descriptions |
-| GLC-group ADME, Table 4 | Candidate intestinal absorption 59.316–59.79%; logBB −0.900 to −0.786; logPS −3.552 to −3.192; CYP2D6/CYP1A2 and renal OCT2 entries all No |
-| BG6-group ADME, Table 5 | Candidate intestinal absorption 0–26.376%; logBB −1.032 to −0.928; logPS −3.604 to −3.460; CYP2D6/CYP1A2 and renal OCT2 entries all No; poor absorption must not be relabelled as uniformly favourable ADME |
-| 2DG-group ADME, Table 6 | Candidate intestinal absorption 86.764–87.984%; logBB −0.265 to −0.025; logPS −3.254 to −3.147; CYP2D6/CYP1A2 and renal OCT2 entries all No |
-| Toxicity, Tables 7–9 | All nine listed candidates are labelled class 6; GLC-group LD50 2300–14,388 mg/kg; BG6/2DG-group LD50 5500–15,900 mg/kg; reported carcinogenicity, immunotoxicity, mutagenicity and cytotoxicity entries are Inactive. Class 6 alongside 2300 mg/kg conflicts with the text's class-VI definition of LD50 >5000 mg/kg; retain the discrepancy |
-| Optional MD backbone RMSD, Results section 3.3 | GLC-group finalist approximately ±5.0 Å; BG6-group approximately ±4.0 Å; 2DG-group approximately ±0.5 Å, compared with their references; these summaries are not universal stability thresholds |
-| Optional MD plot/prose conflict | Figures 7A and 8A display curves around 0.4–0.5 on axes labelled RMSD (Å), whereas Results section 3.3 reports approximately ±4.0 Å and ±5.0 Å. Plot values are visual estimates (derived), not digitised data. Preserve the conflict; do not infer corrected units or use these values for pass/fail grading. The paper's ± notation is retained as reported, not interpreted as negative RMSD |
-| Optional MD H-bonds, Results section 3.3 | GLC-group finalist/reference averages 6/4; BG6-group 7/5; 2DG-group 3/6. Distinguish these MD values from docking counts and the abstract's different summaries |
+| Criterion | Measurements and Evidence | Evaluation Rule |
+| --- | --- | --- |
+| Input integrity and traceability | Validated identities, chemical states, library size, exclusions and retained input artifacts | Every reported candidate and reference must map to a documented input; identity-changing transformations must be explicit |
+| Screening coverage | Counts and rankings by query group, three-dimensional shape/feature evidence, conformer handling and filter attrition | Reconcile entry counts and unique identities separately, preserve the requested screening method and explain exclusions; do not force a predetermined retained yield |
+| Property-based selection | Compound-level properties, endpoint coverage, model identities, units and declared selection rules | Establish endpoint coverage from model definitions rather than names alone; missing predictions remain unresolved and predictions must support the actual selection decisions |
+| Binding-region and reference validity | Effective region, coordinate-frame checks, reference poses, available recovery metrics and contemporaneous reference results | Binding claims require a valid region and interpretable controls; score agreement alone does not establish pose recovery |
+| Candidate prioritisation | Finalists, reference-relative comparisons and supporting pose/property evidence | Compare compatible methods and protocols; do not treat scores from different models as interchangeable or equate a score with measured affinity |
+| Dynamics evidence | Completed equilibration/production duration, analysed systems, atom selections, alignment, units and time-series summaries | Verify 100 ps equilibration and 20 ns production from logs and trajectories per selected candidate/reference system; missing requested systems or incomplete trajectories leave the validation stage incomplete |
+| Workflow completeness | Stage outcomes, job records, artifact availability, exclusions and limitations | Classify the run from executed evidence; unavailable required stages prevent a complete-workflow claim |
+
+State undefined or unmeasurable metrics explicitly. Use thresholds justified for the chosen methods and decision, rather than assuming a universal score cutoff.
 
 ## Expected Output
 
-**Format:** `small_molecule_vs_bundle` (environment convention, derived)
-**Directory:** `results/task_007/<run>/` (environment convention, derived)
-
-The following output filenames are required by this benchmark design; they are not claimed to be files deposited by the paper's authors.
+**Format:** `small_molecule_vs_bundle`\
+**Directory:** `results/task_007/<run_id>/`
 
 | File | Content |
-|---|---|
-| `input_manifest.json` | Library source/version/retrieval date, checksums, query identities, receptor provenance and exact-method coverage |
-| `input_library.csv` | Every candidate input, with stable identifier, SMILES and query membership |
-| `reference_ligands.sdf` | Validated structures of all three reference queries |
-| `input_receptor.pdb` | Original receptor submitted to the platform; record chain selection and preparation separately |
-| `screening_results.csv` | Complete analogue-screen results, method-specific similarity scores, filtering decisions and stage counts |
-| `docking_scores.csv` | Candidate/reference identifiers, query group, rank, Vina score, pose file and protocol identifier |
-| `docked_poses.zip` | Downloaded candidate and reference docking poses |
-| `admet_panel.csv` | Property and toxicity predictions, units, model identifiers, filter rules and missing endpoints |
-| `metrics.json` | Query-specific best scores, contemporaneous reference scores, anchor comparisons, stage counts, scientific completion status and optional-MD status |
-| `run_report.md` | Candidate-selection rationale, effective settings, input/output inventory, paper discrepancies, platform adaptations and unresolved capabilities |
+| --- | --- |
+| `input_manifest.json` | Target/reference identities, library provenance, input hashes, preparation records and chemical-state choices |
+| `workflow_plan.json` | Selected capabilities, verified input/output contracts, effective settings, selection rules and required/optional stages |
+| `screening_results.csv` | Candidate identities, query membership, screening ranks/results and reconciled stage counts |
+| `property_results.csv` | Properties/predictions, units, model identities, filtering decisions and missing endpoints |
+| `binding_results.csv` | Candidate/reference results, effective protocol identifiers and links to pose/interaction artifacts |
+| `candidate_results.csv` | Ranked finalists by query group, reference comparisons, selection rationale and limitations |
+| `dynamics_results.csv` | Requested systems, candidate/reference roles, completion status, actual equilibration/production durations, analysis definitions/units, RMSD/RMSF/distance/hydrogen-bond summaries and links to retained trajectories and analysis files |
+| `artifact_manifest.csv` | Original platform output filenames, corresponding job/stage, locations and integrity information |
+| `workflow_assessment.json` | Completion status, query-group coverage, stage outcomes, dynamics status and unresolved requirements |
+| `report.md` | Scientific reasoning, tool-selection rationale, results, controls, exclusions and interpretation |
 
-Retain all platform-exported preparation files in their original formats and record their filenames in the manifest. An exported prepared-receptor PDB is not assumed to exist. If MD is run, retain its available input settings, topologies, trajectories and analysis files; explicitly flag any required artifact that the platform does not export.
+Retain all available native structure, pose and other platform outputs alongside these tables. Retain dynamics preparation files, settings, trajectories and analysis artifacts for every simulated system; report unavailable exports explicitly. For a required but unexecuted system, record its status/reason and leave its numerical measurements missing rather than inventing a completed result.
 
-**Pass bar:** identify at least 1 candidate per query group scoring at or below −7.2 kcal/mol (GLC), −7.8 kcal/mol (BG6), and −6.8 kcal/mol (2DG), respectively, using AutoDock Vina at the tabulated chain A/N-terminal site, with complete input/pose provenance and documented drug-likeness and ADME/toxicity assessment. These one-sided query-specific criteria are benchmark-design choices derived from Tables 10–12, not author-defined pass criteria. Mark exact paper reproduction blocked if the required screening method, endpoints or docking controls are unavailable. MD omission alone is not a failure under this task's optional-MD rule.
+**Completion Rule:** All 3 query groups must have an auditable screening, filtering, docking and candidate-selection outcome, with justified reference comparisons and reconciled artifacts. Complete dynamics validation for every selected candidate and matched reference before claiming a complete candidate-validation workflow. If no candidate qualifies in a group, report that scientific outcome explicitly rather than inventing a candidate or claiming its simulation ran. An unsupported or unexecuted required capability leaves the run PARTIAL or NEEDS_INPUT.
+
+Return the assessment in this form, with actual values replacing the descriptions:
+
+```text
+<EVAL_ANSWER>
+{"completion_status":"<COMPLETE|PARTIAL|NEEDS_INPUT>","query_groups_evaluated":["<evaluated group identifiers>"],"dynamics_status":"<COMPLETE|PARTIAL|UNAVAILABLE|NO_QUALIFYING_CANDIDATE>","unresolved_requirements":["<specific missing requirements, or an empty list>"]}
+</EVAL_ANSWER>
+```
+
+Use distinct identifiers from `GLC`, `BG6` and `2DG` for `query_groups_evaluated`; these identify the declared query groups, not automatically validated database component codes. The answer fields must agree with `workflow_assessment.json`, the stage evidence and the report. COMPLETE requires all three groups and no unresolved required stages. NO_QUALIFYING_CANDIDATE is valid only after completed screening and property assessment establish that no candidate qualifies; it cannot represent a failed tool or unavailable prediction.
 
 ## Constraints
 
-- **Time Limit:** 240 minutes of agent working time (long-running platform jobs may complete asynchronously beyond it; environment convention, derived).
-- **Reference Policy:** use the inputs and workflow in this task; do not consult the publication to obtain its selected-hit identities or copy its ranked results during a benchmark run.
-- **Knowledge Cutoff:** not applicable — retrospective paper-anchored task; source settings and unresolved details are identified in this document.
-- **Execution:** only Boltzmann small-molecule tools; public databases are input sources. Do not call external scientific services or run standalone scientific software to fill missing capabilities.
-- **Evaluation Integrity:** freeze candidate selection and rankings before comparing against the published anchors. Record every effective setting and preserve raw platform downloads. A structural validation pass is not a completed scientific benchmark.
+- **Execution Budget:** Follow the resource limits and deadline supplied by the execution context; record actual working time, job duration and unfinished work.
+- **Reference Policy:** Use the supplied scientific inputs, public input records and platform documentation. Evaluator-only reference outcomes must not guide candidate selection or be copied into run results.
+- **Input Policy:** Use the fixed run inputs for benchmark comparisons. If the library or required reference definition is absent and cannot be retrieved unambiguously, return NEEDS_INPUT; a separately chosen exploratory library is a different experiment.
+- **Reproducibility:** Preserve job identifiers, effective settings, input/output provenance and secret-free execution records. Make every reported count and comparison reproducible.
+- **Scope:** Use scientific capabilities available through the Boltzmann suite; report any unavailable required capability rather than supplying it through an undeclared external scientific service.
 
 ## Important Instructions
 
-- Solve this task using the provided tools and your own reasoning.
-- Do NOT search for, reference, or reproduce the source paper's specific hits, scores, or tables during execution; the numerical anchors already supplied here may be used for evaluation.
-- Report unavailable inputs or required capabilities explicitly. Do not invent datasets, prediction endpoints, platform tool names, completed jobs or reproducibility claims.
-
-## Publication
-
-Tanbin, S.; Ahmad Fuad, F. A.; Abdul Hamid, A. A. **Virtual Screening for Potential Inhibitors of Human Hexokinase II for the Development of Anti-Dengue Therapeutics.** BioTech 2021, 10(1), 1; published 28 December 2020. [DOI: 10.3390/biotech10010001](https://doi.org/10.3390/biotech10010001). [PMC9245486](https://pmc.ncbi.nlm.nih.gov/articles/PMC9245486/).
-
-Source audit: original 28-page publisher PDF and PMC full-text XML, including Tables 1–12 and visual inspection of Figures 5, 7 and 8. The [document audit record](../../../research/small-molecule-virtual-screening/hkii-task007-source-audit-2026-11-06.json) distinguishes checked transcriptions from unresolved source, data and platform issues.
+- Independently select relevant suite capabilities and execute the workflow in the stated order. No particular implementation is prescribed.
+- Validate actual input/output compatibility and method suitability before submitting work.
+- Mark missing prerequisites as NEEDS_INPUT and required execution gaps as PARTIAL; neither represents a completed workflow.
+- Distinguish scientific rejection of a candidate from preparation failure, unavailable predictions or missing data.
+- Preserve chemical identity and coordinate-frame consistency throughout the workflow.
+- Keep unavailable measurements unresolved, and base the final assessment on executed evidence.

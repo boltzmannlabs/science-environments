@@ -26,6 +26,23 @@ def test_task_files_use_canonical_naming():
     assert ids == [f"{i:03d}" for i in range(1, len(ids) + 1)], ids
 
 
+def test_capability_workflow_rejects_source_and_tool_leaks():
+    import copy
+    for fname in env_lib.task_files():
+        parsed = env_lib.parse_task(os.path.join(env_lib.tasks_dir(), fname))
+        if parsed["task_format"] != "capability_workflow":
+            continue
+        assert not env_lib.check_structure(parsed)
+        for leaked_text in ("Use Vina_basic_docking", "Source: https://doi.org/10.0000/example"):
+            leaked = copy.deepcopy(parsed)
+            leaked["text"] += "\n" + leaked_text
+            assert any("exposes" in error for error in env_lib.check_structure(leaked))
+        missing_provenance = copy.deepcopy(parsed)
+        missing_provenance["evaluator_format"] = None
+        assert any("evaluator specification" in error
+                   for error in env_lib.check_structure(missing_provenance))
+
+
 if __name__ == "__main__":
     for name in [n for n in dir() if n.startswith("test_")]:
         getattr(sys.modules[__name__], name)()

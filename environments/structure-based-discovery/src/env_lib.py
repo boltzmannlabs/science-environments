@@ -20,6 +20,8 @@ SECTIONS = [
     "Publication",
 ]
 
+WORKFLOW_SECTIONS = SECTIONS[:-1]
+
 PLATFORM_DOCKING_ARG = "exhaustivness"  # real Boltzmann API spelling (sic) — do not "fix"
 
 
@@ -61,7 +63,23 @@ def parse_task(path):
         m = re.search(r"\*\*" + re.escape(label) + r":?\*\* ?(.*)", body)
         return m.group(1).strip() if m else None
 
+    task_format = "paper_anchored" if "Publication" in sec else "capability_workflow"
+    evaluator_file = None
+    evaluator_text = ""
+    evaluator_format = None
+    grading_mode = None
     pub_body = sec.get("Publication", "")
+    if task_format == "capability_workflow":
+        evaluator_file = os.path.join("benchmark", os.path.basename(path))
+        evaluator_path = os.path.join(os.path.dirname(os.path.dirname(path)), evaluator_file)
+        if os.path.isfile(evaluator_path):
+            with open(evaluator_path, encoding="utf-8") as fh:
+                evaluator_text = fh.read()
+            pub_body = dict(split_sections(evaluator_text)).get("Publication", "")
+            format_m = re.search(r"^\*\*Task Format:\*\*\s*(\S+)", evaluator_text, re.M)
+            mode_m = re.search(r"^\*\*Grading Mode:\*\*\s*(\S+)", evaluator_text, re.M)
+            evaluator_format = format_m.group(1) if format_m else None
+            grading_mode = mode_m.group(1) if mode_m else None
     doi_m = re.search(r"\((https?://doi\.org/[^\s)]+)\)", pub_body)
     pmc_m = re.search(r"\((https?://pmc\.ncbi\.nlm\.nih\.gov/articles/(PMC\d+)/?)\)", pub_body)
 
@@ -82,6 +100,9 @@ def parse_task(path):
         if line.strip().startswith("**Pass bar:**"):
             pass_bar = line.strip()[len("**Pass bar:**"):].strip()
             break
+        if task_format == "capability_workflow" and line.strip().startswith("**Completion Rule:**"):
+            pass_bar = line.strip()[len("**Completion Rule:**"):].strip()
+            break
 
     expected_outputs = re.findall(r"^\|\s*`([^`]+)`\s*\|", sec.get("Expected Output", ""), re.M)
 
@@ -91,11 +112,18 @@ def parse_task(path):
         if not (line.startswith("|") and line.endswith("|")):
             continue
         cells = [c.strip() for c in line[1:-1].split("|")]
-        if len(cells) < 2 or cells[0] in ("Metric", "File", "Tool", ""):
+        if len(cells) < 2 or cells[0] in ("Metric", "Criterion", "File", "Tool", ""):
             continue
         if set(cells[0]) <= set("-: "):
             continue
-        evaluation_metrics.append({"metric": cells[0], "published_value": cells[1]})
+        if task_format == "capability_workflow":
+            evaluation_metrics.append({
+                "metric": cells[0],
+                "measurements_and_evidence": cells[1],
+                "evaluation_rule": cells[2] if len(cells) > 2 else "",
+            })
+        else:
+            evaluation_metrics.append({"metric": cells[0], "published_value": cells[1]})
 
     return {
         "file": os.path.basename(path),
@@ -111,12 +139,58 @@ def parse_task(path):
         "pass_bar": pass_bar,
         "expected_outputs": expected_outputs,
         "evaluation_metrics": evaluation_metrics,
+        "task_format": task_format,
+        "evaluator_file": evaluator_file,
+        "evaluator_format": evaluator_format,
+        "grading_mode": grading_mode,
         "text": text,
     }
 
 
+def check_workflow_structure(parsed):
+    """Validate an agent-facing workflow without exposing evaluator provenance."""
+    errors = []
+    prefix = parsed["file"] + ": "
+    if parsed["section_order"] != WORKFLOW_SECTIONS:
+        errors.append(prefix + "capability workflow sections are missing or out of order")
+    if parsed["evaluator_format"] != "capability_workflow":
+        errors.append(prefix + "missing capability-workflow evaluator specification")
+    if parsed["grading_mode"] != "manual_review_required":
+        errors.append(prefix + "workflow grading must require scientific review")
+    if not parsed["doi"] or not parsed["pmc"]:
+        errors.append(prefix + "evaluator specification missing source identifiers")
+    if not parsed["pass_bar"]:
+        errors.append(prefix + "missing Completion Rule")
+    if not parsed["pdbs"]:
+        errors.append(prefix + "Target section names no PDB ID")
+    if not parsed["expected_outputs"]:
+        errors.append(prefix + "missing required output files")
+    if not parsed["evaluation_metrics"] or any(
+        not row["evaluation_rule"] for row in parsed["evaluation_metrics"]
+    ):
+        errors.append(prefix + "metrics must include measurements and evaluation rules")
+    for needle in ("Execution Budget:", "Reference Policy:", "Capability", "Expected Evidence"):
+        if needle not in parsed["text"]:
+            errors.append(prefix + "missing " + needle)
+    forbidden = (
+        r"doi\.org/|PMC\d+|\bUSRCAT\b|\bSwissADME\b|\bProTox\b|"
+        r"\bVina\b|\bMGLTools\b|\bAvogadro\b|\bPyMOL\b|\bOpen\s*Babel\b|"
+        r"\bGROMACS\b|\bOpenMM\b|\bVMD\b|\bATB\b|\bXmgrace\b|"
+        r"Similarity_Screening|Property_Prediction|MDS_openMM|MDS_Gromacs|Diffdock|"
+        r"Vina_basic_docking|exhaustivness"
+    )
+    if re.search(forbidden, parsed["text"], re.I):
+        errors.append(prefix + "agent task exposes publication identity or prescribed tools")
+    for token in ("TODO", "TBD", "XXX"):
+        if token in parsed["text"]:
+            errors.append(prefix + "placeholder '" + token + "' present")
+    return errors
+
+
 def check_structure(parsed):
     """Return list of structural error strings (empty = valid)."""
+    if parsed["task_format"] == "capability_workflow":
+        return check_workflow_structure(parsed)
     errors = []
     order = parsed["section_order"]
     if order != SECTIONS:
@@ -199,6 +273,11 @@ def grade_run(task_id, run_dir, verbose=True):
     task = next((t for t in env["tasks"] if t["id"] == task_id), None)
     if task is None:
         raise SystemExit(f"unknown task id {task_id}")
+    if task.get("grading_mode") == "manual_review_required":
+        raise SystemExit(
+            f"{task_id}: scientific review required; the legacy single-score grader "
+            "cannot certify this capability workflow"
+        )
     lines, failures = [], 0
     for fname in task["expected_outputs"]:
         exists = os.path.isfile(os.path.join(run_dir, fname))

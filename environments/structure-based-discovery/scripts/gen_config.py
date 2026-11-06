@@ -15,7 +15,7 @@ def main():
     tasks = []
     for fname in env_lib.task_files():
         parsed = env_lib.parse_task(os.path.join(env_lib.tasks_dir(), fname))
-        tasks.append({
+        entry = {
             "id": parsed["id"],
             "file": parsed["file"],
             "title": parsed["title"],
@@ -28,7 +28,16 @@ def main():
             "expected_outputs": parsed["expected_outputs"],
             "evaluation_metrics": parsed["evaluation_metrics"],
             "time_limit_minutes": 240,
-        })
+        }
+        if parsed["task_format"] == "capability_workflow":
+            entry.update({
+                "task_format": parsed["task_format"],
+                "grading_mode": parsed["grading_mode"],
+                "evaluator_file": parsed["evaluator_file"],
+                "time_limit_minutes": None,
+                "budget_source": "execution_context",
+            })
+        tasks.append(entry)
 
     environment = {
         "name": os.path.basename(env_lib.env_dir()),
@@ -63,6 +72,13 @@ def main():
             for t in tasks
         ],
     }
+    for item, task in zip(benchmark["tasks"], tasks):
+        if task.get("task_format") == "capability_workflow":
+            item.update({
+                "task_format": task["task_format"],
+                "grading_mode": task["grading_mode"],
+                "evaluator_file": task["evaluator_file"],
+            })
     bench_path = os.path.join(env_lib.env_dir(), "benchmark", "benchmark.json")
     with open(bench_path, "w", encoding="utf-8") as fh:
         json.dump(benchmark, fh, indent=2, ensure_ascii=False)

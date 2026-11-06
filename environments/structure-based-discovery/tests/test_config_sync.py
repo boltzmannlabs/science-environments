@@ -22,6 +22,11 @@ def test_environment_json_matches_task_docs():
         assert entry["pass_bar"] == parsed["pass_bar"], fname
         assert entry["expected_outputs"] == parsed["expected_outputs"], fname
         assert parsed["pass_bar"] and re.search(r"\d", parsed["pass_bar"]), fname
+        if parsed["task_format"] == "capability_workflow":
+            assert entry["grading_mode"] == "manual_review_required"
+            assert entry["evaluator_file"] == parsed["evaluator_file"]
+            assert entry["time_limit_minutes"] is None
+            assert entry["budget_source"] == "execution_context"
 
 
 def test_benchmark_json_matches_config():
@@ -39,6 +44,26 @@ def test_papers_csv_rows():
                row["doi"].startswith("https://doi.org/10."), row["doi"]
         assert row["pmc"].startswith("PMC"), row["pmc"]
         assert row["pdbs"], row["task_id"]
+
+
+def test_workflow_cannot_pass_legacy_single_score_grader():
+    import json
+    import tempfile
+    for task in env_lib.load_environment_json()["tasks"]:
+        if task.get("task_format") != "capability_workflow":
+            continue
+        with tempfile.TemporaryDirectory() as run_dir:
+            for name in task["expected_outputs"]:
+                with open(os.path.join(run_dir, name), "w", encoding="utf-8") as fh:
+                    fh.write("placeholder\n")
+            with open(os.path.join(run_dir, "metrics.json"), "w", encoding="utf-8") as fh:
+                json.dump({"best_docking_score": -100}, fh)
+            try:
+                env_lib.grade_run(task["id"], run_dir, verbose=False)
+            except SystemExit as exc:
+                assert "scientific review required" in str(exc)
+            else:
+                raise AssertionError("File presence and a favourable score must not certify this workflow")
 
 
 if __name__ == "__main__":

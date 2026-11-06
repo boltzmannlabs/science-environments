@@ -281,85 +281,59 @@
       "pdbs": [
         "2NZT"
       ],
-      "pass_bar": "identify at least 1 candidate per query group scoring at or below −7.2 kcal/mol (GLC), −7.8 kcal/mol (BG6), and −6.8 kcal/mol (2DG), respectively, using AutoDock Vina at the tabulated chain A/N-terminal site, with complete input/pose provenance and documented drug-likeness and ADME/toxicity assessment. These one-sided query-specific criteria are benchmark-design choices derived from Tables 10–12, not author-defined pass criteria. Mark exact paper reproduction blocked if the required screening method, endpoints or docking controls are unavailable. MD omission alone is not a failure under this task's optional-MD rule.",
+      "pass_bar": "All 3 query groups must have an auditable screening, filtering, docking and candidate-selection outcome, with justified reference comparisons and reconciled artifacts. Complete dynamics validation for every selected candidate and matched reference before claiming a complete candidate-validation workflow. If no candidate qualifies in a group, report that scientific outcome explicitly rather than inventing a candidate or claiming its simulation ran. An unsupported or unexecuted required capability leaves the run PARTIAL or NEEDS_INPUT.",
       "expected_outputs": [
         "input_manifest.json",
-        "input_library.csv",
-        "reference_ligands.sdf",
-        "input_receptor.pdb",
+        "workflow_plan.json",
         "screening_results.csv",
-        "docking_scores.csv",
-        "docked_poses.zip",
-        "admet_panel.csv",
-        "metrics.json",
-        "run_report.md"
+        "property_results.csv",
+        "binding_results.csv",
+        "candidate_results.csv",
+        "dynamics_results.csv",
+        "artifact_manifest.csv",
+        "workflow_assessment.json",
+        "report.md"
       ],
       "evaluation_metrics": [
         {
-          "metric": "Initial screening",
-          "published_value": "23.1 million molecules → 100 analogues per query → 300 total initial hits → 165 retained overall; historical counts, not evidence of a deposited complete dataset"
+          "metric": "Input integrity and traceability",
+          "measurements_and_evidence": "Validated identities, chemical states, library size, exclusions and retained input artifacts",
+          "evaluation_rule": "Every reported candidate and reference must map to a documented input; identity-changing transformations must be explicit"
         },
         {
-          "metric": "GLC analogue docking, Table 10",
-          "published_value": "Top-three scores −7.2, −7.0 and −6.10 kcal/mol; GLC reference −7.2 kcal/mol"
+          "metric": "Screening coverage",
+          "measurements_and_evidence": "Counts and rankings by query group, three-dimensional shape/feature evidence, conformer handling and filter attrition",
+          "evaluation_rule": "Reconcile entry counts and unique identities separately, preserve the requested screening method and explain exclusions; do not force a predetermined retained yield"
         },
         {
-          "metric": "BG6 analogue docking, Table 11",
-          "published_value": "Top-three scores −7.8, −7.4 and −7.0 kcal/mol; BG6 reference −7.9 kcal/mol"
+          "metric": "Property-based selection",
+          "measurements_and_evidence": "Compound-level properties, endpoint coverage, model identities, units and declared selection rules",
+          "evaluation_rule": "Establish endpoint coverage from model definitions rather than names alone; missing predictions remain unresolved and predictions must support the actual selection decisions"
         },
         {
-          "metric": "2DG analogue docking, Table 12",
-          "published_value": "Top-three scores −6.8, −6.3 and −6.3 kcal/mol; 2DG reference −6.0 kcal/mol"
+          "metric": "Binding-region and reference validity",
+          "measurements_and_evidence": "Effective region, coordinate-frame checks, reference poses, available recovery metrics and contemporaneous reference results",
+          "evaluation_rule": "Binding claims require a valid region and interpretable controls; score agreement alone does not establish pose recovery"
         },
         {
-          "metric": "Score consistency",
-          "published_value": "Table 10 gives the leading GLC analogue −7.2 kcal/mol, while one Results sentence says −7.0 kcal/mol; Table 10 is the anchor"
+          "metric": "Candidate prioritisation",
+          "measurements_and_evidence": "Finalists, reference-relative comparisons and supporting pose/property evidence",
+          "evaluation_rule": "Compare compatible methods and protocols; do not treat scores from different models as interchangeable or equate a score with measured affinity"
         },
         {
-          "metric": "Docking interactions, leading GLC analogue",
-          "published_value": "Table 10: 7 H-bonds; Glu260, Gln291, Phe156, Asn208, Lys173 and Asp209 listed as interacting residues"
+          "metric": "Dynamics evidence",
+          "measurements_and_evidence": "Completed equilibration/production duration, analysed systems, atom selections, alignment, units and time-series summaries",
+          "evaluation_rule": "Verify 100 ps equilibration and 20 ns production from logs and trajectories per selected candidate/reference system; missing requested systems or incomplete trajectories leave the validation stage incomplete"
         },
         {
-          "metric": "Docking interactions, leading BG6 analogue",
-          "published_value": "Table 11: 11 H-bonds; Gly87, Asn89, Thr232, Arg91, Asp84 and Lys173 listed as interacting residues"
-        },
-        {
-          "metric": "Docking interactions, leading 2DG analogue",
-          "published_value": "Table 12: 4 H-bonds; Asp209, Asn208, Glu294, Thr172, Thr232 and Lys173 listed as interacting residues; residue-list length is not an H-bond count"
-        },
-        {
-          "metric": "Interaction interpretation",
-          "published_value": "Counts and residue names above are Table 10–12 transcriptions, not independently verified contacts or compulsory atom-level grading criteria; figure captions give different contact descriptions"
-        },
-        {
-          "metric": "GLC-group ADME, Table 4",
-          "published_value": "Candidate intestinal absorption 59.316–59.79%; logBB −0.900 to −0.786; logPS −3.552 to −3.192; CYP2D6/CYP1A2 and renal OCT2 entries all No"
-        },
-        {
-          "metric": "BG6-group ADME, Table 5",
-          "published_value": "Candidate intestinal absorption 0–26.376%; logBB −1.032 to −0.928; logPS −3.604 to −3.460; CYP2D6/CYP1A2 and renal OCT2 entries all No; poor absorption must not be relabelled as uniformly favourable ADME"
-        },
-        {
-          "metric": "2DG-group ADME, Table 6",
-          "published_value": "Candidate intestinal absorption 86.764–87.984%; logBB −0.265 to −0.025; logPS −3.254 to −3.147; CYP2D6/CYP1A2 and renal OCT2 entries all No"
-        },
-        {
-          "metric": "Toxicity, Tables 7–9",
-          "published_value": "All nine listed candidates are labelled class 6; GLC-group LD50 2300–14,388 mg/kg; BG6/2DG-group LD50 5500–15,900 mg/kg; reported carcinogenicity, immunotoxicity, mutagenicity and cytotoxicity entries are Inactive. Class 6 alongside 2300 mg/kg conflicts with the text's class-VI definition of LD50 >5000 mg/kg; retain the discrepancy"
-        },
-        {
-          "metric": "Optional MD backbone RMSD, Results section 3.3",
-          "published_value": "GLC-group finalist approximately ±5.0 Å; BG6-group approximately ±4.0 Å; 2DG-group approximately ±0.5 Å, compared with their references; these summaries are not universal stability thresholds"
-        },
-        {
-          "metric": "Optional MD plot/prose conflict",
-          "published_value": "Figures 7A and 8A display curves around 0.4–0.5 on axes labelled RMSD (Å), whereas Results section 3.3 reports approximately ±4.0 Å and ±5.0 Å. Plot values are visual estimates (derived), not digitised data. Preserve the conflict; do not infer corrected units or use these values for pass/fail grading. The paper's ± notation is retained as reported, not interpreted as negative RMSD"
-        },
-        {
-          "metric": "Optional MD H-bonds, Results section 3.3",
-          "published_value": "GLC-group finalist/reference averages 6/4; BG6-group 7/5; 2DG-group 3/6. Distinguish these MD values from docking counts and the abstract's different summaries"
+          "metric": "Workflow completeness",
+          "measurements_and_evidence": "Stage outcomes, job records, artifact availability, exclusions and limitations",
+          "evaluation_rule": "Classify the run from executed evidence; unavailable required stages prevent a complete-workflow claim"
         }
-      ]
+      ],
+      "task_format": "capability_workflow",
+      "grading_mode": "manual_review_required",
+      "evaluator_file": "benchmark/task_007_hkii_antidengue_virtual_screening.md"
     }
   ]
 }
