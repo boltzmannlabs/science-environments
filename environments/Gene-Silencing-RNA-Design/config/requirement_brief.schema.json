@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gene Silencing RNA Design — confirmed requirement brief",
+  "description": "The agent parses a short user request into this contract, echoes it for confirmation, and binds the run by hash. Application defaults fill silent priorities; user min_standards may tighten frozen gates, never loosen. The user need not supply every field.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["brief_id", "target", "application", "objective", "priorities", "constraints"],
+  "properties": {
+    "brief_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"},
+    "mode": {"enum": ["design", "evaluate", "exploratory", "benchmark", "audit"]},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organism", "gene"],
+      "properties": {
+        "organism": {"enum": ["human"]},
+        "gene": {"type": "string", "minLength": 1},
+        "transcript": {"type": "string", "description": "accession.version; resolved and confirmed, never silently picked"},
+        "sequence_supplied": {"type": "boolean"},
+        "allele": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["variant_id"],
+          "properties": {
+            "variant_id": {"type": "string", "minLength": 1},
+            "expected_consequence": {"type": "string"}
+          }
+        }
+      }
+    },
+    "application": {"enum": [
+      "oncology", "genetic_disease_total_lowering", "genetic_disease_allele_selective",
+      "metabolic_liver_galnac", "systemic_lnp", "neuro_cns", "inflammation_immune_modulation",
+      "functional_genomics", "gene_regulation", "drug_target_validation"
+    ]},
+    "objective": {"type": "string", "minLength": 1},
+    "priorities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weights"],
+      "properties": {
+        "hard_vetoes": {
+          "type": "array",
+          "items": {"enum": ["immune_ugugu", "gu_top_decile", "paralog_full_length_hits"]},
+          "description": "absolute exclusions; union with application defaults and frozen gates"
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["efficacy", "specificity", "immune", "seed_tox", "stability"],
+          "properties": {
+            "efficacy": {"type": "number", "minimum": 0, "maximum": 1},
+            "specificity": {"type": "number", "minimum": 0, "maximum": 1},
+            "immune": {"type": "number", "minimum": 0, "maximum": 1},
+            "seed_tox": {"type": "number", "minimum": 0, "maximum": 1},
+            "stability": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "min_standards": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "rnai": {"type": "number", "minimum": 0, "maximum": 100},
+            "viability": {"type": "number", "minimum": 0, "maximum": 100}
+          },
+          "description": "user floors tighten frozen gates; loosening requires explicit logged user instruction"
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "review_window": {"type": "integer", "minimum": 1, "maximum": 5000, "default": 100},
+        "panel_size": {"type": "integer", "minimum": 1, "maximum": 50, "default": 6},
+        "seed_distinct": {"type": "boolean", "default": true},
+        "delivery_context": {"enum": ["galnac", "lnp", "in_vitro_only", "none_stated"]}
+      }
+    },
+    "success_criteria": {"type": "string", "description": "what the user will measure; recorded verbatim"}
+  }
+}

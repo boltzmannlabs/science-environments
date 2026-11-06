@@ -1,0 +1,91 @@
+{
+  "gene": "MYC",
+  "accession": "NM_002467.6",
+  "application_frame": "gene-regulation",
+  "cohort": "Sciabola/Simone Hep3B measured siRNAs (clean vs all local models)",
+  "n_measured": 7,
+  "n_joined": 7,
+  "pool_windows": 3703,
+  "OligoFormer": {
+    "auc": 1.0,
+    "pearson": 0.4694,
+    "spearman": 0.4286
+  },
+  "RN.Ai": {
+    "auc": 1.0,
+    "pearson": 0.5322,
+    "spearman": -0.1071
+  },
+  "top10_measured_percentiles": {
+    "median": 92.6,
+    "min": 56.5,
+    "max": 99.5
+  },
+  "n_pos": 1,
+  "no_tuning": "frozen engine gates; labels joined post-hoc",
+  "joined": [
+    {
+      "site": 1185,
+      "of": 1.064429364681244,
+      "rank": 17,
+      "label": 0.8,
+      "y": 1,
+      "rnai": 85.73,
+      "n": 3703
+    },
+    {
+      "site": 736,
+      "of": 0.9955894800424576,
+      "rank": 102,
+      "label": 0.51,
+      "y": 0,
+      "rnai": 75.36,
+      "n": 3703
+    },
+    {
+      "site": 467,
+      "of": 0.953066251695156,
+      "rank": 246,
+      "label": 0.3,
+      "y": 0,
+      "rnai": 77.55,
+      "n": 3703
+    },
+    {
+      "site": 416,
+      "of": 0.9443915473222732,
+      "rank": 274,
+      "label": 0.18,
+      "y": 0,
+      "rnai": 79.09,
+      "n": 3703
+    },
+    {
+      "site": 728,
+      "of": 0.9402989003062248,
+      "rank": 293,
+      "label": 0.36,
+      "y": 0,
+      "rnai": 75.24,
+      "n": 3703
+    },
+    {
+      "site": 833,
+      "of": 0.7722384425997734,
+      "rank": 1448,
+      "label": 0.52,
+      "y": 0,
+      "rnai": 77.01,
+      "n": 3703
+    },
+    {
+      "site": 861,
+      "of": 0.7510078012347221,
+      "rank": 1611,
+      "label": 0.22,
+      "y": 0,
+      "rnai": 78.65,
+      "n": 3703
+    }
+  ]
+}

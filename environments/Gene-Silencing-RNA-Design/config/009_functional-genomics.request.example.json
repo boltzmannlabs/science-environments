@@ -1,0 +1,34 @@
+{
+  "brief_id": "kif11_panel_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "KIF11",
+    "transcript": "NM_004523?resolve-to-GENCODE-at-intake",
+    "sequence_supplied": false
+  },
+  "application": "functional_genomics",
+  "objective": "Gene-function panel: seed-distinctness maximized with overlap reporting; deliverable is a PANEL (>=3 independent reagents), never a single best siRNA",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu"
+    ],
+    "weights": {
+      "efficacy": 0.3,
+      "specificity": 0.4,
+      "seed_tox": 0.15,
+      "immune": 0.1,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 65
+    }
+  },
+  "constraints": {
+    "review_window": 150,
+    "panel_size": 8,
+    "seed_distinct": true,
+    "delivery_context": "in_vitro_only"
+  },
+  "success_criteria": ">=3 seed-distinct reagents each >=70% knockdown; phenotype reproduced by >=2 independent reagents before any gene-function claim \u2014 illustrative syntax only; not an approved run."
+}

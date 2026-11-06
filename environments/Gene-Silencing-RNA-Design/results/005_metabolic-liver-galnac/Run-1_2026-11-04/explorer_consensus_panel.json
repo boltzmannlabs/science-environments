@@ -1,0 +1,23 @@
+{
+  "consensus_panel": [
+    "NM_001530.4_site_1887",
+    "NM_001530.4_site_313",
+    "NM_001530.4_site_2318",
+    "NM_001530.4_site_1891",
+    "NM_001530.4_site_2551",
+    "NM_001530.4_site_2319"
+  ],
+  "pareto_front": [
+    "NM_001530.4_site_1887",
+    "NM_001530.4_site_1891",
+    "NM_001530.4_site_2319",
+    "NM_001530.4_site_2320"
+  ],
+  "constraint_adaptation": {
+    "original_constraint": "full_length_offtarget_hits <= 10 (frozen gate)",
+    "diagnosis": "saturated for this target: stratified sample n=40 min=22 q25=28 median=32 max=37 \u2014 absolute cap unreachable",
+    "re_anchored_constraint": "cohort-relative: hits <= q25 of target's own distribution (28)",
+    "status": "PROPOSED constraint adaptation \u2014 requires user confirmation; frozen gate NOT changed"
+  },
+  "caveat": "X3b trigger was scope-artifact (mechanism demo; see ledger)"
+}

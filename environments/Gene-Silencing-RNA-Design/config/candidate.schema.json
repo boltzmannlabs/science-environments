@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate record (CSV contract)",
+  "description": "One row per candidate. Required: candidate_id + guide_sequence (5'->3' RNA AUGC, 19-27 nt, T auto-converted and logged; orientation checked, never silently swapped). Empty optional cells are omitted as columns, never left blank (NaN rejects at intake).",
+  "type": "object",
+  "required": ["candidate_id", "guide_sequence"],
+  "properties": {
+    "candidate_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+    "guide_sequence": {"type": "string", "pattern": "^[AUGC]{19,27}$"},
+    "passenger_sequence": {"type": "string", "pattern": "^[AUGC]{19,27}$"},
+    "target_gene": {"type": "string"},
+    "transcript_id": {"type": "string"},
+    "target_start": {"type": "integer", "minimum": 1},
+    "target_end": {"type": "integer", "minimum": 1},
+    "chemical_modifications": {"type": "string"},
+    "source": {"type": "string"}
+  }
+}

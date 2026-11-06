@@ -1,0 +1,195 @@
+{
+  "cohort": "Pfister 2009 HTT SNP-guides (26, reporter IC50; curated set3)",
+  "mode": "EVALUATE \u2014 RN.Ai with N-padded context (source gives no transcript accession; lower-bound predictions, disclosed)",
+  "n": 26,
+  "spearman_rnai_vs_neglog10_ic50": 0.296,
+  "ic50_range_nM": [
+    0.006,
+    3.2
+  ],
+  "rows": [
+    {
+      "id": "Pfister_HTT_01",
+      "guide": "AGCGUUGAAGUACUGUCCCCA",
+      "ic50_match_nM": 0.17,
+      "rnai_pct": 83.84,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_02",
+      "guide": "AGCGUUGAAUUACUGUCCCCA",
+      "ic50_match_nM": 0.18,
+      "rnai_pct": 83.95,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_03",
+      "guide": "UCUUCUAGCGUUGAAGUACUG",
+      "ic50_match_nM": 0.36,
+      "rnai_pct": 89.51,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_04",
+      "guide": "UCUUCUAGCGUUGAAUUACUG",
+      "ic50_match_nM": 0.74,
+      "rnai_pct": 89.08,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_05",
+      "guide": "CACAAGGGCGCAGACUUCCAA",
+      "ic50_match_nM": 0.36,
+      "rnai_pct": 82.61,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_06",
+      "guide": "UACAAGGGCACAGACUUCCAA",
+      "ic50_match_nM": 0.16,
+      "rnai_pct": 91.45,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_07",
+      "guide": "GCAGGGCACAAGGGCGCAGAC",
+      "ic50_match_nM": 0.73,
+      "rnai_pct": 56.99,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_08",
+      "guide": "UCAGGGCACAAGGGCACAGAC",
+      "ic50_match_nM": 0.19,
+      "rnai_pct": 78.28,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_09",
+      "guide": "CGCAAGGGCACAGACUUCCAA",
+      "ic50_match_nM": 1.0,
+      "rnai_pct": 79.4,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_10",
+      "guide": "CAUAAGGGCACAGACUUCCAA",
+      "ic50_match_nM": 3.0,
+      "rnai_pct": 86.45,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_11",
+      "guide": "CACCAGGGCACAGACUUCCAA",
+      "ic50_match_nM": 1.0,
+      "rnai_pct": 83.53,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_12",
+      "guide": "CACACGGGCACAGACUUCCAA",
+      "ic50_match_nM": 0.62,
+      "rnai_pct": 83.42,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_13",
+      "guide": "CACAAUGGCACAGACUUCCAA",
+      "ic50_match_nM": 1.5,
+      "rnai_pct": 86.91,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_14",
+      "guide": "CACAAGUGCACAGACUUCCAA",
+      "ic50_match_nM": 1.3,
+      "rnai_pct": 87.06,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_15",
+      "guide": "CACAAUGGCGCAGACUUCCAA",
+      "ic50_match_nM": 3.2,
+      "rnai_pct": 84.76,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_16",
+      "guide": "GUUGAUCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.09,
+      "rnai_pct": 81.96,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_17",
+      "guide": "GUUGAUCUGCAGCAGCAGCUU",
+      "ic50_match_nM": 0.12,
+      "rnai_pct": 80.59,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_18",
+      "guide": "CUCGGGGUUGAUCUGUAGCAG",
+      "ic50_match_nM": 0.01,
+      "rnai_pct": 83.34,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_19",
+      "guide": "CUCGGGGUUGAUCUGCAGCAG",
+      "ic50_match_nM": 0.01,
+      "rnai_pct": 83.15,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_20",
+      "guide": "UCUGAUCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.01,
+      "rnai_pct": 87.46,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_21",
+      "guide": "UUCGAUCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.02,
+      "rnai_pct": 89.78,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_22",
+      "guide": "UUUUAUCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.03,
+      "rnai_pct": 90.89,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_23",
+      "guide": "UUUGCUCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.02,
+      "rnai_pct": 89.4,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_24",
+      "guide": "UUUGACCUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.02,
+      "rnai_pct": 89.0,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_25",
+      "guide": "UUUGAUUUGUAGCAGCAGCUU",
+      "ic50_match_nM": 0.006,
+      "rnai_pct": 93.1,
+      "applicability": "in_domain"
+    },
+    {
+      "id": "Pfister_HTT_26",
+      "guide": "UUUGCUCUGCAGCAGCAGCUU",
+      "ic50_match_nM": 0.15,
+      "rnai_pct": 88.48,
+      "applicability": "in_domain"
+    }
+  ],
+  "caveats": "reporter-IC50 not cellular KD%; N-padded context lowers RN.Ai validity; correlation is potency-ordering evidence only"
+}

@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "check": "files",
+      "status": "PASS",
+      "detail": "17 core files present; task/config examples identical"
+    },
+    {
+      "check": "application_tasks",
+      "status": "PASS",
+      "detail": "10 tasks: sections+steps+index+examples+schema-enum+weight ranges+organism+review_window"
+    },
+    {
+      "check": "schemas",
+      "status": "PASS",
+      "detail": "2 schemas well-formed; 10 apps; 5 dims; organism/guide/required checks"
+    },
+    {
+      "check": "examples",
+      "status": "PASS",
+      "detail": "2 general examples structurally valid + marked illustrative"
+    },
+    {
+      "check": "yaml_invariants",
+      "status": "PASS",
+      "detail": "invariants present; 10 gates with valid provenance tags; yaml contract paths exist"
+    },
+    {
+      "check": "benchmarks",
+      "status": "PASS",
+      "detail": "benchmark numbers match spec; 19 provenance hashes verified"
+    },
+    {
+      "check": "runtime_import",
+      "status": "PASS",
+      "detail": "3 runtime scripts import + behave; explore has v1.2.1 target_gene param"
+    },
+    {
+      "check": "cross_references",
+      "status": "PASS",
+      "detail": "all relative markdown/JSON links resolve across tasks, benchmark, spec, READMEs"
+    },
+    {
+      "check": "benchmark_readmes",
+      "status": "PASS",
+      "detail": "all benchmark case READMEs have Published reference + Run configuration + Benchmark metrics sections"
+    },
+    {
+      "check": "benchmark_runs_structure",
+      "status": "PASS",
+      "detail": "BENCHMARK_RUNS.md has iteration pattern; published sources cited; none-exists markers present"
+    },
+    {
+      "check": "results_tree",
+      "status": "PASS",
+      "detail": "results tree: 6 application dirs, 11 provenance hashes, no empty run folders"
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}

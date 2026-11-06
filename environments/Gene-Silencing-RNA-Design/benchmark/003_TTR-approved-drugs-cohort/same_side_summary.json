@@ -1,0 +1,106 @@
+{
+  "cohorts": {
+    "approved_drugs": 7,
+    "ours_ttr_top20": 20
+  },
+  "dimensions": {
+    "eff_RN.Ai-Predict": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 84.53,
+        "min": 70.86,
+        "max": 91.54
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 84.345,
+        "min": 73.87,
+        "max": 88.33
+      }
+    },
+    "eff_RNAiSpline": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 0.64,
+        "min": 0.599,
+        "max": 0.684
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 0.674,
+        "min": 0.633,
+        "max": 0.688
+      }
+    },
+    "guide_target_duplex_delta_g_kcal_mol": {
+      "approved_drugs": {
+        "n": 6,
+        "median": -35.2,
+        "min": -38.0,
+        "max": -28.4
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": -29.6,
+        "min": -33.9,
+        "max": -25.0
+      }
+    },
+    "full_length_offtarget_hits": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "seed_occurrence_fold_over_expected": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 1.374,
+        "min": 1.075,
+        "max": 1.865
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 1.261,
+        "min": 0.5,
+        "max": 2.569
+      }
+    },
+    "pots_seed_percentile": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 24.152,
+        "min": 1.404,
+        "max": 37.964
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 22.501,
+        "min": 2.698,
+        "max": 80.023
+      }
+    },
+    "seed_tox_viability_avg_human": {
+      "approved_drugs": {
+        "n": 7,
+        "median": 79.3,
+        "min": 51.7,
+        "max": 85.1
+      },
+      "ours_ttr_top20": {
+        "n": 20,
+        "median": 76.2,
+        "min": 37.5,
+        "max": 89.9
+      }
+    }
+  }
+}
