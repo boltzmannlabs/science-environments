@@ -6,7 +6,7 @@
 
 | Component | Status |
 | --- | --- |
-| Monoclonal tasks | Five active prompts in `tasks/monoclonal_antibody_design/`, each with a reference antibody, scaffold or published comparator. |
+| Monoclonal tasks | Five benchmarked prompts and two restored fixed-framework VHH prompts in `tasks/monoclonal_antibody_design/`. |
 | Bispecific tasks | One design prompt and four evidence-assessment prompts. |
 | Benchmarks | Ten matching documents with metrics, available reference values and task-specific interpretation. |
 | Configuration | Shared schemas and nine contract profiles: four retained monoclonal profiles and five active bispecific profiles. |
@@ -16,7 +16,7 @@
 
 ## Validation Scope
 
-Existing checks assess schemas, declarations, provenance and output consistency. They do not establish the scientific performance of the ten active tasks. The five current monoclonal prompts have no dedicated executable profiles or automatic scientific graders.
+Existing checks assess schemas, declarations, provenance and output consistency. They do not establish the scientific performance of the twelve task documents. The seven current monoclonal prompts have no dedicated executable profiles or automatic scientific graders. The restored VHH prompts are registered under `fixed_framework_tasks`; validation checks their identities, required sections and catalog membership.
 
 The stored validation report is historical and was not regenerated for the documentation changes. Documentation checks cover local links, folder descriptions and task/benchmark correspondence; they are separate from scientific execution.
 

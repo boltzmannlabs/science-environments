@@ -2,9 +2,9 @@
 
 **Environment ID:** `antibody_design`
 
-**Active scope:** five monoclonal design tasks with reference, scaffold or comparator context; one bispecific design task; and four bispecific evidence-assessment tasks. Target-only schemas remain available for compatibility checks, with no active target-only prompt.
+**Active scope:** five benchmarked monoclonal design tasks with reference, scaffold or comparator context; two restored fixed-framework VHH prompts; one bispecific design task; and four bispecific evidence-assessment tasks. Target-only schemas remain available for compatibility checks, with no active target-only prompt.
 
-**Current implementation:** five active monoclonal evaluation prompts live in `tasks/monoclonal_antibody_design/`, with matching published benchmarks under `benchmark/`. The five bispecific tasks retain their existing profiles. Four older monoclonal profiles and their schemas remain for contract regression checks; their retired prompts live only in `tests/fixtures/retired_tasks/`. See the [task catalog](README.md).
+**Current implementation:** five benchmarked monoclonal evaluation prompts and two restored fixed-framework VHH prompts live in `tasks/monoclonal_antibody_design/`. The five bispecific tasks retain their existing profiles. Four older monoclonal profiles and their schemas remain for contract regression checks; their retired prompts live only in `tests/fixtures/retired_tasks/`. See the [task catalog](README.md).
 
 **Implementation folders:** `src/`, `scripts/` and `skills/` each contain one `readme.md`. No specialist code, command entrypoints or reusable agent skills are included.
 
@@ -26,8 +26,8 @@ The [repository README](../../README.md) places environment requirements, config
 | `scripts/` | Utility-script placeholder containing only `readme.md`. |
 | `skills/` | Agent-skill placeholder containing only `readme.md`. |
 | `config/` | Environment registration, family profiles, request/result/protocol schemas, JSON request examples, metric definitions, and validation dependencies. |
-| `tasks/` | Five monoclonal tasks in `monoclonal_antibody_design/` and five existing bispecific tasks. |
-| `benchmark/` | Matching references for all ten tasks: metrics, available values, interpretation and citations. |
+| `tasks/` | Seven monoclonal task documents in `monoclonal_antibody_design/` and five existing bispecific tasks. |
+| `benchmark/` | Matching references for the ten benchmarked tasks; separate benchmarks are not supplied for the restored VHH prompts. |
 | `tests/` | All validation code, acceptance criteria, test fixtures, and testing helpers. The current scenario suite is `monoclonal_antibody_with_reference/`. |
 | `results/` | Small example outputs and generated validation reports; no test implementation. |
 | `../../research/antibody_design/` | Research findings, references, source limitations, and the existing benchmark brief. |
@@ -40,7 +40,7 @@ These cases differ in their starting information and molecular requirements. An 
 
 | Case | Starting information | Intended task outcome | Current package status |
 | --- | --- | --- | --- |
-| Monoclonal design with reference context | Target and the task-specific antibody, scaffold or published comparator. | Designs or reconstructions evaluated against the specified reference evidence. | Five paper-based prompts and matching benchmarks; the retained paired-chain validator does not cover every task format. |
+| Monoclonal design with reference context | Target and the task-specific antibody, scaffold or published comparator. | Designs or reconstructions evaluated against the specified reference evidence. | Five paper-based prompts with benchmarks and two standalone fixed-framework VHH prompts; the retained paired-chain validator does not cover every task format. |
 | Target only | Defined target; no supplied antibody known to bind it. Format/framework choices and other method-required context must still be declared. | Candidate binding hypotheses with traceable origin and evidence; no invented reference or reference-improvement claim. | Retained schemas and regression checks only; no active target-only prompt. |
 | Bispecific antibody | Two intended binding specificities and a declared molecular architecture; parental binders may be supplied, partly supplied, or absent. | An assembly-aware candidate definition, evidence for each specificity, and evidence for the intended combined mechanism. | Design and assessment schemas with declaration checks; no executor or scientific acceptance suite. |
 
@@ -49,6 +49,8 @@ Bispecificity can involve different antigens or distinct epitopes on one antigen
 ## 3. Monoclonal tasks and retained reference contract
 
 The current monoclonal tasks cover HER2/trastuzumab, PD-L1/H5, PD-1/H965, LCAT/reference Fab and Gal-3BP/BDBV-43. Their reference roles differ: H5 and H965 are published comparators, while the design inputs use the stated frameworks. LCAT is a CDR reconstruction task. Each task preserves these distinctions; grouping them does not turn every case into parent-antibody affinity maturation.
+
+Two restored fixed-framework VHH prompts additionally cover HA/RSV on the 3EAK scaffold and restricted huJ3 gp120 CDR design. They retain their original task-specific output requirements and are cataloged under `fixed_framework_tasks`, without executable profiles or separate published-result benchmarks.
 
 The retained paired-chain reference contract supports `reference_guided`, `affinity_maturation`, `humanization`, `developability_optimization`, `specificity_optimization`, and `mechanism_optimization`. These labels specify evaluation questions, not implemented design algorithms. Its accepted product contexts are IgG, Fab, and F(ab')2, with variable-domain or compatible chain-level sequence scopes. VHH and scFv are not accepted formats in this validator. Active tasks using other formats follow their own output requirements and require a compatible evaluator.
 
@@ -97,7 +99,7 @@ The [metric catalog](config/shared/metric-catalog.json) supplies identifiers and
 
 ## 7. Configuration, outputs, and status semantics
 
-The [configuration guide](config/README.md) explains the current contracts. `environment.yaml` catalogs five monoclonal prompts separately from five bispecific task templates. Its nine contract profiles comprise four retired monoclonal profiles and five active bispecific profiles. The five current monoclonal prompts have no dedicated executable profiles or automatic scientific graders. Shared definitions and four family folders hold the retained contracts; reference-only bundle settings apply only to the paired-chain validator.
+The [configuration guide](config/README.md) explains the current contracts. `environment.yaml` catalogs five benchmarked monoclonal prompts and two fixed-framework VHH prompts separately from five bispecific task templates. Its nine contract profiles comprise four retired monoclonal profiles and five active bispecific profiles. The seven current monoclonal prompts have no dedicated executable profiles or automatic scientific graders. Shared definitions and four family folders hold the retained contracts; reference-only bundle settings apply only to the paired-chain validator.
 
 The retained contract requires completed reference-guided bundles to contain `designed_sequences.fasta`, `metrics.json`, `shortlist.csv`, `report.md`, and referenced evidence. They include exactly one declared reference record, exclude that reference from the designed shortlist, and preserve paired-chain identity. See the [result contract](results/README.md). Target-only results record candidate origins; bispecific design results record named chains and arm/whole-molecule evidence. Assessment results wrap task-specific answer fields with request hash, status, evidence, and limitations. These schemas are versioned separately from the reference bundle.
 

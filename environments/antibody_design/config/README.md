@@ -1,6 +1,6 @@
 # Antibody task configuration
 
-The `config/` directory contains shared definitions and **nine contract profiles**. Four profiles are retained for retired monoclonal prompts; five correspond to active bispecific tasks. The five active paper-based monoclonal prompts are cataloged separately and have no dedicated contract profiles. A profile selects the correct request/result schemas. It does not install tools, run a design algorithm, or supply scientifically qualified thresholds.
+The `config/` directory contains shared definitions and **nine contract profiles**. Four profiles are retained for retired monoclonal prompts; five correspond to active bispecific tasks. The five paper-based monoclonal prompts and two restored fixed-framework VHH prompts are cataloged separately and have no dedicated contract profiles. A profile selects the correct request/result schemas. It does not install tools, run a design algorithm, or supply scientifically qualified thresholds.
 
 ```text
 config/
@@ -86,8 +86,10 @@ Only the reference family has the existing `preflight` and `bundle` checks. The 
 
 Canonical schemas now live in family folders; the former flat schema paths were removed. Use the catalog or the validation CLI rather than hardcoded old paths. Schema IDs are stable identifiers resolved by `tests/schema_registry.py` from local files; they are not download URLs. Unknown references fail without network retrieval.
 
-When adding a task, put its Markdown in `tasks/<family>/` and its matching reference document in `benchmark/<family>/`. Register document-only prompts separately from contract profiles. When a compatible contract is implemented, add its profile and request example under `config/<family>/`, register it in `environment.yaml` and add relevant checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
+When adding a benchmarked task, put its Markdown in `tasks/<family>/` and its matching reference document in `benchmark/<family>/`. Register document-only prompts separately from contract profiles. When a compatible contract is implemented, add its profile and request example under `config/<family>/`, register it in `environment.yaml` and add relevant checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
 
 Paper-based evaluation prompts are listed under `paper_benchmark_tasks` and stored in `tasks/monoclonal_antibody_design/`. Their published values and sources live in matching files under `benchmark/monoclonal_antibody_design/`, indexed by `paper_benchmark_references`. Each task and benchmark share the same family folder and filename and link to one another. These documents do not register executable profiles, request schemas or automatic graders.
+
+The two restored VHH prompts are listed under `fixed_framework_tasks` in the same task folder. This separate catalog preserves their original text and validates their task IDs and required sections without inventing benchmark documents or adding executable profiles.
 
 The `bispecific_benchmark_references` mapping links the five existing bispecific task IDs to their benchmark documents. These are reference and evaluation specifications; the mapping does not provide a TxBench grader or certify trajectory outputs.
