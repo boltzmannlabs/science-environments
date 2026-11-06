@@ -1,3 +1,3 @@
-# Source Code
+# Antibody Design Source Code
 
-Reserved for the antibody-design environment implementation. No source code is currently included.
+Core implementations for the antibody design environment will be published here, with integration guidance and usage examples. Planned components support task execution, tool integration, candidate tracking and structured result reporting.

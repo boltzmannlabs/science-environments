@@ -1,128 +1,72 @@
-# Antibody Design — Environment Specification
+# Antibody Design Environment Specification
 
 **Environment ID:** `antibody_design`
 
-**Active scope:** five benchmarked monoclonal design tasks with reference, scaffold or comparator context; two restored fixed-framework VHH prompts; one bispecific design task; and four bispecific evidence-assessment tasks. Target-only schemas remain available for compatibility checks, with no active target-only prompt.
+## Purpose
 
-**Current implementation:** five benchmarked monoclonal evaluation prompts and two restored fixed-framework VHH prompts live in `tasks/monoclonal_antibody_design/`. The five bispecific tasks retain their existing profiles. Four older monoclonal profiles and their schemas remain for contract regression checks; their retired prompts live only in `tests/fixtures/retired_tasks/`. See the [task catalog](README.md).
+The Antibody Design environment defines a common framework for computational antibody discovery, design, optimization and evaluation. Its intended scope covers monoclonal, bispecific and multispecific antibody projects, from a target-defined design objective to traceable candidate comparisons.
 
-**Implementation folders:** `src/`, `scripts/` and `skills/` each contain one `readme.md`. No specialist code, command entrypoints or reusable agent skills are included.
+The specification describes the scientific scope and requirements for the environment as it develops. The current release provides monoclonal antibody task specifications and published benchmark references. Availability of executable capabilities is recorded separately in [status.md](status.md).
 
-**Maturity:** Specification. This environment does not include a scientific executor, qualified prediction adapters, or experimentally validated designs.
+## Antibody Design Families
 
-## 1. Purpose and repository organization
+| Design family | Intended scope | Evaluation focus |
+| --- | --- | --- |
+| Monoclonal antibody design | Design or refine an individual antibody for a defined target and binding region. The current task collection focuses on single-specificity designs. | Target recognition, reference or framework constraints, structural quality, specificity and developability. |
+| Bispecific antibody design | Combine two distinct binding specificities in one defined molecule, directed at different antigens or different epitopes of the same antigen. | Evidence for each binding component, assembly, pairing, geometry and the intended combined mechanism. |
+| Multispecific antibody design | Extend the design framework to molecules with three or more intended binding specificities. | Evidence for every component, compatibility across the assembled molecule and the overall design objective. |
 
-Define clear, reproducible antibody-design tasks for an Agent-Scientist environment, with explicit inputs, outputs, evidence requirements, and limits. The active task catalog and retained validation contracts have separate scopes. Existing scenario tests exercise paired-chain monoclonal reference contracts.
+These are task groupings. Monoclonal origin, the number of binding specificities and molecular format describe different properties; an engineered bispecific antibody can also be a monoclonal product. In this specification, the separate multispecific track denotes three or more specificities. Valency describes the number of binding sites and does not by itself determine specificity. The bispecific scope follows the distinction between different antigens and different epitopes described in [FDA guidance](https://www.fda.gov/media/123313/download).
 
-The [repository README](../../README.md) places environment requirements, configuration, tasks, and applicable tests in `environments/<environment-name>/`, and supporting research in `research/<environment-name>/`. The [contribution guide](../../CONTRIBUTING.md) also permits small example outputs and validation summaries in `results/`. Apply those responsibilities here:
+The intended format coverage includes full-length antibodies, Fab and F(ab')2 fragments, scFv constructs, single-domain antibodies and engineered multidomain formats. Each task must declare its actual chain composition, domain organization, valency and pairing requirements. Format-specific support requires an appropriate input representation and evaluator. Antibody fragments, single-domain antibodies and engineered multispecific products are also recognized within the broader antibody-product scope described by [WHO](https://www.who.int/publications/m/item/trs1043-annex4).
 
-| Location | Responsibility |
+## Design Modes and Objectives
+
+| Mode or objective | Starting information | Intended outcome |
+| --- | --- | --- |
+| De novo design | A defined target and design objective, with an optional scaffold or framework; no supplied antibody known to bind the target is required. | New candidate binding hypotheses with documented sequence origin and supporting evidence. |
+| Reference-guided design | A verified reference antibody, target context and permitted changes. | Reference-derived candidates assessed against a comparable baseline. |
+| Interaction and specificity optimization | An existing candidate or reference with a defined binding objective and relevant comparison evidence. | Improved computational interaction evidence or selectivity while retaining required properties. |
+| Humanization and developability optimization | A supplied antibody and declared sequence, structural and product-property constraints. | Candidates assessed for humanness, stability, solubility, aggregation risk and other relevant liabilities. |
+| Architecture and combined-function optimization | Defined binding components, molecular format and intended mechanism. | An assembly-aware design assessed at both component and whole-molecule levels. |
+| Reconstruction and benchmarking | A masked or otherwise controlled input and an independently retained reference. | A reproducible assessment of sequence recovery, structural agreement or another declared endpoint. |
+
+De novo design may use a framework or scaffold; it does not necessarily mean generating every residue without prior structural context. A published final design used for comparison must remain distinct from the actual starting antibody or framework. Optimization must identify which properties should improve, which must be retained and which constraints cannot be traded off.
+
+## Scientific Inputs and Constraints
+
+A task must define the target identity, relevant construct, design objective, antibody format and available evidence. Reference-guided work additionally requires verified reference components and permitted modifications. Designs with multiple specificities must identify each target or epitope and the role of each binding component.
+
+Structural inputs must retain their origin and biological context. Experimental coordinates, predicted structures and prepared derivatives must be distinguishable. Document chain and residue mappings, unresolved regions, relevant modifications and any differences between the supplied construct and the evaluated model.
+
+Declare the candidate budget, editable regions, protected residues, pairing rules, comparison controls, output requirements and user-imposed tool or resource constraints before execution. Missing essential inputs must be reported explicitly.
+
+## Workflow and Tool Selection
+
+The environment is intended to support task-dependent workflows rather than prescribe one universal tool sequence. Method selection should account for the target, molecular format, available inputs, relevant benchmark evidence, access restrictions, licensing and computational budget.
+
+Where several workflows are appropriate, compare their applicability, evidence quality, limitations and resource requirements before selecting an approach. Record the tools and revisions actually used. A method's published aggregate performance must not be presented as a predicted success rate for a new target.
+
+The scientific lifecycle connects input review, candidate design, structure and interface assessment, property evaluation, comparison and reporting. These are evidence requirements; their implementation may differ across tasks and formats.
+
+## Evaluation and Candidate Selection
+
+| Evaluation area | Required evidence |
 | --- | --- |
-| `README.md` | Concise environment overview, task families, current readiness, and layout. |
-| `ENVIRONMENT_SPEC.md` | Shared requirements and distinctions between task families; current versus planned support. |
-| `MODELS_AND_TOOLS.md` | Model and tool selection scope. |
-| `status.md` | Current contents, validation scope and remaining implementation work. |
-| `src/` | Source-code placeholder containing only `readme.md`. |
-| `scripts/` | Utility-script placeholder containing only `readme.md`. |
-| `skills/` | Agent-skill placeholder containing only `readme.md`. |
-| `config/` | Environment registration, family profiles, request/result/protocol schemas, JSON request examples, metric definitions, and validation dependencies. |
-| `tasks/` | Seven monoclonal task documents in `monoclonal_antibody_design/` and five existing bispecific tasks. |
-| `benchmark/` | Matching references for the ten benchmarked tasks; separate benchmarks are not supplied for the restored VHH prompts. |
-| `tests/` | All validation code, acceptance criteria, test fixtures, and testing helpers. The current scenario suite is `monoclonal_antibody_with_reference/`. |
-| `results/` | Small example outputs and generated validation reports; no test implementation. |
-| `../../research/antibody_design/` | Research findings, references, source limitations, and the existing benchmark brief. |
+| Molecular identity | Complete candidate representation, chain or domain assignments, reference lineage where applicable and compliance with declared edits. |
+| Structure and interface | Folding and interface evidence assessed separately, with explicit structural scope, geometry, contacts and uncertainty. |
+| Binding and specificity | Endpoint definitions, matched reference or control comparisons and relevant selectivity evidence. |
+| Developability | Distinct assessments of applicable sequence liabilities, stability, solubility, aggregation, expression and immunogenicity-related indicators. |
+| Combined architecture | Evidence for each required specificity and the assembled molecule, including compatibility with the declared mechanism. |
+| Benchmark comparability | Matching dataset, metric definition, units, structural scope and evaluation conditions. |
+| Reproducibility | Input and output provenance, method revisions, analysis settings, artifact identities and resource use. |
 
-Do not duplicate active task instructions inside test folders. Retired prompts are retained as historical regression fixtures only. Supporting criteria documents describe what tests must establish; they are not extra agent tasks. Keep research sources in the [reference catalog](../../research/antibody_design/references.md), with findings in [research notes](../../research/antibody_design/research-notes.md).
+Selection must respect mandatory constraints before ranking favorable scores. A strong component cannot compensate for failure of another required component or the assembled molecule. Simultaneous target engagement should be evaluated when required by the proposed mechanism; it is not a universal requirement for every bispecific design. [FDA guidance](https://www.fda.gov/media/123313/download)
 
-## 2. Task families and current support
+Predicted confidence, interaction energies, measured affinity and functional activity are separate endpoints. Published benchmark values provide comparison context and do not automatically define acceptance thresholds. Report uncertainty, missing measurements, failed evaluations and non-comparable results alongside positive findings.
 
-These cases differ in their starting information and molecular requirements. An optimization objective such as humanization is separate from the task family; a molecular format such as Fab is separate from both.
+## Iteration and Evidence Handoffs
 
-| Case | Starting information | Intended task outcome | Current package status |
-| --- | --- | --- | --- |
-| Monoclonal design with reference context | Target and the task-specific antibody, scaffold or published comparator. | Designs or reconstructions evaluated against the specified reference evidence. | Five paper-based prompts with benchmarks and two standalone fixed-framework VHH prompts; the retained paired-chain validator does not cover every task format. |
-| Target only | Defined target; no supplied antibody known to bind it. Format/framework choices and other method-required context must still be declared. | Candidate binding hypotheses with traceable origin and evidence; no invented reference or reference-improvement claim. | Retained schemas and regression checks only; no active target-only prompt. |
-| Bispecific antibody | Two intended binding specificities and a declared molecular architecture; parental binders may be supplied, partly supplied, or absent. | An assembly-aware candidate definition, evidence for each specificity, and evidence for the intended combined mechanism. | Design and assessment schemas with declaration checks; no executor or scientific acceptance suite. |
+Each iteration should retain the candidate identity, changes from its predecessor, input and method revisions, results, failed criteria and the reason for the next decision. Promising candidates may guide focused refinement while alternative approaches preserve exploration. New results must remain attributable to the exact candidate and evaluation conditions that produced them.
 
-Bispecificity can involve different antigens or distinct epitopes on one antigen. It is not synonymous with two binding sites: a conventional bivalent antibody need not be bispecific. Whether both targets must be engaged simultaneously depends on the proposed mechanism. These distinctions follow the [FDA's bispecific antibody guidance](https://www.fda.gov/media/123313/download).
-
-## 3. Monoclonal tasks and retained reference contract
-
-The current monoclonal tasks cover HER2/trastuzumab, PD-L1/H5, PD-1/H965, LCAT/reference Fab and Gal-3BP/BDBV-43. Their reference roles differ: H5 and H965 are published comparators, while the design inputs use the stated frameworks. LCAT is a CDR reconstruction task. Each task preserves these distinctions; grouping them does not turn every case into parent-antibody affinity maturation.
-
-Two restored fixed-framework VHH prompts additionally cover HA/RSV on the 3EAK scaffold and restricted huJ3 gp120 CDR design. They retain their original task-specific output requirements and are cataloged under `fixed_framework_tasks`, without executable profiles or separate published-result benchmarks.
-
-The retained paired-chain reference contract supports `reference_guided`, `affinity_maturation`, `humanization`, `developability_optimization`, `specificity_optimization`, and `mechanism_optimization`. These labels specify evaluation questions, not implemented design algorithms. Its accepted product contexts are IgG, Fab, and F(ab')2, with variable-domain or compatible chain-level sequence scopes. VHH and scFv are not accepted formats in this validator. Active tasks using other formats follow their own output requirements and require a compatible evaluator.
-
-Required distinctions:
-
-- Preserve the reference identity and heavy/light pairing. Each candidate must identify its reference parent and current sequence digest.
-- Establish a reference baseline under the same target context and comparable evaluation conditions as candidates.
-- State which properties should improve, which should be retained, and which are hard constraints. A passing absolute score alone does not demonstrate improvement over the reference.
-- Retain unsuccessful and unresolved outcomes. Do not fill a shortlist with candidates lacking mandatory evidence.
-
-Published reference-based antibody optimization includes experimental assessment of proposed variants; it does not establish that a model score alone demonstrates improvement. This motivates keeping computational predictions and measured comparisons separate. [Hie et al.](https://pubmed.ncbi.nlm.nih.gov/37095349/)
-
-The older EGFR and DENV prompts are retired from the task catalog. Their profiles, schemas and unchanged prompt fixtures remain available to test existing contract behavior.
-
-## 4. Retained target-only contract
-
-There is no active target-only monoclonal task. The older [target-only profile](config/monoclonal_target_only/profile.yaml), request/result schemas and regression fixture remain for compatibility checks. They do not add a task to `tasks/monoclonal_antibody_design/` or provide a scientific executor.
-
-## 5. Case C: bispecific antibody design
-
-The current [bispecific design task](tasks/bispecific_design/bispecific_antibody_design.md) specifies HER2 biparatopic design with zanidatamab as the reference antibody and binding specificities for extracellular domains II and IV. The reference name alone does not supply molecular inputs or establish equivalent geometry or activity. The broader family contract also supports two different antigens.
-
-The task must define the two binding specificities, intended mechanism, architecture, chain identities, valencies, and supplied parental evidence. If only one parental binder is available, the missing binding component remains a separate discovery requirement.
-
-Evaluate the assembled molecule as well as its components. Arm-level binding alone does not establish correct assembly or the intended combined behavior. Research on parental-antibody selection demonstrates the importance of compatible heavy/light-chain pairing for relevant bispecific formats. [Gong et al., 2021](https://pubmed.ncbi.nlm.nih.gov/33397191/)
-
-The proposed evidence contract must distinguish component identity, assembly integrity, each specificity, mechanism-dependent joint engagement, and whole-product developability. Do not assume a universal four-chain architecture, infer clinical benefit from dual binding, or treat two independent antibody outputs as a bispecific result.
-
-**Implemented contract:** the [bispecific design profile](config/bispecific_design/profile.yaml) declares named chains, two specificities, arm assignments, and whole-molecule evidence. Cellular and CNS assessment tasks have separate dataset/decision profiles in `config/bispecific_assessment/`. These declaration checks do not establish assembly, mechanism, or delivery performance. The reference-paired FASTA bundle is not imposed on bispecific architectures; scientific executors and independent evaluators remain required.
-
-## 6. Shared evidence and evaluation requirements
-
-The following are environment-design requirements; their scientific enforcement is not fully implemented:
-
-| Area | Required distinction |
-| --- | --- |
-| Molecular identity | Exact target constructs, candidate sequences, format, chain identities, and source provenance. File hashes establish integrity, not biological correctness. |
-| Structural evidence | Separate antibody folding from target-complex plausibility. Record missing structures, mapping uncertainty, and the domain of applicability of the method. |
-| Binding and function | Keep predicted interaction scores, measured affinity/kinetics, binding assays, and functional endpoints separate. Confidence scores are not affinity measurements. |
-| Developability | Treat stability, aggregation, solubility, expression-related risk, polyreactivity, and immunogenicity indicators as distinct evidence. |
-| Comparisons | Use a matched reference for reference-guided work; declared comparators for target-only work; component and whole-molecule comparisons as appropriate for bispecific work. |
-| Reproducibility | Record request and artifact hashes, model/harness/tool revisions, method availability, seed, isolated workspace, and actual resource use. |
-| Evaluation integrity | Freeze rules and budgets before evaluation; keep held-out outcomes out of agent-visible task inputs; avoid uncalibrated combinations of unlike endpoints. |
-
-The [metric catalog](config/shared/metric-catalog.json) supplies identifiers and scopes, not universally valid thresholds. The [protocol schema](config/shared/protocol.schema.json) describes required declarations, not a scientifically qualified protocol. Missing evidence remains unresolved; a favorable score cannot compensate for a mandatory failed rule. Wet-lab measurements may be supplied as external evidence, but the package does not execute assays.
-
-## 7. Configuration, outputs, and status semantics
-
-The [configuration guide](config/README.md) explains the current contracts. `environment.yaml` catalogs five benchmarked monoclonal prompts and two fixed-framework VHH prompts separately from five bispecific task templates. Its nine contract profiles comprise four retired monoclonal profiles and five active bispecific profiles. The seven current monoclonal prompts have no dedicated executable profiles or automatic scientific graders. Shared definitions and four family folders hold the retained contracts; reference-only bundle settings apply only to the paired-chain validator.
-
-The retained contract requires completed reference-guided bundles to contain `designed_sequences.fasta`, `metrics.json`, `shortlist.csv`, `report.md`, and referenced evidence. They include exactly one declared reference record, exclude that reference from the designed shortlist, and preserve paired-chain identity. See the [result contract](results/README.md). Target-only results record candidate origins; bispecific design results record named chains and arm/whole-molecule evidence. Assessment results wrap task-specific answer fields with request hash, status, evidence, and limitations. These schemas are versioned separately from the reference bundle.
-
-| Status | Current meaning |
-| --- | --- |
-| `CONTRACT_VALID` | Schema and declared identifiers agree; incomplete inputs may still pass. |
-| `ASSESSED` / `INDETERMINATE` | Assessment response declarations, not independently verified decisions. |
-| `NEEDS_INPUT` | Required declared input artifacts are missing or invalid. |
-| `PROTOCOL_REQUIRED` | Required protocol evidence or compatible method declarations are absent or invalid. |
-| `CONTRACT_READY` | Preflight contract checks passed; scientific readiness remains unverified. |
-| `BLOCKED` | A declared execution dependency prevents progress. |
-| `QUALIFIED` | The requested candidate count passes all declared computational rules. |
-| `PARTIAL` | Some, but fewer than requested, qualify. |
-| `NO_QUALIFYING_DESIGNS` | Evaluated candidates have verified mandatory failures; unresolved work alone is insufficient. |
-| `INCOMPLETE` | No candidate qualifies and unresolved work prevents a completed conclusion. |
-| `CANCELLED` | Execution was cancelled; preserve available evidence. |
-
-Malformed requests and task/schema mismatches are rejected. The `tests/task_contracts.py --task ...` command supports all registered profiles; the existing `preflight` and `bundle` commands remain reference-only. Status consistency checks for the newer families do not reproduce their scientific conclusions. `QUALIFIED` does not establish experimental activity or safety.
-
-## 8. Testing, scientific readiness, and source dates
-
-All executable validation and test support lives in `tests/`. The current scenario suite covers reference-guided monoclonal contracts, the DENV example, prompt parity, and declared criteria. See the [acceptance plan](tests/monoclonal_antibody_with_reference/ACCEPTANCE.md) and [coverage/gaps review](tests/monoclonal_antibody_with_reference/COVERAGE.md). `tests/test_configurations.py` additionally checks all task profiles, shared-schema resolution, invalid declarations, and response integrity. Passing these checks does not test target-only or bispecific design capability.
-
-Remaining implementation gaps include a scientific executor, qualified adapters, verified biological examples, independent edit-mask and structural-identity checks, and a justified reference-improvement calculation. The retained target-only and active bispecific families have profiles, schemas and configuration checks. The five paper-based monoclonal tasks have separate output requirements. They still need full result-bundle validation, task-specific scientific evaluators, and independently reviewed end-to-end cases before scientific execution can be claimed. Research coverage, specification completeness, software checks, and scientific validation must be reported separately.
-
-The DENV example retains its **2024-09-01** cutoff. The broader research review includes later publications, clearly dated in the [reference catalog](../../research/antibody_design/references.md). A later paper does not establish eligibility for the frozen DENV profile; each future task must declare its own evidence and method-availability policy.
+Revised workflows should respond to documented evidence. An incomplete or failed stage must not be converted into a successful result, and reused evidence must remain applicable to the current candidate. The stopping decision should reflect the declared objective, available evidence and resource budget.
