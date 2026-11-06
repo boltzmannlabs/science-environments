@@ -45,11 +45,3 @@ Candidate-level pLDDT, ipTM, PAE and pDockQ values for these final endpoints hav
 | Interaction score | Score reference and candidates under identical preparation and score definitions; report candidate minus reference in REU. | Lower is favorable within the matched protocol, but the published best endpoint is not a universal pass threshold. |
 | Allowed changes and structure | Verify chain pairing, edit mask, geometry and intended epitope contacts. | A favorable score cannot compensate for a violated design constraint. |
 | Published endpoint comparison | Match the exact candidate, run and score provenance before comparing with a released endpoint. | Different scoring conditions must be labelled non-comparable. |
-
-## Reference Trajectories
-
-The source provides optimization logs and endpoint artifacts, not an Agent-Scientist execution trajectory. Use the released log paths above to inspect the reported progression; no new optimization was executed for this document.
-
-## Required Evidence and Availability
-
-Retain the task inputs, reference identity, sequence/structure mappings, candidate records, raw outputs and method revisions. Supply `benchmark_comparison.csv` with metric, published value, new value, units, population/atom scope, source and comparability decision. Missing published values stay unavailable; missing new measurements stay unresolved. Freeze acceptance rules before evaluation. This document defines reference comparisons and does not implement an automatic scientific grader.

@@ -31,11 +31,3 @@ The strongest reported AUROC above concerns the design campaign; it must not rep
 | New design evidence | Verify framework input, permitted edits, epitope contacts and complex plausibility for each paired candidate. | Candidate-level numerical cutoffs require the supplied evaluation protocol. |
 | AUROC and enrichment | Use the original labelled panel, score orientation and top-percentile rule. | A single candidate cannot reproduce the reported classification benchmark. |
 | CDR recovery | Evaluate held-out native residues with the same mask and dataset definition. | The aggregate AAR is not an H965-specific binding metric. |
-
-## Reference Trajectories
-
-No public agent-harness trajectory has been established for this local task. The paper supplies scientific design and evaluation examples; it does not supply an Agent-Scientist run or an automatic grader for this prompt.
-
-## Required Evidence and Availability
-
-Retain the task inputs, reference identity, sequence/structure mappings, candidate records, raw outputs and method revisions. Supply `benchmark_comparison.csv` with metric, published value, new value, units, population/atom scope, source and comparability decision. Missing published values stay unavailable; missing new measurements stay unresolved. Freeze acceptance rules before evaluation. This document defines reference comparisons and does not implement an automatic scientific grader.

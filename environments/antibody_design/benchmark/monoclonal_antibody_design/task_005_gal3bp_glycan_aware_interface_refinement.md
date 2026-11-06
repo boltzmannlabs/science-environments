@@ -36,11 +36,3 @@ The reported interface-stability criterion and contact counts are the relevant c
 | Interface stability | Match interface-atom definition, alignment, sampling conditions and replicate treatment before comparing with the reported 5 Å boundary. | A threshold is not a reported mean; preserve all replicate outcomes. |
 | Contact network | Apply the same interaction definitions to reference and variant trajectories. | More contacts alone do not demonstrate improved affinity. |
 | Accessibility and sequence integrity | Preserve target/glycan context, paired-chain identity and permitted edits. | Antigen ΔSASA is not antibody binding energy; unavailable source data remain unresolved. |
-
-## Reference Trajectories
-
-The paper reports molecular simulation analyses, not agent execution traces. Exact study inputs and additional data may require author access; no new simulation or Agent-Scientist design run is claimed here.
-
-## Required Evidence and Availability
-
-Retain the task inputs, reference identity, sequence/structure mappings, candidate records, raw outputs and method revisions. Supply `benchmark_comparison.csv` with metric, published value, new value, units, population/atom scope, source and comparability decision. Missing published values stay unavailable; missing new measurements stay unresolved. Freeze acceptance rules before evaluation. This document defines reference comparisons and does not implement an automatic scientific grader.

@@ -32,11 +32,3 @@ The paper reports H5 structural deposition as PDB **35TL** and EMDB **EMD-77181*
 | H5 structural reconstruction | Compare a prediction of H5 with independent H5 complex coordinates using documented Cα matching and alignment. | The 1.25 Å result is applicable to H5 reconstruction; it is not ground truth for a different generated sequence. |
 | New candidates | Assess declared framework/linker constraints, epitope accessibility, geometry and per-candidate evidence. | Use a frozen evaluation protocol; campaign counts do not supply acceptance thresholds. |
 | Novelty | Record the sequence/structure databases and exact similarity definition. | Do not substitute novelty for binding evidence. |
-
-## Reference Trajectories
-
-No Agent-Scientist or comparable agent-harness trajectory is established by the inspected paper resources. Published structures and candidate records are scientific reference artifacts, not agent-run performance results.
-
-## Required Evidence and Availability
-
-Retain the task inputs, reference identity, sequence/structure mappings, candidate records, raw outputs and method revisions. Supply `benchmark_comparison.csv` with metric, published value, new value, units, population/atom scope, source and comparability decision. Missing published values stay unavailable; missing new measurements stay unresolved. Freeze acceptance rules before evaluation. This document defines reference comparisons and does not implement an automatic scientific grader.

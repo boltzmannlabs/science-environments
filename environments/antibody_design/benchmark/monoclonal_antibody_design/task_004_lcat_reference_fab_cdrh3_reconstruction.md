@@ -39,11 +39,3 @@ These are aggregate results, not published 5BV7 candidate scores. The paper's RM
 | Input isolation | Withhold the native CDR-H3 sequence, loop coordinates and native pose until candidate generation is frozen. | Record public-reference exposure; copied native outputs do not demonstrate design. |
 | Recovery and structure | Report AAR, CAAR, RMSD, TM-score, lDDT and DockQ with explicit scopes, mappings and versions. | Resolve the paper's RMSD-definition discrepancy before claiming exact reproduction. |
 | Dataset-level comparison | Use the complete corresponding evaluation set and sampling/aggregation procedure. | One case cannot establish the paper's mean or standard deviation. |
-
-## Reference Trajectories
-
-The authors release the dataset and model resources. No agent-harness trajectory or verified per-candidate 5BV7 score is established in the inspected release. No new reconstruction was run for this document.
-
-## Required Evidence and Availability
-
-Retain the task inputs, reference identity, sequence/structure mappings, candidate records, raw outputs and method revisions. Supply `benchmark_comparison.csv` with metric, published value, new value, units, population/atom scope, source and comparability decision. Missing published values stay unavailable; missing new measurements stay unresolved. Freeze acceptance rules before evaluation. This document defines reference comparisons and does not implement an automatic scientific grader.
