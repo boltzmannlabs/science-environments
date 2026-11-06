@@ -35,7 +35,7 @@ These capabilities describe the intended tool roles. A single model need not cov
 | Glycan-aware interface assessment | Target modification context, structural mapping and a reference or candidate complex. | Preservation of the declared target context and explicit assumptions when assessing accessibility and interface compatibility. |
 | Reconstruction benchmarking | A controlled design input and independently retained reference. | Separation of design inputs from held-out evaluation evidence, with matching sequence, structure and interface metric definitions. |
 
-The [environment specification](ENVIRONMENT_SPEC.md) defines the broader scientific scope. The [task catalog](README.md#tasks-and-benchmarks) identifies the currently published cases.
+The [environment specification](ENVIRONMENT_SPEC.md) defines the broader scientific scope. The [task catalog](tasks/monoclonal_antibody_design/) identifies the currently published cases.
 
 ## Selection Criteria
 

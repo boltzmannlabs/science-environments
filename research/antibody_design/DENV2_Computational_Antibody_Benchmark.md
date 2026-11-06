@@ -4,7 +4,7 @@
 
 This historical brief records the source situation for two retired task presentations: a
 method-neutral task and a tool-specific task. They shared one biological profile, evaluation
-protocol, budget and hidden outcome set. See the [current task catalog](../../environments/antibody_design/README.md#tasks-and-benchmarks)
+protocol, budget and hidden outcome set. See the [current task catalog](../../environments/antibody_design/tasks/monoclonal_antibody_design/)
 for the published task collection.
 
 ## Scenario
