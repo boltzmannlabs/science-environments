@@ -18,8 +18,8 @@ Generated from the checked-in route summary, selected-route audit and reference 
 
 The percentage product below multiplies step model yields under an illustrative sequential assumption. Branch topology, stoichiometry, purification losses and calibration are not captured. It must not be called an achieved synthetic yield.
 
-| Route | Explicit steps | Predicted step yields (%) | Illustrative product (%) 
-|---|---:|---|---:|---|
+| Route | Explicit steps | Predicted step yields (%) | Illustrative product (%) |
+|:------|---------------:|:--------------------------|-------------------------:|
 | top0 | 3 | 72.83, 58.81, 72.16 | 30.91 |
 | top1 | 3 | 75.23, 67.22, 77.41 | 39.15 |
 | top2 | 3 | 78.14, 55.25, 78.01 | 33.68 |
