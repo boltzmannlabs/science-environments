@@ -2,7 +2,7 @@
 
 This folder contains **executed computational benchmarks on public data** (frozen engine `engine-v1.0.0_protocol-v1.0` unless noted), not experimental validation. Original artifacts are copied byte-identical from the source workspace (`~/IMRAN/NOV26/siRNA-Design-Task-Specific`) with hashes in [PROVENANCE.sha256](PROVENANCE.sha256); large artifacts (transcriptome indexes, generator pools, model checkpoints) remain external and referenced.
 
-**Start here:** [WORKFLOWS_AND_VALIDATION.md](WORKFLOWS_AND_VALIDATION.md) — for every benchmark: the workflow executed, exact tools + license tiers, validation steps undergone, and the manual-vs-sub-agent execution-mode comparison. Case folders follow:
+**Start here:** [BENCHMARK_RUNS.md](BENCHMARK_RUNS.md) — published references vs run results in the iteration structure (published | Run-N config | Δ vs prior runs; future Run slots included) · [WORKFLOWS_AND_VALIDATION.md](WORKFLOWS_AND_VALIDATION.md) — for every benchmark: the workflow executed, exact tools + license tiers, validation steps undergone, and the manual-vs-sub-agent execution-mode comparison. Case folders follow:
 
 - [Simone-independent-evaluation](Simone-independent-evaluation/README.md) — clean-cohort predictor validation.
 - [TTR-approved-drugs-cohort](TTR-approved-drugs-cohort/README.md) — same-side battery + approved-drug site-rank audit.

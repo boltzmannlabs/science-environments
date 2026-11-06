@@ -1,26 +1,32 @@
 # Status
 
-**Lifecycle:** In Progress. **Protocol:** v1.2 (freeze `engine-v1.2.0_protocol-v1.2`; gates frozen at v1.0). **Contribution status:** owner/reviewers/issue pending.
+**Lifecycle:** In Progress. **Protocol:** v1.2 (engine freeze `engine-v1.2.0_protocol-v1.2` + v1.2.1 scope-explicit E4a patch; gates frozen at v1.0). **Contribution status:** owner/reviewers/issue pending; root-repo registration done (canonical repo trees + status paragraph; NOV26 clone research-index row).
 
 ## Implemented and evidenced
 
-- Intent routing (5 modes) + 10 active human application profiles; antiviral review-only; plant/pest inactive.
-- Requirement-brief contract with confirmed, hashed priorities; staged requirement-aware ranking with mandatory ±25% stability reporting; explorer loop (X1–X5) with proposed constraint re-anchoring.
-- Fixed multi-dimensional battery (E1–E6) under 10 frozen, provenance-tagged gates; component validation 11/12 pass + live integration micro-run reproducing a known candidate's values exactly.
-- Executed computational benchmarks on public data (see [benchmark/](benchmark/)): clean-cohort predictor AUC 0.7021 (Simone-322); generator clean AUC 0.760 + measured-top-10 at median 97.5th percentile (HIF1A case study); approved-drug site ranks #62/#107 of 598 (TTR); same-side approved-7 comparison; explorer blind post-hoc 0.92/0.92/0.87.
+- **Protocol stack:** 5 modes (DESIGN / EVALUATE / EXPLORATORY / BENCHMARK / AUDIT) · 10 active application profiles (antiviral review-only; plant/pest inactive) · requirement-brief contract (confirmed, hashed; tighten-only floors) · staged requirement-aware ranking with mandatory ±25% stability · explorer loop (X1–X5) with PROPOSED constraint re-anchoring · scope-explicit E4a (v1.2.1: `--target-gene` + loud warning).
+- **Tasks:** 11 task documents (general + 10 applications), each with application-specific stages/vetoes/weights, complete example request briefs (real transcript accessions, substantive success criteria, illustrative-only markers), and stated benchmark status.
+- **Component validation:** liveness audit — every model/tool proven non-dummy (mutation tests, label separation, positive/negative controls, live-API round-trip); cross-path exact agreement; e2e component checks 11/12 + integration micro-run reproducing known values; **E4e RNAhybrid quarantined** (`NOT_RUN(broken-binary)`).
+- **Executed benchmarks** (all clean-cohort or curated-public; frozen engines; blind label joins; bootstrap CIs; see [BENCHMARK_RUNS.md](benchmark/BENCHMARK_RUNS.md) for the published-vs-run-iteration structure):
+  - Predictor: clean Simone-322 **AUC 0.7021** (vs registry 0.808 exposed; Mix replay 0.8195).
+  - Generator: Mix 0.8437 vs paper 0.8163; clean HIF1A **0.760 [0.615–0.877]**; cross-target **rank-recovery 92.6–97.5th pct robust, AUC target-dependent**.
+  - Approved-drug anchors: **#62/#107 of 598**; same-side bands coincide; 7/7 UGUGU-free.
+  - Application cohorts: scanner spec 1.00/sens 0.10 (not tuned); allele ΔΔG 6.7 vs 4.7; HTT ρ 0.296.
+  - **Head-to-head v2 (definitive):** ordering CI-overlap tie at predictor ceiling (A 0.569 vs B 0.591); delivery **sub-agent ≥ manual on every dimension** (seed-distinct 24/24, locus off-target max 0 vs 1, RN.Ai 86.1 vs 84.4, POTS 4.3 vs 6.5); harness confirmation 279/290 gate-clean.
+- **Benchmark governance:** validity ledger (valid B1–B7 / superseded), scoping-artifact archive with dated supersession, per-case metrics tables, [WORKFLOWS_AND_VALIDATION.md](benchmark/WORKFLOWS_AND_VALIDATION.md) (per-benchmark workflows → tools → validation → execution modes), run-iteration contract (published | Run-N | Δ tables).
 
 ## Not established
 
-No experimental/wet-lab validation of any generated candidate; no delivery or chemistry prediction (none exists publicly); no plant/pest or antiviral execution; ASO models excluded from siRNA scoring.
+No wet-lab validation of any candidate; no delivery/chemistry prediction (none exists publicly); plant/pest and antiviral execution remain gated; ASO models excluded from siRNA scoring; ordering performance is bounded by the underlying models (ceiling finding) — agent value is guarantees + disclosure.
 
-## Known defects / backlog
+## Open backlog
 
-1. Input gate rejects clinical-format overhang duplexes (`passenger_not_reverse_complement`, 5/7 approved drugs at intake).
-2. 6merDB viability threshold is the weakest-evidence, most aggressive gate (removes 12.4% of measured-effectives on the labeled cohort).
-3. Off-target gate scoping **silently depends on a gene-symbol match** (2026-11-05 correction): the HIF1A "saturation" was an artifact — every counted hit was a same-gene isoform match (cross-gene = 0); the mislabeled input symbol disengaged locus-scoping. Under the adapter's own semantics the gate was NOT saturated there. Calibration now means pinning scope explicitly, not just thresholds.
-4. E4e RNAhybrid incompatible with the SIREN convention in the installed build (`NOT_RUN(broken-binary)`); the stage has never executed and is quarantined, not silently empty.
+1. Overhang-tolerant input gate (clinical-format duplexes reject at intake).
+2. 6merDB viability-threshold evidence review (removes 12.4% of measured-effectives).
+3. Per-target off-target gate calibration (scope now pinned by v1.2.1; threshold calibration open).
+4. E4e RNAhybrid adapter/build fix (quarantined).
+5. ~~Scope must fail loud~~ **shipped in v1.2.1** (remaining: harness-side warning on unmatched symbols).
 
 ## Source workspace
 
-Full curation, freezes, validation-program artifacts and reports: `~/IMRAN/NOV26/siRNA-Design-Task-Specific` (tool registry, heuristics audit, validation program, case study, e2e validation, requirement-ranking and explorer demos).
-5. E4a scoping must fail loud: warn on unmatched supplied gene symbols and gene-less transcript headers; pin scope in the thresholds contract. (Found by tool-execution verification 2026-11-05.)
+`~/IMRAN/NOV26/siRNA-Design-Task-Specific` — curation, freezes, validation program, case studies, liveness audit, head-to-head v1/v2, master validity ledger (`BENCHMARKS.md`). Both repo copies (canonical `~/IMRAN/science-environments` and `~/IMRAN/NOV26/science-environments`) are kept in sync.

@@ -14,6 +14,19 @@ argues for deep review windows (>=100) over single-sequence discrimination. EZH2
 CTNNB1 (n=5) measured cohorts exist locally and remain in reserve. Generation pools:
 `~/IMRAN/NOV26/siRNA-Design-Task-Specific/11_app_benchmarks/{hpse,hk2}/` (external, indexed).
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| Per-gene (HPSE/HK2) reference | **none exists** — Run-1 sets references | — |
+| OligoFormer paper (cross-protocol context only) | 0.8163 | PMID 39321261 |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1 | same engine; full pools 4,563/5,608 windows; oncology weights .35/.35/.15/.10/.05; blind post-hoc joins; bootstrap CIs | 2026-11-05 |
+
 ## Benchmark metrics
 
 | Gene | n / pos | OligoFormer AUC [95% CI] | RN.Ai AUC [95% CI] | top-10 recovery |

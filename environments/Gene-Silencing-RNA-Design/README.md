@@ -16,7 +16,7 @@ Protocol versions are frozen with hashes (`engine-v1.0.0` → `v1.1.0` requireme
 2. [Environment specification](ENVIRONMENT_SPEC.md): modes, inputs, brief contract, battery stages, ranking, benchmarking and scope gates.
 3. [Environment configuration](config/environment.yaml), [requirement-brief contract](config/requirement_brief.schema.json) and [candidate contract](config/candidate.schema.json); frozen gates in [thresholds.v1.0.frozen.json](config/thresholds.v1.0.frozen.json).
 4. [Runtime contracts](runtime/CONTRACTS.md): isolated backends, exact invocations, operational rules.
-5. [Acceptance plan](tests/ACCEPTANCE.md) and recorded validation ([validation.json](tests/validation.json)); [benchmark evidence](benchmark/README.md).
+5. [Acceptance plan](tests/ACCEPTANCE.md) and recorded validation ([validation.json](tests/validation.json)); [benchmark evidence](benchmark/README.md) with the [run registry](benchmark/BENCHMARK_RUNS.md) (published references vs Run-N results in the iteration structure).
 6. [Research notes](../../research/Gene-Silencing-RNA-Design/research-notes.md) and [references](../../research/Gene-Silencing-RNA-Design/references.md).
 
 ## Package structure

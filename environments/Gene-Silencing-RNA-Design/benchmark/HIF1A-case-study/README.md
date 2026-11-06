@@ -20,6 +20,21 @@ post-hoc (`posthoc_benchmark.json`): constraint re-anchored cohort-relatively (q
 
 **Correction (2026-11-05):** the gate-saturation finding below is reframed — all counted hits were same-gene isoform matches (cross-gene = 0); a mislabeled input gene symbol silently disengaged locus-scoping. Under the adapter's semantics the gate was not saturated and the protocol would have delivered panels. See the source workspace `12_head_to_head/TOOL_EXECUTION_VERIFICATION.md`.
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| OligoFormer AUC/PCC (Huesken→Mixset — different protocol) | 0.8163 / 0.5879 | PMID 39321261 |
+| Per-gene (HIF1A) reference | **none exists** — Run-1 is the reference-setter | — |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1 (DESIGN) | native inference (train-flag+no_grad, seed 42); 3,928 windows; metabolic weights .35/.20/.20/.20/.05; cutoff 0.7; labels post-hoc | 2026-11-04 |
+| Run-1b (corrected battery) | v1.2.1 locus-scoped E4a, corrected gene symbol | 2026-11-05 |
+| Explorer demo | X1–X5 loop, budgets 60+80 screens; blind selection | 2026-11-04 |
+
 ## Benchmark metrics
 
 | Model | AUC | 95% CI | Pearson | Spearman |

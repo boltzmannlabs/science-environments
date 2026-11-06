@@ -39,6 +39,19 @@ correct; the sub-agent's value is precisely characterized as guarantees + disclo
 Full report: source workspace `14_large_pool_benchmark/LARGE_POOL_REPORT.md`
 (PROTOCOL.md pre-registration; stage1/stage2 scripts; uniform task-workflow batteries).
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| External reference | **none exists** — internal Run-1→Run-2 iteration (see BENCHMARK_RUNS.md §R5) | — |
+
+## Run configuration
+
+| Run | Config delta | Date |
+|---|---|---|
+| Run-1 (v1) | E4a no-scope (gene symbol unmatched) — superseded, archived | 2026-11-05 |
+| Run-2 (v2) | locus-scoped v1.2.1; 4 genes; identical finalist budgets (40/arm/gene) | 2026-11-05 |
+
 ## Per-gene ordering metrics (M1)
 
 | Gene | pool | A surv | B surv | A AUC | B AUC |

@@ -9,6 +9,18 @@ on the 3,703-window pool; 7/7 measured siRNAs (Sciabola/Simone, clean) joined po
 - Honest status: rank-recovery consistent with other targets; **cohort too small for
   discrimination metrics** — reported as such, not padded.
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| Per-gene (MYC) reference | **none exists** — Run-1 sets reference (percentile-only at n=7) | — |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1 | same engine; 3,703 windows; gene-regulation weights .35/.35/.10/.10/.10 | 2026-11-05 |
+
 ## Benchmark metrics
 
 | Metric | Value |

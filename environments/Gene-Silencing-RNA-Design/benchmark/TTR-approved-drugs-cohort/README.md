@@ -14,6 +14,19 @@ modification maps) in the source workspace. Our arm: OligoFormer top-20 TTR wind
   (scaffold caveat); 5/7 drugs reject at the intake gate on clinical-format overhangs
   (backlog #1); givosiran duplex NOT_RUN (isoform context).
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| Per-sequence potency labels | **none** — clinical approval is a program-level descriptive anchor | FDA/EMA approvals |
+| Sequences + modification maps | verified, decoded | FDA GINAS API + EMA EPAR systematic names + patents |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1 | frozen v1.0 gates; TTR ENST00000237014.8, 598-window pool; site-rank audit + same-side battery at identical thresholds | 2026-11-03 |
+
 ## Benchmark metrics
 
 ### Site-rank audit (generator vs approved drugs)

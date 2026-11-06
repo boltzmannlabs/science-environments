@@ -8,6 +8,18 @@ Honest status: tiling sparsity (~100 sites per 3.7–5.6 kb transcript) limits p
 enrichment evaluation to overlap subsets; overlap-limited result retained, not extrapolated.
 Suggests panel logic surfaces top-tier reagents where measurement exists.
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| Panel-enrichment reference | **none exists** — Run-1 is overlap-limited | — |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1 | seed-distinct top-6 from top-150 slice; frozen panel rules; 3 pools | 2026-11-05 |
+
 ## Benchmark metrics
 
 | Gene pool | Panel/top-150 overlap with tiling | Measured labels of panel picks | Cohort base pos-rate |

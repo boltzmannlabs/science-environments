@@ -14,6 +14,23 @@ predictions in `predictions.csv`; metrics in `metrics.json`. Frozen gates, no tu
 Reading: first auditable independent measured-performance number for this stack; ~0.12 AUC
 generalization gap vs the exposed Mix-469 cohort (descriptive replay, source workspace).
 
+## Published reference
+
+| Metric | Published value | Source |
+|---|---|---|
+| AUC (Mixset, N-padded) | 0.808 | RN.Ai repo/registry, DOI 10.1101/2025.08.12.669916 |
+| Spearman (Mixset) | 0.596 | same |
+| AUC (RNAiSpline, same cohort) | 0.818 | RNAiSpline registry validation |
+| AUC (OligoFormer paper protocol) | 0.8163 | PMID 39321261 |
+| Simone/Sciabola cohort | **no published RN.Ai number** — Run-1b is the reference-setter | — |
+
+## Run configuration
+
+| Run | Config | Date |
+|---|---|---|
+| Run-1a | Mix-469 replay: frozen v1.0 gates, no refit, fixed seeds | 2026-11-03 |
+| Run-1b | Simone-322: real 57-nt context from dataset transcripts; cutoff 0.7; labels post-hoc | 2026-11-03 |
+
 ## Benchmark metrics
 
 | Metric | Value |
