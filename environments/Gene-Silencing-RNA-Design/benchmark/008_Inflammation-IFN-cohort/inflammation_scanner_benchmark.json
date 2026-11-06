@@ -1,0 +1,124 @@
+{
+  "cohort": "published IFN-induction siRNAs (Hornung 2005, Judge 2005, Goodchild 2009; curated 2026-11-05)",
+  "n_labeled": 13,
+  "scanner_rule": "UGUGU motif flag (PMIDs 15723075, 15778705) \u2014 frozen scanner, no tuning",
+  "contingency_ugugu": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 9,
+    "tn": 3
+  },
+  "sensitivity": 0.1,
+  "specificity": 1.0,
+  "gu_fraction": {
+    "mean_ifn_pos": 0.124,
+    "mean_ifn_neg": 0.0
+  },
+  "per_row": [
+    {
+      "id": "Hornung_TLR9.2",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.1111,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Judge_Luciferase",
+      "y": 0,
+      "ugugu": false,
+      "gu": 0.0,
+      "u_rich": false,
+      "verif": "IMAGE_VERIFIED"
+    },
+    {
+      "id": "Judge_beta-gal_728",
+      "y": 1,
+      "ugugu": true,
+      "gu": 0.2778,
+      "u_rich": false,
+      "verif": "IMAGE_VERIFIED"
+    },
+    {
+      "id": "Judge_TetR_57",
+      "y": 0,
+      "ugugu": false,
+      "gu": 0.0,
+      "u_rich": false,
+      "verif": "IMAGE_VERIFIED_LOWRES"
+    },
+    {
+      "id": "Goodchild_siCyan1",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.1,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_siCyan2",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.25,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_RS002",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.15,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_RS009",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.05,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_siRNA9.2",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.1,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_siNP_1496",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.05,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Goodchild_siGFP",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.15,
+      "u_rich": false,
+      "verif": "PARTIAL"
+    },
+    {
+      "id": "Hilbert_9.2s_ssRNA",
+      "y": 1,
+      "ugugu": false,
+      "gu": 0.0,
+      "u_rich": false,
+      "verif": "VERIFIED"
+    },
+    {
+      "id": "Hilbert_controlRNA",
+      "y": 0,
+      "ugugu": false,
+      "gu": 0.0,
+      "u_rich": false,
+      "verif": "PARTIAL"
+    }
+  ],
+  "caveats": "small n; IFN labels from supplementary text/figure reads (IMAGE_VERIFIED flagged); scanner is a hazard filter, this tests its classification behavior only"
+}

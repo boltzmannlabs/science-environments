@@ -1,0 +1,18 @@
+{
+  "cohort": "Simone/Sciabola-322 (clean vs RN.Ai/OligoFormer/RNAiSpline training)",
+  "n_total": 322,
+  "n_site_found": 322,
+  "n_scored_ok": 322,
+  "binary_cutoff": "label >= 0.7",
+  "n_pos": 241,
+  "n_neg": 81,
+  "auc": 0.7021,
+  "pearson": 0.5074,
+  "spearman": 0.393,
+  "context_quality": [
+    "in_domain",
+    "reduced_context_flanks_N_padded"
+  ],
+  "site_not_found_rows": [],
+  "model": "RN.Ai-Predict (Apache-2.0) via siRNA-Bench adapter, real mRNA context +/-19nt"
+}

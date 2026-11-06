@@ -1,0 +1,88 @@
+schema_version: "1.2"
+environment_id: gene-silencing-rna-design
+maturity: In Progress
+protocol_freeze: engine-v1.2.0_protocol-v1.2
+gate_thresholds_frozen: config/thresholds.v1.0.frozen.json
+computational_benchmarks_included: true
+experimental_validation_included: false
+
+scope:
+  organism: human
+  representation: paired_19nt_RNA_cores
+  generator_envelope_nt: [19, 8000]
+  acceptance_validated_span_nt: [57, 1000]
+  active_applications:
+    - oncology
+    - genetic_disease_total_lowering
+    - genetic_disease_allele_selective
+    - metabolic_liver_galnac
+    - systemic_lnp
+    - neuro_cns
+    - inflammation_immune_modulation
+    - functional_genomics
+    - gene_regulation
+    - drug_target_validation
+  review_only_applications: [antiviral_pathogen_pest]
+  inactive_applications: [agricultural_plant]
+  aso_models_applied: false
+  chemistry_delivery_prediction: context_annotations_only
+
+modes:
+  design: {requires: confirmed_requirement_brief}
+  evaluate: {requires: candidate_sequences, stages: requested_only}
+  exploratory: {requires: target_only, ends_with: proposed_brief}
+  benchmark: {protocol: same_side_battery}
+  audit: {}
+
+contracts:
+  requirement_brief: config/requirement_brief.schema.json
+  candidate: config/candidate.schema.json
+  task_index: tasks/README.md
+  general_task: tasks/001_gene_silencing_rna.md
+  application_tasks:
+    - tasks/002_gene_silencing_oncology.md
+    - tasks/003_gene_silencing_genetic-disease-total-lowering.md
+    - tasks/004_gene_silencing_genetic-disease-allele-selective.md
+    - tasks/005_gene_silencing_metabolic-liver-galnac.md
+    - tasks/006_gene_silencing_systemic-lnp.md
+    - tasks/007_gene_silencing_neuro-cns.md
+    - tasks/008_gene_silencing_inflammation-immune.md
+    - tasks/009_gene_silencing_functional-genomics.md
+    - tasks/010_gene_silencing_gene-regulation.md
+    - tasks/011_gene_silencing_drug-target-validation.md
+
+autonomy:
+  policy_version: "1.2"
+  routine_human_approval: false
+  brief_confirmation_required: true
+  ambiguity_handling: one_clarifying_round_then_needs_input
+  brief_min_standards_may: tighten_only
+  constraint_adaptations: proposed_with_diagnosis_then_user_confirmation
+  gate_changes: version_bump_required
+  explorer_outcome_peeking: forbidden
+
+evaluation:
+  efficacy_endpoints: [RN.Ai-Predict_percent, OligoFormer_scaled]
+  endpoint_blending: forbidden
+  efficacy_context: guide_plus_19nt_flanks
+  missing_stage_status: NOT_RUN_with_reason
+  evidence_ceiling_computational: NEEDS_EXPERIMENTAL_VALIDATION
+
+ranking:
+  r1_vetoes: brief_union_application_union_frozen_gates
+  r2_normalization: cohort_percentile
+  r2_stability_report: mandatory_pm25pct_weight_perturbation
+  r3_panel: seed_distinct_site_diverse
+  composite_score_semantics: preference_view_not_efficacy
+
+known_defects:
+  E4e_rnahybrid:
+    status: NOT_RUN_broken_binary
+    detail: "-T unsupported; -f 2,7 zeroes computation; adapter stdin format misparsed; stage default-disabled"
+    disposition: quarantined; protocol backlog item
+
+backlog:
+  - "#1 overhang-tolerant input gate (clinical-format duplexes currently rejected at intake)"
+  - "#2 viability-threshold evidence review"
+  - "#3 per-target off-target gate calibration (X3b is the runtime complement)"
+  - "#4 RNAhybrid E4e adapter/build fix"

@@ -1,6 +1,6 @@
 # Monoclonal antibody design: evidence and implications for this environment
 
-**Research scope:** reference-guided monoclonal design, target-only antibody discovery, and bispecific design. **Current release:** five monoclonal task specifications and matching benchmark references. See the [environment specification](../../environments/antibody_design/ENVIRONMENT_SPEC.md) and [current status](../../environments/antibody_design/status.md). The research notes below retain historical design context; references to earlier task contracts and validation describe the retired implementation.
+**Research scope:** reference-guided monoclonal design, target-only antibody discovery, and bispecific design. **Current release:** five benchmarked monoclonal task specifications with matching references, plus two standalone fixed-framework VHH prompts. See the [environment specification](../../environments/antibody_design/ENVIRONMENT_SPEC.md) and [current status](../../environments/antibody_design/status.md). The research notes below retain historical design context; references to earlier task contracts and validation describe the retired implementation.
 
 
 **DENV task knowledge cutoff:** 2024-09-01  
