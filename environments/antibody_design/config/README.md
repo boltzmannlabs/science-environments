@@ -1,39 +1,39 @@
 # Antibody task configuration
 
-Use **one `config/` directory, shared definitions, and a separate profile for each task**. A profile selects the correct request/result schemas. It does not install tools, run a design algorithm, or supply scientifically qualified thresholds.
+The `config/` directory contains shared definitions and **nine contract profiles**. Four profiles are retained for retired monoclonal prompts; five correspond to active bispecific tasks. The five active paper-based monoclonal prompts are cataloged separately and have no dedicated contract profiles. A profile selects the correct request/result schemas. It does not install tools, run a design algorithm, or supply scientifically qualified thresholds.
 
 ```text
 config/
 ├── environment.yaml                # Task catalog and reference-bundle settings
 ├── requirements.txt                # Python validation dependencies
 ├── shared/                         # Common fields, protocol, assay and metric definitions
-├── monoclonal_reference/            # Target + paired reference; includes DENV variants
-├── monoclonal_target_only/          # Target with explicitly absent binding reference
+├── monoclonal_reference/            # Retained paired-reference contracts and DENV variants
+├── monoclonal_target_only/          # Retained target-only contract
 ├── bispecific_design/               # Named chains, two specificities, combined evidence
 └── bispecific_assessment/           # Cellular and CNS dataset/decision contracts
 ```
 
 Only Markdown task instructions live in `../tasks/`. JSON request examples live beside their profiles and schemas in the family folders above. Validation code and tests remain in `../tests/`. Reports belong in `../results/`.
 
-## Task-to-profile mapping
+## Contract Profile Mapping
 
-Paths below are relative to `config/`. Each YAML profile names its task file, request schema, result schema, and validation level.
+Paths below are relative to `config/`. Active profiles name their task file, request schema, result schema and validation level. The four older monoclonal profiles have `prompt_status: retired` and a `fixture_file` for regression checks; they do not register active task prompts.
 
 | Task ID used with `--task` | Profile | Validation available |
 | --- | --- | --- |
-| `mab_reference_guided_design` | [monoclonal_reference/profile.yaml](monoclonal_reference/profile.yaml) | Contract checks; existing reference preflight and bundle validation. |
-| `denv_antibody_001` | [monoclonal_reference/denv.general.yaml](monoclonal_reference/denv.general.yaml) | Same reference workflow, DENV general prompt. |
-| `denv_antibody_001_tools` | [monoclonal_reference/denv.tool_specific.yaml](monoclonal_reference/denv.tool_specific.yaml) | Same DENV contract, expanded capability-evidence prompt. |
-| `mab_target_only_design` | [monoclonal_target_only/profile.yaml](monoclonal_target_only/profile.yaml) | Schema and declared-identifier checks. |
+| `mab_reference_guided_design` | [monoclonal_reference/profile.yaml](monoclonal_reference/profile.yaml) | Retained contract; retired prompt fixture; reference preflight and bundle validation. |
+| `denv_antibody_001` | [monoclonal_reference/denv.general.yaml](monoclonal_reference/denv.general.yaml) | Retained contract checks; retired prompt fixture. |
+| `denv_antibody_001_tools` | [monoclonal_reference/denv.tool_specific.yaml](monoclonal_reference/denv.tool_specific.yaml) | Retained contract checks; retired prompt fixture. |
+| `mab_target_only_design` | [monoclonal_target_only/profile.yaml](monoclonal_target_only/profile.yaml) | Retained contract; retired prompt fixture; schema and declared-identifier checks. |
 | `bispecific_antibody_design` | [bispecific_design/profile.yaml](bispecific_design/profile.yaml) | Schema and declared-identifier checks. |
 | `bispecific_cellular_mechanism_assessment` | [bispecific_assessment/cellular_mechanism.yaml](bispecific_assessment/cellular_mechanism.yaml) | Dataset declarations and response contract. |
 | `bispecific_cns_delivery_assessment` | [bispecific_assessment/cns_delivery.yaml](bispecific_assessment/cns_delivery.yaml) | Dataset declarations and response contract. |
 | `bispecific_cns_readout_comparison` | [bispecific_assessment/cns_readout.yaml](bispecific_assessment/cns_readout.yaml) | Dataset declarations and exact task answer fields. |
 | `bispecific_cns_shuttle_integrated_gate` | [bispecific_assessment/cns_integrated.yaml](bispecific_assessment/cns_integrated.yaml) | Dataset declarations and exact task answer fields. |
 
-Both DENV documents retain `task_id: denv_antibody_001` inside their requests; `variant` distinguishes `general` from `tool_specific`. The CLI profile selector includes `_tools` for the latter. Both prompts now describe capabilities without software names. The existing tool-specific validator still checks its registered method bindings in the supplied protocol; changing prompt wording does not qualify or install those methods.
+Both DENV documents retain `task_id: denv_antibody_001` inside their requests; `variant` distinguishes `general` from `tool_specific`. The CLI profile selector includes `_tools` for the latter. Both historical prompts are test fixtures, not active agent tasks. The existing tool-specific validator still checks its registered method bindings in the supplied protocol; changing prompt wording does not qualify or install those methods.
 
-The monoclonal profiles and request examples specify human EGFR (ERBB1): cetuximab for reference-guided design and no binding reference for target-only discovery. The bispecific profile specifies human HER2 (ERBB2), with zanidatamab as the reference for biparatopic domain II/domain IV design. These names identify the task context; verified sequences, structures, reference evidence, and evaluation protocols must still be supplied. Family schemas remain reusable across targets, and the generic contract checker does not enforce the target-specific task instructions or authenticate reference identity.
+The retained generic monoclonal profiles and request examples specify human EGFR (ERBB1): cetuximab for reference-guided design and no binding reference for target-only discovery. The bispecific profile specifies human HER2 (ERBB2), with zanidatamab as the reference for biparatopic domain II/domain IV design. These names identify the task context; verified sequences, structures, reference evidence, and evaluation protocols must still be supplied. Family schemas remain reusable across targets, and the generic contract checker does not enforce the target-specific task instructions or authenticate reference identity.
 
 ## What each family declares
 
@@ -86,4 +86,8 @@ Only the reference family has the existing `preflight` and `bundle` checks. The 
 
 Canonical schemas now live in family folders; the former flat schema paths were removed. Use the catalog or the validation CLI rather than hardcoded old paths. Schema IDs are stable identifiers resolved by `tests/schema_registry.py` from local files; they are not download URLs. Unknown references fail without network retrieval.
 
-When adding a task, put its Markdown in `tasks/` and its JSON request example in the appropriate `config/` family folder, register its profile, and add relevant contract checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
+When adding a task, put its Markdown in `tasks/<family>/` and its matching reference document in `benchmark/<family>/`. Register document-only prompts separately from contract profiles. When a compatible contract is implemented, add its profile and request example under `config/<family>/`, register it in `environment.yaml` and add relevant checks under `tests/`. Run the package validator to verify schema references, task mappings, examples, documentation links, and existing monoclonal regressions.
+
+Paper-based evaluation prompts are listed under `paper_benchmark_tasks` and stored in `tasks/monoclonal_antibody_design/`. Their published values and sources live in matching files under `benchmark/monoclonal_antibody_design/`, indexed by `paper_benchmark_references`. Each task and benchmark share the same family folder and filename and link to one another. These documents do not register executable profiles, request schemas or automatic graders.
+
+The `bispecific_benchmark_references` mapping links the five existing bispecific task IDs to their benchmark documents. These are reference and evaluation specifications; the mapping does not provide a TxBench grader or certify trajectory outputs.

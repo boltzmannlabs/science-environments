@@ -36,6 +36,8 @@ Use verified capabilities supplied by the execution environment in the following
 
 Keep all supporting statistics and limitations in the report. Preserve the three benchmark answer fields; do not fabricate a fold change when the required values are unavailable.
 
+Published reference evidence and evaluation details: [benchmark](../../benchmark/bispecific_assessment/bispecific_cns_readout_comparison.md).
+
 ## Expected Output
 
 **Required Report:** `report.md`, containing calculations, governing-readout rationale, uncertainty, and limitations.

@@ -40,21 +40,51 @@ def local_links(documents):
     return count
 
 
+def validate_paper_benchmark_tasks(config):
+    tasks = config.get("paper_benchmark_tasks", {})
+    benchmarks = config.get("paper_benchmark_references", {})
+    paths = set(tasks.values())
+    check(len(paths) == len(tasks) and len(set(benchmarks.values())) == len(benchmarks) and
+          set(tasks) == set(benchmarks) and not (set(tasks) & set(config["task_profiles"])),
+          "Paper tasks and benchmarks have unique paired mappings separate from executable profiles")
+    required_headings = {"Description", "Target", "Design Constraints", "Evaluation Metrics",
+                         "Expected Output", "Important Instructions"}
+    for task_id, relative in tasks.items():
+        path = ROOT / relative
+        valid_path = relative == f"tasks/monoclonal_antibody_design/{task_id}.md"
+        text = path.read_text() if valid_path and path.is_file() else ""
+        benchmark_relative = benchmarks[task_id]
+        benchmark_path = ROOT / benchmark_relative
+        valid_benchmark_path = benchmark_relative == f"benchmark/monoclonal_antibody_design/{task_id}.md"
+        benchmark_text = (benchmark_path.read_text()
+                          if valid_benchmark_path and benchmark_path.is_file() else "")
+        headings = set(re.findall(r"^## (.+)$", text, re.M))
+        check(text.startswith(f"# Task: {task_id}\n") and required_headings <= headings and
+              "Benchmark" not in headings and "Computational Tool Capabilities" not in headings and
+              f"(../../{benchmark_relative})" in text and
+              benchmark_text.startswith("# Benchmark: ") and
+              f"**Task ID:** `{task_id}`" in benchmark_text and
+              "## Published Results" in benchmark_text and "https://doi.org/" in benchmark_text and
+              f"(../../{relative})" in benchmark_text,
+              f"Task and benchmark have separate content, matching names and reciprocal links: {task_id}")
+    return paths
+
+
 def main():
     required = [
         "README.md", "ENVIRONMENT_SPEC.md", "tests/monoclonal_antibody_with_reference/validation.py",
         "config/environment.yaml", "config/README.md", "config/requirements.txt",
         "config/monoclonal_reference/request.schema.json",
         "config/monoclonal_reference/denv.request.schema.json", "config/shared/protocol.schema.json",
-        "config/monoclonal_reference/denv.result.schema.json", "config/shared/metric-catalog.json", "tasks/denv_antibody_001.md",
-        "tasks/denv_antibody_001_tools.md", "config/monoclonal_reference/denv.request.example.json",
-        "tasks/mab_reference_guided_design.md", "config/monoclonal_reference/request.example.json",
-        "tasks/mab_target_only_design.md",
-        "tasks/bispecific_antibody_design.md",
-        "tasks/bispecific_cellular_mechanism_assessment.md",
-        "tasks/bispecific_cns_delivery_assessment.md",
-        "tasks/bispecific_cns_readout_comparison.md",
-        "tasks/bispecific_cns_shuttle_integrated_gate.md",
+        "config/monoclonal_reference/denv.result.schema.json", "config/shared/metric-catalog.json", "tests/fixtures/retired_tasks/denv_antibody_001.md",
+        "tests/fixtures/retired_tasks/denv_antibody_001_tools.md", "config/monoclonal_reference/denv.request.example.json",
+        "tests/fixtures/retired_tasks/mab_reference_guided_design.md", "config/monoclonal_reference/request.example.json",
+        "tests/fixtures/retired_tasks/mab_target_only_design.md",
+        "tasks/bispecific_design/bispecific_antibody_design.md",
+        "tasks/bispecific_assessment/bispecific_cellular_mechanism_assessment.md",
+        "tasks/bispecific_assessment/bispecific_cns_delivery_assessment.md",
+        "tasks/bispecific_assessment/bispecific_cns_readout_comparison.md",
+        "tasks/bispecific_assessment/bispecific_cns_shuttle_integrated_gate.md",
 
         "config/monoclonal_reference/result.schema.json", "config/shared/mab-assay-record.schema.json",
         "tests/monoclonal_antibody_with_reference/test_reference_guided.py", "tests/monoclonal_antibody_with_reference/contract_fixtures.py", "tests/monoclonal_antibody_with_reference/COVERAGE.md",
@@ -105,8 +135,16 @@ def main():
         check(profile["scientific_execution_included"] is False and
               profile["scientific_thresholds_supplied"] is False,
               f"Profile does not claim scientific execution or supplied thresholds: {task}")
-        check(profile["task_file"].startswith("tasks/") and (ROOT / profile["task_file"]).is_file(),
-              f"Profile task file exists: {task}")
+        if profile.get("prompt_status") == "retired":
+            fixture = Path(profile["fixture_file"])
+            check("task_file" not in profile and fixture.parent == Path("tests/fixtures/retired_tasks") and
+                  (ROOT / fixture).is_file(), f"Retired prompt is retained only as a test fixture: {task}")
+        else:
+            check(profile["task_file"].startswith("tasks/") and (ROOT / profile["task_file"]).is_file(),
+                  f"Profile task file exists: {task}")
+            family = Path(config["task_profiles"][task]).parent.name
+            check(Path(profile["task_file"]).parent == Path("tasks") / family,
+                  f"Task folder matches configuration family: {task}")
         for kind in ("request", "result"):
             check(config_path(profile[f"{kind}_schema"]).is_file(), f"Profile {kind} schema exists: {task}")
         example_path = ROOT / profile.get("request_example", "config/monoclonal_reference/denv.request.example.json")
@@ -135,9 +173,11 @@ def main():
           "Validation dependencies and report use config and results respectively")
     check(all(path.relative_to(ROOT).parts[0] == "tests" for path in ROOT.rglob("*.py")),
           "All Python testing and validation code is confined to tests")
-    check({path.name for path in ROOT.iterdir() if path.is_dir() and not path.name.startswith(".")
-           and path.name != "__pycache__"} == {"config", "tasks", "tests", "results"},
-          "Environment uses the documented config, tasks, tests, and results directories")
+    directories = {path.name for path in ROOT.iterdir() if path.is_dir()
+                   and not path.name.startswith(".") and path.name != "__pycache__"}
+    required_directories = {"config", "tasks", "tests", "results"}
+    check(required_directories <= directories <= required_directories | {"src", "scripts", "skills", "benchmark"},
+          "Environment contains required directories and supported source, script, skill and benchmark directories")
     check({path.relative_to(ROOT / "tests").parts[0] for path in (ROOT / "tests").rglob("test_*.py")} ==
           {"monoclonal_antibody_with_reference", "test_configurations.py"},
           "Scenario tests remain monoclonal; shared configuration checks live directly under tests")
@@ -153,23 +193,28 @@ def main():
     check(config["maturity"] == "Specification", "Maturity does not claim scientific validation")
     check(config["scientific_execution_included"] is False and config["contract_validation_included"] is True,
           "Configuration distinguishes implemented contract checks from scientific execution")
-    expected_templates = {"reference_guided_monoclonal", "target_only_monoclonal",
-                          "bispecific_design", "bispecific_cellular_mechanism_assessment",
+    expected_templates = {"bispecific_design", "bispecific_cellular_mechanism_assessment",
                           "bispecific_cns_delivery_assessment", "bispecific_cns_readout_comparison",
                           "bispecific_cns_shuttle_integrated_gate"}
     check(set(config["task_templates"]) == expected_templates,
-          "Catalog retains all seven reusable task specifications")
-    check(config["task_status"]["reference_guided_monoclonal"] == "active_specification" and
+          "Profile-backed task catalog contains only the five bispecific tasks")
+    check(all(config["task_status"][name] == "retained_contract_only" for name in
+              ("reference_guided_monoclonal", "target_only_monoclonal", "denv_profile")) and
+          not config["task_variants"] and
           all(config["task_status"][name] == "contract_schema_implemented"
-              for name in expected_templates - {"reference_guided_monoclonal"}),
-          "Catalog distinguishes reference-bundle validation from other family contract checks")
+              for name in expected_templates),
+          "Retired monoclonal prompts are excluded from the active task catalog")
     check(set(config["scope"]["active_design_modes"]) == validation.REFERENCE_GUIDED_MODES,
           "Executable objectives still require a supplied monoclonal reference")
     expected_task_paths = set(config["task_templates"].values()) | set(config["task_variants"].values())
-    check({path.relative_to(ROOT).as_posix() for path in (ROOT / "tasks").iterdir()} ==
-          expected_task_paths and all(path.is_file() and path.suffix == ".md"
-                                     for path in (ROOT / "tasks").iterdir()),
-          "Tasks contains exactly the nine registered Markdown task files")
+    registered_tasks = {profile["task_file"] for task in config["task_profiles"]
+                        if "task_file" in (profile := task_profile(task))}
+    task_files = [path for path in (ROOT / "tasks").rglob("*") if path.is_file()]
+    paper_task_paths = validate_paper_benchmark_tasks(config)
+    check({path.relative_to(ROOT).as_posix() for path in task_files} ==
+          expected_task_paths | paper_task_paths and expected_task_paths == registered_tasks and
+          all(path.suffix == ".md" for path in task_files),
+          "Task folders match the registered profiles and document-only paper benchmark catalog")
     for relative in sorted(expected_task_paths):
         task_text = (ROOT / relative).read_text()
         headings = set(re.findall(r"^## (.+)$", task_text, re.M))
@@ -220,7 +265,7 @@ def main():
     check(needs_input["missing_requirements"] == preflight_result["missing_requirements"],
           "Example preflight result lists the actual missing biological inputs")
 
-    task_paths = [ROOT / "tasks/denv_antibody_001.md", ROOT / "tasks/denv_antibody_001_tools.md"]
+    task_paths = [ROOT / "tests/fixtures/retired_tasks/denv_antibody_001.md", ROOT / "tests/fixtures/retired_tasks/denv_antibody_001_tools.md"]
     generic, specific = (path.read_text() for path in task_paths)
     expected_headings = ["Description", "Target", "Design Constraints", "Computational Tool Capabilities",
                          "Evaluation Metrics", "Expected Output", "Constraints", "Important Instructions"]
@@ -258,7 +303,7 @@ def main():
           set(schema_data["generic-antibody-metrics"]["properties"]["design_mode"]["enum"]) ==
           validation.REFERENCE_GUIDED_MODES,
           "Request and result schemas agree on reference-required objectives")
-    template = ROOT / config["task_templates"]["reference_guided_monoclonal"]
+    template = ROOT / task_profile("mab_reference_guided_design")["fixture_file"]
     check(bool(re.search(r"^## Expected output$", template.read_text(), re.I | re.M)),
           "Reference-guided task defines the output contract")
     check(not re.search(r"\b(StabDDG|Boltz2?|PRODIGY|ipSAE)\b", template.read_text(), re.I),

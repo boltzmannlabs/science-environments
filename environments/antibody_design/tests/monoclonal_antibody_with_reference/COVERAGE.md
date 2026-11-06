@@ -1,8 +1,10 @@
 # Reference-guided monoclonal antibody coverage and gaps
 
+The DENV prompt variants referenced by these regression checks are retired fixtures under `tests/fixtures/retired_tasks/`. The active monoclonal tasks are the five documents in `tasks/monoclonal_antibody_design/`; this suite does not establish their scientific performance.
+
 ## Scope
 
-This scenario suite covers one reusable task: a supplied antigen plus a supplied paired-chain monoclonal reference antibody. Its six objective labels share that reference requirement. The general and tool-specific DENV prompts are two versions of one example, not additional biological tasks. Target-only and bispecific tasks remain under `tasks/` and have separate configuration profiles. Shared checks in `../test_configurations.py` validate their declarations; no scientific design/assessment behavior is tested. This suite's reference-only preflight and bundle validator rejects those other modes.
+This scenario suite covers one reusable task: a supplied antigen plus a supplied paired-chain monoclonal reference antibody. Its six objective labels share that reference requirement. The general and tool-specific DENV prompts are two versions of one example, not additional biological tasks. The five bispecific tasks remain active under `tasks/` and have separate configuration profiles. The target-only prompt is a retired fixture; its profile remains for compatibility checks. Shared checks in `../test_configurations.py` validate their declarations; no scientific design/assessment behavior is tested. This suite's reference-only preflight and bundle validator rejects those other modes.
 
 ## What the automated checks prove
 
@@ -15,7 +17,7 @@ This scenario suite covers one reusable task: a supplied antigen plus a supplied
 | `../test_configurations.py` | All task profiles; local schema references; family/variant routing; budget, identifier, response, and artifact-integrity checks. | Synthetic declarations only; no design or scientific grading. |
 | `../validate_spec.py` | Registered scope, schema syntax, examples, file/link presence, dependency order, and execution of the test suites. | Structural checks; the check count changes when document links change. |
 
-Duplicate prompt-parity and test-plan assertions have one owning test module. All scenario tests and shared fixtures are in `monoclonal_antibody_with_reference/`. Monoclonal request/result validation and acceptance documentation are in this same folder. Shared configuration checks and package checks remain directly under `tests/`; generated reports live in `results/`.
+Duplicate prompt-parity and test-plan assertions have one owning test module. Scenario tests and synthetic fixtures are in `monoclonal_antibody_with_reference/`; historical prompt fixtures are in `tests/fixtures/retired_tasks/`. Monoclonal request/result validation and acceptance documentation are in this same folder. Shared configuration checks and package checks remain directly under `tests/`; generated reports live in `results/`.
 
 The former sequence-liability helper tests were removed because they tested code defined only inside the test file. They did not prove that the environment implements liability screening. No scientific capability was removed from the runtime.
 
