@@ -1,22 +1,24 @@
-# Benchmark and scientific evaluation
+# Benchmark: papers, metrics and achieved comparisons
 
-The fixed public dataset consists of `../results/route_summary.json` (all 16 AI routes) and `../results/top0_validation.json` (selected route review). Original raw platform output is not bundled. No same-target experimental reference route is established in the searched sources.
+## Literature actually compared
 
-## Evidence labels
+Read [papers.md](papers.md) for paper titles, DOI/source links, comparison step, substrate-match status, accessible experimental numbers and access limitations. [papers.json](papers.json) is the machine-readable source catalog. No publisher PDFs are redistributed. The two patent entries are screened broad-query hits, not positive route evidence.
 
-1. **Exact experimentally reported**: same identified target and reported synthetic experiment (none found here).
-2. **Reaction-family benchmark**: an independently reported transformation of a different substrate; [1–3] in the research ledger. Never transfer yields/conditions without same-substrate evidence.
-3. **Computational**: retrosynthesis, ranking, step yields, forward scores, mapping confidence, impurity and condition predictions.
+## Metrics achieved
 
-## Checks
+[achieved_metrics.json](achieved_metrics.json) records the denominator and interpretation for every computed metric. The observed/derived results are 16 generated routes, 56 reaction-node occurrences across routes, one separately checked route (three steps), and two of those three expected products ranked first by forward prediction. This is descriptive model agreement, **not experimental accuracy**.
 
-- Verify SMILES and product graph with RDKit when installed; standard-library tests check schema, count, route uniqueness, models' arithmetic and unsupported-condition flags.
-- Separate raw `reported_num_steps` from `explicit_tree_steps`.
-- Compare forward score/observed product rank, atom mapping and chemically plausible reagent sources for each reviewed step.
-- Treat the product of model yield fractions as an **illustrative value only**, ignoring yield calibration and process losses. Do not rank real synthetic performance by this value.
-- Flag missing coupling catalyst and TBAF-in-protection contradiction before considering any route feasible.
-- Record unknown availability, selectivity and measured yield rather than making up values.
+No target-specific measured yield or selectivity exists; exact same-target experimental routes established in the screened sources: zero. Literature yield error and experimentally achieved improvement are unavailable, not zero.
 
-## Known outcome
+## Comparison tables
 
-No validated complete route to the exact target; top0's central protected ether failed forward checking and model conditions failed chemical plausibility assessment. Reference [3]'s 32% yield concerns a different compound and cannot calibrate top0 or top1.
+- [Tool versus literature and all-route yields](../results/achievements_and_comparison.md).
+- [All-route numeric CSV](../results/route_yield_comparison.csv).
+- [All generated route steps and inputs](../results/route_summary.json).
+- [Selected route reaction-level audit](../results/top0_validation.json).
+
+The literature 32% isolated deprotection yield belongs to a different compound. Neither model percentages nor their illustrative products may be called observed target yield or an improvement over that reference.
+
+## Reproduce
+
+From the repository root, run `python environments/retro_environment/scripts/build_comparisons.py` and `python -m unittest discover -s environments/retro_environment/tests -v`. No external service is contacted. Tests assess data consistency, not chemistry or literature ground truth.

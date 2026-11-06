@@ -3,7 +3,9 @@
 Research-prototype environment for auditing computational retrosynthesis of the target
 `CC1=C(C=C2C=CC(=C(C2=N1)F)F)OC3=C(C(=CC=C3)F)C(C)(C)O`.
 
-This package contains a sanitized, reproducible analysis of 16 model-generated routes and a three-step review of `top0`. It does **not** contain an experimentally validated synthesis, a transferable API credential, or the original account-scoped service export. For scientific interpretation start with [research notes](../../research/retro_environment/research-notes.md), [references](../../research/retro_environment/references.md), [benchmark methodology](benchmark/README.md), and [status](STATUS.md).
+This package contains a sanitized, reproducible analysis of 16 model-generated routes and a three-step review of `top0`. Start with the [achieved numbers and literature comparison tables](results/achievements_and_comparison.md), [paper catalog](benchmark/papers.md), [metric definitions](benchmark/achieved_metrics.json), and [task objectives with actual outcomes](tasks/README.md). The catalog distinguishes papers, an inspected experimental reference for a different substrate, and non-matching patent hits.
+
+It does **not** contain an experimentally validated synthesis, a transferable API credential, or the original account-scoped service export. For scientific interpretation see [research notes](../../research/retro_environment/research-notes.md), [references](../../research/retro_environment/references.md), [benchmark methodology](benchmark/README.md), and [status](STATUS.md).
 
 ## Structure
 

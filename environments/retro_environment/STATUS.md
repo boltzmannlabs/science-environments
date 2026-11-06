@@ -7,6 +7,7 @@
 - Reviewed top0 step-by-step with forward prediction, atom mapping, impurity prediction and condition recommendation (results summarized without backend handles).
 - Compared reaction families with the public references catalogued in `../../research/retro_environment/references.md`.
 - Built a route-wise DOCX and executable data consistency tests.
+- Added explicit task specifications, a paper/source catalog, machine-readable achieved metrics, a full 16-route CSV and readable reaction-level literature comparison tables. These are regenerated using `scripts/build_comparisons.py` and checked by tests; they do not add new experimental evidence.
 
 ## Scientific conclusion
 
