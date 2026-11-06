@@ -4,12 +4,6 @@
 
 **Task:** [LCAT: Reference Fab CDR-H3 Reconstruction](../../tasks/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction.md)
 
-**Reviewed:** 2026-11-05
-
-## Benchmark Scope
-
-A single human-LCAT CDR-H3 reconstruction case from the released RAbD test set. Paper-wide results below are aggregate comparison references, not published scores for the selected 5BV7 case.
-
 ## Published Results
 
 **Source:** [AbFlow, KDD 2026; manuscript v2, September 2026](https://arxiv.org/html/2602.07084v2), Tables 1–2; [publication DOI](https://doi.org/10.1145/3770854.3780296). The [authors' released dataset](https://huggingface.co/wenda8759/AbFlow/blob/main/datasets.zip) contains the 60-entry RAbD test manifest, including 5BV7.

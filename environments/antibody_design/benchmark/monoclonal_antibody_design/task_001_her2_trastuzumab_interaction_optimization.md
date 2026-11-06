@@ -4,12 +4,6 @@
 
 **Task:** [HER2: Trastuzumab Interaction Optimization](../../tasks/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization.md)
 
-**Reviewed:** 2026-11-05
-
-## Benchmark Scope
-
-Reference-derived HER2 interaction optimization. The numerical anchors below are individual optimization-run endpoints from released study data.
-
 ## Published Results
 
 **Source:** [Ab-SELDON, JCIM (2026)](https://doi.org/10.1021/acs.jcim.5c01924), [supporting information](https://doi.org/10.1021/acs.jcim.5c01924.s001), and [released optimization data](https://doi.org/10.5281/zenodo.15803983).

@@ -4,12 +4,6 @@
 
 **Task:** [Gal-3BP: Glycan-Aware Antibody Interface Refinement](../../tasks/monoclonal_antibody_design/task_005_gal3bp_glycan_aware_interface_refinement.md)
 
-**Reviewed:** 2026-11-05
-
-## Benchmark Scope
-
-Gal-3BP/E1 scaffold refinement with Mut1 as the published comparator. Contact counts, dynamic stability criteria and antigen accessibility measure different properties.
-
 ## Published Results
 
 **Source:** [Overcoming structural complexity in Galectin-3BP through an integrative computational antibody design workflow, Computers in Biology and Medicine 204 (March 2026)](https://doi.org/10.1016/j.compbiomed.2026.111550); [full-text manuscript](https://repositorio.usp.br/directbitstream/383020dc-ab48-4ab6-9bf9-81898eee73c7/3292201.pdf), Methods 2.1, 2.6–2.8 and Section 3.2/Figure 3.

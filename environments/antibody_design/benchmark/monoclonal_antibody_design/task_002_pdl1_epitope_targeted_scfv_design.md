@@ -4,12 +4,6 @@
 
 **Task:** [PD-L1: Epitope-Targeted scFv Design](../../tasks/monoclonal_antibody_design/task_002_pdl1_epitope_targeted_scfv_design.md)
 
-**Reviewed:** 2026-11-05
-
-## Benchmark Scope
-
-Framework-conditioned paired-domain scFv design, with H5 as a published comparison antibody. Individual structural validation and campaign-level novelty are separate benchmarks.
-
 ## Published Results
 
 **Source:** [Efficient generation of epitope-targeted antibodies with Germinal, Nature Biotechnology (June 2026)](https://doi.org/10.1038/s41587-026-03187-0); [accessible manuscript, scFv results and Figure 4](https://pmc.ncbi.nlm.nih.gov/articles/PMC13366713/).

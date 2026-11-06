@@ -4,12 +4,6 @@
 
 **Task:** [PD-1: Framework-Guided CDR Design](../../tasks/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design.md)
 
-**Reviewed:** 2026-11-05
-
-## Benchmark Scope
-
-Framework-conditioned PD-1 antibody design with H965 as the published comparator. Screening-panel classification and sequence reconstruction are supplementary benchmark contexts, not individual candidate scores.
-
 ## Published Results
 
 **Source:** [De novo design of epitope-specific antibodies via a structure-driven computational workflow](https://doi.org/10.1038/s41467-025-67361-9), Nature Communications, online December 2025, volume 17 (2026); [accessible text, Figures 5–6 and Supplementary Table 4](https://pmc.ncbi.nlm.nih.gov/articles/PMC12815924/).
