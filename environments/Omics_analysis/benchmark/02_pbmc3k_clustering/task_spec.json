@@ -1,0 +1,26 @@
+{
+ "task_id": "pbmc3k_clustering",
+ "reference": "v3 run (Scanpy 1.12.5) plus manual NK/CD8 split; curated baseline, not independently reviewed ground truth",
+ "graders": [
+  {
+   "name": "clustering",
+   "weight": 1.0,
+   "params": {
+    "required_file": "cluster_assignments.csv",
+    "weights": {
+     "valid_assignments": 0.1,
+     "lineage_homogeneity": 0.4,
+     "lineage_majority_macro_recall": 0.5
+    },
+    "homogeneity": {
+     "floor": 0.5,
+     "full": 0.95
+    },
+    "majority_recall": {
+     "floor": 0.5,
+     "full": 0.95
+    }
+   }
+  }
+ ]
+}

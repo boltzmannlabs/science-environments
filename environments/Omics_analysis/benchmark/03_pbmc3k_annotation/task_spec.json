@@ -1,0 +1,79 @@
+{
+ "task_id": "pbmc3k_annotation",
+ "reference": "v3 run (Scanpy 1.12.5) plus manual NK/CD8 split; curated baseline, not independently reviewed ground truth",
+ "graders": [
+  {
+   "name": "annotation",
+   "weight": 1.0,
+   "params": {
+    "required_file": "cluster_assignments.csv",
+    "unresolved_partial_credit": 0.5,
+    "weights": {
+     "lineage_macro_recall": 0.5,
+     "lineage_macro_precision": 0.15,
+     "subtype_credit": 0.25,
+     "evidence": 0.1
+    },
+    "canonical": {
+     "T": [
+      "CD3D",
+      "CD3E",
+      "IL7R",
+      "IL32",
+      "CD2",
+      "LTB",
+      "LDHB",
+      "TCF7",
+      "CCR7",
+      "LEF1",
+      "CD8A"
+     ],
+     "NK": [
+      "GNLY",
+      "NKG7",
+      "GZMB",
+      "PRF1",
+      "FGFBP2",
+      "FCGR3A",
+      "CTSW",
+      "KLRD1"
+     ],
+     "B": [
+      "MS4A1",
+      "CD79A",
+      "CD79B",
+      "CD74",
+      "HLA-DRA",
+      "CD37"
+     ],
+     "Monocyte": [
+      "LYZ",
+      "S100A8",
+      "S100A9",
+      "FCN1",
+      "LST1",
+      "CST3",
+      "CD14",
+      "AIF1"
+     ],
+     "DC": [
+      "FCER1A",
+      "CD1C",
+      "CLEC10A",
+      "HLA-DPB1",
+      "HLA-DPA1",
+      "CST3"
+     ],
+     "Platelet": [
+      "PPBP",
+      "PF4",
+      "GNG11",
+      "SDPR",
+      "NRGN",
+      "SPARC"
+     ]
+    }
+   }
+  }
+ ]
+}

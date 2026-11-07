@@ -1,4 +1,4 @@
-# Task: pbmc3k_annotation
+# Task: pbmc3k_celltype_annotation
 
 ## Description
 

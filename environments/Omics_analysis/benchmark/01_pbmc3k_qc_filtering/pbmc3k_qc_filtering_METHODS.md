@@ -47,4 +47,4 @@ The scorer also reports, for information only, excluded-set precision and recall
 ## Limits
 
 - One dataset (PBMC3k, widely used in public tutorials), one reference run, and a curated baseline.
-- The self-tests (`scripts/pbmc3k_benchmark/tests/`) show the scorer works on reference-derived and deliberately flawed outputs. They are not evidence about any agent.
+

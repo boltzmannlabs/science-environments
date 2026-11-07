@@ -1,193 +1,192 @@
-# scrnaseq_celltype_annotation v1
+# Omics Analysis Environment Specification
 
-## 1. Environment Overview
+## 1. Environment overview
 
-**Environment Name:** scrnaseq_celltype_annotation  
+**Environment name:** Omics Analysis  
 **Version:** v1  
-**Omics Domain:** Single-cell transcriptomics  
-**Status:** Specification
+**Primary purpose:** Evaluation of AI agents on independent omics data-analysis tasks  
+**Status:** Active benchmark environment under development
 
-This document describes the intended inputs, outputs, agent capabilities, and evaluation requirements for the environment. It does not record a completed implementation or benchmark result.
+This environment contains a collection of independent scientific tasks. Each task defines a biological or computational objective, the data and resources available to an AI agent, the expected outputs, and the criteria used to evaluate the result.
 
-Computational dependencies are declared in `config/environment.yml`. Concrete datasets, required output formats, and task-specific evaluation criteria are documented under `tasks/`.
+Tasks may use different datasets, omics modalities, organisms, analytical workflows, and evaluation methods. The environment is not limited to a single dataset or analysis type.
 
-The presence of configuration files and task definitions does not establish that environment recreation, workflow execution, or scientific evaluation has been completed successfully.
+The repository currently contains four PBMC3k single-cell RNA-seq tasks. Five additional independent tasks are planned and will be specified separately when they are added.
+
+The environment specification defines shared principles. Each task specification is authoritative for that task's inputs, outputs, constraints, and scoring procedure.
 
 ## 2. Objective
 
-Evaluate whether Agent Scientist can identify and annotate major cell populations from a single-cell RNA sequencing (scRNA-seq) dataset using clustering, marker-gene evidence, and suitable biological references.
+Evaluate whether an AI agent can complete an omics-analysis task accurately, reproducibly, and transparently using the data and resources permitted by the task.
 
-The environment should support dataset-appropriate analytical choices and evidence-based uncertainty reporting.
+The environment should reward:
 
-## 3. Scientific Question
+- Appropriate scientific and computational reasoning
+- Dataset-appropriate analytical choices
+- Correct and complete machine-readable outputs
+- Evidence-based biological interpretation
+- Honest reporting of uncertainty and limitations
+- Reproducible analysis provenance
 
-Given an scRNA-seq dataset, can the system:
+The environment should not reward unsupported specificity, unexplained parameter choices, or superficial agreement with a reference output.
 
-- Identify distinct cell populations.
-- Determine marker genes associated with each population.
-- Assign biologically meaningful cell-type labels.
-- Provide evidence supporting each annotation.
-- Report uncertainty or ambiguous annotations where appropriate.
+## 3. Task model
 
-No fixed number of clusters or predetermined set of labels should be imposed independently of the evidence available in the dataset.
+Every task should document the following:
 
-## 4. Inputs Required
+1. Scientific objective and questions
+2. Dataset identity, provenance, and access instructions
+3. Omics modality and relevant biological context
+4. Input files and their formats
+5. Permitted software, references, models, and network resources
+6. Required and optional outputs
+7. Output schemas and identifier conventions
+8. Restrictions and prohibited sources of information
+9. Evaluation criteria and scoring rules
+10. Reproducibility requirements
 
-### Expression Data
+Tasks are independent. A task may reuse a dataset or output from another task only when this is explicitly stated in its task specification.
 
-A single-cell gene-expression dataset in one of the following formats:
+## 4. Inputs and data provenance
 
-- AnnData `.h5ad`.
-- 10x Genomics Matrix Market format.
-- An equivalent format explicitly supported and documented by the task.
+Each task must identify its input data clearly and document, where applicable:
 
-Each task must identify the dataset location and provenance and document, where applicable:
+- Dataset name, source, version, and stable identifier or download URL
+- Organism, tissue, condition, and sample context
+- Omics modality and assay technology
+- Cell, sample, gene, feature, or observation identifiers
+- Matrix orientation and data types
+- Whether values are raw, normalized, transformed, imputed, or otherwise processed
+- Available metadata, layers, annotations, and prior analyses
+- Known limitations, missing information, and possible confounders
 
-- Organism and available tissue or sample context.
-- Cell identifiers and gene-identifier conventions.
-- Expression-matrix location and orientation.
-- Whether the expression values are raw counts, normalized, transformed, or otherwise processed.
-- Relevant expression layers and existing cluster assignments.
-- Known limitations or missing information.
+The agent must inspect its inputs before analysis and report information that cannot be established reliably.
 
-The agent must inspect the input before analysis and report information that cannot be established reliably.
+Input identifiers must be preserved consistently in all derived machine-readable outputs. If rows or observations are filtered, excluded, merged, or unresolved, the task must define how those records are represented and accounted for.
 
-### Optional Resources
+## 5. Permitted resources
 
-- Reference marker-gene databases or published marker lists.
-- Cell Ontology mappings.
-- Additional dataset and sample metadata.
-- Reference cell-type annotations, where their use is explicitly permitted by the task.
+Task specifications may permit resources such as:
 
-Reference annotations available to the agent for annotation assistance must be distinguished from labels reserved for evaluation.
+- Public biological databases and reference annotations
+- Published marker or feature sets
+- Ontologies and controlled vocabularies
+- Pretrained models
+- Statistical and machine-learning libraries
+- External documentation or network access
 
-Datasets, pretrained annotation models, and biological reference resources are separate from the software dependencies declared in `config/environment.yml`.
+The task must distinguish resources available for solving the task from reference data reserved for evaluation. Hidden labels, hidden benchmark files, and evaluator-only outputs must not be accessible to the agent.
 
-Annotation resources must be appropriate for the organism, tissue, technology, and requested annotation resolution. Availability of a software package does not establish suitability of its pretrained models for every dataset.
+Permitted resources should be appropriate for the dataset, organism, technology, and requested resolution. The availability of a package or pretrained model does not establish that it is scientifically suitable for every task.
 
-Each task must specify permitted external resources and any network-access restrictions. Labels reserved for evaluation must remain outside the task-solving agent's accessible inputs.
+## 6. Expected agent behavior
 
-## 5. Agent Actions
+An AI agent should:
 
-Agent Scientist should be able to:
+1. Inspect and validate the supplied inputs.
+2. Identify missing, inconsistent, or ambiguous information.
+3. Select methods appropriate to the task and dataset.
+4. Justify important preprocessing, filtering, modeling, and interpretation choices.
+5. Preserve identifiers and maintain consistency across outputs.
+6. Generate all required machine-readable outputs.
+7. Provide supporting evidence for biological or analytical conclusions.
+8. Report uncertainty, conflicting evidence, failed steps, and limitations.
+9. Record parameters, software versions, random seeds, and provenance where relevant.
+10. Avoid claiming conclusions that are not supported by the data or method.
 
-1. Load and inspect the supplied dataset, including its structure, identifiers, metadata, and preprocessing status.
-2. Assess data quality, report relevant QC metrics, and justify filtering decisions.
-3. Assess potential doublets when required by the task or appropriate for the dataset. Document the method, settings, predictions, and any resulting exclusions. Distinguish an unavailable or failed assessment from a negative prediction.
-4. Perform preprocessing and normalization when required, avoiding inappropriate repeated transformations.
-5. Identify cell populations through clustering or an appropriate reference-based method.
-6. Identify cluster- or population-associated marker genes when applicable.
-7. Consult suitable biological references to support cell-type assignments.
-8. Assign cell-type labels and explicitly identify ambiguous, conflicting, or unresolved assignments.
-9. Provide numerical confidence estimates only when supported by the method and accompanied by an explanation of their interpretation.
-10. Generate an annotation report containing the workflow, supporting evidence, uncertainties, and limitations.
+If a required dependency, input, reference, or computational step is unavailable, the agent must report the limitation and identify the affected outputs rather than silently substituting an unsupported procedure.
 
-Existing preprocessing results or cluster assignments may be reused when justified. Analytical methods and parameters should be selected according to the dataset and task requirements.
+## 7. Expected outputs
 
-If required data, dependencies, or reference resources are unavailable, the agent must report the limitation and identify the affected analytical steps.
+Each task defines its own required output files and schemas. Depending on the task, outputs may include:
 
-## 6. Expected Outputs
+- Cell-, sample-, gene-, feature-, or observation-level result tables
+- Quality-control and filtering summaries
+- Cluster, group, or class assignments
+- Differential-expression or feature-importance tables
+- Biological annotations and evidence tables
+- Processed data objects such as AnnData or equivalent formats
+- Visualizations that support the reported conclusions
+- A run manifest containing counts, parameters, seeds, and software versions
+- An analysis report describing the workflow and limitations
 
-### Primary Outputs
+Machine-readable outputs should:
 
-- A cell-level annotation table containing cell identifiers and assigned labels, including an explicit value for unresolved assignments.
-- A cluster- or population-level marker-gene table when marker analysis is performed.
-- A cluster-to-cell-type mapping when clustering is performed.
-- Annotation evidence supporting the proposed labels.
-- Explicit reporting of ambiguous or unresolved assignments and annotation limitations.
-- An analysis report describing the input assessment, workflow, preprocessing decisions, annotations, supporting and conflicting evidence, uncertainties, and limitations.
+- Use documented column names and data types
+- Preserve original identifiers exactly where required
+- Account for retained, excluded, missing, and unresolved records
+- Be readable by the evaluator without manual correction
+- Contain sufficient metadata to interpret the results
 
-Numerical confidence estimates are optional. When provided, their meaning and limitations must be documented. They must not be presented as calibrated probabilities unless that interpretation is justified.
+Visualizations should complement the underlying data and evidence. They should not be treated as a substitute for required machine-readable outputs.
 
-### Supporting Outputs
-
-Depending on task requirements:
-
-- QC and filtering summaries.
-- Cluster or population summaries.
-- UMAP or other suitable visualizations.
-- Marker-gene evidence tables.
-- An annotated AnnData object or equivalent reusable dataset.
-
-Each task must specify required artifacts, filenames, output locations, formats, and fields.
-
-Machine-readable outputs must preserve consistent cell identifiers. Retained, excluded, and unresolved cells must be accounted for. Visualizations must complement the underlying annotation and evidence outputs.
-
-## 7. Evaluation
+## 8. Evaluation principles
 
 Each task must define its evaluation procedure before results are assessed.
 
-### Functional and Output Evaluation
+### Functional validity
 
-Evaluation should check whether:
+Evaluation may check whether:
 
-- The declared input can be loaded and validated.
-- Required analytical steps execute successfully.
-- Required outputs exist and are readable.
-- Output fields and cell identifiers are valid and consistent.
-- Excluded and unresolved cells are accounted for.
-- Supporting evidence and analysis provenance are provided.
+- Inputs can be loaded and validated
+- Required analysis steps execute successfully
+- Required files exist and are readable
+- Output schemas and identifiers are valid
+- Counts and relationships between outputs are consistent
 
-Successful installation or import checks alone do not establish successful workflow execution or annotation quality.
+Successful installation or import checks alone do not establish successful workflow execution or scientific validity.
 
-### Dataset-Specific Annotation Evaluation
+### Scientific and analytical quality
 
-All tasks are assessed for technical validity, justified analytical choices, supporting biological evidence, uncertainty reporting, and reproducibility.
+Evaluation may assess:
 
-Where suitable reviewed cell-level reference annotations are available, tasks may additionally report per-cell-type precision, recall, F1, macro-F1, and annotation coverage. Reference provenance, limitations, annotation granularity, and eligible evaluation cells must be documented.
+- Whether methods are appropriate for the data and objective
+- Whether preprocessing and filtering decisions are justified
+- Whether reported findings are supported by relevant evidence
+- Whether uncertainty and conflicting evidence are acknowledged
+- Whether unsupported specificity or overinterpretation is avoided
 
-Where suitable reviewed annotations are unavailable, evaluation assesses analysis quality and biological support without claiming independently validated numerical annotation accuracy.
+### Reference-based evaluation
 
-Unreviewed computational outputs, including automated predictions and tutorial results, may serve as comparison baselines. Agreement with those baselines must be distinguished from biological correctness.
+Where reviewed reference labels or results are available, evaluation may report metrics such as precision, recall, F1, macro-F1, correlation, ranking agreement, or task-specific scores.
 
-Comparisons must align cells by their original identifiers and document any label harmonization. Shared cells, excluded cells, and unresolved assignments must be reported. Each task must define how exclusions and unresolved assignments affect scoring.
+Reference outputs are not automatically biological ground truth. Their provenance, limitations, annotation granularity, and eligible evaluation records must be documented.
 
-Matching cluster identifiers, cluster counts, marker rankings, or visualization coordinates is not required unless explicitly specified by the task.
+Where reviewed references are unavailable, evaluation should focus on technical validity, analytical reasoning, evidence quality, and reproducibility without claiming independently validated biological accuracy.
 
-### Uncertainty and Evidence
+Agreement with an automated prediction, tutorial result, or computational baseline must be distinguished from biological correctness.
 
-Evaluation should assess whether:
+## 9. Reproducibility
 
-- Proposed labels have relevant supporting evidence.
-- Conflicting evidence is acknowledged.
-- Unsupported specificity is avoided.
-- Ambiguous populations remain unresolved when appropriate.
-- Numerical confidence estimates, if provided, have a documented interpretation.
+Each evaluated run should record, when applicable:
 
-### Reproducibility
+- Input dataset provenance and version
+- Software and model versions
+- Preprocessing and filtering decisions
+- Analytical methods and parameters
+- Random seeds
+- External resources and access dates
+- Output file descriptions
+- Execution instructions
+- Observed limitations or deviations from the task specification
 
-Each evaluated run should record:
+Results from one dataset or task must not be presented as evidence of generalization to other datasets, organisms, technologies, or biological contexts unless that generalization has been evaluated explicitly.
 
-- Input dataset provenance and version or stable identifier.
-- Preprocessing and filtering decisions.
-- Analytical methods and parameters.
-- Random seeds where applicable.
-- Software and annotation-resource versions.
-- Execution instructions and observed limitations.
+## 10. Success criteria
 
-Results on PBMC 3k alone must not be presented as evidence of generalization across all tissues, organisms, technologies, or disease contexts.
+A task is successful when it satisfies its task-specific acceptance criteria and:
 
-## 8. Success Criteria
+1. Produces valid and complete required outputs.
+2. Uses methods appropriate to the stated objective and input data.
+3. Provides evidence supporting important conclusions.
+4. Preserves identifiers and accounts for filtered or unresolved records.
+5. Reports uncertainty, limitations, and failed or unavailable steps honestly.
+6. Records enough provenance for the analysis to be reproduced or audited.
 
-A task is successful when it satisfies its declared acceptance criteria and:
+The exact definition of success is task-specific and must be documented in the corresponding task specification.
 
-1. Identifies cell populations at a level supported by the dataset and task.
-2. Assigns biologically plausible labels with relevant supporting evidence.
-3. Reports ambiguous or unresolved assignments without forcing unsupported labels.
-4. Produces valid and complete required outputs.
-5. Records reproducible analysis steps and relevant provenance.
-6. Meets the task's predefined evaluation requirements.
+## 11. Current and planned tasks
 
-## 9. Computational Environment Verification
+The current repository includes four PBMC3k single-cell RNA-seq tasks covering quality control, filtering, clustering, marker analysis, and cell-type annotation.
 
-Software dependencies and version requirements are declared in `config/environment.yml`. Installation and verification commands must be documented in `README.md`.
-
-Installation and verification must avoid relying on packages outside the declared environment. The documented procedure should set `PYTHONNOUSERSITE=1` before environment creation and testing.
-
-The repository should provide `tests/test_environment.py` with synthetic-data smoke tests for required imports, dependency consistency, preprocessing, dimensionality reduction, clustering, marker analysis, data storage, and plotting.
-
-These checks require no biological dataset, reference results, or pretrained annotation model. CellTypist and Scrublet receive import checks; their prediction workflows require separate validation.
-
-Passing the tests confirms that the tested software operations execute successfully. It does not establish biological annotation accuracy or compatibility with every dataset or computing platform.
-
-Verification should be repeated after dependency changes or environment recreation. Verification records should identify the tested configuration, platform, Python version, and outcome.
+Five additional independent omics-analysis tasks are planned. They are not part of the current environment until their task specifications, inputs, evaluation criteria, and supporting artifacts have been added to the repository.

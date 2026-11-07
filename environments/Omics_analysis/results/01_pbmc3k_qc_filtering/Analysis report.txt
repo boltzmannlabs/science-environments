@@ -1,0 +1,61 @@
+PBMC 3K: QC filtering and doublet assessment
+
+Input: https://cf.10xgenomics.com/samples/cell-exp/1.1.0/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz
+Archive SHA-256 (local provenance, no publisher checksum comparison): 847d6ebd9a1ec9a768f2be7e40ca42cbfe75ebeb6d76a4c24167041699dc28b5
+The 10x-provided filtered hg19 matrix was inspected before QC: 2700 distinct barcodes,
+32738 genes, 2286884 nonzero entries, 6390631 integer UMI counts,
+13 mitochondrial genes (gene symbols beginning MT-).
+This is already a vendor-filtered barcode matrix, not unfiltered droplets.
+The cell_id values exactly match the barcodes.tsv order; gene IDs are from genes.tsv.
+
+QC metrics calculated on raw counts: detected genes, UMI counts, fraction of UMI counts
+assigned to MT- genes. Percent mitochondrial is on a 0-100 scale.
+Observed distributions (min / 1% / median / 95% / 99% / max):
+      n_genes_by_counts  total_counts  pct_counts_mt
+0.00             212.00        548.00          0.000
+0.01             326.00        658.93          0.594
+0.50             817.00       2197.00          2.030
+0.95            1368.10       4220.55          4.015
+0.99            1749.01       5928.62          5.876
+1.00            3422.00      15844.00         22.569
+
+Decision rules (applied together to all input cells, with every failed rule listed):
+  detected genes < 200: 0 cells;
+  detected genes > 2500: 5 cells;
+  mitochondrial percentage > 5: 57 cells.
+The 200-gene floor screens severely low-complexity cells; all vendor-filtered
+barcodes already exceed it (observed minimum 212).
+The upper 2500-gene cutoff flags the extreme high-complexity tail (99th
+percentile 1749.01), a conservative potential-multiplet
+flag; high-complexity real cells can also be excluded. The 5% MT cutoff is
+above the observed 95th percentile (4.015%) and screens
+unusually mitochondria-rich, potentially stressed/damaged cells; this is not
+a measured viability assay. No additional UMI cutoff is applied because
+complexity and mt% suffice and the observed min UMI count is
+548; UMI counts are reported for auditing.
+
+After joint QC: 2638 pass and 62 fail. Exactly
+0 barcodes failed more than one rule. Exclusion reasons in
+cell_qc.csv list all joint failures, separated by semicolons. Doublet
+scores for QC-failing cells are blank (not assessed).
+
+Scrublet 0.2.3 was applied only to QC-passing raw
+count vectors, with expected_doublet_rate=0.06 (an assumption, not measured
+for this capture), sim_doublet_ratio=2.0, random_state=42,
+n_prin_comps=30, use_approx_neighbors=False. Other scrub_doublets
+preprocessing parameters are package defaults. Its automatically estimated
+threshold was 0.304019; observed predicted-doublet fraction
+1.4405%, simulated detectable fraction
+42.5322%. Score and call are recorded per assessed
+cell. Scrublet's simulation/embedding uses internal transformations for
+classification; no normalization or embedding is saved to the output.
+38 QC-passing predicted doublets were excluded. Scrublet
+predictions are uncertain: homotypic doublets can be missed and some
+heterotypic/rare singlets falsely called. No ground-truth labels are available.
+
+Final: 2600 retained cells, 13596 genes detected in >=3
+retained cells; retained_raw_counts.h5ad holds only these cells and genes,
+with unnormalized integer-valued UMI counts. No clustering, cell-type
+annotation or biological accuracy validation was performed.
+
+Environment versions: {"anndata": "0.13.4", "numpy": "2.1.3", "pandas": "3.1.0", "scanpy": "1.12.4", "scikit-learn": "1.6.1", "scipy": "1.16.3", "scrublet": "0.2.
