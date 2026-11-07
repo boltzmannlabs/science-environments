@@ -1,0 +1,63 @@
+PBMC 3K: de novo single-cell RNA-seq analysis
+===========================================
+Input: user-specified 10x Genomics filtered hg19 matrix (genes.tsv, barcodes.tsv, matrix.mtx).
+Genome context: human hg19; gene symbols from the downloaded feature table.
+Analysis is computational; cell identities are hypotheses from marker expression, not independently validated truth.
+No reference tutorial results, pretrained models, or hidden labels were used.
+
+Input cells: 2700; QC passing: 2689;
+Scrublet-predicted doublets removed: 36;
+Retained: 2653 cells and 13624 genes present in >=3 retained cells.
+QC: retain 200-2500 detected genes and <=10% mitochondrial UMIs per cell.
+The input is already a filtered cell-barcode matrix. The upper complexity and mitochondrial
+cutoffs target extreme outliers; they are heuristic, not external ground-truth QC labels.
+Scrublet on QC-passing raw counts, expected doublet rate 0.06; automatic score threshold
+0.3021. Predicted doublets removed; these are predictions, not confirmed multiplets.
+Retain original integer counts in layers['counts']; library-size normalize X to 10,000 UMIs
+and log1p-transform. Identify 2,000 HVGs via seurat_v3 on raw counts; scale only HVGs
+(clip scaled values to 10), PCA 40 components; 15-nearest-neighbor graph, UMAP seed 42.
+Leiden igraph resolution 0.7, undirected, two iterations, seed 42; resolution chosen
+as a moderate-granularity exploratory setting, not to match any predetermined clusters.
+One-versus-rest Wilcoxon tests with tie correction were run on log-normalized expression
+for all retained genes, with FDR-adjusted p-values in cluster_markers.csv.
+The marker table contains positive and negative DE results: check logfoldchange > 0
+and p_value_adj < 0.05 when using a gene as positive cluster-level evidence.
+
+Cluster annotations (DE statistics below are cluster-vs-all-other-cells and not
+independent proof of cell identity; p-values reflect this one dataset):
+Cluster 0 (578 cells): CCR7+ naive-like T cells [tentative].
+  Observed markers: CCR7 (log2FC 2.89, FDR 2.7e-93, detected 49%); CD3D (log2FC 1.94, FDR 1.3e-61, detected 84%); IL7R (log2FC 1.05, FDR 1.9e-16, detected 56%); CD8B (log2FC 1.66, FDR 2.2e-17, detected 23%).
+  CCR7 enrichment supports resting/naive-like T state; CD8B occurs in some cells, so CD4-vs-CD8 and true naive state are not established.
+Cluster 1 (337 cells): B cells [resolved].
+  Observed markers: CD79A (log2FC 7.88, FDR 0, detected 94%); MS4A1 (log2FC 6.47, FDR 0, detected 86%); TCL1A (log2FC 7.09, FDR 3.7e-273, detected 63%); CD74 (log2FC 4.15, FDR 8.7e-181, detected 100%).
+Cluster 2 (606 cells): IL7R+ CD4-like T cells [tentative].
+  Observed markers: IL7R (log2FC 2.37, FDR 1.6e-90, detected 75%); CD3D (log2FC 2.20, FDR 7.8e-79, detected 90%); LTB (log2FC 2.41, FDR 1.3e-103, detected 97%); CD40LG (log2FC 2.53, FDR 1.2e-48, detected 27%).
+  IL7R, CD40LG and weak CD8 signal favor helper-like T identity; CD4 mRNA is sparse, so subtype is tentative.
+Cluster 3 (471 cells): CD14+ classical monocytes [resolved].
+  Observed markers: S100A8 (log2FC 7.59, FDR 0, detected 97%); FCN1 (log2FC 5.66, FDR 0, detected 95%); CD14 (log2FC 6.24, FDR 4.7e-287, detected 66%); LYZ (log2FC 6.21, FDR 2.3e-258, detected 100%).
+Cluster 4 (155 cells): Cytotoxic NK cells [resolved].
+  Observed markers: GZMB (log2FC 7.74, FDR 8.9e-263, detected 95%); FGFBP2 (log2FC 6.74, FDR 9.8e-231, detected 86%); GNLY (log2FC 7.83, FDR 6.6e-183, detected 94%); NKG7 (log2FC 6.82, FDR 1.2e-134, detected 100%); FCGR3A (log2FC 4.30, FDR 1.2e-105, detected 82%).
+Cluster 5 (297 cells): CD8+ cytotoxic T cells [resolved].
+  Observed markers: GZMK (log2FC 5.09, FDR 1.3e-172, detected 60%); CD8A (log2FC 3.80, FDR 4e-108, detected 51%); CD8B (log2FC 2.65, FDR 3.6e-43, detected 38%); CD3D (log2FC 2.07, FDR 1.1e-45, detected 87%); NKG7 (log2FC 5.21, FDR 9.3e-171, detected 95%).
+Cluster 6 (160 cells): FCGR3A+ nonclassical monocytes [resolved].
+  Observed markers: MS4A7 (log2FC 5.21, FDR 7e-184, detected 81%); FCGR3A (log2FC 5.71, FDR 5.1e-183, detected 98%); LST1 (log2FC 5.23, FDR 2.3e-122, detected 100%); CDKN1C (log2FC 6.15, FDR 3.4e-198, detected 48%).
+Cluster 7 (36 cells): CD1C+ conventional dendritic cells [tentative].
+  Observed markers: FCER1A (log2FC 9.01, FDR 3.2e-287, detected 86%); CLEC10A (log2FC 6.97, FDR 1.9e-161, detected 69%); CD1C (log2FC 5.31, FDR 4.2e-69, detected 50%); CLEC4C (log2FC 8.09, FDR 2.7e-69, detected 17%); LILRA4 (log2FC 6.36, FDR 1e-23, detected 11%).
+  Heterogeneous dendritic-cell cluster: CD1C/CLEC10A dominate, but CLEC4C/LILRA4/GZMB co-expression occurs in a subset.
+  4 cells co-detect CLEC4C, LILRA4 and GZMB in raw counts and receive tentative per-cell plasmacytoid DC labels.
+  Remaining cells have tentative CD1C+ conventional DC labels; rare-cell dropout/ambient RNA can confound these identities.
+Cluster 8 (13 cells): Platelets [resolved].
+  Observed markers: GP9 (log2FC 12.92, FDR 0, detected 92%); ITGA2B (log2FC 12.21, FDR 0, detected 85%); PF4 (log2FC 12.76, FDR 1.7e-175, detected 100%); PPBP (log2FC 12.98, FDR 3.4e-99, detected 100%).
+  Only 13 cells; strong platelet markers support the identity, though some platelet-tagged droplets or aggregates may remain.
+
+Limitations and uncertainty:
+Single sample, no donor/batch replication or protein validation. A small cluster can mix
+rare related phenotypes; cell-level overrides in cluster 7 are tentative and not a
+formal independent subcluster. CD4 is poorly detected in sparse single-cell data;
+the CCR7+ and IL7R+ T groups may each include CD4 and CD8 cells, or state variation.
+Scrublet is not a definitive doublet assay. No CellTypist reference model or
+real-data CellTypist annotation was run. UMAP geometry is descriptive, not evidence
+of developmental relationships. Differential-expression P-values are exploratory
+because clusters were discovered using the same cells; no causal inference.
+Markers with nonsignificant or negative cluster-level log2FC are contextual only.
+All retained barcodes appear exactly once in cluster_assignments.csv.
