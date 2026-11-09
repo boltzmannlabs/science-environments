@@ -1,1 +1,0 @@
-Historical project validation before addition of benchmark/KRAS. These receipts/logs remain byte-identical but bind the earlier project revision, not the current expanded snapshot. Current receipts are in results/. No scientific results were rerun.
