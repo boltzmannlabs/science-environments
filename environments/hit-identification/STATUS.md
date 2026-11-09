@@ -1,9 +1,7 @@
 # Status
 
-2026-11-06: initial task specification and input bundle added. The 400 original compound identifiers and input SMILES were cross-checked against the source supplement; CSV/SDF identities, reference records, native ligand coordinates, source receptor files and bundle checksums were checked locally.
+Update dated 9 November 2026, committed to the `Boltchem` branch. The original task and scientific input bundle are retained unchanged; this update adds the completed run record, evaluation and benchmark comparison.
 
-The source has 398 unique full InChIKeys across 400 records. Five records retain unspecified tetrahedral stereochemistry: 21, 23, 24, 125 and 149. Original chemical inputs are preserved.
+A completed numerical run and its submitted deliverables are retained under `results/task_001_d2r_peripheral_candidate_prioritisation/`. Its eight proposed candidates and two final priorities are reported as the agent's selections. Scientific interpretation limitations are explained in the evaluation report.
 
-The task contains a scientific objective and outputs, with no Description, Evaluation, prescribed tools or simulations. The primary receptor is the original crystal complex. Separate reconstruction experiments are not task inputs.
-
-Scientific execution and platform runtime qualification are not claimed by this repository update.
+`benchmark/` contains evaluation definitions and source-reference data. `results/` contains the actual workflow, execution records, numerical comparisons and evaluation findings. No new scientific jobs or simulations were run for this review. Runtime configuration remains `draft_runtime_unqualified`; file validation is not scientific qualification.

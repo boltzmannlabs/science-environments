@@ -1,17 +1,15 @@
 # Hit identification
 
-Scientific tasks for identifying and prioritising small-molecule hits from supplied libraries. The agent selects its approach and supports recommendations with retained evidence.
+Tasks for prioritising small-molecule candidates from supplied libraries. The execution agent receives a task and its scientific inputs and determines a suitable workflow.
 
-Status: draft specification and validated inputs; scientific execution and runtime qualification remain separate.
-
-| Task | Target | Inputs |
+| Category | Purpose | D2R task |
 | --- | --- | --- |
-| [task_001](tasks/task_001_d2r_peripheral_candidate_prioritisation.md) | Human dopamine D2 receptor | 400 source records, experimental receptor structures, sequences and reference controls |
+| `tasks/` | Scientific objective, inputs, constraints and expected outputs | [Task](tasks/task_001_d2r_peripheral_candidate_prioritisation.md) |
+| `benchmark/` | Benchmark definitions, evaluation methods, metrics and comparison criteria | [Benchmark](benchmark/task_001_d2r_peripheral_candidate_prioritisation.md) |
+| `results/` | Experiment outputs, benchmark results, execution records and evaluation reports | [Workflow, results and paper comparison](results/task_001_d2r_peripheral_candidate_prioritisation/evaluation_report.md) |
 
-Run the selected task from this environment directory: its `inputs/...` paths resolve here. Give the execution agent the selected task and `inputs/` only. Do not include owner-only `benchmark/` metadata or source-paper outcomes.
+The original task and input bundle are unchanged. Give future execution agents only the selected task and `inputs/`; benchmark reference outcomes and previous results are evaluator material.
 
-The primary receptor input is the original 6CM4 crystal complex. No prebuilt reconstruction is supplied. The task requests eight ranked candidates, two final priorities and a detailed report. It prescribes no tools or scientific stages and has no Description or Evaluation section.
+The agent's original detailed report, ranked candidates and assessment are preserved under the task's results directory. Independent comparison findings are kept in `results/` and do not overwrite the submission.
 
-Owner provenance: [benchmark metadata](benchmark/task_001_d2r_peripheral_candidate_prioritisation.md). Source DOI 10.1371/journal.pone.0355997, PMC13524263. These identify the source for maintainers; they are not execution instructions.
-
-Validate files and configuration with `python scripts/validate_environment.py`. Tests run with `python -m pytest tests`.
+Validate with `python scripts/validate_environment.py`, `python scripts/validate_d2r_review.py` and `python -m pytest tests -q`. Offline audit dependencies are listed in `results/task_001_d2r_peripheral_candidate_prioritisation/benchmark_results/requirements-review.txt`. None of these checks submits platform jobs.

@@ -1,2 +1,5 @@
 # Preserve fixed-width scientific inputs and original data exports byte-for-byte.
 inputs/** -whitespace
+results/**/submitted/** -whitespace
+results/**/supporting/** -whitespace
+benchmark/**/reference/** -whitespace
