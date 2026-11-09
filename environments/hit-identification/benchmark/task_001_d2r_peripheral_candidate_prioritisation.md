@@ -45,24 +45,33 @@ Executed on the Boltzmann platform; result files preserved unchanged in [`result
 
 **Overlap with the paper: shortlist 0/8, priorities 0/2.** Both agent priorities are BBB-permeable in the paper's SwissADME table; both paper priorities are BBB-restricted — a predictor disagreement between workflows.
 
-| ID | Selected by | Paper Vina (kcal/mol) | Agent Vina (kcal/mol) | Agent affinity model (unitless) |
-| --- | --- | ---: | ---: | ---: |
-| 17 | Paper | −12.4 | −12.041 | −0.103 |
-| 21 | Paper | −11.9 | −12.579 | −1.130 |
-| 24 | Paper | −11.9 | −11.214 | −0.869 |
-| 27 | Paper | −11.9 | −11.669 | +0.462 |
-| 128 | Paper | −12.3 | −10.943 | +0.558 |
-| 321 | Paper | −12.3 | −11.405 | −0.567 |
-| 360 | Paper | −11.9 | −11.023 | +0.845 |
-| 381 | Paper | −11.9 | −11.224 | +0.813 |
-| 3 | Agent | not reported | −11.600 | −2.369 |
-| 5 | Agent | not reported | −11.266 | −2.362 |
-| 111 | Agent | not reported | −11.043 | −2.214 |
-| 2 | Agent | not reported | −12.425 | −2.191 |
-| 19 | Agent | not reported | −12.155 | −2.166 |
-| 25 | Agent | −11.5 | −11.612 | −2.157 |
-| 120 | Agent | not reported | −9.841 | −2.122 |
-| 10 | Agent | −11.8 | −11.561 | −2.090 |
+**Scores for the paper's 8 shortlisted compounds**
+
+| Compound ID | Paper Vina score (kcal/mol) | Agent Vina score (kcal/mol) | Agent affinity score (unitless) |
+| ---: | ---: | ---: | ---: |
+| 17 | −12.4 | −12.041 | −0.103 |
+| 21 | −11.9 | −12.579 | −1.130 |
+| 24 | −11.9 | −11.214 | −0.869 |
+| 27 | −11.9 | −11.669 | +0.462 |
+| 128 | −12.3 | −10.943 | +0.558 |
+| 321 | −12.3 | −11.405 | −0.567 |
+| 360 | −11.9 | −11.023 | +0.845 |
+| 381 | −11.9 | −11.224 | +0.813 |
+
+**Scores for the agent's 8 shortlisted compounds**
+
+| Compound ID | Paper Vina score (kcal/mol) | Agent Vina score (kcal/mol) | Agent affinity score (unitless) |
+| ---: | ---: | ---: | ---: |
+| 3 | — | −11.600 | −2.369 |
+| 5 | — | −11.266 | −2.362 |
+| 111 | — | −11.043 | −2.214 |
+| 2 | — | −12.425 | −2.191 |
+| 19 | — | −12.155 | −2.166 |
+| 25 | −11.5 | −11.612 | −2.157 |
+| 120 | — | −9.841 | −2.122 |
+| 10 | −11.8 | −11.561 | −2.090 |
+
+"—" = no paper docking score exists: the paper docked only its 226 BBB-impermeable candidates, and these compounds were predicted BBB-permeable in its table, so they never entered its docking stage.
 
 Cross-method agreement: paper Vina vs agent Vina r = 0.667 / ρ = 0.652 (n = 225 common compounds).
 
