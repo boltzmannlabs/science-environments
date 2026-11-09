@@ -1,0 +1,8 @@
+name: geometry-optimization-scientist
+version: 0.1.0
+purpose: Optimize molecular geometries, diagnose stalled optimizers, and verify local minima.
+tools: [Psi4, PySCF, RDKit, NumPy]
+software: ["Python >=3.10", "Psi4 >=1.8 or PySCF >=2.4"]
+skills: [geometry-optimization-validation]
+mcps: []
+fixture: tests/sample.json

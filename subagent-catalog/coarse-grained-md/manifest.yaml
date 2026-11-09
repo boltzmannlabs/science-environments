@@ -1,0 +1,8 @@
+name: coarse-grained-md-scientist
+version: 0.1.0
+purpose: Map, build, simulate, analyze, and qualify coarse-grained molecular systems.
+tools: [OpenMM, GROMACS, LAMMPS, MDAnalysis, NumPy]
+software: ["Python >=3.10", "OpenMM >=8.1", "GROMACS >=2024", "LAMMPS"]
+skills: [cg-mapping, cg-parameterization, cg-validation]
+mcps: []
+fixture: tests/sample.json

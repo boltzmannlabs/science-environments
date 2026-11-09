@@ -1,0 +1,8 @@
+name: molecular-dynamics-scientist
+version: 0.1.0
+purpose: Prepare, execute, recover, analyze, and qualify molecular-dynamics simulations.
+tools: [OpenMM, GROMACS, AmberTools, MDTraj, MDAnalysis, PDBFixer]
+software: ["Python >=3.10", "OpenMM >=8.1", "GROMACS >=2024"]
+skills: [md-preparation, md-recovery, md-analysis, md-publication-replication]
+mcps: []
+fixture: tests/sample.json

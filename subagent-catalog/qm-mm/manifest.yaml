@@ -1,0 +1,8 @@
+name: qm-mm-scientist
+version: 0.1.0
+purpose: Validate QM-region boundaries, embedding, coupling, and QM/MM trajectory evidence.
+tools: [OpenMM, Psi4, PySCF, AmberTools, ParmEd]
+software: ["Python >=3.10", "OpenMM >=8.1", "AmberTools >=23"]
+skills: [qm-mm-boundary-validation]
+mcps: []
+fixture: tests/sample.json

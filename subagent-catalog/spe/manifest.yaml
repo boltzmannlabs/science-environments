@@ -1,0 +1,8 @@
+name: spe-scientist
+version: 0.1.0
+purpose: Diagnose, execute, and independently validate single-point electronic energies.
+tools: [Psi4, PySCF, RDKit, NumPy]
+software: ["Python >=3.10", "Psi4 >=1.8 or PySCF >=2.4"]
+skills: [spe-validation]
+mcps: []
+fixture: tests/sample.json

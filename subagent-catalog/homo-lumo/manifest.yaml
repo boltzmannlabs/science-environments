@@ -1,0 +1,8 @@
+name: homo-lumo-scientist
+version: 0.1.0
+purpose: Identify frontier orbitals, compute HOMO-LUMO gaps, and qualify electronic-state results.
+tools: [Psi4, PySCF, cclib, NumPy]
+software: ["Python >=3.10", "Psi4 >=1.8 or PySCF >=2.4"]
+skills: [frontier-orbital-validation]
+mcps: []
+fixture: tests/sample.json
