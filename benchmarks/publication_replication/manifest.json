@@ -1,0 +1,50 @@
+{
+  "benchmark": "boltsim-focused-publication-replication-v1",
+  "policy": "reproduce-reported-setup-before-comparing-outcomes",
+  "cases": [
+    {
+      "id": "MD-PUB-001",
+      "module": "md",
+      "system": "Barnase-barstar complex",
+      "pdb_id": "1BRS",
+      "input": "environments/md_agents/cases/real_systems/barnase_barstar.pdb",
+      "paper": {"doi": "10.1038/s41598-017-09466-w", "title": "Dynamics of Hydration Water Plays a Key Role in Determining the Binding Thermodynamics of Protein Complexes"},
+      "reported": {"engine": "AMBER14", "force_field": "FF99SB", "water": "TIP3P", "temperature_K": 300, "pressure_bar": 1, "box_side_A": 95.4, "waters": 23477, "counterions": "4 Na+", "observable": "interfacial-water dynamics"},
+      "variant": {"engine": "OpenMM", "force_field": "amber99sb-ildn", "water": "TIP3P", "temperature_K": 300, "pressure_bar": 1, "box_padding_A": 10.0, "observable": "setup-only comparison"},
+      "acceptance": "reported fields parse; structure is non-empty; variant differences are explicit; long-timescale outcome remains REVIEW"
+    },
+    {
+      "id": "MD-PUB-002",
+      "module": "md",
+      "system": "Villin headpiece folding",
+      "pdb_id": "1VII",
+      "input": "environments/md_agents/cases/real_systems/villin_headpiece.pdb",
+      "paper": {"doi": "10.1080/07391102.2008.10507236", "title": "Study of Early Events in the Protein Folding of Villin Headpiece using Molecular Dynamics Simulation"},
+      "reported": {"engine": "AMBER7", "force_field": "paper-specific; exact revision required", "solvent": "fully solvated", "electrostatics": "PME", "duration_ns": 200, "observable": "folding dynamics"},
+      "variant": {"engine": "OpenMM", "force_field": "amber99sb-ildn", "solvent": "explicit TIP3P", "electrostatics": "PME", "duration_ns": 0.01, "observable": "bounded smoke only"},
+      "acceptance": "paper setup metadata is preserved; missing exact force-field revision prevents outcome qualification"
+    },
+    {
+      "id": "FEP-PUB-001",
+      "module": "fep-ti",
+      "system": "Octa-acid OA-G3 to OA-G6 relative transformation",
+      "pdb_id": "SAMPL6-OA-G3-OA-G6",
+      "input": "environments/fep_ti_agents/benchmarks/sampl6/manifest.json",
+      "paper": {"doi": "10.1007/s10822-020-00290-5", "title": "The SAMPL6 SAMPLing challenge: assessing the reliability and efficiency of binding free energy calculations"},
+      "reported": {"protocol": "SAMPL6 relative host-guest challenge", "systems": ["OA-G3", "OA-G6"], "observable": "relative binding free energy", "reference_required": true},
+      "variant": {"protocol": "same endpoints with shortened sampling", "observable": "overlap/convergence diagnostics"},
+      "acceptance": "manifest and endpoint metadata validate; production trajectories and independent uncertainty are required for PASS"
+    },
+    {
+      "id": "CG-PUB-001",
+      "module": "coarse_grained_md",
+      "system": "Martini 3 method validation",
+      "pdb_id": "method-benchmark",
+      "input": "environments/coarse_grained_md/config/environment.yaml",
+      "paper": {"doi": "10.1038/s41592-021-01098-3", "title": "Martini 3: a general purpose force field for coarse-grained molecular dynamics"},
+      "reported": {"model": "Martini 3", "observable": "structure and thermodynamic property reproduction", "reference_required": true},
+      "variant": {"model": "declared alternative CG model", "observable": "mapping and stability sensitivity"},
+      "acceptance": "model identity and variant are explicit; no CG paper observable is claimed without its exact reference system"
+    }
+  ]
+}

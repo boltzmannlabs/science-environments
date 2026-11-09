@@ -29,6 +29,20 @@ references, and qualification boundaries for the retained modules. Environment
 README files contain their exact commands, inputs, tests, and evidence status.
 Results marked `REVIEW` are not production-qualified claims.
 
+## Paper-based reconstruction benchmarks
+
+The focused paper-to-environment benchmark is under
+`benchmarks/publication_replication/`. The first executable task packets are:
+
+- `environments/md_paper_reproduction/tasks/md_paper_001/` — CDK2–CS3 MD
+  protocol reconstruction from a published hypersound-accelerated MD study.
+- `environments/fep_paper_reproduction/tasks/fep_paper_001/` — CDK2 FEP
+  protocol reconstruction from a force-field comparison study.
+
+Each packet keeps paper-reported, agent-generated, supported-alternative, and
+deliberately perturbed configurations separate. Run
+`python scripts/evaluate_paper_tasks.py` to evaluate setup construction locally.
+
 ## Contribution layout
 
 Each portable package follows:

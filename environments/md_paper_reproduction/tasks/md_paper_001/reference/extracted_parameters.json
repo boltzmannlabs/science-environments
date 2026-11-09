@@ -1,0 +1,12 @@
+{
+  "engine": "GROMACS 4.6.5 modified",
+  "electrostatics": "PME",
+  "cutoff_A": 10,
+  "constraints": "P-LINCS all bonds",
+  "timestep_fs": 2,
+  "equilibration": {"nvt_ps": 100, "npt_ps": 100, "protein_heavy_atom_restraints": true},
+  "production": {"ensemble": "NPT", "temperature_K": 298, "pressure_bar": 1, "duration_ns": 100, "restraints": false},
+  "temperature_coupling": "stochastic velocity rescaling",
+  "pressure_coupling": "Parrinello-Rahman",
+  "missing": ["exact force-field revision", "complete CS3 topology", "supplementary hypersound table"]
+}

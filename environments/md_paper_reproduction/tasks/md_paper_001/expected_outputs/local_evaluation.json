@@ -1,0 +1,153 @@
+{
+  "task": "md_paper_001",
+  "input_manifest": {
+    "structure": "cdk2_cs3_4EK5.pdb",
+    "pdb_id": "4EK5",
+    "sha256": "b36d1523603de7f2c598e54ee70a40371f7b52a40deb190d639a1ac2b6abe689",
+    "source": "https://files.rcsb.org/download/4EK5.pdb",
+    "ligand_resname": "CS3",
+    "paper_data": "https://bsma.pdbj.org/entry/27"
+  },
+  "input_manifest_sha256": "3bce874b9ff4971c20756e8612cc0d1ee9a7faed3aedd36e7156703084a81537",
+  "records": [
+    {
+      "config": "config_A_reference.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "paper_reference",
+        "source": "paper",
+        "engine": "gromacs-4.6.5-modified",
+        "timestep_fs": 2,
+        "temperature_K": 298,
+        "pressure_bar": 1,
+        "cutoff_A": 10,
+        "electrostatics": "PME",
+        "constraints": "P-LINCS",
+        "equilibration_ps": {
+          "nvt": 100,
+          "npt": 100
+        },
+        "production_ns": 100,
+        "restraints": false
+      },
+      "reference_keys": [
+        "constraints",
+        "cutoff_A",
+        "electrostatics",
+        "engine",
+        "equilibration",
+        "missing",
+        "pressure_coupling",
+        "production",
+        "temperature_coupling",
+        "timestep_fs"
+      ]
+    },
+    {
+      "config": "config_B_agent.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "agent_generated",
+        "source": "agent",
+        "engine": "gromacs",
+        "timestep_fs": 2,
+        "temperature_K": 298,
+        "pressure_bar": 1,
+        "cutoff_A": 10,
+        "electrostatics": "PME",
+        "constraints": "P-LINCS",
+        "equilibration_ps": {
+          "nvt": 100,
+          "npt": 100
+        },
+        "production_ns": 100,
+        "restraints": false
+      },
+      "reference_keys": [
+        "constraints",
+        "cutoff_A",
+        "electrostatics",
+        "engine",
+        "equilibration",
+        "missing",
+        "pressure_coupling",
+        "production",
+        "temperature_coupling",
+        "timestep_fs"
+      ]
+    },
+    {
+      "config": "config_C_alternative.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "supported_alternative",
+        "source": "agent_alternative",
+        "engine": "openmm",
+        "timestep_fs": 2,
+        "temperature_K": 298,
+        "pressure_bar": 1,
+        "cutoff_A": 10,
+        "electrostatics": "PME",
+        "constraints": "HBonds",
+        "equilibration_ps": {
+          "nvt": 100,
+          "npt": 100
+        },
+        "production_ns": 0.01,
+        "restraints": false
+      },
+      "reference_keys": [
+        "constraints",
+        "cutoff_A",
+        "electrostatics",
+        "engine",
+        "equilibration",
+        "missing",
+        "pressure_coupling",
+        "production",
+        "temperature_coupling",
+        "timestep_fs"
+      ]
+    },
+    {
+      "config": "config_D_perturbed.json",
+      "status": "FAIL",
+      "errors": [
+        "timestep deviates from reported 2 fs"
+      ],
+      "parameters": {
+        "name": "deliberately_perturbed",
+        "source": "fault_injection",
+        "engine": "gromacs",
+        "timestep_fs": 5,
+        "temperature_K": 310,
+        "pressure_bar": 1,
+        "cutoff_A": 10,
+        "electrostatics": "PME",
+        "constraints": "P-LINCS",
+        "equilibration_ps": {
+          "nvt": 100,
+          "npt": 100
+        },
+        "production_ns": 100,
+        "restraints": false
+      },
+      "reference_keys": [
+        "constraints",
+        "cutoff_A",
+        "electrostatics",
+        "engine",
+        "equilibration",
+        "missing",
+        "pressure_coupling",
+        "production",
+        "temperature_coupling",
+        "timestep_fs"
+      ]
+    }
+  ],
+  "scope": "paper protocol reconstruction; not outcome qualification"
+}

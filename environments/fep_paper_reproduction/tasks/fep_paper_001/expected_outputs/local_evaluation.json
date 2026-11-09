@@ -1,0 +1,138 @@
+{
+  "task": "fep_paper_001",
+  "input_manifest": {
+    "target": "CDK2",
+    "pdb_id": "1H1Q",
+    "source_pdb": "https://files.rcsb.org/download/1H1Q.pdb",
+    "code_repository": "https://github.com/shansun7994/Alchaware_v5.0",
+    "required_inputs": [
+      "ligand_a.sdf",
+      "ligand_b.sdf",
+      "atom_map.json",
+      "complex_topology",
+      "solvent_topology"
+    ],
+    "status": "needs_pinned_edge_inputs"
+  },
+  "input_manifest_sha256": "492efb70892965a8d711b764200fe40fd7d1031286707b6eff0359217bb7f4d9",
+  "records": [
+    {
+      "config": "config_A_reference.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "paper_reference",
+        "source": "paper",
+        "engine": "openmm-7.2",
+        "ligand_forcefield": "GAFF-2.11",
+        "charge_method": "AM1-BCC",
+        "legs": [
+          "complex",
+          "solvent"
+        ],
+        "mapping": "MCS",
+        "lambda_windows": "paper/SI required",
+        "production_ns": "paper/SI required"
+      },
+      "reference_keys": [
+        "charge_methods",
+        "engine",
+        "legs",
+        "ligand_forcefield",
+        "mapping",
+        "minimization",
+        "missing",
+        "toolkit"
+      ]
+    },
+    {
+      "config": "config_B_agent.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "agent_generated",
+        "source": "agent",
+        "engine": "openmm",
+        "ligand_forcefield": "GAFF-2.11",
+        "charge_method": "AM1-BCC",
+        "legs": [
+          "complex",
+          "solvent"
+        ],
+        "mapping": "agent-derived MCS",
+        "lambda_windows": "agent-derived",
+        "production_ns": "agent-budget"
+      },
+      "reference_keys": [
+        "charge_methods",
+        "engine",
+        "legs",
+        "ligand_forcefield",
+        "mapping",
+        "minimization",
+        "missing",
+        "toolkit"
+      ]
+    },
+    {
+      "config": "config_C_alternative.json",
+      "status": "REVIEW",
+      "errors": [],
+      "parameters": {
+        "name": "supported_alternative",
+        "source": "agent_alternative",
+        "engine": "openmm",
+        "ligand_forcefield": "GAFF-2.11",
+        "charge_method": "RESP",
+        "legs": [
+          "complex",
+          "solvent"
+        ],
+        "mapping": "same frozen map",
+        "lambda_windows": "same frozen map",
+        "production_ns": "same budget"
+      },
+      "reference_keys": [
+        "charge_methods",
+        "engine",
+        "legs",
+        "ligand_forcefield",
+        "mapping",
+        "minimization",
+        "missing",
+        "toolkit"
+      ]
+    },
+    {
+      "config": "config_D_perturbed.json",
+      "status": "FAIL",
+      "errors": [
+        "invalid FEP legs or atom mapping"
+      ],
+      "parameters": {
+        "name": "deliberately_perturbed",
+        "source": "fault_injection",
+        "engine": "openmm",
+        "ligand_forcefield": "GAFF-2.11",
+        "charge_method": "AM1-BCC",
+        "legs": [
+          "complex"
+        ],
+        "mapping": "missing atom",
+        "lambda_windows": "duplicate lambda",
+        "production_ns": "shortened"
+      },
+      "reference_keys": [
+        "charge_methods",
+        "engine",
+        "legs",
+        "ligand_forcefield",
+        "mapping",
+        "minimization",
+        "missing",
+        "toolkit"
+      ]
+    }
+  ],
+  "scope": "paper protocol reconstruction; not outcome qualification"
+}
