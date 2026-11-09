@@ -2,8 +2,8 @@
 
 **Task:** `task_001_d2r_peripheral_candidate_prioritisation`
 **Reference paper:** Kim S, Jo WH, Cha JO, Kim M-S (2026) *PLOS ONE* 21(8): e0355997, DOI 10.1371/journal.pone.0355997
-**Agent run:** Boltzmann-platform execution, deliverables preserved unchanged in `results/task_001_d2r_peripheral_candidate_prioritisation/submitted/`
-**Comparison date:** 2026-11-09 · Source tables: `benchmark_results/compound_comparison.csv` (all 400 records), `metrics.json`
+**Agent run:** Boltzmann-platform execution, result files preserved unchanged in `results/task_001_d2r_peripheral_candidate_prioritisation/`
+**Comparison date:** 2026-11-09
 
 **Reading rules.** Vina scores are kcal/mol. The agent's affinity-model scores are unitless model outputs. DiffDock confidence is a pose-quality score. Values from different scales must not be subtracted, averaged or treated as calibrated equivalents. Overlap counts describe selection agreement between two computational workflows, not biological accuracy.
 
@@ -84,4 +84,4 @@ Moderate paper-vs-agent Vina agreement is expected across different receptor pre
 
 ## Verdict
 
-The agent's execution is numerically verified and reproducible from its stated primary model, with materially better docking coverage than the paper (400 vs 226) and multi-method cross-checks. Its final peripheral-restriction conclusion is unsupported because the decisive endpoint was misinterpreted. Selection overlap with the paper is zero at both stages — a consequence of different primary scores, different reference anchors and different (or invalidated) brain-access criteria, not of execution failure. Full finding detail: `results/…/evaluation_report.md`; full-precision tables: `benchmark_results/`.
+The agent's execution is numerically verified and reproducible from its stated primary model, with materially better docking coverage than the paper (400 vs 226) and multi-method cross-checks. Its final peripheral-restriction conclusion is unsupported because the decisive endpoint was misinterpreted. Selection overlap with the paper is zero at both stages — a consequence of different primary scores, different reference anchors and different (or invalidated) brain-access criteria, not of execution failure. Full finding detail: [`FINAL_REPORT.md`](../FINAL_REPORT.md).

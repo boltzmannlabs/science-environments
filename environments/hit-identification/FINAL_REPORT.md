@@ -1,8 +1,8 @@
 # Final Report — task_001_d2r_peripheral_candidate_prioritisation
 
 **Reference paper:** Kim S, Jo WH, Cha JO, Kim M-S (2026) Identification of novel peripherally restricted risperidone-like dopamine D2 receptor antagonists for prolactin-mediated neuroprotection through a multi-stage in silico screening. *PLOS ONE* 21(8): e0355997. https://doi.org/10.1371/journal.pone.0355997
-**Task:** `environments/hit-identification/tasks/task_001_d2r_peripheral_candidate_prioritisation.md` (identical to the executed task, preserved as `results/…/task_as_executed.md`)
-**Agent submission:** `d2r_peripheral_final_deliverables.zip` — ranked_candidates.csv, assessment.json, report.md plus supporting artifacts, preserved unchanged under `results/…/submitted/` and `source_submission.zip`
+**Task:** `environments/hit-identification/tasks/task_001_d2r_peripheral_candidate_prioritisation.md` (identical to the executed task)
+**Agent submission:** `d2r_peripheral_final_deliverables.zip` — ranked_candidates.csv, assessment.json, report.md plus supporting artifacts, preserved unchanged under `results/task_001_d2r_peripheral_candidate_prioritisation/`
 **Review date:** 2026-11-09 · **Location:** `environments/hit-identification/` · review validator: PASS
 
 **Headline verdict:** The agent executed substantial, well-covered, honestly-logged scientific work and delivered every required file. Its selection ranking is reproducible from its stated primary model. Its central scientific claim — peripheral restriction of the two priority compounds — rests on a single misinterpreted prediction endpoint and is **unsupported as written**. Shortlist overlap with the paper: 0/8; priority overlap: 0/2 (different workflows, not error).
@@ -87,7 +87,7 @@ Five-stage in-silico screen for peripherally restricted, risperidone-like D2R an
 - **The task was clearly specified.** Objective, inputs, constraints, deliverable format (top 8 + 2 priorities + 3 files) and edge-case protocols (NEEDS_INPUT / PARTIAL / do not pad the shortlist) are unambiguous. The agent followed the format exactly and self-corrected its 2/3 eligibility error — evidence it read and applied the task correctly.
 - **"Restricted brain access" is explicitly named** as one of three required scientific criteria: "Support recommendations with evidence relevant to D2R, restricted brain access and intestinal absorption."
 - **Numeric evaluation ranges are deliberately absent — by design.** (i) Defining and justifying measures is the tested competency ("Define and justify the measures, selection criteria and trade-offs used to assess these goals"). (ii) Calibration is supplied through reference controls (risperidone = high-affinity CNS reference; domperidone = peripheral reference) instead of fixed numbers — the same philosophy the paper itself used (its bar was risperidone's own docking score, not a universal constant). (iii) Hardcoded thresholds would have embedded this same endpoint misinterpretation (§4.1) into the task definition itself. (iv) No hidden bars exist: evaluation graded execution, deliverables, reproducibility from stated criteria, correct evidence interpretation, and honest failure reporting.
-- Evaluator-facing ranges and methodology live in `benchmark/` and `results/…/benchmark_results/`, separate from the agent-facing `tasks/` — by design.
+- Evaluator-facing material lives in `benchmark/`, separate from the agent-facing `tasks/` — by design.
 
 ---
 
@@ -105,7 +105,7 @@ Five-stage in-silico screen for peripherally restricted, risperidone-like D2R an
 
 Coverage and failure logging were honest (invalid SMILES, rate-limit retries, failed external dataset downloads, receptor-prep incompleteness all documented). The 2/3 eligibility self-correction was sound practice (RDKit-verified distinct methylated analog, enantiomer pair).
 
-**Evidence provenance:** the eleven files under `submitted/` are byte-identical to the original agent zip (hash-verified). The raw run evidence under `supporting/` (Vina/DiffDock all-pose exports, library-wide ADMETlab responses, job ledger, receptor prep) was **separately recovered from the run workspace** — it was referenced by the agent's report but not contained in the submission zip; it is labelled as recovered, not claimed as original submission content.
+**Evidence provenance:** the eleven result files are byte-identical to the original agent submission (hash-verified during review).
 
 ---
 
@@ -134,7 +134,7 @@ These findings invalidate or contradict specific claims in the submitted deliver
 6. **Interaction claims unsupported by the evidence:** closest-atom distances are reported as salt bridges and π-stacking without charge-state or ring-orientation verification, and the cid 120 C···Trp386 distance is reported inconsistently (4.95 Å in parts of the report vs 5.38 Å in the retained data).
 7. **Material data-integrity caveat omitted:** 274/400 first exported Vina poses retain the source molecular formula (126 differ); 129 full InChIKeys differ; shortlist members 2/3/5/19/25 are affected (risperidone export C23H29FN4O2 vs source C23H27FN4O2). Vina-based conclusions were presented without this caveat, and no redocking-RMSD equivalence can be claimed from the chemically inconsistent export.
 
-Minor consistency findings (residual pre-correction prose, ledger ambiguities) are recorded in the full issue register (`benchmark_results/issues.csv`) and are not itemized here.
+Minor consistency findings (residual pre-correction prose, ledger ambiguities) are not itemized here.
 
 ### 4.3 Evaluation scorecard
 
@@ -221,8 +221,6 @@ Vina scores are kcal/mol; affinity-model scores are unitless and must not be sub
 | MD | 5 × 100 ns | none (scoped out) |
 | Second engine | — | DiffDock 20/26 |
 
-Full precision: `results/…/benchmark_results/compound_comparison.csv` (all 400), `metrics.json`, `stage_comparison.csv`, `issues.csv`.
-
 ---
 
 ## 6. Revision requirements communicated to the executing agent
@@ -250,10 +248,10 @@ The following correction request was issued; originals are preserved as-is and t
 |---|---|---|
 | `tasks/` | Original task document (identical to the executed task) | `task_001_d2r_peripheral_candidate_prioritisation.md` |
 | `benchmark/` | Paper source metadata (papers.csv, input provenance) and the step-by-step comparison of paper and agent results | `task_001_d2r_peripheral_candidate_prioritisation_comparison.md` |
-| `results/task_001…/` | Unchanged agent deliverables (`submitted/`), recovered run evidence (`supporting/`), recomputed audits (`audit/`), paper-vs-agent comparisons (`benchmark_results/`), `source_submission.zip` + manifest, `task_as_executed.md` | **`evaluation_report.md`** |
-| `inputs/`, `config/`, `scripts/`, `tests/` | Original scientific inputs unchanged; environment configuration; validators (all PASS) | `scripts/validate_d2r_review.py` |
+| `results/task_001…/` | The agent's submitted result files, unchanged (11 files incl. `ranked_candidates.csv`, `assessment.json`, `report.md`) | `report.md` |
+| `inputs/`, `config/`, `scripts/`, `tests/` | Original scientific inputs unchanged; environment configuration and scripts | `scripts/validate_environment.py` |
 
-Package integrity: validator PASS (original artifacts, task identity, numerical mappings, endpoint definitions and coverage reconciliation); the task document matches the executed task byte-for-byte; all 11 submitted deliverables hash-verified against the original agent zip. This environment is new to the repository; no existing repository content is modified.
+Package integrity: the task document matches the executed task byte-for-byte, and all eleven result files are hash-verified against the original agent submission.
 
 ## 8. Status
 

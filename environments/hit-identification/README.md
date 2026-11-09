@@ -6,7 +6,7 @@ Tasks for prioritising small-molecule candidates from supplied libraries. The ex
 | --- | --- | --- |
 | `tasks/` | Scientific objective, inputs, constraints and expected outputs | [Task](tasks/task_001_d2r_peripheral_candidate_prioritisation.md) |
 | `benchmark/` | Paper source metadata and the step-by-step comparison of paper and agent results | [Comparison](benchmark/task_001_d2r_peripheral_candidate_prioritisation_comparison.md) |
-| `results/` | Experiment outputs, benchmark results, execution records and evaluation reports | [Workflow, results and paper comparison](results/task_001_d2r_peripheral_candidate_prioritisation/evaluation_report.md) |
+| `results/` | The agent's submitted result files, unchanged | [Agent report](results/task_001_d2r_peripheral_candidate_prioritisation/report.md) |
 
 The original task and input bundle are unchanged. Give future execution agents only the selected task and `inputs/`; benchmark reference outcomes and previous results are evaluator material.
 
