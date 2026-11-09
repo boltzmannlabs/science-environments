@@ -1,62 +1,47 @@
-# Science Environments
+# Boltsim simulation-agent environments
 
-Scientific environment specifications, research, workflows, and implementations for the Agent Scientist ecosystem.
+`Boltsim` is the simulation-focused branch of Science-Environments. It
+contains seven executable specialist environment families and their uniform
+portable subagent packages. Unrelated pod environments are intentionally not
+included on this branch.
 
-Research notes and sources are organized by environment in `research/`. Environment requirements, configuration, tasks, and applicable tests are organized in `environments/`.
+## Included environments
 
-## Repository structure
+| Module | Environment | Scope |
+| --- | --- | --- |
+| SPE | `environments/spe_agents/` | Single-point energy execution and recovery |
+| Geo-Opt | `environments/geo_opt_agents/` | Geometry optimization and minimum verification |
+| HOMO–LUMO | `environments/homo_lumo_agents/` | Frontier-orbital and electronic-state analysis |
+| QM/MM | `environments/qmmm_agents/` | QM-region, boundary, embedding, and coupling validation |
+| FEP/TI | `environments/fep_ti_agents/` | Alchemical setup, sampling, estimation, and qualification |
+| MD | `environments/md_agents/` | Atomistic molecular-dynamics execution, analysis, and recovery |
+| Coarse-grained MD | `environments/coarse_grained_md/` | Mapping, CG simulation, and structural/thermodynamic validation |
+
+The portable contribution packages in `subagent-catalog/` mirror the three
+simulation families currently prepared for the contribution workflow: MD,
+coarse-grained MD, and FEP/TI. The other four module environments retain their
+native contracts and tests and can be packaged using the same template.
+
+## Research and evidence
+
+The [research index](research/README.md) records the scientific scope,
+references, and qualification boundaries for the retained modules. Environment
+README files contain their exact commands, inputs, tests, and evidence status.
+Results marked `REVIEW` are not production-qualified claims.
+
+## Contribution layout
+
+Each portable package follows:
 
 ```text
-science-environments/
+subagent-catalog/<module>/
+├── manifest.yaml
+├── instructions.md
 ├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── research/
-│   ├── README.md
-│   ├── scRNAseq-environment/
-│   │   ├── research-notes.md
-│   │   └── references.md
-│   ├── synthesis-route-gym/
-│   │   ├── research-notes.md
-│   │   └── references.md
-│   └── sirna-designing-harness/
-│       ├── research-notes.md
-│       └── references.md
-├── environments/
-│   ├── scRNAseq-environment/
-│   │   ├── README.md
-│   │   ├── ENVIRONMENT_SPEC.md
-│   │   ├── config/
-│   │   ├── tasks/
-│   │   └── tests/
-│   ├── synthesis-route-gym/
-│   │   ├── README.md
-│   │   ├── ENVIRONMENT_SPEC.md
-│   │   ├── STATUS.md
-│   │   ├── config/
-│   │   ├── tasks/
-│   │   └── tests/
-│   └── sirna-designing-harness/
-│       ├── README.md
-│       ├── ENVIRONMENT_SPEC.md
-│       ├── STATUS.md
-│       ├── config/
-│       ├── tasks/
-│       ├── tests/
-│       ├── scripts/
-│       ├── skills/
-│       ├── benchmark/
-│       └── results/
-├── docs/
-│   └── decisions/
-└── .github/
-    └── PULL_REQUEST_TEMPLATE.md
+├── skills/<skill>/SKILL.md
+└── tests/{sample.json,expected.json,validation.json}
 ```
 
-Each environment has its own folder. Research notes and references are maintained in the matching `research/<environment-name>/` directory and linked from its README.
-
-Start with the [research index](research/README.md), [scRNA-seq environment](environments/scRNAseq-environment/README.md), [synthesis route environment](environments/synthesis-route-gym/README.md), or [siRNA Designing Harness](environments/sirna-designing-harness/README.md). The siRNA contribution is In Progress: portable technical checks are implemented; scientific deployment, independent efficacy validation and maintainer review remain separate requirements.
-
-Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection is pending in [LICENSE](LICENSE).
-
-Reserved empty directories use `.gitkeep` files so they appear on GitHub. Environment status and evidence should match the linked documents.
+Do not add credentials, installed environments, private datasets, generated
+trajectories, or machine-specific paths. Follow
+[CONTRIBUTING.md](CONTRIBUTING.md) for issue, branch, test, and PR workflow.
