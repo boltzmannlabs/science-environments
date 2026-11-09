@@ -1,0 +1,45 @@
+PBMC 3K cluster annotation report
+
+
+Cells: 2595; genes: 13714; clusters: 10. Input object was not modified.
+Method: Read original AnnData; ranked cluster-vs-rest markers with Scanpy Wilcoxon on supplied log-normalized X (Benjamini-Hochberg adjustment). Reviewed top markers and targeted fractions detected from original counts. Applied joint PBMC lineage signatures and competing-marker checks; cluster IDs have no biological ordering. All cells inherit their cluster annotation. Dot plot displays expression/detection but not a UMAP.
+Evidence here is from the supplied dataset (differential_markers.csv and marker_dotplot.png), interpreted using general cell-marker knowledge; no reference/tutorial labels, external model, or hidden scoring material were used.
+
+Cluster annotations (fractions = cells with detected transcript within the cluster):
+Cluster 0 (n=145): FCGR3A+ NK cells [resolved]
+  Supporting markers: NKG7;GNLY;GZMB;PRF1;KLRD1;FCGR3A;FGFBP2
+  Evidence / conflicts: Strong cytotoxic NK program: NKG7 100%, GNLY 94%, GZMB 98%, FCGR3A 86%; CD3D 11% and CD8A 9% disfavor a T-cell majority.
+Cluster 1 (n=326): Naive-like B cells [resolved]
+  Supporting markers: CD79A;CD79B;MS4A1;TCL1A;FCER2
+  Evidence / conflicts: B-cell program: CD79A 94%, MS4A1 86%, TCL1A 63%, FCER2 enriched; CD27 detected only 11%. Naive-like denotes expression phenotype, not functional verification.
+Cluster 2 (n=13): Platelets [resolved]
+  Supporting markers: PPBP;PF4;GP9;ITGA2B;TUBB1
+  Evidence / conflicts: PPBP and PF4 in 100%, GP9 92%, ITGA2B 85%; small n=13 and lower counts are consistent with platelet profiles. Residual leukocyte signal may reflect ambient RNA/aggregates.
+Cluster 3 (n=22): XCL1+ NK-like cells [tentative]
+  Supporting markers: XCL1;XCL2;KLRC1;NKG7;GNLY
+  Evidence / conflicts: XCL1/XCL2 each 91%, KLRC1 64%, NKG7 100%, GNLY 77% favor an NK-like population; CD3E 59%, CD3D 36%, IL7R 55% conflict with a pure NK assignment. n=22; T/NK mixtures or doublets cannot be excluded.
+Cluster 4 (n=95): GZMK+ T cells [resolved]
+  Supporting markers: CD3D;CD3E;GZMK;CCL5;NKG7;IL7R
+  Evidence / conflicts: CD3D 88%, CD3E 79%, GZMK 93%, CCL5 96%, NKG7 97% identify a GZMK+ T-cell population. CD8A 49%, CD8B 20% and SLC4A10 expression in a minority: CD8/MAIT-like subsets possible but not assigned to the entire cluster.
+Cluster 5 (n=34): CD1C+ conventional dendritic cells [tentative]
+  Supporting markers: FCER1A;CLEC10A;CD1C;HLA-DRA;CD74;CST3
+  Evidence / conflicts: FCER1A 88%, CLEC10A 74%, CD1C 53%, HLA-DRA/CD74 100% favor CD1C+ conventional DC; LYZ 97%, LST1 91%, FCN1 68% are overlapping myeloid signals, CLEC4C occurs in 15%. n=34; mixed myeloid/dendritic states or doublets cannot be excluded.
+Cluster 6 (n=1184): IL7R+ T cells [resolved]
+  Supporting markers: CD3D;CD3E;IL7R;LTB;CCR7;TCF7
+  Evidence / conflicts: CD3D 87%, CD3E 77%, IL7R 66%, LTB 92% support T cells with a less cytotoxic IL7R+ phenotype; CCR7 36%, TCF7 37%, low GZMB 3%. CD4 only 10%, CD8B 17%: CD4/naive subtype is not assigned to all cells.
+Cluster 7 (n=155): Cytotoxic CD8 T cells [resolved]
+  Supporting markers: CD3D;CD3E;CD8A;CD8B;CCL5;NKG7;GZMH
+  Evidence / conflicts: CD3D 91%, CD8A 54%, CD8B 49%, NKG7 99%, CCL5 100%, GZMH 70% support cytotoxic CD8 T cells; some NK-associated transcripts overlap, but CD3D is prevalent.
+Cluster 8 (n=463): CD14+ monocytes [resolved]
+  Supporting markers: CD14;FCN1;S100A8;S100A9;LYZ;LST1
+  Evidence / conflicts: CD14 67%, FCN1 95%, S100A8 97%, S100A9 100%, LYZ 100%, LST1 96% support classical-like CD14+ monocytes; FCGR3A is low (13%).
+Cluster 9 (n=158): FCGR3A+ monocytes [resolved]
+  Supporting markers: FCGR3A;MS4A7;LST1;LYZ;CDKN1C;HES4
+  Evidence / conflicts: FCGR3A 98%, MS4A7 80%, LST1 100%, LYZ 99%, CDKN1C 51%, HES4 61%; CD14 only 15%. Supports CD16+ / non-classical-like monocytes rather than NK cells, but a precise monocyte state is not established.
+
+Uncertainty and limitations:
+- Cell-type assignments are at cluster granularity; individual cells can be misclassified, including doublets and transitional phenotypes. Tentative clusters 3 and 5 contain conflicting signatures; they are not claimed to be purified subsets.
+- Marker enrichment in the same clustering dataset is descriptive, not independent validation. Small cluster sizes, dropout, ambient RNA and possible doublets affect interpretation; no experimental confirmation is provided.
+- No sample/donor covariates, doublet scores, reference model predictions or UMAP coordinates were supplied. The dot plot is not a cell-embedding plot; no cell-level model was run.
+- Wilcoxon tests treat cells as units and may produce extremely small adjusted p-values (including numerical underflow to 0); this is not evidence of independent biological replication. Runtime warnings for zero-variance genes occurred; interpretation uses robust marker combinations and detection proportions, not undefined gene scores.
+- The platelet cluster has only 13 profiles and might include platelet-containing droplets; the label describes the dominant transcript signature rather than confirmed intact cells.

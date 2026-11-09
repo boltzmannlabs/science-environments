@@ -1,0 +1,28 @@
+PBMC 3K unsupervised clustering (no cell-type annotation)
+Cells: 2595; genes: 13714; input HVGs: 2000.
+
+Methods: The input X is preprocessed log-normalized expression; the original X
+and counts layer were retained. The provided HVG subset was centered and
+unit-variance scaled (clipped to +/-10 for PCA only). ARPACK PCA fit 50 PCs.
+A 15-nearest-neighbor graph was constructed using the first 40 PCs and the
+Euclidean metric. Undirected igraph-flavor Leiden was run for two iterations
+at resolution 0.7, random seed 42. UMAP of that graph used minimum distance
+0.5 and seed 42. UMAP axes are visualization coordinates, not independent
+confirmation of cluster separation.
+
+Resolution selection (internal diagnostic only, no labels or reference):
+On the same 40-PC graph, candidate resolutions 0.5, 0.7, 0.9, 1.1, 1.3, 1.5
+were compared using cluster sizes, sampled PC-space silhouette and agreement
+between Leiden seeds 42 and 43. 0.5 gave 7 clusters (sizes 13 to 1172),
+0.7 gave 8 clusters (sizes 13 to 627) with seed ARI ~0.966; 0.9 gave
+8 clusters with seed ARI ~0.859; higher resolutions gave 9-12 clusters,
+including a 3-cell partition at 1.3, and lower seed consistency at 1.5.
+Chosen resolution 0.7 retains two small groups without the large 1172-cell
+cluster or the 3-cell partition. This is a pragmatic unsupervised choice,
+not evidence of a predetermined cell-type count. Actual selected-run
+seed ARI: 0.966; PC-space silhouette (1500-cell random sample): 0.097.
+
+Cluster sizes (cell counts): 0: 565, 1: 325, 2: 460, 3: 410, 4: 627, 5: 163, 6: 32, 7: 13.
+Limitations: no cell-type labels assigned, no external reference used, and
+cluster stability across independent biological samples is not established.
+The smallest clusters merit follow-up examination for technical artifacts.

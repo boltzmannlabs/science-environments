@@ -1,0 +1,299 @@
+{
+ "task_id": "pbmc3k_end_to_end",
+ "reference": "v3 run (Scanpy 1.12.5) plus manual NK/CD8 split; curated baseline, not independently reviewed ground truth",
+ "graders": [
+  {
+   "name": "qc",
+   "weight": 0.2,
+   "params": {
+    "required_file": null,
+    "input_cells": {
+     "mode": "exact",
+     "value": 2700
+    },
+    "qc_passing_cells": {
+     "mode": "range",
+     "min": 2400,
+     "max": 2690
+    },
+    "retained_cells": {
+     "mode": "range",
+     "min": 2400,
+     "max": 2690
+    },
+    "doublets_removed": {
+     "mode": "range",
+     "min": 0,
+     "max": 150
+    },
+    "genes_after_filter": {
+     "mode": "range",
+     "min": 10000,
+     "max": 33000
+    },
+    "excluded_f1_full_credit": 0.7
+   }
+  },
+  {
+   "name": "normalization",
+   "weight": 0.15,
+   "params": {
+    "required_file": null,
+    "h5ad_names": [
+     "pbmc3k_normalized.h5ad",
+     "pbmc3k_processed.h5ad"
+    ],
+    "cell_coverage_min": 0.9,
+    "n_genes_input": 13714,
+    "min_gene_fraction": 0.6,
+    "counts_median_total": 2209.0,
+    "counts_median_tol": 0.1,
+    "lognorm": {
+     "tolerance": 0.01,
+     "min_fraction_cells": 0.95
+    },
+    "n_hvgs_range": [
+     500,
+     6000
+    ],
+    "hvg_ref_recall_min": 0.6,
+    "top10": [
+     "PPBP",
+     "LYZ",
+     "S100A9",
+     "IGLL5",
+     "GNLY",
+     "FTL",
+     "PF4",
+     "FTH1",
+     "GNG11",
+     "S100A8"
+    ]
+   }
+  },
+  {
+   "name": "clustering",
+   "weight": 0.2,
+   "params": {
+    "required_file": null,
+    "weights": {
+     "valid_assignments": 0.1,
+     "lineage_homogeneity": 0.4,
+     "lineage_majority_macro_recall": 0.5
+    },
+    "homogeneity": {
+     "floor": 0.5,
+     "full": 0.95
+    },
+    "majority_recall": {
+     "floor": 0.5,
+     "full": 0.95
+    }
+   }
+  },
+  {
+   "name": "annotation",
+   "weight": 0.25,
+   "params": {
+    "required_file": null,
+    "unresolved_partial_credit": 0.5,
+    "weights": {
+     "lineage_macro_recall": 0.5,
+     "lineage_macro_precision": 0.15,
+     "subtype_credit": 0.25,
+     "evidence": 0.1
+    },
+    "canonical": {
+     "T": [
+      "CD3D",
+      "CD3E",
+      "IL7R",
+      "IL32",
+      "CD2",
+      "LTB",
+      "LDHB",
+      "TCF7",
+      "CCR7",
+      "LEF1",
+      "CD8A"
+     ],
+     "NK": [
+      "GNLY",
+      "NKG7",
+      "GZMB",
+      "PRF1",
+      "FGFBP2",
+      "FCGR3A",
+      "CTSW",
+      "KLRD1"
+     ],
+     "B": [
+      "MS4A1",
+      "CD79A",
+      "CD79B",
+      "CD74",
+      "HLA-DRA",
+      "CD37"
+     ],
+     "Monocyte": [
+      "LYZ",
+      "S100A8",
+      "S100A9",
+      "FCN1",
+      "LST1",
+      "CST3",
+      "CD14",
+      "AIF1"
+     ],
+     "DC": [
+      "FCER1A",
+      "CD1C",
+      "CLEC10A",
+      "HLA-DPB1",
+      "HLA-DPA1",
+      "CST3"
+     ],
+     "Platelet": [
+      "PPBP",
+      "PF4",
+      "GNG11",
+      "SDPR",
+      "NRGN",
+      "SPARC"
+     ]
+    }
+   }
+  },
+  {
+   "name": "markers",
+   "weight": 0.1,
+   "params": {
+    "mode": "majority",
+    "top_n": 25,
+    "min_hits": 2,
+    "min_purity": 0.5,
+    "expected": {
+     "T": [
+      "CD3D",
+      "CD3E",
+      "IL7R",
+      "IL32",
+      "CD2",
+      "LTB",
+      "LDHB",
+      "TCF7",
+      "CCR7",
+      "LEF1",
+      "CD8A"
+     ],
+     "NK": [
+      "GNLY",
+      "NKG7",
+      "GZMB",
+      "PRF1",
+      "FGFBP2",
+      "FCGR3A",
+      "CTSW",
+      "KLRD1"
+     ],
+     "B": [
+      "MS4A1",
+      "CD79A",
+      "CD79B",
+      "CD74",
+      "HLA-DRA",
+      "CD37"
+     ],
+     "Monocyte": [
+      "LYZ",
+      "S100A8",
+      "S100A9",
+      "FCN1",
+      "LST1",
+      "CST3",
+      "CD14",
+      "AIF1"
+     ],
+     "DC": [
+      "FCER1A",
+      "CD1C",
+      "CLEC10A",
+      "HLA-DPB1",
+      "HLA-DPA1",
+      "CST3"
+     ],
+     "Platelet": [
+      "PPBP",
+      "PF4",
+      "GNG11",
+      "SDPR",
+      "NRGN",
+      "SPARC"
+     ]
+    }
+   }
+  },
+  {
+   "name": "report",
+   "weight": 0.1,
+   "params": {
+    "items": {
+     "states_qc_thresholds": "(min(imum)?[_ ]?genes|max(imum)?[_ ]?genes|genes per cell|n_genes|mito|mitochond|percent[_ ]mt|pct[_ ]counts[_ ]mt|threshold|filter(ed|ing))",
+     "states_doublet_handling": "(scrublet|doublet)",
+     "states_normalization": "(log1p|log[- ]?normali[sz]|target[_ ]sum|normali[sz]|scran|size factor|cpm)",
+     "states_hvg_method": "(highly[- ]variable|\\bhvgs?\\b|seurat[_ ]?v3|variable genes)",
+     "states_clustering_method": "(leiden|louvain|k-?means|hierarchical|graph[- ]based clustering)",
+     "cites_marker_genes": "count_distinct_markers>=8",
+     "states_uncertainty": "(uncertain|ambiguous|limitation|caveat|low[- ]confidence|heterogeneous|unresolved|tentative|not (independently )?validated)",
+     "states_predictions_not_ground_truth": "(not (independently )?validated|prediction|putative|computational)"
+    },
+    "canonical_genes": [
+     "AIF1",
+     "CCR7",
+     "CD14",
+     "CD1C",
+     "CD2",
+     "CD37",
+     "CD3D",
+     "CD3E",
+     "CD74",
+     "CD79A",
+     "CD79B",
+     "CD8A",
+     "CLEC10A",
+     "CST3",
+     "CTSW",
+     "FCER1A",
+     "FCGR3A",
+     "FCN1",
+     "FGFBP2",
+     "GNG11",
+     "GNLY",
+     "GZMB",
+     "HLA-DPA1",
+     "HLA-DPB1",
+     "HLA-DRA",
+     "IL32",
+     "IL7R",
+     "KLRD1",
+     "LDHB",
+     "LEF1",
+     "LST1",
+     "LTB",
+     "LYZ",
+     "MS4A1",
+     "NKG7",
+     "NRGN",
+     "PF4",
+     "PPBP",
+     "PRF1",
+     "S100A8",
+     "S100A9",
+     "SDPR",
+     "SPARC",
+     "TCF7"
+    ]
+   }
+  }
+ ]
+}
