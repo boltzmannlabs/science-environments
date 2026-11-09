@@ -247,7 +247,7 @@ The following correction request was issued; originals are preserved as-is and t
 | Folder | Contents | Entry point |
 |---|---|---|
 | `tasks/` | Original task document (identical to the executed task) | `task_001_d2r_peripheral_candidate_prioritisation.md` |
-| `benchmark/` | Paper source metadata (papers.csv, input provenance) and the step-by-step comparison of paper and agent results | `task_001_d2r_peripheral_candidate_prioritisation_comparison.md` |
+| `benchmark/` | Published paper results, evaluation criteria and the agent results, in the repository benchmark format | `task_001_d2r_peripheral_candidate_prioritisation.md` |
 | `results/task_001…/` | The agent's submitted result files, unchanged (11 files incl. `ranked_candidates.csv`, `assessment.json`, `report.md`) | `report.md` |
 | `inputs/`, `config/`, `scripts/`, `tests/` | Original scientific inputs unchanged; environment configuration and scripts | `scripts/validate_environment.py` |
 
