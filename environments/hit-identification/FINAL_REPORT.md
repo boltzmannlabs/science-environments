@@ -249,7 +249,7 @@ The following correction request was issued; originals are preserved as-is and t
 | Folder | Contents | Entry point |
 |---|---|---|
 | `tasks/` | Original task document (identical to the executed task) | `task_001_d2r_peripheral_candidate_prioritisation.md` |
-| `benchmark/` | Paper reference (PDF, article.xml, S1/S2/S5 xlsx, tables), evaluation method, papers.csv | `task_001_d2r_peripheral_candidate_prioritisation.md` |
+| `benchmark/` | Paper source metadata (papers.csv, input provenance) and the step-by-step comparison of paper and agent results | `task_001_d2r_peripheral_candidate_prioritisation_comparison.md` |
 | `results/task_001…/` | Unchanged agent deliverables (`submitted/`), recovered run evidence (`supporting/`), recomputed audits (`audit/`), paper-vs-agent comparisons (`benchmark_results/`), `source_submission.zip` + manifest, `task_as_executed.md` | **`evaluation_report.md`** |
 | `inputs/`, `config/`, `scripts/`, `tests/` | Original scientific inputs unchanged; environment configuration; validators (all PASS) | `scripts/validate_d2r_review.py` |
 
