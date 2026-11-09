@@ -4,17 +4,25 @@
     "target": "CDK2",
     "pdb_id": "1H1Q",
     "source_pdb": "https://files.rcsb.org/download/1H1Q.pdb",
+    "local_pdb": "inputs/cdk2_1H1Q.pdb",
+    "pdb_sha256": "21dc4df2252e8ffbd572e906d05603fb50a2ccd338c366123984d1c099e66586",
     "code_repository": "https://github.com/shansun7994/Alchaware_v5.0",
+    "selected_edge": {
+      "ligand_a": "17",
+      "ligand_b": "1h1q",
+      "direction": "17->1h1q"
+    },
     "required_inputs": [
-      "ligand_a.sdf",
-      "ligand_b.sdf",
+      "ligand_a_structure",
+      "ligand_b_structure",
       "atom_map.json",
-      "complex_topology",
-      "solvent_topology"
+      "complex_endpoint_topology",
+      "solvent_endpoint_topology",
+      "lambda_window_trajectories"
     ],
-    "status": "needs_pinned_edge_inputs"
+    "status": "edge_pinned_endpoint_parameterization_pending"
   },
-  "input_manifest_sha256": "492efb70892965a8d711b764200fe40fd7d1031286707b6eff0359217bb7f4d9",
+  "input_manifest_sha256": "690ac7841bf016da51a76ee0a5c091521d191f95e3e5ffe1637feec5f21a6a8c",
   "records": [
     {
       "config": "config_A_reference.json",

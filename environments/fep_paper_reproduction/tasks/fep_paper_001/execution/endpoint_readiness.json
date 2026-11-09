@@ -1,0 +1,29 @@
+{
+  "status": "REVIEW",
+  "selected_edge": {
+    "ligand_a": "17",
+    "ligand_b": "1h1q",
+    "direction": "17->1h1q",
+    "source_file": "inputs/source_cdk2/cdk2_pairs.txt",
+    "source_line": 2,
+    "net_charge_a": 0,
+    "net_charge_b": 0
+  },
+  "checks": {
+    "selected_edge_pinned": true,
+    "protein_structure_present": true,
+    "ligand_source_present": true,
+    "source_protocol_present": true,
+    "atom_map_present": true,
+    "complex_endpoint_topology_present": false,
+    "solvent_endpoint_topology_present": false,
+    "lambda_trajectories_present": false
+  },
+  "missing": [
+    "complex_endpoint_topology_present",
+    "solvent_endpoint_topology_present",
+    "lambda_trajectories_present"
+  ],
+  "scientific_claim": "No production FEP claim; readiness gate only",
+  "pdb_sha256": "21dc4df2252e8ffbd572e906d05603fb50a2ccd338c366123984d1c099e66586"
+}

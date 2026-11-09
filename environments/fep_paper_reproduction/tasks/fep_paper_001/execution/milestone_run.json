@@ -1,0 +1,20 @@
+{
+  "task": "fep_paper_001",
+  "selected_edge": "17->1h1q",
+  "config_b_reconstruction": "PASS: 20/20 explicit source-protocol checks",
+  "source_inputs": "PASS: pinned CDK2 source artifacts and hashes",
+  "ligand_materialization": "PASS: 45-atom endpoint MOL2/SDF files generated",
+  "mapping": "REVIEW: 44-atom constrained MCS; stereochemistry and alchemical topology still require review",
+  "endpoint_preparation": "REVIEW: complex and solvent endpoint topologies are not present",
+  "production_execution": "REVIEW: no lambda-window trajectories or replica metadata",
+  "scientific_qualification": "REVIEW",
+  "claim": "Protocol reconstruction and setup-readiness evidence only; no production ΔΔG claim",
+  "commands": [
+    "scripts/materialize_edge_inputs.py",
+    "scripts/generate_mcs_mapping.py",
+    "scripts/reconstruct_config_b.py",
+    "evaluation/compare_config_b.py",
+    "scripts/check_endpoint_readiness.py",
+    "pytest tests"
+  ]
+}
