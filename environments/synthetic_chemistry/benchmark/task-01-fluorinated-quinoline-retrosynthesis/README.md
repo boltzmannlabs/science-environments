@@ -21,4 +21,4 @@ The literature 32% isolated deprotection yield belongs to a different compound. 
 
 ## Reproduce
 
-From the repository root, run `python environments/retro_environment/scripts/build_comparisons.py` and `python -m unittest discover -s environments/retro_environment/tests -v`. No external service is contacted. Tests assess data consistency, not chemistry or literature ground truth.
+From the repository root, run `python environments/synthetic_chemistry/scripts/build_comparisons.py` and `python -m unittest discover -s environments/synthetic_chemistry/tests -v`. No external service is contacted. Tests assess data consistency, not chemistry or literature ground truth.

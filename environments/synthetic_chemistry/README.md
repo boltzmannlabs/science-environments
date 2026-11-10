@@ -1,4 +1,4 @@
-# Retro Environment — target-specific route audit
+# Synthetic Chemistry — target-specific route audit
 
 Research-prototype environment for auditing computational retrosynthesis of the target
 `CC1=C(C=C2C=CC(=C(C2=N1)F)F)OC3=C(C(=CC=C3)F)C(C)(C)O`.
@@ -32,14 +32,14 @@ Use the same `task-NN-descriptive-topic` name in all three sections for each fut
 From the repository root:
 
 ```sh
-python -m unittest discover -s environments/retro_environment/tests -v
-python environments/retro_environment/scripts/derive_routes.py --input /path/to/authorized-scored-paths.json --output /path/to/derived-summary.json
+python -m unittest discover -s environments/synthetic_chemistry/tests -v
+python environments/synthetic_chemistry/scripts/derive_routes.py --input /path/to/authorized-scored-paths.json --output /path/to/derived-summary.json
 ```
 
 The raw export is intentionally excluded. To rebuild the report, create an isolated Python environment and install `python-docx` and `rdkit` there; then run:
 
 ```sh
-python environments/retro_environment/scripts/build_report.py
+python environments/synthetic_chemistry/scripts/build_report.py
 ```
 
 No live Boltzmann job is run by these scripts. See [specification](ENVIRONMENT_SPEC.md) and [tasks](tasks/README.md) for input expectations and reproducibility limits.
