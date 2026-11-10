@@ -8,7 +8,8 @@ Implemented locally on the `Boltsim` branch and committed as `c6a3241`.
 
 - Literature-to-configuration reconstruction from the published protocol and public source configuration.
 - Molecular system identification with the CDK2 edge `17 -> 1h1q` pinned to a specific source revision.
-- Constrained MCS atom mapping with explicit limitations and provenance.
+- Constrained MCS atom mapping plus an OpenFE/Lomap candidate mapping with
+  explicit limitations and provenance.
 - Protocol fidelity: Config B independently reconstructed and matched 20/20 evaluated reference fields.
 - Readiness assessment that reports missing scientific evidence instead of treating setup success as FEP success.
 
@@ -18,6 +19,8 @@ Implemented locally on the `Boltsim` branch and committed as `c6a3241`.
 - SAMPL6 manifest validation: passed.
 - Config B explicit parameter comparison: `20/20`, accuracy `1.0`.
 - Endpoint-readiness gate: `REVIEW`.
+- OpenFE/Lomap mapping: one candidate, 45 mapped atoms, topology validation
+  still required.
 
 ### Current qualification
 

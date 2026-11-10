@@ -54,3 +54,9 @@ def test_mapping_is_generated_but_reviewed():
     assert mapping["ligand_b"] == "1h1q"
     assert mapping["mapped_atom_count"] > 0
     assert mapping["status"] in {"PASS", "REVIEW"}
+
+def test_openfe_mapping_is_available():
+    mapping = json.loads((ROOT / "inputs/openfe_atom_map.json").read_text())
+    assert mapping["mapper"] == "OpenFE LomapAtomMapper"
+    assert mapping["mapped_atom_count"] == 45
+    assert mapping["status"] == "REVIEW"

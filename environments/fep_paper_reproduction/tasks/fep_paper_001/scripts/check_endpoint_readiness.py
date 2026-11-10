@@ -24,7 +24,7 @@ def main() -> dict:
         "protein_structure_present": (ROOT / "inputs/source_cdk2/protein.pdb").is_file(),
         "ligand_source_present": (ROOT / "inputs/source_cdk2/ligands.mol2").is_file(),
         "source_protocol_present": (ROOT / "inputs/source_cdk2/Alchaware.cfg").is_file(),
-        "atom_map_present": (ROOT / "inputs/atom_map.json").is_file(),
+        "atom_map_present": (ROOT / "inputs/atom_map.json").is_file() and (ROOT / "inputs/openfe_atom_map.json").is_file(),
         "complex_endpoint_topology_present": (ROOT / "inputs/complex_endpoint_topology.xml").is_file(),
         "solvent_endpoint_topology_present": (ROOT / "inputs/solvent_endpoint_topology.xml").is_file(),
         "lambda_trajectories_present": (ROOT / "execution/trajectories").is_dir(),
