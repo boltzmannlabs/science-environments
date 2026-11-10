@@ -7,7 +7,7 @@ Evaluate computational retrosynthesis pathways for target
 
 ## Inputs and observations
 
-The private authenticated platform returned 16 top-level paths. We preserve sanitized pathway precursors, product SMILES, ranking metadata and model yield fields in `../../environments/retro_environment/results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json`. The result's raw `num_steps` disagrees with counts reconstructed from the reaction-node tree. `top0` comprises TBS protection, proposed phenol–aryl bromide ether formation, and deprotection.
+The private authenticated platform returned 16 top-level paths. We preserve sanitized pathway precursors, product SMILES, ranking metadata and model yield fields in `../../environments/synthetic_chemistry/results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json`. The result's raw `num_steps` disagrees with counts reconstructed from the reaction-node tree. `top0` comprises TBS protection, proposed phenol–aryl bromide ether formation, and deprotection.
 
 The expected top0 protected ether appeared last among forward predictions (score zero), whereas a quinolinol O-silylation was strongly ranked. The proposed protection conditions contained fluoride, which challenges TBS installation, and the proposed coupling conditions lacked a coupling catalyst. Atom mapping for the desired products was internally consistent with depicted bonds, but does not demonstrate that the reactions occur. The deprotection motif is plausible conditionally on accessing the intermediate.
 
@@ -19,4 +19,4 @@ Corey/Venkateswarlu [1] describe the TBS-protection class; their publisher proce
 
 Reagent supply, selectivity (including O/N arylation), actual conversion, isolable intermediate stability, measured impurities and overall route feasibility remain unknown. Any proposed experimental program requires qualified chemist review, starting material verification and analytical characterization.
 
-See [references.md](references.md) for evidence URLs and [environment status](../../environments/retro_environment/STATUS.md) for implementation readiness.
+See [references.md](references.md) for evidence URLs and [environment status](../../environments/synthetic_chemistry/STATUS.md) for implementation readiness.

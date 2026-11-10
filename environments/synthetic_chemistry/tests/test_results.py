@@ -1,4 +1,4 @@
-"""Validate curated retro_environment records without requiring platform access."""
+"""Validate curated synthetic_chemistry records without requiring platform access."""
 import json
 import math
 import unittest
