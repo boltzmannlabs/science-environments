@@ -1,0 +1,29 @@
+Checking file /home/boltzmann15/github/science-environments/environments/md_paper_reproduction/tasks/md_paper_001/inputs/paper_source/cdk2_cs3/em.gro
+              :-) GROMACS - gmx check, 2025.2-Ubuntu_2025.2_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/boltzmann15/github/science-environments
+Command line:
+  gmx check -f /home/boltzmann15/github/science-environments/environments/md_paper_reproduction/tasks/md_paper_001/inputs/paper_source/cdk2_cs3/em.gro
+
+Reading frames from gro file 'Protein in water', 60120 atoms.
+
+Reading frame       0 time    0.000   
+# Atoms  60120
+Precision 0.001 (nm)
+
+Last frame          0 time    0.000   
+
+
+Item        #frames Timestep (ps)
+Step             0
+Time             0
+Lambda           0
+Coords           1
+Velocities       0
+Forces           0
+Box              1
+
+GROMACS reminds you: "Still I had a lurking question. Would it not be better if one could really 'see' whether molecules as complicated as the sterols, or strychnine were just as experiment suggested?" (Dorothy Hodgkin)
+

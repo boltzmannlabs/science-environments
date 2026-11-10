@@ -19,13 +19,15 @@ The configuration matrix is evaluated separately from agent architecture:
   protocol.
 
 The PDB input hash is valid, but the selected PDB contains no `CS3` ligand
-records. The RCSB CS3 ideal ligand structure is therefore pinned separately,
-validated by hash and parameterized with bounded AmberTools GAFF2/AM1-BCC.
-The generated MOL2 and FRCMOD files are recorded as setup evidence. The ideal
-ligand does not provide the protein-bound pose, so complex assembly remains a
-separate gate.
+records. The RCSB CS3 ideal ligand structure is pinned separately, validated by
+hash and parameterized with bounded AmberTools GAFF2/AM1-BCC. The BSM-00027
+archive was also retrieved and the CDK2-CS3 source preparation bundle was
+pinned under `inputs/paper_source/cdk2_cs3/`; `gmx check` reads its 60,120-atom
+minimized coordinate file successfully. The source bundle contains 50 LIG
+molecules and references an unredistributed `amber99sb-ildn.ff` directory, so
+it is not silently converted into a single-ligand production system.
 
-Current evidence is parameter extraction, configuration fault detection and
-ligand parameterization. The next MD milestone is to obtain the paper-consistent
-CS3 binding-pose coordinates/topology, assemble the complex and run a bounded
-setup smoke test before any long production claim.
+Current evidence is parameter extraction, configuration fault detection,
+ligand parameterization and source-coordinate integrity. Topology preprocessing,
+single-ligand complex assembly and production dynamics remain REVIEW; no 100 ns
+paper reproduction is claimed.

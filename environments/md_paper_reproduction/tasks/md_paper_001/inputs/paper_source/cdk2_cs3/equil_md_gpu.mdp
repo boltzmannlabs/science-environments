@@ -1,0 +1,59 @@
+title = Protein-ligand complex full equilibration
+
+; Run parameters
+integrator 	= md 		; leap-frog integrator
+nsteps 		= 50000000 	; 2 * 25000000 = 50000 ps (50 ns) ######################
+dt 		= 0.002 	; 2 fs
+
+; Output control
+nstxout 	= 0 		; suppress .trr output
+nstvout 	= 0 		; suppress .trr output
+nstxtcout    	= 1000     	; write .xtc trajectory every 2 ps
+nstenergy 	= 1000 		; save energies every 2 ps
+nstlog 		= 1000 		; update log file every 2 ps
+energygrps 	= Protein LIG 	; #### should modify the names
+
+; Bond parameters
+continuation 	= yes 		; Restarting after NPT
+constraint_algorithm = lincs 	; holonomic constraints
+constraints 	= all-bonds 	; all bonds (even heavy atom-H bonds) constrained
+lincs_iter 	= 1 		; accuracy of LINCS
+lincs_order 	= 6 		; also related to accuracy (###associated with mpi calc)
+
+; Neighborsearching
+cutoff-scheme   = Verlet
+ns_type 	= grid 		; search neighboring grid cells
+nstlist 	= 20 		; 10 fs (#### 10 in the case of 20fs)
+;rlist 		= 1.1 		; short-range neighborlist cutoff (in nm)
+
+; VdW
+vdwtype 	= Cut-off
+;rvdw_switch 	= 0.9
+rvdw 		= 1.0 		; short-range van der Waals cutoff (in nm)
+DispCorr 	= EnerPres 	; account for cut-off vdW scheme
+
+; Electrostatics
+coulombtype 	= PME 		; Particle Mesh Ewald for long-range electrostatics
+pme_order 	= 4 		; cubic interpolation
+fourierspacing 	= 0.12 		; grid spacing for FFT
+rcoulomb 	= 1.0 		; short-range electrostatic cutoff (in nm)
+ewald_rtol 	= 1e-8 		; #### modified
+
+; Temperature coupling
+tcoupl 		= V-rescale 	; modified Berendsen thermostat
+tc-grps 	= Protein_LIG Water_and_ions ; two coupling groups - more accurate #### should modify the names
+tau_t 		= 0.1 0.1 	; time constant, in ps
+ref_t 		= 298 298 	; reference temperature, one for each group, in K
+
+; Pressure coupling
+pcoupl 		= Parrinello-Rahman  	; pressure coupling is on for NPT
+pcoupltype 	= isotropic 	; uniform scaling of box vectors
+tau_p 		= 2.0 		; time constant, in ps
+ref_p 		= 1.0 		; reference pressure, in bar
+compressibility = 4.5e-5 	; isothermal compressibility of water, bar^-1
+
+; Periodic boundary conditions
+pbc 		= xyz 		; 3-D PBC
+
+; Velocity generation
+gen_vel 	= no 		; velocity generation off after NPT

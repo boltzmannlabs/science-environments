@@ -1,0 +1,51 @@
+{
+  "source": "https://bmdi-db.med.kyoto-u.ac.jp/owncloud/index.php/s/L8rwegnll6yXj5l",
+  "directory": "hypersound_MD/input_files/CDK2_CS3",
+  "file_checks": {
+    "em.gro": {
+      "present": true,
+      "bytes": 2705454,
+      "sha256": "d91baf80b62c55cdf3e16a6749cbd44f6d7bd4e8340331b19059782c25195b92",
+      "hash_matches": true
+    },
+    "topol_fin.top": {
+      "present": true,
+      "bytes": 1440798,
+      "sha256": "88194f035b992a5ec5ed956393e46cb9cf748fdef598a1d3c07ecb8e7d676999",
+      "hash_matches": true
+    },
+    "CDK2_CS3_lig_GMX_new16.itp": {
+      "present": true,
+      "bytes": 27546,
+      "sha256": "68362577582ebda259e5366c130073fe0a9caef199b054ae287c553fc56b42af",
+      "hash_matches": true
+    },
+    "equil_md_gpu.mdp": {
+      "present": true,
+      "bytes": 2252,
+      "sha256": "1b7efe4c54727e0c3d536ba528b04b8c3ed7df6765e34d6dd11f5da88571aa83",
+      "hash_matches": true
+    },
+    "equil_npt_gpu.mdp": {
+      "present": true,
+      "bytes": 2315,
+      "sha256": "4f9dcbd80d7456f0b86bb30c46b94fbc39be2389b0585fb054346bfa19ad6d09",
+      "hash_matches": true
+    },
+    "equil_nvt_gpu.mdp": {
+      "present": true,
+      "bytes": 2117,
+      "sha256": "51d30721990faef343548235bc8de037cc42fb7c51e574d4b8aa29b8585d328d",
+      "hash_matches": true
+    },
+    "index.ndx": {
+      "present": true,
+      "bytes": 1854920,
+      "sha256": "1211e374c5e0c19c82051d3a493ef2d779e36f08657db076b188214c9e2ae05e",
+      "hash_matches": true
+    }
+  },
+  "gmx_check": "PASS",
+  "status": "PASS",
+  "scientific_scope": "source input integrity and coordinate readability; topology and production dynamics remain unqualified"
+}

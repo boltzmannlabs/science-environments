@@ -1,0 +1,27 @@
+              :-) GROMACS - gmx grompp, 2025.2-Ubuntu_2025.2_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/boltzmann15/github/science-environments/environments/md_paper_reproduction/tasks/md_paper_001/inputs/paper_source/cdk2_cs3
+Command line:
+  gmx grompp -f equil_nvt_gpu.mdp -c em.gro -p topol_fin.top -n index.ndx -o /tmp/cs3_nvt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+Generating 1-4 interactions: fudge = 0.5
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2025.2-Ubuntu_2025.2_1
+Source file: src/gromacs/gmxpreprocess/gmxcpp.cpp (line 297)
+
+Fatal error:
+Topology include file "posre.itp" not found
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+Setting the LD random seed to -115965957
+
+Generated 3003 of the 3003 non-bonded parameter combinations
+
+Generated 3003 of the 3003 1-4 parameter combinations

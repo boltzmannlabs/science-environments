@@ -40,3 +40,9 @@ def test_cs3_parameterization_passes():
     assert result["status"] == "PASS"
     assert result["charge_method"] == "AM1-BCC"
     assert result["outputs_present"] is True
+
+def test_paper_source_bundle_is_pinned_and_readable():
+    result = json.loads((ROOT / "evaluation/paper_source_validation.json").read_text())
+    assert result["status"] == "PASS"
+    assert result["gmx_check"] == "PASS"
+    assert all(item["hash_matches"] for item in result["file_checks"].values())

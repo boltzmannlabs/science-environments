@@ -1,0 +1,16 @@
+{
+  "source": "https://bmdi-db.med.kyoto-u.ac.jp/owncloud/index.php/s/L8rwegnll6yXj5l",
+  "dataset": "BSM-00027 hypersound_MD",
+  "selected_directory": "hypersound_MD/input_files/CDK2_CS3",
+  "files": {
+    "em.gro": {"sha256": "d91baf80b62c55cdf3e16a6749cbd44f6d7bd4e8340331b19059782c25195b92", "bytes": 2705454},
+    "topol_fin.top": {"sha256": "88194f035b992a5ec5ed956393e46cb9cf748fdef598a1d3c07ecb8e7d676999", "bytes": 1440798},
+    "CDK2_CS3_lig_GMX_new16.itp": {"sha256": "68362577582ebda259e5366c130073fe0a9caef199b054ae287c553fc56b42af", "bytes": 27546},
+    "equil_md_gpu.mdp": {"sha256": "1b7efe4c54727e0c3d536ba528b04b8c3ed7df6765e34d6dd11f5da88571aa83", "bytes": 2252},
+    "equil_npt_gpu.mdp": {"sha256": "4f9dcbd80d7456f0b86bb30c46b94fbc39be2389b0585fb054346bfa19ad6d09", "bytes": 2315},
+    "equil_nvt_gpu.mdp": {"sha256": "51d30721990faef343548235bc8de037cc42fb7c51e574d4b8aa29b8585d328d", "bytes": 2117},
+    "index.ndx": {"sha256": "1211e374c5e0c19c82051d3a493ef2d779e36f08657db076b188214c9e2ae05e", "bytes": 1854920}
+  },
+  "system_evidence": {"coordinate_atoms": 60120, "ligand_residue": "LIG", "ligand_atom_records": 1700, "ligand_molecule_count": 50, "box_nm": [8.43544, 8.43544, 8.43544]},
+  "validation": {"gmx_check": "PASS", "topology_preprocessing": "REVIEW", "reason": "The source topology includes an amber99sb-ildn.ff directory that is not redistributed here; no production run is claimed."}
+}

@@ -1,0 +1,8 @@
+{
+  "command": "gmx grompp -f equil_nvt_gpu.mdp -c em.gro -p topol_fin.top -n index.ndx -o /tmp/cs3_nvt.tpr",
+  "exit_code": 1,
+  "status": "REVIEW",
+  "blocking_error": "posre.itp not found",
+  "scientific_reason": "Generating a new position-restraint file would alter the paper source; no substitute was invented.",
+  "log": "execution/grompp_source.log"
+}
