@@ -28,6 +28,10 @@ Implemented locally on the `Boltsim` branch and committed as `c6a3241`.
   source-provided Jaguar charges; `tleap` generated both unsolvated complex
   and ligand-solvent endpoint topologies. Solvation, ion composition and the
   alchemical hybrid topology remain separate validation gates.
+- Configuration matrix evaluation now classifies A/B as `REVIEW`, C as
+  `REVIEW` (RESP parameters unavailable), and D as `FAIL` for its planted
+  invalid settings. Bounded OpenMM minimization smoke tests completed for
+  both A/B endpoint pairs with finite energies and reduced potential energy.
 
 ### Current qualification
 

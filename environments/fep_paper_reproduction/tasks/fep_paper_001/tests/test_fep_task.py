@@ -86,3 +86,14 @@ def test_unsolvated_endpoint_topologies_exist():
     assert result["status"] == "PASS"
     for label in ("a", "b"):
         assert all(result["records"][label]["files"].values())
+
+def test_configuration_matrix_statuses():
+    result = json.loads((ROOT / "evaluation/config_matrix.json").read_text())
+    assert result["configs"]["config_A_reference"]["status"] == "REVIEW"
+    assert result["configs"]["config_B_agent"]["status"] == "REVIEW"
+    assert result["configs"]["config_C_alternative"]["status"] == "REVIEW"
+    assert result["configs"]["config_D_perturbed"]["status"] == "FAIL"
+
+def test_endpoint_smoke_runs_pass():
+    result = json.loads((ROOT / "execution/config_runs/endpoint_smoke.json").read_text())
+    assert result["status"] == "PASS"

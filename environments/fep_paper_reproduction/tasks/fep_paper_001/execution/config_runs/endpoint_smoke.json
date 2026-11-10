@@ -1,0 +1,38 @@
+{
+  "configs_executed": [
+    "config_A_reference",
+    "config_B_agent"
+  ],
+  "records": {
+    "a": {
+      "complex": {
+        "status": "PASS",
+        "before_kj_mol": -20188.14404296875,
+        "after_kj_mol": -53151.16638183594,
+        "particles": 9058
+      },
+      "solvent": {
+        "status": "PASS",
+        "before_kj_mol": -380.50406646728516,
+        "after_kj_mol": -418.25099182128906,
+        "particles": 45
+      }
+    },
+    "b": {
+      "complex": {
+        "status": "PASS",
+        "before_kj_mol": -20230.464599609375,
+        "after_kj_mol": -53198.80694580078,
+        "particles": 9058
+      },
+      "solvent": {
+        "status": "PASS",
+        "before_kj_mol": -435.86643981933594,
+        "after_kj_mol": -471.8974151611328,
+        "particles": 45
+      }
+    }
+  },
+  "status": "PASS",
+  "scope": "bounded endpoint minimization smoke test; not lambda-window FEP"
+}
