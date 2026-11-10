@@ -1,0 +1,195 @@
+{
+  "benchmark": "FEP-PAPER-001",
+  "contracted_specialists": 15,
+  "contracted_problem_solving": 10,
+  "roles": {
+    "FEP-AG01": {
+      "status": "OPERATIONAL",
+      "tool": "scripts/generate_openfe_mapping.py",
+      "evidence": "inputs/openfe_atom_map.json",
+      "note": "OpenFE/Lomap mapping is generated and retained.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-AG02": {
+      "status": "PARTIAL",
+      "tool": "scripts/check_endpoint_readiness.py",
+      "evidence": "execution/endpoint_readiness.json",
+      "note": "Endpoint compatibility is checked; chemical-feasibility reasoning is not autonomous.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-AG03": {
+      "status": "OPERATIONAL",
+      "tool": "scripts/parameterize_ligands_gaff.py",
+      "evidence": "execution/ligand_parameterization/parameterization.json",
+      "note": "GAFF parameterization tool and logs are present.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-AG04": {
+      "status": "PARTIAL",
+      "tool": null,
+      "evidence": "reference/lambda_protocol.json",
+      "note": "A frozen protocol exists; adaptive schedule optimization is not implemented.",
+      "tool_present": false,
+      "evidence_present": true
+    },
+    "FEP-AG05": {
+      "status": "PARTIAL",
+      "tool": null,
+      "evidence": "inputs/transformation.json",
+      "note": "Endpoint charge metadata exists; correction execution is not implemented.",
+      "tool_present": false,
+      "evidence_present": true
+    },
+    "FEP-AG06": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No paper-task crash recovery tool or recovery trace.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG07": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No production reduced-potential overlap analysis.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG08": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No trajectory block/replica convergence analysis.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG09": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No binding-site water trajectory analysis.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG10": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No adaptive sampling controller is connected.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG11": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No BAR/MBAR paper-task execution evidence.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG12": {
+      "status": "PARTIAL",
+      "tool": "scripts/check_endpoint_readiness.py",
+      "evidence": "execution/endpoint_readiness.json",
+      "note": "Complex/solvent legs are checked, but no computed cycle closure.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-AG13": {
+      "status": "SPECIFICATION",
+      "tool": null,
+      "evidence": null,
+      "note": "No network ranking evidence for the pilot edge.",
+      "tool_present": false,
+      "evidence_present": false
+    },
+    "FEP-AG14": {
+      "status": "PARTIAL",
+      "tool": "scripts/evaluate_config_matrix.py",
+      "evidence": "evaluation/config_matrix.json",
+      "note": "Configuration faults are audited; scientific false-success checks remain incomplete.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-AG15": {
+      "status": "PARTIAL",
+      "tool": "scripts/check_endpoint_readiness.py",
+      "evidence": "expected_outputs/qualification.json",
+      "note": "Independent readiness gate exists; it correctly returns REVIEW without trajectories.",
+      "tool_present": true,
+      "evidence_present": true
+    },
+    "FEP-PS01": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS02": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS03": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS04": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS05": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS06": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS07": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS08": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS09": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    },
+    "FEP-PS10": {
+      "status": "FIXTURE_ONLY",
+      "tool": "scripts/run_fep_validation.py",
+      "evidence": "results/fixture_results.json",
+      "note": "Validated on the synthetic fixture; not connected to paper trajectories."
+    }
+  },
+  "counts": {
+    "operational": 2,
+    "partial": 6,
+    "specification": 7,
+    "fixture_only": 10
+  },
+  "claim": "25 documented roles; not 25 autonomous AI agents",
+  "status": "REVIEW"
+}
