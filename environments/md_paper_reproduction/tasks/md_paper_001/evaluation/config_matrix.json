@@ -1,0 +1,26 @@
+{
+  "configs": {
+    "config_A_reference": {
+      "status": "REVIEW",
+      "reason": "configuration setup only; topology and 100 ns scientific evidence are absent",
+      "name": "paper_reference"
+    },
+    "config_B_agent": {
+      "status": "REVIEW",
+      "reason": "configuration setup only; topology and 100 ns scientific evidence are absent",
+      "name": "agent_generated"
+    },
+    "config_C_alternative": {
+      "status": "REVIEW",
+      "reason": "OpenMM/HBonds/short production is a declared alternative, not paper reproduction",
+      "name": "supported_alternative"
+    },
+    "config_D_perturbed": {
+      "status": "FAIL",
+      "reason": "5 fs timestep and 310 K deviate from the paper protocol",
+      "name": "deliberately_perturbed"
+    }
+  },
+  "status": "REVIEW",
+  "scope": "paper protocol configuration benchmark; not 100 ns outcome reproduction"
+}

@@ -1,0 +1,37 @@
+{
+  "status": "REVIEW",
+  "configuration": {
+    "name": "agent_generated",
+    "source": "independent_paper_interpretation",
+    "engine": "GROMACS",
+    "engine_version": "4.6.5 modified",
+    "target": "CDK2-CS3",
+    "pdb_id": "4EK5",
+    "ligand_resname": "CS3",
+    "electrostatics": "PME",
+    "cutoff_A": 10,
+    "constraints": "P-LINCS all bonds",
+    "timestep_fs": 2,
+    "equilibration_ps": {
+      "nvt": 100,
+      "npt": 100
+    },
+    "temperature_K": 298,
+    "pressure_bar": 1,
+    "production_ns": 100,
+    "restraints": false,
+    "thermostat": "stochastic velocity rescaling",
+    "barostat": "Parrinello-Rahman",
+    "unresolved": [
+      "exact force-field revision",
+      "complete CS3 topology",
+      "hypersound supplementary parameters"
+    ]
+  },
+  "provenance": {
+    "paper_sha256": "82aaa7b857697a6a66cddf4d86ac3cf09787b3948cadf1d9a35704c5d4e43014",
+    "manifest_sha256": "3bce874b9ff4971c20756e8612cc0d1ee9a7faed3aedd36e7156703084a81537",
+    "read_config_A": false,
+    "read_frozen_reference": false
+  }
+}
