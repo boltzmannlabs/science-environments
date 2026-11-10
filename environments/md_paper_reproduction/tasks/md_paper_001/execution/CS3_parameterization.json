@@ -1,0 +1,13 @@
+{
+  "input": "inputs/CS3_ideal.sdf",
+  "charge_method": "AM1-BCC",
+  "forcefield": "GAFF2",
+  "antechamber_exit": 0,
+  "parmchk2_exit": 0,
+  "outputs_present": true,
+  "status": "PASS",
+  "limitations": [
+    "binding-pose coordinates are not included in ideal ligand SDF",
+    "protein force-field revision and complex topology remain unresolved"
+  ]
+}

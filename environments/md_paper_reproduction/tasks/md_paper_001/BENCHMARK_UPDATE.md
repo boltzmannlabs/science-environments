@@ -19,11 +19,13 @@ The configuration matrix is evaluated separately from agent architecture:
   protocol.
 
 The PDB input hash is valid, but the selected PDB contains no `CS3` ligand
-records. The input validator therefore returns `REVIEW` and identifies the
-missing ligand structure/topology. This is an intentional evidence gate; no
-ligand or topology is fabricated.
+records. The RCSB CS3 ideal ligand structure is therefore pinned separately,
+validated by hash and parameterized with bounded AmberTools GAFF2/AM1-BCC.
+The generated MOL2 and FRCMOD files are recorded as setup evidence. The ideal
+ligand does not provide the protein-bound pose, so complex assembly remains a
+separate gate.
 
-Current evidence is parameter extraction and configuration fault detection.
-The next MD milestone is to pin the permitted CS3 structure/topology from the
-paper archive, then generate an executable short setup smoke test before any
-long production claim.
+Current evidence is parameter extraction, configuration fault detection and
+ligand parameterization. The next MD milestone is to obtain the paper-consistent
+CS3 binding-pose coordinates/topology, assemble the complex and run a bounded
+setup smoke test before any long production claim.
