@@ -1,5 +1,10 @@
 # FEP/TI Specialist Agents
 
+This environment now follows the paper-benchmark layout used by the other
+Science-Environments packages. Read `ENVIRONMENT_SPEC.md`, `MODELS_AND_TOOLS.md`
+and `STATUS.md` first; paper tasks are indexed in `tasks/README.md`, benchmark
+scope is in `benchmark/README.md`, and current evidence is in `results/`.
+
 **Status: Specification with fixture validation.** This environment defines
 ten FEP/TI problem-solving specialists, their inputs/outputs, acceptance
 criteria, and evidence rules. It does not claim a production free-energy
