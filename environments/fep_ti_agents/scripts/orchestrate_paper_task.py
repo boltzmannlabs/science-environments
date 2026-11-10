@@ -8,7 +8,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT.parent / "fep_paper_reproduction/tasks/fep_paper_001"
+PAPER = ROOT / "tasks/fep_paper_001"
 OUT = ROOT / "results/paper_orchestration.json"
 
 def select() -> dict:

@@ -14,10 +14,8 @@ not only whether a numerical free-energy value is produced.
 - Current result: setup reconstruction `PASS` for evaluated fields;
   scientific FEP qualification `REVIEW`.
 
-The detailed task remains in
-`environments/fep_paper_reproduction/tasks/fep_paper_001/`. Its results are
-summarized in `../results/FEP_PAPER_BENCHMARK_REPORT.md` and the machine-readable
-audit files.
+The detailed task is in `../tasks/fep_paper_001/`. Its results are summarized in
+`../results/FEP_PAPER_BENCHMARK_REPORT.md` and the machine-readable audit files.
 
 Future benchmark systems must pin a paper DOI, revision, molecular edge,
 structures, parameters, protocol, reference metrics and acceptance criteria.

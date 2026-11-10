@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT.parent / "fep_paper_reproduction/tasks/fep_paper_001"
+PAPER = ROOT / "tasks/fep_paper_001"
 OUT = ROOT / "results/operational_role_audit.json"
 
 def role(tool: str | None, evidence: str | None, status: str, note: str) -> dict:
