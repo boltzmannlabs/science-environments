@@ -21,19 +21,55 @@ Resolved per request ([005 example brief](../config/005_base-editing.request.exa
 
 ## Design Constraints
 
-- Editor window declared per editor (the prior environment's interface convention: ABE
-  positions 4–7, CBE 4–8; editor-specific windows from the model in force — disclosed per run).
-- Prediction input conventions carry over where wrapped tools are used (50-nt context:
-  19-nt upstream + 20-nt protospacer + 3-nt PAM + 8-nt downstream; orientation verified).
-- Bystander outputs are window-scoped — they do not prove absence of editing outside the
-  window; predicted fraction-of-reads-edited is not automatically the intended-correction
-  rate (both caveats inherited verbatim from the prior environment's rules).
-- Strand mapping: ABE predicts A→G on the editable strand; map complementary-strand
-  changes when the variant sits on the other strand.
-- Training-distribution caveat: landing-pad-trained models (BE-Hive/BE-DICT) vs
-  endogenous-trained (DeepABE/DeepCBE) — model provenance disclosed per run.
-- License tiers: DeepBE + yachielab repos have **no license** — research-internal,
-  never redistributed; BEDICT2.0 CLI and BE-dataHIVE are the clean local candidates.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full.* Modality-specific layers:
+
+**Editor & window constraints**
+- Editor declared per run (ABE/CBE family + editor variant); the **editing window is
+  editor-specific and disclosed per model in force** (prior-environment interface
+  convention: ABE positions 4–7, CBE 4–8 — editor-specific windows from the model in
+  force take precedence and are recorded with every prediction).
+- The target base must fall inside the declared window on the correct strand; both-strand
+  enumeration with explicit strand mapping (ABE edits A→G on the editable strand — a
+  variant on the opposite strand is reached via the complementary base, and the mapping
+  is shown in the record, not assumed).
+
+**Bystander & purity constraints**
+- All editable bases in each window are enumerated (bystander table) before ranking;
+  bystander purity = intended/(intended + bystander-in-window), reported per
+  guide–editor pair; hard bystander veto only where the brief sets it — otherwise
+  bystander count is a disclosed ranking dimension.
+- Bystander outputs are **window-scoped** — they do not prove absence of editing outside
+  the window; the predicted fraction of reads with an editing event is **not
+  automatically the intended-correction rate** (both rules inherited verbatim from the
+  prior base-editing environment).
+- For correction requests, a bystander that converts a neighboring pathogenic-relevant
+  codon is a veto-class event; silent bystanders are offered as purity-preserving design
+  options (ePRIDICT-class silent-bystander convention).
+
+**Model & input constraints**
+- Prediction input conventions: 50-nt context (19-nt upstream + 20-nt protospacer +
+  3-nt PAM + 8-nt downstream) where wrapped tools require it — orientation verified, and
+  the extracted guide/PAM re-checked against the design output.
+- Training-distribution provenance is disclosed per run: landing-pad-trained models
+  (BE-Hive, BE-DICT) vs endogenous-trained (DeepABE/DeepCBE) vs multi-context
+  (BEDICT2.0); efficiencies shift with delivery/chromatin — cross-context extrapolation
+  is flagged.
+- Each guide–editor–model prediction is a separate result; scores are never compared as
+  calibrated probabilities across differently configured models; **no neutral cross-tool
+  BE benchmark exists** — self-reported cross-tool claims are not imported as facts.
+
+**Specificity constraints**
+- Off-target assessment for base editors differs from nuclease Cas9 (ABE-specific
+  off-targets dominate — CHANGE-seq-BE evidence: 98.8% of validated off-targets were
+  ABE8e-specific); the off-target layer reports this distinction and is marked
+  model-limited until the BE-aware layer is installed.
+- Cas9 activity only weakly predicts base-editor activity (Song 2020) — nuclease
+  on-target scores are context, never a substitute BE endpoint.
+
+**Licensing**
+- DeepBE and yachielab repos have **no license** — research-internal, never
+  redistributed; BEDICT2.0 CLI and BE-dataHIVE are the clean local candidates;
+  deepcrispr.info portals research-use with provenance-only outputs.
 
 ## Required Execution Steps
 

@@ -20,17 +20,44 @@ Resolved per request — gene list supplied at intake
 
 ## Design Constraints
 
-- Enumeration at genome scale: Bowtie-1 ungapped (verified local) for off-target counts;
-  FlashFry-class for large sets (fastest enumeration; no VCF-aware search — disclosed);
-  CRISPRitz only when variant-aware screening is declared.
-- Multi-targeting avoidance: guides with additional perfect/near-perfect matches
-  genome-wide excluded (Kuscu-2019 confound); multi-cut toxicity (Álvarez 2022,
-  TP53-dependent) and off-target-mediated depletion (Pérez 2021 CSC) documented as
-  screen-analysis confounds.
-- Calibration baseline: RS2/RS3 via CRISPick-class rules (Avana/Brunello lineage);
-  guide-quality targets consistent with RS3 tiling validation (84,609-sgRNA library).
-- Non-targeting controls and safe-harbor/positive controls included per screen-design
-  convention when requested.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full — at
+genome scale.* Task-specific layers:
+
+**Enumeration-at-scale constraints**
+- Genome-scale enumeration across the declared gene set: Bowtie-1 ungapped (verified
+  local) for off-target counts; FlashFry-class for large sets (fastest enumeration; **no
+  VCF-aware search — disclosed cap**); CRISPRitz only when variant-aware screening is
+  declared; runtime budgets declared before enumeration (screen-budget discipline).
+- All genes resolve or are reported unresolved — never silently skipped; per-gene
+  candidate counts recorded (genes with no passing guide are explicit output).
+
+**Multi-targeting & confound constraints (screen validity)**
+- Guides with additional perfect/near-perfect matches genome-wide are excluded
+  (multi-targeting confound — Kuscu 2019); seed-level repeats across the library are
+  capped (seed-distinctness constraint) to avoid correlated depletion artifacts.
+- Documented screen confounds carried as flags: multi-cut toxicity (Álvarez 2022,
+  TP53-dependent) and off-target-mediated gRNA depletion (Pérez 2021 CSC correction);
+  copy-number-amplified loci flagged where annotation is available (false-positive
+  dropouts); essential-gene lists used for positive-control placement are
+  source-cited.
+
+**Sizing & composition constraints**
+- Compact-library evidence governs sizing: score-based 3-guide-per-gene libraries match
+  or beat larger unscored libraries (Lukasiak 2024) — panel size is a declared
+  brief constraint, default 3–6 guides/gene depending on screen type.
+- Controls are part of the library contract: non-targeting controls matched for GC and
+  dinucleotide content; safe-harbor/essential-gene positive controls included on
+  request; CRISPRi/a libraries inherit task 007 window constraints.
+
+**Calibration & ranking constraints**
+- Guide-quality baseline: RS2/RS3 via CRISPick-class rules (Avana/Brunello lineage);
+  quality targets consistent with the RS3 tiling validation (84,609-sgRNA library);
+  ranking at library level balances per-guide quality with cohort diversity
+  (site-distinctness across the library, not just within gene).
+
+**Boundary**
+- Screen readout analysis (MAGeCK-class statistics) is downstream and out of scope —
+  the deliverable is the library + per-guide evidence + confound flags.
 
 ## Required Execution Steps
 

@@ -21,14 +21,46 @@ Resolved per request ([004 example brief](../config/004_variant-correction.reque
 
 ## Design Constraints
 
-- WT-sparing: PAM/spacer discrimination between mutant and WT allele checked (PAM created/
-  destroyed by the variant is the clean case); mismatch-position discrimination scored
-  (CFD/Elevation on both alleles).
-- HDR path: donor design by verified rules only — Richardson-2016 asymmetric ssODN
-  (donor complementary to non-target strand; ~36-nt PAM-distal / ~91-nt PAM-proximal
-  convention) + CUNE arm-composition context (n=30 — thin, disclosed); **no large ML HDR
-  predictor exists** — stated, never approximated.
-- Modality decision recorded with reasons; task 005/006 stages inherited on hand-off.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full.* Task-specific layers:
+
+**Variant verification (hard gate)**
+- The variant is reference-verified (ClinVar/dbSNP + VEP; coordinate + ref/alt alleles
+  against GRCh38.p14) **before any design step**; an unverifiable variant blocks the run
+  (`NEEDS_INPUT`), never a best-effort guess. Haplotype/phase context surfaced where the
+  user supplies it.
+
+**Modality router constraints (decision recorded with reasons)**
+- Edit type + distance decide the modality: A→G or C→T reachable inside an editor's
+  window with acceptable bystanders → base editing (task 005); other SNVs / small indels /
+  insertions ≤3 bp standard (≤40 bp with ePRIDICT-class context) → prime editing
+  (task 006); larger constructs / tags → HDR (below). Router reasons and rejected
+  alternatives are part of the deliverable.
+
+**Allele discrimination (WT-sparing)**
+- PAM/spacer discrimination between mutant and WT allele is checked at the sequence level:
+  the clean case is a variant-created PAM or variant-disrupted PAM; spacer-position
+  mismatch discrimination scored with CFD/Elevation on **both** alleles (position +
+  type-dependent; mismatch-position sensitivity is the design lever).
+- Discrimination is reported as a margin (mutant vs WT predicted activity), never as a
+  guarantee of allele selectivity — experimental confirmation is the next-evidence step.
+- Therapeutic-context correction requests inherit task 003 constraints (variant-aware
+  off-target mandatory).
+
+**HDR path (rules-bounded)**
+- Donor design uses verified rules only: Richardson-2016 asymmetric ssODN — donor
+  complementary to the **non-target strand**; commonly cited arm lengths (~36-nt
+  PAM-distal / ~91-nt PAM-proximal) are per-paper-figure conventions, stated as such.
+- 3′ homology-arm composition is the dominant known predictor (CUNE, n=30 — thin;
+  disclosed as weak evidence); **no large ML HDR-efficiency predictor exists** — stated,
+  never approximated; silent/blocking mutations that would recode the target site
+  (PAM-disrupting donor edits) are offered where compatible with the repair design.
+- HDR efficiency is never predicted beyond rules + context; the deliverable states this
+  gap explicitly.
+
+**Outcome semantics**
+- Intended-edit efficiency and purity (intended vs unintended outcomes) are separate
+  endpoints; a high-efficiency guide with poor purity is reported as such, never blended
+  into one "correction score"; bystander context inherited from tasks 005/006 on hand-off.
 
 ## Required Execution Steps
 

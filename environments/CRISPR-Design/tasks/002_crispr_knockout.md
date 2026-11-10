@@ -28,16 +28,48 @@ Resolved per request — never defaulted. Example genes (KIF11, KRAS) illustrati
 
 ## Design Constraints
 
-- Nuclease context declared: WT SpCas9 default; eSpCas9(1.1)/SpCas9-HF1 scored with
-  DeepHF-class variant models; Cas12a with DeepCpf1-class; **no verified activity model
-  exists for SpG/SpRY/HypaCas9** — near-PAMless design runs enumeration+off-target only,
-  with the model gap stated.
-- Frameshift probability from Lindel (local verified backend); DRAFT floor 0.60 before
-  calibration.
-- Off-target: Bowtie-1 ungapped ≤3 mm both strands, intended locus excluded, caps
-  disclosed; bulges NOT_EVALUATED (disclosed cap); CFD + Elevation pair/aggregate scores.
-- Training-disjoint discipline for any benchmark arm (the DeepCRISPR lesson — best on only
-  1/6 independent datasets, Konstantakos 2022).
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full.* Modality-specific layers:
+
+**Modality & nuclease context**
+- Nuclease declared per run: WT SpCas9 default (20-nt + NGG); eSpCas9(1.1)/SpCas9-HF1
+  scored with DeepHF-class variant models (per-variant endpoints, never mixed into one
+  column); Cas12a with DeepCpf1-class models (23-nt + TTTV; note PAM is 5′ of the
+  protospacer — orientation mapping mandatory).
+- **No verified activity model exists for SpG/SpRY/HypaCas9** — near-PAMless design runs
+  enumeration + off-target + physico-chem only, with the model gap stated per deliverable;
+  relaxed/custom PAMs use enumeration-only mode (CRISPOR/CHOPCHOP conventions).
+- Paired-nickase designs are outside battery v0.1 (stated boundary, not approximated).
+
+**Target placement (disruption logic)**
+- Placement favors early constitutive coding exons so a frameshift disables all major
+  isoforms; the isoform-coverage table is part of every candidate record — a guide
+  covering a subset of protein-coding isoforms is flagged, never silently accepted.
+- Cut-site protein position recorded (RS2-lineage positional context); guides whose only
+  consequence is an in-frame lesion near the C-terminus are down-ranked with reasons.
+- Alternative first exons / alternative starts surfaced when the isoform set includes them.
+
+**Outcome constraints**
+- Frameshift probability from Lindel (local verified backend) is a first-class endpoint;
+  DRAFT floor 0.60 before calibration — treated as a ranking constraint, not a promise of
+  knockout; indel profile (incl. 1-bp insertion fractions) reported with it.
+- On-target endpoints: DeepSpCas9 + CRISPRon or RS2/RS3 (≥2, separate columns); CRISPRon
+  column carries the Kim-2019-in-training disclosure whenever Kim data is involved.
+
+**Specificity constraints**
+- Bowtie-1 ungapped ≤3 mm both strands, intended locus excluded, heuristic caps disclosed;
+  bulges NOT_EVALUATED (disclosed cap); CFD + Elevation pair/aggregate reported separately.
+- Guides with additional perfect matches genome-wide are vetoed (multi-cut confound —
+  Kuscu 2019 lineage applies to screen use as well).
+
+**Physico-chemical filters (ranking constraints, not silent drops)**
+- GC 40–80% band (RS2-era convention; flag outside band); ≥4 consecutive T's flagged
+  (Pol III termination risk — CRISPOR convention); homopolymer runs and
+  self-complementarity flagged; Tm reported with method stated.
+
+**Benchmark discipline**
+- Training-disjoint splits mandatory for any benchmark arm (the DeepCRISPR lesson — best
+  on only 1/6 independent datasets, Konstantakos 2022); DeepCRISPR itself excluded as a
+  scoring endpoint (cautionary baseline only).
 
 ## Required Execution Steps
 

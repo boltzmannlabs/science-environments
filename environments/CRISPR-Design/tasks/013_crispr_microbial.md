@@ -20,13 +20,37 @@ Resolved per request ([013 example brief](../config/013_microbial.request.exampl
 
 ## Design Constraints
 
-- Bacterial genome + annotation resolved at intake (species/strain declared, versioned);
-  off-target search scoped to that genome (+ plasmid context if declared).
-- Activity endpoints: bacterial models only; the confound layer flags 5-nt seed motifs
-  associated with dCas9 toxicity (Cui 2018) — exclusion is a screen-quality decision,
-  recorded as such.
-- Mixed-effect context (Yu 2024): dataset/batch effects handled by the model's
-  conventions — provenance disclosed per run.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full — with
+human-trained models excluded outright.* Task-specific layers:
+
+**Reference & organism constraints**
+- Bacterial genome + annotation resolved at intake: species **and strain** declared,
+  versioned, checksummed; off-target search scoped to that genome (+ plasmid context if
+  declared — plasmid/backbone targets are a distinct enumeration class in microbial
+  work); human-trained activity models are never applied under any weighting (hard
+  rule, no extrapolation flag option).
+
+**Model constraints**
+- Activity endpoints from bacterial models only: Guo-2018 genome-wide E. coli predictor
+  (KO) and Yu-2024 mixed-effect model (CRISPRi — current best); model provenance and
+  dataset lineage disclosed per run; organisms outside the models' training organisms
+  are flagged species-extrapolation, and rules-only fallback is offered with the gap
+  stated (never a mammalian score in disguise).
+- "CRISPRi-ML" as a named tool could not be verified — never cited or used.
+
+**Toxicity/confound constraints (specific to microbial CRISPRi screens)**
+- 5-nt seed motifs associated with dCas9 binding toxicity (Cui 2018, ~92k-sgRNA E. coli
+  screen) are flagged per guide — exclusion is a screen-quality decision recorded as
+  such, not a silent filter; growth-defect confounds are distinguished from true
+  essentiality effects in the deliverable's caveat block.
+
+**Representation & specificity constraints**
+- Spacer/PAM geometry per the declared nuclease (SpCas9-NGG standard; Cas12a-TTTV
+  available); GC/climate adjustments for extreme-GC organisms flagged (model coverage
+  caveat, not a hidden rescaling).
+- Essentiality phenotypes, growth curves, and competitive-fitness outcomes are
+  experimental endpoints — never claimed from scores; companion-screen context
+  (Rousset 2018) cited where design decisions depend on it.
 
 ## Required Execution Steps
 

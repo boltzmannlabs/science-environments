@@ -25,15 +25,43 @@ supplied synthetic control locus).
 
 ## Design Constraints
 
-- Cas12a crRNA (TTTV PAM-dependent) + isothermal primer compatibility co-design; RPA
-  primer design context integrated (EasyDesign server convention).
-- Sensitivity prediction: EasyDesign CNN (ρ 0.812 on 11,496 validated cases; 4 held-out
-  pathogens) — the only large ML pair; no independent benchmark exists (disclosed).
-- Variant/allele discrimination assays: mismatch-position sensitivity at the crRNA–target
-  duplex evaluated from model + thermodynamic context; SNP-allele detection designs state
-  discrimination mechanism explicitly.
-- Diagnostics sensitivity claims are assay-level experimental endpoints — never claimed
-  computationally.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full — with
+the review-only scope gate as the first constraint.* Task-specific layers:
+
+**Scope gate (binding, first)**
+- **Pathogen-targeting sequence design is review-only** — viral/bacterial isolate
+  targets produce no generation and no evaluation; the refusal is logged with this task
+  as reference; contrived/synthetic targets and non-pathogen allele-detection assays
+  remain runnable; tool presence (EasyDesign/PrimedSherlock) is not authorization.
+
+**Assay architecture constraints**
+- Cas12a detection is TTTV-PAM-dependent: enumeration is PAM-constrained on the target
+  (collateral trans-cleavage of the reporter drives signal); crRNA–target duplex
+  constraints follow Cas12a geometry (orientation mapping shown, not assumed).
+- Primer–crRNA co-design: RPA/LAMP isothermal primers must flank the crRNA site without
+  competing secondary structure overlap; primer compatibility is a veto-class constraint
+  (an unscreenable genomic neighborhood blocks the candidate, not just down-ranks it);
+  amplicon length context recorded per assay design.
+
+**Discrimination constraints (allele/SNP detection)**
+- For allele-discrimination assays, the mismatch position at the crRNA–target duplex is
+  the design lever: central/discriminating positions are preferred and the mechanism
+  (bubble position → cleavage-rate difference) is stated per design; both alleles are
+  enumerated and the discrimination margin is reported — never claimed as proven
+  specificity (assay-level experimental endpoint).
+
+**Model & evidence constraints**
+- Sensitivity endpoint: EasyDesign CNN (ρ 0.812 on 11,496 validated cases; 4 held-out
+  pathogens) — the **only large ML pair in diagnostics**; no independent benchmark
+  exists (disclosed per deliverable); specificity of the screen is bounded by the
+  declared reference context (supplied background genomes/transcripts — never implicitly
+  "everything").
+- Limit-of-detection, false-positive rate, and clinical performance are assay-level
+  experimental endpoints — never claimed computationally.
+
+**Safety & dual-use**
+- No design that increases detectable virulence/transmissibility markers; no clinical
+  diagnostic claims; review gate escalation is documented rather than worked around.
 
 ## Required Execution Steps
 

@@ -21,6 +21,10 @@ plant_genome_editing` are refused before reference resolution; the
 
 ## Design Constraints
 
+*Universal contract from [task 001](001_crispr_design_general.md) would bind on
+activation; while inactive the only valid behavior is refusal + explanation.*
+
+**Why the gate exists (constraints that make plant design non-runnable today)**
 - **No plant-specific activity-prediction model was verified** in the 2026-11-10
   curation sweep — plant modes of live design tools (CRISPR-P2.0, CRISPR-GE,
   Cas-Designer, CHOPCHOP plant genomes) reuse mammalian/zebrafish scores.
@@ -30,6 +34,16 @@ plant_genome_editing` are refused before reference resolution; the
   gate).
 - Tool availability is not authorization: the curated plant tools are recorded for the
   activation phase in [MODELS_AND_TOOLS](../MODELS_AND_TOOLS.md).
+
+**Constraints that will bind after activation (pre-declared)**
+- Species reference + annotation versioned and checksummed at intake; off-target search
+  scoped to the declared species genome (plus declared relatives for cross-hybridization
+  risk — polyploid genomes require subgenome-aware enumeration, flagged).
+- Activity scoring either by a validated species model or an explicit **rules-only mode**
+  with the model gap stated per run — never mammalian-model extrapolation.
+- Expression/delivery context in plants (Agrobacterium/transient/transgenic) is a
+  declaration field, not a predicted quantity; regulatory context for crop edits is
+  outside this environment entirely (stated, never advised on).
 
 ## Required Execution Steps
 

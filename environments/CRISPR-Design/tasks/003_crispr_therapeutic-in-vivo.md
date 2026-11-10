@@ -20,16 +20,45 @@ Resolved per request ([003 example brief](../config/003_therapeutic-in-vivo.requ
 
 ## Design Constraints
 
-- Off-target stack: E3a/b plus **E3c variant-aware layer** (CRISPRitz VCF search;
-  CRISPRme population panels) — clinically load-bearing: CRISPRme found a PAM-creating
-  MAF-4.5% allele driving the top off-target for a clinical BCL11A guide; CHANGE-seq
-  found SNVs affect ~15.2% of off-target sites.
-- Assay hierarchy stated with every deliverable: in-silico → in-vitro (CHANGE-seq class)
-  → cell-based (GUIDE-seq class); in-silico ≈77% recall @ top-500 (Kaufmann 2026).
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full; the
+specificity constraints are elevated here.* Task-specific layers:
+
+**Specificity stack (regulator-grade)**
+- Full stack mandatory: E3a enumeration + E3b pair/aggregate scores + **E3c variant-aware
+  layer** (CRISPRitz VCF search; CRISPRme population panels). Rationale is
+  clinically load-bearing: CRISPRme found a PAM-creating MAF-4.5% allele driving the top
+  off-target for a clinical BCL11A-enhancer guide; CHANGE-seq found human SNVs affect
+  ~15.2% of analyzed off-target sites. Reference-genome-only search is insufficient and
+  is flagged as such, never silently accepted.
+- Population panel declaration: which VCF panels (1000G-class) and which ancestries are
+  in scope is part of the confirmed brief — panel choice is surfaced, not defaulted.
+- Guides with any exonic near-match (≤2 mm) in coding/regulatory annotated regions are
+  vetoed by default in this profile regardless of score.
+
+**Assay hierarchy & claims discipline**
+- Every deliverable states the hierarchy: in-silico → in-vitro (CHANGE-seq class) →
+  cell-based (GUIDE-seq class) — and that in-silico ≈77% recall @ top-500 with weak
+  score↔indel correlation (Kaufmann 2026). Computational output nominates candidates for
+  experimental assessment; it never clears them.
+- No off-target-safety, genotoxicity, or therapeutic-qualification claims of any kind;
+  "clean" is prohibited vocabulary for in-silico results.
+
+**Anchor honesty (therapeutic context)**
 - **No therapeutic guide sequence is public** (exa-cel "SPY101" redacted (b)(4) in FDA
-  SBRA; NTLA-2001 patent-bound; VERVE-101 unverified) — anchors are strategy-level;
-  never fabricate or adopt circulating "therapeutic guide sequences".
-- Delivery prediction does not exist — stated, never approximated.
+  SBRA; NTLA-2001 patent-bound; VERVE-101 unverified in open text) — benchmark anchors
+  are target identity + edit mechanism + off-target-assay strategy; circulating
+  "therapeutic guide sequences" are treated UNVERIFIED and never adopted.
+
+**Delivery & biology context**
+- Delivery prediction (LNP/GalNAc tropism, exposure) does not exist for sequence-level
+  design — stated, never approximated; tissue-of-action expression context is annotation
+  only. Editing in delivery-relevant tissue types outside model training contexts is
+  flagged extrapolation.
+
+**Prioritization posture**
+- Default weight emphasis specificity-heavy (.55); panel sized for downstream
+  experimental nomination, not breadth; every ranked candidate carries its
+  assay-hierarchy next-evidence recommendation.
 
 ## Required Execution Steps
 

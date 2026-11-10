@@ -20,18 +20,48 @@ Resolved per request ([009 example brief](../config/009_cas13.request.example.js
 
 ## Design Constraints
 
-- Representation: 20–30-nt crRNA spacers, RNA alphabet; transcript (not genome)
-  reference; direct-repeat nomenclature per Cas13 system declared at intake.
-- Mismatch-intolerance region nt 15–21 (Cas13design-2020 finding) drives placement away
-  from near-match positions elsewhere in the transcriptome.
-- Models: Cas13design (2020) lineage and **TIGER (2023, current reference — mismatch/
-  indel-aware CNN)**; TIGER's G-U wobble-tolerance finding carried into off-target
-  interpretation.
-- Transcriptome screen: Bowtie2 vs GENCODE transcriptome (local, siRNA-environment
-  evidence base) with seed-region mismatch weighting; genome off-target stack NOT run
-  (no DNA cutting) — stated.
-- Structure/accessibility: RNAplfold/RNAduplex conventions from the siRNA environment
-  (W/L/u declared) as context dimensions.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full — with the DNA-specific layers replaced by RNA-targeting equivalents.* Modality-specific layers:
+
+**Representation & reference constraints**
+- 20–30-nt crRNA spacers, RNA alphabet (ACGU); the reference is the **transcript**, not
+  the genome (versioned GENCODE transcript; both-strand considerations do not apply —
+  target orientation is the transcript sense); direct-repeat nomenclature per Cas13
+  system declared at intake; system-specific flanking-site (PFS) preferences are
+  system-scoped and declared at intake (commonly-reported PFS patterns were **not
+  re-verified** in the 2026-11-10 sweep — none are assumed by default).
+
+**Placement constraints (Cas13-specific determinants)**
+- Mismatch-intolerance concentrates at spacer **nt 15–21** (Cas13design-2020 finding):
+  (a) within-guide — positions 15–21 are treated as the sensitive region for
+  near-match avoidance; (b) endogenous mismatches between guide and target at those
+  positions depress activity — placement avoids guides whose target carries known SNPs
+  at 15–21.
+- Transcript accessibility context (RNAplfold/RNAduplex conventions, W/L/u declared —
+  siRNA-environment evidence base) is a ranking context column, never an efficacy
+  promise.
+
+**Model constraints**
+- Endpoints from Cas13design (2020) lineage and **TIGER (2023, current reference —
+  mismatch/indel-aware CNN)**; TIGER's G-U wobble-tolerance finding is carried into
+  off-target interpretation (wobble mismatches are more tolerated → near-match screens
+  must include G-U pairs); the Arc Institute 2025 tool is curated-only (UNVERIFIED).
+- TIGER head-to-head deltas vs Cas13design are paywalled-UNVERIFIED — both endpoints
+  run as separate columns where available.
+
+**Specificity constraints (transcriptome-scale)**
+- Genome off-target stack is NOT_RUN by definition (no DNA cutting) — stated, not
+  omitted silently; instead: transcriptome screen vs declared reference (Bowtie2,
+  GENCODE local) with seed-region mismatch weighting and nt 15–21 protection.
+- Guides with ≤1-mismatch near-matches in abundant off-target transcripts are vetoed
+  (default); knockdown of unintended transcripts is the primary hazard model.
+- **Collateral activity** (trans-cleavage upon target recognition — system/assay
+  dependent) is a disclosed caveat on every deliverable; no collateral predictor exists
+  and none is approximated.
+
+**Scope**
+- Human transcripts by default; pathogen-transcript targeting routes to task 010 gates
+  (review-only); Cas13 systems beyond Cas13d/Cas13a carry a system-declaration
+  requirement at intake.
 
 ## Required Execution Steps
 

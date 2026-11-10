@@ -21,13 +21,38 @@ Resolved per request ([008 example brief](../config/008_epigenome-editing.reques
 
 ## Design Constraints
 
-The three verified rules (Nuñez 2021 tiling, ~116k sgRNAs, 520 genes):
-1. **Wide targeting window** −500..+500 bp around TSS (far wider than CRISPRi's ~75 bp).
-2. **Nucleosome-depleted regions** — activity tracks NDR placement; nucleosome-dense
-   promoters restrict activity.
-3. **Functional-CpG density, CGI annotation NOT required** — 300+ non-CGI genes silenced
-   via low-density functional CpGs; fully CpG-devoid promoters fail.
-Multiple guides per gene improve silencing — panel size defaults reflect this.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full.* Modality-specific layers — the three verified rules (Nuñez 2021 tiling, ~116k sgRNAs, 520 genes) are the design core:
+
+**Rule 1 — wide targeting window**
+- Active sgRNAs spread **−500..+500 bp around the TSS** (occasionally ~2 kb upstream for
+  some loci) — far wider than CRISPRi's ~75-bp downstream window; battery enumerates the
+  full ±500-bp window with per-guide distance-from-TSS recorded; guides beyond the
+  window carry an out-of-window flag.
+
+**Rule 2 — nucleosome-depleted regions (NDR)**
+- Most active sgRNAs sit in NDRs (activity tracks MNase occupancy in periodic pattern);
+  nucleosome-dense promoters (RAB11A-class) restrict activity — NDR annotation (MNase/
+  DNase proxy, source declared) is a first-class context column; missing chromatin data
+  is NOT_RUN(context-absent), never imputed.
+
+**Rule 3 — functional CpG density (CGI annotation NOT required)**
+- CpG-density profile of the targeted promoter is recorded; CGI annotation is explicitly
+  **not** a filter — 300+ non-CGI genes were durably silenced via low-density functional
+  CpGs (DYNC2LI1/LAMP2/VPS25 validated); fully CpG-devoid promoters (CALD1-class) fail —
+  candidates in CpG-devoid promoters are flagged likely-inert with the rule citation.
+
+**Panel & mechanism constraints**
+- **Multiple guides per gene improve silencing** — panel-size defaults are larger than
+  single-guide tasks; combination proposals (2–4 guides spanning the window + NDR +
+  CpG-dense sites) are part of the deliverable.
+- Mechanism is methylation-based durable repression by dCas9-DNMT fusion (no cutting):
+  E4 indel endpoints are NOT_RUN by definition; CRISPRon/TET reversal context is
+  annotated as the reversibility dimension (experimental endpoint).
+- Proxy-activity disclosure: **no dedicated CRISPRoff designer exists** — CRISPick
+  CRISPRi-class activity is the declared proxy with the CRISPRi≠CRISPRoff caveat on
+  every score column (the source paper itself used CRISPRi rules).
+- Silencing durability and methylation maintenance are experimental endpoints — never
+  predicted; no methylation model exists and none is approximated.
 
 ## Required Execution Steps
 

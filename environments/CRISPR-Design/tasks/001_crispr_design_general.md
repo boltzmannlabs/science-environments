@@ -26,13 +26,67 @@ Resolved per request — never defaulted. Example (KIF11 knockout) is illustrati
 
 ## Design Constraints
 
-- Representation: 20-nt spacer + NGG PAM (SpCas9), 23-nt + TTTV (Cas12a), 20–30-nt crRNA
-  (Cas13); DNA alphabet ACGT for genome-targeting tasks, RNA ACGU for Cas13.
-- ≥2 independent on-target endpoints, separate columns, **never averaged**; expression
-  system (U6 vs T7/IVT) declared — scores do not transfer across it (Haeussler 2016).
-- Off-target outputs are prioritization, never safety claims (Kaufmann 2026: ~77% recall
-  @ top-500, weak score↔indel correlation).
-- Gates are DRAFT until calibrated; briefs tighten only.
+The universal constraint contract — binding on every task (002–013 add modality-specific
+layers on top):
+
+**Representation & alphabet**
+- 20-nt spacer + NGG PAM (SpCas9); 23-nt spacer + 5′ TTTV PAM (Cas12a); 20–30-nt crRNA
+  spacer (Cas13, RNA alphabet ACGU). DNA tasks use ACGT; orientation checked, never
+  silently swapped; coordinates 1-based closed with strand; PAM reported with every spacer.
+- No ambiguous bases (N) pass intake; supplied sequences with U/T mismatch are converted
+  with the conversion logged, never guessed.
+
+**Reference & annotation**
+- Versioned transcript + exon structure (GENCODE 49 local) on GRCh38.p14; isoform
+  decision surfaced to the user, never silently chosen; spliced-exon and CDS-translation
+  validation before design (prior-run recipe).
+- Allele-selective objectives require a reference-verified variant (ClinVar/dbSNP + VEP)
+  before any design step.
+
+**On-target endpoints**
+- ≥2 independent model endpoints per candidate, separate columns, native units,
+  **never averaged, ensembled or blended**; every score column carries model identity +
+  version; correlated models disclosed (e.g., CRISPRon's training includes Kim-2019 data —
+  split discipline stated per benchmark).
+- Expression system (U6 Pol III vs T7/IVT) is declared and binding — scores do not
+  transfer across it (Haeussler 2016); cell types outside a model's training contexts are
+  flagged extrapolation.
+- Realistic performance envelope disclosed with benchmark claims: replicate ρ≈0.7 ceiling;
+  ≥0.4 on truly independent data is respectable (Haeussler 2016; Konstantakos 2022).
+
+**Specificity**
+- Genome-wide off-target enumeration ≤3 mismatches, both strands, ungapped (bulges
+  NOT_EVALUATED — disclosed cap in every off-target deliverable); intended locus excluded
+  by verified coordinates.
+- Pair scores (CFD, Elevation) reported separately from enumeration counts; aggregate
+  specificity disclosed as a preference view, never an efficacy estimate.
+- **Off-target output is prioritization, never a safety claim** (Kaufmann 2026: ~77%
+  recall @ top-500; weak score↔indel correlation); regulator-grade contexts additionally
+  require the variant-aware layer and the assay-hierarchy statement (task 003).
+
+**Outcome honesty**
+- Every computational deliverable caps at `NEEDS_EXPERIMENTAL_VALIDATION`; failed/missing
+  stages are `NOT_RUN(reason)` — never imputed; a failed stage blocks only dependent claims;
+  small/degenerate evaluation sets reported as degenerate.
+- `best_design` stays null without experimental evidence.
+
+**Gates & thresholds**
+- Gates are DRAFT (provenance-tagged) until calibrated on Kim-2019 held-out +
+  Konstantakos-2022 protocol (on-target) and CHANGE-seq 110-guide set (off-target);
+  briefs tighten only — loosening requires explicit logged user instruction; gate
+  saturation is diagnosed and surfaced, never silently passed.
+
+**Tooling & licensing discipline**
+- Licenses bind use: CRISOT (CC BY-NC 2.0) research-internal only; no-license repos
+  (DeepBE, yachielab, Cas13design mirror) never redistributed; research-use portals
+  (deepcrispr.info, pridict.it) provenance-only; third-party weights never shipped.
+- Backend liveness probed before every run (`runtime/probe_backends.py`); absolute-path
+  invocation; fresh run directories; inputs read-only; provenance block mandatory.
+
+**Scope gates**
+- Pathogen-targeting diagnostics design: review-only. Plant editing: inactive (no
+  verified plant activity model; human models never transfer). Microbial: bacterial
+  models only. Delivery prediction: does not exist — stated, never approximated.
 
 ## Required Execution Steps
 

@@ -19,15 +19,45 @@ Resolved per request ([006 example brief](../config/006_prime-editing.request.ex
 
 ## Design Constraints
 
-- pegRNA fields carried in the candidate contract (`pegrna_pbs`, `pegRNA_rtt`,
-  `nicking_grna`, `editor`); design-only enumeration may use PrimeDesign/PE-Designer
-  conventions — prediction always model-tagged.
-- Intended-edit and purity (unintended) endpoints stay separate columns; PRIDICT2.0's
-  score>70 ⇒ ~12× efficiency observation is context evidence, not a promise.
-- Expression context (cell type) binds DeepPrime-class outputs (7-cell-type models);
-  contexts outside trained cell types are flagged extrapolation.
-- Model licenses/availability: PRIDICT2.0 CLI (uzh-dqbm-cmi) clean to run locally;
-  DeepPrime CLI local; OptiPrime web URL unverified — treat as curated-only.
+*Universal contract from [task 001](001_crispr_design_general.md) applies in full.* Modality-specific layers:
+
+**pegRNA structural constraints**
+- pegRNA = spacer + 3′ extension (PBS + RTT); both sequences are part of the candidate
+  contract (`pegrna_pbs`, `pegRNA_rtt`) and are enumerated as design variants, not fixed.
+- PBS/RTT length choices are model- and protocol-scoped — declared per run against the
+  model in force (DeepPE's length recommendations are HEK293T-PE2-calibrated; treat as
+  context, not universal rules); edit position inside the RTT and primer-binding
+  annealing temperature context recorded.
+- **Extension-encoded poly-T risk**: the 3′ extension is transcribed by Pol III too —
+  ≥4-T runs in PBS/RTT carry the same termination flag as the spacer; extension
+  self-complementarity and GC are checked as separate physico-chem columns.
+
+**PE system & nicking constraints**
+- PE system declared per run (PE2/PE3/PE3b + editor generation); PE3 nicking sgRNA is
+  designed as a second candidate with its own off-target record; PE3b (mutant-strand
+  nicking) preference recorded for correction requests where allele discrimination
+  matters.
+- Edit-size scope: standard predictions cover ≤3-bp edits; ≤40-bp edits carry the
+  ePRIDICT-class context label and are extrapolation-flagged under other models.
+
+**Endpoint constraints**
+- Intended-edit efficiency and purity/unintended endpoints are separate columns, never
+  blended; PRIDICT2.0's score>70 ⇒ ~12× higher in-vitro efficiency is context evidence,
+  not a promise; purity uses the model's own unintended definition (disclosed per model).
+- Expression context binds DeepPrime-class outputs (8 PE systems × 7 cell types):
+  system × cell-type combinations outside the trained grid are flagged extrapolation;
+  cell type and delivery are part of the provenance block.
+
+**Specificity constraints**
+- pegRNA spacer + nicking spacer each get the E3 stack; the 3′ extension's target
+  complement is noted as an additional alignment feature (extension-derived binding is
+  model-limited and disclosed as such — no verified extension-aware genome search exists
+  in battery v0.1).
+
+**Model availability/licensing**
+- PRIDICT2.0 CLI (uzh-dqbm-cmi) clean to run locally; DeepPrime CLI local; OptiPrime
+  web URL unverified — curated-only; ePRIDICT protocol (Nat Protoc 2026) is the
+  current reference standard for ≤40-bp + chromatin context.
 
 ## Required Execution Steps
 
