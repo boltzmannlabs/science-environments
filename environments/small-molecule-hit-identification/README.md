@@ -1,4 +1,6 @@
-# Hit identification
+# Small-molecule hit identification
+
+Environment directory: `environments/small-molecule-hit-identification/`.
 
 Task materials for prioritising small-molecule candidates from a supplied library.
 This contribution publishes the selected D2R task benchmark, original agent outputs
