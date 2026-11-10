@@ -25,8 +25,8 @@ def main() -> dict:
         "ligand_source_present": (ROOT / "inputs/source_cdk2/ligands.mol2").is_file(),
         "source_protocol_present": (ROOT / "inputs/source_cdk2/Alchaware.cfg").is_file(),
         "atom_map_present": (ROOT / "inputs/atom_map.json").is_file() and (ROOT / "inputs/openfe_atom_map.json").is_file(),
-        "complex_endpoint_topology_present": (ROOT / "inputs/complex_endpoint_topology.xml").is_file(),
-        "solvent_endpoint_topology_present": (ROOT / "inputs/solvent_endpoint_topology.xml").is_file(),
+        "complex_endpoint_topology_present": all((ROOT / f"execution/endpoints/{label}/complex.prmtop").is_file() for label in ("a", "b")),
+        "solvent_endpoint_topology_present": all((ROOT / f"execution/endpoints/{label}/solvent.prmtop").is_file() for label in ("a", "b")),
         "lambda_trajectories_present": (ROOT / "execution/trajectories").is_dir(),
     }
     missing = [name for name, ok in checks.items() if not ok]

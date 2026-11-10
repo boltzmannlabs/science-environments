@@ -1,0 +1,10 @@
+source leaprc.protein.ff14SB
+source leaprc.phosaa10
+source leaprc.gaff2
+loadAmberParams /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/ligand_parameterization/ligand_b.frcmod
+lig = loadMol2 /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/ligand_parameterization/ligand_b_gaff2.mol2
+prot = loadPdb /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/inputs/source_cdk2/protein.pdb
+complex = combine {prot lig}
+saveAmberParm complex /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/complex.prmtop /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/complex.inpcrd
+saveAmberParm lig /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/solvent.prmtop /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/solvent.inpcrd
+quit

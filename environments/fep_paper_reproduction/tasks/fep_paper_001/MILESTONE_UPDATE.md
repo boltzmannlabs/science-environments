@@ -24,6 +24,10 @@ Implemented locally on the `Boltsim` branch and committed as `c6a3241`.
 - Protein-only endpoint preparation: OpenMM system generated for all 9,013
   CDK2 particles using AMBER ff14SB plus the pinned phosphoamino-acid
   parameters. This is not yet a complex or solvent FEP endpoint.
+- GAFF2 ligand parameterization completed for both endpoints using the
+  source-provided Jaguar charges; `tleap` generated both unsolvated complex
+  and ligand-solvent endpoint topologies. Solvation, ion composition and the
+  alchemical hybrid topology remain separate validation gates.
 
 ### Current qualification
 
@@ -36,8 +40,8 @@ claimed.
 
 ### Next execution order
 
-1. Parameterize both ligands with the source-compatible GAFF workflow, then
-   generate and independently validate complex and solvent endpoint systems.
+1. Solvate and ionize both endpoint systems, then independently validate the
+   resulting complex and solvent coordinates and charges.
 2. Generate all source-consistent lambda windows and preserve inputs, logs,
    checkpoints and trajectories.
 3. Run overlap, convergence, effective-sample-size, uncertainty and replica

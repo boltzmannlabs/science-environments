@@ -15,13 +15,11 @@
     "ligand_source_present": true,
     "source_protocol_present": true,
     "atom_map_present": true,
-    "complex_endpoint_topology_present": false,
-    "solvent_endpoint_topology_present": false,
+    "complex_endpoint_topology_present": true,
+    "solvent_endpoint_topology_present": true,
     "lambda_trajectories_present": false
   },
   "missing": [
-    "complex_endpoint_topology_present",
-    "solvent_endpoint_topology_present",
     "lambda_trajectories_present"
   ],
   "scientific_claim": "No production FEP claim; readiness gate only",

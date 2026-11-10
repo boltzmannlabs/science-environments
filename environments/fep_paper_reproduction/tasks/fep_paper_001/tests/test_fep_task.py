@@ -38,7 +38,8 @@ def test_endpoint_readiness_does_not_claim_production():
     import check_endpoint_readiness
     result = check_endpoint_readiness.main()
     assert result["status"] == "REVIEW"
-    assert "complex_endpoint_topology_present" in result["missing"]
+    assert "complex_endpoint_topology_present" not in result["missing"]
+    assert "solvent_endpoint_topology_present" not in result["missing"]
     assert "lambda_trajectories_present" in result["missing"]
 
 def test_pinned_source_artifacts_exist():
@@ -73,3 +74,15 @@ def test_protein_endpoint_evidence_exists():
     assert metrics["protein_atoms"] == metrics["system_particles"]
     assert metrics["status"] == "REVIEW"
     assert "ligand GAFF" in metrics["complex_endpoint"]
+
+def test_ligand_parameterization_evidence_exists():
+    result = json.loads((ROOT / "execution/ligand_parameterization/parameterization.json").read_text())
+    assert result["records"]["a"]["antechamber_exit"] == 0
+    assert result["records"]["b"]["antechamber_exit"] == 0
+    assert result["status"] == "PASS"
+
+def test_unsolvated_endpoint_topologies_exist():
+    result = json.loads((ROOT / "execution/endpoints/endpoint_build.json").read_text())
+    assert result["status"] == "PASS"
+    for label in ("a", "b"):
+        assert all(result["records"][label]["files"].values())
