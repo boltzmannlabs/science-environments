@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate record (CSV contract)",
+  "description": "One row per candidate guide. Required: candidate_id + spacer_sequence (5'->3' DNA for Cas9/Cas12a, RNA U-notation for Cas13; orientation checked, never silently swapped; U auto-converted for DNA inputs and logged). Empty optional cells are omitted as columns, never left blank (NaN rejects at intake).",
+  "type": "object",
+  "required": ["candidate_id", "spacer_sequence"],
+  "properties": {
+    "candidate_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+    "spacer_sequence": {"type": "string", "pattern": "^(?:[ACGT]{20}|[ACGT]{23}|[ACGU]{20,30})$", "description": "20-nt (spcas9), 23-nt (cas12a), or 20-30-nt RNA (cas13)"},
+    "pam": {"type": "string", "description": "3-nt PAM adjacent to spacer (DNA modalities)"},
+    "strand": {"enum": ["+", "-"]},
+    "chrom": {"type": "string"},
+    "spacer_start": {"type": "integer", "minimum": 1},
+    "spacer_end": {"type": "integer", "minimum": 1},
+    "target_gene": {"type": "string"},
+    "transcript_id": {"type": "string"},
+    "coding_consequence": {"type": "string", "description": "exon/CDS/UTR placement + frame consequence from validated annotation"},
+    "isoform_coverage": {"type": "string", "description": "which validated transcripts the cut/edit site lies in"},
+    "pegrna_pbs": {"type": "string", "description": "prime editing only: PBS sequence"},
+    "pegRNA_rtt": {"type": "string", "description": "prime editing only: RTT sequence"},
+    "nicking_grna": {"type": "string", "description": "prime editing PE3 only: nicking sgRNA spacer"},
+    "editor": {"type": "string", "description": "base/prime editing: editor or PE system used"},
+    "donor_design": {"type": "string", "description": "HDR only: ssODN/donor annotation (asymmetry class per Richardson 2016)"},
+    "source": {"type": "string", "description": "generator/enumerator identity + model version"}
+  }
+}

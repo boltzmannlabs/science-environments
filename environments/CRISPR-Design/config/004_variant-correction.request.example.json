@@ -1,0 +1,21 @@
+{
+  "brief_id": "htt_snv_correction_router_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "HTT",
+    "transcript": "resolve-to-GENCODE-49-at-intake",
+    "sequence_supplied": false,
+    "variant": {"variant_id": "ClinVar-VCV-resolve-at-intake", "expected_consequence": "pathogenic SNV; corrected in mutant, spared in WT"}
+  },
+  "application": "variant_correction_precision_repair",
+  "nuclease": "spcas9",
+  "objective": "Route the correction modality by edit type and distance (BE if A-to-G/C-to-T reachable in editor window; PE otherwise; HDR only for larger constructs), with WT-allele discrimination; illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match", "pam_shared_with_wt_allele"],
+    "weights": {"on_target": 0.25, "specificity": 0.35, "outcome_quality": 0.30, "context": 0.10}
+  },
+  "edit": {"edit_type": "snv_correction", "position": "variant-relative; verified against reference at intake", "ref_allele": "resolve-at-intake", "alt_allele": "resolve-at-intake", "editor_constraint": ""},
+  "constraints": {"review_window": 100, "panel_size": 4, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "Allele-specific correction measured by amplicon sequencing in the user's system — downstream evidence."
+}

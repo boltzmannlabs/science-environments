@@ -1,0 +1,22 @@
+{
+  "brief_id": "pcsk9_abe_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "PCSK9",
+    "transcript": "resolve-to-GENCODE-49-at-intake",
+    "sequence_supplied": false,
+    "variant": {"variant_id": "target-splice-A-resolve-at-intake", "expected_consequence": "splice-disrupting A-to-G (VERVE-101 strategy class)"}
+  },
+  "application": "base_editing",
+  "nuclease": "spcas9",
+  "objective": "ABE guide design placing the target A in the editor window with minimal bystander editing; editor choice informed by DeepBE-class models; illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match", "bystander_in_window"],
+    "weights": {"on_target": 0.30, "specificity": 0.25, "outcome_quality": 0.35, "context": 0.10},
+    "min_standards": {"exact_match_off_targets_max": 0}
+  },
+  "edit": {"edit_type": "a_to_g", "position": "splice-site A; verified at intake", "ref_allele": "A", "alt_allele": "G", "editor_constraint": "ABE-family; router proposes"},
+  "constraints": {"review_window": 100, "panel_size": 6, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "Intended A-to-G fraction and bystander profile by amplicon-seq in the user's system — downstream evidence."
+}

@@ -1,0 +1,14 @@
+{
+  "brief_id": "contrived_target_diagnostics_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "synthetic-control-locus", "sequence_supplied": true},
+  "application": "diagnostics_pathogen",
+  "nuclease": "cas12a",
+  "objective": "Cas12a crRNA design for a CONTRIVED/synthetic (non-pathogen) detection target with primer compatibility context (EasyDesign/PrimedSherlock conventions). PATHOGEN-TARGETING REQUESTS ARE REVIEW-ONLY — this example deliberately uses a supplied synthetic sequence; tool presence is not authorization.",
+  "priorities": {
+    "hard_vetoes": ["gc_out_of_band"],
+    "weights": {"on_target": 0.45, "specificity": 0.30, "outcome_quality": 0.10, "context": 0.15}
+  },
+  "constraints": {"review_window": 50, "panel_size": 6, "site_distinct": true, "expression_system": "in_vitro_protein"},
+  "success_criteria": "Detection sensitivity (limit of detection) on contrived target in the user's assay — downstream evidence; pathogen extension requires review approval first."
+}

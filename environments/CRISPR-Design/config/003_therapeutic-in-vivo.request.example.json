@@ -1,0 +1,15 @@
+{
+  "brief_id": "ttr_therapeutic_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "TTR", "transcript": "resolve-to-GENCODE-49-at-intake", "sequence_supplied": false},
+  "application": "therapeutic_in_vivo_editing",
+  "nuclease": "spcas9",
+  "objective": "Hepatic in-vivo knockout context: regulator-grade specificity stack with variant-aware off-target layer (population SNVs); anchor strategy-level only — no public therapeutic guide sequence exists (exa-cel SPY101 redacted; NTLA-2001 patent-bound).",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match", "high_top1_cfd"],
+    "weights": {"on_target": 0.20, "specificity": 0.55, "outcome_quality": 0.15, "context": 0.10},
+    "min_standards": {"cfd_top1_max": 0.02}
+  },
+  "constraints": {"review_window": 200, "panel_size": 6, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "Serum TTR reduction and site-specific indel measurement in the user's system — downstream evidence; in-silico off-target output is prioritization, never safety proof."
+}

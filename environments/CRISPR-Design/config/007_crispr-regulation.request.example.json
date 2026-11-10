@@ -1,0 +1,14 @@
+{
+  "brief_id": "myc_crispri_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "MYC", "transcript": "resolve-to-GENCODE-49-at-intake", "sequence_supplied": false},
+  "application": "crispr_regulation",
+  "nuclease": "dcas9_krab",
+  "objective": "CRISPRi (dCas9-KRAB) repression: guides in the narrow TSS-downstream window per Horlbeck rules; chromatin context flagged (K562-calibrated caveat disclosed); illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match"],
+    "weights": {"on_target": 0.35, "specificity": 0.25, "outcome_quality": 0.15, "context": 0.25}
+  },
+  "constraints": {"review_window": 100, "panel_size": 6, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "MYC mRNA reduction by RT-qPCR in the user's line — downstream evidence."
+}
