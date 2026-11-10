@@ -1,0 +1,30 @@
+{
+  "protein": {
+    "pdb_id": "2QBS",
+    "present": true,
+    "sha256": "987a6c09ac6b8d9b2a1e8d298a904d9cd51eb5690c8f254f8c2efa2b92a41d9f",
+    "atom_records": 5488
+  },
+  "ligands": {
+    "23477": {
+      "present": true,
+      "sha256": "7d2f2b28604ac56d7612347e577fc958b0d5f9a250cb5efc78591244c7c44aa7",
+      "atoms": 43,
+      "valid": true
+    },
+    "23482": {
+      "present": true,
+      "sha256": "0d2578785fe2c6cfa4f7bc4fe34ae8bdb64e6d63bb11a2a7d3cf14403bbadd8e",
+      "atoms": 50,
+      "valid": true
+    }
+  },
+  "edge": {
+    "ligand_a": "23477",
+    "ligand_b": "23482",
+    "ddg_kcal_mol": -1.16,
+    "direction": "23477->23482"
+  },
+  "status": "PASS",
+  "scope": "source identity and edge validation; no production FEP claim"
+}

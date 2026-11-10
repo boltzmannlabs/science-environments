@@ -19,3 +19,15 @@ The detailed task is in `../tasks/fep_paper_001/`. Its results are summarized in
 
 Future benchmark systems must pin a paper DOI, revision, molecular edge,
 structures, parameters, protocol, reference metrics and acceptance criteria.
+
+## FEP-PAPER-002
+
+- Paper-derived system: PTP1B structure `2QBS`, edge `23477 -> 23482`.
+- Reference source: Ross et al. 2023 public binding free-energy benchmark,
+  pinned revision `a65d86b782a678c75388566ce00446e45283ee63`.
+- Published edge reference: `-1.16 kcal/mol`.
+- Current result: source identity and edge validation PASS; production FEP
+  qualification REVIEW because edge-specific trajectories and complete open
+  protocol evidence are unavailable.
+
+The detailed task is in `../tasks/fep_paper_002/`.
