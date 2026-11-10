@@ -1,4 +1,4 @@
-# Retro Environment — target-specific route audit
+# Retro Environment — task-scoped route audits
 
 Research-prototype environment for auditing computational retrosynthesis of the target
 `CC1=C(C=C2C=CC(=C(C2=N1)F)F)OC3=C(C(=CC=C3)F)C(C)(C)O`.
@@ -15,7 +15,7 @@ benchmark/task-01-fluorinated-quinoline-retrosynthesis/   # papers, source links
 results/task-01-fluorinated-quinoline-retrosynthesis/     # observed model outputs, numerical tables and DOCX
 ```
 
-Use the same `task-NN-descriptive-topic` name in all three sections for each future study. The existing three phase documents belong to task-01-fluorinated-quinoline-retrosynthesis, not three separate target tasks.
+Use the same `task-NN-descriptive-topic` name in all three sections for each future study. See the [reusable task-folder standard](TASK_STRUCTURE.md) for required sections, evidence fields and validation. The existing three phase documents belong to task-01-fluorinated-quinoline-retrosynthesis, not three separate target tasks.
 
 ## Structure
 
@@ -43,3 +43,7 @@ python environments/retro_environment/scripts/build_report.py
 ```
 
 No live Boltzmann job is run by these scripts. See [specification](ENVIRONMENT_SPEC.md) and [tasks](tasks/README.md) for input expectations and reproducibility limits.
+
+## Task 02 — Impurity retrosynthesis and literature benchmarking
+
+[Task definition](tasks/task-02-impurity-retrosynthesis/README.md), [literature and metrics](benchmark/task-02-impurity-retrosynthesis/README.md), [results](results/task-02-impurity-retrosynthesis/README.md), and [gaps to outperform literature](results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md). This case is separate from the Task-01 target described above. The existing `benchmark/` directory is retained (not duplicated as `benchmarks/`). All sections share the same task folder name.

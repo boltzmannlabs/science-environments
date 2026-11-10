@@ -8,3 +8,7 @@ Each numbered folder represents one complete scientific task, not one tool call.
 
 - [task-01-fluorinated-quinoline-retrosynthesis benchmarks](../benchmark/task-01-fluorinated-quinoline-retrosynthesis/README.md)
 - [task-01-fluorinated-quinoline-retrosynthesis results](../results/task-01-fluorinated-quinoline-retrosynthesis/README.md)
+
+## Task 02 — Impurity retrosynthesis
+
+[Complete task](../tasks/task-02-impurity-retrosynthesis/README.md) · [Literature and achieved metrics](../benchmark/task-02-impurity-retrosynthesis/README.md) · [Outputs and improvement gaps](../results/task-02-impurity-retrosynthesis/README.md). A/M: 19 paths and 59 reaction nodes screened; racemic parent completion is owner-confirmed with numerical artifacts not yet linked. No experimental literature superiority is claimed.

@@ -22,3 +22,7 @@ None of the 16 routes has an experimentally verified same-target preparation est
 - Original platform model version, training provenance, sampling parameters and reproducibility seed were not returned.
 
 **No live service capability is promised by this repository snapshot.**
+
+## Task 02
+
+Added linked impurity test case, literature/experimental reference context, achieved metrics, output files and gap plan under `task-02-impurity-retrosynthesis`. A/M model summaries include 19 paths/59 nodes; racemic completion remains owner-confirmed, metrics unlinked. No new service jobs or wet-lab experiments were run for repository organization. See [Task-02 results](results/task-02-impurity-retrosynthesis/README.md).
