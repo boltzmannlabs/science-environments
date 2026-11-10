@@ -1,0 +1,12 @@
+{
+  "protein_atoms": 9013,
+  "system_particles": 9013,
+  "forcefields": [
+    "amber/protein.ff14SB.xml",
+    "inputs/source_cdk2/protein.phosaa10.xml"
+  ],
+  "status": "REVIEW",
+  "complex_endpoint": "not generated: ligand GAFF endpoint parameters required",
+  "solvent_endpoint": "not generated: ligand GAFF endpoint parameters required",
+  "scientific_claim": "protein-only topology validation; not a complete FEP endpoint"
+}

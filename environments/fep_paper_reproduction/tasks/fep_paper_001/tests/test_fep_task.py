@@ -67,3 +67,9 @@ def test_mapping_qualification_is_conservative():
     assert qualification["checks"]["all_elements_match"] is False
     assert qualification["status"] == "REVIEW"
     assert qualification["checks"]["stereochemistry_explicitly_reviewed"] is False
+
+def test_protein_endpoint_evidence_exists():
+    metrics = json.loads((ROOT / "execution/endpoint_preparation/protein_endpoint_metrics.json").read_text())
+    assert metrics["protein_atoms"] == metrics["system_particles"]
+    assert metrics["status"] == "REVIEW"
+    assert "ligand GAFF" in metrics["complex_endpoint"]
