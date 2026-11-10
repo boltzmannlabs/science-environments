@@ -60,3 +60,10 @@ def test_openfe_mapping_is_available():
     assert mapping["mapper"] == "OpenFE LomapAtomMapper"
     assert mapping["mapped_atom_count"] == 45
     assert mapping["status"] == "REVIEW"
+
+def test_mapping_qualification_is_conservative():
+    qualification = json.loads((ROOT / "evaluation/mapping_qualification.json").read_text())
+    assert qualification["mapped_atom_count"] == 45
+    assert qualification["checks"]["all_elements_match"] is False
+    assert qualification["status"] == "REVIEW"
+    assert qualification["checks"]["stereochemistry_explicitly_reviewed"] is False
