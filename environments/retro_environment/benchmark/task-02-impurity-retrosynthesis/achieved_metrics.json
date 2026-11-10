@@ -22,11 +22,19 @@
     }
   },
   "racemic_ibuprofen": {
-    "completion": "completed_owner_confirmed",
-    "route_count": null,
-    "reaction_nodes": null,
-    "literature_comparator_mapping": null,
-    "metrics_status": "original artifacts not linked"
+    "completion": "completed_artifact_recovered",
+    "route_count": 7,
+    "reaction_nodes": 25,
+    "literature_comparator_mapping": [
+      "US3385886A Example 4",
+      "EP0337803A1",
+      "US5166418A"
+    ],
+    "metrics_status": "25 step comparisons recovered; no experimental performance measured",
+    "exact_step_matches_in_inspected_sources": 0,
+    "analogous_step_matches": 1,
+    "indirect_multi_operation_analogies": 1,
+    "other_steps_not_assessed_across_full_literature": 23
   },
   "experimental_comparison": {
     "project_measured_yield": null,

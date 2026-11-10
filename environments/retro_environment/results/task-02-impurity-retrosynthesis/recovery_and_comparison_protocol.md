@@ -4,7 +4,7 @@ Status: draft for process-owner review, not a registered experimental study or a
 
 ## Artifact recovery outcome
 
-The current profile and project document search located only the original A/M scored-path JSON files plus their derivatives. A separate user-authored task brief specifies racemic ibuprofen as PubChem CID 3672 with input `CC(C)Cc1ccc(cc1)C(C)C(=O)O`, alongside aspirin and paracetamol. That document is an **instruction/specification**, not a completed run output or literature comparison. Its supplied structure confirms the intended parent connectivity, not a measured racemic composition, salt/form identity, successful tool execution or synthesis. No original parent run export, job handle or exact comparison report has yet been recovered. Owner-confirmed completion is retained; numerical metrics remain unavailable. No source document or account-scoped export is copied here.
+The previous retro_case chat history identified the completed parent-racemate run and its audit/comparison files. Seven routes and 25 reaction-node comparisons are recovered in [racemic_ibuprofen_recovered.json](racemic_ibuprofen_recovered.json), with exact comparator mapping in [racemic_ibuprofen_comparison.md](racemic_ibuprofen_comparison.md). The earlier local-profile-only search missed this separate session. CID 3672 and submitted parent SMILES are recorded in those artifacts. This closes the run-recovery gap, not stereochemical/form, reaction-feasibility, experimental or cost qualification.
 
 ## Target/benchmark gate
 
@@ -29,6 +29,6 @@ A qualified review must assess reactive intermediates, incompatibilities, therma
 
 ## Immediate owner decisions
 
-Provide the racemic run's file/report location or exact existing job ID and its reference list; do not create a replacement run under the name “recovery.” Confirm intended form and purity measurement basis and identify the responsible laboratory/process-safety team. Agree on one matched comparator, common starting-material boundary, primary endpoint and meaningful margin before any experimental benchmark.
+The original racemic run is now recovered; review its mapped comparator steps rather than creating a replacement run. Confirm intended form and purity measurement basis and identify the responsible laboratory/process-safety team. Agree on one matched comparator, common starting-material boundary, primary endpoint and meaningful margin before any experimental benchmark.
 
 [Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmark/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)

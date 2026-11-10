@@ -42,7 +42,10 @@ class TestTask02(unittest.TestCase):
         self.assertEqual(sum(int(row['reaction_nodes']) for row in rows), 59)
         self.assertEqual(len({(row['target'], row['route_id']) for row in rows}), 19)
         self.assertFalse(metrics['experimental_comparison']['chemical_superiority_demonstrated'])
-        self.assertIsNone(metrics['racemic_ibuprofen']['route_count'])
+        self.assertEqual(metrics['racemic_ibuprofen']['route_count'], 7)
+        recovered = json.loads((RESULTS / 'racemic_ibuprofen_recovered.json').read_text())
+        self.assertEqual(len(recovered['routes']), 7)
+        self.assertEqual(len(recovered['step_comparison']), 25)
         self.assertIsNone(metrics['experimental_comparison']['project_measured_yield'])
 
     def test_reference_catalog_and_gaps(self):

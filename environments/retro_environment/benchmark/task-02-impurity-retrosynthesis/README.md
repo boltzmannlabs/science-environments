@@ -1,5 +1,10 @@
 # Task 02 benchmark — literature and achieved metrics
 
+## Recovery update — supersedes earlier missing-artifact statements
+
+The prior retro_case execution artifacts have now been recovered: parent racemic ibuprofen has **7 routes and 25 reaction-node comparisons**, distinct from the A/M subset. Comparator patents are US3385886A Example 4, EP0337803A1 and US5166418A; no measured superiority was found. See the recovered parent comparison and JSON linked from the Task-02 results index. Earlier owner-confirmed/unlinked wording below is a historical state, not current availability.
+
+
 Task: [complete test case](../../tasks/task-02-impurity-retrosynthesis/README.md). Outputs: [result inventory](../../results/task-02-impurity-retrosynthesis/README.md).
 
 ## Comparator data

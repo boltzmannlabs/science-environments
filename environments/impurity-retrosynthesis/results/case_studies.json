@@ -19,13 +19,16 @@
     },
     {
       "case_id": "racemic-ibuprofen",
-      "execution_status": "completed_owner_confirmed",
-      "literature_comparison_status": "completed_owner_confirmed",
-      "provenance": "Direct project-owner correction during repository update",
-      "artifact_status": "original_output_and_reference_mapping_not_located_in_checkout",
-      "route_count": null,
-      "reaction_node_count": null,
-      "performance_metrics": null
+      "execution_status": "completed_artifact_recovered",
+      "literature_comparison_status": "recovered_documentary_step_review",
+      "provenance": "Prior retro_case execution and comparison artifacts recovered read-only",
+      "artifact_status": "sanitized_ibuprofen_derivative_available_in_retro_task02",
+      "route_count": 7,
+      "reaction_node_count": 25,
+      "performance_metrics": {
+        "literature_superiority_demonstrated": false,
+        "measured_yield": null
+      }
     },
     {
       "case_id": "osimertinib-original-proposal",
