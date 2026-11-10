@@ -35,3 +35,11 @@ the original report does not endorse those interpretations. No new scientific
 execution, reassessment or experimental validation is performed by this transfer.
 Give execution agents the selected task and its inputs; keep benchmark outcomes
 and earlier results for evaluation.
+
+## Reserved environment structure
+
+The environment also reserves `ENVIRONMENT_SPEC.md`, `STATUS.md` and
+`MODELS_AND_TOOLS.md` as empty files, and `config/`, `tests/`, `scripts/` and
+`src/` as empty directories tracked with `.gitkeep` files, as requested by the
+contributor. These placeholders have no implementation or validation content.
+Remove each directory's `.gitkeep` when substantive files are added.
