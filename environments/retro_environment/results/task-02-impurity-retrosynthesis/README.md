@@ -11,6 +11,7 @@
 | [case_studies.json](case_studies.json) | A/M artifact-backed completion; racemic ibuprofen owner-confirmed completion with numerical artifact gap; original osimertinib identity proposal separately held. |
 | [achievements_and_comparison.md](achievements_and_comparison.md) | Target-specific observations and comparison with literature, without claiming improved experimental performance. |
 | [gaps_and_improvement_plan.md](gaps_and_improvement_plan.md) | Prioritized evidence/chemistry/process gaps and requirements for an actual literature-superiority claim. |
+| [recovery_and_comparison_protocol.md](recovery_and_comparison_protocol.md) | Recovery search found a parent-racemate task brief, not its executed output; defines draft matched endpoints, measurement records, safety/cost gates and owner decisions. |
 | [task_record.json](task_record.json) | Standardized task ID and cross-folder artifact links; expected reproducibility and validation state. |
 | [benchmark metrics](../../benchmark/task-02-impurity-retrosynthesis/achieved_metrics.json) | Computational metrics and separately labelled literature-reported values; absent measured metrics are null. |
 
