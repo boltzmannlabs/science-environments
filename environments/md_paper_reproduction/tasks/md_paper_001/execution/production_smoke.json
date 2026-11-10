@@ -1,0 +1,21 @@
+{
+  "engine": "GROMACS 2025.2",
+  "source_protocol": "equil_md_gpu.mdp",
+  "preprocessing_command": "gmx grompp -f equil_md_gpu.mdp -c em.gro -p topol_fin.top -n index.ndx -o cs3_md.tpr -maxwarn 1",
+  "execution_command": "gmx mdrun -s cs3_md.tpr -deffnm cs3_smoke -nsteps 10 -nb cpu -ntmpi 1 -ntomp 2",
+  "steps_completed": 10,
+  "execution_status": "PASS",
+  "qualification_status": "REVIEW",
+  "evidence": {
+    "grompp_log": "execution/grompp_production_smoke.log",
+    "mdrun_log": "execution/mdrun_production_smoke.log",
+    "grompp_warning": "net charge -0.000105; Ewald with net charge; all-bond constraints differ from force-field recommendation",
+    "runtime_warning": "Parrinello-Rahman pressure scaling exceeded 1% on step 1"
+  },
+  "limitations": [
+    "-maxwarn 1 was used exactly as specified by the archived source README; this is not a production qualification.",
+    "Only 10 CPU smoke steps were executed; no 50 ns or 100 ns production claim is made.",
+    "The source system contains 50 LIG molecules and is not equivalent to a single-ligand binding free-energy system.",
+    "No GPU execution was claimed because this smoke run used the available CPU backend."
+  ]
+}

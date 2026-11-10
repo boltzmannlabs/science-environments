@@ -1,0 +1,40 @@
+              :-) GROMACS - gmx mdrun, 2025.2-Ubuntu_2025.2_1 (-:
+
+Executable:   /usr/bin/gmx
+Data prefix:  /usr
+Working dir:  /home/boltzmann15/github/science-environments/environments/md_paper_reproduction/tasks/md_paper_001/inputs/paper_source/cdk2_cs3
+Command line:
+  gmx mdrun -s /tmp/tmp.lWzn3soNvg/cs3_md.tpr -deffnm /tmp/tmp.lWzn3soNvg/cs3_smoke -nsteps 10 -nb cpu -ntmpi 1 -ntomp 2
+
+Compiled SIMD is SSE4.1, but AVX_512 might be faster (see log).
+Reading file /tmp/tmp.lWzn3soNvg/cs3_md.tpr, VERSION 2025.2-Ubuntu_2025.2_1 (single precision)
+Multiple energy groups is not implemented for GPUs, falling back to the CPU. For better performance, run on the GPU without energy groups and then do gmx mdrun -rerun option on the trajectory with an energy group .tpr file.
+
+Overriding nsteps with value passed on the command line: 10 steps, 0.02 ps
+Changing nstlist from 20 to 80, rlist from 1.008 to 1.129
+
+
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cpus
+      and the -pin option is set to auto: will not pin threads to cpus.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+starting mdrun 'Protein in water'
+10 steps,      0.0 ps.
+
+Step 1 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        1.229        0.615      200.0
+                 (ns/day)    (hour/ns)
+Performance:        3.093        7.759
+
+GROMACS reminds you: "Have a Nice Day" (R. McDonald)
+

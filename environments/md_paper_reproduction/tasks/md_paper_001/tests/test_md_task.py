@@ -46,3 +46,9 @@ def test_paper_source_bundle_is_pinned_and_readable():
     assert result["status"] == "PASS"
     assert result["gmx_check"] == "PASS"
     assert all(item["hash_matches"] for item in result["file_checks"].values())
+
+def test_bounded_production_smoke_is_recorded_without_false_qualification():
+    result = json.loads((ROOT / "execution/production_smoke.json").read_text())
+    assert result["execution_status"] == "PASS"
+    assert result["steps_completed"] == 10
+    assert result["qualification_status"] == "REVIEW"

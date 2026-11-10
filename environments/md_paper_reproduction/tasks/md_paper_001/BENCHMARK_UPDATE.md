@@ -30,4 +30,7 @@ it is not silently converted into a single-ligand production system.
 Current evidence is parameter extraction, configuration fault detection,
 ligand parameterization and source-coordinate integrity. Topology preprocessing,
 single-ligand complex assembly and production dynamics remain REVIEW; no 100 ns
-paper reproduction is claimed.
+paper reproduction is claimed. A bounded 10-step GROMACS smoke run was also
+executed from the archived production input. It completed, but required the
+source-prescribed `-maxwarn 1` and emitted net-charge/pressure-scaling warnings;
+the run is therefore execution PASS and scientific qualification REVIEW.
