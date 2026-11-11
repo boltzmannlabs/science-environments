@@ -7,4 +7,4 @@ comparison requested for the FEP module.
 
 Current evidence and limitations are reported in
 `tasks/fep_paper_002/reports/FINAL_REPORT.md` and
-`reports/FEP_AGENT_COMPARISON.md`.
+`results/reports/FEP_AGENT_COMPARISON.md`.

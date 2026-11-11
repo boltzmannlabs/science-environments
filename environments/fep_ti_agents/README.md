@@ -23,13 +23,13 @@ Paper-reconstruction tasks are the primary benchmark. The bounded SAMPL6
 manifest remains a separate provenance fixture and is not the required scope
 of the publication-based tasks.
 
-The canonical case-study catalogue is in `case_studies/`. It currently records
+The canonical case-study catalogue is in `benchmark/case_studies/`. It currently records
 two setup-validated cases and two additional paper-derived cases at
 `CATALOGUED` status.
 
 The three-agent paper benchmark is indexed under
 `benchmark/FEP01_PTP1B/`, with the comparative evidence report in
-`reports/FEP_AGENT_COMPARISON.md`. Only the specialist configuration has an
+`results/reports/FEP_AGENT_COMPARISON.md`. Only the specialist configuration has an
 auditable local execution trace; general and fully orchestrated LLM runs are
 not claimed until their model/runtime traces are available.
 
@@ -126,11 +126,10 @@ fep_ti_agents/
 ├── scripts/ (execution and validation entry points)
 ├── tests/ (package and task tests)
 ├── benchmark/ (publication-derived benchmark records)
-├── reports/ and research/ (comparative evidence and source notes)
-├── case_studies/ (case catalogue and qualification levels)
+├── benchmark/case_studies/ (case catalogue and qualification levels)
 └── results/ (run indexes and qualification evidence)
 ```
 
-The first-level directories match the De Novo environment convention. The
-additional FEP directories retain domain-specific case-study, research and
-comparative-report evidence without changing the standard execution layout.
+The first-level directories now match the De Novo environment convention.
+FEP research notes are maintained at repository-level `research/FEP-TI/`, and
+comparative reports are kept under `results/reports/`.

@@ -126,7 +126,7 @@ def test_extended_gpu_replica_has_complete_window_execution_but_stays_review():
 
 def test_fep01_three_agent_benchmark_is_explicit_about_execution_evidence():
     benchmark = ROOT.parents[1]/'benchmark'/'FEP01_PTP1B'
-    report = ROOT.parents[1]/'reports'/'FEP_AGENT_COMPARISON.md'
+    report = ROOT.parents[1]/'results'/'reports'/'FEP_AGENT_COMPARISON.md'
     assert (benchmark/'TASK.md').exists()
     assert (benchmark/'PAPER_REFERENCE.md').exists()
     text = report.read_text()

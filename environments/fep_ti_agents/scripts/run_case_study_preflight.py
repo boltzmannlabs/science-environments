@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOGUE = ROOT / "case_studies/catalogue.json"
+CATALOGUE = ROOT / "benchmark/case_studies/catalogue.json"
 
 def main() -> dict:
     data = json.loads(CATALOGUE.read_text())
