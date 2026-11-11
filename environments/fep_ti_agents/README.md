@@ -27,6 +27,12 @@ The canonical case-study catalogue is in `case_studies/`. It currently records
 two setup-validated cases and two additional paper-derived cases at
 `CATALOGUED` status.
 
+The three-agent paper benchmark is indexed under
+`benchmark/FEP01_PTP1B/`, with the comparative evidence report in
+`reports/FEP_AGENT_COMPARISON.md`. Only the specialist configuration has an
+auditable local execution trace; general and fully orchestrated LLM runs are
+not claimed until their model/runtime traces are available.
+
 The paper catalogue targets eight concrete task definitions from five distinct
 publication/study families, following the grouping style used by the De Novo
 Enzyme Design environment. At present, two FEP paper tasks are implemented;

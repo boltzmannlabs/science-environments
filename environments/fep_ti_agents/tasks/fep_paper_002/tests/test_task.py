@@ -123,3 +123,15 @@ def test_extended_gpu_replica_has_complete_window_execution_but_stays_review():
         assert evaluation['legs'][leg]['convergence'] == 'INSUFFICIENT_SAMPLES'
         assert evaluation['legs'][leg]['uncertainty'] == 'NOT_ESTIMABLE'
         assert evaluation['legs'][leg]['qualification'] == 'REVIEW'
+
+def test_fep01_three_agent_benchmark_is_explicit_about_execution_evidence():
+    benchmark = ROOT.parents[1]/'benchmark'/'FEP01_PTP1B'
+    report = ROOT.parents[1]/'reports'/'FEP_AGENT_COMPARISON.md'
+    assert (benchmark/'TASK.md').exists()
+    assert (benchmark/'PAPER_REFERENCE.md').exists()
+    text = report.read_text()
+    assert 'General agent' in text
+    assert 'FEP specialist' in text
+    assert 'Agent + subagents + evaluator' in text
+    assert 'NOT_EXECUTED' in text
+    assert 'REVIEW' in text
