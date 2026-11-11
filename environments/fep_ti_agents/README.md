@@ -126,5 +126,11 @@ fep_ti_agents/
 ├── scripts/ (execution and validation entry points)
 ├── tests/ (package and task tests)
 ├── benchmark/ (publication-derived benchmark records)
+├── reports/ and research/ (comparative evidence and source notes)
+├── case_studies/ (case catalogue and qualification levels)
 └── results/ (run indexes and qualification evidence)
 ```
+
+The first-level directories match the De Novo environment convention. The
+additional FEP directories retain domain-specific case-study, research and
+comparative-report evidence without changing the standard execution layout.
