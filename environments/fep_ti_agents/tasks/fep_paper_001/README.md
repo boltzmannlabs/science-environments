@@ -1,5 +1,8 @@
 # FEP-PAPER-001 — CDK2 relative binding free energy
 
+**Status:** setup reconstruction `PASS` for evaluated fields; scientific
+qualification `REVIEW`.
+
 This is the first paper-derived FEP benchmark in the FEP/TI environment. It
 reconstructs the CDK2 `17 -> 1h1q` transformation from the pinned Alchaware
 source and evaluates whether the agent can build a traceable FEP setup.
@@ -17,6 +20,12 @@ source and evaluates whether the agent can build a traceable FEP setup.
 | `evaluation/` | Configuration, mapping and readiness reports |
 | `expected_outputs/` | Machine-checkable acceptance requirements |
 | `tests/` | Regression tests for the task packet |
+
+## Benchmark interpretation
+
+This is a paper-to-environment reconstruction benchmark. Matching a reported
+parameter is scored separately from executing converged lambda windows and
+reproducing a published free-energy value.
 
 ## Run validation
 

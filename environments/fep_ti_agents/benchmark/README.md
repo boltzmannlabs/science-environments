@@ -3,6 +3,16 @@
 The benchmark catalogue measures literature-to-environment reconstruction,
 not only whether a numerical free-energy value is produced.
 
+## Standard benchmark layout
+
+Each paper benchmark has a task packet, frozen inputs, independently curated
+reference values, four setup configurations, execution evidence, evaluation
+reports and a results index. Published computed values remain separate from
+experimental context and newly generated outputs.
+
+Run each task from the repository root with its validation script and tests.
+Setup checks and production FEP qualification are reported separately.
+
 ## FEP-PAPER-001
 
 - Paper-derived system: CDK2 transformation `17 -> 1h1q`.

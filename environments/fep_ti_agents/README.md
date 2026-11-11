@@ -5,11 +5,10 @@ Science-Environments packages. Read `ENVIRONMENT_SPEC.md`, `MODELS_AND_TOOLS.md`
 and `STATUS.md` first; paper tasks are indexed in `tasks/README.md`, benchmark
 scope is in `benchmark/README.md`, and current evidence is in `results/`.
 
-**Status: Specification with fixture validation.** This environment defines
-ten FEP/TI problem-solving specialists, their inputs/outputs, acceptance
-criteria, and evidence rules. It does not claim a production free-energy
-calculation without real windows, trajectories, overlap, convergence,
-uncertainty, and reference evidence.
+**Status: In progress.** The environment contains paper-derived setup
+benchmarks, specialist/problem-solving contracts and executable validation.
+It does not claim a production free-energy calculation without real windows,
+trajectories, overlap, convergence, uncertainty and reference evidence.
 
 ## Read in this order
 
@@ -19,6 +18,10 @@ uncertainty, and reference evidence.
 4. [Task cards](tasks/)
 5. [Fixture results](results/fixture_results.json)
 6. [Acceptance tests](tests/)
+
+Paper-reconstruction tasks are the primary benchmark. The bounded SAMPL6
+manifest remains a separate provenance fixture and is not the required scope
+of the publication-based tasks.
 
 Shared diagnosis, retry, audit, and provenance logic is in
 [`../md_agents/recovery_agents/cross_domain`](../md_agents/recovery_agents/cross_domain/).
