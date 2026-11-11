@@ -23,6 +23,10 @@ Paper-reconstruction tasks are the primary benchmark. The bounded SAMPL6
 manifest remains a separate provenance fixture and is not the required scope
 of the publication-based tasks.
 
+The canonical case-study catalogue is in `case_studies/`. It currently records
+two setup-validated cases and two additional paper-derived cases at
+`CATALOGUED` status.
+
 The paper catalogue targets eight concrete task definitions from five distinct
 publication/study families, following the grouping style used by the De Novo
 Enzyme Design environment. At present, two FEP paper tasks are implemented;
@@ -95,6 +99,7 @@ fep_ti_agents/
 ├── src/ (shared task and evidence contracts)
 ├── src/agents/contracts.json
 ├── src/agents/fep_environment_contracts.json / fep_agent_contracts.json
+├── case_studies/ (paper-based scientific benchmark catalogue)
 ├── tasks/ (15 specialist cards + 10 problem-solving cards + 15 environment cards)
 ├── scripts/ (execution and validation entry points)
 ├── tests/ (package and task tests)

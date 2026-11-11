@@ -41,7 +41,7 @@ unavailable.
 
 ## Validation
 
-The FEP package and paper tasks currently pass 31 automated tests. The tests
+The FEP package and paper tasks currently pass 32 automated tests. The tests
 validate contracts, pinned inputs, endpoint artifacts, mapping evidence,
 orchestration output and the architecture benchmark harness. They do not claim
 publication-level free-energy reproduction.

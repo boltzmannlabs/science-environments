@@ -1,0 +1,36 @@
+{
+  "module": "FEP/TI",
+  "qualification_levels": ["CATALOGUED", "REFERENCE_READY", "SETUP_VALIDATED", "EXECUTED", "SCIENTIFICALLY_VALIDATED", "REPRODUCED"],
+  "case_studies": [
+    {
+      "id": "CDK2_RBFE_001",
+      "paper_family": "Alchaware CDK2 study",
+      "calculation": "relative binding free energy",
+      "status": "SETUP_VALIDATED",
+      "canonical_task": "../tasks/fep_paper_001/"
+    },
+    {
+      "id": "PTP1B_RBFE_001",
+      "paper_family": "Ross et al. 2023 public benchmark",
+      "system": "PTP1B 2QBS; 23477 -> 23482",
+      "calculation": "relative binding free energy",
+      "status": "SETUP_VALIDATED",
+      "canonical_task": "../tasks/fep_paper_002/"
+    },
+    {
+      "id": "FORCE_FIELD_SENSITIVITY_001",
+      "paper_family": "Sun and Huggins 2022",
+      "calculation": "force-field, water-model and charge-method sensitivity",
+      "status": "CATALOGUED",
+      "canonical_task": null
+    },
+    {
+      "id": "SECOND_RBFE_001",
+      "paper_family": "Ross et al. 2023 public benchmark",
+      "system": "PTP1B second edge from jacs_set (edge to be frozen)",
+      "calculation": "relative binding free energy",
+      "status": "CATALOGUED",
+      "canonical_task": null
+    }
+  ]
+}
