@@ -3,6 +3,10 @@
 The benchmark catalogue measures literature-to-environment reconstruction,
 not only whether a numerical free-energy value is produced.
 
+The complete paper grouping and planned task count are documented in
+[`PAPER_CATALOGUE.md`](PAPER_CATALOGUE.md). The current implemented set is
+two tasks from two source families; planned tasks are not reported as executed.
+
 ## Standard benchmark layout
 
 Each paper benchmark has a task packet, frozen inputs, independently curated

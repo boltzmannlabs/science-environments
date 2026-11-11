@@ -23,6 +23,12 @@ Paper-reconstruction tasks are the primary benchmark. The bounded SAMPL6
 manifest remains a separate provenance fixture and is not the required scope
 of the publication-based tasks.
 
+The paper catalogue targets eight concrete task definitions from five distinct
+publication/study families, following the grouping style used by the De Novo
+Enzyme Design environment. At present, two FEP paper tasks are implemented;
+the remaining catalogue entries are planned until their inputs and protocols
+are pinned.
+
 Shared diagnosis, retry, audit, and provenance logic is in
 [`../md_agents/recovery_agents/cross_domain`](../md_agents/recovery_agents/cross_domain/).
 
