@@ -104,7 +104,11 @@ def main() -> int:
 
     records["status"] = "EXECUTED_REVIEW"
     records["qualification"] = "REVIEW"
-    records["qualification_reason"] = "Bounded 3-window/1-ps run; insufficient sampling for scientific qualification."
+    records["qualification_reason"] = (
+        f"{args.windows}-window GPU execution completed for both legs, but one repeat and "
+        f"{args.production_ps} production samples/window do not establish convergence, "
+        "replica agreement, or uncertainty; retain REVIEW."
+    )
     (OUT / "run_record.json").write_text(json.dumps(records, indent=2, default=str) + "\n")
     return 0
 

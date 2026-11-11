@@ -1,0 +1,32 @@
+{
+  "status": "EXECUTED_REVIEW",
+  "engine": "OpenFE/OpenMM",
+  "platform": "OpenCL",
+  "gpu_backend": "NVIDIA GeForce RTX 3060 (OpenCL)",
+  "cuda_attempt": "FAILED_NO_REGISTERED_CUDA_PLATFORM",
+  "mapping_atoms": 43,
+  "windows": 11,
+  "repeat": 1,
+  "equilibration_ps": 2,
+  "production_ps": 10,
+  "legs": {
+    "solvent": {
+      "setup_ok": true,
+      "setup_result": "ProtocolUnitResult(HybridTopology Setup: 23477 to 23482 repeat 0 generation 0)",
+      "simulation_ok": true,
+      "simulation_result": "ProtocolUnitResult(HybridTopology Simulation: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_ok": false,
+      "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)"
+    },
+    "complex": {
+      "setup_ok": true,
+      "setup_result": "ProtocolUnitResult(HybridTopology Setup: 23477 to 23482 repeat 0 generation 0)",
+      "simulation_ok": true,
+      "simulation_result": "ProtocolUnitResult(HybridTopology Simulation: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_ok": false,
+      "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)"
+    }
+  },
+  "qualification": "REVIEW",
+  "qualification_reason": "11-window GPU execution completed for both legs, but one replica and 10 production samples/window do not establish convergence, replica agreement, or uncertainty; retain REVIEW."
+}

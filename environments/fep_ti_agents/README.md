@@ -70,6 +70,22 @@ protein–ligand FEP result. Production qualification still requires a supported
 engine, molecular topology and parameters, real trajectories, frozen reference
 data, and independent repeats.
 
+### PTP1B GPU execution evidence
+
+The PTP1B 23477 → 23482 paper case has now been executed on the NVIDIA GeForce
+RTX 3060 through its registered OpenCL platform (OpenFE/OpenMM). The recorded
+run uses 11 lambda windows, 2 ps equilibration and 10 ps production per window
+for both solvent and complex legs. Both legs completed setup and simulation
+with finite energies; the independent evaluator recorded window coverage,
+replica-exchange acceptance and an adjacent-overlap proxy.
+
+This is execution validation, not scientific PASS: one repeat and 10 production
+samples per window are insufficient to establish block convergence, independent
+replica agreement or a defensible free-energy uncertainty. The run therefore
+remains `REVIEW` in
+`tasks/fep_paper_002/execution/openfe_production_replica1/`, with raw
+NetCDF/checkpoint artifacts and the independent evaluation preserved.
+
 ## Molecular benchmark manifest
 
 [`benchmark/sampl6/manifest.json`](benchmark/sampl6/manifest.json) pins a

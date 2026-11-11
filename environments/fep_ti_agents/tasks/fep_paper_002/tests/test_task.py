@@ -104,3 +104,22 @@ def test_bounded_run_independent_evaluation_rejects_false_convergence():
         assert leg['production_samples_per_window']==1
         assert leg['convergence']=='INSUFFICIENT_SAMPLES'
         assert leg['uncertainty']=='NOT_ESTIMABLE'
+
+def test_extended_gpu_replica_has_complete_window_execution_but_stays_review():
+    run = ROOT/'execution/openfe_production_replica1'
+    record = json.loads((run/'run_record.json').read_text())
+    evaluation = json.loads((run/'independent_evaluation.json').read_text())
+    assert record['platform'] == 'OpenCL'
+    assert 'NVIDIA GeForce RTX 3060' in record['gpu_backend']
+    assert record['windows'] == 11
+    assert record['production_ps'] == 10
+    assert record['qualification'] == 'REVIEW'
+    for leg in ('solvent', 'complex'):
+        assert record['legs'][leg]['setup_ok'] is True
+        assert record['legs'][leg]['simulation_ok'] is True
+        assert evaluation['legs'][leg]['finite_energies'] is True
+        assert evaluation['legs'][leg]['lambda_windows'] == 11
+        assert evaluation['legs'][leg]['production_samples_per_window'] == 10
+        assert evaluation['legs'][leg]['convergence'] == 'INSUFFICIENT_SAMPLES'
+        assert evaluation['legs'][leg]['uncertainty'] == 'NOT_ESTIMABLE'
+        assert evaluation['legs'][leg]['qualification'] == 'REVIEW'

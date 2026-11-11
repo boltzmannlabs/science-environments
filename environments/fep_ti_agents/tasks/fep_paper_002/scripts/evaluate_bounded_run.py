@@ -48,7 +48,15 @@ def main() -> int:
     parser.add_argument("--minimum-samples", type=int, default=100)
     args = parser.parse_args()
     global RUN
-    RUN = args.run if args.run.is_absolute() else ROOT / args.run
+    # Accept paths relative to either the repository working directory or the
+    # task directory.  This keeps the evaluator usable from the repository
+    # root without accidentally creating ROOT/ROOT/... paths.
+    if args.run.is_absolute():
+        RUN = args.run
+    elif (Path.cwd() / args.run).exists():
+        RUN = (Path.cwd() / args.run).resolve()
+    else:
+        RUN = (ROOT / args.run).resolve()
     result = {
         "status": "REVIEW",
         "legs": {leg: evaluate(leg) for leg in ("solvent", "complex")},
