@@ -55,3 +55,10 @@ def test_paper_configuration_matrix_runs_reference_alternative_and_stop_case():
     assert d['configs']['config_C_alternative']['status']=='REVIEW'
     assert d['configs']['config_D_perturbed']['status']=='FAIL'
     assert d['configs']['config_D_perturbed']['execution']=='STOPPED'
+
+def test_protein_preparation_records_charge_and_tleap_validation():
+    d=json.loads((ROOT/'execution/protein_preparation.json').read_text())
+    assert d['status']=='SETUP_VALIDATED'
+    assert d['independent_checks']['tleap_errors']==0
+    assert d['independent_checks']['net_charge_before_neutralization']==-7.0
+    assert d['independent_checks']['neutralization']=='PENDING'

@@ -33,6 +33,7 @@ reproduce the entire benchmark or a production FEP trajectory bundle.
 | --- | --- | --- |
 | Source identity | Match revision, protein, PDB and ligand edge. | All frozen hashes and direction must match. |
 | Endpoint preparation | Generate and independently load both ligand endpoint topologies. | MOL2/FRCMOD/PRMTOP/INPCRD artifacts exist and `tleap` reports no error. |
+| Protein preparation | Normalize the PDB and generate an ff14SB protein topology. | `tleap` completes without errors; the recorded net charge is retained for later neutralization. |
 | Parameter provenance | Distinguish source-reported, inferred and missing parameters. | GAFF2/AM1-BCC is labelled inferred; missing lambda and replica data remain unresolved. |
 | Configuration handling | Run reference, specialist, alternative and perturbed conditions. | Reversed edge is stopped before simulation; valid setup is not promoted to production. |
 | Scientific qualification | Evaluate complex/solvent legs, trajectories, overlap and convergence. | Missing evidence returns `REVIEW`, never `PASS`. |

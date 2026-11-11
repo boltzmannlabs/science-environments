@@ -1,0 +1,79 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/leap_nohyd.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/leap_nohyd.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/amino12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminoct12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminont12.lib
+Loading PDB file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS_prepared_nohyd.pdb
+  Added missing heavy atom: .R<CASP 298>.A<OXT 13>
+  total atoms in file: 2429
+  Leap added 2386 missing atoms according to residue templates:
+       1 Heavy
+       2385 H / lone pairs
+Checking 'P'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.192 angstroms between nonbonded atoms HD12 and HG
+-------  .R<LEU 83>.A<HD12 12> and .R<CYS 226>.A<HG 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.181 angstroms between nonbonded atoms HH and HD22
+-------  .R<TYR 152>.A<HH 15> and .R<ASN 193>.A<HD22 12>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.268 angstroms between nonbonded atoms HE and HG
+-------  .R<ARG 238>.A<HE 15> and .R<SER 243>.A<HG 9>
+Checking parameters for unit 'P'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 4
+Unit is OK.
+Checking Unit.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 984 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CASP	1
+  )
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 5; Notes = 1.

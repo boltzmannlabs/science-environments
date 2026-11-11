@@ -1,0 +1,5 @@
+source leaprc.protein.ff14SB
+P = loadpdb /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS_prepared_nohyd.pdb
+check P
+saveamberparm P /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS.prmtop /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS.inpcrd
+quit

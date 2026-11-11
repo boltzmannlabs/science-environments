@@ -1,0 +1,31 @@
+{
+  "task_id": "fep_paper_002",
+  "status": "SETUP_VALIDATED",
+  "input": "inputs/ptp1b_2QBS_protein.pdb",
+  "preparation": {
+    "normalizer": "AmberTools pdb4amber",
+    "flags": ["--nohyd", "--prot", "--amber-compatible-residues", "--dry"],
+    "force_field": "AMBER ff14SB",
+    "topology_builder": "tleap"
+  },
+  "outputs": {
+    "prepared_pdb": "execution/protein_preparation/ptp1b_2QBS_prepared_nohyd.pdb",
+    "prmtop": "execution/protein_preparation/ptp1b_2QBS.prmtop",
+    "inpcrd": "execution/protein_preparation/ptp1b_2QBS.inpcrd"
+  },
+  "hashes": {
+    "prepared_pdb": "2bb8ea07305077079d3baf5dc393d1f993d94942b0f8b943372d73dd6a30ab93",
+    "prmtop": "c75c016fc094d5ae0a084db6006386cb89558abeb2cf8c409d988912d731df3a",
+    "inpcrd": "f6d8476a29b6df8c6fe7616d3265e362b6c949e723052f52b4c2851622703020"
+  },
+  "independent_checks": {
+    "tleap_errors": 0,
+    "prepared_atom_records": 2431,
+    "net_charge_before_neutralization": -7.0,
+    "neutralization": "PENDING",
+    "complex_assembly": "PENDING",
+    "solvent_assembly": "PENDING"
+  },
+  "qualification": "REVIEW",
+  "note": "Protein topology is valid as a preparation artifact. The -7 charge must be handled during system assembly; this is not yet a solvated or alchemical complex."
+}

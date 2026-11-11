@@ -23,6 +23,11 @@ The bounded endpoint parameterization run is recorded in
 topologies with `tleap`. The exact commands and SHA-256 hashes are recorded in that file;
 the frozen SDF inputs were not modified.
 
+Protein preparation is recorded in `execution/protein_preparation.json`.
+The ff14SB protein topology was generated successfully, but the protein has a
+recorded net charge of `-7` before ion neutralization. Neutralized complex and
+solvent systems are therefore still pending.
+
 This is an environment-construction result, not a production FEP result.
 Complex and solvent topologies, hybrid alchemical topology, lambda-window
 trajectories, overlap, convergence and uncertainty evidence are still
