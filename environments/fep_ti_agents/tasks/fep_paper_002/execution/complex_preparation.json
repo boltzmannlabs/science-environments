@@ -1,0 +1,37 @@
+{
+  "task_id": "fep_paper_002",
+  "status": "SETUP_VALIDATED",
+  "qualification": "REVIEW",
+  "method": {
+    "protein_force_field": "AMBER ff14SB",
+    "ligand_force_field": "GAFF2",
+    "ligand_charges": "AM1-BCC",
+    "water_model": "TIP3P",
+    "builder": "AmberTools tleap",
+    "solvation": "solvateBox COM TIP3PBOX 10.0",
+    "neutralization": "addionsRand COM Na+ 7",
+    "inputs_immutable": true
+  },
+  "endpoints": {
+    "23477": {
+      "unsolvated_prmtop": "execution/complex_preparation/ptp1b_23477_complex_unsolvated.prmtop",
+      "unsolvated_inpcrd": "execution/complex_preparation/ptp1b_23477_complex_unsolvated.inpcrd",
+      "solvated_prmtop": "execution/complex_preparation/ptp1b_23477_complex_solvated.prmtop",
+      "solvated_inpcrd": "execution/complex_preparation/ptp1b_23477_complex_solvated.inpcrd",
+      "solvated_pdb": "execution/complex_preparation/ptp1b_23477_complex_solvated.pdb",
+      "independent_validation": {"unsolvated_atoms": 4858, "unsolvated_residues": 299, "unsolvated_charge": -7.0, "solvated_atoms": 40715, "solvated_residues": 12256, "solvated_charge": 0.0, "sodium_ions": 7, "water_residues": 11950, "box_angstrom": [92.328, 80.729, 68.61]},
+      "tleap": {"errors": 0, "warnings": 9, "notes": 1}
+    },
+    "23482": {
+      "unsolvated_prmtop": "execution/complex_preparation/ptp1b_23482_complex_unsolvated.prmtop",
+      "unsolvated_inpcrd": "execution/complex_preparation/ptp1b_23482_complex_unsolvated.inpcrd",
+      "solvated_prmtop": "execution/complex_preparation/ptp1b_23482_complex_solvated.prmtop",
+      "solvated_inpcrd": "execution/complex_preparation/ptp1b_23482_complex_solvated.inpcrd",
+      "solvated_pdb": "execution/complex_preparation/ptp1b_23482_complex_solvated.pdb",
+      "independent_validation": {"unsolvated_atoms": 4865, "unsolvated_residues": 299, "unsolvated_charge": -7.002, "solvated_atoms": 40713, "solvated_residues": 12253, "solvated_charge": -0.002, "sodium_ions": 7, "water_residues": 11947, "box_angstrom": [92.328, 80.729, 68.61]},
+      "tleap": {"errors": 0, "warnings": 9, "notes": 1}
+    }
+  },
+  "checks": {"both_complex_endpoints_built": "PASS", "both_endpoints_solvated": "PASS", "neutralization_within_0.01_e": "PASS", "topology_coordinate_pairs_present": "PASS", "close_contact_warnings": "REVIEW", "hybrid_alchemical_topology": "PENDING", "lambda_windows": "PENDING", "production_trajectories": "PENDING", "scientific_free_energy": "PENDING"},
+  "provenance": {"independent_checker": "ParmEd topology inspection plus tleap log parsing", "logs": ["execution/complex_preparation/tleap_23477.log", "execution/complex_preparation/tleap_23482.log"], "warning_policy": "Warnings are retained; setup is not promoted to production qualification.", "note": "These are solvated endpoint preparation artifacts, not a hybrid alchemical topology or a production FEP result."}
+}

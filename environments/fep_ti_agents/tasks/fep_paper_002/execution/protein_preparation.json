@@ -22,10 +22,10 @@
     "tleap_errors": 0,
     "prepared_atom_records": 2431,
     "net_charge_before_neutralization": -7.0,
-    "neutralization": "PENDING",
-    "complex_assembly": "PENDING",
-    "solvent_assembly": "PENDING"
+    "neutralization": "PASS",
+    "complex_assembly": "PASS",
+    "solvent_assembly": "PASS"
   },
   "qualification": "REVIEW",
-  "note": "Protein topology is valid as a preparation artifact. The -7 charge must be handled during system assembly; this is not yet a solvated or alchemical complex."
+  "note": "Protein topology and both neutralized solvated endpoint assemblies are validated. Hybrid alchemical topology, lambda trajectories and production FEP remain pending."
 }

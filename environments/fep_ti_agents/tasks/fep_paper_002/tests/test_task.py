@@ -23,7 +23,7 @@ def test_endpoint_parameterization_is_recorded_without_overclaiming():
     assert d['force_field']=='GAFF2'
     assert d['charge_method']=='AM1-BCC'
     assert d['validation']['both_endpoints_parameterized'] is True
-    assert d['validation']['complex_topology']=='PENDING'
+    assert d['validation']['complex_topology']=='PASS'
     for endpoint in d['endpoints'].values():
         assert (ROOT/endpoint['mol2']).exists()
         assert (ROOT/endpoint['frcmod']).exists()
@@ -61,4 +61,20 @@ def test_protein_preparation_records_charge_and_tleap_validation():
     assert d['status']=='SETUP_VALIDATED'
     assert d['independent_checks']['tleap_errors']==0
     assert d['independent_checks']['net_charge_before_neutralization']==-7.0
-    assert d['independent_checks']['neutralization']=='PENDING'
+    assert d['independent_checks']['neutralization']=='PASS'
+
+def test_complex_endpoints_are_independently_validated_without_overclaiming():
+    d=json.loads((ROOT/'execution/complex_preparation.json').read_text())
+    assert d['status']=='SETUP_VALIDATED'
+    assert d['qualification']=='REVIEW'
+    assert d['checks']['both_complex_endpoints_built']=='PASS'
+    assert d['checks']['both_endpoints_solvated']=='PASS'
+    assert d['checks']['neutralization_within_0.01_e']=='PASS'
+    assert d['checks']['hybrid_alchemical_topology']=='PENDING'
+    assert d['checks']['production_trajectories']=='PENDING'
+    for endpoint in d['endpoints'].values():
+        assert endpoint['tleap']['errors']==0
+        assert endpoint['independent_validation']['sodium_ions']==7
+        assert abs(endpoint['independent_validation']['solvated_charge']) <= 0.01
+        for key in ('unsolvated_prmtop','unsolvated_inpcrd','solvated_prmtop','solvated_inpcrd','solvated_pdb'):
+            assert (ROOT/endpoint[key]).exists()

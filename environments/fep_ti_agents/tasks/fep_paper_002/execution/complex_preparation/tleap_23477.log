@@ -1,0 +1,172 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation/leap_23477.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation/leap_23477.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/amino12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminoct12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminont12.lib
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.water.tip3p done
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/atomic_ions.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/solvents.lib
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23477.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading PDB file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS_prepared_nohyd.pdb
+  Added missing heavy atom: .R<CASP 298>.A<OXT 13>
+  total atoms in file: 2429
+  Leap added 2386 missing atoms according to residue templates:
+       1 Heavy
+       2385 H / lone pairs
+Loading Mol2 file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23477.mol2
+Reading MOLECULE named LIG
+Checking 'COM'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.268 angstroms between nonbonded atoms HG and HE
+-------  .R<SER 243>.A<HG 9> and .R<ARG 238>.A<HE 15>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.192 angstroms between nonbonded atoms HG and HD12
+-------  .R<CYS 226>.A<HG 9> and .R<LEU 83>.A<HD12 12>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.181 angstroms between nonbonded atoms HD22 and HH
+-------  .R<ASN 193>.A<HD22 12> and .R<TYR 152>.A<HH 15>
+Checking parameters for unit 'COM'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 4
+Unit is OK.
+Checking Unit.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 997 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CASP	1
+	LIG	1
+  )
+ (no restraints)
+  Solute vdw bounding box:              69.216 57.497 45.315
+  Total bounding box for atom centers:  89.216 77.497 65.315
+  Solvent unit box:                     18.774 18.774 18.774
+  Total vdw box size:                   92.328 80.729 68.610 angstroms.
+  Volume: 511387.855 A^3 
+  Total mass 250448.180 amu,  Density 0.813 g/cc
+  Added 11957 residues.
+Adding 7 counter ions to "COM". 11950 solvent molecules will remain.
+0: Placed Na+ in COM at (39.76, 4.41, -26.11).
+0: Placed Na+ in COM at (0.02, 28.00, -22.41).
+0: Placed Na+ in COM at (1.23, 29.54, 30.28).
+0: Placed Na+ in COM at (-12.99, 11.46, 28.32).
+0: Placed Na+ in COM at (7.90, 19.50, 30.76).
+0: Placed Na+ in COM at (21.55, -0.73, -29.78).
+0: Placed Na+ in COM at (36.14, -34.28, -18.05).
+Checking 'COM'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.268 angstroms between nonbonded atoms HG and HE
+-------  .R<SER 243>.A<HG 9> and .R<ARG 238>.A<HE 15>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.192 angstroms between nonbonded atoms HG and HD12
+-------  .R<CYS 226>.A<HG 9> and .R<LEU 83>.A<HD12 12>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.181 angstroms between nonbonded atoms HD22 and HH
+-------  .R<ASN 193>.A<HD22 12> and .R<TYR 152>.A<HH 15>
+Checking parameters for unit 'COM'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 3
+Unit is OK.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 997 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CASP	1
+	LIG	1
+	WAT	11950
+  )
+ (no restraints)
+Writing pdb file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation/ptp1b_23477_complex_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASP -> ASP
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 9; Notes = 1.

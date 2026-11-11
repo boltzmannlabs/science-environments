@@ -24,14 +24,16 @@ topologies with `tleap`. The exact commands and SHA-256 hashes are recorded in t
 the frozen SDF inputs were not modified.
 
 Protein preparation is recorded in `execution/protein_preparation.json`.
-The ff14SB protein topology was generated successfully, but the protein has a
-recorded net charge of `-7` before ion neutralization. Neutralized complex and
-solvent systems are therefore still pending.
+The ff14SB protein topology has a recorded net charge of `-7` before ion
+neutralization. Both endpoint complexes were then assembled, solvated with
+TIP3P and neutralized with seven sodium ions. ParmEd independently checked
+atom counts, box dimensions, ion counts and final charge; see
+`execution/complex_preparation.json` and the preserved `tleap` logs.
 
 This is an environment-construction result, not a production FEP result.
-Complex and solvent topologies, hybrid alchemical topology, lambda-window
-trajectories, overlap, convergence and uncertainty evidence are still
-required before scientific qualification.
+The endpoint complex/solvent preparation is now setup-validated. A hybrid
+alchemical topology, lambda-window trajectories, overlap, convergence and
+uncertainty evidence are still required before scientific qualification.
 
 Agent/tool provenance is recorded in `execution/agent_execution_trace.json`.
 It identifies the parameter, preparation and evaluation roles, commands,

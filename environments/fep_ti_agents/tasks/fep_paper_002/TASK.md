@@ -35,6 +35,10 @@ which production settings are explicitly available versus unresolved.
 - `evaluation/input_validation.json`
 - `evaluation/edge_validation.json`
 - `execution/generated_config.json`
+- `execution/parameterization.json`
+- `execution/protein_preparation.json`
+- `execution/complex_preparation.json`
+- `execution/complex_preparation/` (topology, coordinates and tleap logs)
 - `expected_outputs/qualification.json`
 
 ## Acceptance
@@ -42,5 +46,7 @@ which production settings are explicitly available versus unresolved.
 - Correctly identifies PTP1B/2QBS and edge `23477 -> 23482`.
 - Confirms published edge value `-1.16 kcal/mol`.
 - Validates both ligand files and protein hash.
+- Validates both neutralized endpoint complex/solvent systems independently,
+  including atom counts, box dimensions, ion counts and total charge.
 - Does not claim a production FEP result without trajectories and estimator
   evidence.
