@@ -81,11 +81,14 @@ SAMPL6 molecular simulations have already been executed.
 ```text
 fep_ti_agents/
 ├── README.md / ENVIRONMENT_SPEC.md / REFERENCES.md
+├── STATUS.md / MODELS_AND_TOOLS.md
+├── config/ (schemas and policy)
+├── src/ (shared task and evidence contracts)
 ├── agents/contracts.json
 ├── agents/fep_environment_contracts.json / fep_agent_contracts.json
-├── config/
 ├── tasks/ (15 specialist cards + 10 problem-solving cards + 15 environment cards)
-├── results/
-├── scripts/
-└── tests/
+├── scripts/ (execution and validation entry points)
+├── tests/ (package and task tests)
+├── benchmark/ (publication-derived benchmark records)
+└── results/ (run indexes and qualification evidence)
 ```
