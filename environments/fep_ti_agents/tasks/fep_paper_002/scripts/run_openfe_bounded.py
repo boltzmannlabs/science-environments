@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import argparse
 from pathlib import Path
 
 import gufe
@@ -16,7 +17,7 @@ from openfe import LomapAtomMapper, ProteinComponent, SmallMoleculeComponent, So
 from openfe.protocols.openmm_rfe import RelativeHybridTopologyProtocol
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "execution" / "openfe_bounded_run"
+DEFAULT_OUT = ROOT / "execution" / "openfe_bounded_run"
 PARAM = ROOT / "execution" / "parameterization_corrected"
 
 
@@ -39,6 +40,14 @@ def charged_component(label: str) -> SmallMoleculeComponent:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--windows", type=int, default=3)
+    parser.add_argument("--production-ps", type=int, default=1)
+    parser.add_argument("--equilibration-ps", type=int, default=1)
+    args = parser.parse_args()
+    global OUT
+    OUT = args.output if args.output.is_absolute() else ROOT / args.output
     OUT.mkdir(parents=True, exist_ok=True)
     a = charged_component("23477")
     b = charged_component("23482")
@@ -49,14 +58,14 @@ def main() -> int:
 
     settings = RelativeHybridTopologyProtocol.default_settings()
     settings.protocol_repeats = 1
-    settings.lambda_settings.lambda_windows = 3
-    settings.simulation_settings.n_replicas = 3
+    settings.lambda_settings.lambda_windows = args.windows
+    settings.simulation_settings.n_replicas = args.windows
     settings.simulation_settings.minimization_steps = 1
-    settings.simulation_settings.equilibration_length = "1 ps"
-    settings.simulation_settings.production_length = "1 ps"
+    settings.simulation_settings.equilibration_length = f"{args.equilibration_ps} ps"
+    settings.simulation_settings.production_length = f"{args.production_ps} ps"
     settings.simulation_settings.time_per_iteration = "1 ps"
-    settings.simulation_settings.real_time_analysis_interval = "1 ps"
-    settings.simulation_settings.real_time_analysis_minimum_time = "1 ps"
+    settings.simulation_settings.real_time_analysis_interval = f"{max(1, args.production_ps // 10)} ps"
+    settings.simulation_settings.real_time_analysis_minimum_time = f"{max(1, args.production_ps // 10)} ps"
     settings.output_settings.checkpoint_interval = "1 ps"
     # This OpenMM build exposes the RTX 3060 through OpenCL, not CUDA.  Use
     # the registered GPU backend and retain the CUDA failure as provenance.
@@ -65,7 +74,7 @@ def main() -> int:
 
     systems_a = list(__import__("openfe.setup.chemicalsystem_generator", fromlist=["EasyChemicalSystemGenerator"]).EasyChemicalSystemGenerator(solvent=solvent, protein=protein)(a))
     systems_b = list(__import__("openfe.setup.chemicalsystem_generator", fromlist=["EasyChemicalSystemGenerator"]).EasyChemicalSystemGenerator(solvent=solvent, protein=protein)(b))
-    records = {"status": "RUNNING", "engine": "OpenFE/OpenMM", "platform": "OpenCL", "gpu_backend": "NVIDIA GeForce RTX 3060 (OpenCL)", "cuda_attempt": "FAILED_NO_REGISTERED_CUDA_PLATFORM", "mapping_atoms": len(mapping.componentA_to_componentB), "windows": 3, "repeat": 1, "legs": {}}
+    records = {"status": "RUNNING", "engine": "OpenFE/OpenMM", "platform": "OpenCL", "gpu_backend": "NVIDIA GeForce RTX 3060 (OpenCL)", "cuda_attempt": "FAILED_NO_REGISTERED_CUDA_PLATFORM", "mapping_atoms": len(mapping.componentA_to_componentB), "windows": args.windows, "repeat": 1, "equilibration_ps": args.equilibration_ps, "production_ps": args.production_ps, "legs": {}}
 
     for leg, (state_a, state_b) in zip(("solvent", "complex"), zip(systems_a, systems_b)):
         leg_dir = OUT / leg

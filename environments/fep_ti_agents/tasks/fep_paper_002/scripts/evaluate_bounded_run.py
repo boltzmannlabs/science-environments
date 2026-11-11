@@ -2,13 +2,15 @@
 from __future__ import annotations
 
 import json
+import argparse
 from pathlib import Path
 
 import netCDF4
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN = ROOT / "execution" / "openfe_bounded_run"
+DEFAULT_RUN = ROOT / "execution" / "openfe_bounded_run"
+RUN = DEFAULT_RUN
 
 
 def evaluate(leg: str) -> dict:
@@ -41,14 +43,20 @@ def evaluate(leg: str) -> dict:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run", type=Path, default=DEFAULT_RUN)
+    parser.add_argument("--minimum-samples", type=int, default=100)
+    args = parser.parse_args()
+    global RUN
+    RUN = args.run if args.run.is_absolute() else ROOT / args.run
     result = {
         "status": "REVIEW",
         "legs": {leg: evaluate(leg) for leg in ("solvent", "complex")},
         "criteria": {
-            "minimum_production_samples": 100,
+            "minimum_production_samples": args.minimum_samples,
             "required_replicas": 3,
             "required_lambda_windows": 11,
-            "note": "The bounded smoke run proves execution and output generation, not convergence or a publishable free energy.",
+            "note": "Independent evaluator distinguishes execution from convergence and publication-level qualification.",
         },
     }
     (RUN / "independent_evaluation.json").write_text(json.dumps(result, indent=2) + "\n")
