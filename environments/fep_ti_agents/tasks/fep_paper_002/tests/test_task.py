@@ -46,3 +46,12 @@ def test_paper_comparison_and_architecture_matrix_are_conservative():
     assert matrix['experiments']['A_general_agent']['status']=='NOT_EXECUTED'
     assert matrix['experiments']['B_specialist_assisted']['topology_generation']=='STANDALONE_ENDPOINTS_PASS'
     assert matrix['metrics']['scientific_qualification']=='REVIEW'
+
+def test_paper_configuration_matrix_runs_reference_alternative_and_stop_case():
+    d=json.loads((ROOT/'execution/config_comparison.json').read_text())
+    assert d['benchmark_focus']=='paper-to-environment setup reconstruction'
+    assert d['configs']['config_B_agent']['status']=='SETUP_PASS'
+    assert d['configs']['config_B_agent']['standalone_endpoint_topologies'] is True
+    assert d['configs']['config_C_alternative']['status']=='REVIEW'
+    assert d['configs']['config_D_perturbed']['status']=='FAIL'
+    assert d['configs']['config_D_perturbed']['execution']=='STOPPED'

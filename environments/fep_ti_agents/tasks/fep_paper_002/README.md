@@ -36,6 +36,13 @@ LLM execution. The paper comparison is in
 `evaluation/paper_parameter_comparison.json`, and the A/B/C architecture
 matrix is in `evaluation/agent_configuration_comparison.json`.
 
+The executable setup matrix is recorded in
+`execution/config_comparison.json`. It evaluates the paper reference, the
+specialist-generated setup, a supported alternative and a deliberately
+reversed transformation. The invalid configuration is stopped before any
+simulation, while the valid setup is accepted only at the environment
+construction stage.
+
 The current result is `REVIEW`: input identity, ligand extraction and the
 published experimental edge and endpoint ligand parameterization are
 validated, but the source paper does not provide a complete open alchemical

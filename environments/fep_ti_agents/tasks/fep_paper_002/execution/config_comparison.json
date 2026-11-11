@@ -1,0 +1,42 @@
+{
+  "task_id": "fep_paper_002",
+  "benchmark_focus": "paper-to-environment setup reconstruction",
+  "configs": {
+    "config_A_reference": {
+      "purpose": "independently curated paper protocol",
+      "status": "REFERENCE_ONLY",
+      "common_identity": true,
+      "execution": "NOT_RUN",
+      "reason": "source benchmark engine/protocol is not locally reproduced"
+    },
+    "config_B_agent": {
+      "purpose": "specialist-generated local setup",
+      "status": "SETUP_PASS",
+      "common_identity": true,
+      "standalone_endpoint_topologies": true,
+      "execution": "NOT_RUN",
+      "reason": "complex/solvent hybrid topology and lambda protocol are unresolved"
+    },
+    "config_C_alternative": {
+      "purpose": "supported OpenFE alternative",
+      "status": "REVIEW",
+      "common_identity": true,
+      "execution": "NOT_RUN",
+      "reason": "lambda and sampling settings require explicit scientific decisions"
+    },
+    "config_D_perturbed": {
+      "purpose": "fault injection",
+      "status": "FAIL",
+      "common_identity": false,
+      "execution": "STOPPED",
+      "reason": "reversed transformation direction detected before execution"
+    }
+  },
+  "metrics": {
+    "identity_checks": "A/B/C pass; D fails as designed",
+    "agent_endpoint_setup": "B standalone endpoints available",
+    "production_fep": "NOT_EXECUTED",
+    "scientific_qualification": "REVIEW"
+  },
+  "anti_overclaim": "Setup validity is not free-energy reproduction; no lambda trajectories or ddG estimate are produced by this script."
+}
