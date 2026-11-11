@@ -16,6 +16,18 @@ python scripts/validate_inputs.py
 python -m pytest -q tests
 ```
 
+The bounded endpoint parameterization run is recorded in
+`execution/parameterization.json`. It generated GAFF2/AM1-BCC MOL2 and
+`frcmod` files for both ligand endpoints using AmberTools `antechamber` and
+`parmchk2`. The exact command and SHA-256 hashes are recorded in that file;
+the frozen SDF inputs were not modified.
+
+This is an environment-construction result, not a production FEP result.
+Complex and solvent topologies, hybrid alchemical topology, lambda-window
+trajectories, overlap, convergence and uncertainty evidence are still
+required before scientific qualification.
+
 The current result is `REVIEW`: input identity, ligand extraction and the
-published experimental edge are validated, but the source paper does not
-provide a complete open alchemical trajectory bundle for this edge.
+published experimental edge and endpoint ligand parameterization are
+validated, but the source paper does not provide a complete open alchemical
+trajectory bundle for this edge.

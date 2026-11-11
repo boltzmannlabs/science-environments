@@ -14,3 +14,15 @@ def test_config_b_independent():
 def test_qualification_is_conservative():
     d=json.loads((ROOT/'expected_outputs/qualification.json').read_text())
     assert d['required_status']=='REVIEW'
+
+def test_endpoint_parameterization_is_recorded_without_overclaiming():
+    d=json.loads((ROOT/'execution/parameterization.json').read_text())
+    assert d['status']=='SETUP_COMPLETE'
+    assert d['qualification']=='REVIEW'
+    assert d['force_field']=='GAFF2'
+    assert d['charge_method']=='AM1-BCC'
+    assert d['validation']['both_endpoints_parameterized'] is True
+    assert d['validation']['complex_topology']=='PENDING'
+    for endpoint in d['endpoints'].values():
+        assert (ROOT/endpoint['mol2']).exists()
+        assert (ROOT/endpoint['frcmod']).exists()

@@ -29,12 +29,15 @@ not present.
 
 `FEP-PAPER-002` adds the PTP1B `23477 -> 23482` edge from the pinned 2023
 public benchmark. Protein/ligand identity and the published `-1.16 kcal/mol`
-edge value validate successfully; production FEP remains `REVIEW` because
-edge-specific trajectories and complete open protocol evidence are unavailable.
+edge value validate successfully. Both ligand endpoints now have recorded
+GAFF2/AM1-BCC MOL2 and `frcmod` artifacts with immutable-input provenance.
+Production FEP remains `REVIEW` because edge-specific complex/solvent
+topologies, lambda trajectories and complete open protocol evidence are
+unavailable.
 
 ## Validation
 
-The FEP package and paper task currently pass 21 automated tests. The tests
+The FEP package and paper tasks currently pass 25 automated tests. The tests
 validate contracts, pinned inputs, endpoint artifacts, mapping evidence,
 orchestration output and the architecture benchmark harness. They do not claim
 publication-level free-energy reproduction.

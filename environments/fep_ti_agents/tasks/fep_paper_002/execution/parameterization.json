@@ -1,0 +1,39 @@
+{
+  "task_id": "fep_paper_002",
+  "status": "SETUP_COMPLETE",
+  "qualification": "REVIEW",
+  "engine": "AmberTools antechamber/parmchk2",
+  "force_field": "GAFF2",
+  "charge_method": "AM1-BCC",
+  "net_charge": 0,
+  "endpoints": {
+    "23477": {
+      "input": "inputs/ligand_23477.sdf",
+      "mol2": "execution/parameterization/23477.mol2",
+      "frcmod": "execution/parameterization/23477.frcmod",
+      "mol2_sha256": "ccd0a79e241a47b16026c03cbeae22bbea53fba5cd8e9e2ffd5f8a31d0a1a46f",
+      "frcmod_sha256": "6303f1f3d0ebf31df0f0d0a194659d8241bc303ee592be39749783e43bcf7e46"
+    },
+    "23482": {
+      "input": "inputs/ligand_23482.sdf",
+      "mol2": "execution/parameterization/23482.mol2",
+      "frcmod": "execution/parameterization/23482.frcmod",
+      "mol2_sha256": "3b963aab2369d75a23ff8827ae3cc7baa698bd5cd466c39f6ff2333a252fcdeb",
+      "frcmod_sha256": "ab50cad336b49691d83fb345a8dc4211860fdaae757b9f9179f1871146cfda65"
+    }
+  },
+  "validation": {
+    "both_endpoints_parameterized": true,
+    "atom_type_and_bonded_parameter_files_generated": true,
+    "complex_topology": "PENDING",
+    "solvent_topology": "PENDING",
+    "alchemical_hybrid_topology": "PENDING",
+    "lambda_trajectories": "PENDING",
+    "overlap_convergence_uncertainty": "PENDING"
+  },
+  "provenance": {
+    "command": "antechamber -at gaff2 -c bcc -nc 0; parmchk2 -s 2",
+    "inputs_immutable": true,
+    "note": "Endpoint ligand parameter files are setup evidence only; no production FEP result is claimed."
+  }
+}
