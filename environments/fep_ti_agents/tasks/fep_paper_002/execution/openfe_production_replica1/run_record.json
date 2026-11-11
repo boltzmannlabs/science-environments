@@ -18,7 +18,7 @@
       "analysis_ok": false,
       "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)"
     },
-    "complex": {
+  "complex": {
       "setup_ok": true,
       "setup_result": "ProtocolUnitResult(HybridTopology Setup: 23477 to 23482 repeat 0 generation 0)",
       "simulation_ok": true,
@@ -26,6 +26,10 @@
       "analysis_ok": false,
       "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)"
     }
+  },
+  "local_checkpoint_sha256": {
+    "solvent": "57f6cb9776acf8865598e0b3fdec9de00b6c2fec3e452c56228fd22bd120b1e1",
+    "complex": "54a146f75657fb7229274573df9bd359f22f90e36de8f7c287629007c68dd87c"
   },
   "qualification": "REVIEW",
   "qualification_reason": "11-window GPU execution completed for both legs, but one replica and 10 production samples/window do not establish convergence, replica agreement, or uncertainty; retain REVIEW."
