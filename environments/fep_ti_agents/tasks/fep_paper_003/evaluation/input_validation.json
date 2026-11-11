@@ -1,0 +1,36 @@
+{
+  "task_id": "fep_paper_003",
+  "edge": {
+    "direction": "OA-G3->OA-G6",
+    "experimental_ddg_kcal_mol": 0.21,
+    "sign_convention": "DG(OA-G6) - DG(OA-G3)"
+  },
+  "inputs": {
+    "complex/oa_g3_complex.pdb": {
+      "present": true,
+      "sha256": "745e28ba79cf381d6043eb07b5806616e1782b5ee2fbb1066f49a024679a92a7",
+      "matches_reference": true,
+      "atom_records": 7974
+    },
+    "complex/oa_g6_complex.pdb": {
+      "present": true,
+      "sha256": "d0369d41fea4b5e4660372850832421ac2bf0018c3f78bff51764908184a85e2",
+      "matches_reference": true,
+      "atom_records": 7976
+    },
+    "solvent/oa_g3_solvent.pdb": {
+      "present": true,
+      "sha256": "5adae3bf78144d2ae814ac8f67eb9a5d6e0afdf374dcbfc9dfdac352119f8094",
+      "matches_reference": true,
+      "atom_records": 2942
+    },
+    "solvent/oa_g6_solvent.pdb": {
+      "present": true,
+      "sha256": "74e048ecd627078f1f735ca7c59463bfb8df34f5b68b30e8d052131da231916a",
+      "matches_reference": true,
+      "atom_records": 2944
+    }
+  },
+  "status": "PASS",
+  "scope": "input identity and edge validation; no production FEP claim"
+}

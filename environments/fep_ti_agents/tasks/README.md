@@ -16,7 +16,8 @@ environment rather than read an evaluator answer key.
 |---|---|---|---|
 | [FEP-PAPER-001](fep_paper_001/TASK.md) | CDK2, edge `17 -> 1h1q` | Reconstruct a published RBFE protocol and validate setup | Implemented / REVIEW |
 | [FEP-PAPER-002](fep_paper_002/TASK.md) | PTP1B, edge `23477 -> 23482` | Reconstruct a public benchmark RBFE edge | Implemented / REVIEW |
-| FEP-PAPER-003 | Sun & Huggins 2022 | Reconstruct a force-field/charge-method FEP setup | Planned |
+| [FEP-PAPER-003](fep_paper_003/TASK.md) | SAMPL6 OA-G3 → OA-G6 | Reconstruct host–guest inputs and protocol evidence | Reference-ready / REVIEW |
+| FEP-PAPER-004 | Sun & Huggins 2022 | Reconstruct a force-field/charge-method FEP setup | Planned |
 
 The expanded eight-task/five-paper target is tracked in
 `../benchmark/PAPER_CATALOGUE.md`. Only FEP-PAPER-001 and FEP-PAPER-002 have
