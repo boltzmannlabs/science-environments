@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FEP agent-generated configuration",
+  "type": "object",
+  "required": ["task_id", "endpoint_a", "endpoint_b", "status"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "endpoint_a": {"type": "string"},
+    "endpoint_b": {"type": "string"},
+    "lambda_schedule": {"type": ["array", "string", "null"]},
+    "status": {"enum": ["PASS", "REVIEW", "FAIL", "NEEDS_INPUT", "BLOCKED"]},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}
