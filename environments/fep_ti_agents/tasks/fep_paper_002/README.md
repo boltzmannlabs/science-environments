@@ -29,14 +29,16 @@ TIP3P and neutralized with seven sodium ions. ParmEd independently checked
 atom counts, box dimensions, ion counts and final charge; see
 `execution/complex_preparation.json` and the preserved `tleap` logs.
 
-This is an environment-construction result, not a production FEP result.
+This is an environment-construction and bounded execution result, not a
+scientifically qualified production FEP result.
 The corrected endpoint complex/solvent preparation and OpenFE hybrid topology
-generation are setup-validated. A bounded OpenFE run was executed on the RTX
+generation are setup-validated. An extended OpenFE run was executed on the RTX
 3060 through the registered OpenCL backend (CUDA is unavailable in this
-OpenMM build). Both solvent and complex legs completed three-window
-simulations and produced NetCDF/checkpoint artifacts. The independent
-evaluation records one production sample per window, very low overlap proxies,
-and non-estimable uncertainty; the case therefore remains REVIEW.
+OpenMM build). Both solvent and complex legs completed 11-window simulations
+with 2 ps equilibration and 10 ps production per window. The independent
+evaluation records finite energies and overlap proxies, but one repeat and 10
+production samples per window are insufficient for convergence, replica
+agreement or uncertainty; the case therefore remains REVIEW.
 
 Run/evaluate the bounded GPU smoke test with:
 
@@ -44,6 +46,11 @@ Run/evaluate the bounded GPU smoke test with:
 python scripts/run_openfe_bounded.py
 python scripts/evaluate_bounded_run.py
 ```
+
+The extended run is preserved in
+`execution/openfe_production_replica1/`. Checkpoint files are retained locally
+for restart; their SHA-256 values are recorded in `run_record.json` because
+they exceed the GitHub file-size limit.
 
 Agent/tool provenance is recorded in `execution/agent_execution_trace.json`.
 It identifies the parameter, preparation and evaluation roles, commands,
