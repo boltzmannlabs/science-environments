@@ -1,0 +1,39 @@
+{
+  "status": "REVIEW",
+  "legs": {
+    "solvent": {
+      "leg": "solvent",
+      "netcdf": "execution/openfe_bounded_run/solvent/scratch/simulation.nc",
+      "iterations": 2,
+      "replicas": 3,
+      "lambda_windows": 3,
+      "finite_energies": true,
+      "production_samples_per_window": 1,
+      "replica_exchange_acceptance": 0.25925925925925924,
+      "adjacent_overlap_proxy": 7.212224000455532e-05,
+      "convergence": "INSUFFICIENT_SAMPLES",
+      "uncertainty": "NOT_ESTIMABLE",
+      "qualification": "REVIEW"
+    },
+    "complex": {
+      "leg": "complex",
+      "netcdf": "execution/openfe_bounded_run/complex/scratch/simulation.nc",
+      "iterations": 2,
+      "replicas": 3,
+      "lambda_windows": 3,
+      "finite_energies": true,
+      "production_samples_per_window": 1,
+      "replica_exchange_acceptance": 0.3333333333333333,
+      "adjacent_overlap_proxy": 9.188462024238654e-08,
+      "convergence": "INSUFFICIENT_SAMPLES",
+      "uncertainty": "NOT_ESTIMABLE",
+      "qualification": "REVIEW"
+    }
+  },
+  "criteria": {
+    "minimum_production_samples": 100,
+    "required_replicas": 3,
+    "required_lambda_windows": 11,
+    "note": "The bounded smoke run proves execution and output generation, not convergence or a publishable free energy."
+  }
+}

@@ -18,7 +18,7 @@ def test_qualification_is_conservative():
 
 def test_endpoint_parameterization_is_recorded_without_overclaiming():
     d=json.loads((ROOT/'execution/parameterization.json').read_text())
-    assert d['status']=='SETUP_COMPLETE'
+    assert d['status']=='SUPERSEDED_INVALID_CHARGE'
     assert d['qualification']=='REVIEW'
     assert d['force_field']=='GAFF2'
     assert d['charge_method']=='AM1-BCC'
@@ -64,17 +64,43 @@ def test_protein_preparation_records_charge_and_tleap_validation():
     assert d['independent_checks']['neutralization']=='PASS'
 
 def test_complex_endpoints_are_independently_validated_without_overclaiming():
-    d=json.loads((ROOT/'execution/complex_preparation.json').read_text())
+    d=json.loads((ROOT/'execution/complex_preparation_corrected.json').read_text())
     assert d['status']=='SETUP_VALIDATED'
     assert d['qualification']=='REVIEW'
-    assert d['checks']['both_complex_endpoints_built']=='PASS'
-    assert d['checks']['both_endpoints_solvated']=='PASS'
-    assert d['checks']['neutralization_within_0.01_e']=='PASS'
-    assert d['checks']['hybrid_alchemical_topology']=='PENDING'
-    assert d['checks']['production_trajectories']=='PENDING'
+    assert d['checks']['formal_charge_consistency']=='PASS'
+    assert d['checks']['neutralized_endpoint_charge_within_0.01_e']=='PASS'
+    assert d['checks']['hybrid_alchemical_topology']=='PASS'
+    assert d['checks']['lambda_window_simulation']=='PASS_BOUNDED'
     for endpoint in d['endpoints'].values():
-        assert endpoint['tleap']['errors']==0
-        assert endpoint['independent_validation']['sodium_ions']==7
-        assert abs(endpoint['independent_validation']['solvated_charge']) <= 0.01
-        for key in ('unsolvated_prmtop','unsolvated_inpcrd','solvated_prmtop','solvated_inpcrd','solvated_pdb'):
+        assert endpoint['tleap_errors']==0
+        assert endpoint['sodium_ions']==9
+        assert abs(endpoint['net_charge']) <= 0.01
+        for key in ('solvated_prmtop','solvated_inpcrd'):
             assert (ROOT/endpoint[key]).exists()
+
+def test_corrected_gpu_run_is_recorded_and_conservative():
+    d=json.loads((ROOT/'execution/openfe_bounded_run/run_record.json').read_text())
+    assert d['platform']=='OpenCL'
+    assert 'NVIDIA GeForce RTX 3060' in d['gpu_backend']
+    assert d['legs']['solvent']['setup_ok'] is True
+    assert d['legs']['solvent']['simulation_ok'] is True
+    assert d['legs']['complex']['setup_ok'] is True
+    assert d['legs']['complex']['simulation_ok'] is True
+    assert d['qualification']=='REVIEW'
+
+def test_corrected_parameterization_matches_frozen_formal_charge():
+    d=json.loads((ROOT/'execution/parameterization_corrected.json').read_text())
+    assert d['checks']['formal_charge_consistency']=='PASS'
+    assert d['formal_charge_required']==-2
+    for endpoint in d['endpoints'].values():
+        assert endpoint['formal_charge']==-2
+        assert abs(endpoint['partial_charge_sum'] + 2.0) < 0.01
+
+def test_bounded_run_independent_evaluation_rejects_false_convergence():
+    d=json.loads((ROOT/'execution/openfe_bounded_run/independent_evaluation.json').read_text())
+    assert d['status']=='REVIEW'
+    for leg in d['legs'].values():
+        assert leg['finite_energies'] is True
+        assert leg['production_samples_per_window']==1
+        assert leg['convergence']=='INSUFFICIENT_SAMPLES'
+        assert leg['uncertainty']=='NOT_ESTIMABLE'

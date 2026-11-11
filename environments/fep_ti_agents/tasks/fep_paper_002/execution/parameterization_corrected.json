@@ -1,0 +1,14 @@
+{
+  "task_id": "fep_paper_002",
+  "status": "SETUP_VALIDATED",
+  "qualification": "REVIEW",
+  "force_field": "GAFF2",
+  "charge_method": "AM1-BCC",
+  "formal_charge_required": -2,
+  "correction": "The first parameterization incorrectly forced net charge 0 despite the frozen SDF formal charge -2. It is retained as superseded evidence; these corrected artifacts are the active inputs.",
+  "endpoints": {
+    "23477": {"mol2": "execution/parameterization_corrected/23477.mol2", "frcmod": "execution/parameterization_corrected/23477.frcmod", "mol2_sha256": "46ce3df3587524addbffcd6cf5b95986e7e8d22a9884017be147afeb1fec7aab", "partial_charge_sum": -2.002, "formal_charge": -2},
+    "23482": {"mol2": "execution/parameterization_corrected/23482.mol2", "frcmod": "execution/parameterization_corrected/23482.frcmod", "mol2_sha256": "20c530aee0b3e8f5e2b183b5b33ec257d7c71a195ec2bb7d5d0b63e21068f104", "partial_charge_sum": -2.002, "formal_charge": -2}
+  },
+  "checks": {"formal_charge_consistency": "PASS", "all_bonded_parameters_resolved": "PASS", "source_sdf_immutable": true, "complex_rebuild_required": true}
+}

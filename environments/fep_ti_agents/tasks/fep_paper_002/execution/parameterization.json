@@ -1,8 +1,10 @@
 {
   "task_id": "fep_paper_002",
-  "status": "SETUP_COMPLETE",
+  "status": "SUPERSEDED_INVALID_CHARGE",
   "qualification": "REVIEW",
   "engine": "AmberTools antechamber/parmchk2",
+  "superseded_by": "execution/parameterization_corrected.json",
+  "charge_consistency_failure": "Frozen SDF formal charge is -2; this historical run forced -nc 0.",
   "force_field": "GAFF2",
   "charge_method": "AM1-BCC",
   "net_charge": 0,

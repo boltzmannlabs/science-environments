@@ -16,12 +16,11 @@ python scripts/validate_inputs.py
 python -m pytest -q tests
 ```
 
-The bounded endpoint parameterization run is recorded in
-`execution/parameterization.json`. It generated GAFF2/AM1-BCC MOL2 and
-`frcmod` files for both ligand endpoints using AmberTools `antechamber` and
-`parmchk2`, then generated standalone Amber `prmtop`/`inpcrd` endpoint
-topologies with `tleap`. The exact commands and SHA-256 hashes are recorded in that file;
-the frozen SDF inputs were not modified.
+The first endpoint parameterization is retained as superseded evidence because
+it incorrectly forced charge zero for SDF inputs whose formal charge is -2.
+The corrected GAFF2/AM1-BCC parameterization is recorded in
+`execution/parameterization_corrected.json`; the corrected complexes use nine
+Na+ ions and have total charge within 0.002 e of neutral.
 
 Protein preparation is recorded in `execution/protein_preparation.json`.
 The ff14SB protein topology has a recorded net charge of `-7` before ion
@@ -31,9 +30,20 @@ atom counts, box dimensions, ion counts and final charge; see
 `execution/complex_preparation.json` and the preserved `tleap` logs.
 
 This is an environment-construction result, not a production FEP result.
-The endpoint complex/solvent preparation is now setup-validated. A hybrid
-alchemical topology, lambda-window trajectories, overlap, convergence and
-uncertainty evidence are still required before scientific qualification.
+The corrected endpoint complex/solvent preparation and OpenFE hybrid topology
+generation are setup-validated. A bounded OpenFE run was executed on the RTX
+3060 through the registered OpenCL backend (CUDA is unavailable in this
+OpenMM build). Both solvent and complex legs completed three-window
+simulations and produced NetCDF/checkpoint artifacts. The independent
+evaluation records one production sample per window, very low overlap proxies,
+and non-estimable uncertainty; the case therefore remains REVIEW.
+
+Run/evaluate the bounded GPU smoke test with:
+
+```bash
+python scripts/run_openfe_bounded.py
+python scripts/evaluate_bounded_run.py
+```
 
 Agent/tool provenance is recorded in `execution/agent_execution_trace.json`.
 It identifies the parameter, preparation and evaluation roles, commands,

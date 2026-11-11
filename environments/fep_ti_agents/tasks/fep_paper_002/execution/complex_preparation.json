@@ -1,7 +1,8 @@
 {
   "task_id": "fep_paper_002",
-  "status": "SETUP_VALIDATED",
-  "qualification": "REVIEW",
+  "status": "SUPERSEDED_INVALID_CHARGE",
+  "qualification": "FAIL",
+  "superseded_by": "execution/complex_preparation_corrected.json",
   "method": {
     "protein_force_field": "AMBER ff14SB",
     "ligand_force_field": "GAFF2",
