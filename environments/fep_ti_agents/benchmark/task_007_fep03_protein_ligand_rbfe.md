@@ -1,7 +1,7 @@
-# Task 007 — Second protein–ligand RBFE reconstruction
+# Task 007 — CDK2 protein–ligand RBFE reconstruction
 
-Select and freeze a second edge from the Ross et al. public protein–ligand
-benchmark, then reconstruct its paper-reported setup using the same three agent
-configurations as FEP01.
+Reconstruct the CDK2 `17 → 1h1q` transformation from the Sun–Huggins paper
+using the existing canonical task packet at `tasks/fep_paper_001/` and the same
+three agent configurations as FEP01.
 
-**Status:** catalogued; edge selection and source inputs pending.
+**Status:** setup validated; scientific qualification `REVIEW`.

@@ -1,20 +1,26 @@
-**Task ID:** `task_003_force_field_sensitivity`
+# Task ID: `task_003_force_field_sensitivity`
 
-**Task:** Force-field sensitivity reconstruction.
+**Task:** [CDK2 force-field sensitivity reconstruction](../tasks/fep_paper_005/TASK.md)
 
 ## Published Results
 
 **Source:** Sun and Huggins (2022), [DOI 10.3389/fmolb.2022.972162](https://doi.org/10.3389/fmolb.2022.972162).
 
 The paper compares force-field, water-model and ligand-charge configurations.
-The exact transformation and source metric table for this case must be pinned
-before execution; this task is currently `CATALOGUED`.
+The selected system is CDK2 PDB `1H1Q`, ligand `17 → 1h1q`, with frozen
+protein and ligand inputs under the canonical task packet.
+
+**Status:** `REFERENCE_READY / REVIEW`.
 
 ## Evaluation Criteria
 
-- Freeze one reported transformation and all endpoint structures.
-- Reconstruct the paper arm, an agent-generated arm and one-factor-at-a-time
-  alternatives.
+- Validate all three frozen input hashes and the selected edge.
+- Reconstruct the paper arm, an agent-generated arm and a one-factor RESP
+  charge alternative.
+- Stop the unsupported/undeclared water-model perturbation before simulation.
 - Compare parameter fidelity separately from free-energy agreement.
-- Do not mark `REFERENCE_READY` until supplementary inputs and computed
-  reference metrics are collected.
+- Keep production sensitivity and uncertainty `REVIEW` until trajectories exist.
+
+The independent validator is
+`../tasks/fep_paper_005/scripts/validate_inputs.py`; task tests report the
+current evidence.

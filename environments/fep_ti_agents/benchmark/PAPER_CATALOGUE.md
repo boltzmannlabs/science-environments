@@ -15,8 +15,9 @@ tasks, but the publication count remains distinct.
 |---|---|---|---|
 | FEP-PAPER-001 | Alchaware/CDK2 study | CDK2 edge `17 -> 1h1q` | Implemented / REVIEW |
 | FEP-PAPER-002 | Ross et al. 2023 public benchmark | PTP1B `2QBS`, edge `23477 -> 23482` | Implemented / REVIEW |
-| FEP-PAPER-003 | Sun & Huggins 2022 | Force-field and charge-method sensitivity | Planned |
-| FEP-PAPER-004 | Sun & Huggins 2022 | A second reported transformation/configuration | Planned |
+| FEP-PAPER-003 | SAMPL6 host–guest challenge | OA-G3 → OA-G6 setup reconstruction | Reference-ready / REVIEW |
+| FEP-PAPER-004 | Ross et al. 2023 public benchmark | PTP1B edge `23477 → 23479` | Reference-ready / REVIEW |
+| FEP-PAPER-005 | Sun & Huggins 2022 | Force-field and charge-method sensitivity | Reference-ready / REVIEW |
 | FEP-PAPER-005 | Fu et al. 2022 BFEE2 protocol | Abl-SH3:p41 binding free-energy setup | Planned |
 | FEP-PAPER-006 | Ross et al. 2023 public benchmark | A second independently selected benchmark edge | Planned |
 | FEP-PAPER-007 | Published charge-changing FEP study | Charge correction and electrostatic protocol | Planned |

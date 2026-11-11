@@ -4,8 +4,9 @@ The benchmark catalogue measures literature-to-environment reconstruction,
 not only whether a numerical free-energy value is produced.
 
 The complete paper grouping and planned task count are documented in
-[`PAPER_CATALOGUE.md`](PAPER_CATALOGUE.md). The current implemented set is
-two tasks from two source families; planned tasks are not reported as executed.
+[`PAPER_CATALOGUE.md`](PAPER_CATALOGUE.md). The current implemented set
+contains five concrete paper-task packets; production qualification remains
+separate from setup validation.
 
 ## Standard benchmark layout
 
@@ -48,3 +49,27 @@ The detailed task is in `../tasks/fep_paper_002/`.
 The benchmark record is in `task_002_ptp1b_rbfe.md`, with the same source,
 configuration-matrix and acceptance structure used by the repository's
 publication-reproduction environments.
+
+## FEP-PAPER-003
+
+- Paper-derived system: SAMPL6 OA-G3 → OA-G6 host–guest transformation.
+- Frozen inputs: complex and solvent PDB files with source hashes.
+- Current result: input identity validation PASS; setup and scientific FEP
+  qualification REVIEW.
+- Detailed task: `../tasks/fep_paper_003/`.
+
+## FEP-PAPER-004
+
+- Paper-derived system: PTP1B `2QBS`, edge `23477 → 23479`.
+- Published experimental reference: `−0.29 kcal/mol`.
+- Current result: source identity and edge validation PASS; production
+  qualification REVIEW.
+- Detailed task: `../tasks/fep_paper_004/`.
+
+## FEP-PAPER-005
+
+- Paper-derived system: CDK2 `1H1Q`, edge `17 → 1h1q`.
+- Focus: force-field, water-model and charge-method sensitivity.
+- Current result: frozen-input and one-factor configuration validation PASS;
+  production sensitivity qualification REVIEW.
+- Detailed task: `../tasks/fep_paper_005/`.
