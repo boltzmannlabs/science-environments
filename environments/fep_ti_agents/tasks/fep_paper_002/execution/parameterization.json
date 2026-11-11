@@ -11,19 +11,28 @@
       "input": "inputs/ligand_23477.sdf",
       "mol2": "execution/parameterization/23477.mol2",
       "frcmod": "execution/parameterization/23477.frcmod",
+      "prmtop": "execution/parameterization/23477.prmtop",
+      "inpcrd": "execution/parameterization/23477.inpcrd",
       "mol2_sha256": "ccd0a79e241a47b16026c03cbeae22bbea53fba5cd8e9e2ffd5f8a31d0a1a46f",
-      "frcmod_sha256": "6303f1f3d0ebf31df0f0d0a194659d8241bc303ee592be39749783e43bcf7e46"
+      "frcmod_sha256": "6303f1f3d0ebf31df0f0d0a194659d8241bc303ee592be39749783e43bcf7e46",
+      "prmtop_sha256": "0df9e86360b2b21f13df147a0393e277d868c16a3b1527147013ca76f0d8ba40",
+      "inpcrd_sha256": "59fc8ec9bf41be69a4eb496fb346f37a12bfd84d427a34f3a820277a13d89f99"
     },
     "23482": {
       "input": "inputs/ligand_23482.sdf",
       "mol2": "execution/parameterization/23482.mol2",
       "frcmod": "execution/parameterization/23482.frcmod",
+      "prmtop": "execution/parameterization/23482.prmtop",
+      "inpcrd": "execution/parameterization/23482.inpcrd",
       "mol2_sha256": "3b963aab2369d75a23ff8827ae3cc7baa698bd5cd466c39f6ff2333a252fcdeb",
-      "frcmod_sha256": "ab50cad336b49691d83fb345a8dc4211860fdaae757b9f9179f1871146cfda65"
+      "frcmod_sha256": "ab50cad336b49691d83fb345a8dc4211860fdaae757b9f9179f1871146cfda65",
+      "prmtop_sha256": "c00ed36509a241e10519e6e187b9a2f4d4d8f8b616f36d15b28624624b112cbcac",
+      "inpcrd_sha256": "b2aed6ac3eba44925f777618aba0ad4ed95eee6a8e9c26b7de7e23f1beb5bac4"
     }
   },
   "validation": {
     "both_endpoints_parameterized": true,
+    "standalone_endpoint_topologies": true,
     "atom_type_and_bonded_parameter_files_generated": true,
     "complex_topology": "PENDING",
     "solvent_topology": "PENDING",

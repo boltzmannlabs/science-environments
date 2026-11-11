@@ -1,0 +1,6 @@
+source leaprc.gaff2
+loadamberparams /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.frcmod
+LIG = loadmol2 /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.mol2
+check LIG
+saveamberparm LIG /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.prmtop /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.inpcrd
+quit

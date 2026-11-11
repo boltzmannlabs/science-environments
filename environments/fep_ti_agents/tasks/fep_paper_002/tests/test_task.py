@@ -26,3 +26,6 @@ def test_endpoint_parameterization_is_recorded_without_overclaiming():
     for endpoint in d['endpoints'].values():
         assert (ROOT/endpoint['mol2']).exists()
         assert (ROOT/endpoint['frcmod']).exists()
+        assert (ROOT/endpoint['prmtop']).exists()
+        assert (ROOT/endpoint['inpcrd']).exists()
+    assert d['validation']['standalone_endpoint_topologies'] is True

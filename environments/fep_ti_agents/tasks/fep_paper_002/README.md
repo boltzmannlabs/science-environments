@@ -19,7 +19,8 @@ python -m pytest -q tests
 The bounded endpoint parameterization run is recorded in
 `execution/parameterization.json`. It generated GAFF2/AM1-BCC MOL2 and
 `frcmod` files for both ligand endpoints using AmberTools `antechamber` and
-`parmchk2`. The exact command and SHA-256 hashes are recorded in that file;
+`parmchk2`, then generated standalone Amber `prmtop`/`inpcrd` endpoint
+topologies with `tleap`. The exact commands and SHA-256 hashes are recorded in that file;
 the frozen SDF inputs were not modified.
 
 This is an environment-construction result, not a production FEP result.
