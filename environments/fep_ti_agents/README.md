@@ -14,7 +14,7 @@ trajectories, overlap, convergence, uncertainty and reference evidence.
 
 1. [Environment specification](ENVIRONMENT_SPEC.md)
 2. [Configuration and schemas](config/)
-3. [Agent contracts](agents/contracts.json)
+3. [Agent contracts](src/agents/contracts.json)
 4. [Task cards](tasks/)
 5. [Fixture results](results/fixture_results.json)
 6. [Acceptance tests](tests/)
@@ -41,9 +41,9 @@ FEP-PS08 charge-changing corrections; FEP-PS09 restraints and standard state;
 and FEP-PS10 final result qualification.
 
 The package also records 15 environment families in
-[`agents/fep_environment_contracts.json`](agents/fep_environment_contracts.json)
+[`src/agents/fep_environment_contracts.json`](src/agents/fep_environment_contracts.json)
 and 15 specialist contracts in
-[`agents/fep_agent_contracts.json`](agents/fep_agent_contracts.json). Each
+[`src/agents/fep_agent_contracts.json`](src/agents/fep_agent_contracts.json). Each
 family has a uniform task card in `tasks/fep_env_*.md`, covering inputs,
 execution, independent evaluation, acceptance criteria, and failure status.
 Each of the 15 specialist agents has a corresponding detailed task card in
@@ -68,7 +68,7 @@ data, and independent repeats.
 
 ## Molecular benchmark manifest
 
-[`benchmarks/sampl6/manifest.json`](benchmarks/sampl6/manifest.json) pins a
+[`benchmark/sampl6/manifest.json`](benchmark/sampl6/manifest.json) pins a
 bounded SAMPL6 OA-G3/OA-G6 pair, including structures-at-source URLs, guest
 SMILES, experimental ΔG values, the OA-G3→OA-G6 relative target (0.21 ± 0.028
 kcal/mol), and 12 controlled fault-injection cases. The manifest deliberately
@@ -93,8 +93,8 @@ fep_ti_agents/
 ├── STATUS.md / MODELS_AND_TOOLS.md
 ├── config/ (schemas and policy)
 ├── src/ (shared task and evidence contracts)
-├── agents/contracts.json
-├── agents/fep_environment_contracts.json / fep_agent_contracts.json
+├── src/agents/contracts.json
+├── src/agents/fep_environment_contracts.json / fep_agent_contracts.json
 ├── tasks/ (15 specialist cards + 10 problem-solving cards + 15 environment cards)
 ├── scripts/ (execution and validation entry points)
 ├── tests/ (package and task tests)

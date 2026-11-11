@@ -6,7 +6,7 @@ Audit atom correspondence for a proposed alchemical transformation before any pr
 
 ## Dataset and inputs
 
-- `benchmarks/sampl6/manifest.json` (OA-G3 → OA-G6 pilot pair)
+- `../benchmark/sampl6/manifest.json` (OA-G3 → OA-G6 pilot pair)
 - Endpoint structures/topologies, atom map, charge and parameter manifest
 
 ## Tools to use

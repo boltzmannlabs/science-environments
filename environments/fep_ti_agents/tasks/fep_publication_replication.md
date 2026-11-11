@@ -11,7 +11,7 @@ shortened controlled variant.
 
 ## Inputs and acceptance
 
-Use `../../benchmarks/publication_replication/manifest.json` case
+Use `../../benchmark/publication_replication/manifest.json` case
 `FEP-PUB-001` and the pinned SAMPL6 manifest. Validate endpoint identity,
 protocol metadata, and provenance. A missing alchemical topology, trajectory,
 overlap matrix, or independent uncertainty analysis must return `REVIEW`.

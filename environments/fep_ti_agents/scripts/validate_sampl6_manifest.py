@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
-manifest = json.loads((ROOT / "benchmarks/sampl6/manifest.json").read_text())
+manifest = json.loads((ROOT / "benchmark/sampl6/manifest.json").read_text())
 assert len(manifest["systems"]) == 2
 assert {s["id"] for s in manifest["systems"]} == {"SAMPL6-OA-G3", "SAMPL6-OA-G6"}
 assert manifest["relative_target"]["experimental_delta_delta_g_kcal_mol"] == 0.21
