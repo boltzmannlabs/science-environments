@@ -135,3 +135,11 @@ def test_fep01_three_agent_benchmark_is_explicit_about_execution_evidence():
     assert 'Agent + subagents + evaluator' in text
     assert 'NOT_EXECUTED' in text
     assert 'REVIEW' in text
+
+def test_companion_paper_benchmarks_use_uniform_task_format():
+    package = ROOT.parents[1]
+    for name in ('FEP02_SAMPL6', 'FEP03_Protein_Ligand_RBFE'):
+        benchmark = package/'benchmark'/name
+        assert (benchmark/'TASK.md').exists()
+        assert (benchmark/'PAPER_REFERENCE.md').exists()
+        assert (benchmark/'README.md').exists()

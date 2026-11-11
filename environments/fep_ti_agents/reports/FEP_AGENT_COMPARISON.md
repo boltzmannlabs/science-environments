@@ -42,3 +42,15 @@ outputs.
 This report measures environment-construction capability separately from
 scientific reproduction. It does not count deterministic setup scripts as
 autonomous AI agents.
+
+## Companion benchmark status
+
+| Benchmark | Current gate | Next required evidence |
+|---|---|---|
+| FEP01 PTP1B | SETUP/EXECUTION complete; REVIEW scientifically | independent repeats, convergence and uncertainty |
+| FEP02 SAMPL6 OA-G3 → OA-G6 | REFERENCE_READY | parameter extraction, endpoint setup and controlled execution |
+| FEP03 protein–ligand RBFE | CATALOGUED | freeze a second edge, structures and reference metrics |
+
+FEP02 and FEP03 are now represented in the same benchmark format as FEP01.
+They are not counted as executed production studies until their stated inputs
+and scientific evidence exist.
