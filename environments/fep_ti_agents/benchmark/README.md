@@ -31,3 +31,6 @@ structures, parameters, protocol, reference metrics and acceptance criteria.
   protocol evidence are unavailable.
 
 The detailed task is in `../tasks/fep_paper_002/`.
+The benchmark record is in `fep_paper_002_ptp1b.md`, with the same source,
+configuration-matrix and acceptance structure used by the repository's
+publication-reproduction environments.
