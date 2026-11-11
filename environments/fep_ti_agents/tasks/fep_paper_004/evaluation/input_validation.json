@@ -1,0 +1,27 @@
+{
+  "task_id": "fep_paper_004",
+  "edge": {
+    "direction": "23477->23479",
+    "ddg_kcal_mol": -0.29
+  },
+  "inputs": {
+    "ptp1b_2QBS_protein.pdb": {
+      "sha256": "987a6c09ac6b8d9b2a1e8d298a904d9cd51eb5690c8f254f8c2efa2b92a41d9f",
+      "matches_reference": true
+    },
+    "ligand_23477.sdf": {
+      "sha256": "1411029cca8dc31c87ad771c4dcd96b609007cec61198d7e3f84df035660730e",
+      "matches_reference": true
+    },
+    "ligand_23479.sdf": {
+      "sha256": "692d287dc8297134e171867b3cbe3777d272696278c28b3be5125de0a03b84d4",
+      "matches_reference": true
+    },
+    "ptp1b_edges.csv": {
+      "sha256": "1a64ecd7ffbdeea683f68be910e150bf5ad5f3bf4ccb5380fc21cd3042546cfd",
+      "matches_reference": true
+    }
+  },
+  "status": "PASS",
+  "scope": "source identity and edge validation; no production FEP claim"
+}

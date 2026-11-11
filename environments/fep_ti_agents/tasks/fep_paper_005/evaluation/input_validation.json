@@ -1,0 +1,35 @@
+{
+  "task_id": "fep_paper_005",
+  "system": "CDK2",
+  "edge": "17->1h1q",
+  "reported_fields": {
+    "engine": "OpenMM 7.2",
+    "ligand_forcefield": "GAFF 2.11",
+    "protein_forcefield": "AMBER ff14SB",
+    "water_model": "TIP3P",
+    "charge_methods": [
+      "AM1-BCC",
+      "RESP"
+    ],
+    "mapping": "maximum common substructure"
+  },
+  "inputs": {
+    "source_cdk2/cdk2_1H1Q.pdb": {
+      "sha256": "21dc4df2252e8ffbd572e906d05603fb50a2ccd338c366123984d1c099e66586",
+      "matches_reference": true,
+      "present": true
+    },
+    "source_cdk2/ligand_a.sdf": {
+      "sha256": "7e88656ed56bff29f81f4e1f42fe73f656bfb738e9cb081d2a6012998b790c76",
+      "matches_reference": true,
+      "present": true
+    },
+    "source_cdk2/ligand_b.sdf": {
+      "sha256": "f3e0a280c48642fad3a796f42bab6c250ec78b74e9090ffa21b551ebca79b215",
+      "matches_reference": true,
+      "present": true
+    }
+  },
+  "status": "PASS",
+  "scope": "input identity and sensitivity configuration; no production FEP claim"
+}

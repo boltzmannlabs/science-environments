@@ -21,16 +21,16 @@
       "id": "FORCE_FIELD_SENSITIVITY_001",
       "paper_family": "Sun and Huggins 2022",
       "calculation": "force-field, water-model and charge-method sensitivity",
-      "status": "CATALOGUED",
-      "canonical_task": null
+      "status": "REFERENCE_READY",
+      "canonical_task": "tasks/fep_paper_005/"
     },
     {
       "id": "SECOND_RBFE_001",
       "paper_family": "Ross et al. 2023 public benchmark",
       "system": "PTP1B second edge from jacs_set (edge to be frozen)",
       "calculation": "relative binding free energy",
-      "status": "CATALOGUED",
-      "canonical_task": null
+      "status": "REFERENCE_READY",
+      "canonical_task": "tasks/fep_paper_004/"
     }
   ]
 }
