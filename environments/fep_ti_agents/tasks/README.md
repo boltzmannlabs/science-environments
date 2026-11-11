@@ -1,5 +1,11 @@
 # Published FEP reconstruction tasks
 
+The publication benchmarks follow the uniform Science-Environments layout used
+by De Novo Enzyme Design. Flat benchmark cards are indexed under
+`../benchmark/task_*.md`; detailed specialist and problem-solving contracts
+remain in this directory. The current paper cases are FEP01 PTP1B, FEP02
+SAMPL6, and FEP03 second protein–ligand RBFE.
+
 Each task reconstructs a specific published FEP workflow. The paper and
 supporting files are the source of the protocol; the agent must generate the
 environment rather than read an evaluator answer key.
