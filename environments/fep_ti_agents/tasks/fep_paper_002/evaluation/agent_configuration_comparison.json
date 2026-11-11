@@ -1,0 +1,31 @@
+{
+  "task_id": "fep_paper_002",
+  "same_inputs": true,
+  "experiments": {
+    "A_general_agent": {
+      "status": "NOT_EXECUTED",
+      "tool_calls": 0,
+      "topology_generation": "UNRESOLVED",
+      "note": "No general-agent runtime was available in this local package; no result fabricated."
+    },
+    "B_specialist_assisted": {
+      "status": "EXECUTED_SETUP",
+      "tool_calls": ["antechamber", "parmchk2", "tleap"],
+      "topology_generation": "STANDALONE_ENDPOINTS_PASS",
+      "independent_evaluation": "REVIEW"
+    },
+    "C_orchestrated_with_independent_evaluator": {
+      "status": "PARTIALLY_EXECUTED",
+      "tool_calls": ["antechamber", "parmchk2", "tleap"],
+      "topology_generation": "STANDALONE_ENDPOINTS_PASS",
+      "independent_evaluation": "REVIEW",
+      "missing": ["complex/solvent hybrid topologies", "lambda trajectories", "scientific FEP metrics"]
+    }
+  },
+  "metrics": {
+    "parameter_comparison": "evaluation/paper_parameter_comparison.json",
+    "production_execution": "NOT_AVAILABLE",
+    "scientific_qualification": "REVIEW"
+  },
+  "anti_overclaim": "A deterministic tool trace is not autonomous AI-agent evidence; A and C require a model runtime for full comparison."
+}

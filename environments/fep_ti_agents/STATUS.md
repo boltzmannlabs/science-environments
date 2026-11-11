@@ -31,13 +31,17 @@ not present.
 public benchmark. Protein/ligand identity and the published `-1.16 kcal/mol`
 edge value validate successfully. Both ligand endpoints now have recorded
 GAFF2/AM1-BCC MOL2 and `frcmod` artifacts with immutable-input provenance.
+The PTP1B task now also records the preparation-tool trace, paper-parameter
+comparison, and A/B/C architecture matrix. The trace is explicitly a
+deterministic specialist harness record, not an autonomous LLM execution
+claim.
 Production FEP remains `REVIEW` because edge-specific complex/solvent
 topologies, lambda trajectories and complete open protocol evidence are
 unavailable.
 
 ## Validation
 
-The FEP package and paper tasks currently pass 25 automated tests. The tests
+The FEP package and paper tasks currently pass 27 automated tests. The tests
 validate contracts, pinned inputs, endpoint artifacts, mapping evidence,
 orchestration output and the architecture benchmark harness. They do not claim
 publication-level free-energy reproduction.

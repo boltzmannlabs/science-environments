@@ -28,6 +28,14 @@ Complex and solvent topologies, hybrid alchemical topology, lambda-window
 trajectories, overlap, convergence and uncertainty evidence are still
 required before scientific qualification.
 
+Agent/tool provenance is recorded in `execution/agent_execution_trace.json`.
+It identifies the parameter, preparation and evaluation roles, commands,
+outputs and independent checks. The trace explicitly records that this run
+used a deterministic specialist harness; it does not falsely claim autonomous
+LLM execution. The paper comparison is in
+`evaluation/paper_parameter_comparison.json`, and the A/B/C architecture
+matrix is in `evaluation/agent_configuration_comparison.json`.
+
 The current result is `REVIEW`: input identity, ligand extraction and the
 published experimental edge and endpoint ligand parameterization are
 validated, but the source paper does not provide a complete open alchemical
