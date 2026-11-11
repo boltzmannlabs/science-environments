@@ -18,3 +18,6 @@ is publication-qualified.
 Fixture results must not be promoted to production free-energy evidence.
 Paper-task results are indexed under `fep_paper_002/` and retain source
 hashes, commands, generated artifacts and limitations.
+
+`case_study_preflight.json` records the sequential readiness check for every
+case in the scientific catalogue.

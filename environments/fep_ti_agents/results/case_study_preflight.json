@@ -1,0 +1,46 @@
+{
+  "catalogue": "case_studies/catalogue.json",
+  "cases": [
+    {
+      "case_id": "CDK2_RBFE_001",
+      "status": "SETUP_VALIDATED",
+      "task_structure": true,
+      "canonical_task": "tasks/fep_paper_001/",
+      "canonical_task_available": true,
+      "execution": "DELEGATED_TO_CANONICAL_TASK"
+    },
+    {
+      "case_id": "PTP1B_RBFE_001",
+      "status": "SETUP_VALIDATED",
+      "task_structure": true,
+      "canonical_task": "tasks/fep_paper_002/",
+      "canonical_task_available": true,
+      "execution": "DELEGATED_TO_CANONICAL_TASK"
+    },
+    {
+      "case_id": "FORCE_FIELD_SENSITIVITY_001",
+      "status": "CATALOGUED",
+      "task_structure": true,
+      "reference_ready": false,
+      "execution": "NOT_RUN",
+      "missing": [
+        "frozen molecular inputs",
+        "published computational reference metrics",
+        "case-specific tests"
+      ]
+    },
+    {
+      "case_id": "SECOND_RBFE_001",
+      "status": "CATALOGUED",
+      "task_structure": true,
+      "reference_ready": false,
+      "execution": "NOT_RUN",
+      "missing": [
+        "frozen molecular inputs",
+        "published computational reference metrics",
+        "case-specific tests"
+      ]
+    }
+  ],
+  "anti_overclaim": "Preflight readiness is not production FEP execution."
+}
