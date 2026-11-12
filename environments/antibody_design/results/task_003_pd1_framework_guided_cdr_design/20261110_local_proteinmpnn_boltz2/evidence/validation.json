@@ -1,0 +1,29 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "20261110_local_proteinmpnn_boltz2",
+  "validation_scope": "packaging",
+  "checked_at_utc": "2026-11-12T07:22:10.861268+00:00",
+  "packaging_status": "passed",
+  "scientific_coverage": "partial",
+  "candidate_rows_including_controls": 20,
+  "reference_rows": 0,
+  "selected_rows": 3,
+  "assessment_rows": 0,
+  "exported_fasta_records": 6,
+  "exported_candidate_or_control_ids": [
+    "task003_cand11",
+    "task003_cand2",
+    "task003_cand9"
+  ],
+  "structure_files": 3,
+  "checks": [
+    "required files",
+    "task/run identity",
+    "unique candidate IDs",
+    "shortlist membership",
+    "FASTA ID coverage",
+    "canonical artifact paths"
+  ],
+  "scientific_reexecution_performed": false,
+  "issues": []
+}

@@ -1,0 +1,10 @@
+{
+  "tool": "BiOTITE 1.4.0 rolling-ball SASA, probe 1.4 A, ProtOr radii",
+  "global_unglyc_A2": 26962.7,
+  "global_glyc_A2": 26962.7,
+  "global_glycan_dsasa_A2": 0.0,
+  "glycan_atoms": 336,
+  "benchmark_reference": "Paper reports ~1,299 A^2 (conformational-diversity ensemble, mature construct)",
+  "comparability": "NOT REPRODUCIBLE with simplified glycan model: glycan atoms (5-17 A from Asn side-chain attachment) are farther from the antigen than the rolling-probe centers (3.1 A from atom), so no probe points are occluded (dSASA=0). A realistic multi-conformation N-glycan ensemble (as used in the paper) is required for a meaningful global glycan dSASA.",
+  "sasa_bug_note": "The original custom probe-based SASA (06_glycan_aware.py) overestimates SASA ~5-10x: its occlusion test uses d < r_j instead of d < (r_probe + r_j), under-counting burial. BiOTITE is the authoritative cross-check (unglycosylated antigen SASA = 26,962.7 A^2, consistent with a 585-residue protein)."
+}

@@ -1,0 +1,81 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "20261110_local_proteinmpnn_boltz2",
+  "status": "COMPLETED_HISTORICAL_LOCAL_RUN",
+  "workflow_scope": "historical local CDR-H3-only comparison; not pending six-CDR platform workflow",
+  "target": {
+    "name": "human PD-1",
+    "pdb": "4ZQK",
+    "chain": "B"
+  },
+  "reference_control": "H965",
+  "design": {
+    "tool": "ProteinMPNN",
+    "editable_region": "H965 CDR-H3",
+    "generated_count": 20,
+    "unique_cdrh3_count": 17
+  },
+  "structure_prediction": {
+    "tool": "Boltz2",
+    "reference_and_candidate_count": 4,
+    "new_candidate_ids": [
+      "task003_cand11",
+      "task003_cand9",
+      "task003_cand2"
+    ]
+  },
+  "shortlist": [
+    "task003_cand11",
+    "task003_cand9",
+    "task003_cand2"
+  ],
+  "platform_run_separation": {
+    "pending_run_id": "20261110_pd1_framework_stage0_pending",
+    "submitted": false,
+    "candidate_outputs_claimed": false
+  },
+  "results_link": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/",
+  "canonical_source_run": "src/task_003_pd1_framework_guided_cdr_design/runs/20261110_local_proteinmpnn_boltz2",
+  "canonical_result_root": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2",
+  "input_checksum_manifest": "src/task_003_pd1_framework_guided_cdr_design/runs/20261110_local_proteinmpnn_boltz2/inputs/sha256sums.json",
+  "result_checksum_manifest": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/evidence/mappings/path_manifest.json",
+  "fresh_validation": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/evidence/validation.json",
+  "canonical_artifact_hashes": [
+    {
+      "path": "report.md",
+      "sha256": "c9bf3f5438a0e3c5af9e1a151863903c8e5390122eedb05e6e576a45c2609b73"
+    },
+    {
+      "path": "candidates.csv",
+      "sha256": "e9273829815ba47f047fdd3db00607c4274fc24e2832c969e1bd810375a7fc15"
+    },
+    {
+      "path": "shortlist.csv",
+      "sha256": "5aeb8cc430cc0f12e410b54e4c2c25ddd78b63dd6aa538db54b04a72f11d34a8"
+    },
+    {
+      "path": "designed_sequences.fasta",
+      "sha256": "5356ca76972104dea0517e607d47416018488ddd12e48587e2b4d5851540ec87"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "ce4d3981331828eb8d9ca82ea9612ba9538805e28a3f1c69547a9ebbd2ef89e6"
+    },
+    {
+      "path": "benchmark_comparison.csv",
+      "sha256": "c21588e2442cb6533d5144a445864e789bd8b8cc4760245527803f6b6fcb65b9"
+    },
+    {
+      "path": "structures/task003_cand11_complex.pdb",
+      "sha256": "2b1c3fa3f28a7b032d0cfa88c187611a9b6461181c4b634d2c1a742729f736b6"
+    },
+    {
+      "path": "structures/task003_cand2_complex.pdb",
+      "sha256": "7665696fabf2ee051a15e4775222b34ceef9b6e58dfebb50db89cfd52f709c9d"
+    },
+    {
+      "path": "structures/task003_cand9_complex.pdb",
+      "sha256": "64f166703356203cad9f3957d792731ac0a9e5fd89d01ed3a63b8395c824b61a"
+    }
+  ]
+}

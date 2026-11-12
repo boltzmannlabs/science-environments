@@ -1,0 +1,14 @@
+metric,published_value,executed_value,unit_or_scale,scope,comparability,source_or_evidence
+H5 predicted-vs-experimental global Cα RMSD,1.25,14.94,Å,H5 reference reconstruction; different model roles,not_directly_comparable,Germinal Nat Biotechnol 2026; evidence/task002_h5_rmsd.json
+H5 VH Cα RMSD,,19.11,Å,H5 reference reconstruction,not_comparable,evidence/task002_h5_rmsd.json
+H5 VL Cα RMSD,,8.23,Å,H5 reference reconstruction,not_comparable,evidence/task002_h5_rmsd.json
+Whole-complex Cα RMSD,,12.72,Å,H5 reference reconstruction,not_comparable,evidence/task002_h5_rmsd.json
+Boltz-2 complex pTM,,0.944,score,H5 reference reconstruction,executed,evidence/task002_h5_rmsd.json
+Boltz-2 complex ipTM,,0.926,score,H5 reference reconstruction,executed,evidence/task002_h5_rmsd.json
+RF-Antibody generated candidates,20,,count,Generation population,executed,evidence/raw/platform_outputs/rfantibody_candidates.json
+RF-Antibody locally evaluated candidates,10,,count,Boltz-2 candidate evaluation,executed,candidates.csv
+RF-Antibody epitope-engaged candidates,8/10,,fraction,All five declared hotspots engaged,executed,evidence/benchmark_comparison.md
+Shortlisted candidates,5,,count,Four epitope-engaged plus one contrast candidate,executed,shortlist.csv
+Interface similarity (iAlign IS),≤0.2,UNAVAILABLE,IS score,Germinal PD-L1 scFv novelty against PDB/OAS known complexes and design set,not_reproduced,benchmark task file; exact iAlign/database inputs not retained
+AF-M iPAE / AF3 PAE filter,iPAE <0.35; PAE <8 Å,UNAVAILABLE,confidence/error threshold,Germinal design-stage and AF3 final filters,not_comparable,benchmark task file; Boltz-2 ipDE is not PAE
+PD-L1 designs passing Germinal filters,470,20 generated; 10 evaluated; 5 shortlisted,count,Campaign yield vs this single RF-Antibody fallback run,not_comparable,benchmark task file; candidates.csv

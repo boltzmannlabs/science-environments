@@ -1,0 +1,339 @@
+{
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "20261110_rf_antibody_boltz2",
+  "run_date": "2026-11-10",
+  "status": "completed_with_pending_branch",
+  "source_root": "src/task_002_pdl1_epitope_targeted_scfv_design",
+  "results_root": "results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2",
+  "workflow_design": "epitope_abgen -> AntiBMPNN -> Boltz2 -> Antibody_Prediction",
+  "workflow_executed": "rfdiffusion_proteinmpnn -> local Boltz-2 -> interface analysis -> Antibody_Prediction",
+  "jobs": {
+    "epitope_abgen": {
+      "doc_id": "6af33484b2d9f21f0dc8d50e",
+      "status": "pending_no_output",
+      "observed_message": "No Output Found",
+      "polling_window": ">2h",
+      "downstream_executed": false
+    },
+    "rfdiffusion_proteinmpnn": {
+      "doc_id": "68d12a5de5b6a2fdc0e3c443",
+      "status": "completed",
+      "generated_candidate_count": 20,
+      "raw_output": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/rfantibody_candidates.json"
+    },
+    "Antibody_Prediction": {
+      "doc_id": "6af36e74d982f81aac5b4ec8",
+      "status": "completed",
+      "property_count": 5,
+      "raw_output": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/antibody_pred_output.csv"
+    }
+  },
+  "local_execution": {
+    "tool": "Boltz-2",
+    "status": "completed",
+    "evaluated_candidate_count": 10,
+    "gpu": "NVIDIA RTX 3090 24 GB",
+    "execution_mode": "sequential",
+    "oom_events": 0,
+    "commands": [
+      "boltz predict inputs/<candidate>.yaml --out_dir pred_<candidate> --recycling_steps 3 --use_msa_server",
+      "python code/analyze_interface.py"
+    ]
+  },
+  "counts": {
+    "generated_candidates": 20,
+    "evaluated_candidates": 10,
+    "property_predicted_candidates": 5,
+    "shortlisted_candidates": 5,
+    "epitope_engaged_recommendations": 4,
+    "contrast_candidates": 1
+  },
+  "shortlist": [
+    "rf1_d5",
+    "rf1_d2",
+    "rf1_d3",
+    "rf0_d5",
+    "rf0_d0"
+  ],
+  "best_candidate": "rf1_d5",
+  "code": [
+    "../../code/boltz2_run_batch.sh",
+    "../../code/analyze_interface.py",
+    "../../code/compute_novelty.py",
+    "../../code/rank_and_package.py",
+    "../../code/retained_root_scripts/h5_rmsd.py"
+  ],
+  "source_files": [
+    "../../source/framework_scfv.fasta",
+    "../../source/pdl1_vlike.fasta",
+    "../../source/h5_reference.fasta",
+    "../../source/germinal_config.yaml",
+    "../../source/germinal_config_run_scfv_pdl1.yaml",
+    "../../source/germinal_config_target_pdl1.yaml"
+  ],
+  "limitations": [
+    "The epitope_abgen branch produced no output.",
+    "The RF-Antibody fallback conditions on the whole antigen surface; hotspot targeting was post-hoc.",
+    "Remote platform backend implementation and private payload code are not locally available.",
+    "Thermal stability and solubility were not independently reproduced with a local open-source predictor.",
+    "StaBddG was not applicable because no bound generic reference complex was available."
+  ],
+  "canonical_source_run": "src/task_002_pdl1_epitope_targeted_scfv_design/runs/20261110_rf_antibody_boltz2",
+  "canonical_result_root": "results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2",
+  "input_checksum_manifest": "src/task_002_pdl1_epitope_targeted_scfv_design/runs/20261110_rf_antibody_boltz2/inputs/sha256sums.json",
+  "result_checksum_manifest": "results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/mappings/path_manifest.json",
+  "fresh_validation": "results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/validation.json",
+  "canonical_artifact_hashes": [
+    {
+      "path": "report.md",
+      "sha256": "8dabfcee2da8fc3fb57b82536eb28e3cca9e0e609a95a5061efe02c9c0f295a9"
+    },
+    {
+      "path": "candidates.csv",
+      "sha256": "a8b535f3ffbbafb10e1a3907034cd5b42293722735d032f7891376b183f1d90d"
+    },
+    {
+      "path": "shortlist.csv",
+      "sha256": "df8c8af64bade0c5ceaa88b6e6e29470e86e79c7d53c54d0dcd9947cbd8b5145"
+    },
+    {
+      "path": "designed_sequences.fasta",
+      "sha256": "62d25100c2eb54a0c6ded575b6527ede71bff0d738f8551a4563f64d0e7669ac"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "f0e9810f208b2e2d08142be07a8ac5aa63c9d49b7264c76d2f6985648a24cfa3"
+    },
+    {
+      "path": "benchmark_comparison.csv",
+      "sha256": "d4cd9079b287c9bee7b2931499ef39094723333ada439a8bd19c4f1430051e46"
+    },
+    {
+      "path": "structures/rf0_d0_scfv_pdl1_model_0.cif",
+      "sha256": "13fbb3c76dc90cc162191c0cdcd18817de80d3b84f541c041de409e5d321af58"
+    },
+    {
+      "path": "structures/rf0_d5_scfv_pdl1_model_0.cif",
+      "sha256": "a0c721396355570b561468d01cd2b6b8b354a700938d4bba5ea3e45750fce087"
+    },
+    {
+      "path": "structures/rf1_d2_scfv_pdl1_model_0.cif",
+      "sha256": "bdfc8e616dc8a68e0590354d526c2de0f71233ebcc6caa6f7adabde0c09e06eb"
+    },
+    {
+      "path": "structures/rf1_d3_scfv_pdl1_model_0.cif",
+      "sha256": "c75d3c78ee69ba5705ae4f93e2f3e9bf0d9bce43bb17e7bbfda7b6d155fe31c0"
+    },
+    {
+      "path": "structures/rf1_d5_scfv_pdl1_model_0.cif",
+      "sha256": "bb0b561a1ad3f90cbab815789023538a9ed16b5ca4360abd25ccdd78d2316112"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "report.md",
+      "sha256": "8dabfcee2da8fc3fb57b82536eb28e3cca9e0e609a95a5061efe02c9c0f295a9"
+    },
+    {
+      "path": "candidates.csv",
+      "sha256": "a8b535f3ffbbafb10e1a3907034cd5b42293722735d032f7891376b183f1d90d"
+    },
+    {
+      "path": "shortlist.csv",
+      "sha256": "df8c8af64bade0c5ceaa88b6e6e29470e86e79c7d53c54d0dcd9947cbd8b5145"
+    },
+    {
+      "path": "designed_sequences.fasta",
+      "sha256": "62d25100c2eb54a0c6ded575b6527ede71bff0d738f8551a4563f64d0e7669ac"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "f0e9810f208b2e2d08142be07a8ac5aa63c9d49b7264c76d2f6985648a24cfa3"
+    },
+    {
+      "path": "benchmark_comparison.csv",
+      "sha256": "d4cd9079b287c9bee7b2931499ef39094723333ada439a8bd19c4f1430051e46"
+    }
+  ],
+  "results_directory": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2",
+  "results_directory_base": "source run directory",
+  "artifact_counts": {
+    "inventory_rows_including_controls": 20,
+    "selected_rows_including_contrasts": 5,
+    "selected_sequence_records": 5,
+    "structure_files": 5
+  },
+  "packaging": {
+    "updated_at_utc": "2026-11-11T10:42:56.414471+00:00",
+    "scientific_execution_performed": false,
+    "relocations": "logs/packaging_history/relocations.json",
+    "validated_at_utc": "2026-11-11T10:48:39.757436+00:00",
+    "validation_report": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/validation.json"
+  },
+  "scientific_artifacts": [
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/benchmark_comparison.csv",
+      "sha256": "d4cd9079b287c9bee7b2931499ef39094723333ada439a8bd19c4f1430051e46",
+      "bytes": 1268
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/candidates.csv",
+      "sha256": "a8b535f3ffbbafb10e1a3907034cd5b42293722735d032f7891376b183f1d90d",
+      "bytes": 3532
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/designed_sequences.fasta",
+      "sha256": "62d25100c2eb54a0c6ded575b6527ede71bff0d738f8551a4563f64d0e7669ac",
+      "bytes": 1525
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/all_candidates.csv",
+      "sha256": "af2c06a586de215c09f36e530db9b2e7acfefb9ef476d4b3048a7e02cc86de5a",
+      "bytes": 48
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_comparison.md",
+      "sha256": "167263d8774616775ec3ccae1bd65332813dd52bf8ba7f9eebf01130e137e9d2",
+      "bytes": 6437
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/boltz2_analysis.json",
+      "sha256": "120b8a64c7f11defc402c5e5a401fa938f88f09405c012879734142190dc7010",
+      "bytes": 4670
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/mappings/path_manifest.json",
+      "sha256": "d3ddb16622f5dc8b94540cac39042682cd5b1a6a0aaeac352074118ab8cac6e9",
+      "bytes": 1669
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/mappings/relocation_manifest.json",
+      "sha256": "b824dfdd8865e4d31c80c19789f3d89e182b4e0691b7807a9e33dcc2bc515ace",
+      "bytes": 7488
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/metrics.json",
+      "sha256": "33b8e4929e40902db368e896f1a5decd86746126f8f24e7b3e6b36377b363e7d",
+      "bytes": 989
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/metrics_new.json",
+      "sha256": "f0e9810f208b2e2d08142be07a8ac5aa63c9d49b7264c76d2f6985648a24cfa3",
+      "bytes": 18380
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/open_source_validation.md",
+      "sha256": "dc24e8e42e9c88fe1710739402d2180ec782c77cd97d0ea294d34e402f63e001",
+      "bytes": 4159
+    },
+    {
+      "path": "../../../../src/task_002_pdl1_epitope_targeted_scfv_design/runs/20261110_rf_antibody_boltz2/logs/packaging_history/imported_original_summary.md",
+      "sha256": "d6b573928ea5620834cf1b756a4ffe005342621b1945c6f826b61df5fb71ac54",
+      "bytes": 3117
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/candidates_evaluated_snapshot.csv",
+      "sha256": "e54cae2c47ae973cdba58f797a9a7a74352bd98fccb1be8dc16609bb713e6bb8",
+      "bytes": 2202
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/antibody_pred_output.csv",
+      "sha256": "424d3573c10d371c8fdc17faa4fb425350a02e58054310a950a5edf12d6bba4f",
+      "bytes": 1808
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/boltz2_analysis.json",
+      "sha256": "120b8a64c7f11defc402c5e5a401fa938f88f09405c012879734142190dc7010",
+      "bytes": 4670
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/novelty.json",
+      "sha256": "02a4928a85a095a53bcb2714d71e3477d771176aafca1b13608bec616625d7d0",
+      "bytes": 914
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/novelty_recomputed.json",
+      "sha256": "e1ccc518d07077b9c836176d5f1566942fbf9496af10b0f3634cefbd78527dc4",
+      "bytes": 1142
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/raw/platform_outputs/rfantibody_candidates.json",
+      "sha256": "cee09b35439501df05e69d962119fa95b5398fcc2a3069ffcc8d206dde0d8709",
+      "bytes": 11482
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/confidence_task002_h5_pdl1_model_0.json",
+      "sha256": "877db5692a5595fe969e2c37f3ce424836ccced259a086580c798009f9dd8163",
+      "bytes": 899
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/task002_h5_pdl1_model_0.pdb",
+      "sha256": "b41edef44a22d75d7cff27d70df553d798a70411d777a56d33efec1982ae71e4",
+      "bytes": 212543
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/task002_h5_rmsd.json",
+      "sha256": "29361f5cd0e72bacf849e930fc1f00d1ae4e94569f0fd0d805c9bccd029cec9f",
+      "bytes": 556
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/metrics.json",
+      "sha256": "f0e9810f208b2e2d08142be07a8ac5aa63c9d49b7264c76d2f6985648a24cfa3",
+      "bytes": 18380
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/report.md",
+      "sha256": "7eb405dedd30c61fd7c437cb39e352ca17525556e3f06b311b16937c7d841d03",
+      "bytes": 4174
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/sequences.fasta",
+      "sha256": "62d25100c2eb54a0c6ded575b6527ede71bff0d738f8551a4563f64d0e7669ac",
+      "bytes": 1525
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/shortlist.csv",
+      "sha256": "8f4c49960e005887caa720ef20385cb7758cba228eed94ef3cdf5f37d4c74e92",
+      "bytes": 1732
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf0_d0_scfv_pdl1_model_0.cif",
+      "sha256": "13fbb3c76dc90cc162191c0cdcd18817de80d3b84f541c041de409e5d321af58",
+      "bytes": 256794
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf0_d5_scfv_pdl1_model_0.cif",
+      "sha256": "a0c721396355570b561468d01cd2b6b8b354a700938d4bba5ea3e45750fce087",
+      "bytes": 256751
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d2_scfv_pdl1_model_0.cif",
+      "sha256": "bdfc8e616dc8a68e0590354d526c2de0f71233ebcc6caa6f7adabde0c09e06eb",
+      "bytes": 257581
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d3_scfv_pdl1_model_0.cif",
+      "sha256": "c75d3c78ee69ba5705ae4f93e2f3e9bf0d9bce43bb17e7bbfda7b6d155fe31c0",
+      "bytes": 257031
+    },
+    {
+      "path": "../../../../results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d5_scfv_pdl1_model_0.cif",
+      "sha256": "bb0b561a1ad3f90cbab815789023538a9ed16b5ca4360abd25ccdd78d2316112",
+      "bytes": 257202
+    }
+  ],
+  "path_bases": {
+    "results_directory": "source run directory",
+    "source_root": "environment root",
+    "results_root": "environment root"
+  },
+  "packaging_transfer": {
+    "base_commit": "ba3232c0480ba3e6fd516712d36ed2d93adf9414",
+    "execution_status": "finished_with_pending_branch",
+    "scientific_coverage": "partial",
+    "scientific_jobs_executed_during_transfer": false,
+    "historical_paths_and_hashes": "Original execution-workspace paths and older checksum inventories are retained as historical provenance; use the fresh package inventory for current paths and integrity.",
+    "current_inventory": "../../../../src/shared/package_inventory.csv",
+    "external_artifacts": "../../../../src/shared/external_artifacts.json"
+  }
+}

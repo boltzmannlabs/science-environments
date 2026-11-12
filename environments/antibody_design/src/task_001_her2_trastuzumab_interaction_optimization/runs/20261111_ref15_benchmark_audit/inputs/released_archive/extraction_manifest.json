@@ -1,0 +1,1159 @@
+{
+  "archive": "src/task_001_her2_trastuzumab_interaction_optimization/runs/20261111_ref15_benchmark_audit/inputs/ab_seldon_trastuzumab_optimization_tests_v2.tar.gz",
+  "members_seen": 64014,
+  "elapsed_seconds": 53.25612693000585,
+  "saved": [
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/1n8z-frk-reduced.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/1n8z-frk-reduced.fasta",
+      "bytes": 589,
+      "sha256": "f4c49361add46251c4e27a98c6ebe1b52a308e7fe80cd1535542719a6d6efa57"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/complex_1n8z-frk-reduced.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/complex_1n8z-frk-reduced.pdb",
+      "bytes": 423007,
+      "sha256": "26e43537a4e0ff50aebc4b7cfa49105ff56ba8ccfbfa953ad9e2955ed7c7082e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/memory_frame_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/memory_frame_v6.2.py",
+      "bytes": 41443,
+      "sha256": "8467cde0f646e6027f64b05bb2e24240bedc159c98059c8268af4a1009506bc2"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/min_imp.sh",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/min_imp.sh",
+      "bytes": 311,
+      "sha256": "86c6004fd2319944de140e948c1990497cf1d87127036bdd20781670be424981"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/mutagenesis_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/mutagenesis_v6.2.py",
+      "bytes": 42174,
+      "sha256": "88d1cc8611521533f9619c23da232beab2ce574718a79d686a7ae246edf8c7a1"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/prepare_v2.7.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/prepare_v2.7.py",
+      "bytes": 18858,
+      "sha256": "15b9602b624e8a4372e76e1aa775a9f0a106877617bb8bfc8e568121e4563e63"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/seldon.sh",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/seldon.sh",
+      "bytes": 170,
+      "sha256": "d773578ff7593a96fdc7b7157a4d3619b239f66ceabe13134a1c8434f3219b97"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_bnk_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_bnk_v6.2.py",
+      "bytes": 47847,
+      "sha256": "98c60049aca98f2d8d9ba0d8c72f1db7f5a51f8f54c87fe0dd556eda69c40658"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_h3_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_h3_v6.2.py",
+      "bytes": 43004,
+      "sha256": "05c8f28b8222dddffc9f33b3d56158612fc2a9ca82b67f0178da4db9065fd929"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_rep_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_nai_rep_v6.2.py",
+      "bytes": 41331,
+      "sha256": "6930ae08e5633ab9bb21620eec611e03a3496e0342c50915e19665cac5d64c78"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/swap_settings.cfg",
+      "bytes": 1504,
+      "sha256": "5e0f8865d1e6d8a9c9119eae0de1500024fa30849965ce6d37e957d49e151644"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2530-pfs25/6phb.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2530-pfs25/6phb.fasta",
+      "bytes": 610,
+      "sha256": "952fa03a629412cfad0c0edcb87a236057aa421a019ad261d9c9813df8315d33"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2530-pfs25/complex_6phb.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2530-pfs25/complex_6phb.pdb",
+      "bytes": 474918,
+      "sha256": "9a632d955ed3305b431c779b1c80cef7a885eda0adec679b45ceaa56ac5e9c8d"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2j88-rabd/2J88.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2j88-rabd/2J88.fasta",
+      "bytes": 504,
+      "sha256": "3813df0a5cd8286a0d33303ed60f638d06ba8083cb78b477ea9497dac3bc74d9"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2j88-rabd/complex_2j88.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/2j88-rabd/complex_2j88.pdb",
+      "bytes": 342078,
+      "sha256": "9376faf315575a2879e448ce2c3df01909290243d0d981d455d27b2437ed64c1"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/atezo-pdl1/5x8l.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/atezo-pdl1/5x8l.fasta",
+      "bytes": 269,
+      "sha256": "3901b286d77f790462a0fe4bf4fa22c7e63333a0b0e699548ff692c14c3a1f33"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/atezo-pdl1/complex_5x8l.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/atezo-pdl1/complex_5x8l.pdb",
+      "bytes": 430530,
+      "sha256": "5adaff06d458a84fd3b7b2e39e4d5e5875a39bbf4178e929b8cee012f4a42d31"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/c098-covidrbd/c098.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/c098-covidrbd/c098.fasta",
+      "bytes": 247,
+      "sha256": "c15d8abe8428765e3c7932a2fba2d2224f6f10d62bfe365693a6970491c15da8"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/c098-covidrbd/complex_c098.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/c098-covidrbd/complex_c098.pdb",
+      "bytes": 261317,
+      "sha256": "a0e94cbff86d1a0dae72398471c54642bfe7dfeba092276012a51218469e5420"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/cr3022-covidrbd/complex_cr3022.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/cr3022-covidrbd/complex_cr3022.pdb",
+      "bytes": 548628,
+      "sha256": "0b83c0bbd85e1a314ba8c85162da8320b1f2864ec3bd1f42222a06bace15cbbc"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/cr3022-covidrbd/cr3022.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/cr3022-covidrbd/cr3022.fasta",
+      "bytes": 238,
+      "sha256": "62e1cc4399baf1c6884cde1ed0ef34175132d6ebce1f771263810a28fffd87de"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/trast-her2-PAPER/1n8z-frk-reduced.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/trast-her2-PAPER/1n8z-frk-reduced.fasta",
+      "bytes": 589,
+      "sha256": "f4c49361add46251c4e27a98c6ebe1b52a308e7fe80cd1535542719a6d6efa57"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/trast-her2-PAPER/complex_1n8z-frk-reduced.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/example-complexes/trast-her2-PAPER/complex_1n8z-frk-reduced.pdb",
+      "bytes": 423007,
+      "sha256": "26e43537a4e0ff50aebc4b7cfa49105ff56ba8ccfbfa953ad9e2955ed7c7082e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/1n8z-frk-reduced.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/1n8z-frk-reduced.fasta",
+      "bytes": 589,
+      "sha256": "f4c49361add46251c4e27a98c6ebe1b52a308e7fe80cd1535542719a6d6efa57"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/complex_1n8z-frk-reduced.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/complex_1n8z-frk-reduced.pdb",
+      "bytes": 423007,
+      "sha256": "26e43537a4e0ff50aebc4b7cfa49105ff56ba8ccfbfa953ad9e2955ed7c7082e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/memory_frame_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/memory_frame_v6.2.py",
+      "bytes": 41443,
+      "sha256": "8467cde0f646e6027f64b05bb2e24240bedc159c98059c8268af4a1009506bc2"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/min_imp.sh",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/min_imp.sh",
+      "bytes": 311,
+      "sha256": "86c6004fd2319944de140e948c1990497cf1d87127036bdd20781670be424981"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/mutagenesis_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/mutagenesis_v6.2.py",
+      "bytes": 42174,
+      "sha256": "88d1cc8611521533f9619c23da232beab2ce574718a79d686a7ae246edf8c7a1"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/prepare_v2.7.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/prepare_v2.7.py",
+      "bytes": 18858,
+      "sha256": "15b9602b624e8a4372e76e1aa775a9f0a106877617bb8bfc8e568121e4563e63"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/seldon.sh",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/seldon.sh",
+      "bytes": 170,
+      "sha256": "d773578ff7593a96fdc7b7157a4d3619b239f66ceabe13134a1c8434f3219b97"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_bnk_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_bnk_v6.2.py",
+      "bytes": 47847,
+      "sha256": "98c60049aca98f2d8d9ba0d8c72f1db7f5a51f8f54c87fe0dd556eda69c40658"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_h3_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_h3_v6.2.py",
+      "bytes": 43004,
+      "sha256": "05c8f28b8222dddffc9f33b3d56158612fc2a9ca82b67f0178da4db9065fd929"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_rep_v6.2.py",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_nai_rep_v6.2.py",
+      "bytes": 41331,
+      "sha256": "6930ae08e5633ab9bb21620eec611e03a3496e0342c50915e19665cac5d64c78"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/swap_settings.cfg",
+      "bytes": 1438,
+      "sha256": "8c1bb77ddd78f08f4bb77f65406770426832fb01b6d7565dac4dedd97ef68fa0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/absolute_ticks.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/absolute_ticks.csv",
+      "bytes": 2440,
+      "sha256": "a752af3546675f13e3183c5a5da7ce0084e3bfda29bd1e97e8eca037634158ae"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_cumulative_ticks.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_cumulative_ticks.csv",
+      "bytes": 23785,
+      "sha256": "2c31127a1d87ab8074168d940f383f4b17d1c0d19cce146fb25c84eac6931efb"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_energies.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_energies.csv",
+      "bytes": 174752,
+      "sha256": "a67399edf83c4f414334a74467629365430751b2eb6dbf1972f67ed0d3c260fb"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_reductions.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_reductions.csv",
+      "bytes": 177783,
+      "sha256": "14be874412b01431ac87579b0a09fa3d249afd936c139adcf17cc965f2b1420b"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_ticks.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/aligned_ticks.csv",
+      "bytes": 20283,
+      "sha256": "0eddfaed358142645032a1632a08e40962f61964669531a47befdda75dbcef29"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/approvals-by-step.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/approvals-by-step.csv",
+      "bytes": 24,
+      "sha256": "241b0376f4213cd74a81f4d8add27c7f1e47f78fd9711ecf4f9644b75ad72b6d"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/bs2-optimization_cycles.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/bs2-optimization_cycles.csv",
+      "bytes": 92,
+      "sha256": "7665b239770770c078b4fc4da3599ec84286696b38804d85928a9668c9ef5292"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks.csv",
+      "bytes": 2440,
+      "sha256": "6367fd0fcce8a4ce7efad07c1ae26127ace2905eb2a2413b1b55cea259c10471"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks_15.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks_15.csv",
+      "bytes": 2443,
+      "sha256": "cac6563bbd478a4251d0443483183266800be61310dae11c3058b9be1d1a65a2"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks_20.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/grouped_ticks_20.csv",
+      "bytes": 2443,
+      "sha256": "aa18d2812c6b3f99cd88ad0403a75a7778df2f50ba38425d2bea5b3d621f87fb"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/max_min_differences.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/max_min_differences.csv",
+      "bytes": 690,
+      "sha256": "a3bfcda0ff1cdc267ea484e5abcfbce86c320fe9d9fd27bbb5a2b16104117fee"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/ratio_ticks.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/ratio_ticks.csv",
+      "bytes": 5451,
+      "sha256": "1031cbb779e5cb8e66f1bb72784206df85a430276e8c5b8ceaba35a933b7b62f"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/reductions-by-step-replicates.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/reductions-by-step-replicates.csv",
+      "bytes": 1159,
+      "sha256": "f2e9575d150a6e5fc3b6c825a1bd86842d1b43be4865bd104e671fa373bba85c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/reductions-by-step.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/reductions-by-step.csv",
+      "bytes": 1131,
+      "sha256": "c6bf9f431c7d30b6d9f3440bdb18e8432b7935ebdf7618b5f2eac25053793472"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs1.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs1.csv",
+      "bytes": 22911,
+      "sha256": "7a4f49a47c07047ff5e2b08078d2ed272468b7366f664b6587e40df80d39a516"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs2.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs2.csv",
+      "bytes": 9235,
+      "sha256": "9fa7657bae1b3be4475fb1e6879c0dcd71a68dfc5b6fb957dd4f3c0d29df87cd"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs3.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs3.csv",
+      "bytes": 17100,
+      "sha256": "df4b4e934aad292bd641e3a111f537770a8fb407d47907dd8bd5baf7d4355f1e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs4.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_energies_bs4.csv",
+      "bytes": 17003,
+      "sha256": "c4ac480fcfc6cb58a2961efc3152061ef95ba95c30bd47317ad00eab9bf2c77c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs1.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs1.csv",
+      "bytes": 20852,
+      "sha256": "237ddf5ebf1b8825deb58e4faa257ffa0c24a2920e71048d0f82501243ca6355"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs2.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs2.csv",
+      "bytes": 7490,
+      "sha256": "b18545e4e390b28295a7bdd3e965a20dcfdf2a0535734d5ab45f592bf853642d"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs3.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs3.csv",
+      "bytes": 11599,
+      "sha256": "a9bfc309e15dbb8aba8a271857701f5eff99c0a898bb6df55993fccf03f3392e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs4.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/all_reductions_bs4.csv",
+      "bytes": 11304,
+      "sha256": "a4cd08deec9c1acf612558c6cad4f72726c9425bb2aa4770f505a26229a91272"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity1.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity1.csv",
+      "bytes": 4138,
+      "sha256": "eef9a4ccf5542fdb224e48b8ef0b718257d0632f866b9ac065dd9beec1344a74"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity1.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity1.log",
+      "bytes": 37101,
+      "sha256": "cd954e19b98b4ecd752f9511b4ad801dddbeac153743df214f028982882d7d4b"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity2.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity2.csv",
+      "bytes": 3993,
+      "sha256": "4f374c95b10455a9d0eafe9c3ebc4c2e152760e6428d54041b183e8c3b85cb09"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity2.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity2.log",
+      "bytes": 35629,
+      "sha256": "1d5cc68e5085feba6ac82b54ee15eb0947be8feeadfe258b127dec7d6c2caee3"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity3.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity3.csv",
+      "bytes": 3751,
+      "sha256": "31006ded447fe94bde91d9fad90a87b55f66337dbce88b93c00210cc98742ff0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity3.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity3.log",
+      "bytes": 36239,
+      "sha256": "46d971d7c1130ff0db5b72ca8d4e54ec854b17ceb1f31f8642fff4f60fc8c100"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity4.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity4.csv",
+      "bytes": 3835,
+      "sha256": "15751fb479ca395682e09f9d1df8a3e315c957f3e5f69de44d2cc35e6f16557b"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity4.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity4.log",
+      "bytes": 36082,
+      "sha256": "ea59d6bd25ec19d6eaa93570e4cd19154efdb56a8c9381bff323be8679e137f7"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity5.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity5.csv",
+      "bytes": 3761,
+      "sha256": "163a40eed3cb65937db4672ffcae5ff9e8b98b35dacdd6e08c0849ebd68d98d5"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity5.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity5.log",
+      "bytes": 34792,
+      "sha256": "0b37ae031c6e2b70aa68d9fb193f9c395f7b4cd84a3ea54f74efb382986ce070"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity6.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity6.csv",
+      "bytes": 4153,
+      "sha256": "8d842fa006439976213daaac9aae6732e31ee3577dab125432382f98ba4d1a58"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity6.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity6.log",
+      "bytes": 37118,
+      "sha256": "47d814c10eedd3d92eccbd15e89be1c1b84afbabacc296990e92ee9d567a9f39"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity7.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity7.csv",
+      "bytes": 3979,
+      "sha256": "f5ed3ef6d3222a629c6553e4c249222d44bc6ebaa47e8de1a17dc4d6b7c0bef2"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity7.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity7.log",
+      "bytes": 36978,
+      "sha256": "b05401cae158c9e721359939a9c320a6a4f126b6df7240eb6bca495bc0d58797"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity8.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity8.csv",
+      "bytes": 4155,
+      "sha256": "3eba6457156e8f08dc5dab81acc3391667e6c9944020233d91ff8602b277b60c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity8.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_diversity8.log",
+      "bytes": 36657,
+      "sha256": "055e95abc7d121c4249b887b7ed8fc0cba4e2c5bf3487cc50b4f11600c186c3a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random1.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random1.csv",
+      "bytes": 3965,
+      "sha256": "b6448db68ffbc3c43e0f01a724b8be0b956b717d5029beb5b93044abb189e1be"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random1.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random1.log",
+      "bytes": 35268,
+      "sha256": "48bd55906b91fa22593f5456c9a889a16d912029ae056ac80b0eb779e06cd603"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random2.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random2.csv",
+      "bytes": 3996,
+      "sha256": "0ea17ad75ed4ec3f3575b997cbdae22ed67c72eab7930d50160122249aefb64c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random2.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random2.log",
+      "bytes": 35892,
+      "sha256": "cb0bac78adacd3ff091cf817b06ba9bd8d74792b9f269347b4bd6c05a66d81b0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random3.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random3.csv",
+      "bytes": 3805,
+      "sha256": "4ccacb2d5512db4a3d9c7548900b031bf02a66c129c73828066d2c2d773f52a1"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random3.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random3.log",
+      "bytes": 33738,
+      "sha256": "a56a0b11752b6c4890fb887aff295c40802b80f4d58c49505cb5965fd9607687"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random4.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random4.csv",
+      "bytes": 4337,
+      "sha256": "106a1db581757a8f57c31449105a117c82022aeb72af681633c62a17a65c3318"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random4.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random4.log",
+      "bytes": 37476,
+      "sha256": "bc9fb3e4d967bce20aff8c991c3d02a68ef37713ba37789b9196e118f67e90fd"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random5.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random5.csv",
+      "bytes": 3798,
+      "sha256": "f611be36233978440171277b51b34a23642581fa6238c64756e62dc61cb20a70"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random5.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random5.log",
+      "bytes": 36197,
+      "sha256": "a6ef4de230f36e6aca3ccff82fb8ebfc2b723d53995349151e20efa7b4bc9abd"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random6.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random6.csv",
+      "bytes": 4079,
+      "sha256": "f9c2dd971e2a4fde755a8d5473745bf821f07a8d94ec2e12b9d6278a7447066e"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random6.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random6.log",
+      "bytes": 36472,
+      "sha256": "2df88035bc16b0a7b49b8d67249ee08673ac4067072f38f944fb77fa2fa116d8"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random7.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random7.csv",
+      "bytes": 3807,
+      "sha256": "e0423cfd8843e5dd0b7d4319842becc349d70f93ea22590a397adba6985a1066"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random7.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random7.log",
+      "bytes": 34654,
+      "sha256": "da38a18950f9acf4c245f6452bfaef065da1244494a8826e19df8736861a7fe7"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random8.csv",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random8.csv",
+      "bytes": 3628,
+      "sha256": "735575df54b809ac846296d2ab42c71e6ae9219686f82487b3350ac5fe6dfd80"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random8.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/step_graphs/swap_001_random8.log",
+      "bytes": 34534,
+      "sha256": "581566dcad5e6d91cfb19fefad1bec12822ebf3de5fbb6c4327e537d3b3a2011"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity1.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity1.log",
+      "bytes": 37101,
+      "sha256": "cd954e19b98b4ecd752f9511b4ad801dddbeac153743df214f028982882d7d4b"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity2.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity2.log",
+      "bytes": 35629,
+      "sha256": "1d5cc68e5085feba6ac82b54ee15eb0947be8feeadfe258b127dec7d6c2caee3"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity3.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity3.log",
+      "bytes": 36239,
+      "sha256": "46d971d7c1130ff0db5b72ca8d4e54ec854b17ceb1f31f8642fff4f60fc8c100"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity4.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity4.log",
+      "bytes": 36082,
+      "sha256": "ea59d6bd25ec19d6eaa93570e4cd19154efdb56a8c9381bff323be8679e137f7"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity5.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity5.log",
+      "bytes": 34792,
+      "sha256": "0b37ae031c6e2b70aa68d9fb193f9c395f7b4cd84a3ea54f74efb382986ce070"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity6.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity6.log",
+      "bytes": 37118,
+      "sha256": "47d814c10eedd3d92eccbd15e89be1c1b84afbabacc296990e92ee9d567a9f39"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity7.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity7.log",
+      "bytes": 36978,
+      "sha256": "b05401cae158c9e721359939a9c320a6a4f126b6df7240eb6bca495bc0d58797"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity8.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_diversity8.log",
+      "bytes": 36657,
+      "sha256": "055e95abc7d121c4249b887b7ed8fc0cba4e2c5bf3487cc50b4f11600c186c3a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random1.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random1.log",
+      "bytes": 35268,
+      "sha256": "48bd55906b91fa22593f5456c9a889a16d912029ae056ac80b0eb779e06cd603"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random2.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random2.log",
+      "bytes": 35892,
+      "sha256": "cb0bac78adacd3ff091cf817b06ba9bd8d74792b9f269347b4bd6c05a66d81b0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random3.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random3.log",
+      "bytes": 33738,
+      "sha256": "a56a0b11752b6c4890fb887aff295c40802b80f4d58c49505cb5965fd9607687"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random4.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random4.log",
+      "bytes": 37476,
+      "sha256": "bc9fb3e4d967bce20aff8c991c3d02a68ef37713ba37789b9196e118f67e90fd"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random5.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random5.log",
+      "bytes": 36197,
+      "sha256": "a6ef4de230f36e6aca3ccff82fb8ebfc2b723d53995349151e20efa7b4bc9abd"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random6.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random6.log",
+      "bytes": 36472,
+      "sha256": "2df88035bc16b0a7b49b8d67249ee08673ac4067072f38f944fb77fa2fa116d8"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random7.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random7.log",
+      "bytes": 34654,
+      "sha256": "da38a18950f9acf4c245f6452bfaef065da1244494a8826e19df8736861a7fe7"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random8.log",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/energy/swap_001_random8.log",
+      "bytes": 34534,
+      "sha256": "581566dcad5e6d91cfb19fefad1bec12822ebf3de5fbb6c4327e537d3b3a2011"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "bytes": 283626,
+      "sha256": "184db7d8cd9e17184e6f29d3429ed63b78a2724cdee55ec32b2e1139d4f63f45"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "bytes": 280953,
+      "sha256": "f4ac37ae583b7a72cdc22d90c3ad2483d7fdd80a43e7978406ce0cb6c0d93e34"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/zernike-self-div.txt",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/zernike-self-div.txt",
+      "bytes": 23424,
+      "sha256": "eec32a132b9ec477b10675923156deddfb0fd5b061576eae30fee47021802cf0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/zernike-self-ran.txt",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/her2_final_antibodies/full_fv/zernike-self-ran.txt",
+      "bytes": 23424,
+      "sha256": "01e329c5ef2bbfc7349c0944f7248381d70571d4f73fd73547e8e0ea4a244526"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/zernike-self-div.txt",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/zernike-self-div.txt",
+      "bytes": 23424,
+      "sha256": "eec32a132b9ec477b10675923156deddfb0fd5b061576eae30fee47021802cf0"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/zernike-self-ran.txt",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/analyses/zernike/databases/zernike-self-ran.txt",
+      "bytes": 23424,
+      "sha256": "01e329c5ef2bbfc7349c0944f7248381d70571d4f73fd73547e8e0ea4a244526"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "f310844a349ebe225f8e795407c284e64f11e669ea9f73e7f7b5497b94444bde"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity1_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "832201c5d9713ec4126ecdfbfa42c69d38079227ab660b02c9ab2dba7eeeb3a8"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity2_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "41a7fb4065d02cc5d348be4ff2a975036ff59b8567b80fe0e2e15565bd17e261"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity3_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "5f85eee5d353bd34550780ba4869695407994e260ad97647308d4a678a39fe64"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity4_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "b2f2402948d5687b72573af8956cf25cbbeda1b54668ddd8d695b06a9076ff7f"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity5_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/complex_FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/complex_FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "bytes": 428395,
+      "sha256": "e88af27f860be2ffd77c653cadabf3300b38ccfac2b23f3d3347ed0bdf9edc81"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/FINAL_001_1n8z-frk-reduced_div6_000024.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/FINAL_001_1n8z-frk-reduced_div6_000024.fasta",
+      "bytes": 316,
+      "sha256": "c41fc0b02675324fb4aaa2a049132cdf432843a4e17328a2cab298b77504e1df"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "bytes": 283626,
+      "sha256": "184db7d8cd9e17184e6f29d3429ed63b78a2724cdee55ec32b2e1139d4f63f45"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "2be3f26a0f750059cc9431c3e6e5cdbbcaf67af5a19cac80043226ea10532975"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity6_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "684edb79e1322d9d647701b931ecb7f360c486f5a5e4a33348e5c2471125b870"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity7_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/swap_settings.cfg",
+      "bytes": 1506,
+      "sha256": "eae697afd886354aef6d5d24f4a0e4a362a7aa379aa670cfc7730f185dc506f5"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/div_her2/diversity8_her2/diversity/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_antibodies/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_antibodies/FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "bytes": 283626,
+      "sha256": "184db7d8cd9e17184e6f29d3429ed63b78a2724cdee55ec32b2e1139d4f63f45"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_antibodies/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_antibodies/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "bytes": 280953,
+      "sha256": "f4ac37ae583b7a72cdc22d90c3ad2483d7fdd80a43e7978406ce0cb6c0d93e34"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_complexes/complex_FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_complexes/complex_FINAL_001_1n8z-frk-reduced_div6_000024.pdb",
+      "bytes": 428395,
+      "sha256": "e88af27f860be2ffd77c653cadabf3300b38ccfac2b23f3d3347ed0bdf9edc81"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_complexes/complex_FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_complexes/complex_FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "bytes": 425722,
+      "sha256": "8134ca1dda6b5d3ccd5c67202c056285452fb0e9d7bd7c318be209f28ec6dc5c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_sequences/FINAL_001_1n8z-frk-reduced_div6_000024.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_sequences/FINAL_001_1n8z-frk-reduced_div6_000024.fasta",
+      "bytes": 316,
+      "sha256": "c41fc0b02675324fb4aaa2a049132cdf432843a4e17328a2cab298b77504e1df"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_sequences/FINAL_001_1n8z-frk-reduced_ran4_000015.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_sequences/FINAL_001_1n8z-frk-reduced_ran4_000015.fasta",
+      "bytes": 312,
+      "sha256": "9bbdd4b0a03050703eefcd917b9ab9c9a7e033d6b1770fc6b53558edacf6d008"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "c0a9736be02c8487d8e601209f5cc6fb4b5789df9614130ba29b98eb4b5e3f6d"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random1_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "cc10f149738d30b97f5448f66bbf84b8964fcfd2e2677082e9e035fd1ddce02a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random2_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "ce2443251f95cb71ec1305b5004d80ca174bdda5742fd7f06bfe72db98f10e02"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random3_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/complex_FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/complex_FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "bytes": 425722,
+      "sha256": "8134ca1dda6b5d3ccd5c67202c056285452fb0e9d7bd7c318be209f28ec6dc5c"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/FINAL_001_1n8z-frk-reduced_ran4_000015.fasta",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/FINAL_001_1n8z-frk-reduced_ran4_000015.fasta",
+      "bytes": 312,
+      "sha256": "9bbdd4b0a03050703eefcd917b9ab9c9a7e033d6b1770fc6b53558edacf6d008"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/FINAL_001_1n8z-frk-reduced_ran4_000015.pdb",
+      "bytes": 280953,
+      "sha256": "f4ac37ae583b7a72cdc22d90c3ad2483d7fdd80a43e7978406ce0cb6c0d93e34"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "4668f3f963559aae5aa0a3dda753a54c05913fe7ca3a7358ea7260b93dcf8747"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random4_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "fe861d9523e69cdbf7ef82ebda7a03ee8f8f39acda2125196262d60369495422"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random5_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "4f8c852771d7cc1f8df6a4f314b5e197d4e0c32fb7f6d820b77d20baf625756a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random6_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "2e1cdfd3546fb82c74c67633027ad7e3184de92253ebbb24620fe18f58dfde54"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random7_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/min.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/min.in",
+      "bytes": 257,
+      "sha256": "feeeae51f49d70e1f9484a75d1bedfb3d0de1f709cb4107a20ba7956ef7e101a"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/parmed.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/parmed.in",
+      "bytes": 46,
+      "sha256": "d83e0350dbc69f50cd8a1a018a6f4157a6227c47953c8d4d0fb9fb8ada445033"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/swap_settings.cfg",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/swap_settings.cfg",
+      "bytes": 1440,
+      "sha256": "7e676d6751d1a3c06d5a616d6e2e3ce4b67975f384e9c17ab1e84bf881b64383"
+    },
+    {
+      "member": "ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/tleap_imp.in",
+      "path": "inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/ran_her2/random8_her2/random/tleap_imp.in",
+      "bytes": 150,
+      "sha256": "cd6028cb7ee6eb84a2e33bda385240b8fab82654c6f89802f6bb0e3457a84724"
+    }
+  ]
+}

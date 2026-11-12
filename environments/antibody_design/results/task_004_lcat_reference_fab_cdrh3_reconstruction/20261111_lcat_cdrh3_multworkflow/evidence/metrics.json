@@ -1,0 +1,52 @@
+{
+ "task": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+ "benchmark": {
+  "name": "AbFlow (KDD 2026), 60-case RAbD aggregate",
+  "table1": {
+   "AAR": "0.4234\u00b10.1334",
+   "TM-score": "0.9736\u00b10.0090",
+   "lDDT": "0.8522\u00b10.0216",
+   "CAAR": "0.2824\u00b10.2037",
+   "RMSD": "8.25\u00b14.55 A",
+   "DockQ": "0.423\u00b10.161"
+  },
+  "table2": {
+   "CDR_H3_RMSD_A": 1.83,
+   "fullatom_TMscore": 0.9707,
+   "fullatom_lDDT": 0.8151,
+   "fullatom_DockQ": 0.431
+  },
+  "note": "60-case aggregate, not 5BV7-specific; paper has RMSD-definition discrepancy (Sec 5.2 vs App C)"
+ },
+ "our_results": {
+  "native_cdrh3": "AREGAAVRSFYYSYYGMDV",
+  "best_AAR": 0.4737,
+  "best_CAAR": 0.5714,
+  "structural": {
+   "sample9": {
+    "CDR_H3_CA_RMSD_A": 6.456,
+    "TMscore": 0.0,
+    "lDDT": 98.9,
+    "ptm": 0.73,
+    "pddt": 0.923
+   },
+   "sample1": {
+    "CDR_H3_CA_RMSD_A": 47.771,
+    "TMscore": 0.0,
+    "lDDT": 98.03,
+    "ptm": 0.708,
+    "pddt": 0.906
+   },
+   "sample6": {
+    "CDR_H3_CA_RMSD_A": 51.16,
+    "TMscore": 0.0,
+    "lDDT": 97.81,
+    "ptm": 0.713,
+    "pddt": 0.927
+   }
+  },
+  "protocol": "ProteinMPNN design (20 variants) + Boltz2 structure (top 3); align on antibody framework C-alpha (B all + C minus CDR-H3); CDR-H3 C-alpha metrics"
+ },
+ "comparison": "MIXED - AAR better (our best 0.4737 vs benchmark mean 0.4234); structural reconstruction worse (our best RMSD 6.46 A vs Table 2 1.83 A; TM-score 0 vs 0.97). Single case vs 60-case aggregate.",
+ "integrity": "TM-score 0 is correct for the large CDR-H3 displacements (short loops are TM-sensitive). Did not resolve the paper's RMSD-definition discrepancy; reported Table 1 and Table 2 separately."
+}

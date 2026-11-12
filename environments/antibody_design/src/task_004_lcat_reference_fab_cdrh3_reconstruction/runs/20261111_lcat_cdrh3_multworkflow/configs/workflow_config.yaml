@@ -1,0 +1,40 @@
+task_id: task_004_lcat_reference_fab_cdrh3_reconstruction
+run_id: 20261111_lcat_cdrh3_multworkflow
+target:
+  pdb_id: 5BV7
+  native_cdrh3: AREGAAVRSFYYSYYGMDV
+  vh_positions_1_based: [96, 114]
+  pdb_chain_c_residues: [97, 115]
+  caar_vh_positions_1_based: [102, 108]
+workflows:
+  W1:
+    name: AgCDR-Diff plus AntiBMPNN
+    provider: Boltzmann platform
+    backbones: 24
+    sequences_per_backbone: 10
+  W2:
+    name: CDR_Generator/EvoDiff
+    provider: Boltzmann platform
+    sequences: 24
+  W3:
+    name: IG-Design
+    provider: Boltzmann platform
+    status: failed
+  W4:
+    name: Epitope AbGen
+    provider: Boltzmann platform
+    status: pending_no_output
+  W5:
+    name: ProteinMPNN plus Boltz2
+    provider: open source comparison
+    designs: 20
+    structured_top_candidates: 3
+metrics:
+  aar: exact_matches_over_19_cdrh3_positions
+  caar: exact_matches_over_7_native_contact_positions
+  rmsd: cdrh3_ca_rmsd
+  interface_cutoff_angstrom: 5.0
+  developability: [gravy, instability_index, aromatic_fraction, net_charge, hydrophobic_fraction]
+resource_policy:
+  gpu_jobs: sequential
+  oom_observed: false

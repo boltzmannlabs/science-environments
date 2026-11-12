@@ -1,0 +1,145 @@
+easy-complexsearch /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_complex.tsv /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp --threads 1 --exhaustive-search 1 --format-output query,target,alntmscore,qtmscore,ttmscore,lddt,rmsd,prob 
+
+MMseqs Version:                        	ef4e960ab84fc502665eb7b84573dfff9c2aa89d
+Substitution matrix                    	aa:3di.out,nucl:3di.out
+Add backtrace                          	true
+Alignment mode                         	0
+Alignment mode                         	0
+E-value threshold                      	10
+Seq. id. threshold                     	0
+Min alignment length                   	0
+Seq. id. mode                          	0
+Alternative alignments                 	0
+Coverage threshold                     	0
+Coverage mode                          	0
+Max sequence length                    	65535
+Compositional bias                     	1
+Compositional bias                     	1
+Max reject                             	2147483647
+Max accept                             	2147483647
+Preload mode                           	0
+Gap open cost                          	aa:10,nucl:10
+Gap extension cost                     	aa:1,nucl:1
+Threads                                	1
+Compressed                             	0
+Verbosity                              	3
+Seed substitution matrix               	aa:3di.out,nucl:3di.out
+Sensitivity                            	4
+k-mer length                           	0
+Target search mode                     	0
+k-score                                	seq:2147483647,prof:2147483647
+Max results per query                  	300
+Split database                         	0
+Split mode                             	2
+Split memory limit                     	0
+Diagonal scoring                       	true
+Exact k-mer matching                   	0
+Mask residues                          	1
+Mask residues probability              	0.9
+Mask lower case residues               	1
+Minimum diagonal score                 	30
+Selected taxa                          	
+Spaced k-mers                          	1
+Spaced k-mer pattern                   	
+Local temporary path                   	
+Rescore mode                           	0
+Remove hits by seq. id. and coverage   	false
+Sort results                           	0
+Mask profile                           	1
+Profile E-value threshold              	0.001
+Global sequence weighting              	false
+Allow deletions                        	false
+Filter MSA                             	1
+Use filter only at N seqs              	0
+Maximum seq. id. threshold             	0.9
+Minimum seq. id.                       	0.0
+Minimum score per column               	-20
+Minimum coverage                       	0
+Select N most diverse seqs             	1000
+Pseudo count mode                      	0
+Min codons in orf                      	30
+Max codons in length                   	32734
+Max orf gaps                           	2147483647
+Contig start mode                      	2
+Contig end mode                        	2
+Orf start mode                         	1
+Forward frames                         	1,2,3
+Reverse frames                         	1,2,3
+Translate orf                          	0
+Use all table starts                   	false
+Offset of numeric ids                  	0
+Create lookup                          	0
+Add orf stop                           	false
+Overlap between sequences              	0
+Sequence split mode                    	1
+Header split mode                      	0
+Chain overlapping alignments           	0
+Merge query                            	1
+Search iterations                      	1
+Start sensitivity                      	4
+Search steps                           	1
+Exhaustive search mode                 	true
+Filter results during exhaustive search	0
+Strand selection                       	1
+LCA search mode                        	false
+Disk space limit                       	0
+MPI runner                             	
+Force restart with latest tmp          	false
+Remove temporary files                 	false
+
+Alignment backtraces will be computed, since they were requested by output format.
+createdb /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query --chain-name-mode 0 --write-mapping 0 --mask-bfactor-threshold 0 --coord-store-mode 2 --write-lookup 1 --tar-include '.*' --tar-exclude '^$' --file-include '.*' --file-exclude '^$' --threads 1 -v 3 
+
+Output file: /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query
+[=================================================================] 20 0s 36ms
+Time for merging to query_ss: 0h 0m 0s 0ms
+Time for merging to query_h: 0h 0m 0s 0ms
+Time for merging to query_ca: 0h 0m 0s 0ms
+Time for merging to query: 0h 0m 0s 0ms
+Ignore 0 out of 45.
+Too short: 0, incorrect: 0, not proteins: 0.
+Time for processing: 0h 0m 0s 41ms
+createdb /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target --chain-name-mode 0 --write-mapping 0 --mask-bfactor-threshold 0 --coord-store-mode 2 --write-lookup 1 --tar-include '.*' --tar-exclude '^$' --file-include '.*' --file-exclude '^$' --threads 1 -v 3 
+
+Output file: /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target
+[=================================================================] 1 0s 0ms
+Time for merging to target_ss: 0h 0m 0s 0ms
+Time for merging to target_h: 0h 0m 0s 0ms
+Time for merging to target_ca: 0h 0m 0s 0ms
+Time for merging to target: 0h 0m 0s 0ms
+Ignore 0 out of 3.
+Too short: 0, incorrect: 0, not proteins: 0.
+Time for processing: 0h 0m 0s 11ms
+Create directory /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp
+search /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp -a 1 --threads 1 --exhaustive-search 1 
+
+structurealign /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/pref /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/strualn --tmscore-threshold 0 --lddt-threshold 0 --sort-by-structure-bits 1 --alignment-type 2 --sub-mat 'aa:3di.out,nucl:3di.out' -a 1 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 10 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 0.5 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 --zdrop 40 --threads 1 --compressed 0 -v 3 
+
+[=================================================================] 45 0s 58ms
+Time for merging to strualn: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 63ms
+mvdb /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/strualn /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/aln 
+
+Time for processing: 0h 0m 0s 0ms
+mvdb /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/aln /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result -v 3 
+
+Time for processing: 0h 0m 0s 0ms
+Removing temporary files
+rmdb /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/search_tmp/2099998601868342654/pref -v 3 
+
+Time for processing: 0h 0m 0s 0ms
+scorecomplex /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result2 --threads 1 -v 3 --min-assigned-chains-ratio 0 
+
+[=================================================================] 20 0s 47ms
+Time for merging to result2: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 52ms
+convertalis /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result2 /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_complex.tsv --sub-mat 'aa:3di.out,nucl:3di.out' --format-mode 0 --format-output query,target,alntmscore,qtmscore,ttmscore,lddt,rmsd,prob --translation-table 1 --gap-open aa:10,nucl:10 --gap-extend aa:1,nucl:1 --db-output 0 --db-load-mode 0 --search-type 0 --threads 1 --compressed 0 -v 3 
+
+[=================================================================] 45 0s 54ms
+Time for merging to foldseek_complex.tsv: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 59ms
+createcomplexreport /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/query /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/target /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_tmp/13318909914970015998/result2 /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/foldseek_complex.tsv_report --threads 1 -v 3 
+
+[=================================================================] 20 0s 1ms
+Time for merging to foldseek_complex.tsv_report: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 4ms

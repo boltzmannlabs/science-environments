@@ -1,0 +1,29 @@
+COMMAND ["/home/boltzmann10/anaconda3/bin/prodigy", "src/task_001_her2_trastuzumab_interaction_optimization/runs/20261111_ref15_benchmark_audit/inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/her2_test_data/experiments/final_complexes/complex_FINAL_001_1n8z-frk-reduced_div6_000024.pdb", "--selection", "H,L", "C", "--temperature", "25", "--distance-cutoff", "5.5", "--acc-threshold", "0.05", "-np", "1"]
+EXIT 0
+[!] Structure contains gaps:
+	C GLY1 < Fragment 0 > C ASN122
+	H GLU1 < Fragment 1 > H ASP31
+	H TYR32 < Fragment 2 > H ASN52
+	H ASP53 < Fragment 3 > H ASP72
+	H ASN73 < Fragment 4 > H ALA100
+	H VAL100 < Fragment 5 > H SER113
+	L ASP1 < Fragment 6 > L ILE30
+	L TYR31 < Fragment 7 > L ARG95
+	L ARG96 < Fragment 8 > L LYS107
+
+[+] Executing 1 task(s) in total
+##########################################
+[+] Processing structure complex_FINAL_001_1n8z-frk-reduced_div6_000024_model0
+[+] No. of intermolecular contacts: 104
+[+] No. of charged-charged contacts: 10.0
+[+] No. of charged-polar contacts: 5.0
+[+] No. of charged-apolar contacts: 30.0
+[+] No. of polar-polar contacts: 3.0
+[+] No. of apolar-polar contacts: 20.0
+[+] No. of apolar-apolar contacts: 36.0
+[+] Percentage of apolar NIS residues: 41.18
+[+] Percentage of charged NIS residues: 17.28
+[++] Predicted binding affinity (kcal.mol-1):    -13.8
+[++] Predicted dissociation constant (M) at 25.0˚C:  8.1e-11
+
+STDERR

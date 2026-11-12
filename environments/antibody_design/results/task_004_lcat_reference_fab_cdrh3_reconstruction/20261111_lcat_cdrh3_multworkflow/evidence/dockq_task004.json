@@ -1,0 +1,113 @@
+{
+  "tool": "AbFlow retained DockQ.py",
+  "tool_path": "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+  "tool_sha256": "c89dd07e9a45f5368c6758fead2a10bc742ccfb20b43e320aae3ac481950ce24",
+  "biopython_runtime": "1.88",
+  "protocol": {
+    "model_chain1": [
+      "B",
+      "C"
+    ],
+    "model_chain2": [
+      "A"
+    ],
+    "native_chain1": [
+      "B",
+      "C"
+    ],
+    "native_chain2": [
+      "A"
+    ],
+    "flags": [
+      "-short",
+      "-no_needle"
+    ],
+    "meaning": "antibody chains B/C versus LCAT antigen chain A; deposited 5BV7 reference"
+  },
+  "results": [
+    {
+      "dockq": 0.539,
+      "fnat": 0.745,
+      "irms": 1.427,
+      "lrms": 11.647,
+      "fnonnat": 0.339,
+      "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb",
+      "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+      "command": [
+        "python3",
+        "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "-model_chain1",
+        "B",
+        "C",
+        "-model_chain2",
+        "A",
+        "-native_chain1",
+        "B",
+        "C",
+        "-native_chain2",
+        "A",
+        "-short",
+        "-no_needle"
+      ],
+      "stdout": "DockQ 0.539 Fnat 0.745 iRMS 1.427 LRMS 11.647 Fnonnat 0.339 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+    },
+    {
+      "dockq": 0.506,
+      "fnat": 0.8,
+      "irms": 1.473,
+      "lrms": 16.516,
+      "fnonnat": 0.312,
+      "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb",
+      "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+      "command": [
+        "python3",
+        "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "-model_chain1",
+        "B",
+        "C",
+        "-model_chain2",
+        "A",
+        "-native_chain1",
+        "B",
+        "C",
+        "-native_chain2",
+        "A",
+        "-short",
+        "-no_needle"
+      ],
+      "stdout": "DockQ 0.506 Fnat 0.800 iRMS 1.473 LRMS 16.516 Fnonnat 0.312 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+    },
+    {
+      "dockq": 0.537,
+      "fnat": 0.764,
+      "irms": 1.203,
+      "lrms": 15.219,
+      "fnonnat": 0.311,
+      "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb",
+      "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+      "command": [
+        "python3",
+        "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb",
+        "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "-model_chain1",
+        "B",
+        "C",
+        "-model_chain2",
+        "A",
+        "-native_chain1",
+        "B",
+        "C",
+        "-native_chain2",
+        "A",
+        "-short",
+        "-no_needle"
+      ],
+      "stdout": "DockQ 0.537 Fnat 0.764 iRMS 1.203 LRMS 15.219 Fnonnat 0.311 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+    }
+  ]
+}

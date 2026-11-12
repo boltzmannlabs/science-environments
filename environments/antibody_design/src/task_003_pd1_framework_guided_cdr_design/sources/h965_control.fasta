@@ -1,0 +1,13 @@
+# Comparison CONTROL ONLY - anti-PD-1-H965, tFold final design (NOT a design input).
+# Source: tFold study (PMC12815924), verified against the staged reference complex
+# evidence/reference/task003_h965_pd1.pdb (predicted H965(VH)+H965(VL)+PD-1).
+# Framework regions of H965 match Table 1 FRs exactly (IGHV3-23/IGKV1-5).
+# Chothia CDRs: H1=GFTFSSY (7), H2=SGGSYT (6), H3=EYINTFTY (8), L1=RASQSISSWLA (11),
+# L2=AASRLQS (7), L3=QQSYSYPPLT (10; the F before GQGTKVEIK belongs to IGKJ1).
+# H965 is evaluated with the identical Boltz2 protocol as a control; its aggregate
+# published screening metrics (AUROC 0.76/0.95, enrichment 7.41, AAR 0.317) are NOT
+# individual H965 values and are never assigned to it.
+>H965_VH (117 aa)
+EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGGGSYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKEYINTFTYWGQGTLVTVSS
+>H965_VL (108 aa)
+DIQMTQSPSTLSASVGDRVTITCRASQSISSWLAWYQQKPGKAPKLLIYAASRLQSGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCQQSYSYPPLTFGQGTKVEIK

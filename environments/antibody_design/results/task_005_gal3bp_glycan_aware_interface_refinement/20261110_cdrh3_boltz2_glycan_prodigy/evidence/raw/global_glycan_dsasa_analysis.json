@@ -1,0 +1,22 @@
+{
+  "glycan_model": "Representative N-glycan, simplified 12-sugar linear model at each N-glycosylation site",
+  "n_glyc_sites": 7,
+  "n_glyc_sites_present": [
+    69,
+    125,
+    192,
+    362,
+    398,
+    551,
+    580
+  ],
+  "n_glyc_sites_missing": [],
+  "global_antigen_sasa_unglycosylated_A2": 285172.1,
+  "global_antigen_sasa_with_glycans_A2": 283542.6,
+  "global_glycan_dsasa_A2": 1629.5,
+  "area_difference_convention": "dSASA = SASA_unglycosylated - SASA_with_glycans; positive = glycan occludes",
+  "glycan_atoms_total": 504,
+  "sasa_algorithm": "Probe-based SASA (NACCESS/FreeSASA-consistent), probe radius 1.4 A, 24 probes/sphere",
+  "reference_complex": "task005_ref_bdbv43.pdb (Boltz2-predicted BDBV-43 Fab + full-length LGALS3BP)",
+  "note": "Matched-conditions computation. The paper's ~1,299 A^2 is for their mature construct with a conformational-diversity N-glycan ensemble; our value uses a simplified single-conformation glycan model and is NOT directly comparable."
+}

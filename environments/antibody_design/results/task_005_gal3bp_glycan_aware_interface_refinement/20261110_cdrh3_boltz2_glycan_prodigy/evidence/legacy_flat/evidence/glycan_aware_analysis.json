@@ -1,0 +1,13 @@
+{
+  "glycan_model": "Representative N-glycan, simplified 12-sugar linear model at Asn362 (C-terminal flank of BACK domain 260-360)",
+  "e1_epitope_definition": "BACK-domain (260-360) antigen solvent surface (approximation; paper's exact E1 mapping unavailable)",
+  "back_n_residues": 101,
+  "sasa_back_unglycosylated_A2": 48087.8,
+  "sasa_back_with_glycan_A2": 48053.7,
+  "back_glycan_dsasa_A2": 34.2,
+  "area_difference_convention": "dSASA = SASA_BACK(unglycosylated) - SASA_BACK(with glycan); positive = glycan occludes",
+  "glycan_antibody_clashes_n2p5A": 0,
+  "glycan_atoms_total": 72,
+  "reference_complex": "task005_ref_bdbv43.pdb (Boltz2-predicted BDBV-43 Fab + full-length LGALS3BP)",
+  "note": "Study's exact E1 mapping and glycan model unavailable (paper inaccessible). Matched-conditions approximation using verified UniProt BACK domain (260-360) and N-glycosylation site (362)."
+}

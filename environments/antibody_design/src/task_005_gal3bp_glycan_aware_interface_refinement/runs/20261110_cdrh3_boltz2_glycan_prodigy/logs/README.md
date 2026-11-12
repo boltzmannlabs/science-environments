@@ -1,0 +1,1 @@
+The organized execution package does not contain raw platform logs. The retained scientific outputs and status record are authoritative for this packaged run. The platform AntiBMPNN approval prompt timed out, so no platform job log or job ID is claimed here.

@@ -1,0 +1,61 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261110_antibmpnn_her2_prodigy",
+  "checked_at_utc": "2026-11-11T10:48:39.757436+00:00",
+  "validation_status": "passed",
+  "scope": "Current source/results packaging, candidate identifiers, table structure, links and preserved original content; no scientific calculation rerun.",
+  "checks": {
+    "source_paths": {
+      "execution.md": true,
+      "provenance.json": true,
+      "inputs": true,
+      "configs": true,
+      "logs": true
+    },
+    "result_paths": {
+      "report.md": true,
+      "candidates.csv": true,
+      "shortlist.csv": true,
+      "designed_sequences.fasta": true,
+      "metrics.json": true,
+      "benchmark_comparison.csv": true,
+      "structures": true,
+      "evidence/raw": true,
+      "evidence/reference": true,
+      "evidence/mappings": true,
+      "evidence/validation.json": true
+    },
+    "source_task_paths": {
+      "approaches.md": true,
+      "workflow.md": true,
+      "code": true
+    },
+    "run_identity": true,
+    "provenance_results_path": true,
+    "candidate_ids_unique": true,
+    "shortlist_ids_in_inventory": true,
+    "rank_or_unranked_status": true,
+    "csv_files_checked": 3,
+    "csv_artifact_references_checked": 20,
+    "selected_candidate_sequence_identifiers": true,
+    "source_outputs_directory_absent": true,
+    "unpacked_execution_records_in_results": [],
+    "current_document_paths": true,
+    "bidirectional_execution_result_links": true,
+    "json_files_parsed": 16
+  },
+  "counts": {
+    "inventory_rows_including_controls": 20,
+    "reference_controls": 0,
+    "selected_rows_including_contrasts": 5,
+    "selected_sequence_records": 10,
+    "structure_files": 6
+  },
+  "issues": [],
+  "scientific_execution_performed": false,
+  "notes": [
+    "Unranked archived selections retain their original row order and selection rationale.",
+    "Original raw tool archives remain byte-preserved, including any auxiliary records embedded inside those archives.",
+    "Identifier checks do not establish structural accuracy, affinity or scientific benchmark success."
+  ]
+}

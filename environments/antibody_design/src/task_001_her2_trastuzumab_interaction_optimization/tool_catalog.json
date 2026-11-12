@@ -1,0 +1,32 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "catalog_status": "retrospective_inventory_not_live_discovery",
+  "tools": [
+    {
+      "name": "AntiBMPNN",
+      "execution_origin": "Boltzmann",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Antibody_Prediction",
+      "execution_origin": "Boltzmann",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Boltz2",
+      "execution_origin": "mixed; see execution records",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "ABodyBuilder2 / ImmuneBuilder",
+      "execution_origin": "local independent evaluation",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "PyMOL / OpenMM / Prodigy",
+      "execution_origin": "local independent evaluation",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    }
+  ],
+  "guidance": "Resolve the current platform catalog and tool contracts before a new execution. This file describes retained history, not presently available endpoints."
+}

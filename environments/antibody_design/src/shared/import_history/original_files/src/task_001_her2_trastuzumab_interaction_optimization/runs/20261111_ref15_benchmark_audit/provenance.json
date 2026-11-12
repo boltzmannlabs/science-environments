@@ -1,0 +1,82 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261111_ref15_benchmark_audit",
+  "parent_run_id": "20261110_antibmpnn_her2_prodigy",
+  "created_at_UTC": "2026-11-11T12:26:01.007563+00:00",
+  "results_directory": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261111_ref15_benchmark_audit",
+  "status": "PARTIAL_REPRODUCTION_PRIMARY_METRIC_BLOCKED",
+  "counts": {
+    "new_generated": 0,
+    "inherited_candidates_evaluated": 5,
+    "native_controls": 1,
+    "released_optimized_controls": 2,
+    "ABodyBuilder2_predictions": 6,
+    "complex_refinement_successes": 6,
+    "Prodigy_invocations_successful": 15,
+    "published_runs_parsed": 16
+  },
+  "code_hashes": [
+    {
+      "path": "configs/code_snapshot/audit_current_task_benchmark.py",
+      "sha256": "d621aa5fda7ba8928e77cdc7f872555a5044bc1ab06c4160f59009cc463708c1",
+      "bytes": 9380
+    },
+    {
+      "path": "configs/code_snapshot/download_benchmark_archive.py",
+      "sha256": "42ec0aaa830b83907ee48545f83924fee8cdcdb62ebf559093fe06afcb459670",
+      "bytes": 2381
+    },
+    {
+      "path": "configs/code_snapshot/extract_benchmark_controls.py",
+      "sha256": "7c870f3387ad5086c6e48f9f833d8aaf3c855b2f23eecc634d153211b8e21726",
+      "bytes": 1855
+    },
+    {
+      "path": "configs/code_snapshot/finalize_current_task_benchmark_audit.py",
+      "sha256": "e605d4cd07796874019e1e5f9d9fe4ac193647ef489d9bd9b171f428400ab3a8",
+      "bytes": 16579
+    },
+    {
+      "path": "configs/code_snapshot/pymol_cdr_benchmark_validation.py",
+      "sha256": "702de76745817f56bee2a0b004b6591b2e74e6c248d95445f1f7cd7271a53ace",
+      "bytes": 3920
+    },
+    {
+      "path": "configs/code_snapshot/refine_benchmark_complexes.py",
+      "sha256": "49fc8acad6bab9cd7be5e764a84aac4b78a08bac045b2afc0c9203e55338bd16",
+      "bytes": 1337
+    },
+    {
+      "path": "configs/code_snapshot/retrieve_benchmark_sources.py",
+      "sha256": "0a08ae3e42a682779f1736e79afefb42bdf3f54f4a99297d42bbcf406f36fe6d",
+      "bytes": 2192
+    },
+    {
+      "path": "configs/code_snapshot/retrieve_released_benchmark.py",
+      "sha256": "73bbaa65c3bee1a454e65d6fe659063d71ad0398edd9e040c46d711b99108e22",
+      "bytes": 2698
+    },
+    {
+      "path": "configs/code_snapshot/run_abodybuilder2_benchmark_validation.py",
+      "sha256": "b936eb59bea5af59febaf6ff7d7860630dd3d7055b18342cba6cf3e546851b05",
+      "bytes": 3076
+    },
+    {
+      "path": "configs/code_snapshot/validate_current_task_benchmark_audit.py",
+      "sha256": "87bf11cba6302fa0b84dada017f350d506136c44eab3f51e9c85cb5fa92c96f2",
+      "bytes": 6705
+    }
+  ],
+  "configs": "configs/evaluation_config.json",
+  "benchmark_DOI": "10.1021/acs.jcim.5c01924",
+  "SI_DOI": "10.1021/acs.jcim.5c01924.s001",
+  "data_DOI": "10.5281/zenodo.15803983",
+  "archive_sha256": "d466325a7d1eb45a6d8c6752d5952f5d4db6f2a9c412aa8e8c5801dd85b9eaed",
+  "strict_REF15_results": null,
+  "scientific_limitations": [
+    "One four-network ensemble prediction per sequence, not independent repeat experiments.",
+    "ABodyBuilder2 error values are ensemble position dispersion in angstroms, not pLDDT.",
+    "No replicated Amber minimization or exact REF15 scoring was performed.",
+    "Published endpoint Prodigy values are newly rescored controls, not source-reported affinities."
+  ]
+}

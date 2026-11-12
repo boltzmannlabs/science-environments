@@ -1,0 +1,24 @@
+{
+  "tool": "AbFlow evaluation/rmsd.py compute_rmsd",
+  "scope": "chain C residues 97-115 C-alpha",
+  "results": [
+    {
+      "candidate_id": "task004_sample1",
+      "AbFlow_CDRH3_RMSD_raw": 38.240662559980784,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.336458180353462,
+      "n_atoms": 19
+    },
+    {
+      "candidate_id": "task004_sample6",
+      "AbFlow_CDRH3_RMSD_raw": 39.85787223925519,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.3150234819540363,
+      "n_atoms": 19
+    },
+    {
+      "candidate_id": "task004_sample9",
+      "AbFlow_CDRH3_RMSD_raw": 33.095434298126065,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.204680352884714,
+      "n_atoms": 19
+    }
+  ]
+}

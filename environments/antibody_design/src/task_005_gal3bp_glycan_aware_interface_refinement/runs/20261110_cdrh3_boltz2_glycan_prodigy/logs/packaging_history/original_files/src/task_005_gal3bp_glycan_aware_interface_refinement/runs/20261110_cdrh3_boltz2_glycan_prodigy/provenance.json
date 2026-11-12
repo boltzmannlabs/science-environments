@@ -1,0 +1,115 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+  "status": "partially_completed",
+  "selected_workflow": "W1 AntiBMPNN-style protected-framework CDR-H3 redesign with matched structure/interface/glycan evaluation",
+  "actual_candidate_generator": "Local ProteinMPNN outputs retained from the prior execution; platform AntiBMPNN submission was not approved because the partial-validation prompt timed out",
+  "target": {
+    "name": "LGALS3BP / Gal-3BP",
+    "uniprot": "Q08380",
+    "length": 585,
+    "epitope_proxy": "BACK domain residues 260-360"
+  },
+  "reference": {
+    "name": "BDBV-43",
+    "source_structure": "PDB 7KEW",
+    "vh_chain": "G",
+    "vl_chain": "J",
+    "cdrh3": "ARDEIIGADS"
+  },
+  "editable_region": "VH CDR-H3 only",
+  "protected_regions": [
+    "VH framework",
+    "VH CDR-H1/H2",
+    "entire VL"
+  ],
+  "software_stages": [
+    {
+      "name": "ProteinMPNN",
+      "status": "completed",
+      "count": 20
+    },
+    {
+      "name": "Boltz2",
+      "status": "completed",
+      "complexes": 4
+    },
+    {
+      "name": "interface_metrics",
+      "status": "completed"
+    },
+    {
+      "name": "glycan_aware_local_analysis",
+      "status": "completed_approximate"
+    },
+    {
+      "name": "Prodigy",
+      "status": "completed",
+      "complexes": 4
+    },
+    {
+      "name": "Antibody_Prediction",
+      "status": "pending"
+    },
+    {
+      "name": "heated_MD",
+      "status": "blocked"
+    }
+  ],
+  "evaluation_definitions": {
+    "ca_ca_A": 8.0,
+    "vdw_A": 4.5,
+    "hbond_no_A": 3.5,
+    "glycan_clash_A": 2.5
+  },
+  "results_dir": "../../../../results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/20261110_cdrh3_boltz2_glycan_prodigy",
+  "source_manifest": "../../sources/source_manifest.json",
+  "notes": [
+    "Published benchmark values are retained only as non-like-for-like comparison anchors.",
+    "No experimental binding claim is made; BDBV-43 is a computational scaffold for this target.",
+    "This provenance file records the execution state and does not claim unexecuted stages."
+  ],
+  "canonical_source_run": "src/task_005_gal3bp_glycan_aware_interface_refinement/runs/20261110_cdrh3_boltz2_glycan_prodigy",
+  "canonical_result_root": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy",
+  "input_checksum_manifest": "src/task_005_gal3bp_glycan_aware_interface_refinement/runs/20261110_cdrh3_boltz2_glycan_prodigy/inputs/sha256sums.json",
+  "result_checksum_manifest": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/mappings/path_manifest.json",
+  "fresh_validation": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/validation.json",
+  "canonical_artifact_hashes": [
+    {
+      "path": "report.md",
+      "sha256": "45a26c88807108e7c2e74b891165c17f657abe2f46a585fc865139e31c54d545"
+    },
+    {
+      "path": "candidates.csv",
+      "sha256": "18a2acc24e18357c6c0be8e3e74667fa21bb124c71cffed0b8e254ed0a22563b"
+    },
+    {
+      "path": "shortlist.csv",
+      "sha256": "b463dab4aca3ac45d6259f3ca210ca7d69134b967649722873bb01c975e364a3"
+    },
+    {
+      "path": "designed_sequences.fasta",
+      "sha256": "2ae6b0793203a75fa94bbebec2ecec5d62c56d00c5d80f431d755082c810e22d"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "998d70ab299e52873db57667b8ba9ac1fa071aa91f05c8f9566bda6e594ea7d3"
+    },
+    {
+      "path": "benchmark_comparison.csv",
+      "sha256": "4d1131bc827d3719912bdbb37eba6c4a8643a7d17754fd0fc7542eb04aae41b3"
+    },
+    {
+      "path": "structures/task005_cand11_complex.pdb",
+      "sha256": "3d1fa6a0cc5649fbf381592bb7e45b7e3b3bad064c315e1f72ac7db10cf55dca"
+    },
+    {
+      "path": "structures/task005_cand17_complex.pdb",
+      "sha256": "c004fb31806ca192b20b1ff97d2626ce92427b27cb637c4cdbf196b37b54ac02"
+    },
+    {
+      "path": "structures/task005_cand7_complex.pdb",
+      "sha256": "a9e84c0148bfe675ac167da29d56bc0b50e6afc7a48f5e43be5f62ee9efc560b"
+    }
+  ]
+}

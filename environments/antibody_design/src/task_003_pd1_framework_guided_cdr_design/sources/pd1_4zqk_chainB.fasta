@@ -1,0 +1,11 @@
+# Target: human PD-1 (PDCD1) extracellular IgV domain.
+# Sequence: PDB 4ZQK chain B deposited construct (residues 33-146), 106 aa.
+# UniProt: Q15116 (legacy entry for human PD-1; current entry Q5W5W0).
+# Note: the D/E-loop segment DRSQPGQDS present in the canonical UniProt sequence
+# is disordered/absent in the 4ZQK crystal construct; this is the construct used
+# in the study's structural analysis (Fig. 2c).
+# Intended epitope: PD-1 ligand-binding surface (PD-L1 contact face), see
+# epitope_pd1_ligand_binding.json (28 residues, 6.0 A heavy-atom cutoff on
+# native 4ZQK).
+>PD-1_EC_4ZQK_chainB (106 aa, construct residues 33-146)
+NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPESRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQIKESLRAELRVTE

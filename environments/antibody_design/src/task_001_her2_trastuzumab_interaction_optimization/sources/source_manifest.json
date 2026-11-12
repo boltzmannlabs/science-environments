@@ -1,0 +1,25 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "reference_complex": {
+    "pdb_id": "1N8Z",
+    "local_path": "inputs/1N8Z_deposited_complex.pdb",
+    "chains": {"light": "A", "heavy": "B", "her2": "C"}
+  },
+  "task_definition": "tasks/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization.md",
+  "benchmark_definition": "benchmark/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization.md",
+  "boltzmann": {
+    "candidate_generation": "AntiBMPNN",
+    "structure_prediction": "Boltz2",
+    "property_prediction": "Antibody_Prediction",
+    "generation_experiment_id": "6af3361ad982f81aac5b4a52",
+    "generation_job_name": "AntiBMPNN - 20261110-151953Z - cbb255"
+  },
+  "open_source": {
+    "binding": "ProDIGy",
+    "structure_parsing": "Biopython",
+    "numerical_analysis": "NumPy"
+  },
+  "results_root": "results/task_001_her2_trastuzumab_interaction_optimization",
+  "task_bundle_root": "science_env_results/her2_results",
+  "benchmark_metric_status": "REF15 not computed; Rosetta unavailable"
+}

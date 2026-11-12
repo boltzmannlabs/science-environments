@@ -1,0 +1,22 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "catalog_status": "retrospective_inventory_not_live_discovery",
+  "tools": [
+    {
+      "name": "ProteinMPNN / Boltz2",
+      "execution_origin": "historical local",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "AntiBMPNN",
+      "execution_origin": "planned platform submission; not executed",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Prodigy / Biotite",
+      "execution_origin": "local independent evaluation",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    }
+  ],
+  "guidance": "Resolve the current platform catalog and tool contracts before a new execution. This file describes retained history, not presently available endpoints."
+}

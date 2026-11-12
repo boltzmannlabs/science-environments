@@ -1,0 +1,107 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+  "checked_scope": "fresh canonical source/results package validation; no scientific rerun",
+  "validation": {
+    "required_paths": {
+      "report.md": true,
+      "candidates.csv": true,
+      "shortlist.csv": true,
+      "designed_sequences.fasta": true,
+      "metrics.json": true,
+      "benchmark_comparison.csv": true
+    },
+    "result_directories": {
+      "structures": true,
+      "evidence": true,
+      "evidence/raw": true,
+      "evidence/reference": true,
+      "evidence/mappings": true
+    },
+    "source_paths": {
+      "execution.md": true,
+      "provenance.json": true,
+      "inputs": true,
+      "configs": true,
+      "logs": true
+    },
+    "source_result_identity": {
+      "source_run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+      "result_run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+      "source_provenance_references_run": true,
+      "source_provenance_references_result_run": true
+    },
+    "csv": {
+      "candidates.csv": {
+        "row_count": 21,
+        "headers": [
+          "candidate_id",
+          "name",
+          "rank",
+          "selection_status",
+          "selection_reason",
+          "ipTM",
+          "pLDDT",
+          "pDE",
+          "interface_residue_pairs",
+          "vdw_atom_pairs",
+          "hbond_atom_pairs",
+          "hbond_share",
+          "antigen_residues",
+          "prodigy_dG_kcal_mol",
+          "prodigy_Kd_M",
+          "prodigy_IC",
+          "structure_file",
+          "generation_status",
+          "cdrh3_sequence",
+          "mpnn_score",
+          "sample"
+        ],
+        "unique_headers": true
+      },
+      "shortlist.csv": {
+        "row_count": 3,
+        "headers": [
+          "rank",
+          "candidate_id",
+          "selection_status",
+          "selection_reason",
+          "ipTM",
+          "prodigy_dG_kcal_mol",
+          "prodigy_Kd_M",
+          "structure_file"
+        ],
+        "unique_headers": true
+      }
+    },
+    "candidate_counts": {
+      "inventory": 21,
+      "unique_inventory": 21,
+      "shortlist": 3,
+      "shortlist_unique": 3,
+      "shortlist_membership_valid": true
+    },
+    "fasta": {
+      "records": 6,
+      "unique_candidate_ids": 3,
+      "candidate_ids_represented": [
+        "task005_cand11",
+        "task005_cand17",
+        "task005_cand7"
+      ],
+      "coverage_note": "Coverage is documented in the task report; raw complete libraries remain under evidence/raw when the FASTA is shortlist-only."
+    },
+    "structures": {
+      "linked_records": 4,
+      "missing_links": [],
+      "structure_model_count": 3
+    },
+    "checksum_manifest": {
+      "path": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/mappings/path_manifest.json",
+      "entries": 9
+    },
+    "issues": [],
+    "validation_status": "passed",
+    "timestamp_utc": "2026-11-11T09:13:56.079839+00:00"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "20261111_lcat_cdrh3_multworkflow",
+  "checked_scope": "fresh AbFlow benchmark and current-candidate validation",
+  "validation": {
+    "required_paths": {
+      "report.md": true,
+      "candidates.csv": true,
+      "shortlist.csv": true,
+      "designed_sequences.fasta": true,
+      "metrics.json": true,
+      "benchmark_comparison.csv": true,
+      "structures": true,
+      "evidence/raw": true,
+      "evidence/reference": true,
+      "evidence/mappings": true,
+      "evidence/validation.json": true
+    },
+    "source_result_identity": {
+      "source_run_id": "20261111_lcat_cdrh3_multworkflow",
+      "result_run_id": "20261111_lcat_cdrh3_multworkflow",
+      "source_provenance_matches": true,
+      "result_provenance_matches": null
+    },
+    "candidate_counts": {
+      "inventory": 285,
+      "unique_inventory": 285,
+      "shortlist": 9,
+      "shortlist_unique": 9,
+      "shortlist_membership_valid": true
+    },
+    "abflow_benchmark": {
+      "dataset_test_cases": 60,
+      "aggregate_metrics_reproduced": true,
+      "current_candidate_metrics_reproduced": true,
+      "oom_events": 0
+    },
+    "checksum_manifest": {
+      "path": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/evidence/mappings/path_manifest.json",
+      "entries": 6,
+      "matches": true
+    },
+    "issues": [],
+    "validation_status": "passed",
+    "timestamp_utc": "2026-11-11T13:05:53.540297+00:00"
+  }
+}

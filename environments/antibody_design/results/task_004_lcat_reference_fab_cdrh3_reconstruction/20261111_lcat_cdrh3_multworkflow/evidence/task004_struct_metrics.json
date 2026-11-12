@@ -1,0 +1,46 @@
+{
+  "candidates": {
+    "1": {
+      "cdrh3_CA_RMSD_A": 47.771,
+      "cdrh3_TMscore": 0.0,
+      "cdrh3_lDDT": 98.03,
+      "confidence": {
+        "ptm": 0.7075533270835876,
+        "iptm": 0.657489001750946,
+        "pddt": 0.9057815074920654
+      }
+    },
+    "6": {
+      "cdrh3_CA_RMSD_A": 51.16,
+      "cdrh3_TMscore": 0.0,
+      "cdrh3_lDDT": 97.81,
+      "confidence": {
+        "ptm": 0.7129516005516052,
+        "iptm": 0.6669893860816956,
+        "pddt": 0.927179753780365
+      }
+    },
+    "9": {
+      "cdrh3_CA_RMSD_A": 6.456,
+      "cdrh3_TMscore": 0.0,
+      "cdrh3_lDDT": 98.9,
+      "confidence": {
+        "ptm": 0.7303877472877502,
+        "iptm": 0.6851199269294739,
+        "pddt": 0.9226083159446716
+      }
+    }
+  },
+  "protocol": "Boltz2 prediction (designed heavy + native light + LCAT); align on antibody framework C-alpha (B all + C minus CDR-H3); CDR-H3 C-alpha metrics",
+  "benchmark_table1": {
+    "AAR": "0.4234\u00b10.1334",
+    "TM-score": "0.9736\u00b10.0090",
+    "lDDT": "0.8522\u00b10.0216",
+    "CAAR": "0.2824\u00b10.2037",
+    "RMSD": "8.25\u00b14.55 A",
+    "DockQ": "0.423\u00b10.161"
+  },
+  "benchmark_scope": "60-case RAbD aggregate (AbFlow Table 1), not 5BV7-specific",
+  "our_aar": 0.4737,
+  "our_caar": 0.5714
+}

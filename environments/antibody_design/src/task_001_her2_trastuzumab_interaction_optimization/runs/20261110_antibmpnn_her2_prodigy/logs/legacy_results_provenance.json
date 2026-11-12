@@ -1,0 +1,40 @@
+{
+ "task": "task_001_her2_trastuzumab_interaction_optimization",
+ "workflow": "AntiBMPNN (structure-conditioned, all 6 CDRs) -> filter -> Antibody_Prediction -> fixed-pose reconstruction -> ProDIGy",
+ "reference_complex": "PDB 1N8Z (trastuzumab Fab + HER2 EC)",
+ "reference_sequences": {
+  "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+  "VL": "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+ },
+ "n_designed": 20,
+ "n_unique": 20,
+ "n_shortlisted": 5,
+ "shortlist": [
+  "AB_08",
+  "AB_20",
+  "AB_04",
+  "AB_05",
+  "AB_13"
+ ],
+ "binding_metric": "ProDIGy (open-source), fixed-pose (1N8Z backbone + designed CDR side chains)",
+ "benchmark_metric": "REF15 (Rosetta REU) \u2014 NOT COMPUTED (Rosetta unavailable)",
+ "benchmark_status": "NON-COMPARABLE \u2014 different scoring protocol; Rosetta unavailable",
+ "completed": [
+  "AntiBMPNN design (20 candidates)",
+  "sequence filtering (framework + disulfide)",
+  "Antibody_Prediction (stability/solubility)",
+  "fixed-pose CDR reconstruction (5 candidates)",
+  "ProDIGy binding metric (reference + 5 candidates)",
+  "clash analysis",
+  "Boltz2 reference structure prediction (VH-VL + VH-HER2)"
+ ],
+ "failed": [
+  "Boltz2 candidate structure downloads (300s signed-URL TTL exceeded inter-call latency)"
+ ],
+ "pending": [
+  "REF15 (Rosetta) \u2014 unavailable in this environment",
+  "Boltz2 candidate structures \u2014 download failed",
+  "full rotamer optimization of reconstructed CDRs"
+ ],
+ "integrity": "Did not fabricate REF15 scores. Did not substitute ProDIGy for REF15. Published benchmark values reported as NON-COMPARABLE controls."
+}

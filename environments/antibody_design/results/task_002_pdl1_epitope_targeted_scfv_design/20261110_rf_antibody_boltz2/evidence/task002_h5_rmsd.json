@@ -1,0 +1,15 @@
+{
+  "protocol": "Boltz2 prediction of H5+PD-L1 (3 chains, same sequences as 35TL); Kabsch alignment on PD-L1 (chain A) C-alpha; position-matched C-alpha RMSD",
+  "H5_antibody_CA_RMSD_A": 14.942,
+  "H5_VH_CA_RMSD_A": 19.112,
+  "H5_VL_CA_RMSD_A": 8.231,
+  "whole_complex_CA_RMSD_A": 12.716,
+  "benchmark_published_A": 1.25,
+  "published_scope": "H5 predicted-vs-experimental global C-alpha RMSD (Germinal paper, different predictor)",
+  "boltz2_confidence": {
+    "ptm": 0.9437,
+    "iptm": 0.9262,
+    "complex_plddt": 0.9549,
+    "complex_pde": 0.368
+  }
+}

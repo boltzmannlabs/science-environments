@@ -1,0 +1,21 @@
+{
+  "tleap": null,
+  "pmemd.cuda": null,
+  "parmed": null,
+  "pdb2pqr": null,
+  "propka": null,
+  "rosetta_scripts": null,
+  "score_jd2": null,
+  "molprobity": null,
+  "mkdssp": null,
+  "pyrosetta_probe": {
+    "command": [
+      "/home/boltzmann10/anaconda3/bin/python",
+      "-c",
+      "import pyrosetta;print(pyrosetta.__version__)"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'pyrosetta'\n"
+  }
+}

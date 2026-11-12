@@ -1,0 +1,62 @@
+{
+  "tool": "Prodigy 2.4.0 (/home/boltzmann10/anaconda3/bin/prodigy)",
+  "selection": "A,B vs C",
+  "results": {
+    "BDBV-43 (reference)": {
+      "recomputed": {
+        "dg": -11.2,
+        "kd": null,
+        "ic": 69
+      },
+      "reported": {
+        "dg": -11.2,
+        "kd": 6.1e-09,
+        "ic": 69
+      },
+      "dg_match": true,
+      "ic_match": true
+    },
+    "task005_cand11": {
+      "recomputed": {
+        "dg": -11.1,
+        "kd": null,
+        "ic": 80
+      },
+      "reported": {
+        "dg": -11.1,
+        "kd": 7.3e-09,
+        "ic": 80
+      },
+      "dg_match": true,
+      "ic_match": true
+    },
+    "task005_cand7": {
+      "recomputed": {
+        "dg": -10.8,
+        "kd": null,
+        "ic": 75
+      },
+      "reported": {
+        "dg": -10.8,
+        "kd": 1.2e-08,
+        "ic": 75
+      },
+      "dg_match": true,
+      "ic_match": true
+    },
+    "task005_cand17": {
+      "recomputed": {
+        "dg": -14.5,
+        "kd": null,
+        "ic": 102
+      },
+      "reported": {
+        "dg": -14.5,
+        "kd": 2.3e-11,
+        "ic": 102
+      },
+      "dg_match": true,
+      "ic_match": true
+    }
+  }
+}

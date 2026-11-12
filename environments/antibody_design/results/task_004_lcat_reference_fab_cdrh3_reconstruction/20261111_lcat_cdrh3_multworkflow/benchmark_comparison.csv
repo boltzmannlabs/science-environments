@@ -1,0 +1,14 @@
+record_type,metric,published_value,executed_value,unit_or_scale,scope,comparability,source_or_evidence
+AbFlow_RAbD60_reproduction,AAR H3,0.4234 ± 0.1334,0.4209 ± 0.1306,fraction,60-case aggregate; same AbFlow H3 evaluation,matched_reproduction,evidence/abflow_rabd_reproduction.json
+AbFlow_RAbD60_reproduction,CAAR H3,0.2824 ± 0.2037,0.2819 ± 0.1985,fraction,60-case aggregate; same AbFlow H3 evaluation,matched_reproduction,evidence/abflow_rabd_reproduction.json
+AbFlow_RAbD60_reproduction,TM-score,0.9736 ± 0.0090,0.9736 ± 0.0090,score,full antibody chains; AbFlow tm_score.py,matched_reproduction,evidence/abflow_rabd_reproduction.json
+AbFlow_RAbD60_reproduction,lDDT,0.8522 ± 0.0216,0.8524 ± 0.0218,0–1 score,full antibody chains; AbFlow lddt.py,matched_reproduction,evidence/abflow_rabd_reproduction.json
+AbFlow_RAbD60_reproduction,DockQ,0.423 ± 0.161,0.4240 ± 0.1644,score,CDR-H3 DockQ; AbFlow evaluation/bak_dockq.py,matched_reproduction,evidence/abflow_rabd_reproduction.json
+AbFlow_RAbD60_reproduction,CDR-H3 RMSD,8.25 ± 4.55 Å / 1.83 Å,8.2629 ± 4.5025 Å,Å,AbFlow RMSD(CA) CDRH3 aggregate; table-scope discrepancy retained,partial_reproduction,evidence/abflow_rabd_reproduction.json
+current_task004,AAR,0.4234 ± 0.1334,0.4737 (samples 1/6/9),fraction,single 5BV7 candidates vs reproduced 60-case baseline,single_case_above_mean,evidence/abflow_rabd_reproduction.json
+current_task004,CAAR,0.2824 ± 0.2037,0.5714 (samples 1/6/9),fraction,single 5BV7 candidates vs reproduced 60-case baseline,single_case_above_mean,evidence/abflow_rabd_reproduction.json
+current_task004,structural lDDT,0.8524 ± 0.0218,0.8822–0.8907,0–1 score,full antibody chains; same AbFlow lDDT implementation,above_reproduced_mean,evidence/current_candidates_structural_lddt_tm.json
+current_task004,antibody TM-score,0.9736 ± 0.0090,0.7759–0.8095,score,full antibody chains; same AbFlow TMscore implementation,below_reproduced_mean,evidence/current_candidates_structural_lddt_tm.json
+current_task004,CDR-H3 DockQ,0.4240 ± 0.1644,0.162–0.182,score,"CDR-H3 residues 97–115 vs antigen A; same DockQ family, task mapping",below_reproduced_mean,evidence/current_candidates_cdrh3_dockq.json
+current_task004,CDR-H3 RMSD,8.2629 ± 4.5025,AbFlow raw=33.095–39.858 Å; Kabsch=3.205–3.336 Å,Å,19-residue CDR-H3 C-alpha; same AbFlow compute_rmsd implementation,below_reproduced_baseline,evidence/current_candidates_abflow_cdrh3_rmsd.json
+execution,RAbD test cases,60,60,count,AbFlow H3 generation and metric evaluation,completed,evidence/raw/abflow_benchmark_setup/rabd_paratope_h3_results/summary.json

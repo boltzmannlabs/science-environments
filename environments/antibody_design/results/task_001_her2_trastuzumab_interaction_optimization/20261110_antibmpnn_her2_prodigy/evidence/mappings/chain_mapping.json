@@ -1,0 +1,64 @@
+{
+ "pdb": "1N8Z",
+ "prepared_from": "deposited asymmetric unit PDB (files.rcsb.org/download/1N8Z.pdb), numbering and chain IDs preserved without renaming",
+ "chains": {
+  "A": {
+   "role": "trastuzumab light chain (VL + Ckappa)",
+   "species": "Mus musculus",
+   "length": 214,
+   "modeled": 214,
+   "v_domain_1based": [
+    1,
+    107
+   ]
+  },
+  "B": {
+   "role": "trastuzumab heavy chain (VH + CH1)",
+   "species": "Mus musculus",
+   "length": 220,
+   "modeled": 220,
+   "v_domain_1based": [
+    1,
+    120
+   ]
+  },
+  "C": {
+   "role": "HER2 (ERBB2) extracellular domain",
+   "species": "Homo sapiens",
+   "length": 607,
+   "modeled": 581,
+   "unmodeled_residues": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    303,
+    304,
+    305,
+    361,
+    362,
+    363,
+    364,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590
+   ]
+  }
+ },
+ "assembly": "1 Fab : 1 HER2 ECD (deposited asymmetric unit equals biological assembly; 2 inter-molecular disulfide bonds, 7 cis peptides)",
+ "known_defects": [
+  "missing sidechain atoms Lys A190 (CG CD CE NZ)"
+ ]
+}
