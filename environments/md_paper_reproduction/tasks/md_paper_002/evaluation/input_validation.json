@@ -1,0 +1,14 @@
+{
+  "task_id": "md_paper_002",
+  "status": "PASS",
+  "checks": {
+    "input_exists": true,
+    "input_sha256_matches": true,
+    "pdb_id": true,
+    "nvt_ns_present": true,
+    "conventional_scope": true
+  },
+  "scope": "frozen input and conventional MD setup validation; no production claim",
+  "actual_sha256": "d33bbe2ecf3351efb3eff31a37cc5b61ede1af1e37ce233dd89bd7a91ffd23b3",
+  "expected_sha256": "d33bbe2ecf3351efb3eff31a37cc5b61ede1af1e37ce233dd89bd7a91ffd23b3"
+}

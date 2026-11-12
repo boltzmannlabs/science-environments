@@ -1,0 +1,14 @@
+{
+  "config_id": "B",
+  "status": "REVIEW",
+  "source": "agent_extracted_paper_parameters",
+  "parameters": {
+    "software": "GROMACS 2021.4", "protein_forcefield": "AMBER14SB",
+    "water_model": "TIP3P", "box": "dodecahedron", "minimization": "steepest descent",
+    "nvt_ns": 0.1, "npt_ns": 1.0, "temperature_k": 310, "pressure_bar": 1,
+    "electrostatics": "PME", "cutoff_angstrom": 12,
+    "integrator": "leapfrog stochastic dynamics", "timestep_fs": 2, "constraints": "LINCS"
+  },
+  "unresolved": ["production_duration_ns", "replica_count"],
+  "qualification": "REVIEW"
+}

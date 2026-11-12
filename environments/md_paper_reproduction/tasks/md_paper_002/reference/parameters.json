@@ -1,0 +1,24 @@
+{
+  "task_id": "md_paper_002",
+  "paper_doi": "10.1021/acschembio.2c00735",
+  "system": "SARS-CoV-2 3CLpro",
+  "pdb_id": "6M2N",
+  "reported": {
+    "software": {"value": "GROMACS 2021.4", "source": "paper_methods"},
+    "protein_forcefield": {"value": "AMBER14SB", "source": "paper_methods"},
+    "water_model": {"value": "TIP3P", "source": "paper_methods"},
+    "box": {"value": "dodecahedron", "source": "paper_methods"},
+    "minimization": {"value": "steepest descent", "source": "paper_methods"},
+    "nvt_ns": {"value": 0.1, "source": "paper_methods"},
+    "npt_ns": {"value": 1.0, "source": "paper_methods"},
+    "temperature_k": {"value": 310, "source": "paper_methods"},
+    "pressure_bar": {"value": 1, "source": "paper_methods"},
+    "electrostatics": {"value": "PME", "source": "paper_methods"},
+    "cutoff_angstrom": {"value": 12, "source": "paper_methods"},
+    "integrator": {"value": "leapfrog stochastic dynamics", "source": "paper_methods"},
+    "timestep_fs": {"value": 2, "source": "paper_methods"},
+    "constraints": {"value": "LINCS", "source": "paper_methods"}
+  },
+  "not_reported": ["production_duration_ns", "replica_count"],
+  "input_sha256": {"6M2N.pdb": "d33bbe2ecf3351efb3eff31a37cc5b61ede1af1e37ce233dd89bd7a91ffd23b3"}
+}

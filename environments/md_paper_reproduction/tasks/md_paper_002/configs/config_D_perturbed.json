@@ -1,0 +1,8 @@
+{
+  "config_id": "D",
+  "status": "FAIL",
+  "changed_factor": "timestep_fs",
+  "parameters": {"timestep_fs": 20, "all_other_parameters": "same_as_config_A"},
+  "expected_action": "STOP_BEFORE_EXECUTION",
+  "reason": "deliberately unsafe timestep for this constrained atomistic protocol"
+}
