@@ -1,9 +1,9 @@
 # Final Report — task_001_d2r_peripheral_candidate_prioritisation
 
 **Reference paper:** Kim S, Jo WH, Cha JO, Kim M-S (2026) Identification of novel peripherally restricted risperidone-like dopamine D2 receptor antagonists for prolactin-mediated neuroprotection through a multi-stage in silico screening. *PLOS ONE* 21(8): e0355997. https://doi.org/10.1371/journal.pone.0355997
-**Task:** `environments/virtual-screening/tasks/task_001_d2r_peripheral_candidate_prioritisation.md` (identical to the executed task)
+**Task:** `environments/hit-identification/tasks/task_001_d2r_peripheral_candidate_prioritisation.md` (identical to the executed task)
 **Agent submission:** `d2r_peripheral_final_deliverables.zip` — ranked_candidates.csv, assessment.json, report.md plus supporting artifacts, preserved unchanged under `results/task_001_d2r_peripheral_candidate_prioritisation/`
-**Review date:** 2026-11-09 · **Location:** `environments/virtual-screening/` · review validator: PASS
+**Review date:** 2026-11-09 · **Location:** `environments/hit-identification/` · review validator: PASS
 
 **Headline verdict:** The agent executed substantial, well-covered, honestly-logged scientific work and delivered every required file. Its selection ranking is reproducible from its stated primary model. Its central scientific claim — peripheral restriction of the two priority compounds — rests on a single misinterpreted prediction endpoint and is **unsupported as written**. Shortlist overlap with the paper: 0/8; priority overlap: 0/2 (different workflows, not error).
 

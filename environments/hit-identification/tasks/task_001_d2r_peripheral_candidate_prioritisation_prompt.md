@@ -55,7 +55,7 @@ Retain the scientific output artifacts supporting the reported results and ident
 - Distinguish a lack of promising candidates from missing inputs or failed execution.
 - Base the final conclusions on the completed scientific work.
 
-Use the Boltchem branch and work from environments/virtual-screening/ so the supplied input paths resolve correctly.
+Use the Boltchem branch and work from environments/hit-identification/ so the supplied input paths resolve correctly.
 
 Read task.md and the supplied input metadata. Use your own scientific reasoning to design an appropriate workflow, select relevant tools from the Boltzmann small-molecule discovery suite, execute the work and interpret the results. Do not perform molecular dynamics simulations.
 

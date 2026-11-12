@@ -1,6 +1,6 @@
 # Hit identification environment specification
 
-Environment ID: `virtual-screening`.
+Environment ID: `hit-identification`.
 
 Provide a scientific objective, target information, a fixed compound library and reference controls. The agent determines a suitable approach and reports the results, scientific reasoning, evidence, failures and limitations.
 
