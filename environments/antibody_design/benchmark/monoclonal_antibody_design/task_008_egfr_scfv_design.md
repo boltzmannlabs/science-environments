@@ -6,7 +6,7 @@
 
 ## Published Results
 
-**Source:** [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv); the **21 EGFR references** linked in the [reference index](PROTEINBASE_SCFV_INDEX.md). Values were retrieved from those records on 10 November 2026.
+**Source:** [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv); the **21 EGFR reference records** listed below. Values were retrieved from those records on 10 November 2026.
 
 The table gives the observed minimum and maximum for each reported computational metric. Whole-structure scores and domain scores are separated. Domain ranges summarize all reported domain entries; database-match ranges summarize the reported hits in each database.
 
@@ -37,3 +37,29 @@ The table gives the observed minimum and maximum for each reported computational
 | PDB100 Aligned residues | 61 | 103 | Source-domain database matches |
 
 ProteinMPNN recovery and TM-score retain the raw source scales. TED confidence values are categorical classes. Database-match RMSD and TM-score describe structural-search alignments, not accuracy against an experimentally resolved antibody–antigen complex.
+
+## Reference Records
+
+The computational ranges above summarize these released EGFR scFv records:
+
+- [vast-bear-marble](https://proteinbase.com/proteins/vast-bear-marble)
+- [scarlet-seal-granite](https://proteinbase.com/proteins/scarlet-seal-granite)
+- [bright-crane-jade](https://proteinbase.com/proteins/bright-crane-jade)
+- [green-boar-bronze](https://proteinbase.com/proteins/green-boar-bronze)
+- [lunar-bear-dust](https://proteinbase.com/proteins/lunar-bear-dust)
+- [lunar-zebra-topaz](https://proteinbase.com/proteins/lunar-zebra-topaz)
+- [mellow-shark-ruby](https://proteinbase.com/proteins/mellow-shark-ruby)
+- [shy-shark-cypress](https://proteinbase.com/proteins/shy-shark-cypress)
+- [silent-ibis-reed](https://proteinbase.com/proteins/silent-ibis-reed)
+- [soft-jaguar-fern](https://proteinbase.com/proteins/soft-jaguar-fern)
+- [soft-seal-cypress](https://proteinbase.com/proteins/soft-seal-cypress)
+- [strong-quail-topaz](https://proteinbase.com/proteins/strong-quail-topaz)
+- [young-heron-pearl](https://proteinbase.com/proteins/young-heron-pearl)
+- [solid-bison-topaz](https://proteinbase.com/proteins/solid-bison-topaz)
+- [mellow-ram-reed](https://proteinbase.com/proteins/mellow-ram-reed)
+- [mellow-ram-sand](https://proteinbase.com/proteins/mellow-ram-sand)
+- [quick-hawk-opal](https://proteinbase.com/proteins/quick-hawk-opal)
+- [radiant-otter-marble](https://proteinbase.com/proteins/radiant-otter-marble)
+- [rough-quail-granite](https://proteinbase.com/proteins/rough-quail-granite)
+- [strong-mole-onyx](https://proteinbase.com/proteins/strong-mole-onyx)
+- [vast-boar-granite](https://proteinbase.com/proteins/vast-boar-granite)

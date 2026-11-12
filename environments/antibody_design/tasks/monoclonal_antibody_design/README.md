@@ -14,7 +14,7 @@ The task collection covers **23 tasks grouped into seven scientific scenarios**.
 | Fixed-backbone, property-focused variant design | A supplied parent sequence, canonical backbone and permitted edit masks. | Generate constrained variants and calculate matched parent/candidate residue-volume, hydrophilicity and charge descriptors. | [007 — huJ3 / gp120 VHH](task_007_huj3_gp120_fixed_framework_design.md) |
 | Supplied-panel prediction and ranking | Existing antibody variants, verified parents and the relevant assay or property context. | Score and rank the supplied panel; evaluate against independently held labels after predictions are frozen. | [019 — Affinity ranking](task_019_abbibench_antibody_affinity_ranking.md); [020 — Developability / fitness ranking](task_020_flab_antibody_developability_ranking.md); [021 — Binding-retention prediction](task_021_abdesign_antibody_binding_retention.md); [022 — Binding ΔΔG prediction](task_022_abbind_antibody_binding_ddg_prediction.md); [023 — Interface mutation-effect scoring](task_023_abagym_antibody_interface_mutation_scoring.md) |
 
-Each task has a [matching computational benchmark](../../benchmark/monoclonal_antibody_design/README.md) with the same task identifier.
+Each task has a [matching computational benchmark](../../benchmark/monoclonal_antibody_design/) with the same task identifier.
 
 ## Interpreting the Scenarios
 
@@ -30,4 +30,4 @@ Each task has a [matching computational benchmark](../../benchmark/monoclonal_an
 
 Select the scenario that matches the available inputs and intended outcome, then follow the linked task's target identity, editable/protected regions, evaluation requirements and output contract. The grouping does not prescribe a workflow count, tool sequence or universal ranking rule.
 
-The [environment specification](../../ENVIRONMENT_SPEC.md), [source guide](../../src/readme.md) and [results guide](../../results/README.md) describe execution records and scientific outputs. Task availability records a specification, not evidence that its scientific execution is complete.
+The [environment specification](../../ENVIRONMENT_SPEC.md), [source guide](../../src/readme.md) and [results guide](../../results/README.md) describe execution records and scientific outputs.

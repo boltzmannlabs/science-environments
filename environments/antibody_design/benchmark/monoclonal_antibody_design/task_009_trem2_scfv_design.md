@@ -6,7 +6,7 @@
 
 ## Published Results
 
-**Source:** [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv); the **1 TREM2 reference** linked in the [reference index](PROTEINBASE_SCFV_INDEX.md). Values were retrieved from those records on 10 November 2026.
+**Source:** [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv); the TREM2 reference identified below. Values were retrieved from that record on 10 November 2026.
 
 Only one strong-labeled scFv reference is included: [golden-gecko-stone](https://proteinbase.com/proteins/golden-gecko-stone). Minimum and maximum are therefore equal for each reported metric.
 
