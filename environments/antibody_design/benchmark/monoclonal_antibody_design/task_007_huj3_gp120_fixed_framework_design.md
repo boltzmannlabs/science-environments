@@ -1,7 +1,7 @@
 
 **Task ID:** `task_007_huj3_gp120_fixed_framework_design`
 
-**Task:** [huJ3 gp120 Fixed-Framework VHH Design](../task_007_huj3_gp120_fixed_framework_design.md)
+**Task:** [huJ3 gp120 Fixed-Framework VHH Design](../../tasks/monoclonal_antibody_design/task_007_huj3_gp120_fixed_framework_design.md)
 
 ## Published Results
 
