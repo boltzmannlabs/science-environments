@@ -5,3 +5,6 @@ control,pdb,native_chain,file,inchikey,role
 T0B,7B6W,AAA,inputs/controls/7B6W_T0B_chain_AAA_native.sdf,XBRXTUGRUXGBPX-DLBZAZTESA-N,"native bound pose, original heavy-atom coordinates"
 risperidone_8NU_ideal,,,inputs/controls/risperidone_8NU_ideal.sdf,RAPZEAPATHNIPO-UHFFFAOYSA-N,independent CCD ideal structure; not the native pose
 domperidone,,,inputs/controls/domperidone_pubchem_3151.sdf,FGXWKSZFVQUSTL-UHFFFAOYSA-N,PubChem CID 3151 reference for final ADME/off-target profiling
+remdesivir,,,inputs/controls/remdesivir.sdf,KEEBLYWBELVGPQ-UHFFFAOYSA-N,clinical reference compound; DrugBank DB14942
+ritonavir,,,inputs/controls/ritonavir.sdf,NCDNCNXCDXHOMX-QSSRUAPUSA-N,clinical reference compound
+N3,6LU7,C,inputs/targets/6LU7_N3_ligand_native.pdb,,"native bound pose, linked entity (02J)AVL(PJE)(010); defines the active site"

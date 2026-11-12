@@ -1,0 +1,88 @@
+{
+ "task": "task_002_sars_cov2_mpro_hit_prioritisation",
+ "source_dataset": "https://github.com/ELAISS-OUQ/SARS-CoV-2-inhibitors (Data Availability.rar, extracted 2026-11-12)",
+ "docking_config": {
+  "engine": "AutoDock Vina via PyRx 0.8",
+  "exhaustiveness": 8,
+  "center_xyz": [
+   -9.63277273088,
+   11.339191664,
+   70.502119905
+  ],
+  "size_xyz": [
+   13.2348108577,
+   20.2509899507,
+   13.2150344603
+  ]
+ },
+ "disclosed_inputs": {
+  "approved_drug_records": 281,
+  "ritonavir_derivative_records": 117,
+  "receptor": "6LU7 prepared PDBQT included",
+  "optimized_structures": "UFF SDF+MOL2 for the 117 derivative inputs"
+ },
+ "published_claims_vs_deposits": {
+  "paper_S1_derivative_count": 188,
+  "deposited": 117,
+  "never_deposited_anywhere": [
+   171,
+   172,
+   173,
+   174,
+   175,
+   176,
+   177
+  ],
+  "scored_output_without_input_sdf": [
+   "MOL77"
+  ],
+  "bond_order_recovery_test": "OpenBabel PDBQT->SDF gave 10/102 InChI-identical reconstructions; PDBQT files carry generic UFF atom typing with no bond orders, so input structures for unsupplied compounds are not recoverable with correct chemistry",
+  "remdesivir": "input DB14942 present; no deposited docking output (published -7.3 not reproducible from the dataset)",
+  "ritonavir_deposited_best": -6.6,
+  "ritonavir_published": -6.9,
+  "table1_top20_range_published": [
+   -9.6,
+   -8.7
+  ],
+  "note": "paper states Table 1 values come from its AutoDock 4.2 second screen; best deposited Vina score is -9.0 (mol187), consistent with Table 1 not being Vina output",
+  "deposited_scored_counts": {
+   "ritonavir_derivatives": 102,
+   "approved_drugs": 144
+  }
+ },
+ "frozen_task_library": "the 281 approved-drug records and the 117 derivative records with disclosed structures; controls remdesivir and ritonavir",
+ "structure_facts": {
+  "pdb": "6LU7",
+  "observed_residues": "1-306, fully resolved, no gaps",
+  "co_crystal_ligand": "N3 inhibitor present as chain B linked peptide-like entity (02J)AVL(PJE)(010); 02J = 5-methyl-1,2-oxazole-3-carboxylic acid head; PJE and 010 are the linked tail components; phenylmethanol and waters also present"
+ },
+ "published_evaluation_metrics": {
+  "top20_table1_range_kcal_mol": [
+   -9.6,
+   -8.7
+  ],
+  "table1_engine": "CORRECTED: Table 1 contains BOTH engines per compound - AutoDock VINA and AutoDock tools (4.2); the -8.7..-9.6 top-20 range is the VINA column; the VINA column matches the deposited outputs exactly on every verifiable row (5/5: DB00619, DB01232, Mol181, Mol184, Mol187, Mol188 set)",
+  "reference_scores_published": {
+   "remdesivir": -7.3,
+   "ritonavir": -6.9
+  },
+  "final3": [
+   "PF-03715455",
+   "lifirafenib",
+   "Mol181"
+  ],
+  "final3_interaction_profiles": {
+   "PF-03715455": "H-bonds Glu166, Cys145, Leu141; hydrophobic (Pi-Sigma, Pi-Pi-T-shaped, alkyl, Pi-alkyl) His41, Met165, His163, Cys145, Pro168; Pi-anion Phe140; Pi-sulfur Cys145",
+   "lifirafenib": "H-bond Ala191; carbon and Pi-donor H-bonds Thr190, Glu166; hydrophobic His41, Met49, Cys145, Pro168; halogen (F) Gln189",
+   "Mol181": "H-bonds Cys145 and His41 (catalytic dyad), same interaction types as the two drugs"
+  },
+  "ligand_prep": "UFF minimization, conjugate gradient, 2000 steps, update every step, stop below 0.01 kcal/mol energy difference; 9 conformations per ligand",
+  "table1_full": "task_002_published_table1.csv (22 rows: 2 references + 18 hits; both engines)",
+  "table1_quirks": [
+   "Results prose lists \"Mol1184\" but Table 1 itself lists Mol184 - typo confirmed in prose only",
+   "reference-ID conflicts: Table 1 gives ritonavir as DB00503 and remdesivir as DB14761; the dataset supplies remdesivir as DB14942 - identities follow the names",
+   "15 of 20 Table-1 rows have no deposited docking output in the dataset; their published values are not reproducible from the repo",
+   "top-20 identity list now exact from Table 1: Laniquidar, Fostemsavir, Dihydroergocristine, Dihydro-alpha-ergocryptine, Dihydroergocornine, Fenebrutinib, Ergotamine, Relacorilant, Simeprevir, Lifirafenib, Methotrexate, Imatinib, Saquinavir, Umbralisib, Irinotecan, PF-03715455, Mol181, Mol184, Mol187, Mol188"
+  ]
+ }
+}
