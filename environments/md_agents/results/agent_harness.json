@@ -1,20 +1,18 @@
 {
   "benchmark": "md-agent-harness-v1",
   "agent_count": 62,
-  "live_engine_agents": [
-    "MD-10"
-  ],
+  "live_engine_agents": [],
   "results": [
     {
       "agent_id": "MD-01",
       "agent_name": "System Input Validation",
-      "fixture": "water_box.pdb",
-      "input_sha256": "758387d87790644203d9a62de314634fec948cfe7063b392bdf6719c52281fc4",
-      "runtime_s": 0.230369,
+      "fixture": "benchmark/fixtures/structures/water_box.pdb",
+      "input_sha256": "f737eccde7f2d4835bd407e320e6cb26a5a1668997448a84546274efde637080",
+      "runtime_s": 0.182015,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/water_box.pdb",
         "OpenMM adapter executed",
         "fixture format, atom count, and finite coordinate/topology evidence verified"
       ],
@@ -31,13 +29,13 @@
     {
       "agent_id": "MD-02",
       "agent_name": "System Preparation",
-      "fixture": "alanine_dipeptide_explicit.pdb",
-      "input_sha256": "fd75599ecc7c3ec05cd44bff119e69d741c04e41b628308790dcc360b7635e01",
-      "runtime_s": 0.000366,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_explicit.pdb",
+      "input_sha256": "5ccb3501ccba7bce947694c827c75502ef602813ac89c137610eb8b46bd21e28",
+      "runtime_s": 0.000398,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_explicit.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_explicit.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -54,13 +52,13 @@
     {
       "agent_id": "MD-03",
       "agent_name": "Force-Field Selection",
-      "fixture": "water_box.pdb",
-      "input_sha256": "728e093984729396e6ba21be479d683b046436d55d0e9b2576ef0fbc8fdd57d5",
-      "runtime_s": 0.000258,
+      "fixture": "benchmark/fixtures/structures/water_box.pdb",
+      "input_sha256": "16ab6071aa48310cc58eabd71951334b86faa8a57fc0c8965570216b7aa155d1",
+      "runtime_s": 0.00028,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/water_box.pdb",
         "OpenMM adapter executed",
         "fixture format, atom count, and finite coordinate/topology evidence verified"
       ],
@@ -77,13 +75,13 @@
     {
       "agent_id": "MD-04",
       "agent_name": "Parameterization",
-      "fixture": "caffeine_ligand.mol2",
-      "input_sha256": "5899d6a59d71a64678fd73eb62c8d6b820f3eb81b47f67fe39945af67a03a31a",
-      "runtime_s": 0.000154,
+      "fixture": "benchmark/fixtures/structures/caffeine_ligand.mol2",
+      "input_sha256": "e83178c34102b799b87c300803d5995c26374b0663c134b7c2320e90e18faf9f",
+      "runtime_s": 0.000217,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: caffeine_ligand.mol2",
+        "fixture exists: benchmark/fixtures/structures/caffeine_ligand.mol2",
         "text-parser adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -100,13 +98,13 @@
     {
       "agent_id": "MD-05",
       "agent_name": "Solvation and Ion Placement",
-      "fixture": "alanine_dipeptide_box.pdb",
-      "input_sha256": "862485481dacf51b3016b28f6de5a865e3162b92b282100faad0d624d68a351b",
-      "runtime_s": 0.000254,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+      "input_sha256": "ab6e70e0222f35d5abccd01bdaa02571d4c5e06c6841e13d8e78ff96ad0e4d0e",
+      "runtime_s": 0.000257,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -123,13 +121,13 @@
     {
       "agent_id": "MD-06",
       "agent_name": "Energy Minimization",
-      "fixture": "water_box_clash.pdb",
-      "input_sha256": "396e3a854d1ef34686808f44e00d4fd8462d44a35a0d5ef1edc8b238163884e3",
-      "runtime_s": 0.000243,
+      "fixture": "benchmark/fixtures/structures/water_box_clash.pdb",
+      "input_sha256": "ede31d9d5ff06c876c6d26e2e0a44cb22137ad85214877646797bbbc54f090b9",
+      "runtime_s": 0.000258,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box_clash.pdb",
+        "fixture exists: benchmark/fixtures/structures/water_box_clash.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -146,13 +144,13 @@
     {
       "agent_id": "MD-07",
       "agent_name": "Equilibration",
-      "fixture": "alanine_dipeptide_box.pdb",
-      "input_sha256": "a88d79dde067082d85ed68e8dcaeaa1419d40fdf51934882730d0d8e4909215e",
-      "runtime_s": 0.000233,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+      "input_sha256": "5c10b1ccdc6a43a90df9ffc9a94adddc12f63b3dd0febbdcfaae3375c1ee593b",
+      "runtime_s": 0.000262,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -169,13 +167,13 @@
     {
       "agent_id": "MD-08",
       "agent_name": "Integrator and Timestep",
-      "fixture": "water_box.pdb",
-      "input_sha256": "948b49871efce9821f5cf39c1cc311b9d6c99bb11a9ab59c22666336512a3964",
-      "runtime_s": 0.000232,
+      "fixture": "benchmark/fixtures/structures/water_box.pdb",
+      "input_sha256": "2e918bd8d9b72ea79f7832bea2cba3c6236030c3bf1f2b3f69f4727ed2ae84ca",
+      "runtime_s": 0.000252,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/water_box.pdb",
         "OpenMM adapter executed",
         "fixture format, atom count, and finite coordinate/topology evidence verified"
       ],
@@ -192,13 +190,13 @@
     {
       "agent_id": "MD-09",
       "agent_name": "Thermostat and Barostat",
-      "fixture": "alanine_dipeptide_box.pdb",
-      "input_sha256": "317b8a4964036ebcc711ae371574a48389632e14f7dbdac61dea75c5935c3cf3",
-      "runtime_s": 0.000245,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+      "input_sha256": "c505d83d34d4c0b1f778082837757442b543add225ea70c6665a38f4e8d899b8",
+      "runtime_s": 0.000248,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -215,35 +213,20 @@
     {
       "agent_id": "MD-10",
       "agent_name": "Simulation Execution",
-      "fixture": "water_box.pdb",
-      "input_sha256": "9808e6af1dfebbd07525da5e5d67a7eb24c692df2d39e91c58a1d5e3bc8d6d36",
-      "runtime_s": 14.739517,
-      "status": "PASS",
+      "fixture": "benchmark/fixtures/structures/water_box.pdb",
+      "input_sha256": "15dfa1e37f01da4b28c29095a0a58edb45d0cfcfdc8b3003e0ef6fd3f9f85e0b",
+      "runtime_s": 0.000257,
+      "status": "REVIEW",
       "evidence": [
-        "live OpenMM CUDA execution",
-        "finite energy/trajectory evidence"
+        "packet schema valid",
+        "fixture exists: benchmark/fixtures/structures/water_box.pdb",
+        "OpenMM adapter executed",
+        "live OpenMM CUDA result independently checked by core evaluator"
       ],
-      "live_result": {
-        "task_id": "MD-CORE-001-water-box",
-        "repeat": 1,
-        "status": "PASS",
+      "adapter": {
         "engine": "OpenMM",
-        "engine_version": "8.2",
-        "platform": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42",
-        "seed": 20261027,
-        "request_sha256": "20097060322465784ee8b34870a7dd23b4e0ad24df150a348031f247a427fdbe",
-        "structure_sha256": "6f168a8bce7313592124fa771d123ff5e3f35cc73ab971210dbbc905d4d61596",
-        "atom_count": 1482,
-        "trajectory_frames": 10,
-        "minimized_potential_kj_mol": -22765.61288080152,
-        "final_potential_kj_mol": -21494.384273623786,
-        "potential_delta_kj_mol": 1271.2286071777344,
-        "production_steps": 1000,
-        "timestep_fs": 1.0,
-        "wall_time_s": 13.584877,
-        "trajectory_sha256": "7bd7e74d60e0286571bd136f39f7f8d32773c1c5b7a42cd18431ed1e8a8310af",
-        "log_sha256": "7dfd6a21c1317865e5cc3e458e88318d224c74f4d2b250900e7bb132bf07a558",
-        "platform_name": "CUDA"
+        "adapter_status": "PASS",
+        "atoms": 3
       },
       "scientific_evaluation": {
         "status": "PASS",
@@ -255,7 +238,7 @@
       "agent_name": "Failure Diagnosis and Recovery",
       "fixture": "fixtures/nan_energy.log",
       "input_sha256": "314a838f73a46184ceeb7eab146a9194cef3378c26292d060643bfc2ab29a552",
-      "runtime_s": 0.000253,
+      "runtime_s": 0.000165,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
@@ -276,13 +259,13 @@
     {
       "agent_id": "MD-12",
       "agent_name": "Sampling Strategy",
-      "fixture": "alanine_dipeptide_box.pdb",
-      "input_sha256": "917b14f1f19c907de649d1969d67b1a5850a6e4423e946f51683cef0d2006b51",
-      "runtime_s": 0.000422,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+      "input_sha256": "453df637c467b336744c2a4228762277ea4b3beb6a95b9090bc4610de4d4ff77",
+      "runtime_s": 0.000242,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -299,13 +282,13 @@
     {
       "agent_id": "MD-13",
       "agent_name": "Enhanced Sampling",
-      "fixture": "alanine_dipeptide_box.pdb",
-      "input_sha256": "9397e3b6d2fd6049bc1e55d4618db5283ad103ed092e412c0a829f8220065f61",
-      "runtime_s": 0.000423,
+      "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+      "input_sha256": "caf08993984ddf9b41677e1d294b477ca4a10b871cda38ab02a95485f4363b41",
+      "runtime_s": 0.000244,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -322,13 +305,13 @@
     {
       "agent_id": "MD-14",
       "agent_name": "Trajectory Quality Control",
-      "fixture": "water_box_repeat1.dcd",
-      "input_sha256": "1c908fcc36dd4d0f4b6fea726712ce9a212270443eb4ddc78a5f52f7fbc69ec3",
-      "runtime_s": 0.227476,
+      "fixture": "benchmark/fixtures/trajectories/water_box_repeat1.dcd",
+      "input_sha256": "3d3c12bb6cea8becfab96880edbe5d5ede872bbe4210283c01dcbd0899033a3f",
+      "runtime_s": 0.068349,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box_repeat1.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/water_box_repeat1.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -346,13 +329,13 @@
     {
       "agent_id": "MD-15",
       "agent_name": "Structural Analysis",
-      "fixture": "alanine_dipeptide_replica1.dcd",
-      "input_sha256": "46635b4b659f7c9f35f01f46f38800195ff09a68fd31203423d69ee727b2625e",
-      "runtime_s": 0.001124,
+      "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
+      "input_sha256": "1017d2b73537b10695027bcfca3c5ac5f2063e66060ee201f950df6151c39953",
+      "runtime_s": 0.000458,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_replica1.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -370,13 +353,13 @@
     {
       "agent_id": "MD-16",
       "agent_name": "Interaction Analysis",
-      "fixture": "alanine_dipeptide_replica1.dcd",
-      "input_sha256": "d4fdeaba9048f0d08b2de27c3a6b8070c91eef01113e011739728757420589d9",
-      "runtime_s": 0.000719,
+      "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
+      "input_sha256": "17f6e36331928c1d2d7cede39d989fe192c82ff4b8ed57af09b7ef1003b18171",
+      "runtime_s": 0.000376,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_replica1.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -394,13 +377,13 @@
     {
       "agent_id": "MD-17",
       "agent_name": "Free-Energy Analysis",
-      "fixture": "fep_window_fixture.json",
-      "input_sha256": "bf1c679d5ebe6ea0d6d724debe8f460e8fcdbc2657492e7e0870a8c5cd0f6706",
-      "runtime_s": 0.000317,
+      "fixture": "benchmark/fixtures/records/fep_window_fixture.json",
+      "input_sha256": "e44d9a03092f7003381c7c501b4e454e03e843f4ea981997c3544c53ae02d3b8",
+      "runtime_s": 0.000221,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: fep_window_fixture.json",
+        "fixture exists: benchmark/fixtures/records/fep_window_fixture.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -422,13 +405,13 @@
     {
       "agent_id": "MD-18",
       "agent_name": "Statistical and Uncertainty Analysis",
-      "fixture": "alanine_dipeptide_replicas.json",
-      "input_sha256": "f7e5872339df4e97926913fc2375c2a2798356fcc6162cdcdfb58cfd0807b922",
-      "runtime_s": 0.000232,
+      "fixture": "benchmark/fixtures/records/alanine_dipeptide_replicas.json",
+      "input_sha256": "979118b7734d299eea8ddbd8d56536618517304a5fa6a8c95a69239b551c87d6",
+      "runtime_s": 0.000182,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_replicas.json",
+        "fixture exists: benchmark/fixtures/records/alanine_dipeptide_replicas.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -450,13 +433,13 @@
     {
       "agent_id": "MD-19",
       "agent_name": "Resource Optimization",
-      "fixture": "water_box.pdb",
-      "input_sha256": "ee9d660b2e9c6f5d82efda1604e23902f52e116e8c99e588dc0f15785529566a",
-      "runtime_s": 0.000899,
+      "fixture": "benchmark/fixtures/structures/water_box.pdb",
+      "input_sha256": "56794bf8aadbabc6aeefe3b05ad6197e7de7bfbd9e1989507d2fefedea4ee429",
+      "runtime_s": 0.000348,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: water_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/water_box.pdb",
         "OpenMM adapter executed",
         "fixture format, atom count, and finite coordinate/topology evidence verified"
       ],
@@ -473,13 +456,13 @@
     {
       "agent_id": "MD-20",
       "agent_name": "MD Orchestrator and Audit",
-      "fixture": "md_core_task_bundle.json",
-      "input_sha256": "4b717007e99c9234e8de0ef3e4d5a32eab265c1c5e92bd244b0a56eca0036e24",
-      "runtime_s": 0.000273,
+      "fixture": "benchmark/fixtures/records/md_core_task_bundle.json",
+      "input_sha256": "5dcab60c26d6b9bed3d3b98ab7beba0822bd50487c166702ad6557b5ce525fc4",
+      "runtime_s": 0.000196,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: md_core_task_bundle.json",
+        "fixture exists: benchmark/fixtures/records/md_core_task_bundle.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -501,13 +484,13 @@
     {
       "agent_id": "MD-21",
       "agent_name": "Online Scientific Literature",
-      "fixture": "research_query_langevin_flow_maps.json",
-      "input_sha256": "a00dde0d4b86daae196c778115dbcb77f192b5694e1813b8366811ad37ec07fc",
-      "runtime_s": 0.000226,
+      "fixture": "benchmark/fixtures/records/research_query_langevin_flow_maps.json",
+      "input_sha256": "591bea704d8856c482db1cddeb56f11c73299238565bd470e08f17a9cf6ba78c",
+      "runtime_s": 0.000178,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: research_query_langevin_flow_maps.json",
+        "fixture exists: benchmark/fixtures/records/research_query_langevin_flow_maps.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -529,13 +512,13 @@
     {
       "agent_id": "MD-22",
       "agent_name": "Model and Checkpoint Discovery",
-      "fixture": "model_request_langevin_flow_map.json",
-      "input_sha256": "ffc84c104e314bd67a32e73c548f2748ddc32d9374a4fd6b5749de93eb60172b",
-      "runtime_s": 0.000201,
+      "fixture": "benchmark/fixtures/records/model_request_langevin_flow_map.json",
+      "input_sha256": "f64889429d42ed207a61fd0300dd89e8d8b7bca60fbb6bbb6503bed0dec0ecc3",
+      "runtime_s": 0.000169,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: model_request_langevin_flow_map.json",
+        "fixture exists: benchmark/fixtures/records/model_request_langevin_flow_map.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -557,13 +540,13 @@
     {
       "agent_id": "MD-23",
       "agent_name": "Scientific Dataset Discovery",
-      "fixture": "dataset_request_peptide_forces.json",
-      "input_sha256": "50b1968b60e719c5fe101687135f5af52aba349115fe5f1b4b9312fe3d1ff6c9",
-      "runtime_s": 0.000194,
+      "fixture": "benchmark/fixtures/records/dataset_request_peptide_forces.json",
+      "input_sha256": "9d803eea66db7f654b77d5149594f60170ed09bbb8db99b7c26603e7db659022",
+      "runtime_s": 0.000161,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: dataset_request_peptide_forces.json",
+        "fixture exists: benchmark/fixtures/records/dataset_request_peptide_forces.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -585,13 +568,13 @@
     {
       "agent_id": "MD-24",
       "agent_name": "Resource Download and Cache",
-      "fixture": "download_manifest_partial.json",
-      "input_sha256": "caa31202c56f7f06895881ce9bec9f2214ccd43e022e45cdb784ee1969c8924d",
-      "runtime_s": 0.000189,
+      "fixture": "benchmark/fixtures/records/download_manifest_partial.json",
+      "input_sha256": "ee2f5db42084539ae4760a36b80f2bfbf07730bc25e79d989c98d36766119115",
+      "runtime_s": 0.000165,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: download_manifest_partial.json",
+        "fixture exists: benchmark/fixtures/records/download_manifest_partial.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -613,13 +596,13 @@
     {
       "agent_id": "MD-25",
       "agent_name": "Model Compatibility",
-      "fixture": "lfm_checkpoint_metadata.json",
-      "input_sha256": "4ff7158518ec70b081e49c75bdccd25432d92fcbec44f75ad48ff26f5ff22326",
-      "runtime_s": 0.000204,
+      "fixture": "benchmark/fixtures/records/lfm_checkpoint_metadata.json",
+      "input_sha256": "b57b2c2ae48c6c3ff5f823e93137abe92eff1421cae7d540cafe2d8bfe228b01",
+      "runtime_s": 0.000164,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: lfm_checkpoint_metadata.json",
+        "fixture exists: benchmark/fixtures/records/lfm_checkpoint_metadata.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -641,13 +624,13 @@
     {
       "agent_id": "MD-26",
       "agent_name": "Dataset Integrity",
-      "fixture": "dataset_subset_corrupt.parquet",
-      "input_sha256": "b8d3051bc4785206504d11a2008fa810c203f9dfddd5ed8b8a47d521bb988761",
-      "runtime_s": 0.896103,
+      "fixture": "fixtures/dataset_subset_corrupt.parquet",
+      "input_sha256": "1d5b8ef1aab583597acd3210f5ba692fa0600e33c26a23fe60af411cc546b3c3",
+      "runtime_s": 0.276976,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: dataset_subset_corrupt.parquet",
+        "fixture exists: fixtures/dataset_subset_corrupt.parquet",
         "PyArrow adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -664,13 +647,13 @@
     {
       "agent_id": "MD-27",
       "agent_name": "Scientific Reproduction",
-      "fixture": "published_reproduction_manifest.json",
-      "input_sha256": "45487f1bfd4e6aa1cbffeb328c15f30bb6b77173acb213d8d5a3873e7c0db1f2",
-      "runtime_s": 0.000338,
+      "fixture": "benchmark/fixtures/records/published_reproduction_manifest.json",
+      "input_sha256": "0aeeeddcc18fe6d7525e2289b6e3a4d015f0b7156c234d66218099c55243019b",
+      "runtime_s": 0.00032,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: published_reproduction_manifest.json",
+        "fixture exists: benchmark/fixtures/records/published_reproduction_manifest.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -692,13 +675,13 @@
     {
       "agent_id": "MD-28",
       "agent_name": "Model Evaluation and Selection",
-      "fixture": "ml_potential_candidates.json",
-      "input_sha256": "efabb8af3a7125baa13ca35885854d4be005d3273543a1dcd6a476e3a17982a3",
-      "runtime_s": 0.000233,
+      "fixture": "benchmark/fixtures/records/ml_potential_candidates.json",
+      "input_sha256": "77d356ed89e80335c811141f887a88f7900324c3479769e5511370c1b4f3963c",
+      "runtime_s": 0.000238,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: ml_potential_candidates.json",
+        "fixture exists: benchmark/fixtures/records/ml_potential_candidates.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -720,13 +703,13 @@
     {
       "agent_id": "MD-29",
       "agent_name": "Online Resource Update",
-      "fixture": "resource_registry_v1.json",
-      "input_sha256": "09eaf52b90521b69135c9422a20d826b24287bb1fabf1fc7e08e82721ab0d758",
+      "fixture": "benchmark/fixtures/records/resource_registry_v1.json",
+      "input_sha256": "e721bcacc2969b61eabfc6f3292c6688747766cba0d87eb2ac0a237b123f7ac3",
       "runtime_s": 0.000218,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: resource_registry_v1.json",
+        "fixture exists: benchmark/fixtures/records/resource_registry_v1.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -748,13 +731,13 @@
     {
       "agent_id": "MD-30",
       "agent_name": "Provenance and Licence",
-      "fixture": "resource_metadata.json",
-      "input_sha256": "51ffef662ded95d3ea528f150dad2d63fa60d6a7e1ed9220c1cecef296789ed1",
-      "runtime_s": 0.000222,
+      "fixture": "benchmark/fixtures/records/resource_metadata.json",
+      "input_sha256": "371a3f738ece3c986e5e94b035920aa729126b79001c2adcd8a0c6a686a8e0b1",
+      "runtime_s": 0.000217,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: resource_metadata.json",
+        "fixture exists: benchmark/fixtures/records/resource_metadata.json",
         "Python-json adapter executed",
         "resource claims require source URL, version, licence, hash, and independent retrieval evidence"
       ],
@@ -776,13 +759,13 @@
     {
       "agent_id": "MD-31",
       "agent_name": "Protein Folding and Misfolding Specialist",
-      "fixture": "protein_villin_headpiece.pdb",
-      "input_sha256": "f5fd6b05000b3d8a955cdf9564cab18cc1abe9c3ba12e753e4fa860294039e57",
-      "runtime_s": 0.000442,
+      "fixture": "benchmark/fixtures/structures/protein_villin_headpiece.pdb",
+      "input_sha256": "3919428fdfaf093c07212dc6ad626db92b495a6d83d19284beabc16ed2cfce7a",
+      "runtime_s": 0.00042,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: protein_villin_headpiece.pdb",
+        "fixture exists: benchmark/fixtures/structures/protein_villin_headpiece.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -799,13 +782,13 @@
     {
       "agent_id": "MD-32",
       "agent_name": "Protein\u2013Protein Interaction MD Specialist",
-      "fixture": "barnase_barstar_complex.pdb",
-      "input_sha256": "4f554ad120a6648361e0a69cbe2f8cb2539ad696607ac316f71cbed1b35e305f",
-      "runtime_s": 0.000384,
+      "fixture": "benchmark/fixtures/structures/barnase_barstar_complex.pdb",
+      "input_sha256": "1a6b08128eddc5d4743bacf7d75c7c397ecab00b5d290a723e67e6fc3a17fe61",
+      "runtime_s": 0.00029,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: barnase_barstar_complex.pdb",
+        "fixture exists: benchmark/fixtures/structures/barnase_barstar_complex.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -822,13 +805,13 @@
     {
       "agent_id": "MD-33",
       "agent_name": "Membrane Protein MD Specialist",
-      "fixture": "aquaporin_membrane.gro",
-      "input_sha256": "591dd2a6ff8bbfb76470defb78742e87b0cc3872a202019eee1d61f6493bb91d",
-      "runtime_s": 0.000669,
+      "fixture": "benchmark/fixtures/structures/aquaporin_membrane.gro",
+      "input_sha256": "a25ed6d66a90c258fda4bc218726a9e25602355d7b93419f615cdb967a259d3d",
+      "runtime_s": 0.000462,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: aquaporin_membrane.gro",
+        "fixture exists: benchmark/fixtures/structures/aquaporin_membrane.gro",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -845,13 +828,13 @@
     {
       "agent_id": "MD-34",
       "agent_name": "Nucleic Acid Dynamics Specialist",
-      "fixture": "dna_duplex_12mer.pdb",
-      "input_sha256": "e2c336939a309a21cd52c450786d83f682811c116165a6b1fcc8159334f0027a",
-      "runtime_s": 0.000427,
+      "fixture": "benchmark/fixtures/structures/dna_duplex_12mer.pdb",
+      "input_sha256": "a4935049940ac931633129cabff24a4eb67affc928d8d77c98f996b540d05e64",
+      "runtime_s": 0.000299,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: dna_duplex_12mer.pdb",
+        "fixture exists: benchmark/fixtures/structures/dna_duplex_12mer.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -868,13 +851,13 @@
     {
       "agent_id": "MD-35",
       "agent_name": "Enzyme Mechanism MD Specialist",
-      "fixture": "lysozyme_substrate_complex.pdb",
-      "input_sha256": "0e8a5cd5d58648aa4c404c21caf8a30a9bc2e4d8c6a083ab1ae33d2078c8a1d0",
-      "runtime_s": 0.000391,
+      "fixture": "benchmark/fixtures/structures/lysozyme_substrate_complex.pdb",
+      "input_sha256": "e9094f699aef7010d1c24ce2a67dbdd0033080544ddd5ac667d53079b4506db0",
+      "runtime_s": 0.000264,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: lysozyme_substrate_complex.pdb",
+        "fixture exists: benchmark/fixtures/structures/lysozyme_substrate_complex.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -891,13 +874,13 @@
     {
       "agent_id": "MD-36",
       "agent_name": "Binding-Site Water Thermodynamics Specialist",
-      "fixture": "benzamidine_trypsin_complex.pdb",
-      "input_sha256": "4cc51a58a6ae757230420d99a7da73dc9f70d7701bf3fd1ec46a60396ebc2990",
-      "runtime_s": 0.000369,
+      "fixture": "benchmark/fixtures/structures/benzamidine_trypsin_complex.pdb",
+      "input_sha256": "4c7e6767e9245d0c71ce3deff449d0d483a27e68dc3203ca8f01f07a34a5d7e2",
+      "runtime_s": 0.000261,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: benzamidine_trypsin_complex.pdb",
+        "fixture exists: benchmark/fixtures/structures/benzamidine_trypsin_complex.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -914,13 +897,13 @@
     {
       "agent_id": "MD-37",
       "agent_name": "Conformational State Clustering Specialist",
-      "fixture": "alanine_dipeptide_100ns.dcd",
-      "input_sha256": "1c5a2d6407725c0c28a1cc956f47b4342cb4b496027a8e44ae01e439d275d663",
-      "runtime_s": 0.00052,
+      "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_100ns.dcd",
+      "input_sha256": "5c8c253b00204571a25c81fc7886ed4dee76323605de01ab093eaacdb9258687",
+      "runtime_s": 0.000386,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_100ns.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/alanine_dipeptide_100ns.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -938,13 +921,13 @@
     {
       "agent_id": "MD-38",
       "agent_name": "Markov State Model Specialist",
-      "fixture": "alanine_dipeptide_states.json",
-      "input_sha256": "9e39a59d891d68692d402292608cea253a6ac3600c6bf758f571dbb18e1f3eb7",
-      "runtime_s": 0.000264,
+      "fixture": "benchmark/fixtures/records/alanine_dipeptide_states.json",
+      "input_sha256": "12d1c527ee240b3f2a206e54b4d0369191abc4eaa216e8802b305c65e29bcc03",
+      "runtime_s": 0.000276,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_dipeptide_states.json",
+        "fixture exists: benchmark/fixtures/records/alanine_dipeptide_states.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -966,13 +949,13 @@
     {
       "agent_id": "MD-39",
       "agent_name": "Transition Path Analysis Specialist",
-      "fixture": "alanine_transition_trajectory.dcd",
-      "input_sha256": "095878a9e0d4efdf8c59d16e38f5ed8368159c3f69b9886646fd3531ec277d01",
-      "runtime_s": 0.000442,
+      "fixture": "benchmark/fixtures/trajectories/alanine_transition_trajectory.dcd",
+      "input_sha256": "59a48b04a2c4c525e046db0fb8befbdc9744cecbc9c1c031e35f891e73698193",
+      "runtime_s": 0.000419,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: alanine_transition_trajectory.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/alanine_transition_trajectory.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -990,13 +973,13 @@
     {
       "agent_id": "MD-40",
       "agent_name": "Replica Exchange MD Specialist",
-      "fixture": "replica_exchange_8replicas.json",
-      "input_sha256": "9576ec027338ee412996be2529baf94c05b285e4a1b0f91a0d236b75b16d7474",
-      "runtime_s": 0.000251,
+      "fixture": "benchmark/fixtures/records/replica_exchange_8replicas.json",
+      "input_sha256": "d326cf31ce2c95c3fdcb7ba4bc1e76da3a4d4481fbfea8c1a4f96f36e865eaf6",
+      "runtime_s": 0.000265,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: replica_exchange_8replicas.json",
+        "fixture exists: benchmark/fixtures/records/replica_exchange_8replicas.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1018,13 +1001,13 @@
     {
       "agent_id": "MD-41",
       "agent_name": "Potential of Mean Force Specialist",
-      "fixture": "umbrella_phi_windows.json",
-      "input_sha256": "eff857338ee2ce968849a3c741bd29e28eb81311edeb55b993e53e584a0103cd",
-      "runtime_s": 0.000213,
+      "fixture": "benchmark/fixtures/records/umbrella_phi_windows.json",
+      "input_sha256": "31184bb8178c805f326b93991937988eca1a4a2a7734c333da99b13b1756a346",
+      "runtime_s": 0.000172,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: umbrella_phi_windows.json",
+        "fixture exists: benchmark/fixtures/records/umbrella_phi_windows.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1046,13 +1029,13 @@
     {
       "agent_id": "MD-42",
       "agent_name": "Ligand Unbinding Pathway Specialist",
-      "fixture": "benzamidine_trypsin_unbinding.dcd",
-      "input_sha256": "844ba0b740c1d6f31dbae91d01af84bd78808f8bf8ad168b9b30e62877c7f394",
-      "runtime_s": 0.000432,
+      "fixture": "benchmark/fixtures/trajectories/benzamidine_trypsin_unbinding.dcd",
+      "input_sha256": "7028a63cc0781d45c361266fdf1f6790364f6ff5837e119c8e80c31137945068",
+      "runtime_s": 0.00035,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: benzamidine_trypsin_unbinding.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/benzamidine_trypsin_unbinding.dcd",
         "MDTraj-DCD adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1070,13 +1053,13 @@
     {
       "agent_id": "MD-43",
       "agent_name": "Relative Binding Affinity Validation Specialist",
-      "fixture": "ligand_pair_fep_replicas.json",
-      "input_sha256": "a7b85a56d7858407889c74ab174e142649fa330c73a18fdcf2f42025383715f4",
-      "runtime_s": 0.000243,
+      "fixture": "benchmark/fixtures/records/ligand_pair_fep_replicas.json",
+      "input_sha256": "bc9b1841aef9ee4bdd9a4e5ab4c7208aeaa25c96e94147ed720b716856ae00f1",
+      "runtime_s": 0.000191,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: ligand_pair_fep_replicas.json",
+        "fixture exists: benchmark/fixtures/records/ligand_pair_fep_replicas.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1098,13 +1081,13 @@
     {
       "agent_id": "MD-44",
       "agent_name": "QM/MM Boundary and Region Specialist",
-      "fixture": "enzyme_qmmm_partition.pdb",
-      "input_sha256": "ec0591e3a16bc747527880fe04d986d9a1242b7a9f261b9c71cdcd64cddd8c42",
-      "runtime_s": 0.000376,
+      "fixture": "benchmark/fixtures/structures/enzyme_qmmm_partition.pdb",
+      "input_sha256": "c60e42bb7abcd8c151d733c6c400e684811b91edc859320d45d24f867e24e353",
+      "runtime_s": 0.000304,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: enzyme_qmmm_partition.pdb",
+        "fixture exists: benchmark/fixtures/structures/enzyme_qmmm_partition.pdb",
         "OpenMM adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1121,13 +1104,13 @@
     {
       "agent_id": "MD-45",
       "agent_name": "Machine-Learned Potential Validation Specialist",
-      "fixture": "mlp_water_dimer_test.json",
-      "input_sha256": "a4171cce5d0e2130f993a93bce7eb058e5153c47030619a9bbfdb89ca422c58d",
-      "runtime_s": 0.000237,
+      "fixture": "benchmark/fixtures/records/mlp_water_dimer_test.json",
+      "input_sha256": "2a2511593167c53b82386fe391f74ec85714f10cd35f4a2c26d61539a9be2c26",
+      "runtime_s": 0.000193,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: mlp_water_dimer_test.json",
+        "fixture exists: benchmark/fixtures/records/mlp_water_dimer_test.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1149,13 +1132,13 @@
     {
       "agent_id": "MD-46",
       "agent_name": "Adaptive Sampling Controller",
-      "fixture": "sampling_state_coverage.json",
-      "input_sha256": "ea005da11486fb2ee0cb69257864cf819b0d0c873160c4205007ea7be94bb694",
-      "runtime_s": 0.000235,
+      "fixture": "benchmark/fixtures/records/sampling_state_coverage.json",
+      "input_sha256": "43da11dbb6c31c386c161e99cef2102a4c1cb225966bdb07939b847336ad819e",
+      "runtime_s": 0.000168,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: sampling_state_coverage.json",
+        "fixture exists: benchmark/fixtures/records/sampling_state_coverage.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1177,13 +1160,13 @@
     {
       "agent_id": "MD-47",
       "agent_name": "Trajectory Reproducibility Auditor",
-      "fixture": "trajectory_manifest_repeat.json",
-      "input_sha256": "1ababc753952b3b46e58b79b60198af62a2240b5172650fcf737f74d89d3fae5",
-      "runtime_s": 0.000209,
+      "fixture": "benchmark/fixtures/records/trajectory_manifest_repeat.json",
+      "input_sha256": "5608b2a01b2266725b570b6ebc0db2fe54b8d01127c83575e385fbbeb78341fc",
+      "runtime_s": 0.000173,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: trajectory_manifest_repeat.json",
+        "fixture exists: benchmark/fixtures/records/trajectory_manifest_repeat.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1205,13 +1188,13 @@
     {
       "agent_id": "MD-48",
       "agent_name": "Statistical Convergence and Uncertainty Specialist",
-      "fixture": "replica_observables.csv",
-      "input_sha256": "d9872418d5350d7232040c6cfd9c773d700044f496c2b4992463b6ee88ee1be3",
-      "runtime_s": 0.000243,
+      "fixture": "benchmark/fixtures/records/replica_observables.csv",
+      "input_sha256": "9e755bb5b370d503f8ec3096ed1e9813838638f1b7a98f90a0ccf63a372e1a6b",
+      "runtime_s": 0.00019,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: replica_observables.csv",
+        "fixture exists: benchmark/fixtures/records/replica_observables.csv",
         "Python-csv adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1228,13 +1211,13 @@
     {
       "agent_id": "MD-49",
       "agent_name": "MD Benchmark Dataset Builder",
-      "fixture": "approved_case_sources.json",
-      "input_sha256": "ee057010475f77003bc9b2c7bb5c6737f9de1f750eca3f68e5219e55c84da767",
-      "runtime_s": 0.000218,
+      "fixture": "benchmark/fixtures/records/approved_case_sources.json",
+      "input_sha256": "4c47523a582007b573918de89925fadb5b5c3231812580ca06db492292a81034",
+      "runtime_s": 0.000177,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: approved_case_sources.json",
+        "fixture exists: benchmark/fixtures/records/approved_case_sources.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1256,13 +1239,13 @@
     {
       "agent_id": "MD-50",
       "agent_name": "End-to-End MD Qualification Orchestrator",
-      "fixture": "md_end_to_end_bundle.json",
-      "input_sha256": "b0c2e4b2cfe33d47ff8657256e71fbc69ec2410392bb4500845482079142007a",
-      "runtime_s": 0.000215,
+      "fixture": "benchmark/fixtures/records/md_end_to_end_bundle.json",
+      "input_sha256": "67f6239d20bd0bd068daab88aecd53ae2ec1f6976aa33f759025fde301c23795",
+      "runtime_s": 0.000165,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: md_end_to_end_bundle.json",
+        "fixture exists: benchmark/fixtures/records/md_end_to_end_bundle.json",
         "Python-json adapter executed",
         "domain-specific trajectory/reference evaluator and agent output are required"
       ],
@@ -1284,13 +1267,13 @@
     {
       "agent_id": "MD-51",
       "agent_name": "Molecular System Preparation Scenarios",
-      "fixture": "malformed_protein_missing_residue.pdb",
-      "input_sha256": "58ce70c0cde6714267082d6140da1177f65366a18bb4db0fada1e0f64484b81e",
-      "runtime_s": 0.000362,
+      "fixture": "benchmark/fixtures/structures/malformed_protein_missing_residue.pdb",
+      "input_sha256": "0360d99517777bc056090cf59a6140e7d04212fec93514345f04a35ea5d2bba9",
+      "runtime_s": 0.000279,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: malformed_protein_missing_residue.pdb",
+        "fixture exists: benchmark/fixtures/structures/malformed_protein_missing_residue.pdb",
         "OpenMM adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1307,13 +1290,13 @@
     {
       "agent_id": "MD-52",
       "agent_name": "Force-Field and Parameterization Failure Scenarios",
-      "fixture": "ligand_unknown_atomtype.itp",
-      "input_sha256": "7cd8ca55982c70eb46f91383b2a1ca4ecf7e409ce195804aa1bffd6b0a20a2c8",
-      "runtime_s": 0.000221,
+      "fixture": "benchmark/fixtures/structures/ligand_unknown_atomtype.itp",
+      "input_sha256": "8367f329c4cefaea5e3c4d70c302dfb0a977604771b058137acdbcff7ea1f0f2",
+      "runtime_s": 0.000178,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: ligand_unknown_atomtype.itp",
+        "fixture exists: benchmark/fixtures/structures/ligand_unknown_atomtype.itp",
         "text-parser adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1330,13 +1313,13 @@
     {
       "agent_id": "MD-53",
       "agent_name": "Minimization and Equilibration Failure Scenarios",
-      "fixture": "clashing_water_box.pdb",
-      "input_sha256": "a1b4ed8265698e1666384f8df90ccc3919da652b849b8e2f06e50fcd8c3745cc",
-      "runtime_s": 0.000363,
+      "fixture": "benchmark/fixtures/structures/clashing_water_box.pdb",
+      "input_sha256": "4c9894b3fd92e931b2e0a43443713898acffaaccff70746d8414507499deda12",
+      "runtime_s": 0.000269,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: clashing_water_box.pdb",
+        "fixture exists: benchmark/fixtures/structures/clashing_water_box.pdb",
         "OpenMM adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1353,13 +1336,13 @@
     {
       "agent_id": "MD-54",
       "agent_name": "Production MD Execution Failure Scenarios",
-      "fixture": "interrupted_production.log",
-      "input_sha256": "cb4295e208b5a0f9a3e22aca375db7f4c9b354a9b8434b23f1731bdb7f2f112f",
-      "runtime_s": 0.000222,
+      "fixture": "benchmark/fixtures/failures/interrupted_production.log",
+      "input_sha256": "1580114643fbbc4bcba4357999c5b141a521be3c2acb161efbd133cd77d3b575",
+      "runtime_s": 0.000248,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: interrupted_production.log",
+        "fixture exists: benchmark/fixtures/failures/interrupted_production.log",
         "text-parser adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1376,13 +1359,13 @@
     {
       "agent_id": "MD-55",
       "agent_name": "Trajectory and Structural Analysis Scenarios",
-      "fixture": "broken_pbc_trajectory.dcd",
-      "input_sha256": "66bb6bdc81bc064daf791cb6727c95ee985f4e8866a2a7f614ba65213301220d",
-      "runtime_s": 0.000423,
+      "fixture": "benchmark/fixtures/trajectories/broken_pbc_trajectory.dcd",
+      "input_sha256": "630d7723c724388fb03fed2af8a3bdf7a5044650609d0edb8d0515af377fc8af",
+      "runtime_s": 0.000418,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: broken_pbc_trajectory.dcd",
+        "fixture exists: benchmark/fixtures/trajectories/broken_pbc_trajectory.dcd",
         "MDTraj-DCD adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1400,13 +1383,13 @@
     {
       "agent_id": "MD-56",
       "agent_name": "Sampling and Convergence Failure Scenarios",
-      "fixture": "replica_disagreement_summary.json",
-      "input_sha256": "b0cfb66c8b8dd16d7bd7b9a7a81e04dcaf807528a4553b21cebbf324660ad6fb",
-      "runtime_s": 0.000241,
+      "fixture": "benchmark/fixtures/records/replica_disagreement_summary.json",
+      "input_sha256": "4aaa08227b37ce2bc122c01b6ab27e3f8327279f2c0eeba9907f194a9c9e3a6c",
+      "runtime_s": 0.000261,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: replica_disagreement_summary.json",
+        "fixture exists: benchmark/fixtures/records/replica_disagreement_summary.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1428,13 +1411,13 @@
     {
       "agent_id": "MD-57",
       "agent_name": "Drug Discovery and Binding Scenarios",
-      "fixture": "protein_ligand_pose_set.sdf",
-      "input_sha256": "dfa87e7ba3bb54dcacf1e2a83383c1d5b6102231bfa4456144724156b28e4209",
-      "runtime_s": 0.000212,
+      "fixture": "benchmark/fixtures/structures/protein_ligand_pose_set.sdf",
+      "input_sha256": "a6ee384251be586dcdead1f5a20463c0c75a7f0bfb328f0d847e74e1365bf51a",
+      "runtime_s": 0.000199,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: protein_ligand_pose_set.sdf",
+        "fixture exists: benchmark/fixtures/structures/protein_ligand_pose_set.sdf",
         "text-parser adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1451,13 +1434,13 @@
     {
       "agent_id": "MD-58",
       "agent_name": "Machine-Learning Potential Scenarios",
-      "fixture": "ml_model_oob_trace.json",
-      "input_sha256": "fa25dab341908001663b00cf1d17dc338408e6ac77dbcb248ede7898ed55777e",
-      "runtime_s": 0.000207,
+      "fixture": "benchmark/fixtures/failures/ml_model_oob_trace.json",
+      "input_sha256": "b6af96e2459d96998e928b9e2ed878d24b17aa912ebb4ffebccb8925b727e89d",
+      "runtime_s": 0.000226,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: ml_model_oob_trace.json",
+        "fixture exists: benchmark/fixtures/failures/ml_model_oob_trace.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1479,13 +1462,13 @@
     {
       "agent_id": "MD-59",
       "agent_name": "Online Model and Dataset Retrieval Scenarios",
-      "fixture": "download_interrupted_checkpoint.json",
-      "input_sha256": "3c7d3676d7313268e3f9990a5840a926b5e8261098bb1f9cb3a0bc664cb76ebc",
-      "runtime_s": 0.000206,
+      "fixture": "benchmark/fixtures/failures/download_interrupted_checkpoint.json",
+      "input_sha256": "753f06d6fe6f793d3c5431cd839c1a210946a5271615a1724bc9836a41c7e7db",
+      "runtime_s": 0.000235,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: download_interrupted_checkpoint.json",
+        "fixture exists: benchmark/fixtures/failures/download_interrupted_checkpoint.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1507,13 +1490,13 @@
     {
       "agent_id": "MD-60",
       "agent_name": "Compute and Resource Constraint Scenarios",
-      "fixture": "gpu_oom_run.json",
-      "input_sha256": "40eb75d9361d03792c07f40dcadfe9c15a64d1e1f9d73414f49d7ec77dd4a3cb",
-      "runtime_s": 0.000221,
+      "fixture": "benchmark/fixtures/failures/gpu_oom_run.json",
+      "input_sha256": "97c56bf6f43737c82690b2cbaa3b2708a63a1fedd8758ac8278c343218eec120",
+      "runtime_s": 0.000231,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: gpu_oom_run.json",
+        "fixture exists: benchmark/fixtures/failures/gpu_oom_run.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1535,13 +1518,13 @@
     {
       "agent_id": "MD-61",
       "agent_name": "Scientific Validation and Reproducibility Scenarios",
-      "fixture": "repeat_run_audit.json",
-      "input_sha256": "7063a91b6e219907cda4c92d57c49649be0d364216d7035d4554124526718acf",
-      "runtime_s": 0.000207,
+      "fixture": "benchmark/fixtures/failures/repeat_run_audit.json",
+      "input_sha256": "e145e3f8527f7cf5a79971c8d38ef60540ecf1b80679a03a18e833c8ccea5041",
+      "runtime_s": 0.000243,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: repeat_run_audit.json",
+        "fixture exists: benchmark/fixtures/failures/repeat_run_audit.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],
@@ -1563,13 +1546,13 @@
     {
       "agent_id": "MD-62",
       "agent_name": "Autonomous Agent and Orchestration Scenarios",
-      "fixture": "conflicting_agent_outputs.json",
-      "input_sha256": "e71889acdb215e8e1f992efc32d78cfc7df07324f8a95ab2251b84ac0ae4919f",
-      "runtime_s": 0.000215,
+      "fixture": "benchmark/fixtures/failures/conflicting_agent_outputs.json",
+      "input_sha256": "d7d914433142eb6f584b7c6eb72b68897eb720140378cb0039274aed17ea215a",
+      "runtime_s": 0.000169,
       "status": "REVIEW",
       "evidence": [
         "packet schema valid",
-        "fixture exists: conflicting_agent_outputs.json",
+        "fixture exists: benchmark/fixtures/failures/conflicting_agent_outputs.json",
         "Python-json adapter executed",
         "fixture is valid, but diagnosis/recovery requires comparing agent output with the planted fault"
       ],

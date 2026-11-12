@@ -1,0 +1,18 @@
+{
+  "task_id": "MD-27",
+  "agent_id": "MD-27",
+  "agent_name": "Scientific Reproduction",
+  "group": "online",
+  "input": {
+    "fixture": "benchmark/fixtures/records/published_reproduction_manifest.json",
+    "parameters": {
+      "system": "alanine_dipeptide",
+      "engine": "OpenMM",
+      "seed": 1234,
+      "steps": 10000
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

@@ -1,0 +1,62 @@
+{
+  "systems": [
+    {
+      "system": "barnase_barstar.pdb",
+      "bounded_execution": "PASS",
+      "trajectory_present": true,
+      "replicas": 3,
+      "steps": 100,
+      "uncertainty": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reasons": [
+        "single bounded replica",
+        "only 100 production steps",
+        "paper-matched sampling duration and reference observable are unavailable"
+      ]
+    },
+    {
+      "system": "dna_duplex.pdb",
+      "bounded_execution": "PASS",
+      "trajectory_present": true,
+      "replicas": 3,
+      "steps": 100,
+      "uncertainty": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reasons": [
+        "single bounded replica",
+        "only 100 production steps",
+        "paper-matched sampling duration and reference observable are unavailable"
+      ]
+    },
+    {
+      "system": "trypsin_benzamidine.pdb",
+      "bounded_execution": "PASS",
+      "trajectory_present": true,
+      "replicas": 1,
+      "steps": 100,
+      "uncertainty": "INSUFFICIENT",
+      "scientific_qualification": "REVIEW",
+      "reasons": [
+        "single bounded replica",
+        "only 100 production steps",
+        "paper-matched sampling duration and reference observable are unavailable"
+      ]
+    },
+    {
+      "system": "villin_headpiece.pdb",
+      "bounded_execution": "PASS",
+      "trajectory_present": true,
+      "replicas": 3,
+      "steps": 100,
+      "uncertainty": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reasons": [
+        "single bounded replica",
+        "only 100 production steps",
+        "paper-matched sampling duration and reference observable are unavailable"
+      ]
+    }
+  ],
+  "qualification": "REVIEW",
+  "anti_overclaim": "Finite energy and a short trajectory do not establish paper reproduction."
+}

@@ -1,0 +1,25 @@
+{
+  "task_id": "MD-38",
+  "agent_id": "MD-38",
+  "agent_name": "Markov State Model Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/records/alanine_dipeptide_states.json",
+    "parameters": {
+      "states": 4,
+      "lag_times_ps": [
+        1,
+        2,
+        5,
+        10
+      ],
+      "tests": [
+        "implied_timescales",
+        "Chapman-Kolmogorov"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

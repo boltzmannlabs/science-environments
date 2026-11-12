@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-11",
+  "agent_id": "MD-11",
+  "agent_name": "Failure Diagnosis and Recovery",
+  "group": "core",
+  "input": {
+    "fixture": "benchmark/fixtures/failures/nan_energy.log",
+    "parameters": {
+      "first_bad_step": 417,
+      "error": "Particle coordinate is NaN",
+      "checkpoint": "step_400.chk"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

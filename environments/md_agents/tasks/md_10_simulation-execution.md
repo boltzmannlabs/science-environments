@@ -8,7 +8,7 @@ Launch, monitor, checkpoint and resume a declared MD job. Use the [environment s
 
 ## Exact Input Files
 
-Use [MD-CORE-001-water-box](../inputs/MD-CORE-001-water-box/task.json). The
+Use [MD-CORE-001-water-box](../src/cases/inputs/MD-CORE-001-water-box/task.json). The
 structure and request hashes are frozen in that packet; do not substitute a
 different water box.
 

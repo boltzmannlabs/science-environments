@@ -1,0 +1,775 @@
+{
+  "benchmark": "md-paper-protocol-targets-v1",
+  "configs": [
+    "general",
+    "specialist",
+    "orchestrated"
+  ],
+  "case_count": 3,
+  "run_count": 9,
+  "results": [
+    {
+      "case_id": "MD-PAPER-001",
+      "config": "general",
+      "system": "villin headpiece (1VII)",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "timestep_fs",
+        "production_length",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        }
+      },
+      "score": 57.5,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-001",
+      "config": "specialist",
+      "system": "villin headpiece (1VII)",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "timestep_fs",
+        "production_length",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        }
+      },
+      "score": 87.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-001",
+      "config": "orchestrated",
+      "system": "villin headpiece (1VII)",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "timestep_fs",
+        "production_length",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1002/jcc.10349"
+        }
+      },
+      "score": 95.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-002",
+      "config": "general",
+      "system": "barnase-barstar (1BRS)",
+      "required_fields": [
+        "engine",
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "electrostatics",
+        "production_length",
+        "replicas",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        }
+      },
+      "score": 57.5,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-002",
+      "config": "specialist",
+      "system": "barnase-barstar (1BRS)",
+      "required_fields": [
+        "engine",
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "electrostatics",
+        "production_length",
+        "replicas",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        }
+      },
+      "score": 87.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-002",
+      "config": "orchestrated",
+      "system": "barnase-barstar (1BRS)",
+      "required_fields": [
+        "engine",
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "electrostatics",
+        "production_length",
+        "replicas",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "10.1016/j.jmb.2007.01.051"
+        }
+      },
+      "score": 95.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-003",
+      "config": "general",
+      "system": "DNA duplex",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "pressure_bar",
+        "electrostatics",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        }
+      },
+      "score": 57.5,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-003",
+      "config": "specialist",
+      "system": "DNA duplex",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "pressure_bar",
+        "electrostatics",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        }
+      },
+      "score": 87.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    },
+    {
+      "case_id": "MD-PAPER-003",
+      "config": "orchestrated",
+      "system": "DNA duplex",
+      "required_fields": [
+        "force_field",
+        "water_model",
+        "temperature_K",
+        "pressure_bar",
+        "electrostatics",
+        "observable"
+      ],
+      "extracted": {
+        "engine": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "force_field": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "water_model": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "temperature_K": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "pressure_bar": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "timestep_fs": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "electrostatics": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "box_and_ions": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "equilibration": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "production_length": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "replicas": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "observable": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        },
+        "reference_value": {
+          "status": "NOT_REPORTED",
+          "value": null,
+          "source": "NOT_PINNED"
+        }
+      },
+      "score": 95.75,
+      "setup_status": "PASS",
+      "scientific_qualification": "REVIEW",
+      "reason": "Setup benchmark passed its contract gate; paper-matched trajectories and reference observables are not executed."
+    }
+  ],
+  "anti_overclaim": "A setup score is not scientific reproduction."
+}

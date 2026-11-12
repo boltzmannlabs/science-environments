@@ -1,0 +1,23 @@
+{
+  "task_id": "MD-28",
+  "agent_id": "MD-28",
+  "agent_name": "Model Evaluation and Selection",
+  "group": "online",
+  "input": {
+    "fixture": "benchmark/fixtures/records/ml_potential_candidates.json",
+    "parameters": {
+      "candidates": [
+        "model_A",
+        "model_B"
+      ],
+      "heldout": "water_dimer",
+      "metrics": [
+        "energy_RMSE",
+        "force_RMSE"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

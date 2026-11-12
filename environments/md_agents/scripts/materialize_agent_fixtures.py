@@ -50,7 +50,7 @@ $$$$
 """
 
 def main() -> None:
-    packets = sorted((ROOT / "inputs").glob("MD-??/task.json"))
+    packets = sorted((ROOT / "src/cases/inputs").glob("MD-??/task.json"))
     made = 0
     for packet_path in packets:
         packet = json.loads(packet_path.read_text())
@@ -60,8 +60,8 @@ def main() -> None:
         if target.exists() and ext != ".parquet":
             continue
         target.parent.mkdir(parents=True, exist_ok=True)
-        if fixture == "water_box.pdb" and (ROOT / "cases/water_box.pdb").exists():
-            shutil.copy2(ROOT / "cases/water_box.pdb", target)
+        if target.name == "water_box.pdb" and (ROOT / "src/cases/water_box.pdb").exists():
+            shutil.copy2(ROOT / "src/cases/water_box.pdb", target)
         elif ext == ".pdb": target.write_text(PDB)
         elif ext == ".gro": target.write_text(GRO)
         elif ext == ".mol2": target.write_text(MOL2)

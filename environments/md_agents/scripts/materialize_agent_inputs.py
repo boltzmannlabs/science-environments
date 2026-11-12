@@ -4,9 +4,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
-manifest = json.loads((ROOT / "cases/agent_inputs.json").read_text())
+manifest = json.loads((ROOT / "src/cases/agent_inputs.json").read_text())
 for case in manifest["cases"]:
-    out_dir = ROOT / "inputs" / case["agent_id"]
+    out_dir = ROOT / "src/cases/inputs" / case["agent_id"]
     out_dir.mkdir(parents=True, exist_ok=True)
     packet = {
         "task_id": case["agent_id"],

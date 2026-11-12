@@ -10,7 +10,7 @@ ROOT=Path(__file__).parents[1]
 OUT=ROOT/'results/real_system_smoke'; OUT.mkdir(parents=True,exist_ok=True)
 systems=['villin_headpiece.pdb','dna_duplex.pdb','barnase_barstar.pdb','trypsin_benzamidine.pdb']
 for name in systems:
-    path=ROOT/'cases/real_systems'/name; rec={'system':name,'status':'FAIL','engine':'OpenMM','engine_version':openmm.__version__,'original_input':str(path)}
+    path=ROOT/'src/cases/real_systems'/name; rec={'system':name,'status':'FAIL','engine':'OpenMM','engine_version':openmm.__version__,'original_input':str(path)}
     try:
         # Derive a repaired copy; never overwrite the downloaded source PDB.
         from pdbfixer import PDBFixer

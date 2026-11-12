@@ -23,7 +23,7 @@ def test_four_cuda_core_repeats_are_complete_and_finite():
     assert len({r["structure_sha256"] for r in results}) == 1
 
 def test_core_packet_declares_runtime_and_acceptance():
-    packet = json.loads((ROOT / "inputs/MD-CORE-001-water-box/task.json").read_text())
+    packet = json.loads((ROOT / "src/cases/inputs/MD-CORE-001-water-box/task.json").read_text())
     assert packet["runtime"]["engine"] == "OpenMM"
     assert packet["runtime"]["production_steps"] == 1000
     assert packet["runtime"]["repeat_ids"] == [1, 2, 3, 4]

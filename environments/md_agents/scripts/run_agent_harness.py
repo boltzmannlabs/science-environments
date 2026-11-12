@@ -45,7 +45,7 @@ def packet_result(packet_path: Path, live: bool = False) -> dict:
         # Fixtures may be kept in the package's explicit cases/ directory or
         # referenced by a path relative to the package root.  Presence alone
         # is not a scientific pass; it only enables the next adapter stage.
-        candidates = (ROOT / fixture, ROOT / "cases" / fixture)
+        candidates = (ROOT / fixture, ROOT / "src/cases" / fixture)
         candidate = next((p for p in candidates if p.exists()), None)
         if candidate is not None:
             result["evidence"].append(f"fixture exists: {candidate.relative_to(ROOT)}")
@@ -72,7 +72,7 @@ def main():
     ap.add_argument("--strict", action="store_true", help="return nonzero when any packet is not scientifically qualified")
     ap.add_argument("--output", default="results/agent_harness.json")
     args = ap.parse_args()
-    paths = [ROOT / "inputs" / f"MD-{int(args.agent.split('-')[1]):02d}" / "task.json"] if args.agent else sorted((ROOT / "inputs").glob("MD-??/task.json"))
+    paths = [ROOT / "src/cases/inputs" / f"MD-{int(args.agent.split('-')[1]):02d}" / "task.json"] if args.agent else sorted((ROOT / "src/cases/inputs").glob("MD-??/task.json"))
     results = [packet_result(p, live=args.live) for p in paths]
     payload = {"benchmark": "md-agent-harness-v1", "agent_count": len(results),
                "live_engine_agents": ["MD-10"] if args.live else [], "results": results,

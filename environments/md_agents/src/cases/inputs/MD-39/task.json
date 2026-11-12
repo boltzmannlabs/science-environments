@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-39",
+  "agent_id": "MD-39",
+  "agent_name": "Transition Path Analysis Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/trajectories/alanine_transition_trajectory.dcd",
+    "parameters": {
+      "state_A": "alpha_R",
+      "state_B": "beta",
+      "progress_coordinate": "phi"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

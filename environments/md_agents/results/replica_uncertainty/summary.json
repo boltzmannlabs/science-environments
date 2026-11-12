@@ -1,0 +1,30 @@
+{
+  "systems": [
+    {
+      "system": "villin_headpiece.pdb",
+      "replicas": 3,
+      "expected_replicas": 3,
+      "mean_energy_kj_mol": -5399.071472580455,
+      "sd_energy_kj_mol": 22.597901315138696,
+      "uncertainty_status": "PASS"
+    },
+    {
+      "system": "barnase_barstar.pdb",
+      "replicas": 3,
+      "expected_replicas": 3,
+      "mean_energy_kj_mol": -59783.951594881946,
+      "sd_energy_kj_mol": 9779.49939625155,
+      "uncertainty_status": "PASS"
+    },
+    {
+      "system": "dna_duplex.pdb",
+      "replicas": 3,
+      "expected_replicas": 3,
+      "mean_energy_kj_mol": -16355.947833632194,
+      "sd_energy_kj_mol": 26.564275909004355,
+      "uncertainty_status": "PASS"
+    }
+  ],
+  "steps_per_replica": 200,
+  "interpretation": "bounded replica uncertainty; not paper reproduction"
+}

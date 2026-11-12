@@ -1,14 +1,14 @@
 {
   "system": "trypsin_benzamidine.pdb",
   "engine": "OpenMM",
-  "engine_version": "8.2",
+  "engine_version": "8.3.1",
   "status": "PASS",
   "input": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_smoke/trypsin_benzamidine.pdb.repaired.pdb",
-  "platform": "CUDA",
+  "platform": "CPU",
   "atoms": 3406,
   "steps": 100,
-  "final_energy_kj_mol": -17724.206101589123,
-  "wall_time_s": 0.776,
+  "final_energy_kj_mol": -17664.14312691471,
+  "wall_time_s": 0.975,
   "trajectory": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_production/trypsin_benzamidine.pdb.dcd",
   "log": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_production/trypsin_benzamidine.pdb.log"
 }

@@ -21,7 +21,8 @@ contracts:
   request: config/request.schema.json
   protocol: config/protocol.schema.json
   tasks: tasks/
-  agents: agents/contracts.json
+  agents: src/agents/contracts.json
+  benchmark_fixtures: benchmark/fixtures/
 status_taxonomy: [PASS, FAIL, REVIEW, NEEDS_INPUT, PROTOCOL_REQUIRED, BLOCKED, UNRESOLVED]
 failure_categories:
   - invalid_system

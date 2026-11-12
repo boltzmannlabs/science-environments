@@ -1,0 +1,20 @@
+{
+  "task_id": "MD-56",
+  "agent_id": "MD-56",
+  "agent_name": "Sampling and Convergence Failure Scenarios",
+  "group": "scenario",
+  "input": {
+    "fixture": "benchmark/fixtures/records/replica_disagreement_summary.json",
+    "parameters": {
+      "replica_means": [
+        1.2,
+        1.3,
+        4.8
+      ],
+      "max_allowed_spread": 0.5
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

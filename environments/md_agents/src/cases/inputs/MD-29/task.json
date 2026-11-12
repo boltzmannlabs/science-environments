@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-29",
+  "agent_id": "MD-29",
+  "agent_name": "Online Resource Update",
+  "group": "online",
+  "input": {
+    "fixture": "benchmark/fixtures/records/resource_registry_v1.json",
+    "parameters": {
+      "current": "1.0",
+      "candidate": "1.1",
+      "replacement_policy": "manual-review"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

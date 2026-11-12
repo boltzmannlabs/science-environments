@@ -3,7 +3,7 @@ from pathlib import Path
 
 def test_harness_covers_all_62_packets():
     root = Path(__file__).parents[1]
-    packets = list((root / "inputs").glob("MD-??/task.json"))
+    packets = list((root / "src/cases/inputs").glob("MD-??/task.json"))
     assert len(packets) == 62
     for path in packets:
         data = json.loads(path.read_text())

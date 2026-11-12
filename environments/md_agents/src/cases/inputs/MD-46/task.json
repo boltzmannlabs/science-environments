@@ -1,0 +1,19 @@
+{
+  "task_id": "MD-46",
+  "agent_id": "MD-46",
+  "agent_name": "Adaptive Sampling Controller",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/records/sampling_state_coverage.json",
+    "parameters": {
+      "under_sampled_states": [
+        "cluster_4",
+        "cluster_7"
+      ],
+      "budget_ns": 20
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

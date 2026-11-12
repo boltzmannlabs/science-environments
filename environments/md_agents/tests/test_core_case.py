@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).parents[1]
 
 def test_core_request_is_explicit():
-    request = json.loads((ROOT/'cases/water_box_request.json').read_text())
+    request = json.loads((ROOT/'src/cases/water_box_request.json').read_text())
     assert request['engine'] == 'OpenMM'
     assert request['production_steps'] == 1000
     assert request['seed'] == 20261027

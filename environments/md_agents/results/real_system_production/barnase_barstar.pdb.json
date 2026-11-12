@@ -1,14 +1,14 @@
 {
   "system": "barnase_barstar.pdb",
   "engine": "OpenMM",
-  "engine_version": "8.2",
+  "engine_version": "8.3.1",
   "status": "PASS",
   "input": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_smoke/barnase_barstar.pdb.repaired.pdb",
-  "platform": "CUDA",
+  "platform": "CPU",
   "atoms": 11016,
   "steps": 100,
-  "final_energy_kj_mol": -86071.5193724687,
-  "wall_time_s": 0.782,
+  "final_energy_kj_mol": -69477.96408801709,
+  "wall_time_s": 2.226,
   "trajectory": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_production/barnase_barstar.pdb.dcd",
   "log": "/home/boltzmann15/github/science-environments/environments/md_agents/results/real_system_production/barnase_barstar.pdb.log"
 }
