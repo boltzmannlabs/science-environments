@@ -16,6 +16,12 @@ execution and evaluation evidence.
 | `fixtures/` | Frozen structures, trajectories, records, and faults. |
 | `../src/cases/` | Molecular structures, requests, and materialized agent packets. |
 
+| Task card | Reproduction target |
+| --- | --- |
+| [task_001_villin_headpiece.md](task_001_villin_headpiece.md) | Villin folding setup and observables |
+| [task_002_barnase_barstar.md](task_002_barnase_barstar.md) | Barnase–barstar interface dynamics |
+| [task_003_dna_duplex.md](task_003_dna_duplex.md) | DNA duplex preparation and helical analysis |
+
 Research-paper reconstruction benchmarks are catalogued in
 [`PAPER_CATALOGUE.md`](PAPER_CATALOGUE.md), with one packet per study and a
 machine-readable [`paper_manifest.json`](paper_manifest.json). Run
