@@ -1,0 +1,78 @@
+{
+  "status": "COMPLETED_ASSAY_MATCHED_METRIC_REPLAY_NOT_NATIVE_WORKFLOW_VALIDATION",
+  "metrics": [
+    {
+      "dataset": 1,
+      "model": "CRISPRon_author",
+      "n": 20,
+      "spearman": 0.8537044605231736,
+      "guide_bootstrap_ci_low": 0.5827606371971238,
+      "guide_bootstrap_ci_high": 0.9564251541800932,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 1,
+      "model": "CRISPick_Doench2022_author",
+      "n": 20,
+      "spearman": 0.8766917293233082,
+      "guide_bootstrap_ci_low": 0.6363357715081854,
+      "guide_bootstrap_ci_high": 0.9650462562284643,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 1,
+      "model": "DeepHF_author",
+      "n": 20,
+      "spearman": 0.8872180451127819,
+      "guide_bootstrap_ci_low": 0.6658815104554232,
+      "guide_bootstrap_ci_high": 0.9756292587433649,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 1,
+      "model": "DeepSpCas9_author",
+      "n": 20,
+      "spearman": 0.8330827067669173,
+      "guide_bootstrap_ci_low": 0.5850984952673732,
+      "guide_bootstrap_ci_high": 0.9393054188267268,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 2,
+      "model": "CRISPRon_author",
+      "n": 32,
+      "spearman": 0.5064223252455051,
+      "guide_bootstrap_ci_low": 0.19596413915322158,
+      "guide_bootstrap_ci_high": 0.7365777394318747,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 2,
+      "model": "CRISPick_Doench2022_author",
+      "n": 32,
+      "spearman": 0.5285923753665689,
+      "guide_bootstrap_ci_low": 0.2067601218901709,
+      "guide_bootstrap_ci_high": 0.7531785001539028,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 2,
+      "model": "DeepHF_author",
+      "n": 32,
+      "spearman": 0.4644428152492667,
+      "guide_bootstrap_ci_low": 0.15990393053318133,
+      "guide_bootstrap_ci_high": 0.6929731479176297,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    },
+    {
+      "dataset": 2,
+      "model": "DeepSpCas9_author",
+      "n": 32,
+      "spearman": 0.4915689149560116,
+      "guide_bootstrap_ci_low": 0.15982599703261413,
+      "guide_bootstrap_ci_high": 0.7290470736834807,
+      "mode": "AUTHOR_SCORE_REPLAY"
+    }
+  ],
+  "scope_limit": "Matches published plant assay outcomes; does not activate a generic rice/plant design workflow or demonstrate fresh model feature reconstruction. No mammalian phenotype substituted."
+}

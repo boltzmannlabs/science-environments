@@ -1,0 +1,78 @@
+{
+  "task_id": "004",
+  "task_spec": "tasks/004_crispr_variant-correction.md",
+  "application": "variant_correction_precision_repair",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "MATCHED_MODEL_COMPONENT_EVALUATIONS",
+  "finding": "PRIDICT2 grouped OOF and DeepPrime HEK293T/PE2 fixed-test components; BE4 any-edit efficiency separately.",
+  "limitations": "Not allele-specific HBB repair or HDR validation; BE4 labels cannot validate BE4max intended purity.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/004",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "004",
+    "brief_id": "htt_snv_correction_router_example",
+    "application": "variant_correction_precision_repair",
+    "target": "HBB",
+    "input_sha256": "f97bf278b5855d47cbc6783518905bc5c26e306a9b943a026715233220b6cd8a",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "variant": "EXECUTED dbSNP+exact-allele VEP+local reference verification",
+      "pegRNA_enumeration": "EXECUTED declared PBS/RTT grid; all sequence reconstructions verified",
+      "nicking": "NOT_APPLICABLE(PE2 selected)",
+      "allele_comparison": "EXECUTED CFD nuclease-context pair comparison; not PE selectivity",
+      "offtarget": "EXECUTED raw reference-genome <=3mm alignments; mutant intended allele absent from reference, no false intended exclusion",
+      "efficiency": "NOT_RUN(PRIDICT/DeepPrime not installed)",
+      "ranking": "NOT_RUN(no intended/purity model outputs)",
+      "population": "NOT_RUN(no representative population VCF)",
+      "WT_PAM_gate": "EXECUTED actual allele-PAM comparison; task004 shared-PAM veto recorded"
+    },
+    "blockers": [
+      "No PE efficiency/purity models; design-only pegRNAs are not optimized predictions",
+      "No allele-selective or therapeutic claim; mandatory population-aware layer remains absent for correction context",
+      "Raw reference-genome alignments retained; no full allele-aware CFD aggregation or population search claimed"
+    ],
+    "test_input": {
+      "variant": {
+        "variant_id": "rs334",
+        "assembly": "GRCh38.p14",
+        "chromosome": "chr11",
+        "position": 5227002,
+        "reference_allele": "T",
+        "disease_test_allele": "A",
+        "correction_from": "A",
+        "correction_to": "T",
+        "VEP_url": "https://rest.ensembl.org/vep/human/region/11:5227002-5227002:1/A?content-type=application/json",
+        "VEP_sha256": "65fba09249b94ad44d051f3bbc143436dec7c44e3f4dbee0d7b5f79c656d20eb",
+        "dbsnp_sha256": "553589198dd77fe82fbcdb1d2b0158feaaa8761f6e38e881251af08203616dea",
+        "note": "Multiallelic dbSNP record; exact T>A allele used, not all rs334 alleles classified together"
+      },
+      "PE_system": "PE2 design-only test",
+      "PBS_lengths": [
+        10,
+        13,
+        15
+      ],
+      "RTT_lengths": [
+        10,
+        15,
+        20,
+        30
+      ],
+      "cell_context": "not a trained efficiency claim",
+      "sequence_scope": "chr11:5226802-5227202"
+    },
+    "test_input_sha256": "a9ed874180d09f21cae82de466957d79adc567247da4dd4b96e3662d29895a63",
+    "status": "PARTIAL_EXECUTED",
+    "candidate_count": 39,
+    "unique_spacers": 6,
+    "WT_PAM_gate_survivors": 12
+  },
+  "shared_benchmark_not_independent_per_task": true
+}

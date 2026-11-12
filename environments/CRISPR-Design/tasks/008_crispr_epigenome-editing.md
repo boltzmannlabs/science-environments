@@ -1,8 +1,11 @@
 # Task: crispr_epigenome_editing_008
 
 **Task family:** application-aware CRISPR design — **epigenome editing (CRISPRoff/on
-durable silencing)**. **Status:** specification phase; runtime pending; published
-anchors only.
+durable silencing)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). Executed
+evidence: blocked on a matched epigenetic endpoint — PCSK9 enumeration/TSS/CpG context
+exists, but no durable-silencing performance has been evaluated (labels and matched
+predictor adapter missing). Start from the [general task](001_crispr_design_general.md)
+for mode routing.
 
 ## Description
 
@@ -79,7 +82,16 @@ methylation predictions are not made (no model exists).
 
 ## Important Instructions
 
-Published anchors: Nuñez 2021 (*Cell* 184:2503) — GSE168012 (RNA-seq/ChIP/WGBS), tiling
-+ 21,378-element genome-wide screen; the paper designed its own guides with CRISPRi
-rules (proxy lineage disclosed). Gap: no dedicated designer tool (negative result
-recorded). Run slots NOT_EXECUTED.
+- **Published anchors:** Nuñez 2021 (*Cell* 184:2503) — GSE168012 (RNA-seq/ChIP/WGBS),
+  tiling + 21,378-element genome-wide screen; the paper designed its own guides with
+  CRISPRi rules (proxy lineage disclosed). Gap: no dedicated designer tool (negative
+  result recorded).
+- **Executed evidence (local):** blocked — functional methylation/durable-repression
+  labels and a matched predictor adapter are missing; GSE168012 metadata retrieval
+  failed; CpG count is not methylation efficacy ([Run-3 blocker record,
+  execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/008_epigenome-editing/Run-3_2026-11-12/README.md)).
+  Result record [Run-2](../results/008_epigenome_editing/Run-2_2026-11-12/REPORT.md).
+  Executed metrics from other modalities in the shared campaign do not substitute for
+  this endpoint.
+- **Gaps:** the matched epigenetic endpoint remains unexecuted — evaluation slots stay
+  `NOT_EXECUTED` until labels and an adapter exist.

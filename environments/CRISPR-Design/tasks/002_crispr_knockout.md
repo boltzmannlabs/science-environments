@@ -1,9 +1,13 @@
 # Task: crispr_knockout_002
 
 **Task family:** application-aware CRISPR design — **knockout / gene disruption (incl.
-functional-genomics use)**. **Status:** specification phase; workflow defined; scoring
-runtime pending; no executed benchmark. Core battery shared; only the requirements below
-differ. Start from the [general task](001_crispr_design_general.md) for mode routing.
+functional-genomics use)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). This is
+the only task with an executed end-to-end local workflow (Run1, KIF11, 2026-11-10).
+Executed evidence: fresh Cas9 component evaluation (RS3 Sequence + CRISPRon six-cohort
+held-out inference; CFD assayed-specificity benchmark — endpoint-level, not knockout-
+application validation; see the [completed-only registry](../benchmark/BENCHMARK_RUNS.md)).
+Core battery shared; only the requirements below differ. Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -52,8 +56,14 @@ Resolved per request — never defaulted. Example genes (KIF11, KRAS) illustrati
 - Frameshift probability from Lindel (local verified backend) is a first-class endpoint;
   DRAFT floor 0.60 before calibration — treated as a ranking constraint, not a promise of
   knockout; indel profile (incl. 1-bp insertion fractions) reported with it.
-- On-target endpoints: DeepSpCas9 + CRISPRon or RS2/RS3 (≥2, separate columns); CRISPRon
-  column carries the Kim-2019-in-training disclosure whenever Kim data is involved.
+- On-target endpoints (Run1-verified local set): **RuleSet1 + RuleSet3-Sequence (Hsu2013
+  tracrRNA) + CRISPRater** as the U6-relevant endpoints, plus **CRISPRscan as a declared
+  T7/IVT-context column** (never mixed with U6 interpretation); ≥2 independent endpoints,
+  separate columns, native units — RS3's scaled scores may be negative and are never
+  renormalized. **Note (verified 2026-11-10):** the pinned crisprScore 1.17.2 does not
+  export DeepSpCas9/RS2/DeepCpf1 scorers — those endpoints activate when the upstream
+  models are installed (backlog); CRISPRon likewise carries the Kim-2019-in-training
+  disclosure whenever Kim data is involved.
 
 **Specificity constraints**
 - Bowtie-1 ungapped ≤3 mm both strands, intended locus excluded, heuristic caps disclosed;
@@ -100,8 +110,19 @@ baseline only).
 
 ## Important Instructions
 
-Published-anchor status (strongest task): Kim-2019 (12,832 paired measurements, SRA
-SRP150719) is the reference standard; DeepHF (80,263 pairs) for variants; RS3 corpus for
-rules; **Konstantakos 2022 defines the evaluation protocol** (6 training-disjoint sets,
-Spearman + nDCG@20, realistic ceiling ρ≈0.7). Local benchmark plan pre-registered in
-[benchmark/BENCHMARK_RUNS.md](../benchmark/BENCHMARK_RUNS.md) — Run slots NOT_EXECUTED.
+- **Published anchors (strongest task):** Kim-2019 (12,832 paired measurements, SRA
+  SRP150719) is the reference standard; DeepHF (80,263 pairs) for variants; RS3 corpus for
+  rules; **Konstantakos 2022 defines the evaluation protocol** (6 training-disjoint sets,
+  Spearman + nDCG@20, realistic ceiling ρ≈0.7).
+- **Executed evidence (local):** [RS3 Sequence held-out activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md) ·
+  [CFD2016 assayed specificity](../benchmark/003_CFD2016/Run-4_2026-11-12/REPORT.md) —
+  fresh native inference across six author-defined held-out cohorts with exact-20mer
+  four-model training exclusions (23,629 unique contexts); CFD on 1,684 assay-matched
+  sites. Result records: [Run1 (executed workflow)](../results/002_knockout_gene_disruption/Run1_20261110/run_record_stage1.json) ·
+  [Run-2](../results/002_knockout_gene_disruption/Run-2_2026-11-12/REPORT.md); historical
+  Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/002_knockout/Run-3_2026-11-12/README.md).
+- **Gaps:** not an original CRISPRon_v0 internal-split or ≤3-mm-exclusion replication;
+  RS3 Sequence+Target absent; no knockout-outcome validation for new KIF11/KRAS guides;
+  shared component benchmarks are not independent task replications; unexecuted
+  evaluation slots stay `NOT_EXECUTED`.

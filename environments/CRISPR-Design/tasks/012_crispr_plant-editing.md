@@ -2,7 +2,10 @@
 
 **Task family:** application-aware CRISPR design — **plant / crop editing**.
 **Status:** INACTIVE — this task documents the routing refusal and the activation
-requirements; no design workflow runs until a validated species adapter exists.
+requirements; no design workflow runs until a validated species adapter exists. Archived
+evidence: author-score replay on 52 N. benthamiana guides (publication-comparison only —
+it does not activate plant design). Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -58,7 +61,7 @@ activation; while inactive the only valid behavior is refusal + explanation.*
 
 While inactive: an honest refusal record — no candidates, no scores, no approximated
 predictions. After activation (future): standard typed bundle under
-`results/012_plant-editing/`.
+`results/012_plant_genome_editing/`.
 
 ## Constraints
 
@@ -67,10 +70,18 @@ No silent degradation to mammalian scoring under any weighting; no partial activ
 
 ## Important Instructions
 
-Activation requires: (1) declared species reference genome + annotation (versioned,
-checksummed); (2) a validated activity model for the species/system, or an explicit
-rules-only mode with the model gap stated per run; (3) species-specific off-target
-reference and search policy; (4) a dated activation decision in STATUS. Published
-anchors for the activation phase (CRISPR-P2.0 — Liu 2017 *Mol Plant*; CRISPR-GE — Xie
-lab; Cas-Designer — Park 2015 *BMC Genomics*; CHOPCHOP plant genomes — Labun 2019
-*NAR*) are curated, not executed. Run slots NOT_EXECUTED.
+- **Activation requires:** (1) declared species reference genome + annotation (versioned,
+  checksummed); (2) a validated activity model for the species/system, or an explicit
+  rules-only mode with the model gap stated per run; (3) species-specific off-target
+  reference and search policy; (4) a dated activation decision in STATUS. Published
+  anchors for the activation phase (CRISPR-P2.0 — Liu 2017 *Mol Plant*; CRISPR-GE — Xie
+  lab; Cas-Designer — Park 2015 *BMC Genomics*; CHOPCHOP plant genomes — Labun 2019
+  *NAR*) are curated, not executed.
+- **Archived evidence (publication comparison only):** 52 N. benthamiana guides across
+  20-/32-guide cohorts; author model scores replayed against actual plant mean indel
+  measurements ([Run-3 comparison, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/012_plant-editing/Run-3_2026-11-12/README.md);
+  result record [Run-2](../results/012_plant_genome_editing/Run-2_2026-11-12/REPORT.md)).
+  Not fresh inference or species-adapter validation; plant DESIGN remains inactive; no
+  mammalian phenotype was used as surrogate.
+- **Gaps:** no active plant benchmark exists; plant evaluation slots stay `NOT_EXECUTED`
+  until activation.

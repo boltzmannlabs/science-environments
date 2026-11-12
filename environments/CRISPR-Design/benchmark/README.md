@@ -1,38 +1,49 @@
-# Benchmark — published anchors (no executed local runs yet)
+# Completed computational benchmarks
 
-**Status:** every number below is a **published, source-verified anchor** from the
-2026-11-10 curation sweep (primary sources in
-[research references](../../../research/CRISPR-Design/references.md); deep tables in the
-source workspace `~/IMRAN/NOV26/cirspr-sci-env/02_benchmarks/published_benchmarks.md`).
-**No local benchmark has been executed.** All Run slots are `NOT_EXECUTED` in
-[BENCHMARK_RUNS.md](BENCHMARK_RUNS.md); executed artifacts will land in per-case folders
-here with provenance hashes when the runtime + calibration phases complete.
+This directory is the **active benchmark publication**: only completed
+native-model/endpoint evaluations are included. No heuristic rule, missing-feature
+imputation or surrogate endpoint was added. A completed model benchmark is **not**
+validation of the full design application and not experimental safety — scientifically
+material limitations (weak transfer, source-protocol differences, label-threshold
+semantics) remain attached to every result.
 
-Published anchor ledger:
+## Registry
 
-| Area | Anchor | Dataset / scope | Published headline | Independence |
-| --- | --- | --- | --- | --- |
-| KO on-target | Kim 2019 (DeepSpCas9) | 12,832 paired sgRNA–target, HEK293T; SRA SRP150719 | CV Spearman up to ~0.77; default transfer-test set | single-lab, paired library |
-| KO on-target (variants) | Wang 2019 (DeepHF) | 80,263 pairs WT/eSpCas9(1.1)/SpCas9-HF1; PRJNA522677 | held-out ρ 0.86–0.87 (internal) | single-lab per-variant |
-| KO on-target (rules) | DeWeirdt 2022 (RS3) | 46,526 train + 23,629 held-out + 84,609 tiling; PRJNA832308 | RS3 Seq+Target > RS2 (p<0.002) | defined protocol |
-| **KO cross-tool** | **Konstantakos 2022** | 6 datasets disjoint from every tool's training | DeepHF/DeepSpCas9 top; DeepCRISPR best on 1/6; ceiling ρ≈0.7 | **independent** |
-| KO cross-tool (early) | Haeussler 2016 (CRISPOR) | >19,000 guides, U6 + T7/IVT | all-scores non-training ρ 0.341–0.436; U6 vs T7/IVT split | independent |
-| KO screen-level | Lukasiak 2024 (bioRxiv) | 6 public genome-wide libraries | score-based 3-guide libraries match larger ones | independent |
-| Off-target datasets | Tsai 2015 (GUIDE-seq); Tsai 2017 (CIRCLE-seq); Cameron 2017 (SITE-seq); Lazzarotto 2020 (CHANGE-seq) | 13 RGNs (cell) · in-vitro · 12/2,047 · **110/201,934** | cell-based vs in-vitro truth layers; SNVs affect ~15.2% of sites | experimental truth |
-| **Off-target cross-tool** | **Kaufmann 2026** | 3,827 deep-sequenced sites, 26 combos, 14 tools | recall ≈77% @ top-500; weak score↔indel correlation | **independent** |
-| Off-target SOTA | Chuai 2023 (CRISOT) | CHANGE-seq + SITE-seq; Zenodo 8420032 | ROC-AUC >0.984; beats MIT/CFD/CCTop/CROPit/uCRISPR/KinPred (p<0.05) | held-out (license CC BY-NC ⚠) |
-| Base editing | Arbab 2020 (BE-Hive) | 38,538 targets, 11 editors | outcome R≈0.9 / efficiency R≈0.7; 3,388 SNVs ≥90% precision | single-platform |
-| Base editing (harmonized) | BE-dataHIVE 2024 | 460,000+ combos, 32 editors, 5 studies | fair-comparison substrate | harmonized aggregate |
-| Prime editing | Mathis 2023 (PRIDICT2.0) | 92,423 pegRNAs / 13,349 mutations | ρ 0.85 intended / 0.78 purity; score>70 ⇒ ~12× in vitro | multi-context |
-| Prime editing (breadth) | Yu 2023 (DeepPrime) | 338,996 pairs, 8 systems × 7 cell types | breadth standard | multi-system |
-| CRISPRi/a | Horlbeck 2016 | K562 tiling + genome-wide γ-scores | compact 5-guide libraries detect >90% essential genes | single-lab |
-| Epigenome | Nuñez 2021 (CRISPRoff) | ~116k tiling + 21,378-element screen; GSE168012 | 3 design rules (±500 bp; NDR; CpG density) | single-lab |
-| Cas13 | Wessels 2020 (Cas13design); Wessels & Stirn 2023 (TIGER) | 24,460 guides · ~200,000 guides ± mismatches | nt 15–21 intolerance · current reference model | single-lab |
-| Diagnostics | Huang 2024 (EasyDesign) | 11,496 validated detections | ρ 0.812; 4 held-out pathogens | single-lab (only large pair) |
-| Therapeutic anchors | FDA exa-cel SBRA/BLA; NEJM NTLA-2001/VERVE | strategy-level only | guide "SPY101" redacted (b)(4) — **no public therapeutic guide sequence** | regulatory record |
+| Benchmark | Model | Evidence |
+| --- | --- | --- |
+| 001 | RS3 Sequence held-out activity | [Report](001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) |
+| 002 | CRISPRon v1 external activity | [Report](002_CRISPRon/Run-4_2026-11-12/REPORT.md) |
+| 003 | CFD2016 experimentally assayed specificity | [Report](003_CFD2016/Run-4_2026-11-12/REPORT.md) |
+| 004 | BE-Hive BE4 any-edit efficiency | [Report](004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) |
+| 005 | PRIDICT2.0 published grouped OOF outcomes | [Report](005_PRIDICT2/Run-4_2026-11-12/REPORT.md) |
+| 006 | DeepPrime base fixed test | [Report](006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) |
+| 007 | RFcombined published-method refit evaluation | [Report](007_RFcombined/Run-4_2026-11-12/REPORT.md) |
 
-Validity rules inherited from the siRNA environment (binding for future runs):
-pre-registered metrics before label join; gene/cell-line-disjoint splits (the DeepCRISPR
-lesson); frozen engines, no post-hoc tuning; blind label joins; bootstrap CIs on every
-correlation/AUC; degenerate-n reported as degenerate; weak/negative results published
-alongside strong ones; supersession requires a dated note + corrected re-run.
+Scope and limitation details per benchmark: [BENCHMARK_RUNS.md](BENCHMARK_RUNS.md).
+Machine-readable ledger (drives `tests/test_completed_benchmarks.py` and
+`tests/validate_spec.py` check 8): [completed_benchmarks.json](completed_benchmarks.json)
+(+ [CSV](completed_benchmarks.csv)).
+
+## Run layout and provenance
+
+Each benchmark lives at `00N_<Model>/Run-4_2026-11-12/` and contains `REPORT.md`,
+`predictions.csv`, `metrics.csv` (or `metrics.json`), `model_identity.json`,
+`benchmark_record.json`, an execution log, the exact protocol manifest(s) and the
+scripts used. Fresh native-inference retries completed for RS3, BE-Hive, PRIDICT2.0,
+DeepPrime and CFD (predictions verified identical at saved precision); CRISPRon and
+RFcombined retain their already-completed native runs. Confidence intervals use
+declared resampling units; repeated use of the same measured labels is reproducibility
+evidence, not a new independent replication.
+
+All copied scientific files are bound by [PROVENANCE.json](PROVENANCE.json) /
+[PROVENANCE.sha256](PROVENANCE.sha256) (source and destination SHA-256). Large
+datasets, weights and environments remain at indexed source locations — this is not a
+self-contained portable distribution.
+
+## Relationship to older evidence
+
+Earlier mixed evidence — publication-label replays, per-task Run-2/Run-3 comparisons,
+heuristic component tests, partial and failed attempts — is preserved byte-identically
+in [execution_history/](../execution_history/before_completed_only_20261112T061830Z/README.md)
+and is not promoted into this registry. No wet-lab validation or calibrated design-gate
+freeze is claimed anywhere in this package.

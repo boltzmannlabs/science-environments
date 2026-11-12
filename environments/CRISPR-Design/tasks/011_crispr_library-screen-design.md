@@ -1,7 +1,11 @@
 # Task: crispr_library_screen_design_011
 
 **Task family:** application-aware CRISPR design — **pooled library / screen design**.
-**Status:** specification phase; runtime pending; published anchors only.
+**Status:** In Progress; protocol v0.1 (DRAFT gates). Executed evidence: shared guide
+metrics, not screen validation (RS3/CRISPRon guide-level benchmarks + within-gene
+rank-loss evidence; no library-level essentiality/enrichment/power validation; see the
+[completed-only registry](../benchmark/BENCHMARK_RUNS.md)). Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -83,7 +87,16 @@ stay computational.
 
 ## Important Instructions
 
-Published anchors: RS3 tiling validation (DeWeirdt 2022; 84,609 sgRNAs), Lukasiak 2024
-(VBC vs RS3 vs 6 public libraries; compact-library efficiency), Kuscu 2019 / Pérez 2021 /
-Álvarez 2022 (confound literature), GuideScan2 (multi-locus-binding exclusion — citation
-UNVERIFIED, curated-only). Run slots NOT_EXECUTED.
+- **Published anchors:** RS3 tiling validation (DeWeirdt 2022; 84,609 sgRNAs), Lukasiak
+  2024 (VBC vs RS3 vs 6 public libraries; compact-library efficiency), Kuscu 2019 /
+  Pérez 2021 / Álvarez 2022 (confound literature), GuideScan2 (multi-locus-binding
+  exclusion — citation UNVERIFIED, curated-only).
+- **Executed evidence (local):** [RS3 Sequence held-out
+  activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md) —
+  shared Cas9 guide-level and within-gene rank-loss evidence; supplemental
+  explicitly-defined nDCG retained ([Run-3 comparison, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/011_library-screen-design/Run-3_2026-11-12/README.md)).
+  Result record [Run-2](../results/011_library_screen_design/Run-2_2026-11-12/REPORT.md).
+- **Gaps:** no library-level essential-gene detection, enrichment, screen-power or
+  target-diversity validation; shared guides are not independent task benchmarks;
+  unexecuted evaluation slots stay `NOT_EXECUTED`.

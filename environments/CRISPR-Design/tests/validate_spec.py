@@ -197,9 +197,9 @@ def check_examples():
 # ==================== 5. yaml invariants ====================
 def check_yaml():
     y = read("config/environment.yaml")
-    for token in ["environment_id: crispr-design", "maturity: Curation-complete, pre-runtime",
+    for token in ["environment_id: crispr-design", "maturity: Partial-runtime, executed-computational-benchmarks",
                   "gate_thresholds_draft: config/thresholds.v0.1.draft.json",
-                  "computational_benchmarks_included: false"]:
+                  "computational_benchmarks_included: true"]:
         if token not in y:
             raise AssertionError(f"environment.yaml missing token: {token}")
     for app in ACTIVE:
@@ -260,20 +260,21 @@ def check_cross_references():
 def check_benchmark_docs():
     readme = read("benchmark/README.md")
     runs = read("benchmark/BENCHMARK_RUNS.md")
-    for token in ["Published anchor ledger", "No local benchmark has been executed"]:
-        if token not in readme:
-            raise AssertionError(f"benchmark README missing: {token}")
-    if "| Area |" not in readme:
-        raise AssertionError("benchmark README missing anchor table")
-    sections = re.findall(r"^## \d", runs, flags=re.M)
-    if len(sections) < 5:
-        raise AssertionError(f"BENCHMARK_RUNS has {len(sections)} benchmark sections (<5)")
-    not_exec = runs.count("NOT_EXECUTED")
-    if not_exec < 8:
-        raise AssertionError(f"only {not_exec} NOT_EXECUTED markers")
-    if "No-tuning attestation" not in runs:
-        raise AssertionError("attestation section missing")
-    return f"{len(sections)} pre-registered benchmarks; {not_exec} NOT_EXECUTED slots; attestation present"
+    ledger = jread("benchmark/completed_benchmarks.json")
+    if not ledger or any(row.get("status") != "COMPLETED" for row in ledger):
+        raise AssertionError("active benchmark registry contains an incomplete entry")
+    ids = [r["benchmark_id"] for r in ledger]
+    if len(ids) != len(set(ids)):
+        raise AssertionError("duplicate completed benchmark IDs")
+    for row in ledger:
+        if not os.path.isfile(os.path.join(ENV, row["report"])):
+            raise AssertionError(f"missing completed report: {row['model']}")
+        if row.get("heuristic_or_surrogate_scores_added") is not False:
+            raise AssertionError(f"surrogate/heuristic score admitted: {row['model']}")
+    for marker in ["NOT_EXECUTED", "Future slot", "BLOCKED_MATCHED"]:
+        if marker in readme or marker in runs:
+            raise AssertionError(f"non-completed placeholder in active registry: {marker}")
+    return f"{len(ledger)} completed native-model benchmark records; no partial/planned entries"
 
 
 # ==================== 9. honesty markers ====================
@@ -281,19 +282,27 @@ def check_honesty():
     status = read("STATUS.md")
     spec = read("ENVIRONMENT_SPEC.md")
     readme = read("README.md")
-    if "no executed computational benchmark" not in status.lower() and "no executed" not in status.lower():
-        raise AssertionError("STATUS does not state no-executed-benchmark")
+    if "no wet-lab validation" not in status.lower():
+        raise AssertionError("STATUS does not state the no-wet-lab-validation boundary")
     for token in ["NOT_IMPLEMENTED", "NEEDS_EXPERIMENTAL_VALIDATION"]:
         if token not in spec:
             raise AssertionError(f"spec missing honesty token {token}")
-    if "Curation-complete, pre-runtime" not in readme:
+    if "Partial computational workflows and executed model benchmarks" not in readme:
         raise AssertionError("README missing maturity statement")
     results_dir = os.path.join(ENV, "results")
-    stray = [d for d in os.listdir(results_dir)
-             if os.path.isdir(os.path.join(results_dir, d))]
-    if stray:
-        raise AssertionError(f"results/ has run directories before any run: {stray}")
-    return "status/spec/readme honesty tokens present; results/ empty"
+    run_dirs = [d for d in os.listdir(results_dir)
+                if os.path.isdir(os.path.join(results_dir, d))]
+    for d in run_dirs:
+        if not re.match(r"^\d{3}_", d):
+            raise AssertionError(f"results/ run dir not number-first: {d}")
+        runs = os.listdir(os.path.join(results_dir, d))
+        for rd in runs:
+            if not rd.startswith("Run"):
+                raise AssertionError(f"run dir not Run-prefixed: {d}/{rd}")
+            brief = os.path.join(results_dir, d, rd, "00_inputs", "requirement_brief.json")
+            if not os.path.isfile(brief):
+                raise AssertionError(f"run without hashed brief: {d}/{rd}")
+    return f"status/spec/readme honesty tokens present; {len(run_dirs)} application dir(s) with properly structured runs"
 
 
 # ==================== 10. runtime probe ====================

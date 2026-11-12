@@ -18,32 +18,36 @@ PRIOR_RUN = os.path.expanduser(
     "crispr_design_gene_knockout_001_KIF11_GRCh38"
 )
 
-# Backend map mirrors runtime/CONTRACTS.md. kind: path | binary
+# Backend map mirrors runtime/CONTRACTS.md. kind: path | binary | glob
+CRISPR_ENV = os.path.expanduser("~/IMRAN/NOV26/science-environments/environments/CRISPR-Design")
 BACKENDS = {
     "crisprDesign_source": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "reference_software/crisprDesign")},
     "crisprScore_source": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "reference_software/crisprScore")},
     "crisprScore_R_library": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "bootstrap/R-library")},
     "lindel_runtime": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "runs/20261105T102927Z/lindel-runtime/bin/python")},
-    "bowtie_binary": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "runs/20261105T102927Z/reference")},
+    "rs3_env": {"kind": "path", "loc": os.path.expanduser("~/IMRAN/NOV26/cirspr-sci-env/03_environment/rs3-env/bin/python")},
+    "bowtie_binary": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "bootstrap/runtime/bin/bowtie")},
     "GRCh38_genome_fasta": {"kind": "glob", "loc": os.path.join(PRIOR_RUN, "runs/*/reference/GRCh38.primary_assembly.genome.fa*")},
+    "bowtie_index_GRCh38": {"kind": "glob", "loc": os.path.join(CRISPR_ENV, "results/*/Run*/reference/GRCh38.bowtie.idx.1.ebwt")},
     "off_target_policy": {"kind": "glob", "loc": os.path.join(PRIOR_RUN, "runs/*/off_target_policy.yaml")},
-    "generate_and_score_recipe": {"kind": "glob", "loc": os.path.join(PRIOR_RUN, "runs/*/generate_and_score.R")},
+    "run1_candidate_pool": {"kind": "glob", "loc": os.path.join(CRISPR_ENV, "results/*/Run*/candidate_pool.csv")},
 }
 
 # Not-yet-installed runtime-phase components (from MODELS_AND_TOOLS.md) — expected absent
-# until the runtime phase; probed by upstream availability, presence = early install.
+# until their phase; presence = early install.
 NOT_INSTALLED_EXPECTED = [
     "crispron", "elevation", "crispritz", "crisprme", "flashfry",
-    "pridict2", "bedict2", "be_datahive",
+    "pridict2", "bedict2", "be_datahive", "deephf_env (python3.8+TF; crisprScore deephf-env.yml)",
 ]
 
 STAGES = {
     "C1_enumerate": ["crisprDesign_source", "crisprScore_source", "crisprScore_R_library"],
-    "C2_on_target_local": ["crisprScore_R_library"],
-    "C3_off_target_bowtie": ["bowtie_binary", "GRCh38_genome_fasta"],
+    "C2_on_target_local": ["crisprScore_R_library", "rs3_env"],
+    "C3_off_target_bowtie": ["bowtie_binary", "bowtie_index_GRCh38"],
     "C4_indel_outcome": ["lindel_runtime"],
-    "transcript_validation": ["generate_and_score_recipe"],
+    "E1_reference_base": ["GRCh38_genome_fasta"],
     "policy_off_target": ["off_target_policy"],
+    "run1_executed": ["run1_candidate_pool"],
 }
 
 

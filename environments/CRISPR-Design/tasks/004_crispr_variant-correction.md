@@ -1,8 +1,11 @@
 # Task: crispr_variant_correction_004
 
 **Task family:** application-aware CRISPR design — **genetic-disease variant correction &
-precision repair (modality router: BE / PE / HDR)**. **Status:** specification phase;
-runtime pending; published anchors only.
+precision repair (modality router: BE / PE / HDR)**. **Status:** In Progress; protocol
+v0.1 (DRAFT gates). Executed evidence: matched model-component evaluations (BE-Hive BE4,
+PRIDICT2.0 grouped OOF, DeepPrime fixed test — endpoint-level; see the
+[completed-only registry](../benchmark/BENCHMARK_RUNS.md)); no allele-specific repair or
+HDR validation. Start from the [general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -85,7 +88,16 @@ model; HDR efficiency never predicted beyond rules + context.
 
 ## Important Instructions
 
-Published anchors: BE-Hive (3,388 pathogenic SNVs correctable at ≥90% precision),
-PRIDICT2.0 (13,349 pathogenic mutations; purity ρ 0.78), CUNE (n=30 — thin). No neutral
-BE/PE benchmark exists — cross-tool claims are self-reported; local plan uses
-BE-dataHIVE + Mathis held-out. Run slots NOT_EXECUTED.
+- **Published anchors:** BE-Hive (3,388 pathogenic SNVs correctable at ≥90% precision),
+  PRIDICT1 (13,349 pathogenic mutations; unintended-edit ρ 0.78, not purity); PRIDICT2.0
+  is the later matched-cell model, CUNE (n=30 — thin). No neutral BE/PE benchmark exists —
+  cross-tool claims are self-reported.
+- **Executed evidence (local):** [BE-Hive BE4 any-edit
+  efficiency](../benchmark/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) ·
+  [PRIDICT2.0 published grouped OOF outcomes](../benchmark/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
+  [DeepPrime base fixed test](../benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
+  PRIDICT2 grouped-OOF and DeepPrime HEK293T/PE2 fixed-test components; BE4 any-edit
+  efficiency separately. Result record [Run-2](../results/004_variant_correction_precision_repair/Run-2_2026-11-12/REPORT.md);
+  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/004_variant-correction/Run-3_2026-11-12/README.md).
+- **Gaps:** not allele-specific HBB repair or HDR validation; BE4 labels cannot validate
+  BE4max intended purity; unexecuted evaluation slots stay `NOT_EXECUTED`.

@@ -1,0 +1,67 @@
+{
+  "type": "<class 'tuple'>",
+  "n": 3,
+  "first": [
+    {
+      "type": "<class 'list'>",
+      "n": 1872,
+      "first": [
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "10"
+        },
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "11"
+        },
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "12"
+        }
+      ]
+    },
+    {
+      "type": "<class 'list'>",
+      "n": 920,
+      "first": [
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "0"
+        },
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "1"
+        },
+        {
+          "type": "<class 'numpy.int64'>",
+          "repr": "2"
+        }
+      ]
+    },
+    {
+      "type": "DataFrame",
+      "shape": [
+        808,
+        2
+      ],
+      "columns": [
+        "type",
+        "params"
+      ],
+      "index_head": [
+        "('length', 'length')",
+        "('distance', 'primary TSS-Up')"
+      ],
+      "head_values": [
+        [
+          "binnable_onehot",
+          "{'min edge data': 50, 'bin function': <function median at 0x7a1ca5a39dd0>, 'bin width': 1}"
+        ],
+        [
+          "continuous",
+          "{'C': [0.01, 0.05, 0.075, 0.1, 0.2, 0.5], 'gamma': [1e-06, 1e-05, 5e-05, 0.0001, 0.0005]}"
+        ]
+      ]
+    }
+  ]
+}

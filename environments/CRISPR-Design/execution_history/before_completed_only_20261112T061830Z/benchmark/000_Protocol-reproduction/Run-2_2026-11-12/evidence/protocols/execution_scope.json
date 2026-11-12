@@ -1,0 +1,26 @@
+{
+  "root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "platform": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42",
+  "cpu_affinity": 56,
+  "worker_budget": 2,
+  "GPU": "not requested; CPU validation initially",
+  "policy": "all task writes including data/environment/cache/logs under repository; originals read-only; no experimental work",
+  "priorities": [
+    {
+      "id": 1,
+      "goal": "model-specific Cas9 evaluations; official splits and exclusions"
+    },
+    {
+      "id": 2,
+      "goal": "Cas13 RFcombined and editor-matched BE/PE measured-label benchmarks"
+    },
+    {
+      "id": 3,
+      "goal": "assay/nuclease-matched labeled specificity benchmark"
+    },
+    {
+      "id": 4,
+      "goal": "specialized modality endpoint/coverage matrix"
+    }
+  ]
+}

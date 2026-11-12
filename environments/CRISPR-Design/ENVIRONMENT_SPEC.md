@@ -2,9 +2,15 @@
 
 **Environment ID:** `crispr-design`
 
-**Status:** Curation-complete, pre-runtime. Protocol v0.1 (draft — no engine freeze yet);
-thresholds DRAFT v0.1 (calibrate-then-freeze); no executed computational benchmark yet —
-`benchmark/` carries published anchors only.
+**Status:** In Progress — partial runtime, executed computational model benchmarks.
+Protocol v0.1 (draft — no engine freeze yet); thresholds DRAFT v0.1
+(calibrate-then-freeze). Active benchmark evidence is the [completed-only
+registry](benchmark/BENCHMARK_RUNS.md): seven completed native-model/endpoint
+evaluations, with per-task result records under [results/](results/README.md) and older
+mixed Run-2/Run-3 reports preserved in [execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+Model benchmarks validate endpoints, not design applications, and do not activate every
+application adapter or freeze the DRAFT gates; unimplemented stages stay `NOT_RUN(reason)`
+/ `NOT_IMPLEMENTED`. No experimental validation is claimed.
 
 **Intended runtime claim (when implemented):** computational guide-RNA candidate generation,
 multi-dimensional evaluation and requirement-aware ranking for CRISPR design tasks across
@@ -70,7 +76,7 @@ ranking view of §4):
 | Stage | Content | Endpoint semantics |
 | --- | --- | --- |
 | E1 | validation: alphabet, spacer/PAM orientation, coordinates, exon/CDS consequence, isoform coverage | pass/reject with reasons |
-| E2a–c | on-target activity: ≥2 independent endpoints from {DeepSpCas9, CRISPRon, RS2/Azimuth, RS3, DeepHF (variant), DeepCpf1 (Cas12a)} — separate, native units, **never averaged**; expression-system context (U6 vs T7/IVT) declared | scores + model identity |
+| E2a–c | on-target activity: ≥2 independent endpoints — **Run1-verified local set: RuleSet1, RuleSet3-Sequence (Hsu2013/Chen2013), CRISPRater (U6) + CRISPRscan (declared T7/IVT-context column)**; {CRISPRon, DeepSpCas9, RS2/Azimuth, DeepHF (variant), DeepCpf1} activate on upstream installs (pinned crisprScore 1.17.2 exports only: CasRxRF, CFD, CRISPRater, CRISPRscan, DeepHF*, EnPAMGB*, Lindel, MIT, RuleSet1, RuleSet3 — *env-pending) — separate columns, native units, **never averaged**; expression-system context declared | scores + model identity |
 | E3a | genome-wide off-target enumeration: ≤3-mismatch, both strands, intended-locus exclusion (Bowtie 1 local / CRISPRitz with VCFs + bulges for variant-aware tasks) | hit counts by mismatch class; heuristic caps disclosed |
 | E3b | off-target pair scoring: CFD (baseline) + Elevation/ElevationSC (aggregate); CRISOT optional (CC BY-NC — research-internal only, never redistributed) | pair scores + aggregate specificity |
 | E3c | variant-aware layer (allele/therapeutic tasks): CRISPRitz/CRISPRme VCF-panel search | ancestry/allele off-target nominations |
@@ -106,11 +112,17 @@ ranking → deliver (candidates CSV, per-dimension values, flags, `NOT_RUN` list
 block, evidence tier, next-evidence recommendation per application). Outputs land in a
 fresh run directory; inputs are read-only.
 
-## 7. Benchmarking (published anchors; NOT yet executed locally)
+## 7. Benchmarking (executed local registry + published anchors)
 
+Executed local evidence lives in the [completed-only registry](benchmark/BENCHMARK_RUNS.md):
+seven completed native-model/endpoint evaluations (RS3 Sequence, CRISPRon, CFD2016,
+BE-Hive BE4, PRIDICT2.0, DeepPrime PE2, RFcombined), each with predictions, metrics,
+protocol manifest and limitations attached. These are endpoint-level model benchmarks —
+they do not validate any full design application. Older mixed evidence (Run-2/Run-3
+per-task comparisons, replays, blocked attempts) is preserved in
+[execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
 All published numbers below are source-verified (see
-[benchmark/README.md](benchmark/README.md) and [research references](../../research/CRISPR-Design/references.md));
-**no local benchmark run has been executed yet** — Run slots are explicit `NOT_EXECUTED`.
+[benchmark/README.md](benchmark/README.md) and [research references](../../research/CRISPR-Design/references.md)).
 
 | Anchor | Cohort | Independence | Published headline |
 | --- | --- | --- | --- |
@@ -129,10 +141,12 @@ All published numbers below are source-verified (see
 | TIGER | ~200,000 RfxCas13d guides ± mismatches/indels | single-lab | current Cas13 reference |
 | EasyDesign | 11,496 validated Cas12a-detection cases | single-lab | ρ 0.812; 4 held-out pathogens |
 
-Local benchmark plan (first executions, pre-registered): Konstantakos-protocol replication
+Local benchmark plan (pre-registered; partially superseded by the executed registry
+above): Konstantakos-protocol replication
 on Kim-2019 held-out; CFD-vs-Elevation pair scoring on CHANGE-seq 110-guide set;
 BEDICT2.0/DeepBE on BE-dataHIVE held-out editors; PRIDICT2.0 self-hosted CLI on Mathis
-held-out.
+held-out — the unexecuted arms remain open backlog (see
+[STATUS](STATUS.md#open-backlog)).
 
 ## 8. Scope gates and hard rules
 

@@ -1,0 +1,13 @@
+{
+  "benchmark": "Cas13",
+  "model": "RFcombined",
+  "refits": 1000,
+  "median_spearman": 0.6673083742916215,
+  "mean_spearman": 0.6669169716129948,
+  "split_refit_interval": [
+    0.6298954555379912,
+    0.7001266891035433
+  ],
+  "paper_approx_spearman": 0.67,
+  "comparison": "qualified source-method reimplementation, not an independent-target CI or exact replay of conflicting parameter variants"
+}

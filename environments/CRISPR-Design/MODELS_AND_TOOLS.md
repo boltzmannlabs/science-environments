@@ -1,5 +1,12 @@
 # Models and Tools
 
+**Evidence note.** Active benchmark evidence is the [completed-only
+registry](benchmark/BENCHMARK_RUNS.md) (seven native-model/endpoint evaluations; model
+benchmarks, not application validation). Executed model evaluations, source-score
+replays and uninstalled tools are distinct states — read the availability markers below
+alongside the per-task evidence status in [tasks/README.md](tasks/README.md); older
+mixed evidence is preserved in [execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+
 Curated 2026-11-10 from the source-verified registry
 (`~/IMRAN/NOV26/cirspr-sci-env/01_tools/TOOL_REGISTRY.csv` — full leakage notes, dataset
 pointers, and per-tool sources there; citations in
@@ -12,21 +19,21 @@ documented) · **[C]** curated web/API only · **[G]** gap (no verified tool exi
 | Stage | Tools (role) |
 | --- | --- |
 | C1 enumerate/validate | crisprDesign **[L]** · CHOPCHOP v3 **[C]** · CRISPOR **[C]** |
-| C2 on-target (multi-endpoint, never averaged) | DeepSpCas9 **[L via crisprScore]** · RS2/Azimuth **[L]** · CRISPRon **[R]** · RS3 **[R]** · DeepHF WT/eSpCas9/SpCas9-HF1 **[R]** · DeepCpf1 (Cas12a) **[L via crisprScore]** |
+| C2 on-target (multi-endpoint, never averaged) | **Locally verified (2026-11-10):** RuleSet1 **[L]** · RuleSet3-Sequence **[L, rs3-env]** · CRISPRater **[L]** · CRISPRscan (T7/IVT context) **[L]** · **CRISPRon [L — installed + regression `TEST ok` 2026-11-10; AGPL-3.0 internal-use; TF 2.14/Keras-2 pin documented]** · **Not in pinned crisprScore 1.17.2:** RS2/Azimuth (py2.7 path, BSD-3, archived — second wave), DeepSpCas9 (MIT subtree, py2.7/TF1 — third wave), DeepCpf1 (unlicensed — blocked) · DeepHF webserver-only + crisprScore deephf-env (heavy py3.8/TF env, pending) · DeepCas12a **[R — Apache-2.0, torch, checkpoints in-repo, 2025/26]** for Cas12a |
 | C3 off-target | Bowtie 1.3.1 GRCh38 **[L]** · CFD **[L]** · Elevation/ElevationSC **[R, MIT]** · CRISPRitz **[R, VCF+bulges]** · CRISPRme **[R, allele-aware]** · CRISOT **[R, CC BY-NC ⚠]** · FlashFry **[R, libraries]** |
 | C4 indel outcome | Lindel **[L, verified PASS]** |
-| C5 application layers | BE-Hive **[C/CLI]** · DeepBE **[R, no-license ⚠]** · BEDICT2.0 **[C+CLI]** · BE-dataHIVE **[R/API]** · PRIDICT2.0 **[C+CLI]** · DeepPrime **[R+C]** · Richardson/CUNE HDR rules **[method]** · Horlbeck rules + ScreenProcessing **[R]** · CRISPick CRISPRi/a **[C]** · Cas13design/TIGER **[C]** · EasyDesign **[C]** · PrimedSherlock **[R]** · CRISPRi/a DL 2024–26 **[G]** · CRISPRoff designer **[G]** |
+| C5 application layers | BE-Hive **[C/CLI]** · DeepBE **[R, no-license ⚠]** · BEDICT2.0 **[C+CLI]** · BE-dataHIVE **[R/API]** · PRIDICT2.0 **[C+CLI]** · DeepPrime **[R+C]** · Richardson/CUNE HDR rules **[method]** · Horlbeck rules + ScreenProcessing **[R]** · CRISPick CRISPRi/a **[C]** · Cas13design/TIGER **[C]** · EasyDesign **[C]** · PrimedSherlock **[R]** · **locally available via crisprScore 1.17.2 (env-pending):** DeepHF **[R]**, EnPAM-GB (prime editing) **[R]**, CasRxRF (Cas13 RF) **[R]** · CRISPRi/a DL 2024–26 **[G]** · CRISPRoff designer **[G]** |
 | C6 physico-chem | rule cards (GC 40–80% band, ≥4-T homopolymer, self-complementarity, Tm) **[L]** |
 
 ## Registry (decision-relevant subset)
 
 | Tool | Paper (venue, year) | License | Key dataset | Verified numbers | Caveats |
 | --- | --- | --- | --- | --- | --- |
-| DeepSpCas9 | Kim HK et al., *Sci Adv*, 2019 | research web; model via crisprScore | 12,832 pairs, SRA SRP150719 | CV ρ up to ~0.77; best of 9 on 7 external U6 sets | NOT "Nat Methods ~51k" |
-| DeepHF | Wang D et al., *Nat Commun*, 2019 | code GitHub | 80,263 pairs, PRJNA522677 | held-out ρ 0.86–0.87 (internal) | cross-study drops to 0.4–0.6; NOT Cell Reports |
+| DeepSpCas9 | Kim HK et al., *Sci Adv*, 2019 | research web; **NOT in pinned crisprScore 1.17.2 — use upstream code [R]** | 12,832 pairs, SRA SRP150719 | CV ρ up to ~0.77; best of 9 on 7 external U6 sets | NOT "Nat Methods ~51k" |
+| DeepHF | Wang D et al., *Nat Commun*, 2019 | webserver-only (standalone repo DEAD — izhangcd/DeepHF is 404, verified 2026-11-10); crisprScore `deephf-env` is the only local path (env-pending) | 80,263 pairs, PRJNA522677 | held-out ρ 0.86–0.87 (internal) | cross-study drops to 0.4–0.6; NOT Cell Reports |
 | CRISPRon | Xiang X et al., *Nat Commun*, 2021 | code GitHub+Zenodo | 23,902 gRNAs, GSE173708 | internal ρ 0.80 vs Azimuth 0.56 / DeepSpCas9 0.73 / DeepHF 0.74; external 0.46–0.68 | Kim-2019 rescaled is in training — split discipline required; NOT NAR |
-| RS2/Azimuth | Doench & Fusi et al., *NBT*, 2016 | Broad portal research-use ⚠ | 4,390 sgRNAs | must-beat baseline | training widely exposed |
-| RS3 | DeWeirdt et al., *Nat Commun*, 2022 | R package rs3 | 46,526 + 84,609 tiling, PRJNA832308 | > RS2 p<0.002 | NOT "Hart 2017" |
+| RS2/Azimuth | Doench & Fusi et al., *NBT*, 2016 | Broad portal research-use ⚠; **NOT in pinned crisprScore 1.17.2** | 4,390 sgRNAs | must-beat baseline | training widely exposed |
+| RS3 | DeWeirdt et al., *Nat Commun*, 2022 | via crisprScore **[L, rs3-env; Run1-verified]** | 46,526 + 84,609 tiling, PRJNA832308 | > RS2 p<0.002 | NOT "Hart 2017"; native units scaled (can be negative) |
 | DeepCpf1 | Kim HK et al., *NBT*, 2018 | research web | ~15,000 AsCpf1 targets | exact ρ UNVERIFIED (paywalled) | also a distinct Luo-2019 same-named tool |
 | Lindel | Chen W et al., *NBT*, 2019 | via crisprScoreData (EH6128) | paper corpus | local interface test PASS (0.798) | — |
 | CFD | Doench 2016 (same paper) | open matrix | GUIDE-seq-era | community-standard pair baseline | — |
@@ -48,7 +55,10 @@ documented) · **[C]** curated web/API only · **[G]** gap (no verified tool exi
 | CRISPick | Broad GPP (Sanson 2018 / DeWeirdt 2022 / Horlbeck 2016 calibrations) | portal terms (research) | Avana/Brunello lineage | library-design standard | portal terms bind commercial use |
 | CHOPCHOP v3 | Labun et al., *NAR*, 2019 | WS free (license unstated) | — | meta-tool ranking | no own model |
 | CRISPOR | Haeussler et al., *Genome Biol*, 2016 | WS free; score lib on GitHub | 8-study pooled benchmark | all-scores non-training ρ 0.341–0.436 | meta-tool |
-| DeepCRISPR | Chuai et al., *Genome Biol*, 2018 | Apache-2.0 | aggregated corpora | best on only 1/6 independent datasets (Konstantakos 2022) | **cautionary baseline only**; disjoint splits mandatory |
+| CRISPRon | Xiang et al., *Nat Commun*, 2021 | **AGPL-3.0** (internal use; no redistribution) — **[L] installed + `TEST ok` 2026-11-10** (crispron-env: py3.9/TF 2.14.1/Keras 2.14/ViennaRNA 2.2.5 + CRISPRoff from RTH-tools-admin/crisproff GPL-3.0) | 23,902 gRNAs (GSE173708 + Kim rescaled) | internal ρ 0.80 vs Azimuth 0.56/DeepSpCas9 0.73/DeepHF 0.74; external 0.46–0.68 best | Kim-2019 in training — split discipline disclosed per benchmark |
+| DeepCas12a (bm2-lab-submission) | PMC13435508, 2025/26 | **Apache-2.0**; torch; 9 fold checkpoints in-repo | HT-variant Cas12a corpora | AP 0.783 / AUC 0.868 / ρ 0.630 (HT1) | best open Cas12a option; second wave |
+| CCLMoff | *Commun Biol* 2025 (s42003-025-08275-6) | MIT; **weights external** (Figshare 27080566.v2); repro effort | RNAcentral-pretrained LM | cross-dataset off-target generalization (paper) | missing inference.py + hardcoded paths — blocked pending fixes |
+| DeepCRISPR | Chuai et al., *Genome Biol*, 2018 | Apache-2.0; official Docker `michaelchuai/deepcrispr` | aggregated corpora | best on only 1/6 independent datasets (Konstantakos 2022) | **cautionary baseline only**; disjoint splits mandatory |
 | FlashFry | McKenna & Shendure, *BMC Biol*, 2018 | non-SPDX (terms UNVERIFIED) | — | 30–70× faster enumeration | no VCF-aware search |
 | Guo 2018 / Yu 2024 (bacterial) | *NAR* 2018 / *Genome Biol* 2024 | per paper | E. coli corpora | Yu 2024 = current best bacterial CRISPRi predictor | bacterial-specific |
 

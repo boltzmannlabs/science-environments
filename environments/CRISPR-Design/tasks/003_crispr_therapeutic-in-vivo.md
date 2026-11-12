@@ -1,8 +1,11 @@
 # Task: crispr_therapeutic_in_vivo_003
 
 **Task family:** application-aware CRISPR design — **therapeutic in-vivo editing
-(systemic/LNP context)**. **Status:** specification phase; runtime pending; published
-anchors only. Core battery shared; the specificity stack is elevated here.
+(systemic/LNP context)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). Executed
+evidence: specificity component only (CFD2016 assay-matched benchmark — endpoint-level;
+see the [completed-only registry](../benchmark/BENCHMARK_RUNS.md)); no delivery, in-vivo
+efficacy or therapeutic-safety validation. Core battery shared; the specificity stack is
+elevated here. Start from the [general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -85,7 +88,15 @@ here; licenses bind (CRISOT CC BY-NC — research-internal only).
 
 ## Important Instructions
 
-Published anchors: CHANGE-seq (110 guides / 201,934 sites), Kaufmann-2026 14-tool
-independent benchmark (recall ≈77% @ top-500; weak score↔indel correlation — in-silico
-tools prioritize, never replace experimental assessment), exa-cel BLA off-target record,
-CRISPRme BCL11A analysis. Run slots NOT_EXECUTED.
+- **Published anchors:** CHANGE-seq (110 guides / 201,934 sites), Kaufmann-2026 14-tool
+  independent benchmark (recall ≈77% @ top-500; weak score↔indel correlation — in-silico
+  tools prioritize, never replace experimental assessment), exa-cel BLA off-target record,
+  CRISPRme BCL11A analysis.
+- **Executed evidence (local):** [CFD2016 experimentally assayed
+  specificity](../benchmark/003_CFD2016/Run-4_2026-11-12/REPORT.md) — WT SpCas9
+  assay-matched CFD on 1,684 assayed sites (108 positives, 1,576 negatives, 9 guides).
+  Result record [Run-2](../results/003_therapeutic_in_vivo_editing/Run-2_2026-11-12/REPORT.md);
+  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/003_therapeutic-in-vivo/Run-3_2026-11-12/README.md).
+- **Gaps:** no delivery, in-vivo efficacy, patient-haplotype, therapeutic-safety or
+  clinical detection-limit validation; the variant-aware layer (E3c) remains uninstalled;
+  unexecuted evaluation slots stay `NOT_EXECUTED`.

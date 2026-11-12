@@ -1,58 +1,80 @@
-# BENCHMARK_RUNS — published references vs Run-N iteration registry
+# Completed benchmark execution registry
 
-Iteration structure: every benchmark row carries **published reference | Run-N
-configuration | results**, with future Run slots explicit. **As of 2026-11-10 no Run
-exists** — all slots are `NOT_EXECUTED`; rows become live only when the runtime +
-calibration phases deliver executed artifacts (frozen engine version, blind label join,
-no-tuning attestation, bootstrap CIs).
+Per-benchmark run registry for the active completed-only publication (program overview:
+[README.md](README.md)). Only completed native-model/endpoint evaluations appear here;
+each row's limitations are binding context for any use of the number. A completed model
+benchmark is not validation of the full design application or experimental safety.
 
-## 1. KO on-target clean evaluation (protocol: Konstantakos-2022 replication)
+| ID | Model | Run | Report |
+| --- | --- | --- | --- |
+| 001 | RS3 Sequence held-out activity | Run-4_2026-11-12 | [Results](001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) |
+| 002 | CRISPRon v1 external activity | Run-4_2026-11-12 | [Results](002_CRISPRon/Run-4_2026-11-12/REPORT.md) |
+| 003 | CFD2016 experimentally assayed specificity | Run-4_2026-11-12 | [Results](003_CFD2016/Run-4_2026-11-12/REPORT.md) |
+| 004 | BE-Hive BE4 any-edit efficiency | Run-4_2026-11-12 | [Results](004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) |
+| 005 | PRIDICT2.0 published grouped OOF outcomes | Run-4_2026-11-12 | [Results](005_PRIDICT2/Run-4_2026-11-12/REPORT.md) |
+| 006 | DeepPrime base fixed test | Run-4_2026-11-12 | [Results](006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) |
+| 007 | RFcombined published-method refit evaluation | Run-4_2026-11-12 | [Results](007_RFcombined/Run-4_2026-11-12/REPORT.md) |
 
-| Stage | Content |
-| --- | --- |
-| Published reference | CRISPRon internal ρ 0.80 vs Azimuth 0.56 / DeepSpCas9 0.73 / DeepHF 0.74 (Xiang 2021); Konstantakos 2022 independent ranking (DeepHF/DeepSpCas9 top; ceiling ρ≈0.7) |
-| Run-1 configuration | `NOT_EXECUTED` — planned: local endpoints {DeepSpCas9, RS2 via crisprScore; CRISPRon} on Kim-2019 held-out + Konstantakos 6-disjoint-set protocol; Spearman + nDCG@20; bootstrap CIs; frozen engine stamp |
-| Run-1 results | `NOT_EXECUTED` |
-| FUTURE slots | Run-2: RS3 addition after install · Run-3: DeepHF variant arm |
+## Per-benchmark scope and limitations
 
-## 2. Off-target pair-scoring (protocol: Kaufmann-2026-style recall@K)
+**001 — RS3 Sequence held-out activity.** Six author-defined activity cohorts; native
+30-nt context and Hsu2013/Chen2013 tracr features; exact-20mer four-model
+training-union exclusions; 23,629 unique contexts / 26,915 deduplicated dataset
+observations. Limits: RS3 Sequence only, not Sequence+Target; gene-cluster intervals
+for genome-wide cohorts, guide-row intervals otherwise; original source duplicate-row
+weighting is a separate retained reproduction, not extra independent observations.
+Fresh native inference retry completed.
 
-| Stage | Content |
-| --- | --- |
-| Published reference | Kaufmann 2026: recall ≈77% @ top-500, ≈83% @ top-1,250; weak score↔indel correlation (14 tools) |
-| Run-1 configuration | `NOT_EXECUTED` — planned: CFD + Elevation (CRISOT optional, research-internal) on CHANGE-seq 110-guide set; recall@K + PR-AUC; GUIDE-seq as cell-based truth layer |
-| Run-1 results | `NOT_EXECUTED` |
-| FUTURE slots | Run-2: CRISPRitz bulge-aware arm · Run-3: CRISPRme variant layer |
+**002 — CRISPRon v1 external activity.** Completed native v1 inference on the same six
+RS3-publication common-exclusion cohorts; exact 30-nt contexts and native thermodynamic
+inputs. Limits: this is the RS3 comparative held-out protocol, not a CRISPRon_v0
+internal-0.80 reproduction or its different ≤3-mm training-exclusion procedure; no
+cross-assay universal superiority claim. Prior completed native execution retained, not
+rerun in this retry.
 
-## 3. Base-editing outcome prediction
+**003 — CFD2016 experimentally assayed specificity.** Native WT-SpCas9 CFD2016 scores
+joined to 1,684 explicitly assayed cellular sites: 108 positive, 1,576 negative across
+9 guides; corrected indel ≥ 0.1%; 3 annotated bulges excluded. Limits: negatives mean
+below the assay threshold in this condition, not universal non-cleavage; nominal 0.1%
+AmpliSeq sensitivity without individual-site read-depth LoD; recall@500 saturates due to
+panel exhaustion. Fresh native inference retry completed.
 
-| Stage | Content |
-| --- | --- |
-| Published reference | BE-Hive outcome R≈0.9 / efficiency R≈0.7 (Arbab 2020); BEDICT2.0 R 0.60–0.94 (2025); DeepBE editor-choice gains 2.9–20× (2024) |
-| Run-1 configuration | `NOT_EXECUTED` — planned: BEDICT2.0 + DeepBE on BE-dataHIVE held-out editors; intended-fraction + purity metrics |
-| Run-1 results | `NOT_EXECUTED` |
-| FUTURE slots | Run-2: bystander-model arm (BE-Hive CLI) |
+**004 — BE-Hive BE4 any-edit efficiency.** Native released HEK293T/BE4 regressor on
+9,975 measured external-library any-edit efficiency labels; known training 20-mer/31-nt
+contexts excluded; source-used 31-nt feature encoding independently matched to native
+input. Limits: BE4, not BE4max; target is normalized logit any-edit efficiency, not
+intended-edit purity or genotype distribution; original internal tuning
+membership/whole-gene exclusion not fully available; weak transfer. Fresh native
+inference retry completed.
 
-## 4. Prime-editing intended-edit prediction
+**005 — PRIDICT2.0 published grouped OOF outcomes.** Original Library-Diverse
+group-fold assignments, matching cell heads and missing-label exclusions; two source
+model families averaged within the single held-out fold only. Limits: complete
+base-pretraining library overlap not audited; intended and unintended edit fractions
+are separate endpoints and unintended-edit prediction is not purity validation; no
+PE3-nick-design or all-edit-genotype conclusion. Fresh native inference retry completed.
 
-| Stage | Content |
-| --- | --- |
-| Published reference | PRIDICT2.0 ρ 0.85 intended / 0.78 purity on 92,423 pegRNAs (Mathis 2023) |
-| Run-1 configuration | `NOT_EXECUTED` — planned: self-hosted PRIDICT2.0 CLI on Mathis held-out split; DeepPrime cross-check on shared PE systems (license check first) |
-| Run-1 results | `NOT_EXECUTED` |
-| FUTURE slots | Run-2: pegRNA design-vs-prediction round trip |
+**006 — DeepPrime base fixed test.** Original HEK293T/PE2/conventional-scaffold fixed
+test n=28,883 against 259,910 training rows; zero exact-input and 74-nt-target
+overlaps; native 74-nt/24-numeric inputs, source mean/std and 5-checkpoint ensemble.
+Limits: only this matched editor/cell/scaffold condition evaluated; author-provided
+upstream DeepSpCas9 feature retained, not substituted; no unintended-edit or purity
+conclusion. Fresh native inference retry completed.
 
-## 5. Application-layer anchors (same-side, later phases)
+**007 — RFcombined published-method refit evaluation.** Completed 1,000 native
+randomForest (2,000-tree/mtry-12) fits using the published 2,918-row 35-feature matrix,
+source R-3.5 seed schedule, screen-balanced 70/30 splits and training-only scaling; all
+1,000 partitions/predictions independently verified train/test-disjoint. Limits: a
+completed qualified published-method reimplementation, not an exact replay of
+conflicting source variants (comparative code uses defaults/finalCV mtry 10); published
+precomputed features and global feature selection inherited. Prior completed native
+execution retained, not rerun in this retry.
 
-| Stage | Content |
-| --- | --- |
-| Published reference | Horlbeck 2016 γ-scores (CRISPRi) · Nuñez 2021 GSE168012 rules (CRISPRoff) · TIGER corpus (Cas13) · EasyDesign ρ 0.812 (diagnostics, contrived targets only) · RS3 tiling 84,609 (libraries) |
-| Run-1 configuration | `NOT_EXECUTED` — planned per task after P0/P1 installs |
-| Run-1 results | `NOT_EXECUTED` |
+## Governance
 
-## No-tuning attestation (to be recorded at first freeze)
-
-Thresholds, weights and rules will be frozen before evaluation (see
-[config/thresholds.v0.1.draft.json](../config/thresholds.v0.1.draft.json)
-`no_freeze_without` list); no retrospective outcome may influence any parameter. Until
-then, every deliverable carries the DRAFT-gates disclosure.
+Exact input/model manifests are inside each completed run; all copied scientific files
+are bound by [PROVENANCE.json](PROVENANCE.json)/[PROVENANCE.sha256](PROVENANCE.sha256).
+Large datasets, weights and environments remain at indexed source locations. Integrity
+is machine-checked by [tests/test_completed_benchmarks.py](../tests/test_completed_benchmarks.py)
+(scope, hashes, fresh-inference verification, metric recomputation, link resolution).
+No wet-lab validation or calibrated design-gate freeze is claimed.

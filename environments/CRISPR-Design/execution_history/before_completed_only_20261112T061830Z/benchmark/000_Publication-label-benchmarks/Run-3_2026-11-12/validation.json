@@ -1,0 +1,36 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "provenance",
+      "status": "PASS",
+      "detail": "All retained input hashes match; completed metric execution is not labeled new inference"
+    },
+    {
+      "name": "correlations",
+      "status": "PASS",
+      "detail": "12 Cas9 correlations independently recomputed; all18 intervals/numeric rows coherent"
+    },
+    {
+      "name": "numeric_diagnostic_review",
+      "status": "PASS",
+      "detail": "6 matched common-row diagnostic correlations verified; numeric-only859row comparison"
+    },
+    {
+      "name": "specificity",
+      "status": "PASS",
+      "detail": "CFD assayed-panel AP and positive/negative counts independently recomputed"
+    },
+    {
+      "name": "task_registry",
+      "status": "PASS",
+      "detail": "13 latest task reports/JSON/CSV statuses agree; true blockers retained"
+    },
+    {
+      "name": "links",
+      "status": "PASS",
+      "detail": "169 relative links resolve"
+    }
+  ]
+}

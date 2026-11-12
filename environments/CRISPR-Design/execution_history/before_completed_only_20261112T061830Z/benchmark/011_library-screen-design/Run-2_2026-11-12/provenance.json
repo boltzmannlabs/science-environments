@@ -1,0 +1,57 @@
+{
+  "task_id": "011",
+  "task_spec": "tasks/011_crispr_library-screen-design.md",
+  "application": "library_screen_design",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "SHARED_GUIDE_METRICS_NOT_SCREEN_VALIDATION",
+  "finding": "Shared Cas9 guide-level and within-gene rank-loss evidence; supplemental explicitly-defined nDCG retained.",
+  "limitations": "No library-level essential-gene detection, enrichment, screen power, or target-diversity validation. Shared guides are not independent task benchmarks.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/011",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "011",
+    "brief_id": "genome_wide_library_example",
+    "application": "library_screen_design",
+    "target": "KIF11;KRAS;MYC",
+    "input_sha256": "c244d07aa8bc1828a2bb1f0c91d69fce3f79d534cd83435d89889b155111285c",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "enumeration": "EXECUTED all three declared genes",
+      "activity": "EXECUTED native KO endpoints; RS3 selection view",
+      "assembly": "EXECUTED 3 nonoverlapping seed-distinct guides per gene",
+      "controls": "EXECUTED 6 50%-GC artificial controls; zero exact reference-genome matches",
+      "confounds": "PARTIAL multi-target/seed flags evaluated; copy number absent",
+      "ranking": "EXECUTED RS3 single-endpoint library selection; no endpoint blending"
+    },
+    "blockers": [
+      "No cell-specific copy-number annotation, phenotype validation, or dinucleotide-matched control optimization",
+      "KO specificity remains ungapped reference-only; missing Elevation layer"
+    ],
+    "test_input": {
+      "genes": [
+        "KIF11",
+        "KRAS",
+        "MYC"
+      ],
+      "screen_type": "knockout",
+      "guides_per_gene": 3,
+      "negative_controls": 6,
+      "positive_controls": "none requested",
+      "selection_endpoint": "RS3 native score within draft-gate survivors; seed-distinct filter",
+      "assembly": "GRCh38.p14"
+    },
+    "test_input_sha256": "166a5ecfe7a26a3045fcd607aa82fe1633de613c48ed6f747404b2562dd0b5a4",
+    "candidate_count": 678,
+    "library_guides": 9,
+    "control_count": 6,
+    "status": "PARTIAL_EXECUTED"
+  },
+  "shared_benchmark_not_independent_per_task": true
+}

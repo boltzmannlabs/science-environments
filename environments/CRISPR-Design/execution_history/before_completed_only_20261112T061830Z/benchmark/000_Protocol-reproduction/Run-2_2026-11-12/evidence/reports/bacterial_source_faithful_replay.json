@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETED_SOURCE_METRIC_REPLAY_NOT_FRESH_INFERENCE",
+  "source": "MERF_crispri.py lines954-976, pinned commit2dad9153ea61db49001e2cb48095fbb2eac46003",
+  "aggregation": "Within each heldout fold, compute Spearman per gene PER SOURCE DATASET; median of valid gene-dataset values, exactly as source. Do not pool raw depletion measurements from different experiments within a gene.",
+  "gene_dataset_comparisons": 642,
+  "valid_comparisons": 642,
+  "median_spearman": 0.38138528138528144,
+  "mean_spearman": 0.3321553292023189,
+  "gene_cluster_bootstrap_median_ci95": [
+    0.3377881493506493,
+    0.42499999999999993
+  ],
+  "by_dataset": [
+    {
+      "dataset": 0.0,
+      "median": 0.41818181818181827,
+      "mean": 0.3503191388359046,
+      "count": 171
+    },
+    {
+      "dataset": 1.0,
+      "median": 0.39999999999999997,
+      "mean": 0.3556652580491944,
+      "count": 171
+    },
+    {
+      "dataset": 2.0,
+      "median": 0.3576923076923077,
+      "mean": 0.30840129826845597,
+      "count": 300
+    }
+  ],
+  "paper_reported_rounded_median": 0.396,
+  "limitations": [
+    "Public prediction-file metric replay only, not fresh bacterial model inference or feature reconstruction",
+    "Not the independent9-gene purine screen",
+    "Prior pooled-gene aggregation retained as sensitivity but is not the published endpoint"
+  ]
+}

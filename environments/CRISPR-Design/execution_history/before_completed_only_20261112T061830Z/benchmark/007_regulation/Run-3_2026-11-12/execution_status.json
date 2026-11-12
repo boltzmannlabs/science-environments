@@ -1,0 +1,20 @@
+{
+  "task_id": "007",
+  "task_spec": "tasks/007_crispr_regulation.md",
+  "application": "crispr_regulation",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "CRISPRI_WINDOW_COMPONENT_TEST_ONLY",
+  "finding": "CRISPRi fixed TSS-window gate tested on3607 held-out guides/307 genes; recall0.7642, precision0.2546 for source normalized activity>=0.75.",
+  "limitations": "Full808-feature CRISPRi model and CRISPRa prediction NOT_RUN. No mammalian nuclease score substituted.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/007",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "shared_benchmark_not_independent_per_task": false,
+  "result_report": "results/007_crispr_regulation/Run-2_2026-11-12/REPORT.md",
+  "benchmark_report": "benchmark/007_regulation/Run-3_2026-11-12/README.md",
+  "metric_run_id": "Run-3_2026-11-12",
+  "new_model_inference": false,
+  "prior_benchmark_report": "benchmark/007_regulation/Run-2_2026-11-12/README.md"
+}

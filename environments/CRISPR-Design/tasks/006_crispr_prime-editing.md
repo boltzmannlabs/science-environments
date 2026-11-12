@@ -1,7 +1,11 @@
 # Task: crispr_prime_editing_006
 
 **Task family:** application-aware CRISPR design — **prime editing (pegRNA + PE3
-nicking)**. **Status:** specification phase; runtime pending; published anchors only.
+nicking)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). Executed evidence:
+fresh matched held-out outcome evaluations (PRIDICT2.0 intended ρ 0.9056 HEK293T / 0.8081
+K562; DeepPrime PE2 fixed test ρ 0.861474 — endpoint-level; see the
+[completed-only registry](../benchmark/BENCHMARK_RUNS.md)); PE3 nicking design not
+validated. Start from the [general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -83,8 +87,18 @@ model-scoped (DeepPE's PBS/RTT-length recommendations are HEK293T-PE2-calibrated
 
 ## Important Instructions
 
-Published anchors: PRIDICT2.0 (92,423 pegRNAs / 13,349 pathogenic mutations; ρ 0.85
-intended / 0.78 purity), DeepPrime (338,996 pairs; 8 PE systems × 7 cell types),
-ePRIDICT (≤40 bp + chromatin; Nat Protoc 2026), Cirincione 2024/25 (~240,000 epegRNAs
-experimental platform). No neutral PE benchmark; all cross-tool claims self-reported.
-Run slots NOT_EXECUTED.
+- **Published anchors:** PRIDICT1 (92,423 pegRNAs / 13,349 pathogenic mutations; ρ 0.85
+  intended / 0.78 unintended), PRIDICT2.0 (intended ρ 0.91 HEK293T / 0.81 K562), DeepPrime
+  (338,996 pairs; 8 PE systems × 7 cell types), ePRIDICT (≤40 bp + chromatin; Nat Protoc
+  2026), Cirincione 2024/25 (~240,000 epegRNAs experimental platform). No neutral PE
+  benchmark; all cross-tool claims self-reported.
+- **Executed evidence (local):** [PRIDICT2.0 published grouped OOF
+  outcomes](../benchmark/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
+  [DeepPrime base fixed test](../benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
+  PRIDICT2 intended-edit ρ 0.9056 HEK293T / 0.8081 K562 (source-fold mismatches 0);
+  DeepPrime PE2 conventional-scaffold fixed test n=28,883, ρ 0.861474. Result record
+  [Run-2](../results/006_prime_editing/Run-2_2026-11-12/REPORT.md); historical Run-2/Run-3
+  comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/006_prime-editing/Run-3_2026-11-12/README.md).
+- **Gaps:** cell/editor matched only; pretraining-overlap audit incomplete for PRIDICT2;
+  unintended-edit score is not purity; PE3 nicking design not validated; unexecuted
+  evaluation slots stay `NOT_EXECUTED`.

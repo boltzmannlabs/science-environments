@@ -1,14 +1,18 @@
 # Task: crispr_regulation_007
 
 **Task family:** application-aware CRISPR design — **CRISPRi / CRISPRa gene regulation
-(dCas9)**. **Status:** specification phase; runtime pending; published anchors only.
+(dCas9)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). Executed evidence:
+CRISPRi TSS-window component test only (recall 0.7642 / precision 0.2546 on 3,607
+held-out guides — window-gate-level, not a CRISPRi/a activity-model validation); the
+full 808-feature model and CRISPRa prediction remain unexecuted. Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
 Non-cutting dCas9-KRAB repression (CRISPRi) or dCas9-activator (CRISPRa) guide design:
 TSS-window placement, chromatin context, standard on-target/specificity battery for the
 spacer. CRISPRi optimal guides sit in a narrow (~75-bp) nucleosome-depleted window just
-downstream of the TSS; CRISPRa windows differ by system ( Calabrese/SAM lineage) —
+downstream of the TSS; CRISPRa windows differ by system (Calabrese/SAM lineage) —
 declared per run.
 
 ## Target
@@ -83,7 +87,13 @@ activity — proxy use disclosed per column.
 
 ## Important Instructions
 
-Published anchors: Horlbeck 2016 (*eLife*; K562 tiling + genome-wide γ-scores; compact
-5-guide libraries detect >90% essential genes), Sanson 2018 (Dolcetto/Calabrese library
-benchmarks via CRISPick). Gap: no 2024–26 dedicated DL model found (negative result
-recorded). Run slots NOT_EXECUTED.
+- **Published anchors:** Horlbeck 2016 (*eLife*; K562 tiling + genome-wide γ-scores;
+  compact 5-guide libraries detect >90% essential genes), Sanson 2018 (Dolcetto/Calabrese
+  library benchmarks via CRISPick). Gap: no 2024–26 dedicated DL model found (negative
+  result recorded).
+- **Executed evidence (local):** CRISPRi fixed TSS-window gate tested on 3,607
+  held-out guides across 307 genes — recall 0.7642, precision 0.2546 at source
+  normalized activity ≥ 0.75 ([Run-3 comparison, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/007_regulation/Run-3_2026-11-12/README.md)).
+  Result record [Run-2](../results/007_crispr_regulation/Run-2_2026-11-12/REPORT.md).
+- **Gaps:** full 808-feature CRISPRi model and CRISPRa prediction NOT_RUN; no mammalian
+  nuclease score substituted; unexecuted evaluation slots stay `NOT_EXECUTED`.

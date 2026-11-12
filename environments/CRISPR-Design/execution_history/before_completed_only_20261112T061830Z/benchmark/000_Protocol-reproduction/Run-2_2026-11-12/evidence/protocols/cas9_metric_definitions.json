@@ -1,0 +1,7 @@
+{
+  "primary": "Spearman activity correlation per dataset, author-defined positive efficacy orientation",
+  "CI": "1000 guide-row percentile bootstraps with seeds0..999; observed rows may share genes; source-style not independent-target generalization CI",
+  "rank_loss": "source-style within-gene mean absolute rank difference; 4 genomewide datasets only",
+  "ndcg": "SUPPLEMENTAL not an original RS3 metric; linear within-gene percentile-rank relevance, k=min(20,n), tie-averaged sklearn ndcg_score; not interchangeable with previous binary-top20 metric",
+  "cohort_note": "23629 unique contexts match publication; current per-dataset row totals differ from cached notebook annotations, recorded rather than force-adjusted"
+}

@@ -1,0 +1,24 @@
+{
+  "source_metric_functions": [
+    "calculate_prediction_cors",
+    "get_model_correlations",
+    "calculate_model_rank_loss",
+    "get_model_rank_loss"
+  ],
+  "source_sha256": "a0741a0ddfcd0323da83c4955cb4e43535a1a0a2518a388c211f2f54d10cf721",
+  "source_commit": "e92c3a8dc1d2452ffd979c094ec7d9e1f9b754e9",
+  "observations": 27187,
+  "unique_contexts": 23629,
+  "counts_match_cached_author_execution": true,
+  "data_multiplicity": "Original many-to-many merge behavior recreated from author CRISPRon table multiplicities. Duplicate observation weighting is retained solely for source-faithful replay; deduplicated inference/metrics remain separately available.",
+  "fresh_models": [
+    "Rule Set 3 (sequence)",
+    "CRISPRon"
+  ],
+  "author_score_replays": [
+    "DeepSpCas9",
+    "Rule Set 2"
+  ],
+  "metrics": "Unmodified source calculate/get correlation functions, 1000 row bootstraps. Genomewide rank loss uses source80% gene subsampling without replacement, not a classical full-gene bootstrap.",
+  "analysis_reconciliation": "Cohort multiplicity corrected from source code independently of score performance; no model or threshold tuning. Prior deduplicated results retained."
+}

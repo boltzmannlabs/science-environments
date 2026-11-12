@@ -1,8 +1,11 @@
 # Task: crispr_base_editing_005
 
 **Task family:** application-aware CRISPR design — **base editing (CBE/ABE, editor
-choice)**. **Status:** specification phase; runtime pending; published anchors only.
-Subsumes the prior `crispr-base-editing-environment` single-task scope.
+choice)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). Executed evidence:
+BE-Hive BE4 external-library efficiency test — weak transfer (Spearman 0.166; see the
+[completed-only registry](../benchmark/BENCHMARK_RUNS.md)); bystander-genotype held-out
+evaluation not run. Subsumes the prior `crispr-base-editing-environment` single-task
+scope. Start from the [general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -96,7 +99,15 @@ probabilities across differently configured models.
 
 ## Important Instructions
 
-Published anchors: BE-Hive (38,538 targets, outcome R≈0.9 / efficiency R≈0.7), BE-dataHIVE
-(460,000+ combos, 5 studies harmonized — fair-comparison substrate), DeepBE (63 editors),
-BEDICT2.0 (R 0.60–0.94). **No neutral BE benchmark exists** — cross-tool claims
-self-reported. Run slots NOT_EXECUTED.
+- **Published anchors:** BE-Hive (38,538 targets, outcome R≈0.9 / efficiency R≈0.7),
+  BE-dataHIVE (460,000+ combos, 5 studies harmonized — fair-comparison substrate),
+  DeepBE (63 editors), BEDICT2.0 (R 0.60–0.94). **No neutral BE benchmark exists** —
+  cross-tool claims self-reported.
+- **Executed evidence (local):** [BE-Hive BE4 any-edit
+  efficiency](../benchmark/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) — HEK293T/BE4
+  external library, n=9,975; Spearman 0.165766, Pearson 0.176357; conservative
+  known-training-20mer/31-nt exclusions. Result record [Run-2](../results/005_base_editing/Run-2_2026-11-12/REPORT.md);
+  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/005_base-editing/Run-3_2026-11-12/README.md).
+- **Gaps:** weak transfer performance — do not use as a validated BE4max
+  correction/purity ranker; bystander-genotype held-out evaluation NOT_RUN; unexecuted
+  evaluation slots stay `NOT_EXECUTED`.

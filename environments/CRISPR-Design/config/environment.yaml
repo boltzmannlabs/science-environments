@@ -1,9 +1,9 @@
 schema_version: "0.1"
 environment_id: crispr-design
-maturity: Curation-complete, pre-runtime
+maturity: Partial-runtime, executed-computational-benchmarks
 protocol_freeze: none-yet (protocol v0.1 draft)
 gate_thresholds_draft: config/thresholds.v0.1.draft.json   # calibrate on Kim-2019/Konstantakos before freezing
-computational_benchmarks_included: false   # published anchors only; see benchmark/BENCHMARK_RUNS.md
+computational_benchmarks_included: true    # evidence-qualified results; see benchmark/BENCHMARK_RUNS.md
 experimental_validation_included: false
 
 scope:

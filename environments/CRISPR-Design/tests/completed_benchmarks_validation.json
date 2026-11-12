@@ -1,0 +1,36 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "completed_only_scope",
+      "status": "PASS",
+      "detail": "7 completed native-model endpoint packages; no partial task folders/planning placeholders"
+    },
+    {
+      "name": "copied_artifact_hashes",
+      "status": "PASS",
+      "detail": "48 copied files match immutable source and stored SHA256"
+    },
+    {
+      "name": "fresh_native_inference",
+      "status": "PASS",
+      "detail": "5 actual fresh native inference reruns verified, identical predictions at saved precision"
+    },
+    {
+      "name": "measured_metrics",
+      "status": "PASS",
+      "detail": "RS3,BE-Hive,DeepPrime,CFD metrics independently recomputed;1000correctedRF refits verified"
+    },
+    {
+      "name": "active_links",
+      "status": "PASS",
+      "detail": "262 active document links resolve; archived evidence is outside benchmark/"
+    },
+    {
+      "name": "archived_history",
+      "status": "PASS",
+      "detail": "269 former benchmark files preserved byte-identically outside active benchmark section"
+    }
+  ]
+}

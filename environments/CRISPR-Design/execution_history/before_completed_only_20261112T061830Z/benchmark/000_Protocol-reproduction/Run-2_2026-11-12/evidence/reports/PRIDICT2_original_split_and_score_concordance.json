@@ -1,0 +1,35 @@
+{
+  "data_row_and_group_identity_match": true,
+  "conditions": {
+    "HEK": {
+      "source_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_index_base": 0,
+      "fold_assignment_mismatches": 0,
+      "n_source_assigned_rows": 22619,
+      "comparison_rows": 22619,
+      "max_abs_native_vs_published_intended_score_percent_units": 3.874307083151507e-05,
+      "mean_abs_score_difference_percent_units": 3.7992838717113834e-06
+    },
+    "K562": {
+      "source_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_index_base": 0,
+      "fold_assignment_mismatches": 0,
+      "n_source_assigned_rows": 22752,
+      "comparison_rows": 22752,
+      "max_abs_native_vs_published_intended_score_percent_units": 6.85467698637865e-05,
+      "mean_abs_score_difference_percent_units": 1.8185743806640326e-06
+    }
+  }
+}

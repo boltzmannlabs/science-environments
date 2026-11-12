@@ -1,9 +1,11 @@
 # Task: crispr_design_general_001
 
 **Task family:** application-aware CRISPR design — **general routing task (all modes)**.
-**Status:** specification phase — workflows defined; scoring runtime pending; no executed
-benchmark. Shares the core battery (E1–E6), draft gates and ranking contract with all
-modality tasks; only application-specific requirements differ.
+**Status:** In Progress; protocol v0.1 (DRAFT gates), partial runtime. Executed evidence:
+shared component benchmarks only (RS3 Sequence, CRISPRon — endpoint-level, not routing
+validation; see the [completed-only registry](../benchmark/BENCHMARK_RUNS.md)). Shares
+the core battery (E1–E6), draft gates and ranking contract with all modality tasks; only
+application-specific requirements differ.
 
 ## Description
 
@@ -114,8 +116,18 @@ dependent claims.
 
 ## Important Instructions
 
-Runtime is not yet implemented — until the runtime phase lands, this task documents the
-routing contract and the agent executes it against the verified local backends
-([runtime/CONTRACTS.md](../runtime/CONTRACTS.md)) with explicit `NOT_IMPLEMENTED` marks
-for absent adapters. Benchmark status: published anchors only; all Run slots
-`NOT_EXECUTED` ([BENCHMARK_RUNS](../benchmark/BENCHMARK_RUNS.md)).
+- **Runtime is partial:** task 002's knockout stack has executed end-to-end (Run1,
+  2026-11-10 — see [runtime contracts](../runtime/CONTRACTS.md)); other modality adapters
+  land in later phases. Execute this routing contract against the verified local backends
+  with explicit `NOT_IMPLEMENTED` marks for absent adapters; never fake a stage.
+- **Executed evidence (local):** shared component benchmarks — [RS3 Sequence held-out
+  activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md);
+  result record [results/001_general/Run-2](../results/001_general/Run-2_2026-11-12/REPORT.md);
+  historical Run-2/Run-3 comparisons in
+  [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/001_general-routing/Run-3_2026-11-12/README.md).
+  These are endpoint-level model benchmarks, not routing validation: no labeled
+  modality-routing corpus exists and no complete all-mode workflow has been validated.
+- **Honesty rules:** shared component benchmarks are not independent task replications;
+  unexecuted evaluation slots stay `NOT_EXECUTED`; `best_design=null` absent experimental
+  evidence.

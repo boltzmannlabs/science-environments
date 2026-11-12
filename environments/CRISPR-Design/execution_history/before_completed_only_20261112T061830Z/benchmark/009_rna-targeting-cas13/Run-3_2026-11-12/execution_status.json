@@ -1,0 +1,20 @@
+{
+  "task_id": "009",
+  "task_spec": "tasks/009_crispr_rna-targeting-cas13.md",
+  "application": "rna_targeting_cas13",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "COMPLETED_QUALIFIED_RFCOMBINED_REIMPLEMENTATION",
+  "finding": "1000 corrected RF refits verified; median rho0.667308; split/refit interval[0.629895,0.700127].",
+  "limitations": "Paper2000trees/mtry12 retained; comparative source defaults/finalCV mtry10 differ. Precomputed features, inherited global feature selection; LOSO GFP only0.2947; no TIGER/full-transcriptome specificity validation.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/009",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "shared_benchmark_not_independent_per_task": false,
+  "result_report": "results/009_rna_targeting_cas13/Run-2_2026-11-12/REPORT.md",
+  "benchmark_report": "benchmark/009_rna-targeting-cas13/Run-3_2026-11-12/README.md",
+  "metric_run_id": "Run-3_2026-11-12",
+  "new_model_inference": false,
+  "prior_benchmark_report": "benchmark/009_rna-targeting-cas13/Run-2_2026-11-12/README.md"
+}

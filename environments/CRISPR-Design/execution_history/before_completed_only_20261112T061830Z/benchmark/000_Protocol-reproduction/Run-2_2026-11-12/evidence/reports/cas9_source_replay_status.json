@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETED_SOURCE_FAITHFUL_RS3_COMPARISON_PROTOCOL",
+  "unique_contexts": 23629,
+  "observations": 27187,
+  "dataset_counts": {
+    "Aguirre2016": 7828,
+    "Behan2019": 7025,
+    "Chari2015": 1130,
+    "Kim2019_test": 518,
+    "Koike-Yusa2014": 6718,
+    "Shalem2014": 3968
+  },
+  "training_sequence_exclusion": "verified exact20mer union of four source model training lists",
+  "caveats": [
+    "Duplicate-key observation weighting retained for reproduction, not endorsed as independent biological evidence",
+    "RS3 Sequence+Target not substituted; target-feature model not part of this evaluation",
+    "Original CRISPRon_v0 internal0.80 and separate <=3mm exclusion protocol not claimed reproduced",
+    "Two baselines are author-score metric replays, not fresh local inference"
+  ]
+}

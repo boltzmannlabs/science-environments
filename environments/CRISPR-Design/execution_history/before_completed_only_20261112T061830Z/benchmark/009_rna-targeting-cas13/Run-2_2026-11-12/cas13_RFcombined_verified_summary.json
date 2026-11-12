@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETED_PROTOCOL_REIMPLEMENTATION",
+  "replicates": 1000,
+  "median_spearman": 0.6673,
+  "mean_spearman": 0.6669,
+  "split_refit_percentile_interval": [0.6299, 0.7001],
+  "median_pearson_squared": 0.4578,
+  "paper_reported_spearman_approx": 0.67,
+  "qualification": "Recovered source split seeds with legacy R3.5 sampling; per-training-split scaling corrected. Paper2000/mtry12 parameters retained, whereas comparative source uses RF defaults and final-CV source usesmtry10; no claim of exact replay of all source variants or raw-feature reconstruction",
+  "LOSO": [
+    {
+      "screen": "CD46",
+      "n": 704,
+      "spearman": 0.6186,
+      "pearson_squared": 0.3898,
+      "MSE": 0.171
+    },
+    {
+      "screen": "CD55",
+      "n": 925,
+      "spearman": 0.6332,
+      "pearson_squared": 0.3905,
+      "MSE": 0.1718
+    },
+    {
+      "screen": "CD71",
+      "n": 890,
+      "spearman": 0.6232,
+      "pearson_squared": 0.3812,
+      "MSE": 0.2839
+    },
+    {
+      "screen": "GFP",
+      "n": 399,
+      "spearman": 0.2947,
+      "pearson_squared": 0.0906,
+      "MSE": 0.2124
+    }
+  ]
+}

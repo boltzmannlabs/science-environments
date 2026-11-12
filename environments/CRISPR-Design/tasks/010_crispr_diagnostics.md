@@ -1,9 +1,12 @@
 # Task: crispr_diagnostics_010
 
 **Task family:** application-aware CRISPR design — **CRISPR diagnostics (Cas12/Cas13
-biosensors, SHERLOCK/DETECTR class)**. **Status:** specification phase; runtime pending;
-**pathogen-targeting sequence design is REVIEW-ONLY** (mirrors the siRNA environment's
-antiviral gate).
+biosensors, SHERLOCK/DETECTR class)**. **Status:** In Progress; protocol v0.1 (DRAFT
+gates). Executed evidence: incomplete — prior synthetic non-pathogen diagnostic geometry
+only; the EasyDesign numeric-score replay remains incomplete and no diagnostic model
+validation is accepted. **Pathogen-targeting sequence design is REVIEW-ONLY** (mirrors
+the siRNA environment's antiviral gate). Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -88,7 +91,13 @@ detection, specificity) from in-silico output alone.
 
 ## Important Instructions
 
-Published anchors: EasyDesign (Huang 2024, *iMeta*: ρ 0.812, n=11,496; WS
-crispr.zhejianglab.com), PrimedSherlock (Mann 2022, *BMC Bioinform*: rule-based design,
-Flavivirus validation lineage). Gap: no independent diagnostics benchmark. Run slots
-NOT_EXECUTED.
+- **Published anchors:** EasyDesign (Huang 2024, *iMeta*: ρ 0.812, n=11,496; WS
+  crispr.zhejianglab.com), PrimedSherlock (Mann 2022, *BMC Bioinform*: rule-based design,
+  Flavivirus validation lineage). Gap: no independent diagnostics benchmark.
+- **Executed evidence (local):** incomplete — the EasyDesign numeric-score replay
+  encountered nonnumeric dash tokens and was not rerun; source prediction columns have
+  unequal coverage ([Run-3 record, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/010_diagnostics/Run-3_2026-11-12/README.md)).
+  Result record [Run-2](../results/010_diagnostics_pathogen/Run-2_2026-11-12/REPORT.md).
+- **Gaps:** no clinical sensitivity/specificity/LoD and no new pathogen design or
+  scoring; diagnostic model validation slots stay `NOT_EXECUTED` until the replay is
+  fixed and rerun.

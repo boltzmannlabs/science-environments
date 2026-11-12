@@ -1,0 +1,52 @@
+{
+  "source_commit": "c133c35e205062e766bf515d1766169167e993b9",
+  "input_sha256": "fcffe27e4d3e4b814129ecc68a7d64afb4547adde2f0f052a3db5b77ba476200",
+  "sklearn": "1.0.2",
+  "numpy": "1.24.4",
+  "seed": 42,
+  "group_key": "grp_id",
+  "split": "GroupKFold5 then SECOND GroupShuffleSplit draw for validation, exactly as source function retains its second iteration",
+  "audit": [
+    {
+      "fold": 0,
+      "train": 16508,
+      "validation": 1856,
+      "test": 4592,
+      "train_test_target_overlap": 0
+    },
+    {
+      "fold": 1,
+      "train": 16544,
+      "validation": 1821,
+      "test": 4591,
+      "train_test_target_overlap": 0
+    },
+    {
+      "fold": 2,
+      "train": 16524,
+      "validation": 1841,
+      "test": 4591,
+      "train_test_target_overlap": 0
+    },
+    {
+      "fold": 3,
+      "train": 16509,
+      "validation": 1856,
+      "test": 4591,
+      "train_test_target_overlap": 0
+    },
+    {
+      "fold": 4,
+      "train": 16530,
+      "validation": 1835,
+      "test": 4591,
+      "train_test_target_overlap": 0
+    }
+  ],
+  "missing_labels": {
+    "HEK": 337,
+    "K562": 204
+  },
+  "prediction_rule": "Each row may only be scored by its held-out fold model; never average predictions from all5 folds on a development-library row",
+  "status": "FROZEN_BEFORE_OUTCOME_INFERENCE"
+}

@@ -38,17 +38,17 @@
     {
       "check": "benchmark_docs",
       "status": "PASS",
-      "detail": "5 pre-registered benchmarks; 11 NOT_EXECUTED slots; attestation present"
+      "detail": "7 completed native-model benchmark records; no partial/planned entries"
     },
     {
       "check": "honesty_markers",
       "status": "PASS",
-      "detail": "status/spec/readme honesty tokens present; results/ empty"
+      "detail": "status/spec/readme honesty tokens present; 13 application dir(s) with properly structured runs"
     },
     {
       "check": "runtime_probe",
       "status": "PASS",
-      "detail": "probe runs; 8 backends, 6 stages; findings={'C1_enumerate': 'READY', 'C2_on_target_local': 'READY', 'C3_off_target_bowtie': 'READY', 'C4_indel_outcome': 'READY', 'transcript_validation': 'READY', 'policy_off_target': 'READY'}"
+      "detail": "probe runs; 10 backends, 7 stages; findings={'C1_enumerate': 'READY', 'C2_on_target_local': 'READY', 'C3_off_target_bowtie': 'READY', 'C4_indel_outcome': 'READY', 'E1_reference_base': 'READY', 'policy_off_target': 'READY', 'run1_executed': 'READY'}"
     }
   ],
   "passed": 10,

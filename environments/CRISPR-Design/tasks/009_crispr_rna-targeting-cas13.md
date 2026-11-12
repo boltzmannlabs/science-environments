@@ -1,7 +1,11 @@
 # Task: crispr_rna_targeting_cas13_009
 
 **Task family:** application-aware CRISPR design — **RNA targeting (Cas13)**.
-**Status:** specification phase; runtime pending; published anchors only.
+**Status:** In Progress; protocol v0.1 (DRAFT gates). Executed evidence: RFcombined
+published-method refit evaluation (1,000 corrected refits verified, median ρ 0.667 —
+component-level; see the [completed-only registry](../benchmark/BENCHMARK_RUNS.md)); no
+TIGER or full-transcriptome specificity validation. Start from the
+[general task](001_crispr_design_general.md) for mode routing.
 
 ## Description
 
@@ -89,7 +93,16 @@ gates).
 
 ## Important Instructions
 
-Published anchors: Cas13design (Wessels 2020, *NBT*: 24,460 guides; validated 3,979/48
-genes; WS cas13design.nygenome.org) and TIGER (Wessels & Stirn 2023, *NBT*: ~200,000
-RfxCas13d guides; current reference). Arc Institute 2025 Cas13d tool is emerging —
-details UNVERIFIED, curated-only. Run slots NOT_EXECUTED.
+- **Published anchors:** Cas13design (Wessels 2020, *NBT*: 24,460 guides; validated
+  3,979/48 genes; WS cas13design.nygenome.org) and TIGER (Wessels & Stirn 2023, *NBT*:
+  ~200,000 RfxCas13d guides; current reference). Arc Institute 2025 Cas13d tool is
+  emerging — details UNVERIFIED, curated-only.
+- **Executed evidence (local):** [RFcombined published-method refit
+  evaluation](../benchmark/007_RFcombined/Run-4_2026-11-12/REPORT.md) — 1,000 corrected
+  RF refits verified; median ρ 0.667308; split/refit interval [0.629895, 0.700127].
+  Result record [Run-2](../results/009_rna_targeting_cas13/Run-2_2026-11-12/REPORT.md);
+  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/009_rna-targeting-cas13/Run-3_2026-11-12/README.md).
+- **Gaps:** paper 2,000-trees/mtry-12 settings retained while comparative-source
+  defaults/finalCV use mtry 10; precomputed features with inherited global feature
+  selection; LOSO GFP-only ρ 0.2947; no TIGER or full-transcriptome specificity
+  validation; unexecuted evaluation slots stay `NOT_EXECUTED`.
