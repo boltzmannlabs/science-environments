@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/siRNADiscovery/Data/Simone/sirna_Simone.fas",
+      "sha256": "f5cb5e06f4b423015f70d0dc6550f21e6afbc0f83272797a7ad55280298f3333"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/siRNADiscovery/Data/Simone/mrna_Simone.fas",
+      "sha256": "0590bccd0b9600ae04b552fcdbedb9a22bf1170279af93f01d39fc5f53f5ed3f"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/siRNADiscovery/Data/Simone/Simone_efficacy.csv",
+      "sha256": "e0505c59a14984fbdfadc7acd8dbbdeca1d13fea1acd730a738d22eb1c100dbd"
+    }
+  ],
+  "cohort_source": "Sciabola PMID 23241392; local extraction; original paper dose and model protocols differ.",
+  "training_independence": "Historical repo claims independence; no fresh sequence-overlap audit of all training corpora performed.",
+  "selection": "All rows; no outcome-based selection; original core matching recipe retained."
+}

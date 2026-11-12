@@ -1,0 +1,35 @@
+{
+  "gene": "HK2",
+  "n_joined": 95,
+  "OligoFormer": {
+    "n": 95,
+    "n_positive": 73,
+    "cutoff": 0.7,
+    "auc": 0.6444582814445828,
+    "pearson": 0.3079091849563556,
+    "spearman": 0.3103792034523485,
+    "auc_ci95_stratified_row_bootstrap": [
+      0.4962484433374844,
+      0.7771170610211704
+    ],
+    "bootstrap_replicates": 2000,
+    "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI."
+  },
+  "RN.Ai_fresh": {
+    "n": 95,
+    "n_positive": 73,
+    "cutoff": 0.7,
+    "auc": 0.7176214196762142,
+    "pearson": 0.4319257054537113,
+    "spearman": 0.34696437776757044,
+    "auc_ci95_stratified_row_bootstrap": [
+      0.5765722291407223,
+      0.8536892901618928
+    ],
+    "bootstrap_replicates": 2000,
+    "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI."
+  },
+  "top_measured_percentile_median": 92.79600570613408,
+  "selection": "Labels joined only after frozen candidate selection and ranking; historical full OligoFormer pool reused, not fresh generation.",
+  "comparison_to_published": "OligoFormer paper Huesken->Mixset AUC .8163 is different cohort, not a superiority comparator. MYC n=7 one positive: metrics exploratory, no robust discrimination claim."
+}

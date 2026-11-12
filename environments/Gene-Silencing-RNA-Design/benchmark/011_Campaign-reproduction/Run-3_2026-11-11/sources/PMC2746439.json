@@ -1,0 +1,658 @@
+{
+  "abstract": "Among dominant neurodegenerative disorders, Huntington\u2019s disease (HD) is perhaps the best candidate for treatment with small interfering RNAs (siRNAs) [1\u20139]. Invariably fatal, HD is caused by expansion of a CAG repeat in the Huntingtin gene, creating an extended polyglutamine tract that makes the Huntingtin protein toxic [10]. Silencing mutant Huntingtin mRNA should provide therapeutic benefit, but no siRNA strategy can yet distinguish among the normal and disease Huntingtin alleles and other mRNAs containing CAG repeats [11]. siRNAs targeting the disease isoform of a heterozygous single-nucleotide polymorphism (SNP) in Huntingtin provide an alternative [12\u201316], because such siRNAs should preserve expression of normal Huntingtin, which likely contributes to neuronal function [17\u201319]. We sequenced 22 predicted SNP sites in 225 human samples corresponding to HD and control subjects. We find that 48% of our patient population is heterozygous at a single SNP site; one isoform of this SNP is associated with HD. Several other SNP sites are frequently heterozygous. Consequently, five allele-specific siRNAs, corresponding to just three SNP sites, could be used to treat three-quarters of the United States and European HD patient populations. We have designed and validated selective siRNAs for the three SNP sites, laying the foundation for allele-specific RNAi therapy for HD.",
+  "affiliations": [
+    "1 Department of Medicine, University of Massachusetts Medical School, Worcester, MA, USA",
+    "5 Department of Biochemistry and Molecular Biology and Howard Hughes Medical Institute, University of Massachusetts Medical School, Worcester, MA, USA",
+    "2 Massachusetts General Hospital, Charlestown, MA, USA",
+    "3 University of Ulm, Germany",
+    "4 Columbia University School of Medicine, New York, NY, USA"
+  ],
+  "articleType": "research-article",
+  "assets": [
+    {
+      "assetType": "supplementary-material",
+      "href": "NIHMS118144-supplement-01.pdf",
+      "id": "SD1",
+      "label": "01",
+      "sectionTitle": "Supplementary Material"
+    },
+    {
+      "assetType": "figure",
+      "caption": "Analysis of SNPs in the human Huntingtin mRNA. (A) We sequenced PCR amplicons from genomic DNA from 109 HD patients and 116 controls spanning 22 SNP sites within the Huntingtin mRNA. The SNP at nucleotide 9,633 (rs362307, shown in red) is associated with HD and sites for which we have designed siRNAs are in bold. (B) The maximum percentage of patients to have at least one heterozygous SNP using any combination of 1 to 7 SNPs was calculated using the experimentally determined frequency of heterozygosity for the SNP sites in our study. Three SNPs cover ~75% of the patient population analyzed here.",
+      "href": "nihms118144f1.jpg",
+      "id": "F1",
+      "label": "Figure 1",
+      "sectionTitle": "Figures and Tables"
+    },
+    {
+      "assetType": "figure",
+      "caption": "Representative data for the development of isoform-specific siRNAs targeting two additional SNP sites. (A) siRNAs mismatched at position 16 discriminated between luciferase reporter mRNAs bearing either the C or the A isoform of the rs363125 SNP site. (B) siRNAs bearing a mismatch to the SNP site at position 10 and an additional position 5 mismatch discriminated between the G and A isoforms of the rs362273 SNP site.",
+      "href": "nihms118144f2.jpg",
+      "id": "F2",
+      "label": "Figure 2",
+      "sectionTitle": "Figures and Tables"
+    }
+  ],
+  "authors": [
+    {
+      "givenNames": "Edith L.",
+      "lastName": "Pfister"
+    },
+    {
+      "givenNames": "Lori",
+      "lastName": "Kennington"
+    },
+    {
+      "givenNames": "Juerg",
+      "lastName": "Straubhaar"
+    },
+    {
+      "givenNames": "Sujata",
+      "lastName": "Wagh"
+    },
+    {
+      "givenNames": "Wanzhou",
+      "lastName": "Liu"
+    },
+    {
+      "givenNames": "Marian",
+      "lastName": "DiFiglia"
+    },
+    {
+      "givenNames": "Bernhard",
+      "lastName": "Landwehrmeyer"
+    },
+    {
+      "givenNames": "Jean-Paul",
+      "lastName": "Vonsattel"
+    },
+    {
+      "givenNames": "Phillip D.",
+      "lastName": "Zamore"
+    },
+    {
+      "givenNames": "Neil",
+      "lastName": "Aronin"
+    }
+  ],
+  "doi": "10.1016/j.cub.2009.03.030",
+  "journal": {
+    "issn": "0960-9822",
+    "issue": "9",
+    "pages": "774-778",
+    "title": "Current biology : CB",
+    "volume": "19"
+  },
+  "licenses": [
+    {
+      "text": "This file is available for text mining. It may also be used consistent with the principles of fair use under the copyright law."
+    }
+  ],
+  "pmcId": "PMC2746439",
+  "pmcUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2746439/",
+  "pmid": "19361997",
+  "publicationDate": {
+    "day": "9",
+    "month": "4",
+    "year": "2009"
+  },
+  "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/19361997/",
+  "sections": [
+    {
+      "text": "Current strategies for designing single nucleotide-selective siRNAs rely on SNPs that produce a purine:purine mismatch between the siRNA guide strand and the counter-selected mRNA target [12, 20]. Only 4 of the 12 nucleotide mismatches satisfy this criterion. Even when purine:purine mismatches are available, single-mismatch siRNAs vary in their selectivity, ranging in one study, for example, from 4.3- to 133-fold discrimination between the fully complementary targeted RNA and the mismatched, counter-selected RNA [12].",
+      "title": "Results"
+    },
+    {
+      "text": "We sequenced twelve PCR amplicons spanning 22 known SNP sites in Huntingtin using genomic DNA from 109 Huntington\u2019s disease patients and 116 non-HD controls (Figure 1A). The sequenced DNA encompassed six complete coding exons and the portion of exon 67 that contains the stop codon and part of the 3\u2032 untranslated region (UTR). Twenty-two of the SNP sites were reported in the SNPper database [21, 22]. Four of these reported SNP sites were present only as a single isoform in our population. We identified an additional two sites by resequencing exons 2\u201367 in the Huntingtin locus from six HD patient samples. Table 1 reports the frequency of heterozygosity for each SNP site for patient and control DNA.\n\nOf the 24 SNPs, rs362307 at nt 9,633 (exon 67) of the mRNA was significantly associated with HD (p = 0.0000523). After Bonferroni correction for multiple testing, the association remained significant (p = 0.000890). More than 48% of the HD patients we examined\u2014which are believed to be representative of the US and European patient pool\u2014were heterozygous at this site (Table 1). The U isoform of the rs362307 SNP comprised 26% of Huntingtin alleles among the patients we tested, but in only 6% of alleles among the controls. This finding suggests that a single, allele-specific siRNA selectively targeting the U mRNA isoform of this SNP could be used to treat nearly half of this patient population. To confirm our statistical analysis, we used a previously reported method to determine the rs362307 SNP isoform linked to the CAG repeat expansion allele [23] for 16 patient blood samples. Eight out of the 16 patients were heterozygous at this site; of the eight, the U isoform was linked to the expanded CAG repeat for seven patients (Table S1). We conclude that the U isoform of this SNP is associated with the disease allele of Huntingtin mRNA.",
+      "title": "Sequencing and analysis of Huntingtin SNP sites in HD and control patients"
+    },
+    {
+      "text": "Eight other SNP sites were each heterozygous in > 33% of our patient population, but did not show a statistically significant association with HD. Because no particular isoform of these SNPs is associated with HD in our patient population, each SNP site requires two distinct, isoform-selective siRNAs. We calculated the maximum coverage (i.e., the number of patients with at least one heterozygous SNP site) for all possible combinations of 1 to 7 SNPs. Adding two additional SNP sites covered ~75% of our patient population. Using four or more SNP sites as potential targets for siRNA therapy is not predicted to provide much additional benefit: using even seven SNP sites achieves < 80% coverage, but would require 13 isoform-selective siRNAs (Figure 1B).",
+      "title": "An additional two SNPs achieve patient coverage > 75%"
+    },
+    {
+      "text": "The HD-associated SNP site at position 9,633 of the Huntingtin mRNA does not fall into the category of SNPs predicted to be readily amenable to selective targeting, because it does not create a purine:purine mismatch between siRNA and mRNA [12, 20]. However, our analysis of Huntingtin SNPs in HD patients and controls (Figure 1B and Table 1) suggests that a practicable RNA silencing therapy for HD requires an siRNA that targets the disease isoform at this site, but spares the normal Huntingtin mRNA. To this end, we designed siRNAs targeting the U isoform of the position 9,633 SNP. We tested both the efficacy and selectivity of the siRNAs in cultured human HeLa cells co-transfected with the siRNA and luciferase reporters containing in their 3\u2032 UTRs either the U or C isoform of the sequence containing the SNP. In our hands, such luciferase reporter assays are good predictors of the efficacy and selectivity of siRNAs for endogenous mRNA targets. Figures S1 and S2 present an example using a pair of siRNAs\u2014one fully matched and one bearing a position 10 (P10) mismatch\u2014that targets a SNP site (rs363125) in endogenous Huntingtin mRNA in HeLa cells. Previous work has shown that such SNP selective siRNAs can reduce mutant Huntingtin levels while leaving normal Huntingtin intact [24].\n\nsiRNAs whose guide strand was fully matched to the U isoform, which is associated with HD, but mismatched at position 10 or position 16 to the C isoform, were functional, but failed to discriminate between U and C reporter mRNAs (Figure S3A). (siRNAs that bear purine:pyrimidine mismatches to their counter-selected targets generally show poor discrimination [12].) We also tested single mismatches at positions 2 through 9 (Table S2), but found that all of these were less specific than the most selective position 10 + seed mismatch. Double-mismatch strategies based on a position 16 mismatch with the counter-selected isoform had very low activity (Table S2).\n\nPrevious work has shown that adding a second mismatch can improve the ability of siRNA to discriminate between alleles [25]. We reasoned that adding a mismatch in the seed sequence of the siRNA might sufficiently destabilize our siRNA so that the doubly mismatched siRNA would lose its ability to silence the wild-type Huntingtin mRNA, while pairing at the SNP site would allow the singly mismatched siRNA to retain silencing activity for the disease allele. Therefore, we tested doubly mismatched siRNAs combining a seed mismatch with a position 10 mismatch. We prepared siRNAs predicted to mismatch at position 10 with the normal Huntingtin mRNA and also bearing an additional mismatch to both normal and disease alleles at one of the six seed positions (2\u20137). Mismatches at positions 5 or 6, combined with a position 10 mismatch with the counter-selected isoform, resulted in a reduction or loss of silencing of the SNP-mismatched target, while retaining good activity against the SNP-matched target (Figure S3B).\n\nTable 2 reports \u201cdiscrimination ratios\u201d\u2014the ratio of the IC50 of the siRNA for the counter-selected target to the IC50 of the targeted mRNA. The P10 (SNP) + P5 siRNA (IC50P10 mismatch >20; IC50P10 match = 0.62 \u00b1 0.43 nM) had a discrimination ratio > 32 and at 20 nM\u2014the highest concentration tested\u2014reduced expression of the counter-selected reporter by only 33%. The P10 + P6 siRNA achieved no appreciable reduction in expression of the mismatched reporter, even at 20 nM (IC50P10 mismatch > 20 nM), but was less effective against the matched reporter (IC50P10 match = 1.5 \u00b1 0.31 nM), yielding a lower discrimination ratio. We often observed such a trade-off between the efficacy and the selectivity of SNP-specific siRNAs. We also designed and tested an siRNA targeting the C isoform; while it was less active than the siRNA targeting the U isoform, it selectively targeted the P10-matched allele (IC50P10 mismatch > 20; IC50P10 match = 3.2 \u00b1 2.2 nM; Figure S3C and Table 2).\n\nTo cover 75% of HD patients requires siRNAs targeting additional SNPs. Because no specific nucleotide isoform of these SNP sites is associated with HD, selective siRNAs are needed for both isoforms. Our long-term strategy would be to screen patients to determine the SNP isoform associated with the expanded CAG repeat Huntingtin allele [23] and select the corresponding for therapy. As a first step toward this goal, we tested its ability to target one isoform of the SNP while minimizing silencing of the other isoform. For the SNP site rs363125, which lies at nt 5,304 (exon 39) and occurs as either an A or a C, a single mismatch was sufficient to provide a high degree of selectivity for the fully matched target for both the A (>27-fold discrimination; IC50mismatch > 20 nM; IC50match = 0.74 \u00b1 0.40 nM) and C (IC50mismatch > 20nM; >55-fold discrimination; IC50match = 0.36 \u00b1 0.24 nM) isoforms (Figure 2A, Figure S4, and Table 2). For a second SNP, rs362273, which lies at nt 7,942 (exon 57) in the Huntingtin mRNA and occurs as either an A or a G, the P10 (SNP) + P5 siRNA design targeting the A isoform of the SNP provided ~30-fold selectivity (IC50P10 mismatch = 0.59 \u00b1 0.08 nM; IC50P10 match = 0.02 \u00b1 0.003 nM), whereas the siRNA targeting the G isoform (IC50P10 mismatch = 0.74 \u00b1 0.11 nM; IC50P10 match = 0.15 \u00b1 0.04 nM) gave ~4.9-fold selectivity (Figure 2B, Figure S5 and Table 2).",
+      "title": "Development of allele-specific siRNAs"
+    },
+    {
+      "text": "Targeted reduction of mutant Huntingtin mRNA is considered an ideal strategy for treating HD. The primary obstacles to the development of such a therapy have been concerns about the number of siRNAs that would require testing in clinical trials. It is not clear if drug regulatory agencies will permit patient-specific siRNAs to be used in humans without large-scale clinical trials. Such trials are, of course, not possible if only small numbers of patients share a common SNP isoform. Our results suggest that there is sufficient heterozygosity at a small number of SNP sites among American and European HD patients to support SNP-specific siRNA therapy. Targeting just three SNPs with five siRNAs should cover the majority of HD patients in the population studied here. This is possible because of the presence of several highly heterozygous SNPs and because a single SNP isoform for SNP rs362307 is associated with HD. One siRNA targeting this HD-associated isoform should target the mutant Huntingtin allele in nearly 50% of our patient population. We have developed an siRNA that selectively targets the disease-associated isoform of this SNP in cultured human cells. In the near future, pre-clinical testing of this siRNA for efficacy, selectivity, and safety is clearly of the highest importance.\n\nWhat of the ~25% of patients predicted to be beyond the reach of the five siRNAs developed here? Unfortunately, our analysis predicts that a very large number of siRNAs will be required to provide siRNA therapy for this sub-population. Adding an additional four siRNAs (for a total of nine siRNAs corresponding to 5 SNP sites) only increases the treatable patient population by 3%. A further increase in the number of siRNAs provides no real additional benefit.\n\nFinally, we find that by using potentiating mismatches in the seed sequence, isoform-selective siRNAs can be designed for SNP sites predicted to be poor candidates for the development of allele-selective siRNAs. Our data suggest that a single siRNA directed against a SNP isoform associated with HD could be used to treat nearly half the US and European HD population. Clearly, an siRNA directed against this SNP isoform, such as the siRNA presented here, merits thorough pre-clinical validation to test its promise as a candidate therapy for HD.",
+      "title": "Discussion"
+    },
+    {
+      "text": "[Supplementary: 01]",
+      "title": "Supplementary Material"
+    },
+    {
+      "text": "[Figure: Figure 1]\n\n[Figure: Figure 2]",
+      "title": "Figures and Tables"
+    },
+    {
+      "text": "We thank members of the Zamore and Aronin laboratories for encouragement, helpful discussions and comments on the manuscript. This work was supported, in part, by grants from the NIH to NA, MD, and PDZ (NS38194), to the Diabetes and Endocrinology Research Center (P30DK032520-25), and from the CHDI (High Q Foundation) to NA and PDZ,.",
+      "title": "Acknowledgments"
+    },
+    {
+      "text": "Author contributions\n\nELP, PDZ, and NA conceived the experiments. ELP, JS, SW, PDZ, and NA designed the experiments. ELP, LK, SW, and WL performed the experiments. ELP, LK, JS, PDZ, and NA analyzed the results. MD, BL, and J-PV contributed reagents. ELP and PDZ prepared the figures, and ELP, PDZ and NA wrote the manuscript.\n\nThis is a PDF file of an unedited manuscript that has been accepted for publication. As a service to our customers we are providing this early version of the manuscript. The manuscript will undergo copyediting, typesetting, and review of the resulting proof before it is published in its final citable form. Please note that during the production process errors may be discovered which could affect the content, and all legal disclaimers that apply to the journal pertain.",
+      "title": "Footnotes"
+    }
+  ],
+  "source": "pmc",
+  "tables": [
+    {
+      "caption": "Frequency of Heterozygosity for 24 SNP sites in the Huntingtin mRNA. The SNP sites for which we tested siRNAs are in bold; the SNP associated with HD is shaded.",
+      "headerRowCount": 2,
+      "id": "T1",
+      "label": "Table 1",
+      "rows": [
+        [
+          "Location in mRNA (position, nt)",
+          "Reference Number",
+          "",
+          "Percent heterozygosity"
+        ],
+        [
+          "Location in mRNA (position, nt)",
+          "Reference Number",
+          "Controls",
+          "HD patients"
+        ],
+        [
+          "ORF, exon 20 (2822)",
+          "rs363075",
+          "G/A, 10.3% (G/G, 89.7%)",
+          "G/A, 12.8% (G/G, 86.2%; A/A 0.9%)"
+        ],
+        [
+          "ORF, exon 25 (3335)",
+          "rs35892913",
+          "G/A, 10.3% (G/G, 89.7%)",
+          "G/A, 13.0% (G/G, 86.1%; A/A, 0.9%)"
+        ],
+        [
+          "ORF, exon 25 (3389)",
+          "rs1065746",
+          "G/C, 0% (G/G 100%)",
+          "G/C, 0.9% (G/G 99.1%)"
+        ],
+        [
+          "ORF, exon 25 (3418)",
+          "rs17781557",
+          "T/G, 12.9% (T/T, 87.1%)",
+          "T/G, 1.9% (T/T, 98.1%)"
+        ],
+        [
+          "ORF, exon 29 (3946)",
+          "rs4690074",
+          "C/T, 37.9% (C/C, 50.9%; T/T, 11.2)",
+          "C/T, 35.8% (C/C, 59.6%; T/T, 4.6%)"
+        ],
+        [
+          "ORF, exon 39 (5304)",
+          "rs363125",
+          "C/A, 17.5% (C/C, 79.0%; A/A, 3.5%)",
+          "C/A, 11.0% (C/C, 87.2%; A/A, 1.8%)"
+        ],
+        [
+          "ORF, exon 44 (6150)",
+          "exon 44 (new)",
+          "G/A, 0% (G/G, 100%)",
+          "G/A, 2.8% (G/G, 97.2%)"
+        ],
+        [
+          "ORF, exon 48 (6736)",
+          "rs362336",
+          "G/A, 38.7% (G/G, 49.6%; A/A, 11.7%)",
+          "G/A, 37.4% (G/G, 57.9%; A/A, 4.7%)"
+        ],
+        [
+          "ORF, exon 50 (7070)",
+          "rs362331",
+          "T/C, 45.7% (T/T, 31.0%; C/C, 23.3%)",
+          "T/C, 39.4% (T/T, 49.5%; C/C, 11.0%)"
+        ],
+        [
+          "ORF, exon 57 (7942)",
+          "rs362273",
+          "A/G, 40.3% (A/A, 48.2%; G/G, 11.4%)",
+          "A/G, 35.2% (A/A, 60.2%; G/G, 4.6%)"
+        ],
+        [
+          "ORF, exon 61 (8501)",
+          "rs362272",
+          "G/A, 37.1% (G/G, 51.7%; A/A, 11.2%)",
+          "G/A, 36.1% (G/G, 59.3%; A/A, 4.6%)"
+        ],
+        [
+          "ORF, exon 65 (9053)",
+          "rs3025806",
+          "A/T 0% (C/C, 100%)",
+          "A/T 0% (C/C, 100%)"
+        ],
+        [
+          "ORF, exon 65 (9175)",
+          "exon 65 (new)",
+          "G/A, 2.3% (G/G, 97.7%)",
+          "G/A, 0% (G/G, 100%)"
+        ],
+        [
+          "ORF, exon 67 (9523)",
+          "rs362308",
+          "T/C, 0% (T/T, 100%)",
+          "T/C, 0% (T/T, 100%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (9633)",
+          "rs362307",
+          "C/T, 13.0% (C/C, 87.0%)",
+          "C/T, 48.6% (C/C, 49.5%; T/T 1.9%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (9888)",
+          "rs362306",
+          "G/A, 36.0% (G/G, 52.6%; A/A, 11.4%)",
+          "G/A, 35.8% (G/G, 59.6%; A/A, 4.6%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (9936)",
+          "rs362268",
+          "C/G, 36.8% (C/C, 50.0%; G/G 13.2%)",
+          "C/G, 35.8% (C/C, 59.6%; G/G, 4.6%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (9948)",
+          "rs362305",
+          "C/G, 20.2% (C/C, 78.1%; G/G 1.8%)",
+          "C/G, 11.9% (C/C, 85.3%; G/G, 2.8%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (10060)",
+          "rs362304",
+          "C/A, 22.8% (C/C, 73.7%; A/A, 3.5%)",
+          "C/A, 11.9% (C/C, 85.3%; AA, 2.8%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (10095)",
+          "rs362303",
+          "C/T, 18.4% (C/C, 79.8%; T/T, 1.8%)",
+          "C/A, 11.9% (C/C, 85.3%; T/T, 2.8%)"
+        ],
+        [
+          "3\u2032-UTR, exon 67 (10704)",
+          "rs1557210",
+          "C/T, 0% (C/C 100%)",
+          "C/T, 0% (C/C 100%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (10708)",
+          "rs362302",
+          "C/T, 4.3% (C/C, 95.7%)",
+          "C/T, 0% (C/C, 100%)"
+        ],
+        [
+          "3\u2032-UTR, exon 67 (10796)",
+          "rs3025805",
+          "G/T, 0% (G/G 100%)",
+          "G/T, 0% (G/G 100%)"
+        ],
+        [
+          "3\u2032 UTR, exon 67 (11006)",
+          "rs362267",
+          "C/T, 36.2% (C/C, 52.6%; T/T,11.2%)",
+          "C/T, 35.5% (C/C, 59.8%; T/T, 4.7%)"
+        ]
+      ],
+      "sectionTitle": "Figures and Tables"
+    },
+    {
+      "caption": "Validation of siRNAs designed to distinguish between matched and mismatched SNP isoforms. IC50 values are given as the average \u00b1 standard deviation for at least three independent experiments. The IC50 is reported as > 20 nM for siRNAs that failed to achieve half-maximal inhibition at the highest concentration tested.",
+      "headerRowCount": 3,
+      "id": "T2",
+      "label": "Table 2",
+      "rows": [
+        [
+          "Reference\nNumber",
+          "siRNA guide strand",
+          "SNP\nposition",
+          "primary\nmismatch",
+          "secondary\nmismatch\nposition",
+          "secondary\nmismatch",
+          "IC50 (nM)",
+          "IC50 (nM)",
+          "Discrimination\nratio"
+        ],
+        [
+          "Reference\nNumber",
+          "siRNA guide strand",
+          "SNP\nposition",
+          "primary\nmismatch",
+          "secondary\nmismatch\nposition",
+          "secondary\nmismatch",
+          "Match",
+          "Mismatch",
+          "Discrimination\nratio"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "rs363125",
+          "5\u2032-agcguugaaguacugucccca-3\u2032",
+          "10",
+          "G:A",
+          "none",
+          "none",
+          "0.17 \u00b1 0.11",
+          "0.27 \u00b1 0.25",
+          "1.6"
+        ],
+        [
+          "rs363125",
+          "5\u2032-agcguugaauuacugucccca-3\u2032",
+          "10",
+          "U:C",
+          "none",
+          "none",
+          "0.18 \u00b1 0.09",
+          "0.22 \u00b1 0.07",
+          "1.2"
+        ],
+        [
+          "rs363125",
+          "5\u2032-ucuucuagcguugaaguacug-3\u2032",
+          "16",
+          "G:A",
+          "none",
+          "none",
+          "0.36 \u00b1 0.24",
+          ">20",
+          ">55"
+        ],
+        [
+          "rs363125",
+          "5\u2032-ucuucuagcguugaauuacug-3\u2032",
+          "16",
+          "U:C",
+          "none",
+          "none",
+          "0.74 \u00b1 0.40",
+          ">20",
+          ">27"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "rs362307",
+          "5\u2032-cacaagggcgcagacuuccaa-3\u2032",
+          "10",
+          "G:U",
+          "none",
+          "none",
+          "0.36 \u00b1 0.04",
+          "0.77 \u00b1 0.16",
+          "2.1"
+        ],
+        [
+          "rs362307",
+          "5\u2032-uacaagggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "none",
+          "none",
+          "0.16 \u00b1 0.09",
+          "0.14 \u00b1 0.10",
+          "0.87"
+        ],
+        [
+          "rs362307",
+          "5\u2032-gcagggcacaagggcgcagac-3\u2032",
+          "16",
+          "G:U",
+          "none",
+          "none",
+          "0.73 \u00b1 0.12",
+          "0.72 \u00b1 0.12",
+          "0.99"
+        ],
+        [
+          "rs362307",
+          "5\u2032-ucagggcacaagggcacagac-3\u2032",
+          "16",
+          "A:C",
+          "none",
+          "none",
+          "0.19 \u00b1 0.02",
+          "0.20 \u00b1 0.06",
+          "1.1"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cgcaagggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "2",
+          "G:U",
+          "1.0 \u00b1 0.35",
+          "1.9 \u00b1 0.27",
+          "1.9"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cauaagggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "3",
+          "U:G",
+          "3.0 \u00b1 1.8",
+          "3.5 \u00b1 1.6",
+          "1.2"
+        ],
+        [
+          "rs362307",
+          "5\u2032-caccagggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "4",
+          "C:U",
+          "1.0 \u00b1 0.22",
+          "1.6 \u00b1 1.2",
+          "1.6"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cacacgggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "5",
+          "C:U",
+          "0.62 \u00b1 0.43",
+          ">20",
+          ">32"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cacaauggcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "6",
+          "U:C",
+          "1.5 \u00b1 0.31",
+          ">20",
+          ">13"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cacaagugcacagacuuccaa-3\u2032",
+          "10",
+          "A:C",
+          "7",
+          "U:C",
+          "1.3 \u00b1 0.51",
+          "5.9 \u00b1 1.9",
+          "4.5"
+        ],
+        [
+          "rs362307",
+          "5\u2032-cacaauggcgcagacuuccaa-3\u2032",
+          "10",
+          "G:U",
+          "6",
+          "U:C",
+          "3.2 \u00b1 2.2",
+          ">20",
+          ">6"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "rs362273",
+          "5\u2032-guugaucuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "none",
+          "none",
+          "0.09 \u00b1 0.14",
+          "0.01 \u00b1 0.006",
+          "0.11"
+        ],
+        [
+          "rs362273",
+          "5\u2032-guugaucugcagcagcagcuu-3\u2032",
+          "10",
+          "C:A",
+          "none",
+          "none",
+          "0.12 \u00b1 0.06",
+          "0.44 \u00b1 0.11",
+          "3.7"
+        ],
+        [
+          "rs362273",
+          "5\u2032-cucgggguugaucuguagcag-3\u2032",
+          "16",
+          "U:G",
+          "none",
+          "none",
+          "0.01 \u00b1 0.002",
+          "0.007 \u00b1 0.002",
+          "0.70"
+        ],
+        [
+          "rs362273",
+          "5\u2032-cucgggguugaucugcagcag-3\u2032",
+          "16",
+          "C:A",
+          "none",
+          "none",
+          "0.01 \u00b1 0.003",
+          "0.004 \u00b1 0.001",
+          "0.41"
+        ],
+        [
+          "rs362273",
+          "5\u2032-ucugaucuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "2",
+          "C:A",
+          "0.01 \u00b1 0.002",
+          "0.06 \u00b1 0.008",
+          "5.9"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uucgaucuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "3",
+          "C:A",
+          "0.02 \u00b1 0.003",
+          "0.29 \u00b1 0.04",
+          "15"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uuuuaucuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "4",
+          "U:C",
+          "0.03 \u00b1 0.006",
+          "0.37 \u00b1 0.11",
+          "11"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uuugcucuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "5",
+          "C:U",
+          "0.02 \u00b1 0.003",
+          "0.59 \u00b1 0.08",
+          "31"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uuugaccuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "6",
+          "C:A",
+          "0.02 \u00b1 0.002",
+          "0.06 \u00b1 0.015",
+          "2.7"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uuugauuuguagcagcagcuu-3\u2032",
+          "10",
+          "U:G",
+          "7",
+          "U:G",
+          "0.006 \u00b1 0.001",
+          "0.10 \u00b1 0.02",
+          "17"
+        ],
+        [
+          "rs362273",
+          "5\u2032-uuugcucugcagcagcagcuu-3\u2032",
+          "10",
+          "C:A",
+          "5",
+          "C:U",
+          "0.15 \u00b1 0.04",
+          "0.74 \u00b1 0.11",
+          "4.9"
+        ]
+      ],
+      "sectionTitle": "Figures and Tables"
+    }
+  ],
+  "title": "Five siRNAs targeting three SNPs in Huntingtin may provide therapy for three-quarters of Huntington\u2019s disease patients",
+  "viaSource": "pmc"
+}

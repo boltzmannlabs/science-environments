@@ -1,0 +1,15 @@
+{
+  "job_name": "rna_siRNA_gen",
+  "doc_id": "6af45c45b7e34e64c3637a3a",
+  "experiment_name": "siRNA Generation - 20261111-121459Z - 7cdd23",
+  "submission": "accepted",
+  "terminal_status": "failed",
+  "status_message": "job failed",
+  "service_diagnostic": "RuntimeError: Inference failed: STDOUT: None STDERR: None",
+  "job_terminal_confirmed": true,
+  "candidate_artifact_returned": false,
+  "resubmitted": false,
+  "fallback": "User explicitly approved local backend execution after this observed terminal failure.",
+  "warning_approved": "FASTA record syntax checked; biological sequence suitability is not established by this check.",
+  "TTR_input_sha256": "09e44f4cccb4d3645105e7c4b07114a7f6502a5bae79213711ad3db363318fea"
+}

@@ -1,0 +1,11 @@
+candidate_id,gate,passed,failed_criteria,missing_evidence,evaluated_criteria
+patisiran_derived_19nt_core,A_input_integrity,True,,orientation_documentation,valid_representation; orientation; target_mapping; guide_length_ok
+patisiran_derived_19nt_core,B_computational_suitability,True,,siRNADiscovery: no pretrained checkpoint,gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile
+patisiran_derived_19nt_core,B_seed_toxicity_flag,True,,,seed_viability_avg_human
+patisiran_derived_19nt_core,C_experimental_evidence,True,,no experimental measurements supplied,
+patisiran_derived_19nt_core,D_translational_evidence,True,,no PK/PD data or validated model inputs,
+vutrisiran_derived_19nt_core,A_input_integrity,True,,orientation_documentation,valid_representation; orientation; target_mapping; guide_length_ok
+vutrisiran_derived_19nt_core,B_computational_suitability,True,,siRNADiscovery: no pretrained checkpoint,gc_content; duplex_energy; full_length_offtarget_hits; seed_occurrence_fold; pots_percentile
+vutrisiran_derived_19nt_core,B_seed_toxicity_flag,True,,,seed_viability_avg_human
+vutrisiran_derived_19nt_core,C_experimental_evidence,True,,no experimental measurements supplied,
+vutrisiran_derived_19nt_core,D_translational_evidence,True,,no PK/PD data or validated model inputs,

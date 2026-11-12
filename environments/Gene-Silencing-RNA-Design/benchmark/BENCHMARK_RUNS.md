@@ -103,3 +103,23 @@ Published reference: none (thresholds are provenance-tagged `user_operational`; 
 ---
 
 *Config provenance: every run's thresholds = `config/thresholds.v1.0.frozen.json` unless a delta is stated; weights/vetoes per application = `tasks/*.request.example.json`; engine freezes v1.0–v1.2.1 in the source workspace. Add new runs as new rows — never overwrite a prior run's numbers.*
+
+## R7 — Run-3 campaign reproduction (2026-11-11)
+
+**PUBLISHED REFERENCE:** [Primary-paper curation and comparability report](011_Campaign-reproduction/Run-3_2026-11-11/REPORT.md). OligoFormer Mixset AUC 0.8163 is not the same endpoint/cohort as the RN.Ai Simone replay. Clinical outcomes are context, never per-sequence prediction ground truth.
+
+**RUN CONFIG:** `Run-3_2026-11-11`: user-approved local fallback after one confirmed failed Boltzmann generation attempt; unchanged frozen gates; single-reference TTR/HK2/MYC/PCSK9/TNF; top-100 review and 24-candidate fresh battery per target; explicit both-strand screen and fail-closed application vetoes before requirement ranking. TTR/PCSK9/TNF generation is fresh; HK2/MYC full generation pools are reused with hashes. Panels are shared-target application frames, not independent biological validations.
+
+**RESULTS TABLE:**
+
+| Endpoint | Published | Prior run | Run-3 | Comparison |
+|---|---|---|---|---|
+| RN.Ai Simone AUC (n=322) | No matched published RN.Ai value verified | 0.7021 | 0.7021 | All 322 fresh predictions exactly reproduce prior scores |
+| TTR projected drug-core ranks | Clinical anchors, no rank reference | 107 / 62 of 598 | 107 / 62 of 598 | Fresh full-pool generation reproduces ranks |
+| HK2 OligoFormer AUC (n=95) | 0.8163 on different Mixset protocol | 0.6445 | 0.6445 | Historical OligoFormer pool; fresh RN.Ai AUC 0.7176 |
+| HTT reporter RN.Ai Spearman (n=26) | IC50 outcomes, not predictor correlation | 0.296 | 0.2630 | Context recipe differs; no like-for-like improvement claim |
+| HTT exact-mismatch ΔΔG vs log DR (21 uncensored) | No quantitative RNAduplex reference | Different weakest-of-three/KD% proxy | -0.3080 | Exact primary and secondary paper mismatch pairs; not a cellular selectivity claim |
+| UGUGU sensitivity/specificity | Qualitative mechanism | 0.10 / 1.00 on different subset | 0.1429 / 1.00 (n=8) | Changed exclusions and deduplication; not tuned improvement |
+
+Execution accounting: 11 task records; 9 partial application-panel bundles; 2 published-reporter EVALUATE tasks; 120 unique candidate batteries; 5,877 freshly generated and 9,311 reused windows. Panels contain 51 rows / 31 unique guides. No complete application task or biological validation is claimed: context/annotation stages remain unrun; allele/CNS DESIGN branches remain gated. See [task ledger](011_Campaign-reproduction/Run-3_2026-11-11/task_execution_status.csv), [counts](011_Campaign-reproduction/Run-3_2026-11-11/campaign_counts.json), and per-application `results/*/Run-3_2026-11-11/`.
+

@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/immune_scan.py",
+      "sha256": "2a1e90c7224919d783c68313727897c9c56a508266b49767a021ce4bc9be8d76"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/rank_by_requirements.py",
+      "sha256": "f83ac31668b034392119a31965857fcd1630d5e682e32b6516baeb479ea152f8"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/explore_design.py",
+      "sha256": "f77d06478bcbfc97faa60c5dbb9a8c701ea62286f7aaf42a844961d8917680ef"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/config/thresholds.v1.0.frozen.json",
+      "sha256": "b7ad48084c0a38e4975b12b6f885543d98fc0196b78f176493211c4a215cdfb3"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/run_campaign_20261111.py",
+      "sha256": "c9cb6084f2d3122e5fd1f8e157ce8725a5e113b06d3c15e76e6d7a3c30f3418a"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/benchmark_campaign_20261111.py",
+      "sha256": "8fbc81cf7915649445b29c739b4ce77d1cf6c9046000d7967f832a5bb0987523"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/finalize_campaign_20261111.py",
+      "sha256": "14dcb4488e572579e577b02ac5f63a05596322da3fe589f56459830eab331d3a"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/report_campaign_20261111.py",
+      "sha256": "36ecb0d66932aa75e989fe9492d416a1dc87e9a97daad41d9df098f8f1172fdc"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/tests/test_campaign_20261111.py",
+      "sha256": "41e3a2350aa7bc4512d97bad0c3c74914eeb1e7f0d130527ccfd0f8ad1a77803"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/RN.Ai-predict/RN.Ai-predict.model.keras",
+      "sha256": "9ccaa25b2ff21bd7dfe9aaaa335e44a9796b6178f5ff181555c3f2a02d3a11ad"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/RNAiSpline/checkpoints/best_model.pth",
+      "sha256": "b50e37c246cc071ee81eeac5a438772b579cd2fdc9c8bce631be16ce6b2c48bc"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/.cache/seed7_counts_gencode_v50.npy",
+      "sha256": "12c40b42e98ac35f6748e22cb24a7db73ab2f5ca6218aaaebb26919cd063e3e7"
+    }
+  ],
+  "versions": {
+    "RNAfold": {
+      "returncode": 0,
+      "output": "RNAfold 2.7.2\n"
+    },
+    "RNAduplex": {
+      "returncode": 0,
+      "output": "RNAduplex 2.7.2\n"
+    },
+    "bowtie2": {
+      "returncode": 0,
+      "output": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/envs/biotools/bin/bowtie2-align-s version 2.5.5\n64-bit\nBuilt on runnervm7g52i\nMon Sep 14 02:26:12 UTC 2026\nCompiler: gcc version 14.4.0 (conda-forge gcc 14.4.0-4) \nOptions: -O3 -funroll-loops -g3 -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/envs/biotools/include -fdebug-prefix-map=/opt/conda/conda-bld/bowtie2_1789352508860/work=/usr/local/src/conda/bowtie2-2.5.5 -fdebug-prefix-map=/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/envs/biotools=/usr/local/src/conda-prefix -O3\nSizeof {int, long, long long, void*, size_t, off_t}: {4, 8, 8, 8, 8, 8}\n[WARNING] Failed to launch x86-64-v3 version, staying with default\n[WARNING] Failed to launch x86-64-v3 version, staying with default\n"
+    }
+  },
+  "python": "3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]",
+  "local_backend_root": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench",
+  "OligoFormer_checkpoint_hashes": "Per-fresh-generation manifest.json; historical-reuse manifests explicitly identify source pools.",
+  "script_revision_note": "Final script hashes include postprocessing masks for the inherited blended rank field and context-manager cleanup; no source model/refit or biological gate change. Per-task earlier runner hashes are execution-time snapshots, not hashes of every later cosmetic script revision.",
+  "raw_native_artifact_note": "Disposable generated runtime trees were removed after preserving native tabular output and generator manifests; no third-party code/weights redistributed."
+}

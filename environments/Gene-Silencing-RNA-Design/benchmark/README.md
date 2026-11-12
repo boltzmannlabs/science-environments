@@ -20,3 +20,10 @@ Status summary:
 No-tuning attestation: thresholds, weights and rules were frozen before evaluation; no retrospective outcome influenced any parameter. Known target-level gate saturation (HIF1A off-target screen) is documented in the case folder and drives backlog #3.
 
 **Validity ledger:** the source workspace maintains a master index of every benchmark with valid/superseded status (`~/IMRAN/NOV26/siRNA-Design-Task-Specific/BENCHMARKS.md`). Folders here carry only the retained (valid) evidence; superseded originals stay archived in the source workspace.
+
+## Run-3_2026-11-11 — fresh execution and primary-source audit
+
+See the [campaign report](011_Campaign-reproduction/Run-3_2026-11-11/REPORT.md), [endpoint comparisons](011_Campaign-reproduction/Run-3_2026-11-11/benchmark_comparison.csv), and [task ledger](011_Campaign-reproduction/Run-3_2026-11-11/task_execution_status.csv). New case-specific Run-3 folders link to exact results. This run preserves prior data and frozen gates, reproduces RN.Ai Simone predictions exactly, reproduces the TTR drug-core site ranks with fresh generation, and executes paper-defined HTT reporter evaluations. It does not claim matched-protocol superiority or full application completion.
+
+The source audit independently verifies NM_001530.4 as HIF1A (not HIF1AN), corrects the Goodchild paper mapping to PMID 19630977 in a derived table, and uses PCSK9 RefSeq transcript variant 1 for the new liver/GalNAc frame. Historical artifacts remain unchanged; read their claims alongside the new source-verification and comparability caveats rather than inheriting every historical interpretation.
+
