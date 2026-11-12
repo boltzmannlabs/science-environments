@@ -18,7 +18,7 @@ def build_config(root=ROOT):
                       'expected_outputs':re.findall(r'^\|\s*`([^`]+)`\s*\|',text,re.M),
                       'input_files':re.findall(r'`(inputs/[^`]+)`',text),
                       'source_record_count':400,'shortlist_count':8,'final_priority_count':2})
-    return {'name':'hit-identification','status':'draft_runtime_unqualified',
+    return {'name':'virtual-screening','status':'draft_runtime_unqualified',
             'task_count':len(tasks),'working_directory':'environment_root','tasks':tasks}
 
 if __name__=='__main__':

@@ -1,0 +1,118 @@
+{
+  "name": "virtual-screening",
+  "status": "draft_runtime_unqualified",
+  "task_count": 4,
+  "working_directory": "environment_root",
+  "tasks": [
+    {
+      "id": "task_001",
+      "file": "tasks/task_001_d2r_peripheral_candidate_prioritisation.md",
+      "title": "d2r_peripheral_candidate_prioritisation",
+      "target": "Human dopamine D2 receptor (D2R)",
+      "pdb": "6CM4",
+      "task_format": "goal_oriented",
+      "grading_mode": "manual_review_required",
+      "owner_file": "benchmark/task_001_d2r_peripheral_candidate_prioritisation.md",
+      "expected_outputs": [
+        "ranked_candidates.csv",
+        "assessment.json",
+        "report.md"
+      ],
+      "input_files": [
+        "inputs/targets/6CM4_crystal_complex.pdb",
+        "inputs/targets/target_registry.csv",
+        "inputs/targets/DRD2_P14416.fasta",
+        "inputs/library/compounds_400.csv",
+        "inputs/library/compounds_400.sdf",
+        "inputs/controls/control_registry.csv",
+        "inputs/controls/native_atom_mapping.csv"
+      ],
+      "source_record_count": 400,
+      "shortlist_count": 8,
+      "final_priority_count": 2
+    },
+    {
+      "id": "task_001",
+      "file": "tasks/task_001_d2r_peripheral_candidate_prioritisation_prompt.md",
+      "title": "# Agentic execution prompt \u2014 task_001_d2r_peripheral_candidate_prioritisation",
+      "target": "Human dopamine D2 receptor (D2R)",
+      "pdb": "6CM4",
+      "task_format": "goal_oriented",
+      "grading_mode": "manual_review_required",
+      "owner_file": "benchmark/task_001_d2r_peripheral_candidate_prioritisation_prompt.md",
+      "expected_outputs": [
+        "ranked_candidates.csv",
+        "assessment.json",
+        "report.md"
+      ],
+      "input_files": [
+        "inputs/targets/6CM4_crystal_complex.pdb",
+        "inputs/targets/target_registry.csv",
+        "inputs/targets/DRD2_P14416.fasta",
+        "inputs/library/compounds_400.csv",
+        "inputs/library/compounds_400.sdf",
+        "inputs/controls/control_registry.csv",
+        "inputs/controls/native_atom_mapping.csv"
+      ],
+      "source_record_count": 400,
+      "shortlist_count": 8,
+      "final_priority_count": 2
+    },
+    {
+      "id": "task_002",
+      "file": "tasks/task_002_sars_cov2_mpro_hit_prioritisation.md",
+      "title": "sars_cov2_mpro_hit_prioritisation",
+      "target": "SARS-CoV-2 main protease (Mpro)",
+      "pdb": "6CM4",
+      "task_format": "goal_oriented",
+      "grading_mode": "manual_review_required",
+      "owner_file": "benchmark/task_002_sars_cov2_mpro_hit_prioritisation.md",
+      "expected_outputs": [
+        "ranked_candidates.csv",
+        "assessment.json",
+        "report.md"
+      ],
+      "input_files": [
+        "inputs/targets/6LU7_crystal_complex.pdb",
+        "inputs/targets/target_registry.csv",
+        "inputs/library/approved_drugs.csv",
+        "inputs/library/approved_drugs.sdf",
+        "inputs/library/ritonavir_derivatives.csv",
+        "inputs/library/ritonavir_derivatives.sdf",
+        "inputs/controls/control_registry.csv",
+        "inputs/controls/"
+      ],
+      "source_record_count": 400,
+      "shortlist_count": 8,
+      "final_priority_count": 2
+    },
+    {
+      "id": "task_002",
+      "file": "tasks/task_002_sars_cov2_mpro_hit_prioritisation_prompt.md",
+      "title": "# Agentic execution prompt \u2014 task_002_sars_cov2_mpro_hit_prioritisation",
+      "target": "SARS-CoV-2 main protease (Mpro)",
+      "pdb": "6CM4",
+      "task_format": "goal_oriented",
+      "grading_mode": "manual_review_required",
+      "owner_file": "benchmark/task_002_sars_cov2_mpro_hit_prioritisation_prompt.md",
+      "expected_outputs": [
+        "ranked_candidates.csv",
+        "assessment.json",
+        "report.md"
+      ],
+      "input_files": [
+        "inputs/targets/6LU7_crystal_complex.pdb",
+        "inputs/targets/target_registry.csv",
+        "inputs/library/approved_drugs.csv",
+        "inputs/library/approved_drugs.sdf",
+        "inputs/library/ritonavir_derivatives.csv",
+        "inputs/library/ritonavir_derivatives.sdf",
+        "inputs/controls/control_registry.csv",
+        "inputs/controls/"
+      ],
+      "source_record_count": 400,
+      "shortlist_count": 8,
+      "final_priority_count": 2
+    }
+  ]
+}
