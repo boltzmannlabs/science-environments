@@ -1,0 +1,38 @@
+{
+  "scope": "Post-selection property comparison; original design runs remained paused.",
+  "jobs": [
+    {
+      "local_reference": "J001",
+      "tool": "Enzymes",
+      "status": "completed_artifact_verified",
+      "settings": {
+        "property_name": [
+          "tmPred_enzymes",
+          "pHPred"
+        ]
+      },
+      "accounting_scope": "shared assessment across tasks; count once"
+    },
+    {
+      "local_reference": "J002",
+      "tool": "Netsolp",
+      "status": "completed_artifact_verified",
+      "settings": {
+        "prediction_type": "S"
+      },
+      "accounting_scope": "shared assessment across tasks; count once"
+    },
+    {
+      "local_reference": "J003",
+      "tool": "Enzymes",
+      "status": "completed_artifact_verified",
+      "settings": {
+        "property_name": [
+          "pHPred"
+        ]
+      },
+      "accounting_scope": "shared assessment across tasks; count once"
+    }
+  ],
+  "requested_endpoints_complete": true
+}

@@ -1,11 +1,14 @@
-# Task benchmarks
+# Benchmark comparisons
 
-- [Est30: MHET hydrolysis](task_001_est30_mhet/task_001_est30_mhet.md)
-- [RML: thermal stability](task_002_rml_stability/task_002_rml_stability.md)
-- [LEH: thermal stability](task_003_leh_stability/task_003_leh_stability.md)
-- [BLA: high-temperature performance](task_004_bla_high_temperature/task_004_bla_high_temperature.md)
-- [AtHOL1: ethyl iodide activity](task_005_athol1_substrate/task_005_athol1_substrate.md)
+Each task report contains numerical comparisons and embedded figures. Parent identity and calculation details are in the corresponding results folder.
 
-Published values are operator/evaluator references, separate from new pipeline outputs. Keep winner information out of design-agent inputs until selections are sealed.
+| Task | Report |
+|---|---|
+| RML stability | [Word comparison](task_001_rml_stability/comparisions/benchmark_report.docx) |
+| LEH stability | [Word comparison](task_002_leh_stability/comparisions/benchmark_report.docx) |
+| BLA high-temperature performance | [Word comparison](task_003_bla_high_temperature/comparisions/benchmark_report.docx) |
+| AtHOL1 substrate expansion | [Word comparison](task_004_athol1_substrate/comparisions/benchmark_report.docx) |
+| Sun LEH / Pythia reproduction | [Word comparison](task_005_sun_leh_pythia/comparisions/benchmark_report.docx) |
+| Zhang cellulase and β-glucanase reproduction | [Word comparison](task_006_zhang_hydrolases/comparisions/benchmark_report.docx) |
 
-Each task's `comparisions/` folder will compare the published reference with actual v1, v2 and later runs under the [common protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol). Incompatible endpoints remain descriptive; unfinished comparisons remain pending.
+Rebuild from saved data with `python scripts/build_reports.py`. Requires `python-docx` and `matplotlib`. Report generation does not run predictors.

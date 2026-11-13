@@ -1,0 +1,31 @@
+{
+  "design_usage": {
+    "model": "gpt-6.1-sol",
+    "input_tokens": 2759004,
+    "output_tokens": 870183,
+    "cache_read_tokens": 187242112,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 476986,
+    "api_call_count": 693,
+    "started_at": "2026-11-12T18:12:56.106908+00:00",
+    "last_activity_at": "2026-11-13T05:45:12.028803+00:00",
+    "reported_canonical_tokens_lower_bound": 190871299,
+    "reported_model_requests": 693,
+    "provider": "openai-codex",
+    "snapshot_cutoff_utc": "2026-11-13T05:51:09.485622+00:00",
+    "definition": "Cached input counted once; reasoning is a subset of output, not added again.",
+    "elapsed_seconds_including_waits": 41893.378714
+  },
+  "historical_snapshot_utc": null,
+  "shared_reference_assessment": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "completed_remote_jobs_global": 3,
+    "submission_calls_global": 4,
+    "requested_endpoints_global": 99,
+    "allocation": "Shared once across six tasks; not charged in full to each task.",
+    "task_logical_sequences": 3,
+    "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
+  },
+  "design_status": "Paused"
+}

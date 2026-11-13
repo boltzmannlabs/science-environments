@@ -1,0 +1,21 @@
+{
+  "method": "DDGun_SEQ",
+  "job_id": "99401",
+  "status": "completed_output_verified",
+  "native_session_id": "RUN_0001",
+  "llm": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "submitted_utc": "2026-11-12T11:44:26.861681+00:00",
+  "completed_observation_utc": "2026-11-12T11:54:52.579566+00:00",
+  "job_link": "https://folding.biofold.org/cgi-bin/find-ddgun-job.cgi?njob=99401&wdir=ddgun-6a2fdbe6-de8e-11f1-93ad-0f5071c71c71",
+  "doc_id": null,
+  "collection": null,
+  "post_attempts": 1,
+  "input_sha256": "96d6689cf27c3797a9410e08f3eba9050bf96bc0a4687a04e218e4ddd700a3f2",
+  "output_sha256": "297694812ad7caf855e629e8e82287bfc6f47d1f019f1f79dff4638a0aaf6d7c",
+  "multipart_request_sha256": "d42d965e04e667d910eacb6c4c903f52316ac6ac511cfdb791b6e6fecd5a3d18",
+  "original_receipt_sha256": "32b6e69d49f10964cdf8dbaf25851c5dee334938f35b7fbf3ed8641a615f2530",
+  "timing": "Separate assessment after original candidate selection; not original design-agent execution.",
+  "unit": "kcal/mol unfolding DDG; positive predicts stabilization",
+  "limitation": "Different predictor from the paper; preserves original failed/unresolved qualification. Exact HTTP payload and full audit retained in the local execution archive."
+}

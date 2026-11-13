@@ -1,0 +1,59 @@
+{
+  "sequences": [
+    {
+      "origin": "parent",
+      "candidate": "LEH_WT",
+      "parent": null,
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Sun_LEH_D101V",
+      "parent": "LEH_WT",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVVVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "e107669211950cd55618bbdf874776ff6c25513975d53e6f813ed8c07f0801c5",
+      "edits": [
+        "D101V"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Sun_LEH_T85V",
+      "parent": "LEH_WT",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVEVFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "6c7bfe15fb054a2599ee1cd0cdbed91cbb09e6be9a9061f0b6db677fb20153ca",
+      "edits": [
+        "T85V"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Sun_LEH_P57A",
+      "parent": "LEH_WT",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMALPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "8c52e1529e35cf94a7267640a21117ab978cec6456d60f193aec166c0790e87e",
+      "edits": [
+        "P57A"
+      ],
+      "numbering": "1-based native149 Q9ZAG3/1NWW; expression tag unspecified",
+      "identity_kind": "reconstructed_on_declared_construct",
+      "parent_accession": "Q9ZAG3"
+    }
+  ],
+  "sequence_hash_definition": "SHA256 of uppercase amino-acid sequence without whitespace; no FASTA header."
+}

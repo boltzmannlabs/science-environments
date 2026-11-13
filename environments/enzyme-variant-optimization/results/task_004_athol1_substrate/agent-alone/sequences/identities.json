@@ -1,0 +1,46 @@
+{
+  "sequences": [
+    {
+      "origin": "parent",
+      "candidate": "AtHOL1_3LCC_construct235",
+      "parent": null,
+      "sequence": "MAEEQQNSDQSNGGNVIPTPEEVATFLHKTVEEGGWEKCWEEEITPWDQGRATPLIVHLVDTSSLPLGRALVPGCGGGHDVVAMASPERFVVGLDISESALAKANETYGSSPKAEYFSFVKEDVFTWRPTELFDLIFDYVFFCAIEPEMRPAWAKSMYELLKPDGELITLMYPITDHVGGPPYKVDVSTFEEVLVPIGFKAVSVEENPHAIPTRKGKEKLGRWKKINLEHHHHHH",
+      "length": 235,
+      "sequence_sha256": "7a11b6534e3d4c598e2eabe3bb5b2c190400ffb83dd426d8b0b4a021895e4d52",
+      "edits": [],
+      "numbering": "1-based native227, same positions in 3LCC full235",
+      "identity_kind": "selected_parent",
+      "parent_accession": "Q0WP12"
+    },
+    {
+      "origin": "our",
+      "candidate": "ATH_R2_09",
+      "parent": "AtHOL1_3LCC_construct235",
+      "sequence": "MAEEQQNSDQSNGGNVIPTPEEVATFFHKTVEEGGWEKCWEEEITPWDQGRATPLIVHLVDTSSLPLGRALVPGCGGGHDVVAMASPERFVVGLDISESALAKANETYGSSPKAEYFSFVKEDVFTWRPTELFDLIFDYQFFCAIEPEMRPAWAKSMYELLKPDGELITLMYPITDHVGGPPYKVDVSTFEEVLVPIGFKAVSVEENPHAIPTRKGKEKLGRWKKINLEHHHHHH",
+      "length": 235,
+      "sequence_sha256": "2a85ab14a674db7b9dd324468245d9909ba4dc35cae1b93d52f9fb3afb319825",
+      "edits": [
+        "L27F",
+        "V140Q"
+      ],
+      "numbering": "1-based native/3LCC positions; tail228-235 unchanged",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Shao2025_V140T_construct235",
+      "parent": "AtHOL1_3LCC_construct235",
+      "sequence": "MAEEQQNSDQSNGGNVIPTPEEVATFLHKTVEEGGWEKCWEEEITPWDQGRATPLIVHLVDTSSLPLGRALVPGCGGGHDVVAMASPERFVVGLDISESALAKANETYGSSPKAEYFSFVKEDVFTWRPTELFDLIFDYTFFCAIEPEMRPAWAKSMYELLKPDGELITLMYPITDHVGGPPYKVDVSTFEEVLVPIGFKAVSVEENPHAIPTRKGKEKLGRWKKINLEHHHHHH",
+      "length": 235,
+      "sequence_sha256": "092b3e5c32d83dff14a9657426e1be4a8c20d81855113a3228ce2117e8be74fb",
+      "edits": [
+        "V140T"
+      ],
+      "numbering": "native V140 equals 3LCC full235 V140; no N-terminal index shift",
+      "identity_kind": "reconstructed_on_declared_construct",
+      "parent_accession": "Q0WP12"
+    }
+  ],
+  "sequence_hash_definition": "SHA256 of uppercase amino-acid sequence without whitespace; no FASTA header."
+}
