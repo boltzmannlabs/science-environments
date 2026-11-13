@@ -1,0 +1,396 @@
+{
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "scope": "shortlisted five candidates plus H5 prediction/native reference",
+  "benchmark_reference": "Task 002 benchmark; Germinal H5/PD-L1 PDB 35TL; published H5 RMSD 1.25 A",
+  "candidate_chain_mapping": "A=PD-L1, B=VH, C=VL; linker residues removed from candidate scFv for chain-separated structural tools",
+  "hotspots": [
+    37,
+    39,
+    41,
+    96,
+    98
+  ],
+  "candidate_results": [
+    {
+      "candidate_id": "rf1_d5",
+      "source": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d5_scfv_pdl1_model_0.cif",
+      "standardized_pdb": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/standardized_pdb/rf1_d5.pdb",
+      "chain_map": {
+        "A": "PD-L1 antigen",
+        "B": "VH",
+        "C": "VL"
+      },
+      "source_chain_lengths": {
+        "scfv": 241,
+        "pdl1": 115
+      },
+      "standardized_chain_lengths": {
+        "A": 115,
+        "B": 120,
+        "C": 106
+      },
+      "linker_residues_removed": 15,
+      "interface_atom_contact_pairs_5A": 534,
+      "interface_residue_pairs_5A": 69,
+      "interface_antibody_residue_count_5A": 26,
+      "interface_antigen_residue_count_5A": 22,
+      "interface_min_heavy_atom_distance_A": 1.4954031705856323,
+      "hotspot_residues": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_residues_touched": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_contact_pairs_5A": 133,
+      "interface_hbond_heavy_atom_proxy_count": 19,
+      "interface_cdr_residue_count_imgt_proxy": 10,
+      "interface_cdr_fraction_imgt_proxy": 0.38461538461538464,
+      "interface_hydrophobic_residue_count_proxy": 9,
+      "cdr_mapping_status": "executed",
+      "contact_definition": "all heavy atoms, antibody chains B/C versus antigen chain A, <=5.0 A",
+      "hbond_definition": "heavy-atom donor/acceptor element proxy <=3.5 A; no donor-angle validation",
+      "freesasa": {
+        "complex": 14902.02689481873,
+        "antibody": 10142.290553792931,
+        "antigen": 6447.661144311617,
+        "buried_surface_area_A2": 843.9624016429098,
+        "tool_status": "executed",
+        "definition": "FreeSASA total SASA; BSA=(antibody+antigen-complex)/2"
+      },
+      "prodigy": {
+        "predicted_binding_affinity_kcal_mol": -11.6,
+        "predicted_kd_M": 3e-09,
+        "intermolecular_contacts": 82,
+        "raw_stdout": "[+] Executing 1 task(s) in total\n##########################################\n[+] Processing structure rf1_d5_complex_model0\n[+] No. of intermolecular contacts: 82\n[+] No. of charged-charged contacts: 9.0\n[+] No. of charged-polar contacts: 6.0\n[+] No. of charged-apolar contacts: 22.0\n[+] No. of polar-polar contacts: 2.0\n[+] No. of apolar-polar contacts: 15.0\n[+] No. of apolar-apolar contacts: 28.0\n[+] Percentage of apolar NIS residues: 36.44\n[+] Percentage of charged NIS residues: 25.85\n[++] Predicted binding affinity (kcal.mol-1):    -11.6\n[++] Predicted dissociation constant (M) at 25.0\u02daC:  3.0e-09\n",
+        "returncode": 0,
+        "tool_status": "executed"
+      }
+    },
+    {
+      "candidate_id": "rf1_d2",
+      "source": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d2_scfv_pdl1_model_0.cif",
+      "standardized_pdb": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/standardized_pdb/rf1_d2.pdb",
+      "chain_map": {
+        "A": "PD-L1 antigen",
+        "B": "VH",
+        "C": "VL"
+      },
+      "source_chain_lengths": {
+        "scfv": 241,
+        "pdl1": 115
+      },
+      "standardized_chain_lengths": {
+        "A": 115,
+        "B": 120,
+        "C": 106
+      },
+      "linker_residues_removed": 15,
+      "interface_atom_contact_pairs_5A": 496,
+      "interface_residue_pairs_5A": 56,
+      "interface_antibody_residue_count_5A": 19,
+      "interface_antigen_residue_count_5A": 21,
+      "interface_min_heavy_atom_distance_A": 2.13681697845459,
+      "hotspot_residues": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_residues_touched": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_contact_pairs_5A": 185,
+      "interface_hbond_heavy_atom_proxy_count": 16,
+      "interface_cdr_residue_count_imgt_proxy": 9,
+      "interface_cdr_fraction_imgt_proxy": 0.47368421052631576,
+      "interface_hydrophobic_residue_count_proxy": 5,
+      "cdr_mapping_status": "executed",
+      "contact_definition": "all heavy atoms, antibody chains B/C versus antigen chain A, <=5.0 A",
+      "hbond_definition": "heavy-atom donor/acceptor element proxy <=3.5 A; no donor-angle validation",
+      "freesasa": {
+        "complex": 15020.234848840642,
+        "antibody": 10066.100209336564,
+        "antigen": 6513.557052451705,
+        "buried_surface_area_A2": 779.711206473814,
+        "tool_status": "executed",
+        "definition": "FreeSASA total SASA; BSA=(antibody+antigen-complex)/2"
+      },
+      "prodigy": {
+        "predicted_binding_affinity_kcal_mol": -10.7,
+        "predicted_kd_M": 1.3e-08,
+        "intermolecular_contacts": 77,
+        "raw_stdout": "[+] Executing 1 task(s) in total\n##########################################\n[+] Processing structure rf1_d2_complex_model0\n[+] No. of intermolecular contacts: 77\n[+] No. of charged-charged contacts: 10.0\n[+] No. of charged-polar contacts: 9.0\n[+] No. of charged-apolar contacts: 23.0\n[+] No. of polar-polar contacts: 1.0\n[+] No. of apolar-polar contacts: 11.0\n[+] No. of apolar-apolar contacts: 23.0\n[+] Percentage of apolar NIS residues: 38.20\n[+] Percentage of charged NIS residues: 26.18\n[++] Predicted binding affinity (kcal.mol-1):    -10.7\n[++] Predicted dissociation constant (M) at 25.0\u02daC:  1.3e-08\n",
+        "returncode": 0,
+        "tool_status": "executed"
+      }
+    },
+    {
+      "candidate_id": "rf1_d3",
+      "source": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf1_d3_scfv_pdl1_model_0.cif",
+      "standardized_pdb": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/standardized_pdb/rf1_d3.pdb",
+      "chain_map": {
+        "A": "PD-L1 antigen",
+        "B": "VH",
+        "C": "VL"
+      },
+      "source_chain_lengths": {
+        "scfv": 241,
+        "pdl1": 115
+      },
+      "standardized_chain_lengths": {
+        "A": 115,
+        "B": 120,
+        "C": 106
+      },
+      "linker_residues_removed": 15,
+      "interface_atom_contact_pairs_5A": 439,
+      "interface_residue_pairs_5A": 64,
+      "interface_antibody_residue_count_5A": 27,
+      "interface_antigen_residue_count_5A": 22,
+      "interface_min_heavy_atom_distance_A": 1.4648396968841553,
+      "hotspot_residues": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_residues_touched": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_contact_pairs_5A": 148,
+      "interface_hbond_heavy_atom_proxy_count": 15,
+      "interface_cdr_residue_count_imgt_proxy": 10,
+      "interface_cdr_fraction_imgt_proxy": 0.37037037037037035,
+      "interface_hydrophobic_residue_count_proxy": 11,
+      "cdr_mapping_status": "executed",
+      "contact_definition": "all heavy atoms, antibody chains B/C versus antigen chain A, <=5.0 A",
+      "hbond_definition": "heavy-atom donor/acceptor element proxy <=3.5 A; no donor-angle validation",
+      "freesasa": {
+        "complex": 15120.894006553446,
+        "antibody": 10397.265728085767,
+        "antigen": 6492.338844339162,
+        "buried_surface_area_A2": 884.3552829357423,
+        "tool_status": "executed",
+        "definition": "FreeSASA total SASA; BSA=(antibody+antigen-complex)/2"
+      },
+      "prodigy": {
+        "predicted_binding_affinity_kcal_mol": -11.3,
+        "predicted_kd_M": 5e-09,
+        "intermolecular_contacts": 77,
+        "raw_stdout": "[+] Executing 1 task(s) in total\n##########################################\n[+] Processing structure rf1_d3_complex_model0\n[+] No. of intermolecular contacts: 77\n[+] No. of charged-charged contacts: 6.0\n[+] No. of charged-polar contacts: 10.0\n[+] No. of charged-apolar contacts: 21.0\n[+] No. of polar-polar contacts: 1.0\n[+] No. of apolar-polar contacts: 15.0\n[+] No. of apolar-apolar contacts: 24.0\n[+] Percentage of apolar NIS residues: 38.33\n[+] Percentage of charged NIS residues: 24.17\n[++] Predicted binding affinity (kcal.mol-1):    -11.3\n[++] Predicted dissociation constant (M) at 25.0\u02daC:  5.0e-09\n",
+        "returncode": 0,
+        "tool_status": "executed"
+      }
+    },
+    {
+      "candidate_id": "rf0_d5",
+      "source": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf0_d5_scfv_pdl1_model_0.cif",
+      "standardized_pdb": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/standardized_pdb/rf0_d5.pdb",
+      "chain_map": {
+        "A": "PD-L1 antigen",
+        "B": "VH",
+        "C": "VL"
+      },
+      "source_chain_lengths": {
+        "scfv": 241,
+        "pdl1": 115
+      },
+      "standardized_chain_lengths": {
+        "A": 115,
+        "B": 120,
+        "C": 106
+      },
+      "linker_residues_removed": 15,
+      "interface_atom_contact_pairs_5A": 469,
+      "interface_residue_pairs_5A": 68,
+      "interface_antibody_residue_count_5A": 27,
+      "interface_antigen_residue_count_5A": 26,
+      "interface_min_heavy_atom_distance_A": 1.839035153388977,
+      "hotspot_residues": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_residues_touched": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_contact_pairs_5A": 99,
+      "interface_hbond_heavy_atom_proxy_count": 23,
+      "interface_cdr_residue_count_imgt_proxy": 12,
+      "interface_cdr_fraction_imgt_proxy": 0.4444444444444444,
+      "interface_hydrophobic_residue_count_proxy": 11,
+      "cdr_mapping_status": "executed",
+      "contact_definition": "all heavy atoms, antibody chains B/C versus antigen chain A, <=5.0 A",
+      "hbond_definition": "heavy-atom donor/acceptor element proxy <=3.5 A; no donor-angle validation",
+      "freesasa": {
+        "complex": 14620.78910739638,
+        "antibody": 10174.77154667967,
+        "antigen": 6475.800043196939,
+        "buried_surface_area_A2": 1014.891241240115,
+        "tool_status": "executed",
+        "definition": "FreeSASA total SASA; BSA=(antibody+antigen-complex)/2"
+      },
+      "prodigy": {
+        "predicted_binding_affinity_kcal_mol": -12.5,
+        "predicted_kd_M": 6.8e-10,
+        "intermolecular_contacts": 90,
+        "raw_stdout": "[+] Executing 1 task(s) in total\n##########################################\n[+] Processing structure rf0_d5_complex_model0\n[+] No. of intermolecular contacts: 90\n[+] No. of charged-charged contacts: 8.0\n[+] No. of charged-polar contacts: 9.0\n[+] No. of charged-apolar contacts: 30.0\n[+] No. of polar-polar contacts: 2.0\n[+] No. of apolar-polar contacts: 17.0\n[+] No. of apolar-apolar contacts: 24.0\n[+] Percentage of apolar NIS residues: 39.67\n[+] Percentage of charged NIS residues: 23.55\n[++] Predicted binding affinity (kcal.mol-1):    -12.5\n[++] Predicted dissociation constant (M) at 25.0\u02daC:  6.8e-10\n",
+        "returncode": 0,
+        "tool_status": "executed"
+      }
+    },
+    {
+      "candidate_id": "rf0_d0",
+      "source": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/structures/rf0_d0_scfv_pdl1_model_0.cif",
+      "standardized_pdb": "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/benchmark_20261111_open_source/standardized_pdb/rf0_d0.pdb",
+      "chain_map": {
+        "A": "PD-L1 antigen",
+        "B": "VH",
+        "C": "VL"
+      },
+      "source_chain_lengths": {
+        "scfv": 241,
+        "pdl1": 115
+      },
+      "standardized_chain_lengths": {
+        "A": 115,
+        "B": 120,
+        "C": 106
+      },
+      "linker_residues_removed": 15,
+      "interface_atom_contact_pairs_5A": 458,
+      "interface_residue_pairs_5A": 67,
+      "interface_antibody_residue_count_5A": 25,
+      "interface_antigen_residue_count_5A": 30,
+      "interface_min_heavy_atom_distance_A": 1.2503302097320557,
+      "hotspot_residues": [
+        37,
+        39,
+        41,
+        96,
+        98
+      ],
+      "hotspot_residues_touched": [],
+      "hotspot_contact_pairs_5A": 0,
+      "interface_hbond_heavy_atom_proxy_count": 13,
+      "interface_cdr_residue_count_imgt_proxy": 10,
+      "interface_cdr_fraction_imgt_proxy": 0.4,
+      "interface_hydrophobic_residue_count_proxy": 11,
+      "cdr_mapping_status": "executed",
+      "contact_definition": "all heavy atoms, antibody chains B/C versus antigen chain A, <=5.0 A",
+      "hbond_definition": "heavy-atom donor/acceptor element proxy <=3.5 A; no donor-angle validation",
+      "freesasa": {
+        "complex": 14674.42345542308,
+        "antibody": 10252.438337755577,
+        "antigen": 6346.693866432084,
+        "buried_surface_area_A2": 962.3543743822911,
+        "tool_status": "executed",
+        "definition": "FreeSASA total SASA; BSA=(antibody+antigen-complex)/2"
+      },
+      "prodigy": {
+        "predicted_binding_affinity_kcal_mol": -11.8,
+        "predicted_kd_M": 2e-09,
+        "intermolecular_contacts": 89,
+        "raw_stdout": "[+] Executing 1 task(s) in total\n##########################################\n[+] Processing structure rf0_d0_complex_model0\n[+] No. of intermolecular contacts: 89\n[+] No. of charged-charged contacts: 3.0\n[+] No. of charged-polar contacts: 7.0\n[+] No. of charged-apolar contacts: 15.0\n[+] No. of polar-polar contacts: 13.0\n[+] No. of apolar-polar contacts: 32.0\n[+] No. of apolar-apolar contacts: 19.0\n[+] Percentage of apolar NIS residues: 40.50\n[+] Percentage of charged NIS residues: 21.90\n[++] Predicted binding affinity (kcal.mol-1):    -11.8\n[++] Predicted dissociation constant (M) at 25.0\u02daC:  2.0e-09\n",
+        "returncode": 0,
+        "tool_status": "executed"
+      }
+    }
+  ],
+  "h5_dockq": {
+    "returncode": 0,
+    "command": [
+      "/home/boltzmann10/.sci/cache/scratch/task002_benchmark_venv/bin/python",
+      "/home/boltzmann10/.sci/cache/scratch/dockq_src/dockq-2.1.3/src/DockQ/DockQ.py",
+      "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/task002_h5_pdl1_model_0.pdb",
+      "/home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/35TL.pdb",
+      "--mapping",
+      "ABC:ABC",
+      "--short"
+    ],
+    "tool_status": "executed",
+    "stdout": "Total DockQ over 3 native interfaces: 0.725 with ABC:ABC model:native mapping\nDockQ 0.714 iRMSD 1.746 LRMSD 3.266 fnat 0.846 fnonnat 0.476 F1 0.647 clashes 0 mapping AB:AB /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/task002_h5_pdl1_model_0.pdb A B -> /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/35TL.pdb A B\nDockQ 0.768 iRMSD 1.298 LRMSD 3.226 fnat 0.857 fnonnat 0.571 F1 0.571 clashes 0 mapping AC:AC /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/task002_h5_pdl1_model_0.pdb A C -> /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/35TL.pdb A C\nDockQ 0.692 iRMSD 1.781 LRMSD 2.827 fnat 0.762 fnonnat 0.508 F1 0.598 clashes 1 mapping BC:BC /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/task002_h5_pdl1_model_0.pdb B C -> /home/boltzmann10/agent_scientist_boltpro_tols_scitenist_modify/science-environments/environments/antibody_design/results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2/evidence/reference/35TL.pdb B C\n",
+    "total_native_interfaces": 3,
+    "total_dockq": 0.725,
+    "interfaces": [
+      {
+        "dockq": 0.714,
+        "iRMSD": 1.746,
+        "LRMSD": 3.266,
+        "fnat": 0.846,
+        "fnonnat": 0.476,
+        "F1": 0.647,
+        "clashes": 0,
+        "model_chains": "AB",
+        "native_chains": "AB"
+      },
+      {
+        "dockq": 0.768,
+        "iRMSD": 1.298,
+        "LRMSD": 3.226,
+        "fnat": 0.857,
+        "fnonnat": 0.571,
+        "F1": 0.571,
+        "clashes": 0,
+        "model_chains": "AC",
+        "native_chains": "AC"
+      },
+      {
+        "dockq": 0.692,
+        "iRMSD": 1.781,
+        "LRMSD": 2.827,
+        "fnat": 0.762,
+        "fnonnat": 0.508,
+        "F1": 0.598,
+        "clashes": 1,
+        "model_chains": "BC",
+        "native_chains": "BC"
+      }
+    ]
+  },
+  "tool_versions": {
+    "prodigy": {
+      "returncode": 0,
+      "help_head": "usage: prodigy [-h] [--distance-cutoff DISTANCE_CUTOFF]\n               [--acc-threshold ACC_THRESHOLD] [--temperature TEMPERATURE]\n               [--contact_list] [--pymol_selection] [-q]\n               [-np NUMBER_OF_PROCESSORS] [--selection A B [A,B C ...]]\n               input_path\n\nBinding affinity predictor based on Intermolecular Contacts (ICs).\n\npositional arguments:\n  input_path            Path to either: \n                        - Structure in PDB or mmCIF format\n                        - Directory containing structure files\n\noptions:\n  -h, --help            show this help message and exit\n  --distance-cutoff DISTANCE_CUTOFF\n                        Distance cutoff to calculate ICs\n  --acc-threshold ACC_THRESHOLD\n                        Accessibility threshold for BSA analysis\n  --temperature TEMPERATURE\n                        Temperature (C) for Kd prediction\n  --contact_list        Output a list of contacts\n  --pymol_selection     Output a script to highlight the interface ("
+    },
+    "dockq": {
+      "returncode": 0,
+      "help_head": "usage: DockQ.py [-h] [--capri_peptide] [--small_molecule] [--short]\n                [--json out.json] [--verbose] [--no_align] [--n_cpu CPU]\n                [--max_chunk CHUNK] [--allowed_mismatches ALLOWED_MISMATCHES]\n                [--mapping MODELCHAINS:NATIVECHAINS]\n                <model> <native>\n\nDockQ - Quality measure for protein-protein docking models\n\npositional arguments:\n  <model>               Path to model file\n  <native>              Path to native file\n\noptions:\n  -h, --help            show this help message and exit\n  --capri_peptide       use version for capri_peptide (DockQ cannot not be\n                        trusted for this setting)\n  --small_molecule      If the docking pose of a small molecule should be\n                        evaluated\n  --short               Short output\n  --json out.json       Write outputs to a chosen json file\n  --verbose, -v         Verbose output\n  --no_align            Do not align native and model using sequence\n                     "
+    },
+    "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]",
+    "biopython": "1.85",
+    "numpy": "1.26.4",
+    "freesasa": "unknown",
+    "abnumber": "0.4.4"
+  },
+  "limitations": [
+    "Candidate Prodigy values are model estimates, not affinity measurements.",
+    "The interface CDR fraction and H-bond values are open-source proxies, not PyRosetta InterfaceAnalyzerMover outputs.",
+    "Exact Germinal iAlign IS against the complete PDB/OAS/design-set database was not reproduced because standalone ialign.pl was not available in the environment.",
+    "H5 DockQ is a same-complex prediction-vs-native comparison; applying DockQ to novel candidates against H5 would be a non-like-for-like sequence/structure comparison and is not reported as a pass/fail benchmark."
+  ]
+}

@@ -1,0 +1,109 @@
+{
+ "task": "task_001_her2_trastuzumab_interaction_optimization",
+ "units": {
+  "prodigy_dG": "kcal/mol",
+  "prodigy_KD": "M",
+  "thermal_stab_protbert": "Antibody_Prediction score",
+  "thermal_stab_esm": "Antibody_Prediction score",
+  "solubility": "Antibody_Prediction score",
+  "clash_count": "count (vdw-1.5A, same-chain, non-adjacent)"
+ },
+ "matched_conditions": "fixed 1N8Z pose; candidate = 1N8Z backbone + designed CDR side chains (ideal geometry, CB-oriented)",
+ "reference": {
+  "seq_id": "REF_1N8Z",
+  "VH_hash": "8b8998709aa9423e",
+  "VL_hash": "54785c99f723d618",
+  "prodigy_dG": -9.9,
+  "prodigy_KD": "5.6e-08",
+  "prodigy_IC": 61,
+  "clash_count": 26,
+  "thermal_stab_protbert": 49.549126,
+  "thermal_stab_esm": 94.066696,
+  "solubility": 1
+ },
+ "candidates": {
+  "AB_08": {
+   "VH_hash": "1e0f904a23204fe8",
+   "VL_hash": "19e37aa8bdc352ca",
+   "cdr_edits_H": 2,
+   "cdr_edits_L": 5,
+   "prodigy_dG": -9.8,
+   "prodigy_dG_delta_vs_ref": 0.1,
+   "prodigy_KD": "6.3e-08",
+   "prodigy_IC": 69,
+   "clash_count": 26,
+   "thermal_stab_protbert": "50.04125",
+   "thermal_stab_esm": "107.3841552734375",
+   "solubility": "1",
+   "antibmpnn_score": 0.2705
+  },
+  "AB_20": {
+   "VH_hash": "1e0f904a23204fe8",
+   "VL_hash": "c8cfc8ed0fd57839",
+   "cdr_edits_H": 2,
+   "cdr_edits_L": 7,
+   "prodigy_dG": -9.9,
+   "prodigy_dG_delta_vs_ref": 0.0,
+   "prodigy_KD": "5.9e-08",
+   "prodigy_IC": 67,
+   "clash_count": 26,
+   "thermal_stab_protbert": "50.04125",
+   "thermal_stab_esm": "100.73532104492188",
+   "solubility": "1",
+   "antibmpnn_score": 0.2822
+  },
+  "AB_04": {
+   "VH_hash": "886efc1a5f1ee250",
+   "VL_hash": "296035c28b66f50e",
+   "cdr_edits_H": 3,
+   "cdr_edits_L": 7,
+   "prodigy_dG": -9.6,
+   "prodigy_dG_delta_vs_ref": 0.3,
+   "prodigy_KD": "9.6e-08",
+   "prodigy_IC": 60,
+   "clash_count": 26,
+   "thermal_stab_protbert": "49.10397",
+   "thermal_stab_esm": "92.61592864990234",
+   "solubility": "1",
+   "antibmpnn_score": 0.2855
+  },
+  "AB_05": {
+   "VH_hash": "523f6ac6d2ba3b96",
+   "VL_hash": "f3a1809614f2e75c",
+   "cdr_edits_H": 3,
+   "cdr_edits_L": 9,
+   "prodigy_dG": -9.9,
+   "prodigy_dG_delta_vs_ref": 0.0,
+   "prodigy_KD": "5.7e-08",
+   "prodigy_IC": 65,
+   "clash_count": 38,
+   "thermal_stab_protbert": "49.695152",
+   "thermal_stab_esm": "109.81456756591795",
+   "solubility": "1",
+   "antibmpnn_score": 0.3045
+  },
+  "AB_13": {
+   "VH_hash": "323e227865e84655",
+   "VL_hash": "cfbda13e00d788b6",
+   "cdr_edits_H": 3,
+   "cdr_edits_L": 9,
+   "prodigy_dG": -10.9,
+   "prodigy_dG_delta_vs_ref": -1.0,
+   "prodigy_KD": "9.4e-09",
+   "prodigy_IC": 68,
+   "clash_count": 27,
+   "thermal_stab_protbert": "52.412125",
+   "thermal_stab_esm": "104.79806518554688",
+   "solubility": "1",
+   "antibmpnn_score": 0.3399
+  }
+ },
+ "benchmark": {
+  "name": "Ab-SELDON REF15 (JCIM 2026)",
+  "metric": "REF15 interaction score (Rosetta REU), lower favorable",
+  "best_diversity_FINAL_REU": -94.8663,
+  "best_random_FINAL_REU": -92.6947,
+  "comparability": "NON-COMPARABLE \u2014 Rosetta unavailable; ProDIGy is a different protocol (kcal/mol)",
+  "status": "NOT COMPUTED \u2014 did not fabricate"
+ }
+}

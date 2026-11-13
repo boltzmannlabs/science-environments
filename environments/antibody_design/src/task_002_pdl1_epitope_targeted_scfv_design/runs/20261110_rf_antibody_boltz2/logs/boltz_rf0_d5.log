@@ -1,0 +1,59 @@
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for inputs/rf0_d5.yaml with 2 protein entities.
+Calling MSA server for target rf0_d5 with 2 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/300 [elapsed: 00:01 remaining: ?][ASleeping for 9s. Reason: PENDING
+
+RUNNING:   0%|          | 0/300 [elapsed: 00:11 remaining: ?][A
+RUNNING:   3%|▎         | 9/300 [elapsed: 00:11 remaining: 05:59][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 9/300 [elapsed: 00:17 remaining: 05:59][A
+RUNNING:   5%|▌         | 15/300 [elapsed: 00:17 remaining: 05:38][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:   5%|▌         | 15/300 [elapsed: 00:27 remaining: 05:38][A
+COMPLETE: 100%|██████████| 300/300 [elapsed: 00:27 remaining: 00:00][ACOMPLETE: 100%|██████████| 300/300 [elapsed: 00:29 remaining: 00:00]
+
+  0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/300 [elapsed: 00:01 remaining: ?][ASleeping for 9s. Reason: PENDING
+
+RUNNING:   0%|          | 0/300 [elapsed: 00:10 remaining: ?][A
+RUNNING:   3%|▎         | 9/300 [elapsed: 00:10 remaining: 05:50][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   3%|▎         | 9/300 [elapsed: 00:17 remaining: 05:50][A
+RUNNING:   5%|▌         | 15/300 [elapsed: 00:17 remaining: 05:34][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 15/300 [elapsed: 00:24 remaining: 05:34][A
+RUNNING:   7%|▋         | 21/300 [elapsed: 00:24 remaining: 05:23][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:   7%|▋         | 21/300 [elapsed: 00:33 remaining: 05:23][A
+RUNNING:  10%|▉         | 29/300 [elapsed: 00:33 remaining: 05:07][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:  10%|▉         | 29/300 [elapsed: 00:40 remaining: 05:07][A
+RUNNING:  12%|█▏        | 35/300 [elapsed: 00:40 remaining: 05:00][ASleeping for 9s. Reason: RUNNING
+
+COMPLETE:  12%|█▏        | 35/300 [elapsed: 00:50 remaining: 05:00][A
+COMPLETE: 100%|██████████| 300/300 [elapsed: 00:50 remaining: 00:00][ACOMPLETE: 100%|██████████| 300/300 [elapsed: 00:52 remaining: 00:00]
+100%|██████████| 1/1 [01:23<00:00, 83.15s/it]100%|██████████| 1/1 [01:23<00:00, 83.15s/it]
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 /home/boltzmann10/anaconda3/bin/boltz predict input ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Running structure prediction for 1 input.
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 3090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]/home/boltzmann10/anaconda3/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]

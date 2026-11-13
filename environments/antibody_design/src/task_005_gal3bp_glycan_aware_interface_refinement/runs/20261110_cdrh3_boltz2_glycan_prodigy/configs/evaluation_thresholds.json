@@ -1,0 +1,21 @@
+{
+  "task": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "interface_metrics": {
+    "ca_ca_residue_pair_A": 8.0,
+    "vdw_heavy_atom_pair_A": 4.5,
+    "hbond_no_heavy_atom_proxy_A": 3.5,
+    "glycan_antibody_clash_A": 2.5
+  },
+  "glycan_analysis": {
+    "epitope_proxy": "LGALS3BP BACK domain residues 260-360",
+    "glycan_site": "Asn362",
+    "sugar_count": 12,
+    "interpretation": "positive dSASA means glycan-associated occlusion"
+  },
+  "design_constraints": {
+    "editable_region": "VH CDR-H3 only",
+    "protected_regions": "VH framework, VH CDR-H1/H2, entire VL",
+    "generation_count": 20,
+    "unique_candidates_carried_forward": 3
+  }
+}

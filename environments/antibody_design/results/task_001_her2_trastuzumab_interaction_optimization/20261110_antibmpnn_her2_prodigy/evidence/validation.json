@@ -1,0 +1,31 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261110_antibmpnn_her2_prodigy",
+  "validation_scope": "packaging",
+  "checked_at_utc": "2026-11-12T07:22:10.861268+00:00",
+  "packaging_status": "passed",
+  "scientific_coverage": "partial",
+  "candidate_rows_including_controls": 20,
+  "reference_rows": 0,
+  "selected_rows": 5,
+  "assessment_rows": 0,
+  "exported_fasta_records": 10,
+  "exported_candidate_or_control_ids": [
+    "AB_04",
+    "AB_05",
+    "AB_08",
+    "AB_13",
+    "AB_20"
+  ],
+  "structure_files": 6,
+  "checks": [
+    "required files",
+    "task/run identity",
+    "unique candidate IDs",
+    "shortlist membership",
+    "FASTA ID coverage",
+    "canonical artifact paths"
+  ],
+  "scientific_reexecution_performed": false,
+  "issues": []
+}

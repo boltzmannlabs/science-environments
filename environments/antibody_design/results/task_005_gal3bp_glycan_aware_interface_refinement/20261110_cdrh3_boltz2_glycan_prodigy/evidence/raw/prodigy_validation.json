@@ -1,0 +1,26 @@
+{
+  "tool": "Prodigy (open-source PPI affinity estimator)",
+  "selection": "A,B (antibody) vs C (LGALS3BP)",
+  "results": {
+    "BDBV-43 (reference)": {
+      "dg_kcal_mol": -11.2,
+      "kd_M": 6.1e-09,
+      "n_intermolecular_contacts": 69
+    },
+    "task005_cand11": {
+      "dg_kcal_mol": -11.1,
+      "kd_M": 7.3e-09,
+      "n_intermolecular_contacts": 80
+    },
+    "task005_cand7": {
+      "dg_kcal_mol": -10.8,
+      "kd_M": 1.2e-08,
+      "n_intermolecular_contacts": 75
+    },
+    "task005_cand17": {
+      "dg_kcal_mol": -14.5,
+      "kd_M": 2.3e-11,
+      "n_intermolecular_contacts": 102
+    }
+  }
+}

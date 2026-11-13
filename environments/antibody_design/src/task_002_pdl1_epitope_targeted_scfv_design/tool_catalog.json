@@ -1,0 +1,32 @@
+{
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "catalog_status": "retrospective_inventory_not_live_discovery",
+  "tools": [
+    {
+      "name": "rfdiffusion_proteinmpnn",
+      "execution_origin": "Boltzmann",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "epitope_abgen",
+      "execution_origin": "Boltzmann; no output retained",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Boltz2",
+      "execution_origin": "local",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Antibody_Prediction",
+      "execution_origin": "Boltzmann",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Foldseek",
+      "execution_origin": "local independent evaluation",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    }
+  ],
+  "guidance": "Resolve the current platform catalog and tool contracts before a new execution. This file describes retained history, not presently available endpoints."
+}

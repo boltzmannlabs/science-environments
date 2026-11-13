@@ -1,3 +1,8 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+# Downloaded bulk dependencies and temporary search databases stay external.
+**/foldseek_tmp/
+**/abflow_benchmark_setup/datasets/
+**/abflow_benchmark_setup/datasets.zip
+**/ab_seldon_trastuzumab_optimization_tests_v2.tar.gz

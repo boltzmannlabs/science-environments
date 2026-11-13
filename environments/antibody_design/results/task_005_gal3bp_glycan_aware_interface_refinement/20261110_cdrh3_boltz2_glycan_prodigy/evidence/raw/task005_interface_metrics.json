@@ -1,0 +1,54 @@
+{
+ "definitions": {
+  "ca_ca": 8.0,
+  "vdw": 4.5,
+  "hbond": 3.5,
+  "note": "heavy-atom PDBs, no explicit H; hbond = N/O pair <3.5A proxy"
+ },
+ "results": [
+  {
+   "tag": "ref_bdbv43",
+   "ipTM": 0.323,
+   "pLDDT": 0.831,
+   "pDE": 0.92,
+   "interface_residue_pairs": 32,
+   "vdw_atom_pairs": 281,
+   "hbond_atom_pairs": 14,
+   "hbond_share_of_contacts": 0.0498,
+   "antigen_residues_in_interface": 13
+  },
+  {
+   "tag": "cand11",
+   "ipTM": 0.554,
+   "pLDDT": 0.812,
+   "pDE": 0.85,
+   "interface_residue_pairs": 59,
+   "vdw_atom_pairs": 383,
+   "hbond_atom_pairs": 5,
+   "hbond_share_of_contacts": 0.0131,
+   "antigen_residues_in_interface": 21
+  },
+  {
+   "tag": "cand7",
+   "ipTM": 0.306,
+   "pLDDT": 0.82,
+   "pDE": 0.981,
+   "interface_residue_pairs": 39,
+   "vdw_atom_pairs": 367,
+   "hbond_atom_pairs": 12,
+   "hbond_share_of_contacts": 0.0327,
+   "antigen_residues_in_interface": 13
+  },
+  {
+   "tag": "cand17",
+   "ipTM": 0.485,
+   "pLDDT": 0.827,
+   "pDE": 0.89,
+   "interface_residue_pairs": 54,
+   "vdw_atom_pairs": 499,
+   "hbond_atom_pairs": 18,
+   "hbond_share_of_contacts": 0.0361,
+   "antigen_residues_in_interface": 19
+  }
+ ]
+}

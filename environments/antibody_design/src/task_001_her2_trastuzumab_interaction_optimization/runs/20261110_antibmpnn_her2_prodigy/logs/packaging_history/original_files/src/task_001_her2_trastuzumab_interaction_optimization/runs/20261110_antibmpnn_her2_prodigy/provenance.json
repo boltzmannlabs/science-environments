@@ -1,0 +1,57 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261110_antibmpnn_her2_prodigy",
+  "run_date": "2026-11-10",
+  "status": "completed_with_failed_boltz2_candidate_downloads",
+  "source_root": "src/task_001_her2_trastuzumab_interaction_optimization",
+  "results_root": "results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy",
+  "task_bundle_root": "science_env_results/her2_results",
+  "workflow_design": "AntiBMPNN -> filtering -> Boltz2 reference/candidate submission -> Antibody_Prediction -> fixed-pose reconstruction -> ProDIGy",
+  "workflow_executed": "AntiBMPNN -> filtering -> shortlist -> Antibody_Prediction -> reference Boltz2 -> fixed-pose reconstruction -> ProDIGy",
+  "jobs": {
+    "AntiBMPNN": {
+      "experiment_id": "6af3361ad982f81aac5b4a52",
+      "job_name": "AntiBMPNN - 20261110-151953Z - cbb255",
+      "status": "completed",
+      "generated_candidate_count": 20,
+      "model_name": "antibmpnn_020",
+      "seed": 37
+    },
+    "Boltz2": {
+      "status": "reference_completed_candidate_downloads_failed",
+      "reference_confidence": {"vh_vl_iptm": 0.955, "vh_her2_iptm": 0.245},
+      "failure_reason": "300-second signed-download URL lifetime exceeded inter-call latency"
+    },
+    "Antibody_Prediction": {
+      "status": "completed",
+      "evaluated_records": 6
+    }
+  },
+  "counts": {
+    "generated_candidates": 20,
+    "eligible_candidates": 20,
+    "shortlisted_candidates": 5,
+    "prodigy_evaluated_records": 6,
+    "result_pdb_count": 6,
+    "ref15_records": 0
+  },
+  "shortlist": ["AB_13", "AB_05", "AB_20", "AB_08", "AB_04"],
+  "best_candidate": "AB_13",
+  "code": [
+    "code/00_verify_chain_mapping.py",
+    "code/01_filter_designs.py",
+    "code/02_select_shortlist.py",
+    "code/03_boltz2_payloads.py",
+    "code/04_reconstruct_fixed_pose.py",
+    "code/05_compute_clashes.py",
+    "code/06_run_prodigy.sh",
+    "code/07_assemble_results.py",
+    "code/08_make_her2_bundle.py"
+  ],
+  "limitations": [
+    "REF15 could not be computed because Rosetta was unavailable.",
+    "Candidate Boltz2 artifact downloads failed after signed URLs expired.",
+    "Fixed-pose side-chain geometry is approximate and not full rotamer optimization.",
+    "ProDIGy is a non-comparable metric relative to REF15 and does not establish experimental affinity."
+  ]
+}

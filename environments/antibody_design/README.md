@@ -17,3 +17,13 @@ The environment's development scope covers **monoclonal, bispecific and multispe
 
 Tasks specify the molecular format and representation appropriate to their objective, including paired-chain antibodies, fragments, scFv constructs and other architectures described in the specification.
 
+## Execution Records and Results
+
+The five existing HER2, PD-L1, PD-1, LCAT and Gal-3BP tasks now include retained source and scientific-result packages. Their scientific coverage remains partial; the reports identify missing evaluations and incompatible benchmark comparisons.
+
+- [Source guide](src/readme.md): directory structure, planning records, implementation and execution documentation.
+- [Results guide](results/README.md): directory structure, scientific artifact definitions and reporting requirements.
+- [Status](status.md): capability, coverage and validation limits.
+
+Task definitions and published benchmark files remain separate from execution outputs. Recorded local and platform methods retain their actual origins. No new scientific execution is implied by importing these packages.
+

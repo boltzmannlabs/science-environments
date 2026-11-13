@@ -1,0 +1,18 @@
+COMMAND ["/home/boltzmann10/anaconda3/bin/prodigy", "src/task_001_her2_trastuzumab_interaction_optimization/runs/20261111_ref15_benchmark_audit/inputs/released_archive/ab_seldon_trastuzumab_optimization_tests/ab-seldon-paper-v6.2/diversity/complex_1n8z-frk-reduced.pdb", "--selection", "H,L", "C", "--temperature", "25", "--distance-cutoff", "5.5", "--acc-threshold", "0.05", "-np", "1"]
+EXIT 0
+[+] Executing 1 task(s) in total
+##########################################
+[+] Processing structure complex_1n8z-frk-reduced_model0
+[+] No. of intermolecular contacts: 68
+[+] No. of charged-charged contacts: 7.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 20.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 6.0
+[+] No. of apolar-apolar contacts: 24.0
+[+] Percentage of apolar NIS residues: 39.71
+[+] Percentage of charged NIS residues: 18.38
+[++] Predicted binding affinity (kcal.mol-1):     -9.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  8.8e-08
+
+STDERR

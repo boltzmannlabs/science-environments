@@ -1,0 +1,62 @@
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+  0%|          | 0/1 [00:00<?, ?it/s]Generating MSA for inputs/rf1_d2.yaml with 2 protein entities.
+Calling MSA server for target rf1_d2 with 2 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+
+  0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/300 [elapsed: 00:01 remaining: ?][ASleeping for 7s. Reason: PENDING
+
+RUNNING:   0%|          | 0/300 [elapsed: 00:08 remaining: ?][A
+RUNNING:   2%|▏         | 7/300 [elapsed: 00:08 remaining: 06:10][ASleeping for 9s. Reason: RUNNING
+
+RUNNING:   2%|▏         | 7/300 [elapsed: 00:18 remaining: 06:10][A
+RUNNING:   5%|▌         | 16/300 [elapsed: 00:18 remaining: 05:29][ASleeping for 10s. Reason: RUNNING
+
+RUNNING:   5%|▌         | 16/300 [elapsed: 00:29 remaining: 05:29][A
+RUNNING:   9%|▊         | 26/300 [elapsed: 00:29 remaining: 05:06][ASleeping for 6s. Reason: RUNNING
+
+COMPLETE:   9%|▊         | 26/300 [elapsed: 00:36 remaining: 05:06][A
+COMPLETE: 100%|██████████| 300/300 [elapsed: 00:36 remaining: 00:00][ACOMPLETE: 100%|██████████| 300/300 [elapsed: 00:37 remaining: 00:00]
+
+  0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+SUBMIT:   0%|          | 0/300 [elapsed: 00:00 remaining: ?][A
+PENDING:   0%|          | 0/300 [elapsed: 00:01 remaining: ?][ASleeping for 5s. Reason: PENDING
+
+RUNNING:   0%|          | 0/300 [elapsed: 00:06 remaining: ?][A
+RUNNING:   2%|▏         | 5/300 [elapsed: 00:06 remaining: 06:49][ASleeping for 7s. Reason: RUNNING
+
+RUNNING:   2%|▏         | 5/300 [elapsed: 00:14 remaining: 06:49][A
+RUNNING:   4%|▍         | 12/300 [elapsed: 00:14 remaining: 05:48][ASleeping for 8s. Reason: RUNNING
+
+RUNNING:   4%|▍         | 12/300 [elapsed: 00:23 remaining: 05:48][A
+RUNNING:   7%|▋         | 20/300 [elapsed: 00:23 remaining: 05:25][ASleeping for 6s. Reason: RUNNING
+
+RUNNING:   7%|▋         | 20/300 [elapsed: 00:30 remaining: 05:25][A
+RUNNING:   9%|▊         | 26/300 [elapsed: 00:30 remaining: 05:15][ASleeping for 5s. Reason: RUNNING
+
+RUNNING:   9%|▊         | 26/300 [elapsed: 00:36 remaining: 05:15][A
+RUNNING:  10%|█         | 31/300 [elapsed: 00:36 remaining: 05:10][ASleeping for 8s. Reason: RUNNING
+
+COMPLETE:  10%|█         | 31/300 [elapsed: 00:45 remaining: 05:10][A
+COMPLETE: 100%|██████████| 300/300 [elapsed: 00:45 remaining: 00:00][ACOMPLETE: 100%|██████████| 300/300 [elapsed: 00:48 remaining: 00:00]
+100%|██████████| 1/1 [01:27<00:00, 87.23s/it]100%|██████████| 1/1 [01:27<00:00, 87.23s/it]
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 /home/boltzmann10/anaconda3/bin/boltz predict input ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Running structure prediction for 1 input.
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA GeForce RTX 3090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/boltzmann10/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+Predicting: |          | 0/? [00:00<?, ?it/s]Predicting:   0%|          | 0/1 [00:00<?, ?it/s]Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]/home/boltzmann10/anaconda3/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_attention.py:165: UserWarning: Non-SM100f kernel expects bias to be float32 so it's going to be cast to torch.float32. Check if you can change your code for maximum performance.
+  warnings.warn(
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]Number of failed examples: 0
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]

@@ -1,0 +1,131 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+  "checked_scope": "fresh benchmark-evidence validation",
+  "validation": {
+    "required_paths": {
+      "report.md": true,
+      "candidates.csv": true,
+      "shortlist.csv": true,
+      "designed_sequences.fasta": true,
+      "metrics.json": true,
+      "benchmark_comparison.csv": true,
+      "structures": true,
+      "evidence": true,
+      "evidence/raw": true,
+      "evidence/reference": true,
+      "evidence/mappings": true,
+      "evidence/validation.json": true
+    },
+    "source_paths": {
+      "execution.md": true,
+      "inputs": true,
+      "configs": true,
+      "provenance.json": true,
+      "logs": true
+    },
+    "source_result_identity": {
+      "source_run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+      "result_run_id": "20261110_cdrh3_boltz2_glycan_prodigy",
+      "source_provenance_matches": true,
+      "result_provenance_matches": null
+    },
+    "csv": {
+      "candidates.csv": {
+        "row_count": 21,
+        "headers": [
+          "candidate_id",
+          "name",
+          "rank",
+          "selection_status",
+          "selection_reason",
+          "ipTM",
+          "pLDDT",
+          "pDE",
+          "interface_residue_pairs",
+          "vdw_atom_pairs",
+          "hbond_atom_pairs",
+          "hbond_share",
+          "antigen_residues",
+          "prodigy_dG_kcal_mol",
+          "prodigy_Kd_M",
+          "prodigy_IC",
+          "structure_file",
+          "generation_status",
+          "cdrh3_sequence",
+          "mpnn_score",
+          "sample"
+        ],
+        "row_widths": [
+          21
+        ],
+        "consistent_widths": true,
+        "unique_headers": true
+      },
+      "shortlist.csv": {
+        "row_count": 3,
+        "headers": [
+          "rank",
+          "candidate_id",
+          "selection_status",
+          "selection_reason",
+          "ipTM",
+          "prodigy_dG_kcal_mol",
+          "prodigy_Kd_M",
+          "structure_file"
+        ],
+        "row_widths": [
+          8
+        ],
+        "consistent_widths": true,
+        "unique_headers": true
+      },
+      "benchmark_comparison.csv": {
+        "row_count": 12,
+        "headers": [
+          "published_metric",
+          "published_value",
+          "new_matched_condition_value",
+          "comparable",
+          "explanation"
+        ],
+        "row_widths": [
+          5
+        ],
+        "consistent_widths": true,
+        "unique_headers": true
+      }
+    },
+    "candidate_counts": {
+      "inventory": 21,
+      "unique_inventory": 21,
+      "shortlist": 3,
+      "shortlist_unique": 3,
+      "shortlist_membership_valid": true
+    },
+    "fasta": {
+      "records": 6,
+      "unique_records": 3,
+      "candidate_ids_represented": [
+        "task005_cand11",
+        "task005_cand17",
+        "task005_cand7"
+      ]
+    },
+    "structures": {
+      "linked_records": 4,
+      "missing_links": []
+    },
+    "checksum_manifest": {
+      "path": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/mappings/path_manifest.json",
+      "entries": 6,
+      "matches": true
+    },
+    "issues": [],
+    "validation_status": "passed",
+    "timestamp_utc": "2026-11-11T11:45:05.890489+00:00"
+  },
+  "validation_status": "passed",
+  "issues": [],
+  "checked_at_utc": "2026-11-11T11:46:09.878481+00:00"
+}

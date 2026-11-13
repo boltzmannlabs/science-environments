@@ -6,7 +6,7 @@
 
 The Antibody Design environment defines a common framework for computational antibody discovery, design, optimization and evaluation. Its intended scope covers monoclonal, bispecific and multispecific antibody projects, from a target-defined design objective to traceable candidate comparisons.
 
-The specification describes the scientific scope and requirements for the environment as it develops. The current release provides monoclonal antibody task specifications and published benchmark references. Availability of executable capabilities is recorded separately in [status.md](status.md).
+The specification describes scientific requirements as the environment develops. The current release includes monoclonal task specifications, published benchmark references and retained execution/results packages for five tasks. Capability and scientific coverage are recorded in [status.md](status.md). The shared execution and artifact contract is defined below.
 
 ## Antibody Design Families
 
@@ -49,6 +49,10 @@ Where several workflows are appropriate, compare their applicability, evidence q
 
 The scientific lifecycle connects input review, candidate design, structure and interface assessment, property evaluation, comparison and reporting. These are evidence requirements; their implementation may differ across tasks and formats.
 
+For monoclonal tasks, the agent determines workflow count, methods, execution order and shortlisting strategy from task requirements, verified Boltzmann tool contracts and resource budget. Use Boltzmann tools for design and primary evaluation within the requested scope. Calculate missing benchmark metrics using genuine open-source implementations specified or referenced by the corresponding benchmark; separate local benchmark evaluation requires scope authorization in the task/request. Record execution origin and method differences, without silent local design-model substitution.
+
+Preserve independent workflow executions, repeats and retries under distinct run IDs with lineage. Retain considered approaches and failed attempts in source records. Historical bundles retain their original run IDs and identify component workflows. Schedule GPU work sequentially when needed; respect user stops and do not restart cancelled work automatically.
+
 ## Evaluation and Candidate Selection
 
 | Evaluation area | Required evidence |
@@ -70,3 +74,31 @@ Predicted confidence, interaction energies, measured affinity and functional act
 Each iteration should retain the candidate identity, changes from its predecessor, input and method revisions, results, failed criteria and the reason for the next decision. Promising candidates may guide focused refinement while alternative approaches preserve exploration. New results must remain attributable to the exact candidate and evaluation conditions that produced them.
 
 Revised workflows should respond to documented evidence. An incomplete or failed stage must not be converted into a successful result, and reused evidence must remain applicable to the current candidate. The stopping decision should reflect the declared objective, available evidence and resource budget.
+
+## Agent Workflows and Scientific Results
+
+Use matching task/run identities:
+
+```text
+src/<task_id>/runs/<run_id>/
+results/<task_id>/<run_id>/
+```
+
+| Location | Required records |
+| --- | --- |
+| `src/<task_id>/` | Explored approaches, chosen workflows, tool inventory, run register and implementation. |
+| Source run | Actual execution, inputs, effective configurations, workflow snapshot, provenance and logs. |
+| `results/<task_id>/` | Scientific run folders and supported workflow comparisons, organized as described in the main `results/README.md`. |
+| Results run | Candidate/prediction inventory, selections, sequences, metrics, structures, benchmark comparison/report and scientific evidence. |
+
+The [source guide](src/readme.md) describes planning, implementation and execution records. The [results guide](results/README.md) describes scientific output files and assessment-run exceptions. An attempt producing no scientific output has a source record without placeholder results. Preserve inherited data, failed outputs and original lineage; reusing evidence is not a fresh execution.
+
+## Benchmark Audit and Completion
+
+Audit task-required and missing metrics against only the matching task-specific benchmark. Recover original tools/versions, data, constructs, atom/residue selections, preprocessing, sampling and aggregation. Verify actual evaluator outputs and retain reproducibility evidence. Report our/reference values, compatible differences and supported outcomes in the run's `benchmark_comparison.csv` and `benchmark_report.md`.
+
+Keep missing predictions `not_predicted`, absent calculations `not_computed` and unsupported comparisons `not_comparable`, with reasons and attempted tools. Unsupported numeric fields remain empty or `null`. Do not fabricate values or transfer another task's benchmark. Distinguish dataset aggregates, single-case measurements, prediction confidence and measured affinity.
+
+Record execution status, scientific coverage and packaging validation separately. File presence and a packaging pass cannot establish scientific completion; required unresolved evaluations leave coverage partial or awaiting input. Validate identities, formats, membership, paths, counts and hashes before handoff, with links between source and result runs.
+
+This specification defines the execution contract. Retained runs document historical work; importing or editing them does not launch jobs or establish a universally runnable executor.

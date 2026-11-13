@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+"""Prepare complex PDB with SEQRES matching modeled ATOMs, in the file's native format (13 res/line, 4 chars each)."""
+from collections import OrderedDict
+
+AA1to3 = {'A':'ALA','R':'ARG','N':'ASN','D':'ASP','C':'CYS','Q':'GLN','E':'GLU',
+          'G':'GLY','H':'HIS','I':'ILE','L':'LEU','K':'LYS','M':'MET','F':'PHE',
+          'P':'PRO','S':'SER','T':'THR','W':'TRP','Y':'TYR','V':'VAL'}
+AA3to1 = {v:k for k,v in AA1to3.items()}
+
+# Collect modeled residues per chain in file order
+chains = OrderedDict()  # chain -> [aa1]
+seen = set()
+header_lines = []
+with open('5BV7.pdb') as f:
+    for line in f:
+        if line.startswith('ATOM'):
+            resn = line[17:20].strip()
+            if resn in ('HOH','WAT','EDO','GLC','NAG','BME','CLR','SUL','PO4','NA','CL','UNL','PEG','GOL','DOD'):
+                continue
+            if resn not in AA3to1:
+                continue
+            cid = line[21]
+            if cid not in ('A','B','C'):
+                continue
+            resseq = int(line[22:26].strip()); icode = line[26]
+            key = (cid, resseq, icode)
+            if key not in seen:
+                seen.add(key)
+                chains.setdefault(cid, []).append(AA3to1[resn])
+        elif line.startswith(('HEADER','TITLE','COMPND','SOURCE','EXPDTA')):
+            header_lines.append(line)
+
+# Collect ATOM lines per chain
+chains_atoms = OrderedDict()
+with open('5BV7.pdb') as f:
+    for line in f:
+        if line.startswith('ATOM'):
+            resn = line[17:20].strip()
+            if resn in ('HOH','WAT','EDO','GLC','NAG','BME','CLR','SUL','PO4','NA','CL','UNL','PEG','GOL','DOD'):
+                continue
+            if resn not in AA3to1:
+                continue
+            cid = line[21]
+            if cid not in ('A','B','C'):
+                continue
+            chains_atoms.setdefault(cid, []).append(line)
+
+def write_seqres_lines(f, cid, aas):
+    """Write SEQRES in the file's native format: 13 res/line, 4 chars each."""
+    n = len(aas)
+    per = 13
+    for i in range(0, n, per):
+        serial = i // per + 1
+        chunk = aas[i:i+per]
+        res_str = ''.join(AA1to3[a] + ' ' for a in chunk)
+        line = "SEQRES" + f"{serial:>4d}" + " " + cid + " " + f"{n:>4d}" + "  " + res_str
+        f.write(line.ljust(80) + '\n')
+
+with open('complex_5bv7_v3.pdb', 'w') as f:
+    f.writelines(header_lines)
+    for cid in ('C','B','A'):
+        write_seqres_lines(f, cid, chains[cid])
+    for cid in ('C','B','A'):
+        f.writelines(chains_atoms[cid])
+    f.write("END\n")
+
+for cid in ('C','B','A'):
+    print(f"Chain {cid}: {len(chains[cid])} residues, {len(chains[cid])//13+1} SEQRES lines")
+print("Wrote complex_5bv7_v3.pdb")

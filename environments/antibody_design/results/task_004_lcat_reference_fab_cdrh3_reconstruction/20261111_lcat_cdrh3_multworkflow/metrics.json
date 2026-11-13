@@ -1,0 +1,392 @@
+{
+  "task": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "benchmark": {
+    "name": "AbFlow (KDD 2026), 60-case RAbD aggregate",
+    "table1": {
+      "AAR": "0.4234\u00b10.1334",
+      "TM-score": "0.9736\u00b10.0090",
+      "lDDT": "0.8522\u00b10.0216",
+      "CAAR": "0.2824\u00b10.2037",
+      "RMSD": "8.25\u00b14.55 A",
+      "DockQ": "0.423\u00b10.161"
+    },
+    "table2": {
+      "CDR_H3_RMSD_A": 1.83,
+      "fullatom_TMscore": 0.9707,
+      "fullatom_lDDT": 0.8151,
+      "fullatom_DockQ": 0.431
+    },
+    "note": "60-case aggregate, not 5BV7-specific; paper has RMSD-definition discrepancy (Sec 5.2 vs App C)"
+  },
+  "our_results": {
+    "native_cdrh3": "AREGAAVRSFYYSYYGMDV",
+    "best_AAR": 0.4737,
+    "best_CAAR": 0.5714,
+    "structural": {
+      "sample9": {
+        "CDR_H3_CA_RMSD_A": 6.456,
+        "TMscore": 0.0,
+        "lDDT": 98.9,
+        "ptm": 0.73,
+        "pddt": 0.923
+      },
+      "sample1": {
+        "CDR_H3_CA_RMSD_A": 47.771,
+        "TMscore": 0.0,
+        "lDDT": 98.03,
+        "ptm": 0.708,
+        "pddt": 0.906
+      },
+      "sample6": {
+        "CDR_H3_CA_RMSD_A": 51.16,
+        "TMscore": 0.0,
+        "lDDT": 97.81,
+        "ptm": 0.713,
+        "pddt": 0.927
+      }
+    },
+    "protocol": "ProteinMPNN design (20 variants) + Boltz2 structure (top 3); align on antibody framework C-alpha (B all + C minus CDR-H3); CDR-H3 C-alpha metrics"
+  },
+  "comparison": "not_comparable_as_method_performance: single public 5BV7 case versus a 60-case aggregate; legacy metric definitions differ. See benchmark_report.md and retained reproduction evidence.",
+  "integrity": "TM-score 0 is correct for the large CDR-H3 displacements (short loops are TM-sensitive). Did not resolve the paper's RMSD-definition discrepancy; reported Table 1 and Table 2 separately.",
+  "open_source_dockq": {
+    "tool": "AbFlow retained DockQ.py",
+    "tool_path": "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+    "tool_sha256": "c89dd07e9a45f5368c6758fead2a10bc742ccfb20b43e320aae3ac481950ce24",
+    "biopython_runtime": "1.88",
+    "protocol": {
+      "model_chain1": [
+        "B",
+        "C"
+      ],
+      "model_chain2": [
+        "A"
+      ],
+      "native_chain1": [
+        "B",
+        "C"
+      ],
+      "native_chain2": [
+        "A"
+      ],
+      "flags": [
+        "-short",
+        "-no_needle"
+      ],
+      "meaning": "antibody chains B/C versus LCAT antigen chain A; deposited 5BV7 reference"
+    },
+    "results": [
+      {
+        "dockq": 0.539,
+        "fnat": 0.745,
+        "irms": 1.427,
+        "lrms": 11.647,
+        "fnonnat": 0.339,
+        "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb",
+        "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "command": [
+          "python3",
+          "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+          "-model_chain1",
+          "B",
+          "C",
+          "-model_chain2",
+          "A",
+          "-native_chain1",
+          "B",
+          "C",
+          "-native_chain2",
+          "A",
+          "-short",
+          "-no_needle"
+        ],
+        "stdout": "DockQ 0.539 Fnat 0.745 iRMS 1.427 LRMS 11.647 Fnonnat 0.339 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample1_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+      },
+      {
+        "dockq": 0.506,
+        "fnat": 0.8,
+        "irms": 1.473,
+        "lrms": 16.516,
+        "fnonnat": 0.312,
+        "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb",
+        "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "command": [
+          "python3",
+          "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+          "-model_chain1",
+          "B",
+          "C",
+          "-model_chain2",
+          "A",
+          "-native_chain1",
+          "B",
+          "C",
+          "-native_chain2",
+          "A",
+          "-short",
+          "-no_needle"
+        ],
+        "stdout": "DockQ 0.506 Fnat 0.800 iRMS 1.473 LRMS 16.516 Fnonnat 0.312 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample6_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+      },
+      {
+        "dockq": 0.537,
+        "fnat": 0.764,
+        "irms": 1.203,
+        "lrms": 15.219,
+        "fnonnat": 0.311,
+        "model": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb",
+        "native": "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+        "command": [
+          "python3",
+          "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/DockQ/DockQ.py",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb",
+          "science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb",
+          "-model_chain1",
+          "B",
+          "C",
+          "-model_chain2",
+          "A",
+          "-native_chain1",
+          "B",
+          "C",
+          "-native_chain2",
+          "A",
+          "-short",
+          "-no_needle"
+        ],
+        "stdout": "DockQ 0.537 Fnat 0.764 iRMS 1.203 LRMS 15.219 Fnonnat 0.311 science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/task004_sample9_complex.pdb science-environments/environments/antibody_design/results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/structures/reference_5BV7.pdb"
+      }
+    ],
+    "comparison_note": "Candidate-level full-complex DockQ is newly computed; it is not identical to the AbFlow Table 1/2 aggregate evaluation scope."
+  },
+  "abflow_rabd_reproduction": {
+    "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+    "run_id": "20261111_lcat_cdrh3_multworkflow",
+    "benchmark": "AbFlow RAbD test set, H3-specific paratope-centric design checkpoint",
+    "dataset": {
+      "path": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow/inputs/abflow/RAbD_local/test.json",
+      "test_records": 60,
+      "has_5bv7": true,
+      "test_pkl": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow/inputs/abflow/RAbD_local/test.pkl",
+      "test_surf_pkl": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow/inputs/abflow/RAbD_local/test_surf.pkl"
+    },
+    "environment": {
+      "python": "3.10.14",
+      "biopython": "1.79",
+      "numpy": "1.26.4",
+      "torch": "2.6.0+cu124",
+      "cuda_available": true,
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "batch_size": 1,
+      "num_workers": 1,
+      "oom_events": 0
+    },
+    "checkpoint": {
+      "path": "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/checkpoints/paratope_centric_design.ckpt",
+      "sha256": "fcc614dc357d19e5b5709f22ed4fc8831241722e76e8600389d58c89a5927105",
+      "cdr_type": [
+        "H3"
+      ],
+      "paratope": "H3"
+    },
+    "commands": {
+      "generation": "python generate.py --ckpt checkpoints/paratope_centric_design.ckpt --test_set RAbD_local/test.json --batch_size 1 --num_workers 1 --gpu 0",
+      "metrics": "python cal_metrics.py --test_set rabd_paratope_h3_results/summary.json --metrics_path rabd_paratope_h3_results/metrics.pkl --num_workers 1"
+    },
+    "reproduced_aggregate_metrics": {
+      "AAR H3": {
+        "mean": 0.4208729225137894,
+        "std_population": 0.13062719978901102,
+        "min": 0.08333333333333333,
+        "max": 0.8571428571428571
+      },
+      "CAAR H3": {
+        "mean": 0.28186521811147464,
+        "std_population": 0.19848688952042262,
+        "min": 0.0,
+        "max": 0.799999999984
+      },
+      "AAR": {
+        "mean": 0.4208729225137894,
+        "std_population": 0.13062719978901102,
+        "min": 0.08333333333333333,
+        "max": 0.8571428571428571
+      },
+      "CAAR": {
+        "mean": 0.28186521811147464,
+        "std_population": 0.19848688952042262,
+        "min": 0.0,
+        "max": 0.799999999984
+      },
+      "RMSD(CA) aligned": {
+        "mean": 1.0341878158736617,
+        "std_population": 0.26034772241136395,
+        "min": 0.5722404536772999,
+        "max": 1.7730582294207438
+      },
+      "RMSD(CA) CDRH3": {
+        "mean": 8.26294047912887,
+        "std_population": 4.50254591406371,
+        "min": 1.555442259894751,
+        "max": 28.014808176453066
+      },
+      "RMSD(CA) CDRH3 aligned": {
+        "mean": 1.6465155150512467,
+        "std_population": 0.5839236074507503,
+        "min": 0.6299545575796264,
+        "max": 3.378507801323071
+      },
+      "TMscore": {
+        "mean": 0.973615,
+        "std_population": 0.009000663401475845,
+        "min": 0.9518,
+        "max": 0.9901
+      },
+      "LDDT": {
+        "mean": 0.852355,
+        "std_population": 0.021755845383099538,
+        "min": 0.7895,
+        "max": 0.8995
+      },
+      "DockQ": {
+        "mean": 0.42395,
+        "std_population": 0.1643913445612836,
+        "min": 0.043,
+        "max": 0.889
+      }
+    },
+    "published_comparison": {
+      "AAR_H3": "0.4234 \u00b1 0.1334",
+      "CAAR_H3": "0.2824 \u00b1 0.2037",
+      "RMSD_CDRH3": "8.25 \u00b1 4.55 \u00c5 (Table 1) / 1.83 \u00c5 (Table 2)",
+      "TMscore": "0.9736 \u00b1 0.0090",
+      "lDDT": "0.8522 \u00b1 0.0216",
+      "DockQ": "0.423 \u00b1 0.161"
+    },
+    "reproduced_5bv7_baseline": {
+      "AAR H3": 0.5263157894736842,
+      "CAAR H3": 0.33333333333055554,
+      "AAR": 0.5263157894736842,
+      "CAAR": 0.33333333333055554,
+      "RMSD(CA) aligned": 1.186440071481946,
+      "RMSD(CA) CDRH3": 14.462113136941323,
+      "RMSD(CA) CDRH3 aligned": 2.0414805151581925,
+      "TMscore": 0.9648,
+      "LDDT": 0.8104,
+      "DockQ": 0.889
+    },
+    "current_task004_candidates": {
+      "task004_sample1": {
+        "AAR": 0.4737,
+        "CAAR": 0.5714,
+        "task_CDR_H3_CA_RMSD_A": 47.771,
+        "task_CDR_H3_TMscore": 0.0,
+        "task_pLDDT_confidence_0_100": 98.03,
+        "AbFlow_structural_lDDT": 0.8907,
+        "AbFlow_antibody_TMscore": 0.8095,
+        "AbFlow_CDRH3_DockQ": 0.162,
+        "Fnat": 0.139,
+        "iRMS_A": 14.271,
+        "LRMS_A": 11.979
+      },
+      "task004_sample6": {
+        "AAR": 0.4737,
+        "CAAR": 0.5714,
+        "task_CDR_H3_CA_RMSD_A": 51.16,
+        "task_CDR_H3_TMscore": 0.0,
+        "task_pLDDT_confidence_0_100": 97.81,
+        "AbFlow_structural_lDDT": 0.8863,
+        "AbFlow_antibody_TMscore": 0.7759,
+        "AbFlow_CDRH3_DockQ": 0.174,
+        "Fnat": 0.167,
+        "iRMS_A": 14.176,
+        "LRMS_A": 11.734
+      },
+      "task004_sample9": {
+        "AAR": 0.4737,
+        "CAAR": 0.5714,
+        "task_CDR_H3_CA_RMSD_A": 6.456,
+        "task_CDR_H3_TMscore": 0.0,
+        "task_pLDDT_confidence_0_100": 98.9,
+        "AbFlow_structural_lDDT": 0.8822,
+        "AbFlow_antibody_TMscore": 0.7971,
+        "AbFlow_CDRH3_DockQ": 0.182,
+        "Fnat": 0.167,
+        "iRMS_A": 14.41,
+        "LRMS_A": 11.14
+      }
+    },
+    "interpretation": {
+      "aggregate_reproduction": "completed for the retained AbFlow H3 checkpoint and 60-case RAbD test set",
+      "current_candidate_comparison": "single-case candidates compared with the reproduced aggregate; not a claim that ProteinMPNN+Boltz2 is AbFlow-generated",
+      "limitations": [
+        "AbFlow baseline uses its own paratope-centric H3 checkpoint and sampling seed 2023",
+        "current task candidates were generated by ProteinMPNN+Boltz2",
+        "CDR-H3 RMSD alignment scope differs between the task custom metric and AbFlow cal_metrics"
+      ]
+    },
+    "timestamp_utc": "2026-11-11T13:01:53.298773+00:00"
+  },
+  "current_candidate_method_matched_metrics": {
+    "task004_sample1": {
+      "AAR": 0.4737,
+      "CAAR": 0.5714,
+      "task_CDR_H3_CA_RMSD_A": 47.771,
+      "task_CDR_H3_TMscore": 0.0,
+      "task_pLDDT_confidence_0_100": 98.03,
+      "AbFlow_structural_lDDT": 0.8907,
+      "AbFlow_antibody_TMscore": 0.8095,
+      "AbFlow_CDRH3_DockQ": 0.162,
+      "Fnat": 0.139,
+      "iRMS_A": 14.271,
+      "LRMS_A": 11.979,
+      "candidate_id": "task004_sample1",
+      "AbFlow_CDRH3_RMSD_raw": 38.240662559980784,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.336458180353462,
+      "n_atoms": 19
+    },
+    "task004_sample6": {
+      "AAR": 0.4737,
+      "CAAR": 0.5714,
+      "task_CDR_H3_CA_RMSD_A": 51.16,
+      "task_CDR_H3_TMscore": 0.0,
+      "task_pLDDT_confidence_0_100": 97.81,
+      "AbFlow_structural_lDDT": 0.8863,
+      "AbFlow_antibody_TMscore": 0.7759,
+      "AbFlow_CDRH3_DockQ": 0.174,
+      "Fnat": 0.167,
+      "iRMS_A": 14.176,
+      "LRMS_A": 11.734,
+      "candidate_id": "task004_sample6",
+      "AbFlow_CDRH3_RMSD_raw": 39.85787223925519,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.3150234819540363,
+      "n_atoms": 19
+    },
+    "task004_sample9": {
+      "AAR": 0.4737,
+      "CAAR": 0.5714,
+      "task_CDR_H3_CA_RMSD_A": 6.456,
+      "task_CDR_H3_TMscore": 0.0,
+      "task_pLDDT_confidence_0_100": 98.9,
+      "AbFlow_structural_lDDT": 0.8822,
+      "AbFlow_antibody_TMscore": 0.7971,
+      "AbFlow_CDRH3_DockQ": 0.182,
+      "Fnat": 0.167,
+      "iRMS_A": 14.41,
+      "LRMS_A": 11.14,
+      "candidate_id": "task004_sample9",
+      "AbFlow_CDRH3_RMSD_raw": 33.095434298126065,
+      "AbFlow_CDRH3_RMSD_Kabsch": 3.204680352884714,
+      "n_atoms": 19
+    }
+  },
+  "metric_definition_corrections": {
+    "legacy_lDDT_97_81_to_98_90": "Custom CDR-H3 CA local-distance score, thresholds 1.5/5/15 A, max eight neighbors, from src/shared/metrics.py. Neither standard lDDT nor pLDDT; excluded from direct benchmark comparisons.",
+    "inherited_task_pLDDT_confidence_0_100": "Incorrect inherited label in later raw metadata for the same custom score. Raw evidence retained; use the custom-score definition above.",
+    "AbFlow_structural_lDDT": "Separate benchmark-implementation structural metric, retained values 0.8822 to 0.8907 for the three candidates."
+  }
+}

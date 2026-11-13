@@ -1,0 +1,17 @@
+{
+ "note": "Boltz2 de novo predictions. VH-VL dimer reliable (high ipTM); VH-HER2 pair unreliable (low ipTM) \u2014 de novo antigen-interface prediction is difficult. Candidate Boltz2 jobs were submitted but artifact downloads failed (300s signed-URL TTL exceeded inter-call latency). Reference confidence below.",
+ "REF_1N8Z": {
+  "VH_VL_dimer": {
+   "confidence_score": 0.96,
+   "iptm": 0.955,
+   "plddt": 0.961,
+   "ipde": 0.46
+  },
+  "VH_HER2_pair": {
+   "confidence_score": 0.777,
+   "iptm": 0.245,
+   "plddt": 0.91,
+   "ipde": 15.87
+  }
+ }
+}

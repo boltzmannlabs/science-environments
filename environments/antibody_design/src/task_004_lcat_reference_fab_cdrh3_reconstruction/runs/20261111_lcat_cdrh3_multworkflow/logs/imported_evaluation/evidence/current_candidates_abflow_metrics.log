@@ -1,0 +1,19 @@
+/home/boltzmann10/anaconda3/envs/abflow_benchmark/lib/python3.10/site-packages/pdbfixer/pdbfixer.py:58: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+  0%|          | 0/3 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/cal_metrics.py", line 216, in <module>
+    main(parse())
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/cal_metrics.py", line 183, in main
+    metrics = [cal_metrics(inputs) for inputs in tqdm(metric_inputs)]
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/cal_metrics.py", line 183, in <listcomp>
+    metrics = [cal_metrics(inputs) for inputs in tqdm(metric_inputs)]
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/cal_metrics.py", line 43, in cal_metrics
+    mod_cplx = AgAbComplex.from_pdb(mod_pdb, H, L, A, skip_epitope_cal=True)
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/data/pdb_utils.py", line 658, in from_pdb
+    return cls(antigen, antibody, heavy_chain, light_chain, numbering, skip_epitope_cal, skip_validity_check)
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/data/pdb_utils.py", line 634, in __init__
+    self.antibody, self.cdr_pos = self._extract_antibody_info(antibody, numbering)
+  File "/home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/AbFlow/data/pdb_utils.py", line 723, in _extract_antibody_info
+    assert hit, f'Not {conserved[residue_number]} at {residue_number}'
+AssertionError: Not ['CYS'] at 23
+  0%|          | 0/3 [00:00<?, ?it/s]

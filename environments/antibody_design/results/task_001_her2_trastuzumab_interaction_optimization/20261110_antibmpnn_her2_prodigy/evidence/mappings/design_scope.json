@@ -1,0 +1,76 @@
+{
+ "scheme": "Kabat (Kabat et al. 1993 ranges)",
+ "source": "ANARCI v2026.2.13.2 numbering of PDB 1N8Z sequences (proteiniq.io antibody-variable-regions guide); exact substring verification against deposited SEQRES",
+ "editable": {
+  "B": [
+   {
+    "name": "HCDR1",
+    "kabat": "Kabat 31-35",
+    "seq_range_1based": [
+     31,
+     35
+    ],
+    "sequence": "DTYIH"
+   },
+   {
+    "name": "HCDR2",
+    "kabat": "Kabat 50-65",
+    "seq_range_1based": [
+     50,
+     66
+    ],
+    "sequence": "RIYPTNGYTRYADSVKG"
+   },
+   {
+    "name": "HCDR3",
+    "kabat": "Kabat 95-102",
+    "seq_range_1based": [
+     99,
+     109
+    ],
+    "sequence": "WGGDGFYAMDY"
+   }
+  ],
+  "A": [
+   {
+    "name": "LCDR1",
+    "kabat": "Kabat 24-34",
+    "seq_range_1based": [
+     24,
+     34
+    ],
+    "sequence": "RASQDVNTAVA"
+   },
+   {
+    "name": "LCDR2",
+    "kabat": "Kabat 50-56",
+    "seq_range_1based": [
+     50,
+     56
+    ],
+    "sequence": "SASFLYS"
+   },
+   {
+    "name": "LCDR3",
+    "kabat": "Kabat 89-97",
+    "seq_range_1based": [
+     89,
+     97
+    ],
+    "sequence": "QQHYTTPPT"
+   }
+  ]
+ },
+ "protected": "all positions outside editable CDR ranges, including variable-domain framework, constant regions (VH CH1, VL Ckappa) and HER2",
+ "required_disulfides": [
+  {
+   "vh_pos": 22,
+   "vl_pos": 23
+  },
+  {
+   "vh_pos": 96,
+   "vl_pos": 88
+  }
+ ],
+ "note": "Kabat-number to deposited-sequence-index mapping derived from exact unique CDR substring matches; CDR sequences cross-checked with SAbDab Chothia definitions (CDRL1 RASQDVNTAVA, CDRL3 QQHYTTPPT)"
+}

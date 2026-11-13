@@ -1,0 +1,56 @@
+{
+  "tool": "Biopython 1.85 + numpy 1.26.4",
+  "cutoff_A": 5.0,
+  "chain_mapping": "VH=A, VL=B, PD1=C",
+  "results": {
+    "task003_cand11": {
+      "cdrh3_residue_range": "VH 97-106",
+      "cdrh3_pd1_contact_pairs_lt5A": 12,
+      "cdrh3_pd1_contacting_residues": [
+        34,
+        36,
+        46,
+        50,
+        86,
+        87,
+        88,
+        92
+      ],
+      "cdrh3_min_distance_A": 3.466
+    },
+    "task003_cand9": {
+      "cdrh3_residue_range": "VH 97-106",
+      "cdrh3_pd1_contact_pairs_lt5A": 16,
+      "cdrh3_pd1_contacting_residues": [
+        36,
+        44,
+        46,
+        86,
+        87,
+        88,
+        92,
+        94
+      ],
+      "cdrh3_min_distance_A": 2.927
+    },
+    "task003_cand2": {
+      "cdrh3_residue_range": "VH 97-106",
+      "cdrh3_pd1_contact_pairs_lt5A": 17,
+      "cdrh3_pd1_contacting_residues": [
+        32,
+        33,
+        34,
+        46,
+        48,
+        49,
+        50,
+        86,
+        87,
+        88,
+        89,
+        92
+      ],
+      "cdrh3_min_distance_A": 2.386
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "task": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "packaging_scope": "Existing artifacts only; no scientific jobs, new selection or reranking.",
+  "selection_source": "evidence/original_summary.md",
+  "shortlisted_candidates": [
+    "task004_sample1",
+    "task004_sample6",
+    "task004_sample9"
+  ],
+  "shortlist_count": 3,
+  "sequence_record_count": 6,
+  "structure_count": 3,
+  "status_note": "3 previously evaluated sequence-recovery selections; single-case evidence does not establish improvement over the aggregate benchmark.",
+  "sequence_representation": "Separate heavy/light records for paired antibodies; single record for existing scFv constructs.",
+  "structure_sequence_checks": [
+    {
+      "candidate_id": "task004_sample1",
+      "path": "structures/task004_sample1_complex.pdb",
+      "sequence_match": true
+    },
+    {
+      "candidate_id": "task004_sample6",
+      "path": "structures/task004_sample6_complex.pdb",
+      "sequence_match": true
+    },
+    {
+      "candidate_id": "task004_sample9",
+      "path": "structures/task004_sample9_complex.pdb",
+      "sequence_match": true
+    }
+  ],
+  "source_reports_preserved_verbatim": true,
+  "historical_paths": "Original reports retain historical paths. Use this package manifest and current overview for relocated artifacts.",
+  "imported_artifacts": [
+    {
+      "source": "results/task004_aar.json",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/task004_aar.json",
+      "sha256": "fb4ae27d4d19b4e5da53330451744f517279d9a5961b798082a45abb6c3e812a"
+    },
+    {
+      "source": "results/task004_proteinmpnn/seqs/task004_full_5BV7.fa",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/all_designs.fa",
+      "sha256": "eea4e242fb3605bda5499cd1d4070081f0fcce12aca39f0296320ec2a8a99e7d"
+    },
+    {
+      "source": "prepared/task004_struct/task004_sample1.fasta",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/inputs/task004_sample1.fasta",
+      "sha256": "f42778d117f2a7e9f35d819e2a520f5ca68ebcb93fe8e9f626bc03684e7f20a1"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample1/predictions/task004_sample1/task004_sample1_model_0.pdb",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/structures/task004_sample1_complex.pdb",
+      "sha256": "8ee12039923056b2c3bdb8bb474d4056dcfed21e07891c70a7c3d82bb5a08745"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample1/predictions/task004_sample1/confidence_task004_sample1_model_0.json",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/confidence/task004_sample1.json",
+      "sha256": "14a027ba605a6f57a45038bbf2682737e51820efce0a950112afd9390da0e806"
+    },
+    {
+      "source": "prepared/task004_struct/task004_sample6.fasta",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/inputs/task004_sample6.fasta",
+      "sha256": "0ae4569393cbc61208ea83cb7fd1266298a2e2f3ec58f6642d791cbb16a9a406"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample6/predictions/task004_sample6/task004_sample6_model_0.pdb",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/structures/task004_sample6_complex.pdb",
+      "sha256": "b03c2c83905820d7b8de39631ec93b8ce3807978debeed419b5a0d4f3d2de498"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample6/predictions/task004_sample6/confidence_task004_sample6_model_0.json",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/confidence/task004_sample6.json",
+      "sha256": "a050f0e636922190f0dd8359d4142d98f30c45f806231cbea9bd8e780a415c4b"
+    },
+    {
+      "source": "prepared/task004_struct/task004_sample9.fasta",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/inputs/task004_sample9.fasta",
+      "sha256": "a0f59e5d7450d26b065138722bef982222ca72e23f4681ccf6e76c4a32569c1d"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample9/predictions/task004_sample9/task004_sample9_model_0.pdb",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/structures/task004_sample9_complex.pdb",
+      "sha256": "63d0d58c4a9a53629063556d82797a7aa2f7a7c46efe985f99b49b0e9cc362b2"
+    },
+    {
+      "source": "results/task004_struct_boltz2/boltz_results_task004_sample9/predictions/task004_sample9/confidence_task004_sample9_model_0.json",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/confidence/task004_sample9.json",
+      "sha256": "68c9467cb14056a9167270bc524ea7e233aa196728f4a6aaafd9a01ce51e7988"
+    },
+    {
+      "source": "results/task004_struct_metrics.json",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/task004_struct_metrics.json",
+      "sha256": "07e384a08cbad398d0d90d1e7ab21023881ecd4e3fea5dea68ebaa4c34eaa094"
+    },
+    {
+      "source": "prepared/5BV7.pdb",
+      "packaged_path": "task_004_lcat_reference_fab_cdrh3_reconstruction/evidence/reference/5BV7.pdb",
+      "sha256": "1dcf9fb069162547fe3cef527af3e82692f35f50a9a4a92d99392052bf8cc905"
+    }
+  ],
+  "reference_metrics": "evidence/metrics.json",
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "20261111_lcat_cdrh3_multworkflow",
+  "canonical_result_root": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow",
+  "canonical_source_run": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow"
+}

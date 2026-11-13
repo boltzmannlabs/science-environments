@@ -1,0 +1,7 @@
+metric,published_value,published_source,new_result,new_method,comparability,note
+REF15 (Rosetta REU) best diversity final,-94.8663,"Ab-SELDON JCIM 2026, run 6",NEEDS_INPUT / NOT COMPUTED,Rosetta unavailable,NON-COMPARABLE,Rosetta not installed; REF15 not computable. Did not fabricate.
+REF15 (Rosetta REU) best random final,-92.6947,"Ab-SELDON JCIM 2026, run 4",NEEDS_INPUT / NOT COMPUTED,Rosetta unavailable,NON-COMPARABLE,Rosetta not installed; REF15 not computable.
+REF15 delta (final-initial) diversity,-45.1667,"Ab-SELDON JCIM 2026, run 6",NEEDS_INPUT / NOT COMPUTED,Rosetta unavailable,NON-COMPARABLE,Primary benchmark metric unavailable.
+ProDIGy dG (kcal/mol) reference,N/A (not in published benchmark),,-9.9,ProDIGy (open-source),NEW METRIC,ProDIGy is a contact-based predictor; not the benchmark's REF15.
+ProDIGy dG best candidate (AB_13),N/A,,-10.9,"ProDIGy (open-source), fixed-pose reconstruction",NEW METRIC,"1.0 kcal/mol improvement over reference (fixed-pose, matched conditions)."
+ProDIGy KD best candidate (AB_13),N/A,,9.4e-09 M,ProDIGy (open-source),NEW METRIC,~6x lower KD than reference (5.6e-08 M).

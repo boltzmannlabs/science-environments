@@ -1,0 +1,58 @@
+{
+  "task": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "sources": [
+    {
+      "id": "pdb_7kew",
+      "type": "experimental_structure",
+      "record": "RCSB PDB 7KEW",
+      "use": "BDBV-43 Fab chain identity and paired VH/VL sequence",
+      "chains": {"G": "VH", "J": "VL"},
+      "local_copy": "../runs/20261110_cdrh3_boltz2_glycan_prodigy/inputs/reference/7KEW.pdb",
+      "status": "verified"
+    },
+    {
+      "id": "uniprot_q08380",
+      "type": "protein_record",
+      "record": "UniProt Q08380",
+      "use": "LGALS3BP sequence, 585-aa length, BACK domain 260-360 and N-glycosylation sites",
+      "status": "verified",
+      "glycosylation_sites": [69, 125, 192, 362, 398, 551, 580]
+    },
+    {
+      "id": "gal3bp_paper",
+      "type": "publication",
+      "doi": "10.1016/j.compbiomed.2026.111550",
+      "use": "Task context and published benchmark anchors",
+      "status": "partially_accessible",
+      "limitation": "Exact E1 mapping, study glycan model, Mut1 sequence, mature construct and heated-MD outputs were unavailable"
+    },
+    {
+      "id": "proteinmpnn",
+      "type": "local_software",
+      "use": "CDR-H3-only sequence generation",
+      "status": "executed",
+      "artifact": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/all_designs.fa"
+    },
+    {
+      "id": "boltz2",
+      "type": "local_or_platform_software",
+      "use": "Reference and candidate complex prediction",
+      "status": "executed",
+      "artifact": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/structures/"
+    },
+    {
+      "id": "prodigy",
+      "type": "open_source_software",
+      "use": "PPI affinity/contact cross-check",
+      "status": "executed",
+      "artifact": "results/task_005_gal3bp_glycan_aware_interface_refinement/20261110_cdrh3_boltz2_glycan_prodigy/evidence/prodigy_validation.json"
+    },
+    {
+      "id": "boltzmann_catalog",
+      "type": "workflow_catalog",
+      "use": "Compare AntiBMPNN, RF-Antibody, agcdr_diff, epitope_abgen, Boltz2, property prediction and MD routes",
+      "status": "design_reference_only",
+      "limitation": "Catalog inclusion does not prove that a job was submitted or completed"
+    }
+  ]
+}

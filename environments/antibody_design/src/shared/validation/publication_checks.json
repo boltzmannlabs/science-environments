@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-11-12T07:21:44.545637+00:00",
+  "issue": "https://github.com/boltzmannlabs/science-environments/issues/161",
+  "base_commit": "ba3232c0480ba3e6fd516712d36ed2d93adf9414",
+  "branch": "chore/antibody-five-task-results",
+  "checks": {
+    "task_benchmark_paths_unchanged": true,
+    "python_syntax_files_checked": 93,
+    "python_syntax_errors": 0,
+    "targeted_sensitive_field_scan_findings": 0,
+    "maintained_source_documentation_whitespace": "passed for nine listed files",
+    "maintained_whitespace_paths": [
+      ".gitignore",
+      "ENVIRONMENT_SPEC.md",
+      "README.md",
+      "status.md",
+      "src/readme.md",
+      "results/README.md",
+      "src/shared/validate_packages.py",
+      "src/shared/README.md",
+      "src/shared/PACKAGE_REVIEW.md"
+    ],
+    "full_evidence_whitespace": "Inherited trailing whitespace/CRLF and EOF padding retained in scientific coordinates, original inputs, logs and upstream source snapshots. Full staged whitespace check is not clean; originals remain byte-preserved."
+  },
+  "scientific_execution_during_publication": false
+}

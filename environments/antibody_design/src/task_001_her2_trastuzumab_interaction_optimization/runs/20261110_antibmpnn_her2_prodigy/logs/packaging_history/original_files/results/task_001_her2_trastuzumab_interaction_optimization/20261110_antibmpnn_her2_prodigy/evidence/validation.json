@@ -1,0 +1,38 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261110_antibmpnn_her2_prodigy",
+  "validation_status": "passed",
+  "checks": {
+    "candidate_rows": 20,
+    "candidate_inventory_is_full_generation": true,
+    "candidate_ids_unique": true,
+    "shortlist_rows": 5,
+    "shortlist_ids_in_candidates": true,
+    "fasta_headers": 10,
+    "designed_sequence_headers": 10,
+    "structure_count": 6,
+    "candidate_structure_paths_exist": true,
+    "reference_structure_present": true,
+    "benchmark_comparison_present": true,
+    "report_present": true,
+    "report_execution_link_present": true,
+    "source_execution_present": true,
+    "source_provenance_present": true,
+    "source_outputs_removed": true,
+    "workflow_records_removed_from_results": true,
+    "json_files_parse": true,
+    "python_code_present": true
+  },
+  "scope": [
+    "src/task_001_her2_trastuzumab_interaction_optimization",
+    "results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy",
+    "benchmark/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization.md"
+  ],
+  "notes": [
+    "The task root contains only README.md; scientific artifacts are under the matching run directory.",
+    "candidates.csv inventories all 20 generated candidates; shortlist.csv contains only five selected candidates.",
+    "Workflow, execution and provenance records remain under src; scientific evidence remains under results.",
+    "Boltz2 candidate structures are not counted as completed; the six result PDBs are the reference plus five fixed-pose reconstructions.",
+    "ProDIGy is non-comparable to the published REF15 Rosetta metric."
+  ]
+}

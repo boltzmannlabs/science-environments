@@ -1,0 +1,12 @@
+record_type,metric,value,unit_or_scale,scope,status,source_or_evidence
+published,PD1_vscreen_AUROC,0.76,AUROC,745-antibody panel with 27 positives,not_reproduced,benchmark task file
+published,PD1_top1pct_enrichment,7.41,enrichment factor,745-antibody panel,not_reproduced,benchmark task file
+published,PD1_design_AUROC,0.95,AUROC,design-campaign analysis,not_reproduced,benchmark task file
+published,CDR_H3_AAR,0.317,AAR,SAbDab-22-DesignAb aggregate,not_reproduced,benchmark task file
+local,H965_ipTM,0.878,0-1,reference control Boltz2 model 0,available,evidence/reference/task003_h965_pd1_confidence.json
+local,cand2_ipTM,0.760,0-1,local candidate model 0,available,evidence/confidence/task003_cand2.json
+local,cand9_ipTM,0.671,0-1,local candidate model 0,available,evidence/confidence/task003_cand9.json
+local,cand11_ipTM,0.652,0-1,local candidate model 0,available,evidence/confidence/task003_cand11.json
+local_candidate,task003_cand2_CDR_H3_AAR,0.300,AAR,H965 native AKEYINTFTY; 10-residue single-case comparison,available_not_dataset_comparable,evidence/task003_candidate_aar.json
+local_candidate,task003_cand9_CDR_H3_AAR,0.300,AAR,H965 native AKEYINTFTY; 10-residue single-case comparison,available_not_dataset_comparable,evidence/task003_candidate_aar.json
+local_candidate,task003_cand11_CDR_H3_AAR,0.200,AAR,H965 native AKEYINTFTY; 10-residue single-case comparison,available_not_dataset_comparable,evidence/task003_candidate_aar.json

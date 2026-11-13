@@ -1,0 +1,266 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261110_antibmpnn_her2_prodigy",
+  "run_date": "2026-11-10",
+  "status": "completed_with_failed_boltz2_candidate_downloads",
+  "source_root": "src/task_001_her2_trastuzumab_interaction_optimization",
+  "results_root": "results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy",
+  "workflow_design": "AntiBMPNN -> filtering -> Boltz2 reference/candidate submission -> Antibody_Prediction -> fixed-pose reconstruction -> ProDIGy",
+  "workflow_executed": "AntiBMPNN -> filtering -> shortlist -> Antibody_Prediction -> reference Boltz2 -> fixed-pose reconstruction -> ProDIGy",
+  "jobs": {
+    "AntiBMPNN": {
+      "experiment_id": "6af3361ad982f81aac5b4a52",
+      "job_name": "AntiBMPNN - 20261110-151953Z - cbb255",
+      "status": "completed",
+      "generated_candidate_count": 20,
+      "model_name": "antibmpnn_020",
+      "seed": 37
+    },
+    "Boltz2": {
+      "status": "reference_completed_candidate_downloads_failed",
+      "reference_confidence": {
+        "vh_vl_iptm": 0.955,
+        "vh_her2_iptm": 0.245
+      },
+      "failure_reason": "300-second signed-download URL lifetime exceeded inter-call latency"
+    },
+    "Antibody_Prediction": {
+      "status": "completed",
+      "evaluated_records": 6
+    }
+  },
+  "counts": {
+    "generated_candidates": 20,
+    "eligible_candidates": 20,
+    "shortlisted_candidates": 5,
+    "prodigy_evaluated_records": 6,
+    "result_pdb_count": 6,
+    "ref15_records": 0
+  },
+  "shortlist": [
+    "AB_13",
+    "AB_05",
+    "AB_20",
+    "AB_08",
+    "AB_04"
+  ],
+  "best_candidate": "AB_13",
+  "code": [
+    "../../code/00_verify_chain_mapping.py",
+    "../../code/01_filter_designs.py",
+    "../../code/02_select_shortlist.py",
+    "../../code/03_boltz2_payloads.py",
+    "../../code/04_reconstruct_fixed_pose.py",
+    "../../code/05_compute_clashes.py",
+    "../../code/06_run_prodigy.sh",
+    "../../code/07_assemble_results.py",
+    "../../code/08_make_her2_bundle.py"
+  ],
+  "limitations": [
+    "REF15 could not be computed because Rosetta was unavailable.",
+    "Candidate Boltz2 artifact downloads failed after signed URLs expired.",
+    "Fixed-pose side-chain geometry is approximate and not full rotamer optimization.",
+    "ProDIGy is a non-comparable metric relative to REF15 and does not establish experimental affinity."
+  ],
+  "results_directory": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy",
+  "results_directory_base": "source run directory",
+  "artifact_counts": {
+    "inventory_rows_including_controls": 20,
+    "selected_rows_including_contrasts": 5,
+    "selected_sequence_records": 10,
+    "structure_files": 6
+  },
+  "packaging": {
+    "updated_at_utc": "2026-11-11T10:42:56.414471+00:00",
+    "scientific_execution_performed": false,
+    "relocations": "logs/packaging_history/relocations.json",
+    "validated_at_utc": "2026-11-11T10:48:39.757436+00:00",
+    "validation_report": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/validation.json"
+  },
+  "scientific_artifacts": [
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/README.md",
+      "sha256": "3a9be7ecf09e151b2d198670dc045ce24c8bd2962907d1a490bd5b9d4d3a26f5",
+      "bytes": 757
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/benchmark_comparison.csv",
+      "sha256": "d1d6b4d4d1d761b8d43689f61be4809dcbe7f588ee1c760da076c598a6809abd",
+      "bytes": 1127
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/candidates.csv",
+      "sha256": "4064456910d068452daeb83598a7f60ff49fc120c95f00ab5970ce26ce844d97",
+      "bytes": 8536
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/designed_sequences.fasta",
+      "sha256": "bc2b52eced736bb4b8912f35517e3d74a6b7695ad54b23a7f9fa1cb34a1fdb96",
+      "bytes": 1275
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/benchmark_comparison.csv",
+      "sha256": "d1d6b4d4d1d761b8d43689f61be4809dcbe7f588ee1c760da076c598a6809abd",
+      "bytes": 1127
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/boltz2_confidence.json",
+      "sha256": "530d89ecb9a46698ee057e114793a6280ff21be1f61ead6a68e2cd810255f1c5",
+      "bytes": 547
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/historical_proteinmpnn_cdrh3/all_candidates.csv",
+      "sha256": "4cabb5ed77183101e3aed56eae4ff123abeb26de4506430eacdda8e9f82e1b71",
+      "bytes": 982
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/historical_proteinmpnn_cdrh3/all_designs.fa",
+      "sha256": "e902528692fe6d9f1466018b6f27a791a17df3cab7b2cde19018a8d6a642e36f",
+      "bytes": 6251
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/historical_proteinmpnn_cdrh3/metrics.json",
+      "sha256": "8dceeb534e4487a3c88ca525e5e68b2436c7fcb75e0ddeb0b64839e93fb826ee",
+      "bytes": 961
+    },
+    {
+      "path": "../../../../src/task_001_her2_trastuzumab_interaction_optimization/runs/20261110_antibmpnn_her2_prodigy/logs/packaging_history/imported_original_summary.md",
+      "sha256": "24878422a7b784ebd91f5971bee37f7f6172aa2ba09b916724f9c0e2cef60423",
+      "bytes": 2817
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/historical_proteinmpnn_cdrh3/task001_cdrh3_designed.json",
+      "sha256": "4defc690cdbb8133731263caa539c49505d278582ee73c70643e023dc8710cf6",
+      "bytes": 1183
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/mappings/chain_mapping.json",
+      "sha256": "af8cc447ca16e78f55682be500f9aa91e4c814d2493daaf12755609e11b77331",
+      "bytes": 1133
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/mappings/design_scope.json",
+      "sha256": "d7bf722160e303dd5ebde4743e395d9aa96b7df64ed53d176d9765485758fcf5",
+      "bytes": 1560
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/prodigy_results.csv",
+      "sha256": "5db7003d254f87c9805b8f9babd1313fcdcc26d0e1788ec81ebdb6504a69f847",
+      "bytes": 271
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/property_predictions.csv",
+      "sha256": "46a231200e97048acb4305ae7b3ecb189e840f3fb9ee83e3677968a7ed40db6e",
+      "bytes": 282
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/raw/antibmpnn_generation_metrics.csv",
+      "sha256": "7c9fc648851f50fbb4f69025ca7331d68f7f08df4c19188de4a1e1daf79cab0b",
+      "bytes": 2527
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/raw/antibmpnn_results.csv",
+      "sha256": "a2930663bc5fa6a17fe121ac82f021309dc771e24496498bc6ca3c5a30affcc9",
+      "bytes": 5974
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/raw/reconstruct_results.json",
+      "sha256": "e4babd3241c7c134c01724880afdab3da89647ba2aa7af486ba130a2ba076a67",
+      "bytes": 922
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/raw/task001_antibody_pred_output.csv",
+      "sha256": "09f2b2aca8f8ace4404d56f4653245a9da4ab0e0295dcc9dde2d5772368fab07",
+      "bytes": 1758
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/raw/task001_props_parsed.csv",
+      "sha256": "3bdc8cf14f402ab607a501164ff7906ae2fb16fb7d8453bac5479ce887e46fda",
+      "bytes": 265
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/reconstruction_notes.md",
+      "sha256": "ae67265c4ae8886bf7c430bfa4263a7c63df3e6ad4fdb3dbe7f0cb0ca1a35e54",
+      "bytes": 926
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/reference/1N8Z_deposited_complex.pdb",
+      "sha256": "ed934d36503335c6764b08880f9e50933d99eb13b9bf145339cfcaee150eb21e",
+      "bytes": 703809
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/evidence/reference/boltz2_confidence.json",
+      "sha256": "530d89ecb9a46698ee057e114793a6280ff21be1f61ead6a68e2cd810255f1c5",
+      "bytes": 547
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/metrics.json",
+      "sha256": "eed97414600e6df79002d6501f78067b29e2f00bb3180318d366d7a52aa1ba28",
+      "bytes": 3114
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/report.md",
+      "sha256": "2f3365f60fa40004969fbdcb811211849d2696fadba95d6889812e18ada3ea22",
+      "bytes": 4151
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/sequences.fasta",
+      "sha256": "bc2b52eced736bb4b8912f35517e3d74a6b7695ad54b23a7f9fa1cb34a1fdb96",
+      "bytes": 1275
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/shortlist.csv",
+      "sha256": "50da848cad45c078b519faf1ac0e23eb3e3ed96c2321c2436397906154694015",
+      "bytes": 1182
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/AB_04_reconstructed.pdb",
+      "sha256": "4a74b0e003e030543bdbf854fe5be8a3c9373f9070b3845cc054753c2f246869",
+      "bytes": 637642
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/AB_05_reconstructed.pdb",
+      "sha256": "af2574c89aaa636f02de6832c214fba37acb10adcffea74ca23c168b0354724c",
+      "bytes": 639343
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/AB_08_reconstructed.pdb",
+      "sha256": "d40eeaad79cec29a5f1b59ac2d87ade9dbfd198af9575de1dd5320f876f062d1",
+      "bytes": 639505
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/AB_13_reconstructed.pdb",
+      "sha256": "057104328650d4d6d5405bfc9ae2a95c3f7784940d7e47987155b4f920e6067b",
+      "bytes": 639181
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/AB_20_reconstructed.pdb",
+      "sha256": "7800d74e2a99b0b5bbfd9095f4d3d33c07395d49115ecc4384246e8e530ad3fe",
+      "bytes": 638857
+    },
+    {
+      "path": "../../../../results/task_001_her2_trastuzumab_interaction_optimization/20261110_antibmpnn_her2_prodigy/structures/REF_1N8Z_reference.pdb",
+      "sha256": "ed934d36503335c6764b08880f9e50933d99eb13b9bf145339cfcaee150eb21e",
+      "bytes": 703809
+    }
+  ],
+  "path_bases": {
+    "results_directory": "source run directory",
+    "source_root": "environment root",
+    "results_root": "environment root"
+  },
+  "historical_task_bundle_location": {
+    "recorded_path": "science_env_results/her2_results",
+    "path_base": "original execution workspace",
+    "part_of_current_canonical_package": false
+  },
+  "packaging_transfer": {
+    "base_commit": "ba3232c0480ba3e6fd516712d36ed2d93adf9414",
+    "execution_status": "finished_with_failures",
+    "scientific_coverage": "partial",
+    "scientific_jobs_executed_during_transfer": false,
+    "historical_paths_and_hashes": "Original execution-workspace paths and older checksum inventories are retained as historical provenance; use the fresh package inventory for current paths and integrity.",
+    "current_inventory": "../../../../src/shared/package_inventory.csv",
+    "external_artifacts": "../../../../src/shared/external_artifacts.json"
+  }
+}

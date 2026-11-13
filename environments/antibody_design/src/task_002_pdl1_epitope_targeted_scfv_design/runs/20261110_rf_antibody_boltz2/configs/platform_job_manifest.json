@@ -1,0 +1,33 @@
+{
+  "task": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "20261110_rf_antibody_boltz2",
+  "jobs": {
+    "epitope_abgen": {
+      "doc_id": "6af33484b2d9f21f0dc8d50e",
+      "status": "pending_no_output",
+      "observed_message": "No Output Found",
+      "polling_window": ">2h",
+      "downstream_executed": false
+    },
+    "rfdiffusion_proteinmpnn": {
+      "doc_id": "68d12a5de5b6a2fdc0e3c443",
+      "status": "completed",
+      "generated_candidate_count": 20,
+      "raw_output": "../../outputs/rfantibody_candidates.json"
+    },
+    "Antibody_Prediction": {
+      "doc_id": "6af36e74d982f81aac5b4ec8",
+      "status": "completed",
+      "input": "../../inputs/design/antibody_properties.csv",
+      "output": "../../outputs/antibody_pred_output.csv",
+      "properties": [
+        "Thermal_Stability_Protbert",
+        "Thermal_Stability_ESM",
+        "Solubility_ESM",
+        "CDR_Prediction"
+      ],
+      "scheme": "imgt"
+    }
+  },
+  "note": "Remote worker payloads and backend implementation are not locally available; this manifest records the observed job identity and status without inventing code."
+}

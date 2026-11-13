@@ -1,0 +1,84 @@
+{
+  "task": "task_002_pdl1_epitope_targeted_scfv_design",
+  "scope": "End-to-end executed: RF-Antibody generation (Workflow B) + open-source Boltz-2 structure/interface analysis + platform Antibody_Prediction properties + H5 reconstruction benchmark. Workflow A (epitope_abgen) submitted but produced no output.",
+  "selection_source": "evidence/workflow_design.md (design selection) + post-hoc hotspot filter (execution)",
+  "shortlisted_candidates": [
+    "rf1_d5",
+    "rf1_d2",
+    "rf1_d3",
+    "rf0_d5",
+    "rf0_d0"
+  ],
+  "best_candidate": "rf1_d5",
+  "best_candidate_reason": "Highest ipTM (0.772) among all-5-hotspot candidates; ipDE 3.06; 12 hotspot contact pairs; favorable thermal stability and solubility",
+  "rf0_d0_note": "Included as contrast only: highest ipTM (0.813) but ZERO declared-epitope hotspot engagement (off-epitope binding mode)",
+  "shortlist_count": 5,
+  "generated_candidate_count": 20,
+  "evaluated_candidate_count": 10,
+  "sequence_record_count": 5,
+  "structure_count": 5,
+  "jobs": {
+    "rfdiffusion_proteinmpnn": {
+      "doc_id": "68d12a5de5b6a2fdc0e3c443",
+      "status": "completed",
+      "output": "20 candidates generated; 10 included in the retained local Boltz-2 evaluation panel"
+    },
+    "epitope_abgen": {
+      "doc_id": "6af33484b2d9f21f0dc8d50e",
+      "status": "pending_no_output",
+      "output": null,
+      "note": "Accepted; 'No Output Found' after >2h polling. No backbones/sequences generated."
+    },
+    "Boltz2_local_open_source": {
+      "doc_id": null,
+      "status": "completed",
+      "output": "10/10 scFv+PD-L1 complexes predicted locally (open-source Boltz-2)"
+    },
+    "Antibody_Prediction": {
+      "doc_id": "6af36e74d982f81aac5b4ec8",
+      "status": "completed",
+      "output": "5 shortlist candidates: Thermal_Stability_Protbert, Thermal_Stability_ESM, Solubility_ESM, CDR_Prediction (IMGT)"
+    },
+    "StaBddG": {
+      "status": "not_applicable",
+      "note": "Mutation-dDG tool requiring a bound reference complex; no such reference exists for de novo designs. Evaluated, not run."
+    }
+  },
+  "reference_metrics": "evidence/metrics_new.json; evidence/task002_h5_rmsd.json",
+  "h5_reconstruction": {
+    "boltz2_H5_CA_RMSD_A": 14.942,
+    "published_Germinal_A": 1.25,
+    "note": "Different predictors; 1.25A is the Germinal generator result, not a Boltz-2 benchmark"
+  },
+  "novelty": {
+    "cdr3h_identity_to_H5_range": [
+      0.069,
+      0.276
+    ],
+    "paper_dataset_level_cdr_identity": "~40%",
+    "note": "Per-candidate CDR3-H identity to H5 CDR3-H (WPYSIVMLPFHG)"
+  },
+  "completed_steps": [
+    "workflow design",
+    "RF-Antibody generation",
+    "sequence-level filtering (length/framework/hotspot)",
+    "Boltz-2 structure prediction (10/10)",
+    "interface/hotspot/clash analysis",
+    "Antibody_Prediction properties (5/5 shortlist)",
+    "H5 reconstruction benchmark",
+    "novelty comparison",
+    "documentation"
+  ],
+  "failed_or_pending_steps": [
+    "epitope_abgen (Workflow A): no output after >2h \u2014 pending/failed",
+    "agcdr_diff (Workflow C): not run (excluded at design stage)",
+    "StaBddG: not applicable (evaluated)",
+    "platform Boltz2 cross-check: not run separately \u2014 open-source Boltz-2 is the same model (disclosed)"
+  ],
+  "source_reports_preserved_verbatim": true,
+  "historical_paths": "Original H5-reconstruction artifacts (evidence/reference/, task002_h5_rmsd.json, original_summary.md, metrics.json) are from the prior packaging-only run and are preserved.",
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "20261110_rf_antibody_boltz2",
+  "canonical_result_root": "results/task_002_pdl1_epitope_targeted_scfv_design/20261110_rf_antibody_boltz2",
+  "canonical_source_run": "src/task_002_pdl1_epitope_targeted_scfv_design/runs/20261110_rf_antibody_boltz2"
+}

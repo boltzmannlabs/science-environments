@@ -1,0 +1,25 @@
+{
+  "tool": "AbFlow evaluation/lddt.py + tm_score.py",
+  "runtime_python": "3.10.14",
+  "biopython": "1.79",
+  "results": [
+    {
+      "candidate_id": "task004_sample1",
+      "structural_lDDT": 0.8907,
+      "TMscore_ab": 0.8095,
+      "scope": "antibody chains B/C; full antibody, not CDR-H3-only"
+    },
+    {
+      "candidate_id": "task004_sample6",
+      "structural_lDDT": 0.8863,
+      "TMscore_ab": 0.7759,
+      "scope": "antibody chains B/C; full antibody, not CDR-H3-only"
+    },
+    {
+      "candidate_id": "task004_sample9",
+      "structural_lDDT": 0.8822,
+      "TMscore_ab": 0.7971,
+      "scope": "antibody chains B/C; full antibody, not CDR-H3-only"
+    }
+  ]
+}

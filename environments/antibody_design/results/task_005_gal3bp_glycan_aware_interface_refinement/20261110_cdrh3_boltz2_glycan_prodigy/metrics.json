@@ -1,0 +1,129 @@
+{
+  "task": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "conditions": "Matched-conditions: Boltz2-predicted BDBV-43 Fab + full-length LGALS3BP (585 aa), unglycosylated protein; CDR-H3-only redesign.",
+  "contact_definitions": {
+    "ca_ca": 8.0,
+    "vdw": 4.5,
+    "hbond": 3.5,
+    "note": "heavy-atom PDBs, no explicit H; hbond = N/O pair <3.5A proxy"
+  },
+  "glycan_aware": {
+    "glycan_model": "Representative N-glycan, simplified 12-sugar linear model at Asn362 (C-terminal flank of BACK domain 260-360)",
+    "e1_epitope_definition": "BACK-domain (260-360) antigen solvent surface (approximation; paper's exact E1 mapping unavailable)",
+    "back_n_residues": 101,
+    "sasa_back_unglycosylated_A2": 48087.8,
+    "sasa_back_with_glycan_A2": 48053.7,
+    "back_glycan_dsasa_A2": 34.2,
+    "area_difference_convention": "dSASA = SASA_BACK(unglycosylated) - SASA_BACK(with glycan); positive = glycan occludes",
+    "glycan_antibody_clashes_n2p5A": 0,
+    "glycan_atoms_total": 72,
+    "reference_complex": "task005_ref_bdbv43.pdb (Boltz2-predicted BDBV-43 Fab + full-length LGALS3BP)",
+    "note": "Study's exact E1 mapping and glycan model unavailable (paper inaccessible). Matched-conditions approximation using verified UniProt BACK domain (260-360) and N-glycosylation site (362)."
+  },
+  "glycan_global": {
+    "description": "Global glycan-associated SASA reduction over the full-length LGALS3BP antigen (matched-conditions analog of the paper's ~1,299 A^2).",
+    "status": "NOT REPRODUCIBLE with simplified glycan model",
+    "biotite_unglycosylated_A2": 26962.7,
+    "biotite_with_glycan_A2": 26962.7,
+    "biotite_glycan_dsasa_A2": 0.0,
+    "reason": "Simplified glycan atoms (5-17 A from Asn side-chain attachment) are farther from the antigen than the rolling-probe centers (3.1 A from atom), so no probe points are occluded. A realistic multi-conformation N-glycan ensemble (as used in the paper) is required.",
+    "sasa_bug_note": "The original custom probe-based SASA (06_glycan_aware.py) overestimates SASA ~5-10x: its occlusion test uses d < r_j instead of d < (r_probe + r_j), under-counting burial. BiOTITE 1.4.0 is the authoritative cross-check.",
+    "benchmark_reference": "Paper reports ~1,299 A^2 for its mature construct with a conformational-diversity N-glycan ensemble.",
+    "comparability": "NOT REPRODUCIBLE. The published ~1,299 A^2 requires the study's multi-conformation glycan ensemble and mature construct, neither of which is available.",
+    "raw": "evidence/raw/biotite_sasa_crossvalidation.json"
+  },
+  "metrics": [
+    {
+      "candidate_id": "ref_bdbv43",
+      "name": "BDBV-43 (reference)",
+      "ipTM": 0.323,
+      "pLDDT": 0.831,
+      "pDE": 0.92,
+      "interface_residue_pairs": 32,
+      "vdw_atom_pairs": 281,
+      "hbond_atom_pairs": 14,
+      "hbond_share": 0.0498,
+      "antigen_residues": 13,
+      "prodigy_dG_kcal_mol": -11.2,
+      "prodigy_Kd_M": 6.1e-09,
+      "prodigy_IC": 69
+    },
+    {
+      "candidate_id": "task005_cand11",
+      "name": "task005_cand11",
+      "ipTM": 0.554,
+      "pLDDT": 0.812,
+      "pDE": 0.85,
+      "interface_residue_pairs": 59,
+      "vdw_atom_pairs": 383,
+      "hbond_atom_pairs": 5,
+      "hbond_share": 0.0131,
+      "antigen_residues": 21,
+      "prodigy_dG_kcal_mol": -11.1,
+      "prodigy_Kd_M": 7.3e-09,
+      "prodigy_IC": 80
+    },
+    {
+      "candidate_id": "task005_cand7",
+      "name": "task005_cand7",
+      "ipTM": 0.306,
+      "pLDDT": 0.82,
+      "pDE": 0.981,
+      "interface_residue_pairs": 39,
+      "vdw_atom_pairs": 367,
+      "hbond_atom_pairs": 12,
+      "hbond_share": 0.0327,
+      "antigen_residues": 13,
+      "prodigy_dG_kcal_mol": -10.8,
+      "prodigy_Kd_M": 1.2e-08,
+      "prodigy_IC": 75
+    },
+    {
+      "candidate_id": "task005_cand17",
+      "name": "task005_cand17",
+      "ipTM": 0.485,
+      "pLDDT": 0.827,
+      "pDE": 0.89,
+      "interface_residue_pairs": 54,
+      "vdw_atom_pairs": 499,
+      "hbond_atom_pairs": 18,
+      "hbond_share": 0.0361,
+      "antigen_residues": 19,
+      "prodigy_dG_kcal_mol": -14.5,
+      "prodigy_Kd_M": 2.3e-11,
+      "prodigy_IC": 102
+    }
+  ],
+  "prodigy": {
+    "tool": "Prodigy (open-source PPI affinity estimator)",
+    "selection": "A,B (antibody) vs C (LGALS3BP)",
+    "results": {
+      "BDBV-43 (reference)": {
+        "dg_kcal_mol": -11.2,
+        "kd_M": 6.1e-09,
+        "n_intermolecular_contacts": 69
+      },
+      "task005_cand11": {
+        "dg_kcal_mol": -11.1,
+        "kd_M": 7.3e-09,
+        "n_intermolecular_contacts": 80
+      },
+      "task005_cand7": {
+        "dg_kcal_mol": -10.8,
+        "kd_M": 1.2e-08,
+        "n_intermolecular_contacts": 75
+      },
+      "task005_cand17": {
+        "dg_kcal_mol": -14.5,
+        "kd_M": 2.3e-11,
+        "n_intermolecular_contacts": 102
+      }
+    }
+  },
+  "ranking": {
+    "1st": "task005_cand17",
+    "2nd": "task005_cand11",
+    "3rd": "task005_cand7"
+  },
+  "benchmark_note": "Published 161/165/67%/5A/2.9A2 require the study's mature construct, glycan model, E1 mapping and heated-MD replicas (paper inaccessible). Matched-conditions comparison only."
+}

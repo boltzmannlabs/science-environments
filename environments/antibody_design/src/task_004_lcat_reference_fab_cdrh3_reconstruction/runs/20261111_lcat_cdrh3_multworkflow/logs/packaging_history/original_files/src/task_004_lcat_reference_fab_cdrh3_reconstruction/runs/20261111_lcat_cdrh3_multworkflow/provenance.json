@@ -1,0 +1,266 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "20261111_lcat_cdrh3_multworkflow",
+  "run_status": "completed_with_documented_failures_and_pending_stages",
+  "target": {
+    "pdb_id": "5BV7",
+    "native_cdrh3": "AREGAAVRSFYYSYYGMDV",
+    "vh_positions_1_based": [
+      96,
+      114
+    ],
+    "pdb_chain": "C",
+    "pdb_residues": [
+      97,
+      115
+    ],
+    "caar_vh_positions_1_based": [
+      102,
+      108
+    ]
+  },
+  "source_package": "src/task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "results_package": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow",
+  "benchmark_package": "benchmark/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "workflow_stages": [
+    {
+      "id": "input_preparation",
+      "status": "completed",
+      "code": "code/boltzmann/preparation"
+    },
+    {
+      "id": "W1_agcdr_diff",
+      "status": "completed",
+      "provider": "Boltzmann platform",
+      "backbone_count": 24
+    },
+    {
+      "id": "W1_antibmpnn",
+      "status": "completed",
+      "provider": "Boltzmann platform",
+      "sequence_count": 240
+    },
+    {
+      "id": "W2_cdr_generator",
+      "status": "completed",
+      "provider": "Boltzmann platform",
+      "sequence_count": 24
+    },
+    {
+      "id": "W3_ig_design",
+      "status": "failed",
+      "error": "KeyError: aa_regions"
+    },
+    {
+      "id": "W4_epitope_abgen",
+      "status": "pending_no_output",
+      "provider": "Boltzmann platform"
+    },
+    {
+      "id": "W5_proteinmpnn_boltz2",
+      "status": "completed_prior_work",
+      "design_count": 20,
+      "structured_count": 3
+    },
+    {
+      "id": "sequence_metrics",
+      "status": "completed",
+      "code": "code/boltzmann/analysis"
+    },
+    {
+      "id": "structure_metrics",
+      "status": "completed",
+      "code": "code/boltzmann/analysis"
+    },
+    {
+      "id": "interface_metrics",
+      "status": "completed",
+      "code": "code/boltzmann/interface"
+    },
+    {
+      "id": "developability",
+      "status": "completed",
+      "code": "code/boltzmann/analysis"
+    },
+    {
+      "id": "stability_binding_ddg",
+      "status": "not_run"
+    }
+  ],
+  "key_results": {
+    "W1_mean_aar": 0.0414,
+    "W1_best_aar": 0.2105,
+    "W1_best_loop_aligned_rmsd_A": 7.448,
+    "W2_mean_aar": 0.136,
+    "W2_best_aar": 0.2632,
+    "W5_best_aar": 0.4737,
+    "W5_best_caar": 0.5714,
+    "W5_best_framework_aligned_rmsd_A": 6.456,
+    "native_interface_contact_pairs_lt5A": 352,
+    "W1_mean_interface_contact_pairs_lt5A": 1,
+    "native_min_distance_A": 2.79,
+    "W1_mean_min_distance_A": 6.76
+  },
+  "candidate_counts": {
+    "results_candidates_csv_rows": 9,
+    "results_sequences_fasta_antibody_pairs": 10,
+    "W1_backbones": 24,
+    "W1_sequences": 240,
+    "W2_sequences": 24
+  },
+  "code_hash_manifest": "runs/20261111_lcat_cdrh3_multworkflow/inputs/sha256sums.txt",
+  "inputs": [
+    "runs/20261111_lcat_cdrh3_multworkflow/inputs/reference_5BV7.pdb",
+    "runs/20261111_lcat_cdrh3_multworkflow/inputs/reference_vhvl.fasta"
+  ],
+  "limitations": [
+    "W1 and W5 RMSD use different alignment protocols.",
+    "Remote Boltzmann submission payloads were not retained locally.",
+    "Epitope AbGen produced no output.",
+    "Stability-Binding DDG was not run.",
+    "Epitope detection was limited by prepared-PDB behavior."
+  ],
+  "canonical_source_run": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow",
+  "canonical_result_root": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow",
+  "input_checksum_manifest": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/runs/20261111_lcat_cdrh3_multworkflow/inputs/sha256sums.json",
+  "result_checksum_manifest": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/evidence/mappings/path_manifest.json",
+  "fresh_validation": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/evidence/validation.json",
+  "canonical_artifact_hashes": [
+    {
+      "path": "report.md",
+      "sha256": "c8d884553136b3d299428de9d5da66b04b92a9a838bd85300029979061060232"
+    },
+    {
+      "path": "candidates.csv",
+      "sha256": "da0a115558280411e69371cd87eee7366626a148f001e270475931ec421c24d8"
+    },
+    {
+      "path": "shortlist.csv",
+      "sha256": "f833083f0f2e048b50e4730c35d1b18a0bec5f0cc35edec24c2ded6059896ac4"
+    },
+    {
+      "path": "designed_sequences.fasta",
+      "sha256": "7ee239504087262898d514c7908de9805d95853087544e5a90c99eeeb0d44f16"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "e966f2db1499964a95125add3eb909e2c9bdf964f408b8c12fe82df061bbd88d"
+    },
+    {
+      "path": "benchmark_comparison.csv",
+      "sha256": "4695a50b27417c03b9ce871899322106493fd6b376c1b1ceb9f102a9d22745e1"
+    },
+    {
+      "path": "structures/generated_sample_1.pdb",
+      "sha256": "061aa915ed818b2d049afc15e4dfce6007c03bb33c8caf27165024dc5ae14866"
+    },
+    {
+      "path": "structures/generated_sample_10.pdb",
+      "sha256": "38907316bde32eaf86d468c25dcda51e9ad094d2250660c9e9444c76e818d457"
+    },
+    {
+      "path": "structures/generated_sample_11.pdb",
+      "sha256": "d7e2270e82ba7ba2d2ed84535889896e68a56ceb73f4cb70d2170ecc7072c129"
+    },
+    {
+      "path": "structures/generated_sample_12.pdb",
+      "sha256": "1ac6f10018d33c30a50b8633d4d6c163f5ae6061e0ec904b8084895f6806ba52"
+    },
+    {
+      "path": "structures/generated_sample_13.pdb",
+      "sha256": "8f86f5d742aa8a9cb2b927aff6ee32b01d4283b7dabe641517fa3e219b22ab07"
+    },
+    {
+      "path": "structures/generated_sample_14.pdb",
+      "sha256": "300883e224375164e56625c12c7a6d395781a5e83840afda42634a6fdfb974ee"
+    },
+    {
+      "path": "structures/generated_sample_15.pdb",
+      "sha256": "0105c9d330b1e77e509d981b4dff5b0b292167927bcd3519e07e9fed113dfdf3"
+    },
+    {
+      "path": "structures/generated_sample_16.pdb",
+      "sha256": "5956ddc13dd22c299b1bc3ff52129471055f005d05714fe0b2faa018bcdb494b"
+    },
+    {
+      "path": "structures/generated_sample_17.pdb",
+      "sha256": "86f20c92d1c0898a5691e45b5ccabca1068cd0ed28d6b36527bf6794d01d2d77"
+    },
+    {
+      "path": "structures/generated_sample_18.pdb",
+      "sha256": "2d7a07d71999956077700d901d01d796e796e7a10a6e66ed4216cf515d21a386"
+    },
+    {
+      "path": "structures/generated_sample_19.pdb",
+      "sha256": "197635a5a8f708809e73829ba8b5fec804ac1a089c856f03cd760ca0c603b646"
+    },
+    {
+      "path": "structures/generated_sample_2.pdb",
+      "sha256": "32d35fb901fe7c0845ef5866a9f00f06be0cb1478f900f1552f7028319ae8872"
+    },
+    {
+      "path": "structures/generated_sample_20.pdb",
+      "sha256": "f6e72227807773a308dd6de6f2cc84fe2bc6f1418ef284118caef04ed7c2609a"
+    },
+    {
+      "path": "structures/generated_sample_21.pdb",
+      "sha256": "0afd35ae8f6ac8c7c056f75cdf4b8f755b4be19b6cff650bb650f7e714ac4cc1"
+    },
+    {
+      "path": "structures/generated_sample_22.pdb",
+      "sha256": "79b5732e83ec1bfcc916a86466207fe126ea51c1cec4c36eb8efd30de86b3116"
+    },
+    {
+      "path": "structures/generated_sample_23.pdb",
+      "sha256": "74f16d8ee3a3490fac629e4b546d0c131d3d8e337ee060e3ead1bbd594b8306a"
+    },
+    {
+      "path": "structures/generated_sample_24.pdb",
+      "sha256": "11445a3fad715fd1968738131de5829392c6fe4daf45193be2eb4f48d94dcc68"
+    },
+    {
+      "path": "structures/generated_sample_3.pdb",
+      "sha256": "3a88913954ad828b3dc0edec4e8ca1817d5da94711eb05860c67025c2b9bb738"
+    },
+    {
+      "path": "structures/generated_sample_4.pdb",
+      "sha256": "a135f73c07e0d6443e140eb44cddfeb994ec8544d2c9a69451192f1effddb88a"
+    },
+    {
+      "path": "structures/generated_sample_5.pdb",
+      "sha256": "5f83bdac65fb207124195160d1d8be07e58a2e25e23c096910dbf21085413cd3"
+    },
+    {
+      "path": "structures/generated_sample_6.pdb",
+      "sha256": "d120d7bb271d7a3f8985d8b53434d4ba9d6ef13546201ca44433f2c6033f2f1b"
+    },
+    {
+      "path": "structures/generated_sample_7.pdb",
+      "sha256": "fddfc693a30a69f848bbed070b9a28f9798018f89446ee4f1ca5a17ffcf3b488"
+    },
+    {
+      "path": "structures/generated_sample_8.pdb",
+      "sha256": "b6843b1cc6990eef2ceec49b1d00ff5e8c1e600b06be13abd4f38e8df7b96b5f"
+    },
+    {
+      "path": "structures/generated_sample_9.pdb",
+      "sha256": "76cbdb664ce32fc925111b9d9c0eb760f23ab243cd38e2b026906747262dc002"
+    },
+    {
+      "path": "structures/reference_5BV7.pdb",
+      "sha256": "1dcf9fb069162547fe3cef527af3e82692f35f50a9a4a92d99392052bf8cc905"
+    },
+    {
+      "path": "structures/task004_sample1_complex.pdb",
+      "sha256": "8ee12039923056b2c3bdb8bb474d4056dcfed21e07891c70a7c3d82bb5a08745"
+    },
+    {
+      "path": "structures/task004_sample6_complex.pdb",
+      "sha256": "b03c2c83905820d7b8de39631ec93b8ce3807978debeed419b5a0d4f3d2de498"
+    },
+    {
+      "path": "structures/task004_sample9_complex.pdb",
+      "sha256": "63d0d58c4a9a53629063556d82797a7aa2f7a7c46efe985f99b49b0e9cc362b2"
+    }
+  ]
+}

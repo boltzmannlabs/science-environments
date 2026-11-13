@@ -1,0 +1,23 @@
+{
+ "task": "task_001_her2_trastuzumab_interaction_optimization",
+ "benchmark": {
+  "name": "Ab-SELDON REF15 (JCIM 2026)",
+  "metric": "REF15 interaction score (Rosetta REU, lower is favorable)",
+  "best_diversity_FINAL_REU": -94.8663,
+  "best_diversity_initial_REU": -49.6996,
+  "best_diversity_delta_REU": -45.1667,
+  "best_random_FINAL_REU": -92.6947,
+  "best_random_initial_REU": -48.9576,
+  "best_random_delta_REU": -43.737,
+  "note": "Rosetta REF15 interaction score, NOT measured binding free energy"
+ },
+ "our_results": {
+  "native_cdrh3": "SRWGGDGFYAMDY",
+  "n_designed": 20,
+  "n_unique": 12,
+  "REF15": null,
+  "REF15_status": "UNAVAILABLE - Rosetta not installed in this environment; NOT fabricated"
+ },
+ "comparison": "CANNOT COMPARE - primary benchmark metric (REF15, Rosetta REU) not computable with available tools. No honest comparison possible.",
+ "integrity": "Did not fabricate REF15 scores; did not substitute Boltz2 pLDDT/ipTM for REF15."
+}

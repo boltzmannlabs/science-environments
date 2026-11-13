@@ -1,0 +1,32 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "catalog_status": "retrospective_inventory_not_live_discovery",
+  "tools": [
+    {
+      "name": "AgCDR-Diff / AntiBMPNN / CDR_Generator",
+      "execution_origin": "Boltzmann",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "IG-Design",
+      "execution_origin": "Boltzmann; failed",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "Epitope AbGen",
+      "execution_origin": "Boltzmann; no output retained",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "ProteinMPNN / Boltz2",
+      "execution_origin": "historical local",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    },
+    {
+      "name": "AbFlow / DockQ",
+      "execution_origin": "local benchmark evaluation",
+      "contract_status": "See retained execution/provenance; current endpoint availability and schemas were not verified during packaging"
+    }
+  ],
+  "guidance": "Resolve the current platform catalog and tool contracts before a new execution. This file describes retained history, not presently available endpoints."
+}

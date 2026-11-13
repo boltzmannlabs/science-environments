@@ -1,0 +1,32 @@
+{
+  "tool": "DockQ.py",
+  "results": {
+    "task004_sample1": {
+      "DockQ": 0.539,
+      "Fnat": 0.745,
+      "iRMS_A": 1.427,
+      "LRMS_A": 11.647,
+      "Fnonnat": 0.339,
+      "tool": "DockQ.py (AbFlow repository)",
+      "settings": "-short -quiet -no_needle; model A vs native A, model B+C vs native B+C"
+    },
+    "task004_sample9": {
+      "DockQ": 0.537,
+      "Fnat": 0.764,
+      "iRMS_A": 1.203,
+      "LRMS_A": 15.219,
+      "Fnonnat": 0.311,
+      "tool": "DockQ.py (AbFlow repository)",
+      "settings": "-short -quiet -no_needle; model A vs native A, model B+C vs native B+C"
+    },
+    "task004_sample6": {
+      "DockQ": 0.506,
+      "Fnat": 0.8,
+      "iRMS_A": 1.473,
+      "LRMS_A": 16.516,
+      "Fnonnat": 0.312,
+      "tool": "DockQ.py (AbFlow repository)",
+      "settings": "-short -quiet -no_needle; model A vs native A, model B+C vs native B+C"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+published_metric,published_value,new_matched_condition_value,comparable,explanation
+Unique reference-complex interactions,161,32 (Boltz2 C-alpha<8A residue pairs),NO,Different construct (full-length unglycosylated) + contact definition; not like-for-like.
+Unique Mut1-complex interactions,165,n/a (Mut1 sequence unavailable),NO,Mut1 is a paper-only point-mutation variant; not reproduced.
+H-bond share of contacts,~67%,1.3-5.0% (N/O<3.5A proxy),NO,Different contact-counting definition + glycan context. No explicit H in Boltz2 PDBs limits angle-based H-bond criterion.
+Interface RMSD selection boundary,5 A,n/a (no heated-MD replicas run),NO,Requires 3 heated MD replicas per system (no MD infrastructure, no Mut1, no paper protocol).
+Mut1 interface-stability outcome,No replica exceeded 5 A,n/a,NO,Same reason: no heated-MD replicas, no Mut1 sequence.
+E1 glycan-associated dSASA,2.9 A2,34.2 A2 (BACK-domain, single glycan at 362; UNCERTAIN),NO,Computed with a custom SASA whose occlusion test (d<r_j) overestimates absolute SASA ~5-10x vs BiOTITE 1.4.0; a BiOTITE-based recomputation with the simplified glycan gives dSASA~0. Paper's E1 mapping unavailable. Not independently verifiable.
+E2 glycan-associated dSASA,7.0 A2,n/a,NO,E2 not in scope (E1 task); paper's E2 mapping unavailable.
+Global glycan-associated SASA reduction,~1299 A2,n/a (not reproducible),NO,Recomputed with BiOTITE 1.4.0 (authoritative rolling-ball SASA; unglycosylated antigen = 26,962.7 A2) and a 7-site simplified glycan: dSASA=0 because glycan atoms (5-17 A from Asn side chain) are farther than the 3.1-A probe-center radius, so no probe points are occluded. Requires the study's multi-conformation glycan ensemble + mature construct.
+Boltz2 ipTM (reference),n/a (paper uses AF2),0.323,NEW,Our matched-conditions Boltz2 confidence.
+Boltz2 ipTM (best candidate),n/a,0.554 (cand11) / 0.485 (cand17),NEW,Improved interface confidence over reference.
+Prodigy dG (reference),n/a,-11.2 kcal/mol,NEW,Open-source PPI affinity estimate; REPRODUCED exactly by Prodigy 2.4.0 re-run.
+Prodigy dG (best candidate),n/a,-14.5 kcal/mol (cand17),NEW,cand17 strongest open-source binding estimate; REPRODUCED exactly by Prodigy 2.4.0 re-run.

@@ -1,0 +1,24 @@
+{
+  "packaged_at_utc": "2026-11-11T10:42:56.414471+00:00",
+  "operation": "Byte-preserving relocation; original metadata retained before normalization.",
+  "records": [
+    {
+      "old_path": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/evidence/provenance.json",
+      "current_path": "src/task_003_pd1_framework_guided_cdr_design/runs/20261110_local_proteinmpnn_boltz2/logs/packaging_history/retained_records/evidence/provenance.json",
+      "sha256": "323612ee7d00e492288ac5984b4df2e0c72b816c8a5882426d3b5778cd889031",
+      "purpose": "Preserve historical workflow/execution records under source"
+    },
+    {
+      "old_path": "results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/evidence/workflow_design.md",
+      "current_path": "src/task_003_pd1_framework_guided_cdr_design/runs/20261110_local_proteinmpnn_boltz2/logs/packaging_history/retained_records/evidence/workflow_design.md",
+      "sha256": "08281b4fbb2dbd33376ba9966e2803af49f26d3ec66974a6ee3bb85e4ec2baf8",
+      "purpose": "Preserve historical workflow/execution records under source"
+    },
+    {
+      "old_path": "src/task_003_pd1_framework_stage0_pending/logs/README.md",
+      "current_path": "src/task_003_pd1_framework_guided_cdr_design/runs/20261110_pd1_framework_stage0_pending/logs/prior_stage0_package/logs/README.md",
+      "sha256": "10f16e3d7cd65d1ec8a22f3c2840a5eecc987ad8c840efe4f7307b2a6bb18bda",
+      "purpose": "Retain the orphan stage-0 package under its actual pending source run"
+    }
+  ]
+}

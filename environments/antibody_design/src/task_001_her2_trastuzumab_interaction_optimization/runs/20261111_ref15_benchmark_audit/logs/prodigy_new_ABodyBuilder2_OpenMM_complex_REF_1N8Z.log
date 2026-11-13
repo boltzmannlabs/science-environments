@@ -1,0 +1,26 @@
+COMMAND ["/home/boltzmann10/anaconda3/bin/prodigy", "results/task_001_her2_trastuzumab_interaction_optimization/20261111_ref15_benchmark_audit/structures/REF_1N8Z_openmm_refined_complex.pdb", "--selection", "H,L", "C", "--temperature", "25", "--distance-cutoff", "5.5", "--acc-threshold", "0.05", "-np", "1"]
+EXIT 0
+[!] Structure contains gaps:
+	C GLY697 < Fragment 0 > C ASN818
+	H GLU1 < Fragment 1 > H TYR52
+	H THR53 < Fragment 2 > H ASP72
+	H ASN73 < Fragment 3 > H PHE100
+	H ASP101 < Fragment 4 > H SER113
+	L ASP1 < Fragment 5 > L LYS107
+
+[+] Executing 1 task(s) in total
+##########################################
+[+] Processing structure REF_1N8Z_openmm_refined_complex_model0
+[+] No. of intermolecular contacts: 72
+[+] No. of charged-charged contacts: 8.0
+[+] No. of charged-polar contacts: 11.0
+[+] No. of charged-apolar contacts: 21.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 8.0
+[+] No. of apolar-apolar contacts: 22.0
+[+] Percentage of apolar NIS residues: 41.30
+[+] Percentage of charged NIS residues: 17.75
+[++] Predicted binding affinity (kcal.mol-1):    -10.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.2e-08
+
+STDERR

@@ -1,0 +1,53 @@
+{
+  "task": "task_003_pd1_framework_guided_cdr_design",
+  "benchmark": {
+    "name": "tFold (Nat. Commun. 2025)",
+    "metrics": {
+      "PD1_vscreen_AUROC": 0.76,
+      "PD1_top1pct_enrichment": 7.41,
+      "PD1_design_AUROC": 0.95,
+      "CDR_H3_AAR": 0.317
+    },
+    "note": "Aggregate screening/classification metrics; require 745-antibody panel (27 positives) + SAbDab-22-DesignAb dataset. H965 individual ipTM/PAE/DockQ are 'Not verified' in the benchmark."
+  },
+  "design": {
+    "method": "ProteinMPNN, framework+VL+PD-1 fixed, CDR-H3 masked",
+    "backbone": "Boltz2-predicted H965(VH)+H965(VL)+PD-1 complex",
+    "native_cdrh3": "AKEYINTFTY",
+    "num_designs": 20,
+    "unique_cdrh3": 17
+  },
+  "boltz2_confidence": {
+    "h965_ref": {
+      "ipTM": 0.878,
+      "pLDDT": 0.92,
+      "pDE": 0.404,
+      "vh_pd1_iptm": 0.727,
+      "vl_pd1_iptm": 0.724
+    },
+    "task003_cand11": {
+      "ipTM": 0.652,
+      "pLDDT": 0.904,
+      "pDE": 0.733,
+      "vh_pd1_iptm": 0.305,
+      "vl_pd1_iptm": 0.281
+    },
+    "task003_cand9": {
+      "ipTM": 0.671,
+      "pLDDT": 0.897,
+      "pDE": 0.717,
+      "vh_pd1_iptm": 0.331,
+      "vl_pd1_iptm": 0.302
+    },
+    "task003_cand2": {
+      "ipTM": 0.76,
+      "pLDDT": 0.927,
+      "pDE": 0.568,
+      "vh_pd1_iptm": 0.489,
+      "vl_pd1_iptm": 0.459
+    }
+  },
+  "comparison": "NOT REPRODUCIBLE - published AUROC/enrichment/AAR require the original 745-antibody panel and SAbDab-22-DesignAb aggregate dataset (not provided); no published individual H965 ipTM exists to compare against.",
+  "observation": "All 3 redesigned CDR-H3s have lower antibody-PD-1 pair-ipTM (0.28-0.49) than the H965 reference (0.72); the de novo redesign did not reproduce the H965 binding interface.",
+  "integrity": "Did not fabricate AUROC/enrichment/AAR; did not assign paper's aggregate AUROC to a single candidate; did not infer binding from AUROC or AAR."
+}

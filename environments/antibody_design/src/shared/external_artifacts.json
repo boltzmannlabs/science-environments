@@ -1,0 +1,20 @@
+{
+  "scope": "Dependencies excluded from the contribution, not deleted from the original workspace",
+  "archives": [
+    {
+      "historical_path": "src/task_001_her2_trastuzumab_interaction_optimization/runs/20261111_ref15_benchmark_audit/inputs/ab_seldon_trastuzumab_optimization_tests_v2.tar.gz",
+      "bytes": 4098846633,
+      "sha256": "d466325a7d1eb45a6d8c6752d5952f5d4db6f2a9c412aa8e8c5801dd85b9eaed",
+      "included": false,
+      "local_original_retained": true
+    },
+    {
+      "historical_path": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/20261111_lcat_cdrh3_multworkflow/evidence/raw/abflow_benchmark_setup/datasets.zip",
+      "bytes": 919437377,
+      "sha256": "5a964e006f503ef407c916aa22f42ccf035438ea4be91cbd8e7e89795ae5ce43",
+      "included": false,
+      "local_original_retained": true
+    }
+  ],
+  "other_dependencies": "Full AbFlow datasets tree is listed in omitted_files.csv. Original model/checkpoint hashes remain in run provenance."
+}

@@ -1,0 +1,103 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "20261110_pd1_framework_stage0_pending",
+  "status": "PENDING_PLATFORM_APPROVAL",
+  "approach_id": "W1_RF_Antibody_plus_W2_Epitope_AbGen",
+  "workflow_revision": "src/task_003_pd1_framework_guided_cdr_design/workflow.md",
+  "approaches_revision": "src/task_003_pd1_framework_guided_cdr_design/approaches.md",
+  "target": {
+    "name": "human PD-1",
+    "pdb": "4ZQK",
+    "chain": "B",
+    "sequence_length": 106,
+    "construct_sequence": "sources/pd1_4zqk_chainB.fasta"
+  },
+  "framework": {
+    "germline": [
+      "IGHV3-23",
+      "IGKV1-5"
+    ],
+    "j_genes": [
+      "IGHJ4",
+      "IGKJ1"
+    ],
+    "numbering": "Chothia",
+    "source": "PMC12815924 Table 1",
+    "sequence_file": "sources/framework_table1.fasta",
+    "editable_cdr_lengths": {
+      "H1": [
+        7,
+        7
+      ],
+      "H2": [
+        6,
+        6
+      ],
+      "H3": [
+        7,
+        18
+      ],
+      "L1": [
+        11,
+        11
+      ],
+      "L2": [
+        7,
+        7
+      ],
+      "L3": [
+        9,
+        11
+      ]
+    }
+  },
+  "reference_control": {
+    "name": "anti-PD-1-H965",
+    "role": "comparison_control_only",
+    "sequence_file": "sources/h965_control.fasta",
+    "structure": "../../../../../results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2/evidence/reference/task003_h965_pd1.pdb"
+  },
+  "epitope": {
+    "definition": "PD-1 residues within 6.0 A heavy-atom distance of PD-L1 in native 4ZQK",
+    "residue_file": "sources/epitope_pd1_ligand_binding.json",
+    "count": 28
+  },
+  "code": [
+    "code/stage0_prepare_framework_pd1.py",
+    "code/legacy_local_run/prepare_struct.py",
+    "code/legacy_local_run/design_cdrh3.py"
+  ],
+  "planned_tools": [
+    "rfdiffusion_proteinmpnn",
+    "epitope_abgen",
+    "Antibody_Backbone_to_Sequence_Generation",
+    "Boltz2",
+    "ipsae-protein",
+    "Antibody_Prediction",
+    "stability-binding-ddg",
+    "Antibody_Numbering",
+    "tm_align"
+  ],
+  "platform_submission": {
+    "attempted": true,
+    "job_name": "rfdiffusion_proteinmpnn",
+    "stage": "upload",
+    "validation": "partial",
+    "approval": "timed_out",
+    "submitted": false,
+    "job_id": null
+  },
+  "results_directory": null,
+  "notes": "No candidate-level Boltzmann results are claimed for this run.",
+  "results_status": "No scientific candidate results were produced by this pending platform run.",
+  "historical_results_directory": "../../../../results/task_003_pd1_framework_guided_cdr_design/20261110_local_proteinmpnn_boltz2",
+  "packaging_transfer": {
+    "base_commit": "ba3232c0480ba3e6fd516712d36ed2d93adf9414",
+    "execution_status": "not_submitted",
+    "scientific_coverage": "needs_input",
+    "scientific_jobs_executed_during_transfer": false,
+    "historical_paths_and_hashes": "Original execution-workspace paths and older checksum inventories are retained as historical provenance; use the fresh package inventory for current paths and integrity.",
+    "current_inventory": "../../../../src/shared/package_inventory.csv",
+    "external_artifacts": "../../../../src/shared/external_artifacts.json"
+  }
+}

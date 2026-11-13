@@ -1,0 +1,29 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "20261111_ref15_benchmark_audit",
+  "CPU_only": true,
+  "CUDA_VISIBLE_DEVICES": "",
+  "torch_seed": 37,
+  "torch_threads": 4,
+  "refinement_threads": 2,
+  "abodybuilder2_version": "1.2",
+  "model_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "numbering_scheme": "martin",
+  "Fv_save_check_for_strained_bonds": false,
+  "complex_refine_check_for_strained_bonds": true,
+  "pymol_version": "3.2.0a",
+  "pymol_whole_fv_align": "default all-atom sequence-guided align and outlier rejection",
+  "CDR_CA_rms_cur_matchmaker": 4,
+  "prodigy_version": "2.4.0",
+  "prodigy_distance_cutoff_A": 5.5,
+  "prodigy_accessibility_threshold": 0.05,
+  "temperature_C": 25,
+  "Amber_minimization": "NOT_RUN_missing_executables",
+  "PyRosetta_REF15": "NOT_RUN_missing_module",
+  "paper_archive_MD5": "f699da97a28fc35a7e82c0d9128712a2"
+}

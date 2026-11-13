@@ -1,0 +1,33 @@
+{
+  "tool": "AbFlow retained DockQ.py",
+  "scope": "task CDR-H3 chain C residues 97-115 versus antigen chain A",
+  "results": [
+    {
+      "candidate_id": "task004_sample1",
+      "DockQ": 0.162,
+      "Fnat": 0.139,
+      "iRMS_A": 14.271,
+      "LRMS_A": 11.979,
+      "Fnonnat": 0.875,
+      "stdout": "DockQ 0.162 Fnat 0.139 iRMS 14.271 LRMS 11.979 Fnonnat 0.875 /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/task004_sample1.pdb /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/native_h3.pdb"
+    },
+    {
+      "candidate_id": "task004_sample6",
+      "DockQ": 0.174,
+      "Fnat": 0.167,
+      "iRMS_A": 14.176,
+      "LRMS_A": 11.734,
+      "Fnonnat": 0.838,
+      "stdout": "DockQ 0.174 Fnat 0.167 iRMS 14.176 LRMS 11.734 Fnonnat 0.838 /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/task004_sample6.pdb /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/native_h3.pdb"
+    },
+    {
+      "candidate_id": "task004_sample9",
+      "DockQ": 0.182,
+      "Fnat": 0.167,
+      "iRMS_A": 14.41,
+      "LRMS_A": 11.14,
+      "Fnonnat": 0.846,
+      "stdout": "DockQ 0.182 Fnat 0.167 iRMS 14.410 LRMS 11.140 Fnonnat 0.846 /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/task004_sample9.pdb /home/boltzmann10/.sci/cache/scratch/task004_dockq_dn2eclwo/native_h3.pdb"
+    }
+  ]
+}
