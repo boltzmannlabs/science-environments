@@ -1,0 +1,71 @@
+[
+  {
+    "gene": "HK2",
+    "requested_accession": "NM_000189.5",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_000189.5&rettype=fasta&retmode=text",
+    "retrieved_at": "2026-11-11T12:35:43.195799+00:00",
+    "status": "VERIFIED_PRIMARY",
+    "length": 5626,
+    "header": ">NM_000189.5 Homo sapiens hexokinase 2 (HK2), transcript variant 1, mRNA",
+    "sha256": "31dc2b8d2cb33e2db1e0f766c9bdf6abeee185b602743786f6360304b5a52469",
+    "local_source": "/home/boltzmann13/IMRAN/NOV26/siRNA-Design-Task-Specific/11_app_benchmarks/hk2_NM_000189.5.fa",
+    "local_sequence_identical": true,
+    "local_sha256": "7df9abf6c05853ac777534add9a319ecbcc61178d7f79a4a2012ef97dfb54581"
+  },
+  {
+    "gene": "MYC",
+    "requested_accession": "NM_002467.6",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_002467.6&rettype=fasta&retmode=text",
+    "retrieved_at": "2026-11-11T12:35:43.844784+00:00",
+    "status": "VERIFIED_PRIMARY",
+    "length": 3721,
+    "header": ">NM_002467.6 Homo sapiens MYC proto-oncogene, bHLH transcription factor (MYC), transcript variant 1, mRNA",
+    "sha256": "c2345d6714e129c6cf6c5258a59cc05e8c8816cdbb62e4857a21709ef1c84c72",
+    "local_source": "/home/boltzmann13/IMRAN/NOV26/siRNA-Design-Task-Specific/11_app_benchmarks/myc_NM_002467.6.fa",
+    "local_sequence_identical": true,
+    "local_sha256": "3889b9d1849965dbb64c3216decec3c52877e47fa644579f355dbdd837b152e8"
+  },
+  {
+    "gene": "PCSK9",
+    "requested_accession": "NM_174936.4",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_174936.4&rettype=fasta&retmode=text",
+    "retrieved_at": "2026-11-11T12:35:44.428325+00:00",
+    "status": "VERIFIED_PRIMARY",
+    "length": 3637,
+    "header": ">NM_174936.4 Homo sapiens proprotein convertase subtilisin/kexin type 9 (PCSK9), transcript variant 1, mRNA",
+    "sha256": "b8c331460c19b6b2d7d9e1ffb13ba2f3994a711eb651c71031f33c48bbd00acd"
+  },
+  {
+    "gene": "TNF",
+    "requested_accession": "NM_000594.4",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_000594.4&rettype=fasta&retmode=text",
+    "retrieved_at": "2026-11-11T12:35:44.975904+00:00",
+    "status": "VERIFIED_PRIMARY",
+    "length": 1678,
+    "header": ">NM_000594.4 Homo sapiens tumor necrosis factor (TNF), mRNA",
+    "sha256": "6ccef3f9e9eb89b0b71c18f2867b7aac27ddb3d9056e634b2c22a04756dbc3f8"
+  },
+  {
+    "gene": "HIF1A",
+    "requested_accession": "NM_001530.4",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_001530.4&rettype=fasta&retmode=text",
+    "retrieved_at": "2026-11-11T12:35:45.619865+00:00",
+    "status": "VERIFIED_PRIMARY",
+    "length": 3946,
+    "header": ">NM_001530.4 Homo sapiens hypoxia inducible factor 1 subunit alpha (HIF1A), transcript variant 1, mRNA",
+    "sha256": "f705895c0a99e8bb4f886bba3864608de9e27c084db3e301f927f03225876991",
+    "local_source": "/home/boltzmann13/IMRAN/NOV26/siRNA-Design-Task-Specific/07_case_study/HIF1AN_NM_001530.4_RNA.fa",
+    "local_sequence_identical": true,
+    "local_sha256": "ae60c1f0bb372fb6840bc63a6c82e7966fa7823cdd199c9005dda9aea557dc30"
+  },
+  {
+    "gene": "TTR",
+    "status": "VERIFIED_LOCAL_GENCODE",
+    "accession": "ENST00000237014.8",
+    "header": ">ENST00000237014.8|ENSG00000118271.14|OTTHUMG00000131984.4|OTTHUMT00000254948.1|TTR-201|TTR|616|protein_coding|",
+    "length": 616,
+    "reference": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/references/gencode.v50.transcripts.fa.gz",
+    "sequence_sha256": "beadda1977a48b6a4e3ffc11b93d13a1d4f57ca49309c53169a94f4f4b15072f",
+    "local_sequence_identical": true
+  }
+]

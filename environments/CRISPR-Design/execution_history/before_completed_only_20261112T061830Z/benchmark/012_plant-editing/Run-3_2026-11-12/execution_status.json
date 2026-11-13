@@ -1,0 +1,20 @@
+{
+  "task_id": "012",
+  "task_spec": "tasks/012_crispr_plant-editing.md",
+  "application": "plant_genome_editing",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "AUDIT_ONLY_INACTIVE",
+  "benchmark_status": "PLANT_ASSAY_MATCHED_AUTHOR_SCORE_REPLAY",
+  "finding": "52 N.benthamiana guides across20/32-guide cohorts; author model scores replayed against actual plant mean InDel measurements.",
+  "limitations": "Not fresh inference or species adapter validation; plant DESIGN remains inactive. No mammalian phenotype used as surrogate.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/012",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "shared_benchmark_not_independent_per_task": false,
+  "result_report": "results/012_plant_genome_editing/Run-2_2026-11-12/REPORT.md",
+  "benchmark_report": "benchmark/012_plant-editing/Run-3_2026-11-12/README.md",
+  "metric_run_id": "Run-3_2026-11-12",
+  "new_model_inference": false,
+  "prior_benchmark_report": "benchmark/012_plant-editing/Run-2_2026-11-12/README.md"
+}

@@ -1,0 +1,49 @@
+{
+  "cohort": "Xiang-2021 TRAP12K D10+dox (CRISPRon paper supp4, total_indel_eff)",
+  "cohort_n": 11461,
+  "replicate_ceiling_d8_d10": 0.6149,
+  "published_references": {
+    "crispron_internal_independent_test": 0.8,
+    "crispron_external_sets": "0.46-0.68",
+    "crispor_nontraining_scores": "0.341-0.436",
+    "konstantakos_envelope": "0.4-0.7 independent, ~0.7 replicate ceiling (different assays)"
+  },
+  "exposure": {
+    "crispron": "EXPOSED (training library)",
+    "rs3": "possibly-exposed (2022 pooled public corpora)",
+    "rs1": "clean (2014)",
+    "crisprater": "clean (2016)"
+  },
+  "crispron": {
+    "spearman": 0.5039,
+    "ci95": [
+      0.4887,
+      0.5189
+    ],
+    "ndcg20": 0.0
+  },
+  "rs3_hsu2013": {
+    "spearman": 0.5157,
+    "ci95": [
+      0.5003,
+      0.5303
+    ],
+    "ndcg20": 0.0
+  },
+  "crisprater": {
+    "spearman": 0.0913,
+    "ci95": [
+      0.0724,
+      0.1116
+    ],
+    "ndcg20": 0.0
+  },
+  "ruleset1": {
+    "spearman": 0.2224,
+    "ci95": [
+      0.2044,
+      0.2395
+    ],
+    "ndcg20": 0.0
+  }
+}

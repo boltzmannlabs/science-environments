@@ -1,0 +1,23 @@
+{
+  "model": "BE-Hive efficiency released HEK293T_12kChar_BE4_bestmodel.pkl",
+  "source_model_commit": "fbd495910d6c95b24081649015d6257a8badc9d7",
+  "cell": "HEK293T",
+  "editor": "BE4, not silently renamed BE4max",
+  "training_pool": "all10409 released HEK293T12kChar BE4 processed targets, conservatively excluded by any exact20mer guide or exact31nt model feature context",
+  "external_labels": "separate HEK293T_CtoT_BE4 disease-focused library, processed experimentally measured any-base-editing efficiency",
+  "before_intake": 9975,
+  "eligible": 9975,
+  "known_train_guide_overlaps": 0,
+  "known_train_feature_overlaps": 0,
+  "invalid_sequence_contexts": 0,
+  "input_features": "actual31nt feature region positions-9..21, source onehot/dinucleotide/count/Tm features;50nt API has unused flanks missing in some external sequences, no fake padding used; feature equivalence tested on genuine50nt contexts",
+  "primary_endpoint": "Y: author-normalized replicate-mean logit any-edit fraction, not intended-correction rate or genotype purity",
+  "probability_calibration": "NOT_FIT; no test-label fitting of conversion mean/std; model outputs native logit score only",
+  "metrics": "Pearson/Spearman with measuredY and bootstrap intervals; source paper internal split not claimed reproduced",
+  "limitations": [
+    "Complete original hyperparameter-selection split membership not supplied; external-library benchmark uses conservative released training-pool exclusions",
+    "Not demonstrated fully gene-disjoint; no complete genome-level near-similarity exclusion",
+    "Any-edit efficiency benchmark does not validate BE-Hive bystander-genotype predictions or intended-edit purity"
+  ],
+  "frozen_before_inference": true
+}

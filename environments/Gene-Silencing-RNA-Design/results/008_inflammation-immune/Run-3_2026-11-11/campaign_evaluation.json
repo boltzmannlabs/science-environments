@@ -1,0 +1,19 @@
+{
+  "gene": "TNF",
+  "status": "COMPUTATIONAL_BATTERY_EXECUTED",
+  "pool_windows": 1660,
+  "reviewed": 100,
+  "n_evaluated": 24,
+  "generation_source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/008_inflammation-immune/Run-3_2026-11-11/generation/all_generated_candidates.csv",
+  "generation_sha256": "5ee73eeae4897de07bfcf4f2da73d45a33fab4e287ec762d2ab29cd69f781899",
+  "best_design": null,
+  "not_run": [
+    "E4e RNAhybrid broken-binary",
+    "GTEx/HPA tissue context",
+    "OpenTargets orthogonal context",
+    "6/8-mer transcriptome counts (adapter provides only 7-mer)",
+    "experimental validation",
+    "sequence-based delivery/chemistry prediction"
+  ],
+  "scope": "Single declared transcript; not all-isoform coverage; expression and clinical suitability unverified."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "REJECTED_NOT_VALIDATION",
+  "reason": "Pilot used global instead of per-training-split scaling and inherited row order/arbitrary seed schedule. Original source was recovered and the pilot was stopped. Outputs preserved but must not be pooled with corrected run.",
+  "old_process_session": "proc_3c29267af6b1",
+  "old_output_directory": "predictions/cas13_RFcombined_repeated_holdout",
+  "author_source_commit": "c864b4f267e22e0ef1a9f28651744f6d04d58eaf",
+  "author_data_exact_key_join": 2918,
+  "label_difference_after_key_join": 0.0
+}

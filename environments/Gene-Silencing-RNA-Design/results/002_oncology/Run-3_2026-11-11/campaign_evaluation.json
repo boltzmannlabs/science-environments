@@ -1,0 +1,19 @@
+{
+  "gene": "HK2",
+  "status": "COMPUTATIONAL_BATTERY_EXECUTED",
+  "pool_windows": 5608,
+  "reviewed": 100,
+  "n_evaluated": 24,
+  "generation_source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/generation/candidate_pool_historical.csv",
+  "generation_sha256": "8d5048490df3575e05dc2201acc6ec5bac428baf79b5bdc0de1dcf8e515a8300",
+  "best_design": null,
+  "not_run": [
+    "E4e RNAhybrid broken-binary",
+    "GTEx/HPA tissue context",
+    "OpenTargets orthogonal context",
+    "6/8-mer transcriptome counts (adapter provides only 7-mer)",
+    "experimental validation",
+    "sequence-based delivery/chemistry prediction"
+  ],
+  "scope": "Single declared transcript; not all-isoform coverage; expression and clinical suitability unverified."
+}

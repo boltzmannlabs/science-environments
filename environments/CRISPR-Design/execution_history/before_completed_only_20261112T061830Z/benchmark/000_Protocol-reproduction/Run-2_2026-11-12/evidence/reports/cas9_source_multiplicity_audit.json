@@ -1,0 +1,17 @@
+{
+  "author_prediction_table_rows": 75590,
+  "unique_prediction_contexts": 73754,
+  "extra_rows_from_repeated_prediction_keys": 1836,
+  "source_no_dedup_join_matches_cached_counts": true,
+  "source_rows": 27187,
+  "unique_contexts": 23629,
+  "counts": {
+    "Aguirre2016": 7828,
+    "Behan2019": 7025,
+    "Chari2015": 1130,
+    "Kim2019_test": 518,
+    "Koike-Yusa2014": 6718,
+    "Shalem2014": 3968
+  },
+  "explanation": "Official notebook merges the raw CRISPRon score table without deduplicating identical context/prediction keys. Our first pass deliberately made that join many-to-one. Exact source-row replay and deduplicated sensitivity must be reported separately; duplicates must not be silently presented as independent biological observations."
+}

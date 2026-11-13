@@ -1,0 +1,14 @@
+{
+  "brief_id": "silencing_crisproff_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "PCSK9", "transcript": "resolve-to-GENCODE-49-at-intake", "sequence_supplied": false},
+  "application": "epigenome_editing",
+  "nuclease": "dcas9_crisproff",
+  "objective": "CRISPRoff durable-silencing guide design under the three tiling-derived rules (wide +/-500 bp TSS window; nucleosome-depleted regions; functional-CpG density, CGI not required); no dedicated designer tool exists — CRISPick CRISPRi mode + rules overlay; illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match"],
+    "weights": {"on_target": 0.25, "specificity": 0.25, "outcome_quality": 0.15, "context": 0.35}
+  },
+  "constraints": {"review_window": 200, "panel_size": 6, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "Durable methylation + expression silencing after CRISPRon-reversibility test in the user's system — downstream evidence."
+}

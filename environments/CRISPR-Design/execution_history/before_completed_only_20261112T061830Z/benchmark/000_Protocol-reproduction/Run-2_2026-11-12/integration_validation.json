@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "check": "task_coverage",
+      "status": "PASS",
+      "detail": "13 task result/benchmark pairs; explicit no-experimental-validation statuses"
+    },
+    {
+      "check": "artifact_hashes",
+      "status": "PASS",
+      "detail": "399 copied artifacts match both source and stored SHA256"
+    },
+    {
+      "check": "relative_links",
+      "status": "PASS",
+      "detail": "273 relative links in 48 current documents resolve"
+    },
+    {
+      "check": "cas13_completion",
+      "status": "PASS",
+      "detail": "1000 independently recomputed corrected RF replicates verified; rejected pilot excluded"
+    },
+    {
+      "check": "evidence_boundaries",
+      "status": "PASS",
+      "detail": "No incomplete/replay modality promoted; PRIDICT folds match; specificity totals consistent"
+    }
+  ],
+  "passed": 5,
+  "failed": 0
+}

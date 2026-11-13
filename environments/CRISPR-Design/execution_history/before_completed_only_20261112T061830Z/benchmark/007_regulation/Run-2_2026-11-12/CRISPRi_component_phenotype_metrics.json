@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETED_COMPONENT_ONLY_PHENOTYPIC_TEST",
+  "n": 3607,
+  "genes": 307,
+  "excluded_missing_annotation_or_label": 0,
+  "n_high_activity": 882,
+  "n_window_positive": 2647,
+  "precision_for_high_normalized_activity": 0.2546278806195693,
+  "recall_for_high_normalized_activity": 0.764172335600907,
+  "binary_window_AUROC": 0.5200678191766002,
+  "gene_bootstrap_precision_ci95": [
+    0.23964450035945364,
+    0.2717136883842375
+  ],
+  "gene_bootstrap_recall_ci95": [
+    0.7318654801988135,
+    0.7947475813417035
+  ],
+  "full_CRISPRi_model_validated": false,
+  "limits": [
+    "A fixed window gate is not the learned CRISPRi activity model or an essential-gene screen",
+    "Source-coordinate distances retained; no claim of validating the modern GENCODE49 adapter on these hg19 annotations",
+    "No mammalian nuclease activity score used as a repression surrogate"
+  ]
+}

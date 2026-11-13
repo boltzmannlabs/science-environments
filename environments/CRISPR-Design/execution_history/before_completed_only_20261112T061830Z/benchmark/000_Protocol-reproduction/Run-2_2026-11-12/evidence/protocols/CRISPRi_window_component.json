@@ -1,0 +1,14 @@
+{
+  "model": "Project CRISPRi PAM/TSS-window gate only",
+  "window_bp": [
+    -75,
+    200
+  ],
+  "positive_phenotype": "source normalized guide activity >=0.75; not75% knockdown",
+  "input_annotation": "source human hg19/FANTOM/Ensembl-fallback TSS point positions, all annotated TSSs per gene, source coordinates retained without assembly conversion",
+  "test_split": "original source test indices; train/test gene sets disjoint, verified",
+  "n_heldout_genes": 307,
+  "source_model_NOT_reproduced": "Full Horlbeck808-feature model, chromatin transformation and learned weights are not substituted by this geometric rule",
+  "nuclease_activity_scores": "NOT_USED",
+  "frozen_before_computing_metrics": true
+}

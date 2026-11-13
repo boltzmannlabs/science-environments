@@ -1,0 +1,17 @@
+{
+  "model": "RFcombined",
+  "paper": "10.1038/s41587-020-0456-9",
+  "features": ["MFE", "DR", "Gquad", "Log10_Unpaired", "hybMFE_3.12", "hybMFE_15.9", "NTdens_max_A", "NTdens_max_C", "NTdens_max_G", "NTdens_max_T", "NTdens_max_AT", "NTdens_max_GC", "NTdens_min_A", "NTdens_min_C", "NTdens_min_G", "NTdens_min_T", "NTdens_min_AT", "pA", "pC", "pG", "pAA", "pAC", "pAG", "pAT", "pCA", "pCC", "pCG", "pCT", "pGA", "pGC", "pGG", "pGT", "pTA", "pTC", "pTG"],
+  "n": 2918,
+  "ntree": 2000,
+  "mtry": 12,
+  "replicates": 1000,
+  "workers": 2,
+  "seed_base": 20261111,
+  "split": "Original source seed schedule set.seed1234 sample1..10000 (R3.5 sampling kind) and source-ordered rows; screen-balanced 70/30 disjoint row splits. RF model seeds are explicitly fixed because original comparative fitting script did not fix them.",
+  "preprocessing": "Original source-ordered published 35-feature matrix and normCS labels; training-set-only 5th/95th percentile clipping; no all-data RF used as held-out predictor; global published feature selection/label normalization inherited.",
+  "source_parameter_discrepancy": "Paper final model:2000 trees,mtry12; comparative source:randomForest defaults; final CV source:mtry10. This run retains requested2000/mtry12 paper parameters. It is a qualified protocol reimplementation, not an exact replay of every code variant.",
+  "interpretation": "1000 refit/resplit distribution; percentile intervals describe split/refit variability, not a model-free CI for a new target population",
+  "r_version": "R version 4.5.3 (2026-03-11)",
+  "randomForest_version": "4.7.1.2"
+}

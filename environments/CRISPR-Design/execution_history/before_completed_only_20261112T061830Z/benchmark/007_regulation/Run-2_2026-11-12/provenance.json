@@ -1,0 +1,69 @@
+{
+  "task_id": "007",
+  "task_spec": "tasks/007_crispr_regulation.md",
+  "application": "crispr_regulation",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "CRISPRI_WINDOW_COMPONENT_TEST_ONLY",
+  "finding": "CRISPRi fixed TSS-window gate tested on3607 held-out guides/307 genes; recall0.7642, precision0.2546 for source normalized activity>=0.75.",
+  "limitations": "Full808-feature CRISPRi model and CRISPRa prediction NOT_RUN. No mammalian nuclease score substituted.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/007",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "007",
+    "brief_id": "myc_crispri_example",
+    "application": "crispr_regulation",
+    "target": "MYC",
+    "input_sha256": "bf8fb6e8f16ef387f66f523b5abc6ec136d5297bd7f78cbfe87dc558e199f8e9",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference_annotation": "EXECUTED",
+      "spliced_reference_validation": "EXECUTED",
+      "CDS_translation_check": "EXECUTED (partial CDS flags retained)",
+      "enumeration_E1_E6": "EXECUTED",
+      "on_target": "EXECUTED: nuclease-trained comparator columns ONLY, not regulatory activity",
+      "CRISPRscan": "EXECUTED T7 comparator only; not transferable to U6",
+      "Lindel": "NOT_APPLICABLE(non-cutting dCas9)",
+      "Bowtie_CFD": "EXECUTED genome primary-assembly ungapped <=3mm both strands; NGG filter; intended locus excluded by coordinates",
+      "bulges": "NOT_EVALUATED",
+      "Elevation": "NOT_RUN(adapter unavailable)",
+      "variant_aware": "NOT_RUN(no population VCF specified; not a reference-genome safety assessment)",
+      "gates": "EXECUTED partial sequence/reference gates; no missing regulatory activity imputed",
+      "ranking": "NOT_RUN(missing modality-specific activity/chromatin; no proxy substituted)",
+      "native_TSS": "EXECUTED crisprDesign::addTssAnnotation(anchor=pam_site); requested closed endpoints converted explicitly",
+      "native_TSS_validation": "PASS exact per-guide/per-TSS distances against independent calculation",
+      "E6_scope": "PARTIAL GC/poly-T/homopolymer/Wallace Tm evaluated; scaffold self-complementarity and salt-specific thermodynamics NOT_RUN"
+    },
+    "blockers": [
+      "Cell context/chromatin accessibility absent",
+      "Horlbeck/CRISPick calibrated activity adapter absent; nuclease comparators are not regulatory predictions"
+    ],
+    "test_input": {
+      "gene": "MYC",
+      "scope": "all GENCODE49 protein-coding isoforms",
+      "assembly": "GRCh38.p14",
+      "expression": "U6; Hsu2013 as declared model test configuration",
+      "TSS_anchor": "pam_site"
+    },
+    "test_input_sha256": "2ee80aa1214ef74497ff9b70ca60464c037c7f67021fe8deb4c079a60f6c22d3",
+    "transcript_count": 15,
+    "protein_coding_transcripts": 13,
+    "windows_total": 381,
+    "eligible_count": 335,
+    "gate_pass": 334,
+    "status": "PARTIAL_EXECUTED",
+    "validation": {
+      "scored_contexts_roundtrip": 335,
+      "intended_locus_recovered": 335,
+      "all_raw_endpoints_finite": true
+    },
+    "native_TSS_rows": 777
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

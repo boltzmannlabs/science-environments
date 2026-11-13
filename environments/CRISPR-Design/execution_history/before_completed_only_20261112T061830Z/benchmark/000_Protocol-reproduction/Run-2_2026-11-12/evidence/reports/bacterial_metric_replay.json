@@ -1,0 +1,18 @@
+{
+  "status": "AUTHOR_PREDICTION_METRIC_REPLAY_ONLY",
+  "model": "MERF/CIAO fixed-effect RF, public gene-held-out prediction artifact",
+  "n_observations": 7400,
+  "gene_clusters": 301,
+  "evaluable_clusters": 301,
+  "folds": 10,
+  "cluster_fold_overlap": 0,
+  "median_within_gene_Spearman": 0.33571428571428563,
+  "mean_within_gene_Spearman": 0.3089282631025751,
+  "median_gene_bootstrap_ci95": [
+    0.30256379411827483,
+    0.3691308958630327
+  ],
+  "paper_reported_gene_CV_median": 0.396,
+  "not_independent_screen": "This replays gene-held-out CV from training-source studies, not the9-gene purine validation screen",
+  "not_fresh_inference": "No mammalian score used. Fresh bacterial features/models not executed; sequence identities and training memberships cannot be fully audited from this serialized prediction artifact alone. Do not label the prior lacZ design workflow validated."
+}

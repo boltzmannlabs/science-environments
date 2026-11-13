@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "004",
+  "model": "BEHive_BE4",
+  "title": "BE-Hive BE4 any-edit efficiency",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "004",
+    "005"
+  ],
+  "publication": "https://europepmc.org/articles/PMC7384975",
+  "benchmark_scope": "Native released HEK293T/BE4 regressor;9975measured external-library any-edit efficiency labels;known training20mer/31nt contexts excluded. Source-used31nt feature encoding independently matched to native featurizer without fabricated flanks.",
+  "scientific_limits": "BE4,notBE4max. Target is normalizedlogit any-edit efficiency,not intended-edit purity or genotype distribution. Original internal tuning membership/whole-gene exclusion not fully available. Weak transfer performance is retained.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Fresh native inference retry completed"
+}

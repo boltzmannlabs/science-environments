@@ -1,0 +1,13 @@
+  PASS  files: 17 core files present; task/config examples identical
+  PASS  application_tasks: 10 tasks: sections+steps+index+examples+schema-enum+weight ranges+organism+review_window
+  PASS  schemas: 2 schemas well-formed; 10 apps; 5 dims; organism/guide/required checks
+  PASS  examples: 2 general examples structurally valid + marked illustrative
+  PASS  yaml_invariants: invariants present; 10 gates with valid provenance tags; yaml contract paths exist
+  PASS  benchmarks: benchmark numbers match spec; 19 provenance hashes verified
+  PASS  runtime_import: 3 runtime scripts import + behave; explore has v1.2.1 target_gene param
+  PASS  cross_references: all relative markdown/JSON links resolve across tasks, benchmark, spec, READMEs
+  PASS  benchmark_readmes: all benchmark case READMEs have Published reference + Run configuration + Benchmark metrics sections
+  PASS  benchmark_runs_structure: BENCHMARK_RUNS.md has iteration pattern; published sources cited; none-exists markers present
+  PASS  results_tree: results tree: 11 application dirs, 11 provenance hashes, no empty run folders
+
+SUMMARY: 11/11 pass

@@ -1,0 +1,43 @@
+CAS9_METRICS_DONE Aguirre2016
+CAS9_METRICS_DONE Behan2019
+CAS9_METRICS_DONE Chari2015
+CAS9_METRICS_DONE Kim2019_test
+CAS9_METRICS_DONE Koike-Yusa2014
+CAS9_METRICS_DONE Shalem2014
+PRIDICT_DONE HEK
+PRIDICT_DONE K562
+COMPLETED_METRIC_EXECUTION /home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/benchmark/000_Publication-label-benchmarks/Run-3_2026-11-12
+             model                                       cohort                               endpoint     n  spearman   ci_low  ci_high
+      RS3 Sequence                                  Aguirre2016      official processed sgRNA activity  7716  0.551031 0.535764 0.566498
+       CRISPRon v1                                  Aguirre2016      official processed sgRNA activity  7716  0.538969 0.522539 0.553725
+      RS3 Sequence                                    Behan2019      official processed sgRNA activity  6974  0.265909 0.241873 0.287218
+       CRISPRon v1                                    Behan2019      official processed sgRNA activity  6974  0.222837 0.200157 0.246599
+      RS3 Sequence                                    Chari2015      official processed sgRNA activity  1129  0.436194 0.386081 0.481661
+       CRISPRon v1                                    Chari2015      official processed sgRNA activity  1129  0.475427 0.425516 0.521948
+      RS3 Sequence                                 Kim2019_test      official processed sgRNA activity   518  0.788982 0.750564 0.824135
+       CRISPRon v1                                 Kim2019_test      official processed sgRNA activity   518  0.897008 0.877404 0.913167
+      RS3 Sequence                               Koike-Yusa2014      official processed sgRNA activity  6666  0.416040 0.395561 0.436713
+       CRISPRon v1                               Koike-Yusa2014      official processed sgRNA activity  6666  0.423739 0.402843 0.443168
+      RS3 Sequence                                   Shalem2014      official processed sgRNA activity  3912  0.265764 0.237549 0.295436
+       CRISPRon v1                                   Shalem2014      official processed sgRNA activity  3912  0.259289 0.231813 0.286938
+BE-Hive efficiency         HEK293T BE4 external disease library normalized logit any-edit efficiency Y  9975  0.165766 0.146101 0.185512
+    DeepPrime base HEK293T PE2 conventional scaffold fixed test                 measured PE efficiency 28883  0.861474 0.856848 0.866104
+        PRIDICT2.0                          Library-Diverse HEK                          averageedited 22619  0.905629 0.902657 0.908243
+        PRIDICT2.0                          Library-Diverse HEK                      averageunintended 22619  0.315823 0.302279 0.329188
+        PRIDICT2.0                         Library-Diverse K562                          averageedited 22752  0.808119 0.802668 0.813244
+        PRIDICT2.0                         Library-Diverse K562                      averageunintended 22752  0.274087 0.261240 0.287832
+DIAGNOSTICS           model                cohort    n  spearman
+        CNN12ae   per_model_available 1358  0.812438
+         CNN12a   per_model_available  862  0.656868
+           CNND   per_model_available  859  0.620642
+Transformer12ae   per_model_available  862  0.467465
+ Transformer12a   per_model_available  862  0.541746
+   TransformerD   per_model_available  862  0.532478
+        CNN12ae all_six_models_common  859  0.672393
+         CNN12a all_six_models_common  859  0.657331
+           CNND all_six_models_common  859  0.620642
+Transformer12ae all_six_models_common  859  0.467606
+ Transformer12a all_six_models_common  859  0.542968
+   TransformerD all_six_models_common  859  0.533699
+SPECIFICITY {"model": "CFD2016", "sites": 1684, "positives": 108, "negatives": 1576, "guides": 9, "average_precision": 0.18603938497133019, "guide_cluster_AP_ci": [0.08740410244460901, 0.30826662003630484], "PR_AUC_trapezoid": 0.17899107048917237, "endpoint": "corrected indels>=0.1% in matched assayed-site panel", "detection_limit": "nominal0.1%, per-site raw-read LoD not available", "not_genomewide": "recall@500 saturates because every tested panel has<500 sites", "population_variants": "not evaluated"}
+CAS13 {"benchmark": "Cas13", "model": "RFcombined", "refits": 1000, "median_spearman": 0.6673083742916215, "mean_spearman": 0.6669169716129948, "split_refit_interval": [0.6298954555379912, 0.7001266891035433], "paper_approx_spearman": 0.67, "comparison": "qualified source-method reimplementation, not an independent-target CI or exact replay of conflicting parameter variants"}

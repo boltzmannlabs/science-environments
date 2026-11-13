@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CRISPR Design — confirmed requirement brief",
+  "description": "The agent parses a short user request into this contract, echoes it for confirmation, and binds the run by hash. Application defaults fill silent priorities; user min_standards may tighten gates, never loosen. The user need not supply every field.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["brief_id", "target", "application", "objective", "priorities"],
+  "properties": {
+    "brief_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"},
+    "mode": {"enum": ["design", "evaluate", "exploratory", "benchmark", "audit"]},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organism", "gene"],
+      "properties": {
+        "organism": {"type": "string", "minLength": 1, "description": "human default; plant targets reject as inactive, pathogen targets reject as review-only (except contrived/non-pathogen diagnostics)"},
+        "gene": {"type": "string", "minLength": 1},
+        "transcript": {"type": "string", "description": "accession.version; resolved and confirmed, never silently picked"},
+        "sequence_supplied": {"type": "boolean"},
+        "variant": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["variant_id"],
+          "properties": {
+            "variant_id": {"type": "string", "minLength": 1, "description": "ClinVar/dbSNP identifier; reference-verified before any allele-selective design"},
+            "expected_consequence": {"type": "string"}
+          }
+        }
+      }
+    },
+    "application": {"enum": [
+      "knockout_gene_disruption",
+      "therapeutic_in_vivo_editing",
+      "variant_correction_precision_repair",
+      "base_editing",
+      "prime_editing",
+      "crispr_regulation",
+      "epigenome_editing",
+      "rna_targeting_cas13",
+      "diagnostics_pathogen",
+      "library_screen_design",
+      "plant_genome_editing",
+      "microbial_crispr_design"
+    ]},
+    "nuclease": {"enum": ["spcas9", "espCas9_1.1", "spcas9_hf1", "cas12a", "dcas9_krab", "dcas9_activator", "dcas9_crisproff", "cas13d"]},
+    "objective": {"type": "string", "minLength": 1},
+    "priorities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weights"],
+      "properties": {
+        "hard_vetoes": {
+          "type": "array",
+          "items": {"enum": ["off_target_exact_match", "poly_t_termination_risk", "high_top1_cfd", "gc_out_of_band", "bystander_in_window", "pam_shared_with_wt_allele"]},
+          "description": "absolute exclusions; union with application defaults and calibrated gates"
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["on_target", "specificity", "outcome_quality", "context"],
+          "properties": {
+            "on_target": {"type": "number", "minimum": 0, "maximum": 1},
+            "specificity": {"type": "number", "minimum": 0, "maximum": 1},
+            "outcome_quality": {"type": "number", "minimum": 0, "maximum": 1, "description": "frameshift (KO) / intended-vs-bystander purity (BE/PE) / knock-in efficiency (HDR)"},
+            "context": {"type": "number", "minimum": 0, "maximum": 1, "description": "expression context, chromatin/TSS context, application-layer flags"}
+          }
+        },
+        "min_standards": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "frameshift_probability": {"type": "number", "minimum": 0, "maximum": 1},
+            "cfd_top1_max": {"type": "number", "minimum": 0, "maximum": 1},
+            "exact_match_off_targets_max": {"type": "integer", "minimum": 0}
+          },
+          "description": "user floors tighten gates; loosening requires explicit logged user instruction"
+        }
+      }
+    },
+    "edit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "precision-editing requests only (base/prime/HDR)",
+      "properties": {
+        "edit_type": {"enum": ["c_to_t", "a_to_g", "c_to_g", "snv_correction", "insertion", "deletion", "tag_knock_in"]},
+        "position": {"type": "string", "description": "genomic coordinate or variant-relative description; verified against reference"},
+        "ref_allele": {"type": "string", "minLength": 1},
+        "alt_allele": {"type": "string", "minLength": 1},
+        "editor_constraint": {"type": "string", "description": "e.g. ABE8e, BE4max, PE2, PE3, HDR-ssODN; blank = modality router proposes"}
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "review_window": {"type": "integer", "minimum": 1, "maximum": 5000, "default": 100},
+        "panel_size": {"type": "integer", "minimum": 1, "maximum": 50, "default": 6},
+        "site_distinct": {"type": "boolean", "default": true},
+        "genome_assembly": {"type": "string", "default": "GRCh38.p14"},
+        "expression_system": {"enum": ["u6_pol_iii", "t7_ivt", "in_vitro_protein", "unspecified"], "description": "binds which on-target models apply (U6 vs T7/IVT scores do not transfer — Haeussler 2016)"}
+      }
+    },
+    "success_criteria": {"type": "string", "description": "what the user will measure; recorded verbatim"}
+  }
+}

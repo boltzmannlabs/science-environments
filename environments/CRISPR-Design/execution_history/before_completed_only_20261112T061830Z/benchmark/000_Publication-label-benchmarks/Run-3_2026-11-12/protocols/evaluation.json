@@ -1,0 +1,19 @@
+{
+  "run_id": "Run-3_2026-11-12",
+  "created_utc": "2026-11-12T05:23:40.798756+00:00",
+  "execution": "NEW_METRIC_EXECUTION_ON_RETAINED_PREDICTIONS; no new model inference claimed",
+  "scope": "publication-backed measured-label computational benchmarks, not validation of complete biological workflows",
+  "resampling": {
+    "n": 1000,
+    "seed": 20261112,
+    "generator": "numpy.default_rng",
+    "CI": "95% percentile, target-cluster where available; guide-level otherwise"
+  },
+  "no_model_tuning": true,
+  "no_test_calibration": true,
+  "comparison_policy": "Only compare models on identical rows/labels/features when supported; no cross-paper headline subtraction unless protocol is matched",
+  "paired_Cas9": "RS3 minus CRISPRon Spearman difference; paired bootstrap within each assay; exploratory intervals, not multiplicity-adjusted superiority tests",
+  "primary_Cas9_panel": "Deduplicated common context join, separately from original duplicate-weighted source replay",
+  "diagnostics": "Author numeric-score replay ONLY; paired common row subset plus per-model availability. No sequence columns loaded; no inference, guide design or pathogen performance optimization",
+  "blocked_stages": "Remain blocked, not converted into pass by choosing another endpoint"
+}

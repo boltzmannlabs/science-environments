@@ -1,0 +1,20 @@
+{
+  "task_id": "004",
+  "task_spec": "tasks/004_crispr_variant-correction.md",
+  "application": "variant_correction_precision_repair",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "MATCHED_MODEL_COMPONENT_EVALUATIONS",
+  "finding": "PRIDICT2 grouped OOF and DeepPrime HEK293T/PE2 fixed-test components; BE4 any-edit efficiency separately.",
+  "limitations": "Not allele-specific HBB repair or HDR validation; BE4 labels cannot validate BE4max intended purity.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/004",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "shared_benchmark_not_independent_per_task": true,
+  "result_report": "results/004_variant_correction_precision_repair/Run-2_2026-11-12/REPORT.md",
+  "benchmark_report": "benchmark/004_variant-correction/Run-3_2026-11-12/README.md",
+  "metric_run_id": "Run-3_2026-11-12",
+  "new_model_inference": false,
+  "prior_benchmark_report": "benchmark/004_variant-correction/Run-2_2026-11-12/README.md"
+}

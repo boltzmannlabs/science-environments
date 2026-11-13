@@ -1,0 +1,13 @@
+{
+  "n": 8,
+  "tp": 1,
+  "fn": 6,
+  "tn": 1,
+  "fp": 0,
+  "sensitivity": 0.14285714285714285,
+  "specificity": 1.0,
+  "prior_sensitivity": 0.1,
+  "prior_specificity": 1.0,
+  "comparison": "NOT_LIKE_FOR_LIKE: stricter row exclusions, explicit pathogen exclusion and exact duplex deduplication; no rule tuning.",
+  "limitations": "Small heterogeneous assays; negative motif result does not establish immune safety; do not optimize immune-evasion sequences."
+}

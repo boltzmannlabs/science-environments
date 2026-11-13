@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "check": "files",
+      "status": "PASS",
+      "detail": "15 core + 13 tasks + 13 examples; naming aligned"
+    },
+    {
+      "check": "tasks",
+      "status": "PASS",
+      "detail": "13 task docs: house sections, steps tables, index entries, example refs, status lines"
+    },
+    {
+      "check": "schemas",
+      "status": "PASS",
+      "detail": "12 applications; 4 bounded weight dims; spacer pattern present"
+    },
+    {
+      "check": "examples",
+      "status": "PASS",
+      "detail": "13 briefs conform to schema; all 12 applications covered"
+    },
+    {
+      "check": "yaml_invariants",
+      "status": "PASS",
+      "detail": "10 active + 1 review-only + 1 inactive; 5 modes; draft-gates path"
+    },
+    {
+      "check": "thresholds",
+      "status": "PASS",
+      "detail": "12 draft gates, provenance-tagged; freeze blocked until calibration"
+    },
+    {
+      "check": "cross_references",
+      "status": "PASS",
+      "detail": "all relative links in 23 docs resolve"
+    },
+    {
+      "check": "benchmark_docs",
+      "status": "PASS",
+      "detail": "7 completed native-model benchmark records; no partial/planned entries"
+    },
+    {
+      "check": "honesty_markers",
+      "status": "PASS",
+      "detail": "status/spec/readme honesty tokens present; 13 application dir(s) with properly structured runs"
+    },
+    {
+      "check": "runtime_probe",
+      "status": "PASS",
+      "detail": "probe runs; 10 backends, 7 stages; findings={'C1_enumerate': 'READY', 'C2_on_target_local': 'READY', 'C3_off_target_bowtie': 'READY', 'C4_indel_outcome': 'READY', 'E1_reference_base': 'READY', 'policy_off_target': 'READY', 'run1_executed': 'READY'}"
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

@@ -1,0 +1,60 @@
+{
+  "status": "COMPLETED_QUALIFIED_OOF_REPRODUCTION",
+  "qualifications": "Group disjointness verified within Library-Diverse fine-tuning; source pretraining libraries are not fully present here, so overlap with >400k base training cannot be fully audited. Do not call this independently unseen-locus evaluation across all pretraining data.",
+  "metrics": [
+    {
+      "cell": "HEK",
+      "endpoint": "averageedited",
+      "n": 22619,
+      "OOF_spearman": 0.9056291433786648,
+      "MAE": 0.09602775900487397,
+      "guide_bootstrap_ci_low": 0.9033623724096354,
+      "guide_bootstrap_ci_high": 0.9080395706142276
+    },
+    {
+      "cell": "HEK",
+      "endpoint": "averageunedited",
+      "n": 22619,
+      "OOF_spearman": 0.8885657395971547,
+      "MAE": 0.10101667582624332,
+      "guide_bootstrap_ci_low": 0.8857880394774283,
+      "guide_bootstrap_ci_high": 0.8913217044203827
+    },
+    {
+      "cell": "HEK",
+      "endpoint": "averageunintended",
+      "n": 22619,
+      "OOF_spearman": 0.31582255699226985,
+      "MAE": 0.020733658236641243,
+      "guide_bootstrap_ci_low": 0.3036886297732737,
+      "guide_bootstrap_ci_high": 0.32748716879310463
+    },
+    {
+      "cell": "K562",
+      "endpoint": "averageedited",
+      "n": 22752,
+      "OOF_spearman": 0.8081186019351135,
+      "MAE": 0.040322702244389066,
+      "guide_bootstrap_ci_low": 0.8034756896116799,
+      "guide_bootstrap_ci_high": 0.8129695768208448
+    },
+    {
+      "cell": "K562",
+      "endpoint": "averageunedited",
+      "n": 22752,
+      "OOF_spearman": 0.7148812707468418,
+      "MAE": 0.048586136022368547,
+      "guide_bootstrap_ci_low": 0.7083398633730211,
+      "guide_bootstrap_ci_high": 0.7212006777344364
+    },
+    {
+      "cell": "K562",
+      "endpoint": "averageunintended",
+      "n": 22752,
+      "OOF_spearman": 0.27408742976879114,
+      "MAE": 0.015537706947604061,
+      "guide_bootstrap_ci_low": 0.2618641879335375,
+      "guide_bootstrap_ci_high": 0.287076259032828
+    }
+  ]
+}

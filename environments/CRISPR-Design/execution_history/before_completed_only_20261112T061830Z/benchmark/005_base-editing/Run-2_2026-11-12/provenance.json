@@ -1,0 +1,60 @@
+{
+  "task_id": "005",
+  "task_spec": "tasks/005_crispr_base-editing.md",
+  "application": "base_editing",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "FRESH_BE4_EFFICIENCY_EXTERNAL_TEST",
+  "finding": "BE-Hive HEK293T/BE4 external library,n9975; Spearman0.165766, Pearson0.176357; conservative known training20mer/31nt exclusions.",
+  "limitations": "Weak transfer performance; do not use as validated BE4max correction/purity ranker. Bystander-genotype held-out evaluation NOT_RUN.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/005",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "005",
+    "brief_id": "pcsk9_abe_example",
+    "application": "base_editing",
+    "target": "SYNTHETIC_CBE_SOFTWARE_FIXTURE",
+    "input_sha256": "ea2deea676cae3ef1eae511dc13701c09c4d7eaa00f21b668df95187f7377318",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "native_design": "EXECUTED crisprDesign BE4max",
+      "edited_alleles": "EXECUTED addEditedAlleles; position-weight scores only",
+      "bystanders": "EXECUTED explicit 4-8 spacer-position test window",
+      "efficiency": "NOT_RUN(BE-Hive/BEDICT outcome models absent)",
+      "offtarget": "NOT_RUN(no biological origin; artificial reference-only test)",
+      "ranking": "NOT_RUN(no calibrated efficiency/purity endpoints)"
+    },
+    "blockers": [
+      "Synthetic fixture tests software behavior, not endogenous editing",
+      "Native BE4max allele weights are not calibrated intended fraction or purity predictions"
+    ],
+    "test_input": {
+      "target": "SYNTHETIC_CBE_SOFTWARE_FIXTURE",
+      "sequence_file": "reference.fa",
+      "edit": {
+        "position_1based": 106,
+        "ref": "C",
+        "alt": "T"
+      },
+      "editor": "BE4max",
+      "editing_window_relative_PAM": [
+        -17,
+        -13
+      ],
+      "origin": "deterministic artificial DNA, not a patient/organism sequence",
+      "model_semantics": "native position-weight allele scores, not BE-Hive efficiency or calibrated probabilities"
+    },
+    "test_input_sha256": "89e8f6cd02643225f2f3e01cf9dd5895eebd3aa2f160aaa4d65f29e7be26fbf8",
+    "candidate_count": 29,
+    "native_allele_rows": 47,
+    "status": "PARTIAL_EXECUTED",
+    "eligible_count": 1
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

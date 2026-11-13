@@ -1,0 +1,38 @@
+{
+  "n_anchor_cores": 2,
+  "n_generated_panel": 5,
+  "metrics": {
+    "eff_RN.Ai-Predict": {
+      "anchor_core_median": 80.09,
+      "generated_panel_median": 85.92,
+      "units": "Native column units; not pooled across dimensions"
+    },
+    "guide_target_duplex_delta_g_kcal_mol": {
+      "anchor_core_median": -29.200000000000003,
+      "generated_panel_median": -29.7,
+      "units": "Native column units; not pooled across dimensions"
+    },
+    "pots_seed_percentile": {
+      "anchor_core_median": 31.0577392578125,
+      "generated_panel_median": 24.49951171875,
+      "units": "Native column units; not pooled across dimensions"
+    },
+    "seed_tox_viability_avg_human": {
+      "anchor_core_median": 65.0,
+      "generated_panel_median": 82.5,
+      "units": "Native column units; not pooled across dimensions"
+    },
+    "full_length_offtarget_hits": {
+      "anchor_core_median": 0.0,
+      "generated_panel_median": 0.0,
+      "units": "Native column units; not pooled across dimensions"
+    },
+    "passenger_full_length_offtarget_hits": {
+      "anchor_core_median": 0.0,
+      "generated_panel_median": 0.0,
+      "units": "Native column units; not pooled across dimensions"
+    }
+  },
+  "interpretation": "Descriptive same-battery comparison of unmodified 19-nt projected cores; NOT a comparison of clinical drugs or experimental potency. No fitted labels, no efficacy blending; raw harness legacy composite ignored.",
+  "offtarget_caveat": "Heuristic bowtie2 <=1 mismatch; max_hits=50 parameter may return up to 100 alignments; counts not exhaustive."
+}

@@ -1,0 +1,26 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794403277.923480 1736037 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+W0000 00:00:1794403280.407766 1736037 gpu_device.cc:2365] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2026-11-11 13:21:22,282 - INFO - Using device: cpu
+2026-11-11 13:21:22,308 - INFO - Model loaded successfully!
+2026-11-11 13:21:46,300 - INFO - job TTR_anchors_Run-3_2026-11-11 complete in 28.8s
+== input validation ==
+  transcript OK (616 nt)
+  2 candidates OK (alphabet, length, unique ids checked)
+  thresholds loaded from /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/003_genetic-disease-total-lowering/Run-3_2026-11-11/00_inputs/harness_thresholds.yaml (10 entries)
+
+== running pipeline (job TTR_anchors_Run-3_2026-11-11) ==
+
+== evidence summary ==
+  NEEDS_EXPERIMENTAL_VALIDATION    2
+
+== top 2 filtered & ranked designs ==
+                candidate_id               guide  eff_RN.Ai-Predict  eff_RNAiSpline  guide_target_duplex_delta_g_kcal_mol  full_length_offtarget_hits  seed_occurrence_fold_over_expected  pots_seed_percentile  seed_tox_viability_avg_human  rank_score
+ patisiran_derived_19nt_core AUGGAAUACUCUUGGUUAC              75.16          0.6401                                 -29.3                           0                               1.125             24.151611                          72.9      0.8121
+vutrisiran_derived_19nt_core UCUUGGUUACAUGAAAUCC              85.02          0.6844                                 -29.1                           0                               1.374             37.963867                          57.1      0.5271
+
+outputs: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/011_Campaign-reproduction/Run-3_2026-11-11/ttr_same_side/battery
+full report: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/011_Campaign-reproduction/Run-3_2026-11-11/ttr_same_side/battery/final_report.md
+gate decisions per candidate: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/011_Campaign-reproduction/Run-3_2026-11-11/ttr_same_side/battery/09_filter_decisions.csv

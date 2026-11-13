@@ -1,0 +1,79 @@
+{
+  "status": "COMPLETED_ASSAY_MATCHED_PANEL_BENCHMARK",
+  "n": 1687,
+  "guides": 9,
+  "positives": 109,
+  "negatives": 1578,
+  "positive_threshold_percent": ">0.1 background-corrected indels",
+  "average_precision": 0.18581200328106062,
+  "average_precision_guide_cluster_bootstrap_ci95": [
+    0.08849161090240437,
+    0.3095614138602642
+  ],
+  "cluster_bootstrap_valid_resamples": 1000,
+  "trapezoid_PR_AUC": 0.17889272105422832,
+  "Spearman_CFD_vs_corrected_indel": 0.0791112456075175,
+  "prior_workflow_NGG_le3mm_positive_coverage": 0.21100917431192662,
+  "prior_workflow_NGG_le3mm_retained_sites": 67,
+  "positive_threshold_ge01_sensitivity": {
+    "n_positive": 111,
+    "AP": 0.1854136299879423
+  },
+  "noncanonical_target_PAM_sites": 531,
+  "nominal_assay_detection_limit": "0.1%, as curated study AmpliSeq sensitivity; raw read depths absent, individual-site LoD not inferred",
+  "population_limitations": "No population variants, haplotypes, SVs, bulges or ancestry representation evaluated",
+  "not_a_clinical_claim": "Negatives mean not exceeding threshold in this matched assayed condition, not absence of cleavage at all conditions or true genomewide negatives",
+  "ranking_limit": "K capped at actual assayed panel size; exhausted-panel recall@500 not evidence of genomewide top500 recall",
+  "training_scope": "WT SpCas9 CFD2016 rules, no retraining on evaluation labels; source study28459459 not the Doench2016 training source",
+  "macro_recall_at_K": [
+    {
+      "K": 1,
+      "macro_recall": 0.02110433604336043,
+      "macro_precision": 0.3333333333333333,
+      "guides_panel_exhausted": 0,
+      "guides_total": 9
+    },
+    {
+      "K": 5,
+      "macro_recall": 0.08468834688346882,
+      "macro_precision": 0.2888888888888889,
+      "guides_panel_exhausted": 0,
+      "guides_total": 9
+    },
+    {
+      "K": 10,
+      "macro_recall": 0.14240884454299088,
+      "macro_precision": 0.2111111111111111,
+      "guides_panel_exhausted": 0,
+      "guides_total": 9
+    },
+    {
+      "K": 20,
+      "macro_recall": 0.25404348361665435,
+      "macro_precision": 0.16666666666666669,
+      "guides_panel_exhausted": 0,
+      "guides_total": 9
+    },
+    {
+      "K": 50,
+      "macro_recall": 0.37448263118994823,
+      "macro_precision": 0.11777777777777779,
+      "guides_panel_exhausted": 0,
+      "guides_total": 9
+    },
+    {
+      "K": 100,
+      "macro_recall": 0.6552568366592757,
+      "macro_precision": 0.09905982905982907,
+      "guides_panel_exhausted": 1,
+      "guides_total": 9
+    },
+    {
+      "K": 500,
+      "macro_recall": 1.0,
+      "macro_precision": 0.08566720576885249,
+      "guides_panel_exhausted": 9,
+      "guides_total": 9
+    }
+  ]
+}

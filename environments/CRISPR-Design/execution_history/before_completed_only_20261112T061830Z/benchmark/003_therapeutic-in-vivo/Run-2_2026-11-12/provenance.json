@@ -1,0 +1,69 @@
+{
+  "task_id": "003",
+  "task_spec": "tasks/003_crispr_therapeutic-in-vivo.md",
+  "application": "therapeutic_in_vivo_editing",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "SPECIFICITY_COMPONENT_ONLY",
+  "finding": "WT SpCas9 assay-matched CFD:1684 assayed sites,108 positives,1576 negatives,9 guides.",
+  "limitations": "No delivery, in-vivo efficacy, patient haplotypes, therapeutic safety or clinical detection limit validation.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/003",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "003",
+    "brief_id": "ttr_therapeutic_example",
+    "application": "therapeutic_in_vivo_editing",
+    "target": "TTR",
+    "input_sha256": "ad60b9fa4cd0096e5034740fbb9c6c5cd7ea965d5939b71a34f28f19da0e5177",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference_annotation": "EXECUTED",
+      "spliced_reference_validation": "EXECUTED",
+      "CDS_translation_check": "EXECUTED (partial CDS flags retained)",
+      "enumeration_E1_E6": "EXECUTED",
+      "on_target": "EXECUTED: RS1, RS3-Hsu2013, CRISPRater; separate endpoints",
+      "CRISPRscan": "EXECUTED T7 comparator only; not transferable to U6",
+      "Lindel": "EXECUTED full indel distribution and conditional frameshift ratio",
+      "CRISPRon": "EXECUTED exact 30mer join",
+      "Bowtie_CFD": "EXECUTED genome primary-assembly ungapped <=3mm both strands; NGG filter; intended locus excluded by coordinates",
+      "bulges": "NOT_EVALUATED",
+      "Elevation": "NOT_RUN(adapter unavailable)",
+      "variant_aware": "NOT_RUN(no population VCF specified; not a reference-genome safety assessment)",
+      "gates": "EXECUTED DRAFT v0.1; applicable brief vetoes and frameshift floor enforced",
+      "ranking": "EXECUTED REFERENCE-ONLY preference views; not a therapeutic nomination panel because mandatory variant/exonic veto layers are unrun",
+      "population": "NOT_RUN(no representative population VCF chosen; no therapeutic safety claim)",
+      "E6_scope": "PARTIAL GC/poly-T/homopolymer/Wallace Tm evaluated; scaffold self-complementarity and salt-specific thermodynamics NOT_RUN"
+    },
+    "blockers": [
+      "Elevation endpoint not installed/adapter absent",
+      "No experimental evidence; no best_design or efficacy/safety claim",
+      "Variant-aware search and exonic near-match therapeutic veto layer not available",
+      "In-silico nominations require in-vitro and cell-based off-target assays; not therapeutic clearance"
+    ],
+    "test_input": {
+      "gene": "TTR",
+      "scope": "all GENCODE49 protein-coding isoforms",
+      "population_scope": "NOT_SPECIFIED: cannot be invented as representative; exercise reference-only branch",
+      "context": "human in-vivo application metadata, not delivery prediction"
+    },
+    "test_input_sha256": "f839c0fdc72c7ac431697cc53791e9c026c612f032f14c8dacd68ef2c81527c6",
+    "transcript_count": 12,
+    "protein_coding_transcripts": 10,
+    "windows_total": 5498,
+    "eligible_count": 74,
+    "gate_pass": 1,
+    "status": "PARTIAL_EXECUTED",
+    "validation": {
+      "scored_contexts_roundtrip": 74,
+      "intended_locus_recovered": 74,
+      "all_raw_endpoints_finite": true
+    }
+  },
+  "shared_benchmark_not_independent_per_task": true
+}

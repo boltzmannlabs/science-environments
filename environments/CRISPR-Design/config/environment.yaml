@@ -1,0 +1,43 @@
+schema_version: "0.1"
+environment_id: crispr-design
+maturity: Partial-runtime, executed-computational-benchmarks
+protocol_freeze: none-yet (protocol v0.1 draft)
+gate_thresholds_draft: config/thresholds.v0.1.draft.json   # calibrate on Kim-2019/Konstantakos before freezing
+computational_benchmarks_included: true    # evidence-qualified results; see benchmark/BENCHMARK_RUNS.md
+experimental_validation_included: false
+
+scope:
+  organism_default: human
+  reference_assembly_default: GRCh38.p14
+  annotation_default: GENCODE 49
+  nucleases_validated_context: [spcas9, espCas9_1.1, spcas9_hf1, ascas12a]
+  nucleases_documented_no_model: [spg, spry, hypacas9]   # near-PAMless/variant design supported via custom-PAM enumeration only
+  representation: 20-nt spacer + 3-nt PAM (spcas9); 23-nt spacer + TTTV PAM (cas12a); 20–30-nt crRNA spacer (cas13)
+  active_applications:
+    - knockout_gene_disruption
+    - therapeutic_in_vivo_editing
+    - variant_correction_precision_repair
+    - base_editing
+    - prime_editing
+    - crispr_regulation          # CRISPRi/a
+    - epigenome_editing          # CRISPRoff
+    - rna_targeting_cas13
+    - library_screen_design
+    - microbial_crispr_design
+  review_only_applications: [diagnostics_pathogen]    # diagnostics on non-pathogen/contrived targets stays runnable under task 010 gates
+  inactive_applications: [plant_genome_editing]
+  delivery_prediction: none_exists   # stated, never approximated
+  off_target_safety_claims: prohibited   # prioritization only (Kaufmann 2026)
+
+modes:
+  design: {requires: confirmed_requirement_brief}
+  evaluate: {requires: candidate_spacers, stages: requested_only}
+  exploratory: {requires: target_only, ends_with: proposed_brief}
+  benchmark: {protocol: same_side_battery}
+  audit: {}
+
+contracts:
+  requirement_brief: config/requirement_brief.schema.json
+  candidate: config/candidate.schema.json
+  task_index: tasks/README.md
+  thresholds: config/thresholds.v0.1.draft.json

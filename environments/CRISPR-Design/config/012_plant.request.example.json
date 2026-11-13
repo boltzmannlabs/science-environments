@@ -1,0 +1,11 @@
+{
+  "brief_id": "plant_example_inactive",
+  "mode": "audit",
+  "target": {"organism": "oryza-sativa-rejected", "gene": "EXAMPLE-ONLY", "sequence_supplied": false},
+  "application": "plant_genome_editing",
+  "nuclease": "spcas9",
+  "objective": "AUDIT REQUEST ONLY: plant editing is INACTIVE pending a validated species adapter; no activity model verified for plants (mammalian scores transfer weakly — Haeussler 2016); this example documents the routing refusal, not a runnable brief.",
+  "priorities": {"weights": {"on_target": 0.25, "specificity": 0.25, "outcome_quality": 0.25, "context": 0.25}},
+  "constraints": {"review_window": 100, "panel_size": 4, "site_distinct": true},
+  "success_criteria": "Honest NEEDS_INPUT/inactive-profile response; activation requires declared species reference + validated adapter."
+}

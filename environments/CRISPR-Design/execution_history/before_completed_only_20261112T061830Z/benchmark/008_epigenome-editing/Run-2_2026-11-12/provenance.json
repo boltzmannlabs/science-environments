@@ -1,0 +1,69 @@
+{
+  "task_id": "008",
+  "task_spec": "tasks/008_crispr_epigenome-editing.md",
+  "application": "epigenome_editing",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "BLOCKED_MATCHED_EPIGENETIC_ENDPOINT",
+  "finding": "Prior PCSK9 enumeration/TSS/CpG context exists; no matched durable-silencing performance evaluated.",
+  "limitations": "Functional methylation/durable repression labels and matched predictor adapter missing; GSE168012 metadata retrieval failed. CpG count is not methylation efficacy.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/008",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "008",
+    "brief_id": "silencing_crisproff_example",
+    "application": "epigenome_editing",
+    "target": "PCSK9",
+    "input_sha256": "b56f10284abb6b2466d9ca309127b8b3fae56ed1b1cfe133d064972e51fae3a1",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference_annotation": "EXECUTED",
+      "spliced_reference_validation": "EXECUTED",
+      "CDS_translation_check": "EXECUTED (partial CDS flags retained)",
+      "enumeration_E1_E6": "EXECUTED",
+      "on_target": "EXECUTED: nuclease-trained comparator columns ONLY, not regulatory activity",
+      "CRISPRscan": "EXECUTED T7 comparator only; not transferable to U6",
+      "Lindel": "NOT_APPLICABLE(non-cutting dCas9)",
+      "Bowtie_CFD": "EXECUTED genome primary-assembly ungapped <=3mm both strands; NGG filter; intended locus excluded by coordinates",
+      "bulges": "NOT_EVALUATED",
+      "Elevation": "NOT_RUN(adapter unavailable)",
+      "variant_aware": "NOT_RUN(no population VCF specified; not a reference-genome safety assessment)",
+      "gates": "EXECUTED partial sequence/reference gates; no missing regulatory activity imputed",
+      "ranking": "NOT_RUN(missing modality-specific activity/chromatin; no proxy substituted)",
+      "native_TSS": "EXECUTED crisprDesign::addTssAnnotation(anchor=pam_site); requested closed endpoints converted explicitly",
+      "native_TSS_validation": "PASS exact per-guide/per-TSS distances against independent calculation",
+      "E6_scope": "PARTIAL GC/poly-T/homopolymer/Wallace Tm evaluated; scaffold self-complementarity and salt-specific thermodynamics NOT_RUN"
+    },
+    "blockers": [
+      "Cell context/chromatin accessibility absent",
+      "Horlbeck/CRISPick calibrated activity adapter absent; nuclease comparators are not regulatory predictions"
+    ],
+    "test_input": {
+      "gene": "PCSK9",
+      "scope": "all GENCODE49 protein-coding isoforms",
+      "assembly": "GRCh38.p14",
+      "expression": "U6; Hsu2013 as declared model test configuration",
+      "TSS_anchor": "pam_site"
+    },
+    "test_input_sha256": "ebdef27fdb8d4fb2f22df400d57de83ef5e8441bfe9c172ce8d29cb16ad6eb2e",
+    "transcript_count": 12,
+    "protein_coding_transcripts": 6,
+    "windows_total": 401,
+    "eligible_count": 392,
+    "gate_pass": 388,
+    "status": "PARTIAL_EXECUTED",
+    "validation": {
+      "scored_contexts_roundtrip": 392,
+      "intended_locus_recovered": 392,
+      "all_raw_endpoints_finite": true
+    },
+    "native_TSS_rows": 1249
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

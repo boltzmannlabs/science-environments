@@ -1,0 +1,35 @@
+{
+  "brief_id": "002_oncology_Run-3_2026-11-11",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "HK2",
+    "transcript": "NM_000189.5",
+    "sequence_supplied": true
+  },
+  "application": "oncology",
+  "objective": "Single-reference human HK2 computational knockdown reagent prioritization; application context only, not therapeutic validation.",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu",
+      "paralog_full_length_hits"
+    ],
+    "weights": {
+      "efficacy": 0.35,
+      "specificity": 0.35,
+      "seed_tox": 0.15,
+      "immune": 0.1,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 70
+    }
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true,
+    "delivery_context": "in_vitro_only"
+  },
+  "success_criteria": "Computational benchmark campaign only; no measured knockdown asserted."
+}

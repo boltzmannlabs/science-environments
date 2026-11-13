@@ -1,0 +1,67 @@
+{
+  "task_id": "002",
+  "task_spec": "tasks/002_crispr_knockout.md",
+  "application": "knockout_gene_disruption",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "FRESH_CAS9_COMPONENT_EVALUATION",
+  "finding": "RS3 Sequence and CRISPRon fresh inference across six author-defined held-out cohorts; exact20mer four-model training exclusions; 23629 unique contexts.",
+  "limitations": "Not original CRISPRon_v0 internal split or <=3mm exclusion replication; RS3 Sequence+Target absent; no knockout outcome validation for new KIF11/KRAS guides.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/002",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "002",
+    "brief_id": "kras_ko_functional_genomics_example",
+    "application": "knockout_gene_disruption",
+    "target": "KRAS",
+    "input_sha256": "cb46f9304d398061b282f3a3b6697bc34d12e1f0d79705851043c454bc4efee7",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference_annotation": "EXECUTED",
+      "spliced_reference_validation": "EXECUTED",
+      "CDS_translation_check": "EXECUTED (partial CDS flags retained)",
+      "enumeration_E1_E6": "EXECUTED",
+      "on_target": "EXECUTED: RS1, RS3-Hsu2013, CRISPRater; separate endpoints",
+      "CRISPRscan": "EXECUTED T7 comparator only; not transferable to U6",
+      "Lindel": "EXECUTED full indel distribution and conditional frameshift ratio",
+      "CRISPRon": "EXECUTED exact 30mer join",
+      "Bowtie_CFD": "EXECUTED genome primary-assembly ungapped <=3mm both strands; NGG filter; intended locus excluded by coordinates",
+      "bulges": "NOT_EVALUATED",
+      "Elevation": "NOT_RUN(adapter unavailable)",
+      "variant_aware": "NOT_RUN(no population VCF specified; not a reference-genome safety assessment)",
+      "gates": "EXECUTED DRAFT v0.1; applicable brief vetoes and frameshift floor enforced",
+      "ranking": "EXECUTED separate endpoint preference panels; no endpoint averaging; eight +/-25% normalized weight perturbations per endpoint",
+      "E6_scope": "PARTIAL GC/poly-T/homopolymer/Wallace Tm evaluated; scaffold self-complementarity and salt-specific thermodynamics NOT_RUN"
+    },
+    "blockers": [
+      "Elevation endpoint not installed/adapter absent",
+      "No experimental evidence; no best_design or efficacy/safety claim"
+    ],
+    "test_input": {
+      "gene": "KRAS",
+      "scope": "all GENCODE49 protein-coding isoforms",
+      "assembly": "GRCh38.p14",
+      "expression": "U6; Hsu2013 as declared model test configuration",
+      "TSS_anchor": null
+    },
+    "test_input_sha256": "260e739ab8524d380ab4150756ec765aea04de4f79a1cabed07a6be70491de51",
+    "transcript_count": 16,
+    "protein_coding_transcripts": 11,
+    "windows_total": 3902,
+    "eligible_count": 51,
+    "gate_pass": 20,
+    "status": "PARTIAL_EXECUTED",
+    "validation": {
+      "scored_contexts_roundtrip": 51,
+      "intended_locus_recovered": 51,
+      "all_raw_endpoints_finite": true
+    }
+  },
+  "shared_benchmark_not_independent_per_task": true
+}
