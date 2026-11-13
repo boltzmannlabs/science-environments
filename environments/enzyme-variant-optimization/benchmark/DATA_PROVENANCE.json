@@ -1,0 +1,860 @@
+{
+  "scope": "Published predictions and reference-variant calculations versus agent-alone selected candidates.",
+  "supplemental_timing": "Reference property and DDGun assessments followed original selection; original design qualification is unchanged.",
+  "files": [
+    {
+      "path": "results/EXPORT_MANIFEST.json",
+      "sha256": "6403671e91571e81e3dca9ea2f29f6790170322f0989e9c9288ba2ebcc7a96d6"
+    },
+    {
+      "path": "results/OPEN_SOURCE_ASSESSMENT_USAGE.json",
+      "sha256": "2d8d4b1e0b69f6d8a2248dfc07449c53959f01c4b7e24441d0bff38784c71b29"
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "ec486f5f1158ca0bb1fad2e1f1a288677e977cdfb2a6f2ae2b14ed4bd3743dd0"
+    },
+    {
+      "path": "results/REFERENCE_ASSESSMENT_USAGE.json",
+      "sha256": "33fae46a715b86c89edfdf9c53ca538a6b2f87dff1afd3ccd2dadfc5677ca7c5"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "74467d2d4173a8550c2f6e17bbecec3084d74d10e2f401952c9080d8783444a5"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/EXECUTION_STATUS.json",
+      "sha256": "be81d68efcf591664fd2a60ea87c3f1de2f7fc32e7be58f72af34d8df4194dd8"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/README.md",
+      "sha256": "b9eaaf00e9c253ad941b023b74143f5f5e210345fa14d079c59665ce7dcea7fc"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "67dcdab480c6d1354219f59d688df4d79f662b412099015d99fc749f43fefdf0"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "f4a7930df9ae1fb1d94bf0457dc3ed2fc00b065e4734b0b29a507dd834f30243"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/WORKFLOW.md",
+      "sha256": "65b50722585709372b0f5a38f0935a5d2280b03f18e14870b7c2714e3aa174ec"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/README.md",
+      "sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/ddgun/method.json",
+      "sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/all_candidates.fasta",
+      "sha256": "0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/candidate_history.csv",
+      "sha256": "d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.csv",
+      "sha256": "9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.fasta",
+      "sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/candidates.fasta",
+      "sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/controls.fasta",
+      "sha256": "87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/identities.json",
+      "sha256": "12673e0aa67b146e6e81f245c878c1c40f35b50f8d477645c8a0a1a3547a6116"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/sequences/parent.fasta",
+      "sha256": "fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/00_execution_index/jobs.csv",
+      "sha256": "002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "8bcbb29fe66d3ff9cda1ec196c9c76bfe3391f36d9d8e371d61dba3e15990566"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/settings.json",
+      "sha256": "e51dd2660c1743c6754225c2ae8e0fffc1741a4e6e144690a2f32811ea0b37f7"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/02_variant_generation/README.md",
+      "sha256": "8486373bfef6ff530981c0f1bb1f5cd6d167ec114d3fc68931f4dde9eb9ea30d"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/README.md",
+      "sha256": "99647b3121725d57a4a583388c14f818c6bfb2048d9fcadb5d31991709abf232"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/outputs.csv",
+      "sha256": "99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "f7b5b176796efaa54088bbd32d5e349d84a2667e6b3c2b2ea6e0c9b0f014bbc6"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv",
+      "sha256": "1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv",
+      "sha256": "d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv",
+      "sha256": "6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "sha256": "8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "7125c0d4cdcd52e163f0a36229081841a6383f32a770b0e8ac93babaeea4bfcd"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/outputs.csv",
+      "sha256": "55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "sha256": "98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/README.md",
+      "sha256": "78449c0cab2c481fbb976bb05576d12bd80988bcdda319f569d59ee5e0785db6"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/input.json",
+      "sha256": "67a402adefdb7d9035c490f961bcd9d3d362c8eba70036273aecc9446d4c6921"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/job.json",
+      "sha256": "5bcca9021129c2e4cec135094ae19b94e1a9a41f6d9f4084bbe7b8988205ea80"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/output.txt",
+      "sha256": "2ece065255f4b99ec5982dedb4eba59b59b4d431d4d210c545ff429196cc6e72"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
+      "sha256": "84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "492e08e5b55c2353a8a06cad990470dac430beb5d04857c5a0e7ca3db976eb3e"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/EXECUTION_STATUS.json",
+      "sha256": "a06dc3e8b9a020d35225d41d6fade12557daf3d33e6f96c7ac2169ca610693ab"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/README.md",
+      "sha256": "ab94eadf08f69668ab9c707aa3a9ebe68caac038ca7e00918356fa91e7363389"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "014ec545cba4584c432104c48d2e4969c810d216d935c6319fe88be72d5d458a"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "984e8e2010eeb132aebb525ef0429bff16982395715ec41dc16347fc46b6d9da"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/WORKFLOW.md",
+      "sha256": "35a8fe1a0aa2fad8c98d6209e9b7bf579da9b4a3839c51dd6531fb5a9cbd7f23"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/README.md",
+      "sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/ddgun/method.json",
+      "sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "e27c94d21f001bb142e6231b21f621daf38af9c917a86a82484b25900ffc9e2d"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "aaba3d1b64c5fc66d63ecc6167f9d57ca0378f06da99ef281381b15d1cffbfae"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "5e89963d091da5891d7dd4a55e7914b0351e960be4f4b971b9dfad0a9830db24"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/all_candidates.fasta",
+      "sha256": "62dc029b7d1328d0fc9dc264d9bf7313484a6dee25e1df99c55e61651104f192"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/candidate_history.csv",
+      "sha256": "3f5ff3a2035d8517e6dfe782d6b8420db3ee101a3e729e0ac1f9e10765f9b864"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.csv",
+      "sha256": "4add25ee0ecdaca6f8433a815b3c6c36aa32c2a5d2512dbf412f9a9899cfd30a"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.fasta",
+      "sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/candidates.fasta",
+      "sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/controls.fasta",
+      "sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/identities.json",
+      "sha256": "7eb367c2a55e13f1bd7737b1b4619ec86397f2a2beac44a4f54bab0d1641317d"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/sequences/parent.fasta",
+      "sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/00_execution_index/jobs.csv",
+      "sha256": "3a7d97826f4fd3fade30de3345087e96b061c52f86a4fd9390f4d7b0f91c3ffc"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "ca6e0ba4b18a2fcae5c39f2f09ec01dab614375b7f4837b368b64e885438b7ce"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/settings.json",
+      "sha256": "809492b3fd645796d394a9cd1509ff33844145193a6a731d7501766a9464c1ba"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/02_variant_generation/README.md",
+      "sha256": "97641efd4a5ea52707e780efbae3c4240bf99c288c92a265cbc99a1f51c09f59"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/README.md",
+      "sha256": "77ab15a3939502f6ae08c92d7b668060c7da394e9fb864e9d85b5ba9f80e8bd6"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/outputs.csv",
+      "sha256": "c82813dbe63c2010646d2d1d49bf8fbf16195482b03eadb60e236dd16a75d62c"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "08fa711d68bf39096ff5f4d44fa8bad29da6d7b798b2819d9ed735ac1410e3ef"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "sha256": "4e9d49045293ab1e41fdfb0cf53ae09526ab80b458d7cdddbecb2c148431aa2f"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "b826876c2ddb033bbb63b45b2993604a5c00b43da3723ff0266703a1f2303ebc"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "sha256": "f90ad2a1ce8aa6e8aeb0a58811e56361dbd199569134ebdd0e35465bad0091f1"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/README.md",
+      "sha256": "061b5981e5c5d81e323d5c3f8a627094917614e75add5d8f834c758d72bbb258"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/input.json",
+      "sha256": "96d6689cf27c3797a9410e08f3eba9050bf96bc0a4687a04e218e4ddd700a3f2"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/job.json",
+      "sha256": "b3e5c362825a76a93c725fc40202c64eec757401c0c96adaf5e6567330abffc8"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/output.txt",
+      "sha256": "8f29f33f663462abaef9e6ecd8a1f06c81bfee876df68b802461c252db7de0ad"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
+      "sha256": "3bddf8a7023e1c6f3f70efda17ba14447c4de281b4d855e5dc104171a86e6e98"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/README.md",
+      "sha256": "29d0fd32e235249bae85c0fab29576ac186e04dc85eea21e8f1bdb7aaae8fd4c"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "d4c3626f233dff2ab723aa28d8dd646ac4707d2c77577ad3d5a761415ae2522d"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/README.md",
+      "sha256": "6a3c23484c628dc027f213aed8797ace7b7e903c69d5a5d5fefaf46271621630"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "31499ef24da685a902b7a3b16df02f478342d71155473bb86804758c4c3e4058"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "f9cf70faf7f0131f4d910c2fb85dd335ae6a49ba940faab54e16d2f3c355ea36"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/WORKFLOW.md",
+      "sha256": "22ccdecaad6e12976d5f108ed62bc0c11673d7a3120dbdb05ece9864c0b4fca3"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/README.md",
+      "sha256": "31235c11fb07e30b26273d1708efe6d03124a73481e3802a7a7d02b2c2221992"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/method.json",
+      "sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "sha256": "2a33917fda72f3cbbda936064c5c509b024b23452a97101454fd501a0bd1a9c8"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "3833b7b30b4a4bffc1a086d503413923f48c6488e1177daaca1244366db0de4e"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/method.json",
+      "sha256": "a6a5696a11121225b6f63bf36cca30abfcfaf7f9c48826243542165bc3677682"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/predictions.csv",
+      "sha256": "26e3d00bd71f40ab9e9ad08233335d641c03af5f255ccd0c70aa7e3dc9bde54f"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "5d44adefca89b900c43fda6dba71a7e7937b3096c361dbde84a7df4515900cf1"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "ebbdf633cc76ae873e4c1c4499a14ee05e5b7718f3b94854b5ab1fc9edbad9e1"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/reference_sequences.fasta",
+      "sha256": "e1d75a02de21ec83981357b5e001ff0db5c5cc8b631d0677c9be7f8c2010f994"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/sequences/all_generated_sequences.fasta",
+      "sha256": "0639fb090c115e3b22e199c799fb2ef387f8e33b65cc70b66de67667a4143052"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/sequences/candidate_history.csv",
+      "sha256": "78d487ce56d5def66699a1d366709d450f63c70f4fbfe9ec4de81aba4f455606"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/sequences/candidates.fasta",
+      "sha256": "90731a0b89f040f920a7f63cb0cd5ba3f6058bdba45e6305643b352c51b2f027"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/sequences/identities.json",
+      "sha256": "d1282424563a6537c32360c29616f49888869faed5fd8e1cc4ad4c80787fc7f8"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/sequences/parent.fasta",
+      "sha256": "23c68ad8c213d90c785e0c4436135068d37960637181a33229150c3ed725d888"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/00_execution_index/jobs.json",
+      "sha256": "5fd600a97a9681cff1b3469aea22c3d7775a37f0a76adeb44436780a8d999244"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "ed3b72686dd1d136bd50fc74f9f77fcff5456c66711d04b899e915d2bfcb625d"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/02_variant_generation/README.md",
+      "sha256": "886d36b50cb4597e8c9e2bad5796227cc3d9bfb72810660deab262fd913904df"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/README.md",
+      "sha256": "17737867b761801f6e867117b145501b9a0240ef2b1e56953b9602823937f62a"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/outputs.csv",
+      "sha256": "469fd1d2e6bbb7550d8ae646139af99b2c0e1d12eeb4518ec4ae4d7280e27ad9"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "0eb9c9408ef1258b81e948bfb7d5827404b9ee15f44bd5acb878b97e247981fc"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "sha256": "2c7f1affc266d73c87b06d70a7cb115d7c4a0ef228da6e9c5d9b5d6f0f6c64d3"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "7af05db818174117edb994e1e284f591737caae9f2ea3ed79804b1d33c40649a"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/README.md",
+      "sha256": "bbbb503b8c138c509aad2c5065b05426ed0c3aaa17c68725c7ce7d0ac1cfc697"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "49a2a59bf3ae8c5361d9f3e0f96256485e4dbe2c4464844fa95d81e0e2f62ad7"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/README.md",
+      "sha256": "58e006552b6f0de6a30bab05ce8d128ccb10989cd7f9efe7a9a6894fe0330891"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "3a9769bc326b533e9a7525bbe8c4f98fba5845dd498152907de6399def93fffb"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "cc2737f3eea9a776994524e678d3165900c936eb11cfb1a19c83f22a6df59043"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/WORKFLOW.md",
+      "sha256": "ed6cfed0ce5e058fffd864b38e0ca634f8ea0178d99542dd57b4833a9fa30c59"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/README.md",
+      "sha256": "aab4ff4bd908cb9429c0686a007f99350aec670008920019f8ff62c23c06b415"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/method.json",
+      "sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "sha256": "8ae801cffc76b5ede8eab2b12d4160bbfbbbe5ae208c310ea61186d86c0ab05c"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "9edb2f6da4a7f722cef6c48f39e4e97e6aea81e4ec4285a2f2b7cb02f255ea32"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "50f12ebcd0e78d7aa8ab6a9cc86ace24f5547bd878c224e4c368e563a59b2942"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "41c324a7a175821950e9a2126d9f587508c4c35c90f5192c62e76b8d4ac15b8c"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/reference_sequences.fasta",
+      "sha256": "f531b4b888ead01c88a5ab42ceffb8d424d85b4cab9eeed5d65b036d4604adf3"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/sequences/all_generated_sequences.fasta",
+      "sha256": "84c69835f9585f91fc1a7b7c8782becd9ba71e1f76a0b83d143e646b0e34a6bc"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/sequences/candidate_history.csv",
+      "sha256": "6c838a21eb5901a7a1420334f1803febfa06dc61cbaa23b78cfac43900577f8b"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/sequences/candidates.fasta",
+      "sha256": "0666b4971fca6ca596419b9123add1b8b38b06b46d713f451eb425794dd16bff"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/sequences/identities.json",
+      "sha256": "ab89138dace56d0b793f7945e0e0fc6a5502d04489e2f89fcc0e0626d3f8f995"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/sequences/parent.fasta",
+      "sha256": "2fb7ebc49c2d93a54e1f91648ba61e23e3682450e38cd1b5368791067f5eb314"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/00_execution_index/jobs.json",
+      "sha256": "26b49fe6d103726ec4ccd6647c0b8b5495a5e27c271f40c44d752b02cc1bee2b"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "110c3ebb181b31de1937658551cf1a3b8c07ee53c888f13ac6d3837ba3ce8d4f"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/02_variant_generation/README.md",
+      "sha256": "7e906363a9b5b9b92d58ab0aa214c10ac58d75504aa5b5cc59dc1edda0b04b75"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/README.md",
+      "sha256": "76308bc358ac4447f3a534440e16f119936a4e776247d0023a4223435f546d99"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/outputs.csv",
+      "sha256": "54d20abb7a125cd38c8bbdf4ff2ccf1e02e8d090262bcaa9d6aea28dac20c51a"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "1b09add574ab04f903d511cc55590f12d62a75dda356971688e8074efab086a6"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "sha256": "3068b27cf0b2a8b40ccf2243d9e12009fb24ec3358b505bbb163ba079b1bc041"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "64703e87de70235a2379af8a95e8bc78290bdd3f6a0b4981c72c8d7df3011d7e"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "bdf8a0073c1d9e7171ba800a656f664aaf799392792c56367daab86b11a827fb"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/README.md",
+      "sha256": "904d4e361e2cb216530c3b882588e386ae789c40706b31d71a937b6688961431"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "3c5b55bb86416323f322a6ff7e3e15667e12f6f92b3e77a5990b1be001f02baf"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "b4ce0fd1dd48f9fb53fc78931108578133f3c07507b68e6005d5d06d5b719ce7"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/WORKFLOW.md",
+      "sha256": "fdd722d3c7e4bac73b0aaa6aeabeb28ea96e344b7d0e79de0d825bb14aa3b1c6"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/README.md",
+      "sha256": "512dfe231cd0371284f210e48b54e7dc61c7fdcfb69d16ec89f03e31bd7961ff"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/method.json",
+      "sha256": "79fa0f7ac50bd616dead68467e11c8424c0edad6d882614bdb63e9e81ac8fdac"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/predictions.csv",
+      "sha256": "4a06fff25da3f0ba0060a61bf60fd95036b5d0abe609e851d08a2e9ac0c253ff"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "1bca6a6f5e9185d22c6909b0dfc0ed323c2d0cb65105a19a1ff69c4febe21185"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "88a4de0767188fe09361d8781f0fb782ff888d22304e0c6d7476c424af728eff"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "f0e73ea0c34cf6f406c02755dd6c3282fda0305b4003b999691609b9cfac0e6b"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/reference_sequences.fasta",
+      "sha256": "a4f7625404262efcc085bd461c3f111e2923e5400e23a1e8f89e5fdbee31ca1b"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.csv",
+      "sha256": "8fd7dac59fe0246bd826d3c8bd49e73344a9d10069715b643f250e97c35bff77"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.fasta",
+      "sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidates.fasta",
+      "sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/controls.fasta",
+      "sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/identities.json",
+      "sha256": "a1b3629e9cdf5e1f2eaebf0afc922639c3b571e568f3321b889e1afe413eef83"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/parent.fasta",
+      "sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/sequences/selected_mutant_sequences.csv",
+      "sha256": "60f1d8ff2e0307be379da583c7cdace2c546b2fd5e2c676d25e9c3e483e0891c"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "33633b128fc3cab7a021e131bd08a3697b60435ac0e6ea9c258dcadd20bea0e6"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/settings.json",
+      "sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/README.md",
+      "sha256": "7855ade8bd5a0c7b1bc3cbfbb87521c02ceaa0ace6df712249e663066fb48804"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores.csv",
+      "sha256": "2f54de045ec36a7b7d21d2dedd019e0f4d754638b26ed5c07a2ac71db1bdb8bd"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores_ranked.csv",
+      "sha256": "7fc771d2134795dcd8c3622b5ac6b603bbe66ef5d0cd059bb8dc259f94939248"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/README.md",
+      "sha256": "48363dde7ca6d7a438bea9e26193b5d7157e71c4b9f160865b3ea51a95dd2838"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_mean_lt_minus2.csv",
+      "sha256": "597b571f9e3e5840cc11afc12f45d39be97b1435b2e1266b4e304f5a0513c20a"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_sum_lt_minus2.csv",
+      "sha256": "958bc7afff76943f46e55eb67f5482795b9dfb95f73fad3c003f6fd8435450e7"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "sha256": "5f4e35be072a0b9714a93fd2e669d589eb982d1ff4df16a32fbc5f3ee20a82de"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/EXECUTION_METADATA.json",
+      "sha256": "03c545a49b11436ab786674b5107d97de07cb52633d978007c2d735c804e0d41"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/README.md",
+      "sha256": "cbe31e6e2b46eb4ef79fc4f50934a4e88e4e756e538f3eeffc0cdd013599e5ad"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/USAGE_AND_TIME.md",
+      "sha256": "da99397ff30ed8fdaa6c7dbd53ed5cae1b91427567bb5f0cf6f3ae4c10ffcd69"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/USAGE_SNAPSHOT.json",
+      "sha256": "6388db70edbbb094b13eab562b1689abd7a27498d77cf039b757d0e1e1cba1ad"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/WORKFLOW.md",
+      "sha256": "85a2e6b25b171e37c63d342739fa773604dd9d3df38c860f6ffbd8e8c2423ad1"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/README.md",
+      "sha256": "9a06a38bcba3e90b08b99823df6b286ef25ca972d4bd6967986eaabe5b3b72d1"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/method.json",
+      "sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "sha256": "f873a5ce4ab692114613c0f1a71ea0ec070f066eb5808f93e513617e4a8ff38c"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/open_source_metrics.csv",
+      "sha256": "075a68ec096aa016802f45d6ebd99e106828940d310537742334d2c0eaac05b5"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictions.csv",
+      "sha256": "cb96b82f6750c405245ef8aa661c4aa4a8a4250b341909dec8cc535e63cd27c2"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictor_outputs.csv",
+      "sha256": "42c712f9443a679987cfcd2a2b7374ffe05f1fcca476484bb0acda2960b3713d"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/reference_sequences.fasta",
+      "sha256": "8f8767480981d1ef55c7ef694600bbf2d69035c7580ea6adf8712893fb91ed0d"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.csv",
+      "sha256": "d6ace37d07c9e7977a233d47c6939af782d81ec9999031b21e313250feea4e5b"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.fasta",
+      "sha256": "2bfa1ad042ea8230909ed0e13056e9568d9424e44f7ed734a7971f5d74e43920"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidates.fasta",
+      "sha256": "2bfa1ad042ea8230909ed0e13056e9568d9424e44f7ed734a7971f5d74e43920"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/controls.fasta",
+      "sha256": "0753b7fbf90cfeed0e9a52a2c338aa00ebba0382c1e03a5c44543950738fbd6d"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/identities.json",
+      "sha256": "f2f51ac03319673a062cd6b226285d302550a4c9e427d9015923e056d1f0ca20"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/sequences/parent.fasta",
+      "sha256": "bde2062b49a14562c8f64f4db7dfb6f206bc9884a124928483f75fa64cf15ccb"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/README.md",
+      "sha256": "8e2ece6aa2bfb0358f53cabec126ec5472e1daef5c5eb3cb65fa83ad493c9947"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/settings.json",
+      "sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_beta_glucanase_WT.csv",
+      "sha256": "12c326356aabb5c404a2a62507112bbd325492c20fa20997b2418a5023362016"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_cellulase_WT.csv",
+      "sha256": "82bc18bbb8ed8fb266f5bef2dd345ee4c510406883d151ad239044406cc0ac49"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/README.md",
+      "sha256": "85b4a6ba2bb61dd9c9b18e4f10daa3ad0ed5a10ee28f4e4a66580d57aee9a215"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_beta_glucanase_M5.csv",
+      "sha256": "75e94ddda014f601f697e29db155375006a480b3132c17522e7f4f722172a453"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_cellulase_M2.csv",
+      "sha256": "10d4e554010d66e739054454ca1381a7a566f328e11981a674a40b924e16f589"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/README.md",
+      "sha256": "b4fdbf02129ed4ae217a9d768153bd2cc0214b7c4239a7e648998f7ef945f999"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/04_ranking/README.md",
+      "sha256": "68299967fe2797e576da0a0c345a598e027a34959a0d95d73966ca121cc11fe3"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "sha256": "38d2cc5ab4f6f6cf727cfbc36225cacf67ceebb0a98821d299363bd9691d7722"
+    },
+    {
+      "path": "benchmark/README.md",
+      "sha256": "d02a50c53239b3df0640cadc7bb5a4e8eef3264f60f49289b089367d179ce338"
+    },
+    {
+      "path": "benchmark/report_data.json",
+      "sha256": "dd3c5815678756ccdc1d6dec75a1ebad0898ce3e85aa5aa7438f2d90dbffa1ed"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/README.md",
+      "sha256": "96df8dd9799851fdd8464b7eb74dfab063ff6fc37722848228788c2bd982c29b"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/benchmark_report.pdf",
+      "sha256": "15fe5470391d895e832e07777e1a68867a22b49d89c4341442becd93507063b6"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/reference_predictions.csv",
+      "sha256": "e1e87ab0a85ee872eefe6166ae1db5ae5c70d392c75873811785186a1e23dc85"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/references.md",
+      "sha256": "23ef0aed656b983bbc4a73ebc13b047b9d50a5e59adc0432af70ebb27bbe646f"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/README.md",
+      "sha256": "4d9d4436a6dc580df615152c6d8d36e237ac9b33a06c2b732785b8901b001379"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/benchmark_report.pdf",
+      "sha256": "372c9748e8bd3ab63c88684148c43eaacf72c4ddedc279434bc8162edf2f0079"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
+      "sha256": "d9ebbeb5e907d003f236c79e959d819ef391e3260ebeef7592d6f0f062ffe5b2"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/references.md",
+      "sha256": "b8307d098dc2d327c8fc8992d4e442801f6e5a2035c225f83aa6b3f4062a75f2"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.pdf",
+      "sha256": "20d0b8daf1089454c223d67d2422cc56c04c0ba912d9861b19511c3f9ec23e87"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/references.md",
+      "sha256": "920dc1df4025be3137a35ee788d62d43f44d67ed43a2214264c73288e0911f7a"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/comparisions/benchmark_report.pdf",
+      "sha256": "295f9a337aa3ae650e2e9c0fda81b606f603c2aea352635d521c6d343d2ccda3"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/references.md",
+      "sha256": "26c37acb825441a940495b5bab2f0a6f01a8647bdb72a12ed58666e9d82167fb"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/README.md",
+      "sha256": "b7dd41ff8a6e7bdaef13347a283844d5f27ef73b7075277691d020edad45d656"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf",
+      "sha256": "1521b04283ede01aaab48265dde1b763d16b49bf9575e542c908ddf2524181fe"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/references.md",
+      "sha256": "80b7ebfb4e59139d43bb946eca721d94533e61415d91d2d9c681e04c4f114e90"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/README.md",
+      "sha256": "b912be31f1dc0908ffdd318112314f488d750aceab97afad41473f60686399e5"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf",
+      "sha256": "dc788061c0ea52ab60ba0aa37ad31599d4192a5e09fb9b0c87ef9035d4bf309b"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/published_prediction_only.csv",
+      "sha256": "014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/references.md",
+      "sha256": "8a3ed6046205de2199caed8df083a9d30e7c466e5777db2415778c9484df99a9"
+    }
+  ],
+  "archived_evidence": "Exact original source exports, source acquisition diagnostics, native audits and obsolete report copies remain in the local execution archive, outside Git.",
+  "open_source_assessment_status": "Supported folding comparisons and static BLA entropy complete; AtHOL1 sampled reaction-electrostatics remains in progress."
+}

@@ -19,3 +19,14 @@ Use SCI's existing tool discovery, contract validation, upload/submit/status/dow
 Before freezing each run, record the selected provider, tool/model version, access and license requirements, actual parameters and seed support. ToolUniverse provides access/discovery interfaces; some underlying methods still require additional executables, accounts, models or licensed software. Do not install or enable them without the normal SCI setup and permissions.
 
 The SubTuner study uses advanced electronic-structure and force-field calculations. A docking score is not an interchangeable substitute. An unavailable advanced evaluator leaves that historical comparison unresolved rather than blocking unrelated supported observations.
+
+
+## Observed reproduction capabilities
+
+Tasks005/006 retain Pythia C/P source-pinned inference and ESM-2 score conventions, with AlphaFold2 structures for Zhang where executed. Actual source/checkpoint/input hashes remain in the exported tables/config receipts and retained run archives. The exact paper ESM checkpoint and historical structural settings remain unresolved. Supplemental Tm is TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1; NetSolP is a mean score, not measured solubility. CatPred absolute units/checkpoint were not returned. These observations are separate from current SCI tool contracts and do not freeze deployment availability.
+
+## Executed open-source comparison methods
+
+Post-selection assessments used EvoEF1 1.1 for paired-WT whole-variant folding ΔΔG, DDGun SEQ for compatible sequence-based unfolding ΔΔG, and PACKMAN 1.4.13 after uniform FASPR sidechain packing for static packing-geometric entropy. These are separate method-specific comparisons; original published scores are retained. Exact versions, source pins, signs and preparation settings are recorded beside each task’s comparison outputs.
+
+EvoEF1 source: [EvoEF](https://github.com/tommyhuangthu/EvoEF). DDGun source: [DDGun](https://github.com/biofold/ddgun). Static preparation and entropy: [FASPR](https://github.com/tommyhuangthu/FASPR), [PACKMAN](https://github.com/Pranavkhade/PACKMAN).

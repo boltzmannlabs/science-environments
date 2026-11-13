@@ -1,0 +1,49 @@
+{
+  "sequences": [
+    {
+      "origin": "parent",
+      "candidate": "LEH_WT",
+      "parent": null,
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "LEH_R004",
+      "parent": "LEH_WT",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAARLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALATGKSYNLSILGVFQLTDGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "1334d39a0bbc1b24ab17c42f15ce73a7e1b46526f794efb67fb65057ad4c9364",
+      "edits": [
+        "K42R",
+        "P107A",
+        "E124D"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "LEH_R003",
+      "parent": "LEH_WT",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAYLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALATGKSYNLSILGVFQLTDGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "e52b36c590b5559fc019cd26a272616649e4bdfd97a259c8b57dcb3b7df90486",
+      "edits": [
+        "K42Y",
+        "P107A",
+        "E124D"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    }
+  ],
+  "sequence_hash_definition": "SHA256 of uppercase amino-acid sequence without whitespace; no FASTA header."
+}

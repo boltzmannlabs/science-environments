@@ -1,11 +1,14 @@
-# Task benchmarks
+# Benchmark comparisons
 
-- [Est30: MHET hydrolysis](task_001_est30_mhet/task_001_est30_mhet.md)
-- [RML: thermal stability](task_002_rml_stability/task_002_rml_stability.md)
-- [LEH: thermal stability](task_003_leh_stability/task_003_leh_stability.md)
-- [BLA: high-temperature performance](task_004_bla_high_temperature/task_004_bla_high_temperature.md)
-- [AtHOL1: ethyl iodide activity](task_005_athol1_substrate/task_005_athol1_substrate.md)
+Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.
 
-Published values are operator/evaluator references, separate from new pipeline outputs. Keep winner information out of design-agent inputs until selections are sealed.
+| Task | Report |
+|---|---|
+| RML stability | [PDF comparison](task_001_rml_stability/comparisions/benchmark_report.pdf) |
+| LEH stability | [PDF comparison](task_002_leh_stability/comparisions/benchmark_report.pdf) |
+| BLA high-temperature performance | [PDF comparison](task_003_bla_high_temperature/comparisions/benchmark_report.pdf) |
+| AtHOL1 substrate expansion | [PDF comparison](task_004_athol1_substrate/comparisions/benchmark_report.pdf) |
+| Sun LEH / Pythia reproduction | [PDF comparison](task_005_sun_leh_pythia/comparisions/benchmark_report.pdf) |
+| Zhang cellulase and β-glucanase reproduction | [PDF comparison](task_006_zhang_hydrolases/comparisions/benchmark_report.pdf) |
 
-Each task's `comparisions/` folder will compare the published reference with actual v1, v2 and later runs under the [common protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol). Incompatible endpoints remain descriptive; unfinished comparisons remain pending.
+Rebuild from saved data with `python scripts/build_reports.py`. Requires `ReportLab`, `matplotlib` and DejaVu Sans fonts (`fonts-dejavu-core` on Debian/Ubuntu). Report generation does not run predictors.

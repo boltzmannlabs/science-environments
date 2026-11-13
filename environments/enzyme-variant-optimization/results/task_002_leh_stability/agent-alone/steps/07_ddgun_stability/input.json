@@ -1,0 +1,48 @@
+{
+  "parent_id": "LEH_WT",
+  "parent_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+  "variants": [
+    {
+      "id": "LEH_R004",
+      "mutation": "K42R,P107A,E124D",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAARLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALATGKSYNLSILGVFQLTDGKITGWRDYFDLREFEEAVDLPLRG",
+      "sequence_sha256": "1334d39a0bbc1b24ab17c42f15ce73a7e1b46526f794efb67fb65057ad4c9364",
+      "role": "frozen_candidate"
+    },
+    {
+      "id": "LEH_R003",
+      "mutation": "K42Y,P107A,E124D",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAYLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALATGKSYNLSILGVFQLTDGKITGWRDYFDLREFEEAVDLPLRG",
+      "sequence_sha256": "e52b36c590b5559fc019cd26a272616649e4bdfd97a259c8b57dcb3b7df90486",
+      "role": "frozen_candidate"
+    },
+    {
+      "id": "Wijma_T85I",
+      "mutation": "T85I",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVEIFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "sequence_sha256": "7d9a4b3fa5d92740f6610fa3bc6bf452b03c9462d6d5c87218bcd59fd81c21c2",
+      "role": "paper_control_verified_native_parent"
+    },
+    {
+      "id": "Wijma_T85V",
+      "mutation": "T85V",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVEVFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "sequence_sha256": "6c7bfe15fb054a2599ee1cd0cdbed91cbb09e6be9a9061f0b6db677fb20153ca",
+      "role": "paper_control_verified_native_parent"
+    }
+  ],
+  "payload": {
+    "db": "uniclust30_2018_08",
+    "structure": "",
+    "spdb": "",
+    "pdbid": "",
+    "pdbfile": "",
+    "chain": "",
+    "seqs": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+    "seqfile": "",
+    "vars": "K42R,P107A,E124D\nK42Y,P107A,E124D\nT85I\nT85V",
+    "email": ""
+  },
+  "method": "DDGun sequence, documented combined-variant T_DDG; unfolding sign positive stabilizing; not FoldX/Rosetta",
+  "endpoint": "https://folding.biofold.org/cgi-bin/ddgun.cgi"
+}

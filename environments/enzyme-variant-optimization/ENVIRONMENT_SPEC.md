@@ -160,3 +160,7 @@ Task-specific reference values under [benchmark](benchmark/README.md) are operat
 ### Comparisons across configuration versions
 
 A version identifies model/settings/resource policies; approaches and repeats remain distinct run records. Compare the original published reference with v1, v2 and later runs only for compatible endpoints, units, preparation and evaluation conditions. Disclose changed settings and prior-outcome exposure. Show incompatible results separately with an explanation rather than claiming a numerical gain.
+
+## Task-scoped computational reproductions
+
+Tasks005/006 reproduce declared paper computation stages. Their task files and observed configurations govern scope: full Pythia scans, structure prediction where applicable, ESM-2 scoring, verification, sealing and comparison. They do not inherit the original optimization tasks' docking, MolProbity or revised-generation gates. Experimental stabilized backgrounds are supplied retrospective inputs, not newly performed experiments. Preserve raw scores, signs, unverified settings and excluded/unscored positions; computational completion does not establish exact historical reproduction or improved enzyme performance.

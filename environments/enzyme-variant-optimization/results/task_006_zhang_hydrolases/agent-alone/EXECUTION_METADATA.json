@@ -1,0 +1,36 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "approach": "agent_alone",
+  "record_type": "observed_historical_execution_configuration",
+  "association": "Actual historical agent-alone run; no assigned configuration version.",
+  "source_run_plan_key": "paper_archive/zhang_hydrolases/agent-alone/RUN_PLAN.json",
+  "source_run_plan_sha256": "bee0299397e3484d50f8088831f6e034891ee0bd722ca297f90591e66b349c8f",
+  "snapshot_utc": "2026-11-12T09:35:55.582542+00:00",
+  "llm": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoning_effort": "xhigh",
+    "response_token_limit": null
+  },
+  "effective_observed_settings": {
+    "cpu_threads_max": 4,
+    "local_gpu": false,
+    "shared_model_processes_max": 1,
+    "address_space_bytes": 12884901888,
+    "aggregate_model_tokens": null,
+    "platform_credits": null
+  },
+  "tool_exclusions": [
+    "MLDE"
+  ],
+  "scientific_parent_executes": true,
+  "delegation": {
+    "enabled": false,
+    "saved_roles": []
+  },
+  "accounting": "Includes historical continuations/failures and all authorized amendments; no usage reset.",
+  "configuration_version": null,
+  "publication_scope": "Historical agent-alone execution; no retrospective v1/v2 assignment.",
+  "previous_repository_task_id": "task_007_zhang_hydrolases",
+  "task_numbering_note": "Repository task numbering changed after removing the first task; source run-plan identity and hash are unchanged."
+}

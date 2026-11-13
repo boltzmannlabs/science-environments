@@ -1,0 +1,30 @@
+{
+  "task_id": "task_001_rml_stability",
+  "exported": [
+    {
+      "source_key": "campaign_archive/rml/agent-alone/analysis/revision2_apo_descriptives.py",
+      "source_sha256": "b13b5d35d1a5785a93bd140b2d7169599cc6d5fc1a27fbf00e4e72011cf64847",
+      "export": "src/task_001_rml_stability/agent-alone/analysis/revision2_apo_descriptives.py",
+      "export_sha256": "b13b5d35d1a5785a93bd140b2d7169599cc6d5fc1a27fbf00e4e72011cf64847",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/analysis/review_A058_native_MolProbity_artifacts.py",
+      "source_sha256": "d56b919e12120c806619b69adda30d96b7b5efb42bfc1b43b6bda86446cb79f4",
+      "export": "src/task_001_rml_stability/agent-alone/analysis/review_A058_native_MolProbity_artifacts.py",
+      "export_sha256": "d56b919e12120c806619b69adda30d96b7b5efb42bfc1b43b6bda86446cb79f4",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed."
+    }
+  ],
+  "not_exported": [
+    {
+      "source_key": "campaign_archive/rml/agent-alone/analysis/verify_final_design_closure.py",
+      "reason": "Native SCI database/persistence check; kept in SCI rather than exported as a portable scientific workflow."
+    }
+  ],
+  "scientific_rerun": false,
+  "new_end_to_end_portability_claim": false,
+  "publication_scope": "Agent-alone only"
+}
