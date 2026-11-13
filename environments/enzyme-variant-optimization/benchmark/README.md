@@ -1,6 +1,6 @@
 # Benchmark comparisons
 
-Each task report contains numerical comparisons and embedded figures. Parent identity and calculation details are in the corresponding results folder.
+Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.
 
 | Task | Report |
 |---|---|

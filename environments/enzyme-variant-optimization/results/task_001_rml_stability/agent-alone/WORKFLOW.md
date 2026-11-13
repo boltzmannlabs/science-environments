@@ -19,3 +19,9 @@ Original selected sequences were subsequently assessed with shared temperature, 
 Paused
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
+
+## Additional open-source metric comparison
+
+Existing exact-sequence DDGun results were verified and reused; no new molecular calculation was submitted for this task. Parent comparisons remain the agreed basis.
+
+This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).

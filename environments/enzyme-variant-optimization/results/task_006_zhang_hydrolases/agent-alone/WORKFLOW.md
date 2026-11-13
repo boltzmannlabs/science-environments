@@ -18,3 +18,9 @@ Original selected sequences were subsequently assessed with shared temperature, 
 Declared scoring execution completed; provenance review separately recorded.
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
+
+## Additional open-source metric comparison
+
+EvoEF1 calculates whole combined variants against a common WT for each enzyme. This supplies a matched folding-stability comparison for final published M5/M7 variants and our retained candidates, alongside the original Pythia/ESM comparisons. Undefined combined Pythia/ESM paper scores are not fabricated.
+
+This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).

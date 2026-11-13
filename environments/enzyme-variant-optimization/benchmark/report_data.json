@@ -135,7 +135,18 @@
           "delta_Tm_degC": "2.0042355855306013"
         }
       ],
-      "metrics": [],
+      "metrics": [
+        [
+          "FoldX stability-change prediction (paper reports kJ/mol)",
+          "K319W −1.72 ± 0.08; E336S −1.26 ± 0.11",
+          "EvoEF1: BLA_R2_001 +1.48 kcal/mol; matched reference recalculations below."
+        ],
+        [
+          "MD-prepared packing entropy (J K−1 mol−1)",
+          "WT 4601; K319W 4614; E336S 4609",
+          "Static PACKMAN: BLA_R2_001 7169.33; matched reference recalculations below."
+        ]
+      ],
       "results_path": "results/task_003_bla_high_temperature/agent-alone/README.md",
       "status": "Executed data available; design workflow paused; full acceptance open."
     },
@@ -156,7 +167,23 @@
           "delta_Tm_degC": "-0.2375081380208357"
         }
       ],
-      "metrics": [],
+      "metrics": [
+        [
+          "Electrostatic stabilization estimate (kcal/mol)",
+          "WT −5.6; V140T −7.8",
+          "In progress: matched reaction-electrostatics assessment."
+        ],
+        [
+          "Projected electric field (MV/cm)",
+          "WT −35.2 ± 9.6; V140T −43.4 ± 5.7",
+          "In progress: matched reaction-electrostatics assessment."
+        ],
+        [
+          "Mean C–I / electric-field angle (degrees)",
+          "WT 41.2; V140T 16.6",
+          "In progress: matched reaction-electrostatics assessment."
+        ]
+      ],
       "results_path": "results/task_004_athol1_substrate/agent-alone/README.md",
       "status": "Executed data available; design workflow paused; full acceptance open."
     },

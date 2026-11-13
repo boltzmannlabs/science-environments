@@ -20,6 +20,52 @@ def number(value, digits=4):
     return '—' if value in (None, '') else f'{float(value):.{digits}f}'
 
 
+def add_open_source_metrics(doc, folder, image, plt):
+    """Render verified alternative-method results, distinct from published predictions."""
+    path = folder / 'reference_comparison/open_source_metrics.csv'
+    if not path.exists():
+        return
+    from collections import defaultdict
+    groups = defaultdict(list)
+    diagnostic_or_duplicate = {'Zhang_cellulase_M2_E158C', 'Zhang_beta_glucanase_M5_G74P',
+                               'Zhang_reported_cellulase_WT_T131D', 'Zhang_reported_cellulase_M2_T257K'}
+    for row in rows(path):
+        if row.get('status', 'verified') != 'verified' or row.get('origin') == 'parent':
+            continue
+        if row['candidate_id'] in diagnostic_or_duplicate:
+            continue
+        if row['method'].startswith('DDGun') and (folder / 'steps/07_ddgun_stability/predictions.csv').exists():
+            continue  # The original verified DDGun table and plot already show these rows.
+        groups[(row['metric'], row['method'], row['unit'], row['protocol'])].append(row)
+    for (metric, method, unit, protocol), group in groups.items():
+        doc.add_heading(metric + ' — open-source assessment', 1)
+        doc.add_paragraph(f'Method: {method}. Units: {unit}. Protocol: {protocol}. Values below were calculated in this work for the listed sequences.', style='keep_with_next')
+        show_change = all(r.get('delta_from_parent') not in (None, '') for r in group)
+        headers = ['Sequence', 'Group', 'Parent / background', f'Prediction ({unit})']
+        if show_change:
+            headers.append(f'Change from parent ({unit})')
+        values = []
+        for row in group:
+            value = [row['candidate_id'], 'Reported reference' if row['origin'] == 'reference' else 'Our candidate',
+                     row['parent_id'], f"{float(row['value']):.6g}"]
+            if show_change:
+                value.append(f"{float(row['delta_from_parent']):+.6g}")
+            values.append(value)
+        doc.table(headers, values)
+        fig, ax = plt.subplots(figsize=(11, max(2.7, .48 * len(group) + 1)))
+        plot_field = 'delta_from_parent' if show_change else 'value'
+        ax.barh(range(len(group)), [float(r[plot_field]) for r in group],
+                color=['#d39528' if r['origin'] == 'reference' else '#246b98' for r in group])
+        ax.set_yticks(range(len(group)), [r['candidate_id'].replace('Zhang_', '') for r in group])
+        ax.invert_yaxis()
+        ax.set_xlabel(f'{"Change from evaluated parent: " if show_change else ""}{metric} ({unit})')
+        ax.grid(axis='x', alpha=.15)
+        fig.tight_layout()
+        image(fig, metric + ': reference and our sequences',
+              'Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.'
+              + (' The plot shows changes from the evaluated parent.' if show_change else ''))
+
+
 def build_task(env, task):
     import matplotlib
     matplotlib.use('Agg')
@@ -44,6 +90,7 @@ def build_task(env, task):
             'task_001_rml_stability': ('Teng et al., Tables 1 and sections 3.4/3.7', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11727178/'),
             'task_002_leh_stability': ('Wijma et al., Figure 1 and methods', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3893934/'),
             'task_003_bla_high_temperature': ('Fan et al., computational screening', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10883975/'),
+            'task_004_athol1_substrate': ('Shao et al., Figure 8A and electrostatic analysis', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12288847/'),
             'task_005_sun_leh_pythia': ('Sun et al., LEH case study', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11763918/'),
             'task_006_zhang_hydrolases': ('Zhang et al., original supplementary tables S1/S3/S5/S7', 'https://doi.org/10.1016/j.ijbiomac.2024.138274'),
         }
@@ -150,6 +197,7 @@ def build_task(env, task):
                     ax.grid(axis='x', alpha=.15)
                 fig.tight_layout()
                 image(fig, 'Candidate and reference property predictions', 'Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.')
+        add_open_source_metrics(doc, folder, image, plt)
         doc.add_paragraph('Parent identity, preparation details and run records: results/' + tid + '/agent-alone/README.md.')
 
     target = env / 'benchmark' / tid / 'comparisions/benchmark_report.pdf'
@@ -163,7 +211,7 @@ def build(env):
     for task in tasks:
         if task.get('executed'):
             build_task(env, task)
-    index = ['# Benchmark comparisons', '', 'Each task report contains numerical comparisons and embedded figures. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
+    index = ['# Benchmark comparisons', '', 'Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
         link = task['id'] + ('/comparisions/benchmark_report.pdf' if task.get('executed') else '/references.md')
         index.append(f"| {task['title']} | [{'PDF comparison' if task.get('executed') else 'Published reference'}]({link}) |")

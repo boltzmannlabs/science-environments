@@ -19,3 +19,9 @@ Original selected sequences were subsequently assessed with shared temperature, 
 Paused
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
+
+## Additional open-source metric comparison
+
+A separate open-source assessment recalculated folding stability with EvoEF1 for our retained candidate, K319W and E336S using paired-WT models. A matched FASPR/PACKMAN calculation measured static packing entropy for all four sequences. Original failed preparation and warning diagnostics remain in the private archive; accepted outputs passed geometry/identity and entropy-sum checks.
+
+This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).

@@ -27,5 +27,9 @@
     "task_logical_sequences": 4,
     "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
   },
-  "design_status": "Paused"
+  "design_status": "Paused",
+  "additional_open_source_assessment": {
+    "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
+    "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
+  }
 }

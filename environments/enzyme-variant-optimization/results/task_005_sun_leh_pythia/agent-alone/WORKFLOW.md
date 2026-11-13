@@ -17,3 +17,9 @@ Original selected sequences were subsequently assessed with shared temperature, 
 Declared scoring execution completed; provenance review separately recorded.
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
+
+## Additional open-source metric comparison
+
+The original Pythia scan supplies matched P57A/D101V/T85V score comparisons. New DDGun predictions were completed for P57A and D101V; exact T85V output was reused. No scan or sequence generation was repeated.
+
+This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).

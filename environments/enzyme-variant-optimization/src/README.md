@@ -7,3 +7,5 @@ Executed tasks retain actual historical agent-alone Python with source/export ha
 Archived workspace paths are parameterized through ENZYME_CAMPAIGN_ROOT, ENZYME_REPRODUCTIONS_ROOT, SCI_SOURCE_ROOT, SCI_HOME and BOLTZYME_TOOLS_ROOT. Two LEH verifier scripts also require the exact private input-key environment setting documented in their manifests; those storage keys are not published.
 
 [Shared stability-prediction code](shared/stability_predictions/README.md) supports the additional RML/LEH checks. Run-specific extraction/audit copies are kept outside the repository.
+
+[Executed static packing-entropy code](shared/packing_entropy/README.md) contains the actual FASPR/PACKMAN completion driver and input/warning-validation helpers.

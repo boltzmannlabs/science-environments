@@ -1,0 +1,50 @@
+{
+  "method": "PACKMAN packing-geometric entropy",
+  "package_version": "1.4.13",
+  "unit": "J K^-1 mol^-1",
+  "source": "https://github.com/Pranavkhade/PACKMAN",
+  "preparation": "One common source backbone for all four full483 sequences; deterministic FASPR sidechain packing for every sequence including WT.",
+  "template_sha256": "29a29f0f8fc735e17c257afb7df245c630e3ad7a61faafafb96f3a8e837e1c93",
+  "repacking": {
+    "name": "FASPR",
+    "native_version": "20200309",
+    "source_archive_sha256": "eb8ae43869ba5276663a02a04d54a759e334859ad3e72195e366d94c527e6270",
+    "source": "https://github.com/tommyhuangthu/FASPR",
+    "license": "MIT",
+    "build": "existing /usr/bin/g++15.2.0 -O3; no fast-math; original source unchanged",
+    "library": "bundled dun2010bbdep.bin; hash pinned separately",
+    "command": "FASPR -i common_backbone.pdb -o native_FASPR.pdb -s target_sequence.txt",
+    "target_case": "all uppercase, all sidechains repacked including WT",
+    "random_seed": null,
+    "algorithm": "native deterministic backbone-dependent Dunbrack rotamer search",
+    "attempts_per_target": 1
+  },
+  "terminal_policy": {
+    "method": "PDBFixer1.12.0 findMissingResidues/findMissingAtoms/addMissingAtoms(seed20261113), CPU platform",
+    "allowed_additions": "only C-terminal OXT at residue483; reject any other missing atom/residue",
+    "existing_heavy_atoms": "preserved, full-precision maximum difference acceptance1e-10Angstrom, serialized coordinates exact",
+    "hydrogens": "none",
+    "protonation": "not assigned; no pH-dependent simulation",
+    "relaxation": "no AMBER or physical-forcefield minimization; native FASPR rotamer optimization and PDBFixer OXT-only construction",
+    "soft_builder_internal_motion": "PDBFixer may internally minimize/perform limited soft clash escape for the added terminal atom, not an MD endpoint"
+  },
+  "entropy": {
+    "package": "py-packman1.4.13",
+    "class": "packman.entropy.PackingEntropy",
+    "probe_size_angstrom": 1.4,
+    "onspherepoints": 30,
+    "chains": "A",
+    "atoms": "all canonical protein heavy atoms plus terminal OXT; no H/water/ions/ligands",
+    "formula": "-scipy.constants.R*log10(ConvexHull(residue atoms).volume/ConvexHull(pooled residue atomic Voronoi vertices).volume)",
+    "total": "native get_total_entropy(), cross-check math.fsum of all483 native residue entropies",
+    "normalization": "none",
+    "unit": "J K^-1 mol^-1",
+    "input_precision_angstrom": 0.001
+  },
+  "precision": "Serialized coordinates0.001Angstrom; predictor outputs retained at native precision.",
+  "comparison_basis": "New matched static preparation; published TableS4 used MD-prepared structures. No MD-RMSF or experimental temperature inferred.",
+  "recovery": "Original PDBFixer all-sidechain preparation rejected for severe overlaps. FASPR replacement passes unchanged geometry/completeness checks. Only exact upstream file/ThreadPool ResourceWarnings were classified separately from scientific warnings.",
+  "source_panel_sha256": "e5a4e4fb7158fb7109dbb3208bfde3565bc3d19311777f7b5791cc5638e085d5",
+  "consumer_serial_policy": "FASPR serials normalized reversibly; atom names, residue identities and coordinates preserved; exact inverse restoration verified.",
+  "assessment_mode": "Operator-guided post-selection comparison; independent native scientist selected FASPR recovery."
+}

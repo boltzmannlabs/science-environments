@@ -40,8 +40,12 @@ class PDFReport:
         self.parts.append(Paragraph(escape(text), self.styles[level]))
 
     def add_paragraph(self, text, style=None):
+        from reportlab.lib.styles import ParagraphStyle
         from reportlab.platypus import Paragraph
-        self.parts.append(Paragraph(escape(text), self.styles['body']))
+        paragraph_style = self.styles['body']
+        if style == 'keep_with_next':
+            paragraph_style = ParagraphStyle('linked_body', parent=paragraph_style, keepWithNext=True)
+        self.parts.append(Paragraph(escape(text), paragraph_style))
 
     def table(self, headers, values):
         from reportlab.lib import colors
