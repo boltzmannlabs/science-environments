@@ -1,0 +1,29 @@
+{
+  "cells_input": 10368,
+  "cells_retained": 5307,
+  "n_clusters": 12,
+  "fates_identified": [
+    "megakaryocyte",
+    "erythroid",
+    "neutrophil/granulocyte",
+    "dendritic cell",
+    "possible monocyte (weak evidence)"
+  ],
+  "cluster_relationships": "PAGA undirected connectivity: GATA2+ cluster 1 neighbors megakaryocyte cluster 0 (0.32) and erythroid cluster 2 (0.21); CD34+ FLT3+ clusters 3/4 connect (0.57), with 3 near dendritic progenitor 11 (0.33) and early granulocyte/monocyte 5 (0.16); 5 connects neutrophil-primed 6 (0.59). Dendritic progenitor 11 weakly connects CD7+ dendritic-like 10 (0.12), then MHC-II+ 8 (0.14); 8 neighbors activated CCR7+ 9 (0.83). These are expression graph proximities, not validated lineage direction.",
+  "model": "Unperturbed WT-like sorted and unsorted cohort; QC: one cell/well, >=350 detected genes, 500-14000 UMI, >=5 cells/gene; library-size 10000, log1p, 2500 HVG, scaled PCA 25 PCs, 20-neighbor graph, UMAP and Leiden resolution 0.55; Wilcoxon one-vs-rest BH markers; PAGA and root-dependent diffusion pseudotime. Sequencing batch evaluated but not regressed because confounded with sort/mouse.",
+  "software_used": {
+    "python": "3.12.14",
+    "scanpy": "1.12.5",
+    "anndata": "0.13.4",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "leidenalg": "0.12.0",
+    "igraph": "1.0.0",
+    "harmonypy": "2.1.0",
+    "umap-learn": "0.5.12",
+    "numba": "0.68.1"
+  }
+}
