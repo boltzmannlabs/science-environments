@@ -30,7 +30,7 @@ The original run retained two conditional candidates. Full functional/structural
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_001_rml_stability/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_001_rml_stability/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_001_rml_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

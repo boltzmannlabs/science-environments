@@ -1,10 +1,14 @@
-"""Build one concise Word benchmark per task from saved predictions; no model or network calls."""
+"""Build one concise PDF benchmark per task from saved predictions; no model or network calls."""
 from __future__ import annotations
 import argparse
 import csv
 import json
 import tempfile
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pdf_report import PDFReport
 
 
 def rows(path):
@@ -20,52 +24,11 @@ def build_task(env, task):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    from docx import Document
-    from docx.shared import Inches, Pt, Mm, RGBColor
-    from docx.enum.section import WD_ORIENT
-    from docx.oxml import OxmlElement
-    from docx.oxml.ns import qn
-    from docx.opc.constants import RELATIONSHIP_TYPE as RT
-
     tid = task['id']
     folder = env / 'results' / tid / 'agent-alone'
-    doc = Document()
-    doc.core_properties.author = 'Science environments'
-    doc.core_properties.last_modified_by = 'Science environments'
-    doc.core_properties.comments = ''
-    sec = doc.sections[0]
-    sec.orientation = WD_ORIENT.LANDSCAPE
-    sec.page_width, sec.page_height = Mm(297), Mm(210)
-    sec.top_margin = sec.bottom_margin = Mm(14)
-    sec.left_margin = sec.right_margin = Mm(16)
-    doc.styles['Normal'].font.name = 'Calibri'
-    doc.styles['Normal'].font.size = Pt(10)
-    for name in ['Title', 'Heading 1', 'Heading 2']:
-        doc.styles[name].font.color.rgb = RGBColor.from_string('246B98')
-    sec.footer.paragraphs[0].text = 'Enzyme variant optimization | Computational prediction comparison'
-
-    def table(headers, values):
-        result = doc.add_table(rows=1, cols=len(headers))
-        result.style = 'Light Shading Accent 1'
-        for cell, value in zip(result.rows[0].cells, headers):
-            cell.text = str(value)
-        repeat = OxmlElement('w:tblHeader')
-        result.rows[0]._tr.get_or_add_trPr().append(repeat)
-        for values_row in values:
-            cells = result.add_row().cells
-            for cell, value in zip(cells, values_row):
-                cell.text = str(value)
-        return result
-
-    def source(title, url):
-        paragraph = doc.add_paragraph('Source: ')
-        link = OxmlElement('w:hyperlink')
-        link.set(qn('r:id'), paragraph.part.relate_to(url, RT.HYPERLINK, is_external=True))
-        run, text = OxmlElement('w:r'), OxmlElement('w:t')
-        text.text = title
-        run.append(text)
-        link.append(run)
-        paragraph._p.append(link)
+    doc = PDFReport(task['title'] + ' — benchmark report')
+    table = doc.table
+    source = doc.source
 
     doc.add_heading(task['title'] + ' — benchmark report', 0)
     doc.add_paragraph('Agent-alone candidates, published prediction values and reference variants calculated in this work.')
@@ -96,15 +59,16 @@ def build_task(env, task):
             path = Path(temporary) / f'chart_{charts}.png'
             fig.savefig(path, dpi=170, bbox_inches='tight')
             plt.close(fig)
-            doc.add_heading(title, 2)
-            doc.add_picture(str(path), width=Inches(9.65))
-            doc.add_paragraph(caption, 'Caption')
+            doc.add_figure(path, title, caption)
             charts += 1
 
         if tid == 'task_006_zhang_hydrolases':
             agreement = env / 'benchmark' / tid / 'comparisions/published_prediction_only.csv'
             if agreement.exists():
-                pairs = rows(agreement)
+                pairs = [dict(r, background=r['background'].replace('-', '_'),
+                              method='ESM2' if r['method'] == 'ESM' else r['method'],
+                              paper_score=r['published_prediction'], our_score=r['our_prediction'])
+                         for r in rows(agreement)]
                 example = [('cellulase_WT', 'Pythia', 'T131D'), ('cellulase_M2', 'ESM2', 'T257K'),
                            ('beta_glucanase_WT', 'Pythia', 'N65I'), ('beta_glucanase_M5', 'ESM2', 'I65Y'),
                            ('beta_glucanase_M5', 'ESM2', 'P10D')]
@@ -188,7 +152,7 @@ def build_task(env, task):
                 image(fig, 'Candidate and reference property predictions', 'Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.')
         doc.add_paragraph('Parent identity, preparation details and run records: results/' + tid + '/agent-alone/README.md.')
 
-    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.docx'
+    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.pdf'
     target.parent.mkdir(parents=True, exist_ok=True)
     doc.save(target)
     print(f'{tid}: {charts} embedded charts; {len(doc.tables)} tables')
@@ -201,9 +165,9 @@ def build(env):
             build_task(env, task)
     index = ['# Benchmark comparisons', '', 'Each task report contains numerical comparisons and embedded figures. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
-        link = task['id'] + ('/comparisions/benchmark_report.docx' if task.get('executed') else '/references.md')
-        index.append(f"| {task['title']} | [{'Word comparison' if task.get('executed') else 'Published reference'}]({link}) |")
-    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `python-docx` and `matplotlib`. Report generation does not run predictors.', '']
+        link = task['id'] + ('/comparisions/benchmark_report.pdf' if task.get('executed') else '/references.md')
+        index.append(f"| {task['title']} | [{'PDF comparison' if task.get('executed') else 'Published reference'}]({link}) |")
+    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `ReportLab`, `matplotlib` and DejaVu Sans fonts (`fonts-dejavu-core` on Debian/Ubuntu). Report generation does not run predictors.', '']
     (env / 'benchmark/README.md').write_text('\n'.join(index))
 
 

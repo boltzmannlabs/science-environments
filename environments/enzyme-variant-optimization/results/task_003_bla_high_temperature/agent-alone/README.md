@@ -22,7 +22,7 @@ The design pipeline is paused. Current candidates and property predictions are a
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_003_bla_high_temperature/references.md)
 
 ## Execution records

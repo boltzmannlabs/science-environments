@@ -22,7 +22,7 @@ The design pipeline is paused. The numerical screen, chemical preparation and wr
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_004_athol1_substrate/references.md)
 
 ## Execution records

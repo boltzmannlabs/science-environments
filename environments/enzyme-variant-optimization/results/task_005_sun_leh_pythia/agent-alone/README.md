@@ -22,7 +22,7 @@ The Pythia scan is complete. D101V changes catalytic Asp101; its favorable prope
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_005_sun_leh_pythia/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

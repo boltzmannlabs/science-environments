@@ -74,7 +74,7 @@ Execution settings belong in the selected [configuration version](../config/task
 - `verification.json`, `selection.csv` and `selection_seal.json`: independent numerical checks and original frozen selections.
 - `jobs.json`, `errors.md` and `usage.json`: all actual attempts, real IDs/statuses, correction history, permission events and cumulative accounting; no credentials or duplicate unknown submissions.
 - Source-linked same-variant and best-versus-best comparison tables, kept as distinct analyses. The repository retains prediction columns only in its concise comparison CSV.
-- `REPORT.md` in the execution workspace: stage completion for each enzyme, method ambiguities, numerical findings and remaining evidence gaps. The public report with embedded figures is [comparison.docx](../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.docx).
+- `REPORT.md` in the execution workspace: stage completion for each enzyme, method ambiguities, numerical findings and remaining evidence gaps. The public report with embedded figures is [comparison.pdf](../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf).
 
 ## Important Instructions
 

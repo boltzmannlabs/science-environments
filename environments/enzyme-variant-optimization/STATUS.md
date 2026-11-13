@@ -2,7 +2,7 @@
 
 ## Implemented
 
-Six numbered tasks, published reference notes, per-task result folders and a Word report builder with embedded figures. Original candidate sequences and numerical outputs are retained with their execution records. Reference-property predictions are complete for the reconstructable variants: 99 requested Tm, raw pHPred and NetSolP values were verified across 33 sequence records.
+Six numbered tasks, published reference notes, per-task result folders and a PDF report builder with embedded figures. Original candidate sequences and numerical outputs are retained with their execution records. Reference-property predictions are complete for the reconstructable variants: 99 requested Tm, raw pHPred and NetSolP values were verified across 33 sequence records.
 
 ## In progress
 

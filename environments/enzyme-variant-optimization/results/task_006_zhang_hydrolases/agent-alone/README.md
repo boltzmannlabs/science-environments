@@ -24,7 +24,7 @@ The declared computational scans are complete. Original structural settings and 
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_006_zhang_hydrolases/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

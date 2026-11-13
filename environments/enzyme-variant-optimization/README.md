@@ -28,7 +28,7 @@ enzyme-variant-optimization/
 ├── benchmark/
 │   └── task_<id>/
 │       ├── references.md
-│       └── comparisions/benchmark_report.docx  # available numerical results
+│       └── comparisions/benchmark_report.pdf  # available numerical results
 └── results/
     └── task_<id>/agent-alone/
 ```
@@ -87,7 +87,7 @@ Supporting literature remains in [research notes](../../research/enzyme-variant-
 
 ## Available agent-alone benchmarks
 
-The [benchmark index](benchmark/README.md) and task-specific Word reports compare original published reference values with actual agent-alone outputs only. Each available task comparison has its own Word report with embedded figures. RML and original LEH show changes from our selected parent. The other tasks also include reference-variant property predictions calculated in this work when available.
+The [benchmark index](benchmark/README.md) and task-specific PDF reports compare original published reference values with actual agent-alone outputs only. Each available task comparison has its own PDF report with embedded figures. RML and original LEH show changes from our selected parent. The other tasks also include reference-variant property predictions calculated in this work when available.
 
 [Results](results/README.md) retain exact candidate sequences and full-precision values, including exploratory candidates lacking qualification. Historical runs have no assigned configuration version. Existing config files are proposed future templates; no config-version comparison is presented. Actual model/provider/settings are recorded with each run.
 

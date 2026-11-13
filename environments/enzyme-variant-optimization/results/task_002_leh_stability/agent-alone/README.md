@@ -30,7 +30,7 @@ The original structural assessment did not qualify the retained models. Their ra
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.docx)
+- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.pdf)
 - [Published reference values](../../../benchmark/task_002_leh_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
