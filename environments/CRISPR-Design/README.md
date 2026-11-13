@@ -1,6 +1,38 @@
 # CRISPR Design
 
-**Status: Partial computational workflows and executed model benchmarks; protocol v0.1 gates remain DRAFT.** All 13 tasks have hash-bound result records (Run-2_2026-11-12) and the active benchmark publication is the [completed-only registry](benchmark/BENCHMARK_RUNS.md) — seven completed native-model/endpoint evaluations, with fresh native inference rerun for RS3, BE-Hive, PRIDICT2.0, DeepPrime and CFD. Model benchmarks do not establish full design-application validation. Evidence ranges from fresh model inference to author-score replay, component-only tests and explicit blockers; no complete application or experimental validation is claimed, and no wet-lab validation exists. Older mixed reports and setup/partial evidence are retained as [execution history](execution_history/before_completed_only_20261112T061830Z/README.md) outside `benchmark/`.
+Application-aware CRISPR guide-RNA design environment: request routing, multi-dimensional
+candidate evaluation and requirement-aware ranking across the editing modalities —
+knockout · therapeutic in-vivo · variant correction (BE/PE/HDR router) · base editing ·
+prime editing · CRISPRi/a · CRISPRoff · Cas13 · diagnostics · pooled libraries — with
+executed computational benchmarks and enforced evidence honesty.
+
+## About-env
+
+- **13 fully-specified agent tasks** in the house structure (Description → Target →
+  Design Constraints → Required Execution Steps → Expected Output → Constraints →
+  Important Instructions), each with an example brief that validates against the
+  [requirement-brief schema](config/requirement_brief.schema.json).
+- **Seven completed native-model benchmarks** in the [completed-only
+  registry](benchmark/BENCHMARK_RUNS.md) — RS3 Sequence, CRISPRon, CFD2016, BE-Hive BE4,
+  PRIDICT2.0, DeepPrime PE2, RFcombined — with fresh native inference rerun and verified
+  identical for five of them, and scientifically material limitations attached to every
+  result.
+- **An executed end-to-end workflow (Run1, task 002):** 8,421 windows enumerated, 227
+  coding-valid guides scored on 6 endpoints, Bowtie off-target search with CFD pair
+  scoring, Lindel frameshift outcomes (regression anchor 0.798) and R2/R3 ranking.
+- **Machine-checked integrity:** 10/10 package validation
+  ([validate_spec.py](tests/validate_spec.py)) plus 6/6 publication-integrity checks
+  ([test_completed_benchmarks.py](tests/test_completed_benchmarks.py) — SHA-256 artifact
+  binding, fresh-inference verification, independent metric recomputation, link
+  resolution).
+- **Source-verified 34-tool registry** with licenses, availability and leakage notes;
+  common-lore misattributions were corrected during curation, and every number carries a
+  primary source.
+- **Enforced honesty discipline:** per-dimension evidence, `NOT_RUN(reason)` transparency
+  and `best_design=null` without wet-lab data; off-target output is prioritization,
+  never a safety claim.
+
+**Status: Partial computational workflows and executed model benchmarks; protocol v0.1 gates remain DRAFT.** All 13 tasks have hash-bound result records (Run-2_2026-11-12), and every claim in this package is traceable to what actually ran: fresh model inference, matched held-out evaluation, author-score replay, component-only tests and explicit blockers are each labeled as such. Model benchmarks validate endpoints, not full design applications; no wet-lab validation exists. Older mixed reports are preserved byte-identically as [execution history](execution_history/before_completed_only_20261112T061830Z/README.md) outside `benchmark/`.
 
 **Default operation: agent-led execution.** Give the agent a target
 gene/locus and, when known, the modality (knockout · base editing · prime editing · HDR ·
@@ -12,16 +44,17 @@ per-dimension-ranked deliverable capped at `NEEDS_EXPERIMENTAL_VALIDATION`.
 
 **One environment, modality tasks.** The battery and gates are shared; application tasks
 add required stages, hard vetoes and interpretation rules — not separate generators.
-Pathogen-diagnostics design is review-only; plant editing is inactive pending a species
-adapter; microbial design runs through its dedicated task with bacterial models.
+Scope gates are deliberate safety posture: pathogen-diagnostics design is review-only;
+plant editing is inactive pending a species adapter; microbial design runs through its
+dedicated task with bacterial models only.
 
 **Evidence base.** Built from a 2026-11-10 three-sweep source-verified curation
 (on-target nucleases · precision editing & regulation · specificity/Cas13/diagnostics/
-libraries) plus a local-asset audit that found a prior verified CRISPR-KO run
+libraries) plus a local-asset audit that recovered a prior verified CRISPR-KO stack
 (crisprDesign/crisprScore installed; Lindel backend PASS; Bowtie 1.3.1 + GRCh38.p14
-index + GENCODE 49). Misattributions in common lore were corrected during curation
-(see [research notes](../../research/CRISPR-Design/research-notes.md)); every number
-carries a primary source; unverified items are flagged UNVERIFIED.
+index + GENCODE 49) and put it back to work. Misattributions in common lore were
+corrected during curation (see [research notes](../../research/CRISPR-Design/research-notes.md));
+unverified items are flagged UNVERIFIED rather than silently trusted.
 
 ## Read in this order
 
