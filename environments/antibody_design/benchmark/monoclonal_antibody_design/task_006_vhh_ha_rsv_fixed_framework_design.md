@@ -1,7 +1,7 @@
 
 **Task ID:** `task_006_vhh_ha_rsv_fixed_framework_design`
 
-**Task:** [HA-Targeted Fixed-Framework VHH Design with RSV Comparison](../task_006_vhh_ha_rsv_fixed_framework_design.md)
+**Task:** [HA-Targeted Fixed-Framework VHH Design with RSV Comparison](../../tasks/monoclonal_antibody_design/task_006_vhh_ha_rsv_fixed_framework_design.md)
 
 ## Published Results
 
