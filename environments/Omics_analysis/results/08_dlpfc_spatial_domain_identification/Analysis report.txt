@@ -1,0 +1,61 @@
+DLPFC 151673 | spatial gene-expression domain analysis
+Source: supplied local h5ad only; no reference, anatomical, or hidden labels used.
+
+Input spots: 3639; analyzed spots: 3639; genes in source: 33538; domains: 7.
+Original counts are sparse and integer-valued. Median library size 4120; detected genes 2113; median MT fraction 0.167. 740 spots exceed 20% MT; retained to avoid spatial holes.
+
+Preprocessing and domain inference:
+Unsupervised log1p(counts/spot × 10000) on genes detected in >=10 spots; exclude mitochondrial genes, 3000 HVGs, 25 PCs, expression 20-NN Leiden resolution 1.0 (seed 17), then spatial local denoising by 8 nearest coordinates and expression-centroid penalty (lambda 1; 12 synchronous iterations). Domain-wise exploratory Wilcoxon rank-sum, tie correction, BH adjustment, log2 ratio of mean normalized abundance with 0.1 pseudocount. No reference labels used.
+Exploratory checks: expression Leiden resolution 0.3/0.5/0.7/1.0 and smoothing lambda 0/1/2/3; also assessed spatial-neighbor graph resolutions 0.2-1.6. Chosen resolution 1.0/lambda 1 preserves seven sizeable molecular groups with six-neighbor concordance 0.913 against label-frequency expectation 0.15. Seven is data-driven, not fixed a priori.
+
+Domain findings (original x/y coordinates, not inferred barcodes):
+Domain 0: Neuronal-rich cortical territory, distinguished by neuronal structural and synaptic transcripts (NEFL, SNAP25, TUBA1B); precise cortical layer uncertain.
+  n=756; median xy=[5083.5, 8033.0]; median UMI=4750; local agreement=0.924; largest connected component fraction=0.988; components=3.
+  Non-mito/ribosomal top markers (data-derived): NEFL, TUBA1B, SNAP25, TMSB10, UCHL1, STMN2, PCP4, NEFM, SNCG, NDUFA4, TUBB2A, MDH1
+  Example evidence: NEFL log2 ratio=0.834, BH p=2.7e-93; TUBA1B log2 ratio=0.5, BH p=1.1e-89; SNAP25 log2 ratio=0.515, BH p=7.6e-78; TMSB10 log2 ratio=0.447, BH p=3.1e-61; UCHL1 log2 ratio=0.478, BH p=1.4e-57; STMN2 log2 ratio=0.622, BH p=2.4e-54
+
+Domain 1: Upper/supragranular-like cortical territory, suggested by CUX2, CALB2, HPCAL1 and CAMK2N1; layer assignment remains a hypothesis without histology.
+  n=587; median xy=[6076.0, 10019.0]; median UMI=6966; local agreement=0.94; largest connected component fraction=1.0; components=1.
+  Non-mito/ribosomal top markers (data-derived): HPCAL1, ENC1, CAMK2N1, HOPX, PENK, CARTPT, CUX2, SAA1, SERPINE2, CALB2, CALB1, RCN1
+  Example evidence: HPCAL1 log2 ratio=1.31, BH p=9.1e-107; ENC1 log2 ratio=0.797, BH p=1.6e-95; CAMK2N1 log2 ratio=0.669, BH p=1.2e-94; HOPX log2 ratio=0.961, BH p=7.6e-72; PENK log2 ratio=1.663, BH p=4.2e-68; CARTPT log2 ratio=1.331, BH p=1e-66
+
+Domain 2: Myelin-rich white-matter-like compartment, supported by coordinated MOBP, MAG, MBP, PLP1, CNP, and MOG enrichment.
+  n=577; median xy=[9272.0, 4905.0]; median UMI=3356; local agreement=0.958; largest connected component fraction=0.998; components=2.
+  Non-mito/ribosomal top markers (data-derived): MOBP, MBP, MAG, PLP1, CNP, CRYAB, TF, PPP1R14A, MOG, ERMN, GFAP, CLDN11
+  Example evidence: MOBP log2 ratio=3.424, BH p=0; MBP log2 ratio=3.088, BH p=0; MAG log2 ratio=3.459, BH p=0; PLP1 log2 ratio=3.326, BH p=0; CNP log2 ratio=3.046, BH p=5e-299; CRYAB log2 ratio=2.979, BH p=1.5e-298
+
+Domain 3: Mixed transcriptomic patch with epithelial/immune-response-like signals (KRT19, HLA-B, IFI27) and neuronal signals; likely noncanonical tissue/technical signal, not confidently an anatomical layer.
+  n=431; median xy=[6404.0, 5257.0]; median UMI=2857; local agreement=0.872; largest connected component fraction=0.812; components=6.
+  Non-mito/ribosomal top markers (data-derived): CPB1, COX6C, KRT19, HLA-B, IFI27, H2AFJ, S100P, HLA-A, CALML5, SYT1, ISG15, MUC1
+  Example evidence: CPB1 log2 ratio=3.132, BH p=1.2e-107; COX6C log2 ratio=1.055, BH p=2e-81; KRT19 log2 ratio=1.66, BH p=2.4e-70; HLA-B log2 ratio=1.307, BH p=3.2e-32; IFI27 log2 ratio=1.394, BH p=1.7e-31; H2AFJ log2 ratio=1.408, BH p=2.9e-18
+
+Domain 4: Peripheral/edge-like territory with glial/vascular-associated candidates (CLU, SLC1A2, DES, ACTA2) and comparatively low UMI; susceptible to quality or dissection-edge effects.
+  n=429; median xy=[3530.0, 5074.0]; median UMI=2409; local agreement=0.938; largest connected component fraction=0.979; components=2.
+  Non-mito/ribosomal top markers (data-derived): COX6C, MALAT1, CAMK2N1, ENC1, CLU, PCSK1N, SLC1A2, DES, MT3, CST3, MCCD1, ACTA2
+  Example evidence: COX6C log2 ratio=0.717, BH p=2.9e-43; MALAT1 log2 ratio=0.973, BH p=6.7e-27; CAMK2N1 log2 ratio=0.527, BH p=2.8e-24; ENC1 log2 ratio=0.574, BH p=8.8e-22; CLU log2 ratio=0.387, BH p=5.2e-20; PCSK1N log2 ratio=0.444, BH p=6.5e-12
+
+Domain 5: Neuronal-rich territory with unusual secretory/epithelial-like transcripts (SCGB2A2, TFF1, MGP); a distinct expression domain, but anatomical identity uncertain and possible contamination.
+  n=475; median xy=[9048.0, 8684.0]; median UMI=5918; local agreement=0.912; largest connected component fraction=0.899; components=4.
+  Non-mito/ribosomal top markers (data-derived): SCGB2A2, SCGB1D2, TFF1, MGP, NEFL, CRISP3, TUBA1B, NEFH, TMSB10, SNCG, NDUFA4, MUC1
+  Example evidence: SCGB2A2 log2 ratio=1.397, BH p=2.6e-121; SCGB1D2 log2 ratio=1.28, BH p=5.4e-91; TFF1 log2 ratio=1.103, BH p=1.1e-51; MGP log2 ratio=0.704, BH p=8.2e-37; NEFL log2 ratio=0.561, BH p=4.2e-35; CRISP3 log2 ratio=1.345, BH p=3.3e-34
+
+Domain 6: Spatially less cohesive mixed/intermediate territory with neuronal (DIRAS2, SLC17A7, SEMA3E) and unusual epithelial-associated (KRT17, SCGB1D2) signals; not confidently an anatomical layer or gray-white interface.
+  n=384; median xy=[7848.5, 6752.5]; median UMI=3514; local agreement=0.806; largest connected component fraction=0.734; components=9.
+  Non-mito/ribosomal top markers (data-derived): KRT17, DIRAS2, SEMA3E, B3GALT2, TF, SCGB2A2, CST3, SCGB1D2, CPE, SLC35F1, THEMIS, SLC17A7
+  Example evidence: KRT17 log2 ratio=1.78, BH p=1.1e-45; DIRAS2 log2 ratio=0.735, BH p=5.7e-18; SEMA3E log2 ratio=1.45, BH p=1.1e-16; B3GALT2 log2 ratio=1.308, BH p=1.1e-16; TF log2 ratio=0.32, BH p=1.5e-16; SCGB2A2 log2 ratio=0.64, BH p=2.2e-16
+
+Inferred spatial organization: coordinates and plot provide direct evidence for location; domain 2 forms a myelin-rich territory, while domains 0/1 have neuronal/upper-layer-like signatures, with uncertain intermediate or peripheral territories 3-6. Coordinate axes are image coordinates; without section orientation, do not infer a physical cortical depth direction.
+
+Marker-statistics scope: domain vs all other spots, two-sided Wilcoxon rank-sum with tie correction; BH-adjusted within each group across all analyzed genes. CSV contains at most 150 positive-score markers per domain with BH p<0.05 and log2 mean ratio>0.25, ranked by Wilcoxon score. Adjusted p=0 means floating-point numerical underflow, not proof of a zero probability.
+
+Uncertainty / limitations:
+- One tissue section, no independent biological replicates or histology; anatomical layers are hypotheses, not validated labels.
+- Spatial spots mix cells and ambient RNA; edge/secretory/epithelial signals may reflect contamination, handling, or local biology and cannot be resolved here.
+- Clustering and spatial smoothing use the same expression data as marker tests; marker p-values are descriptive, not independent validation; spatial dependence further inflates nominal significance.
+- Domain identities, boundaries and number depend on preprocessing, Leiden resolution and smoothing. No hidden/reference labels or external anatomical labels were used.
+- All spots were retained despite variable UMI/mitochondrial fractions to avoid creating spatial holes; low-quality spots may affect assignments.
+- Effect size is log2 ratio of arithmetic mean library-normalized counts with pseudocount 0.1, not a bulk differential-expression estimate.
+
+Reproducibility: source file /home/boltzmann6/.sci/profiles/scrna05/inputs/DLPFC_151673_agent_input.h5ad
+Scripts: explore.py (parameter checks, expression/spatial assignments); analyze.py (markers, outputs). Versions: {"anndata": "0.11.4", "igraph": "1.0.0", "leidenalg": "0.12.0", "matplotlib": "3.10.9", "numpy": "2.2.6", "pandas": "2.3.3", "scanpy": "1.11.5", "scikit-learn": "1.7.2", "scipy": "1.15.2"}
+Output assignments retain original spot identifiers; coordinates are preserved by identity in the source file and shown without transformation in spatial_domains.png.

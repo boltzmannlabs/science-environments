@@ -1,0 +1,34 @@
+{
+  "cells_input": 4645,
+  "cells_retained": 4645,
+  "cell_types_found": {
+    "T cell": 2043,
+    "malignant": 1338,
+    "B cell": 650,
+    "macrophage": 197,
+    "NK cell": 113,
+    "unresolved": 89,
+    "fibroblast": 81,
+    "endothelial cell": 73,
+    "plasma cell": 41,
+    "dendritic cell": 20
+  },
+  "n_malignant": 1338,
+  "n_nonmalignant": 3218,
+  "data_used": "GSE72056_melanoma_single_cell_revised_v2.txt.gz; log2(TPM/10 + 1), inferred from inverse-sum \u2248100,000; no count normalization",
+  "model": "QC, Seurat HVG/PCA/Leiden/UMAP, lineage-marker gating and tumor-specific islands; Wilcoxon markers; within-tumor centered and scaled 10-component FastICA, six biologically interpretable signed program directions",
+  "software_used": {
+    "python": "3.12.14",
+    "scanpy": "1.12.5",
+    "anndata": "0.13.4",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "umap-learn": "0.5.12",
+    "leidenalg": "0.12.0",
+    "igraph": "1.0.0",
+    "matplotlib": "3.11.2",
+    "statsmodels": "0.15.0"
+  }
+}
