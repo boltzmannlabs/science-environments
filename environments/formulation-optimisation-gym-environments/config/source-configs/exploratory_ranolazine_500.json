@@ -1,0 +1,36 @@
+{
+  "scenario": "NON_GLENMARK_research_formulation_toy_optimization",
+  "labels": {"published_ingredients": "literature_reported", "release_parameters": "assumed", "outputs": "predicted_scenario_only"},
+  "source": {"doi": "10.5281/zenodo.1170150", "table": "Table 1, page 683; Table 3, page 685", "pdf_sha256": "3619141b00d0bd7e895cfa452ecba94554ea37bdf8724b24bdd1c296eed9c706", "caveat": "research prototypes not Glenmark label or recalled lots; quantitative dissolution profiles graphed only, not fitted"},
+  "paper_mass_mg": {"tablet_total": 695, "ranolazine": 500, "povidone_K30": 10, "aerosil": 5, "titanium_dioxide": 15},
+  "literature_formulations_mg": {
+    "F1": {"avicel_PH101": 81, "compritol": 70, "carbopol_934": 14},
+    "F2": {"avicel_PH101": 67, "compritol": 70, "carbopol_934": 28},
+    "F3": {"avicel_PH101": 53, "compritol": 70, "carbopol_934": 42},
+    "F4": {"avicel_PH101": 25, "compritol": 70, "carbopol_934": 70},
+    "F5": {"avicel_PH101": 46, "compritol": 84, "carbopol_934": 35},
+    "F6": {"avicel_PH101": 39, "compritol": 91, "carbopol_934": 35},
+    "F7": {"avicel_PH101": 32, "compritol": 98, "carbopol_934": 35},
+    "F8": {"avicel_PH101": 25, "compritol": 105, "carbopol_934": 35}
+  },
+  "literature_hardness_kg_per_cm2": {"F1": 7.5, "F2": 7.8, "F3": 8.2, "F4": 9.0, "F5": 9.4, "F6": 9.2, "F7": 9.5, "F8": 9.3},
+  "literature_endpoint_claim_not_training_data": {"formulation": "F8", "time_h": 24, "percent_released": 99.5, "location": "abstract, article 10.5281/zenodo.1170150", "quality": "author-reported summary; underlying replicate curves and graph points not curated; not Glenmark"},
+  "bounded_exploratory_space_assumed_not_approved": {
+    "compritol_mg": [70, 105], "carbopol_934_mg": [14, 70], "avicel_PH101_mg": [25, 81],
+    "hardness_kg_per_cm2": [7.5, 9.5], "potency_fraction": 1.0,
+    "strength_mg": 500, "tablet_total_mg": 695,
+    "time_h": [0, 2, 4, 8, 12, 18, 24],
+    "illustrative_targets_NOT_approved_QC": {"at_2h_max_percent": 25, "at_24h_min_percent": 85}
+  },
+  "release_assumptions_unfitted": {
+    "first_order_k1_per_h_uniform": [0.08, 0.12],
+    "weibull_beta_time_h_uniform": [7.5, 11.0],
+    "weibull_alpha_uniform": [0.75, 1.05],
+    "compritol_log_rate_per_35mg_uniform": [-0.7, 0.7],
+    "carbopol_log_rate_per_56mg_uniform": [-0.6, 0.6],
+    "hardness_log_rate_per_kg_cm2_uniform": [0, 0.2],
+    "directions_are_unknown": true,
+    "sampling": "independent uniform plausibility scenarios, NOT posterior or predictive interval"
+  },
+  "sampling_and_search": {"seed": 2931, "samples_per_model": 128, "compritol_grid_mg": [70, 77, 84, 91, 98, 105], "carbopol_grid_mg": [14, 21, 28, 35, 42, 49, 56, 63, 70], "hardness_grid_kg_per_cm2": [7.5, 8.5, 9.5], "score_weights_assumed": {"joint_scenario_fraction": 0.75, "clipped_margin": 0.15, "lower_polymer_mass_proxy": 0.10}}
+}

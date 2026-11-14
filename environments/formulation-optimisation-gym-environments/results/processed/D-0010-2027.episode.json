@@ -1,0 +1,128 @@
+{
+  "task": {
+    "task_id": "ranolazine_er_dissolution_investigation",
+    "case_id": "D-0010-2027",
+    "api": "ranolazine",
+    "dosage_form": "extended_release_tablet",
+    "reported_issue": "dissolution_specification_failure",
+    "recall_status": "FDA-openFDA-RES-reported"
+  },
+  "sources": {
+    "FDA-RES-D-0010-2027": {
+      "source_id": "FDA-RES-D-0010-2027",
+      "citation": "https://api.fda.gov/drug/enforcement.json?search=recall_number%3A%22D-0010-2027%22",
+      "document_id": "D-0010-2027",
+      "verified_by": "openFDA FDA-origin exact-query and identifier check",
+      "sha256": "6dafe38262f20f9d2575e32b5a41122af250660c77759e4b1cab368b300a9f3a",
+      "api_last_updated": "2026-10-14",
+      "source_type": "FDA enforcement report",
+      "authorized_measurement": false,
+      "verified_fields": [
+        "primary_recall_record",
+        "manufacturer_and_product_identity",
+        "jurisdiction_lots"
+      ]
+    },
+    "FDA-SPL-8bfd1a61-547a-4847-ae4e-480b17da6272": {
+      "source_id": "FDA-SPL-8bfd1a61-547a-4847-ae4e-480b17da6272",
+      "citation": "https://api.fda.gov/drug/label.json?search=openfda.spl_set_id%3A%228bfd1a61-547a-4847-ae4e-480b17da6272%22",
+      "document_id": "8bfd1a61-547a-4847-ae4e-480b17da6272",
+      "verified_by": "FDA-origin SPL set ID and package NDC cross-check",
+      "sha256": "d42e65d68be15cc690d7271e13dcf7ce72a06bb39d5b70be7026a9240a15488a",
+      "api_last_updated": "2026-10-23",
+      "effective_time": "20251028",
+      "source_type": "FDA labeling",
+      "authorized_measurement": false,
+      "verified_fields": [
+        "public_label_ingredient_identities"
+      ]
+    }
+  },
+  "materials": {},
+  "candidates": {},
+  "constraints": {},
+  "predictions": {},
+  "experiments": {},
+  "evidence": [
+    {
+      "text": "FDA enforcement reason: Failed Dissolution Specifications: below specification",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "reason_for_recall"
+    },
+    {
+      "text": "Recalling firm: Ajanta Pharma USA Inc",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "recalling_firm"
+    },
+    {
+      "text": "Product: Ranolazine Extended-Release Tablets, 1000 mg, 60-count bottle, Rx Only, Marketed by: Ajanta Pharma USA Inc., Bridgewater, NJ 08807.  NDC: 27241-126-02",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "product_description"
+    },
+    {
+      "text": "Lot/code as reported: Lot: DJ25134, Exp 11/30/2028",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "code_info"
+    },
+    {
+      "text": "FDA report date: 20261007",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "report_date"
+    },
+    {
+      "text": "Labeled inactive ingredients (qualitative only): Hypromellose, magnesium stearate, methacrylic acid and ethyl acrylate copolymer (sodium lauryl sulfate and polysorbate 80), microcrystalline cellulose, polyethylene glycol and sodium hydroxide. The color coating contains titanium dioxide, polyvinyl alcohol, talc, hypromellose, polyethylene glycol, Iron Oxide Yellow, and Iron Oxide Red.",
+      "label": "literature_reported",
+      "source_id": "FDA-SPL-8bfd1a61-547a-4847-ae4e-480b17da6272",
+      "field": "description"
+    },
+    {
+      "text": "Labeled strength",
+      "value": 1000,
+      "unit": "mg",
+      "label": "literature_reported",
+      "source_id": "FDA-RES-D-0010-2027",
+      "field": "product_description"
+    }
+  ],
+  "hypotheses": [],
+  "ranking": [],
+  "status": "open",
+  "audit": [
+    {
+      "timestamp": "2026-10-26T19:27:26.279963+00:00",
+      "action": "verify_source",
+      "outcome": "success",
+      "detail": {
+        "warnings": [],
+        "candidate_id": null
+      }
+    },
+    {
+      "timestamp": "2026-10-26T19:27:26.279991+00:00",
+      "action": "verify_source",
+      "outcome": "success",
+      "detail": {
+        "warnings": [],
+        "candidate_id": null
+      }
+    },
+    {
+      "timestamp": "2026-10-26T19:27:26.280018+00:00",
+      "action": "import_public_fda_sources",
+      "outcome": "success",
+      "detail": {
+        "recall_number": "D-0010-2027",
+        "source_ids": [
+          "FDA-RES-D-0010-2027",
+          "FDA-SPL-8bfd1a61-547a-4847-ae4e-480b17da6272"
+        ]
+      }
+    }
+  ],
+  "budget": {}
+}

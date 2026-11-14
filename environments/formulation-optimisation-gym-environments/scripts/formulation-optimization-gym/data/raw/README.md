@@ -1,0 +1,1 @@
+Do not edit downloaded public FDA JSON/XML snapshots after ingestion. The four fda-*.json files are FDA-origin API recall/label responses; dailymed-*.xml are FDA/NLM DailyMed SPL labels independently checked against the current product identity. They contain no recalled-lot dissolution measurements. See data/README.md for provenance and limitations.

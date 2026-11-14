@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "formulation-optimization-gym"
+version = "0.1.0"
+description = "Evidence-first ranolazine formulation investigation sandbox"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+formulation-gym = "run:main"
+
+[tool.setuptools]
+py-modules = ["run"]
+packages = ["environment", "agents", "models", "tools", "evaluation"]
