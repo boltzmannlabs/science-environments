@@ -1,0 +1,371 @@
+{
+  "status": "verified_file_copy_not_scientific_validation",
+  "source_root": "original_local_working_tree_not_distributed",
+  "packaged_root": "scripts/formulation-optimization-gym",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "575e5cf051a36400ea0fd3e7042bca34322ae634341e1df89a39b733c9ffd2f6"
+    },
+    {
+      "path": "EXPLORATORY_SIMULATIONS.md",
+      "sha256": "bd4f4aad6f687ff1f8e9c19517aec2eabc56c2258ff13dbe215308872fadec3c"
+    },
+    {
+      "path": "IMPLEMENTATION_REPORT.md",
+      "sha256": "c43fac6b1aec3c50866ecde7336b18507b70de674082fd9eda8bdb30edcf6d4b"
+    },
+    {
+      "path": "RANOLAZINE_500MG_INVESTIGATION.md",
+      "sha256": "740ec29ba234926166378af4432f78da8edfb89274c94e194817e338aaf75db2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "cd211bc6105fe99269284b197c77a25207bc6dd19538b5a3c40a05906186a030"
+    },
+    {
+      "path": "STATUS_AND_GAPS_REPORT.md",
+      "sha256": "a9de61fcb1eed99817af5a949fe1642a070387860731535254b7eca642687570"
+    },
+    {
+      "path": "agents/__init__.py",
+      "sha256": "41c620d92b825185b138a288468d0158a2089d2f1dff6e529a097735a1c2e78d"
+    },
+    {
+      "path": "agents/compatibility_stability.py",
+      "sha256": "29f8ece3a927dbb147d82a41346afd6348c0f96ff12ae593f984fbc472d5fa34"
+    },
+    {
+      "path": "agents/constraint_critic.py",
+      "sha256": "899e7e754da701b1646d74ccecd4e467854c4b49b2fb5f8523684fa55466ec7b"
+    },
+    {
+      "path": "agents/evidence_auditor.py",
+      "sha256": "3f102f47b1fdc287dea0b5648fc857a2d6d4ad960b7805d3bc554ce265a51e31"
+    },
+    {
+      "path": "agents/experimental_design.py",
+      "sha256": "f485fca7fbf92907b8241b4c2442144c8fa9e5892cb2e46026563c500b2474b0"
+    },
+    {
+      "path": "agents/formulation_design.py",
+      "sha256": "c156d4b62ef8b7219d3b8a69ee4e93d0631cf36c6ba77fe8689b24ae6ce2cce5"
+    },
+    {
+      "path": "agents/investigation_coordinator.py",
+      "sha256": "fc69866cf7e41a4d15babac54da464608c27a329507e5e5c423dc1786c439555"
+    },
+    {
+      "path": "agents/property_prediction.py",
+      "sha256": "aaa491966584a8b268114ae2f5c9e218a831b235775a31ace079f97daca4e5e0"
+    },
+    {
+      "path": "configs/exploratory_ranolazine_500.json",
+      "sha256": "4ca16332e512a358b5b702aa7514aa85ec99ea44c80e7fc2827da82a54cab420"
+    },
+    {
+      "path": "configs/task.yaml",
+      "sha256": "48dcb9afb4a834a9c6369658d0a2d1247cb93eca97c88f388b51c7ef5382a32f"
+    },
+    {
+      "path": "configs/tools.example.yaml",
+      "sha256": "298f30e3558abff9da0059ddcc7d845e50409dab1e7eb3f1e706f2117dc77d90"
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "02798a0f87388d4cc74b75871b35624b70be0778abb36eb732ae6f94d8deeb99"
+    },
+    {
+      "path": "data/processed/D-0010-2027.dailymed.episode.json",
+      "sha256": "0935e9b0c07f4f8953ed8ac638592bd5e6c7d0f3a3be7dc4f2610f241674362b"
+    },
+    {
+      "path": "data/processed/D-0010-2027.episode.json",
+      "sha256": "863e8fdf2d933a031067b972280446e3d452cf2841e283168cd57024c9012598"
+    },
+    {
+      "path": "data/processed/D-0092-2024.dailymed.episode.json",
+      "sha256": "1fe437d44784afad98abd097c044bfd32e67500f316cfd642780a36873b09ade"
+    },
+    {
+      "path": "data/processed/D-0092-2024.episode.json",
+      "sha256": "08a73f7e5d67bf47e88f69dffe58a77906ac494f48a2b548ac05f51ed181e577"
+    },
+    {
+      "path": "data/processed/D-0092-2024.investigation.json",
+      "sha256": "7a4f13645b07ae61d6e5f04a16d9e367ece5d9e64341704880eea867e10b307e"
+    },
+    {
+      "path": "data/processed/README.md",
+      "sha256": "1dc570c9ffabaa8ddf94b80c042ac19f3509044594e6d2e0789f0509ff82422d"
+    },
+    {
+      "path": "data/processed/openpkflow_package_demo.json",
+      "sha256": "6070d8aee30cd5330de478f089108256cba2dd4b9eca6548d3e0023a2c80c0a5"
+    },
+    {
+      "path": "data/processed/public_literature_catalog.json",
+      "sha256": "4927281998b5c42ddf9f4d990841a7b28f930019bfd76a11357dd12e3e5b9e9a"
+    },
+    {
+      "path": "data/processed/ranolazine_research_scenario_audit.json",
+      "sha256": "87e49f78e090dea2caba71514c55618992ed6db9b8b7d44173986752cde8ab89"
+    },
+    {
+      "path": "data/processed/ranolazine_research_scenario_results.json",
+      "sha256": "1ed40272dc6e378bdbf706b4314408088d667ea4f2caa2dd2528c795e18ff83a"
+    },
+    {
+      "path": "data/raw/README.md",
+      "sha256": "c8449357f89975182592001b7694ffd771596c1d984e429e6a6589e94e77f40b"
+    },
+    {
+      "path": "data/raw/dailymed-ajanta.xml",
+      "sha256": "d1bbefdf995983077ef70f8ee0e3d4c73af41618463088c727d3a1de2a6a8fca"
+    },
+    {
+      "path": "data/raw/dailymed-glenmark.xml",
+      "sha256": "eb70a2bd7003675d63fccbd4056f8ca67de2385c270bf3adb6dcbf076929d513"
+    },
+    {
+      "path": "data/raw/fda-res-D-0010-2027.json",
+      "sha256": "6dafe38262f20f9d2575e32b5a41122af250660c77759e4b1cab368b300a9f3a"
+    },
+    {
+      "path": "data/raw/fda-res-D-0092-2024.json",
+      "sha256": "63ed2f201c9a6f15bff4a4a88419cecdee5e36761e8289028ec2baa71dc260d2"
+    },
+    {
+      "path": "data/raw/fda-spl-ajanta.json",
+      "sha256": "d42e65d68be15cc690d7271e13dcf7ce72a06bb39d5b70be7026a9240a15488a"
+    },
+    {
+      "path": "data/raw/fda-spl-glenmark.json",
+      "sha256": "c2c4fb20a471db0ccf057ee0128be0104cb2bec0e2456d773716b98ccf2f73ee"
+    },
+    {
+      "path": "data/splits/README.md",
+      "sha256": "a1040fc3ec94c1a630773a92cc5ab756c28d3f01437ffa3525339261a771953e"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "eea69bdb9162a07d654a4c86643f3705ccbc33e92ad15d987b49a7a66e599b68"
+    },
+    {
+      "path": "docs/data_and_provenance.md",
+      "sha256": "6411177f792ae3f15a0254c1d29ab9d04db943cf06073bd5b038e589c1c04690"
+    },
+    {
+      "path": "docs/evaluation_protocol.md",
+      "sha256": "636af17aa18309eaa63d88a4b01efb55f5d5ac2ffd8b274c61d86c1f9de43a6a"
+    },
+    {
+      "path": "docs/implementation_plan.md",
+      "sha256": "015c07102a9a6a877be1669a1360263c9fcd89898ecc6d837163cd2100274f65"
+    },
+    {
+      "path": "docs/source_and_tool_matrix.md",
+      "sha256": "a9f21f747db859fde5bec97a79ca012980c566292d2b352730fbbc870a5d3606"
+    },
+    {
+      "path": "environment/__init__.py",
+      "sha256": "5cbcc57ad3567aa5a4fe925cb9cae5d5cf0a8464e904fe0a5ec299143f144b2c"
+    },
+    {
+      "path": "environment/actions.py",
+      "sha256": "4624eba83c41372ad59ac73012c51ab6cc25d2a507a23f86831659dd7d391b20"
+    },
+    {
+      "path": "environment/budget.py",
+      "sha256": "9ec22bb752311402a9f18dd7120238c0fa3d7d07f9e86a3ec709d2cd169834ec"
+    },
+    {
+      "path": "environment/observations.py",
+      "sha256": "dff8af3db2e143beba8d45169d335fd3cc2fb64facd851d0ab3fa4daad75eabe"
+    },
+    {
+      "path": "environment/state.py",
+      "sha256": "d4194c8fef38358b0a33023db636ee01d02dc6d1510c7db53120fe01f88d8c69"
+    },
+    {
+      "path": "evaluation/__init__.py",
+      "sha256": "029844f7bb4b0865526419b4939947a76cf7cab91abdaf0ebc7cc3a2e7f9edae"
+    },
+    {
+      "path": "evaluation/baselines.py",
+      "sha256": "6c89e0f288309cd1030101d2ca165aecec3f39e0540487414fb3e4fe107a3b38"
+    },
+    {
+      "path": "evaluation/exploratory_scenarios.py",
+      "sha256": "380db3c11392b572b2b584247bb412a58760edd1cd837eeb3cd141f0f4d97b41"
+    },
+    {
+      "path": "evaluation/exploratory_verifier.py",
+      "sha256": "f8f08a248018a73ef400deb139e8725bffb8bb6b379da2058252a8e67d189350"
+    },
+    {
+      "path": "evaluation/holdout_benchmark.py",
+      "sha256": "600c1caacd97d5c5dcd0c51c43a87315a5486c54ffeec894d5c64e8529641793"
+    },
+    {
+      "path": "evaluation/openpkflow_probe.py",
+      "sha256": "0b4d78c7040a4479a77229de22a2f0e4ee4cff81600254f6c6c2b4311ac65da6"
+    },
+    {
+      "path": "evaluation/verifier.py",
+      "sha256": "0c97236720923b4e679e6ec67f361f53ab4be495ed3fc3f079eaa443549cf39d"
+    },
+    {
+      "path": "import_dailymed.py",
+      "sha256": "fdc97881002f84e09738ec741b11b26b720ebf7cc404f30735a057b29a1a0801"
+    },
+    {
+      "path": "import_fda.py",
+      "sha256": "4a742d11aefeb3150381ff7d57199c1bfc05db3ea871446d4c156c2910fb9d6d"
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "13de6cab0c59351c1198ae5b86db8980d81e0a3ccfbc6ac6bf18921661380beb"
+    },
+    {
+      "path": "models/acquisition_policy.py",
+      "sha256": "a7b10ac4c81df7fd93e4053fa3e218bb805baa8aca968511471c3321d7da129e"
+    },
+    {
+      "path": "models/mixture_predictor.py",
+      "sha256": "7668e5b383809fdc1bf3f4f3406dac0aa45269c69aa484a05a55b88eb75b7cc5"
+    },
+    {
+      "path": "models/uncertainty.py",
+      "sha256": "56030d257cb6eca6c2fe1c8c20adbcaf2b99f2280d41310857bc4c3cbc4f4425"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "487e39a9d0ec393f85e09a45bd90d13530e2c3c2482e00e6ac7225fd39a3802d"
+    },
+    {
+      "path": "run.py",
+      "sha256": "3940d9033ba6377f1e3f150fe53baac128a2bd8be7fcfd16a25ab94ba2dcf01d"
+    },
+    {
+      "path": "schemas/candidate.schema.json",
+      "sha256": "17c1d2c8e4c89b73a7753427f9339e668b3c63914306c3ba8414477455a5903f"
+    },
+    {
+      "path": "schemas/experiment.schema.json",
+      "sha256": "cac3e245725b1159fa052b784237500b05b8cc030d1716a0b8f4138f29112d11"
+    },
+    {
+      "path": "schemas/observation.schema.json",
+      "sha256": "2fea38f30fdaaf051557df3d78c131f219562e38d049ffae504a0251a80f4ba3"
+    },
+    {
+      "path": "skills/formulation-benchmark/SKILL.md",
+      "sha256": "7b53e3a93ae8af98b328e90ef38561185a71e0f34da4f132ee66a6cf9bfd1f35"
+    },
+    {
+      "path": "skills/formulation-candidate-review/SKILL.md",
+      "sha256": "9ecb1a98593d274e8bebd9c940fea6046ad22fe7cde0e672b2acabd04b136ec4"
+    },
+    {
+      "path": "skills/formulation-data-intake/SKILL.md",
+      "sha256": "346426597c9619dfa902ec7dc593aa58596b328f66679c20d4b43a263fd97205"
+    },
+    {
+      "path": "skills/formulation-experiment-design/SKILL.md",
+      "sha256": "fe93f910e1c8cbe526b1ca49c6455f8ef724ff3a664e0a1ed56116c018017c37"
+    },
+    {
+      "path": "skills/formulation-literature-curation/SKILL.md",
+      "sha256": "77a20fd4a48e6ae04c8b3f84f8357e2885076d46c26dcd959e01c06b7cbe6ed7"
+    },
+    {
+      "path": "skills/formulation-roadmap/SKILL.md",
+      "sha256": "24580f01ef8dc9695942d6ea0eb9196b164271f759d7cd0f49edecf190859cb3"
+    },
+    {
+      "path": "skills/formulation-tool-integration/SKILL.md",
+      "sha256": "7a7f5e5e9845b68db5de7a32a051983e7a642ffe75863f30f7cdc4a0de5d5684"
+    },
+    {
+      "path": "tests/test_actions.py",
+      "sha256": "18426f74aaed8d71b37ed0fc50f57bea1a69641331e4811f7950085480a75b27"
+    },
+    {
+      "path": "tests/test_agent_contracts.py",
+      "sha256": "01b23d89a094e81bd52e278ca84cde30f16d832777d10a4ce970631d123f691c"
+    },
+    {
+      "path": "tests/test_api_adapters.py",
+      "sha256": "9f3b69a8abeae091427d8a1dd927ef957b13497d0b4efbe9bfc1655b0ca582f1"
+    },
+    {
+      "path": "tests/test_dailymed_import.py",
+      "sha256": "87d89766013e05e1395c3c8467cca69cd840c635f52c5bd3f524ca749786810b"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "sha256": "6dab989745311d0d4b780a8553d91be21480ebcbe38c58b22a038e01fba058cf"
+    },
+    {
+      "path": "tests/test_exploratory_scenarios.py",
+      "sha256": "5d97c37120dc5e8ac899111ddf475f527e6e7daadff11ca7975ef59af1327429"
+    },
+    {
+      "path": "tests/test_fda_import.py",
+      "sha256": "3e723adba75b85428a1451b0d2f6686bc4d1494e48b79853f36eef2dba8f3c4d"
+    },
+    {
+      "path": "tests/test_investigation_coordinator.py",
+      "sha256": "30cdf2ce440112aab84feba9c2086cd84a92f39355fd5b1ac83c45fb11f5c84a"
+    },
+    {
+      "path": "tests/test_mixture_validator.py",
+      "sha256": "378e075f4c99183e07e09c64285dabd1b8aa06d633ce4a925581621897fe082b"
+    },
+    {
+      "path": "tests/test_openpkflow_probe.py",
+      "sha256": "bd7cbc8d472604a16f00be9c082141f3aadf8b1fe43920057f9cf6b153848f10"
+    },
+    {
+      "path": "tests/test_public_literature.py",
+      "sha256": "6c70abf40f1955c26299d3cd76950513d72a2cad78b425a780a27cc4e6d162bc"
+    },
+    {
+      "path": "tests/test_state.py",
+      "sha256": "889f967f5a6b32fde06fb623a58083dd42c0bf5bc727e3261e0bb78d305d7753"
+    },
+    {
+      "path": "tools/__init__.py",
+      "sha256": "16e764de21a46f185782608e3f81ef00bbc4d06a187a8741c214855f17ed9039"
+    },
+    {
+      "path": "tools/boltzmann_adapters.py",
+      "sha256": "e0a714a32539f736a18ad618310a239dffbbb1af4f4629f1e7d47879cfb0db79"
+    },
+    {
+      "path": "tools/mixture_validator.py",
+      "sha256": "fe81f44ca3d38a7f5f0c3bc921069bfcfe6ff0c9462db75b9fa540998b247b87"
+    },
+    {
+      "path": "evaluation/literature_benchmark.py",
+      "sha256": "e53d8e94d3e118176afda12456cfed4221e09bfb65651bf2bd87a4c32fca31a5"
+    },
+    {
+      "path": "tests/test_literature_benchmark.py",
+      "sha256": "4ed62bd2ce3bb73a459729911800042f3c4156344828b37b04225f6cdad8b05d"
+    },
+    {
+      "path": "docs/literature_benchmark.md",
+      "sha256": "f068c88c4e1781b9d898e25cd7113898e80a808086d995483218985eba6dd021"
+    },
+    {
+      "path": "data/processed/literature_benchmark_summary.json",
+      "sha256": "f2c40663be96d09eaf9168b598a93e11a6bef0868a10c86c67d91195fc25802a"
+    }
+  ],
+  "source_files_verified": 90,
+  "scientific_holdout": "not_evaluated",
+  "third_party_pdf": "not_copied_from_scratch",
+  "originals_modified": false
+}
