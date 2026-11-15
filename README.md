@@ -13,6 +13,7 @@ science-environments/
 ├── LICENSE
 ├── research/
 │   ├── README.md
+│   ├── clarithromycin-ir-formulation/
 │   ├── formulation_dissolution/
 │   │   ├── research-notes.md
 │   │   └── references.md
@@ -42,6 +43,7 @@ science-environments/
 │   │   ├── skills/
 │   │   └── tools/
 │   ├── formulation-optimisation-gym-environments/
+│   ├── formulation_environment/   # unified Task - 01 clarithromycin IR benchmark
 │   ├── impurity-retrosynthesis/
 │   └── retro_environment/        # target-specific computational route audit
 ├── synthesis-route-gym/
@@ -58,3 +60,7 @@ Start with the [Formulation Dissolution environment](environments/formulation_di
 The [Impurity Retrosynthesis evidence environment](environments/impurity-retrosynthesis/README.md) provides conservative route-export auditing, synthetic-fixture tests and a [literature benchmark](environments/impurity-retrosynthesis/benchmark/README.md) without publishing profile-scoped raw outputs or claiming experimental validation. Its [research notes](research/impurity-retrosynthesis/research-notes.md), [current status](environments/impurity-retrosynthesis/STATUS.md) and [source review](research/impurity-retrosynthesis/references.md) distinguish model predictions from primary patent reports.
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) for contributions. License selection remains pending in [LICENSE](LICENSE).
+
+## Unified formulation tasks
+
+The [Formulation Environment](environments/formulation_environment/README.md) adds [Task - 01: Clarithromycin 500 mg IR formulation and dissolution investigation](environments/formulation_environment/tasks/Task%20-%2001/README.md), with matching [benchmark](environments/formulation_environment/benchmark/Task%20-%2001/README.md) and [versioned results](environments/formulation_environment/results/Task%20-%2001/README.md). Its [research notes](research/clarithromycin-ir-formulation/research-notes.md), portable offline runner and tests distinguish computed diagnostic improvements from unmeasured tablet performance. It does not replace or pool the ranolazine environment. No better-than-literature product claim is established.

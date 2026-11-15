@@ -1,0 +1,47 @@
+{
+  "status": "DRAFT_REQUIRES_SCIENTIFIC_APPROVAL_NOT_VALIDATED",
+  "route": "PVP_K30_wet_granulation_as_original_stratum",
+  "primary_development_comparator": {
+    "basis": "R1_literature_method_only",
+    "apparatus": "USP_II_paddle",
+    "rpm": 50,
+    "volume_mL": 900,
+    "pH": 5.0,
+    "medium": "acetate buffer; exact preparation and suitability require approval",
+    "temperature_C": 37,
+    "temperature_tolerance_C": 0.5
+  },
+  "challenge_media": [
+    "citrate_at_matched_pH_and_justified_ionic_strength_TBD",
+    "non_carboxylate_buffer_at_matched_pH_and_justified_ionic_strength_TBD"
+  ],
+  "times_min": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    15,
+    20,
+    30,
+    45,
+    60
+  ],
+  "exploratory_units_per_batch_per_medium": 6,
+  "official_release_Q_and_time": null,
+  "reference_product_and_batch": null,
+  "prerequisites": {
+    "reference_profile": "MISSING",
+    "API_form_XRPD_PSD_KF_assay": "MISSING",
+    "excipient_grade_supplier_lot": "MISSING",
+    "sink_conditions_solution_stability_filter_recovery": "NOT_VERIFIED",
+    "stability_indicating_assay_specificity": "NOT_VERIFIED",
+    "sampling_volume_replacement_corrections": "TO_DEFINE",
+    "processing_parameters_and_granulation_exposure": "TO_DEFINE",
+    "jurisdiction_TiO2_assessment": "REQUIRED",
+    "coating_acceptability": "NOT_VERIFIED"
+  },
+  "mechanism_gate": "Never infer KP mechanism without eligible early observations; no library all-point fallback accepted for mechanism",
+  "stability": "Independent packaged accelerated/long-term experiments required; no shelf-life inference",
+  "normalization": "Preserve measured percent-label-claim; investigate assay and analytical corrections; do not clip values or retrospectively renormalize to final sample."
+}

@@ -1,0 +1,15 @@
+# References and evidence provenance
+
+| ID | Source | Access and role | Limitation |
+|---|---|---|---|
+| R1 | [Formulation and Evaluation of Clarithromycin Immediate Release Film Coated Tablets](https://www.pharmatutor.org/articles/formulation-evaluation-clarithromycin-immediate-release-film-coated-tablets) | Full public web article reviewed in original investigation; numeric Tables 9/10 transcribed | Different excipients/coat/weight; no raw unit profiles; independent methodological review needed |
+| R2 | Inukai et al. (2017), [Effect of gel formation on the dissolution behavior of clarithromycin tablets](https://doi.org/10.1016/j.ijpharm.2017.01.065), PMID 28196716 | Europe PMC primary-study abstract retrieved | Mechanism context, not exact-recipe release dataset; full methods/n not recovered |
+| R3 | Fujiki et al. (2015), [Suppressed Release of Clarithromycin from Tablets by Crystalline Phase Transition of Metastable Polymorph Form I](https://doi.org/10.1002/jps.24516), PMID 26053058 | Europe PMC primary-study abstract retrieved | Solid-form mechanism; API form in our designs unknown |
+| A1 | Fujiki et al. (2011), [Stabilization mechanism of clarithromycin tablets under gastric pH conditions](https://doi.org/10.1248/cpb.59.553), PMID 21532191 | Europe PMC primary-study abstract retrieved | Release/degradation coupling; no rates transferred to candidate recipes |
+| R4 | [DailyMed clarithromycin label](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=de33ba3a-9df1-4076-8d5f-b603d2698096) | Official SPL 500 mg product parsed in original investigation | Qualitative inactive ingredients, not quantitative exact-recipe validation |
+| R6 | [FDA quality-related controlled correspondence Q&A](https://www.fda.gov/drugs/pharmaceutical-quality-resources/questions-and-answers-quality-related-controlled-correspondence) | Official dissolution section reviewed | Product-specific method/criteria needed; no applicable QC acceptance criterion obtained |
+| R11 | [FDA Dissolution Methods Database overview](https://www.fda.gov/drugs/drug-approvals-and-databases/dissolution-methods-database) | Official overview retrieved | Not a verified clarithromycin QC method |
+| P1 | [PubChem CID 84029](https://pubchem.ncbi.nlm.nih.gov/compound/84029) | PUG REST structure/properties retrieved; RDKit descriptor calculation | No tablet-release/compatibility proof |
+| R12 | [PTCalc archive](https://doi.org/10.5281/zenodo.22957458) | Checksum-verified source 1.1.0 actually executed locally in source run | Descriptive curve calculations, not an exact-recipe predictor; runtime/source not vendored |
+
+The user-provided benchmark specification also lists other literature/tool links. Those are preserved as input requirements, not falsely marked independently verified. Full third-party article text, complete abstracts and proprietary data are not bundled. Numeric comparator records retain source/table/time/mean/SD provenance. See [source claims](../../environments/formulation_environment/benchmark/Task%20-%2001/inputs/evidence_claims.json).

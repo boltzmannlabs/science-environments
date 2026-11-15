@@ -1,0 +1,14 @@
+{
+  "task_id": "Task - 01",
+  "title": "Clarithromycin 500 mg immediate-release formulation and dissolution investigation",
+  "implementation": "formulation_environment.task01:run_task01",
+  "status": "COMPUTATIONAL_RUN_COMPLETE",
+  "candidate_lab_observations": 0,
+  "candidate_recipe_predictions": 0,
+  "scope": "Heldout timepoints within a single literature study, not heldout formulations/batches or independent external validation.",
+  "verification_artifact": "verification.json",
+  "overwrite_protection_check": "PASSED",
+  "unknown_task_rejection_check": "PASSED",
+  "working_directory_scope": "runner_flags_tested_from_repository_root",
+  "note": "Actual offline runner executed before publication; comparison is computational reproducibility only."
+}

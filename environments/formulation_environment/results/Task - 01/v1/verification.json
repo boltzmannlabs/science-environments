@@ -1,0 +1,35 @@
+{
+  "source_sha256": "fc74a5300b8677c5b2677a9ef628c0dacb91cbb39eb7d9519e39955bf328b4c7",
+  "finished_mass_mg": 800,
+  "source_candidates_checked": 12,
+  "additional_LHS_candidates_generated": 12,
+  "feasible_unique_candidates": 24,
+  "sampling_attempts": 12,
+  "sampling_rejections": 0,
+  "negative_control_rejections": 10,
+  "negative_control_failures": 0,
+  "near_duplicate_rule": "reject if every non-API mass difference is <1 mg",
+  "minimum_pairwise_Linf_distance_mg": 2.0,
+  "chosen_designs": [
+    "F02",
+    "F03",
+    "F04"
+  ],
+  "all_finalist_hard_constraints_pass": true,
+  "core_coat_conservation_all_pass": true,
+  "csv_readback_all_pass": true,
+  "optuna_exact_objective_verified": true,
+  "efficacy_ranking": "UNRANKABLE",
+  "calibrated_prediction_intervals": "NOT_AVAILABLE",
+  "candidate_endpoint_predictions": 0,
+  "candidate_lab_observations": 0,
+  "software_versions": {
+    "python": "3.13.7",
+    "numpy": "2.2.4",
+    "pandas": "3.0.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.9.0",
+    "optuna": "4.9.0",
+    "rdkit": "2026.03.1"
+  }
+}

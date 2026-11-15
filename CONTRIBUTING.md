@@ -413,3 +413,9 @@ All contributors must follow this workflow regardless of whether their contribut
 No contribution should be merged without appropriate documentation, validation and review.
 
 **Every contribution must be traceable, reproducible, documented and reviewed.**
+
+## Task-scoped environment records
+
+For task-based environments, keep the same identifier under `tasks/<task-id>/`, singular `benchmark/<task-id>/`, and `results/<task-id>/`. Include the task title, overall work, objective, inputs, acceptance criteria and actual execution scope; link the three matching sections. Keep shared implementation in `src/` and version results rather than overwriting historical records. The formulation environment preserves the requested literal identifier `Task - 01`; see its [task-folder standard](environments/formulation_environment/TASK_STRUCTURE.md).
+
+Register future tasks explicitly and extend dispatch/tests; a new folder alone does not add validated scientific support. Numerical model-error reductions must not be relabeled as experimental product improvements. Publication should exclude credentials, personal machine paths, caches and unnecessary third-party full text. Branch publication does not itself satisfy the review/approval/main-merge requirements above.

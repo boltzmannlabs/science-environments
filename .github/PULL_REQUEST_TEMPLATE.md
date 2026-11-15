@@ -31,6 +31,8 @@ Record assumptions, uncertainties, dependencies, blockers and follow-up work.
 - [ ] Scientific claims are supported by sources; proposed methods and illustrative values are identified.
 - [ ] Environment status and reproducibility details are accurate where applicable.
 - [ ] No credentials, restricted data or unnecessary generated artifacts are included.
+- [ ] Task-based changes use matching task/benchmark/results IDs and preserve prior result versions.
+- [ ] Computed/model improvements are distinguished from measured scientific or product improvements.
 - [ ] Appropriate reviewers have been requested.
 
 Review outcome: link completed reviews when available; do not claim approval before it is given.
