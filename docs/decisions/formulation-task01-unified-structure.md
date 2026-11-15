@@ -7,7 +7,7 @@ Status: Implemented on requested Rebolt working branch; scientific review pendin
 
 The user requested a formulation environment and consistent task-specific folders under tasks, benchmark and results. Existing Rebolt environments, including ranolazine-focused formulation_dissolution, must remain intact. Current scientific evidence concerns clarithromycin IR under an assumed 800 mg basis and cannot be pooled with other APIs or release types.
 
-## Decision
+## Initial decision
 
 Create `environments/formulation_environment/` with one shared source package and explicit task registry. Preserve the requested literal identifier `Task - 01` in all three task sections. Use singular benchmark to match repository structure. Put title/objective/overall work in task documentation, source/metric contracts in benchmark, and curated v1/v2 calculations/reports in results. Add a linked research topic.
 
@@ -18,3 +18,7 @@ Overwriting the existing ranolazine environment risks conflating distinct scient
 ## Consequences
 
 New tasks require matched folders, registry/dispatch entries and tests; existing tasks/results stay versioned. Inputs are portable snapshots, runs refuse overwrites, and published artifacts exclude local/account details. Tests and actual offline replay gate publication. No new root license is selected, no main merge is performed, and no review/physical validation is inferred from push success.
+
+## Follow-up naming decision
+
+At the user's request, replace the numbered directory name with `clarithromycin-500mg-ir-formulation-dissolution` under tasks, benchmark and results. Preserve `Task - 01` only as the stable logical ID and CLI selector. Record `folder_slug` separately, update paths/links/manifests/tests, and leave scientific artifacts unchanged. Future tasks should similarly use meaningful descriptive folders rather than number-only directory names.

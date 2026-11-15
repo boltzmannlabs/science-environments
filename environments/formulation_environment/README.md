@@ -6,7 +6,7 @@ A reusable, evidence-gated task collection for formulation design, dissolution a
 
 ## Current work
 
-[Task - 01 — Clarithromycin 500 mg immediate-release formulation and dissolution investigation](tasks/Task%20-%2001/README.md).
+[Task - 01 — Clarithromycin 500 mg immediate-release formulation and dissolution investigation](tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md).
 
 - Fixed 500 mg API in an assumed 800 mg finished coated tablet; eight specified excipients only.
 - Original 24 valid recipes, expanded to 28; nine matched CP/PVP designs support future interaction/curvature estimation.
@@ -33,15 +33,15 @@ Run from this directory. `scripts/run_task.py` resolves checkout inputs independ
 formulation_environment/
   README.md  ENVIRONMENT_SPEC.md  STATUS.md  MODELS_AND_TOOLS.md
   config/          task registry and frozen benchmark contract
-  tasks/Task - 01/  objective, overall work, execution and acceptance
-  benchmark/Task - 01/  benchmark specification, numeric inputs and metric contract
-  results/Task - 01/    curated v1/v2 results, reports and provenance
+  tasks/clarithromycin-500mg-ir-formulation-dissolution/  objective, overall work, execution and acceptance
+  benchmark/clarithromycin-500mg-ir-formulation-dissolution/  benchmark specification, numeric inputs and metric contract
+  results/clarithromycin-500mg-ir-formulation-dissolution/    curated v1/v2 results, reports and provenance
   scripts/         portable execution and publication checks
   src/             reusable implementation and hard constraints
   tests/           independent data/scientific-contract regression tests
 ```
 
-Use the **same exact task ID** under all three task roots. [Task structure standard](TASK_STRUCTURE.md) explains adding Task - 02 without overwriting Task - 01.
+Use the **same descriptive folder slug** under all three task roots; retain numbering as a separate logical task ID. [Task structure standard](TASK_STRUCTURE.md) explains adding Task - 02 without overwriting Task - 01.
 
 ## Navigation
 

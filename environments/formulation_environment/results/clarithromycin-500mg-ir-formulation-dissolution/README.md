@@ -1,6 +1,6 @@
 # Task - 01 results
 
-[Task and objective](../../tasks/Task%20-%2001/README.md) · [Benchmark and inputs](../../benchmark/Task%20-%2001/README.md)
+[Task and objective](../../tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md) · [Benchmark and inputs](../../benchmark/clarithromycin-500mg-ir-formulation-dissolution/README.md)
 
 ## Versions
 

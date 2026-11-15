@@ -1,6 +1,6 @@
 # Task - 01 benchmark
 
-[Task](../../tasks/Task%20-%2001/README.md) · [Results](../../results/Task%20-%2001/README.md)
+[Task](../../tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md) · [Results](../../results/clarithromycin-500mg-ir-formulation-dissolution/README.md)
 
 ## Frozen objective and inputs
 

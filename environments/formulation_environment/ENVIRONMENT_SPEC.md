@@ -8,8 +8,8 @@ PVP wet granulation is a provisional process stratum, not an executed or validat
 
 ## State and provenance
 
-- Immutable numeric source snapshots and user-supplied specification: `benchmark/Task - 01/`.
-- Append-only conceptual result versions: `results/Task - 01/v1/` and `v2/`; fresh local runs go to `.runs/`.
+- Immutable numeric source snapshots and user-supplied specification: `benchmark/clarithromycin-500mg-ir-formulation-dissolution/`.
+- Append-only conceptual result versions: `results/clarithromycin-500mg-ir-formulation-dissolution/v1/` and `v2/`; fresh local runs go to `.runs/`.
 - Model outputs, literature observations and planned experiments must remain distinguishable.
 - Candidate endpoints remain null / NOT_PREDICTED / UNKNOWN; a composition pass never implies a physical-quality pass.
 

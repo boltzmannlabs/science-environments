@@ -15,8 +15,9 @@ ENV = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ENV / 'src'))
 from formulation_environment.constraints import NAMES, BOUNDS, validate_composition
 
-BENCH = ENV / 'benchmark' / 'Task - 01'
-RESULTS = ENV / 'results' / 'Task - 01'
+TASK_FOLDER = 'clarithromycin-500mg-ir-formulation-dissolution'
+BENCH = ENV / 'benchmark' / TASK_FOLDER
+RESULTS = ENV / 'results' / TASK_FOLDER
 V2 = RESULTS / 'v2'
 
 
@@ -36,11 +37,13 @@ class StructureTests(unittest.TestCase):
         self.assertEqual(set(tasks), {'Task - 01'})
         for key in ['task_dir', 'benchmark_dir', 'results_dir']:
             path = Path(tasks['Task - 01'][key])
-            self.assertEqual(path.name, 'Task - 01')
+            self.assertEqual(path.name, TASK_FOLDER)
+            self.assertEqual(path.name, tasks['Task - 01']['folder_slug'])
             self.assertTrue((ENV / path / 'README.md').is_file())
+            self.assertFalse((ENV / path.parent / 'Task - 01').exists())
 
     def test_objective_title_and_overall_scope(self):
-        text = (ENV / 'tasks/Task - 01/README.md').read_text()
+        text = (ENV / 'tasks' / TASK_FOLDER / 'README.md').read_text()
         for phrase in ['Clarithromycin 500 mg', '## Overall task', '## Objective', '## Actual outcome']:
             self.assertIn(phrase, text)
 

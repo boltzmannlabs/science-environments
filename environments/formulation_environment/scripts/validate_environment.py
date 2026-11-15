@@ -65,7 +65,7 @@ def main():
         scanned += 1
         if any(p.search(content) for p in patterns):
             failures.append('private_path_or_credential_pattern:' + str(file.relative_to(ENV)))
-    sources = json.loads((ENV / 'results/Task - 01/publication_sources.json').read_text())['artifacts']
+    sources = json.loads((ENV / 'results/clarithromycin-500mg-ir-formulation-dissolution/publication_sources.json').read_text())['artifacts']
     for artifact in sources:
         path = ENV / artifact['path']
         if hashlib.sha256(path.read_bytes()).hexdigest() != artifact['sha256']:
@@ -74,7 +74,7 @@ def main():
     if args.run:
         import pandas as pd
         run = args.run.resolve()
-        expected = json.loads((ENV / 'benchmark/Task - 01/expected_metrics.json').read_text())
+        expected = json.loads((ENV / 'benchmark/clarithromycin-500mg-ir-formulation-dissolution/expected_metrics.json').read_text())
         actual = json.loads((run / 'model_comparison.json').read_text())
         if len(actual) != len(expected['metrics']):
             failures.append('offline_replay_metric_count')
@@ -112,7 +112,7 @@ def main():
         'scientific_review': 'PENDING',
         'visual_Word_review': 'NOT_PERFORMED',
     }
-    out = ENV / 'results/Task - 01'
+    out = ENV / 'results/clarithromycin-500mg-ir-formulation-dissolution'
     # Log tests actually executed, not a fabricated success transcript.
     (out / 'repository_tests.txt').write_text(log.getvalue())
     (out / 'repository_validation.json').write_text(json.dumps(receipt, indent=2) + '\n')

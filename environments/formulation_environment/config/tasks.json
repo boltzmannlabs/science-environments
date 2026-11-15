@@ -1,12 +1,13 @@
 {
   "schema_version": "1.0",
-  "task_folder_standard": "tasks/<task_id>, benchmark/<task_id>, results/<task_id>",
+  "task_folder_standard": "tasks/<folder_slug>, benchmark/<folder_slug>, results/<folder_slug>; task_id stays stable",
   "tasks": {
     "Task - 01": {
       "title": "Clarithromycin 500 mg immediate-release formulation and dissolution investigation",
-      "task_dir": "tasks/Task - 01",
-      "benchmark_dir": "benchmark/Task - 01",
-      "results_dir": "results/Task - 01",
+      "folder_slug": "clarithromycin-500mg-ir-formulation-dissolution",
+      "task_dir": "tasks/clarithromycin-500mg-ir-formulation-dissolution",
+      "benchmark_dir": "benchmark/clarithromycin-500mg-ir-formulation-dissolution",
+      "results_dir": "results/clarithromycin-500mg-ir-formulation-dissolution",
       "entrypoint": "formulation_environment.task01:run_task01",
       "status": "DESIGN_ONLY",
       "default_result_version": "v2"
