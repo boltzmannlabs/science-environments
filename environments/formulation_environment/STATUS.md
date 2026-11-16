@@ -1,5 +1,9 @@
 # Status
 
+## Task - 02 ownership and execution
+
+Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+
 **Lifecycle: In Progress. Scientific tier: DESIGN_ONLY.**
 
 ## Implemented and actually executed in the source investigation

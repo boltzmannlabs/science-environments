@@ -31,6 +31,10 @@ All scientific caveats and full comparisons are in the [Task-02 benchmark report
 
 The comparison JSON/CSV are preserved byte-for-byte from the earlier saved run. In `existing_lofo_rerun.json`, only three personal absolute output paths were replaced with `historical-run://published_benchmark_rerun/` locators; these are provenance identifiers, not downloadable files. All numerical values, input hashes and verifier findings are unchanged. Publication checks and the existing Task-01 test execution are recorded in [publication_validation.json](publication_validation.json) and [publication_tests.txt](publication_tests.txt). These checks do not rerun or independently validate the historical model-comparison study.
 
+## Task-scoped structure validation
+
+Dedicated configuration, source, scripts, tests, documentation, research and decision folders are now mapped in the task registry. [structure-v1 validation](structure-v1/repository_validation.json) records the actual integrated tests and Task-01 regression replay; [test log](structure-v1/repository_tests.txt), [Task-02 archive verification](structure-v1/verification.json) and [runner receipt](structure-v1/run_receipt.json) are separate from the earlier scientific outputs. The archive verifier checks saved hashes/arithmetic only; it does not reproduce fitting or validate a product.
+
 ## Decision boundary
 
 This is an evidence-limited computational result. It does not establish that any candidate improves ranolazine ER dissolution experimentally, meets a regulated release specification, explains a recall, or is suitable for commercial manufacture. A product-level evaluation requires an authorized method/version and limits, source-linked unit profiles for the lot and appropriate comparators, plus prospective quality-reviewed testing.

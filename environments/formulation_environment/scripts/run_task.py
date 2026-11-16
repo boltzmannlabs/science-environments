@@ -3,6 +3,7 @@
 from pathlib import Path
 import argparse
 import contextlib
+import io
 import json
 import sys
 
@@ -23,17 +24,23 @@ def main():
     if output.exists() and any(output.iterdir()):
         parser.error('Output directory is not empty; use a new run directory.')
     output.mkdir(parents=True, exist_ok=True)
-    inputs = ENV / task['benchmark_dir'] / 'inputs'
-    if task['entrypoint'] != 'formulation_environment.task01:run_task01':
+    if task['entrypoint'] == 'formulation_environment.task01:run_task01':
+        from formulation_environment.task01 import run_task01 as run
+        inputs = ENV / task['benchmark_dir'] / 'inputs'
+    elif task['entrypoint'] == 'formulation_environment.ranolazine_task02:run_task02':
+        from formulation_environment.ranolazine_task02 import run_task02 as run
+        inputs = ENV / task['config_dir']
+    else:
         parser.error('Unsupported entrypoint; extend the explicit dispatch when adding tasks.')
-    from formulation_environment.task01 import run_task01
-    with (output / 'execution.log').open('w') as log, contextlib.redirect_stdout(log):
-        result = run_task01(inputs, output)
+    log = io.StringIO()
+    with contextlib.redirect_stdout(log):
+        result = run(inputs, output)
+    (output / 'execution.log').write_text(log.getvalue())
     receipt = {
         'task_id': args.task,
         'title': task['title'],
         'implementation': task['entrypoint'],
-        'status': 'COMPUTATIONAL_RUN_COMPLETE',
+        'status': result.get('status', 'COMPUTATIONAL_RUN_COMPLETE'),
         'candidate_lab_observations': 0,
         'candidate_recipe_predictions': 0,
         'scope': result['scope'],

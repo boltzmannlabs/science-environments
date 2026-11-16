@@ -11,6 +11,21 @@
       "entrypoint": "formulation_environment.task01:run_task01",
       "status": "DESIGN_ONLY",
       "default_result_version": "v2"
+    },
+    "Task - 02": {
+      "title": "Ranolazine ER Tablet Dissolution Investigation",
+      "folder_slug": "Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "task_dir": "tasks/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "benchmark_dir": "benchmark/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "results_dir": "results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "config_dir": "config/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "source_dir": "src/formulation_environment/ranolazine_task02",
+      "test_dir": "tests/ranolazine_task02",
+      "script_dir": "scripts/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "docs_dir": "docs/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "research_dir": "../../research/Task - 02 - Ranolazine ER Tablet Dissolution Investigation",
+      "entrypoint": "formulation_environment.ranolazine_task02:run_task02",
+      "status": "ARCHIVED_EVIDENCE_VERIFICATION_ONLY"
     }
   }
 }

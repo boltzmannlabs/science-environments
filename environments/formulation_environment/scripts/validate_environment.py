@@ -19,13 +19,14 @@ REPO = ENV.parents[1]
 
 def public_files():
     for p in ENV.rglob('*'):
-        if p.is_file() and not any(x in p.parts for x in ['.runs', '.cache', '.venv', '__pycache__', '.pytest_cache']):
+        if p.is_file() and not any(x in p.parts for x in ['.runs', '.cache', '.venv', '__pycache__', '.pytest_cache', 'build', 'dist']):
             yield p
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--run', type=Path, help='Actually executed fresh run to compare against curated v2')
+    parser.add_argument('--run', type=Path, help='Actually executed fresh Task-01 run to compare against curated v2')
+    parser.add_argument('--out-dir', type=Path, help='New validation receipt directory; defaults under .runs/validation')
     args = parser.parse_args()
     log = io.StringIO()
     suite = unittest.defaultTestLoader.discover(str(ENV / 'tests'))
@@ -33,7 +34,11 @@ def main():
     failures = []
     if not result.wasSuccessful():
         failures.append('scientific_contract_tests_failed')
-    docs = list(ENV.rglob('*.md')) + list((REPO / 'research/clarithromycin-ir-formulation').glob('*.md'))
+    docs = [p for p in public_files() if p.suffix == '.md']
+    docs += [REPO / 'README.md', REPO / 'research/README.md']
+    docs += list((REPO / 'research/clarithromycin-ir-formulation').glob('*.md'))
+    docs += list((REPO / 'research/Task - 02 - Ranolazine ER Tablet Dissolution Investigation').glob('*.md'))
+    docs += list((REPO / 'docs/decisions/Task - 02 - Ranolazine ER Tablet Dissolution Investigation').glob('*.md'))
     checked_links = 0
     for file in docs:
         if any(x in file.parts for x in ['.runs', '.venv', '.cache']):
@@ -94,7 +99,7 @@ def main():
             failures.append('offline_replay_missing_actual_runner_receipt')
         comparison = {'status': 'PASSED' if not any(f.startswith('offline_replay') for f in failures) else 'FAILED', 'metric_rows_compared': len(actual), 'tolerance_absolute': expected['tolerance_absolute'], 'valid_recipe_records': len(pool), 'scope': 'real_portable_runner_execution_compared_to_curated_computations_not_lab_replication'}
     receipt = {
-        'task_id': 'Task - 01',
+        'task_ids': ['Task - 01', 'Task - 02'],
         'validated_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'python': platform.python_version(),
         'unit_tests_run': result.testsRun,
@@ -112,7 +117,11 @@ def main():
         'scientific_review': 'PENDING',
         'visual_Word_review': 'NOT_PERFORMED',
     }
-    out = ENV / 'results/clarithromycin-500mg-ir-formulation-dissolution'
+    out = args.out_dir or ENV / '.runs/validation' / datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    out = out.resolve()
+    if out.exists() and any(out.iterdir()):
+        parser.error('Validation output directory is not empty; preserve prior receipts.')
+    out.mkdir(parents=True, exist_ok=True)
     # Log tests actually executed, not a fabricated success transcript.
     (out / 'repository_tests.txt').write_text(log.getvalue())
     (out / 'repository_validation.json').write_text(json.dumps(receipt, indent=2) + '\n')

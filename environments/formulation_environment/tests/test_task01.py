@@ -34,7 +34,7 @@ class StructureTests(unittest.TestCase):
 
     def test_literal_task_id_and_three_paths(self):
         tasks = load(ENV / 'config/tasks.json')['tasks']
-        self.assertEqual(set(tasks), {'Task - 01'})
+        self.assertIn('Task - 01', tasks)  # Other tasks must not replace Task-01.
         for key in ['task_dir', 'benchmark_dir', 'results_dir']:
             path = Path(tasks['Task - 01'][key])
             self.assertEqual(path.name, TASK_FOLDER)

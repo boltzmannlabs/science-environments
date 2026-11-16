@@ -2,7 +2,7 @@
 
 **Status: In Progress / DESIGN_ONLY. No validated pharmaceutical product or recipe-to-release predictor.**
 
-A reusable, evidence-gated task collection for formulation design, dissolution analysis and experimental planning. This addition preserves the separate [ranolazine-focused environment](../formulation_dissolution/README.md); it does not merge its synthetic scenarios with clarithromycin literature data.
+A reusable, evidence-gated task collection for formulation design, dissolution analysis and experimental planning. Task-02 has dedicated folders for its [ranolazine investigation](tasks/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md), including configuration, source, scripts, tests, documentation, research, benchmark and results. The original [ranolazine implementation/evidence](../formulation_dissolution/README.md) remains unchanged; its synthetic scenarios are not pooled with clarithromycin literature data.
 
 ## Current work
 
@@ -26,6 +26,14 @@ python3.13 -m venv .venv
 ```
 
 Run from this directory. `scripts/run_task.py` resolves checkout inputs independently of the working directory, refuses to overwrite nonempty runs, and records a receipt. No API credentials, network, LLM, GPU or physical laboratory backend is needed for Task 01. Tests do not manufacture synthetic experimental evidence.
+
+## Task - 02: separate ranolazine folders
+
+[Ownership map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md). Run archive verification from this environment:
+
+    python scripts/run_task.py --task "Task - 02" --out .runs/task02/new-run
+
+This verifies archived hashes and arithmetic only. It does not rerun model fitting or demonstrate product improvement.
 
 ## Unified structure
 

@@ -1,5 +1,9 @@
 # Environment specification
 
+## Task - 02 ownership and execution
+
+Task-02 has its own registered archive-verification implementation, folder contract and tests. It checks saved hashes, group/fold counts and aggregate arithmetic only; no fresh kinetic fitting or product prediction is provided. See the [task folder map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+
 ## Scientific contract
 
 Task 01 is clarithromycin 500 mg IR under an illustrative 800 mg dry coated tablet basis, not ranolazine ER and not the earlier 750 mg exploratory screen. API dose is fixed, not an optimization variable. Exactly eight excipients and their fixed benchmark bounds are enforced. Core: API, MCC, crospovidone, PVP K30, colloidal silica, magnesium stearate. Coat: hypromellose, titanium dioxide and PEG 4000. API mass assumes 100% as-is potency; real charging requires a defined potency/water convention and rebalancing.
