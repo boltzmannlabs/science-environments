@@ -37,8 +37,6 @@ The tree shows the standard artifact names. Each directory contains the scientif
 
 Read `report.md` for the findings and `run.json` for the tool inputs and settings behind them. Candidate and model identifiers connect the report to the tables, sequences and structural outputs.
 
-Task-level [benchmark comparisons](../benchmark/monoclonal_antibody_design/README.md) combine related results with their reference context and PNG figures. The [source guide](../src/readme.md) explains the matching code, preparation records and two log files. The [environment specification](../ENVIRONMENT_SPEC.md) defines the shared directory conventions.
-
 ## Standalone task summaries
 
 The existing summaries for tasks 006 and 007 retain their upstream Markdown format and content:
