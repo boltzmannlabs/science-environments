@@ -91,7 +91,7 @@ CRISPR-Design/
 │   ├── candidate.schema.json
 │   ├── thresholds.v0.1.draft.json     (DRAFT — calibrate on Kim-2019/Konstantakos before freeze)
 │   └── 001..013_*.request.example.json  (13 example briefs, syntax only)
-├── runtime/
+├── src/
 │   ├── CONTRACTS.md                    (backend map + binding rules; verified local assets)
 │   ├── probe_backends.py               (liveness probe — reports backend presence, no fake scoring)
 │   ├── run_002_knockout.R              (executed Run1 stage-1: enumerate → E1/E2/E4/E6)
