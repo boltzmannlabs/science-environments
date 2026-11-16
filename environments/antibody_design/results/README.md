@@ -36,12 +36,3 @@ The tree shows the standard artifact names. Each directory contains the scientif
 | `raw/` | Native scientific products, including generated libraries, prediction archives, confidence arrays and numerical analyses. |
 
 Read `report.md` for the findings and `run.json` for the tool inputs and settings behind them. Candidate and model identifiers connect the report to the tables, sequences and structural outputs.
-
-## Standalone task summaries
-
-The existing summaries for tasks 006 and 007 retain their upstream Markdown format and content:
-
-- [Task 006 — HA / RSV VHH results](task_006_vhh_ha_rsv_fixed_framework_design%20%E2%80%94%20Results.md)
-- [Task 007 — huJ3 / gp120 results](task_007_huj3_gp120_fixed_framework_design%20%E2%80%94%20Results.md)
-
-These documents sit directly under `results/`, alongside the task/run folders.
