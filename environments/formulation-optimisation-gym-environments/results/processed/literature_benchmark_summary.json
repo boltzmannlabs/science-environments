@@ -1,0 +1,54 @@
+{
+  "status": "sanity_check_only_NOT_validation",
+  "holdout_benchmark_status": "not_evaluated",
+  "simulation_source": "results/processed/ranolazine_research_scenario_results.json",
+  "simulation_status": "exploratory_assumption_conditional_NOT_product_prediction",
+  "primary_comparator": {
+    "doi": "10.5281/zenodo.1170150",
+    "formulation": "F8",
+    "time_h": 24,
+    "reported_release_percent": 99.5,
+    "source_location": "abstract",
+    "source_quality": "author-reported summary; replicate-level numerical curves unavailable; not a recalled product",
+    "reported_hardness_kg_per_cm2": "9.3 +/- 0.04",
+    "pdf_sha256_verified": "3619141b00d0bd7e895cfa452ecba94554ea37bdf8724b24bdd1c296eed9c706"
+  },
+  "scenario_comparison": {
+    "first_order": {
+      "simulated_p05_percent": 78.73974513241123,
+      "simulated_p50_percent": 89.3809057297187,
+      "simulated_p95_percent": 96.4847257024141,
+      "absolute_median_error_percentage_points": 10.119094270281295,
+      "reported_endpoint_within_scenario_p05_p95": false
+    },
+    "weibull": {
+      "simulated_p05_percent": 79.79711845521157,
+      "simulated_p50_percent": 89.46928777886427,
+      "simulated_p95_percent": 96.55223718036505,
+      "absolute_median_error_percentage_points": 10.03071222113573,
+      "reported_endpoint_within_scenario_p05_p95": false
+    }
+  },
+  "interpretation": "Both unfitted scenario medians underpredict the single reported endpoint by about 10 percentage points, and it lies above both assumption-scenario p95 values. The quantiles are not predictive intervals. This flags model/assumption discrepancy; it does not establish product-level model failure, validate or refute the publication, or support recalibration from n=1.",
+  "secondary_comparator": {
+    "doi": "10.5281/zenodo.1311884",
+    "table": "Table 6",
+    "use": "excluded from numeric benchmark",
+    "reason": "PDF text extraction showed missing/inconsistent time-row cell counts and nonmonotonic profile values; table cell alignment and source values were not independently resolved",
+    "pdf_sha256_verified": "a1b666d1c6ef13c3519c778ecb977001e5936389f796067aede0534ec0ec39c7"
+  },
+  "paper_1_internal_kinetic_fit_conflict": {
+    "table_4_f8_higuchi_r2": 0.976,
+    "discussion_f8_higuchi_r2": 0.989,
+    "table_4_f8_peppas_r2": 0.986,
+    "discussion_f8_peppas_r2": 0.991,
+    "interpretation": "Internal reporting discrepancy; do not claim independently reproduced fit."
+  },
+  "limitations": [
+    "one author-reported numerical endpoint only; no replicate-level curve or SD",
+    "different research formulation, not Glenmark or Ajanta recalled batches",
+    "scenario distributions are assumed parameter draws, not confidence or predictive intervals",
+    "no training/fitting or parameter tuning to the literature endpoint",
+    "no experimentally validated candidate or approved QC method/specification"
+  ]
+}

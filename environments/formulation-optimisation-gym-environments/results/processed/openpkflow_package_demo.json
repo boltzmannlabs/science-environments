@@ -1,0 +1,103 @@
+{
+  "status": "software_demonstration_only",
+  "source": "openpkflow bundled example_dissolution.csv",
+  "version": "2.9.0",
+  "product": "not_ranolazine",
+  "profile_units": {
+    "time": "package API documents minutes; example CSV does not state unit",
+    "release": "percent"
+  },
+  "model_set": [
+    "zero_order",
+    "first_order",
+    "higuchi",
+    "weibull",
+    "hixson_crowell"
+  ],
+  "profiles": {
+    "reference": {
+      "timepoints": 6,
+      "batches": 3,
+      "best_by_aicc": "weibull",
+      "model_fits": [
+        {
+          "name": "zero_order",
+          "aicc": 31.908695607968728,
+          "r_squared": 0.8176746722067024,
+          "in_sample_rmse_percent": 11.123477528658102
+        },
+        {
+          "name": "first_order",
+          "aicc": 19.85880639993913,
+          "r_squared": 0.9755292692840384,
+          "in_sample_rmse_percent": 4.075121382347175
+        },
+        {
+          "name": "higuchi",
+          "aicc": 28.140824319968026,
+          "r_squared": 0.9026985337238553,
+          "in_sample_rmse_percent": 8.125999152987522
+        },
+        {
+          "name": "weibull",
+          "aicc": 12.368224121124307,
+          "r_squared": 0.9969482535735612,
+          "in_sample_rmse_percent": 1.4391010916532743
+        },
+        {
+          "name": "hixson_crowell",
+          "aicc": 14.519612195971453,
+          "r_squared": 0.9899496039865303,
+          "in_sample_rmse_percent": 2.611612072585771
+        }
+      ]
+    },
+    "test": {
+      "timepoints": 6,
+      "batches": 3,
+      "best_by_aicc": "hixson_crowell",
+      "model_fits": [
+        {
+          "name": "zero_order",
+          "aicc": 28.97032040091618,
+          "r_squared": 0.8743900071012889,
+          "in_sample_rmse_percent": 8.707575263470872
+        },
+        {
+          "name": "first_order",
+          "aicc": 19.453592610243394,
+          "r_squared": 0.9742853591205205,
+          "in_sample_rmse_percent": 3.9398108617290375
+        },
+        {
+          "name": "higuchi",
+          "aicc": 28.848938215983676,
+          "r_squared": 0.8769056114078925,
+          "in_sample_rmse_percent": 8.619940522116453
+        },
+        {
+          "name": "weibull",
+          "aicc": 18.124100848211658,
+          "r_squared": 0.9910455983125038,
+          "in_sample_rmse_percent": 2.324895450925308
+        },
+        {
+          "name": "hixson_crowell",
+          "aicc": 16.837919282757287,
+          "r_squared": 0.9833715520730955,
+          "in_sample_rmse_percent": 3.1681883947689315
+        }
+      ]
+    }
+  },
+  "uncertainty": {
+    "calibration": "not_established",
+    "reason": "example has no independent validation or per-vessel dissolution records"
+  },
+  "caveats": [
+    "not FDA recall measurements",
+    "batch IDs in example cannot be assumed to be independent vessels",
+    "AICc is within-profile fit, not validated predictive performance",
+    "no drug/product-specific objective or approved criterion"
+  ]
+}

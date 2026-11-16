@@ -1,0 +1,3 @@
+# Results
+
+[Processed evidence and scenario output](processed/) were copied without editing; original raw FDA/DailyMed snapshots live in [packaged gym data/raw](../scripts/formulation-optimization-gym/data/raw/). The reproducible [literature benchmark report](../benchmark/LITERATURE_BENCHMARK.md) and [machine-readable comparison](processed/literature_benchmark_summary.json) compare the assumption-only model output against the one literature-reported endpoint suitable for a cautious numerical sanity check. Scenario outputs are unvalidated, and case episodes contain no measured recalled-lot dissolution profiles. Run the gym tests and independent verifier from `../scripts/formulation-optimization-gym/`.

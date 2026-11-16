@@ -1,0 +1,33 @@
+{
+  "status": "sanity_check_only_NOT_validation",
+  "holdout_benchmark_status": "not_evaluated",
+  "n_literature_endpoints": 1,
+  "claim": {
+    "formulation": "F8",
+    "time_h": 24,
+    "percent_released": 99.5,
+    "location": "abstract, article 10.5281/zenodo.1170150",
+    "quality": "author-reported summary; underlying replicate curves and graph points not curated; not Glenmark"
+  },
+  "models": {
+    "first_order": {
+      "simulated_p05_percent": 78.73974513241123,
+      "simulated_p50_percent": 89.3809057297187,
+      "simulated_p95_percent": 96.4847257024141,
+      "absolute_median_error_percentage_points": 10.119094270281295,
+      "literature_endpoint_within_scenario_p05_p95": false
+    },
+    "weibull": {
+      "simulated_p05_percent": 79.79711845521157,
+      "simulated_p50_percent": 89.46928777886427,
+      "simulated_p95_percent": 96.55223718036505,
+      "absolute_median_error_percentage_points": 10.03071222113573,
+      "literature_endpoint_within_scenario_p05_p95": false
+    }
+  },
+  "interpretation": "Scenario-to-literature discrepancy only. Scenario quantiles are assumptions-based draws, not predictive intervals. One author-reported endpoint cannot establish fit, model ranking, calibration, or product performance; no parameter fitting was performed.",
+  "excluded_study": {
+    "doi": "10.5281/zenodo.1311884",
+    "reason": "Table 6 extraction has missing/inconsistent cells and nonmonotonic values; numeric curation unresolved."
+  }
+}
