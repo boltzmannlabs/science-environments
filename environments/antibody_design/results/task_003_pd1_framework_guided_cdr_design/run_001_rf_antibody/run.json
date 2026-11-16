@@ -1,0 +1,109 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_001_rf_antibody",
+  "workflow_id": "WF1_scaffold_rf_antibody_cdr_redesign",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_003_pd1_framework_guided_cdr_design/run_001_rf_antibody",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_001_rf_antibody"
+  },
+  "preparation": {
+    "objective": "Redesign the six CDRs on the fixed paper Table-1 humanized framework (IGHV3-23*01/IGKV1-5*01 + IGHJ4/IGKJ1) against the human PD-1 ligand-binding interface, using the staged 5GGS-derived Fv scaffold, and compare computational evidence with the published anti-PD-1-H965 design.",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S1_input_staging",
+      "purpose": "Stage verified inputs (framework, PD-1 antigen, published panel, interface definition)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "paper/supplement retrieval + parse_panel.py",
+          "source": "open_source",
+          "records": ["C01"],
+          "model_version": "PyMuPDF text extraction + custom parser",
+          "inputs": {"paper_html": "pmc.ncbi.nlm.nih.gov/articles/PMC12815924/", "supplements": "41467_2025_67361_MOESM{1,2,3}_ESM.pdf"},
+          "parameters": null,
+          "outputs": {
+            "framework_table1.json": "inputs/framework_table1.json",
+            "panel": "inputs/pd1_panel_published.json (10 binders incl. H965 KD 81.6 nM)"
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_design_rf_antibody",
+      "purpose": "Generate CDR designs on the staged Fv scaffold",
+      "status": "completed",
+      "dependencies": ["S1_input_staging"],
+      "tools": [
+        {
+          "tool": "rfdiffusion_proteinmpnn (RF-Antibody)",
+          "source": "boltzmann",
+          "records": ["C02"],
+          "model_version": "RFdiffusion antibody-finetuned + ProteinMPNN",
+          "inputs": {
+            "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+            "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+            "num_sequences": 20,
+            "antibody_type": "antibody"
+          },
+          "parameters": {"num_sequences": "20 designs requested (returned 40 paired VH/VL)", "antibody_type": "paired antibody format"},
+          "outputs": {
+            "recorded_outputs": {"raw": "outputs/rf_antibody/ (unzipped platform archive)", "pairs": 40},
+            "saved_artifacts": ["@results/raw/recovered_native_generation", "@results/raw/rf_antibody_mpnn_set0.csv", "@results/raw/rf_antibody_mpnn_set1.csv"]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_gate_enforcement",
+      "purpose": "Enforce frozen gates on RF-Antibody outputs",
+      "status": "completed",
+      "dependencies": ["S2_design_rf_antibody"],
+      "tools": [
+        {
+          "tool": "process_rf_align.py",
+          "source": "open_source",
+          "records": ["C03"],
+          "model_version": "Needleman-Wunsch (numpy) + frozen Table-1 boundaries",
+          "inputs": {"rf_output": "outputs/rf_antibody/ab_des_output_{0,1}_mpnn.csv"},
+          "parameters": null,
+          "outputs": {
+            "pool": "candidates/rf_antibody_pool.json",
+            "eligible": 0,
+            "failed_gates": "39/40 H2 length 7 + FR junction edits; 1 extraction failure"
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"generated": 40, "eligible": 0},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "7ab271b715f20352c28564af3932b6f4f5b18d4869cf2cae28d0c049a26e2e64"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "relation": "original run for this task",
+    "historical_components": "Executed 2026-11-14 under the earlier flat layout (src/<task>/runs/run_001); reorganized into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution. All doc IDs, payloads and artifacts unchanged."
+  }
+}

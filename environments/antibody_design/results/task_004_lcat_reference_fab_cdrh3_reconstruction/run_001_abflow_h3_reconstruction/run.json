@@ -1,0 +1,168 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_001_abflow_h3_reconstruction",
+  "workflow_id": "wf_abflow_paratope_centric_h3",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction"
+  },
+  "preparation": {
+    "objective": "Antigen-conditioned CDR-H3 sequence/structure reconstruction for 5BV7 under the AbFlow RAbD benchmark protocol",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "historical_stage_1",
+      "purpose": "input masking + reference sealing",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "build_run.py",
+          "source": "open_source",
+          "records": ["C01"],
+          "inputs": {"test_set": "authors RAbD test.json 5bv7 entry (heavy C, light B, antigen [A], IMGT-numbered, cdrh3_seq present)"},
+          "parameters": {"n_replicates": 32, "output_dir": "run_5bv7_abflow"},
+          "outputs": {"value": ["input/test_5bv7.json", "input/test_5bv7_xN.json", "reference/*"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_2",
+      "purpose": "CDR-H3 co-design generation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow",
+          "source": "open_source",
+          "records": ["C02", "C03", "C04", "C05"],
+          "inputs": {
+            "by_record": {
+              "C02": {
+                "test_set": "input/test_5bv7_xN.json (masked, 32 entries)",
+                "surf_file": "AbFlow/all_data/RAbD/test_surf.pkl",
+                "pep_file": "AbFlow/all_data/RAbD/test.pkl"
+              },
+              "C03": {"test_set": "input/test_5bv7.json (single masked entry)"},
+              "C04": {"test_set": "input/test_5bv7_xN.json (32 entries)"},
+              "C05": {"test_set": "input/test_5bv7_xN.json (32 entries)"}
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C02": {"seed": 2023, "batch_size": 8, "gpu": 0},
+              "C03": {"seed": 2023, "batch_size": 1},
+              "C04": {"seed": 20261114, "batch_size": 8},
+              "C05": {"seed": 20261114, "batch_size": 8}
+            }
+          },
+          "outputs": {
+            "by_record": {
+              "C02": {"value": ["gen_smoke/candidates.csv (32)"]},
+              "C03": {"value": ["gen_1shot/candidates.csv (1)"]},
+              "C04": {"value": ["gen_g30_prev (32)"]},
+              "C05": {"value": ["gen_g30/candidates.csv (32, complete pmets)"]}
+            }
+          },
+          "states": {"completed": 3, "completed_with_defect": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_3",
+      "purpose": "freeze rankings before native scoring",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "freeze_rankings.py",
+          "source": "open_source",
+          "records": ["C06"],
+          "inputs": {"pools": ["gen_1shot", "gen_g30"]},
+          "parameters": {"ordering": "pmets asc; tie-break candidate_id asc"},
+          "outputs": {"value": ["shortlist_frozen.csv x2", "freeze_record.json x2"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_4",
+      "purpose": "native-reference evaluation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow evaluator",
+          "source": "open_source",
+          "records": ["C07", "C08"],
+          "inputs": {
+            "common": {"chains": "H=C, L=B, A=[A]"},
+            "by_record": {
+              "C07": {"mod_pdb": "candidate PDBs", "ref_pdb": "reference/native_5bv7.pdb"},
+              "C08": {"mod_pdb": "candidate PDBs (33)", "ref_pdb": "reference/native_5bv7.pdb (sealed until freeze)"}
+            }
+          },
+          "parameters": {"common": {"cdr_type": "['H3']"}, "by_record": {"C08": {"PATH_prefix": "/home/boltzmann10/anaconda3/envs/abflow_benchmark/bin"}}},
+          "outputs": {"by_record": {"C08": {"value": ["metrics_per_candidate.json x2 (1+32)", "metrics_summary.json"]}}},
+          "states": {"failed": 1, "completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_5",
+      "purpose": "packaging + benchmark comparison",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "package_results.py",
+          "source": "open_source",
+          "records": ["C09"],
+          "inputs": null,
+          "parameters": {"include_diagnostics": false, "bundles": ["lcat_results"]},
+          "outputs": {"value": ["results/.../lcat_results/ (52 files verified)", "results/.../run_001_abflow_h3_reconstruction/"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "counts": {
+      "designed_workflows": 4,
+      "selected": 1,
+      "executed": 1,
+      "candidates_generated": 65,
+      "candidates_evaluated": 33,
+      "unique_h3_sequences": 4,
+      "native_copies": 0,
+      "selected_workflows": 2,
+      "executed_workflows": 2
+    }
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "7b3b1e91ac4643992af8bcfc1eea600cd5ce3f80f73d02c77f9de1da5f24bbdb"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "derived_from": "AbFlow released RAbD test entry 5bv7 (datasets.zip sha256 5a964e006f503ef4...)",
+    "historical_components": [
+      "pilot pool gen_smoke (seed 2023, 32 draws, 2026-11-14T11:19Z): superseded - per-batch pmets indexing bug; sequences valid, ranking not; retained as diagnostic only",
+      "gen_g30_prev first g30 attempt (14:59Z): same bug; superseded by deterministic regeneration (32/32 sequence-identical)"
+    ]
+  }
+}

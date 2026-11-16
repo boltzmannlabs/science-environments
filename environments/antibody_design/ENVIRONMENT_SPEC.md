@@ -2,71 +2,107 @@
 
 **Environment ID:** `antibody_design`
 
-## Purpose
+## Purpose and organization
 
-The Antibody Design environment defines a common framework for computational antibody discovery, design, optimization and evaluation. Its intended scope covers monoclonal, bispecific and multispecific antibody projects, from a target-defined design objective to traceable candidate comparisons.
+The environment organizes computational antibody discovery, design, optimization and evaluation around explicit scientific tasks and traceable results. Task definitions describe the scientific objective; benchmark documents provide reference context; source and result directories retain the methods, inputs and calculated outputs for each recorded run.
 
-The specification describes the scientific scope and requirements for the environment as it develops. The current release provides monoclonal antibody task specifications and published benchmark references. Availability of executable capabilities is recorded separately in [status.md](status.md).
+The development scope covers monoclonal, bispecific and multispecific antibodies, including de novo design and optimization of existing antibodies. Task definitions declare the molecular format, binding specificities and evaluation requirements.
 
-## Antibody Design Families
+The current task family is `monoclonal_antibody_design`. Its collection covers reference-guided refinement, framework- and epitope-conditioned design, CDR reconstruction, sequence–structure co-design, property-focused design and supplied-panel assessment. The [task catalog](tasks/monoclonal_antibody_design/README.md) links each definition to its benchmark reference.
 
-| Design family | Intended scope | Evaluation focus |
-| --- | --- | --- |
-| Monoclonal antibody design | Design or refine an individual antibody for a defined target and binding region. The current task collection focuses on single-specificity designs. | Target recognition, reference or framework constraints, structural quality, specificity and developability. |
-| Bispecific antibody design | Combine two distinct binding specificities in one defined molecule, directed at different antigens or different epitopes of the same antigen. | Evidence for each binding component, assembly, pairing, geometry and the intended combined mechanism. |
-| Multispecific antibody design | Extend the design framework to molecules with three or more intended binding specificities. | Evidence for every component, compatibility across the assembled molecule and the overall design objective. |
+## Directory contract
 
-These are task groupings. Monoclonal origin, the number of binding specificities and molecular format describe different properties; an engineered bispecific antibody can also be a monoclonal product. In this specification, the separate multispecific track denotes three or more specificities. Valency describes the number of binding sites and does not by itself determine specificity. The bispecific scope follows the distinction between different antigens and different epitopes described in [FDA guidance](https://www.fda.gov/media/123313/download).
-
-The intended format coverage includes full-length antibodies, Fab and F(ab')2 fragments, scFv constructs, single-domain antibodies and engineered multidomain formats. Each task must declare its actual chain composition, domain organization, valency and pairing requirements. Format-specific support requires an appropriate input representation and evaluator. Antibody fragments, single-domain antibodies and engineered multispecific products are also recognized within the broader antibody-product scope described by [WHO](https://www.who.int/publications/m/item/trs1043-annex4).
-
-## Design Modes and Objectives
-
-| Mode or objective | Starting information | Intended outcome |
-| --- | --- | --- |
-| De novo design | A defined target and design objective, with an optional scaffold or framework; no supplied antibody known to bind the target is required. | New candidate binding hypotheses with documented sequence origin and supporting evidence. |
-| Reference-guided design | A verified reference antibody, target context and permitted changes. | Reference-derived candidates assessed against a comparable baseline. |
-| Interaction and specificity optimization | An existing candidate or reference with a defined binding objective and relevant comparison evidence. | Improved computational interaction evidence or selectivity while retaining required properties. |
-| Humanization and developability optimization | A supplied antibody and declared sequence, structural and product-property constraints. | Candidates assessed for humanness, stability, solubility, aggregation risk and other relevant liabilities. |
-| Architecture and combined-function optimization | Defined binding components, molecular format and intended mechanism. | An assembly-aware design assessed at both component and whole-molecule levels. |
-| Reconstruction and benchmarking | A masked or otherwise controlled input and an independently retained reference. | A reproducible assessment of sequence recovery, structural agreement or another declared endpoint. |
-
-De novo design may use a framework or scaffold; it does not necessarily mean generating every residue without prior structural context. A published final design used for comparison must remain distinct from the actual starting antibody or framework. Optimization must identify which properties should improve, which must be retained and which constraints cannot be traded off.
-
-## Scientific Inputs and Constraints
-
-A task must define the target identity, relevant construct, design objective, antibody format and available evidence. Reference-guided work additionally requires verified reference components and permitted modifications. Designs with multiple specificities must identify each target or epitope and the role of each binding component.
-
-Structural inputs must retain their origin and biological context. Experimental coordinates, predicted structures and prepared derivatives must be distinguishable. Document chain and residue mappings, unresolved regions, relevant modifications and any differences between the supplied construct and the evaluated model.
-
-Declare the candidate budget, editable regions, protected residues, pairing rules, comparison controls, output requirements and user-imposed tool or resource constraints before execution. Missing essential inputs must be reported explicitly.
-
-## Workflow and Tool Selection
-
-The environment is intended to support task-dependent workflows rather than prescribe one universal tool sequence. Method selection should account for the target, molecular format, available inputs, relevant benchmark evidence, access restrictions, licensing and computational budget.
-
-Where several workflows are appropriate, compare their applicability, evidence quality, limitations and resource requirements before selecting an approach. Record the tools and revisions actually used. A method's published aggregate performance must not be presented as a predicted success rate for a new target.
-
-The scientific lifecycle connects input review, candidate design, structure and interface assessment, property evaluation, comparison and reporting. These are evidence requirements; their implementation may differ across tasks and formats.
-
-## Evaluation and Candidate Selection
-
-| Evaluation area | Required evidence |
+| Path | Role |
 | --- | --- |
-| Molecular identity | Complete candidate representation, chain or domain assignments, reference lineage where applicable and compliance with declared edits. |
-| Structure and interface | Folding and interface evidence assessed separately, with explicit structural scope, geometry, contacts and uncertainty. |
-| Binding and specificity | Endpoint definitions, matched reference or control comparisons and relevant selectivity evidence. |
-| Developability | Distinct assessments of applicable sequence liabilities, stability, solubility, aggregation, expression and immunogenicity-related indicators. |
-| Combined architecture | Evidence for each required specificity and the assembled molecule, including compatibility with the declared mechanism. |
-| Benchmark comparability | Matching dataset, metric definition, units, structural scope and evaluation conditions. |
-| Reproducibility | Input and output provenance, method revisions, analysis settings, artifact identities and resource use. |
+| `tasks/<family>/<task_id>.md` | Scientific task definition. |
+| `benchmark/<family>/<task_id>/reference.md` | Published reference methods, metric definitions and benchmark context. |
+| `benchmark/<family>/<task_id>/comparison.md` | Calculated results grouped by run, with interpretation and embedded figures. |
+| `benchmark/<family>/<task_id>/figures/` | PNG images used by the comparison document. |
+| `configs/<task_id>/<run_id>.json` | Compact Agent-Scientist settings. |
+| `src/<task_id>/<run_id>/` | Methods, metadata, implementation, inputs and execution records. |
+| `results/<task_id>/<run_id>/` | Scientific run configuration, reports, tables and generated artifacts. |
+| `results/<task_id> — Results.md` | Standalone task result summary retained in the upstream Markdown format. |
+| `scripts/` | Shared utility directory. |
+| `skills/` | Reusable agent-instruction directory. |
+| `tests/` | Environment validation-resource directory. |
 
-Selection must respect mandatory constraints before ranking favorable scores. A strong component cannot compensate for failure of another required component or the assembled molecule. Simultaneous target engagement should be evaluated when required by the proposed mechanism; it is not a universal requirement for every bispecific design. [FDA guidance](https://www.fda.gov/media/123313/download)
+Reference documents accompany the task definitions. Comparison documents and their figure directories accompany recorded calculations. Source, result and agent-setting files are organized for the completed run packages included in this collection.
 
-Predicted confidence, interaction energies, measured affinity and functional activity are separate endpoints. Published benchmark values provide comparison context and do not automatically define acceptance thresholds. Report uncertainty, missing measurements, failed evaluations and non-comparable results alongside positive findings.
+## Identifiers and file relationships
 
-## Iteration and Evidence Handoffs
+Use the same descriptive `<task_id>` in the task filename, benchmark folder, configuration folder, source folder and result folder. A `<run_id>` combines its ordinal with a descriptive method name and stays consistent across the three per-run locations:
 
-Each iteration should retain the candidate identity, changes from its predecessor, input and method revisions, results, failed criteria and the reason for the next decision. Promising candidates may guide focused refinement while alternative approaches preserve exploration. New results must remain attributable to the exact candidate and evaluation conditions that produced them.
+```text
+configs/<task_id>/<run_id>.json
+src/<task_id>/<run_id>/
+results/<task_id>/<run_id>/
+```
 
-Revised workflows should respond to documented evidence. An incomplete or failed stage must not be converted into a successful result, and reused evidence must remain applicable to the current candidate. The stopping decision should reflect the declared objective, available evidence and resource budget.
+Within run records, `task_id` and `run_id` match those paths. `workflow_id` identifies the recorded method, and `lineage` describes relationships between related runs. Candidate identifiers connect candidate tables, sequence records, evaluated models, metrics and shortlists.
+
+## Task definitions and benchmark documents
+
+A task definition establishes the target and construct, antibody representation, supplied reference material, editable and protected regions, scientific objective and expected outputs. It defines the evaluation endpoints and any input-isolation or comparison rules relevant to the task.
+
+Each matching benchmark directory uses the same task ID. `reference.md` describes the reference source, evaluation context, metric definitions, units and reported values. `comparison.md` presents calculated results with their candidate identities, comparator, sample scope and interpretation. Related runs can appear in separate tables within the same comparison document.
+
+Figures are stored as PNG files under `figures/`, embedded in `comparison.md` and explained by captions. Captions identify what is plotted and how it relates to the reported measurements. Predicted confidence, predicted interaction energy, sequence recovery and structural measurements retain their distinct endpoint definitions.
+
+## Source package
+
+```text
+src/<task_id>/<run_id>/
+├── workflow.md
+├── run.yaml
+├── code/
+├── inputs/
+│   ├── saved_artifacts.csv
+│   └── execution_records/
+│       ├── full_config.json
+│       ├── tool_details.json
+│       ├── run_files.csv
+│       └── observable_events.jsonl
+└── logs/
+    ├── agent_scientist_log.md
+    └── execution_summary.md
+```
+
+`workflow.md` explains the method, input preparation, constraints, stages and selection criteria. `run.yaml` records identity, state, lineage, configuration paths and artifact-manifest metadata. `code/` contains run-specific implementation and analysis files. `inputs/` holds original and prepared inputs, mappings, controls, saved requests and supporting records.
+
+`inputs/execution_records/` retains detailed tool records and the original configuration snapshot. Additional run-specific evidence can be stored alongside these files. `inputs/saved_artifacts.csv` inventories the package, and `run_files.csv` inventories the scientific input, code and result files; entries include paths, file sizes and SHA-256 hashes.
+
+Each `logs/` directory contains exactly two files. `agent_scientist_log.md` records observable activity in chronological order. `execution_summary.md` summarizes preparation, tools, outputs, counts and decisions. Supporting machine-readable records remain under `inputs/execution_records/`.
+
+## Configuration records
+
+| Record | Contents |
+| --- | --- |
+| `configs/<task_id>/<run_id>.json` | Five Agent-Scientist keys: `use_subagent`, `llm_model`, `llm_version`, `tokens_used` and `time_budget`. Token fields are `input_output` and `cache_reads`; the time field is `minutes`. A leading `~` marks an approximate quantity. |
+| `results/<task_id>/<run_id>/run.json` | Scientific identity, preparation, ordered stages, tool sources, supplied inputs, parameter values, recorded outputs, outcome and artifact links. |
+| `src/<task_id>/<run_id>/run.yaml` | Source metadata and links to the two current configuration records and the artifact manifest. |
+| `src/<task_id>/<run_id>/inputs/execution_records/full_config.json` | Preserved original configuration snapshot. |
+| `src/<task_id>/<run_id>/inputs/execution_records/tool_details.json` | Detailed tool records supporting the compact scientific configuration. |
+
+In `run.json`, `paths.src` and `paths.results` declare environment-relative folders. References beginning with `@src/` or `@results/` resolve within those folders. Shared settings appear once; `by_record` holds differences between tool records. A `value_ref` such as `C01#/parameters/key` identifies a value under `records.C01` in `tool_details.json`. Detailed records preserve long payloads while the current configuration remains compact.
+
+## Results package
+
+Results are represented as structured per-run packages and standalone task summary documents. The existing summaries for tasks 006 and 007 retain their upstream Markdown filenames and contents. The following table describes the files within a per-run package.
+
+| File or directory | Contents |
+| --- | --- |
+| `run.json` | Compact scientific configuration and artifact links. |
+| `report.md` | Methods performed, numerical findings, candidate-selection criteria and interpretation. |
+| `candidates.csv` | Candidate identities and recorded candidate attributes. |
+| `shortlist.csv` | Selected entries and the recorded selection information. |
+| `sequences.fasta` | Saved candidate sequences identified by stable record names. |
+| `metrics.csv` | Calculated measurements for candidates, models or run-level summaries. |
+| `benchmark_comparison.csv` | Per-run reference comparisons and endpoint context. |
+| `structures/` | Saved evaluated or generated structural models. |
+| `raw/` | Native scientific outputs, including prediction archives, generated libraries, confidence arrays and numerical analyses. |
+
+The artifact set follows the outputs of each calculation. Additional files retain descriptive names, and the report links the tables and native products used in its findings. Source methods and preparation details are documented in the corresponding source package.
+
+## Documentation and navigation
+
+The [main README](README.md) introduces the collection and top-level structure. The [task guide](tasks/README.md), [source guide](src/readme.md), [results guide](results/README.md) and [benchmark guide](benchmark/README.md) explain their respective file roles. Relative links connect task definitions, benchmark references, source methods and result reports so that the collection can be read from its own directory tree.

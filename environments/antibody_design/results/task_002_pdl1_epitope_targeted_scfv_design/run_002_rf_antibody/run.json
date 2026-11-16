@@ -1,0 +1,102 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "run_002_rf_antibody",
+  "workflow_id": "wf_rf_antibody",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_002_pdl1_epitope_targeted_scfv_design/run_002_rf_antibody",
+    "results": "results/task_002_pdl1_epitope_targeted_scfv_design/run_002_rf_antibody"
+  },
+  "preparation": {
+    "objective": "framework-conditioned, epitope-directed design of paired VH/VL candidates (scFv output) against human PD-L1 with H5/35TL as comparator only",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "W3_generation_and_evaluation",
+      "purpose": "RF-Antibody generation, excluded outputs",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "rfdiffusion_proteinmpnn",
+          "source": "boltzmann",
+          "records": ["C01", "C02", "C03", "C04", "C05", "C06"],
+          "inputs": {
+            "common": {"antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb"},
+            "by_record": {
+              "C01": {
+                "saved_request": "@src/inputs/submitted_requests/message_18023_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              },
+              "C02": {
+                "saved_request": "@src/inputs/submitted_requests/message_18026_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              },
+              "C03": {
+                "saved_request": "@src/inputs/submitted_requests/message_18030_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              },
+              "C04": {
+                "saved_request": "@src/inputs/submitted_requests/message_18033_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              },
+              "C05": {
+                "saved_request": "@src/inputs/submitted_requests/message_18043_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              },
+              "C06": {
+                "saved_request": "@src/inputs/submitted_requests/message_18047_subcall_0.json",
+                "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb"
+              }
+            }
+          },
+          "parameters": {
+            "common": {"num_sequences": 8},
+            "by_record": {
+              "C03": {"antibody_type": "scfv"},
+              "C04": {"antibody_type": "scFv"},
+              "C05": {"antibody_type": "antibody"},
+              "C06": {"antibody_type": "antibody"}
+            }
+          },
+          "outputs": {
+            "saved_artifacts": ["@results/raw/ab_des_output_0_mpnn.csv", "@results/raw/ab_des_output_1_mpnn.csv", "@results/raw/recovered_native/rfab_raw"]
+          },
+          "states": {"unknown": 2, "not_started": 2, "approval_required": 1, "accepted": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "reason": "Generation returned VH-only designs, which were excluded against the paired-chain requirement. Downstream candidate evaluation was not executed for excluded outputs.",
+    "inventory_rows": 1,
+    "historical_submission_attempts_recovered": 6
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "4ffbf2df0960defc96c3451326a903285230151b226da1799ac21be80d46d426"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "historical_components": ["run1_epitope_abgen"],
+    "relationship": "Retrospective separation of the four workflows explicitly declared in the combined workflow plan; no new execution.",
+    "historical_config": "src/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen/inputs/historical_provenance/combined_config.json",
+    "retrospective_workflow_id": "W3"
+  }
+}

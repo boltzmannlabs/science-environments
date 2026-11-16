@@ -1,0 +1,37 @@
+{
+ "status": "Success",
+ "OutputData": {
+  "pdb_zip": {
+   "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/pdbs_outputs.zip",
+   "download_link": [
+    "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/pdbs_outputs.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=azurevms%40boltchem-general-324210.iam.gserviceaccount.com%2F20261114%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261114T162736Z&X-Goog-Expires=300&X-Goog-SignedHeaders=host&response-content-disposition=inline&X-Goog-Signature=45a24bb6af2a13a7a7e69cc4189c9300010c970c1356a0b51e19bd5f6c62181d351e43279220c0bf63022c538df0c43efc04d8c6ba7dd366d8bf129c9eefc7cab397289e4411afcbdd475c9f20e8e2d04250b41b789a9e1e1b759e4616ef92081c229584d29ba9a61323810cb2ac04f6b5315d6369bb03d4646492a221d4d190f380fc819398649dd58d8ea7ec20b497f3263685579e9b10c8f6a645a8aaf87a97c47e72c10b48d6d44b6bfc13e973422f813618e83c6f44b2f90ab880c7d0f410b3b79c8a40d48b91144146d16e9721d27feb0f990cb869ab59f5df913a89bdce4a56d9dc4c988b45df7674a8c4f56bbe08cf269aefde3245f360809e048a54"
+   ]
+  },
+  "csv_path": {
+   "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/paths.csv",
+   "download_link": [
+    "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/paths.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=azurevms%40boltchem-general-324210.iam.gserviceaccount.com%2F20261114%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261114T162736Z&X-Goog-Expires=300&X-Goog-SignedHeaders=host&response-content-disposition=inline&X-Goog-Signature=17e36ef6e3d97e1c6f0b2763df39205be4366239b090a31d7aec76016db1e68bc0c10ef7f3a906cbbaf681ed5e8b0b820af9c4aa50a28f8bcb4ea09195cf0b388b8ab116e34e098f05866a093e0ad30b252b3808f514179e85b9b3690d06ac372ec538ca15835941da61f3f4ec4f44eb4b4a7728d83f39e6900774ff5deb0a37515d767ffa149175402bc9219d50b295d2772c3a8d6f9ded1797934c303088049e2ea9eeb96b14b01c489ec42524399117a3871bce29bf358e49e9859e7290cd24747ca6bfb6774233320819bb46de4351b499b5ac02c7886abed2696809d9402635fbbf310e57d465f6a25579daea73bc1694a0837b51569bc16033044d7e18"
+   ]
+  },
+  "zip_path": {
+   "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/outputs.zip",
+   "download_link": [
+    "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6af88afc9de6b44b075d88fd/outputs.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=azurevms%40boltchem-general-324210.iam.gserviceaccount.com%2F20261114%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261114T162736Z&X-Goog-Expires=300&X-Goog-SignedHeaders=host&response-content-disposition=inline&X-Goog-Signature=8ff24d81ca1fbc9017448b2b27c3bda367b38a909535e01c66fe721619c95a1119da24a1765eda77491493183f4703c523342e22385932548883011de1e7525d44f60fbc301527874433e75959f4e9f6ecf66b9fe474f59bbae04a4e15501ac8a5a994b7b1fbc5681aca8118b02abc8ae0ee04703ce539cd6197d747789fbc4884e5328a4f274cbf036376f1dc2c67bfff061dc02b411262e99d6d63eb7ca07f0383a38902ff5dda229c9e4c110cebc29c724754c0833fb5878db0812184368861c0a03e8667164281e203232b1b397a4a085e1b034a21504f3b1f014babf6c1fd5ee076a212bb232de6b4c368d7e18afbe5f475819483d8ee5eff3734b30da3"
+   ]
+  }
+ },
+ "billing": [
+  {
+   "job_name": "task-structurepred-boltz22z45s",
+   "tool_name": "boltz-structure-prediction",
+   "node": "boltzmann12",
+   "duration_seconds": 236,
+   "total_tool_runtime": 229,
+   "tool_lifetime_seconds": 236,
+   "rounded_minutes": 4,
+   "rate_per_hour": 50,
+   "amount": 4
+  }
+ ],
+ "time_taken": "0:03:49.013940"
+}

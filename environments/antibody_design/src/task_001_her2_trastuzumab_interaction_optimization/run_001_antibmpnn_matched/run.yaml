@@ -1,0 +1,46 @@
+run_id: run_001_antibmpnn_matched
+task_id: task_001_her2_trastuzumab_interaction_optimization
+workflow_id: wf_antibmpnn_fixed_backbone_cdr
+status: complete
+lineage:
+  parent: null
+  derived_from: PDB 1N8Z (sha256 ed934d36...)
+  historical_components: []
+counts:
+  designed_workflows: 3
+  selected_workflows: 1
+  executed_workflows: 1
+  generated_sequences: 40
+  unique_candidates: 38
+  evaluated_candidates: 8
+  jobs_ledger: inputs/job_map.json (25 entries)
+config:
+  path: ../../../results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/run.json
+  sha256: 2e9423472700f9bddb05e5f80b8e26ddeed3fe98f632d671c34c6813826d54ed
+last_update: '2026-11-14 14:12:00+00:00'
+completed_utc: '2026-11-14T14:00:00Z'
+stages:
+- stage: S0_prep
+  status: complete
+- stage: S1_design
+  status: complete
+  tool: AntiBMPNN
+  doc_id: 6af8461a9850a93adf67cb88
+- stage: S2_verify
+  status: complete
+- stage: S3_structure
+  status: complete
+  tool: Boltz2
+  n_jobs: 9
+- stage: S4_affinity
+  status: complete
+  tool: Prodigy
+  n_jobs: 9
+- stage: S5_evaluation
+  status: complete
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched.json
+config_sha256: 1c141a033b08a0e1af50b28f6f8113dded998db4390d744758a3059b1369b674

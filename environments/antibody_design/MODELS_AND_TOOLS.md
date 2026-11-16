@@ -13,7 +13,7 @@ The current release provides monoclonal task specifications and benchmark refere
 | Candidate generation | Propose candidates within the selected design mode, molecular format and editing constraints. | Complete candidate representations, unique identifiers and traceable sequence origins or reference changes. |
 | Structure assessment | Evaluate antibody folding, target complexes and relevant assembled architectures. | Structural models, confidence and geometry measurements, assessed regions and uncertainty. |
 | Interface assessment | Examine binding-region compatibility, contacts, clashes and applicable interaction scores. | Candidate-level measurements with target context, definitions and matched reference comparisons. |
-| Property assessment | Assess applicable stability, solubility, aggregation, expression, humanness and other sequence or structural liabilities. | Separate property estimates, method applicability and limitations for the evaluated format. |
+| Property assessment | Assess applicable stability, solubility, aggregation, expression, humanness and other sequence or structural liabilities. | Separate property estimates, method applicability and evaluation scope for the evaluated format. |
 | Specificity assessment | Compare evidence for intended recognition and relevant alternative targets or binding regions. | Defined comparison panels, controls and the scope of any selectivity conclusion. |
 | Architecture assessment | Evaluate binding components, pairing, domain organization and whole-molecule compatibility. | Component-level and assembly-level findings tied to the declared mechanism. |
 | Benchmarking and reporting | Compare eligible results, retain uncertainty and produce reproducible summaries. | Metric definitions, benchmark scope, candidate/reference comparisons and supporting artifacts. |
@@ -47,7 +47,7 @@ Choose methods using the following criteria:
 4. **Reproducibility:** identifiable model or software revisions, accessible dependencies, supported input/output formats and retained native artifacts.
 5. **Practical availability:** working access, licensing, hardware requirements and a verified route to execute the selected method.
 
-Consider established and newly released methods using the same criteria. Popularity or recency alone does not establish suitability. Record why a method was selected and any limitations affecting interpretation.
+Consider established and newly released methods using the same criteria. Popularity or recency alone does not establish suitability. Record why a method was selected and any evaluation scope affecting interpretation.
 
 Where multiple approaches are requested, propose up to five distinct, feasible workflow options and prioritize them using comparable evidence, input readiness and resource requirements. Present fewer options when the evidence does not support five. Keep published benchmark performance separate from expectations for the new task.
 
@@ -61,7 +61,7 @@ Each proposed integration should document:
 | Applicability | Supported formats, target context, input assumptions and known exclusions. |
 | Access | Provider or execution mode, license, dependencies and resource requirements. |
 | Inputs and outputs | Accepted data types, chain and residue conventions, output artifacts and metric definitions. |
-| Evidence | Relevant benchmark population, evaluation conditions, uncertainty and comparison limitations. |
+| Evidence | Relevant benchmark population, evaluation conditions, uncertainty and comparison evaluation scope. |
 | Integration status | Whether the method is proposed, connected or verified for a specified use case, with supporting evidence. |
 
 Record the actual method revisions and settings used in each run. Installation, successful execution and scientific suitability are separate aspects of integration readiness.

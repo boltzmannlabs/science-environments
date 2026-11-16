@@ -1,0 +1,307 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_002_diffab_local",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "id": "S2",
+      "purpose": "DiffAb in-context H3 generation",
+      "depends": [],
+      "acceptance": "32 full-atom candidates; H3 len 19; framework native",
+      "status": "completed",
+      "stage_id": "historical_stage_1",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "id": "S3",
+      "purpose": "freeze ranking",
+      "depends": [
+        "S2"
+      ],
+      "acceptance": "frozen order before scoring",
+      "status": "completed",
+      "stage_id": "historical_stage_2",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C03"
+      ]
+    },
+    {
+      "id": "S4",
+      "purpose": "scoring",
+      "depends": [
+        "S3"
+      ],
+      "acceptance": "authors evaluator unmodified",
+      "status": "completed",
+      "stage_id": "historical_stage_3",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C04"
+      ]
+    },
+    {
+      "id": "S5",
+      "purpose": "packaging",
+      "depends": [
+        "S4"
+      ],
+      "acceptance": "full results tree",
+      "status": "completed",
+      "stage_id": "historical_stage_4",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C05"
+      ]
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "d1",
+      "tool": "DiffAb",
+      "identifier": "codesign_single.pt (local repo, open source)",
+      "purpose": "H3 co-design, 32 samples",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "user-authorized open-source execution; DiffAb single-CDR co-design is the paper-cited baseline family",
+      "model_version": "DiffAb codesign_single.pt (sha256 53d1c240020ce87c...)",
+      "inputs": {
+        "pdb": "native_5bv7_complex.pdb (native complex, in-context)",
+        "cdr": "H_CDR3 (0-based 95-113, len 19)"
+      },
+      "parameters": {
+        "seed": 20261114,
+        "num_samples": 32,
+        "sample_structure": true,
+        "sample_sequence": true,
+        "cdrs": [
+          "H_CDR3"
+        ]
+      },
+      "parameter_descriptions": {
+        "seed": "run-date seed, distinct from AbFlow runs",
+        "num_samples": "32 to match AbFlow-G pool size",
+        "sample_structure/sequence": "co-design both (DiffAb default)",
+        "cdrs": "H3 only — single-CDR track"
+      },
+      "resources": {
+        "gpu": "RTX 3090 24GB",
+        "runtime_s": 55
+      },
+      "execution": {
+        "command": "PYTHONPATH=<repo> <diffab env>/bin/python run_diffab_exact_cdrs_from_input.py native_5bv7_complex.pdb --info-file info.txt --heavy C --light B --config lcat_h3_n32.yml --out_root out_h3_n32 --cdrs HCDR3 --label LCAT_H3",
+        "executed_at": "2026-11-14T15:48:27Z",
+        "exit": 0,
+        "env": "conda diffab"
+      },
+      "outputs": [
+        "out_h3_n32/... 32 candidate PDBs"
+      ],
+      "validation": "32/32 candidates; H3 length 19 conserved; 32 unique H3 sequences; 0 native copies; framework byte-identical (in-context)",
+      "fallback": null,
+      "tool_name": "DiffAb",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred."
+      },
+      "request_payload": null,
+      "original_pointer": "/stages/0/tool_calls/0"
+    },
+    "C02": {
+      "call_id": "d1b",
+      "tool": "graft_diffab.py",
+      "identifier": "local python",
+      "purpose": "evaluator-compatible model build (Chothia->IMGT H3 transplant)",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "evaluator requires IMGT numbering; transplant preserves all DiffAb design content",
+      "inputs": {
+        "candidates": "32 DiffAb PDBs",
+        "scaffold": "native IMGT complex"
+      },
+      "parameters": {
+        "renumber": "H3 block -> native IMGT keys, 1:1 by sequence position"
+      },
+      "parameter_descriptions": {
+        "renumber": "position 1:1; no residue insertion/deletion; framework untouched"
+      },
+      "execution": {
+        "command": "python graft_diffab.py",
+        "executed_at": "2026-11-14T16:05Z",
+        "exit": 0
+      },
+      "outputs": [
+        "gen_diffab_grafted/ (32 models)"
+      ],
+      "validation": "Bio.PDB parse OK; chains A/C/B 377/126/109; first attempt had icode column bug — fixed and regrafted (all 32)",
+      "fallback": {
+        "prior_call": "d1",
+        "error": "first graft wrote insertion codes into wrong PDB columns -> Bio.PDB parse failure",
+        "recovery": "column-correct regraft of all 32",
+        "protocol_difference": "none — numbering layout only"
+      },
+      "tool_name": "graft_diffab.py",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/0/tool_calls/1"
+    },
+    "C03": {
+      "call_id": "d2",
+      "tool": "local python",
+      "identifier": "score_runs23_final.py (freeze block)",
+      "purpose": "filename-order freeze (deterministic sampling order)",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "DiffAb provides no per-sample confidence; deterministic order declared",
+      "parameters": {
+        "ordering": "filename (sampling) order"
+      },
+      "parameter_descriptions": {
+        "ordering": "seeded sampling order is deterministic; no score-based reordering possible pre-scoring"
+      },
+      "execution": {
+        "executed_at": "2026-11-14T16:07Z",
+        "exit": 0
+      },
+      "outputs": [
+        "diffab_frozen_shortlist.json"
+      ],
+      "validation": "32 entries, PDB sha256 recorded",
+      "fallback": null,
+      "tool_name": "local python",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/1/tool_calls/0"
+    },
+    "C04": {
+      "call_id": "d3",
+      "tool": "AbFlow evaluator",
+      "identifier": "cal_metrics.cal_metrics @ df39b47",
+      "purpose": "score vs sealed native",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "same evaluator as all runs — cross-run comparability",
+      "inputs": {
+        "mod_pdbs": "32 grafted models",
+        "ref": "sealed native 5bv7",
+        "chains": "C/B/[A]"
+      },
+      "parameters": {
+        "cdr_type": "['H3']"
+      },
+      "parameter_descriptions": {
+        "cdr_type": "authors' H3-scoring path"
+      },
+      "resources": {
+        "cpu": "workstation",
+        "runtime": "~5 s/candidate"
+      },
+      "execution": {
+        "command": "PATH=<env>/bin:$PATH python score_runs23_final.py",
+        "executed_at": "2026-11-14T16:07-16:10Z",
+        "exit": 0,
+        "notes": "first attempt: DockQ silently 0 for all — evaluator shells ./DockQ/DockQ.py relative to repo; chdir fix; rescored all 64 (runs 2+3) — DockQ now populated"
+      },
+      "outputs": [
+        "scored_diffab/metrics_per_candidate.json"
+      ],
+      "validation": "n=32; AAR H3 mean 0.2747; rank-1 0.2105",
+      "fallback": {
+        "prior_call": "d3-attempt-1",
+        "error": "DockQ silently 0: evaluator shells ./DockQ/DockQ.py relative to repo; driver had not chdir-ed",
+        "recovery": "chdir to repo; native-vs-native control (AAR 1.0/TM 1.0) then full rescore of all 64 candidates",
+        "protocol_difference": "none — execution environment only"
+      },
+      "tool_name": "AbFlow evaluator",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "original_pointer": "/stages/2/tool_calls/0"
+    },
+    "C05": {
+      "call_id": "d4",
+      "tool": "local python",
+      "identifier": "build script",
+      "purpose": "results tree",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "contract packaging",
+      "parameters": {
+        "per_run_tree": true
+      },
+      "parameter_descriptions": {
+        "per_run_tree": "§6 layout"
+      },
+      "execution": {
+        "executed_at": "2026-11-14T16:20Z"
+      },
+      "outputs": [
+        "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/"
+      ],
+      "validation": "complete",
+      "fallback": null,
+      "tool_name": "local python",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/3/tool_calls/0"
+    }
+  }
+}

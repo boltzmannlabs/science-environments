@@ -29,7 +29,7 @@ Design the CDR-H3 sequence and loop conformation of a paired monoclonal antibody
 
 Source references: [CHIMERA-Bench paper, 2026](https://arxiv.org/abs/2603.13431), [data release](https://zenodo.org/records/20598827), [mansoor181/chimera-bench @ `c0ada2ff045e`](https://github.com/mansoor181/chimera-bench/tree/c0ada2ff045e1622ef39e4a25db34724813f378a).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_010_chimera_epitope_conditioned_cdr_design.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_010_chimera_epitope_conditioned_cdr_design/reference.md).
 
 ## Expected Output
 
@@ -45,6 +45,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Report model-ranked candidates separately from retrospective best-of-K recovery summaries.
 - Native recovery and pose agreement describe reconstruction quality; they do not establish experimental affinity.

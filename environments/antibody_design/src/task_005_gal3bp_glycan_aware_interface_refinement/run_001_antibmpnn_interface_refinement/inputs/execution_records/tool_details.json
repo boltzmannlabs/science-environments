@@ -1,0 +1,1243 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "run_001_antibmpnn_interface_refinement",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "stage_id": "W1_ref_complex",
+      "status": "completed",
+      "purpose": null,
+      "metadata_gaps": {
+        "purpose": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "dependencies": null,
+      "acceptance_criteria": null,
+      "records": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "stage_id": "W2_cdr_design",
+      "status": "completed",
+      "purpose": null,
+      "metadata_gaps": {
+        "purpose": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "dependencies": null,
+      "acceptance_criteria": null,
+      "records": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "stage_id": "W3_candidate_eval",
+      "status": "completed",
+      "purpose": null,
+      "metadata_gaps": {
+        "purpose": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "dependencies": null,
+      "acceptance_criteria": null,
+      "records": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "stage_id": "W4_interface_sampling",
+      "status": "completed",
+      "purpose": null,
+      "metadata_gaps": {
+        "purpose": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "dependencies": null,
+      "acceptance_criteria": null,
+      "records": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "w1-boltz2",
+      "tool": "Boltz2 (boltzmann platform)",
+      "purpose": "pairwise structure prediction VH:VL and VH:antigen",
+      "source": "boltzmann",
+      "status": "completed_superseded",
+      "selection_reason": "Boltzmann-first tool priority; ternary not offered by this tool",
+      "execution": {
+        "doc_id": "6af844cd9de6b44b075d7a93",
+        "duration": "7.6 min"
+      },
+      "outputs": "gal3bp_w1_ref_complex/outputs/extracted/boltz_pdb/{1,2}_model_0.pdb",
+      "validation": "pair models only (no ternary); VH:VL iptm 0.945, VH:antigen iptm 0.317",
+      "fallback": "superseded by AFM ternary after platform credits returned",
+      "tool_name": "Boltz2 (boltzmann platform)",
+      "actual_identifier": "Boltz2",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_16571_subcall_0.json",
+        "sha256": "11cc468aa2f1767368aa49b40b0a9f3ff2275ad2b93eb0fa2267910817739836"
+      },
+      "request_payload": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameters": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "submitted_tool_arguments": {
+        "job_name": "Boltz2",
+        "experiment_data": {
+          "Protein_Sequences": [
+            "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+            "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+            "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+          ],
+          "DNA_Sequences": [],
+          "RNA_Sequences": [],
+          "SMILES": []
+        }
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/0/tool_calls/0",
+      "recovered_records": [
+        "C01.R01"
+      ]
+    },
+    "C01.R01": {
+      "call_id": "call_-7077575589447591549:subcall:0",
+      "tool_name": "Boltz2",
+      "actual_identifier": "Boltz2",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_16571_subcall_0.json",
+        "sha256": "11cc468aa2f1767368aa49b40b0a9f3ff2275ad2b93eb0fa2267910817739836"
+      },
+      "request_payload": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "submitted_tool_arguments": {
+        "job_name": "Boltz2",
+        "experiment_data": {
+          "Protein_Sequences": [
+            "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+            "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+            "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+          ],
+          "DNA_Sequences": [],
+          "RNA_Sequences": [],
+          "SMILES": []
+        }
+      },
+      "parameters": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 16571,
+        "tool_call_id": "call_-7077575589447591549",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:23:57.395199+00:00",
+        "doc_id": "6af844cd9de6b44b075d7a93",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C01",
+      "original_pointer": "/stages/0/tool_calls/0/recovered_submissions/0"
+    },
+    "C02": {
+      "call_id": "w1-afm",
+      "tool": "Multimer_Structure_Prediction (colabfold_multimer, AF2-Multimer v3)",
+      "purpose": "ternary reference complex",
+      "source": "boltzmann",
+      "status": "completed",
+      "selection_reason": "only platform tool offering true ternary Fv+antigen prediction",
+      "execution": {
+        "doc_id": "6af879cf9de6b44b075d7f4c",
+        "submitted": "2026-11-14T15:10Z",
+        "duration": "2h10m"
+      },
+      "outputs": "gal3bp_w1_ref_complex/outputs_afm/ (5 models)",
+      "validation": "chains A/B/C correct; iptm 0.26-0.32 (low-confidence interface, honest borrowed-scaffold prior)",
+      "fallback": null,
+      "tool_name": "Multimer_Structure_Prediction (colabfold_multimer, AF2-Multimer v3)",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_17387_subcall_0.json",
+        "sha256": "2d49f565e094a0c00c3b62b71441f56c3396cf134acb58ea939af9b845293f3a"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/0/tool_calls/1",
+      "recovered_records": [
+        "C02.R01"
+      ]
+    },
+    "C02.R01": {
+      "call_id": "call_-7077347681303002936:subcall:0",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_17387_subcall_0.json",
+        "sha256": "2d49f565e094a0c00c3b62b71441f56c3396cf134acb58ea939af9b845293f3a"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 17387,
+        "tool_call_id": "call_-7077347681303002936",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T15:10:07.431908+00:00",
+        "doc_id": "6af879cf9de6b44b075d7f4c",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C02",
+      "original_pointer": "/stages/0/tool_calls/1/recovered_submissions/0"
+    },
+    "C03": {
+      "call_id": "w1-local",
+      "tool": "interface_map.py, interface_chemistry.py, glycan_dsasa.py (skill script), Prodigy (conda base)",
+      "purpose": "interface map, chemistry, glycan dSASA, dG",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "open-source validation chain per skill reference",
+      "execution": {
+        "environment": "conda base python + Biopython 1.84; local"
+      },
+      "outputs": "gal3bp_w1_ref_complex/outputs/*.json, prodigy_ref.txt",
+      "validation": "ref interface 26 residue pairs (CA-CA<6A, atom-level); 1387 heavy contacts; 9 H-bonds; 0 salt bridges; 530 C-C; Prodigy -9.2 kcal/mol, Kd 1.7e-7; glycan dSASA 245.3 A2 at N344 (simplified model)",
+      "fallback": null,
+      "tool_name": "interface_map.py, interface_chemistry.py, glycan_dsasa.py (skill script), Prodigy (conda base)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "original_pointer": "/stages/0/tool_calls/2"
+    },
+    "C04": {
+      "call_id": "w2-antibmpnn-1",
+      "tool": "AntiBMPNN (boltzmann platform)",
+      "purpose": "CDR redesign on ref rank_001",
+      "doc_id": "6af8999b9030bff4164485c2",
+      "status": "validation_failed",
+      "validation": "position 113 > chain B length 106 (mask built from gapped IMGT numbering)",
+      "fallback": "mask recomputed from ANARCI non-gap indices; L3 clamped to 105-106",
+      "source": "boltzmann",
+      "tool_name": "AntiBMPNN (boltzmann platform)",
+      "actual_identifier": "AntiBMPNN",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred.",
+        "outputs": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "selection_reason": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18724_subcall_0.json",
+        "sha256": "f27d874a0f493de670c2e410411d9cfdd4033b34dd7c9f5efaa63f824d823a1a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "26-38,54-64,104-117",
+          "B": "26-38,54-61,104-113"
+        }
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "26-38,54-64,104-117",
+          "B": "26-38,54-61,104-113"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": null,
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 20,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+          "residue_positions_to_design": {
+            "A": "26-38,54-64,104-117",
+            "B": "26-38,54-61,104-113"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/1/tool_calls/0",
+      "recovered_records": [
+        "C04.R01"
+      ]
+    },
+    "C04.R01": {
+      "call_id": "call_-7077213197287026404:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18724_subcall_0.json",
+        "sha256": "f27d874a0f493de670c2e410411d9cfdd4033b34dd7c9f5efaa63f824d823a1a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "26-38,54-64,104-117",
+          "B": "26-38,54-61,104-113"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 20,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+          "residue_positions_to_design": {
+            "A": "26-38,54-64,104-117",
+            "B": "26-38,54-61,104-113"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "26-38,54-64,104-117",
+          "B": "26-38,54-61,104-113"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 18724,
+        "tool_call_id": "call_-7077213197287026404",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T17:25:47.501736+00:00",
+        "doc_id": "6af8999b9030bff4164485c2",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C04",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/0"
+    },
+    "C05": {
+      "call_id": "w2-antibmpnn-2",
+      "tool": "AntiBMPNN (boltzmann platform)",
+      "purpose": "CDR redesign",
+      "source": "boltzmann",
+      "doc_id": "6af89b4ed29658acc304eef4",
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "fixed": "chain C (antigen)",
+        "masks": {
+          "A": "27-38,56-65,105-119",
+          "B": "27-38,55-61,105-106"
+        }
+      },
+      "outputs": "gal3bp_w2_cdr_design/outputs/ (19 unique of 20 designs)",
+      "validation": "framework positions unchanged (verified by diff); scores 0.336-0.400",
+      "status": "completed",
+      "selection_reason": "platform CDR-design tool, antigen-fixed, matched to ref complex",
+      "tool_name": "AntiBMPNN (boltzmann platform)",
+      "actual_identifier": "AntiBMPNN",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18740_subcall_0.json",
+        "sha256": "22a84ddb4c73e432d354dd62ecccae0799e3a2549978d318aae3086a56e8270a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "27-38,56-65,105-119",
+          "B": "27-38,55-61,105-106"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "fallback": null,
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 20,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+          "residue_positions_to_design": {
+            "A": "27-38,56-65,105-119",
+            "B": "27-38,55-61,105-106"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/1/tool_calls/1",
+      "recovered_records": [
+        "C05.R01"
+      ]
+    },
+    "C05.R01": {
+      "call_id": "call_-7077215739907664453:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18740_subcall_0.json",
+        "sha256": "22a84ddb4c73e432d354dd62ecccae0799e3a2549978d318aae3086a56e8270a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "27-38,56-65,105-119",
+          "B": "27-38,55-61,105-106"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 20,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+          "residue_positions_to_design": {
+            "A": "27-38,56-65,105-119",
+            "B": "27-38,55-61,105-106"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 20,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+        "residue_positions_to_design": {
+          "A": "27-38,56-65,105-119",
+          "B": "27-38,55-61,105-106"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 18740,
+        "tool_call_id": "call_-7077215739907664453",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T17:33:02.073750+00:00",
+        "doc_id": "6af89b4ed29658acc304eef4",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C05",
+      "original_pointer": "/stages/1/tool_calls/1/recovered_submissions/0"
+    },
+    "C06": {
+      "call_id": "w3-g14",
+      "tool": "Multimer_Structure_Prediction",
+      "purpose": "matched evaluation G3BPD-14",
+      "source": "boltzmann",
+      "doc_id": "6af89d409850a93adf67dbf3",
+      "validation": "downloaded model VH/VL sequences match design exactly; iptm rank1 0.68 (others 0.50/0.29/0.28/0.28); 512 contacts, 5 H-bonds, Prodigy -8.7",
+      "status": "completed",
+      "selection_reason": "matched evaluation protocol identical to reference",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred.",
+        "outputs": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18884_subcall_0.json",
+        "sha256": "aa6325c5577824ec46367e4eb35f52e56e21050a7288e712ad154388ffb0e261"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": null,
+      "fallback": null,
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/2/tool_calls/0",
+      "recovered_records": [
+        "C06.R01"
+      ]
+    },
+    "C06.R01": {
+      "call_id": "call_-7077212750610425421:subcall:0",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18884_subcall_0.json",
+        "sha256": "aa6325c5577824ec46367e4eb35f52e56e21050a7288e712ad154388ffb0e261"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSNYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 18884,
+        "tool_call_id": "call_-7077212750610425421",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T17:41:20.047491+00:00",
+        "doc_id": "6af89d409850a93adf67dbf3",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C06",
+      "original_pointer": "/stages/2/tool_calls/0/recovered_submissions/0"
+    },
+    "C07": {
+      "call_id": "w3-g04",
+      "tool": "Multimer_Structure_Prediction",
+      "purpose": "matched evaluation G3BPD-04",
+      "source": "boltzmann",
+      "doc_id": "6af89d539030bff41644864d",
+      "validation": "sequences verified; iptm rank1 0.66 (0.55/0.30/0.30/0.29); 608 contacts, 5 H-bonds, Prodigy -8.7",
+      "status": "completed",
+      "selection_reason": "matched evaluation protocol identical to reference",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred.",
+        "outputs": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18886_subcall_0.json",
+        "sha256": "2cb0e2adef7ce4a6a350e4c62a441d6f743cdc82166a8b9b5239c0e4d1741ed5"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": null,
+      "fallback": null,
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/2/tool_calls/1",
+      "recovered_records": [
+        "C07.R01"
+      ]
+    },
+    "C07.R01": {
+      "call_id": "call_-7077208764880773712:subcall:0",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18886_subcall_0.json",
+        "sha256": "2cb0e2adef7ce4a6a350e4c62a441d6f743cdc82166a8b9b5239c0e4d1741ed5"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGTANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSISNYLAWYQQKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 18886,
+        "tool_call_id": "call_-7077208764880773712",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T17:41:39.549926+00:00",
+        "doc_id": "6af89d539030bff41644864d",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C07",
+      "original_pointer": "/stages/2/tool_calls/1/recovered_submissions/0"
+    },
+    "C08": {
+      "call_id": "w3-g17",
+      "tool": "Multimer_Structure_Prediction",
+      "purpose": "matched evaluation G3BPD-17",
+      "source": "boltzmann",
+      "doc_id": "6af8a897445ae94313c3cfa6",
+      "validation": "sequences verified after chimera void; iptm rank1 0.56 (others pending extraction); 665 contacts, 6 H-bonds, 2 salt bridges, Prodigy -8.6",
+      "status": "completed",
+      "selection_reason": "matched evaluation protocol identical to reference",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred.",
+        "outputs": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18956_subcall_0.json",
+        "sha256": "3211bd5d1c782d8d2acffddcdc59a45c9cb1675f1e14f9faff60d4b2148171a1"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": null,
+      "fallback": null,
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/2/tool_calls/2",
+      "recovered_records": [
+        "C08.R01"
+      ]
+    },
+    "C08.R01": {
+      "call_id": "call_-7077167567554472990:subcall:0",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_18956_subcall_0.json",
+        "sha256": "3211bd5d1c782d8d2acffddcdc59a45c9cb1675f1e14f9faff60d4b2148171a1"
+      },
+      "request_payload": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "submitted_tool_arguments": {
+        "experiment_data": {
+          "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        },
+        "job_name": "Multimer_Structure_Prediction"
+      },
+      "parameters": {
+        "input_path": "QVQLVQSGAEVKKPGSSVKVSCRASGGTFSFSYAISWVRQAPGQGFEWMGTIMPIFGVANYAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGGAPYPFDYWGQGTLVTVS:EIVMTQSPAIMSVSPGKRATLSCRASQSVSSYLAWYQQKPGQAPRLLIYGSSTRATGVPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI:VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 18956,
+        "tool_call_id": "call_-7077167567554472990",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T18:29:42.863248+00:00",
+        "doc_id": "6af8a897445ae94313c3cfa6",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C08",
+      "original_pointer": "/stages/2/tool_calls/2/recovered_submissions/0"
+    },
+    "C09": {
+      "call_id": "w3-anarci",
+      "tool": "ANARCI (igdesign env)",
+      "purpose": "germline assignment candidates",
+      "source": "open_source",
+      "outputs": "gal3bp_w3_candidate_eval/outputs/anarci_candidates_summary.json",
+      "validation": "all 6 chains numbered; IGHV1-69*06 (0.90-0.91 identity) / IGKV3-15*01 retained; liability scan: NS motif at VH 85 (framework, parental)",
+      "status": "completed",
+      "tool_name": "ANARCI (igdesign env)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "selection_reason": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "fallback": null,
+      "original_pointer": "/stages/2/tool_calls/3"
+    },
+    "C10": {
+      "call_id": "w3-glycan",
+      "tool": "glycan_dsasa.py (skill script, open_source)",
+      "purpose": "candidate-side glycan occlusion under identical conventions",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "task requires glycan accessibility evidence for candidates, matched to reference conventions",
+      "execution": {
+        "environment": "conda base python + numpy"
+      },
+      "outputs": "gal3bp_w3_candidate_eval/outputs/glycan_dsasa_{G3BPD-14,G3BPD-04,G3BPD-17}.json",
+      "validation": "dSASA 222.2/217.2/217.5 A2, 0 clashes each; mirrored into results metrics.json",
+      "fallback": null,
+      "tool_name": "glycan_dsasa.py (skill script, open_source)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "original_pointer": "/stages/2/tool_calls/4"
+    },
+    "C11": {
+      "call_id": "w3-persistence",
+      "tool": "candidate_persistence.py (local)",
+      "purpose": "per-sample interface persistence + inter-model RMSD for each candidate's 5 AFM models",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "task requires retained per-sample results; interface stability criterion",
+      "execution": {
+        "environment": "conda base python + Biopython"
+      },
+      "outputs": "gal3bp_w3_candidate_eval/outputs/candidate_per_sample_persistence.json",
+      "validation": "0 rank-1 pairs persist >=3/5 for all candidates; RMSD 6.1-45.3 A; mirrored into metrics.json",
+      "fallback": null,
+      "tool_name": "candidate_persistence.py (local)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "original_pointer": "/stages/2/tool_calls/5"
+    },
+    "C12": {
+      "call_id": "w4-afm",
+      "tool": "w4_interface_sampling.py (local)",
+      "purpose": "cross-model interface RMSD + persistence on 5 AFM ref models",
+      "source": "open_source",
+      "outputs": "gal3bp_w4_interface_sampling/outputs/w4_interface_sampling.json",
+      "validation": "0/130 contact pairs persist in >=3 models; pairwise interface RMSD 18-28 A; each model poses the Fv differently (consistent with iptm ~0.3)",
+      "status": "completed",
+      "tool_name": "w4_interface_sampling.py (local)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "selection_reason": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/0"
+    },
+    "C13": {
+      "call_id": "w4-protenix",
+      "tool": "Protenix local (protenix_base_default_v1.0.0)",
+      "purpose": "independent-protocol sampling: 3 seeds x 5 samples with real MSAs",
+      "source": "open_source",
+      "execution": "RTX 3090, 4m19s",
+      "outputs": "gal3bp_w4_interface_sampling/outputs/protenix_w4_summary.json",
+      "validation": "iptm 0.146-0.166 all 15 samples; best-sample interface 40 pairs; 0 pairs shared by >1 sample (persistence histogram all 0.1) — third engine confirms no stable interface",
+      "status": "completed",
+      "selection_reason": "local fallback lane executed in parallel as independent-protocol evidence",
+      "tool_name": "Protenix local (protenix_base_default_v1.0.0)",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "parameters": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/1"
+    },
+    "C14": {
+      "call_id": "w4-boltz2-aux",
+      "tool": "Boltz2 (aux evidence)",
+      "purpose": "VH:antigen pair iptm",
+      "source": "boltzmann",
+      "doc_id": "6af844cd9de6b44b075d7a93",
+      "validation": "iptm 0.317",
+      "status": "completed",
+      "tool_name": "Boltz2 (aux evidence)",
+      "actual_identifier": "Boltz2",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+        "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred.",
+        "execution": "Not recorded in the historical configuration; no value inferred.",
+        "outputs": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "selection_reason": null,
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_16571_subcall_0.json",
+        "sha256": "11cc468aa2f1767368aa49b40b0a9f3ff2275ad2b93eb0fa2267910817739836"
+      },
+      "request_payload": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameters": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": null,
+      "fallback": null,
+      "submitted_tool_arguments": {
+        "job_name": "Boltz2",
+        "experiment_data": {
+          "Protein_Sequences": [
+            "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+            "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+            "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+          ],
+          "DNA_Sequences": [],
+          "RNA_Sequences": [],
+          "SMILES": []
+        }
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/3/tool_calls/2",
+      "recovered_records": [
+        "C14.R01"
+      ]
+    },
+    "C14.R01": {
+      "call_id": "call_-7077575589447591549:subcall:0",
+      "tool_name": "Boltz2",
+      "actual_identifier": "Boltz2",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/inputs/submitted_requests/message_16571_subcall_0.json",
+        "sha256": "11cc468aa2f1767368aa49b40b0a9f3ff2275ad2b93eb0fa2267910817739836"
+      },
+      "request_payload": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "submitted_tool_arguments": {
+        "job_name": "Boltz2",
+        "experiment_data": {
+          "Protein_Sequences": [
+            "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+            "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+            "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+          ],
+          "DNA_Sequences": [],
+          "RNA_Sequences": [],
+          "SMILES": []
+        }
+      },
+      "parameters": {
+        "Protein_Sequences": [
+          "QVQLVQSGAEVKKPGSSVKVSCRASGDSFSRKYGISWVRQAPGQGFEWMGTIMPIVGLTTSAQKFQGRVTITADKSTSTAHMELNSLTSEDTAIYYCARDEIIGARPHWFDSWGQGTLVTVS",
+          "EIVMTQSPAIMSVSPGKRATLSCRASQSVSSNLAWYQRKPGQAPRLLIYGSSTRATGIPARFSGSGSGTEFTLTISSLQSEDFAVYYCLQYYNWPRTFGQGTKVEI",
+          "VNDGDMRLADGGATNQGRVEIFYRGQWGTVCDNLWDLTDASVVCRALGFENATQALGRAAFGQGSGPIMLDEVQCTGTEASLADCKSLGWLKSNCRHERDAGVVCTNETRSTHTLDLSRELSEALGQIFDSQRGCDLSISVNVQGEDALGFCGHTVILTANLEAQALWKEPGSNVTMSVDAECVPMVRDLLRYFYSRRIDITLSSVKCFHKLASAYGARQLQGYCASLFAILLPQDPSFQMPLDLYAYAVATGDALLEKLCLQFLAWNFEALTQAEAWPSVPTDLLQLLLPRSDLAVPSELALLKAVDTWSWGERASHEEVEGLVEKIRFPMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPFQLLARYKGLNLTEDTYKPRIYTSPTWSAFVTDSSWSARKSQLVYQSRRGPLVKYSSDYFQAPSDYRYYPYQSFQTPQHPSFLFQDKRVSWSLVYLPTIQSCWNYGFSCSSDELPVLGLTKSGGSDRTIAYENKALMLCEGLFVADVTDFEGWKAAIPSALDTNSSKSTSSFPCPAGHFNGFRTVIRPFYLTNSSGVD"
+        ],
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110418_c0bdfc",
+        "message_id": 16571,
+        "tool_call_id": "call_-7077575589447591549",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:23:57.395199+00:00",
+        "doc_id": "6af844cd9de6b44b075d7a93",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C14",
+      "original_pointer": "/stages/3/tool_calls/2/recovered_submissions/0"
+    }
+  }
+}

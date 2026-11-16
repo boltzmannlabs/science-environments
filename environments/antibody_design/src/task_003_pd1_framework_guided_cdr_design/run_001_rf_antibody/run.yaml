@@ -1,0 +1,22 @@
+run_id: run_001_rf_antibody
+task_id: task_003_pd1_framework_guided_cdr_design
+workflow_id: WF1_scaffold_rf_antibody_cdr_redesign
+status: completed
+lineage:
+  parent: null
+  relation: original run for this task
+  historical_components: Executed 2026-11-14 under the earlier flat layout (src/<task>/runs/run_001);
+    reorganized into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution.
+    All doc IDs, payloads and artifacts unchanged.
+config_json: ../../../configs/task_003_pd1_framework_guided_cdr_design/run_001_rf_antibody.json
+config_sha256: f2ec3810009493461da8d285b1e61726916ad679e7afb5d19b3b9e487c98da4d
+counts:
+  candidates_generated: 140
+  gate_pass: 0
+config:
+  path: ../../../results/task_003_pd1_framework_guided_cdr_design/run_001_rf_antibody/run.json
+  sha256: 89480fceb4eb9d7754071b1299e43a4f5befb008f0a93a7d60f9d1a5a12c879c
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'

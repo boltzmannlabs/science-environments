@@ -1,0 +1,28 @@
+run_id: run_003_antibmpnn_native_backbone
+task_id: task_004_lcat_reference_fab_cdrh3_reconstruction
+workflow_id: wf_antibmpnn_fixed_backbone_h3
+status: completed
+lineage:
+  parent: run_001_abflow_h3_reconstruction
+  derived_from: native 5bv7 complex; Boltzmann AntiBMPNN job 6af884b7239a6b9f38bec1e5
+  historical_components:
+  - originally designed blocked (isolation constraint); user authorized execution
+    2026-11-14 as declared native-backbone variant; reclassified selected+executed
+  - first submission doc 6af882e5239a6b9f38bec0b4 failed validation (unsupported residues
+    from IMGT insertion codes); renumbered resubmission doc 6af884b7239a6b9f38bec1e5
+    succeeded
+counts:
+  designed_workflows: 4
+  selected_workflows: 4
+  candidates_generated: 32
+  candidates_evaluated: 32
+config:
+  path: ../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/run.json
+  sha256: 569337dcea30b36697a3c05b714555eb0f2557ea5a7421aac202c77387b8fbbf
+last_update: 2026-11-14 16:20:00+00:00
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone.json
+config_sha256: b86b53a1f2bb0003ee38265ad01b420d80070ce4e5bbc44263dea25672efa9f7

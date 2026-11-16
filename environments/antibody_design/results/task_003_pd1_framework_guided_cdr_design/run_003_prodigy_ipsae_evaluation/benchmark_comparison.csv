@@ -1,0 +1,23 @@
+candidate_id,record_type,pair,metric,candidate_value,h965_control_value,delta_vs_control,comparison_verdict,reference_value,reference_source,notes
+PD1T3-019,candidate,PD1:VH,prodigy_binding_affinity_raw,-10.9,-13.1,2.2,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-019,candidate,PD1:VH,ipSAE_A_B_asym,0.899311,0.785058,0.114253,above control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-019,candidate,PD1:VL,prodigy_binding_affinity_raw,-10.1,-9.7,-0.4,more favorable (lower),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-019,candidate,PD1:VL,ipSAE_A_B_asym,0.815554,0.269031,0.546523,above control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-011,candidate,PD1:VH,prodigy_binding_affinity_raw,-12.4,-13.1,0.7,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-011,candidate,PD1:VH,ipSAE_A_B_asym,0.891207,0.785058,0.106149,above control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-011,candidate,PD1:VL,prodigy_binding_affinity_raw,-8.9,-9.7,0.8,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-011,candidate,PD1:VL,ipSAE_A_B_asym,0.181306,0.269031,-0.087725,below control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-038,candidate,PD1:VH,prodigy_binding_affinity_raw,-12.6,-13.1,0.5,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-038,candidate,PD1:VH,ipSAE_A_B_asym,0.726325,0.785058,-0.058733,below control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-038,candidate,PD1:VL,prodigy_binding_affinity_raw,-13.7,-9.7,-4.0,more favorable (lower),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-038,candidate,PD1:VL,ipSAE_A_B_asym,0.641322,0.269031,0.372291,above control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-054,candidate,PD1:VH,prodigy_binding_affinity_raw,-10.9,-13.1,2.2,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-054,candidate,PD1:VH,ipSAE_A_B_asym,0.755745,0.785058,-0.029313,below control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-054,candidate,PD1:VL,prodigy_binding_affinity_raw,-11.8,-9.7,-2.1,more favorable (lower),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-054,candidate,PD1:VL,ipSAE_A_B_asym,0.390241,0.269031,0.12121,above control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-069,candidate,PD1:VH,prodigy_binding_affinity_raw,-7.9,-13.1,5.2,less favorable (higher),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-069,candidate,PD1:VH,ipSAE_A_B_asym,0.31789,0.785058,-0.467168,below control,,,"PAE-weighted interface score, higher = more confident interface"
+PD1T3-069,candidate,PD1:VL,prodigy_binding_affinity_raw,-10.9,-9.7,-1.2,more favorable (lower),,,structure-based prediction on Boltz2 model; raw units uninterpreted
+PD1T3-069,candidate,PD1:VL,ipSAE_A_B_asym,0.468605,0.269031,0.199574,above control,,,"PAE-weighted interface score, higher = more confident interface"
+H965_control,control,PD1:VH+VL,measured_KD_SPR,,,,reference_only,81.6,nM; paper Suppl. Table 7 (SPR),experimental measurement; candidates have no measured values
+PD1T3-019,candidate,PD1:VH+VL,measured_KD_SPR,not_measured,81.6,,not_comparable,81.6,nM; paper Suppl. Table 7 (SPR),no experimental assay run in this task

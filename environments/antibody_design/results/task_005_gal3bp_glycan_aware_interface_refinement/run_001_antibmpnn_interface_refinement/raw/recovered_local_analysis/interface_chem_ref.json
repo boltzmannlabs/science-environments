@@ -1,0 +1,129 @@
+{
+  "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+  "n_interface_residue_pairs_CA_independent": 116,
+  "n_heavy_atom_contacts_5A": 1387,
+  "n_hbonds": 9,
+  "hbond_share_of_contacts_pct": 0.6,
+  "hbonds": [
+    {
+      "donor": "C315 ARG:NE",
+      "acceptor": "A60 THR:OG1",
+      "dist_A": 2.19
+    },
+    {
+      "donor": "C315 ARG:NH1",
+      "acceptor": "A60 THR:OG1",
+      "dist_A": 2.82
+    },
+    {
+      "donor": "C315 ARG:NH2",
+      "acceptor": "A60 THR:OG1",
+      "dist_A": 3.23
+    },
+    {
+      "donor": "A106 ARG:NE",
+      "acceptor": "C351 HIS:NE2",
+      "dist_A": 2.37
+    },
+    {
+      "donor": "A106 ARG:NH1",
+      "acceptor": "C350 SER:OG",
+      "dist_A": 3.06
+    },
+    {
+      "donor": "A106 ARG:NH1",
+      "acceptor": "C351 HIS:ND1",
+      "dist_A": 3.02
+    },
+    {
+      "donor": "A106 ARG:NH1",
+      "acceptor": "C351 HIS:NE2",
+      "dist_A": 1.74
+    },
+    {
+      "donor": "A106 ARG:NH2",
+      "acceptor": "C351 HIS:NE2",
+      "dist_A": 2.09
+    },
+    {
+      "donor": "B32 ASN:ND2",
+      "acceptor": "C318 HIS:ND1",
+      "dist_A": 2.83
+    }
+  ],
+  "n_salt_bridges": 0,
+  "salt_bridges": [],
+  "n_carbon_carbon_contacts_5A": 530,
+  "paratope_residues": [
+    "A100",
+    "A101",
+    "A102",
+    "A103",
+    "A104",
+    "A105",
+    "A106",
+    "A107",
+    "A108",
+    "A109",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A48",
+    "A49",
+    "A50",
+    "A51",
+    "A53",
+    "A56",
+    "A58",
+    "A59",
+    "A60",
+    "A61",
+    "A62",
+    "B30",
+    "B31",
+    "B32",
+    "B49",
+    "B53",
+    "B91",
+    "B92",
+    "B93",
+    "B94",
+    "B96"
+  ],
+  "epitope_residues": [
+    "C274",
+    "C275",
+    "C276",
+    "C278",
+    "C279",
+    "C280",
+    "C305",
+    "C306",
+    "C307",
+    "C308",
+    "C309",
+    "C310",
+    "C311",
+    "C312",
+    "C313",
+    "C314",
+    "C315",
+    "C316",
+    "C317",
+    "C318",
+    "C319",
+    "C321",
+    "C322",
+    "C325",
+    "C343",
+    "C344",
+    "C345",
+    "C346",
+    "C347",
+    "C349",
+    "C350",
+    "C351",
+    "C355"
+  ]
+}

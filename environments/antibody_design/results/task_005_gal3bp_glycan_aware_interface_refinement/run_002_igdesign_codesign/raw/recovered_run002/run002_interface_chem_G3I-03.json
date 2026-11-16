@@ -1,0 +1,109 @@
+{
+  "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+  "n_interface_residue_pairs_CA_independent": 69,
+  "n_heavy_atom_contacts_5A": 815,
+  "n_hbonds": 9,
+  "hbond_share_of_contacts_pct": 1.1,
+  "hbonds": [
+    {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A56 TYR:OH",
+      "dist_A": 1.21
+    },
+    {
+      "donor": "A56 TYR:OH",
+      "acceptor": "C441 GLN:OE1",
+      "dist_A": 3.27
+    },
+    {
+      "donor": "A58 SER:OG",
+      "acceptor": "C440 TYR:OH",
+      "dist_A": 1.61
+    },
+    {
+      "donor": "C440 TYR:OH",
+      "acceptor": "A58 SER:OG",
+      "dist_A": 1.61
+    },
+    {
+      "donor": "A58 SER:OG",
+      "acceptor": "C461 SER:OG",
+      "dist_A": 2.33
+    },
+    {
+      "donor": "C461 SER:OG",
+      "acceptor": "A58 SER:OG",
+      "dist_A": 2.33
+    },
+    {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 2.39
+    },
+    {
+      "donor": "B94 TRP:NE1",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 1.94
+    },
+    {
+      "donor": "C474 TYR:OH",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 1.94
+    }
+  ],
+  "n_salt_bridges": 0,
+  "salt_bridges": [],
+  "n_carbon_carbon_contacts_5A": 312,
+  "paratope_residues": [
+    "A101",
+    "A102",
+    "A103",
+    "A104",
+    "A105",
+    "A106",
+    "A107",
+    "A108",
+    "A109",
+    "A31",
+    "A32",
+    "A51",
+    "A53",
+    "A54",
+    "A55",
+    "A56",
+    "A57",
+    "A58",
+    "A59",
+    "A60",
+    "A75",
+    "B1",
+    "B93",
+    "B94",
+    "B95"
+  ],
+  "epitope_residues": [
+    "C401",
+    "C403",
+    "C406",
+    "C434",
+    "C435",
+    "C436",
+    "C437",
+    "C438",
+    "C439",
+    "C440",
+    "C441",
+    "C442",
+    "C443",
+    "C444",
+    "C459",
+    "C460",
+    "C461",
+    "C467",
+    "C469",
+    "C470",
+    "C473",
+    "C474",
+    "C491"
+  ]
+}

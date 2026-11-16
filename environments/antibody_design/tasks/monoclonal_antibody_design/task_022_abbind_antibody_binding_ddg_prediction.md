@@ -30,7 +30,7 @@ Predict the effects of supplied antibody mutations on binding to a defined human
 
 Source references: [AB-Bind original study](https://pmc.ncbi.nlm.nih.gov/articles/PMC4815335/), [DOI](https://doi.org/10.1002/pro.2829), [sarahsirin/AB-Bind-Database @ `f5af13df8000`](https://github.com/sarahsirin/AB-Bind-Database/tree/f5af13df80000ad9e438a6ccf1147bd5f9d55dba).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_022_abbind_antibody_binding_ddg_prediction.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_022_abbind_antibody_binding_ddg_prediction/reference.md).
 
 ## Expected Output
 
@@ -46,6 +46,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Retain the score definition and units supplied by the computational method; identify calibrated energies and ranking scores explicitly.
-- Predicted mutation effects do not establish experimentally improved affinity of an unmeasured variant.
+- Report predicted mutation effects with the matched parent, candidate, scoring definition and comparison endpoint.

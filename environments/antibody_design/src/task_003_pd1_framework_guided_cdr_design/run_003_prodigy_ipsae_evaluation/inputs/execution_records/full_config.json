@@ -1,0 +1,1095 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_004",
+  "workflow_id": "WF4_interface_evaluation_prodigy_ipsae",
+  "status": "completed",
+  "lineage": {
+    "parent": "run_002",
+    "relation": "downstream evaluation phase on run_002's Boltz2 models: independent interface-affinity and PAE-based interface scoring, filling the gap left by the unavailable Antigen_Antibody_binding property"
+  },
+  "task_requirements": {
+    "objective": "Quantify interface quality of run_002's 6 Boltz2 models (5 candidates + H965 control) with Prodigy (predicted binding affinity, KD) and ipSAE (interface PAE score) under Boltzmann tooling",
+    "constraints": [
+      "Models and PAE files come from run_002's completed Boltz2 jobs — no re-prediction",
+      "Prodigy per-model jobs because ZIP uploads break receipt validation (recorded)"
+    ],
+    "metrics": [
+      "Prodigy predicted logKA / KD",
+      "ipSAE interface score",
+      "comparison vs H965 control under identical tools"
+    ],
+    "benchmark": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design/reference.md",
+    "historical_benchmark_reference": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design.md"
+  },
+  "input_inventory": [
+    {
+      "input": "12 Boltz2 model PDBs (6 jobs x 2 pairs)",
+      "source": "run_002 Boltz2 outputs",
+      "description": "per-model platform uploads (see tool_calls)",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/evaluated_models"
+    },
+    {
+      "input": "boltz2_models_conf.zip (models + pae/plddt npz + confidence json)",
+      "source": "packaged from run_002 outputs",
+      "sha256": "29a7e779d286d0635fe4efa05fbb56212d0c8f936cbfc157064900744a47f767"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1_prodigy_per_model",
+      "status": "completed",
+      "purpose": "Prodigy binding-affinity prediction on each of the 12 PD1:VH / PD1:VL models",
+      "dependencies": [
+        "run_002 S4"
+      ],
+      "acceptance_criteria": "12 terminal jobs; KD/logKA parsed per model",
+      "tool_calls": [
+        {
+          "call_id": "run_004-S1-01..12",
+          "tool": "Prodigy (Binding Affinity)",
+          "actual_identifier": "12 boltzmann jobs: 6af886a89de6b44b075d8685 (cand2 VH), 6af886c89850a93adf67d73b (H965 VH), 6af886d2239a6b9f38bec324 (H965 VL), 6af886df9850a93adf67d773 (cand1 VH), 6af886ea9de6b44b075d86f1 (cand1 VL), 6af886f4239a6b9f38bec38d (cand2 VL), 6af886ff9de6b44b075d872a (cand3 VH), 6af887099de6b44b075d8750 (cand3 VL), 6af88713239a6b9f38bec3dd (cand4 VH), 6af8871d239a6b9f38bec3fb (cand4 VL), 6af887289de6b44b075d8791 (cand5 VH), 6af887329850a93adf67d827 (cand5 VL)",
+          "purpose": "Interface affinity prediction per model",
+          "source": "boltzmann",
+          "selection_reason": "Boltzmann-native affinity predictor; fills Antigen_Antibody_binding gap",
+          "status": "completed",
+          "request_payload": {
+            "job_name": "Prodigy",
+            "experiment_data": {
+              "input_path": "<per-model platform path>",
+              "chain_list": [
+                "A",
+                "B"
+              ]
+            }
+          },
+          "parameters": {
+            "chain_list": [
+              "A",
+              "B"
+            ],
+            "input": "one PDB per job (12 jobs)"
+          },
+          "parameter_descriptions": {
+            "chain_list": "interacting chains A (PD-1) and B (VH or VL)"
+          },
+          "execution": {
+            "jobs": 12,
+            "uploaded_receipts": "all checked-level validation"
+          },
+          "outputs": {},
+          "validation": {},
+          "fallback": {
+            "prior_attempt": "ZIP uploads (boltz2_models.zip, prodigy_set{1,2}.zip)",
+            "observed_error": "Structure inventory exceeds 256 KiB receipt budget -> submit-time 'validation rules changed' rejection; single-PDB submit without chain_list hit connector serialization bug (chain_list:'' -> backend 422)",
+            "recovery": "per-model uploads with experiment_data {chain_list:[A,B]} declared at upload time",
+            "reason_for_switch": "only route that passed receipt validation",
+            "protocol_differences": "12 jobs instead of 1-2 ZIP jobs; identical science"
+          },
+          "tool_name": "Prodigy (Binding Affinity)",
+          "model_version": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "inputs": null,
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077296210414922696:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18223_subcall_0.json",
+                "sha256": "5add1fda56fa1ada0240630fae0d5bd6e1fcfe6ee1270c637bfaca397b542900"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672290927/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672290927/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672290927/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18223,
+                "tool_call_id": "call_-7077296210414922696",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:04:56.213784+00:00",
+                "doc_id": "6af886a89de6b44b075d8685",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18223_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077293495995594361:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18231_subcall_0.json",
+                "sha256": "1d3f468a11b79d0bfacad64bbf99a280a45dccf98b718188ce92486c18cda086"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672323898/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672323898/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672323898/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18231,
+                "tool_call_id": "call_-7077293495995594361",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:05:28.041638+00:00",
+                "doc_id": "6af886c89850a93adf67d73b",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18231_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077291296972339165:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18235_subcall_0.json",
+                "sha256": "8360b990df313a317dbb281ff7ad19a98fb67bd44c33655c083f3ec3e798a543"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672333404/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672333404/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672333404/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18235,
+                "tool_call_id": "call_-7077291296972339165",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:05:38.397878+00:00",
+                "doc_id": "6af886d2239a6b9f38bec324",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18235_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077291846728150781:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18243_subcall_0.json",
+                "sha256": "87668b8d3a09d65cef92555ae6e85fa1fbd4530e288ddb22c9130e78a814113e"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672346596/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672346596/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672346596/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18243,
+                "tool_call_id": "call_-7077291846728150781",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:05:51.644853+00:00",
+                "doc_id": "6af886df9850a93adf67d773",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18243_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077291400051548703:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18251_subcall_0.json",
+                "sha256": "7292c24a8d3bc9d78fe51af8492ec8edaa5af86347c711aba3cfce942915bea1"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672357339/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672357339/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672357339/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18251,
+                "tool_call_id": "call_-7077291400051548703",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:01.750447+00:00",
+                "doc_id": "6af886ea9de6b44b075d86f1",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18251_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077290541058091697:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18256_subcall_0.json",
+                "sha256": "582ef3dd32cb2e1615284a41a026bc308e694e89eec48b14089bc906bc1e8b1b"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672367922/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672367922/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672367922/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18256,
+                "tool_call_id": "call_-7077290541058091697",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:12.487223+00:00",
+                "doc_id": "6af886f4239a6b9f38bec38d",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18256_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077304972148206469:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18260_subcall_0.json",
+                "sha256": "651456da4fdc23bb2b515797b47710b7b4f9f401648d5a4c471c138d2b2bfed8"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672378710/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672378710/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672378710/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18260,
+                "tool_call_id": "call_-7077304972148206469",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:22.998525+00:00",
+                "doc_id": "6af886ff9de6b44b075d872a",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18260_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077289956942543351:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18267_subcall_0.json",
+                "sha256": "67155df1ca1be69d58395cc27fd9ecc6862bef6d94be7bf9ac88730976fee2be"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672388334/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672388334/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672388334/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18267,
+                "tool_call_id": "call_-7077289956942543351",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:32.829029+00:00",
+                "doc_id": "6af887099de6b44b075d8750",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18267_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077301398735415583:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18271_subcall_0.json",
+                "sha256": "af22e7feeb21c390127e2a67ab78755b9ca371d23a7787c38502fc96cc5e555b"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672398243/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672398243/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672398243/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18271,
+                "tool_call_id": "call_-7077301398735415583",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:42.969693+00:00",
+                "doc_id": "6af88713239a6b9f38bec3dd",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18271_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077298615596608617:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18279_subcall_0.json",
+                "sha256": "22a80ba41e3c5585f7032e486e23c13d799adba301c39a4c403418fb0643c6e9"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672408890/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672408890/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672408890/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18279,
+                "tool_call_id": "call_-7077298615596608617",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:06:53.390711+00:00",
+                "doc_id": "6af8871d239a6b9f38bec3fb",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18279_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077298031481060430:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18284_subcall_0.json",
+                "sha256": "40827e34ff05d998b8f09d5f7b3ca3e57d6de3d43083bc8c68c124a589dc2256"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672418788/1_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672418788/1_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672418788/1_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18284,
+                "tool_call_id": "call_-7077298031481060430",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:07:03.575566+00:00",
+                "doc_id": "6af887289de6b44b075d8791",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18284_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077288410754313142:subcall:0",
+              "tool_name": "Prodigy",
+              "actual_identifier": "Prodigy",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18288_subcall_0.json",
+                "sha256": "84f42673ca4f2286f1f4e0dd165c20f1369a6a4f27d6995b0c8515614c46e25e"
+              },
+              "request_payload": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672429501/2_model_0.pdb"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "chain_list": [
+                    "A",
+                    "B"
+                  ],
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672429501/2_model_0.pdb"
+                },
+                "job_name": "Prodigy"
+              },
+              "parameters": {
+                "chain_list": [
+                  "A",
+                  "B"
+                ],
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672429501/2_model_0.pdb"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18288,
+                "tool_call_id": "call_-7077288410754313142",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:07:14.072758+00:00",
+                "doc_id": "6af887329850a93adf67d827",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18288_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_ipsae_interface_scoring",
+      "status": "completed",
+      "Ppurpose": null,
+      "purpose": "ipSAE interface score on models+PAE bundle",
+      "dependencies": [
+        "run_002 S4"
+      ],
+      "acceptance_criteria": "Terminal job; ipSAE scores parsed",
+      "tool_calls": [
+        {
+          "call_id": "run_004-S2-01",
+          "tool": "ipsae-protein (ipSAE Generation)",
+          "actual_identifier": "boltzmann job ipsae-protein, doc 6af88746d29658acc304eb69",
+          "purpose": "PAE-based interface score per model",
+          "source": "boltzmann",
+          "selection_reason": "Confidence-aware interface scoring complementary to Prodigy",
+          "status": "completed",
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+            "model_type": "boltz2",
+            "pae_cutoff": 10.0,
+            "dist_cutoff": 10.0
+          },
+          "parameters": {
+            "pae_cutoff": 10.0,
+            "dist_cutoff": 10.0
+          },
+          "parameter_descriptions": {
+            "pae_cutoff": "worker default",
+            "dist_cutoff": "worker default"
+          },
+          "execution": {
+            "doc_id": "6af88746d29658acc304eb69",
+            "status": "submitted"
+          },
+          "outputs": {},
+          "validation": {},
+          "fallback": null,
+          "tool_name": "ipsae-protein (ipSAE Generation)",
+          "model_version": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "inputs": {
+            "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18294_subcall_0.json",
+            "sha256": "5ade90cc3a7dcac6fbb17ec60eed3d3d9e6636fdc276025b93c4e1828f7fdf9d"
+          },
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077274563779753363:subcall:0",
+              "tool_name": "ipsae-protein",
+              "actual_identifier": "ipsae-protein",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/submitted_requests/message_18294_subcall_0.json",
+                "sha256": "5ade90cc3a7dcac6fbb17ec60eed3d3d9e6636fdc276025b93c4e1828f7fdf9d"
+              },
+              "request_payload": {
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+                "model_type": "boltz2",
+                "pae_cutoff": 10.0,
+                "dist_cutoff": 10.0
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+                  "model_type": "boltz2",
+                  "pae_cutoff": 10.0,
+                  "dist_cutoff": 10.0
+                },
+                "job_name": "ipsae-protein"
+              },
+              "parameters": {
+                "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+                "model_type": "boltz2",
+                "pae_cutoff": 10.0,
+                "dist_cutoff": 10.0
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 18294,
+                "tool_call_id": "call_-7077274563779753363",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T16:07:31.370722+00:00",
+                "doc_id": "6af88746d29658acc304eb69",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw/observed_submission_responses/message_18294_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ],
+          "historical_request_payload_before_reconciliation": {
+            "job_name": "ipsae-protein",
+            "experiment_data": {
+              "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+              "model_type": "boltz2",
+              "pae_cutoff": 10.0,
+              "dist_cutoff": 10.0
+            }
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "input_path": "users/680f678c1b1d883c92aa706c/1794672444600/boltz2_models_conf.zip",
+              "model_type": "boltz2",
+              "pae_cutoff": 10.0,
+              "dist_cutoff": 10.0
+            },
+            "job_name": "ipsae-protein"
+          },
+          "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed."
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_004.json",
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_004/workflow.md",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_004/code",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs/execution_summary.md",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_004/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/shortlist.csv",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_004/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/metrics.csv",
+    "benchmark_comparison_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/benchmark_comparison.csv",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw"
+  },
+  "completion_summary": {
+    "last_update": "2026-11-15T04:05:00Z",
+    "status": "completed",
+    "detail": "12 Prodigy per-model jobs + 1 ipsae-protein job all terminal-completed and downloaded. metrics.csv (24 rows), benchmark_comparison.csv (22 rows), raw/ (13 native outputs), report.md written; run_002 metrics.csv extended with the same 24 prediction rows.",
+    "key_results": "ipSAE leader PD1T3-019 (VH 0.899 / VL 0.816, both above H965 control VH 0.785); strongest Prodigy predictions PD1T3-038 (VH -12.6 / VL -13.7 vs H965 -13.1/-9.7); raw values recorded without unit interpretation."
+  },
+  "historical_artifact_links": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_004/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_004.json",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs/"
+  },
+  "workflow_plan": {
+    "note": "See the original workflow.md; no historical plan fabricated."
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/code",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_code"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/inputs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_inputs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/candidates",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/candidates"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/frozen_configs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/frozen_configs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/provenance.json",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/provenance.json"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/execution.md",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/execution.md"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/metrics_raw.json",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw/historical_metrics_raw.json"
+      },
+      {
+        "original": "results/task_003_pd1_framework_guided_cdr_design/run_001/pd1_results",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/_historical/combined_pd1_results"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "ab63859b7bc11de95cfbaa2a383ac675bca1cd0f43e26a103ab11565011a667d",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_004/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_004.json",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_004/code",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_004/logs/execution_summary.md",
+    "file_manifest": "src/task_003_pd1_framework_guided_cdr_design/run_004/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110401_625a94.jsonl",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_004",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_004/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/shortlist.csv",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_004/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/metrics.csv",
+    "benchmark_comparison_csv": "results/task_003_pd1_framework_guided_cdr_design/run_004/benchmark_comparison.csv",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_004/raw"
+  }
+}

@@ -1,0 +1,46 @@
+# execution_summary — task_005 gal3bp_results
+
+## What ran
+| Stage | Tool (source) | ID | Result |
+|---|---|---|---|
+| W1 ref pairs (aux) | Boltz2 (boltzmann) | 6af844cd9de6b44b075d7a93 | VH:VL iptm 0.945; VH:ag 0.317 (pairwise only) |
+| W1 ref ternary | AF2-Multimer (boltzmann) | 6af879cf9de6b44b075d7f4c | 5 models, iptm 0.26-0.32 |
+| W1 analysis | interface_map/chemistry, glycan_dsasa, Prodigy (open_source) | local | 26 pairs, 1387 contacts, 9 H-bonds, 0 salt, dG -9.2, glycan dSASA 245.3 A2 |
+| W2 design | AntiBMPNN (boltzmann) | 6af89b4ed29658acc304eef4 | 20 designs / 19 unique (1st attempt 6af8999b validation_failed on mask) |
+| W3 eval | AF2-Multimer (boltzmann) | 6af89d40 / 6af89d53 / 6af8a897 | G3BPD-14 iptm 0.68; G3BPD-04 0.66; G3BPD-17 0.56 (all sequence-verified) |
+| W3 analysis | chemistry, Prodigy, ANARCI (open_source) | local | contacts 512/608/665; H-bonds 5/5/6; salt 0/0/2; dG -8.7/-8.7/-8.6; germlines retained |
+| W4 sampling | w4_interface_sampling.py + Protenix 3x5 (open_source) | local | ref: 0/130 pairs persist >=3 models, RMSD 18-28 A; Protenix iptm <=0.166, no shared pairs |
+
+## Counts
+designed 20 -> unique 19 -> evaluated 3 -> selected 3. Voided platform submissions: 6 (hand-typed payload errors; documented in config JSON). All scientific results use only sequence-verified jobs.
+
+## Completion state
+- Completed: W1-W4 with real outputs; results package per contract sections 3-6.
+- Partial: G3BPD-17 rank 2-5 iptm not extracted (rank_001 complete).
+- Blocked/NEEDS_INPUT: study full text, exact E1/E2 residue lists, study mutation set, GaMD replica protocol.
+- Not comparable: study interaction counts (161/165), ~67% H-bond share, 5 A replica RMSD, 2.9 A2 E1 dSASA — all not_comparable per benchmark_comparison.csv.
+
+## Verdicts
+- Reference interface is a low-confidence computational pose across three independent engines (AFM, Boltz2, Protenix) — the honest borrowed-scaffold prior.
+- CDR redesign raised predicted interface confidence (iptm 0.32 -> 0.68/0.66/0.56) without pose convergence between top models (epitope Jaccard 0-0.21) — computational only, not affinity.
+- No claim of study reproduction; this is a workflow-shape reproduction on public inputs.
+
+## Closure additions (task-md Expected Output alignment)
+- designed_sequences.fasta + metrics.json delivered (task bundle names); metrics.json carries matched reference/candidate measurements, glycan assumptions, per-sample persistence and structure sha256 provenance.
+- Candidate glycan occlusion (simplified N-glycan at N344, C276-350 window): 222.2/217.2/217.5 A2, 0 clashes — no candidate epitope blocked under this model.
+- Candidate interface stability: per-sample pair counts retained; 0 rank-1 pairs persist >=3/5 models for every candidate; inter-model RMSD 6.1-45.3 A — confidence gain is not pose reproducibility.
+- shortlist.csv now states supported improvements AND unresolved criteria per candidate.
+- Mut1 retained as NOT_REPRODUCED published control (NEEDS_INPUT), never regenerated.
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed_with_caveats**. [Workflow](../workflow.md), [configuration](../../../../configs/task_005_gal3bp_glycan_aware_interface_refinement/gal3bp_results.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"counts": {"designed": 20, "unique": 19, "evaluated": 3, "selected": 3, "voided_submissions": 6, "task_bundle_files_complete": true}, "remaining_requirements": ["Study full text + exact E1/E2 epitope residue lists + study mutation set: NEEDS_INPUT (unobtainable from this host)", "GaMD/heated-MD replica sampling not executed (protocol not reproducible with available tools); W4 substitute = predictor sampling, protocol-incomparable"], "last_update": "2026-11-14T19:20Z"}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

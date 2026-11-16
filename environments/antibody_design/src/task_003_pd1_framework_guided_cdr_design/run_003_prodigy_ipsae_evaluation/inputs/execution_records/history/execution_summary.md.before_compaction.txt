@@ -1,0 +1,34 @@
+# execution_summary — run_004 (final)
+
+Run: run_004 / WF4 interface evaluation (Prodigy + ipSAE) of run_002 models. Status: COMPLETED. Config: configs/task_003_pd1_framework_guided_cdr_design/run_004.json. Report: results/task_003_pd1_framework_guided_cdr_design/run_004/report.md.
+
+## What ran
+- Prodigy x12 (per-model route forced by connector ZIP-receipt limitation; chain_list [A,B] declared at upload). All 12 terminal-completed and downloaded. Docs (VH then VL per record): H965 6af886c89850a93adf67d73b / 6af886d2239a6b9f38bec324; PD1T3-069 6af886df9850a93adf67d773 / 6af886ea9de6b44b075d86f1; PD1T3-019 6af886a89de6b44b075d8685 / 6af886f4239a6b9f38bec38d; PD1T3-011 6af886ff9de6b44b075d872a / 6af887099de6b44b075d8750; PD1T3-038 6af88713239a6b9f38bec3dd / 6af8871d239a6b9f38bec3fb; PD1T3-054 6af887289de6b44b075d8791 / 6af887329850a93adf67d827.
+- ipsae-protein x1 (doc 6af88746d29658acc304eb69, 12-model bundle + PAE/plddt): completed, downloaded.
+
+## Counts
+models evaluated 12; Prodigy values 12; ipSAE values 12; metrics rows written 24 (+ header).
+
+## Selection/decision
+Raw values recorded without unit interpretation. Combined-evidence leader PD1T3-019 (ipSAE 0.899/0.816, both pairs above H965's best pair 0.785); strongest Prodigy predictions PD1T3-038 (VH -12.6, VL -13.7). run_002 metrics.csv extended with all 24 prediction rows; run_004 report and benchmark context written.
+
+## Connector findings (recorded, not worked around silently)
+1. Multi-structure ZIP uploads exceed the 256 KiB receipt inventory budget -> submit-time rejection (12- and 6-model ZIPs both rejected).
+2. Single-PDB submit with omitted chain_list serializes chain_list:"" -> backend 422.
+3. Working pattern: upload with experiment_data {chain_list:[A,B]}, then submit.
+
+## Remaining
+None for this run. Fills the Antigen_Antibody_binding gap from run_002 (connector enum drift) with Prodigy + ipSAE structure-based predictions; these remain predictions, not measurements.
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_003_pd1_framework_guided_cdr_design/run_004.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"last_update": "2026-11-15T04:05:00Z", "status": "completed", "detail": "12 Prodigy per-model jobs + 1 ipsae-protein job all terminal-completed and downloaded. metrics.csv (24 rows), benchmark_comparison.csv (22 rows), raw/ (13 native outputs), report.md written; run_002 metrics.csv extended with the same 24 prediction rows.", "key_results": "ipSAE leader PD1T3-019 (VH 0.899 / VL 0.816, both above H965 control VH 0.785); strongest Prodigy predictions PD1T3-038 (VH -12.6 / VL -13.7 vs H965 -13.1/-9.7); raw values recorded without unit interpretation."}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

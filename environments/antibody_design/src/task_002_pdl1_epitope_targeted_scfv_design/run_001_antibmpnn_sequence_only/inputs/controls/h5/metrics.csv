@@ -1,0 +1,11 @@
+entity_id,kind,metric,value,unit,protocol,source
+h5_control_v3,control,iptm,0.9265,unitless,"Boltz2 confidence, AG+scFv 2-chain",results/.../structures/h5_control_v3_boltz2_prediction.pdb
+h5_control_v3,control,complex_plddt,0.921,unitless,Boltz2,same
+h5_control_v3,control,global_ca_rmsd_vs_35TL,2.05,angstrom,"sequence-anchored CA match, 334 residues",logs/h5_control_v3_analysis.json
+h5_control_v3,control,interface_residue_recovery,0.9130434782608695,fraction,PD-L1 interface residues within 5 A recovered,same
+h5_control_v3,control,cdr_H1_ca_rmsd,1.21,angstrom,"sequence-anchored, antigen-frame",same
+h5_control_v3,control,cdr_H2_ca_rmsd,2.12,angstrom,"sequence-anchored, antigen-frame",same
+h5_control_v3,control,cdr_H3_ca_rmsd,3.72,angstrom,"sequence-anchored, antigen-frame",same
+h5_control_v3,control,cdr_L1_ca_rmsd,1.79,angstrom,"sequence-anchored, antigen-frame",same
+h5_control_v3,control,cdr_L2_ca_rmsd,0.86,angstrom,"sequence-anchored, antigen-frame",same
+h5_control_v3,control,cdr_L3_ca_rmsd,3.08,angstrom,"sequence-anchored, antigen-frame",same

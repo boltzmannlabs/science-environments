@@ -1,0 +1,38 @@
+record_type,record_id,metric,value,scope,source
+individual_new_candidate,PD1T3-019,iptm_PD1_VH,0.9453,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-019,iptm_PD1_VL,0.9163,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-019,n_overlap_PDL1_surface,26,model-derived contacts,run_001
+individual_new_candidate,PD1T3-019,H3_identity_to_H965,1/8,novelty distance,run_001
+individual_new_candidate,PD1T3-019,thermal_stability_esm_C,79.04932403564453,ESM prediction,run_001
+individual_new_candidate,PD1T3-019,solubility_esm,1,ESM prediction,run_001
+individual_new_candidate,PD1T3-011,iptm_PD1_VH,0.9404,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-011,iptm_PD1_VL,0.677,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-011,n_overlap_PDL1_surface,19,model-derived contacts,run_001
+individual_new_candidate,PD1T3-011,H3_identity_to_H965,0/8,novelty distance,run_001
+individual_new_candidate,PD1T3-011,thermal_stability_esm_C,77.66149139404297,ESM prediction,run_001
+individual_new_candidate,PD1T3-011,solubility_esm,1,ESM prediction,run_001
+individual_new_candidate,PD1T3-054,iptm_PD1_VH,0.8818,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-054,iptm_PD1_VL,0.789,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-054,n_overlap_PDL1_surface,23,model-derived contacts,run_001
+individual_new_candidate,PD1T3-054,H3_identity_to_H965,0/8,novelty distance,run_001
+individual_new_candidate,PD1T3-054,thermal_stability_esm_C,69.59105682373047,ESM prediction,run_001
+individual_new_candidate,PD1T3-054,solubility_esm,1,ESM prediction,run_001
+individual_new_candidate,PD1T3-038,iptm_PD1_VH,0.8716,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-038,iptm_PD1_VL,0.8559,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-038,n_overlap_PDL1_surface,22,model-derived contacts,run_001
+individual_new_candidate,PD1T3-038,H3_identity_to_H965,0/8,novelty distance,run_001
+individual_new_candidate,PD1T3-038,thermal_stability_esm_C,80.1585464477539,ESM prediction,run_001
+individual_new_candidate,PD1T3-038,solubility_esm,1,ESM prediction,run_001
+individual_new_candidate,PD1T3-069,iptm_PD1_VH,0.7218,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-069,iptm_PD1_VL,0.8334,"our Boltz2 prediction, single candidate",run_001
+individual_new_candidate,PD1T3-069,n_overlap_PDL1_surface,16,model-derived contacts,run_001
+individual_new_candidate,PD1T3-069,H3_identity_to_H965,1/8,novelty distance,run_001
+individual_new_candidate,PD1T3-069,thermal_stability_esm_C,68.31668853759766,ESM prediction,run_001
+individual_new_candidate,PD1T3-069,solubility_esm,1,ESM prediction,run_001
+individual_control,H965,iptm_PD1_VH_our_prediction,0.8953,our Boltz2 prediction of published H965 (paper never published individual values),run_001
+individual_control,H965,iptm_PD1_VL_our_prediction,0.7172,our Boltz2 prediction of published H965,run_001
+individual_control,H965,KD_nM_measured,81.6,published SPR measurement (Suppl. Table 7),PMC12815924
+screening_panel,PD-1_745_panel,AUROC,0.76,published aggregate; NOT reproduced (panel unavailable),paper
+screening_panel,PD-1_745_panel,top1pct_enrichment,7.41,published aggregate; NOT reproduced,paper
+screening_panel,design_campaign,discrimination_AUROC,0.95,published aggregate; distinct from 745-panel AUROC; NOT reproduced,paper
+reconstruction,SAbDab-22-DesignAb,CDRH3_AAR_epitope_informed,0.317,published aggregate recovery; NOT a binding metric; NOT H965-specific,paper

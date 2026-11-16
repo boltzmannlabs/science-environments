@@ -32,7 +32,7 @@ Obtain the actual framework sequences and target construct from the study resour
 | Screening quality | AUROC and top-percentile enrichment, if a labelled panel is evaluated | Require the same positive/negative definitions and panel; one candidate cannot yield an AUROC. |
 | Novelty and developability | Reference sequence distance and sequence/structure liabilities | Distinguish a new design from a retrieved published antibody. |
 
-Published comparison data: [PD-1: Framework-Guided CDR Design benchmark](../../benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design.md).
+Published comparison data: [PD-1: Framework-Guided CDR Design benchmark](../../benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design/reference.md).
 
 ## Expected Output
 
@@ -49,5 +49,5 @@ Published comparison data: [PD-1: Framework-Guided CDR Design benchmark](../../b
 
 - Choose the design and evaluation methods independently within the user's constraints.
 - Do not assign the paper's aggregate scores to H965 or to a new candidate.
-- Report `NEEDS_INPUT` if required framework sequences or target annotations cannot be verified.
-- Missing candidate-level benchmarks remain unavailable; never infer them from an AUROC or measured affinity.
+- Verify framework sequences and target annotations before execution; retain their sources and identities in the technical run record.
+- Source candidate-level benchmark values directly and retain panel AUROC and affinity as separate endpoints.

@@ -1,0 +1,409 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_001",
+  "workflow_id": "WF1_scaffold_rf_antibody_cdr_redesign",
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "relation": "original run for this task",
+    "historical_components": "Executed 2026-11-14 under the earlier flat layout (src/<task>/runs/run_001); reorganized into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution. All doc IDs, payloads and artifacts unchanged."
+  },
+  "task_requirements": {
+    "objective": "Redesign the six CDRs on the fixed paper Table-1 humanized framework (IGHV3-23*01/IGKV1-5*01 + IGHJ4/IGKJ1) against the human PD-1 ligand-binding interface, using the staged 5GGS-derived Fv scaffold, and compare computational evidence with the published anti-PD-1-H965 design.",
+    "constraints": [
+      "Framework FR blocks byte-identical to Table 1; only the six CDRs editable",
+      "CDR lengths H1=7, H2=6, H3=7-18, L1=11, L2=7, L3=9-11",
+      "No Cys in CDRs; candidate CDR set must differ from every published panel member",
+      "Published panel sequences are comparison controls only, never design inputs",
+      "Sequences parsed programmatically from source files, never retyped"
+    ],
+    "metrics": [
+      "gate pass/fail per candidate",
+      "eligible candidate count",
+      "framework byte-identity"
+    ],
+    "benchmark": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design/reference.md",
+    "historical_benchmark_reference": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design.md"
+  },
+  "input_inventory": [
+    {
+      "input": "framework_table1.json",
+      "source": "paper Table 1 (PMC12815924)",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/framework_table1.json",
+      "sha256": "e6ded0abaae598983c81cdf74f0eea3561142827dcf43eb3b9d18d88f91842d3",
+      "historical_path": "inputs/framework_table1.json",
+      "saved_sha256": "e6ded0abaae598983c81cdf74f0eea3561142827dcf43eb3b9d18d88f91842d3"
+    },
+    {
+      "input": "pd1_panel_published.json",
+      "source": "Suppl. Table 7, MOESM1",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/pd1_panel_published.json",
+      "sha256": "7dafe11c8415eb504ee50ae724dedde10876047945fec645ca1e4107f23b6a44",
+      "historical_path": "inputs/pd1_panel_published.json",
+      "saved_sha256": "7dafe11c8415eb504ee50ae724dedde10876047945fec645ca1e4107f23b6a44"
+    },
+    {
+      "input": "fv_scaffold.pdb",
+      "source": "built from 5GGS chains A/B backbone with Table-1 FR identity (build_complex.py)",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/fv_scaffold.pdb",
+      "sha256": "47dbf3452229f4d663f6defda2076071f33a8a409041ca119b70013a3c4a1218",
+      "prepared": true,
+      "historical_path": "inputs/fv_scaffold.pdb",
+      "saved_sha256": "47dbf3452229f4d663f6defda2076071f33a8a409041ca119b70013a3c4a1218"
+    },
+    {
+      "input": "pd1_antigen.pdb",
+      "source": "5GGS chain Z residues 33-134",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/pd1_antigen.pdb",
+      "sha256": "1aecd0d0b0cf5ad55da4abaa93cbeaed84b4f19a0815aac3aba3ec3f8032c4a4",
+      "prepared": true,
+      "historical_path": "inputs/pd1_antigen.pdb",
+      "saved_sha256": "1aecd0d0b0cf5ad55da4abaa93cbeaed84b4f19a0815aac3aba3ec3f8032c4a4"
+    },
+    {
+      "input": "pd1_ecd_33_134.fasta",
+      "source": "UniProt Q15116 33-134",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/pd1_ecd_33_134.fasta",
+      "sha256": "78f534a06675419e5eebae44248268e14932f3624ceaa05ca7f7d29a30aff4c0",
+      "historical_path": "inputs/pd1_ecd_33_134.fasta",
+      "saved_sha256": "78f534a06675419e5eebae44248268e14932f3624ceaa05ca7f7d29a30aff4c0"
+    }
+  ],
+  "workflow_plan": {
+    "objective": "Scaffold-anchored CDR redesign via RF-Antibody (rfdiffusion_proteinmpnn) + gate enforcement",
+    "stages": [
+      {
+        "stage_id": "S1_input_staging",
+        "purpose": "stage/verify framework, antigen, panel, interface inputs",
+        "status": "completed"
+      },
+      {
+        "stage_id": "S2_design_rf_antibody",
+        "purpose": "CDR backbone+sequence generation on staged Fv scaffold",
+        "status": "completed"
+      },
+      {
+        "stage_id": "S3_gate_enforcement",
+        "purpose": "align outputs to Table-1 layout; enforce FR byte-identity, CDR length, no-Cys, novelty",
+        "status": "completed"
+      },
+      {
+        "stage_id": "S4_pool_export",
+        "purpose": "export pool JSON with gate verdicts",
+        "status": "completed"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "stage_id": "S1_input_staging",
+      "purpose": "Stage verified inputs (framework, PD-1 antigen, published panel, interface definition)",
+      "dependencies": [],
+      "acceptance_criteria": "All inputs hash-recorded; framework byte-validated against all 10 published sequences",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "run_001-S1-01",
+          "tool": "paper/supplement retrieval + parse_panel.py",
+          "actual_identifier": "local code: code/parse_panel.py",
+          "purpose": "Extract Table-1 framework and Suppl. Table 7 panel programmatically",
+          "source": "open_source",
+          "model_version": "PyMuPDF text extraction + custom parser",
+          "selection_reason": "PMC bot-blocked direct supplement fetch; Springer CDN used; sequences never retyped",
+          "status": "completed",
+          "inputs": {
+            "paper_html": "pmc.ncbi.nlm.nih.gov/articles/PMC12815924/",
+            "supplements": "41467_2025_67361_MOESM{1,2,3}_ESM.pdf"
+          },
+          "outputs": {
+            "framework_table1.json": "inputs/framework_table1.json",
+            "panel": "inputs/pd1_panel_published.json (10 binders incl. H965 KD 81.6 nM)"
+          },
+          "validation": "FR blocks byte-identical across all 10 panel sequences; H698 L3 len 8 recorded as published deviation",
+          "fallback": null,
+          "tool_name": "paper/supplement retrieval + parse_panel.py",
+          "request_payload": null,
+          "metadata_gaps": {
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "parameters": "Not recorded in the historical configuration; no value inferred.",
+            "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred.",
+            "execution": "Not recorded in the historical configuration; no value inferred."
+          },
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": null
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_design_rf_antibody",
+      "purpose": "Generate CDR designs on the staged Fv scaffold",
+      "dependencies": [
+        "S1_input_staging"
+      ],
+      "acceptance_criteria": "Job terminal; paired designs returned",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "run_001-S2-01",
+          "tool": "rfdiffusion_proteinmpnn (RF-Antibody)",
+          "actual_identifier": "boltzmann job rfdiffusion_proteinmpnn, doc 6af8769f239a6b9f38beba18",
+          "purpose": "CDR backbone + sequence design conditioned on Fv scaffold + PD-1 antigen",
+          "source": "boltzmann",
+          "model_version": "RFdiffusion antibody-finetuned + ProteinMPNN",
+          "selection_reason": "Task-primary design route for fixed-framework CDR redesign",
+          "status": "completed",
+          "inputs": {
+            "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+            "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+            "num_sequences": 20,
+            "antibody_type": "antibody"
+          },
+          "request_payload": {
+            "job_name": "rfdiffusion_proteinmpnn",
+            "experiment_data": {
+              "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+              "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+              "num_sequences": 20,
+              "antibody_type": "antibody"
+            }
+          },
+          "parameters": {
+            "num_sequences": "20 designs requested (returned 40 paired VH/VL)",
+            "antibody_type": "paired antibody format"
+          },
+          "parameter_descriptions": {
+            "num_sequences": "design budget; 20 requested returned 40 pairs (2 per design)",
+            "antibody_type": "paired VH/VL, not nanobody"
+          },
+          "resources": {
+            "mode": "remote (platform GPU)"
+          },
+          "execution": {
+            "submitted": "2026-11-14T15:0x:xxZ",
+            "job_id": "6af8769f239a6b9f38beba18",
+            "runtime": "~1m49s"
+          },
+          "outputs": {
+            "raw": "outputs/rf_antibody/ (unzipped platform archive)",
+            "pairs": 40
+          },
+          "validation": "Archive downloaded and unzipped; 40 paired designs parsed",
+          "fallback": null,
+          "tool_name": "rfdiffusion_proteinmpnn (RF-Antibody)",
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077364551934535859:subcall:0",
+              "tool_name": "rfdiffusion_proteinmpnn",
+              "actual_identifier": "rfdiffusion_proteinmpnn",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/submitted_requests/message_17052_subcall_0.json",
+                "sha256": "ba2cf441e9cc18c5395bdf22bebb92bd5196afdf1bddb9f8c577ef7d86fdc6f6"
+              },
+              "request_payload": {
+                "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                "antibody_type": "antibody",
+                "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                "num_sequences": 20
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                  "antibody_type": "antibody",
+                  "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                  "num_sequences": 20
+                },
+                "job_name": "rfdiffusion_proteinmpnn"
+              },
+              "parameters": {
+                "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                "antibody_type": "antibody",
+                "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                "num_sequences": 20
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17052,
+                "tool_call_id": "call_-7077364551934535859",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T14:56:31.683889+00:00",
+                "doc_id": "6af8769f239a6b9f38beba18",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw/observed_submission_responses/message_17052_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_gate_enforcement",
+      "purpose": "Enforce frozen gates on RF-Antibody outputs",
+      "dependencies": [
+        "S2_design_rf_antibody"
+      ],
+      "acceptance_criteria": "Every candidate has explicit gate verdicts",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "run_001-S3-01",
+          "tool": "process_rf_align.py",
+          "actual_identifier": "local code: code/process_rf_align.py",
+          "purpose": "NW-align each design to Table-1 layout; extract CDRs; enforce gates",
+          "source": "open_source",
+          "model_version": "Needleman-Wunsch (numpy) + frozen Table-1 boundaries",
+          "selection_reason": "Strict enforcement of paper CDR lengths; no silent junction repair",
+          "status": "completed",
+          "inputs": {
+            "rf_output": "outputs/rf_antibody/ab_des_output_{0,1}_mpnn.csv"
+          },
+          "outputs": {
+            "pool": "candidates/rf_antibody_pool.json",
+            "eligible": 0,
+            "failed_gates": "39/40 H2 length 7 + FR junction edits; 1 extraction failure"
+          },
+          "validation": "All 40 verdicts recorded with failure reasons",
+          "fallback": null,
+          "tool_name": "process_rf_align.py",
+          "request_payload": null,
+          "metadata_gaps": {
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "parameters": "Not recorded in the historical configuration; no value inferred.",
+            "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred.",
+            "execution": "Not recorded in the historical configuration; no value inferred."
+          },
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": null
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_001.json",
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_001/workflow.md",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_001/code",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs/execution_summary.md",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_001/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/shortlist.csv",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_001/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/metrics.csv",
+    "structures": "results/task_003_pd1_framework_guided_cdr_design/run_001/structures",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw"
+  },
+  "completion_summary": {
+    "generated": 40,
+    "eligible": 0,
+    "reason_zero": "Systematic 7-residue H2 window and FR/CDR junction edits vs the locked Table-1 framework; honest zero, gates not weakened",
+    "remaining": "None for this route; route superseded by run_002 backbone diversification",
+    "last_update": "2026-11-14T16:10:00Z",
+    "package_inventory_note": "Canonical table contains the 40 RF exclusions only; mixed historical inventory archived. Native chain sequences retained exactly."
+  },
+  "historical_artifact_links": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_001/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_001.json",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs/",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_001/"
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/code",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_code"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/inputs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_inputs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/candidates",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/candidates"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/frozen_configs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/frozen_configs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/provenance.json",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/provenance.json"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/execution.md",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/execution.md"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/metrics_raw.json",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw/historical_metrics_raw.json"
+      },
+      {
+        "original": "results/task_003_pd1_framework_guided_cdr_design/run_001/pd1_results",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/_historical/combined_pd1_results"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [
+      "benchmark_comparison.csv"
+    ],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "99cb6264701e2a5647ed7693e28261799c6dafb1b8c8d30acf6d3508909bedc7",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_001/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_001.json",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_001/code",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_001/logs/execution_summary.md",
+    "file_manifest": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110401_625a94.jsonl",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_001",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_001/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/shortlist.csv",
+    "structures": "results/task_003_pd1_framework_guided_cdr_design/run_001/structures",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_001/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_001/metrics.csv"
+  }
+}

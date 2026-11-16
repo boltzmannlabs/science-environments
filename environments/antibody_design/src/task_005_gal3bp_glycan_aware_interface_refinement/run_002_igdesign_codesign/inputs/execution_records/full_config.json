@@ -1,0 +1,387 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "run_002_igdesign_codesign",
+  "workflow_id": "igdesign_lm_codesign",
+  "status": "completed",
+  "lineage": {
+    "parent_run": "gal3bp_results (AntiBMPNN fixed-backbone, completed_with_caveats)",
+    "relationship": "parallel distinct strategy; consumes run's W1 reference complex read-only",
+    "historical_components": []
+  },
+  "task_requirements": {
+    "objective": "glycan-aware interface refinement of BDBV-43-derived candidates on Gal-3BP E1-window; second design engine (antigen-conditioned LM codesign) beyond fixed-backbone AntiBMPNN",
+    "constraints": [
+      "preserve chain pairing VH/VL and framework outside declared CDR mask",
+      "matched evaluation conditions vs reference and vs run gal3bp_results candidates",
+      "Mut1 stays published control",
+      "study-specific numbers stay NEEDS_INPUT/not_comparable"
+    ],
+    "metrics": [
+      "designed/unique/shortlisted counts",
+      "per-sample CE loss (design confidence)",
+      "matched AFM iptm per rank",
+      "interface chemistry (contacts/H-bonds/salt)",
+      "Prodigy dG",
+      "glycan dSASA (N344 window)",
+      "persistence across 5 ranks"
+    ]
+  },
+  "input_inventory": [
+    {
+      "path": "inputs/igdesign_input_complex.pdb",
+      "provenance": "run gal3bp_results W1 AFM rank_001 (doc 6af879cf9de6b44b075d7f4c) + 3-letter SEQRES added",
+      "sha256": "627a4180839a182be6917a3afd5e11228d526983cc58599d59e00cb80c8651ad",
+      "validation": "igdesign PDBParserAnnotator parse OK; chains A 122 / B 106 / C 567; A byte==reference VH"
+    },
+    {
+      "path": "inputs/hcdr123_gal3bp.yaml",
+      "provenance": "this run",
+      "sha256": "bcb931c2ec44a46fdcfa9b78cd4b9d874c6f12c0bc60c923956ce1a6c50b3e06",
+      "validation": "positions 0-based verified vs igdesign annotate_chain on full VH (no truncation)"
+    },
+    {
+      "path": "inputs/igdesign_cdr_positions.json",
+      "provenance": "igdesign structure_analysis.annotate_chain",
+      "sha256": "851faa225cd8bdb7ad926d5c9c0ce57ec2655eeb934cc639507259d6a9742587"
+    },
+    {
+      "path": "inputs/ref_sequences.fasta",
+      "provenance": "PDB 7KEW BDBV-43 Fv",
+      "sha256": "2a67bc15718f6815030d1e658280a05f0c0b95fac4f01546d4648e5f8ca9ef98"
+    },
+    {
+      "path": "code/run_igdesign_mmap.py",
+      "provenance": "copied from task_017 validated wrapper (skill igdesign-memory-safe-inference)",
+      "sha256": "54adb4432aaec335e37c87335ce7ee46195a5ba33406cb9394eff8e1c1693831"
+    }
+  ],
+  "workflow_plan": {
+    "designed_strategies": 4,
+    "selected": 2,
+    "planning_table": [
+      {
+        "run_id": "gal3bp_results",
+        "strategy": "fixed-backbone AntiBMPNN both-chain CDR redesign + matched AFM eval",
+        "status": "completed_with_caveats"
+      },
+      {
+        "run_id": "run_002_igdesign_codesign",
+        "strategy": "antigen-conditioned LMDesign heavy-CDR123 codesign + matched AFM eval",
+        "status": "selected, executing"
+      },
+      {
+        "run_id": "run_003_epitope_abgen_backbone",
+        "strategy": "epitope-conditioned backbone+sequence regeneration (platform epitope_abgen)",
+        "status": "blocked: 3 independent jobs 404-forever (docs in task env history 2026-11-14); server-side hang class; lane superseded by local generators"
+      },
+      {
+        "run_id": "run_004_agcdr_backbone",
+        "strategy": "local AgCDR-diff CDR backbone regeneration + AntiBMPNN sequencing",
+        "status": "blocked: finetuned checkpoint missing (/home/boltzmann10/gpu_job/checkpoints/interface_geometry/20260916_184746/best.pt absent); repo comparison scripts crash on dataset API mismatch"
+      }
+    ],
+    "stages": [
+      {
+        "stage_id": "G1_generation",
+        "purpose": "100-sample IgDesign codesign",
+        "status": "completed",
+        "tool_calls": [
+          {
+            "call_id": "run002-igdesign-gen",
+            "tool": "IgDesign (LMDesign+igMPNN) local",
+            "actual_identifier": "commit 70431eef0afaf0496d7d84e22dfdc1980ec9e70, ckpts igdesign_acvr2b_holdout + igmpnn_acvr2b_holdout",
+            "source": "open_source",
+            "purpose": "antigen-conditioned heavy CDR123 sequence codesign",
+            "selection_reason": "second independent design engine; Boltzmann has no LM codesign tool; ToolUniverse none",
+            "status": "completed",
+            "inputs": "inputs/hcdr123_gal3bp.yaml",
+            "parameters": {
+              "samples": 100,
+              "seed": 0,
+              "temperature_pmpnn": 0.5,
+              "temperature_lm": 0.5,
+              "scope": "heavy CDR1/2/3, VL fixed, antigen-conditioned, fp16"
+            },
+            "parameter_descriptions": {
+              "samples": "10 decoding orders x 10 PMNN x 1 LM",
+              "fp16": "memory-forced operating point (skill recipe), documented not equivalent to fp32"
+            },
+            "resources": {
+              "gpu": "RTX 3090 24GB",
+              "peak_expected": "~17.5 GB"
+            },
+            "execution": {
+              "env": "/home/boltzmann10/anaconda3/envs/igdesign",
+              "cmd": "python code/run_igdesign_mmap.py inputs/hcdr123_gal3bp.yaml"
+            },
+            "outputs": "igdesign_run002_results.csv (100 samples) + gates JSON",
+            "validation": "97 unique pass gates (3 rejected: new Cys); top-3 by mean region CE loss selected",
+            "fallback": null
+          }
+        ]
+      },
+      {
+        "stage_id": "G2_gates",
+        "purpose": "dedupe, mask containment, framework identity, liabilities",
+        "status": "completed",
+        "tool_calls": [
+          {
+            "call_id": "run002-gates",
+            "tool": "igdesign_gates.py local",
+            "source": "open_source",
+            "purpose": "dedupe/mask/framework/Cys/liability gates",
+            "status": "completed",
+            "outputs": "igdesign_run002_candidates.json",
+            "validation": "100->97 unique; 0 edits outside mask; framework byte-identical by construction; liab_new none in top-3",
+            "fallback": null
+          }
+        ]
+      },
+      {
+        "stage_id": "G3_matched_eval",
+        "purpose": "top-3 AFM evaluation matched to gal3bp_results W3 protocol",
+        "status": "completed",
+        "tool_calls": [
+          {
+            "call_id": "run002-afm-G3I-01",
+            "tool": "Multimer_Structure_Prediction (Boltzmann)",
+            "source": "boltzmann",
+            "purpose": "matched AFM eval G3I-01",
+            "status": "completed",
+            "outputs": "afm zip downloaded; rank1 metrics computed",
+            "fallback": null
+          },
+          {
+            "call_id": "run002-afm-G3I-02",
+            "tool": "Multimer_Structure_Prediction (Boltzmann)",
+            "source": "boltzmann",
+            "purpose": "matched AFM eval G3I-02",
+            "status": "completed",
+            "outputs": "afm zip downloaded; rank1 metrics computed",
+            "fallback": null
+          },
+          {
+            "call_id": "run002-afm-G3I-03",
+            "tool": "Multimer_Structure_Prediction (Boltzmann)",
+            "source": "boltzmann",
+            "purpose": "matched AFM eval G3I-03",
+            "status": "completed",
+            "outputs": "afm zip downloaded; rank1 metrics computed",
+            "fallback": null
+          }
+        ]
+      },
+      {
+        "stage_id": "G4_chemistry",
+        "purpose": "interface chemistry, Prodigy, glycan dSASA, persistence",
+        "status": "completed",
+        "tool_calls": []
+      },
+      {
+        "stage_id": "G5_packaging",
+        "purpose": "results bundle + benchmark comparison rows",
+        "status": "completed",
+        "tool_calls": []
+      }
+    ]
+  },
+  "artifact_links": {
+    "config_json": "configs/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign.json",
+    "workflow_md": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/workflow.md",
+    "code": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/code",
+    "inputs": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs",
+    "agent_log": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/logs/execution_summary.md",
+    "report_md": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/report.md",
+    "candidates_csv": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/candidates.csv",
+    "shortlist_csv": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/shortlist.csv",
+    "sequences_fasta": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/sequences.fasta",
+    "metrics_csv": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.csv",
+    "benchmark_comparison_csv": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/benchmark_comparison.csv",
+    "structures": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures",
+    "raw": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw"
+  },
+  "completion_summary": {
+    "status": "completed",
+    "counts": {
+      "generated_samples": 100,
+      "retained_candidates": 97,
+      "evaluated_candidates": 3,
+      "shortlist": 3
+    },
+    "evidence": [
+      "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/report.md",
+      "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.csv",
+      "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/job_registry.json"
+    ],
+    "remaining_requirements": [],
+    "status_reconciled_utc": "2026-11-16T05:06:52+00:00",
+    "scope": "Execution and saved computational artifacts complete; scientific interpretation remains in report.md."
+  },
+  "stages": [
+    {
+      "stage_id": "S1_generation",
+      "purpose": "Local IgDesign generation",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_results.csv",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_candidates.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "tool_calls": [],
+      "record_type": "retrospective_saved_artifact_reconciliation"
+    },
+    {
+      "stage_id": "S2_sequence_checks",
+      "purpose": "Recorded sequence/framework gates and candidate inventory",
+      "dependencies": [
+        "S1_generation"
+      ],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/code/igdesign_gates.py",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_candidates.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "tool_calls": [],
+      "record_type": "retrospective_saved_artifact_reconciliation"
+    },
+    {
+      "stage_id": "S3_matched_prediction",
+      "purpose": "Three completed AF2-Multimer candidate predictions",
+      "dependencies": [
+        "S2_sequence_checks"
+      ],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/job_registry.json",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_job_manifest.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "tool_calls": [
+        {
+          "call_id": "saved-afm-G3I-01",
+          "tool_name": "Multimer_Structure_Prediction",
+          "actual_identifier": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "purpose": "Matched evaluation G3I-01",
+          "status": "completed",
+          "inputs": {
+            "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-01.txt",
+            "sha256": "46afc16c1ff4a572c5e61212b200ba40deef986a763cf4f83d2beab8204de6ee"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af9a0ce9de6b44b075d9527",
+            "record_type": "existing_execution_evidence"
+          },
+          "outputs": {
+            "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-01",
+            "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-01_afm_rank1.pdb"
+          },
+          "validation": {
+            "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+          }
+        },
+        {
+          "call_id": "saved-afm-G3I-02",
+          "tool_name": "Multimer_Structure_Prediction",
+          "actual_identifier": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "purpose": "Matched evaluation G3I-02",
+          "status": "completed",
+          "inputs": {
+            "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-02.txt",
+            "sha256": "a938d0b08d86db0b7c3705b0e4a0fd20ead4753821e65a1b519bef96ab6fac1b"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af9a0d7d29658acc304fdb4",
+            "record_type": "existing_execution_evidence"
+          },
+          "outputs": {
+            "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-02",
+            "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-02_afm_rank1.pdb"
+          },
+          "validation": {
+            "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+          }
+        },
+        {
+          "call_id": "saved-afm-G3I-03",
+          "tool_name": "Multimer_Structure_Prediction",
+          "actual_identifier": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "purpose": "Matched evaluation G3I-03",
+          "status": "completed",
+          "inputs": {
+            "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-03.txt",
+            "sha256": "59f8783f9a556d548f1a9f0db5046bd215918e56606b76850625e20cb1fa0b4d"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af9a105d29658acc304fdc5",
+            "record_type": "existing_execution_evidence"
+          },
+          "outputs": {
+            "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-03",
+            "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-03_afm_rank1.pdb"
+          },
+          "validation": {
+            "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+          }
+        }
+      ],
+      "record_type": "retrospective_saved_artifact_reconciliation"
+    },
+    {
+      "stage_id": "S4_evaluation",
+      "purpose": "Interface chemistry, predicted energy, glycan and model-persistence analyses",
+      "dependencies": [
+        "S3_matched_prediction"
+      ],
+      "status": "completed",
+      "evidence": [
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.csv",
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.json",
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_persistence_glycan.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "tool_calls": [],
+      "record_type": "retrospective_saved_artifact_reconciliation"
+    }
+  ],
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "7f81a1d7a1b67a0c7dcc1de6cc13d3ec116780b78efd99d83ce5b26c77baa1d9",
+    "source_status": "in_flight",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/workflow.md"
+  }
+}

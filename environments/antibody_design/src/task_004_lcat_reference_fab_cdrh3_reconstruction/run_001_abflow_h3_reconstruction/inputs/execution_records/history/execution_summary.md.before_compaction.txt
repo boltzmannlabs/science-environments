@@ -1,0 +1,24 @@
+# execution_summary — run_001_abflow_h3_reconstruction
+
+- Objective: CDR-H3 reconstruction on 5bv7, benchmark-matched (AbFlow Table 1 protocol).
+- Tools actually used: AbFlow paratope_centric_design.ckpt (open_source, repo df39b47, HF release); local python drivers; authors' cal_metrics.cal_metrics evaluator + TMscore/lddt/DockQ v1 binaries.
+- Inputs: masked 5bv7 dataset entry (cdrh3_seq removed; sampler-level masking verified); sealed native reference (JSON+PDB+sha256 manifest), unsealed only after ranking freeze.
+- Counts: 65 candidates generated across pilot(32)/1-shot(1)/pool(32); 33 evaluated (1-shot + final pool); 4 unique H3 sequences; 0 native copies; 1 selected per protocol (frozen rank-1 of each pool).
+- Completed: S1-S5. Partial: none. Failed-then-recovered: pilot pool ranking (pmets bug — regenerated deterministically), first scoring attempt (lddt PATH). Blocked: none in this run.
+- Selection decisions: frozen ordering = pmets asc (pose-blind), never altered after scoring.
+- Key results (1-shot): AAR H3 0.5263 (pub 0.4234±0.1334), CAAR 0.3333 (0.2824±0.2037), TM 0.9648 (0.9736±0.0090), lDDT 0.8105 (0.8522±0.0216), RMSD AppC 14.472 A (8.25±4.55), DockQ 0.889 (0.423±0.161). All |z|<=1.9 except DockQ +2.9.
+- Remaining requirements: DockQ v2 not computed; 60-case aggregates not reproducible from one case (by design); Table-2 track handled separately in run_004.
+- Links: [workflow.md](../workflow.md) | [config JSON](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction.json) | [report (bundle)](../../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/lcat_results/report.md) | [activity log](agent_scientist_log.md)
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"last_update": "2026-11-14T15:45:00Z", "counts": {"designed_workflows": 4, "selected": 1, "executed": 1, "candidates_generated": 65, "candidates_evaluated": 33, "unique_h3_sequences": 4, "native_copies": 0, "selected_workflows": 2, "executed_workflows": 2}, "remaining_requirements": ["DockQ v2 (paper secondary check, aggregate 0.339): not_computed - no DockQ v2 installation identified in session; only v1 (authors build) run", "Table 2 multi-CDR/full-atom tracks: not_comparable - out of declared single-CDR-H3 scope", "single-case values cannot reproduce 60-case aggregate statistics (by design)"]}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

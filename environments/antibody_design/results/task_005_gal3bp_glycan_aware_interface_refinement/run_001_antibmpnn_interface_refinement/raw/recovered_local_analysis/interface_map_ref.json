@@ -1,0 +1,103 @@
+{
+  "definition": "antibody-antigen residue pair if CA-CA < 6.0 A; same definition for reference and candidates",
+  "n_contact_pairs": 7,
+  "n_paratope_residues": 7,
+  "n_epitope_residues": 6,
+  "paratope_region_counts": {
+    "FR": 7
+  },
+  "paratope_residues": [
+    {
+      "residue": "A055",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A056",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A076",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A102",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A104",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A105",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A106",
+      "chain": "VH",
+      "region": "FR"
+    }
+  ],
+  "epitope_residues": [
+    "C214",
+    "C223",
+    "C254",
+    "C535",
+    "C538",
+    "C540"
+  ],
+  "epitope_domain_counts": {
+    "BTB(153-259)": 2,
+    "BACK(260-360)": 1,
+    "C-term(361-585)": 3
+  },
+  "epitope_mature_range": [
+    214,
+    540
+  ],
+  "cdr_position_map_1based": {
+    "H1": [],
+    "H2": [],
+    "H3": [],
+    "L1": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "L2": [
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "L3": [
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ]
+  },
+  "caveat": "epitope mapped on the computational ternary assembly (Boltz2 pair models), not on the study's unavailable reference model; paper-defined E1 could not be verified (NEEDS_INPUT)"
+}

@@ -1,0 +1,254 @@
+{
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "run_002_igdesign_codesign",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "stage_id": "S1_generation",
+      "purpose": "Local IgDesign generation",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_results.csv",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_candidates.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "record_type": "retrospective_saved_artifact_reconciliation",
+      "records": []
+    },
+    {
+      "stage_id": "S2_sequence_checks",
+      "purpose": "Recorded sequence/framework gates and candidate inventory",
+      "dependencies": [
+        "S1_generation"
+      ],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/code/igdesign_gates.py",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_candidates.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "record_type": "retrospective_saved_artifact_reconciliation",
+      "records": []
+    },
+    {
+      "stage_id": "S3_matched_prediction",
+      "purpose": "Three completed AF2-Multimer candidate predictions",
+      "dependencies": [
+        "S2_sequence_checks"
+      ],
+      "status": "completed",
+      "evidence": [
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/job_registry.json",
+        "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_run002_job_manifest.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "record_type": "retrospective_saved_artifact_reconciliation",
+      "records": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "stage_id": "S4_evaluation",
+      "purpose": "Interface chemistry, predicted energy, glycan and model-persistence analyses",
+      "dependencies": [
+        "S3_matched_prediction"
+      ],
+      "status": "completed",
+      "evidence": [
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.csv",
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/metrics.json",
+        "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_persistence_glycan.json"
+      ],
+      "acceptance_criteria": "Recorded sequence checks and saved per-run evaluation artifacts; see report.md.",
+      "record_type": "retrospective_saved_artifact_reconciliation",
+      "records": []
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "saved-afm-G3I-01",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "source": "boltzmann",
+      "purpose": "Matched evaluation G3I-01",
+      "status": "completed",
+      "inputs": {
+        "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-01.txt",
+        "sha256": "46afc16c1ff4a572c5e61212b200ba40deef986a763cf4f83d2beab8204de6ee"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af9a0ce9de6b44b075d9527",
+        "record_type": "existing_execution_evidence"
+      },
+      "outputs": {
+        "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-01",
+        "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-01_afm_rank1.pdb"
+      },
+      "validation": {
+        "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+      },
+      "original_pointer": "/stages/2/tool_calls/0"
+    },
+    "C02": {
+      "call_id": "saved-afm-G3I-02",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "source": "boltzmann",
+      "purpose": "Matched evaluation G3I-02",
+      "status": "completed",
+      "inputs": {
+        "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-02.txt",
+        "sha256": "a938d0b08d86db0b7c3705b0e4a0fd20ead4753821e65a1b519bef96ab6fac1b"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af9a0d7d29658acc304fdb4",
+        "record_type": "existing_execution_evidence"
+      },
+      "outputs": {
+        "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-02",
+        "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-02_afm_rank1.pdb"
+      },
+      "validation": {
+        "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+      },
+      "original_pointer": "/stages/2/tool_calls/1"
+    },
+    "C03": {
+      "call_id": "saved-afm-G3I-03",
+      "tool_name": "Multimer_Structure_Prediction",
+      "actual_identifier": "Multimer_Structure_Prediction",
+      "source": "boltzmann",
+      "purpose": "Matched evaluation G3I-03",
+      "status": "completed",
+      "inputs": {
+        "payload_file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/payload_G3I-03.txt",
+        "sha256": "59f8783f9a556d548f1a9f0db5046bd215918e56606b76850625e20cb1fa0b4d"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af9a105d29658acc304fdc5",
+        "record_type": "existing_execution_evidence"
+      },
+      "outputs": {
+        "native_folder": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/afm_native/G3I-03",
+        "evaluated_structure": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/structures/G3I-03_afm_rank1.pdb"
+      },
+      "validation": {
+        "sequence_verification": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/raw/run002_seq_verification.json"
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "request_payload": "Verbatim scientific payload is retained in the saved payload file; original HTTP envelope is not reconstructed."
+      },
+      "original_pointer": "/stages/2/tool_calls/2"
+    }
+  },
+  "saved_local_configuration": {
+    "file": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/hcdr123_gal3bp.yaml",
+    "sha256": "bcb931c2ec44a46fdcfa9b78cd4b9d874c6f12c0bc60c923956ce1a6c50b3e06",
+    "values": {
+      "structure_path": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design/src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_input_complex.pdb",
+      "lmdesign_checkpoint": "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igdesign_acvr2b_holdout.ckpt",
+      "pmpnn_checkpoint": "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igmpnn_acvr2b_holdout.ckpt",
+      "save_path": "/home/boltzmann10/.sci/cache/scratch/gal3bp_run/igdesign_run002_results.csv",
+      "region_order": [
+        "hcdr1",
+        "hcdr2",
+        "hcdr3"
+      ],
+      "lmdesign_num_decoding_orders": 10,
+      "lmdesign_num_pmpnn_seqs": 10,
+      "lmdesign_num_lm_seqs": 1,
+      "lmdesign_pmpnn_logit_temperature": 0.5,
+      "lmdesign_output_logit_temperature": 0.5,
+      "independent_loss": true,
+      "condition_on_light_chain": true,
+      "condition_on_antigen": true,
+      "predict_light_chain": false,
+      "batch_size": 1,
+      "num_batches": 1,
+      "random_seed": 0,
+      "epitope_idxs_or_all": "all",
+      "antigen_chain_id": "C",
+      "heavy_chain_id": "A",
+      "light_chain_id": "B",
+      "regions": {
+        "hcdr1": {
+          "positions": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "chain": "heavy"
+        },
+        "hcdr2": {
+          "positions": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58
+          ],
+          "chain": "heavy"
+        },
+        "hcdr3": {
+          "positions": [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111
+          ],
+          "chain": "heavy"
+        }
+      }
+    },
+    "scope": "Saved local configuration with its structure path rehomed to this completed-workflow workspace; scientific settings unchanged.",
+    "original_sha256": "bcb931c2ec44a46fdcfa9b78cd4b9d874c6f12c0bc60c923956ce1a6c50b3e06",
+    "package_source_sha256": "35996850cba02a83f1b9fec35af2859ad966f24cd0c110755bd68f714fd1433b"
+  }
+}

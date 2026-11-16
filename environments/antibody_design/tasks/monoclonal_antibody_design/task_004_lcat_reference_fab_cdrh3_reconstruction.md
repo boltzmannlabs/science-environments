@@ -32,7 +32,7 @@ Confirm dataset-to-deposition chain and residue mappings rather than assuming th
 | Constraint compliance | Changes outside the mask, pairing and geometry | Reject prohibited edits and invalid structures. |
 | Evidence integrity | Raw artifacts, candidate hashes and reference exposure | Keep individual results separate from dataset summaries. |
 
-Published comparison data: [LCAT: Reference Fab CDR-H3 Reconstruction benchmark](../../benchmark/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction.md).
+Published comparison data: [LCAT: Reference Fab CDR-H3 Reconstruction benchmark](../../benchmark/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction/reference.md).
 
 ## Expected Output
 
@@ -49,5 +49,5 @@ Published comparison data: [LCAT: Reference Fab CDR-H3 Reconstruction benchmark]
 
 - Choose methods independently; no prescribed generation workflow is required.
 - Do not claim to reproduce a 60-case benchmark from this single task.
-- Use `NEEDS_INPUT` if the masked input or reference mapping is unavailable.
+- Verify the masked input and reference mapping before generation; retain the matching records with the run.
 - Reconstruction accuracy does not establish improved LCAT binding or agonist activity.

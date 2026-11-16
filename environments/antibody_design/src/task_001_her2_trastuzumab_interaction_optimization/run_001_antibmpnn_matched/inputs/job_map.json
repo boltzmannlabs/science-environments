@@ -1,0 +1,192 @@
+{
+  "jobs": [
+    {
+      "stage": "S1_design",
+      "tool": "AntiBMPNN",
+      "experiment_name": "AntiBMPNN - 20261114-112037Z - eaa1a3",
+      "doc_id": "6af844059de6b44b075d79e0",
+      "input_s3": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+      "input_sha256": "4e774d2a59edbe1e9dbfcf88e15a0a483b7021d46b1a31f5cf171e09cbfc5ac9",
+      "payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "submitted": "2026-11-14T11:20:37Z"
+    },
+    {
+      "stage": "S1_design",
+      "tool": "AntiBMPNN",
+      "experiment_name": "attempt2 complex_vhvl_her2.pdb",
+      "doc_id": "6af844589030bff41644751b",
+      "note": "failed: heavy-domain detection"
+    },
+    {
+      "stage": "S1_design",
+      "tool": "AntiBMPNN",
+      "experiment_name": "attempt3 complex_vhvl_her2_ter.pdb",
+      "doc_id": "6af844ca9850a93adf67cad5",
+      "note": "failed: heavy-domain detection"
+    },
+    {
+      "stage": "S1_design",
+      "tool": "AntiBMPNN",
+      "experiment_name": "attempt4 fv_vhvl_only.pdb",
+      "doc_id": "6af8453c239a6b9f38beb6dd",
+      "note": "failed: heavy-domain detection"
+    },
+    {
+      "stage": "S1_control",
+      "tool": "AntiBMPNN",
+      "experiment_name": "1MCP control gen2",
+      "doc_id": "6af84579239a6b9f38beb714",
+      "note": "service health control: SUCCEEDED"
+    },
+    {
+      "stage": "S1_design",
+      "tool": "AntiBMPNN",
+      "experiment_name": "AntiBMPNN - 20261114-112354Z - fb6923 (attempt5, complex_hl_a_seqres.pdb)",
+      "doc_id": "6af8461a9850a93adf67cb88",
+      "note": "WINNING design job; 40 generations; account users/68d12a5de5b6a2fdc0e3c443"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 - 20261114-113431Z - e8bc4f (REFERENCE)",
+      "doc_id": "6af84747445ae94313c3a9ae",
+      "note": "reference complex prediction; account users/68d12a5de5b6a2fdc0e3c443 (old key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C001",
+      "doc_id": "6af87767239a6b9f38beba67",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C002",
+      "doc_id": "6af87769239a6b9f38beba72",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C003",
+      "doc_id": "6af8776c9850a93adf67ce91",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C004",
+      "doc_id": "6af8776e9de6b44b075d7e2f",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C005",
+      "doc_id": "6af87770445ae94313c3add0",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C006",
+      "doc_id": "6af87773239a6b9f38beba85",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C007",
+      "doc_id": "6af877759de6b44b075d7e3e",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S2_pred",
+      "tool": "Boltz2",
+      "experiment_name": "Boltz-2 task001 cand T001-C008",
+      "doc_id": "6af877789030bff416447921",
+      "note": "candidate complex prediction; account users/680f678c1b1d883c92aa706c (new key)"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "v1 nested zip attempts",
+      "doc_id": "6af87c88d29658acc304e3e3,6af87c8a445ae94313c3b2c3,6af87c8c9de6b44b075d8065,6af87c8e9850a93adf67d0b0,6af87c8f445ae94313c3b2d1,6af87c91239a6b9f38bebcb8,6af87c939850a93adf67d0bb,6af87c949850a93adf67d0c6,6af87c96d29658acc304e3f6",
+      "note": "failed: Signed URL download 404 / nested-zip level"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 REFERENCE flat",
+      "doc_id": "6af883e0d29658acc304e85a",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C001 flat",
+      "doc_id": "6af883e39de6b44b075d8496",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C002 flat",
+      "doc_id": "6af883e4d29658acc304e869",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C003 flat",
+      "doc_id": "6af883e69850a93adf67d51a",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C004 flat",
+      "doc_id": "6af883e89030bff416447f91",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C005 flat",
+      "doc_id": "6af883ea445ae94313c3bcee",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C006 flat",
+      "doc_id": "6af883eb9850a93adf67d541",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C007 flat",
+      "doc_id": "6af883eed29658acc304e8a3",
+      "note": "flat zip; Success"
+    },
+    {
+      "stage": "S3_affinity",
+      "tool": "Prodigy",
+      "experiment_name": "Prodigy task001 T001-C008 flat",
+      "doc_id": "6af883ef239a6b9f38bec13b",
+      "note": "flat zip; Success"
+    }
+  ]
+}

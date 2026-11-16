@@ -1,0 +1,29 @@
+# Agent-Scientist activity — run_002_igdesign_codesign
+
+Task: `task_005_gal3bp_glycan_aware_interface_refinement`. Saved status: **completed**. Evidence presentation updated 2026-11-16.
+
+[Execution summary](execution_summary.md) · [Exact calls, inputs and responses](../inputs/execution_records/tool_details.json) · [Observable narrative export](../inputs/execution_records/observable_events.jsonl)
+
+## Existing recorded activity
+
+# agent_scientist_log.md — run_002_igdesign_codesign
+
+- [2026-11-15 ~09:00Z] Multi-workflow expansion for task_005 authorized by user. Designed 4 strategies (2 executable now, 2 blocked with evidence). run_002 selected: IgDesign antigen-conditioned heavy-CDR123 codesign. Input prepared: reference complex + 3-letter SEQRES (parser requires Proper-case 3-letter codes; 1-letter SEQRES fails three2one). Positions verified 0-based on full untruncated VH via dataset preflight. fp16 wrapper copied from task_017. Config written before submission; run.yaml hash d696f996c9a1172e.
+- [12:1x] Generation DONE 100 samples (fp16, 40 s sampling); gates: 97 unique pass (3 rejected new-Cys); ranked by mean region CE loss; top-3 G3I-01/02/03 selected.
+- [12:1x] G3I-01 doc 6af9a0ce9de6b44b075d9527, G3I-02 doc 6af9a0d7d29658acc304fdb4 accepted. G3I-03 first submit 6af9a0e39030bff416449703 VOIDED pre-download (submitter duplicated an antigen segment vs payload file; format-valid corruption passed checked validation). Clean resubmit doc 6af9a105d29658acc304fdc5 accepted from verbatim payload. Registry + config updated; run.yaml hash 966ff59a1210c908.
+- [14:4x] All 3 AFM jobs completed (docs 6af9a0ce..., 6af9a0d7..., 6af9a105...). Rank-1 iptm: G3I-01 0.28, G3I-02 0.29, G3I-03 0.29 (all 15 models 0.27-0.29) — NO confidence gain vs reference band 0.26-0.32.
+- [14:4x] Sequence-echo verification PASSED all 3 (VH/VL/AG match designed payload + reference antigen exactly).
+- [14:4x] Prodigy rank-1: G3I-01 -9.1 (Kd 2.0e-07), G3I-02 -8.4 (6.8e-07), G3I-03 -9.2 (1.7e-07) kcal/mol vs ref -9.2.
+- [14:4x] Interface chemistry: contacts 919/1030/815, hbonds 10/8/9, salt 0; glycan model 0 clashes each, dSASA 217/221/213 A2.
+- [14:4x] Persistence: 0 pairs >=3/5 models in all 3 candidates; inter-model interface RMSD 5.8-51 A. Same non-persistence verdict as run_001 AntiBMPNN lane — two independent design engines agree the AFM ensemble does not support a stable interface.
+- [14:4x] Results persisted per §6: metrics.json, metrics.csv, candidates.csv (97), designed_sequences.fasta (97), shortlist.csv, sequences.fasta, structures/, raw/, benchmark_comparison.csv. Config stages -> completed; run.yaml -> completed.
+
+## Call and submission timeline
+
+Each row is an existing record. Recovered submission rows belong to their parent call; they may include failed attempts and are not additional completed workflow steps. Unknown timestamps remain explicitly unrecorded.
+
+| Time recorded | Record | Tool | State | Job / call identity |
+| --- | --- | --- | --- | --- |
+| not recorded | `C01` | Multimer_Structure_Prediction | completed | `6af9a0ce9de6b44b075d9527` |
+| not recorded | `C02` | Multimer_Structure_Prediction | completed | `6af9a0d7d29658acc304fdb4` |
+| not recorded | `C03` | Multimer_Structure_Prediction | completed | `6af9a105d29658acc304fdc5` |

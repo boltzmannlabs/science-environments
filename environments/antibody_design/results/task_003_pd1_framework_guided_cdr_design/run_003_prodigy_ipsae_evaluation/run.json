@@ -1,0 +1,89 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_003_prodigy_ipsae_evaluation",
+  "workflow_id": "WF4_interface_evaluation_prodigy_ipsae",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_003_pd1_framework_guided_cdr_design/run_003_prodigy_ipsae_evaluation",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_003_prodigy_ipsae_evaluation"
+  },
+  "preparation": {
+    "objective": "Quantify interface quality of run_002's 6 Boltz2 models (5 candidates + H965 control) with Prodigy (predicted binding affinity, KD) and ipSAE (interface PAE score) under Boltzmann tooling",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S1_prodigy_per_model",
+      "purpose": "Prodigy binding-affinity prediction on each of the 12 PD1:VH / PD1:VL models",
+      "status": "completed",
+      "dependencies": ["run_002 S4"],
+      "tools": [
+        {
+          "tool": "Prodigy (Binding Affinity)",
+          "source": "boltzmann",
+          "records": ["C01"],
+          "inputs": {"input": "one PDB per job (12 jobs)"},
+          "parameters": {"chain_list": ["A", "B"]},
+          "outputs": {
+            "saved_artifacts": [
+              "@results/raw/prodigy_cand1_VH.csv",
+              "@results/raw/prodigy_cand1_VL.csv",
+              "@results/raw/prodigy_cand2_VH.csv",
+              "@results/raw/prodigy_cand2_VL.csv",
+              "@results/raw/prodigy_cand3_VH.csv",
+              "@results/raw/prodigy_cand3_VL.csv",
+              "@results/raw/prodigy_cand4_VH.csv",
+              "@results/raw/prodigy_cand4_VL.csv",
+              "@results/raw/prodigy_cand5_VH.csv",
+              "@results/raw/prodigy_cand5_VL.csv",
+              "@results/raw/prodigy_h965_VH.csv",
+              "@results/raw/prodigy_h965_VL.csv"
+            ]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_ipsae_interface_scoring",
+      "purpose": "ipSAE interface score on models+PAE bundle",
+      "status": "completed",
+      "dependencies": ["run_002 S4"],
+      "tools": [
+        {
+          "tool": "ipsae-protein (ipSAE Generation)",
+          "source": "boltzmann",
+          "records": ["C02"],
+          "inputs": {"saved_request": "@src/inputs/submitted_requests/message_18294_subcall_0.json"},
+          "parameters": {"pae_cutoff": 10.0, "dist_cutoff": 10.0},
+          "outputs": {"saved_artifacts": ["@results/raw/ipsae_results.csv"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"status": "completed"},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "6bf7ab5cf3cbcf6b80a8d67aa0446a28c526c7738c2c32a7744f272e6d09210f"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": "run_002_agcdr_antibmpnn",
+    "relation": "downstream evaluation phase on run_002_agcdr_antibmpnn's Boltz2 models: independent interface-affinity and PAE-based interface scoring, filling the gap left by the unavailable Antigen_Antibody_binding property"
+  }
+}

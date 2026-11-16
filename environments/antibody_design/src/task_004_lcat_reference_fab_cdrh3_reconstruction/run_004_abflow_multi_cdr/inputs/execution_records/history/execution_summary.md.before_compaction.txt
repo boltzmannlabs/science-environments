@@ -1,0 +1,23 @@
+# execution_summary — run_004_abflow_multi_cdr
+
+- Workflow: all-CDR co-design, declared separate track (task md permits six-CDR only as separate track — declared in workflow.md and never merged with run_001 metrics).
+- Tools actually used: AbFlow multi_cdr_design.ckpt (open_source, repo df39b47); local python freeze/score drivers; authors' cal_metrics.cal_metrics evaluator.
+- Inputs: masked 5bv7 entry (shared with run_001); sealed native reference unsealed only post-freeze.
+- Counts: 1 generated / 1 evaluated / 1 selected (frozen rank 1); 0 rejected; 0 native copies.
+- Completed: S1-S5 all. Partial/failed/blocked: none in this run. Unexecuted elsewhere: run_002 (not_selected), run_003 (blocked).
+- Key numbers: AAR H3 0.4211 (published Table-2 aggregate 0.4352±0.1310, z=-0.11); CAAR 0.25 (0.2968±0.2044, z=-0.23); TM 0.9593; lDDT 0.7686 (below published mean); RMSD AppC 19.8398 A; DockQ 0.345.
+- Remaining requirements: DockQ v2 not computed (no installation); single case cannot reproduce aggregates.
+- Links: [workflow.md](../workflow.md) | [config JSON](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr.json) | [report.md](../../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/report.md) | [activity log](agent_scientist_log.md)
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"last_update": "2026-11-14T16:40:00Z", "counts": {"candidates_generated": 1, "candidates_evaluated": 1, "unique_h3": 1, "native_copies": 0}, "remaining_requirements": ["multi-CDR track is 1-shot single-case; paper Table 2 aggregate not reproduced (single case cannot reproduce aggregates)", "DockQ v2 not computed (no installation identified)"]}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

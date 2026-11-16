@@ -1,0 +1,334 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_antibmpnn_fixed_backbone_cdr",
+  "status": "complete",
+  "paths": {
+    "src": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched",
+    "results": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched"
+  },
+  "preparation": {
+    "objective": "Reference-guided interaction optimization of trastuzumab Fv against HER2 ECD",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S0_prep",
+      "purpose": "fetch/verify/split 1N8Z; build correctly numbered design input",
+      "status": "complete",
+      "tools": [
+        {
+          "tool": "stage0_fetch_verify.py",
+          "source": "open_source",
+          "records": ["C01"],
+          "inputs": {"pdb": "inputs/1n8z.pdb (sha256 ed934d36...)"},
+          "parameters": null,
+          "outputs": {
+            "outputs": ["inputs/antibody_fv.pdb", "inputs/antigen_her2.pdb", "inputs/crystal_contacts.csv", "inputs/reference_sequences.json"]
+          },
+          "states": {"complete": 1}
+        },
+        {
+          "tool": "stage0b_fix_numbering.py",
+          "source": "open_source",
+          "records": ["C02"],
+          "inputs": {"input": "inputs/1n8z.pdb"},
+          "parameters": {"CROP": "A=107 VL, B=120 VH (variable-domain crop)", "renumber": "per-residue sequential"},
+          "outputs": {"outputs": ["inputs/complex_hl_a_seqres.pdb (sha256 9e54b25d680daa48)"]},
+          "states": {"complete": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S1_design",
+      "purpose": "CDR-only fixed-backbone redesign of trastuzumab Fv",
+      "status": "complete",
+      "dependencies": ["S0_prep"],
+      "tools": [
+        {
+          "tool": "AntiBMPNN",
+          "source": "boltzmann",
+          "records": ["C03", "C04", "C05"],
+          "inputs": {
+            "by_record": {
+              "C03": {"inputs": ["complex_fv_her2.pdb", "complex_vhvl_her2.pdb", "complex_vhvl_her2_ter.pdb", "fv_vhvl_only.pdb"]},
+              "C03.R01": {"input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb"},
+              "C03.R02": {"input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb"},
+              "C03.R03": {"input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb"},
+              "C03.R04": {"input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb"},
+              "C04": {
+                "input": "inputs/1mcp_control.pdb (340,443 bytes)",
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb"
+              },
+              "C05": {"input": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb"}
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C03": {"value": null},
+              "C03.R01": {
+                "chains_to_design": ["H", "L"],
+                "generation_count": 40,
+                "residue_positions_to_design": {"H": "31-35,50-65,95-102", "L": "24-34,50-56,89-97"}
+              },
+              "C03.R02": {
+                "chains_to_design": ["A", "B"],
+                "generation_count": 40,
+                "residue_positions_to_design": {"A": "31-35,50-65,95-102", "B": "24-34,50-56,89-97"}
+              },
+              "C03.R03": {
+                "chains_to_design": ["A", "B"],
+                "generation_count": 40,
+                "residue_positions_to_design": {"A": "31-35,50-65,95-102", "B": "24-34,50-56,89-97"}
+              },
+              "C03.R04": {
+                "chains_to_design": ["A", "B"],
+                "generation_count": 40,
+                "residue_positions_to_design": {"A": "31-35,50-65,95-102", "B": "24-34,50-56,89-97"}
+              },
+              "C04": {"chains_to_design": ["H", "L"], "generation_count": 2, "residue_positions_to_design": {}},
+              "C05": {
+                "generation_count": "40 candidates within budget",
+                "residue_positions_to_design": "Kabat CDR windows (task constraint: CDR-only)"
+              }
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C05": {
+                  "outputs": ["inputs/antibmpnn_results.zip (40,806 bytes)"],
+                  "validation": "40 sequences; domains H=VH(120) L=VL(107) kappa"
+                }
+              }
+            },
+            "saved_artifacts": ["@results/raw/recovered_native/antibmpnn_results.zip"]
+          },
+          "states": {"failed": 1, "complete": 2}
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_verify",
+      "purpose": "edit-mask verification, dedupe, candidate table",
+      "status": "complete",
+      "dependencies": ["S1_design"],
+      "tools": [
+        {
+          "tool": "stage2_verify_mask.py",
+          "source": "open_source",
+          "records": ["C06"],
+          "inputs": {"input": "inputs/antibmpnn_results.zip"},
+          "parameters": {"mask": "Kabat CDR windows"},
+          "outputs": {"outputs": ["inputs/candidates.json (38 unique)"]},
+          "states": {"complete": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_structure",
+      "purpose": "matched Boltz2 complex prediction: reference + top-8 candidates",
+      "status": "complete",
+      "dependencies": ["S2_verify"],
+      "tools": [
+        {
+          "tool": "Boltz2",
+          "source": "boltzmann",
+          "records": ["C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15"],
+          "inputs": {
+            "by_record": {
+              "C07": {
+                "Protein_Sequences": {"value_ref": "C07#/parameters/Protein_Sequences", "sequence_lengths": [607, 120, 107]},
+                "DNA_Sequences": [],
+                "RNA_Sequences": [],
+                "SMILES": []
+              },
+              "C08": {"payload": "inputs/boltz2_payloads.json[T001-C001]"},
+              "C09": {"payload": "inputs/boltz2_payloads.json[T001-C002]"},
+              "C10": {"payload": "inputs/boltz2_payloads.json[T001-C003]"},
+              "C11": {"payload": "inputs/boltz2_payloads.json[T001-C004]"},
+              "C12": {"payload": "inputs/boltz2_payloads.json[T001-C005]"},
+              "C13": {"payload": "inputs/boltz2_payloads.json[T001-C006]"},
+              "C14": {"payload": "inputs/boltz2_payloads.json[T001-C007]"},
+              "C15": {"payload": "inputs/boltz2_payloads.json[T001-C008]"}
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C08": {"value": null},
+              "C09": {"value": null},
+              "C10": {"value": null},
+              "C11": {"value": null},
+              "C12": {"value": null},
+              "C13": {"value": null},
+              "C14": {"value": null},
+              "C15": {"value": null}
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C07": {"outputs": ["inputs/boltz2_reference/{pdbs_outputs.zip,outputs.zip,paths.csv}"]},
+                "C08": {"outputs": ["inputs/boltz2_candidates/T001-C001/"]},
+                "C09": {"outputs": ["inputs/boltz2_candidates/T001-C002/"]},
+                "C10": {"outputs": ["inputs/boltz2_candidates/T001-C003/"]},
+                "C11": {"outputs": ["inputs/boltz2_candidates/T001-C004/"]},
+                "C12": {"outputs": ["inputs/boltz2_candidates/T001-C005/"]},
+                "C13": {"outputs": ["inputs/boltz2_candidates/T001-C006/"]},
+                "C14": {"outputs": ["inputs/boltz2_candidates/T001-C007/"]},
+                "C15": {"outputs": ["inputs/boltz2_candidates/T001-C008/"]}
+              }
+            },
+            "saved_artifacts": ["@results/raw/recovered_native/boltz2_candidates", "@results/raw/recovered_native/boltz2_reference"]
+          },
+          "states": {"complete": 9}
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_affinity",
+      "purpose": "Prodigy binding-affinity on Boltz2 structures (both records per construct)",
+      "status": "complete",
+      "dependencies": ["S3_structure"],
+      "tools": [
+        {
+          "tool": "Prodigy",
+          "source": "boltzmann",
+          "records": ["C16", "C17", "C18", "C19", "C20", "C21", "C22", "C23", "C24", "C25"],
+          "inputs": {
+            "by_record": {
+              "C16": {"input": "pdbs_outputs.zip (nested boltz_pdb/)"},
+              "C17": {"input": "inputs/prodigy_flat/REFERENCE_flat.zip"},
+              "C18": {"input": "inputs/prodigy_flat/T001-C001_flat.zip"},
+              "C19": {"input": "inputs/prodigy_flat/T001-C002_flat.zip"},
+              "C20": {"input": "inputs/prodigy_flat/T001-C003_flat.zip"},
+              "C21": {"input": "inputs/prodigy_flat/T001-C004_flat.zip"},
+              "C22": {"input": "inputs/prodigy_flat/T001-C005_flat.zip"},
+              "C23": {"input": "inputs/prodigy_flat/T001-C006_flat.zip"},
+              "C24": {"input": "inputs/prodigy_flat/T001-C007_flat.zip"},
+              "C25": {"input": "inputs/prodigy_flat/T001-C008_flat.zip"}
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C16": {"chain_list": "[] = automatic pairwise analysis of uppercase chains"},
+              "C17": {"chain_list": "[] automatic pairwise"},
+              "C18": {"chain_list": "[] automatic pairwise"},
+              "C19": {"chain_list": "[] automatic pairwise"},
+              "C20": {"chain_list": "[] automatic pairwise"},
+              "C21": {"chain_list": "[] automatic pairwise"},
+              "C22": {"chain_list": "[] automatic pairwise"},
+              "C23": {"chain_list": "[] automatic pairwise"},
+              "C24": {"chain_list": "[] automatic pairwise"},
+              "C25": {"chain_list": "[] automatic pairwise"}
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C17": {"outputs": ["inputs/prodigy/REFERENCE/prodigy.csv"]},
+                "C18": {"outputs": ["inputs/prodigy/T001-C001/prodigy.csv"]},
+                "C19": {"outputs": ["inputs/prodigy/T001-C002/prodigy.csv"]},
+                "C20": {"outputs": ["inputs/prodigy/T001-C003/prodigy.csv"]},
+                "C21": {"outputs": ["inputs/prodigy/T001-C004/prodigy.csv"]},
+                "C22": {"outputs": ["inputs/prodigy/T001-C005/prodigy.csv"]},
+                "C23": {"outputs": ["inputs/prodigy/T001-C006/prodigy.csv"]},
+                "C24": {"outputs": ["inputs/prodigy/T001-C007/prodigy.csv"]},
+                "C25": {"outputs": ["inputs/prodigy/T001-C008/prodigy.csv"]}
+              }
+            },
+            "saved_artifacts": ["@results/raw/recovered_native/prodigy"]
+          },
+          "states": {"failed": 1, "complete": 9}
+        }
+      ]
+    },
+    {
+      "stage_id": "S5_evaluation",
+      "purpose": "consolidated metrics + artifacts",
+      "status": "complete",
+      "dependencies": ["S4_affinity"],
+      "tools": [
+        {
+          "tool": "stage4_extract_confidence.py",
+          "source": "open_source",
+          "records": ["C26"],
+          "inputs": {"inputs": "inputs/boltz2_reference/outputs.zip + inputs/boltz2_candidates/*/outputs.zip"},
+          "parameters": null,
+          "outputs": {"outputs": ["raw/boltz2_confidence.{json,csv}"]},
+          "states": {"complete": 1}
+        },
+        {
+          "tool": "stage6_evaluate.py",
+          "source": "open_source",
+          "records": ["C27"],
+          "inputs": {"inputs": "prodigy CSVs + plddt npz + crystal_contacts.csv"},
+          "parameters": {"RT": "0.0019872041 kcal/mol/K", "T": "298.15 K", "epitope": "1N8Z HER2 crystal contacts (16 residues 532-603)"},
+          "outputs": {"outputs": ["raw/evaluation.{csv,json}"]},
+          "states": {"complete": 1}
+        },
+        {
+          "tool": "clash scan",
+          "source": "open_source",
+          "records": ["C28"],
+          "inputs": {"inputs": "pdbs_outputs.zip members"},
+          "parameters": {"cutoff": "2.2 A heavy-atom pairs"},
+          "outputs": {"outputs": ["raw/clash_counts.json"]},
+          "states": {"complete": 1}
+        },
+        {
+          "tool": "stage7_artifacts.py",
+          "source": "open_source",
+          "records": ["C29"],
+          "inputs": {"inputs": "candidates.json + evaluation.json + confidences + clashes"},
+          "parameters": {"rank_key": "mean Prodigy dG -> ipTM rec2 -> fewer mutations (pre-stated)"},
+          "outputs": {
+            "outputs": [
+              "candidates.csv (38)",
+              "shortlist.csv (8)",
+              "sequences.fasta (78)",
+              "metrics.csv (81 rows)",
+              "benchmark_comparison.csv",
+              "report.md"
+            ]
+          },
+          "states": {"complete": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "workflows_designed": 3,
+    "selected": 1,
+    "executed": 1,
+    "not_selected": 1,
+    "not_run": 1,
+    "generated": 40,
+    "unique_candidates": 38,
+    "evaluated": 8,
+    "unevaluated": 30,
+    "top_shortlist": "T001-C005 (pre-stated rank key)",
+    "integrative_lead": "T001-C008"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "9e88cca2f6d3f308f2b53b44e8790764a9c7f0a4e14a04851d15ace81e5dbc0d"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {"parent": null, "derived_from": "PDB 1N8Z (sha256 ed934d36...)", "historical_components": []}
+}

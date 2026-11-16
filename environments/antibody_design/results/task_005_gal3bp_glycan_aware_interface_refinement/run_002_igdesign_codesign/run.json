@@ -1,0 +1,130 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "run_002_igdesign_codesign",
+  "workflow_id": "igdesign_lm_codesign",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign",
+    "results": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign"
+  },
+  "preparation": {
+    "objective": "glycan-aware interface refinement of BDBV-43-derived candidates on Gal-3BP E1-window; second design engine (antigen-conditioned LM codesign) beyond fixed-backbone AntiBMPNN",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S1_generation",
+      "purpose": "Local IgDesign generation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "IgDesign",
+          "source": "open_source",
+          "evidence_type": "saved_configuration",
+          "inputs": {
+            "structure_path": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design/@src/inputs/igdesign_input_complex.pdb",
+            "lmdesign_checkpoint": "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igdesign_acvr2b_holdout.ckpt",
+            "pmpnn_checkpoint": "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igmpnn_acvr2b_holdout.ckpt"
+          },
+          "parameters": {
+            "region_order": ["hcdr1", "hcdr2", "hcdr3"],
+            "lmdesign_num_decoding_orders": 10,
+            "lmdesign_num_pmpnn_seqs": 10,
+            "lmdesign_num_lm_seqs": 1,
+            "lmdesign_pmpnn_logit_temperature": 0.5,
+            "lmdesign_output_logit_temperature": 0.5,
+            "independent_loss": true,
+            "condition_on_light_chain": true,
+            "condition_on_antigen": true,
+            "predict_light_chain": false,
+            "batch_size": 1,
+            "num_batches": 1,
+            "random_seed": 0,
+            "epitope_idxs_or_all": "all",
+            "antigen_chain_id": "C",
+            "heavy_chain_id": "A",
+            "light_chain_id": "B"
+          },
+          "outputs": ["@src/inputs/igdesign_run002_results.csv", "@src/inputs/igdesign_run002_candidates.json"],
+          "configuration_file": "@src/inputs/hcdr123_gal3bp.yaml"
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_sequence_checks",
+      "purpose": "Recorded sequence/framework gates and candidate inventory",
+      "status": "completed",
+      "dependencies": ["S1_generation"],
+      "saved_artifacts": ["@src/code/igdesign_gates.py", "@src/inputs/igdesign_run002_candidates.json"]
+    },
+    {
+      "stage_id": "S3_matched_prediction",
+      "purpose": "Three completed AF2-Multimer candidate predictions",
+      "status": "completed",
+      "dependencies": ["S2_sequence_checks"],
+      "tools": [
+        {
+          "tool": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "records": ["C01", "C02", "C03"],
+          "inputs": {
+            "by_record": {
+              "C01": {"payload_file": "@src/inputs/payload_G3I-01.txt"},
+              "C02": {"payload_file": "@src/inputs/payload_G3I-02.txt"},
+              "C03": {"payload_file": "@src/inputs/payload_G3I-03.txt"}
+            }
+          },
+          "parameters": null,
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C01": {"native_folder": "@results/raw/afm_native/G3I-01", "evaluated_structure": "@results/structures/G3I-01_afm_rank1.pdb"},
+                "C02": {"native_folder": "@results/raw/afm_native/G3I-02", "evaluated_structure": "@results/structures/G3I-02_afm_rank1.pdb"},
+                "C03": {"native_folder": "@results/raw/afm_native/G3I-03", "evaluated_structure": "@results/structures/G3I-03_afm_rank1.pdb"}
+              }
+            },
+            "saved_artifacts": ["@results/raw/afm_native"]
+          },
+          "states": {"completed": 3}
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_evaluation",
+      "purpose": "Interface chemistry, predicted energy, glycan and model-persistence analyses",
+      "status": "completed",
+      "dependencies": ["S3_matched_prediction"],
+      "saved_artifacts": ["@results/metrics.csv", "@results/metrics.json", "@results/raw/run002_persistence_glycan.json"]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "counts": {"generated_samples": 100, "retained_candidates": 97, "evaluated_candidates": 3, "shortlist": 3},
+    "scope": "Execution and saved computational artifacts complete; scientific interpretation remains in report.md."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "bc2be5138d9ec2a1baae596576ba5c7736f0a070fb59fe6145bc147177629f85"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent_run": "run_001_antibmpnn_interface_refinement (AntiBMPNN fixed-backbone, completed_with_caveats)",
+    "relationship": "parallel distinct strategy; consumes run's W1 reference complex read-only",
+    "historical_components": []
+  }
+}

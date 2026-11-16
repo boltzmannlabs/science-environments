@@ -1,0 +1,367 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_004_abflow_multi_cdr",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "id": "S1",
+      "purpose": "masking + reference sealing (inherited from run_001 S1)",
+      "depends": [],
+      "acceptance": "masked input, sealed reference",
+      "status": "completed",
+      "stage_id": "historical_stage_1",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C01"
+      ]
+    },
+    {
+      "id": "S2",
+      "purpose": "all-CDR generation",
+      "depends": [
+        "S1"
+      ],
+      "acceptance": "CDR-only changes, framework preserved, no native copy",
+      "status": "completed",
+      "stage_id": "historical_stage_2",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C02"
+      ]
+    },
+    {
+      "id": "S3",
+      "purpose": "freeze before scoring",
+      "depends": [
+        "S2"
+      ],
+      "acceptance": "ranking frozen, hashes verified",
+      "status": "completed",
+      "stage_id": "historical_stage_3",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C03"
+      ]
+    },
+    {
+      "id": "S4",
+      "purpose": "native-reference scoring",
+      "depends": [
+        "S3"
+      ],
+      "acceptance": "authors evaluator unmodified; candidate scored",
+      "status": "completed",
+      "stage_id": "historical_stage_4",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "id": "S5",
+      "purpose": "packaging",
+      "depends": [
+        "S4"
+      ],
+      "acceptance": "per-run results tree complete",
+      "status": "completed",
+      "stage_id": "historical_stage_5",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C06"
+      ]
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "mc1",
+      "tool": "build_run.py",
+      "identifier": "local python",
+      "purpose": "mask+seal (same artifacts reused)",
+      "source": "open_source",
+      "status": "completed",
+      "inputs": {
+        "test_set": "authors RAbD test.json 5bv7 entry (heavy C, light B, antigen [A], IMGT)"
+      },
+      "parameters": {
+        "n_replicates": 32
+      },
+      "parameter_descriptions": {
+        "n_replicates": "replicate count for pool runs; this run uses the single-entry input"
+      },
+      "resources": {
+        "cpu": "workstation",
+        "gpu": null
+      },
+      "execution": {
+        "command": "python build_run.py run_5bv7_abflow 32",
+        "executed_at": "2026-11-14T11:17:00Z"
+      },
+      "outputs": [
+        "input/test_5bv7.json",
+        "reference/freeze_manifest.json"
+      ],
+      "validation": "field-diff confirmed only cdrh3_seq removed",
+      "fallback": null,
+      "selection_reason": "reuse of run_001 S1 artifacts (identical inputs; no re-execution needed)",
+      "tool_name": "build_run.py",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "original_pointer": "/stages/0/tool_calls/0"
+    },
+    "C02": {
+      "call_id": "mc2",
+      "tool": "AbFlow",
+      "identifier": "multi_cdr_design.ckpt @ repo df39b47",
+      "purpose": "all-CDR 1-shot co-design",
+      "source": "open_source",
+      "status": "completed",
+      "model_version": "multi_cdr_design.ckpt (HF wenda8759/AbFlow, sha256 ae5d78d583615b2c...)",
+      "inputs": {
+        "test_set": "run_5bv7_abflow/input/test_5bv7.json (masked)",
+        "surf_file": "AbFlow/all_data/RAbD/test_surf.pkl",
+        "pep_file": "AbFlow/all_data/RAbD/test.pkl"
+      },
+      "parameters": {
+        "seed": 2023,
+        "batch_size": 1,
+        "gpu": 0,
+        "ckpt": "AbFlow/checkpoints/multi_cdr_design.ckpt"
+      },
+      "parameter_descriptions": {
+        "seed": "2023 = authors generate.py default (setup_seed(2023)); explicit choice for reproducibility",
+        "batch_size": "1 = single-sample 1-shot protocol (paper Table 2 sampling convention, matches Table 1 1-shot)",
+        "gpu": "RTX 3090 24GB, GPU 0 (free at run time)",
+        "ckpt": "authors Table-2 all-CDR checkpoint; selected because it is the benchmark-referenced method for this track"
+      },
+      "resources": {
+        "gpu": "RTX 3090 24GB",
+        "gpu_mem_approx": "~6 GB",
+        "runtime": "~9 s"
+      },
+      "execution": {
+        "command": "python generate_candidates.py --repo AbFlow --test-set run_5bv7_abflow/input/test_5bv7.json --save-dir run_5bv7_abflow/gen_mcdr_1shot --surf-file AbFlow/all_data/RAbD/test_surf.pkl --pep-file AbFlow/all_data/RAbD/test.pkl --ckpt AbFlow/checkpoints/multi_cdr_design.ckpt --seed 2023 --batch-size 1",
+        "executed_at": "2026-11-14T15:28:42Z",
+        "exit": 0,
+        "env": "conda abflow_benchmark"
+      },
+      "outputs": [
+        "gen_mcdr_1shot/5bv7_h3_000.pdb",
+        "gen_mcdr_1shot/candidates.csv",
+        "gen_mcdr_1shot/generation_freeze.json"
+      ],
+      "output_hashes": {
+        "5bv7_h3_000.pdb": "sha256 2d5c24b42316ec4de689be885288c098226a35bdbf22b1ab4e8b2b050e016dcc"
+      },
+      "validation": "VH FW identity 106/107 outside H3; changes only in CDR positions (VH {51,98-114}, VL {28-31,49-51,88-96}); H3 len 19; no native copy",
+      "fallback": null,
+      "selection_reason": "authors Table-2 all-CDR checkpoint — only benchmark-referenced route for this declared track",
+      "tool_name": "AbFlow",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred."
+      },
+      "request_payload": null,
+      "original_pointer": "/stages/1/tool_calls/0"
+    },
+    "C03": {
+      "call_id": "mc3",
+      "tool": "freeze_rankings.py",
+      "identifier": "local python",
+      "purpose": "pmets-asc freeze + hash verify",
+      "source": "open_source",
+      "status": "completed",
+      "inputs": {
+        "pool": "gen_mcdr_1shot"
+      },
+      "parameters": {
+        "ordering": "pmets asc, tie-break candidate_id"
+      },
+      "parameter_descriptions": {
+        "ordering": "pose-blind model confidence; frozen before any native metric exists"
+      },
+      "execution": {
+        "command": "python freeze_rankings.py run_5bv7_abflow/gen_mcdr_1shot",
+        "executed_at": "2026-11-14T15:29:33Z",
+        "exit": 0
+      },
+      "outputs": [
+        "shortlist_frozen.csv",
+        "freeze_record.json"
+      ],
+      "validation": "PDB sha256 verified against generation_freeze.json; protocol label corrected post-hoc in freeze_record.json (documentation only)",
+      "fallback": null,
+      "selection_reason": "freeze-before-score contract (same rule as run_001)",
+      "tool_name": "freeze_rankings.py",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/2/tool_calls/0"
+    },
+    "C04": {
+      "call_id": "mc4",
+      "tool": "AbFlow evaluator",
+      "identifier": "cal_metrics.cal_metrics @ df39b47",
+      "purpose": "recovery/structure/interface metrics vs sealed native",
+      "source": "open_source",
+      "status": "completed",
+      "inputs": {
+        "mod_pdb": "gen_mcdr_1shot/5bv7_h3_000.pdb",
+        "ref_pdb": "reference/native_5bv7.pdb (sealed)",
+        "chains": "H=C, L=B, A=[A]"
+      },
+      "parameters": {
+        "cdr_type": "['H3']"
+      },
+      "parameter_descriptions": {
+        "cdr_type": "evaluator's H3-scoring path (same as run_001); full-antibody metrics unaffected by this list; AAR H3 computed on positions 95-113"
+      },
+      "resources": {
+        "cpu": "workstation",
+        "runtime_s": 4.9
+      },
+      "execution": {
+        "command": "PATH=<env>/bin:$PATH python score_candidates.py",
+        "executed_at": "2026-11-14T15:31Z",
+        "exit": 0
+      },
+      "outputs": [
+        "gen_mcdr_1shot/metrics_per_candidate.json"
+      ],
+      "validation": "AAR H3 0.4211, CAAR 0.25, TM 0.9593, lDDT 0.7686, RMSD(AppC) 19.8398 A, DockQ 0.345",
+      "fallback": null,
+      "selection_reason": "authors evaluator — same scoring path as run_001 for cross-run consistency",
+      "tool_name": "AbFlow evaluator",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "original_pointer": "/stages/3/tool_calls/0"
+    },
+    "C05": {
+      "call_id": "mc4b",
+      "tool": "AbFlow evaluator",
+      "identifier": "cal_metrics.cal_metrics @ df39b47, cdr list H1-H3/L1-L3",
+      "purpose": "per-CDR Kabsch RMSDs for repo-benchmark Table-2 comparison",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "repo benchmark md Table-2 rows are per-CDR RMSDs; requires full CDR list",
+      "inputs": {
+        "mod_pdb": "gen_mcdr_1shot/5bv7_h3_000.pdb",
+        "ref_pdb": "sealed native",
+        "chains": "C/B/[A]"
+      },
+      "parameters": {
+        "cdr_type": "['H1','H2','H3','L1','L2','L3']"
+      },
+      "parameter_descriptions": {
+        "cdr_type": "evaluator emits per-CDR RMSD(CA) CDRx + aligned (Kabsch) pairs"
+      },
+      "execution": {
+        "command": "cal_metrics([mod, ref, C, B, [A], [H1..L3]])",
+        "executed_at": "2026-11-14T16:35Z",
+        "exit": 0
+      },
+      "outputs": [
+        "gen_mcdr_1shot/metrics_allcdrs.json"
+      ],
+      "validation": "H1/H2 Kabsch 0.61/0.53 vs published 0.63/0.55 — definition confirmed",
+      "fallback": null,
+      "tool_name": "AbFlow evaluator",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/3/tool_calls/1"
+    },
+    "C06": {
+      "call_id": "mc5",
+      "tool": "local python",
+      "identifier": "build script",
+      "purpose": "per-run tree + planning updates",
+      "source": "open_source",
+      "status": "completed",
+      "execution": {
+        "executed_at": "2026-11-14T15:40Z"
+      },
+      "outputs": [
+        "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/"
+      ],
+      "validation": "all contract files present",
+      "fallback": null,
+      "parameters": {
+        "per_run_tree": true,
+        "planning_updates": true
+      },
+      "parameter_descriptions": {
+        "per_run_tree": "write full §6 results tree for this run",
+        "planning_updates": "update all planning tables to 4 designed / 2 selected / 2 executed"
+      },
+      "selection_reason": "reproducible per-run packaging",
+      "tool_name": "local python",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/4/tool_calls/0"
+    }
+  }
+}

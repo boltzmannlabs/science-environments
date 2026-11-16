@@ -1,0 +1,429 @@
+{
+ "_conventions": "iptm per rank from colabfold scores json; contacts<=5A; hbond<=3.5A angle>=90; salt<=4A; persistence=fraction of 5 models containing rank-1 pair (CA-CA<6A); rmsd after antigen superposition",
+ "candidates": {
+  "G3I-01": {
+   "afm_iptm_by_rank": {
+    "001": 0.29,
+    "002": 0.29,
+    "003": 0.28,
+    "004": 0.28,
+    "005": 0.28
+   },
+   "interface_chemistry": {
+    "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+    "n_interface_residue_pairs_CA_independent": 69,
+    "n_heavy_atom_contacts_5A": 919,
+    "n_hbonds": 10,
+    "hbond_share_of_contacts_pct": 1.1,
+    "hbonds": [
+     {
+      "donor": "C436 ARG:NH1",
+      "acceptor": "A33 TYR:OH",
+      "dist_A": 3.28
+     },
+     {
+      "donor": "A51 ARG:NH1",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 3.49
+     },
+     {
+      "donor": "A51 ARG:NH2",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 2.25
+     },
+     {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A55 TYR:OH",
+      "dist_A": 3.18
+     },
+     {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A56 TYR:OH",
+      "dist_A": 3.16
+     },
+     {
+      "donor": "A56 TYR:OH",
+      "acceptor": "C441 GLN:OE1",
+      "dist_A": 1.82
+     },
+     {
+      "donor": "B93 ASN:ND2",
+      "acceptor": "C469 GLN:OE1",
+      "dist_A": 2.53
+     },
+     {
+      "donor": "C469 GLN:NE2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 2.89
+     },
+     {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 1.66
+     },
+     {
+      "donor": "B94 TRP:NE1",
+      "acceptor": "C473 ASN:OD1",
+      "dist_A": 3.01
+     }
+    ],
+    "n_salt_bridges": 0,
+    "salt_bridges": [],
+    "n_carbon_carbon_contacts_5A": 373,
+    "paratope_residues": [
+     "A101",
+     "A102",
+     "A103",
+     "A104",
+     "A105",
+     "A106",
+     "A32",
+     "A33",
+     "A51",
+     "A53",
+     "A54",
+     "A55",
+     "A56",
+     "A57",
+     "A58",
+     "A60",
+     "A63",
+     "A75",
+     "B92",
+     "B93",
+     "B94",
+     "B95",
+     "B96"
+    ],
+    "epitope_residues": [
+     "C401",
+     "C402",
+     "C403",
+     "C404",
+     "C406",
+     "C436",
+     "C437",
+     "C438",
+     "C439",
+     "C440",
+     "C441",
+     "C442",
+     "C443",
+     "C444",
+     "C459",
+     "C460",
+     "C461",
+     "C462",
+     "C467",
+     "C469",
+     "C470",
+     "C472",
+     "C473",
+     "C474",
+     "C475",
+     "C489",
+     "C491"
+    ]
+   },
+   "prodigy": {
+    "dg_kcal_mol": -9.1,
+    "kd_m_25c": 2e-07
+   },
+   "persistence": {
+    "001": 18,
+    "002": 55,
+    "003": 61,
+    "004": 4,
+    "005": 30
+   },
+   "pairs_in_ge3_of5": 0,
+   "interface_ca_rmsd_to_rank001_A": {
+    "002": 51.39,
+    "003": 5.78,
+    "004": 39.9,
+    "005": 49.17
+   },
+   "glycan": {
+    "model": "N344 simplified glycan on C276-350 window",
+    "dsasa_A2": 217.1,
+    "antibody_clashes_lt2p5A": 0
+   }
+  },
+  "G3I-02": {
+   "afm_iptm_by_rank": {
+    "001": 0.29,
+    "002": 0.29,
+    "003": 0.29,
+    "004": 0.27,
+    "005": 0.27
+   },
+   "interface_chemistry": {
+    "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+    "n_interface_residue_pairs_CA_independent": 76,
+    "n_heavy_atom_contacts_5A": 1030,
+    "n_hbonds": 8,
+    "hbond_share_of_contacts_pct": 0.8,
+    "hbonds": [
+     {
+      "donor": "A51 ARG:NH2",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 2.76
+     },
+     {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A56 TYR:OH",
+      "dist_A": 3.44
+     },
+     {
+      "donor": "A56 TYR:OH",
+      "acceptor": "C441 GLN:OE1",
+      "dist_A": 3.22
+     },
+     {
+      "donor": "A75 LYS:NZ",
+      "acceptor": "C444 GLN:OE1",
+      "dist_A": 3.43
+     },
+     {
+      "donor": "B93 ASN:ND2",
+      "acceptor": "C469 GLN:OE1",
+      "dist_A": 3.01
+     },
+     {
+      "donor": "C469 GLN:NE2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 3.37
+     },
+     {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 3.42
+     },
+     {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 2.9
+     }
+    ],
+    "n_salt_bridges": 0,
+    "salt_bridges": [],
+    "n_carbon_carbon_contacts_5A": 440,
+    "paratope_residues": [
+     "A101",
+     "A102",
+     "A103",
+     "A104",
+     "A105",
+     "A106",
+     "A107",
+     "A30",
+     "A51",
+     "A53",
+     "A54",
+     "A55",
+     "A56",
+     "A57",
+     "A58",
+     "A60",
+     "A63",
+     "A75",
+     "B93",
+     "B94",
+     "B95"
+    ],
+    "epitope_residues": [
+     "C401",
+     "C402",
+     "C403",
+     "C406",
+     "C436",
+     "C437",
+     "C438",
+     "C439",
+     "C440",
+     "C441",
+     "C442",
+     "C443",
+     "C444",
+     "C459",
+     "C460",
+     "C461",
+     "C462",
+     "C467",
+     "C469",
+     "C470",
+     "C472",
+     "C473",
+     "C474",
+     "C475",
+     "C489",
+     "C491"
+    ]
+   },
+   "prodigy": {
+    "dg_kcal_mol": -8.4,
+    "kd_m_25c": 6.8e-07
+   },
+   "persistence": {
+    "001": 22,
+    "002": 49,
+    "003": 28,
+    "004": 5,
+    "005": 10
+   },
+   "pairs_in_ge3_of5": 0,
+   "interface_ca_rmsd_to_rank001_A": {
+    "002": 50.39,
+    "003": 41.46,
+    "004": 33.32,
+    "005": 37.92
+   },
+   "glycan": {
+    "model": "N344 simplified glycan on C276-350 window",
+    "dsasa_A2": 220.6,
+    "antibody_clashes_lt2p5A": 0
+   }
+  },
+  "G3I-03": {
+   "afm_iptm_by_rank": {
+    "001": 0.29,
+    "002": 0.29,
+    "003": 0.29,
+    "004": 0.28,
+    "005": 0.28
+   },
+   "interface_chemistry": {
+    "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+    "n_interface_residue_pairs_CA_independent": 69,
+    "n_heavy_atom_contacts_5A": 815,
+    "n_hbonds": 9,
+    "hbond_share_of_contacts_pct": 1.1,
+    "hbonds": [
+     {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A56 TYR:OH",
+      "dist_A": 1.21
+     },
+     {
+      "donor": "A56 TYR:OH",
+      "acceptor": "C441 GLN:OE1",
+      "dist_A": 3.27
+     },
+     {
+      "donor": "A58 SER:OG",
+      "acceptor": "C440 TYR:OH",
+      "dist_A": 1.61
+     },
+     {
+      "donor": "C440 TYR:OH",
+      "acceptor": "A58 SER:OG",
+      "dist_A": 1.61
+     },
+     {
+      "donor": "A58 SER:OG",
+      "acceptor": "C461 SER:OG",
+      "dist_A": 2.33
+     },
+     {
+      "donor": "C461 SER:OG",
+      "acceptor": "A58 SER:OG",
+      "dist_A": 2.33
+     },
+     {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 2.39
+     },
+     {
+      "donor": "B94 TRP:NE1",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 1.94
+     },
+     {
+      "donor": "C474 TYR:OH",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 1.94
+     }
+    ],
+    "n_salt_bridges": 0,
+    "salt_bridges": [],
+    "n_carbon_carbon_contacts_5A": 312,
+    "paratope_residues": [
+     "A101",
+     "A102",
+     "A103",
+     "A104",
+     "A105",
+     "A106",
+     "A107",
+     "A108",
+     "A109",
+     "A31",
+     "A32",
+     "A51",
+     "A53",
+     "A54",
+     "A55",
+     "A56",
+     "A57",
+     "A58",
+     "A59",
+     "A60",
+     "A75",
+     "B1",
+     "B93",
+     "B94",
+     "B95"
+    ],
+    "epitope_residues": [
+     "C401",
+     "C403",
+     "C406",
+     "C434",
+     "C435",
+     "C436",
+     "C437",
+     "C438",
+     "C439",
+     "C440",
+     "C441",
+     "C442",
+     "C443",
+     "C444",
+     "C459",
+     "C460",
+     "C461",
+     "C467",
+     "C469",
+     "C470",
+     "C473",
+     "C474",
+     "C491"
+    ]
+   },
+   "prodigy": {
+    "dg_kcal_mol": -9.2,
+    "kd_m_25c": 1.7e-07
+   },
+   "persistence": {
+    "001": 19,
+    "002": 84,
+    "003": 47,
+    "004": 46,
+    "005": 18
+   },
+   "pairs_in_ge3_of5": 0,
+   "interface_ca_rmsd_to_rank001_A": {
+    "002": 39.31,
+    "003": 15.21,
+    "004": 38.28,
+    "005": 32.51
+   },
+   "glycan": {
+    "model": "N344 simplified glycan on C276-350 window",
+    "dsasa_A2": 213.3,
+    "antibody_clashes_lt2p5A": 0
+   }
+  }
+ }
+}

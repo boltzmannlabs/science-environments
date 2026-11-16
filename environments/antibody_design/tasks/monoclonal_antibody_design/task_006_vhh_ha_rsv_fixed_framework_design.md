@@ -47,7 +47,7 @@ Choose suitable available capabilities independently. If a required capability i
 | Aggregation propensity | Calculate a spatial surface aggregation-propensity score for each candidate. | Record the structure used, solvent-exposure treatment, residue contributions where available, aggregation definition, and native score scale. Keep sequence-only aggregation estimates separately identified. |
 | Humanness | Calculate a human-repertoire prevalence-based humanness score. | Record peptide-window definition, subject-prevalence criterion, repertoire snapshot, sequence scope, and aggregation rule. Report whole-VHH and CDR-specific results where supported. |
 | Interface interaction energy | Calculate the energy difference between the bound complex and separated antibody/antigen partners under one consistent scoring protocol. | Preserve the energy definition, scoring units, sign convention, partner selections, preparation/refinement conditions, and structure hash. Keep component energies when available. |
-| Predicted cross-target specificity | Calculate each candidate's interaction profile against its intended target and the declared native decoy panel. | Retain per-target results, method and decision criterion, panel coverage, and on-target versus decoy comparisons. If the method supports positive-interaction classification, report positive fractions and their normalization with explicit denominators. Unsupported classifications remain unavailable. |
+| Predicted cross-target specificity | Calculate each candidate's interaction profile against its intended target and the declared native decoy panel. | Retain per-target results, method and decision criterion, panel coverage, and on-target versus decoy comparisons. If the method supports positive-interaction classification, report positive fractions and their normalization with explicit denominators. Retain the decision rule with each reported classification. |
 
 Record every candidate-level result, calculation method/version, units or score scale, conditions, and raw-artifact path. Summarize distributions separately for HA and RSV, retaining sample counts and the individual observations. Keep pooled summaries distinct from results for particular candidates.
 
@@ -63,7 +63,7 @@ Predeclare the scoring and ranking rules. Different humanness definitions, aggre
 - `specificity_predictions.csv`: candidate-by-target predictions, target identities, scoring definitions, declared classifications where supported, and panel coverage.
 - `metrics.json`: the four requested property assessments, input/design validity checks, methods, parameters, hashes, and exclusions.
 - `shortlist.csv`: eligible unique candidates selected separately for each antigen using the declared rule.
-- `report.md`: input preparation, actual execution, property distributions, target/decoy comparisons, selection rationale, and limitations.
+- `report.md`: input preparation, actual execution, property distributions, target/decoy comparisons, selection rationale, and evaluation scope.
 - Supporting canonical designs, assessment structures, residue maps, native calculation outputs, and execution logs.
 
 ## Important Instructions

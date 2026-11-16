@@ -30,7 +30,7 @@ Assess the effects of supplied antibody-interface mutations on recognition of th
 
 Source references: [AbAgym, mAbs 2025](https://doi.org/10.1080/19420862.2025.2592421), [3BioCompBio/AbAgym @ `87af82ad68bb`](https://github.com/3BioCompBio/AbAgym/tree/87af82ad68bb90921e15fb8b79c7bcb1d05b23d3).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_023_abagym_antibody_interface_mutation_scoring.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_023_abagym_antibody_interface_mutation_scoring/reference.md).
 
 ## Expected Output
 
@@ -46,6 +46,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Retain the experimental meaning of each DMS endpoint when interpreting computational agreement.
 - Mutation-effect ranking does not establish equilibrium affinity or therapeutic activity.

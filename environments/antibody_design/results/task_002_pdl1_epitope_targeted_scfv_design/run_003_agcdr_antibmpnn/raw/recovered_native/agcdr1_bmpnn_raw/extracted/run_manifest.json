@@ -1,0 +1,86 @@
+{
+  "request": {
+    "job_name": "task002_antibmpnn_on_agcdr1",
+    "experiment_id": "6af88dea445ae94313c3c8c6",
+    "user_id": "680f678c1b1d883c92aa706c",
+    "input_path": "/app/inputs/6af88dea445ae94313c3c8c6/6af88dea445ae94313c3c8c6_task002_antibmpnn_on_agcdr1.pdb",
+    "chains_to_design": [
+      "H",
+      "L"
+    ],
+    "residue_positions_to_design": {
+      "H": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "L": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    "generation_count": 8,
+    "model_name": "antibmpnn_020",
+    "sampling_temperature": 0.1,
+    "backbone_noise": 0.0,
+    "seed": 37
+  },
+  "fixed_chains_by_pdb": {
+    "6af88dea445ae94313c3c8c6_task002_antibmpnn_on_agcdr1": [
+      "A"
+    ]
+  },
+  "pdb_count": 1,
+  "sequence_count": 8,
+  "expected_sequence_count": 8,
+  "csv_columns": [
+    "pdb_name",
+    "heavy_chain",
+    "light_chain"
+  ]
+}

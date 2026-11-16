@@ -1,0 +1,135 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_004_abflow_multi_cdr",
+  "workflow_id": "wf_abflow_multi_cdr_design",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr"
+  },
+  "preparation": {
+    "objective": "All-CDR sequence/structure co-design for 5bv7 as a declared separate evaluation track (paper Table 2 protocol)",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "historical_stage_1",
+      "purpose": "masking + reference sealing (inherited from run_001 S1)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "build_run.py",
+          "source": "open_source",
+          "records": ["C01"],
+          "inputs": {"test_set": "authors RAbD test.json 5bv7 entry (heavy C, light B, antigen [A], IMGT)"},
+          "parameters": {"n_replicates": 32},
+          "outputs": {"value": ["input/test_5bv7.json", "reference/freeze_manifest.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_2",
+      "purpose": "all-CDR generation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow",
+          "source": "open_source",
+          "records": ["C02"],
+          "model_version": "multi_cdr_design.ckpt (HF wenda8759/AbFlow, sha256 ae5d78d583615b2c...)",
+          "inputs": {
+            "test_set": "run_5bv7_abflow/input/test_5bv7.json (masked)",
+            "surf_file": "AbFlow/all_data/RAbD/test_surf.pkl",
+            "pep_file": "AbFlow/all_data/RAbD/test.pkl"
+          },
+          "parameters": {"seed": 2023, "batch_size": 1, "gpu": 0, "ckpt": "AbFlow/checkpoints/multi_cdr_design.ckpt"},
+          "outputs": {"value": ["gen_mcdr_1shot/5bv7_h3_000.pdb", "gen_mcdr_1shot/candidates.csv", "gen_mcdr_1shot/generation_freeze.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_3",
+      "purpose": "freeze before scoring",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "freeze_rankings.py",
+          "source": "open_source",
+          "records": ["C03"],
+          "inputs": {"pool": "gen_mcdr_1shot"},
+          "parameters": {"ordering": "pmets asc, tie-break candidate_id"},
+          "outputs": {"value": ["shortlist_frozen.csv", "freeze_record.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_4",
+      "purpose": "native-reference scoring",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow evaluator",
+          "source": "open_source",
+          "records": ["C04", "C05"],
+          "inputs": {
+            "common": {"mod_pdb": "gen_mcdr_1shot/5bv7_h3_000.pdb"},
+            "by_record": {
+              "C04": {"ref_pdb": "reference/native_5bv7.pdb (sealed)", "chains": "H=C, L=B, A=[A]"},
+              "C05": {"ref_pdb": "sealed native", "chains": "C/B/[A]"}
+            }
+          },
+          "parameters": {"by_record": {"C04": {"cdr_type": "['H3']"}, "C05": {"cdr_type": "['H1','H2','H3','L1','L2','L3']"}}},
+          "outputs": {
+            "by_record": {"C04": {"value": ["gen_mcdr_1shot/metrics_per_candidate.json"]}, "C05": {"value": ["gen_mcdr_1shot/metrics_allcdrs.json"]}}
+          },
+          "states": {"completed": 2}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_5",
+      "purpose": "packaging",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C06"],
+          "inputs": null,
+          "parameters": {"per_run_tree": true, "planning_updates": true},
+          "outputs": {"value": ["@results/"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"counts": {"candidates_generated": 1, "candidates_evaluated": 1, "unique_h3": 1, "native_copies": 0}},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "ccee9eeca88d2582d836765e72555d777436a2887891e8e06ab5a26f96d58ae3"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": "run_001_abflow_h3_reconstruction",
+    "derived_from": "same masked 5bv7 inputs and sealed reference as run_001; distinct checkpoint (multi_cdr_design.ckpt)",
+    "historical_components": []
+  }
+}

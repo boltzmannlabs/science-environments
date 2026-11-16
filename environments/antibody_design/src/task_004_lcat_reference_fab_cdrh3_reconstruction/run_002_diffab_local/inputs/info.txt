@@ -1,0 +1,5 @@
+# LCAT 5bv7 — H_CDR3 span definition for DiffAb exact-CDR runner
+# Sequence used ONLY to locate the 19-residue span (runner contract); DiffAb
+# regenerates sequence+structure there (sample_sequence: true). Native-pose-
+# conditioned protocol, declared separate from the pose-blind AbFlow track.
+H CDR3: AREGAAVRSFYYSYYGMDV

@@ -1,0 +1,22 @@
+# agent_scientist_log — run_004 (live)
+
+- 16:02-16:03Z Prepared run_004 packages from run_002 Boltz2 outputs: boltz2_models.zip (12 PDBs, sha256 c7031461…) and boltz2_models_conf.zip (12 models + pae/plddt npz + confidence json, 60 files, sha256 29a7e779…).
+- 16:03Z boltz2_models.zip upload OK (partial validation: inventory >256 KiB receipt budget). Submit REJECTED: "validation rules or dependent inputs changed" — ZIP receipt not usable at submit time.
+- 16:04Z Split into prodigy_set1/2.zip (6 models each); same submit rejection. Conclusion: multi-structure ZIP receipts unusable for Prodigy submits (recorded as connector limitation).
+- 16:04:30Z Single-PDB submit without chain_list: backend 422 — connector serialized chain_list:"" and experiment_name:"" (visible in error payload). Connector serialization bug, recorded.
+- 16:04:56Z Working route found: upload single PDB WITH experiment_data {chain_list:["A","B"]}, receipt covers the parameter; submit accepted. cand2-VH first (doc 6af886a89de6b44b075d8685).
+- 16:05-16:07Z Remaining 11 Prodigy jobs submitted one-by-one the same way (doc IDs in config). All accepted with checked-level validation.
+- 16:07:31Z ipsae-protein submitted (doc 6af88746d29658acc304eb69; boltz2_models_conf.zip uploaded with partial validation accepted for this tool; model_type boltz2; cutoffs 10/10).
+- Polling all 13 jobs; no duplicates submitted.
+
+## Closeout (2026-11-14)
+
+- All 13 jobs completed and downloaded; results tabulated in metrics.csv (24 metric rows) and report.md.
+- Consolidated remaining tabular deliverables per monoclonal.md: candidates.csv (5 candidates evaluated in this phase + control reference), shortlist.csv (ipSAE-sum ranking: PD1T3-019 > 038 > 054 > 011 > 069), sequences.fasta (evaluated set, from run_002), benchmark_comparison.csv (3 rows; predicted-vs-measured marked not_comparable, raw Prodigy units not interpreted).
+- Selection: PD1T3-019 leads on combined evidence (ipSAE 0.899/0.816 both pairs above control VH 0.785; ipTM 0.945/0.916 from run_002). All values are structure-based predictions on Boltz2 models under identical preparation — not measured affinities (H965 measured KD 81.6 nM, SPR, remains the only measurement).
+- Status: complete; no remaining requirements within this run's scope.
+
+
+## Retrospective packaging — 2026-11-15T11:14:35+00:00
+
+Existing run files were inventoried and organized under this run ID. No tool jobs were started. Source session: `20261114_110401_625a94`; the [redacted observable export](../../../../maintenance/package_repair_20261115/sessions/20261114_110401_625a94.jsonl) contains public messages, calls, and outputs across the session's runs; private reasoning fields are not exported. This entry is a retrospective storage action, not fabricated historical execution.

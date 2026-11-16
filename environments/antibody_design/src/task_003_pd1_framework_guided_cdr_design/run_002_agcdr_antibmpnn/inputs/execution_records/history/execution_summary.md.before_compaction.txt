@@ -1,0 +1,41 @@
+# execution_summary — run_002
+
+Run: run_002 / WF2 backbone-diversified design + screening. Status: COMPLETED.
+
+## What ran
+| stage | tool | source | docs | outcome |
+|---|---|---|---|---|
+| backbone diversification | agcdr_diff | boltzmann | 6af879a3d29658acc304e059 | 20 backbones, CDR RMSD ~10.9 A, framework preserved |
+| sequence design | AntiBMPNN | boltzmann | 6af87c36445ae94313c3b280 (failed first: 6af87a62445ae94313c3b0f1) | 160 seqs; mask verified 160/160 |
+| gates | process_agcdr.py | local | — | 115 unique eligible |
+| selection | select_screening.py | local | — | 5 selected (min pairwise Hamming 32/60), rule frozen pre-score |
+| screening | Boltz2 x6 | boltzmann | 6af87d71445ae94313c3b729 + 5 candidates | all terminal; pairwise PD1:VH/PD1:VL predictions |
+| properties | Antibody_Prediction x3 | boltzmann | 6af87dd4…, 6af87dda…, 6af87ded… | Tm/solubility/CDR for 5+control |
+
+## Counts
+generated 160; gate-pass 115; selected 5; screened 6 (incl. control); property rows 6.
+
+## Key numbers
+H965 control ipTM PD1:VH 0.895 / VL 0.717. Candidates PD1:VH: PD1T3-019 0.945, PD1T3-011 0.940, PD1T3-054 0.882, PD1T3-038 0.872, PD1T3-069 0.722. Top PD1T3-019 also 0.916 VL, 75/67 contacts <5A, 26 PD-L1-surface contacts, Tm_pred 79.0 C, solubility 1.
+
+## Not-run / blocked
+- Antigen_Antibody_binding property: absent from active connector enum (submitted and rejected). Filled by run_004 (Prodigy/ipSAE).
+- Ternary complex prediction: platform emits pairwise only — disclosed, metrics kept per pair.
+
+## Remaining
+run_004 interface evaluation on these models; run_003 epitope-conditioned route.
+
+Report: results/task_003_pd1_framework_guided_cdr_design/run_002/report.md
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_003_pd1_framework_guided_cdr_design/run_002.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"generated": 160, "gate_pass": 115, "selected": 5, "screened": 6, "top_candidate": "PD1T3-019 ipTM PD1:VH 0.945 vs H965 control 0.895 (same-predictor comparison; not affinity)", "remaining": "Prodigy/ipSAE interface evaluation executed under run_004; epitope-conditioned route under run_003", "last_update": "2026-11-14T16:10:00Z"}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

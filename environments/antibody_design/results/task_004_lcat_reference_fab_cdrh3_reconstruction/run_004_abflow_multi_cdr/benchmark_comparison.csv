@@ -1,0 +1,11 @@
+metric,this_run_5bv7,published_aggregate,published_table,n_cases,comparability,verdict
+RMSD(CA) CDRH1 Kabsch,0.6063,0.63,Table 2 multi-CDR,60,"same evaluator, same Kabsch CDR RMSD definition; single case vs aggregate",matches (0.96x published)
+RMSD(CA) CDRH2 Kabsch,0.5307,0.55,Table 2 multi-CDR,60,same,matches (0.96x published)
+RMSD(CA) CDRH3 Kabsch,2.6302,1.83,Table 2 multi-CDR,60,same,above (1.44x published)
+RMSD(CA) CDRL1 Kabsch,0.7824,0.64,Table 2 multi-CDR,60,same,slightly above (1.22x)
+RMSD(CA) CDRL2 Kabsch,0.1248,0.25,Table 2 multi-CDR,60,same,below (0.50x published)
+RMSD(CA) CDRL3 Kabsch,2.0849,0.65,Table 2 multi-CDR,60,same,above (3.21x published) — single-case outlier
+AAR H3,0.4211,0.4352,Table 2 multi-CDR (paper panel),60,"paper-panel value, not in repo benchmark md",within spread
+TMscore,0.9593,0.9707,Table 2 full-atom,60,same evaluator,slightly below
+LDDT,0.7686,0.8151,Table 2 full-atom,60,same,below
+DockQ cdrh3_only,0.345,0.431,Table 2 full-atom,60,same,below

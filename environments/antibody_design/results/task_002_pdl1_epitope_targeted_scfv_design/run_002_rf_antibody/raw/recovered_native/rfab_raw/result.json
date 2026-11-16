@@ -1,0 +1,25 @@
+{
+ "status": "Success",
+ "OutputData": {
+  "output_path": {
+   "path": "users/680f678c1b1d883c92aa706c/rfdiffusion_proteinmpnn/rf_antibody/6af884fc9de6b44b075d8594/result.zip",
+   "download_link": [
+    "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/rfdiffusion_proteinmpnn/rf_antibody/6af884fc9de6b44b075d8594/result.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=azurevms%40boltchem-general-324210.iam.gserviceaccount.com%2F20261114%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261114T160319Z&X-Goog-Expires=300&X-Goog-SignedHeaders=host&response-content-disposition=inline&X-Goog-Signature=5c65f04ed7b7f44e3261ae33e65179246a0b3197c0c1c8494434c5b00e7f1af3ef3a7946bf31d715eb6ec20a06d363f1377cfe83d789f5e7ceec4f311c0da8af7f225a47acfbbba06db300c66fb57b06f123c6c913887753f55c11f904776b414f6d829ba976b35f81b2ae4e0db08a92ff3814ea48c6d71ae22487741587bcf63e3e4f4b77636c5d26debbb9f018c36807f1fbeb2087675ae11a439d7d5f6b6ccd7ae2510e21fee7802aa735f388b9c0e51b8055cbf5c121553e250a8c11683599852fe81c961b1388d2a0c5d1b9ebd44cbdfdda8b77e1a6d57e80944a15c715e31a4f6558303e3d9fd6269d912f57564d437632243e1b2460b62c7e7584faa7"
+   ]
+  }
+ },
+ "billing": [
+  {
+   "job_name": "task-rfantibody-jm76v",
+   "tool_name": "rfdiffusion_proteinmpnn",
+   "node": "boltzmann8",
+   "duration_seconds": 45,
+   "total_tool_runtime": 44,
+   "tool_lifetime_seconds": 45,
+   "rounded_minutes": 1,
+   "rate_per_hour": 50,
+   "amount": 1
+  }
+ ],
+ "time_taken": "00 hr, 00 min, 40 sec"
+}

@@ -1,0 +1,26 @@
+run_id: run_002_diffab_local
+task_id: task_004_lcat_reference_fab_cdrh3_reconstruction
+workflow_id: wf_diffab_incontext_h3
+status: completed
+lineage:
+  parent: run_001_abflow_h3_reconstruction
+  derived_from: same 5bv7 native complex and sealed reference; DiffAb codesign_single.pt
+  historical_components:
+  - originally designed not_selected (no evaluation stack); user authorized end-to-end
+    execution of all designed workflows via available open-source tools 2026-11-14;
+    reclassified selected+executed
+counts:
+  designed_workflows: 4
+  selected_workflows: 4
+  candidates_generated: 32
+  candidates_evaluated: 32
+config:
+  path: ../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/run.json
+  sha256: 88fbe020d47ccdd2443edb8e27d82aa915bde542528947845250c05a72ba9d02
+last_update: 2026-11-14 16:20:00+00:00
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local.json
+config_sha256: f4a7e18aadf7ff1d6bce3af05cdaf557273051d8596102ea004d8f63e26ba5e9

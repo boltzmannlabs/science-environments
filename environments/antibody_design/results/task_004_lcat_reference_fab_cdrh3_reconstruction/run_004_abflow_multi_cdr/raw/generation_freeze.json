@@ -1,0 +1,10 @@
+{
+  "n_candidates": 1,
+  "seed": 2023,
+  "ckpt": "/home/boltzmann10/lcat_task004/AbFlow/checkpoints/multi_cdr_design.ckpt",
+  "generated_at": "2026-11-14 15:28:42",
+  "candidate_pdb_sha256": {
+    "5bv7_h3_000": "2d5c24b42316ec4de689be885288c098226a35bdbf22b1ab4e8b2b050e016dcc"
+  },
+  "ranking_rule": "model pmets (mean NLL of H3 seq under model, lower=better) frozen BEFORE native scoring"
+}

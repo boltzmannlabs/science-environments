@@ -1,0 +1,49 @@
+{
+  "tool": "AgCDR-Diff",
+  "model": "fine-tuned RFDiffusion3 antibody CDR model",
+  "checkpoint": "agcdr_diff_epoch87.pt",
+  "checkpoint_epoch": 87,
+  "experiment_id": "6af88d4b9de6b44b075d8990",
+  "num_samples": 8,
+  "num_steps": 10,
+  "seed": 0,
+  "generation_mode": "chunked",
+  "requested_gpu_batch_size": 4,
+  "gpu_batch_size": 4,
+  "effective_gpu_batch_sizes": [
+    4,
+    4
+  ],
+  "effective_num_steps": 10,
+  "generation_seconds": 3.5813769567757845,
+  "mean_sample_seconds": 0.44767211959697306,
+  "oom_retries": 0,
+  "primary_generated_pdbs": [
+    "generated_structures/generated_sample_1.pdb",
+    "generated_structures/generated_sample_2.pdb",
+    "generated_structures/generated_sample_3.pdb",
+    "generated_structures/generated_sample_4.pdb",
+    "generated_structures/generated_sample_5.pdb",
+    "generated_structures/generated_sample_6.pdb",
+    "generated_structures/generated_sample_7.pdb",
+    "generated_structures/generated_sample_8.pdb"
+  ],
+  "all_generated_samples_pdb": "generated_structures/all_generated_samples.pdb",
+  "input_reference_pdb": "reference/input_structure.pdb",
+  "reports": {
+    "metrics": "reports/metrics.json",
+    "preprocessing": "reports/preprocessing.json",
+    "run_information": "reports/run_information.json"
+  },
+  "input_mode": "antibody_antigen_pair",
+  "chain_maps": {
+    "antibody": {
+      "H": "H",
+      "L": "L"
+    },
+    "antigen": {
+      "A": "A"
+    }
+  },
+  "atom_records": 2674
+}

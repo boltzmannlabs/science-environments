@@ -30,7 +30,7 @@ Design all six CDR sequences and the antigen-bound conformation of a paired mono
 
 Source references: [IgGM, ICLR 2025 paper](https://proceedings.iclr.cc/paper_files/paper/2025/file/fa5b423e24b442180bcd4e13ae75a27f-Paper-Conference.pdf), [author results page](https://iggm.rubo.wang/), [TencentAI4S/IgGM @ `06abc563b3fc`](https://github.com/TencentAI4S/IgGM/tree/06abc563b3fc8c7ea020543add16b69b6f8a1c8d).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_018_iggm_paired_cdr_sequence_structure_codesign.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_018_iggm_paired_cdr_sequence_structure_codesign/reference.md).
 
 ## Expected Output
 
@@ -46,6 +46,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Report sequence/structure design results separately from known-sequence structure prediction.
 - Native recovery and backbone agreement do not establish experimental affinity or therapeutic activity.

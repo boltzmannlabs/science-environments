@@ -1,0 +1,17 @@
+{
+  "allow_partial_validation": true,
+  "experiment_data": {
+    "chains_to_design": [
+      "H",
+      "L"
+    ],
+    "generation_count": 8,
+    "input_path": "users/680f678c1b1d883c92aa706c/1794674148445/agcdr_sample1_design_input.pdb",
+    "residue_positions_to_design": {
+      "H": "26-33,51-58,97-109",
+      "L": "24-29,50-55,89-97"
+    }
+  },
+  "experiment_name": "task002_antibmpnn_on_agcdr1",
+  "job_name": "AntiBMPNN"
+}

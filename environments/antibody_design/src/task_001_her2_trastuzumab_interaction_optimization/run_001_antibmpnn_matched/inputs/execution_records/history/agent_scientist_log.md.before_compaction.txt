@@ -1,0 +1,22 @@
+# agent_scientist_log.md — run_001_antibmpnn_matched
+
+- 2026-11-14T11:09:09Z Session start. Task md + benchmark md + monoclonal.md guide read. 3 workflows designed (run_001 selected, run_002 not_selected, run_003 not_run); configs + run.yaml written.
+- 2026-11-14T11:10Z Stage 0 executed: 1N8Z downloaded (sha256 ed934d36...), chains verified A=trastuzumab light(214), B=heavy(220), C=HER2(581/607 modeled; gaps 102-110,303-305,361-364,581-590); VH/VL 100% identity to trastuzumab consensus; Fv+HER2 split PDBs prepared and hash-pinned. Biological assembly = as-deposited (identity BIOMT).
+- Zenodo released control archive (4.1 GB) not retrievable within session budget -> comparison controls documented NEEDS_INPUT; published REF15 endpoints retained from benchmark md only.
+- 2026-11-14T11:20-11:28Z AntiBMPNN attempts 1-4 FAILED (docs 6af844059de6b44b075d79e0, 6af844589030bff41644751b, 6af844ca9850a93adf67cad5, 6af8453c239a6b9f38beb6dd): "Expected exactly one heavy/VHH domain; detected 0". fetch_tool_log -> HTTP 404. Benign control 1MCP (doc 6af84579239a6b9f38beb714, $1) SUCCEEDED -> service healthy, input format at fault.
+- 2026-11-14T11:29Z Root cause: stage0 renumbered residues per ATOM line (VH=924 "residues"). stage0b rewritten with per-residue numbering + SEQRES + TER/END; complex_hl_a_seqres.pdb verified H=VH(120)/L=VL(107)/A=HER2(581).
+- 2026-11-14T11:32Z AntiBMPNN attempt 5 (doc 6af8461a9850a93adf67cb88, generation_count 40) SUBMITTED -> SUCCESS. Results zip downloaded via fresh signed URL (40,806 bytes).
+- 2026-11-14T11:33Z stage2 verification: 40/40 lengths unchanged, all mutations inside Kabat CDR mask, framework byte-identical, no new Cys; 38 unique (2 duplicate pairs); NG/NS/NT/DG/DS/DT motifs all inherited from reference CDRs.
+- 2026-11-14T11:34Z Boltz2 REFERENCE submitted (doc 6af84747445ae94313c3a9ae) -> Success ~11:50Z. Pairwise scheduling discovered: record 1 = HER2+VH, record 2 = HER2+VL. Confidence: ipTM 0.220/0.340.
+- 2026-11-14T12:00Z Candidate submissions blocked: HTTP 500 "Insufficient credits" on old account. User supplied new API key in chat (value NOT logged here); key written to profile .env; jobs now under account users/680f678c1b1d883c92aa706c.
+- 2026-11-14T12:05-12:20Z 8 candidate Boltz2 jobs submitted + completed (docs in inputs/boltz2_submissions.json); artifacts downloaded (pdbs_outputs.zip, outputs.zip, paths.csv each). Signed-URL expiry (300 s) bit once during batch download; resolved by re-poll + immediate download per job.
+- 2026-11-14T12:30-12:45Z Prodigy v1 (9 jobs, nested pdbs_outputs.zip): ALL FAILED ("Signed URL download failed: 404", then "Input contains no nonempty PDB files at the supported archive level"). Diagnosis: nested boltz_pdb/ directory level. One corrected resubmission each with flat zips (PDBs at archive root) -> ALL 9 SUCCEEDED; prodigy.csv per construct.
+- 2026-11-14T13:00-13:10Z stage6 evaluation: Prodigy dG + derived Kd, epitope recovery vs crystal contacts (16 HER2 residues 532-603), CDR pLDDT from plddt npz, interface clash counts (<2.2 A heavy-atom pairs). Files: raw/evaluation.{csv,json}, raw/clash_counts.json, raw/boltz2_confidence.{csv,json}.
+- 2026-11-14T13:30-13:40Z stage7 artifact build per monoclonal.md section 6: candidates.csv (38), shortlist.csv (8; pre-stated rank key: mean Prodigy dG, then ipTM rec2, then fewer mutations), sequences.fasta (78 chains), metrics.csv (81 rows), benchmark_comparison.csv (published REF15 endpoints + our metrics; cross-protocol verdict not_comparable per benchmark md), report.md (renamed from results.md, sections 7-9 added). 18 structure PDBs staged in structures/.
+- Disclosure: mid-run account change (reference Boltz2 job on old account, candidate jobs on new account) — identical Boltz2/Prodigy protocol on both; recorded in report.md section 5.
+- 2026-11-14T14:05Z Logs + execution_summary finalized; config JSON stages[] to be backfilled with tool_calls detail (see execution_summary).
+
+
+## Retrospective packaging — 2026-11-15T11:14:35+00:00
+
+Existing run files were inventoried and organized under this run ID. No tool jobs were started. Source session: `20261114_110112_c07285`; the [redacted observable export](../../../../maintenance/package_repair_20261115/sessions/20261114_110112_c07285.jsonl) contains public messages, calls, and outputs across the session's runs; private reasoning fields are not exported. This entry is a retrospective storage action, not fabricated historical execution.

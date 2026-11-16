@@ -1,0 +1,30 @@
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/lightning_fabric/__init__.py:36: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__("pkg_resources").declare_namespace(__name__)
+Running IgDesign with config: inputs/hcdr123_gal3bp.yaml
+  region_order: ['hcdr1', 'hcdr2', 'hcdr3']
+  samples: 10x10x1
+Starting model loading  at 2026-11-15 12:05:35.689348
+Lightning automatically upgraded your loaded checkpoint from v1.6.5 to v2.0.9. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint --file ../../../../../../../agent_sci_boltpro_errors_tools/igdesign/ckpts/igdesign_acvr2b_holdout.ckpt`
+Global seed set to 42
+Lightning automatically upgraded your loaded checkpoint from v1.6.5 to v2.0.9. To apply the upgrade to your files permanently, run `python -m pytorch_lightning.utilities.upgrade_checkpoint --file ../../../../../../../agent_sci_boltpro_errors_tools/igdesign/ckpts/igmpnn_acvr2b_holdout.ckpt`
+Global seed set to 17
+Resetting parameters.
+Resetting parameters.
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/pytorch_lightning/utilities/parsing.py:197: UserWarning: Attribute 'structure_model' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['structure_model'])`.
+  rank_zero_warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.13s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00,  9.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.83s/it]
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/pytorch_lightning/core/saving.py:161: UserWarning: Found keys that are in the model state dict but not in the checkpoint: ['model.language_model.esm.contact_head.regression.weight', 'model.language_model.esm.contact_head.regression.bias', 'model.language_model.transformer.contact_head.regression.weight', 'model.language_model.transformer.contact_head.regression.bias']
+  rank_zero_warn(
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/pytorch_lightning/core/saving.py:165: UserWarning: Found keys that are not in the model state dict but in the checkpoint: ['model.language_model.esm.embeddings.position_ids', 'model.language_model.transformer.embeddings.position_ids']
+  rank_zero_warn(
+Model loaded at 2026-11-15 12:06:23.923049
+Time taken to load model: 0:00:48.233701
+Global seed set to 0
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/triton/knobs.py:504: UserWarning: TRITON_DEFAULT_FP_FUSION is unset: defaulting to FP fusion ENABLED for backward compatibility in Triton 3.9. The default will change to DISABLED in Triton 3.10; set TRITON_DEFAULT_FP_FUSION=1 to keep fusion enabled or =0 to adopt the new default early and silence this warning.
+  warn_once(FP_FUSION_DEFAULT_WARNING)
+Scoring sequences with independent loss:   0%|          | 0/100 [00:00<?, ?it/s]Scoring sequences with independent loss: 100%|██████████| 100/100 [00:00<00:00, 1880.08it/s]
+Done generating and scoring sequences. Results saved to /home/boltzmann10/.sci/cache/scratch/gal3bp_run/igdesign_run002_results.csv
+DONE
+EXIT:0

@@ -1,0 +1,6 @@
+metric,this_run_5bv7_antibmpnn_n32_mean,published_aggregate_mean,published_aggregate_sd,published_table,n_cases,comparability,verdict
+AAR H3,0.5526,0.4234,0.1334,Table 1,60,isolation-relaxed declared variant (native backbone supplied); evaluator identical,above reference — not comparable 1:1 (less blind)
+CAAR H3,0.3542,0.2824,0.2037,Table 1,60,same,above reference — not comparable 1:1
+RMSD H3,0.0,8.25,4.55,Table 1,60,by construction (fixed backbone),not_comparable
+TMscore,1.0,0.9736,0.009,Table 1,60,by construction,not_comparable
+DockQ,artifact,0.423,0.161,Table 1,60,evaluator reduction artifact on identical backbones,not_comparable

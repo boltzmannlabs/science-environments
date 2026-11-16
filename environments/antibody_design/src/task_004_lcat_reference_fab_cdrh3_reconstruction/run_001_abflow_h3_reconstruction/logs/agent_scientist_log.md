@@ -1,0 +1,57 @@
+# Agent-Scientist activity — run_001_abflow_h3_reconstruction
+
+Task: `task_004_lcat_reference_fab_cdrh3_reconstruction`. Saved status: **completed**. Evidence presentation updated 2026-11-16.
+
+[Execution summary](execution_summary.md) · [Exact calls, inputs and responses](../inputs/execution_records/tool_details.json) · [Observable narrative export](../inputs/execution_records/observable_events.jsonl)
+
+## Existing recorded activity
+
+# agent_scientist_log — run_001_abflow_h3_reconstruction
+
+Chronological observable agent activity (UTC, session 2026-11-14; session_id 20261114_110408_5c556e).
+
+| Time | Activity |
+| --- | --- |
+| 11:04 | Session start; task md, ENVIRONMENT_SPEC, MODELS_AND_TOOLS, status.md read |
+| 11:05 | Found prior AbFlow install + usage docs (Dileep_kumar abflow_instructions.md); authors repo located with checkpoints + all_data/RAbD + compiled evaluators |
+| 11:07 | Downloaded 5BV7.pdb from RCSB; found abflow_benchmark conda env (torch+CUDA, ANARCI, lddt); GPU 0 free |
+| 11:09 | Read generate.py/cal_metrics.py/dataset.py/model code: masking verified at sampler level (init_interface randomizes H3 seq+coords; cmask=1 whole-antibody) |
+| 11:10 | Fetched paper arxiv 2602.07084v2; protocol pinned: Table 1 = CDR-H3 co-design 1-shot over 60 complexes; Appendix C RMSD = in-place H3 CA (no Kabsch) |
+| 11:12 | Downloaded HF datasets.zip (919 MB); extracted RAbD test.json + 5bv7.pdb; verified 5bv7 entry (heavy C, light B, antigen A, H3 95-113 len 19, cluster 3sm5; 3sm5 absent from train/valid) |
+| 11:17 | build_run.py: masked inputs + sealed reference with sha256 manifest |
+| 11:19 | Pilot generation (seed 2023, 32 draws) — first attempt crashed on relative paths after repo chdir; fixed by resolving paths pre-import; rerun OK (~192 s). Framework+VL byte-identical, 4 unique H3s, 0 native copies |
+| 11:23:47 | 1-shot generation (seed 2023, batch 1) — official Table-1 protocol run |
+| 11:24 | First scoring attempt failed: lddt not found (sh: lddt: command not found) |
+| 11:25 | PATH fix (env bin prepended); full scoring of 1-shot: AAR 0.5263, CAAR 0.3333, TM 0.9648, lDDT 0.8105, RMSD(AppC) 14.472 A, DockQ 0.889 |
+| 11:26 | AbFlow-G pool generation (seed 20261114, 32 draws) |
+| 11:27:55 | Rankings frozen (pmets asc) for both pools; hash checks all-verified |
+| 11:27-15:02 | Investigated RMSD semantics (in-place vs Kabsch) from authors code + Appendix C; coordinate analysis: antigen fixed, antibody centroid +25 A; DockQ superposes interface, hence 0.889 with large in-place RMSD |
+| 15:02 | Discovered pmets per-batch indexing bug (global idx vs batch-local list): candidates 9-32 of pool had blank pmets -> ranking invalid; 1-shot unaffected |
+| 15:03 | Patched generate_candidates.py (enumerate + pmets[i]); regenerated pool at same seed 20261114: 32/32 sequences identical; re-froze; re-scored |
+| 15:06 | metrics_summary.json metric_definitions wording corrected (values never wrong) |
+| 15:07 | package_results.py: bundle built (52 files, CHECKSUMS verified); repo results tree written |
+| 15:28-15:40 | run_004 multi-CDR track designed and executed (see its own logs) |
+| 15:45 | Config enriched to full field set; planning table updated to 4 designed / 2 selected / 2 executed |
+
+Errors and recoveries: (1) relative-path crash — pre-import resolution; (2) lddt PATH — env bin prepend; (3) pmets indexing — per-batch fix + deterministic regeneration + refreeze + rescore; (4) metric_definitions wording — corrected. No fabricated events; timestamps from file mtimes and recorded manifests.
+
+
+## Retrospective packaging — 2026-11-15T11:14:35+00:00
+
+Existing run files were inventoried and organized under this run ID. No tool jobs were started. Source session: `20261114_110408_5c556e`; the [saved observable events](../inputs/execution_records/observable_events.jsonl) provide the supporting activity record. This entry is a retrospective storage action, not fabricated historical execution.
+
+## Call and submission timeline
+
+Each row is an existing record. Recovered submission rows belong to their parent call; they may include failed attempts and are not additional completed workflow steps. Unknown timestamps remain explicitly unrecorded.
+
+| Time recorded | Record | Tool | State | Job / call identity |
+| --- | --- | --- | --- | --- |
+| 2026-11-14T11:17:00Z | `C01` | build_run.py | completed | `c1` |
+| 2026-11-14T11:19-11:22Z | `C02` | AbFlow | completed | `c2` |
+| 2026-11-14T11:23:47-11:23:56Z | `C03` | AbFlow | completed | `c3` |
+| 2026-11-14T11:24Z | `C07` | AbFlow evaluator | failed | `c7` |
+| 2026-11-14T11:25-11:27Z / 15:03-15:06Z | `C08` | AbFlow evaluator | completed | `c8` |
+| 2026-11-14T11:26-11:27Z | `C04` | AbFlow | completed_with_defect | `c4` |
+| 2026-11-14T11:27:55Z / 15:03:38Z (after regeneration) | `C06` | freeze_rankings.py | completed | `c6` |
+| 2026-11-14T15:03Z | `C05` | AbFlow | completed | `c5` |
+| 2026-11-14T15:07Z | `C09` | package_results.py | completed | `c9` |

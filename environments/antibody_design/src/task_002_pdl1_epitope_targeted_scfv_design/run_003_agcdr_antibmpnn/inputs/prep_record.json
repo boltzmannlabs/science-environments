@@ -1,0 +1,74 @@
+{
+  "study_framework_scfv.pdb": {
+    "source": "/home/boltzmann10/.sci/cache/scratch/task002/germinal_repo/pdbs/scfv.pdb",
+    "sha256": "cbdb24aac3fe9b15b738816421fa02b422d341fde5ccd6ffb12a763763516a93"
+  },
+  "study_target_pdl1_seedcomplex.pdb": {
+    "source": "/home/boltzmann10/.sci/cache/scratch/task002/germinal_repo/pdbs/pdl1.pdb",
+    "sha256": "d7351a441c34cbb9c799798425295106f25beca45428f96d8d8a8f63c586e132"
+  },
+  "pose_donor_5X8M_durvalumab.pdb": {
+    "source": "/home/boltzmann10/.sci/cache/scratch/task002/5X8M.pdb",
+    "sha256": "72c7afc6526ca5695246c76c533b3864666d1216623e487bf707afb02dcd64af"
+  },
+  "eval_35TL_experimental.pdb": {
+    "source": "/home/boltzmann10/.sci/cache/scratch/task002/35TL.pdb",
+    "sha256": "cffc4623e7139143f59ce1b10b1fc889851e2b9a182300a6a2c838c463808406"
+  },
+  "germinal_repo_commit": "1e1c1a5b79884ae45abae030c9df90d9423a990a",
+  "scfv_layout": {
+    "total": 242,
+    "vh_len": 120,
+    "linker": "AGGGGSGGGGSGGGS",
+    "vl_len": 107,
+    "orientation": "VH-first"
+  },
+  "declared_cdr_boundaries": {
+    "H": {
+      "H1": [
+        26,
+        33
+      ],
+      "H2": [
+        51,
+        58
+      ],
+      "H3": [
+        97,
+        109
+      ]
+    },
+    "L": {
+      "L1": [
+        24,
+        29
+      ],
+      "L2": [
+        50,
+        55
+      ],
+      "L3": [
+        89,
+        97
+      ]
+    },
+    "numbering": "chain-local 1-based (VH 1-120; VL 1-107 after linker removal)"
+  },
+  "pose_donor": {
+    "pdb": "5X8M",
+    "antibody": "durvalumab Fab",
+    "vh_chain": "B",
+    "vl_chain": "C",
+    "antigen_chain": "A",
+    "antigen_ca_pairs": 115,
+    "antigen_rmsd": 0.559,
+    "framework_ca_pairs": 80,
+    "framework_rmsd": 0.401,
+    "h5_coordinates_used": false
+  },
+  "placement_checks": {
+    "framework_min_heavy_dist": 1.48,
+    "framework_atoms_lt_2p4A": 3,
+    "framework_atoms_lt_3p0A": 6
+  }
+}

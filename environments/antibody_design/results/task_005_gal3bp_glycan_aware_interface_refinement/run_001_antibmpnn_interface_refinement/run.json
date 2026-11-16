@@ -1,0 +1,230 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_005_gal3bp_glycan_aware_interface_refinement",
+  "run_id": "run_001_antibmpnn_interface_refinement",
+  "workflow_id": "run_001_antibmpnn_interface_refinement_w1_w4",
+  "status": "completed_with_caveats",
+  "paths": {
+    "src": "src/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement",
+    "results": "results/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement"
+  },
+  "preparation": {
+    "objective": "Glycan-aware interface refinement benchmark task: refine/design BDBV-43-derived antibody interface against Gal-3BP (LGALS3BP, UniProt Q08380) following the published study's workflow shape (ref complex -> CDR redesign -> matched evaluation -> interface sampling), using verifiable public inputs",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "W1_ref_complex",
+      "purpose": null,
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "Boltz2 (boltzmann platform)",
+          "source": "boltzmann",
+          "records": ["C01"],
+          "inputs": {
+            "saved_request": "@src/inputs/submitted_requests/message_16571_subcall_0.json",
+            "Protein_Sequences": {"value_ref": "C01#/parameters/Protein_Sequences", "sequence_lengths": [122, 106, 567]},
+            "DNA_Sequences": [],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameters": {},
+          "outputs": {
+            "recorded_outputs": {"value": "gal3bp_w1_ref_complex/outputs/extracted/boltz_pdb/{1,2}_model_0.pdb"},
+            "saved_artifacts": ["@results/raw/gal3bp_w1_ref_complex/outputs/extracted/boltz_pdb"]
+          },
+          "states": {"completed_superseded": 1}
+        },
+        {
+          "tool": "Multimer_Structure_Prediction (colabfold_multimer, AF2-Multimer v3)",
+          "source": "boltzmann",
+          "records": ["C02"],
+          "inputs": {
+            "saved_request": "@src/inputs/submitted_requests/message_17387_subcall_0.json",
+            "input_path": {"value_ref": "C02#/parameters/input_path", "sequence_lengths": [122, 106, 567]}
+          },
+          "parameters": {},
+          "outputs": {
+            "recorded_outputs": {"value": "gal3bp_w1_ref_complex/outputs_afm/ (5 models)"},
+            "saved_artifacts": ["@results/raw/gal3bp_w1_ref_complex/outputs_afm"]
+          },
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "interface_map.py, interface_chemistry.py, glycan_dsasa.py (skill script), Prodigy (conda base)",
+          "source": "open_source",
+          "records": ["C03"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w1_ref_complex/outputs/*.json, prodigy_ref.txt"},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "W2_cdr_design",
+      "purpose": null,
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AntiBMPNN (boltzmann platform)",
+          "source": "boltzmann",
+          "records": ["C04", "C05"],
+          "inputs": {
+            "by_record": {
+              "C04": {
+                "saved_request": "@src/inputs/submitted_requests/message_18724_subcall_0.json",
+                "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb"
+              },
+              "C05": {"saved_request": "@src/inputs/submitted_requests/message_18740_subcall_0.json"}
+            }
+          },
+          "parameters": {
+            "common": {"chains_to_design": ["A", "B"], "generation_count": 20},
+            "by_record": {
+              "C04": {"residue_positions_to_design": {"A": "26-38,54-64,104-117", "B": "26-38,54-61,104-113"}},
+              "C05": {"fixed": "chain C (antigen)", "masks": {"A": "27-38,56-65,105-119", "B": "27-38,55-61,105-106"}}
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {"by_record": {"C05": {"value": "gal3bp_w2_cdr_design/outputs/ (19 unique of 20 designs)"}}},
+            "saved_artifacts": ["@results/raw/gal3bp_w2_cdr_design/outputs"]
+          },
+          "states": {"validation_failed": 1, "completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "W3_candidate_eval",
+      "purpose": null,
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "records": ["C06", "C07", "C08"],
+          "inputs": {
+            "by_record": {
+              "C06": {
+                "saved_request": "@src/inputs/submitted_requests/message_18884_subcall_0.json",
+                "input_path": {"value_ref": "C06#/parameters/input_path", "sequence_lengths": [122, 106, 567]}
+              },
+              "C07": {
+                "saved_request": "@src/inputs/submitted_requests/message_18886_subcall_0.json",
+                "input_path": {"value_ref": "C07#/parameters/input_path", "sequence_lengths": [122, 106, 567]}
+              },
+              "C08": {
+                "saved_request": "@src/inputs/submitted_requests/message_18956_subcall_0.json",
+                "input_path": {"value_ref": "C08#/parameters/input_path", "sequence_lengths": [122, 106, 567]}
+              }
+            }
+          },
+          "parameters": {},
+          "outputs": {
+            "saved_artifacts": [
+              "@results/raw/gal3bp_w3_candidate_eval/outputs_G3BPD-04",
+              "@results/raw/gal3bp_w3_candidate_eval/outputs_G3BPD-14",
+              "@results/raw/gal3bp_w3_candidate_eval/outputs_G3BPD-17"
+            ]
+          },
+          "states": {"completed": 3}
+        },
+        {
+          "tool": "ANARCI (igdesign env)",
+          "source": "open_source",
+          "records": ["C09"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w3_candidate_eval/outputs/anarci_candidates_summary.json"},
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "glycan_dsasa.py (skill script, open_source)",
+          "source": "open_source",
+          "records": ["C10"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w3_candidate_eval/outputs/glycan_dsasa_{G3BPD-14,G3BPD-04,G3BPD-17}.json"},
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "candidate_persistence.py (local)",
+          "source": "open_source",
+          "records": ["C11"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w3_candidate_eval/outputs/candidate_per_sample_persistence.json"},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "W4_interface_sampling",
+      "purpose": null,
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "w4_interface_sampling.py (local)",
+          "source": "open_source",
+          "records": ["C12"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w4_interface_sampling/outputs/w4_interface_sampling.json"},
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "Protenix local (protenix_base_default_v1.0.0)",
+          "source": "open_source",
+          "records": ["C13"],
+          "inputs": null,
+          "parameters": null,
+          "outputs": {"value": "gal3bp_w4_interface_sampling/outputs/protenix_w4_summary.json"},
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "Boltz2 (aux evidence)",
+          "source": "boltzmann",
+          "records": ["C14"],
+          "inputs": {
+            "saved_request": "@src/inputs/submitted_requests/message_16571_subcall_0.json",
+            "Protein_Sequences": {"value_ref": "C14#/parameters/Protein_Sequences", "sequence_lengths": [122, 106, 567]},
+            "DNA_Sequences": [],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameters": {},
+          "outputs": {"saved_artifacts": ["@results/raw/gal3bp_w1_ref_complex/outputs/extracted/boltz_pdb"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"counts": {"designed": 20, "unique": 19, "evaluated": 3, "selected": 3, "voided_submissions": 6, "task_bundle_files_complete": true}},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "e6357f0558722a545a321d61e9798e2e453a141cdf75a45041e2050b6d89ab3f"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "historical": [
+      "Boltz2 pair predictions (doc 6af844cd9de6b44b075d7a93) from credit-exhausted phase, used as auxiliary evidence",
+      "Boltz2 Multimer attempt failed 'Insufficient credits' (no doc_id) before credits returned"
+    ]
+  }
+}

@@ -12,7 +12,7 @@ Design paired-variable-domain monoclonal antibody candidates against the human P
 **Antibody Format:** scFv containing paired VH/VL domains; preserve the declared orientation and linker\
 **Objective:** Framework-conditioned epitope-directed design
 
-H5 is a final published design, not the original starting antibody. Recover the actual starting framework from the study resources. If it is unavailable, report the missing input rather than silently substituting H5 as the parent.
+H5 is a final published design, not the original starting antibody. Recover the actual starting framework from the study resources. Use the verified starting framework as the parent and retain H5 as the final-design comparator.
 
 ## Design Constraints
 
@@ -31,7 +31,7 @@ H5 is a final published design, not the original starting antibody. Recover the 
 | Structural agreement | Global Cα RMSD and per-CDR comparisons against an independent structure | Evaluate H5 reconstruction separately; H5 is not ground truth for different candidate sequences. |
 | Novelty and liabilities | CDR identity, interface similarity, sequence liabilities | Report comparator database and search scope; novelty alone does not prove binding. |
 
-Published comparison data: [PD-L1: Epitope-Targeted scFv Design benchmark](../../benchmark/monoclonal_antibody_design/task_002_pdl1_epitope_targeted_scfv_design.md).
+Published comparison data: [PD-L1: Epitope-Targeted scFv Design benchmark](../../benchmark/monoclonal_antibody_design/task_002_pdl1_epitope_targeted_scfv_design/reference.md).
 
 ## Expected Output
 
@@ -42,11 +42,11 @@ Published comparison data: [PD-L1: Epitope-Targeted scFv Design benchmark](../..
 - `metrics.json`: candidate evidence, comparator records, input identities and artifact hashes.
 - `shortlist.csv`: ranked candidates with eligibility and uncertainty.
 - `benchmark_comparison.csv`: published values, new measurements and their comparison scope.
-- `report.md`: epitope evidence, H5 comparison, design provenance and limitations, with structures and raw outputs.
+- `report.md`: epitope evidence, H5 comparison, design provenance and evaluation scope, with structures and raw outputs.
 
 ## Important Instructions
 
 - Choose methods independently; the paper defines the scientific example and benchmark, not a required workflow.
 - Do not present a new sequence's similarity to H5 as experimentally established structural accuracy.
-- Keep published results separate from executed results. Use `NEEDS_INPUT` for missing essential sequences or structures.
+- Keep published results separate from executed results. Verify essential sequences and structures before execution and record their identities.
 - The scFv output format is explicit; do not silently treat it as a full-length IgG or an independently paired Fab result.

@@ -1,0 +1,27 @@
+run_id: run_001_antibmpnn_interface_refinement
+task_id: task_005_gal3bp_glycan_aware_interface_refinement
+status: completed_with_caveats
+lineage:
+  parent: null
+  historical:
+  - Boltz2 pair predictions (doc 6af844cd9de6b44b075d7a93) from credit-exhausted phase,
+    used as auxiliary evidence
+  - Boltz2 Multimer attempt failed 'Insufficient credits' (no doc_id) before credits
+    returned
+config:
+  path: ../../../results/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement/run.json
+  sha256: 0b88bc25f80cc235fd6fd47d1192a1b8a16e0d00eb5bc60bff2f77ec1c4d20dc
+config_sha256_16: 0b88bc25f80cc235
+counts:
+  designed: 20
+  unique_designs: 19
+  evaluated: 3
+  voided_platform_submissions: 6
+last_update: 2026-11-14T18:55Z
+workflow_id: run_001_antibmpnn_interface_refinement_w1_w4
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_005_gal3bp_glycan_aware_interface_refinement/run_001_antibmpnn_interface_refinement.json
+config_sha256: b68b38936a7d247a2bd247c7b9bc2cc667fc8e16af9fe4221123263ec7fea6a2

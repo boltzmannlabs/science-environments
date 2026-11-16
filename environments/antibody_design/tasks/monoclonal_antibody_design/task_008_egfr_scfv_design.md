@@ -32,7 +32,7 @@ Design scFv variants against human EGFR using the supplied reference antibody. I
 
 Source references: [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_008_egfr_scfv_design.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_008_egfr_scfv_design/reference.md).
 
 ## Expected Output
 
@@ -49,7 +49,7 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Treat whole-structure confidence, domain scores and database-alignment scores according to their actual structural scope.
 - Use published values as reference evidence; report the calculations performed for the current candidate separately.
 - Computational compatibility and interface improvement do not establish experimental affinity or EGFR inhibition.

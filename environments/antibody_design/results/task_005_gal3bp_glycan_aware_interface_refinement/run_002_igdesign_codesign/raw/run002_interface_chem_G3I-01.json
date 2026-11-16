@@ -1,0 +1,116 @@
+{
+  "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+  "n_interface_residue_pairs_CA_independent": 69,
+  "n_heavy_atom_contacts_5A": 919,
+  "n_hbonds": 10,
+  "hbond_share_of_contacts_pct": 1.1,
+  "hbonds": [
+    {
+      "donor": "C436 ARG:NH1",
+      "acceptor": "A33 TYR:OH",
+      "dist_A": 3.28
+    },
+    {
+      "donor": "A51 ARG:NH1",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 3.49
+    },
+    {
+      "donor": "A51 ARG:NH2",
+      "acceptor": "C474 TYR:OH",
+      "dist_A": 2.25
+    },
+    {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A55 TYR:OH",
+      "dist_A": 3.18
+    },
+    {
+      "donor": "C441 GLN:NE2",
+      "acceptor": "A56 TYR:OH",
+      "dist_A": 3.16
+    },
+    {
+      "donor": "A56 TYR:OH",
+      "acceptor": "C441 GLN:OE1",
+      "dist_A": 1.82
+    },
+    {
+      "donor": "B93 ASN:ND2",
+      "acceptor": "C469 GLN:OE1",
+      "dist_A": 2.53
+    },
+    {
+      "donor": "C469 GLN:NE2",
+      "acceptor": "B93 ASN:OD1",
+      "dist_A": 2.89
+    },
+    {
+      "donor": "C473 ASN:ND2",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 1.66
+    },
+    {
+      "donor": "B94 TRP:NE1",
+      "acceptor": "C473 ASN:OD1",
+      "dist_A": 3.01
+    }
+  ],
+  "n_salt_bridges": 0,
+  "salt_bridges": [],
+  "n_carbon_carbon_contacts_5A": 373,
+  "paratope_residues": [
+    "A101",
+    "A102",
+    "A103",
+    "A104",
+    "A105",
+    "A106",
+    "A32",
+    "A33",
+    "A51",
+    "A53",
+    "A54",
+    "A55",
+    "A56",
+    "A57",
+    "A58",
+    "A60",
+    "A63",
+    "A75",
+    "B92",
+    "B93",
+    "B94",
+    "B95",
+    "B96"
+  ],
+  "epitope_residues": [
+    "C401",
+    "C402",
+    "C403",
+    "C404",
+    "C406",
+    "C436",
+    "C437",
+    "C438",
+    "C439",
+    "C440",
+    "C441",
+    "C442",
+    "C443",
+    "C444",
+    "C459",
+    "C460",
+    "C461",
+    "C462",
+    "C467",
+    "C469",
+    "C470",
+    "C472",
+    "C473",
+    "C474",
+    "C475",
+    "C489",
+    "C491"
+  ]
+}

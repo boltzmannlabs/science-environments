@@ -1,0 +1,12 @@
+{
+  "native_entry_sha256": "28487ca965dccfdbe4a46723c7bb92c52a4bec1f4109b93a18500efb01059d91",
+  "native_pdb_sha256": "bfaa5a0e6993aa5405d1e825c7fe4ae0e3c74e8c06a4ed0e7e774d94c5fe1783",
+  "masked_input_sha256": "185dc3e6d0d41f3b8973a3b96946cfa5114af48f61202b3f8942776e88a59148",
+  "replicated_input_sha256": "2febd6e13a3106e1d43f14f0774e577e131629ccf6df3346225a321753937d77",
+  "n_replicates": 32,
+  "mask_definition": {
+    "sequence_mask": "cdrh3_seq removed from input; smask = H3 only",
+    "coordinate_mask": "cmask = full antibody; native pose withheld (init_interface noise init)",
+    "antigen_conditioning": "antigen chain A coordinates + released surface features (test_surf.pkl)"
+  }
+}
