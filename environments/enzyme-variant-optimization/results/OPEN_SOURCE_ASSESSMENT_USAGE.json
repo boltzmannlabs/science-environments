@@ -1,0 +1,36 @@
+{
+  "definition": "Reported model tokens include cached input once per request; reasoning is a subset of output and is not added again. Shared folding-assessment usage is recorded once, not allocated fully to every task.",
+  "completed_assessments": {
+    "shared_folding": {
+      "model": "gpt-6.1-sol",
+      "input_tokens": 362772,
+      "output_tokens": 75014,
+      "cache_read_tokens": 28299392,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 25546,
+      "api_call_count": 101,
+      "reported_tokens_including_cached_input_once": 28737178,
+      "elapsed_seconds_launch_to_last_native_activity": 2587.4818868637085,
+      "started_utc": "2026-11-13T08:25:25.406654+00:00",
+      "provider": "openai-codex",
+      "scope": "New post-selection comparison; no original design accounting reset."
+    },
+    "bla_entropy": {
+      "model": "gpt-6.1-sol",
+      "input_tokens": 398692,
+      "output_tokens": 89337,
+      "cache_read_tokens": 18209280,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 37989,
+      "api_call_count": 100,
+      "reported_tokens_including_cached_input_once": 18697309,
+      "elapsed_seconds_launch_to_last_native_activity": 3839.821913957596,
+      "started_utc": "2026-11-13T08:26:11.311254+00:00",
+      "provider": "openai-codex",
+      "scope": "New post-selection comparison; no original design accounting reset."
+    }
+  },
+  "pending_assessments": [
+    "AtHOL1 reaction electrostatics"
+  ]
+}

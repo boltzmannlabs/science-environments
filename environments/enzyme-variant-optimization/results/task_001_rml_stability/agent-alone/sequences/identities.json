@@ -1,0 +1,57 @@
+{
+  "sequences": [
+    {
+      "origin": "parent",
+      "candidate": "RML_WT",
+      "parent": null,
+      "sequence": "SINGGIRAATSQEINELTYYTTLSANSYCRTVIPGATWDCIHCDATEDLKIIKTWSTLIYDTNAMVARGDSEKTIYIVFRGSSSIRNWIADLTFVPVSYPPVSGTKVHKGFLDSYGEVQNELVATVLDQFKQYPSYKVAVTGHSLGGATVLLCALDLYQREEGLSSSNLFLYTQGQPRVGDPAFANYVVSTGIPYRRTVNERDIVPHLPPAAFGFLHAGEEYWITDNSPETVQVCTSDLETSDCSNSIVPFTSVLDHLSYFGINTGLCT",
+      "length": 269,
+      "sequence_sha256": "6d120cb07f40cd383b33ce70bedb8b9adfdaa4346dacadfbaae42dc55073b684",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "RML_R2_02",
+      "parent": "RML_WT",
+      "sequence": "SINGGIRAATQQEINELTYYTTLSANSYCRTVIPGATWDCIHCDATEDLKIIKTWSTLIYDTNAMVARGDKDKTIYIVFRGSSSIRNWIADLTFVPVSYPPVSGTKVHKGFLDSYGEVQNELVATVLDQFKQYPDYKVAVTGHSLGGATVLLCALDLYQLKQGLSSSNLFLYTQGQPRVGDPAFANYVVSTGIPYRRTVNERDIVPHLPPAAFGFLHAGEEYWITDNSPETVQVCTSDLETSDCSNSIVPFTSVLDHLSYFGINTGLCT",
+      "length": 269,
+      "sequence_sha256": "aca715d519165f9a000942091105e7d2910eaa535313ade3a99904ef9c72a414",
+      "edits": [
+        "S11Q",
+        "S71K",
+        "E72D",
+        "S135D",
+        "R160L",
+        "E161K",
+        "E162Q"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "RML_R2_01",
+      "parent": "RML_WT",
+      "sequence": "SINGGIRAATQQEINELTYYTTLSANSYCRTVIPGATWDCIHCDATEDLKIIKTWSTLIYDTNAMVARGDKTKTIYIVFRGSSSIRNWIADLTFVPVSYPPVSGTKVHKGFLDSYGEVQNELVATVLDQFKQYPDYKVAVTGHSLGGATVLLCALDLYQLKQGLSSSNLFLYTQGQPRVGDPAFANYVVSTGIPYRRTVNERDIVPHLPPAAFGFLHAGEEYWITDNSPETVQVCTSDLETSDCSNSIVPFTSVLDHLSYFGINTGLCT",
+      "length": 269,
+      "sequence_sha256": "cc13eb247ac62fba5394d74d5f343a8865263ce7be3207d33ef9a0cdfbf03407",
+      "edits": [
+        "S11Q",
+        "S71K",
+        "E72T",
+        "S135D",
+        "R160L",
+        "E161K",
+        "E162Q"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    }
+  ],
+  "sequence_hash_definition": "SHA256 of uppercase amino-acid sequence without whitespace; no FASTA header."
+}

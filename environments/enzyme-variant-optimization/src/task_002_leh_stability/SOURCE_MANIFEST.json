@@ -1,0 +1,53 @@
+{
+  "task_id": "task_002_leh_stability",
+  "exported": [
+    {
+      "source_key": "campaign_archive/leh/agent-alone/qa_variant_docking.py",
+      "source_sha256": "a1bbf47c77545198699276bedeb29207377e0a036c9adefe82122c6bf8d7ebb1",
+      "export": "src/task_002_leh_stability/agent-alone/qa_variant_docking.py",
+      "export_sha256": "a1bbf47c77545198699276bedeb29207377e0a036c9adefe82122c6bf8d7ebb1",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/inspect_A059_complex_quality.py",
+      "source_sha256": "904ea3840d05c2401cad854f7edf7599997795a7a7dc1baf132dd7779dffcd35",
+      "export": "src/task_002_leh_stability/agent-alone/inspect_A059_complex_quality.py",
+      "export_sha256": "2cc1a49098d8f4d1919235a33c2c476fba349052b837301cb9c97faf3707a3d6",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "private_input_keys_parameterized": [
+        {
+          "environment_variable": "MOLPROBITY_INPUT_KEY_80BA701903DA",
+          "original_key_sha256": "80ba701903da2e84532c9b4388947021331ea04644b5d1e495d748f0eb5d571d"
+        }
+      ]
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/serialize_A060_full_scene_handoff.py",
+      "source_sha256": "04c5eb0f25658cafbfce0fc7fcd93b3bec734ff7fcb1ebacd3cc5ae57fa53247",
+      "export": "src/task_002_leh_stability/agent-alone/serialize_A060_full_scene_handoff.py",
+      "export_sha256": "04c5eb0f25658cafbfce0fc7fcd93b3bec734ff7fcb1ebacd3cc5ae57fa53247",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/verify_A076_quality_artifacts.py",
+      "source_sha256": "6969276eb5471fc5ea7f3754819055dfb100ac3484a73929b9334e10b65e3741",
+      "export": "src/task_002_leh_stability/agent-alone/verify_A076_quality_artifacts.py",
+      "export_sha256": "a3bdf8f4edb998ec2f073c8dd7f2ad7bbfa5112b925851c43f6000d87098dae7",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "private_input_keys_parameterized": [
+        {
+          "environment_variable": "MOLPROBITY_INPUT_KEY_6CEDE97613EE",
+          "original_key_sha256": "6cede97613eeb0d716d6ee153fb7f28165931ec096f5f1964321b50eb7ae09cc"
+        }
+      ]
+    }
+  ],
+  "not_exported": [],
+  "scientific_rerun": false,
+  "new_end_to_end_portability_claim": false,
+  "publication_scope": "Agent-alone only"
+}

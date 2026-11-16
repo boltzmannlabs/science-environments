@@ -1,0 +1,40 @@
+{
+  "design_usage": {
+    "arm": "rml/agent-alone",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reported_canonical_tokens_lower_bound": 656773668,
+    "reported_model_requests": 1636,
+    "elapsed_seconds_including_waits": 658683,
+    "workflow_complete": false,
+    "accuracy_status": "Not yet verified against applicable benchmark"
+  },
+  "historical_snapshot_utc": "2026-11-12T09:35:26.552581+00:00",
+  "shared_reference_assessment": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "completed_remote_jobs_global": 3,
+    "submission_calls_global": 4,
+    "requested_endpoints_global": 99,
+    "allocation": "Shared once across six tasks; not charged in full to each task.",
+    "task_logical_sequences": 3,
+    "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
+  },
+  "design_status": "Paused",
+  "shared_ddgun_assessment": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "input_tokens": 304362,
+    "output_tokens": 55298,
+    "cache_read_tokens": 10669312,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 15190,
+    "api_call_count": 46,
+    "session_start_to_final_response_seconds": 2154.698,
+    "scope": "Separate post-selection RML/LEH DDGun assessment: 2 completed jobs, 6 outputs; no reassignment to original design-run usage."
+  },
+  "additional_open_source_assessment": {
+    "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
+    "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
+  }
+}

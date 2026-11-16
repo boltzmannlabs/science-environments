@@ -1,0 +1,231 @@
+{
+  "sequences": [
+    {
+      "origin": "parent",
+      "candidate": "Zhang_beta_glucanase_M5",
+      "parent": null,
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "82b31bef7b7a00d881900c44de25da61b16ef31d5cb820c9cd5d85c43dc65a20",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "parent",
+      "candidate": "Zhang_beta_glucanase_WT",
+      "parent": null,
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRANNVSVTSLGEMRLALTSPSYNKFDCGENRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDAANAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGSYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "1be527a773d049420b217cf4e7eded5f21468e74c9608033cdb34bec1184bb87",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "parent",
+      "candidate": "Zhang_cellulase_M2",
+      "parent": null,
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d1e2ad6d3703189900a7a006037d492964d2ce2cc21f202ab170f223fd92fdeb",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "parent",
+      "candidate": "Zhang_cellulase_WT",
+      "parent": null,
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTGTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENILGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d345d0fa5fd6c7a3c7bab7013e9b4f78efb3e76f8cc410cad11026ea88c6fd57",
+      "edits": [],
+      "numbering": "1-based full selected parent sequence",
+      "identity_kind": "selected_parent",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_cellulase_WT_T131D",
+      "parent": "Zhang_cellulase_WT",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNDPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTGTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENILGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "b789902a1efd834b2a5dbdf6993b5719b2ebc47d0312f3fc23411077531e6ed2",
+      "edits": [
+        "T131D"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_cellulase_M2_T257K",
+      "parent": "Zhang_cellulase_M2",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKKISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "121b02d2289ae8902c71fff52c45ca2706b213270ed88e92b382fa6ce15d7f4e",
+      "edits": [
+        "T257K"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_cellulase_M2_E158C",
+      "parent": "Zhang_cellulase_M2",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAECVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "2ed719b16c633ce5bfe2bed7704049e1ee8352b8e1a4a19e15aca5df5c635ccf",
+      "edits": [
+        "E158C"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_beta_glucanase_WT_M30P",
+      "parent": "Zhang_beta_glucanase_WT",
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNPFNCTWRANNVSVTSLGEMRLALTSPSYNKFDCGENRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDAANAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGSYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "b6e3c11533d92fed11bf5c9e9fcc81a52bce52bedbdfcb573bb04fd1bd276858",
+      "edits": [
+        "M30P"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_beta_glucanase_M5_P10D",
+      "parent": "Zhang_beta_glucanase_M5",
+      "sequence": "MQTGGSFFDDFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "1b0770b5a4681d1cd11b98c7a01687a80feb60808881e81b15eaa38197866cc3",
+      "edits": [
+        "P10D"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "our",
+      "candidate": "Zhang_beta_glucanase_M5_G74P",
+      "parent": "Zhang_beta_glucanase_M5",
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYPLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "8ce91005a62cd27070a573bdfc3653567fb1759c151d07703e2ac557e17697ad",
+      "edits": [
+        "G74P"
+      ],
+      "numbering": "1-based exact selected parent sequence",
+      "identity_kind": "retained_source_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_published_cellulase_M5",
+      "parent": "Zhang_cellulase_WT",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGMSSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKFLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRESDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "5d4723bdec030dce32183cb2063e534b998beddef7cf8c16818f3f7724c5cae4",
+      "edits": [
+        "I34M",
+        "G177P",
+        "Y252F",
+        "L287E",
+        "L302R"
+      ],
+      "numbering": "1-based full sequence as printed section3.3",
+      "identity_kind": "exact_published_full_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_published_beta_glucanase_M7",
+      "parent": "Zhang_beta_glucanase_WT",
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGWSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAYYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "cfa75230f09b7f392dad5c09501e167fc27d586d4a18147657eab7056fd9d191",
+      "edits": [
+        "Y25W",
+        "N38S",
+        "L45E",
+        "N65I",
+        "A142S",
+        "S196K",
+        "H206Y"
+      ],
+      "numbering": "1-based full sequence as printed section3.3",
+      "identity_kind": "exact_published_full_sequence",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_reported_cellulase_WT_T131D",
+      "parent": "Zhang_cellulase_WT",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNDPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTGTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENILGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "b789902a1efd834b2a5dbdf6993b5719b2ebc47d0312f3fc23411077531e6ed2",
+      "edits": [
+        "T131D"
+      ],
+      "numbering": "1-based cellulase_WT background; WT and M2/M5 not interchangeable",
+      "identity_kind": "reconstructed_documented_changes_on_documented_background",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_reported_cellulase_M2_T257K",
+      "parent": "Zhang_cellulase_M2",
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKKISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "121b02d2289ae8902c71fff52c45ca2706b213270ed88e92b382fa6ce15d7f4e",
+      "edits": [
+        "T257K"
+      ],
+      "numbering": "1-based cellulase_M2 background; WT and M2/M5 not interchangeable",
+      "identity_kind": "reconstructed_documented_changes_on_documented_background",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_reported_beta_glucanase_WT_N65I",
+      "parent": "Zhang_beta_glucanase_WT",
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRANNVSVTSLGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDAANAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGSYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "0211351dcc0c7208c0e6a040604e0b8091464c2f48fa56084651b5c11152369f",
+      "edits": [
+        "N65I"
+      ],
+      "numbering": "1-based beta_glucanase_WT background; WT and M2/M5 not interchangeable",
+      "identity_kind": "reconstructed_documented_changes_on_documented_background",
+      "parent_accession": null
+    },
+    {
+      "origin": "reference",
+      "candidate": "Zhang_reported_beta_glucanase_M5_I65Y",
+      "parent": "Zhang_beta_glucanase_M5",
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEYRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "7f0e85ab4cc3c25e3404910ee807d85838595271a1339a9533d1649acda0c234",
+      "edits": [
+        "I65Y"
+      ],
+      "numbering": "1-based beta_glucanase_M5 background; WT and M2/M5 not interchangeable",
+      "identity_kind": "reconstructed_documented_changes_on_documented_background",
+      "parent_accession": null
+    }
+  ],
+  "sequence_hash_definition": "SHA256 of uppercase amino-acid sequence without whitespace; no FASTA header."
+}

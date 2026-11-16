@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "task_id": "task_006_zhang_hydrolases",
+  "config_version": "v1",
+  "approach": "agent_alone",
+  "record_type": "reusable_profile_documented_after_historical_execution",
+  "task_file": "tasks/task_006_zhang_hydrolases.md",
+  "llm": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoning_effort": "xhigh",
+    "response_token_limit": null
+  },
+  "execution": {
+    "runtime": "Agent-Scientist",
+    "max_concurrent_scientific_jobs": 2,
+    "shared_cpu_model_processes_max": 1,
+    "cpu_threads_max": 4,
+    "local_gpu": false,
+    "evaluator_attempt_reserve": 1
+  },
+  "budgets": {
+    "aggregate_model_tokens": {
+      "mode": "unbounded"
+    },
+    "platform_credits": {
+      "mode": "unbounded"
+    },
+    "limit_amendments": "Preserve cumulative use and record owner-authorized changes."
+  },
+  "tool_exclusions": [
+    "MLDE"
+  ],
+  "delegation": {
+    "enabled": false,
+    "saved_roles": []
+  },
+  "stages": [
+    "prepare",
+    "full_task_specific_inference",
+    "verify",
+    "seal",
+    "compare"
+  ],
+  "scope": "Computational paper reproduction only; do not inherit RML/LEH docking/optimization gates.",
+  "provenance": {
+    "executed_from_this_repository_file": false,
+    "observed_run_plan_sha256": "bee0299397e3484d50f8088831f6e034891ee0bd722ca297f90591e66b349c8f"
+  },
+  "historical_execution_metadata": "results/task_006_zhang_hydrolases/agent-alone/EXECUTION_METADATA.json"
+}

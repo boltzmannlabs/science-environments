@@ -1,0 +1,403 @@
+{
+  "schema": "enzyme-reference-vs-agent-alone.v1",
+  "snapshot_utc": "2026-11-12T09:52:54.671818+00:00",
+  "scope": "Agent-alone candidate predictions, published predictor values and separately labeled reference variants calculated in this work.",
+  "tasks": [
+    {
+      "id": "task_001_rml_stability",
+      "title": "RML stability",
+      "executed": true,
+      "reference_summary": "Published predictor values are listed by method; our candidate changes use our selected parent.",
+      "candidates": [
+        {
+          "case": "rml",
+          "candidate_id": "RML_R2_02",
+          "stratum": "sealed_design_rank",
+          "sequence_sha256": "aca715d519165f9a000942091105e7d2910eaa535313ade3a99904ef9c72a414",
+          "parent_id": "RML_WT",
+          "parent_sha256": "6d120cb07f40cd383b33ce70bedb8b9adfdaa4346dacadfbaae42dc55073b684",
+          "parent_relative_edits": "S11Q;S71K;E72D;S135D;R160L;E161K;E162Q",
+          "Tm_degC": "48.05044174194336",
+          "parent_Tm_degC": "46.97819264729818",
+          "delta_Tm_degC": "1.07224909464518",
+          "NetsolP": "0.5736409466943039",
+          "parent_NetsolP": "0.5609481357190541",
+          "historical_primary_score": "48.05043411254883",
+          "historical_score_convention": "sealed_design_rank"
+        },
+        {
+          "case": "rml",
+          "candidate_id": "RML_R2_01",
+          "stratum": "sealed_design_rank",
+          "sequence_sha256": "cc13eb247ac62fba5394d74d5f343a8865263ce7be3207d33ef9a0cdfbf03407",
+          "parent_id": "RML_WT",
+          "parent_sha256": "6d120cb07f40cd383b33ce70bedb8b9adfdaa4346dacadfbaae42dc55073b684",
+          "parent_relative_edits": "S11Q;S71K;E72T;S135D;R160L;E161K;E162Q",
+          "Tm_degC": "47.987780253092446",
+          "parent_Tm_degC": "46.97819264729818",
+          "delta_Tm_degC": "1.009587605794266",
+          "NetsolP": "0.5777886809217062",
+          "parent_NetsolP": "0.5609481357190541",
+          "historical_primary_score": "47.987778981526695",
+          "historical_score_convention": "sealed_design_rank"
+        }
+      ],
+      "metrics": [
+        [
+          "Vina docking score, pNPL (kcal/mol)",
+          "WT −5.5; N120M/E230I/N264M −5.6",
+          "RML_R2_01 −5.221; RML_R2_02 −5.193"
+        ],
+        [
+          "Folding-stability predictions",
+          "FoldX: N120M −0.35775; E230I −1.59876; N264M −0.77627 kcal/mol (single mutants). Additional Table 1 predictors in references.",
+          "DDGun_SEQ: RML_R2_02 −0.1; RML_R2_01 −0.2 kcal/mol ΔΔGunfold"
+        ],
+        [
+          "Predicted Tm change (°C)",
+          "Not reported",
+          "RML_R2_02 +1.0722; RML_R2_01 +1.0096"
+        ]
+      ],
+      "results_path": "results/task_001_rml_stability/agent-alone/README.md",
+      "status": "Agent-alone computational results available",
+      "show_experimental_panel": false
+    },
+    {
+      "id": "task_002_leh_stability",
+      "title": "LEH stability",
+      "executed": true,
+      "reference_summary": "Published predictor values are listed by method; our candidate changes use our selected parent.",
+      "candidates": [
+        {
+          "case": "leh",
+          "candidate_id": "LEH_R004",
+          "stratum": "historical_screen_rank",
+          "sequence_sha256": "1334d39a0bbc1b24ab17c42f15ce73a7e1b46526f794efb67fb65057ad4c9364",
+          "parent_id": "LEH_WT",
+          "parent_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+          "parent_relative_edits": "K42R;P107A;E124D",
+          "Tm_degC": "53.432482401529946",
+          "parent_Tm_degC": "52.18267059326172",
+          "delta_Tm_degC": "1.2498118082682268",
+          "NetsolP": "0.8989874108449103",
+          "parent_NetsolP": "0.8954829306807286",
+          "historical_primary_score": "53.43245951334635",
+          "historical_score_convention": "historical_screen_rank"
+        },
+        {
+          "case": "leh",
+          "candidate_id": "LEH_R003",
+          "stratum": "historical_screen_rank",
+          "sequence_sha256": "e52b36c590b5559fc019cd26a272616649e4bdfd97a259c8b57dcb3b7df90486",
+          "parent_id": "LEH_WT",
+          "parent_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+          "parent_relative_edits": "K42Y;P107A;E124D",
+          "Tm_degC": "52.53789774576823",
+          "parent_Tm_degC": "52.18267059326172",
+          "delta_Tm_degC": "0.35522715250650805",
+          "NetsolP": "0.9029866789534164",
+          "parent_NetsolP": "0.8954829306807286",
+          "historical_primary_score": "52.537906646728516",
+          "historical_score_convention": "historical_screen_rank"
+        }
+      ],
+      "metrics": [
+        [
+          "Predicted stability change",
+          "FoldX: T85I −20; T85V −14 kJ/mol ΔΔGfold",
+          "DDGun_SEQ: LEH_R004 +0.2; LEH_R003 +0.5 kcal/mol ΔΔGunfold"
+        ],
+        [
+          "Predicted Tm change (°C)",
+          "Not reported",
+          "LEH_R004 +1.2498; LEH_R003 +0.3552"
+        ]
+      ],
+      "results_path": "results/task_002_leh_stability/agent-alone/README.md",
+      "status": "Agent-alone computational results available",
+      "show_experimental_panel": false
+    },
+    {
+      "id": "task_003_bla_high_temperature",
+      "title": "BLA high-temperature performance",
+      "executed": true,
+      "reference_summary": "Use the existing paper/table/figure values in the source-backed reference document linked below.",
+      "candidates": [
+        {
+          "candidate_id": "BLA_R2_001",
+          "origin": "our",
+          "parent_id": "BLA_PARENT_WP061576039_mature30_512",
+          "sequence_sha256": "b363d59272160ae871974d9d6aaba0900748dfe54092d8e0a000b3d771c3bddc",
+          "Tm_degC": "52.76757939656576",
+          "pHPred_raw": "7.35",
+          "NetsolP": "0.5957610423016922",
+          "delta_Tm_degC": "2.0042355855306013"
+        }
+      ],
+      "metrics": [
+        [
+          "FoldX stability-change prediction (paper reports kJ/mol)",
+          "K319W −1.72 ± 0.08; E336S −1.26 ± 0.11",
+          "EvoEF1: BLA_R2_001 +1.48 kcal/mol; matched reference recalculations below."
+        ],
+        [
+          "MD-prepared packing entropy (J K−1 mol−1)",
+          "WT 4601; K319W 4614; E336S 4609",
+          "Static PACKMAN: BLA_R2_001 7169.33; matched reference recalculations below."
+        ]
+      ],
+      "results_path": "results/task_003_bla_high_temperature/agent-alone/README.md",
+      "status": "Executed data available; design workflow paused; full acceptance open."
+    },
+    {
+      "id": "task_004_athol1_substrate",
+      "title": "AtHOL1 substrate expansion",
+      "executed": true,
+      "reference_summary": "Use the existing paper/table/figure values in the source-backed reference document linked below.",
+      "candidates": [
+        {
+          "candidate_id": "ATH_R2_09",
+          "origin": "our",
+          "parent_id": "AtHOL1_3LCC_construct235",
+          "sequence_sha256": "2a85ab14a674db7b9dd324468245d9909ba4dc35cae1b93d52f9fb3afb319825",
+          "Tm_degC": "47.1995964050293",
+          "pHPred_raw": "7.071428571428571",
+          "NetsolP": "0.6511682506650509",
+          "delta_Tm_degC": "-0.2375081380208357"
+        }
+      ],
+      "metrics": [
+        [
+          "Electrostatic stabilization estimate (kcal/mol)",
+          "WT −5.6; V140T −7.8",
+          "In progress: matched reaction-electrostatics assessment."
+        ],
+        [
+          "Projected electric field (MV/cm)",
+          "WT −35.2 ± 9.6; V140T −43.4 ± 5.7",
+          "In progress: matched reaction-electrostatics assessment."
+        ],
+        [
+          "Mean C–I / electric-field angle (degrees)",
+          "WT 41.2; V140T 16.6",
+          "In progress: matched reaction-electrostatics assessment."
+        ]
+      ],
+      "results_path": "results/task_004_athol1_substrate/agent-alone/README.md",
+      "status": "Executed data available; design workflow paused; full acceptance open."
+    },
+    {
+      "id": "task_005_sun_leh_pythia",
+      "title": "Sun LEH / Pythia reproduction",
+      "executed": true,
+      "reference_summary": "Pythia selection cutoff < −2; exact best-LEH candidate prediction not established in the inspected source.",
+      "candidates": [
+        {
+          "case": "sun_leh",
+          "candidate_id": "Sun_LEH_D101V",
+          "stratum": "Pythia_sum_best_per_position",
+          "sequence_sha256": "e107669211950cd55618bbdf874776ff6c25513975d53e6f813ed8c07f0801c5",
+          "parent_id": "LEH_WT",
+          "parent_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+          "parent_relative_edits": "D101V",
+          "Tm_degC": "52.55968475341797",
+          "parent_Tm_degC": "52.18267059326172",
+          "delta_Tm_degC": "0.37701416015625",
+          "NetsolP": "0.8862540642332993",
+          "parent_NetsolP": "0.8954829306807286",
+          "historical_primary_score": "-12.9369215965271",
+          "historical_score_convention": "Pythia_sum_best_per_position"
+        },
+        {
+          "case": "sun_leh",
+          "candidate_id": "Sun_LEH_T85V",
+          "stratum": "Pythia_sum_best_per_position",
+          "sequence_sha256": "6c7bfe15fb054a2599ee1cd0cdbed91cbb09e6be9a9061f0b6db677fb20153ca",
+          "parent_id": "LEH_WT",
+          "parent_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+          "parent_relative_edits": "T85V",
+          "Tm_degC": "52.50629806518555",
+          "parent_Tm_degC": "52.18267059326172",
+          "delta_Tm_degC": "0.3236274719238281",
+          "NetsolP": "0.8996966830684462",
+          "parent_NetsolP": "0.8954829306807286",
+          "historical_primary_score": "-7.934738636016846",
+          "historical_score_convention": "Pythia_sum_best_per_position"
+        }
+      ],
+      "metrics": [
+        [
+          "Pythia score (unitless)",
+          "Candidate score not reported",
+          "D101V −12.93692160; T85V −7.93473864 (summed score)"
+        ],
+        [
+          "Pythia selection cutoff",
+          "< −2",
+          "33 selected mutations using summed-score implementation"
+        ],
+        [
+          "Predicted Tm change (°C)",
+          "Not reported",
+          "D101V +0.3770; T85V +0.3236"
+        ]
+      ],
+      "results_path": "results/task_005_sun_leh_pythia/agent-alone/README.md",
+      "status": "Agent-alone computational results available",
+      "show_experimental_panel": false
+    },
+    {
+      "id": "task_006_zhang_hydrolases",
+      "title": "Zhang cellulase and β-glucanase reproduction",
+      "executed": true,
+      "reference_summary": "Prediction-only original Tables S1/S3/S5/S7; same-variant agreement and retained leaders reported separately.",
+      "candidates": [
+        {
+          "case": "zhang_cellulase",
+          "candidate_id": "Zhang_cellulase_WT_T131D",
+          "stratum": "Pythia_WT_primary_sum",
+          "sequence_sha256": "b789902a1efd834b2a5dbdf6993b5719b2ebc47d0312f3fc23411077531e6ed2",
+          "parent_id": "Zhang_cellulase_WT",
+          "parent_sha256": "d345d0fa5fd6c7a3c7bab7013e9b4f78efb3e76f8cc410cad11026ea88c6fd57",
+          "parent_relative_edits": "T131D",
+          "Tm_degC": "47.285325368245445",
+          "parent_Tm_degC": "47.240926106770836",
+          "delta_Tm_degC": "0.044399261474609375",
+          "NetsolP": "0.7502426435795453",
+          "parent_NetsolP": "0.7501780611578373",
+          "historical_primary_score": "-12.790703773498535",
+          "historical_score_convention": "Pythia_WT_primary_sum"
+        },
+        {
+          "case": "zhang_cellulase",
+          "candidate_id": "Zhang_cellulase_M2_T257K",
+          "stratum": "ESM_nllr",
+          "sequence_sha256": "121b02d2289ae8902c71fff52c45ca2706b213270ed88e92b382fa6ce15d7f4e",
+          "parent_id": "Zhang_cellulase_M2",
+          "parent_sha256": "d1e2ad6d3703189900a7a006037d492964d2ce2cc21f202ab170f223fd92fdeb",
+          "parent_relative_edits": "T257K",
+          "Tm_degC": "47.477124532063804",
+          "parent_Tm_degC": "47.32381057739258",
+          "delta_Tm_degC": "0.15331395467122633",
+          "NetsolP": "0.7576102394968431",
+          "parent_NetsolP": "0.7573990817201398",
+          "historical_primary_score": "-8.872273206710815",
+          "historical_score_convention": "ESM_nllr"
+        },
+        {
+          "case": "zhang_beta_glucanase",
+          "candidate_id": "Zhang_beta_glucanase_WT_M30P",
+          "stratum": "Pythia_WT_primary_sum",
+          "sequence_sha256": "b6e3c11533d92fed11bf5c9e9fcc81a52bce52bedbdfcb573bb04fd1bd276858",
+          "parent_id": "Zhang_beta_glucanase_WT",
+          "parent_sha256": "1be527a773d049420b217cf4e7eded5f21468e74c9608033cdb34bec1184bb87",
+          "parent_relative_edits": "M30P",
+          "Tm_degC": "48.129449208577476",
+          "parent_Tm_degC": "47.711813608805336",
+          "delta_Tm_degC": "0.41763559977214015",
+          "NetsolP": "0.7103610485691622",
+          "parent_NetsolP": "0.704005546341046",
+          "historical_primary_score": "-14.531351089477539",
+          "historical_score_convention": "Pythia_WT_primary_sum"
+        },
+        {
+          "case": "zhang_beta_glucanase",
+          "candidate_id": "Zhang_beta_glucanase_M5_P10D",
+          "stratum": "ESM_nllr",
+          "sequence_sha256": "1b0770b5a4681d1cd11b98c7a01687a80feb60808881e81b15eaa38197866cc3",
+          "parent_id": "Zhang_beta_glucanase_M5",
+          "parent_sha256": "82b31bef7b7a00d881900c44de25da61b16ef31d5cb820c9cd5d85c43dc65a20",
+          "parent_relative_edits": "P10D",
+          "Tm_degC": "47.12542597452799",
+          "parent_Tm_degC": "47.31077575683594",
+          "delta_Tm_degC": "-0.18534978230794508",
+          "NetsolP": "0.7256717969357194",
+          "parent_NetsolP": "0.7244454329991954",
+          "historical_primary_score": "-6.70656031370163",
+          "historical_score_convention": "ESM_nllr"
+        }
+      ],
+      "metrics": [
+        [
+          "Cellulase WT: Pythia (unitless)",
+          "T131D −12.587",
+          "T131D −12.79070377"
+        ],
+        [
+          "Cellulase M2: ESM (unitless)",
+          "M2 + T257K −8.872",
+          "M2 + T257K −8.87227321"
+        ],
+        [
+          "β-glucanase WT: Pythia (unitless)",
+          "N65I −10.762",
+          "Same variant N65I −11.32239389; retained leader M30P −14.53135109"
+        ],
+        [
+          "β-glucanase M5: ESM (unitless)",
+          "M5 + I65Y −8.583; M5 + P10D −6.767",
+          "Same I65Y −2.72094822; retained leader P10D −6.70656031"
+        ]
+      ],
+      "results_path": "results/task_006_zhang_hydrolases/agent-alone/README.md",
+      "published_score_agreement": [
+        {
+          "method": "Pythia",
+          "construct": "cellulase_WT",
+          "reference_rows": 47,
+          "agent_alone": {
+            "MAE": 2.0304030979275702,
+            "RMSE": 3.0866740540619637,
+            "Pearson_r": 0.3782470730523466,
+            "Spearman_rho": 0.3101295097132285,
+            "strict_threshold_agreement_rows": 30,
+            "within_three_decimal_rounding_rows": 0
+          }
+        },
+        {
+          "method": "ESM2",
+          "construct": "cellulase_M2",
+          "reference_rows": 20,
+          "agent_alone": {
+            "MAE": 0.00022079353332522534,
+            "RMSE": 0.00026207857123401523,
+            "Pearson_r": 0.9999999882905836,
+            "Spearman_rho": 0.9996239894584122,
+            "strict_threshold_agreement_rows": 20,
+            "within_three_decimal_rounding_rows": 20
+          }
+        },
+        {
+          "method": "Pythia",
+          "construct": "beta_glucanase_WT",
+          "reference_rows": 24,
+          "agent_alone": {
+            "MAE": 1.0599477365960677,
+            "RMSE": 1.4777435668986412,
+            "Pearson_r": 0.8389822912878134,
+            "Spearman_rho": 0.7443478260869565,
+            "strict_threshold_agreement_rows": 19,
+            "within_three_decimal_rounding_rows": 0
+          }
+        },
+        {
+          "method": "ESM2",
+          "construct": "beta_glucanase_M5",
+          "reference_rows": 17,
+          "agent_alone": {
+            "MAE": 0.4174245195248548,
+            "RMSE": 1.4261719455968807,
+            "Pearson_r": 0.6570357566947865,
+            "Spearman_rho": 0.9172288664537509,
+            "strict_threshold_agreement_rows": 16,
+            "within_three_decimal_rounding_rows": 0
+          }
+        }
+      ],
+      "status": "Agent-alone computational results available",
+      "show_experimental_panel": false
+    }
+  ],
+  "presentation": "One report per task; calculation and parent details in results; methods and units remain attached to values."
+}

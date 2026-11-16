@@ -1,0 +1,48 @@
+{
+  "task_id": "task_002_leh_stability",
+  "approach": "agent_alone",
+  "record_type": "observed_historical_execution_configuration",
+  "association": "Actual historical agent-alone run; no assigned configuration version.",
+  "source_run_plan_key": "campaign_archive/leh/agent-alone/RUN_PLAN.json",
+  "source_run_plan_sha256": "ce4543072ae9eb92c86508a266e5d01d48277b7883ce83a9a8b676ead58719d1",
+  "snapshot_utc": "2026-11-12T09:35:55.582542+00:00",
+  "llm": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reasoning_effort": "xhigh",
+    "response_token_limit": null
+  },
+  "effective_observed_settings": {
+    "unique_full_length_sequences_including_parent_max": 24,
+    "maximum_substitutions_per_variant": 8,
+    "insertions_deletions_tags_or_length_changes_allowed": false,
+    "initial_non_native_unique_target": 12,
+    "initial_target_is_approximate": true,
+    "results_driven_sequence_revision_rounds_min": 1,
+    "results_driven_sequence_revision_rounds_max": 2,
+    "scientific_submission_attempts_all_providers_max": 115,
+    "final_supported_non_native_variants_max": 5,
+    "all_final_designs_require_detailed_structural_and_substrate_assessment": true,
+    "platform_credit_spending_cap": null,
+    "native_parent_tool_iterations_per_turn_max": 1000,
+    "native_wall_seconds_per_turn_max": 172800,
+    "aggregate_model_requests_max": 1840,
+    "aggregate_reported_model_tokens_max": null,
+    "local_gpu_execution_allowed": false,
+    "concurrent_submitted_molecular_jobs_per_arm_max": 2,
+    "active_operation_approval": null
+  },
+  "tool_exclusions": [
+    "MLDE"
+  ],
+  "scientific_parent_executes": true,
+  "delegation": {
+    "enabled": false,
+    "saved_roles": []
+  },
+  "accounting": "Includes historical continuations/failures and all authorized amendments; no usage reset.",
+  "configuration_version": null,
+  "publication_scope": "Historical agent-alone execution; no retrospective v1/v2 assignment.",
+  "previous_repository_task_id": "task_003_leh_stability",
+  "task_numbering_note": "Repository task numbering changed after removing the first task; source run-plan identity and hash are unchanged."
+}

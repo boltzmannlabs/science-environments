@@ -1,0 +1,18 @@
+##----------------------------------------------------------------------------------------------
+##
+## DDGun - Untrained predictor of protein stability change upon mutation.
+## https://folding.biofold.org/ddgun
+##
+## Reference:
+## Montanucci L, Capriotti E, Frank Y, Ben-Tal N, Fariselli P. (2019).
+## DDGun: an untrained method for the prediction of protein stability changes upon
+## single and multiple point variations. BMC Bioinformatics. 20 (Suppl 14): 335
+##
+##-----------------------------------------------------------------------------------------------
+##
+##
+#SEQFILE	VARIANT	CONSERVATION	S_KD	S_BL	S_PROF	S_DDG[SEQ]	T_DDG[SEQ]	STABILITY[SEQ]
+sequence.fasta	K42R,P107A,E124D	6.2|8.1,20.6|17.5,8.0|44.2	-0.123,0.645,-1.267	-0.498,-0.574,2.836	-2.638,0.798,-0.009	1.0,-0.3,0.5	0.2	Increase
+sequence.fasta	K42Y,P107A,E124D	6.2|0.8,20.6|17.5,8.0|44.2	0.231,0.645,-1.267	-2.379,-0.574,2.836	-4.791,0.798,-0.009	1.4,-0.3,0.5	0.5	Increase
+sequence.fasta	T85I	3.7|23.9	1.101	2.375	-1.920	1.8	1.8	Increase
+sequence.fasta	T85V	3.7|24.5	1.055	2.402	-1.318	1.6	1.6	Increase

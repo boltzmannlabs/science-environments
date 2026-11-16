@@ -1,0 +1,240 @@
+[
+  {
+    "attempt": "REMOTE_001",
+    "tool": "Random_Controlled_Mutagenesis",
+    "stage": "initial_generation",
+    "status": "confirmed_failed",
+    "request_sha256": "835301fdbc4f11f65c771a963d292b97c8670c4b71fdc725fa0dbf6067c29473"
+  },
+  {
+    "attempt": "REMOTE_002",
+    "tool": "Enzymes",
+    "stage": "parent_baseline",
+    "status": "confirmed_failed",
+    "request_sha256": "27e3c449dbdbcf4e420210e6ceef98a12cdc689e4811f67ced056cf3ddc4c329"
+  },
+  {
+    "attempt": "REMOTE_003",
+    "tool": "Enzymes",
+    "stage": "parent_primary_recovery",
+    "status": "not_started_validation_rejected",
+    "request_sha256": "4651daff3187488d6d98be0bc41b69f666981acac82c0cd5d1fef3019c97b5ba"
+  },
+  {
+    "attempt": "REMOTE_004",
+    "tool": "Enzymes",
+    "stage": "parent_primary_recovery_revalidated",
+    "status": "artifact_validated_completed",
+    "request_sha256": "7a4f8866482ab865997b1ef259f414094b9065658e6882d2361acd75b36532b2"
+  },
+  {
+    "attempt": "REMOTE_005",
+    "tool": "Protein_Structure_Prediction",
+    "stage": "exact_parent_structure",
+    "status": "artifact_validated_completed",
+    "request_sha256": "0ed022be20c2138ec733e9859a8d9d0f018a73b378830f762924a7209a9a5dbc"
+  },
+  {
+    "attempt": "REMOTE_006",
+    "tool": "Boltz2",
+    "stage": "parent_substrate_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": "55f4a0b29df01022412833cf43c25f3e5edeef52adda49a09b2d777de92d86e7"
+  },
+  {
+    "attempt": "REMOTE_007",
+    "tool": "Solublempnn",
+    "stage": "initial_generation_method_recovery",
+    "status": "artifact_validated_completed_count_shortfall",
+    "request_sha256": "f9a365e7d9990384a856a3302b16a8073fa88ea65f11eb1d985910c9e0ce4ed3"
+  },
+  {
+    "attempt": "REMOTE_008",
+    "tool": "Enzymes",
+    "stage": "initial_primary_screen",
+    "status": "artifact_validated_completed",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_009",
+    "tool": "Netsolp",
+    "stage": "initial_solubility_screen_with_parent",
+    "status": "not_started_local_preflight_exception",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_010",
+    "tool": "Boltz2",
+    "stage": "initial_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_011",
+    "tool": "Boltz2",
+    "stage": "initial_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_012",
+    "tool": "Solublempnn",
+    "stage": "results_driven_revision_generation",
+    "status": "artifact_validated_completed",
+    "request_sha256": "cbb437cadcb95293684067c9e0a9b3fe94e9f9a0b5fd3c561c7a6007ae61707a"
+  },
+  {
+    "attempt": "REMOTE_013",
+    "tool": "Boltz2",
+    "stage": "initial_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_014",
+    "tool": "Enzymes",
+    "stage": "revision_primary_reevaluation",
+    "status": "artifact_validated_completed",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_015",
+    "tool": "Boltz2",
+    "stage": "initial_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_016",
+    "tool": "Boltz2",
+    "stage": "initial_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_017",
+    "tool": "Boltz2",
+    "stage": "revision_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_018",
+    "tool": "Boltz2",
+    "stage": "agent_transcription_error_redundant_initial_complex",
+    "status": "completed_scientifically_redundant_agent_dispatch_error",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_019",
+    "tool": "Boltz2",
+    "stage": "corrected_revision_variant_complex",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": "0c8e0a1c22a9d5af2c197ef45f5d06bc24f0346916cf661c19ee1f16506111e1"
+  },
+  {
+    "attempt": "REMOTE_020",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_021",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_022",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_023",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_024",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_025",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_026",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_027",
+    "tool": "Mol_Probity",
+    "stage": "complete_present_complex_quality",
+    "status": "artifact_validated_completed_measurement_only",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_028",
+    "tool": "Diffdock",
+    "stage": "results_driven_alternative_substrate_pose_assessment",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": "a515d112549013741a0f0ec336b14a082cf0d3e4aba36d54da3b757142e144be"
+  },
+  {
+    "attempt": "REMOTE_029",
+    "tool": "Diffdock",
+    "stage": "results_driven_alternative_substrate_pose_assessment",
+    "status": "artifact_validated_completed_partial_scientific_state",
+    "request_sha256": "3a5780bac1f9886433f642d4ddac25cfa201838696304091de1750964e4c6f2e"
+  },
+  {
+    "attempt": "REMOTE_030",
+    "tool": "Enzymes",
+    "stage": "post_seal_final_matched_primary_screen_all_unique",
+    "status": "artifact_validated_completed",
+    "request_sha256": "bde2cdeb96debab1c64da995b7f80755805ded1bc977d16518c82f9866e8825a"
+  },
+  {
+    "attempt": "REMOTE_031",
+    "tool": "Mol_Probity",
+    "stage": "conditional_Diffdock_primary_scene_quality",
+    "status": "artifact_validated_completed_conditional_docked_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_032",
+    "tool": "Mol_Probity",
+    "stage": "conditional_Diffdock_primary_scene_quality",
+    "status": "artifact_validated_completed_conditional_docked_state",
+    "request_sha256": ""
+  },
+  {
+    "attempt": "REMOTE_033",
+    "tool": "ProteinsPlus_protonate_structure",
+    "stage": "approved_parent_only_protonation_compatibility_diagnostic",
+    "status": "native_completed_original_QA_failed_separate_approved_QA_completed",
+    "request_sha256": "cba0be3c7b6cf45a36d96a4c708c9a94a5f37a7cbd44eeb05d5ce403bc21cc9c"
+  },
+  {
+    "attempt": "REMOTE_034",
+    "tool": "peptiverse",
+    "stage": "matched_secondary_solubility_screen_all9",
+    "status": "artifact_validated_completed_secondary_solubility",
+    "request_sha256": ""
+  }
+]

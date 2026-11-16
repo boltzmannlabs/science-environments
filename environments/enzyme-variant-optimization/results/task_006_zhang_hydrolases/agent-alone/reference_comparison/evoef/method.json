@@ -1,0 +1,14 @@
+{
+  "method": "EvoEF1",
+  "version": "1.1",
+  "source_commit": "6bce56dcbf95e34dfe890bfccdffd0df252b830c",
+  "binary_sha256": "caa7378755ab105b30435372737c734d044217e0d65a91d4812a9232d4422669",
+  "quantity": "E(mutant) - E(paired WT), native folding DDG; negative stabilizing",
+  "unit": "kcal/mol",
+  "precision": "Native total energies are reported to 0.01 kcal/mol; differences use the returned decimal energies.",
+  "source": "https://github.com/tommyhuangthu/EvoEF",
+  "preparation": "Exact declared WT sequence and compatible retained structure; protein-only; RepairStructure3; BuildMutant10; matched WT/variant local repacking, complete combined edits.",
+  "qualification": "An intrinsic protein stability estimate; chemical complex and enzyme function are assessed separately.",
+  "source_result_sha256": "0578f33c0ffb10f3f717a0cd08273ae837425cb72ef769e205267e9e85727697",
+  "assessment_mode": "Operator-guided post-selection comparison; original scientist-alone design execution unchanged."
+}

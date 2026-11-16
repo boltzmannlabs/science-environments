@@ -1,0 +1,1515 @@
+{
+  "snapshot_utc": "2026-11-13",
+  "files": [
+    {
+      "source_key": "campaign_archive/rml/agent-alone/candidate_history.csv",
+      "source_sha256": "d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877",
+      "export": "results/task_001_rml_stability/agent-alone/sequences/candidate_history.csv",
+      "export_sha256": "d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/candidates.fasta",
+      "source_sha256": "0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d",
+      "export": "results/task_001_rml_stability/agent-alone/sequences/all_candidates.fasta",
+      "export_sha256": "0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/observations.csv",
+      "source_sha256": "356b6ffb98130f1d2fd35860b7a993473410e365dcaf4e5bb7268eec64dda695",
+      "export": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "export_sha256": "8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/observations.csv",
+      "source_sha256": "356b6ffb98130f1d2fd35860b7a993473410e365dcaf4e5bb7268eec64dda695",
+      "export": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/outputs.csv",
+      "export_sha256": "99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/observations.csv",
+      "source_sha256": "356b6ffb98130f1d2fd35860b7a993473410e365dcaf4e5bb7268eec64dda695",
+      "export": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/outputs.csv",
+      "export_sha256": "55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/candidate_history.csv",
+      "source_sha256": "942ba8cb0b5c599a84b8ab3e2c5044d77352cbc9452c5816ccebe546f6a72135",
+      "export": "results/task_002_leh_stability/agent-alone/sequences/candidate_history.csv",
+      "export_sha256": "3f5ff3a2035d8517e6dfe782d6b8420db3ee101a3e729e0ac1f9e10765f9b864",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/candidates.fasta",
+      "source_sha256": "62dc029b7d1328d0fc9dc264d9bf7313484a6dee25e1df99c55e61651104f192",
+      "export": "results/task_002_leh_stability/agent-alone/sequences/all_candidates.fasta",
+      "export_sha256": "62dc029b7d1328d0fc9dc264d9bf7313484a6dee25e1df99c55e61651104f192",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/observations.csv",
+      "source_sha256": "b19352420eb2400c39444eccb059aacc46a9ee2c034da7808942eb660ef1cea9",
+      "export": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "export_sha256": "4e9d49045293ab1e41fdfb0cf53ae09526ab80b458d7cdddbecb2c148431aa2f",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/observations.csv",
+      "source_sha256": "b19352420eb2400c39444eccb059aacc46a9ee2c034da7808942eb660ef1cea9",
+      "export": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/outputs.csv",
+      "export_sha256": "c82813dbe63c2010646d2d1d49bf8fbf16195482b03eadb60e236dd16a75d62c",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/results/1NWW_A/all_scores.csv",
+      "source_sha256": "85103438cd2b5b4af06f70a535f8f3f8625b65169bf03bc48febcf0f314b6226",
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores.csv",
+      "export_sha256": "2f54de045ec36a7b7d21d2dedd019e0f4d754638b26ed5c07a2ac71db1bdb8bd",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/results/1NWW_A/all_scores_ranked.csv",
+      "source_sha256": "002e2aef1c3f644cf2837e6def6e325d90b9462065c11e26ccf63e9a6ab57745",
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores_ranked.csv",
+      "export_sha256": "7fc771d2134795dcd8c3622b5ac6b603bbe66ef5d0cd059bb8dc259f94939248",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/results/1NWW_A/selected_sum_lt_minus2.csv",
+      "source_sha256": "bc3f3f564dc4aca4f1abc1708333c51c36c42ab4d437fe31059bb26f2aa59612",
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_sum_lt_minus2.csv",
+      "export_sha256": "958bc7afff76943f46e55eb67f5482795b9dfb95f73fad3c003f6fd8435450e7",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/results/1NWW_A/selected_mean_lt_minus2.csv",
+      "source_sha256": "8e0f91d0fd3691bd8816b594ec7a0b2399a2dfb4bdeaf416224693a0227527c5",
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_mean_lt_minus2.csv",
+      "export_sha256": "597b571f9e3e5840cc11afc12f45d39be97b1435b2e1266b4e304f5a0513c20a",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/results/1NWW_A/selected_mutant_sequences.csv",
+      "source_sha256": "ca4dbbd7514579f06f6a9becf3f00dcbe6a14f8ba2df88e2a94d988f7a1701e8",
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/selected_mutant_sequences.csv",
+      "export_sha256": "60f1d8ff2e0307be379da583c7cdace2c546b2fd5e2c676d25e9c3e483e0891c",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/pythia_runs/zhang_pythia_cellulase_WT_001/all_substitutions.csv",
+      "source_sha256": "26227770e9491879b350e3603c47901c422a240a16548ea9fcaba290fcec4f06",
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_cellulase_WT.csv",
+      "export_sha256": "82bc18bbb8ed8fb266f5bef2dd345ee4c510406883d151ad239044406cc0ac49",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/pythia_runs/zhang_pythia_beta_glucanase_WT_001/all_substitutions.csv",
+      "source_sha256": "33a5a8c7713041004836e77a912ef2bd671f9f0122c1f3191d80f3887a90438d",
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_beta_glucanase_WT.csv",
+      "export_sha256": "12c326356aabb5c404a2a62507112bbd325492c20fa20997b2418a5023362016",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/results/cellulase_M2_all_substitutions.csv",
+      "source_sha256": "96317cae88bbdbb355885b3901e4187f773d86e32e996bf919cb0b2f33c6f706",
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_cellulase_M2.csv",
+      "export_sha256": "10d4e554010d66e739054454ca1381a7a566f328e11981a674a40b924e16f589",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/results/beta_glucanase_M5_all_substitutions.csv",
+      "source_sha256": "b0da297be52bf65d4e367e901443f5949923147b3eff6cf934c8161b7593c61b",
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_beta_glucanase_M5.csv",
+      "export_sha256": "75e94ddda014f601f697e29db155375006a480b3132c17522e7f4f722172a453",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/analysis/revision2_apo_descriptives.py",
+      "source_sha256": "b13b5d35d1a5785a93bd140b2d7169599cc6d5fc1a27fbf00e4e72011cf64847",
+      "export": "src/task_001_rml_stability/agent-alone/analysis/revision2_apo_descriptives.py",
+      "export_sha256": "b13b5d35d1a5785a93bd140b2d7169599cc6d5fc1a27fbf00e4e72011cf64847",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/rml/agent-alone/analysis/review_A058_native_MolProbity_artifacts.py",
+      "source_sha256": "d56b919e12120c806619b69adda30d96b7b5efb42bfc1b43b6bda86446cb79f4",
+      "export": "src/task_001_rml_stability/agent-alone/analysis/review_A058_native_MolProbity_artifacts.py",
+      "export_sha256": "4eee3b48276de354bb4f3365208516c786adbe2e06ef9e05b3052739a24f858e",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/qa_variant_docking.py",
+      "source_sha256": "a1bbf47c77545198699276bedeb29207377e0a036c9adefe82122c6bf8d7ebb1",
+      "export": "src/task_002_leh_stability/agent-alone/qa_variant_docking.py",
+      "export_sha256": "74b46a9da6c68e7148b031f95e0c09817d2ef678484cf4279548adc039771279",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/inspect_A059_complex_quality.py",
+      "source_sha256": "904ea3840d05c2401cad854f7edf7599997795a7a7dc1baf132dd7779dffcd35",
+      "export": "src/task_002_leh_stability/agent-alone/inspect_A059_complex_quality.py",
+      "export_sha256": "bcb5aa0afc49ef3b5f2721f00bd71c3ffec4b64d9bc33aeaa7c8c26c1d64866f",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "private_input_keys_parameterized": [
+        {
+          "environment_variable": "MOLPROBITY_INPUT_KEY_80BA701903DA",
+          "original_key_sha256": "80ba701903da2e84532c9b4388947021331ea04644b5d1e495d748f0eb5d571d"
+        }
+      ],
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/serialize_A060_full_scene_handoff.py",
+      "source_sha256": "04c5eb0f25658cafbfce0fc7fcd93b3bec734ff7fcb1ebacd3cc5ae57fa53247",
+      "export": "src/task_002_leh_stability/agent-alone/serialize_A060_full_scene_handoff.py",
+      "export_sha256": "04c5eb0f25658cafbfce0fc7fcd93b3bec734ff7fcb1ebacd3cc5ae57fa53247",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "campaign_archive/leh/agent-alone/verify_A076_quality_artifacts.py",
+      "source_sha256": "6969276eb5471fc5ea7f3754819055dfb100ac3484a73929b9334e10b65e3741",
+      "export": "src/task_002_leh_stability/agent-alone/verify_A076_quality_artifacts.py",
+      "export_sha256": "3c2af0bdf0d45c3c39ba5d01527a2ab1153c19cf8bdc6b8b3c01403f9749e8d1",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "private_input_keys_parameterized": [
+        {
+          "environment_variable": "MOLPROBITY_INPUT_KEY_6CEDE97613EE",
+          "original_key_sha256": "6cede97613eeb0d716d6ee153fb7f28165931ec096f5f1964321b50eb7ae09cc"
+        }
+      ],
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/run_full_scan.py",
+      "source_sha256": "303a406f26164b85cd4ec3c521ea6d7c699a5369a4e6be2ad081101ae6dd989a",
+      "export": "src/task_005_sun_leh_pythia/agent-alone/run_full_scan.py",
+      "export_sha256": "303a406f26164b85cd4ec3c521ea6d7c699a5369a4e6be2ad081101ae6dd989a",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/selection.py",
+      "source_sha256": "419718550e786b42528feb3b17e6253062a64936ee509985b737de07decf3649",
+      "export": "src/task_005_sun_leh_pythia/agent-alone/selection.py",
+      "export_sha256": "419718550e786b42528feb3b17e6253062a64936ee509985b737de07decf3649",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/verify_results.py",
+      "source_sha256": "6ff3ef5a573c2346d6e6d09845b991e40deca2f8859ec2434b68514c7bd1a1e3",
+      "export": "src/task_005_sun_leh_pythia/agent-alone/verify_results.py",
+      "export_sha256": "6ff3ef5a573c2346d6e6d09845b991e40deca2f8859ec2434b68514c7bd1a1e3",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/final_audit.py",
+      "source_sha256": "006435f099db972e28905d33be935e9452797c5e0f7b5dfb7222a566485e6f2f",
+      "export": "src/task_005_sun_leh_pythia/agent-alone/final_audit.py",
+      "export_sha256": "1429dec80bdcc8831e653aba6725253bbd686701815f350de216c0df39715c92",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/full_af2_structure_v2.py",
+      "source_sha256": "67148297b6124288ddb364fefed44ec9cf1b7f84c29864142fdb8c5519c57cbf",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/full_af2_structure_v2.py",
+      "export_sha256": "67148297b6124288ddb364fefed44ec9cf1b7f84c29864142fdb8c5519c57cbf",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/full_pythia_scan.py",
+      "source_sha256": "5ec0c08b6d09dad34bcab116f4e498f0669f26307191d299894ca367a4db53d2",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/full_pythia_scan.py",
+      "export_sha256": "5ec0c08b6d09dad34bcab116f4e498f0669f26307191d299894ca367a4db53d2",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/full_esm_scan.py",
+      "source_sha256": "2d9dcde13e55bdbb64c41cba660d2cb2d6d58f9146fe165088b8e2203a08c181",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/full_esm_scan.py",
+      "export_sha256": "2d9dcde13e55bdbb64c41cba660d2cb2d6d58f9146fe165088b8e2203a08c181",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/prepare_sequences.py",
+      "source_sha256": "156c6f86bce1cd45becfa7d787785b3a3c458829d9e40fcfc878a670f0125e73",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/prepare_sequences.py",
+      "export_sha256": "156c6f86bce1cd45becfa7d787785b3a3c458829d9e40fcfc878a670f0125e73",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/verify_pythia_scan.py",
+      "source_sha256": "2074073dbb5ec1f74423362e3652f4849c466683c6addcccdd2e605bd3d642a9",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/verify_pythia_scan.py",
+      "export_sha256": "2074073dbb5ec1f74423362e3652f4849c466683c6addcccdd2e605bd3d642a9",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/zhang_hydrolases/agent-alone/src/verify_full_esm.py",
+      "source_sha256": "6cec774a35a3edc42b242c163fd12be43ed09f4d8997bf88f821798cbaeb73c2",
+      "export": "src/task_006_zhang_hydrolases/agent-alone/src/verify_full_esm.py",
+      "export_sha256": "6cec774a35a3edc42b242c163fd12be43ed09f4d8997bf88f821798cbaeb73c2",
+      "literal_paths_parameterized": 0,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "paper_archive/sun_leh/agent-alone/freeze_inputs.py",
+      "source_sha256": "961f56ffacb262b2150bfde3fc05e3aa71f9742f35eebe6cd4f6c5d68cf99b67",
+      "export": "src/task_005_sun_leh_pythia/agent-alone/freeze_inputs.py",
+      "export_sha256": "54694176522171b3f7dc1604c636305afac08e6eab0669e0cd3fc59bed770091",
+      "literal_paths_parameterized": 0,
+      "embedded_interpreter_locator_parameterized": true,
+      "scope": "Historical agent-generated source. Runtime resources/inputs remain required; not newly executed.",
+      "transformation": "Organized by execution step; private operational identifiers replaced by local references. Scientific values retained."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/README.md",
+      "export_sha256": "ec486f5f1158ca0bb1fad2e1f1a288677e977cdfb2a6f2ae2b14ed4bd3743dd0",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/REFERENCE_ASSESSMENT_USAGE.json",
+      "export_sha256": "33fae46a715b86c89edfdf9c53ca538a6b2f87dff1afd3ccd2dadfc5677ca7c5",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "74467d2d4173a8550c2f6e17bbecec3084d74d10e2f401952c9080d8783444a5",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/EXECUTION_STATUS.json",
+      "export_sha256": "be81d68efcf591664fd2a60ea87c3f1de2f7fc32e7be58f72af34d8df4194dd8",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/README.md",
+      "export_sha256": "b9eaaf00e9c253ad941b023b74143f5f5e210345fa14d079c59665ce7dcea7fc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "67dcdab480c6d1354219f59d688df4d79f662b412099015d99fc749f43fefdf0",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "f4a7930df9ae1fb1d94bf0457dc3ed2fc00b065e4734b0b29a507dd834f30243",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/WORKFLOW.md",
+      "export_sha256": "65b50722585709372b0f5a38f0935a5d2280b03f18e14870b7c2714e3aa174ec",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/README.md",
+      "export_sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.csv",
+      "export_sha256": "9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.fasta",
+      "export_sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/controls.fasta",
+      "export_sha256": "87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/identities.json",
+      "export_sha256": "12673e0aa67b146e6e81f245c878c1c40f35b50f8d477645c8a0a1a3547a6116",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/sequences/parent.fasta",
+      "export_sha256": "fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/00_execution_index/jobs.csv",
+      "export_sha256": "002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "8bcbb29fe66d3ff9cda1ec196c9c76bfe3391f36d9d8e371d61dba3e15990566",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/settings.json",
+      "export_sha256": "e51dd2660c1743c6754225c2ae8e0fffc1741a4e6e144690a2f32811ea0b37f7",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/02_variant_generation/README.md",
+      "export_sha256": "8486373bfef6ff530981c0f1bb1f5cd6d167ec114d3fc68931f4dde9eb9ea30d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/README.md",
+      "export_sha256": "99647b3121725d57a4a583388c14f818c6bfb2048d9fcadb5d31991709abf232",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "export_sha256": "f7b5b176796efaa54088bbd32d5e349d84a2667e6b3c2b2ea6e0c9b0f014bbc6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv",
+      "export_sha256": "1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv",
+      "export_sha256": "d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv",
+      "export_sha256": "6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "export_sha256": "7125c0d4cdcd52e163f0a36229081841a6383f32a770b0e8ac93babaeea4bfcd",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "export_sha256": "98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/README.md",
+      "export_sha256": "78449c0cab2c481fbb976bb05576d12bd80988bcdda319f569d59ee5e0785db6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/input.json",
+      "export_sha256": "67a402adefdb7d9035c490f961bcd9d3d362c8eba70036273aecc9446d4c6921",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/job.json",
+      "export_sha256": "5bcca9021129c2e4cec135094ae19b94e1a9a41f6d9f4084bbe7b8988205ea80",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/output.txt",
+      "export_sha256": "2ece065255f4b99ec5982dedb4eba59b59b4d431d4d210c545ff429196cc6e72",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
+      "export_sha256": "84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "492e08e5b55c2353a8a06cad990470dac430beb5d04857c5a0e7ca3db976eb3e",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/EXECUTION_STATUS.json",
+      "export_sha256": "a06dc3e8b9a020d35225d41d6fade12557daf3d33e6f96c7ac2169ca610693ab",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/README.md",
+      "export_sha256": "ab94eadf08f69668ab9c707aa3a9ebe68caac038ca7e00918356fa91e7363389",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "014ec545cba4584c432104c48d2e4969c810d216d935c6319fe88be72d5d458a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "984e8e2010eeb132aebb525ef0429bff16982395715ec41dc16347fc46b6d9da",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/WORKFLOW.md",
+      "export_sha256": "35a8fe1a0aa2fad8c98d6209e9b7bf579da9b4a3839c51dd6531fb5a9cbd7f23",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/README.md",
+      "export_sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "aaba3d1b64c5fc66d63ecc6167f9d57ca0378f06da99ef281381b15d1cffbfae",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "5e89963d091da5891d7dd4a55e7914b0351e960be4f4b971b9dfad0a9830db24",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.csv",
+      "export_sha256": "4add25ee0ecdaca6f8433a815b3c6c36aa32c2a5d2512dbf412f9a9899cfd30a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.fasta",
+      "export_sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/controls.fasta",
+      "export_sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/identities.json",
+      "export_sha256": "7eb367c2a55e13f1bd7737b1b4619ec86397f2a2beac44a4f54bab0d1641317d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/sequences/parent.fasta",
+      "export_sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/00_execution_index/jobs.csv",
+      "export_sha256": "3a7d97826f4fd3fade30de3345087e96b061c52f86a4fd9390f4d7b0f91c3ffc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "ca6e0ba4b18a2fcae5c39f2f09ec01dab614375b7f4837b368b64e885438b7ce",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/settings.json",
+      "export_sha256": "809492b3fd645796d394a9cd1509ff33844145193a6a731d7501766a9464c1ba",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/02_variant_generation/README.md",
+      "export_sha256": "97641efd4a5ea52707e780efbae3c4240bf99c288c92a265cbc99a1f51c09f59",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/README.md",
+      "export_sha256": "77ab15a3939502f6ae08c92d7b668060c7da394e9fb864e9d85b5ba9f80e8bd6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "export_sha256": "08fa711d68bf39096ff5f4d44fa8bad29da6d7b798b2819d9ed735ac1410e3ef",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "export_sha256": "b826876c2ddb033bbb63b45b2993604a5c00b43da3723ff0266703a1f2303ebc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "export_sha256": "f90ad2a1ce8aa6e8aeb0a58811e56361dbd199569134ebdd0e35465bad0091f1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/README.md",
+      "export_sha256": "061b5981e5c5d81e323d5c3f8a627094917614e75add5d8f834c758d72bbb258",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/input.json",
+      "export_sha256": "96d6689cf27c3797a9410e08f3eba9050bf96bc0a4687a04e218e4ddd700a3f2",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/job.json",
+      "export_sha256": "b3e5c362825a76a93c725fc40202c64eec757401c0c96adaf5e6567330abffc8",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/output.txt",
+      "export_sha256": "8f29f33f663462abaef9e6ecd8a1f06c81bfee876df68b802461c252db7de0ad",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
+      "export_sha256": "3bddf8a7023e1c6f3f70efda17ba14447c4de281b4d855e5dc104171a86e6e98",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/README.md",
+      "export_sha256": "29d0fd32e235249bae85c0fab29576ac186e04dc85eea21e8f1bdb7aaae8fd4c",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "d4c3626f233dff2ab723aa28d8dd646ac4707d2c77577ad3d5a761415ae2522d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/README.md",
+      "export_sha256": "6a3c23484c628dc027f213aed8797ace7b7e903c69d5a5d5fefaf46271621630",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "31499ef24da685a902b7a3b16df02f478342d71155473bb86804758c4c3e4058",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "f9cf70faf7f0131f4d910c2fb85dd335ae6a49ba940faab54e16d2f3c355ea36",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/WORKFLOW.md",
+      "export_sha256": "22ccdecaad6e12976d5f108ed62bc0c11673d7a3120dbdb05ece9864c0b4fca3",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/README.md",
+      "export_sha256": "31235c11fb07e30b26273d1708efe6d03124a73481e3802a7a7d02b2c2221992",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "5d44adefca89b900c43fda6dba71a7e7937b3096c361dbde84a7df4515900cf1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "ebbdf633cc76ae873e4c1c4499a14ee05e5b7718f3b94854b5ab1fc9edbad9e1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/reference_sequences.fasta",
+      "export_sha256": "e1d75a02de21ec83981357b5e001ff0db5c5cc8b631d0677c9be7f8c2010f994",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/sequences/all_generated_sequences.fasta",
+      "export_sha256": "0639fb090c115e3b22e199c799fb2ef387f8e33b65cc70b66de67667a4143052",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/sequences/candidate_history.csv",
+      "export_sha256": "78d487ce56d5def66699a1d366709d450f63c70f4fbfe9ec4de81aba4f455606",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "90731a0b89f040f920a7f63cb0cd5ba3f6058bdba45e6305643b352c51b2f027",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/sequences/identities.json",
+      "export_sha256": "d1282424563a6537c32360c29616f49888869faed5fd8e1cc4ad4c80787fc7f8",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/sequences/parent.fasta",
+      "export_sha256": "23c68ad8c213d90c785e0c4436135068d37960637181a33229150c3ed725d888",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/00_execution_index/jobs.json",
+      "export_sha256": "5fd600a97a9681cff1b3469aea22c3d7775a37f0a76adeb44436780a8d999244",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "ed3b72686dd1d136bd50fc74f9f77fcff5456c66711d04b899e915d2bfcb625d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/02_variant_generation/README.md",
+      "export_sha256": "886d36b50cb4597e8c9e2bad5796227cc3d9bfb72810660deab262fd913904df",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/README.md",
+      "export_sha256": "17737867b761801f6e867117b145501b9a0240ef2b1e56953b9602823937f62a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/outputs.csv",
+      "export_sha256": "469fd1d2e6bbb7550d8ae646139af99b2c0e1d12eeb4518ec4ae4d7280e27ad9",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "export_sha256": "0eb9c9408ef1258b81e948bfb7d5827404b9ee15f44bd5acb878b97e247981fc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "export_sha256": "2c7f1affc266d73c87b06d70a7cb115d7c4a0ef228da6e9c5d9b5d6f0f6c64d3",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "export_sha256": "7af05db818174117edb994e1e284f591737caae9f2ea3ed79804b1d33c40649a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/README.md",
+      "export_sha256": "bbbb503b8c138c509aad2c5065b05426ed0c3aaa17c68725c7ce7d0ac1cfc697",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "49a2a59bf3ae8c5361d9f3e0f96256485e4dbe2c4464844fa95d81e0e2f62ad7",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/README.md",
+      "export_sha256": "58e006552b6f0de6a30bab05ce8d128ccb10989cd7f9efe7a9a6894fe0330891",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "3a9769bc326b533e9a7525bbe8c4f98fba5845dd498152907de6399def93fffb",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "cc2737f3eea9a776994524e678d3165900c936eb11cfb1a19c83f22a6df59043",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/WORKFLOW.md",
+      "export_sha256": "ed6cfed0ce5e058fffd864b38e0ca634f8ea0178d99542dd57b4833a9fa30c59",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/README.md",
+      "export_sha256": "aab4ff4bd908cb9429c0686a007f99350aec670008920019f8ff62c23c06b415",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "50f12ebcd0e78d7aa8ab6a9cc86ace24f5547bd878c224e4c368e563a59b2942",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "41c324a7a175821950e9a2126d9f587508c4c35c90f5192c62e76b8d4ac15b8c",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/reference_sequences.fasta",
+      "export_sha256": "f531b4b888ead01c88a5ab42ceffb8d424d85b4cab9eeed5d65b036d4604adf3",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/sequences/all_generated_sequences.fasta",
+      "export_sha256": "84c69835f9585f91fc1a7b7c8782becd9ba71e1f76a0b83d143e646b0e34a6bc",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/sequences/candidate_history.csv",
+      "export_sha256": "6c838a21eb5901a7a1420334f1803febfa06dc61cbaa23b78cfac43900577f8b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "0666b4971fca6ca596419b9123add1b8b38b06b46d713f451eb425794dd16bff",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/sequences/identities.json",
+      "export_sha256": "ab89138dace56d0b793f7945e0e0fc6a5502d04489e2f89fcc0e0626d3f8f995",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/sequences/parent.fasta",
+      "export_sha256": "2fb7ebc49c2d93a54e1f91648ba61e23e3682450e38cd1b5368791067f5eb314",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/00_execution_index/jobs.json",
+      "export_sha256": "26b49fe6d103726ec4ccd6647c0b8b5495a5e27c271f40c44d752b02cc1bee2b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "110c3ebb181b31de1937658551cf1a3b8c07ee53c888f13ac6d3837ba3ce8d4f",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/02_variant_generation/README.md",
+      "export_sha256": "7e906363a9b5b9b92d58ab0aa214c10ac58d75504aa5b5cc59dc1edda0b04b75",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/README.md",
+      "export_sha256": "76308bc358ac4447f3a534440e16f119936a4e776247d0023a4223435f546d99",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/outputs.csv",
+      "export_sha256": "54d20abb7a125cd38c8bbdf4ff2ccf1e02e8d090262bcaa9d6aea28dac20c51a",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+      "export_sha256": "1b09add574ab04f903d511cc55590f12d62a75dda356971688e8074efab086a6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+      "export_sha256": "3068b27cf0b2a8b40ccf2243d9e12009fb24ec3358b505bbb163ba079b1bc041",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+      "export_sha256": "64703e87de70235a2379af8a95e8bc78290bdd3f6a0b4981c72c8d7df3011d7e",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "bdf8a0073c1d9e7171ba800a656f664aaf799392792c56367daab86b11a827fb",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/README.md",
+      "export_sha256": "904d4e361e2cb216530c3b882588e386ae789c40706b31d71a937b6688961431",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "3c5b55bb86416323f322a6ff7e3e15667e12f6f92b3e77a5990b1be001f02baf",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "b4ce0fd1dd48f9fb53fc78931108578133f3c07507b68e6005d5d06d5b719ce7",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/WORKFLOW.md",
+      "export_sha256": "fdd722d3c7e4bac73b0aaa6aeabeb28ea96e344b7d0e79de0d825bb14aa3b1c6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/README.md",
+      "export_sha256": "512dfe231cd0371284f210e48b54e7dc61c7fdcfb69d16ec89f03e31bd7961ff",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "88a4de0767188fe09361d8781f0fb782ff888d22304e0c6d7476c424af728eff",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "f0e73ea0c34cf6f406c02755dd6c3282fda0305b4003b999691609b9cfac0e6b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/reference_sequences.fasta",
+      "export_sha256": "a4f7625404262efcc085bd461c3f111e2923e5400e23a1e8f89e5fdbee31ca1b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.csv",
+      "export_sha256": "8fd7dac59fe0246bd826d3c8bd49e73344a9d10069715b643f250e97c35bff77",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.fasta",
+      "export_sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/controls.fasta",
+      "export_sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/identities.json",
+      "export_sha256": "a1b3629e9cdf5e1f2eaebf0afc922639c3b571e568f3321b889e1afe413eef83",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/sequences/parent.fasta",
+      "export_sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "33633b128fc3cab7a021e131bd08a3697b60435ac0e6ea9c258dcadd20bea0e6",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/settings.json",
+      "export_sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/README.md",
+      "export_sha256": "7855ade8bd5a0c7b1bc3cbfbb87521c02ceaa0ace6df712249e663066fb48804",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/README.md",
+      "export_sha256": "48363dde7ca6d7a438bea9e26193b5d7157e71c4b9f160865b3ea51a95dd2838",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "export_sha256": "5f4e35be072a0b9714a93fd2e669d589eb982d1ff4df16a32fbc5f3ee20a82de",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/EXECUTION_METADATA.json",
+      "export_sha256": "03c545a49b11436ab786674b5107d97de07cb52633d978007c2d735c804e0d41",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/README.md",
+      "export_sha256": "cbe31e6e2b46eb4ef79fc4f50934a4e88e4e756e538f3eeffc0cdd013599e5ad",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/USAGE_AND_TIME.md",
+      "export_sha256": "da99397ff30ed8fdaa6c7dbd53ed5cae1b91427567bb5f0cf6f3ae4c10ffcd69",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/USAGE_SNAPSHOT.json",
+      "export_sha256": "6388db70edbbb094b13eab562b1689abd7a27498d77cf039b757d0e1e1cba1ad",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/WORKFLOW.md",
+      "export_sha256": "85a2e6b25b171e37c63d342739fa773604dd9d3df38c860f6ffbd8e8c2423ad1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/README.md",
+      "export_sha256": "9a06a38bcba3e90b08b99823df6b286ef25ca972d4bd6967986eaabe5b3b72d1",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/jobs.json",
+      "export_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictions.csv",
+      "export_sha256": "cb96b82f6750c405245ef8aa661c4aa4a8a4250b341909dec8cc535e63cd27c2",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictor_outputs.csv",
+      "export_sha256": "42c712f9443a679987cfcd2a2b7374ffe05f1fcca476484bb0acda2960b3713d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/reference_sequences.fasta",
+      "export_sha256": "8f8767480981d1ef55c7ef694600bbf2d69035c7580ea6adf8712893fb91ed0d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.csv",
+      "export_sha256": "d6ace37d07c9e7977a233d47c6939af782d81ec9999031b21e313250feea4e5b",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.fasta",
+      "export_sha256": "2bfa1ad042ea8230909ed0e13056e9568d9424e44f7ed734a7971f5d74e43920",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidates.fasta",
+      "export_sha256": "2bfa1ad042ea8230909ed0e13056e9568d9424e44f7ed734a7971f5d74e43920",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/controls.fasta",
+      "export_sha256": "0753b7fbf90cfeed0e9a52a2c338aa00ebba0382c1e03a5c44543950738fbd6d",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/identities.json",
+      "export_sha256": "f2f51ac03319673a062cd6b226285d302550a4c9e427d9015923e056d1f0ca20",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/sequences/parent.fasta",
+      "export_sha256": "bde2062b49a14562c8f64f4db7dfb6f206bc9884a124928483f75fa64cf15ccb",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/README.md",
+      "export_sha256": "8e2ece6aa2bfb0358f53cabec126ec5472e1daef5c5eb3cb65fa83ad493c9947",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/settings.json",
+      "export_sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/README.md",
+      "export_sha256": "85b4a6ba2bb61dd9c9b18e4f10daa3ad0ed5a10ee28f4e4a66580d57aee9a215",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/README.md",
+      "export_sha256": "b4fdbf02129ed4ae217a9d768153bd2cc0214b7c4239a7e648998f7ef945f999",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/04_ranking/README.md",
+      "export_sha256": "68299967fe2797e576da0a0c345a598e027a34959a0d95d73966ca121cc11fe3",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_saved_assessment_or_execution_export",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/steps/06_post_selection_properties/predictions.csv",
+      "export_sha256": "38d2cc5ab4f6f6cf727cfbc36225cacf67ceebb0a98821d299363bd9691d7722",
+      "transformation": "Task-organized review view; scientific measurements retain source precision; private audit mapping excluded."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/OPEN_SOURCE_ASSESSMENT_USAGE.json",
+      "export_sha256": "2d8d4b1e0b69f6d8a2248dfc07449c53959f01c4b7e24441d0bff38784c71b29",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/ddgun/method.json",
+      "export_sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_001_rml_stability/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/ddgun/method.json",
+      "export_sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_002_leh_stability/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "e27c94d21f001bb142e6231b21f621daf38af9c917a86a82484b25900ffc9e2d",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/method.json",
+      "export_sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "export_sha256": "2a33917fda72f3cbbda936064c5c509b024b23452a97101454fd501a0bd1a9c8",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "3833b7b30b4a4bffc1a086d503413923f48c6488e1177daaca1244366db0de4e",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/method.json",
+      "export_sha256": "a6a5696a11121225b6f63bf36cca30abfcfaf7f9c48826243542165bc3677682",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/predictions.csv",
+      "export_sha256": "26e3d00bd71f40ab9e9ad08233335d641c03af5f255ccd0c70aa7e3dc9bde54f",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/method.json",
+      "export_sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "export_sha256": "8ae801cffc76b5ede8eab2b12d4160bbfbbbe5ae208c310ea61186d86c0ab05c",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_004_athol1_substrate/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "9edb2f6da4a7f722cef6c48f39e4e97e6aea81e4ec4285a2f2b7cb02f255ea32",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/method.json",
+      "export_sha256": "79fa0f7ac50bd616dead68467e11c8424c0edad6d882614bdb63e9e81ac8fdac",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/predictions.csv",
+      "export_sha256": "4a06fff25da3f0ba0060a61bf60fd95036b5d0abe609e851d08a2e9ac0c253ff",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "1bca6a6f5e9185d22c6909b0dfc0ed323c2d0cb65105a19a1ff69c4febe21185",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/method.json",
+      "export_sha256": "00a3af25895f01388189f2c8bc34c87f28f2601b153a944f44a9bc62f1e35857",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/paired_energies.csv",
+      "export_sha256": "f873a5ce4ab692114613c0f1a71ea0ec070f066eb5808f93e513617e4a8ff38c",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    },
+    {
+      "source_key": "verified_open_source_comparison_exports",
+      "source_sha256": null,
+      "export": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/open_source_metrics.csv",
+      "export_sha256": "075a68ec096aa016802f45d6ebd99e106828940d310537742334d2c0eaac05b5",
+      "transformation": "Compact method-specific predictions and settings; operational identifiers/paths excluded; original scientific sources retained privately."
+    }
+  ],
+  "source_keys_are_archive_labels_not_repository_paths": true,
+  "original_large_private_artifacts_not_redistributed": true,
+  "scientific_executions_during_export": "No original design runs resumed. Three separate reference property jobs completed and verified.",
+  "publication_scope": "Reference versus agent-alone only",
+  "historical_configuration_version_assigned": false,
+  "cleanup_note": "Per-task sequences, workflow, step outputs and usage; reference assessment kept separate. Full original audit records and private identifier mapping remain outside Git.",
+  "privacy_scope": "Review export excludes credentials, personal contacts, internal hosts/paths, storage access URLs and backend identifiers."
+}
