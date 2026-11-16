@@ -1,0 +1,512 @@
+{
+  "dataset_id": "DLPFC_151673",
+  "spots_input": 3639,
+  "spots_analyzed": 3639,
+  "n_domains": 7,
+  "domain_interpretations": {
+    "0": "Neuronal-rich cortical territory, distinguished by neuronal structural and synaptic transcripts (NEFL, SNAP25, TUBA1B); precise cortical layer uncertain.",
+    "1": "Upper/supragranular-like cortical territory, suggested by CUX2, CALB2, HPCAL1 and CAMK2N1; layer assignment remains a hypothesis without histology.",
+    "2": "Myelin-rich white-matter-like compartment, supported by coordinated MOBP, MAG, MBP, PLP1, CNP, and MOG enrichment.",
+    "3": "Mixed transcriptomic patch with epithelial/immune-response-like signals (KRT19, HLA-B, IFI27) and neuronal signals; likely noncanonical tissue/technical signal, not confidently an anatomical layer.",
+    "4": "Peripheral/edge-like territory with glial/vascular-associated candidates (CLU, SLC1A2, DES, ACTA2) and comparatively low UMI; susceptible to quality or dissection-edge effects.",
+    "5": "Neuronal-rich territory with unusual secretory/epithelial-like transcripts (SCGB2A2, TFF1, MGP); a distinct expression domain, but anatomical identity uncertain and possible contamination.",
+    "6": "Spatially less cohesive mixed/intermediate territory with neuronal (DIRAS2, SLC17A7, SEMA3E) and unusual epithelial-associated (KRT17, SCGB1D2) signals; not confidently an anatomical layer or gray-white interface."
+  },
+  "domain_markers": {
+    "0": [
+      "NEFL",
+      "TUBA1B",
+      "SNAP25",
+      "TMSB10",
+      "UCHL1",
+      "STMN2",
+      "PCP4",
+      "NEFM",
+      "SNCG",
+      "NDUFA4",
+      "TUBB2A",
+      "MDH1"
+    ],
+    "1": [
+      "HPCAL1",
+      "ENC1",
+      "CAMK2N1",
+      "HOPX",
+      "PENK",
+      "CARTPT",
+      "CUX2",
+      "SAA1",
+      "SERPINE2",
+      "CALB2",
+      "CALB1",
+      "RCN1"
+    ],
+    "2": [
+      "MOBP",
+      "MBP",
+      "MAG",
+      "PLP1",
+      "CNP",
+      "CRYAB",
+      "TF",
+      "PPP1R14A",
+      "MOG",
+      "ERMN",
+      "GFAP",
+      "CLDN11"
+    ],
+    "3": [
+      "CPB1",
+      "COX6C",
+      "KRT19",
+      "HLA-B",
+      "IFI27",
+      "H2AFJ",
+      "S100P",
+      "HLA-A",
+      "CALML5",
+      "SYT1",
+      "ISG15",
+      "MUC1"
+    ],
+    "4": [
+      "COX6C",
+      "MALAT1",
+      "CAMK2N1",
+      "ENC1",
+      "CLU",
+      "PCSK1N",
+      "SLC1A2",
+      "DES",
+      "MT3",
+      "CST3",
+      "MCCD1",
+      "ACTA2"
+    ],
+    "5": [
+      "SCGB2A2",
+      "SCGB1D2",
+      "TFF1",
+      "MGP",
+      "NEFL",
+      "CRISP3",
+      "TUBA1B",
+      "NEFH",
+      "TMSB10",
+      "SNCG",
+      "NDUFA4",
+      "MUC1"
+    ],
+    "6": [
+      "KRT17",
+      "DIRAS2",
+      "SEMA3E",
+      "B3GALT2",
+      "TF",
+      "SCGB2A2",
+      "CST3",
+      "SCGB1D2",
+      "CPE",
+      "SLC35F1",
+      "THEMIS",
+      "SLC17A7"
+    ]
+  },
+  "supporting_evidence": {
+    "0": {
+      "markers": [
+        {
+          "gene": "NEFL",
+          "log2_mean_normalized_ratio": 0.834,
+          "adjusted_p_value": 2.666983184987434e-93,
+          "domain_mean_counts_per_10k": 15.33
+        },
+        {
+          "gene": "TUBA1B",
+          "log2_mean_normalized_ratio": 0.5,
+          "adjusted_p_value": 1.097173520334884e-89,
+          "domain_mean_counts_per_10k": 33.77
+        },
+        {
+          "gene": "SNAP25",
+          "log2_mean_normalized_ratio": 0.515,
+          "adjusted_p_value": 7.619632595727258e-78,
+          "domain_mean_counts_per_10k": 40.37
+        },
+        {
+          "gene": "TMSB10",
+          "log2_mean_normalized_ratio": 0.447,
+          "adjusted_p_value": 3.0807290889464942e-61,
+          "domain_mean_counts_per_10k": 37.33
+        },
+        {
+          "gene": "UCHL1",
+          "log2_mean_normalized_ratio": 0.478,
+          "adjusted_p_value": 1.36732474261689e-57,
+          "domain_mean_counts_per_10k": 21.68
+        },
+        {
+          "gene": "STMN2",
+          "log2_mean_normalized_ratio": 0.622,
+          "adjusted_p_value": 2.4469306290014975e-54,
+          "domain_mean_counts_per_10k": 10.87
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 756,
+        "local_same_domain_fraction": 0.924,
+        "largest_spatial_component_fraction": 0.988,
+        "spatial_components": 3,
+        "median_spatial_xy": [
+          5083.5,
+          8033.0
+        ],
+        "median_umi": 4750.0,
+        "median_mito_fraction": 0.184
+      }
+    },
+    "1": {
+      "markers": [
+        {
+          "gene": "HPCAL1",
+          "log2_mean_normalized_ratio": 1.31,
+          "adjusted_p_value": 9.095591250903921e-107,
+          "domain_mean_counts_per_10k": 5.44
+        },
+        {
+          "gene": "ENC1",
+          "log2_mean_normalized_ratio": 0.797,
+          "adjusted_p_value": 1.6221456509525368e-95,
+          "domain_mean_counts_per_10k": 23.29
+        },
+        {
+          "gene": "CAMK2N1",
+          "log2_mean_normalized_ratio": 0.669,
+          "adjusted_p_value": 1.2188795363126382e-94,
+          "domain_mean_counts_per_10k": 20.82
+        },
+        {
+          "gene": "HOPX",
+          "log2_mean_normalized_ratio": 0.961,
+          "adjusted_p_value": 7.578096876948851e-72,
+          "domain_mean_counts_per_10k": 5.95
+        },
+        {
+          "gene": "PENK",
+          "log2_mean_normalized_ratio": 1.663,
+          "adjusted_p_value": 4.18408894392094e-68,
+          "domain_mean_counts_per_10k": 0.48
+        },
+        {
+          "gene": "CARTPT",
+          "log2_mean_normalized_ratio": 1.331,
+          "adjusted_p_value": 1.038462767206191e-66,
+          "domain_mean_counts_per_10k": 1.56
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 587,
+        "local_same_domain_fraction": 0.94,
+        "largest_spatial_component_fraction": 1.0,
+        "spatial_components": 1,
+        "median_spatial_xy": [
+          6076.0,
+          10019.0
+        ],
+        "median_umi": 6966.0,
+        "median_mito_fraction": 0.19
+      }
+    },
+    "2": {
+      "markers": [
+        {
+          "gene": "MOBP",
+          "log2_mean_normalized_ratio": 3.424,
+          "adjusted_p_value": 0.0,
+          "domain_mean_counts_per_10k": 16.94
+        },
+        {
+          "gene": "MBP",
+          "log2_mean_normalized_ratio": 3.088,
+          "adjusted_p_value": 0.0,
+          "domain_mean_counts_per_10k": 210.68
+        },
+        {
+          "gene": "MAG",
+          "log2_mean_normalized_ratio": 3.459,
+          "adjusted_p_value": 0.0,
+          "domain_mean_counts_per_10k": 12.37
+        },
+        {
+          "gene": "PLP1",
+          "log2_mean_normalized_ratio": 3.326,
+          "adjusted_p_value": 0.0,
+          "domain_mean_counts_per_10k": 122.8
+        },
+        {
+          "gene": "CNP",
+          "log2_mean_normalized_ratio": 3.046,
+          "adjusted_p_value": 4.990927582942714e-299,
+          "domain_mean_counts_per_10k": 37.46
+        },
+        {
+          "gene": "CRYAB",
+          "log2_mean_normalized_ratio": 2.979,
+          "adjusted_p_value": 1.4646460877524293e-298,
+          "domain_mean_counts_per_10k": 39.76
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 577,
+        "local_same_domain_fraction": 0.958,
+        "largest_spatial_component_fraction": 0.998,
+        "spatial_components": 2,
+        "median_spatial_xy": [
+          9272.0,
+          4905.0
+        ],
+        "median_umi": 3356.0,
+        "median_mito_fraction": 0.115
+      }
+    },
+    "3": {
+      "markers": [
+        {
+          "gene": "CPB1",
+          "log2_mean_normalized_ratio": 3.132,
+          "adjusted_p_value": 1.2287630637651891e-107,
+          "domain_mean_counts_per_10k": 2.69
+        },
+        {
+          "gene": "COX6C",
+          "log2_mean_normalized_ratio": 1.055,
+          "adjusted_p_value": 2.003425009774953e-81,
+          "domain_mean_counts_per_10k": 36.53
+        },
+        {
+          "gene": "KRT19",
+          "log2_mean_normalized_ratio": 1.66,
+          "adjusted_p_value": 2.4015402340144498e-70,
+          "domain_mean_counts_per_10k": 8.52
+        },
+        {
+          "gene": "HLA-B",
+          "log2_mean_normalized_ratio": 1.307,
+          "adjusted_p_value": 3.152771408151572e-32,
+          "domain_mean_counts_per_10k": 5.37
+        },
+        {
+          "gene": "IFI27",
+          "log2_mean_normalized_ratio": 1.394,
+          "adjusted_p_value": 1.6746004149065798e-31,
+          "domain_mean_counts_per_10k": 4.68
+        },
+        {
+          "gene": "H2AFJ",
+          "log2_mean_normalized_ratio": 1.408,
+          "adjusted_p_value": 2.9165463021496774e-18,
+          "domain_mean_counts_per_10k": 2.25
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 431,
+        "local_same_domain_fraction": 0.872,
+        "largest_spatial_component_fraction": 0.812,
+        "spatial_components": 6,
+        "median_spatial_xy": [
+          6404.0,
+          5257.0
+        ],
+        "median_umi": 2857.0,
+        "median_mito_fraction": 0.164
+      }
+    },
+    "4": {
+      "markers": [
+        {
+          "gene": "COX6C",
+          "log2_mean_normalized_ratio": 0.717,
+          "adjusted_p_value": 2.9016772904047436e-43,
+          "domain_mean_counts_per_10k": 30.27
+        },
+        {
+          "gene": "MALAT1",
+          "log2_mean_normalized_ratio": 0.973,
+          "adjusted_p_value": 6.667515777323332e-27,
+          "domain_mean_counts_per_10k": 23.83
+        },
+        {
+          "gene": "CAMK2N1",
+          "log2_mean_normalized_ratio": 0.527,
+          "adjusted_p_value": 2.807395470827709e-24,
+          "domain_mean_counts_per_10k": 19.64
+        },
+        {
+          "gene": "ENC1",
+          "log2_mean_normalized_ratio": 0.574,
+          "adjusted_p_value": 8.792677095649854e-22,
+          "domain_mean_counts_per_10k": 21.1
+        },
+        {
+          "gene": "CLU",
+          "log2_mean_normalized_ratio": 0.387,
+          "adjusted_p_value": 5.249365495238702e-20,
+          "domain_mean_counts_per_10k": 38.63
+        },
+        {
+          "gene": "PCSK1N",
+          "log2_mean_normalized_ratio": 0.444,
+          "adjusted_p_value": 6.4615748288892125e-12,
+          "domain_mean_counts_per_10k": 14.98
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 429,
+        "local_same_domain_fraction": 0.938,
+        "largest_spatial_component_fraction": 0.979,
+        "spatial_components": 2,
+        "median_spatial_xy": [
+          3530.0,
+          5074.0
+        ],
+        "median_umi": 2409.0,
+        "median_mito_fraction": 0.181
+      }
+    },
+    "5": {
+      "markers": [
+        {
+          "gene": "SCGB2A2",
+          "log2_mean_normalized_ratio": 1.397,
+          "adjusted_p_value": 2.604917061463909e-121,
+          "domain_mean_counts_per_10k": 29.99
+        },
+        {
+          "gene": "SCGB1D2",
+          "log2_mean_normalized_ratio": 1.28,
+          "adjusted_p_value": 5.381489997464568e-91,
+          "domain_mean_counts_per_10k": 8.22
+        },
+        {
+          "gene": "TFF1",
+          "log2_mean_normalized_ratio": 1.103,
+          "adjusted_p_value": 1.1182352108128558e-51,
+          "domain_mean_counts_per_10k": 2.21
+        },
+        {
+          "gene": "MGP",
+          "log2_mean_normalized_ratio": 0.704,
+          "adjusted_p_value": 8.234262386841907e-37,
+          "domain_mean_counts_per_10k": 4.17
+        },
+        {
+          "gene": "NEFL",
+          "log2_mean_normalized_ratio": 0.561,
+          "adjusted_p_value": 4.188280219126084e-35,
+          "domain_mean_counts_per_10k": 13.88
+        },
+        {
+          "gene": "CRISP3",
+          "log2_mean_normalized_ratio": 1.345,
+          "adjusted_p_value": 3.3160912846768715e-34,
+          "domain_mean_counts_per_10k": 0.18
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 475,
+        "local_same_domain_fraction": 0.912,
+        "largest_spatial_component_fraction": 0.899,
+        "spatial_components": 4,
+        "median_spatial_xy": [
+          9048.0,
+          8684.0
+        ],
+        "median_umi": 5918.0,
+        "median_mito_fraction": 0.162
+      }
+    },
+    "6": {
+      "markers": [
+        {
+          "gene": "KRT17",
+          "log2_mean_normalized_ratio": 1.78,
+          "adjusted_p_value": 1.113974016923921e-45,
+          "domain_mean_counts_per_10k": 2.17
+        },
+        {
+          "gene": "DIRAS2",
+          "log2_mean_normalized_ratio": 0.735,
+          "adjusted_p_value": 5.741308062981679e-18,
+          "domain_mean_counts_per_10k": 5.23
+        },
+        {
+          "gene": "SEMA3E",
+          "log2_mean_normalized_ratio": 1.45,
+          "adjusted_p_value": 1.0809092608208183e-16,
+          "domain_mean_counts_per_10k": 0.68
+        },
+        {
+          "gene": "B3GALT2",
+          "log2_mean_normalized_ratio": 1.308,
+          "adjusted_p_value": 1.1182541608318715e-16,
+          "domain_mean_counts_per_10k": 1.5
+        },
+        {
+          "gene": "TF",
+          "log2_mean_normalized_ratio": 0.32,
+          "adjusted_p_value": 1.4529652907113398e-16,
+          "domain_mean_counts_per_10k": 6.56
+        },
+        {
+          "gene": "SCGB2A2",
+          "log2_mean_normalized_ratio": 0.64,
+          "adjusted_p_value": 2.2030623190944124e-16,
+          "domain_mean_counts_per_10k": 20.29
+        }
+      ],
+      "spatial_metrics": {
+        "spots": 384,
+        "local_same_domain_fraction": 0.806,
+        "largest_spatial_component_fraction": 0.734,
+        "spatial_components": 9,
+        "median_spatial_xy": [
+          7848.5,
+          6752.5
+        ],
+        "median_umi": 3514.5,
+        "median_mito_fraction": 0.154
+      }
+    }
+  },
+  "model": "Unsupervised log1p(counts/spot \u00d7 10000) on genes detected in >=10 spots; exclude mitochondrial genes, 3000 HVGs, 25 PCs, expression 20-NN Leiden resolution 1.0 (seed 17), then spatial local denoising by 8 nearest coordinates and expression-centroid penalty (lambda 1; 12 synchronous iterations). Domain-wise exploratory Wilcoxon rank-sum, tie correction, BH adjustment, log2 ratio of mean normalized abundance with 0.1 pseudocount. No reference labels used.",
+  "software_used": {
+    "python": "3.10.22",
+    "scanpy": "1.11.5",
+    "anndata": "0.11.4",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.15.2",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.9",
+    "igraph": "1.0.0",
+    "leidenalg": "0.12.0"
+  },
+  "limitations": [
+    "One tissue section, no independent biological replicates or histology; anatomical layers are hypotheses, not validated labels.",
+    "Spatial spots mix cells and ambient RNA; edge/secretory/epithelial signals may reflect contamination, handling, or local biology and cannot be resolved here.",
+    "Clustering and spatial smoothing use the same expression data as marker tests; marker p-values are descriptive, not independent validation; spatial dependence further inflates nominal significance.",
+    "Domain identities, boundaries and number depend on preprocessing, Leiden resolution and smoothing. No hidden/reference labels or external anatomical labels were used.",
+    "All spots were retained despite variable UMI/mitochondrial fractions to avoid creating spatial holes; low-quality spots may affect assignments.",
+    "Effect size is log2 ratio of arithmetic mean library-normalized counts with pseudocount 0.1, not a bulk differential-expression estimate."
+  ],
+  "spatial_coherence": {
+    "six_nearest_neighbor_same_domain_fraction": 0.913,
+    "independent_label_frequency_expectation": 0.15
+  },
+  "quality_control": {
+    "median_umi": 4120.0,
+    "median_detected_genes": 2113.0,
+    "median_mito_fraction": 0.167,
+    "spots_over_20pct_mito": 740
+  }
+}

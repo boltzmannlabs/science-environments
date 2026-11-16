@@ -1,0 +1,106 @@
+{
+  "cell_types_analyzed": [
+    "all_cells",
+    "B cells",
+    "CD14+ Monocytes",
+    "CD4 T cells",
+    "CD8 T cells",
+    "Dendritic cells",
+    "FCGR3A+ Monocytes",
+    "NK cells"
+  ],
+  "n_significant_per_cell_type": {
+    "all_cells": 1100,
+    "B cells": 359,
+    "CD14+ Monocytes": 1446,
+    "CD4 T cells": 455,
+    "CD8 T cells": 150,
+    "Dendritic cells": 323,
+    "FCGR3A+ Monocytes": 634,
+    "NK cells": 248
+  },
+  "top_induced_genes": [
+    "CCL8",
+    "CXCL11",
+    "NUPR1",
+    "IFIT1",
+    "CXCL10",
+    "TGM1",
+    "RSAD2",
+    "HESX1",
+    "CCNA1",
+    "CH25H",
+    "IL27",
+    "HRASLS2",
+    "PDGFRL",
+    "IFIT2",
+    "IFIT3",
+    "ISG15",
+    "DEFB1",
+    "IFI27",
+    "CMPK2",
+    "SCIN"
+  ],
+  "top_repressed_genes": [
+    "HTRA1",
+    "C19orf59",
+    "CLEC5A",
+    "THBD",
+    "VCAN",
+    "CST6",
+    "CD93",
+    "MMP7",
+    "SDC2",
+    "COL7A1",
+    "KCNJ15",
+    "HBEGF",
+    "MMP9",
+    "IL1B",
+    "TPST1",
+    "CXCL5",
+    "RP11-65J3.1",
+    "OSM",
+    "FCAR",
+    "CXCL1"
+  ],
+  "data_used": {
+    "accessions": [
+      "GSM2560248 (control)",
+      "GSM2560249 (IFN-beta 6h)"
+    ],
+    "files": [
+      "GSE96583_batch2.genes.tsv.gz",
+      "GSE96583_batch2.total.tsne.df.tsv.gz",
+      "GSM2560248_2.1.mtx.gz",
+      "GSM2560248_barcodes.tsv.gz",
+      "GSM2560249_2.2.mtx.gz",
+      "GSM2560249_barcodes.tsv.gz"
+    ],
+    "labels_used": [
+      "ind (donor pairing)",
+      "cell (cell-type label)",
+      "multiplets (singlet filtering)",
+      "stim inspected; well accession used to define condition because of inconsistent stim labels"
+    ],
+    "metadata_stim_mismatches": {
+      "GSM2560248": 0,
+      "GSM2560249": 313
+    },
+    "inspected_not_used": [
+      "GSE96583_genes.txt.gz (Ensembl IDs only; batch2 gene table provides source symbols)"
+    ]
+  },
+  "model": "Raw UMI pseudobulk by donor x condition x cell type; PyDESeq2 negative-binomial GLM design ~ donor + condition, Wald stim versus ctrl; >=10 UMIs in >=4 pseudobulks, BH within cell type. At least 10 QC singlet cells per donor/condition for cell-specific strata and >=5 paired donors.",
+  "software_used": {
+    "python-dateutil": "4.0.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "scanpy": "1.12.5",
+    "anndata": "0.13.4",
+    "pydeseq2": "0.5.4",
+    "statsmodels": "0.15.0",
+    "python": "3.12.14"
+  }
+}

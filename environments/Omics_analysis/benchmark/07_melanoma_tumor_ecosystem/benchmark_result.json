@@ -1,0 +1,371 @@
+{
+  "task_id": "melanoma_tumor_ecosystem",
+  "reference": {
+    "paper": "Tirosh et al. 2016, Science 352:189-196",
+    "dataset": "GSE72056",
+    "tables": "Table S2 (cells per type per tumor), S3 (cell-type-specific genes), S7 (MITF program), S8 (AXL program)"
+  },
+  "paper_reported": {
+    "cells": 4645,
+    "patients": 19,
+    "cell_counts_by_category": {
+      "T-cells": 2068,
+      "B-cells": 515,
+      "Mcrophages": 126,
+      "Endothelial cells": 65,
+      "CAFs": 61,
+      "NK cells": 52,
+      "Melanoma": 1246,
+      "unclassified": 511
+    },
+    "cell_type_specific_gene_list_sizes": {
+      "T-cells": 38,
+      "B-cells": 31,
+      "Macrophages": 92,
+      "Endothelial cells": 95,
+      "CAFs": 88,
+      "melanoma": 47
+    },
+    "mitf_program_genes": 100,
+    "axl_program_genes": 100,
+    "claims": [
+      "Malignant cells cluster by tumor; non-malignant cells cluster by cell type.",
+      "Malignant cells vary in cell cycle (13.5% cycling on average across tumors), and in MITF-high and AXL-high programs."
+    ]
+  },
+  "agent_reported": {
+    "cells_input": 4645,
+    "cells_retained": 4645,
+    "cell_types_found": {
+      "T cell": 2043,
+      "malignant": 1338,
+      "B cell": 650,
+      "macrophage": 197,
+      "NK cell": 113,
+      "unresolved": 89,
+      "fibroblast": 81,
+      "endothelial cell": 73,
+      "plasma cell": 41,
+      "dendritic cell": 20
+    },
+    "n_malignant": 1338,
+    "n_nonmalignant": 3218,
+    "data_used": "GSE72056_melanoma_single_cell_revised_v2.txt.gz; log2(TPM/10 + 1), inferred from inverse-sum \u2248100,000; no count normalization",
+    "model": "QC, Seurat HVG/PCA/Leiden/UMAP, lineage-marker gating and tumor-specific islands; Wilcoxon markers; within-tumor centered and scaled 10-component FastICA, six biologically interpretable signed program directions",
+    "programs": {
+      "stress_immediate_early": 100,
+      "hypoxia_glycolysis": 100,
+      "invasive_matrix": 100,
+      "interferon_antigen_presentation": 100,
+      "melanocytic_differentiation": 100,
+      "cell_cycle": 100
+    }
+  },
+  "metrics": {
+    "cell_counts": {
+      "per_cell_type": {
+        "T cell": {
+          "paper_category": "T-cells",
+          "paper_total": 2068,
+          "agent_total": 2043,
+          "pearson_across_19_tumors": 0.995,
+          "spearman_across_19_tumors": 0.993
+        },
+        "B cell": {
+          "paper_category": "B-cells",
+          "paper_total": 515,
+          "agent_total": 650,
+          "pearson_across_19_tumors": 0.953,
+          "spearman_across_19_tumors": 0.98
+        },
+        "macrophage": {
+          "paper_category": "Mcrophages",
+          "paper_total": 126,
+          "agent_total": 197,
+          "pearson_across_19_tumors": 0.987,
+          "spearman_across_19_tumors": 0.836
+        },
+        "endothelial cell": {
+          "paper_category": "Endothelial cells",
+          "paper_total": 65,
+          "agent_total": 73,
+          "pearson_across_19_tumors": 0.989,
+          "spearman_across_19_tumors": 1.0
+        },
+        "fibroblast": {
+          "paper_category": "CAFs",
+          "paper_total": 61,
+          "agent_total": 81,
+          "pearson_across_19_tumors": 0.978,
+          "spearman_across_19_tumors": 0.962
+        },
+        "NK cell": {
+          "paper_category": "NK cells",
+          "paper_total": 52,
+          "agent_total": 113,
+          "pearson_across_19_tumors": 0.832,
+          "spearman_across_19_tumors": 0.757
+        },
+        "malignant": {
+          "paper_category": "Melanoma",
+          "paper_total": 1246,
+          "agent_total": 1338,
+          "pearson_across_19_tumors": 0.999,
+          "spearman_across_19_tumors": 0.993
+        },
+        "unresolved": {
+          "paper_category": "unclassified",
+          "paper_total": 511,
+          "agent_total": 89,
+          "pearson_across_19_tumors": 0.255,
+          "spearman_across_19_tumors": 0.441
+        }
+      },
+      "category_overlap": {
+        "cells_in_both_tables": 4644,
+        "sum_over_tumors_and_categories_of_min_of_two_counts": 4134,
+        "share_of_cells": 0.8902,
+        "agent_only_cell_types": {
+          "plasma cell": 41,
+          "dendritic cell": 20
+        }
+      },
+      "malignant_per_tumor": {
+        "53": {
+          "paper_melanoma": 16,
+          "agent_malignant": 17
+        },
+        "58": {
+          "paper_melanoma": 0,
+          "agent_malignant": 0
+        },
+        "59": {
+          "paper_melanoma": 54,
+          "agent_malignant": 61
+        },
+        "60": {
+          "paper_melanoma": 9,
+          "agent_malignant": 9
+        },
+        "65": {
+          "paper_melanoma": 4,
+          "agent_malignant": 7
+        },
+        "67": {
+          "paper_melanoma": 0,
+          "agent_malignant": 0
+        },
+        "71": {
+          "paper_melanoma": 54,
+          "agent_malignant": 61
+        },
+        "72": {
+          "paper_melanoma": 0,
+          "agent_malignant": 0
+        },
+        "74": {
+          "paper_melanoma": 0,
+          "agent_malignant": 0
+        },
+        "75": {
+          "paper_melanoma": 0,
+          "agent_malignant": 0
+        },
+        "78": {
+          "paper_melanoma": 120,
+          "agent_malignant": 127
+        },
+        "79": {
+          "paper_melanoma": 468,
+          "agent_malignant": 494
+        },
+        "80": {
+          "paper_melanoma": 125,
+          "agent_malignant": 126
+        },
+        "81": {
+          "paper_melanoma": 133,
+          "agent_malignant": 151
+        },
+        "82": {
+          "paper_melanoma": 32,
+          "agent_malignant": 33
+        },
+        "84": {
+          "paper_melanoma": 11,
+          "agent_malignant": 13
+        },
+        "88": {
+          "paper_melanoma": 112,
+          "agent_malignant": 131
+        },
+        "89": {
+          "paper_melanoma": 98,
+          "agent_malignant": 98
+        },
+        "94": {
+          "paper_melanoma": 10,
+          "agent_malignant": 10
+        }
+      }
+    },
+    "markers_vs_table_s3": {
+      "per_cell_type": {
+        "T cell": {
+          "paper_list": "T-cells",
+          "paper_list_size": 38,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 11,
+          "agent_top50_in_paper_list": 22,
+          "paper_genes_found_in_agent_list": 24,
+          "paper_genes_found_share": 0.632
+        },
+        "B cell": {
+          "paper_list": "B-cells",
+          "paper_list_size": 31,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 13,
+          "agent_top50_in_paper_list": 20,
+          "paper_genes_found_in_agent_list": 24,
+          "paper_genes_found_share": 0.774
+        },
+        "macrophage": {
+          "paper_list": "Macrophages",
+          "paper_list_size": 92,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 16,
+          "agent_top50_in_paper_list": 35,
+          "paper_genes_found_in_agent_list": 39,
+          "paper_genes_found_share": 0.424
+        },
+        "endothelial cell": {
+          "paper_list": "Endothelial cells",
+          "paper_list_size": 95,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 16,
+          "agent_top50_in_paper_list": 28,
+          "paper_genes_found_in_agent_list": 30,
+          "paper_genes_found_share": 0.316
+        },
+        "fibroblast": {
+          "paper_list": "CAFs",
+          "paper_list_size": 88,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 15,
+          "agent_top50_in_paper_list": 34,
+          "paper_genes_found_in_agent_list": 37,
+          "paper_genes_found_share": 0.42
+        },
+        "malignant": {
+          "paper_list": "melanoma",
+          "paper_list_size": 47,
+          "agent_markers_listed": 60,
+          "agent_top20_in_paper_list": 12,
+          "agent_top50_in_paper_list": 15,
+          "paper_genes_found_in_agent_list": 18,
+          "paper_genes_found_share": 0.383
+        }
+      },
+      "agent_cell_types_without_a_paper_list": [
+        "NK cell",
+        "dendritic cell",
+        "plasma cell",
+        "unresolved"
+      ]
+    },
+    "programs_vs_tables_s7_s8": {
+      "per_agent_program": {
+        "stress_immediate_early": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 4,
+          "axl_genes_in_program": 2
+        },
+        "hypoxia_glycolysis": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 2,
+          "axl_genes_in_program": 14
+        },
+        "invasive_matrix": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 0,
+          "axl_genes_in_program": 17
+        },
+        "interferon_antigen_presentation": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 1,
+          "axl_genes_in_program": 4
+        },
+        "melanocytic_differentiation": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 28,
+          "axl_genes_in_program": 3
+        },
+        "cell_cycle": {
+          "genes_listed": 100,
+          "mitf_genes_in_program": 0,
+          "axl_genes_in_program": 2
+        }
+      },
+      "program_with_most_mitf_genes": "melanocytic_differentiation",
+      "program_with_most_axl_genes": "invasive_matrix"
+    },
+    "agent_file_consistency": {
+      "cell_ids_unique": true,
+      "rows_equal_cells_retained": true,
+      "cells_input_equals_retained": true,
+      "cell_types_found_equals_annotations": {
+        "T cell": true,
+        "malignant": true,
+        "B cell": true,
+        "macrophage": true,
+        "NK cell": true,
+        "unresolved": true,
+        "fibroblast": true,
+        "endothelial cell": true,
+        "plasma cell": true,
+        "dendritic cell": true
+      },
+      "n_malignant_matches": true,
+      "n_nonmalignant_matches": true,
+      "counts_csv_sum_equals_annotations": true,
+      "counts_csv_matches_annotations": true,
+      "unresolved_cells": 89
+    }
+  },
+  "notes": [
+    "The comparison is at the level of counts, gene lists and programs. No per-cell reference labels were used.",
+    "The paper's categories include 'unclassified' (511 cells). The agent's 'unresolved' (89) is not the same thing, and the agent split out plasma cells and dendritic cells, which the paper's table does not have.",
+    "category_overlap is an upper bound on cell-by-cell agreement: it counts cells that could have the same category in the same tumor, not cells shown to have it.",
+    "Table S3 lists are short and were selected by the paper's own method. The agent's lists are its top 60 Wilcoxon markers, so the overlap shares depend on both list lengths.",
+    "Table S2 states a total of 4,645 cells, but its category counts sum to 4,644 (see reference_table_check). The comparison uses the category counts.",
+    "Table S5 (cell cycle genes) was not available, so the agent's cell_cycle program is not compared. The paper reports cell cycle as a program."
+  ],
+  "reference_table_check": {
+    "table_s2": {
+      "total_stated_in_table": 4645,
+      "sum_of_category_counts": 4644,
+      "all_tumors_row_category_sum": 4644
+    }
+  },
+  "provenance": {
+    "inputs_sha256": {
+      "cell_annotations.csv": "c95d7c22d131dfe6216bb14c27395f5d071767a4ca99357bce55be4b389cd518",
+      "cell_type_counts.csv": "a6e50730e8f354b5a708d61f7081ebddfd04856381cafcbf67573bfe571d85de",
+      "cell_type_markers.csv": "924719be81cc4f02d332b8a4b61410fbd34229e719dc65857ab15e628cfdb325",
+      "malignant_programs.csv": "4328189af847b1e89fea7bd1dc07886b4630f83ddd3eb6f073274e20aa894ce4",
+      "summary.json": "796772ecbbf5e95f078d20e04aff1cefd763ef5f18761a1443066c80a7f29128",
+      "table_s2.xlsx": "1162e40e16a34841ddd420653acf53ea048e95ac4e1403570843cdf42c105f23",
+      "table_s3.xlsx": "857012a244af83c1adda6a5a402815359bccd45c5d0192125bb6873126a59903",
+      "table_s7.xlsx": "54d719ab538a74843388ecfea94b235edad03c41f5127f52493200d403b64c97",
+      "table_s8.xlsx": "e05ea80b11f100ecdb93fef3f3a4237a1f2ed6faac8d63288976f57324f75f9e"
+    },
+    "script_sha256": "a06f76d77380dc646ad0084614b00d99297a417d6a587d4833ef93d1c17a7dcc",
+    "scorer": {
+      "python": "3.13.18",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "openpyxl": "3.1.5"
+    }
+  }
+}

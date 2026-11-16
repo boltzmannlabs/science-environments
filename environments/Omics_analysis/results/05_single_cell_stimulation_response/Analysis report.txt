@@ -1,0 +1,34 @@
+GSE96583: 6-hour IFN-beta response in pooled human PBMCs
+Source: NCBI GEO GSE96583 series SOFT, GSM2560248 and GSM2560249 batch-2 supplementary files. GEO series SOFT: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE96nnn/GSE96583/soft/GSE96583_family.soft.gz
+
+Input: 29065 cells, 35635 Ensembl-indexed features, 32938 unique source gene symbols. Two batch-2 wells; batch-1 experiments A/B/C were excluded because they are not the paired stimulation experiment.
+Per-cell metadata: ind (8 donor IDs), cell (provided cell type), multiplets (singlet/doublet/ambs) and stim (inspected). GEO accession/well identifies condition: GSM2560248 control; GSM2560249 stimulated. Metadata stim disagrees with well for {'GSM2560248': 0, 'GSM2560249': 313} cells; the accession-based condition is used throughout (especially the 313 stim-well cells labeled ctrl in metadata). These cells are retained if otherwise passing QC; metadata inconsistency is a limitation.
+
+QC: retained singlets with >=200 detected genes and <=20% mitochondrial UMIs; ambiguous calls and doublets removed. This does not detect within-donor or uncaught doublets. No upper library-size filter; high-quality activated immune cells can have many UMIs. Source MT- features are present but contain zero mapped counts in these matrices, so mitochondrial QC is uninformative. Missing cell labels excluded only from cell-type pseudobulks. No normalization or log transform applied to raw count matrices before model fitting; PyDESeq2 estimates size factors.
+
+Per-condition QC counts:
+condition  multiplets  pass_qc
+ctrl       ambs        False        706
+           doublet     False       1598
+           singlet     False         54
+                       True       12261
+stim       ambs        False        530
+           doublet     False       1631
+           singlet     False         63
+                       True       12222
+
+Model: sum raw UMI counts within each donor/condition/cell-type and across all cells for an overall test. Only donors with >=10 passing cells in each condition enter each cell-type test; >=5 paired donors needed. Test gene symbols with >=10 counts in >=4 pseudobulk samples; duplicated gene symbols summed over source Ensembl features. PyDESeq2 negative-binomial GLM with donor fixed effects and condition (~ donor + condition), Wald stim-versus-control contrast. Benjamini-Hochberg within each comparison, independent filtering and Cook filtering off; no LFC shrinkage. Gene universe differs across cell types. Missing/untestable p-values remain blank in CSV. Donors, not cells, are the replication unit.
+
+Donor pairs per comparison: {'all_cells': 8, 'B cells': 8, 'CD14+ Monocytes': 8, 'CD4 T cells': 8, 'CD8 T cells': 8, 'Dendritic cells': 6, 'FCGR3A+ Monocytes': 8, 'NK cells': 8}
+Tested genes per comparison: {'B cells': 3306, 'CD14+ Monocytes': 4915, 'CD4 T cells': 6515, 'CD8 T cells': 2146, 'Dendritic cells': 1490, 'FCGR3A+ Monocytes': 2858, 'NK cells': 2387, 'all_cells': 9222}
+Significant genes (FDR <0.05 AND abs(log2FC)>1): {'all_cells': 1100, 'B cells': 359, 'CD14+ Monocytes': 1446, 'CD4 T cells': 455, 'CD8 T cells': 150, 'Dendritic cells': 323, 'FCGR3A+ Monocytes': 634, 'NK cells': 248}
+All-cells strongest induced: CCL8, CXCL11, NUPR1, IFIT1, CXCL10, TGM1, RSAD2, HESX1, CCNA1, CH25H, IL27, HRASLS2, PDGFRL, IFIT2, IFIT3, ISG15, DEFB1, IFI27, CMPK2, SCIN
+All-cells strongest repressed: HTRA1, C19orf59, CLEC5A, THBD, VCAN, CST6, CD93, MMP7, SDC2, COL7A1, KCNJ15, HBEGF, MMP9, IL1B, TPST1, CXCL5, RP11-65J3.1, OSM, FCAR, CXCL1
+
+Cell-type findings (FDR <0.05 and abs(log2FC)>1): IFIT1/IFIT3/RSAD2 are induced across tested lymphoid and myeloid types. CD14+ monocytes induce CCL8/CXCL10/CXCL11 and repress CLEC5A/VCAN/MMP9; FCGR3A+ monocytes also induce CCL8 and repress CLEC5A/VCAN. B cells induce IFIT1 and TNFSF10 while repressing SPI1. CD4 and CD8 T cells and NK cells induce IFIT1/IFIT3; CD8 T cells repress FGFBP2. Dendritic cells induce CXCL10 and repress IL1R2, but use only 6 qualifying pairs. CD14+ monocytes have more passing genes than other types in this analysis, whereas CD8 T cells have fewer; different power and depth may contribute. Very large LFC for sparse chemokines can be unstable, and apparent chemokine transcription in lymphocytes could reflect ambient RNA or misclassified cells.
+Interpretation: significant positive/negative contrasts identify induced/repressed transcript abundance after six hours, conditional on donor and QC selection. Cell-type-specific signals and counts differ, but comparing significance counts is not a formal test of interaction and is affected by expression depth and abundance. A stimulated-vs-control contrast within each type cannot establish direct cytokine signaling, and the all-cells contrast may reflect shifts in cell composition.
+Model diagnostic: PyDESeq2 parametric dispersion-trend fitting warned of nonconvergence for CD8 T cells and FCGR3A+ monocytes and automatically used a mean-based dispersion trend; interpret their FDRs with additional caution. Megakaryocytes were not tested because only 4 paired donors had >=10 QC cells in both conditions. No explicit donor-by-condition interaction was tested.
+Limitations: each condition is one pooled well/library, confounded with technical effects; donor pairing helps biological variation but does not replicate treatment wells. Provided cell labels may be imperfect or treatment-sensitive. Pseudobulk sample depth and differential cell recovery may alter estimates. Sparse types are underpowered; untested types/genes should not be interpreted as nonresponsive. MT QC is ineffective for this dataset, and reported doublet calls may be imperfect. Effects are conditional on the 8 included donors and 6-hour IFN-beta treatment; no kinetic or independent-cohort inference.
+
+Software versions: {'python-dateutil': '4.0.0', 'numpy': '2.5.4', 'pandas': '3.1.1', 'scipy': '1.18.1', 'matplotlib': '3.11.2', 'scanpy': '1.12.5', 'anndata': '0.13.4', 'pydeseq2': '0.5.4', 'statsmodels': '0.15.0', 'python': '3.12.14'}
+Script: /home/boltzmann6/.sci/profiles/scrna03/workspace/single_cell_stimulation_response/analyze.py

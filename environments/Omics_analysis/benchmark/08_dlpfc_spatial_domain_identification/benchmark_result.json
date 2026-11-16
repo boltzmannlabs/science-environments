@@ -1,0 +1,497 @@
+{
+  "task_id": "dlpfc_spatial_domain_identification",
+  "reference": {
+    "labels_file": "DLPFC_151673_hidden_labels.csv (columns spot_id, truth)",
+    "source": "Maynard et al. 2021, Nature Neuroscience, doi 10.1038/s41593-020-00787-0",
+    "sample": "151673",
+    "labels": [
+      "Layer_1",
+      "Layer_2",
+      "Layer_3",
+      "Layer_4",
+      "Layer_5",
+      "Layer_6",
+      "WM"
+    ],
+    "reference_label_counts": {
+      "Layer_3": 989,
+      "Layer_6": 692,
+      "Layer_5": 673,
+      "WM": 513,
+      "Layer_1": 273,
+      "Layer_2": 253,
+      "Layer_4": 218
+    },
+    "spots_without_label": 28
+  },
+  "paper_reported": {
+    "design": "12 Visium samples from 3 neurotypical adult donors (two pairs of adjacent sections per donor)",
+    "spots_total": 47681,
+    "spots_assigned_to": "six cortical layers or white matter (manual, 'supervised' annotation)",
+    "orientation_markers": {
+      "SNAP25": "gray matter / neurons",
+      "MOBP": "white matter / oligodendrocytes",
+      "PCP4": "layer 5"
+    },
+    "evaluation_used_in_paper": "adjusted Rand index against the manual layer annotation as gold standard (values are in Figure 7F, not extracted here)"
+  },
+  "agent_reported": {
+    "spots_input": 3639,
+    "spots_analyzed": 3639,
+    "n_domains": 7,
+    "domain_interpretations": {
+      "0": "Neuronal-rich cortical territory, distinguished by neuronal structural and synaptic transcripts (NEFL, SNAP25, TUBA1B); precise cortical layer uncertain.",
+      "1": "Upper/supragranular-like cortical territory, suggested by CUX2, CALB2, HPCAL1 and CAMK2N1; layer assignment remains a hypothesis without histology.",
+      "2": "Myelin-rich white-matter-like compartment, supported by coordinated MOBP, MAG, MBP, PLP1, CNP, and MOG enrichment.",
+      "3": "Mixed transcriptomic patch with epithelial/immune-response-like signals (KRT19, HLA-B, IFI27) and neuronal signals; likely noncanonical tissue/technical signal, not confidently an anatomical layer.",
+      "4": "Peripheral/edge-like territory with glial/vascular-associated candidates (CLU, SLC1A2, DES, ACTA2) and comparatively low UMI; susceptible to quality or dissection-edge effects.",
+      "5": "Neuronal-rich territory with unusual secretory/epithelial-like transcripts (SCGB2A2, TFF1, MGP); a distinct expression domain, but anatomical identity uncertain and possible contamination.",
+      "6": "Spatially less cohesive mixed/intermediate territory with neuronal (DIRAS2, SLC17A7, SEMA3E) and unusual epithelial-associated (KRT17, SCGB1D2) signals; not confidently an anatomical layer or gray-white interface."
+    },
+    "domain_markers": {
+      "0": [
+        "NEFL",
+        "TUBA1B",
+        "SNAP25",
+        "TMSB10",
+        "UCHL1",
+        "STMN2",
+        "PCP4",
+        "NEFM",
+        "SNCG",
+        "NDUFA4",
+        "TUBB2A",
+        "MDH1"
+      ],
+      "1": [
+        "HPCAL1",
+        "ENC1",
+        "CAMK2N1",
+        "HOPX",
+        "PENK",
+        "CARTPT",
+        "CUX2",
+        "SAA1",
+        "SERPINE2",
+        "CALB2",
+        "CALB1",
+        "RCN1"
+      ],
+      "2": [
+        "MOBP",
+        "MBP",
+        "MAG",
+        "PLP1",
+        "CNP",
+        "CRYAB",
+        "TF",
+        "PPP1R14A",
+        "MOG",
+        "ERMN",
+        "GFAP",
+        "CLDN11"
+      ],
+      "3": [
+        "CPB1",
+        "COX6C",
+        "KRT19",
+        "HLA-B",
+        "IFI27",
+        "H2AFJ",
+        "S100P",
+        "HLA-A",
+        "CALML5",
+        "SYT1",
+        "ISG15",
+        "MUC1"
+      ],
+      "4": [
+        "COX6C",
+        "MALAT1",
+        "CAMK2N1",
+        "ENC1",
+        "CLU",
+        "PCSK1N",
+        "SLC1A2",
+        "DES",
+        "MT3",
+        "CST3",
+        "MCCD1",
+        "ACTA2"
+      ],
+      "5": [
+        "SCGB2A2",
+        "SCGB1D2",
+        "TFF1",
+        "MGP",
+        "NEFL",
+        "CRISP3",
+        "TUBA1B",
+        "NEFH",
+        "TMSB10",
+        "SNCG",
+        "NDUFA4",
+        "MUC1"
+      ],
+      "6": [
+        "KRT17",
+        "DIRAS2",
+        "SEMA3E",
+        "B3GALT2",
+        "TF",
+        "SCGB2A2",
+        "CST3",
+        "SCGB1D2",
+        "CPE",
+        "SLC35F1",
+        "THEMIS",
+        "SLC17A7"
+      ]
+    },
+    "model": "Unsupervised log1p(counts/spot \u00d7 10000) on genes detected in >=10 spots; exclude mitochondrial genes, 3000 HVGs, 25 PCs, expression 20-NN Leiden resolution 1.0 (seed 17), then spatial local denoising by 8 nearest coordinates and expression-centroid penalty (lambda 1; 12 synchronous iterations). Domain-wise exploratory Wilcoxon rank-sum, tie correction, BH adjustment, log2 ratio of mean normalized abundance with 0.1 pseudocount. No reference labels used.",
+    "reported_coherence": {
+      "six_nearest_neighbor_same_domain_fraction": 0.913,
+      "independent_label_frequency_expectation": 0.15
+    },
+    "limitations": [
+      "One tissue section, no independent biological replicates or histology; anatomical layers are hypotheses, not validated labels.",
+      "Spatial spots mix cells and ambient RNA; edge/secretory/epithelial signals may reflect contamination, handling, or local biology and cannot be resolved here.",
+      "Clustering and spatial smoothing use the same expression data as marker tests; marker p-values are descriptive, not independent validation; spatial dependence further inflates nominal significance.",
+      "Domain identities, boundaries and number depend on preprocessing, Leiden resolution and smoothing. No hidden/reference labels or external anatomical labels were used.",
+      "All spots were retained despite variable UMI/mitochondrial fractions to avoid creating spatial holes; low-quality spots may affect assignments.",
+      "Effect size is log2 ratio of arithmetic mean library-normalized counts with pseudocount 0.1, not a bulk differential-expression estimate."
+    ]
+  },
+  "metrics": {
+    "identifiers": {
+      "agent_rows": 3639,
+      "agent_ids_unique": true,
+      "reference_rows": 3639,
+      "input_spots": 3639,
+      "agent_ids_equal_input_ids": true,
+      "agent_ids_equal_reference_ids": true
+    },
+    "agreement": {
+      "spots_compared": 3611,
+      "spots_without_reference_label": 28,
+      "adjusted_rand_index": 0.3212,
+      "normalized_mutual_information": 0.4791,
+      "homogeneity": 0.4932,
+      "completeness": 0.4657
+    },
+    "per_agent_domain": {
+      "0": {
+        "n_labelled_spots": 756,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.396,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.393,
+          "Layer_4": 0.138,
+          "Layer_5": 0.396,
+          "Layer_6": 0.074,
+          "WM": 0.0
+        }
+      },
+      "1": {
+        "n_labelled_spots": 587,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.641,
+        "share_in_each_label": {
+          "Layer_1": 0.053,
+          "Layer_2": 0.307,
+          "Layer_3": 0.641,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "2": {
+        "n_labelled_spots": 577,
+        "dominant_reference_label": "WM",
+        "dominant_share": 0.882,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.0,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.118,
+          "WM": 0.882
+        }
+      },
+      "3": {
+        "n_labelled_spots": 429,
+        "dominant_reference_label": "Layer_6",
+        "dominant_share": 0.452,
+        "share_in_each_label": {
+          "Layer_1": 0.077,
+          "Layer_2": 0.012,
+          "Layer_3": 0.033,
+          "Layer_4": 0.089,
+          "Layer_5": 0.338,
+          "Layer_6": 0.452,
+          "WM": 0.0
+        }
+      },
+      "4": {
+        "n_labelled_spots": 429,
+        "dominant_reference_label": "Layer_1",
+        "dominant_share": 0.483,
+        "share_in_each_label": {
+          "Layer_1": 0.483,
+          "Layer_2": 0.159,
+          "Layer_3": 0.359,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "5": {
+        "n_labelled_spots": 449,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.408,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.33,
+          "Layer_4": 0.169,
+          "Layer_5": 0.408,
+          "Layer_6": 0.094,
+          "WM": 0.0
+        }
+      },
+      "6": {
+        "n_labelled_spots": 384,
+        "dominant_reference_label": "Layer_6",
+        "dominant_share": 0.865,
+        "share_in_each_label": {
+          "Layer_1": 0.005,
+          "Layer_2": 0.0,
+          "Layer_3": 0.0,
+          "Layer_4": 0.0,
+          "Layer_5": 0.12,
+          "Layer_6": 0.865,
+          "WM": 0.01
+        }
+      }
+    },
+    "per_reference_label": {
+      "Layer_1": {
+        "n_spots": 273,
+        "best_agent_domain": 4,
+        "share_in_best_domain": 0.758
+      },
+      "Layer_2": {
+        "n_spots": 253,
+        "best_agent_domain": 1,
+        "share_in_best_domain": 0.711
+      },
+      "Layer_3": {
+        "n_spots": 989,
+        "best_agent_domain": 1,
+        "share_in_best_domain": 0.38
+      },
+      "Layer_4": {
+        "n_spots": 218,
+        "best_agent_domain": 0,
+        "share_in_best_domain": 0.477
+      },
+      "Layer_5": {
+        "n_spots": 673,
+        "best_agent_domain": 0,
+        "share_in_best_domain": 0.444
+      },
+      "Layer_6": {
+        "n_spots": 692,
+        "best_agent_domain": 6,
+        "share_in_best_domain": 0.48
+      },
+      "WM": {
+        "n_spots": 513,
+        "best_agent_domain": 2,
+        "share_in_best_domain": 0.992
+      }
+    },
+    "contingency_agent_domain_by_reference_label": {
+      "0": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 297,
+        "Layer_4": 104,
+        "Layer_5": 299,
+        "Layer_6": 56,
+        "WM": 0
+      },
+      "1": {
+        "Layer_1": 31,
+        "Layer_2": 180,
+        "Layer_3": 376,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "2": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 0,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 68,
+        "WM": 509
+      },
+      "3": {
+        "Layer_1": 33,
+        "Layer_2": 5,
+        "Layer_3": 14,
+        "Layer_4": 38,
+        "Layer_5": 145,
+        "Layer_6": 194,
+        "WM": 0
+      },
+      "4": {
+        "Layer_1": 207,
+        "Layer_2": 68,
+        "Layer_3": 154,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "5": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 148,
+        "Layer_4": 76,
+        "Layer_5": 183,
+        "Layer_6": 42,
+        "WM": 0
+      },
+      "6": {
+        "Layer_1": 2,
+        "Layer_2": 0,
+        "Layer_3": 0,
+        "Layer_4": 0,
+        "Layer_5": 46,
+        "Layer_6": 332,
+        "WM": 4
+      }
+    },
+    "spatial_coherence": {
+      "agent_6nn_same_domain": 0.9134,
+      "reference_6nn_same_label": 0.9046
+    },
+    "interpretation_claims_that_name_a_layer": {
+      "2": {
+        "agent_claim": "white-matter-like",
+        "reference_labels_counted": [
+          "WM"
+        ],
+        "share_of_labelled_spots_in_those_labels": 0.882
+      },
+      "1": {
+        "agent_claim": "upper/supragranular-like",
+        "reference_labels_counted": [
+          "Layer_1",
+          "Layer_2",
+          "Layer_3"
+        ],
+        "share_of_labelled_spots_in_those_labels": 1.0
+      }
+    },
+    "paper_named_markers_in_agent_marker_tables": {
+      "SNAP25": [
+        {
+          "domain": 0,
+          "rank": 3,
+          "adjusted_p_value": 7.619632595727258e-78
+        },
+        {
+          "domain": 5,
+          "rank": 16,
+          "adjusted_p_value": 3.8383442840883325e-21
+        }
+      ],
+      "MOBP": [
+        {
+          "domain": 2,
+          "rank": 1,
+          "adjusted_p_value": 0.0
+        }
+      ],
+      "PCP4": [
+        {
+          "domain": 0,
+          "rank": 7,
+          "adjusted_p_value": 2.2084534729087924e-50
+        },
+        {
+          "domain": 5,
+          "rank": 19,
+          "adjusted_p_value": 1.6767559526288683e-20
+        }
+      ]
+    },
+    "agent_file_consistency": {
+      "n_domains_in_answers_equals_csv": true,
+      "spots_analyzed_equals_csv_rows": true,
+      "domain_sizes_in_answers_equal_csv": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true
+      },
+      "reported_6nn_coherence": 0.913,
+      "recomputed_6nn_coherence": 0.9134,
+      "marker_rows_per_domain": {
+        "0": 150,
+        "1": 150,
+        "2": 150,
+        "3": 126,
+        "4": 65,
+        "5": 150,
+        "6": 103
+      },
+      "marker_columns": [
+        "domain_id",
+        "gene",
+        "effect_size",
+        "p_value",
+        "adjusted_p_value",
+        "rank"
+      ]
+    }
+  },
+  "notes": [
+    "The reference is a manual annotation of 7 labels. The agent's number of domains was not fixed, so ARI and NMI are used because they do not need matching labels.",
+    "28 spots have no reference label and are left out of the agreement metrics. They are counted in the coherence of the agent's domains.",
+    "Domains the agent called 'uncertain' are not scored as errors by these metrics. per_agent_domain shows which reference labels they contain.",
+    "The reference is itself a manual annotation, not an independent truth."
+  ],
+  "provenance": {
+    "inputs_sha256": {
+      "spatial_domains.csv": "50697c07d5216f9212f7fb76a0cfbdab3e0c9f4eac218c805aac4218d7988eda",
+      "domain_markers.csv": "a4ceda769d9c9508c02448038e1a738090acae93787d055c3d20c14c4a3fc7cf",
+      "answers.json": "f2321aad0b9dbdcf19425f8f8149173297763e5ea7fea49304095f85c4943adb",
+      "analysis_report.txt": "8a15cb3216e85251f0d847a801585bc7c79b6fde5338d0b05cf5dd3eebe00888",
+      "hidden_labels.csv": "390d122af2b498ec269d0b91e992c94dfedc3a19694c3ad700335e999a7d329b",
+      "agent_input.h5ad": "baebbb9d829454a1db6bf29e09123bed53adf05a866040d5f5b71a4d6f052b2c"
+    },
+    "script_sha256": "d16f9ebb6f5b781a81dd9d15e7396bd045005507268f4839caed8a5b93ac4beb",
+    "scorer": {
+      "python": "3.13.18",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "anndata": "0.13.4"
+    }
+  }
+}

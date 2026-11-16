@@ -1,0 +1,44 @@
+GSE72857 mouse bone marrow progenitor single-cell UMI analysis
+Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72857/suppl/
+Raw supplementary files: GSE72857_umitab.txt.gz (genes x wells) and GSE72857_experimental_design.txt.gz (one row/well). SHA-256 values recorded at download: counts 6f45b72b935493181f0f9fdb7343181a5eeca63d0d39ba2a2a8439ac34f08e74; design b547a49285a59476e194d77c9a34a9747628ee465736227d840a6aac5f3a5f68. No published clustering or tutorial results used.
+
+Dataset and cohort: 10,368 input wells and 27,297 gene rows; identifiers matched one-to-one in the matrix and design. Four unperturbed sorted/unsorted myeloid sample strata had 5,760 wells: unsorted myeloid 3,072; CMP CD41 384; CMP Flt3+ Csf1r+ 1,152; CMP Irf8-GFP+ MHCII+ 1,152. Excluded before QC: Cebpa KO 2,304, Cebpa control 1,152, Cebpe KO 768, Cebpe control 384. Controls excluded because their mice, genetic/sorting experiments and batches differ from the unperturbed cohort, not because of cell quality. Thus cells_input counts all wells whereas cells_retained counts the selected cohort after QC, not a pure all-sample QC survival rate.
+
+Quality control: require Number_of_cells == 1; >=350 detected genes; >=500 and <=14,000 UMIs/cell. Thresholds follow observed distributions; 5,307/5,760 cohort wells retained: unsorted 2,723, CD41 336, Flt3+Csf1r+ 1,132, Irf8-GFP+MHCII+ 1,116. Drop genes expressed in <5 retained cells, leaving 12,998. Only mt-Nd4 starts with mt- in this historical count table: mitochondrial percentage is therefore not a reliable QC metric, so no threshold was imposed. Upper UMI limit mitigates high-count multiplets, but doublets were not comprehensively removed. Full-well QC metadata are in qc_all_cells.csv; raw count matrices were preserved in focus_unfiltered.h5ad and clustered.h5ad. Counts include semicolon-separated gene aliases, kept exactly as deposited.
+
+Batch handling: metadata include 6 sequencing batches, 54 amplification batches, 27 plates, 8 mice and eight sorting/genotype strata. The selected cohort spans sequencing SB17, SB19, SB20, SB25; sorted strata and sequencing batches are strongly confounded (e.g. Irf8-GFP sorting mainly SB25, Flt3+Csf1r+ mainly SB20/SB25). Correcting these batches globally could remove true sorted-lineage differences, so primary analysis uses uncorrected expression with metadata audit. Erythroid, granulocyte and megakaryocyte populations each include multiple unsorted plates; small dendritic subtypes are concentrated in Irf8-sorted plates and should not be treated as independently replicated across conditions. Sample identity is not an independent biological replicate for cell-level Wilcoxon p-values.
+
+Methods: preserve raw counts; normalize each cell to 10,000 UMIs then log1p; 2,500 variable genes (Scanpy seurat flavor); center and scale HVG values with clip at 10; PCA 40 dimensions, graph uses first 25 PCs and 20 nearest neighbors; UMAP seed 23; Leiden igraph two iterations, resolution 0.55 (compared to 0.35 and 0.8; subclusters not perfectly stable). Cluster-vs-all Wilcoxon markers from all 12,998 normalized genes; marker CSV stores up to 100 positive genes per cluster with Benjamini-Hochberg adjusted p<0.05 and Scanpy approximate log2 fold-change >0.4. P-values are descriptive per-cell ranking, not biological replicate-level significance. Gene aliases like Itga2b;GPalpha IIb retain source names. PAGA connection weights describe undirected graph proximity; diffusion pseudotime roots in cluster 3 at a Cd34/Flt3-high, Cd74-low cell, which is a biological assumption rather than a verified ancestral cell. Pseudotime may be undefined in disconnected regions.
+
+Populations and marker evidence (cluster sizes from cluster_assignments.csv):
+cluster_id  cell_type                                   
+0           Megakaryocyte-primed progenitor                  380
+1           GATA2+ mixed erythroid/myeloid progenitor        621
+10          CD7+ MHC-II+ dendritic-like (uncertain)           27
+11          FLT3+ MHC-II+ dendritic progenitor               674
+2           Erythroid-primed progenitor                      979
+3           CD34+ FLT3+ myeloid progenitor                  1127
+4           Cycling/stress-like myeloid progenitor           116
+5           Early granulocyte/monocyte-primed progenitor     548
+6           Neutrophil-primed progenitor                     360
+7           T/NK-like contaminant (uncertain)                 56
+8           MHC-II+ dendritic-cell-primed                    393
+9           CCR7+ activated dendritic-like                    26
+0: Megakaryocyte-primed: Itga2b;GPalpha IIb, Pf4, Gp9, Gp5, Vwf and Nrgn; mostly CD41 sorted. This is transcriptional priming, not proven platelet production.
+1: Gata2/Apoe/Car1/Car2-positive transitional population expressing both erythroid and myeloid genes. The mixed program could be transitional or ambient/doublet signal; avoid claiming a unique multipotent ancestor.
+2: Erythroid-primed: Klf1, Car1, Car2, Ermap, Epor, Gata1 and heme genes; mainly unsorted across plates.
+3: Cd34/Flt3/Csf1r/Irf8/Mpo-positive early myeloid progenitor, mixed Flt3+Csf1r and Irf8 sorted samples. Source sorts shape cell occupancy.
+4: Closely related Cd34/Flt3/Irf8 progenitor with Atpase6, Mtrnr2l, Npm1 and Top2a: possibly cycling/stress or plate-specific technical substate (110/116 from plate 11), not a securely distinct fate.
+5: Early granulocyte/monocyte-primed program: Elane, Prtn3, Ctsg, Mpo, Ly6c2, Csf1r; primarily unsorted. Monocyte fate specifically is uncertain: no robust separate Lyz2/Ccr2 monocyte endpoint is resolved.
+6: Neutrophil/granulocyte-primed: Elane, Ctsg, Prtn3, Cebpe, Fcgr3, Pglyrp1 and Mpo; primarily unsorted over multiple plates. Immature granule expression does not demonstrate mature neutrophils.
+7: Ccl5, Ctsw, Cd7, Nkg7, Lck and Tcrb-like features: T/NK-like contaminants or doublets, not a myeloid progenitor lineage (n=56).
+8: Cd74, H2-Aa, H2-Ab1, Cst3, Irf8, Id2: MHC-II+ dendritic-lineage program; sorting may select a mature DC-like state rather than priming alone.
+9: Ccr7, Cd74, H2-Aa, Relb: small activated/migratory dendritic-like subset (n=26).
+10: Cd7, Col17a1, H2-Aa, Cd74, Id2: small mixed dendritic-like state (n=27), lineage/contaminant identity uncertain.
+11: Cd34, Flt3, Irf8, Sell and intermediate Cd74/H2-Aa: dendritic-primed progenitor relative to MHC-II-high 8/9; MHC-II sorting enriches it.
+
+Relationships (inferred undirected, not lineage-validated): PAGA undirected connectivity: GATA2+ cluster 1 neighbors megakaryocyte cluster 0 (0.32) and erythroid cluster 2 (0.21); CD34+ FLT3+ clusters 3/4 connect (0.57), with 3 near dendritic progenitor 11 (0.33) and early granulocyte/monocyte 5 (0.16); 5 connects neutrophil-primed 6 (0.59). Dendritic progenitor 11 weakly connects CD7+ dendritic-like 10 (0.12), then MHC-II+ 8 (0.14); 8 neighbors activated CCR7+ 9 (0.83). These are expression graph proximities, not validated lineage direction.
+
+Key limitations: sorted fractions, mouse, amplification plates and sequencing batches are confounded, limiting independent validation and batch correction; no barcoding-based lineage tracing, time course or functional assays; marker signals can arise from ambient RNA, doublets and varying cell cycle; one mt-labeled gene makes mitochondrial QC inadequate; per-cell Wilcoxon treats cells as independent. DPT ordering is root-dependent and does not prove ancestry, branch commitment, or fate; rare clusters 9 and 10 especially uncertain. A separate control/KO analysis, ambient-RNA modelling and balanced biological replicates would be needed for stronger inference.
+
+Software: {"anndata": "0.13.4", "harmonypy": "2.1.0", "igraph": "1.0.0", "leidenalg": "0.12.0", "matplotlib": "3.11.2", "numba": "0.68.1", "numpy": "2.5.4", "pandas": "3.1.1", "python": "3.12.14", "scanpy": "1.12.5", "scikit-learn": "1.9.1", "scipy": "1.18.1", "umap-learn": "0.5.12"}
