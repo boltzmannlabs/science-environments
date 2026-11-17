@@ -4,7 +4,7 @@ Each task contains one `agent-alone/` directory. Start with its README and WORKF
 
 | Folder or file | Contents |
 |---|---|
-| `WORKFLOW.md` | Actual operations, tools, outcomes and current status. |
+| `WORKFLOW.md` | Compact workflow JPG, final tools and links to step outputs. |
 | `sequences/` | Exact parent and candidate sequences, hashes and generation history where available. |
 | `steps/` | Measurements and job records organized by the operations that produced them. |
 | `reference_comparison/` | Same-method predictions for selected candidates and reconstructable reference variants. |

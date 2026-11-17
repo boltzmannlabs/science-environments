@@ -42,15 +42,5 @@
   "additional_open_source_assessment": {
     "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
     "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
-  },
-  "historical_design_usage_snapshot": {
-    "arm": "rml/agent-alone",
-    "model": "gpt-6.1-sol",
-    "provider": "openai-codex",
-    "reported_canonical_tokens_lower_bound": 656773668,
-    "reported_model_requests": 1636,
-    "elapsed_seconds_including_waits": 658683,
-    "workflow_complete": false,
-    "accuracy_status": "Not yet verified against applicable benchmark"
   }
 }

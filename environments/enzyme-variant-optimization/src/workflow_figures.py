@@ -1,0 +1,103 @@
+"""Render compact JPG method diagrams; reads no raw jobs and starts no scientific tools."""
+from pathlib import Path
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+
+SPECS = [{'task': 'task_001_rml_stability',
+  'title': 'RML stability',
+  'stages': [['Parent checks', 'Python · 3TGL sequence'],
+             ['Variant generation', 'SolubleMPNN'],
+             ['Property screening', 'Enzymes · NetSolP'],
+             ['Protein structures', 'Protein Structure Prediction'],
+             ['Substrate scoring', 'Vina'],
+             ['Structure quality', 'MolProbity · CCTBX']],
+  'later': 'Enzymes + NetSolP: properties     |     DDGun_SEQ: stability'},
+ {'task': 'task_002_leh_stability',
+  'title': 'LEH stability',
+  'stages': [['Parent checks', 'Python · 1NWW dimer'],
+             ['Generation and revision', 'SolubleMPNN · ThermalMPNN'],
+             ['Property screening', 'Enzymes · NetSolP'],
+             ['Complex structures', 'Boltz2'],
+             ['Substrate scoring', 'Vina'],
+             ['Structure quality', 'MolProbity']],
+  'later': 'Enzymes + NetSolP: properties     |     DDGun_SEQ: stability'},
+ {'task': 'task_003_bla_high_temperature',
+  'title': 'BLA high-temperature performance',
+  'stages': [['Parent checks', 'Python · mature BLA'],
+             ['Generation and revision', 'SolubleMPNN'],
+             ['Temperature screening', 'Enzymes'],
+             ['Complex structures', 'Boltz2'],
+             ['Substrate poses', 'DiffDock'],
+             ['Structure quality', 'MolProbity · CCTBX']],
+  'later': 'Enzymes + NetSolP: properties   |   EvoEF1: folding\n'
+           'FASPR → PACKMAN: static packing entropy'},
+ {'task': 'task_004_athol1_substrate',
+  'title': 'AtHOL1 substrate expansion',
+  'stages': [['Parent and reaction', 'Python · 3LCC + ligands'],
+             ['Generation and revision', 'SolubleMPNN · ThermalMPNN'],
+             ['Property screening', 'CatPred · Enzymes'],
+             ['Protein structures', 'Protein Structure Prediction'],
+             ['Ligand-state modeling', 'Placer'],
+             ['Structure quality', 'MolProbity']],
+  'later': 'Enzymes + NetSolP + EvoEF1: properties and folding\n'
+           'OpenMM → field analysis + PySCF: reaction-site assessment'},
+ {'task': 'task_005_sun_leh_pythia',
+  'title': 'Sun LEH / Pythia study',
+  'stages': [['Freeze inputs', 'Python · 1NWW mapping'],
+             ['Mutation scoring', 'Pythia'],
+             ['Verify coverage', 'Python'],
+             ['Rank substitutions', 'Python · summed score'],
+             ['Select mutations', 'Python · score < −2'],
+             ['Seal scoring outputs', 'Python audit']],
+  'later': 'Enzymes + NetSolP: properties     |     DDGun_SEQ: stability'},
+ {'task': 'task_006_zhang_hydrolases',
+  'title': 'Zhang cellulase / β-glucanase study',
+  'stages': [['Freeze sequences', 'Python · WT and M2/M5'],
+             ['WT structures', 'AlphaFold2 / ColabFold'],
+             ['WT mutation scoring', 'Pythia'],
+             ['M2/M5 mutation scoring', 'ESM-2'],
+             ['Verify and rank', 'Python'],
+             ['Seal comparisons', 'Python']],
+  'later': 'Enzymes + NetSolP: properties     |     EvoEF1: whole-variant folding'}]
+
+def build(env):
+    for spec in SPECS:
+        fig, ax = plt.subplots(figsize=(12, 9))
+        fig.patch.set_facecolor("#ffffff")
+        ax.set(xlim=(0, 12), ylim=(0, 9))
+        ax.axis("off")
+        ax.text(.5, 8.45, spec["title"], fontsize=23, weight="bold", color="#16334b", va="center")
+        ax.text(.5, 7.94, "FINAL METHOD PATH · AGENT ALONE", fontsize=10, weight="bold", color="#647789")
+        positions = [(0.5, 5.45), (4.35, 5.45), (8.2, 5.45), (8.2, 2.95), (4.35, 2.95), (.5, 2.95)]
+        # Zhang has parallel score branches: input → ESM, structure → Pythia; both → ranking.
+        edges = [(0,1),(1,2),(2,3),(3,4),(4,5)]
+        if spec["task"] == "task_006_zhang_hydrolases":
+            positions = [(.5,5.45),(4.35,5.45),(8.2,5.45),(.5,2.95),(4.35,2.95),(8.2,2.95)]
+            edges = [(0,1),(1,2),(0,3),(2,4),(3,4),(4,5)]
+        width, height = 3.3, 1.6
+        for i, ((stage, tool), (x,y)) in enumerate(zip(spec["stages"], positions)):
+            ax.add_patch(FancyBboxPatch((x,y),width,height,boxstyle="round,pad=0.04,rounding_size=0.15",facecolor="#eef5fa",edgecolor="#c5d9e8",linewidth=1.4))
+            ax.text(x+.22,y+1.18,f"{i+1:02d}",fontsize=11,weight="bold",color="#557a96")
+            ax.text(x+.22,y+.83,stage,fontsize=12,weight="bold",color="#16334b")
+            import textwrap
+            ax.text(x+.22,y+.38,"\n".join(textwrap.wrap(tool, 29)),fontsize=10.5,color="#375469",va="center",linespacing=1.25)
+        for start,end in edges:
+            x,y=positions[start]; xx,yy=positions[end]
+            if yy == y:
+                a=(x+width,y+height/2) if xx>x else (x,y+height/2)
+                b=(xx,yy+height/2) if xx>x else (xx+width,yy+height/2)
+            else:
+                a=(x+width/2,y);b=(xx+width/2,yy+height)
+            ax.add_patch(FancyArrowPatch(a,b,arrowstyle="-|>",mutation_scale=13,color="#8198aa",linewidth=1.5,shrinkA=6,shrinkB=6))
+        ax.add_patch(FancyBboxPatch((.5,.55),11,1.5,boxstyle="round,pad=.04,rounding_size=.14",facecolor="#fbf5e9",edgecolor="#e9d9b5"))
+        ax.text(.75,1.67,"LATER BENCHMARK CALCULATIONS",fontsize=10,weight="bold",color="#886627")
+        ax.text(.75,1.12,spec["later"],fontsize=12,color="#5b503d",va="center",linespacing=1.5)
+        target=env/"results"/spec["task"]/"agent-alone"/"figures"/"workflow.jpg"
+        target.parent.mkdir(parents=True,exist_ok=True)
+        fig.savefig(target,dpi=140,format="jpg",pil_kwargs={"quality":93},facecolor="white")
+        plt.close(fig)
+
+if __name__ == "__main__":
+    build(Path(__file__).resolve().parents[1])
