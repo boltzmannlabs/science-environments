@@ -62,8 +62,59 @@ SPECS = [{'task': 'task_001_rml_stability',
              ['Seal comparisons', 'Python']],
   'later': 'Enzymes + NetSolP: properties     |     EvoEF1: whole-variant folding'}]
 
+def build_zhang(env, spec):
+    """Keep WT structure scoring and stabilized-sequence scoring in separate lanes."""
+    fig, ax = plt.subplots(figsize=(12, 9))
+    fig.patch.set_facecolor("white")
+    ax.set(xlim=(0, 12), ylim=(0, 9))
+    ax.axis("off")
+    ax.text(.5, 8.45, spec["title"], fontsize=22, weight="bold", color="#16334b")
+    ax.text(.5, 7.98, "AGENT ALONE · TWO SCORING BACKGROUNDS", fontsize=10,
+            weight="bold", color="#647789")
+
+    def card(x, y, width, height, title, subtitle):
+        ax.add_patch(FancyBboxPatch((x, y), width, height,
+                     boxstyle="round,pad=.035,rounding_size=.13",
+                     facecolor="#eef5fa", edgecolor="#c5d9e8", linewidth=1.4))
+        ax.text(x + width / 2, y + height * .67, title, fontsize=13,
+                weight="bold", color="#16334b", ha="center", va="center")
+        ax.text(x + width / 2, y + height * .27, subtitle, fontsize=10.5,
+                color="#375469", ha="center", va="center")
+
+    def arrow(start, end):
+        ax.add_patch(FancyArrowPatch(start, end, arrowstyle="-|>",
+                     mutation_scale=13, color="#8198aa", linewidth=1.5,
+                     shrinkA=6, shrinkB=6))
+
+    card(3.55, 6.75, 4.9, .86, "Freeze inputs", "Python · exact WT and M2/M5 sequences")
+    card(.8, 5.3, 4.8, 1.05, "WT structure prediction", "AlphaFold2 / ColabFold")
+    card(6.4, 5.3, 4.8, 1.05, "Stabilized sequence inputs", "Cellulase M2 · β-glucanase M5")
+    card(.8, 3.85, 4.8, 1.05, "Pythia", "WT structure-conditioned mutation scores")
+    card(6.4, 3.85, 4.8, 1.05, "ESM-2", "M2/M5 sequence-conditioned mutation scores")
+    card(3.55, 2.35, 4.9, .95, "Verify, rank and retain outputs", "Python · keep scoring backgrounds separate")
+    arrow((4.6, 6.75), (3.2, 6.35))
+    arrow((7.4, 6.75), (8.8, 6.35))
+    arrow((3.2, 5.3), (3.2, 4.9))
+    arrow((8.8, 5.3), (8.8, 4.9))
+    arrow((3.2, 3.85), (4.8, 3.3))
+    arrow((8.8, 3.85), (7.2, 3.3))
+    ax.add_patch(FancyBboxPatch((.5, .55), 11, 1.2,
+                 boxstyle="round,pad=.035,rounding_size=.13",
+                 facecolor="#fbf5e9", edgecolor="#e9d9b5"))
+    ax.text(.75, 1.4, "LATER BENCHMARK CALCULATIONS", fontsize=10,
+            weight="bold", color="#886627")
+    ax.text(.75, .93, spec["later"], fontsize=11.5, color="#5b503d")
+    target = env / "results" / spec["task"] / "agent-alone/figures/workflow.jpg"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(target, dpi=140, format="jpg", pil_kwargs={"quality": 93}, facecolor="white")
+    plt.close(fig)
+
+
 def build(env):
     for spec in SPECS:
+        if spec["task"] == "task_006_zhang_hydrolases":
+            build_zhang(env, spec)
+            continue
         fig, ax = plt.subplots(figsize=(12, 9))
         fig.patch.set_facecolor("#ffffff")
         ax.set(xlim=(0, 12), ylim=(0, 9))
@@ -71,11 +122,7 @@ def build(env):
         ax.text(.5, 8.45, spec["title"], fontsize=23, weight="bold", color="#16334b", va="center")
         ax.text(.5, 7.94, "FINAL METHOD PATH · AGENT ALONE", fontsize=10, weight="bold", color="#647789")
         positions = [(0.5, 5.45), (4.35, 5.45), (8.2, 5.45), (8.2, 2.95), (4.35, 2.95), (.5, 2.95)]
-        # Zhang has parallel score branches: input → ESM, structure → Pythia; both → ranking.
         edges = [(0,1),(1,2),(2,3),(3,4),(4,5)]
-        if spec["task"] == "task_006_zhang_hydrolases":
-            positions = [(.5,5.45),(4.35,5.45),(8.2,5.45),(.5,2.95),(4.35,2.95),(8.2,2.95)]
-            edges = [(0,1),(1,2),(0,3),(2,4),(3,4),(4,5)]
         width, height = 3.3, 1.6
         for i, ((stage, tool), (x,y)) in enumerate(zip(spec["stages"], positions)):
             ax.add_patch(FancyBboxPatch((x,y),width,height,boxstyle="round,pad=0.04,rounding_size=0.15",facecolor="#eef5fa",edgecolor="#c5d9e8",linewidth=1.4))

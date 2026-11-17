@@ -2,7 +2,7 @@
 
 ![Final workflow tools](figures/workflow.jpg)
 
-The diagram shows the final method path, with later benchmark calculations in a separate panel. Relevant screens and assessments were repeated after sequence revisions.
+The WT branch uses AlphaFold2/ColabFold structures with Pythia. The separate M2/M5 branch uses sequence-based ESM-2 scoring. Python verifies and ranks the outputs while keeping these backgrounds separate; later benchmark calculations appear below.
 
 | Stage | Tools | Work performed | Results |
 |---|---|---|---|
