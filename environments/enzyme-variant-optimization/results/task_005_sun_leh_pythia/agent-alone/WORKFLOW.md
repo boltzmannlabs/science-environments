@@ -1,6 +1,6 @@
 # Executed workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+This record describes actual agent-alone execution. Original design work is operationally closed; reference comparison is a separate completed assessment.
 
 | Step | Agent operation and outcome | Records |
 |---|---|---|

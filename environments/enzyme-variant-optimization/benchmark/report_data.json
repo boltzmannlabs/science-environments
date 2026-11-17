@@ -1,6 +1,6 @@
 {
   "schema": "enzyme-reference-vs-agent-alone.v1",
-  "snapshot_utc": "2026-11-12T09:52:54.671818+00:00",
+  "snapshot_utc": "2026-11-16T19:50:24.400353+00:00",
   "scope": "Agent-alone candidate predictions, published predictor values and separately labeled reference variants calculated in this work.",
   "tasks": [
     {
@@ -60,7 +60,7 @@
         ]
       ],
       "results_path": "results/task_001_rml_stability/agent-alone/README.md",
-      "status": "Agent-alone computational results available",
+      "status": "Closed with limitations",
       "show_experimental_panel": false
     },
     {
@@ -115,7 +115,7 @@
         ]
       ],
       "results_path": "results/task_002_leh_stability/agent-alone/README.md",
-      "status": "Agent-alone computational results available",
+      "status": "Closed: no supported final candidate",
       "show_experimental_panel": false
     },
     {
@@ -148,7 +148,7 @@
         ]
       ],
       "results_path": "results/task_003_bla_high_temperature/agent-alone/README.md",
-      "status": "Executed data available; design workflow paused; full acceptance open."
+      "status": "Completed with unresolved blockers"
     },
     {
       "id": "task_004_athol1_substrate",
@@ -169,23 +169,23 @@
       ],
       "metrics": [
         [
-          "Electrostatic stabilization estimate (kcal/mol)",
-          "WT −5.6; V140T −7.8",
-          "In progress: matched reaction-electrostatics assessment."
+          "Named electrostatic stabilization estimate (kcal/mol)",
+          "WT −5.6; V140T −7.8 (main text)",
+          "Our separate pre-reaction LMO interaction: parent −1.18; V140T −1.18; ATH_R2_09 −1.00. Distinct method/estimate."
         ],
         [
-          "Projected electric field (MV/cm)",
+          "Projected protein field (MV/cm)",
           "WT −35.2 ± 9.6; V140T −43.4 ± 5.7",
-          "In progress: matched reaction-electrostatics assessment."
+          "30 ns protocol: parent −46.42 ± 12.68; V140T −39.24 ± 6.56; ATH_R2_09 −30.28 ± 6.75"
         ],
         [
-          "Mean C–I / electric-field angle (degrees)",
+          "Mean geometric I→C/field angle (degrees)",
           "WT 41.2; V140T 16.6",
-          "In progress: matched reaction-electrostatics assessment."
+          "30 ns protocol: parent 28.97; V140T 30.54; ATH_R2_09 39.10"
         ]
       ],
       "results_path": "results/task_004_athol1_substrate/agent-alone/README.md",
-      "status": "Executed data available; design workflow paused; full acceptance open."
+      "status": "Closed with limitations"
     },
     {
       "id": "task_005_sun_leh_pythia",
@@ -244,7 +244,7 @@
         ]
       ],
       "results_path": "results/task_005_sun_leh_pythia/agent-alone/README.md",
-      "status": "Agent-alone computational results available",
+      "status": "Computational execution completed",
       "show_experimental_panel": false
     },
     {
@@ -395,7 +395,7 @@
           }
         }
       ],
-      "status": "Agent-alone computational results available",
+      "status": "Computational execution completed",
       "show_experimental_panel": false
     }
   ],

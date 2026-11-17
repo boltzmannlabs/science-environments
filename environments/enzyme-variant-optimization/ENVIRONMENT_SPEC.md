@@ -12,7 +12,7 @@ Each task identifies the parent, reaction, target property and relevant conditio
 
 Use SCI's existing search and reading tools to research chemistry and prepare a source-backed reaction description. Read mechanism references, not the target study's winning mutations or outcome tables. Resolve chemistry that changes the calculation before using it; otherwise mark that assessment unresolved. Do not create an extra chemistry service or require an external template registry.
 
-Freeze the public input bundle, task, conditions, budgets and final evaluation protocol in the run's `RUN_PLAN.json`, with their hashes and actual software versions. Parent preparation is shared; candidate generation and design results are not. The selected task/version/approach profile under [config](config/README.md) contains execution settings, not an already-frozen scientific protocol or historical run receipt.
+Freeze the public input bundle, task, conditions, budgets and final evaluation protocol in the run's `RUN_PLAN.json`, with their hashes and actual software versions. Parent preparation is shared; candidate generation and design results are not. The selected task/version/approach profile under [config](configs/README.md) contains execution settings, not an already-frozen scientific protocol or historical run receipt.
 
 ## Computational tool capabilities
 

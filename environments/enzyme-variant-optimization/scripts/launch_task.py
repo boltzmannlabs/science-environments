@@ -19,7 +19,7 @@ def main():
     if not re.fullmatch(r"task_\d{3}_[a-z0-9_]+", args.task) or not re.fullmatch(r"v[1-9]\d*", args.version):
         parser.error("Use a numbered task ID and configuration version such as v1.")
     env = Path(__file__).resolve().parents[1]
-    config = env / "config" / args.task / args.version / (args.approach + ".json")
+    config = env / "configs" / args.task / args.version / (args.approach + ".json")
     if not config.is_file():
         parser.error("This task/version/approach has no selected configuration.")
     settings = json.loads(config.read_text())

@@ -1,6 +1,6 @@
 # Executed workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+This record describes actual agent-alone execution. Original design work is operationally closed; reference comparison is a separate completed assessment.
 
 | Step | Agent operation and outcome | Records |
 |---|---|---|
@@ -16,12 +16,12 @@ Original selected sequences were subsequently assessed with shared temperature, 
 
 ## Current outcome
 
-Paused
+Closed with limitations. See [terminal outcome](OUTCOME.json).
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
 
 ## Additional open-source metric comparison
 
-EvoEF1 folding comparisons for the reference and our retained candidate are complete. Reaction-site OpenMM/PySCF assessment is in progress; MD heating failures and corrected preparation are being diagnosed. Prepared-state quantum preflight is capability evidence only and is excluded from final comparison values.
+EvoEF1 folding comparisons for the reference and our retained candidate are complete. The separate reaction-site assessment completed three 30 ns trajectories, 750 field snapshots and 75 explicit C–I LMO calculations. [Final numerical records and protocol](steps/10_reaction_electrostatics/README.md).
 
 This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).

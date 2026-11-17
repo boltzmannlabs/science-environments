@@ -26,11 +26,13 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The original structural assessment did not qualify the retained models. Their raw predictions are reported, with model findings retained in the execution records.
+Closed: no supported final candidate. Reviewed empty selection retained.
+
+[Recorded terminal outcome](OUTCOME.json).
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_002_leh_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

@@ -1,6 +1,38 @@
 {
   "design_usage": {
     "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "input_tokens": 18207607,
+    "output_tokens": 6727375,
+    "cache_read_tokens": 1108961536,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 3483823,
+    "api_call_count": 4256,
+    "reported_canonical_tokens_lower_bound": 1133896518,
+    "snapshot_cutoff_utc": "2026-11-16T19:45:37.918678+00:00",
+    "started_at": "2026-11-12T18:12:56.080597+00:00",
+    "last_activity_at": "2026-11-16T19:40:54.833356+00:00",
+    "elapsed_seconds_including_waits": 350878.753,
+    "definition": "Cumulative persisted native usage. Repeated cached context is counted by calls; reasoning is already part of output. Not monetary charges or newly generated tokens."
+  },
+  "historical_snapshot_utc": null,
+  "shared_reference_assessment": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "completed_remote_jobs_global": 3,
+    "submission_calls_global": 4,
+    "requested_endpoints_global": 99,
+    "allocation": "Shared once across six tasks; not charged in full to each task.",
+    "task_logical_sequences": 4,
+    "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
+  },
+  "design_status": "Completed with unresolved blockers",
+  "additional_open_source_assessment": {
+    "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
+    "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
+  },
+  "historical_design_usage_snapshot": {
+    "model": "gpt-6.1-sol",
     "input_tokens": 2435750,
     "output_tokens": 988885,
     "cache_read_tokens": 234613120,
@@ -15,21 +47,5 @@
     "snapshot_cutoff_utc": "2026-11-13T05:51:09.485622+00:00",
     "definition": "Cached input counted once; reasoning is a subset of output, not added again.",
     "elapsed_seconds_including_waits": 41893.405025
-  },
-  "historical_snapshot_utc": null,
-  "shared_reference_assessment": {
-    "model": "gpt-6.1-sol",
-    "provider": "openai-codex",
-    "completed_remote_jobs_global": 3,
-    "submission_calls_global": 4,
-    "requested_endpoints_global": 99,
-    "allocation": "Shared once across six tasks; not charged in full to each task.",
-    "task_logical_sequences": 4,
-    "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
-  },
-  "design_status": "Paused",
-  "additional_open_source_assessment": {
-    "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
-    "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
   }
 }

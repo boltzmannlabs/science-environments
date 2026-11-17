@@ -18,11 +18,13 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The Pythia scan is complete. D101V changes catalytic Asp101; its favorable property score does not establish retained enzyme function.
+Computational execution completed. Sealed scoring/ranking and comparison retained; exact paper provenance unresolved.
+
+[Recorded terminal outcome](OUTCOME.json).
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_005_sun_leh_pythia/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

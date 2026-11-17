@@ -1,6 +1,6 @@
 # Executed workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+This record describes actual agent-alone execution. Original design work is operationally closed; reference comparison is a separate completed assessment.
 
 | Step | Agent operation and outcome | Records |
 |---|---|---|
@@ -16,7 +16,7 @@ Original selected sequences were subsequently assessed with shared temperature, 
 
 ## Current outcome
 
-Paused
+Closed with limitations. See [terminal outcome](OUTCOME.json).
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
 

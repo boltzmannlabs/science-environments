@@ -46,7 +46,7 @@ Use native SCI tool discovery and verified source implementations for the declar
 | 7. Review and seal | Review stage completion and source-qualified eligibility, preserve unfiltered versus qualified libraries, and freeze original selections. | Sealed selection tables, complete full-background sequences, concerns and final source/protocol limitations. |
 | 8. Compare and report | Join original numerical prediction rows by enzyme, background and exact mutation; report same-variant agreement separately from best-published-versus-best-ours comparisons. | Source-linked numerical comparisons, score differences and the actual computational outcome for each enzyme, with failures and cumulative resource records. |
 
-Execution settings belong in the selected [configuration version](../config/task_006_zhang_hydrolases/README.md). Record the SCI LLM separately from AlphaFold2, Pythia and ESM-2. Historical exports have no retroactively assigned configuration version.
+Execution settings belong in the selected [configuration version](../configs/task_006_zhang_hydrolases/README.md). Record the SCI LLM separately from AlphaFold2, Pythia and ESM-2. Historical exports have no retroactively assigned configuration version.
 
 ## Evaluation Metrics
 
@@ -74,7 +74,7 @@ Execution settings belong in the selected [configuration version](../config/task
 - `verification.json`, `selection.csv` and `selection_seal.json`: independent numerical checks and original frozen selections.
 - `jobs.json`, `errors.md` and `usage.json`: all actual attempts, real IDs/statuses, correction history, permission events and cumulative accounting; no credentials or duplicate unknown submissions.
 - Source-linked same-variant and best-versus-best comparison tables, kept as distinct analyses. The repository retains prediction columns only in its concise comparison CSV.
-- `REPORT.md` in the execution workspace: stage completion for each enzyme, method ambiguities, numerical findings and remaining evidence gaps. The public report with embedded figures is [comparison.pdf](../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf).
+- `REPORT.md` in the execution workspace: stage completion for each enzyme, method ambiguities, numerical findings and remaining evidence gaps. The public report with embedded figures is [comparison.pdf](../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md).
 
 ## Important Instructions
 

@@ -1,6 +1,6 @@
 # Executed workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+This record describes actual agent-alone execution. Original design work is operationally closed; reference comparison is a separate completed assessment.
 
 | Step | Agent operation and outcome | Records |
 |---|---|---|
@@ -16,7 +16,7 @@ Original selected sequences were subsequently assessed with shared temperature, 
 
 ## Current outcome
 
-Paused
+Completed with unresolved blockers. See [terminal outcome](OUTCOME.json).
 
 Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
 
@@ -25,3 +25,7 @@ Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_
 A separate open-source assessment recalculated folding stability with EvoEF1 for our retained candidate, K319W and E336S using paired-WT models. A matched FASPR/PACKMAN calculation measured static packing entropy for all four sequences. Original failed preparation and warning diagnostics remain in the private archive; accepted outputs passed geometry/identity and entropy-sum checks.
 
 This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).
+
+## Terminal review update
+
+The final record contains 81 scientific attempts and nine assessed sequence identities including the parent (eight variants). No candidate qualified. The final native validation reached topology and manager setup, then stopped on a very-small-nonbonded-distance warning; the required downstream reports remain incomplete. [Outcome](OUTCOME.json).

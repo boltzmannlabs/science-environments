@@ -1,13 +1,19 @@
 {
   "design_usage": {
-    "arm": "sun_leh/agent-alone",
     "model": "gpt-6.1-sol",
     "provider": "openai-codex",
+    "input_tokens": 176089,
+    "output_tokens": 62224,
+    "cache_read_tokens": 9045760,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 21994,
+    "api_call_count": 65,
     "reported_canonical_tokens_lower_bound": 9284073,
-    "reported_model_requests": 65,
-    "elapsed_seconds_including_waits": 2350,
-    "workflow_complete": false,
-    "accuracy_status": "Not yet verified against applicable benchmark"
+    "snapshot_cutoff_utc": "2026-11-16T19:45:37.918678+00:00",
+    "started_at": "2026-11-06T18:59:28.181749+00:00",
+    "last_activity_at": "2026-11-06T19:38:38.414352+00:00",
+    "elapsed_seconds_including_waits": 2350.233,
+    "definition": "Cumulative persisted native usage. Repeated cached context is counted by calls; reasoning is already part of output. Not monetary charges or newly generated tokens."
   },
   "historical_snapshot_utc": "2026-11-12T09:35:26.552581+00:00",
   "shared_reference_assessment": {
@@ -20,9 +26,19 @@
     "task_logical_sequences": 4,
     "accounting_file": "../../REFERENCE_ASSESSMENT_USAGE.json"
   },
-  "design_status": "Declared scoring execution completed; provenance review separately recorded.",
+  "design_status": "Computational execution completed",
   "additional_open_source_assessment": {
     "accounting_file": "../../OPEN_SOURCE_ASSESSMENT_USAGE.json",
     "scope": "Shared post-selection folding assessment across tasks; BLA entropy is task-specific. Original design usage remains separate."
+  },
+  "historical_design_usage_snapshot": {
+    "arm": "sun_leh/agent-alone",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reported_canonical_tokens_lower_bound": 9284073,
+    "reported_model_requests": 65,
+    "elapsed_seconds_including_waits": 2350,
+    "workflow_complete": false,
+    "accuracy_status": "Not yet verified against applicable benchmark"
   }
 }

@@ -18,11 +18,13 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The design pipeline is paused. Current candidates and property predictions are available; full candidate assessment and final selection are unfinished.
+Completed with unresolved blockers. Attempt81reached topology+manager; report warning stopped remaining assessment; empty selection.
+
+[Recorded terminal outcome](OUTCOME.json).
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_003_bla_high_temperature/references.md)
 
 ## Execution records

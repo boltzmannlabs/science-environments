@@ -1,14 +1,15 @@
-"""Build one concise PDF benchmark per task from saved predictions; no model or network calls."""
+"""Build GitHub-readable benchmark pages and figures from saved predictions only."""
 from __future__ import annotations
 import argparse
 import csv
+import hashlib
 import json
 import tempfile
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pdf_report import PDFReport
+from markdown_report import MarkdownReport
 
 
 def rows(path):
@@ -18,6 +19,40 @@ def rows(path):
 
 def number(value, digits=4):
     return '—' if value in (None, '') else f'{float(value):.{digits}f}'
+
+
+def add_electrostatics(doc, folder, image, plt):
+    path = folder / 'steps/10_reaction_electrostatics/predictions.csv'
+    if not path.exists():
+        return
+    data = rows(path)
+    labels = [('parent', 'Evaluated parent'), ('reference', 'Reference V140T'),
+              ('retained_candidate', 'Our ATH_R2_09')]
+    measures = [('projected_protein_field_core216', 'Projected protein field', 'MV/cm'),
+                ('geometric_I_to_C_field_angle', 'Geometric I→C/field angle', 'degrees'),
+                ('pre_reaction_explicit_CI_LMO_coupling_core216', 'C–I LMO/field interaction', 'kcal/mol')]
+    doc.add_heading('Matched 30 ns reaction-site assessment', 1)
+    doc.add_paragraph('Each sequence has one 30 ns trajectory; the first 5 ns are excluded. Field and angle summaries use 250 snapshots; explicit C–I LMO calculations use 25 snapshots per sequence. Values are mean ± sample SD.')
+    lookup = {(r['display_label'], r['endpoint']): r for r in data}
+    doc.table(['Observable', 'Parent', 'Reference V140T', 'Our ATH_R2_09'],
+              [[f'{name} ({unit})'] +
+               [f"{float(lookup[(case, endpoint)]['mean']):.2f} ± {float(lookup[(case, endpoint)]['sd']):.2f}" for case, _ in labels]
+               for endpoint, name, unit in measures])
+    fig, axes = plt.subplots(1, 3, figsize=(12, 3.6))
+    for ax, (endpoint, name, unit) in zip(axes, measures):
+        group = [lookup[(case, endpoint)] for case, _ in labels]
+        ax.bar(range(3), [float(r['mean']) for r in group],
+               yerr=[float(r['sd']) for r in group], capsize=4,
+               color=['#73808d', '#d39528', '#246b98'])
+        ax.set_xticks(range(3), ['Parent', 'V140T', 'ATH_R2_09'], rotation=20)
+        ax.set_title(name, fontsize=9)
+        ax.set_ylabel(unit)
+        ax.grid(axis='y', alpha=.15)
+    fig.tight_layout()
+    image(fig, 'Matched field, geometry and interaction predictions',
+          'Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.')
+    doc.add_paragraph('The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.')
+    doc.add_paragraph('[Protocol and sequence identities](../../../results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md).')
 
 
 def add_open_source_metrics(doc, folder, image, plt):
@@ -72,7 +107,7 @@ def build_task(env, task):
     import matplotlib.pyplot as plt
     tid = task['id']
     folder = env / 'results' / tid / 'agent-alone'
-    doc = PDFReport(task['title'] + ' — benchmark report')
+    doc = MarkdownReport(task['title'] + ' — benchmark report')
     table = doc.table
     source = doc.source
 
@@ -198,12 +233,14 @@ def build_task(env, task):
                 fig.tight_layout()
                 image(fig, 'Candidate and reference property predictions', 'Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.')
         add_open_source_metrics(doc, folder, image, plt)
-        doc.add_paragraph('Parent identity, preparation details and run records: results/' + tid + '/agent-alone/README.md.')
+        if tid == 'task_004_athol1_substrate':
+            add_electrostatics(doc, folder, image, plt)
+        doc.add_paragraph(f'[Results and preparation details](../../../results/{tid}/agent-alone/README.md) · [Published reference](../references.md).')
 
-    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.pdf'
+    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.md'
     target.parent.mkdir(parents=True, exist_ok=True)
     doc.save(target)
-    print(f'{tid}: {charts} embedded charts; {len(doc.tables)} tables')
+    print(f'{tid}: {charts} linked figures; {len(doc.tables)} tables')
 
 
 def build(env):
@@ -213,10 +250,21 @@ def build(env):
             build_task(env, task)
     index = ['# Benchmark comparisons', '', 'Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
-        link = task['id'] + ('/comparisions/benchmark_report.pdf' if task.get('executed') else '/references.md')
-        index.append(f"| {task['title']} | [{'PDF comparison' if task.get('executed') else 'Published reference'}]({link}) |")
-    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `ReportLab`, `matplotlib` and DejaVu Sans fonts (`fonts-dejavu-core` on Debian/Ubuntu). Report generation does not run predictors.', '']
+        link = task['id'] + ('/comparisions/benchmark_report.md' if task.get('executed') else '/references.md')
+        index.append(f"| {task['title']} | [{'Comparison and figures' if task.get('executed') else 'Published reference'}]({link}) |")
+    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
     (env / 'benchmark/README.md').write_text('\n'.join(index))
+    manifest_path = env / 'benchmark/DATA_PROVENANCE.json'
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text())
+        manifest['files'] = [
+            {'path': str(path.relative_to(env)),
+             'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+            for folder in ('benchmark', 'results', 'configs')
+            for path in sorted((env / folder).rglob('*'))
+            if path.is_file() and path != manifest_path
+        ]
+        manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
 
 
 def main():

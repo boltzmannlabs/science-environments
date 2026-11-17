@@ -44,7 +44,7 @@ Execute each stage using appropriate native SCI tools selected from Boltzmann, T
 | 7. Re-evaluate revisions | Repeat affected stability/property and structural/complex evaluations, including direct checks of combined changes and disulfide geometry where relevant. | Revised observations, actual structures, functional safeguards and matched parent/initial-batch comparisons. |
 | 8. Select and compare | Apply mandatory evidence requirements, rank eligible variants, seal the selection and obtain separate common-protocol evaluation. | Final sequences, sealed ranking, numerical comparison, exclusions/failures, resource records and final report. |
 
-Execution settings belong in the selected [configuration version](../config/task_002_leh_stability/README.md). Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
+Execution settings belong in the selected [configuration version](../configs/task_002_leh_stability/README.md). Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
 
 ## Evaluation Metrics
 
@@ -85,4 +85,4 @@ Freeze the primary endpoint, safeguards and tie-breakers before design. Rank eli
 - Use native SCI tool discovery, input validation, submissions and artifact handling with current contracts. No new catalogue, approval layer or custom job runner is required.
 - Preserve available results and report what remains unresolved.
 - Missing required evidence leaves the workflow unfinished, not numerically failed. Complete with no supported improvement is a valid outcome; computations do not prove improved experimental catalysis or stability.
-- The [environment specification](../ENVIRONMENT_SPEC.md), [configuration versions](../config/task_002_leh_stability/README.md) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the full workflow stated here.
+- The [environment specification](../ENVIRONMENT_SPEC.md), [configuration versions](../configs/task_002_leh_stability/README.md) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the full workflow stated here.

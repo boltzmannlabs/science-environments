@@ -20,11 +20,13 @@ The report shows leaders under the common negative-log-likelihood score conventi
 
 ## Run status
 
-The declared computational scans are complete. Original structural settings and site-exclusion rules are incompletely established. The original prediction results and reference sequences remain unchanged.
+Computational execution completed. Sealed structure/inference/scoring outputs retained; historical settings/eligibility gaps remain.
+
+[Recorded terminal outcome](OUTCOME.json).
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_006_zhang_hydrolases/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)

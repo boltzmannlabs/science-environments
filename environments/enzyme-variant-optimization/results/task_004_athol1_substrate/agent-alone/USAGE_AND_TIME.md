@@ -1,13 +1,14 @@
 # Usage and time
 
-Model: **gpt-6.1-sol**, provider openai-codex. No retrospective config version is assigned.
+Final recorded snapshot: 2026-11-16T19:45:37.918678+00:00. Model: GPT-6.1-Sol via Codex (`openai-codex`).
 
-| Measure | Recorded value |
+| Measurement | Value |
 |---|---:|
-| Cumulative reported tokens (lower bound; cached input counted once) | 190,871,299 |
-| Model requests | 693 |
-| Elapsed seconds, including waits at recorded cutoff | 41893.38 |
+| Uncached input + output | 4,922,898 |
+| Cache-read tokens | 198,167,680 |
+| Reported cumulative total, lower bound | 203,090,578 |
+| Recorded activity span, hours | 83.45 |
 
-Shared reference-property assessment: three completed remote jobs across six tasks. Shared costs are not allocated repeatedly to each task. Full task telemetry and cutoffs are in [USAGE_SNAPSHOT.json](USAGE_SNAPSHOT.json).
+The span includes pauses and follow-ups; it is not continuous scientific compute time. Token totals include repeated cached context and recorded auxiliary calls. Reasoning is already included in output. These numbers are not cost estimates.
 
-Additional open-source assessment usage is recorded separately in [the shared accounting file](../../OPEN_SOURCE_ASSESSMENT_USAGE.json). Shared model usage is counted once; task-specific entropy/electrostatics work is identified separately.
+[Machine-readable snapshot and historical cutoff](USAGE_SNAPSHOT.json) · [Actual run summary](../../../configs/task_004_athol1_substrate/run_001_agent_alone.json). Shared post-selection assessments retain their separate usage records.
