@@ -28,8 +28,6 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 Closed with limitations. Design and independent review retained; qualification/common metric gaps remain.
 
-[Recorded terminal outcome](OUTCOME.json).
-
 ## Files
 
 - [Benchmark report](../../../benchmark/task_001_rml_stability/comparisions/benchmark_report.md)
@@ -41,7 +39,17 @@ Closed with limitations. Design and independent review retained; qualification/c
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 8,430,372 |
+| Cache-read tokens | 648,343,296 |
+| Reported cumulative total, lower bound | 656,773,668 |
+| Recorded activity span, hours | 77.00 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

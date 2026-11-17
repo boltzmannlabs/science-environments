@@ -20,8 +20,6 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 Closed with limitations. Existing execution/review retained; CatPred definitions/build, A025 and historical protocol gap unresolved.
 
-[Recorded terminal outcome](OUTCOME.json).
-
 ## Files
 
 - [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md)
@@ -30,7 +28,17 @@ Closed with limitations. Existing execution/review retained; CatPred definitions
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 4,922,898 |
+| Cache-read tokens | 198,167,680 |
+| Reported cumulative total, lower bound | 203,090,578 |
+| Recorded activity span, hours | 83.45 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

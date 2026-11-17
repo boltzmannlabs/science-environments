@@ -22,8 +22,6 @@ The report shows leaders under the common negative-log-likelihood score conventi
 
 Computational execution completed. Sealed structure/inference/scoring outputs retained; historical settings/eligibility gaps remain.
 
-[Recorded terminal outcome](OUTCOME.json).
-
 ## Files
 
 - [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md)
@@ -34,7 +32,17 @@ Computational execution completed. Sealed structure/inference/scoring outputs re
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 911,289 |
+| Cache-read tokens | 54,630,400 |
+| Reported cumulative total, lower bound | 55,541,689 |
+| Recorded activity span, hours | 20.07 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

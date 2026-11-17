@@ -113,10 +113,11 @@ def build_task(env, task):
 
     doc.add_heading(task['title'] + ' — benchmark report', 0)
     doc.add_paragraph('Agent-alone candidates, published prediction values and reference variants calculated in this work.')
-    metadata = folder / 'EXECUTION_METADATA.json'
-    if metadata.exists():
-        model = json.loads(metadata.read_text()).get('llm', {})
-        doc.add_paragraph('Agent Scientist: ' + model.get('model', 'See results') + '. Predictor names and units are listed with each measurement.')
+    run_config = env / 'configs' / tid / 'run_001_agent_alone.json'
+    if run_config.exists():
+        model = json.loads(run_config.read_text())
+        model_name = model['llm_model'] + '-' + model['llm_version']
+        doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
 
     if task.get('metrics'):
         doc.add_heading('Published predictions and our predictions', 1)

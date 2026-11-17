@@ -18,4 +18,4 @@ Later benchmark calculations used Enzymes, NetSolP and EvoEF1. A separate matche
 
 [Property comparison](reference_comparison/README.md) · [Reaction-site assessment](steps/10_reaction_electrostatics/README.md)
 
-[Outcome and qualification](OUTCOME.json) · [Sequences](sequences/identities.json) · [Usage and time](USAGE_AND_TIME.md)
+[Results and outcome](README.md) · [Sequences](sequences/identities.json) · [Usage and time](README.md#usage-and-time)

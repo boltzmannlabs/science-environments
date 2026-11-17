@@ -18,4 +18,4 @@ Later benchmark calculations used Enzymes and NetSolP for properties and EvoEF1 
 
 [Property comparison](reference_comparison/README.md)
 
-[Outcome and qualification](OUTCOME.json) · [Sequences](sequences/identities.json) · [Usage and time](USAGE_AND_TIME.md)
+[Results and outcome](README.md) · [Sequences](sequences/identities.json) · [Usage and time](README.md#usage-and-time)
