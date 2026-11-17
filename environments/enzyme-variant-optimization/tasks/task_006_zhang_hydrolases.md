@@ -46,7 +46,7 @@ Use native SCI tool discovery and verified source implementations for the declar
 | 7. Review and seal | Review stage completion and source-qualified eligibility, preserve unfiltered versus qualified libraries, and freeze original selections. | Sealed selection tables, complete full-background sequences, concerns and final source/protocol limitations. |
 | 8. Compare and report | Join original numerical prediction rows by enzyme, background and exact mutation; report same-variant agreement separately from best-published-versus-best-ours comparisons. | Source-linked numerical comparisons, score differences and the actual computational outcome for each enzyme, with failures and cumulative resource records. |
 
-Execution settings belong in the selected [configuration version](../configs/task_006_zhang_hydrolases/README.md). Record the SCI LLM separately from AlphaFold2, Pythia and ESM-2. Historical exports have no retroactively assigned configuration version.
+Historical model and usage summaries are in [run configs](../configs/task_006_zhang_hydrolases/). Fresh executions require separately frozen settings. Record the SCI LLM separately from AlphaFold2, Pythia and ESM-2. Historical exports have no retroactively assigned configuration version.
 
 ## Evaluation Metrics
 

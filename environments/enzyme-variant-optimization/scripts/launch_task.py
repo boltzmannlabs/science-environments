@@ -11,17 +11,18 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--task", required=True)
-    parser.add_argument("--version", default="v1")
+    parser.add_argument("--settings", type=Path, required=True,
+                        help="Explicit frozen launch settings; compact historical configs are not launch profiles.")
     parser.add_argument("--approach", choices=("agent_alone", "agent_with_specialist"), required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--start", action="store_true")
     args = parser.parse_args()
-    if not re.fullmatch(r"task_\d{3}_[a-z0-9_]+", args.task) or not re.fullmatch(r"v[1-9]\d*", args.version):
-        parser.error("Use a numbered task ID and configuration version such as v1.")
+    if not re.fullmatch(r"task_\d{3}_[a-z0-9_]+", args.task):
+        parser.error("Use a numbered task ID.")
     env = Path(__file__).resolve().parents[1]
-    config = env / "configs" / args.task / args.version / (args.approach + ".json")
+    config = args.settings.resolve()
     if not config.is_file():
-        parser.error("This task/version/approach has no selected configuration.")
+        parser.error("The supplied frozen settings file does not exist.")
     settings = json.loads(config.read_text())
     model = settings.get("llm", {}).get("model")
     if not model:
@@ -43,7 +44,7 @@ def main():
                      "Do not claim improvement or completion without actual evidence.\n")
     if prepared.exists():
         saved = json.loads(prepared.read_text())
-        if (saved.get("task"), saved.get("version"), saved.get("approach")) != (args.task, args.version, args.approach):
+        if (saved.get("task"), saved.get("approach")) != (args.task, args.approach):
             parser.error("Prepared workspace belongs to different settings.")
         if not query.is_file() or query.read_text() != body or saved["config_sha256"] != hashlib.sha256(config.read_bytes()).hexdigest():
             parser.error("Prepared inputs changed; review and prepare a new workspace.")
@@ -51,7 +52,7 @@ def main():
         if any(workspace.iterdir()):
             parser.error("Use an empty fresh workspace or the matching prepared-launch manifest.")
         query.write_text(body)
-        prepared.write_text(json.dumps({"task": args.task, "version": args.version, "approach": args.approach,
+        prepared.write_text(json.dumps({"task": args.task, "approach": args.approach,
                                        "config_sha256": hashlib.sha256(config.read_bytes()).hexdigest()}, indent=2) + "\n")
     command = ["sci", "--cli", "--no-daemon", "--no-restore-cwd", "chat", "--query-file=" + str(query),
                "--model", model, "--provider", settings["llm"].get("provider", "openai-codex"),

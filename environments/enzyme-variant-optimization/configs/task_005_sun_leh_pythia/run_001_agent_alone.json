@@ -2,26 +2,11 @@
   "use_subagent": false,
   "llm_model": "gpt",
   "llm_version": "6.1-sol",
-  "provider": "openai-codex",
-  "record_type": "observed_run_summary",
-  "snapshot_utc": "2026-11-16T19:45:37.918678+00:00",
   "tokens_used": {
     "input_output": 238313,
-    "cache_reads": 9045760,
-    "cache_writes": 0,
-    "reported_total_lower_bound": 9284073
+    "cache_reads": 9045760
   },
   "time_budget": {
-    "minutes": null,
-    "note": "No single fixed campaign-wide wall-time budget is established by this summary."
-  },
-  "time_used": {
-    "recorded_activity_span_minutes": 39.171,
-    "includes_pauses_and_followups": true
-  },
-  "outcome": "Computational execution completed",
-  "tool_exclusions": [
-    "MLDE"
-  ],
-  "accounting_note": "Cumulative persisted native lineage usage, including repeated cached context and recorded auxiliary calls; not newly generated tokens, a billing charge, or a compute duration. Reasoning is already included in output."
+    "minutes": null
+  }
 }
