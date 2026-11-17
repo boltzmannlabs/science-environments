@@ -17,4 +17,4 @@ Each task contains one `agent-alone/` directory. Start with its README and WORKF
 - [task_005_sun_leh_pythia](task_005_sun_leh_pythia/agent-alone/README.md)
 - [task_006_zhang_hydrolases](task_006_zhang_hydrolases/agent-alone/README.md)
 
-Shared reference-assessment usage is recorded once in [REFERENCE_ASSESSMENT_USAGE.json](REFERENCE_ASSESSMENT_USAGE.json). The ten native arms are operationally closed; task READMEs retain their outcomes and scientific gaps. Full private operational archives are excluded from this export.
+The ten native arms are operationally closed; task READMEs retain their outcomes and scientific gaps. Full private operational archives are excluded from this export.
