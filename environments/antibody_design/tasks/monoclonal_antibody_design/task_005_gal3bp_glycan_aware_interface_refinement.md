@@ -19,7 +19,7 @@ The scaffold is a computational starting point for this target, not an experimen
 
 - Preserve the supplied chain pairing and protected framework. Declare CDR editing boundaries and retain the reference-to-candidate mutation record.
 - Keep the mature target construct, glycosylation assumptions and oligomeric context explicit. Do not treat predicted antigen coordinates as an experimental PDB structure.
-- Compare reference and candidates under matched structural and sampling conditions. Record any unavailable study inputs or changes in assumptions.
+- Compare reference and candidates under matched structural and sampling conditions. Record the verified study inputs and the assumptions used for the performed comparison.
 - Retain Mut1 as a published comparison control rather than a newly generated design.
 
 ## Evaluation Metrics
@@ -32,22 +32,22 @@ The scaffold is a computational starting point for this target, not an experimen
 | Sequence quality | Framework edits, humanness and developability liabilities | Compare reference and candidate using the same definitions. |
 | Conformational evidence | Populations and free-energy landscapes, where available | Distinguish relative landscape estimates from binding free energy. |
 
-Published comparison data: [Gal-3BP: Glycan-Aware Antibody Interface Refinement benchmark](../../benchmark/monoclonal_antibody_design/task_005_gal3bp_glycan_aware_interface_refinement.md).
+Published comparison data: [Gal-3BP: Glycan-Aware Antibody Interface Refinement benchmark](../../benchmark/monoclonal_antibody_design/task_005_gal3bp_glycan_aware_interface_refinement/reference.md).
 
 ## Expected Output
 
 **Format:** `antibody_design_bundle`\
-**Directory:** `gal3bp_results/`
+**Directory:** `run_001_antibmpnn_interface_refinement/`
 
 - `designed_sequences.fasta`: paired reference-derived candidates with unique identifiers.
 - `metrics.json`: matched reference/candidate measurements, glycan assumptions and raw artifact provenance.
 - `shortlist.csv`: ranked candidates with supported improvements and unresolved criteria.
 - `benchmark_comparison.csv`: published values, new results and explicit distinctions between outcomes and thresholds.
-- `report.md`: structural rationale and limitations, with target/complex structures and numerical analysis outputs.
+- `report.md`: structural rationale and evaluation scope, with target/complex structures and numerical analysis outputs.
 
 ## Important Instructions
 
 - Select methods independently within the user's constraints; no fixed pipeline is prescribed.
-- Report `NEEDS_INPUT` if the study's reference complex, paired sequences or epitope mapping cannot be verified.
+- Verify the study reference complex, paired sequences and epitope mapping before selecting the matched comparison protocol.
 - Do not substitute a minimum on a conformational free-energy landscape for a binding free-energy measurement.
 - Keep computational stability, target binding and functional inhibition as separate conclusions.

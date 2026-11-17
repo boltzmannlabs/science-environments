@@ -1,0 +1,42 @@
+2026-11-14 17:33:50,440 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:835] INFO runner.batch_inference: Run infer with input=ref_msa.json, out_dir=protenix_ref, sample=5
+2026-11-14 17:33:50,440 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:863] INFO runner.batch_inference: Using default params for model protenix_base_default_v1.0.0: cycle=10, step=200, use_msa=False
+2026-11-14 17:33:50,440 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:511] INFO runner.batch_inference: Will infer with 1 jsons
+2026-11-14 17:33:50,621 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:413] INFO runner.batch_inference: Inference by Protenix: model_size: base, with_feature: default, model_version: v1.0.0, dtype: bf16
+2026-11-14 17:33:50,621 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:418] INFO runner.batch_inference: Triangle_multiplicative kernel: cuequivariance, Triangle_attention kernel: cuequivariance
+2026-11-14 17:33:50,622 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/batch_inference.py:422] INFO runner.batch_inference: enable_diffusion_shared_vars_cache: True, enable_efficient_fusion: True, enable_tf32: True
+2026-11-14 17:33:50,622 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:246] INFO runner.inference: Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-14 17:33:50,622 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:98] INFO root: LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-14 17:33:50,758 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:123] INFO root: Kernels will be compiled when fast_layernorm is first called.
+2026-11-14 17:33:50,758 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:127] INFO root: Finished environment initialization.
+train scheduler 16.0
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-14 17:34:46,546 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:246] INFO runner.inference: Loading from /home/boltzmann10/checkpoint/protenix_base_default_v1.0.0.pt, strict: True
+2026-11-14 17:34:48,018 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:246] INFO runner.inference: Sampled key: module.input_embedder.atom_attention_encoder.linear_no_bias_ref_pos.weight
+2026-11-14 17:34:48,171 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:246] INFO runner.inference: Finish loading checkpoint.
+2026-11-14 17:34:48,180 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:246] INFO runner.inference: Model parameters: 368.48M
+  0%|          | 0/1 [00:00<?, ?it/s]2026-11-14 17:34:48,188 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/msa_search.py:243] WARNING runner.msa_search: the inference json file ref_msa.json 
+do not contain msa and will not be updated,
+and you set not using msa, in this mode, 
+if you do not use esm feature, model performance might degrade significantly
+2026-11-14 17:34:48,188 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:428] INFO runner.inference: Loading data from ref_msa.json
+2026-11-14 17:34:48,191 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/inference/infer_dataloader.py:283] INFO protenix.data.inference.infer_dataloader: Featurizing ref...
+2026-11-14 17:34:56,108 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/constraint/constraint_featurizer.py:392] INFO protenix.data.constraint.constraint_featurizer: Loaded constraint feature: #atom contact:0 #contact:0 #pocket:0
+2026-11-14 17:34:56,320 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/template/template_featurizer.py:684] INFO protenix.data.template.template_featurizer: Calling InferenceTemplateFeaturizer.make_template_feature
+2026-11-14 17:34:58,842 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:478] INFO runner.inference: [Rank 0 (1/1)] ref [seed:101]: N_asym 3, N_token 795, N_atom 6206, N_msa 1
+2026-11-14 17:36:22,538 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:500] INFO runner.inference: [Rank 0] ref [seed:101] succeeded. Model forward time: 83.70s. Results saved to protenix_ref
+2026-11-14 17:36:22,585 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:520] INFO runner.inference: [Rank 0] Seed 101 completed in 94.39s.
+2026-11-14 17:36:22,586 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/inference/infer_dataloader.py:283] INFO protenix.data.inference.infer_dataloader: Featurizing ref...
+2026-11-14 17:36:23,109 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/constraint/constraint_featurizer.py:392] INFO protenix.data.constraint.constraint_featurizer: Loaded constraint feature: #atom contact:0 #contact:0 #pocket:0
+2026-11-14 17:36:23,323 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/template/template_featurizer.py:684] INFO protenix.data.template.template_featurizer: Calling InferenceTemplateFeaturizer.make_template_feature
+2026-11-14 17:36:25,983 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:478] INFO runner.inference: [Rank 0 (1/1)] ref [seed:102]: N_asym 3, N_token 795, N_atom 6206, N_msa 1
+2026-11-14 17:37:45,173 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:500] INFO runner.inference: [Rank 0] ref [seed:102] succeeded. Model forward time: 79.19s. Results saved to protenix_ref
+2026-11-14 17:37:45,219 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:520] INFO runner.inference: [Rank 0] Seed 102 completed in 82.63s.
+2026-11-14 17:37:45,220 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/inference/infer_dataloader.py:283] INFO protenix.data.inference.infer_dataloader: Featurizing ref...
+2026-11-14 17:37:45,774 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/constraint/constraint_featurizer.py:392] INFO protenix.data.constraint.constraint_featurizer: Loaded constraint feature: #atom contact:0 #contact:0 #pocket:0
+2026-11-14 17:37:45,967 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/protenix/data/template/template_featurizer.py:684] INFO protenix.data.template.template_featurizer: Calling InferenceTemplateFeaturizer.make_template_feature
+2026-11-14 17:37:48,213 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:478] INFO runner.inference: [Rank 0 (1/1)] ref [seed:103]: N_asym 3, N_token 795, N_atom 6206, N_msa 1
+2026-11-14 17:39:07,173 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:500] INFO runner.inference: [Rank 0] ref [seed:103] succeeded. Model forward time: 78.96s. Results saved to protenix_ref
+2026-11-14 17:39:07,214 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:520] INFO runner.inference: [Rank 0] Seed 103 completed in 81.99s.
+2026-11-14 17:39:07,214 [/home/boltzmann10/APRIL_EXPERIMENTATION/Protenix/runner/inference.py:532] INFO runner.inference: [Rank 0] Job completed in 259.03s.
+100%|██████████| 1/1 [04:19<00:00, 259.03s/it]100%|██████████| 1/1 [04:19<00:00, 259.03s/it]

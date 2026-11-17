@@ -1,0 +1,82 @@
+candidate_id,metric,value,units,source,protocol
+REFERENCE,dG_rec1_H,-10.2,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+REFERENCE,dG_rec2_L,-8.7,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+REFERENCE,Kd_uM_rec2,0.42,uM,derived: exp(dG/RT),HER2+VL record
+REFERENCE,iptm_rec1,0.22,dimensionless,Boltz2,HER2+VH
+REFERENCE,iptm_rec2,0.34,dimensionless,Boltz2,HER2+VL
+REFERENCE,cdr_plddt_VH,0.8169,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+REFERENCE,cdr_plddt_VL,0.8708,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+REFERENCE,epitope_recovery_rec2,0.0,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+REFERENCE,clashes_total,0,count,local: heavy-atom <2.2A,both records
+T001-C001,dG_rec1_H,-10.2,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C001,dG_rec2_L,-8.7,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C001,Kd_uM_rec2,0.42,uM,derived: exp(dG/RT),HER2+VL record
+T001-C001,iptm_rec1,0.251,dimensionless,Boltz2,HER2+VH
+T001-C001,iptm_rec2,0.701,dimensionless,Boltz2,HER2+VL
+T001-C001,cdr_plddt_VH,0.8291,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C001,cdr_plddt_VL,0.8895,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C001,epitope_recovery_rec2,0.0,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C001,clashes_total,1,count,local: heavy-atom <2.2A,both records
+T001-C002,dG_rec1_H,-11.2,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C002,dG_rec2_L,-9.5,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C002,Kd_uM_rec2,0.11,uM,derived: exp(dG/RT),HER2+VL record
+T001-C002,iptm_rec1,0.148,dimensionless,Boltz2,HER2+VH
+T001-C002,iptm_rec2,0.792,dimensionless,Boltz2,HER2+VL
+T001-C002,cdr_plddt_VH,0.8299,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C002,cdr_plddt_VL,0.9222,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C002,epitope_recovery_rec2,0.062,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C002,clashes_total,3,count,local: heavy-atom <2.2A,both records
+T001-C003,dG_rec1_H,-10.3,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C003,dG_rec2_L,-8.7,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C003,Kd_uM_rec2,0.42,uM,derived: exp(dG/RT),HER2+VL record
+T001-C003,iptm_rec1,0.18,dimensionless,Boltz2,HER2+VH
+T001-C003,iptm_rec2,0.753,dimensionless,Boltz2,HER2+VL
+T001-C003,cdr_plddt_VH,0.8284,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C003,cdr_plddt_VL,0.9092,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C003,epitope_recovery_rec2,0.062,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C003,clashes_total,1,count,local: heavy-atom <2.2A,both records
+T001-C004,dG_rec1_H,-8.9,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C004,dG_rec2_L,-9.7,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C004,Kd_uM_rec2,0.08,uM,derived: exp(dG/RT),HER2+VL record
+T001-C004,iptm_rec1,0.173,dimensionless,Boltz2,HER2+VH
+T001-C004,iptm_rec2,0.738,dimensionless,Boltz2,HER2+VL
+T001-C004,cdr_plddt_VH,0.8514,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C004,cdr_plddt_VL,0.9182,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C004,epitope_recovery_rec2,0.0,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C004,clashes_total,0,count,local: heavy-atom <2.2A,both records
+T001-C005,dG_rec1_H,-8.0,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C005,dG_rec2_L,-9.6,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C005,Kd_uM_rec2,0.09,uM,derived: exp(dG/RT),HER2+VL record
+T001-C005,iptm_rec1,0.348,dimensionless,Boltz2,HER2+VH
+T001-C005,iptm_rec2,0.797,dimensionless,Boltz2,HER2+VL
+T001-C005,cdr_plddt_VH,0.8425,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C005,cdr_plddt_VL,0.9073,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C005,epitope_recovery_rec2,0.0,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C005,clashes_total,1,count,local: heavy-atom <2.2A,both records
+T001-C006,dG_rec1_H,-11.4,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C006,dG_rec2_L,-9.5,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C006,Kd_uM_rec2,0.11,uM,derived: exp(dG/RT),HER2+VL record
+T001-C006,iptm_rec1,0.363,dimensionless,Boltz2,HER2+VH
+T001-C006,iptm_rec2,0.781,dimensionless,Boltz2,HER2+VL
+T001-C006,cdr_plddt_VH,0.8849,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C006,cdr_plddt_VL,0.9044,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C006,epitope_recovery_rec2,0.0,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C006,clashes_total,0,count,local: heavy-atom <2.2A,both records
+T001-C007,dG_rec1_H,-10.2,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C007,dG_rec2_L,-10.1,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C007,Kd_uM_rec2,0.04,uM,derived: exp(dG/RT),HER2+VL record
+T001-C007,iptm_rec1,0.195,dimensionless,Boltz2,HER2+VH
+T001-C007,iptm_rec2,0.569,dimensionless,Boltz2,HER2+VL
+T001-C007,cdr_plddt_VH,0.8378,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C007,cdr_plddt_VL,0.8714,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C007,epitope_recovery_rec2,0.062,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C007,clashes_total,3,count,local: heavy-atom <2.2A,both records
+T001-C008,dG_rec1_H,-10.6,kcal/mol,Prodigy (Boltzmann),HER2+VH pairwise record
+T001-C008,dG_rec2_L,-9.6,kcal/mol,Prodigy (Boltzmann),HER2+VL pairwise record
+T001-C008,Kd_uM_rec2,0.09,uM,derived: exp(dG/RT),HER2+VL record
+T001-C008,iptm_rec1,0.254,dimensionless,Boltz2,HER2+VH
+T001-C008,iptm_rec2,0.808,dimensionless,Boltz2,HER2+VL
+T001-C008,cdr_plddt_VH,0.8159,dimensionless,Boltz2 plddt npz,"VH CDRs (Kabat H31-35,50-65,95-102)"
+T001-C008,cdr_plddt_VL,0.9337,dimensionless,Boltz2 plddt npz,"VL CDRs (Kabat L24-34,50-56,89-97)"
+T001-C008,epitope_recovery_rec2,0.062,fraction,local: prodigy interface vs 1N8Z contacts,strict residue-number overlap
+T001-C008,clashes_total,1,count,local: heavy-atom <2.2A,both records

@@ -1,3 +1,3 @@
 # Antibody Design Skills
 
-Reusable agent skills for antibody design will be published here, with setup instructions and usage examples. Planned skills cover task interpretation, input review, workflow planning, candidate assessment and evidence reporting across design and optimization tasks.
+This directory is reserved for reusable agent instructions. The [environment specification](../ENVIRONMENT_SPEC.md) defines the directory and recording conventions, while the [task definitions](../tasks/monoclonal_antibody_design/README.md) provide the scientific requirements.

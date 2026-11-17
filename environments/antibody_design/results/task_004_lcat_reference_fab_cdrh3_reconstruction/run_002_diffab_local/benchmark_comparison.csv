@@ -1,0 +1,7 @@
+metric,this_run_5bv7_diffab_n32_mean,published_aggregate_mean,published_aggregate_sd,published_table,n_cases,comparability,verdict
+AAR H3,0.2747,0.4234,0.1334,Table 1,60,protocol-different (in-context vs pose-blind); evaluator identical,below reference (comparator only)
+CAAR H3,0.1458,0.2824,0.2037,Table 1,60,same,below reference (comparator only)
+TMscore,0.9785,0.9736,0.009,Table 1,60,same,matches (conditioned on native framework)
+LDDT,0.8956,0.8522,0.0216,Table 1,60,same,above reference
+RMSD H3 in-place,4.5504,8.25,4.55,Table 1,60,same,above mean (z=+1.7 vs aggregate; pose-conditioned)
+DockQ,0.5877,0.423,0.161,Table 1,60,same,above reference

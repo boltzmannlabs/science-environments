@@ -1,0 +1,16 @@
+{
+  "allow_partial_validation": true,
+  "experiment_data": {
+    "chains_to_design": [
+      "A",
+      "B"
+    ],
+    "generation_count": 20,
+    "input_path": "users/680f678c1b1d883c92aa706c/1794677121895/ref_rank1_clean.pdb",
+    "residue_positions_to_design": {
+      "A": "26-38,54-64,104-117",
+      "B": "26-38,54-61,104-113"
+    }
+  },
+  "job_name": "AntiBMPNN"
+}

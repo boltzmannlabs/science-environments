@@ -30,7 +30,7 @@ Prioritize paired monoclonal antibody candidates for the specified developabilit
 
 Source references: [FLAb preprint, 2024](https://doi.org/10.1101/2024.01.13.575504), [FLAb2 preprint, 2025](https://doi.org/10.64898/2025.12.27.696706), [Graylab/FLAb @ `e05e3f013578`](https://github.com/Graylab/FLAb/tree/e05e3f0135783ffb7de412df6a1467e7a0031911).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_020_flab_antibody_developability_ranking.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_020_flab_antibody_developability_ranking/reference.md).
 
 ## Expected Output
 
@@ -46,6 +46,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Keep computational predictions and experimental property measurements separately identified.
 - Property ranking does not establish clinical safety, immunogenicity or therapeutic readiness.

@@ -1,0 +1,1750 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_antibmpnn_fixed_backbone_cdr",
+  "status": "complete",
+  "lineage": {
+    "parent": null,
+    "derived_from": "PDB 1N8Z (sha256 ed934d36...)",
+    "historical_components": []
+  },
+  "task_requirements": {
+    "objective": "Reference-guided interaction optimization of trastuzumab Fv against HER2 ECD",
+    "constraints": [
+      "CDR-only edits; framework, disulfides, VH/VL pairing protected",
+      "Reference and candidates evaluated under identical construct and preparation",
+      "Published optimized sequences kept as comparison controls only"
+    ],
+    "metrics": [
+      "interaction score (Prodigy Kd pred + Boltz2 ipTM)",
+      "structural quality (CDR pLDDT, clashes)",
+      "binding-region retention (epitope contact recovery)",
+      "candidate quality (dedupe, liabilities)"
+    ]
+  },
+  "input_inventory": {
+    "1n8z.pdb": {
+      "path": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/1n8z.pdb",
+      "sha256": "ed934d36503335c6764b08880f9e50933d99eb13b9bf145339cfcaee150eb21e",
+      "provenance": "RCSB files.rcsb.org/download/1N8Z.pdb"
+    },
+    "complex_fv_her2.pdb": {
+      "path": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/complex_fv_her2.pdb",
+      "sha256": "4e774d2a59edbe1e9dbfcf88e15a0a483b7021d46b1a31f5cf171e09cbfc5ac9"
+    },
+    "antibody_fv.pdb": {
+      "sha256": "1866856a37221fc8dc59f29d7f075714acde9d1fe1523e5038077f4c249b492c"
+    },
+    "antigen_her2.pdb": {
+      "sha256": "66863dac0dbd4f6e6d9739eeacc5abfd5baab736ddd52df8b99f319c706cbe92"
+    },
+    "reference_sequences.json": {
+      "sha256": "7a32d7d9db34a9a2f1bb3f873096eb9327af27359469de01729321524da880ba"
+    },
+    "crystal_contacts.csv": {
+      "sha256": "75d3f880bc3592df62eb89ae79c89da2fe9e3c70f1164234281f005773e24bcd"
+    }
+  },
+  "workflow_plan": {
+    "designed": 3,
+    "selected": 1,
+    "stages": [
+      {
+        "id": "S1",
+        "purpose": "AntiBMPNN CDR redesign on fixed complex backbone",
+        "depends": [],
+        "tool": "AntiBMPNN"
+      },
+      {
+        "id": "S2",
+        "purpose": "edit-mask verification + dedupe",
+        "depends": [
+          "S1"
+        ],
+        "tool": "local python"
+      },
+      {
+        "id": "S3",
+        "purpose": "matched Boltz2 complex predictions (ref + candidates)",
+        "depends": [
+          "S2"
+        ],
+        "tool": "Boltz2"
+      },
+      {
+        "id": "S4",
+        "purpose": "interface analysis + Prodigy + properties",
+        "depends": [
+          "S3"
+        ],
+        "tool": "local python + Prodigy + Antibody_Prediction"
+      },
+      {
+        "id": "S5",
+        "purpose": "benchmark comparison + bundle",
+        "depends": [
+          "S4"
+        ],
+        "tool": "local python"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "stage_id": "S0_prep",
+      "purpose": "fetch/verify/split 1N8Z; build correctly numbered design input",
+      "dependencies": [],
+      "acceptance_criteria": "VH/VL 100% trastuzumab; chains verified; CDR windows computed",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S0-1",
+          "tool_name": "stage0_fetch_verify.py",
+          "actual_identifier": "local python3",
+          "purpose": "fetch 1N8Z, verify chains/sequences, split Fv/HER2, contact map",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "pdb": "inputs/1n8z.pdb (sha256 ed934d36...)"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python3 code/stage0_fetch_verify.py",
+            "log": "stage0_run.log"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/antibody_fv.pdb",
+              "inputs/antigen_her2.pdb",
+              "inputs/crystal_contacts.csv",
+              "inputs/reference_sequences.json"
+            ]
+          },
+          "validation": "VH/VL 100% match; A=light(214)/B=heavy(220)/C=HER2(581/607)",
+          "fallback": null
+        },
+        {
+          "call_id": "S0-2",
+          "tool_name": "stage0b_fix_numbering.py",
+          "actual_identifier": "local python3",
+          "purpose": "fix per-atom residue numbering bug; rebuild with per-residue numbering + SEQRES + TER/END",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/1n8z.pdb"
+          },
+          "request_payload": null,
+          "parameters": {
+            "CROP": "A=107 VL, B=120 VH (variable-domain crop)",
+            "renumber": "per-residue sequential"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python3 code/stage0b_fix_numbering.py"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/complex_hl_a_seqres.pdb (sha256 9e54b25d680daa48)"
+            ]
+          },
+          "validation": "H=VH(120)/L=VL(107)/A=HER2(581); CDR windows verified",
+          "fallback": {
+            "prior_call": "S0-1",
+            "error": "AntiBMPNN x4: Expected exactly one heavy/VHH domain (per-atom numbering made VH=924 residues)",
+            "recovery": "stage0b rewrite",
+            "protocol_difference": null
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S1_design",
+      "purpose": "CDR-only fixed-backbone redesign of trastuzumab Fv",
+      "dependencies": [
+        "S0_prep"
+      ],
+      "acceptance_criteria": "sequences returned; all edits inside CDR mask; framework identical",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S1-a1..a4",
+          "tool_name": "AntiBMPNN",
+          "actual_identifier": "boltzmann AntiBMPNN",
+          "purpose": "design attempts 1-4 (rejected inputs)",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "failed",
+          "inputs": {
+            "inputs": [
+              "complex_fv_her2.pdb",
+              "complex_vhvl_her2.pdb",
+              "complex_vhvl_her2_ter.pdb",
+              "fv_vhvl_only.pdb"
+            ]
+          },
+          "request_payload": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 40,
+            "residue_positions_to_design": {
+              "H": "31-35,50-65,95-102",
+              "L": "24-34,50-56,89-97"
+            }
+          },
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_ids": [
+              "6af844059de6b44b075d79e0",
+              "6af844589030bff41644751b",
+              "6af844ca9850a93adf67cad5",
+              "6af8453c239a6b9f38beb6dd"
+            ],
+            "error": "Expected exactly one heavy/VHH domain; detected 0"
+          },
+          "outputs": null,
+          "validation": "terminal failure x4",
+          "fallback": {
+            "prior_stage": "S0-1",
+            "error": "input numbering",
+            "recovery": "S0-2 rebuild",
+            "reason": "input format",
+            "alternative": "complex_hl_a_seqres.pdb"
+          },
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077579300299335558:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "failed",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16414_subcall_0.json",
+                "sha256": "1b08763c4ca78ac8cc51b7f54179c8833ed1ff15f4b5c2710062f0eabea6f487"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+                "residue_positions_to_design": {
+                  "H": "31-35,50-65,95-102",
+                  "L": "24-34,50-56,89-97"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "H",
+                    "L"
+                  ],
+                  "generation_count": 40,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+                  "residue_positions_to_design": {
+                    "H": "31-35,50-65,95-102",
+                    "L": "24-34,50-56,89-97"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+                "residue_positions_to_design": {
+                  "H": "31-35,50-65,95-102",
+                  "L": "24-34,50-56,89-97"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16414,
+                "tool_call_id": "call_-7077579300299335558",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:20:37.730417+00:00",
+                "doc_id": "6af844059de6b44b075d79e0",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16414_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077575039691783799:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "failed",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16492_subcall_0.json",
+                "sha256": "b0f9687edccc3074aaca15440be36cab10659c4426175c10c3bfb9fec7f464e0"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "A",
+                    "B"
+                  ],
+                  "generation_count": 40,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+                  "residue_positions_to_design": {
+                    "A": "31-35,50-65,95-102",
+                    "B": "24-34,50-56,89-97"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16492,
+                "tool_call_id": "call_-7077575039691783799",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:22:00.318391+00:00",
+                "doc_id": "6af844589030bff41644751b",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16492_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077577238715039327:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "failed",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16568_subcall_0.json",
+                "sha256": "c6bf778f4a5a3a71106665a067d081654297659d29365033d79894fc5841e2e6"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "A",
+                    "B"
+                  ],
+                  "generation_count": 40,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+                  "residue_positions_to_design": {
+                    "A": "31-35,50-65,95-102",
+                    "B": "24-34,50-56,89-97"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16568,
+                "tool_call_id": "call_-7077577238715039327",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:23:54.354766+00:00",
+                "doc_id": "6af844ca9850a93adf67cad5",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16568_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077571706797161870:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "failed",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16614_subcall_0.json",
+                "sha256": "ecb46baf625050cb154bfc60c2ace2198244101a77fbcf5020ba9787f99cfcf4"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "A",
+                    "B"
+                  ],
+                  "generation_count": 40,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+                  "residue_positions_to_design": {
+                    "A": "31-35,50-65,95-102",
+                    "B": "24-34,50-56,89-97"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "A",
+                  "B"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+                "residue_positions_to_design": {
+                  "A": "31-35,50-65,95-102",
+                  "B": "24-34,50-56,89-97"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16614,
+                "tool_call_id": "call_-7077571706797161870",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:25:48.096608+00:00",
+                "doc_id": "6af8453c239a6b9f38beb6dd",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16614_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        },
+        {
+          "call_id": "S1-control",
+          "tool_name": "AntiBMPNN",
+          "actual_identifier": "boltzmann AntiBMPNN",
+          "purpose": "benign control (1MCP) to bisect service vs input fault",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/1mcp_control.pdb (340,443 bytes)"
+          },
+          "request_payload": {
+            "generation_count": 2,
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "residue_positions_to_design": {}
+          },
+          "parameters": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 2,
+            "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+            "residue_positions_to_design": {}
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af84579239a6b9f38beb714",
+            "cost_usd": 1
+          },
+          "outputs": null,
+          "validation": "service healthy; failures were input-format",
+          "fallback": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077585931728844002:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16656_subcall_0.json",
+                "sha256": "0b0bad500b12a0f0181e8ef13d00393174cfb64aebc6e44164cbf233f7ff6815"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 2,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+                "residue_positions_to_design": {}
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "H",
+                    "L"
+                  ],
+                  "generation_count": 2,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+                  "residue_positions_to_design": {}
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 2,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+                "residue_positions_to_design": {}
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16656,
+                "tool_call_id": "call_-7077585931728844002",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:26:49.668764+00:00",
+                "doc_id": "6af84579239a6b9f38beb714",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16656_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        },
+        {
+          "call_id": "S1-final",
+          "tool_name": "AntiBMPNN",
+          "actual_identifier": "boltzmann AntiBMPNN",
+          "purpose": "winning design run: 40 CDR-redesign generations on fixed 1N8Z Fv backbone",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+            "sha256": "9e54b25d680daa48749f87bf1cc4038a8a09d0dd3217387241aaa3d354bd98cd"
+          },
+          "request_payload": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 40,
+            "residue_positions_to_design": {
+              "H": "31-35,50-65,95-102",
+              "L": "24-34,50-56,89-97"
+            }
+          },
+          "parameters": {
+            "generation_count": "40 candidates within budget",
+            "residue_positions_to_design": "Kabat CDR windows (task constraint: CDR-only)"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af8461a9850a93adf67cb88",
+            "experiment_name": "AntiBMPNN - 20261114-112354Z - fb6923",
+            "completed_utc": "~2026-11-14T11:32:07Z"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/antibmpnn_results.zip (40,806 bytes)"
+            ],
+            "validation": "40 sequences; domains H=VH(120) L=VL(107) kappa"
+          },
+          "validation": null,
+          "fallback": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077572531430878641:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16729_subcall_0.json",
+                "sha256": "79fa7bb874689d878f206db6dc180a72dc6aa5da997bfdbe1a094c83a32635fa"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+                "residue_positions_to_design": {
+                  "H": "31-35,50-65,95-102",
+                  "L": "24-34,50-56,89-97"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "H",
+                    "L"
+                  ],
+                  "generation_count": 40,
+                  "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+                  "residue_positions_to_design": {
+                    "H": "31-35,50-65,95-102",
+                    "L": "24-34,50-56,89-97"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 40,
+                "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+                "residue_positions_to_design": {
+                  "H": "31-35,50-65,95-102",
+                  "L": "24-34,50-56,89-97"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16729,
+                "tool_call_id": "call_-7077572531430878641",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:29:30.581045+00:00",
+                "doc_id": "6af8461a9850a93adf67cb88",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16729_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_verify",
+      "purpose": "edit-mask verification, dedupe, candidate table",
+      "dependencies": [
+        "S1_design"
+      ],
+      "acceptance_criteria": "100% mutations inside mask; framework byte-identical; no new Cys",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S2-1",
+          "tool_name": "stage2_verify_mask.py",
+          "actual_identifier": "local python3",
+          "purpose": "position-by-position mask verification + dedupe + liability scan",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/antibmpnn_results.zip"
+          },
+          "request_payload": null,
+          "parameters": {
+            "mask": "Kabat CDR windows"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python3 code/stage2_verify_mask.py"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/candidates.json (38 unique)"
+            ]
+          },
+          "validation": "40/40 mask-clean; 0 framework violations; 0 new Cys; 2 dup pairs removed; NG/DS/DT motifs inherited from reference",
+          "fallback": null
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_structure",
+      "purpose": "matched Boltz2 complex prediction: reference + top-8 candidates",
+      "dependencies": [
+        "S2_verify"
+      ],
+      "acceptance_criteria": "all jobs terminal Success; artifacts downloaded",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S3-ref",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "reference complex prediction (trastuzumab VH/VL vs HER2 construct)",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "Protein_Sequences": "[HER2_construct_607aa, VH_120aa, VL_107aa] (exact in inputs/boltz2_payloads.json[0])"
+          },
+          "request_payload": {
+            "Protein_Sequences": null,
+            "DNA_Sequences": [],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+              "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+              "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af84747445ae94313c3a9ae",
+            "account": "users/68d12a5de5b6a2fdc0e3c443 (old key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_reference/{pdbs_outputs.zip,outputs.zip,paths.csv}"
+            ]
+          },
+          "validation": "Success; pairwise records rec1=HER2+VH ipTM 0.220, rec2=HER2+VL ipTM 0.340",
+          "fallback": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077568167744108664:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16852_subcall_0.json",
+                "sha256": "b27f6ad23d4fdd9fa885450f34cc177bd09a0ab21a309a3f3a971c88c09a43a4"
+              },
+              "request_payload": {
+                "DNA_Sequences": [],
+                "Protein_Sequences": [
+                  "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+                  "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+                  "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+                ],
+                "RNA_Sequences": [],
+                "SMILES": []
+              },
+              "submitted_tool_arguments": {
+                "job_name": "Boltz2",
+                "experiment_data": {
+                  "DNA_Sequences": [],
+                  "Protein_Sequences": [
+                    "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+                    "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+                    "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+                  ],
+                  "RNA_Sequences": [],
+                  "SMILES": []
+                }
+              },
+              "parameters": {
+                "DNA_Sequences": [],
+                "Protein_Sequences": [
+                  "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+                  "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+                  "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+                ],
+                "RNA_Sequences": [],
+                "SMILES": []
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110112_c07285",
+                "message_id": 16852,
+                "tool_call_id": "call_-7077568167744108664",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T11:34:31.466881+00:00",
+                "doc_id": "6af84747445ae94313c3a9ae",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/observed_submission_responses/message_16852_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        },
+        {
+          "call_id": "S3-T001-C001",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C001",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C001]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af87767239a6b9f38beba67",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C001/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C002",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C002",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C002]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af87769239a6b9f38beba72",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C002/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C003",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C003",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C003]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af8776c9850a93adf67ce91",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C003/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C004",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C004",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C004]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af8776e9de6b44b075d7e2f",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C004/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C005",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C005",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C005]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af87770445ae94313c3add0",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C005/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C006",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C006",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C006]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af87773239a6b9f38beba85",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C006/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C007",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C007",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C007]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af877759de6b44b075d7e3e",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C007/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S3-T001-C008",
+          "tool_name": "Boltz2",
+          "actual_identifier": "boltzmann boltz_structure_prediction",
+          "purpose": "candidate complex prediction T001-C008",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "payload": "inputs/boltz2_payloads.json[T001-C008]"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af877789030bff416447921",
+            "account": "users/680f678c1b1d883c92aa706c (new key)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/boltz2_candidates/T001-C008/"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_affinity",
+      "purpose": "Prodigy binding-affinity on Boltz2 structures (both records per construct)",
+      "dependencies": [
+        "S3_structure"
+      ],
+      "acceptance_criteria": "prodigy.csv per construct",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S4-v1",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "v1 submissions with nested pdbs_outputs.zip",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "failed",
+          "inputs": {
+            "input": "pdbs_outputs.zip (nested boltz_pdb/)"
+          },
+          "request_payload": {
+            "input_path": "users/.../pdbs_outputs.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] = automatic pairwise analysis of uppercase chains"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_ids": [
+              "6af87c88d29658acc304e3e3",
+              "6af87c8a445ae94313c3b2c3",
+              "6af87c8c9de6b44b075d8065",
+              "6af87c8e9850a93adf67d0b0",
+              "6af87c8f445ae94313c3b2d1",
+              "6af87c91239a6b9f38bebcb8",
+              "6af87c939850a93adf67d0bb",
+              "6af87c949850a93adf67d0c6",
+              "6af87c96d29658acc304e3f6"
+            ],
+            "error": "Signed URL download failed: 404 / no nonempty PDB files at supported archive level"
+          },
+          "outputs": null,
+          "validation": "all 9 failed",
+          "fallback": {
+            "prior_call": null,
+            "error": "nested archive level unsupported",
+            "recovery": "flatten zips (PDBs at root)",
+            "reason": "input format",
+            "alternative": "flat zip resubmission, one per job (policy: one corrected resubmission)"
+          }
+        },
+        {
+          "call_id": "S4-REFERENCE",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission REFERENCE",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/REFERENCE_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671583579/REFERENCE_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883e0d29658acc304e85a"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/REFERENCE/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C001",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C001",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C001_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671585424/T001-C001_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883e39de6b44b075d8496"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C001/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C002",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C002",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C002_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671587409/T001-C002_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883e4d29658acc304e869"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C002/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C003",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C003",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C003_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671589092/T001-C003_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883e69850a93adf67d51a"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C003/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C004",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C004",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C004_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671590903/T001-C004_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883e89030bff416447f91"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C004/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C005",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C005",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C005_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671592959/T001-C005_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883ea445ae94313c3bcee"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C005/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C006",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C006",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C006_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671594636/T001-C006_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883eb9850a93adf67d541"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C006/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C007",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C007",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C007_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671596326/T001-C007_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883eed29658acc304e8a3"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C007/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        },
+        {
+          "call_id": "S4-T001-C008",
+          "tool_name": "Prodigy",
+          "actual_identifier": "boltzmann Prodigy",
+          "purpose": "flat-zip corrected submission T001-C008",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "input": "inputs/prodigy_flat/T001-C008_flat.zip"
+          },
+          "request_payload": {
+            "input_path": "users/680f678c1b1d883c92aa706c/1794671598601/T001-C008_flat.zip",
+            "chain_list": []
+          },
+          "parameters": {
+            "chain_list": "[] automatic pairwise"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "doc_id": "6af883ef239a6b9f38bec13b"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/prodigy/T001-C008/prodigy.csv"
+            ]
+          },
+          "validation": "Success",
+          "fallback": null
+        }
+      ]
+    },
+    {
+      "stage_id": "S5_evaluation",
+      "purpose": "consolidated metrics + artifacts",
+      "dependencies": [
+        "S4_affinity"
+      ],
+      "acceptance_criteria": "monoclonal.md section-6 artifact set complete",
+      "status": "complete",
+      "tool_calls": [
+        {
+          "call_id": "S5-1",
+          "tool_name": "stage4_extract_confidence.py",
+          "actual_identifier": "local python3",
+          "purpose": "Boltz2 confidence extraction",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "inputs": "inputs/boltz2_reference/outputs.zip + inputs/boltz2_candidates/*/outputs.zip"
+          },
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python3 code/stage4_extract_confidence.py"
+          },
+          "outputs": {
+            "outputs": [
+              "raw/boltz2_confidence.{json,csv}"
+            ]
+          },
+          "validation": null,
+          "fallback": null
+        },
+        {
+          "call_id": "S5-2",
+          "tool_name": "stage6_evaluate.py",
+          "actual_identifier": "local python3",
+          "purpose": "Prodigy dG/Kd + epitope recovery + CDR pLDDT",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "inputs": "prodigy CSVs + plddt npz + crystal_contacts.csv"
+          },
+          "request_payload": null,
+          "parameters": {
+            "RT": "0.0019872041 kcal/mol/K",
+            "T": "298.15 K",
+            "epitope": "1N8Z HER2 crystal contacts (16 residues 532-603)"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python3 code/stage6_evaluate.py"
+          },
+          "outputs": {
+            "outputs": [
+              "raw/evaluation.{csv,json}"
+            ]
+          },
+          "validation": "9 rows x 20 cols",
+          "fallback": null
+        },
+        {
+          "call_id": "S5-3",
+          "tool_name": "clash scan",
+          "actual_identifier": "local python3 (inline)",
+          "purpose": "interface heavy-atom clashes <2.2 A",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "inputs": "pdbs_outputs.zip members"
+          },
+          "request_payload": null,
+          "parameters": {
+            "cutoff": "2.2 A heavy-atom pairs"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": null,
+          "outputs": {
+            "outputs": [
+              "raw/clash_counts.json"
+            ]
+          },
+          "validation": "0-3 per construct",
+          "fallback": null
+        },
+        {
+          "call_id": "S5-4",
+          "tool_name": "stage7_artifacts.py",
+          "actual_identifier": "local python3",
+          "purpose": "candidates/shortlist/fasta/metrics/benchmark/report build",
+          "source": "open_source",
+          "model_version": null,
+          "selection_reason": null,
+          "status": "complete",
+          "inputs": {
+            "inputs": "candidates.json + evaluation.json + confidences + clashes"
+          },
+          "request_payload": null,
+          "parameters": {
+            "rank_key": "mean Prodigy dG -> ipTM rec2 -> fewer mutations (pre-stated)"
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "command": "python code/stage7_artifacts.py"
+          },
+          "outputs": {
+            "outputs": [
+              "candidates.csv (38)",
+              "shortlist.csv (8)",
+              "sequences.fasta (78)",
+              "metrics.csv (81 rows)",
+              "benchmark_comparison.csv",
+              "report.md"
+            ]
+          },
+          "validation": "verified counts",
+          "fallback": null
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched.json",
+    "workflow_md": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/workflow.md",
+    "code": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/code",
+    "inputs": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs",
+    "agent_log": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/execution_summary.md",
+    "report_md": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/report.md",
+    "candidates_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/candidates.csv",
+    "shortlist_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/shortlist.csv",
+    "sequences_fasta": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/sequences.fasta",
+    "metrics_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/metrics.csv",
+    "benchmark_comparison_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/benchmark_comparison.csv",
+    "structures": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/structures",
+    "raw": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw"
+  },
+  "completion_summary": {
+    "workflows_designed": 3,
+    "selected": 1,
+    "executed": 1,
+    "not_selected": 1,
+    "not_run": 1,
+    "generated": 40,
+    "unique_candidates": 38,
+    "evaluated": 8,
+    "unevaluated": 30,
+    "jobs_ledger": "inputs/job_map.json (25 entries)",
+    "top_shortlist": "T001-C005 (pre-stated rank key)",
+    "integrative_lead": "T001-C008",
+    "remaining": [
+      "Zenodo 4.1 GB archive NEEDS_INPUT",
+      "REF15 scoring not computed (not_comparable protocol)",
+      "no ternary complex record (Boltz2 pairwise scheduling)"
+    ],
+    "last_update": "2026-11-14T14:10Z"
+  },
+  "completed_utc": "2026-11-14",
+  "historical_artifact_links": {
+    "workflow_md": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/workflow.md",
+    "logs": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/"
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/boltz2_reference",
+        "saved": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/recovered_native/boltz2_reference"
+      },
+      {
+        "original": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/boltz2_candidates",
+        "saved": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/recovered_native/boltz2_candidates"
+      },
+      {
+        "original": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/prodigy",
+        "saved": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/recovered_native/prodigy"
+      },
+      {
+        "original": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/antibmpnn_results.zip",
+        "saved": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw/recovered_native/antibmpnn_results.zip"
+      },
+      {
+        "original": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/stage0_run.log",
+        "saved": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/stage0_run.log"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "3a5803a106542079cf93d107b05e96365df402abb301b605d70edb6abba31ede",
+    "source_status": "complete",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/workflow.md",
+    "config_json": "configs/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched.json",
+    "inputs": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs",
+    "code": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/code",
+    "logs": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs",
+    "agent_log": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/logs/execution_summary.md",
+    "file_manifest": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110112_c07285.jsonl",
+    "results": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched",
+    "report_md": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/report.md",
+    "candidates_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/candidates.csv",
+    "shortlist_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/shortlist.csv",
+    "sequences_fasta": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/sequences.fasta",
+    "metrics_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/metrics.csv",
+    "benchmark_comparison_csv": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/benchmark_comparison.csv",
+    "structures": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/structures",
+    "raw": "results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/raw"
+  }
+}

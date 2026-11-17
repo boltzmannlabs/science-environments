@@ -1,0 +1,1629 @@
+{
+  "task_id": "task_001_her2_trastuzumab_interaction_optimization",
+  "run_id": "run_001_antibmpnn_matched",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "stage_id": "S0_prep",
+      "purpose": "fetch/verify/split 1N8Z; build correctly numbered design input",
+      "dependencies": [],
+      "acceptance_criteria": "VH/VL 100% trastuzumab; chains verified; CDR windows computed",
+      "status": "complete",
+      "records": [
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "stage_id": "S1_design",
+      "purpose": "CDR-only fixed-backbone redesign of trastuzumab Fv",
+      "dependencies": [
+        "S0_prep"
+      ],
+      "acceptance_criteria": "sequences returned; all edits inside CDR mask; framework identical",
+      "status": "complete",
+      "records": [
+        "C03",
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "stage_id": "S2_verify",
+      "purpose": "edit-mask verification, dedupe, candidate table",
+      "dependencies": [
+        "S1_design"
+      ],
+      "acceptance_criteria": "100% mutations inside mask; framework byte-identical; no new Cys",
+      "status": "complete",
+      "records": [
+        "C06"
+      ]
+    },
+    {
+      "stage_id": "S3_structure",
+      "purpose": "matched Boltz2 complex prediction: reference + top-8 candidates",
+      "dependencies": [
+        "S2_verify"
+      ],
+      "acceptance_criteria": "all jobs terminal Success; artifacts downloaded",
+      "status": "complete",
+      "records": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "stage_id": "S4_affinity",
+      "purpose": "Prodigy binding-affinity on Boltz2 structures (both records per construct)",
+      "dependencies": [
+        "S3_structure"
+      ],
+      "acceptance_criteria": "prodigy.csv per construct",
+      "status": "complete",
+      "records": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "stage_id": "S5_evaluation",
+      "purpose": "consolidated metrics + artifacts",
+      "dependencies": [
+        "S4_affinity"
+      ],
+      "acceptance_criteria": "monoclonal.md section-6 artifact set complete",
+      "status": "complete",
+      "records": [
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ]
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "S0-1",
+      "tool_name": "stage0_fetch_verify.py",
+      "actual_identifier": "local python3",
+      "purpose": "fetch 1N8Z, verify chains/sequences, split Fv/HER2, contact map",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "pdb": "inputs/1n8z.pdb (sha256 ed934d36...)"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python3 code/stage0_fetch_verify.py",
+        "log": "stage0_run.log"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/antibody_fv.pdb",
+          "inputs/antigen_her2.pdb",
+          "inputs/crystal_contacts.csv",
+          "inputs/reference_sequences.json"
+        ]
+      },
+      "validation": "VH/VL 100% match; A=light(214)/B=heavy(220)/C=HER2(581/607)",
+      "fallback": null,
+      "original_pointer": "/stages/0/tool_calls/0"
+    },
+    "C02": {
+      "call_id": "S0-2",
+      "tool_name": "stage0b_fix_numbering.py",
+      "actual_identifier": "local python3",
+      "purpose": "fix per-atom residue numbering bug; rebuild with per-residue numbering + SEQRES + TER/END",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/1n8z.pdb"
+      },
+      "request_payload": null,
+      "parameters": {
+        "CROP": "A=107 VL, B=120 VH (variable-domain crop)",
+        "renumber": "per-residue sequential"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python3 code/stage0b_fix_numbering.py"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/complex_hl_a_seqres.pdb (sha256 9e54b25d680daa48)"
+        ]
+      },
+      "validation": "H=VH(120)/L=VL(107)/A=HER2(581); CDR windows verified",
+      "fallback": {
+        "prior_call": "S0-1",
+        "error": "AntiBMPNN x4: Expected exactly one heavy/VHH domain (per-atom numbering made VH=924 residues)",
+        "recovery": "stage0b rewrite",
+        "protocol_difference": null
+      },
+      "original_pointer": "/stages/0/tool_calls/1"
+    },
+    "C03": {
+      "call_id": "S1-a1..a4",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "boltzmann AntiBMPNN",
+      "purpose": "design attempts 1-4 (rejected inputs)",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "failed",
+      "inputs": {
+        "inputs": [
+          "complex_fv_her2.pdb",
+          "complex_vhvl_her2.pdb",
+          "complex_vhvl_her2_ter.pdb",
+          "fv_vhvl_only.pdb"
+        ]
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_ids": [
+          "6af844059de6b44b075d79e0",
+          "6af844589030bff41644751b",
+          "6af844ca9850a93adf67cad5",
+          "6af8453c239a6b9f38beb6dd"
+        ],
+        "error": "Expected exactly one heavy/VHH domain; detected 0"
+      },
+      "outputs": null,
+      "validation": "terminal failure x4",
+      "fallback": {
+        "prior_stage": "S0-1",
+        "error": "input numbering",
+        "recovery": "S0-2 rebuild",
+        "reason": "input format",
+        "alternative": "complex_hl_a_seqres.pdb"
+      },
+      "original_pointer": "/stages/1/tool_calls/0",
+      "recovered_records": [
+        "C03.R01",
+        "C03.R02",
+        "C03.R03",
+        "C03.R04"
+      ]
+    },
+    "C03.R01": {
+      "call_id": "call_-7077579300299335558:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16414_subcall_0.json",
+        "sha256": "1b08763c4ca78ac8cc51b7f54179c8833ed1ff15f4b5c2710062f0eabea6f487"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "H",
+            "L"
+          ],
+          "generation_count": 40,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+          "residue_positions_to_design": {
+            "H": "31-35,50-65,95-102",
+            "L": "24-34,50-56,89-97"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655224765/complex_fv_her2.pdb",
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16414,
+        "tool_call_id": "call_-7077579300299335558",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:20:37.730417+00:00",
+        "doc_id": "6af844059de6b44b075d79e0",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C03",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/0"
+    },
+    "C03.R02": {
+      "call_id": "call_-7077575039691783799:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16492_subcall_0.json",
+        "sha256": "b0f9687edccc3074aaca15440be36cab10659c4426175c10c3bfb9fec7f464e0"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 40,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+          "residue_positions_to_design": {
+            "A": "31-35,50-65,95-102",
+            "B": "24-34,50-56,89-97"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655314759/complex_vhvl_her2.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16492,
+        "tool_call_id": "call_-7077575039691783799",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:22:00.318391+00:00",
+        "doc_id": "6af844589030bff41644751b",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C03",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/1"
+    },
+    "C03.R03": {
+      "call_id": "call_-7077577238715039327:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16568_subcall_0.json",
+        "sha256": "c6bf778f4a5a3a71106665a067d081654297659d29365033d79894fc5841e2e6"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 40,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+          "residue_positions_to_design": {
+            "A": "31-35,50-65,95-102",
+            "B": "24-34,50-56,89-97"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655428858/complex_vhvl_her2_ter.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16568,
+        "tool_call_id": "call_-7077577238715039327",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:23:54.354766+00:00",
+        "doc_id": "6af844ca9850a93adf67cad5",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C03",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/2"
+    },
+    "C03.R04": {
+      "call_id": "call_-7077571706797161870:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16614_subcall_0.json",
+        "sha256": "ecb46baf625050cb154bfc60c2ace2198244101a77fbcf5020ba9787f99cfcf4"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "A",
+            "B"
+          ],
+          "generation_count": 40,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+          "residue_positions_to_design": {
+            "A": "31-35,50-65,95-102",
+            "B": "24-34,50-56,89-97"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "A",
+          "B"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655540930/fv_vhvl_only.pdb",
+        "residue_positions_to_design": {
+          "A": "31-35,50-65,95-102",
+          "B": "24-34,50-56,89-97"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16614,
+        "tool_call_id": "call_-7077571706797161870",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:25:48.096608+00:00",
+        "doc_id": "6af8453c239a6b9f38beb6dd",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C03",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/3"
+    },
+    "C04": {
+      "call_id": "S1-control",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "boltzmann AntiBMPNN",
+      "purpose": "benign control (1MCP) to bisect service vs input fault",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/1mcp_control.pdb (340,443 bytes)"
+      },
+      "request_payload": {
+        "generation_count": 2,
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "residue_positions_to_design": {}
+      },
+      "parameters": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 2,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+        "residue_positions_to_design": {}
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af84579239a6b9f38beb714",
+        "cost_usd": 1
+      },
+      "outputs": null,
+      "validation": "service healthy; failures were input-format",
+      "fallback": null,
+      "original_pointer": "/stages/1/tool_calls/1",
+      "recovered_records": [
+        "C04.R01"
+      ]
+    },
+    "C04.R01": {
+      "call_id": "call_-7077585931728844002:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16656_subcall_0.json",
+        "sha256": "0b0bad500b12a0f0181e8ef13d00393174cfb64aebc6e44164cbf233f7ff6815"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 2,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+        "residue_positions_to_design": {}
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "H",
+            "L"
+          ],
+          "generation_count": 2,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+          "residue_positions_to_design": {}
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 2,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655604072/1mcp_control.pdb",
+        "residue_positions_to_design": {}
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16656,
+        "tool_call_id": "call_-7077585931728844002",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:26:49.668764+00:00",
+        "doc_id": "6af84579239a6b9f38beb714",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C04",
+      "original_pointer": "/stages/1/tool_calls/1/recovered_submissions/0"
+    },
+    "C05": {
+      "call_id": "S1-final",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "boltzmann AntiBMPNN",
+      "purpose": "winning design run: 40 CDR-redesign generations on fixed 1N8Z Fv backbone",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+        "sha256": "9e54b25d680daa48749f87bf1cc4038a8a09d0dd3217387241aaa3d354bd98cd"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "parameters": {
+        "generation_count": "40 candidates within budget",
+        "residue_positions_to_design": "Kabat CDR windows (task constraint: CDR-only)"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af8461a9850a93adf67cb88",
+        "experiment_name": "AntiBMPNN - 20261114-112354Z - fb6923",
+        "completed_utc": "~2026-11-14T11:32:07Z"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/antibmpnn_results.zip (40,806 bytes)"
+        ],
+        "validation": "40 sequences; domains H=VH(120) L=VL(107) kappa"
+      },
+      "validation": null,
+      "fallback": null,
+      "original_pointer": "/stages/1/tool_calls/2",
+      "recovered_records": [
+        "C05.R01"
+      ]
+    },
+    "C05.R01": {
+      "call_id": "call_-7077572531430878641:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16729_subcall_0.json",
+        "sha256": "79fa7bb874689d878f206db6dc180a72dc6aa5da997bfdbe1a094c83a32635fa"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "H",
+            "L"
+          ],
+          "generation_count": 40,
+          "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+          "residue_positions_to_design": {
+            "H": "31-35,50-65,95-102",
+            "L": "24-34,50-56,89-97"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "H",
+          "L"
+        ],
+        "generation_count": 40,
+        "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655764557/complex_hl_a_seqres.pdb",
+        "residue_positions_to_design": {
+          "H": "31-35,50-65,95-102",
+          "L": "24-34,50-56,89-97"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16729,
+        "tool_call_id": "call_-7077572531430878641",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:29:30.581045+00:00",
+        "doc_id": "6af8461a9850a93adf67cb88",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C05",
+      "original_pointer": "/stages/1/tool_calls/2/recovered_submissions/0"
+    },
+    "C06": {
+      "call_id": "S2-1",
+      "tool_name": "stage2_verify_mask.py",
+      "actual_identifier": "local python3",
+      "purpose": "position-by-position mask verification + dedupe + liability scan",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/antibmpnn_results.zip"
+      },
+      "request_payload": null,
+      "parameters": {
+        "mask": "Kabat CDR windows"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python3 code/stage2_verify_mask.py"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/candidates.json (38 unique)"
+        ]
+      },
+      "validation": "40/40 mask-clean; 0 framework violations; 0 new Cys; 2 dup pairs removed; NG/DS/DT motifs inherited from reference",
+      "fallback": null,
+      "original_pointer": "/stages/2/tool_calls/0"
+    },
+    "C07": {
+      "call_id": "S3-ref",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "reference complex prediction (trastuzumab VH/VL vs HER2 construct)",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "Protein_Sequences": "[HER2_construct_607aa, VH_120aa, VL_107aa] (exact in inputs/boltz2_payloads.json[0])"
+      },
+      "request_payload": {
+        "Protein_Sequences": null,
+        "DNA_Sequences": [],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameters": {
+        "DNA_Sequences": [],
+        "Protein_Sequences": [
+          "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+          "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+          "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+        ],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af84747445ae94313c3a9ae",
+        "account": "users/68d12a5de5b6a2fdc0e3c443 (old key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_reference/{pdbs_outputs.zip,outputs.zip,paths.csv}"
+        ]
+      },
+      "validation": "Success; pairwise records rec1=HER2+VH ipTM 0.220, rec2=HER2+VL ipTM 0.340",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/0",
+      "recovered_records": [
+        "C07.R01"
+      ]
+    },
+    "C07.R01": {
+      "call_id": "call_-7077568167744108664:subcall:0",
+      "tool_name": "Boltz2",
+      "actual_identifier": "Boltz2",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/inputs/submitted_requests/message_16852_subcall_0.json",
+        "sha256": "b27f6ad23d4fdd9fa885450f34cc177bd09a0ab21a309a3f3a971c88c09a43a4"
+      },
+      "request_payload": {
+        "DNA_Sequences": [],
+        "Protein_Sequences": [
+          "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+          "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+          "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+        ],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "submitted_tool_arguments": {
+        "job_name": "Boltz2",
+        "experiment_data": {
+          "DNA_Sequences": [],
+          "Protein_Sequences": [
+            "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+            "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+            "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+          ],
+          "RNA_Sequences": [],
+          "SMILES": []
+        }
+      },
+      "parameters": {
+        "DNA_Sequences": [],
+        "Protein_Sequences": [
+          "TQVCTGTDMKLRLPASPETHLDMLRHLYQGCQVVQGNLELTYLPTNASLSFLQDIQEVQGYVLIAHNQVRQVPLQRLRIVRGTQLFEDNYALAVLDNGDPLNNTTPVTGASPGGLRELQLRSLTEILKGGVLIQRNPQLCYQDTILWKDIFHKNNQLALTLIDTNRSRACHPCSPMCKGSRCWGESSEDCQSLTRTVCAGGCARCKGPLPTDCCHEQCAAGCTGPKHSDCLACLHFNHSGICELHCPALVTYNTDTFESMPNPEGRYTFGASCVTACPYNYLSTDVGSCTLVCPLHNQEVTAEDGTQRCEKCSKPCARVCYGLGMEHLREVRAVTSANIQEFAGCKKIFGSLAFLPESFDGDPASNTAPLQPEQLQVFETLEEITGYLYISAWPDSLPDLSVFQNLQVIRGRILHNGAYSLTLQGLGISWLGLRSLRELGSGLALIHHNTHLCFVHTVPWDQLFRNPHQALLHTANRPEDECVGEGLACHQLCARGHCWGPGPTQCVNCSQFLRGQECVEECRVLQGLPREYVNARHCLPCHPECQPQNGSVTCFGPEADQCVACAHYKDPPFCVARCPSGVKPDLSYMPIWKFPDEEGACQPCPIN",
+          "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+          "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK"
+        ],
+        "RNA_Sequences": [],
+        "SMILES": []
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110112_c07285",
+        "message_id": 16852,
+        "tool_call_id": "call_-7077568167744108664",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T11:34:31.466881+00:00",
+        "doc_id": "6af84747445ae94313c3a9ae",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C07",
+      "original_pointer": "/stages/3/tool_calls/0/recovered_submissions/0"
+    },
+    "C08": {
+      "call_id": "S3-T001-C001",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C001",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C001]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af87767239a6b9f38beba67",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C001/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/1"
+    },
+    "C09": {
+      "call_id": "S3-T001-C002",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C002",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C002]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af87769239a6b9f38beba72",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C002/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/2"
+    },
+    "C10": {
+      "call_id": "S3-T001-C003",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C003",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C003]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af8776c9850a93adf67ce91",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C003/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/3"
+    },
+    "C11": {
+      "call_id": "S3-T001-C004",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C004",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C004]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af8776e9de6b44b075d7e2f",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C004/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/4"
+    },
+    "C12": {
+      "call_id": "S3-T001-C005",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C005",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C005]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af87770445ae94313c3add0",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C005/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/5"
+    },
+    "C13": {
+      "call_id": "S3-T001-C006",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C006",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C006]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af87773239a6b9f38beba85",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C006/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/6"
+    },
+    "C14": {
+      "call_id": "S3-T001-C007",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C007",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C007]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af877759de6b44b075d7e3e",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C007/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/7"
+    },
+    "C15": {
+      "call_id": "S3-T001-C008",
+      "tool_name": "Boltz2",
+      "actual_identifier": "boltzmann boltz_structure_prediction",
+      "purpose": "candidate complex prediction T001-C008",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "payload": "inputs/boltz2_payloads.json[T001-C008]"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af877789030bff416447921",
+        "account": "users/680f678c1b1d883c92aa706c (new key)"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/boltz2_candidates/T001-C008/"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/3/tool_calls/8"
+    },
+    "C16": {
+      "call_id": "S4-v1",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "v1 submissions with nested pdbs_outputs.zip",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "failed",
+      "inputs": {
+        "input": "pdbs_outputs.zip (nested boltz_pdb/)"
+      },
+      "request_payload": {
+        "input_path": "users/.../pdbs_outputs.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] = automatic pairwise analysis of uppercase chains"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_ids": [
+          "6af87c88d29658acc304e3e3",
+          "6af87c8a445ae94313c3b2c3",
+          "6af87c8c9de6b44b075d8065",
+          "6af87c8e9850a93adf67d0b0",
+          "6af87c8f445ae94313c3b2d1",
+          "6af87c91239a6b9f38bebcb8",
+          "6af87c939850a93adf67d0bb",
+          "6af87c949850a93adf67d0c6",
+          "6af87c96d29658acc304e3f6"
+        ],
+        "error": "Signed URL download failed: 404 / no nonempty PDB files at supported archive level"
+      },
+      "outputs": null,
+      "validation": "all 9 failed",
+      "fallback": {
+        "prior_call": null,
+        "error": "nested archive level unsupported",
+        "recovery": "flatten zips (PDBs at root)",
+        "reason": "input format",
+        "alternative": "flat zip resubmission, one per job (policy: one corrected resubmission)"
+      },
+      "original_pointer": "/stages/4/tool_calls/0"
+    },
+    "C17": {
+      "call_id": "S4-REFERENCE",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission REFERENCE",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/REFERENCE_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671583579/REFERENCE_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883e0d29658acc304e85a"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/REFERENCE/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/1"
+    },
+    "C18": {
+      "call_id": "S4-T001-C001",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C001",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C001_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671585424/T001-C001_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883e39de6b44b075d8496"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C001/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/2"
+    },
+    "C19": {
+      "call_id": "S4-T001-C002",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C002",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C002_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671587409/T001-C002_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883e4d29658acc304e869"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C002/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/3"
+    },
+    "C20": {
+      "call_id": "S4-T001-C003",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C003",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C003_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671589092/T001-C003_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883e69850a93adf67d51a"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C003/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/4"
+    },
+    "C21": {
+      "call_id": "S4-T001-C004",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C004",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C004_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671590903/T001-C004_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883e89030bff416447f91"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C004/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/5"
+    },
+    "C22": {
+      "call_id": "S4-T001-C005",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C005",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C005_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671592959/T001-C005_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883ea445ae94313c3bcee"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C005/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/6"
+    },
+    "C23": {
+      "call_id": "S4-T001-C006",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C006",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C006_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671594636/T001-C006_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883eb9850a93adf67d541"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C006/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/7"
+    },
+    "C24": {
+      "call_id": "S4-T001-C007",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C007",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C007_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671596326/T001-C007_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883eed29658acc304e8a3"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C007/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/8"
+    },
+    "C25": {
+      "call_id": "S4-T001-C008",
+      "tool_name": "Prodigy",
+      "actual_identifier": "boltzmann Prodigy",
+      "purpose": "flat-zip corrected submission T001-C008",
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "input": "inputs/prodigy_flat/T001-C008_flat.zip"
+      },
+      "request_payload": {
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671598601/T001-C008_flat.zip",
+        "chain_list": []
+      },
+      "parameters": {
+        "chain_list": "[] automatic pairwise"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "doc_id": "6af883ef239a6b9f38bec13b"
+      },
+      "outputs": {
+        "outputs": [
+          "inputs/prodigy/T001-C008/prodigy.csv"
+        ]
+      },
+      "validation": "Success",
+      "fallback": null,
+      "original_pointer": "/stages/4/tool_calls/9"
+    },
+    "C26": {
+      "call_id": "S5-1",
+      "tool_name": "stage4_extract_confidence.py",
+      "actual_identifier": "local python3",
+      "purpose": "Boltz2 confidence extraction",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "inputs": "inputs/boltz2_reference/outputs.zip + inputs/boltz2_candidates/*/outputs.zip"
+      },
+      "request_payload": null,
+      "parameters": null,
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python3 code/stage4_extract_confidence.py"
+      },
+      "outputs": {
+        "outputs": [
+          "raw/boltz2_confidence.{json,csv}"
+        ]
+      },
+      "validation": null,
+      "fallback": null,
+      "original_pointer": "/stages/5/tool_calls/0"
+    },
+    "C27": {
+      "call_id": "S5-2",
+      "tool_name": "stage6_evaluate.py",
+      "actual_identifier": "local python3",
+      "purpose": "Prodigy dG/Kd + epitope recovery + CDR pLDDT",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "inputs": "prodigy CSVs + plddt npz + crystal_contacts.csv"
+      },
+      "request_payload": null,
+      "parameters": {
+        "RT": "0.0019872041 kcal/mol/K",
+        "T": "298.15 K",
+        "epitope": "1N8Z HER2 crystal contacts (16 residues 532-603)"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python3 code/stage6_evaluate.py"
+      },
+      "outputs": {
+        "outputs": [
+          "raw/evaluation.{csv,json}"
+        ]
+      },
+      "validation": "9 rows x 20 cols",
+      "fallback": null,
+      "original_pointer": "/stages/5/tool_calls/1"
+    },
+    "C28": {
+      "call_id": "S5-3",
+      "tool_name": "clash scan",
+      "actual_identifier": "local python3 (inline)",
+      "purpose": "interface heavy-atom clashes <2.2 A",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "inputs": "pdbs_outputs.zip members"
+      },
+      "request_payload": null,
+      "parameters": {
+        "cutoff": "2.2 A heavy-atom pairs"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": null,
+      "outputs": {
+        "outputs": [
+          "raw/clash_counts.json"
+        ]
+      },
+      "validation": "0-3 per construct",
+      "fallback": null,
+      "original_pointer": "/stages/5/tool_calls/2"
+    },
+    "C29": {
+      "call_id": "S5-4",
+      "tool_name": "stage7_artifacts.py",
+      "actual_identifier": "local python3",
+      "purpose": "candidates/shortlist/fasta/metrics/benchmark/report build",
+      "source": "open_source",
+      "model_version": null,
+      "selection_reason": null,
+      "status": "complete",
+      "inputs": {
+        "inputs": "candidates.json + evaluation.json + confidences + clashes"
+      },
+      "request_payload": null,
+      "parameters": {
+        "rank_key": "mean Prodigy dG -> ipTM rec2 -> fewer mutations (pre-stated)"
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "command": "python code/stage7_artifacts.py"
+      },
+      "outputs": {
+        "outputs": [
+          "candidates.csv (38)",
+          "shortlist.csv (8)",
+          "sequences.fasta (78)",
+          "metrics.csv (81 rows)",
+          "benchmark_comparison.csv",
+          "report.md"
+        ]
+      },
+      "validation": "verified counts",
+      "fallback": null,
+      "original_pointer": "/stages/5/tool_calls/3"
+    }
+  }
+}

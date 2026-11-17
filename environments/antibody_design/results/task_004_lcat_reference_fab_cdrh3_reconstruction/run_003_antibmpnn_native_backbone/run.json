@@ -1,0 +1,132 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_003_antibmpnn_native_backbone",
+  "workflow_id": "wf_antibmpnn_fixed_backbone_h3",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone"
+  },
+  "preparation": {
+    "objective": "Fixed-backbone CDR-H3 sequence design via Boltzmann AntiBMPNN",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "historical_stage_1",
+      "purpose": "input preparation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C01"],
+          "inputs": {"saved_request": "@src/inputs/submitted_requests/message_17956_subcall_0.json"},
+          "parameters": {"mask_h3_to": "GLY", "atoms_kept": ["N", "CA", "C", "O"], "renumber": "sequential 1-N per chain"},
+          "outputs": {"value": ["antibmpnn_input_5bv7_seq.pdb"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_2",
+      "purpose": "AntiBMPNN design (Boltzmann)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AntiBMPNN",
+          "source": "boltzmann",
+          "records": ["C02"],
+          "model_version": "AntiBMPNN (platform; model antibmpnn_020 per FASTA header, T=0.1)",
+          "inputs": {
+            "input_path": "uploaded antibmpnn_input_5bv7_seq.pdb (receipt 6632033784ec47cda454eaed4007f31a)",
+            "upload_sha256": "e5333129601dad3ea4fdca4411d82a4923cb0ea3499b2da95684b9b75b1ccd22"
+          },
+          "parameters": {"chains_to_design": ["C"], "residue_positions_to_design": {"C": "96-114"}, "generation_count": 32},
+          "outputs": {
+            "recorded_outputs": {"value": ["antibmpnn_results.zip -> antibmpnn_out/ (results.csv 32 rows, raw FASTA, metrics, manifest, logs)"]},
+            "saved_artifacts": ["@results/raw/antibmpnn_results.csv", "@results/raw/antibmpnn_results.zip"]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_3",
+      "purpose": "freeze",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C03"],
+          "inputs": null,
+          "parameters": {"ordering": "model score asc, tie-break candidate_id"},
+          "outputs": {"value": ["antibmpnn_prep.json (frozen)"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_4",
+      "purpose": "scoring",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow evaluator",
+          "source": "open_source",
+          "records": ["C04"],
+          "inputs": {"mod_pdbs": "32 native-backbone graft models", "ref": "sealed native", "chains": "C/B/[A]"},
+          "parameters": {"cdr_type": "['H3']"},
+          "outputs": {"value": ["scored_antibmpnn/metrics_per_candidate.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_5",
+      "purpose": "packaging",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C05"],
+          "inputs": null,
+          "parameters": {"per_run_tree": true},
+          "outputs": {"value": ["@results/"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"counts": {"candidates_generated": 32, "candidates_evaluated": 32, "unique_h3": 32, "native_copies": 0}},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "5ca66b4045237ac054c39941ae70a043b63feb8827ad23e70549ad5ae765205b"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": "run_001_abflow_h3_reconstruction",
+    "derived_from": "native 5bv7 complex; Boltzmann AntiBMPNN job 6af884b7239a6b9f38bec1e5",
+    "historical_components": [
+      "originally designed blocked (isolation constraint); user authorized execution 2026-11-14 as declared native-backbone variant; reclassified selected+executed",
+      "first submission doc 6af882e5239a6b9f38bec0b4 failed validation (unsupported residues from IMGT insertion codes); renumbered resubmission doc 6af884b7239a6b9f38bec1e5 succeeded"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+# execution_summary — run_003_antibmpnn_native_backbone
+
+- Workflow: Boltzmann AntiBMPNN fixed-backbone H3 sequence design (platform priority 1), user-authorized declared isolation-relaxed variant.
+- Tools: Boltzmann AntiBMPNN (job 6af884b7239a6b9f38bec1e5, Success, 98 s, 1 billing unit); authors' evaluator for scoring.
+- Counts: 32 generated / 32 evaluated / 32 unique H3 / 0 native copies. Completed S1-S5. One failed submission (insertion codes) with bounded recovery (renumber) — documented in config fallback.
+- Results (n=32): AAR H3 0.5526 ± 0.0671 (rank-1 0.5789); CAAR 0.3542. Structural metrics by-construction trivial (native backbone): RMSD 0, TM 1.0; DockQ artifact recorded not-comparable.
+- Links: [workflow.md](../workflow.md) | [config](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone.json) | [report.md](../../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/report.md) | [log](agent_scientist_log.md)
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"last_update": "2026-11-14T16:20:00Z", "counts": {"candidates_generated": 32, "candidates_evaluated": 32, "unique_h3": 32, "native_copies": 0}, "remaining_requirements": ["isolation-relaxed track — informative metrics limited to AAR/CAAR; structural metrics by-construction trivial"]}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

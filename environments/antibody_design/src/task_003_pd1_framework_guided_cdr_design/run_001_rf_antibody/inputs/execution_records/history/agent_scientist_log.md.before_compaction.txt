@@ -1,0 +1,30 @@
+# agent_scientist_log — run_001 (retrospective export)
+
+Exported from the live Agent-Scientist session that executed run_001 on 2026-11-14 (session 20261114_110401_625a94). Chronological observable events only; internal reasoning omitted. Times UTC, approximate to the minute from tool receipts.
+
+- 11:04 Session start. Loaded task_003 spec + fixed-framework-cdr-design skill.
+- 11:1x Paper retrieval: PMC12815924 HTML via curl (340,170 B) after web_extract returned search-only stub.
+- 11:2x Supplements: PMC links bot-blocked; fetched from Springer static CDN (MOESM1-3); PyMuPDF text extraction.
+- 11:3x Suppl. Table 7 parsed programmatically (parse_panel.py, 2 bug fixes: token regex [A-Z]{2,}; section bounds between Table 6/7 captions). 10 binders incl. H965 KD 81.6 nM. H698 L3 len 8 recorded as published deviation.
+- 11:4x UniProt Q15116, PDB 4ZQK, 5GGS fetched. Chain pairing resolved by exhaustive min-CA measurement (Fab A/B <-> PD-1 Z).
+- 11:5x Antibody_Numbering attempts x4: scheme "IMGT" backend-rejected (wants lowercase); "imgt" connector-rejected; "Chothia" backend-failed; omitted -> "Scheme is required". DEADLOCK declared; CDR boundaries frozen from Table-1 layout (validated on all 10 published sequences).
+- 12:0x build_complex.py: v1 54 A PD-1–Fv distance -> wrong chain pair; fixed to Z+A/B. Complex staged (P-H 3.6 A).
+- 12:1x Uploads with allow_partial_validation after explicit user approval ("continue the work").
+- 12:2x rfdiffusion_proteinmpnn submitted (doc 6af8769f239a6b9f38beba18) -> completed 1m49s -> 40 pairs.
+- 12:3x process_rf_align.py: 39/40 fail H2=7/FR-junction gate; 1 extraction failure. 0 eligible.
+- 12:4x AntiBMPNN round 1 (doc 6af87806d29658acc304df8c, 40 seqs): mask verified 40/40; 40/40 novel Cys at L3-92 -> 0 eligible.
+- 12:5x AntiBMPNN round 2 (doc 6af8799d445ae94313c3b012, 60 seqs): same artifact 60/60 -> conservative route 0/100.
+- 13:0x Decision recorded: gates stay frozen; pivot to backbone diversification (run_002 lineage).
+
+Stop conditions: none — route exhausted honestly.
+
+## Closeout consolidation (2026-11-14, later session)
+
+- Results consolidated from the legacy pd1_results/ layout to the monoclonal.md §6 run-root layout: report.md, benchmark_comparison.csv, designed_sequences.fasta (230 chain records = 115 candidates), shortlist.csv (5 gate-passing: PD1T3-019/011/038/054/069), metrics.json, published_controls.fasta copied to run root; raw_outputs/ → raw/; structures/ kept.
+- candidates.csv built at run root: 155 rows (115 designed candidates with shortlist status integrated + 40 RF-Antibody designs excluded for length/framework deviations from the locked template).
+- Note: the agcdr_diff track referenced in pool tags was executed under this run's lineage (docs in metrics.json); the rfdiffusion track contributed 0 eligible designs (39/40 H2=7 window + FR-junction edits; 1 extraction failure).
+
+
+## Retrospective packaging — 2026-11-15T11:14:35+00:00
+
+Existing run files were inventoried and organized under this run ID. No tool jobs were started. Source session: `20261114_110401_625a94`; the [redacted observable export](../../../../maintenance/package_repair_20261115/sessions/20261114_110401_625a94.jsonl) contains public messages, calls, and outputs across the session's runs; private reasoning fields are not exported. This entry is a retrospective storage action, not fabricated historical execution.

@@ -1,0 +1,486 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_002_diffab_local",
+  "workflow_id": "wf_diffab_incontext_h3",
+  "status": "completed",
+  "lineage": {
+    "parent": "run_001_abflow_h3_reconstruction",
+    "derived_from": "same 5bv7 native complex and sealed reference; DiffAb codesign_single.pt",
+    "historical_components": [
+      "originally designed not_selected (no evaluation stack); user authorized end-to-end execution of all designed workflows via available open-source tools 2026-11-14; reclassified selected+executed"
+    ]
+  },
+  "task_requirements": {
+    "objective": "DiffAb in-context CDR-H3 co-design comparator for 5bv7",
+    "constraints": [
+      "declared protocol difference: in-context (pose-conditioned), NOT pose-blind — never merged with run_001 metrics",
+      "H3-only design; framework/VL/antigen native (in-context protocol)",
+      "freeze rankings before scoring"
+    ],
+    "metrics": [
+      "AAR",
+      "CAAR",
+      "RMSD variants",
+      "TMscore",
+      "lDDT",
+      "DockQ v1 cdrh3_only"
+    ],
+    "benchmark": "no direct published DiffAb column for this exact protocol (paper standardizes DiffAb behind IgFold+HDock+Rosetta); Table-1 aggregates shown as context only"
+  },
+  "input_inventory": {
+    "native_5bv7_complex.pdb": {
+      "sha256": "bfaa5a0e6993aa5405d1e825c7fe4ae0e3c74e8c06a4ed0e7e774d94c5fe1783",
+      "provenance": "authors datasets.zip 5bv7.pdb (in-context protocol input)"
+    },
+    "info.txt": {
+      "sha256": "4384bd9609231ff1563a4a668b14e1a5d09fd785238ed537bb73bb91893c38ca",
+      "provenance": "H_CDR3 span locator (sequence locates the 19-res mask; runner contract)"
+    },
+    "lcat_h3_n32.yml": {
+      "sha256": "e525ed6a298ac52be455b64c158decc9e08cc8f0383e368059f8574fcfafef1e",
+      "provenance": "sampling config: codesign_single.pt, H_CDR3 only, n=32, seed 20261114"
+    },
+    "codesign_single.pt": {
+      "sha256": "53d1c240020ce87c0d2a8f552accb41415106f1d26a8c8701076d76bde81a21e",
+      "provenance": "DiffAb released single-CDR co-design checkpoint (local repo)"
+    }
+  },
+  "workflow_plan": {
+    "designed": 4,
+    "selected": 4,
+    "executed": 4,
+    "planning_table": [
+      {
+        "run_id": "run_001_abflow_h3_reconstruction",
+        "objective": "benchmark-matched CDR-H3 reconstruction via authors H3 checkpoint",
+        "ordered_tools": "AbFlow paratope_centric_design.ckpt + authors evaluator",
+        "source": "open_source",
+        "selected": true,
+        "status": "completed",
+        "reason": "only route with published Table-1 comparators, released weights and released evaluator for this exact protocol"
+      },
+      {
+        "run_id": "run_002_diffab_local",
+        "objective": "DiffAb in-context CDR-H3 co-design comparator",
+        "ordered_tools": "DiffAb codesign_single.pt (local) + authors evaluator",
+        "source": "open_source",
+        "selected": true,
+        "status": "completed",
+        "reason": "user-authorized end-to-end execution of remaining designed workflows via open-source tools; DiffAb is the paper-cited H3 co-design baseline family"
+      },
+      {
+        "run_id": "run_003_antibmpnn_native_backbone",
+        "objective": "AntiBMPNN fixed-backbone H3 sequence design (Boltzmann platform, priority 1)",
+        "ordered_tools": "AntiBMPNN (Boltzmann) + authors evaluator",
+        "source": "boltzmann",
+        "selected": true,
+        "status": "completed",
+        "reason": "user authorized the native-backbone declared variant; Boltzmann tool priority 1 satisfied; isolation-relaxed track declared"
+      },
+      {
+        "run_id": "run_004_abflow_multi_cdr",
+        "objective": "all-CDR co-design, declared separate track (Table 2)",
+        "ordered_tools": "AbFlow multi_cdr_design.ckpt + authors evaluator",
+        "source": "open_source",
+        "selected": true,
+        "status": "completed",
+        "reason": "authors released the Table-2 checkpoint; covers the task md second track"
+      }
+    ],
+    "stages": [
+      {
+        "id": "S2",
+        "purpose": "DiffAb generation",
+        "depends": [],
+        "status": "completed"
+      },
+      {
+        "id": "S3",
+        "purpose": "freeze",
+        "depends": [
+          "S2"
+        ],
+        "status": "completed"
+      },
+      {
+        "id": "S4",
+        "purpose": "score with authors evaluator",
+        "depends": [
+          "S3"
+        ],
+        "status": "completed"
+      },
+      {
+        "id": "S5",
+        "purpose": "package",
+        "depends": [
+          "S4"
+        ],
+        "status": "completed"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "S2",
+      "purpose": "DiffAb in-context H3 generation",
+      "depends": [],
+      "acceptance": "32 full-atom candidates; H3 len 19; framework native",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "d1",
+          "tool": "DiffAb",
+          "identifier": "codesign_single.pt (local repo, open source)",
+          "purpose": "H3 co-design, 32 samples",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "user-authorized open-source execution; DiffAb single-CDR co-design is the paper-cited baseline family",
+          "model_version": "DiffAb codesign_single.pt (sha256 53d1c240020ce87c...)",
+          "inputs": {
+            "pdb": "native_5bv7_complex.pdb (native complex, in-context)",
+            "cdr": "H_CDR3 (0-based 95-113, len 19)"
+          },
+          "parameters": {
+            "seed": 20261114,
+            "num_samples": 32,
+            "sample_structure": true,
+            "sample_sequence": true,
+            "cdrs": [
+              "H_CDR3"
+            ]
+          },
+          "parameter_descriptions": {
+            "seed": "run-date seed, distinct from AbFlow runs",
+            "num_samples": "32 to match AbFlow-G pool size",
+            "sample_structure/sequence": "co-design both (DiffAb default)",
+            "cdrs": "H3 only — single-CDR track"
+          },
+          "resources": {
+            "gpu": "RTX 3090 24GB",
+            "runtime_s": 55
+          },
+          "execution": {
+            "command": "PYTHONPATH=<repo> <diffab env>/bin/python run_diffab_exact_cdrs_from_input.py native_5bv7_complex.pdb --info-file info.txt --heavy C --light B --config lcat_h3_n32.yml --out_root out_h3_n32 --cdrs HCDR3 --label LCAT_H3",
+            "executed_at": "2026-11-14T15:48:27Z",
+            "exit": 0,
+            "env": "conda diffab"
+          },
+          "outputs": [
+            "out_h3_n32/... 32 candidate PDBs"
+          ],
+          "validation": "32/32 candidates; H3 length 19 conserved; 32 unique H3 sequences; 0 native copies; framework byte-identical (in-context)",
+          "fallback": null,
+          "tool_name": "DiffAb",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred."
+          },
+          "request_payload": null
+        },
+        {
+          "call_id": "d1b",
+          "tool": "graft_diffab.py",
+          "identifier": "local python",
+          "purpose": "evaluator-compatible model build (Chothia->IMGT H3 transplant)",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "evaluator requires IMGT numbering; transplant preserves all DiffAb design content",
+          "inputs": {
+            "candidates": "32 DiffAb PDBs",
+            "scaffold": "native IMGT complex"
+          },
+          "parameters": {
+            "renumber": "H3 block -> native IMGT keys, 1:1 by sequence position"
+          },
+          "parameter_descriptions": {
+            "renumber": "position 1:1; no residue insertion/deletion; framework untouched"
+          },
+          "execution": {
+            "command": "python graft_diffab.py",
+            "executed_at": "2026-11-14T16:05Z",
+            "exit": 0
+          },
+          "outputs": [
+            "gen_diffab_grafted/ (32 models)"
+          ],
+          "validation": "Bio.PDB parse OK; chains A/C/B 377/126/109; first attempt had icode column bug — fixed and regrafted (all 32)",
+          "fallback": {
+            "prior_call": "d1",
+            "error": "first graft wrote insertion codes into wrong PDB columns -> Bio.PDB parse failure",
+            "recovery": "column-correct regraft of all 32",
+            "protocol_difference": "none — numbering layout only"
+          },
+          "tool_name": "graft_diffab.py",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_1",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S3",
+      "purpose": "freeze ranking",
+      "depends": [
+        "S2"
+      ],
+      "acceptance": "frozen order before scoring",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "d2",
+          "tool": "local python",
+          "identifier": "score_runs23_final.py (freeze block)",
+          "purpose": "filename-order freeze (deterministic sampling order)",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "DiffAb provides no per-sample confidence; deterministic order declared",
+          "parameters": {
+            "ordering": "filename (sampling) order"
+          },
+          "parameter_descriptions": {
+            "ordering": "seeded sampling order is deterministic; no score-based reordering possible pre-scoring"
+          },
+          "execution": {
+            "executed_at": "2026-11-14T16:07Z",
+            "exit": 0
+          },
+          "outputs": [
+            "diffab_frozen_shortlist.json"
+          ],
+          "validation": "32 entries, PDB sha256 recorded",
+          "fallback": null,
+          "tool_name": "local python",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "inputs": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_2",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S4",
+      "purpose": "scoring",
+      "depends": [
+        "S3"
+      ],
+      "acceptance": "authors evaluator unmodified",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "d3",
+          "tool": "AbFlow evaluator",
+          "identifier": "cal_metrics.cal_metrics @ df39b47",
+          "purpose": "score vs sealed native",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "same evaluator as all runs — cross-run comparability",
+          "inputs": {
+            "mod_pdbs": "32 grafted models",
+            "ref": "sealed native 5bv7",
+            "chains": "C/B/[A]"
+          },
+          "parameters": {
+            "cdr_type": "['H3']"
+          },
+          "parameter_descriptions": {
+            "cdr_type": "authors' H3-scoring path"
+          },
+          "resources": {
+            "cpu": "workstation",
+            "runtime": "~5 s/candidate"
+          },
+          "execution": {
+            "command": "PATH=<env>/bin:$PATH python score_runs23_final.py",
+            "executed_at": "2026-11-14T16:07-16:10Z",
+            "exit": 0,
+            "notes": "first attempt: DockQ silently 0 for all — evaluator shells ./DockQ/DockQ.py relative to repo; chdir fix; rescored all 64 (runs 2+3) — DockQ now populated"
+          },
+          "outputs": [
+            "scored_diffab/metrics_per_candidate.json"
+          ],
+          "validation": "n=32; AAR H3 mean 0.2747; rank-1 0.2105",
+          "fallback": {
+            "prior_call": "d3-attempt-1",
+            "error": "DockQ silently 0: evaluator shells ./DockQ/DockQ.py relative to repo; driver had not chdir-ed",
+            "recovery": "chdir to repo; native-vs-native control (AAR 1.0/TM 1.0) then full rescore of all 64 candidates",
+            "protocol_difference": "none — execution environment only"
+          },
+          "tool_name": "AbFlow evaluator",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null
+        }
+      ],
+      "stage_id": "historical_stage_3",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S5",
+      "purpose": "packaging",
+      "depends": [
+        "S4"
+      ],
+      "acceptance": "full results tree",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "d4",
+          "tool": "local python",
+          "identifier": "build script",
+          "purpose": "results tree",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "contract packaging",
+          "parameters": {
+            "per_run_tree": true
+          },
+          "parameter_descriptions": {
+            "per_run_tree": "§6 layout"
+          },
+          "execution": {
+            "executed_at": "2026-11-14T16:20Z"
+          },
+          "outputs": [
+            "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/"
+          ],
+          "validation": "complete",
+          "fallback": null,
+          "tool_name": "local python",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "inputs": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_4",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local.json",
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/workflow.md",
+    "code": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/code",
+    "inputs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/inputs",
+    "agent_log": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs/execution_summary.md",
+    "report_md": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/report.md",
+    "candidates_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/candidates.csv",
+    "shortlist_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/shortlist.csv",
+    "sequences_fasta": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/sequences.fasta",
+    "metrics_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/metrics.csv",
+    "benchmark_comparison_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/benchmark_comparison.csv",
+    "structures": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/structures",
+    "raw": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/raw"
+  },
+  "completion_summary": {
+    "last_update": "2026-11-14T16:20:00Z",
+    "counts": {
+      "candidates_generated": 32,
+      "candidates_evaluated": 32,
+      "unique_h3": 32,
+      "native_copies": 0
+    },
+    "remaining_requirements": [
+      "protocol-different comparator (in-context, not pose-blind); never merged with run_001"
+    ]
+  },
+  "historical_artifact_links": {
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/workflow.md",
+    "logs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs/",
+    "results_run": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/",
+    "workspace": "/home/boltzmann10/lcat_task004/run_5bv7_diffab"
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "25aa96b454cf18a2ff4ed774df6654c3832c105ecd7e5466fc61efe4b9894a1d",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/workflow.md",
+    "config_json": "configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local.json",
+    "inputs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/inputs",
+    "code": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/code",
+    "logs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs",
+    "agent_log": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/logs/execution_summary.md",
+    "file_manifest": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110408_5c556e.jsonl",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local",
+    "report_md": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/report.md",
+    "candidates_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/candidates.csv",
+    "shortlist_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/shortlist.csv",
+    "sequences_fasta": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/sequences.fasta",
+    "metrics_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/metrics.csv",
+    "benchmark_comparison_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/benchmark_comparison.csv",
+    "structures": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/structures",
+    "raw": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/raw"
+  }
+}

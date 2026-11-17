@@ -32,7 +32,7 @@ Design monoclonal antibody variants derived from Spesolimab against human IL-36R
 
 Source references: [IgDesign preprint, 2023](https://doi.org/10.1101/2023.12.08.570889), [ICLR GEM 2024 paper](https://openreview.net/pdf?id=awGfgUJdQY), [released `Spesolimab-IL36R.csv`](https://raw.githubusercontent.com/AbSciBio/igdesign/70431eef0afaf0496d7d84e22dfdc1980ec9e70e/data/Spesolimab-IL36R.csv), [AbSciBio/igdesign @ `70431eef0afa`](https://github.com/AbSciBio/igdesign/tree/70431eef0afaf0496d7d84e22dfdc1980ec9e70e).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_015_il36r_igdesign_cdr_redesign.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_015_il36r_igdesign_cdr_redesign/reference.md).
 
 ## Expected Output
 
@@ -48,7 +48,7 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Use source reference sequences as labelled controls and preserve the provenance of newly generated variants.
 - Report 1-shot and best-of-100 AAR separately when those sample budgets are executed.
 - Computational recovery and scRMSD do not establish experimental affinity or functional activity.

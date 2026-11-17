@@ -1,0 +1,53 @@
+{
+  "request": {
+    "job_name": "AntiBMPNN - 20261114-155638Z - ad4974",
+    "experiment_id": "6af884b7239a6b9f38bec1e5",
+    "user_id": "680f678c1b1d883c92aa706c",
+    "input_path": "/app/inputs/6af884b7239a6b9f38bec1e5/6af884b7239a6b9f38bec1e5_AntiBMPNN - 20261114-155638Z - ad4974.pdb",
+    "chains_to_design": [
+      "C"
+    ],
+    "residue_positions_to_design": {
+      "C": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114
+      ]
+    },
+    "generation_count": 32,
+    "model_name": "antibmpnn_020",
+    "sampling_temperature": 0.1,
+    "backbone_noise": 0.0,
+    "seed": 37
+  },
+  "fixed_chains_by_pdb": {
+    "6af884b7239a6b9f38bec1e5_AntiBMPNN - 20261114-155638Z - ad4974": [
+      "A",
+      "B"
+    ]
+  },
+  "pdb_count": 1,
+  "sequence_count": 32,
+  "expected_sequence_count": 32,
+  "csv_columns": [
+    "pdb_name",
+    "heavy_chain",
+    "light_chain"
+  ]
+}

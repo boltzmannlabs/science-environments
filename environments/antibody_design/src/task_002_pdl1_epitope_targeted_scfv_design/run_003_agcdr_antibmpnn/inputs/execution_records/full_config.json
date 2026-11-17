@@ -1,0 +1,1010 @@
+{
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "run_004_agcdr_antibmpnn",
+  "workflow_id": "wf_agcdr_antibmpnn",
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "historical_components": [
+      "run1_epitope_abgen"
+    ],
+    "relationship": "Retrospective separation of the four workflows explicitly declared in the combined workflow plan; no new execution.",
+    "historical_config": "src/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen/inputs/historical_provenance/combined_config.json",
+    "retrospective_workflow_id": "W4"
+  },
+  "task_requirements": {
+    "objective": "framework-conditioned, epitope-directed design of paired VH/VL candidates (scFv output) against human PD-L1 with H5/35TL as comparator only",
+    "constraints": [
+      "framework = study trastuzumab scFv (Germinal pdbs/scfv.pdb), VH-first, linker AGGGGSGGGGSGGGS",
+      "CDR edit boundaries H1 26-33, H2 51-58, H3 97-109, L1 24-29, L2 50-55, L3 89-97",
+      "epitope = 5 hotspots (A37/A39/A41/A96/A98, study numbering) + 4.5 A neighbor shell (28 residues total)",
+      "H5 (35TL) held out from generation"
+    ],
+    "metrics": [
+      "H5 reconstruction control: global complex CA RMSD vs 35TL (published AF3 1.25 A)",
+      "PD-L1 interface-residue recovery",
+      "per-CDR RMSD, ipTM/complex pLDDT"
+    ]
+  },
+  "input_inventory": [
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/antibody_framework_placed.pdb",
+      "sha256": "c23013a8752488b0e5f22825361d4c5879796d23e4e4b7880a49e0a58801d2a1",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/antigen_pdl1_Vdomain.pdb",
+      "sha256": "79612be97be4785cc9e83d2c6e1a33beffc8d5db052e477849daa0c327902768",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/eval_35TL_experimental.pdb",
+      "sha256": "cffc4623e7139143f59ce1b10b1fc889851e2b9a182300a6a2c838c463808406",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/placed_complex_framework.pdb",
+      "sha256": "59caf0aa38ffa4acaed1c7eec16e911e3c120f5f8e078b3fbac81ff917a2f8d3",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/pose_donor_5X8M_durvalumab.pdb",
+      "sha256": "72c7afc6526ca5695246c76c533b3864666d1216623e487bf707afb02dcd64af",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/prep_record.json",
+      "sha256": "e35dd37c551eba0cb254732b883461aa8f90f0ab8c51d5be7d64c5ae6fe9adb8",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/study_framework_scfv.pdb",
+      "sha256": "cbdb24aac3fe9b15b738816421fa02b422d341fde5ccd6ffb12a763763516a93",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/study_target_pdl1_seedcomplex.pdb",
+      "sha256": "d7351a441c34cbb9c799798425295106f25beca45428f96d8d8a8f63c586e132",
+      "provenance": "Existing saved task input"
+    }
+  ],
+  "workflow_plan": {
+    "title": "Backbone-generation alternative and evaluation",
+    "prepared_workflows": 4,
+    "ordered_tools": "agcdr_diff + AntiBMPNN",
+    "selection_reason": "Alternative workflow completed with saved generated and evaluated outputs. It is a different implementation from W1; comparative limitations remain in the historical report.",
+    "status_scope": "This workflow only; historical control and other workflow results are separately attributed."
+  },
+  "stages": [
+    {
+      "stage_id": "W4_generation_and_evaluation",
+      "purpose": "Backbone-generation alternative and evaluation",
+      "dependencies": [],
+      "acceptance_criteria": "Original task constraints and the saved route-specific success/exclusion records.",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "call_-7077259136257224762:subcall:0",
+          "tool_name": "agcdr_diff",
+          "actual_identifier": "agcdr_diff",
+          "purpose": "task002_agcdr_diff_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18613_subcall_0.json",
+            "sha256": "69bdd9737c0624a91fc1de7d46ccdaf6105794245f83bb63c82671aa88e7e49d"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_samples": 8,
+            "num_steps": 10
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_samples": 8,
+              "num_steps": 10
+            },
+            "experiment_name": "task002_agcdr_diff_run1",
+            "job_name": "agcdr_diff"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_samples": 8,
+            "num_steps": 10
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18613,
+            "tool_call_id": "call_-7077259136257224762",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:33:15.090181+00:00",
+            "doc_id": "6af88d4b9de6b44b075d8990",
+            "experiment_name": "task002_agcdr_diff_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18613_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077265080491962406:subcall:0",
+          "tool_name": "AntiBMPNN",
+          "actual_identifier": "AntiBMPNN",
+          "purpose": "task002_antibmpnn_on_agcdr_sample1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18631_subcall_0.json",
+            "sha256": "6bdbbbdb13134d1917354b84dce5f4d9c653eb69d47360f603a7af9c1abcfe79"
+          },
+          "request_payload": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 8,
+            "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "residue_positions_to_design": {
+              "H": "26-33,51-58,97-109",
+              "L": "24-29,50-55,89-97"
+            }
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "chains_to_design": [
+                "H",
+                "L"
+              ],
+              "generation_count": 8,
+              "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "residue_positions_to_design": {
+                "H": "26-33,51-58,97-109",
+                "L": "24-29,50-55,89-97"
+              }
+            },
+            "experiment_name": "task002_antibmpnn_on_agcdr_sample1",
+            "job_name": "AntiBMPNN"
+          },
+          "parameters": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 8,
+            "input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "residue_positions_to_design": {
+              "H": "26-33,51-58,97-109",
+              "L": "24-29,50-55,89-97"
+            }
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18631,
+            "tool_call_id": "call_-7077265080491962406",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:35:20.665064+00:00",
+            "doc_id": "6af88dc99030bff416448460",
+            "experiment_name": "task002_antibmpnn_on_agcdr_sample1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18631_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077273086311000571:subcall:0",
+          "tool_name": "AntiBMPNN",
+          "actual_identifier": "AntiBMPNN",
+          "purpose": "task002_antibmpnn_on_agcdr1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18639_subcall_0.json",
+            "sha256": "1ecf123a24ba4ca077579508acdaf4a22ac2009300af5e0c002faed20009fbe3"
+          },
+          "request_payload": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 8,
+            "input_path": "users/680f678c1b1d883c92aa706c/1794674148445/agcdr_sample1_design_input.pdb",
+            "residue_positions_to_design": {
+              "H": "26-33,51-58,97-109",
+              "L": "24-29,50-55,89-97"
+            }
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "chains_to_design": [
+                "H",
+                "L"
+              ],
+              "generation_count": 8,
+              "input_path": "users/680f678c1b1d883c92aa706c/1794674148445/agcdr_sample1_design_input.pdb",
+              "residue_positions_to_design": {
+                "H": "26-33,51-58,97-109",
+                "L": "24-29,50-55,89-97"
+              }
+            },
+            "experiment_name": "task002_antibmpnn_on_agcdr1",
+            "job_name": "AntiBMPNN"
+          },
+          "parameters": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "generation_count": 8,
+            "input_path": "users/680f678c1b1d883c92aa706c/1794674148445/agcdr_sample1_design_input.pdb",
+            "residue_positions_to_design": {
+              "H": "26-33,51-58,97-109",
+              "L": "24-29,50-55,89-97"
+            }
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18639,
+            "tool_call_id": "call_-7077273086311000571",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:35:53.872362+00:00",
+            "doc_id": "6af88dea445ae94313c3c8c6",
+            "experiment_name": "task002_antibmpnn_on_agcdr1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18639_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077264771254318579:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand0_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18649_subcall_0.json",
+            "sha256": "a8f9d8b70dff9ae04a172b941883bb9e74d520a51d4a32bbca4b727a7ae06402"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRISRSRRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYSSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSLINTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDLDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTRISRSRRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYSSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSLINTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDLDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand0_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRISRSRRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYSSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSLINTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDLDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18649,
+            "tool_call_id": "call_-7077264771254318579",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:42:48.464688+00:00",
+            "doc_id": "6af88f88d29658acc304edab",
+            "experiment_name": "task002_agcdr1_cand0_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18649_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077253535619867613:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand1_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18651_subcall_0.json",
+            "sha256": "685422830aa04d86c42741a4ce96452141651fb38fae7b68c969c39eaee4bcbb"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTTITTSSRIHWVRQAPGKGLEWVARARRSSSSSRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYSDWGDWFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSVNTAVAWYQQKPGKAPKLLIYSAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYSLDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTTITTSSRIHWVRQAPGKGLEWVARARRSSSSSRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYSDWGDWFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSVNTAVAWYQQKPGKAPKLLIYSAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYSLDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand1_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTTITTSSRIHWVRQAPGKGLEWVARARRSSSSSRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYSDWGDWFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSVNTAVAWYQQKPGKAPKLLIYSAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYSLDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18651,
+            "tool_call_id": "call_-7077253535619867613",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:42:55.581799+00:00",
+            "doc_id": "6af88f8f445ae94313c3c96e",
+            "experiment_name": "task002_agcdr1_cand1_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18651_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077257933666380760:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand2_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18653_subcall_0.json",
+            "sha256": "19b21b89a8605b86a2222bd36785b649a45ecea9a5d4783948b0c970fc15b756"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASYRISTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYYTSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYGAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDTDRGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASYRISTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYYTSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYGAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDTDRGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand2_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASYRISTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYYTSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYGAGSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDTDRGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18653,
+            "tool_call_id": "call_-7077257933666380760",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:02.141317+00:00",
+            "doc_id": "6af88f96239a6b9f38bec682",
+            "experiment_name": "task002_agcdr1_cand2_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18653_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077253879217255451:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand3_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18655_subcall_0.json",
+            "sha256": "a68e772f7d7b1549a30f4648d41c86ae65f2b06b518215b36949d7508757a3f0"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRTSTRDRIHWVRQAPGKGLEWVARARWGSSFVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCYYEYSDWGDDFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYGASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYILDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTRTSTRDRIHWVRQAPGKGLEWVARARWGSSFVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCYYEYSDWGDDFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYGASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYILDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand3_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRTSTRDRIHWVRQAPGKGLEWVARARWGSSFVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCYYEYSDWGDDFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYGASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYILDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18655,
+            "tool_call_id": "call_-7077253879217255451",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:08.894205+00:00",
+            "doc_id": "6af88f9d445ae94313c3c983",
+            "experiment_name": "task002_agcdr1_cand3_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18655_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077256627996326947:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand4_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18657_subcall_0.json",
+            "sha256": "6de05d44ff13506455e17d7ca4b7ac91bb2e84bfc77745c1d2cee7053df86501"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASRYRTSIRIHWVRQAPGKGLEWVARIYSSYTYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSTVYTAVAWYQQKPGKAPKLLIYAASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASRYRTSIRIHWVRQAPGKGLEWVARIYSSYTYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSTVYTAVAWYQQKPGKAPKLLIYAASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand4_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASRYRTSIRIHWVRQAPGKGLEWVARIYSSYTYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSTVYTAVAWYQQKPGKAPKLLIYAASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18657,
+            "tool_call_id": "call_-7077256627996326947",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:16.144890+00:00",
+            "doc_id": "6af88fa49850a93adf67da68",
+            "experiment_name": "task002_agcdr1_cand4_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18657_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077250202725246968:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand5_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18661_subcall_0.json",
+            "sha256": "4407ba8af1366de5fc8b8cb06bef3e5b92f9d01dcaed13ef2492aa48a25ec4ab"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTTISTSRSIHWVRQAPGKGLEWVARARYGSSSPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYTSYGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYYASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDDDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTTISTSRSIHWVRQAPGKGLEWVARARYGSSSPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYTSYGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYYASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDDDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand5_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTTISTSRSIHWVRQAPGKGLEWVARARYGSSSPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYSYTSYGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYYASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYDDDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18661,
+            "tool_call_id": "call_-7077250202725246968",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:27.661231+00:00",
+            "doc_id": "6af88faf9850a93adf67da73",
+            "experiment_name": "task002_agcdr1_cand5_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18661_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077258517781937754:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand6_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18663_subcall_0.json",
+            "sha256": "3cb8e780a8aa80b4b30a23779b584cfca127d21f5f8e23e163840800071f9182"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRITTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYATSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYLASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTRITTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYATSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYLASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand6_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRITTSSRIHWVRQAPGKGLEWVARARYGSSSVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYYATSWGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYLASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18663,
+            "tool_call_id": "call_-7077258517781937754",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:34.086612+00:00",
+            "doc_id": "6af88fb6239a6b9f38bec694",
+            "experiment_name": "task002_agcdr1_cand6_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18663_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077257968026121543:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand7_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18665_subcall_0.json",
+            "sha256": "e9e1a424c72db3c3bfc3e8e3635e12e558c9a71692fd5164543a9283e6315ac1"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRISTSDRIHWVRQAPGKGLEWVARTRRGSSDPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYRYTSWGDPFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYIVDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTRISTSDRIHWVRQAPGKGLEWVARTRRGSSDPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYRYTSWGDPFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYIVDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand7_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRISTSDRIHWVRQAPGKGLEWVARTRRGSSDPRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYRYTSWGDPFWYWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSMVNTAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYIVDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18665,
+            "tool_call_id": "call_-7077257968026121543",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:43:41.179274+00:00",
+            "doc_id": "6af88fbd445ae94313c3c9c0",
+            "experiment_name": "task002_agcdr1_cand7_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18665_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077256524917105413:subcall:0",
+          "tool_name": "Boltz2",
+          "actual_identifier": "Boltz2",
+          "purpose": "task002_agcdr1_cand4b_eval",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/submitted_requests/message_18683_subcall_0.json",
+            "sha256": "c3e1828ff453584be26959b318e256e7ec6977b07f4e3dde32c581e507f373b2"
+          },
+          "request_payload": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRIRTSRRIHWVRQAPGKGLEWVARARYGSDAVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYDASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "DNA_Sequences": [],
+              "Protein_Sequences": [
+                "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+                "EVQLVESGGGLVQPGGSLRLSCAASTRIRTSRRIHWVRQAPGKGLEWVARARYGSDAVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYDASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+              ],
+              "RNA_Sequences": [],
+              "SMILES": []
+            },
+            "experiment_name": "task002_agcdr1_cand4b_eval",
+            "job_name": "Boltz2"
+          },
+          "parameters": {
+            "DNA_Sequences": [],
+            "Protein_Sequences": [
+              "FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNA",
+              "EVQLVESGGGLVQPGGSLRLSCAASTRIRTSRRIHWVRQAPGKGLEWVARARYGSDAVRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCIYEYTDDGDWFWDWGQGTLVTVSSAGGGGSGGGGSGGGSDIQMTQSPSSLSASVGDRVTITCRASSSINTAVAWYQQKPGKAPKLLIYDASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCFYLTDDGRTFGQGTKVEIK"
+            ],
+            "RNA_Sequences": [],
+            "SMILES": []
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18683,
+            "tool_call_id": "call_-7077256524917105413",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T16:54:53.733116+00:00",
+            "doc_id": "6af8925d239a6b9f38bec737",
+            "experiment_name": "task002_agcdr1_cand4b_eval",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw/observed_submission_responses/message_18683_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn.json",
+    "workflow_md": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/workflow.md",
+    "code": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/code",
+    "inputs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs",
+    "agent_log": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/logs/execution_summary.md",
+    "report_md": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/report.md",
+    "candidates_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/candidates.csv",
+    "shortlist_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/shortlist.csv",
+    "sequences_fasta": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/sequences.fasta",
+    "metrics_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/metrics.csv",
+    "benchmark_comparison_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/benchmark_comparison.csv",
+    "structures": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/structures",
+    "raw": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw"
+  },
+  "completion_summary": {
+    "status": "completed",
+    "reason": "Alternative workflow completed with saved generated and evaluated outputs. It is a different implementation from W1; comparative limitations remain in the historical report.",
+    "inventory_rows": 8,
+    "inventory_note": "RF-Antibody's historical candidate row is a group-level exclusion; its original complete generation files are retained in raw/.",
+    "packaged_at": "2026-11-15T11:14:35+00:00",
+    "historical_submission_attempts_recovered": 12,
+    "submission_count_note": "Unique observable call/subcall identities, including validation rejections and failed attempts; not a count of successful server jobs."
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "results/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen",
+        "saved": "results/task_002_pdl1_epitope_targeted_scfv_design/_historical/run1_combined_results"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "aa89f196fc9b481435e91a1a9fbe8268319454e7f0c870e3312eb6f497abeb08",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/workflow.md",
+    "config_json": "configs/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn.json",
+    "inputs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs",
+    "code": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/code",
+    "logs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/logs",
+    "agent_log": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/logs/execution_summary.md",
+    "file_manifest": "src/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110304_1c10da.jsonl",
+    "results": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn",
+    "report_md": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/report.md",
+    "candidates_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/candidates.csv",
+    "shortlist_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/shortlist.csv",
+    "sequences_fasta": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/sequences.fasta",
+    "metrics_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/metrics.csv",
+    "benchmark_comparison_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/benchmark_comparison.csv",
+    "structures": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/structures",
+    "raw": "results/task_002_pdl1_epitope_targeted_scfv_design/run_004_agcdr_antibmpnn/raw"
+  }
+}

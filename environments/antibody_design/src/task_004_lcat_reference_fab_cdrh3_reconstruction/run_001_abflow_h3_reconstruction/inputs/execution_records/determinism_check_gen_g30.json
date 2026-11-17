@@ -1,0 +1,7 @@
+{
+  "check": "deterministic regeneration at fixed seed after pmets-index fix",
+  "seed": 20261114,
+  "sequence_identical_candidates": 32,
+  "total": 32,
+  "coordinate_note": "PDB files differ only by GPU float nondeterminism (md5 differs, seq identical); ranking uses pmets now captured per batch item"
+}

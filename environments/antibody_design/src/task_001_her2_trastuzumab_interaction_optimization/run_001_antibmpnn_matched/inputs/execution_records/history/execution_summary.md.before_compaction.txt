@@ -1,0 +1,49 @@
+# execution_summary.md — run_001_antibmpnn_matched
+
+Workflow: wf_antibmpnn_fixed_backbone_cdr — AntiBMPNN CDR-only redesign on PDB 1N8Z Fv, matched Boltz2+Prodigy evaluation vs reference.
+Status: COMPLETE (computational package). Config: `../../../../configs/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched.json`
+
+## Stages executed
+| Stage | Tool (source) | Calls | Outcome |
+| --- | --- | --- | --- |
+| S0 prep/verify | local python (open_source) | stage0, stage0b | 1N8Z fetched/verified; correct design input built after per-atom numbering bug fixed |
+| S1 design | AntiBMPNN (boltzmann) | 5 attempts + 1 control | 4 failures (input format) root-caused and fixed; success on attempt 5 (doc 6af8461a...) |
+| S2 structure | Boltz2 (boltzmann) | 9 jobs | REFERENCE + 8 candidates, all Success (pairwise records rec1=HER2+VH, rec2=HER2+VL) |
+| S3 affinity | Prodigy (boltzmann) | 9+9 jobs | v1 nested-zip failures; flat-zip corrected resubmissions all Success |
+| S4 evaluation | local python (open_source) | stage2/4/6 + clash scan | edit-mask verify, confidence extraction, dG/Kd, epitope recovery, CDR pLDDT, clashes |
+| S5 artifacts | local python (open_source) | stage7 | candidates.csv, shortlist.csv, sequences.fasta, metrics.csv, benchmark_comparison.csv, report.md |
+
+## Counts
+- Generated: 40 sequences (AntiBMPNN) -> 38 unique (2 duplicate pairs removed); 40/40 edit-mask clean; 0 framework violations; 0 new Cys.
+- Evaluated: 8 candidates + reference under matched Boltz2+Prodigy protocol; 30 candidates preserved unevaluated (candidates.csv, sequences.fasta).
+- Selection: shortlist ranked by pre-stated key (mean Prodigy dG -> ipTM rec2 -> fewer mutations): top T001-C005; integrative lead recommendation T001-C008 (report section 4).
+- Jobs ledger: 25 entries in inputs/job_map.json (5 AntiBMPNN + 1 control + 9 Boltz2 + 10 Prodigy across v1/v2 states).
+- Workflows: 3 designed / 1 selected+executed / 1 not_selected (run_002, matched-conditions rationale) / 1 not_run (run_003, no distinct strategy). Reasons in each workflow.md.
+
+## Key numbers (see report.md + metrics.csv)
+- Reference: Prodigy dG -10.2 (VH rec) / -8.7 (VL rec); ipTM 0.220/0.340.
+- Candidates: ipTM(VL) 0.57-0.81 (all > reference); Prodigy dG(VL) -8.7..-10.1 (6/8 better than reference); best VH dG -11.4 (C006); clashes 0-3.
+- Benchmark comparison: published REF15 (REU) endpoints vs our Prodigy/Boltz2 metrics = not_comparable (different scoring functions/structures); within-protocol deltas reported.
+
+## Remaining requirements / gaps
+- Zenodo released archive (4.1 GB) not retrieved -> published endpoint sequences not compared directly (NEEDS_INPUT).
+- No REF15/Rosetta scorer available in-session; REF15 scoring of our candidates not computed (not_comparable regardless, per benchmark doc).
+- Boltz2 pairwise scheduling (no ternary complex record): VH-record Prodigy interfaces land on HER2 domains I/II in most models; noted in report section 4.
+- Wet-lab binding measurements out of scope.
+
+## Links
+- Workflow: ../workflow.md | Activity log: agent_scientist_log.md | Scientific report: ../../../../results/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched/report.md
+- Raw native outputs: inputs/ (antibmpnn_results.zip, boltz2_*/, prodigy/), results/.../raw/.
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **complete**. [Workflow](../workflow.md), [configuration](../../../../configs/task_001_her2_trastuzumab_interaction_optimization/run_001_antibmpnn_matched.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"workflows_designed": 3, "selected": 1, "executed": 1, "not_selected": 1, "not_run": 1, "generated": 40, "unique_candidates": 38, "evaluated": 8, "unevaluated": 30, "jobs_ledger": "inputs/job_map.json (25 entries)", "top_shortlist": "T001-C005 (pre-stated rank key)", "integrative_lead": "T001-C008", "remaining": ["Zenodo 4.1 GB archive NEEDS_INPUT", "REF15 scoring not computed (not_comparable protocol)", "no ternary complex record (Boltz2 pairwise scheduling)"], "last_update": "2026-11-14T14:10Z"}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

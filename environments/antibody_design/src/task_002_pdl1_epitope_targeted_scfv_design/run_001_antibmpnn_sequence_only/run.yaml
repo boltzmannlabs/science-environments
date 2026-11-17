@@ -1,0 +1,20 @@
+task_id: task_002_pdl1_epitope_targeted_scfv_design
+run_id: run_001_antibmpnn_sequence_only
+workflow_id: wf_antibmpnn_sequence_only
+status: completed
+lineage:
+  parent: null
+  historical_components:
+  - run1_epitope_abgen
+  relationship: Retrospective separation of the four workflows explicitly declared
+    in the combined workflow plan; no new execution.
+  historical_config: src/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen/inputs/historical_provenance/combined_config.json
+config:
+  path: ../../../results/task_002_pdl1_epitope_targeted_scfv_design/run_001_antibmpnn_sequence_only/run.json
+  sha256: 6201ac05f05e9bf21ed21671c8f865b0b42a0ccdb1a65601aeb2e6d3cc962c68
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_002_pdl1_epitope_targeted_scfv_design/run_001_antibmpnn_sequence_only.json
+config_sha256: d85ff5526c69a65ab497d7c69cf449a09a879f56fc92c641660543525e74cd17

@@ -1,0 +1,1265 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_002",
+  "workflow_id": "WF2_backbone_diversified_agcdr_antibmpnn_screening",
+  "status": "completed",
+  "lineage": {
+    "parent": "run_001",
+    "relation": "backbone-diversified successor: run_001's scaffold-anchored routes yielded 0 eligible (RF) and 0 eligible (scaffold AntiBMPNN, Cys artifact), motivating CDR-backbone diversification before sequence design",
+    "historical_components": "Executed 2026-11-14 under the earlier flat layout; reorganized into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution. All doc IDs, payloads and artifacts unchanged."
+  },
+  "task_requirements": {
+    "objective": "Diversify CDR backbones on the fixed framework (agcdr_diff), redesign CDR sequences on each backbone (AntiBMPNN), enforce frozen gates, select 5 diverse candidates + H965 control, screen with Boltz2 and property predictors",
+    "constraints": [
+      "Same frozen gates as run_001 (FR byte-identity, CDR lengths, no Cys, novelty, dedupe)",
+      "Selection rule frozen before any complex score existed: medoid-seeded greedy max-min CDR Hamming",
+      "H965 runs alongside as control, never as design input"
+    ],
+    "metrics": [
+      "gate pass count",
+      "ipTM/complex ipLDDT per pair",
+      "interface contacts <5A",
+      "PD-L1-surface overlap",
+      "ESM thermal stability/solubility"
+    ],
+    "benchmark": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design/reference.md",
+    "historical_benchmark_reference": "benchmark/monoclonal_antibody_design/task_003_pd1_framework_guided_cdr_design.md"
+  },
+  "input_inventory": [
+    {
+      "input": "fv_scaffold.pdb",
+      "source": "as run_001",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/fv_scaffold.pdb",
+      "sha256": "47dbf3452229f4d663f6defda2076071f33a8a409041ca119b70013a3c4a1218",
+      "historical_path": "inputs/fv_scaffold.pdb",
+      "saved_sha256": "47dbf3452229f4d663f6defda2076071f33a8a409041ca119b70013a3c4a1218"
+    },
+    {
+      "input": "pd1_antigen.pdb",
+      "source": "as run_001",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/pd1_antigen.pdb",
+      "sha256": "1aecd0d0b0cf5ad55da4abaa93cbeaed84b4f19a0815aac3aba3ec3f8032c4a4",
+      "historical_path": "inputs/pd1_antigen.pdb",
+      "saved_sha256": "1aecd0d0b0cf5ad55da4abaa93cbeaed84b4f19a0815aac3aba3ec3f8032c4a4"
+    },
+    {
+      "input": "agcdr_backbones.zip",
+      "source": "20 renumbered Fv backbones from agcdr_diff output (H:117/L:108 per-residue numbering)",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/candidates/agcdr_backbones.zip",
+      "saved_path_status": "not_resolved_from_historical_reference",
+      "historical_path": "candidates/agcdr_backbones.zip",
+      "saved_sha256": "830379782dd1acd6b922096615940c401c181c5b9462e59e7017a0bd42ded938"
+    },
+    {
+      "input": "properties_input.csv",
+      "source": "5 selected candidates + H965 control",
+      "path": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/properties_input.csv",
+      "sha256": "4edc554748fafddc76328974341f3e5a93d12fe60639d2a024cb573c08d4c0b8",
+      "historical_path": "inputs/properties_input.csv",
+      "saved_sha256": "4edc554748fafddc76328974341f3e5a93d12fe60639d2a024cb573c08d4c0b8"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "S1_backbone_diversification",
+      "status": "completed",
+      "purpose": "Sample CDR backbone conformations with framework+antigen preserved",
+      "dependencies": [],
+      "acceptance_criteria": "Terminal job; 20 backbone samples; framework preserved",
+      "tool_calls": [
+        {
+          "call_id": "run_002-S1-01",
+          "tool": "agcdr_diff (Antibody RFD3)",
+          "actual_identifier": "boltzmann job agcdr_diff, doc 6af879a3d29658acc304e059",
+          "purpose": "CDR backbone diffusion conditioned on Fv scaffold + PD-1 antigen",
+          "source": "boltzmann",
+          "model_version": "Antibody RFD3 diffusion",
+          "selection_reason": "Only Boltzmann route that diversifies CDR backbones while fixing framework and antigen",
+          "status": "completed",
+          "request_payload": {
+            "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+            "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+            "num_samples": 20,
+            "num_steps": 50
+          },
+          "parameters": {
+            "num_samples": 20,
+            "num_steps": 50
+          },
+          "parameter_descriptions": {
+            "num_samples": "20 backbone samples within budget",
+            "num_steps": "50 diffusion steps (platform-recommended)"
+          },
+          "execution": {
+            "job_id": "6af879a3d29658acc304e059",
+            "runtime": "platform"
+          },
+          "outputs": {
+            "backbones": 20,
+            "cdr_rmsd_vs_scaffold_A": 10.9,
+            "framework_preserved": true
+          },
+          "validation": "Reports + structures downloaded; framework residues unchanged",
+          "fallback": null,
+          "tool_name": "agcdr_diff (Antibody RFD3)",
+          "inputs": {
+            "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17379_subcall_0.json",
+            "sha256": "88fb9f98e1396f2246584bb171783adcd52bfdb7bc480fe62a1f91d53c4382a1"
+          },
+          "metadata_gaps": {
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077345860236867814:subcall:0",
+              "tool_name": "agcdr_diff",
+              "actual_identifier": "agcdr_diff",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17379_subcall_0.json",
+                "sha256": "88fb9f98e1396f2246584bb171783adcd52bfdb7bc480fe62a1f91d53c4382a1"
+              },
+              "request_payload": {
+                "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                "num_samples": 20,
+                "num_steps": 50
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                  "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                  "num_samples": 20,
+                  "num_steps": 50
+                },
+                "job_name": "agcdr_diff"
+              },
+              "parameters": {
+                "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+                "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+                "num_samples": 20,
+                "num_steps": 50
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17379,
+                "tool_call_id": "call_-7077345860236867814",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:09:22.882422+00:00",
+                "doc_id": "6af879a3d29658acc304e059",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17379_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ],
+          "historical_request_payload_before_reconciliation": {
+            "job_name": "agcdr_diff",
+            "experiment_data": {
+              "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+              "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+              "num_samples": 20,
+              "num_steps": 50
+            }
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "antibody_pdb_path": "users/680f678c1b1d883c92aa706c/1794668173943/fv_scaffold.pdb",
+              "antigen_pdb_path": "users/680f678c1b1d883c92aa706c/1794668182656/pd1_antigen.pdb",
+              "num_samples": 20,
+              "num_steps": 50
+            },
+            "job_name": "agcdr_diff"
+          },
+          "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed."
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_antibmpnn_on_backbones",
+      "status": "completed",
+      "purpose": "Design CDR sequences on each diversified backbone",
+      "dependencies": [
+        "S1_backbone_diversification"
+      ],
+      "acceptance_criteria": "Terminal job; mask verified position-by-position; gates enforced",
+      "tool_calls": [
+        {
+          "call_id": "run_002-S2-01",
+          "tool": "AntiBMPNN",
+          "actual_identifier": "boltzmann job AntiBMPNN, doc 6af87c36445ae94313c3b280 (first attempt 6af87a62445ae94313c3b0f1 failed on per-atom numbering)",
+          "purpose": "CDR-masked sequence design on 20 agcdr backbones",
+          "source": "boltzmann",
+          "model_version": "AntiBMPNN",
+          "selection_reason": "Mask-restricted design preserves framework; verified 160/160",
+          "status": "completed",
+          "request_payload": {
+            "job_name": "AntiBMPNN",
+            "experiment_data": {
+              "input_path": "users/680f678c1b1d883c92aa706c/1794669616517/agcdr_backbones.zip",
+              "chains_to_design": [
+                "H",
+                "L"
+              ],
+              "residue_positions_to_design": {
+                "H": "26-32,52-57,98-105",
+                "L": "24-34,50-56,89-98"
+              },
+              "generation_count": 8
+            }
+          },
+          "parameters": {
+            "generation_count": 8,
+            "mask_H": "26-32,52-57,98-105 (H1/H2/H3)",
+            "mask_L": "24-34,50-56,89-98 (L1/L2/L3)"
+          },
+          "parameter_descriptions": {
+            "generation_count": "8 sequences per backbone x 20 = 160",
+            "residue_positions_to_design": "exact frozen CDR mask from Table-1 layout"
+          },
+          "execution": {
+            "job_id": "6af87c36445ae94313c3b280"
+          },
+          "outputs": {
+            "sequences": 160,
+            "gate_pass": 115
+          },
+          "validation": "Mask verified 160/160 position-by-position; FR byte-identity asserted per row; no-Cys/length/novelty gates applied",
+          "fallback": {
+            "prior_call": "6af87a62445ae94313c3b0f1",
+            "observed_error": "per-atom residue numbering made 468 'residues'",
+            "recovery": "renumbered per-residue (H:117/L:108) and resubmitted",
+            "reason_for_switch": "platform expects residue-indexed positions",
+            "protocol_differences": "none scientific; numbering only"
+          },
+          "tool_name": "AntiBMPNN",
+          "inputs": null,
+          "metadata_gaps": {
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077345413560269194:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "failed",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17424_subcall_0.json",
+                "sha256": "d987b0770125378ccb84b5662f4f72b5d08e6dee77e3219f0a0d386d645f0474"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 8,
+                "input_path": "users/680f678c1b1d883c92aa706c/1794669148021/agcdr_backbones.zip",
+                "residue_positions_to_design": {
+                  "H": "26-32,52-57,99-106",
+                  "L": "24-34,50-56,89-98"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "H",
+                    "L"
+                  ],
+                  "generation_count": 8,
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794669148021/agcdr_backbones.zip",
+                  "residue_positions_to_design": {
+                    "H": "26-32,52-57,99-106",
+                    "L": "24-34,50-56,89-98"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 8,
+                "input_path": "users/680f678c1b1d883c92aa706c/1794669148021/agcdr_backbones.zip",
+                "residue_positions_to_design": {
+                  "H": "26-32,52-57,99-106",
+                  "L": "24-34,50-56,89-98"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17424,
+                "tool_call_id": "call_-7077345413560269194",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:12:33.813948+00:00",
+                "doc_id": "6af87a62445ae94313c3b0f1",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17424_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077349983405466191:subcall:0",
+              "tool_name": "AntiBMPNN",
+              "actual_identifier": "AntiBMPNN",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17492_subcall_0.json",
+                "sha256": "761577b153a33c4849f023af79d5bf507037289ff320dcc4c136f6abf478b364"
+              },
+              "request_payload": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 8,
+                "input_path": "users/680f678c1b1d883c92aa706c/1794669616517/agcdr_backbones.zip",
+                "residue_positions_to_design": {
+                  "H": "26-32,52-57,99-106",
+                  "L": "24-34,50-56,89-98"
+                }
+              },
+              "submitted_tool_arguments": {
+                "allow_partial_validation": true,
+                "experiment_data": {
+                  "chains_to_design": [
+                    "H",
+                    "L"
+                  ],
+                  "generation_count": 8,
+                  "input_path": "users/680f678c1b1d883c92aa706c/1794669616517/agcdr_backbones.zip",
+                  "residue_positions_to_design": {
+                    "H": "26-32,52-57,99-106",
+                    "L": "24-34,50-56,89-98"
+                  }
+                },
+                "job_name": "AntiBMPNN"
+              },
+              "parameters": {
+                "chains_to_design": [
+                  "H",
+                  "L"
+                ],
+                "generation_count": 8,
+                "input_path": "users/680f678c1b1d883c92aa706c/1794669616517/agcdr_backbones.zip",
+                "residue_positions_to_design": {
+                  "H": "26-32,52-57,99-106",
+                  "L": "24-34,50-56,89-98"
+                }
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17492,
+                "tool_call_id": "call_-7077349983405466191",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:20:21.836008+00:00",
+                "doc_id": "6af87c36445ae94313c3b280",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17492_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_selection",
+      "status": "completed",
+      "purpose": "Select 5 diverse candidates for screening (frozen rule)",
+      "dependencies": [
+        "S2_antibmpnn_on_backbones"
+      ],
+      "acceptance_criteria": "Rule pre-registered; min pairwise CDR Hamming >= 32/60",
+      "tool_calls": [
+        {
+          "call_id": "run_002-S3-01",
+          "tool": "select_screening.py",
+          "actual_identifier": "local code: code/select_screening.py",
+          "purpose": "Medoid-seeded greedy max-min CDR Hamming selection",
+          "source": "open_source",
+          "status": "completed",
+          "inputs": {
+            "pool": "candidates/agcdr_pool.json (115 eligible)"
+          },
+          "outputs": {
+            "selected": 5,
+            "min_pairwise_hamming": 32,
+            "output": "candidates/screening_selection.json"
+          },
+          "validation": "Selection executed before any Boltz2 score existed (rule frozen in configs/workflow.md)",
+          "fallback": null,
+          "tool_name": "select_screening.py",
+          "model_version": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "parameters": "Not recorded in the historical configuration; no value inferred.",
+            "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred.",
+            "execution": "Not recorded in the historical configuration; no value inferred."
+          },
+          "selection_reason": null,
+          "request_payload": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": null
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_boltz2_screening",
+      "status": "completed",
+      "purpose": "Complex plausibility per selected candidate + H965 control",
+      "dependencies": [
+        "S3_selection"
+      ],
+      "acceptance_criteria": "6 terminal Boltz2 jobs; confidence + models retrieved",
+      "tool_calls": [
+        {
+          "call_id": "run_002-S4-01..06",
+          "tool": "Boltz2",
+          "actual_identifier": "docs 6af87d71445ae94313c3b729 (H965 control), 6af87d939030bff416447c9a (cand1), 6af87d99239a6b9f38bebe2d (cand2), 6af87da39030bff416447cb6 (cand3), 6af87da99de6b44b075d81f2 (cand4), 6af87db19850a93adf67d249 (cand5)",
+          "purpose": "PD-1:VH and PD-1:VL pairwise complex predictions per submission",
+          "source": "boltzmann",
+          "model_version": "Boltz2 boltz-structure-prediction",
+          "selection_reason": "Complex confidence under identical preparation for candidates and control",
+          "status": "completed",
+          "request_payload": {
+            "job_name": "Boltz2",
+            "experiment_data": {
+              "Protein_Sequences": [
+                "<PD-1 construct>",
+                "<VH>",
+                "<VL>"
+              ]
+            }
+          },
+          "parameters": {
+            "sequences": "PD-1 + candidate VH/VL (control uses H965 VH/VL; control antigen 33-145 S93 form, candidates 33-134 C93 form — disclosed)"
+          },
+          "execution": {
+            "jobs": 6,
+            "all_terminal": true
+          },
+          "outputs": {
+            "per_job": "PD1:VH + PD1:VL predictions (models, confidence JSON, PAE/plddt npz)"
+          },
+          "validation": "All 6 archives downloaded within signed-URL windows; chain identities verified by length and sequence prefix",
+          "fallback": {
+            "observed_error": "boltzmann_download 400 on outputs.zip; signed URLs expire 300 s",
+            "recovery": "status re-poll + immediate curl; connector 400 recorded, not silently absorbed",
+            "reason_for_switch": "artifact retrieval",
+            "protocol_differences": "none"
+          },
+          "tool_name": "Boltz2",
+          "inputs": null,
+          "metadata_gaps": {
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077325519271749134:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17555_subcall_0.json",
+                "sha256": "037e0f318a2d956fa333616d686b308bb4fd66ca838f56bcd59eed7c3f767a11"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDSRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQIKESLRAELRVT",
+                  "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGGGSYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKEYINTFTYWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCRASQSISSWLAWYQQKPGKAPKLLIYAASRLQSGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCQQSYSYPPLTFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDSRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQIKESLRAELRVT",
+                    "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGGGSYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKEYINTFTYWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCRASQSISSWLAWYQQKPGKAPKLLIYAASRLQSGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCQQSYSYPPLTFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDSRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQIKESLRAELRVT",
+                  "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGGGSYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKEYINTFTYWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCRASQSISSWLAWYQQKPGKAPKLLIYAASRLQSGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCQQSYSYPPLTFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17555,
+                "tool_call_id": "call_-7077325519271749134",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:25:37.129487+00:00",
+                "doc_id": "6af87d71445ae94313c3b729",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17555_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077332734816811866:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17573_subcall_0.json",
+                "sha256": "97f59f205e561c699bd22f483b7dd97ca502b8cd71b58f5df7e886738b662350"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDATAGAGAMSWVRQAPGKGLEWVSAIGGSGAGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGSYFTSGAWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASEFSGGYGDWYQQKPGKAPKLLIYDGYFLASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCDRSRGLSVVGFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                    "EVQLLESGGGLVQPGGSLRLSCAASDATAGAGAMSWVRQAPGKGLEWVSAIGGSGAGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGSYFTSGAWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCKASEFSGGYGDWYQQKPGKAPKLLIYDGYFLASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCDRSRGLSVVGFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDATAGAGAMSWVRQAPGKGLEWVSAIGGSGAGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGSYFTSGAWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASEFSGGYGDWYQQKPGKAPKLLIYDGYFLASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCDRSRGLSVVGFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17573,
+                "tool_call_id": "call_-7077332734816811866",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:26:11.758358+00:00",
+                "doc_id": "6af87d939030bff416447c9a",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17573_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077324935156196439:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17577_subcall_0.json",
+                "sha256": "af872b22d10699cd17ea797e53b9e13702de2135d2461e2635c07f3fd3d8cdd8"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDTLTGGAAMSWVRQAPGKGLEWVSAIGGGDGGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKAAAGAFAFWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQGGLSSTYWYQQKPGKAPKLLIYYGIYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVYTGTFKGYSFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                    "EVQLLESGGGLVQPGGSLRLSCAASDTLTGGAAMSWVRQAPGKGLEWVSAIGGGDGGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKAAAGAFAFWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCKASQGGLSSTYWYQQKPGKAPKLLIYYGIYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVYTGTFKGYSFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDTLTGGAAMSWVRQAPGKGLEWVSAIGGGDGGTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKAAAGAFAFWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQGGLSSTYWYQQKPGKAPKLLIYYGIYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVYTGTFKGYSFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17577,
+                "tool_call_id": "call_-7077324935156196439",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:26:17.676409+00:00",
+                "doc_id": "6af87d99239a6b9f38bebe2d",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17577_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077339881642386245:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17579_subcall_0.json",
+                "sha256": "92f0cb7935622106f49abef069c6919aa692e91520410c191b7791afc028467c"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASSYLGSGGAMSWVRQAPGKGLEWVSAIGSDSYSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGDLFFGLGWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQSASSGGNWYQQKPGKAPKLLIYGDGYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVVSGTGTTSGFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                    "EVQLLESGGGLVQPGGSLRLSCAASSYLGSGGAMSWVRQAPGKGLEWVSAIGSDSYSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGDLFFGLGWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCKASQSASSGGNWYQQKPGKAPKLLIYGDGYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVVSGTGTTSGFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASSYLGSGGAMSWVRQAPGKGLEWVSAIGSDSYSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKGDLFFGLGWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQSASSGGNWYQQKPGKAPKLLIYGDGYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCVVSGTGTTSGFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17579,
+                "tool_call_id": "call_-7077339881642386245",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:26:27.172600+00:00",
+                "doc_id": "6af87da39030bff416447cb6",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17579_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077341977586425933:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17583_subcall_0.json",
+                "sha256": "47ae3a379cb6d101cbc0b182bd9776d94454bca219d81b2d9dafd4584b9d0fd1"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDGYSGGGAMSWVRQAPGKGLEWVSAIGGNNDNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVTFSGGPGWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASESGFAYVDWYQQKPGKAPKLLIYYGNYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCTVTPGLDLSSFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                    "EVQLLESGGGLVQPGGSLRLSCAASDGYSGGGAMSWVRQAPGKGLEWVSAIGGNNDNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVTFSGGPGWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCKASESGFAYVDWYQQKPGKAPKLLIYYGNYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCTVTPGLDLSSFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASDGYSGGGAMSWVRQAPGKGLEWVSAIGGNNDNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVTFSGGPGWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASESGFAYVDWYQQKPGKAPKLLIYYGNYKASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCTVTPGLDLSSFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17583,
+                "tool_call_id": "call_-7077341977586425933",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:26:33.405726+00:00",
+                "doc_id": "6af87da99de6b44b075d81f2",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17583_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077331910183088437:subcall:0",
+              "tool_name": "Boltz2",
+              "actual_identifier": "Boltz2",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17589_subcall_0.json",
+                "sha256": "64ebf7f3b816e5c00a05774859b9b03831e7e590a1eb305b64d51a4d5e83f84b"
+              },
+              "request_payload": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASGTLGDAGAMSWVRQAPGKGLEWVSAIGGGSGNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKTGAYSGGSWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQKSFAVSDWYQQKPGKAPKLLIYGGGYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCLVSDGTVDVDFGQGTKVEIK"
+                ]
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "Protein_Sequences": [
+                    "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                    "EVQLLESGGGLVQPGGSLRLSCAASGTLGDAGAMSWVRQAPGKGLEWVSAIGGGSGNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKTGAYSGGSWGQGTLVTVSS",
+                    "DIQMTQSPSTLSASVGDRVTITCKASQKSFAVSDWYQQKPGKAPKLLIYGGGYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCLVSDGTVDVDFGQGTKVEIK"
+                  ]
+                },
+                "job_name": "Boltz2"
+              },
+              "parameters": {
+                "Protein_Sequences": [
+                  "NPPTFSPALLVVTEGDNATFTCSFSNTSESFVLNWYRMSPSNQTDKLAAFPEDRSQPGQDCRFRVTQLPNGRDFHMSVVRARRNDSGTYLCGAISLAPKAQI",
+                  "EVQLLESGGGLVQPGGSLRLSCAASGTLGDAGAMSWVRQAPGKGLEWVSAIGGGSGNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKTGAYSGGSWGQGTLVTVSS",
+                  "DIQMTQSPSTLSASVGDRVTITCKASQKSFAVSDWYQQKPGKAPKLLIYGGGYAASGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCLVSDGTVDVDFGQGTKVEIK"
+                ]
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17589,
+                "tool_call_id": "call_-7077331910183088437",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:26:40.909146+00:00",
+                "doc_id": "6af87db19850a93adf67d249",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17589_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_id": "S5_properties",
+      "status": "completed",
+      "control": "H965 evaluated alongside",
+      "purpose": "Thermal stability, solubility, CDR prediction on 5 candidates + H965",
+      "dependencies": [
+        "S3_selection"
+      ],
+      "acceptaence_criteria": null,
+      "acceptance_criteria": "3 terminal property jobs",
+      "tool_calls": [
+        {
+          "call_id": "run_002-S5-01..03",
+          "tool": "Antibody_Prediction (AB_PROP)",
+          "actual_identifier": "docs 6af87dd4d29658acc304e596 (Thermal_Stability_ESM), 6af87dda445ae94313c3b7bb (Solubility_ESM), 6af87ded445ae94313c3b850 (CDR_Prediction)",
+          "purpose": "Property prediction for candidates + control",
+          "source": "boltzmann",
+          "status": "completed",
+          "request_payload": {
+            "job_name": "Antibody_Prediction",
+            "experiment_data": {
+              "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+              "scheme": "imgt",
+              "property_name": [
+                "<one per job>"
+              ]
+            }
+          },
+          "execution": {
+            "jobs": 3,
+            "all_terminal": true
+          },
+          "outputs": {
+            "csv": "output-{1,2,3}.csv"
+          },
+          "validation": "6 rows each (5 candidates + H965); CDR_Prediction CDRs consistent with design mask",
+          "fallback": {
+            "unavailable": "Antigen_Antibody_binding property absent from active connector enum (contract drift); recorded not_run",
+            "attempts": "submitted and rejected by enum validation"
+          },
+          "tool_name": "Antibody_Prediction (AB_PROP)",
+          "model_version": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "selection_reason": "Not recorded in the historical configuration; no value inferred.",
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "parameters": "Not recorded in the historical configuration; no value inferred.",
+            "parameter_descriptions": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "selection_reason": null,
+          "inputs": null,
+          "parameters": null,
+          "parameter_descriptions": null,
+          "resources": null,
+          "recovered_submissions": [
+            {
+              "call_id": "call_-7077338094935992575:subcall:0",
+              "tool_name": "Antibody_Prediction",
+              "actual_identifier": "Antibody_Prediction",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17610_subcall_0.json",
+                "sha256": "d78e3578c13f2b35a5a5010e880cb5dda47cfeeb60a2cbfc4127aef816c7add3"
+              },
+              "request_payload": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "Thermal_Stability_ESM"
+                ],
+                "scheme": "imgt"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                  "property_name": [
+                    "Thermal_Stability_ESM"
+                  ],
+                  "scheme": "imgt"
+                },
+                "job_name": "Antibody_Prediction"
+              },
+              "parameters": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "Thermal_Stability_ESM"
+                ],
+                "scheme": "imgt"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17610,
+                "tool_call_id": "call_-7077338094935992575",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:27:16.035003+00:00",
+                "doc_id": "6af87dd4d29658acc304e596",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17610_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077337991856776849:subcall:0",
+              "tool_name": "Antibody_Prediction",
+              "actual_identifier": "Antibody_Prediction",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17619_subcall_0.json",
+                "sha256": "c4417475f4cfa05636983ef636447c9ec3b80c06d68dcd00cc87744d4497ac6f"
+              },
+              "request_payload": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "Solubility_ESM"
+                ],
+                "scheme": "imgt"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                  "property_name": [
+                    "Solubility_ESM"
+                  ],
+                  "scheme": "imgt"
+                },
+                "job_name": "Antibody_Prediction"
+              },
+              "parameters": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "Solubility_ESM"
+                ],
+                "scheme": "imgt"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17619,
+                "tool_call_id": "call_-7077337991856776849",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:27:22.005850+00:00",
+                "doc_id": "6af87dda445ae94313c3b7bb",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17619_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            },
+            {
+              "call_id": "call_-7077337991856780775:subcall:0",
+              "tool_name": "Antibody_Prediction",
+              "actual_identifier": "Antibody_Prediction",
+              "purpose": null,
+              "source": "boltzmann",
+              "model_version": null,
+              "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+              "status": "Success",
+              "inputs": {
+                "saved_request": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/submitted_requests/message_17631_subcall_0.json",
+                "sha256": "1e4e1395c59d7e8f2cfd21c6986780125ec7a6e227babfdb2e05df9f88a34ac8"
+              },
+              "request_payload": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "CDR_Prediction"
+                ],
+                "scheme": "imgt"
+              },
+              "submitted_tool_arguments": {
+                "experiment_data": {
+                  "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                  "property_name": [
+                    "CDR_Prediction"
+                  ],
+                  "scheme": "imgt"
+                },
+                "job_name": "Antibody_Prediction"
+              },
+              "parameters": {
+                "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                "property_name": [
+                  "CDR_Prediction"
+                ],
+                "scheme": "imgt"
+              },
+              "parameter_descriptions": null,
+              "resources": null,
+              "execution": {
+                "session_id": "20261114_110401_625a94",
+                "message_id": 17631,
+                "tool_call_id": "call_-7077337991856780775",
+                "subcall_index": 0,
+                "timestamp_utc": "2026-11-14T15:27:40.943404+00:00",
+                "doc_id": "6af87ded445ae94313c3b850",
+                "experiment_name": null,
+                "evidence_type": "original_observable_request_and_responses"
+              },
+              "outputs": {
+                "observable_responses": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw/observed_submission_responses/message_17631_subcall_0.json"
+              },
+              "validation": {
+                "request_matches_export": true,
+                "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+              },
+              "fallback": null,
+              "metadata_gaps": {
+                "model_version": "Not recorded in the original request/response; no defaults inferred.",
+                "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+                "resources": "Not recorded in the original request/response; no defaults inferred."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_002.json",
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_002/workflow.md",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_002/code",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs/execution_summary.md",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_002/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/shortlist.csv",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_002/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/metrics.csv",
+    "benchmark_comparison_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/benchmark_comparison.csv",
+    "structures": "results/task_003_pd1_framework_guided_cdr_design/run_002/structures",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw"
+  },
+  "completion_summary": {
+    "generated": 160,
+    "gate_pass": 115,
+    "selected": 5,
+    "screened": 6,
+    "top_candidate": "PD1T3-019 ipTM PD1:VH 0.945 vs H965 control 0.895 (same-predictor comparison; not affinity)",
+    "remaining": "Prodigy/ipSAE interface evaluation executed under run_004; epitope-conditioned route under run_003",
+    "last_update": "2026-11-14T16:10:00Z"
+  },
+  "historical_artifact_links": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_002/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_002.json",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs/",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_002/"
+  },
+  "workflow_plan": {
+    "note": "See the original workflow.md; no historical plan fabricated."
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/code",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_code"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/inputs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/_historical/shared_inputs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/candidates",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/candidates"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/frozen_configs",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/frozen_configs"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/provenance.json",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/provenance.json"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/execution.md",
+        "saved": "src/task_003_pd1_framework_guided_cdr_design/run_001/inputs/historical_execution/execution.md"
+      },
+      {
+        "original": "src/task_003_pd1_framework_guided_cdr_design/run_001/metrics_raw.json",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/run_001/raw/historical_metrics_raw.json"
+      },
+      {
+        "original": "results/task_003_pd1_framework_guided_cdr_design/run_001/pd1_results",
+        "saved": "results/task_003_pd1_framework_guided_cdr_design/_historical/combined_pd1_results"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "29ef867d5bcba8d7237b70223863443ee1df51a9c425e1d7ab027d74b1ce20b0",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_003_pd1_framework_guided_cdr_design/run_002/workflow.md",
+    "config_json": "configs/task_003_pd1_framework_guided_cdr_design/run_002.json",
+    "inputs": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs",
+    "code": "src/task_003_pd1_framework_guided_cdr_design/run_002/code",
+    "logs": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs",
+    "agent_log": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_003_pd1_framework_guided_cdr_design/run_002/logs/execution_summary.md",
+    "file_manifest": "src/task_003_pd1_framework_guided_cdr_design/run_002/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110401_625a94.jsonl",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_002",
+    "report_md": "results/task_003_pd1_framework_guided_cdr_design/run_002/report.md",
+    "candidates_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/candidates.csv",
+    "shortlist_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/shortlist.csv",
+    "sequences_fasta": "results/task_003_pd1_framework_guided_cdr_design/run_002/sequences.fasta",
+    "metrics_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/metrics.csv",
+    "benchmark_comparison_csv": "results/task_003_pd1_framework_guided_cdr_design/run_002/benchmark_comparison.csv",
+    "structures": "results/task_003_pd1_framework_guided_cdr_design/run_002/structures",
+    "raw": "results/task_003_pd1_framework_guided_cdr_design/run_002/raw"
+  }
+}

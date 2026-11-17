@@ -1,0 +1,513 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_003_antibmpnn_native_backbone",
+  "record_semantics": "Cxx is an original call record; Cxx.Rxx is its recovered submission evidence. Do not add these counts to estimate completed jobs.",
+  "stages": [
+    {
+      "id": "S1",
+      "purpose": "input preparation",
+      "depends": [],
+      "acceptance": "H3 GLY-masked, no insertion codes",
+      "status": "completed",
+      "stage_id": "historical_stage_1",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C01"
+      ]
+    },
+    {
+      "id": "S2",
+      "purpose": "AntiBMPNN design (Boltzmann)",
+      "depends": [
+        "S1"
+      ],
+      "acceptance": "32 sequences, H3-only diffs",
+      "status": "completed",
+      "stage_id": "historical_stage_2",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C02"
+      ]
+    },
+    {
+      "id": "S3",
+      "purpose": "freeze",
+      "depends": [
+        "S2"
+      ],
+      "acceptance": "frozen before scoring",
+      "status": "completed",
+      "stage_id": "historical_stage_3",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C03"
+      ]
+    },
+    {
+      "id": "S4",
+      "purpose": "scoring",
+      "depends": [
+        "S3"
+      ],
+      "acceptance": "authors evaluator",
+      "status": "completed",
+      "stage_id": "historical_stage_4",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C04"
+      ]
+    },
+    {
+      "id": "S5",
+      "purpose": "packaging",
+      "depends": [
+        "S4"
+      ],
+      "acceptance": "results tree",
+      "status": "completed",
+      "stage_id": "historical_stage_5",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null,
+      "records": [
+        "C05"
+      ]
+    }
+  ],
+  "records": {
+    "C01": {
+      "call_id": "a0",
+      "tool": "local python",
+      "identifier": "prep script",
+      "purpose": "GLY mask + sequential renumber",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "platform input contract requires standard residues",
+      "parameters": {
+        "mask_h3_to": "GLY",
+        "atoms_kept": [
+          "N",
+          "CA",
+          "C",
+          "O"
+        ],
+        "renumber": "sequential 1-N per chain"
+      },
+      "parameter_descriptions": {
+        "mask_h3_to": "withholds native H3 sequence identity while retaining backbone",
+        "atoms_kept": "backbone only for masked residues",
+        "renumber": "removes IMGT insertion codes the platform parser reads as unsupported residues"
+      },
+      "execution": {
+        "executed_at": "2026-11-14T15:52Z",
+        "exit": 0
+      },
+      "outputs": [
+        "antibmpnn_input_5bv7_seq.pdb"
+      ],
+      "validation": "19 GLY at 96-114; chains 377/109/126",
+      "fallback": {
+        "prior_call": null,
+        "error": "first submission 6af882e5239a6b9f38bec0b4 failed: designed chain contains unsupported residues [\"-\"] (IMGT insertion codes)",
+        "recovery": "sequential renumbering, same atoms and mask",
+        "protocol_difference": "residue numbering only; coordinates and mask unchanged"
+      },
+      "tool_name": "local python",
+      "actual_identifier": "AntiBMPNN",
+      "metadata_gaps": {
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": {
+        "saved_request": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/inputs/submitted_requests/message_17956_subcall_0.json",
+        "sha256": "d0683b97baad1c0ef7cf35300dbdfe0d8e27ed816358950a9a9fc4f8e2c0e99a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "C"
+        ],
+        "generation_count": 32,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671323049/antibmpnn_input_5bv7_h3gly.pdb",
+        "residue_positions_to_design": {
+          "C": "96-114"
+        }
+      },
+      "resources": null,
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "C"
+          ],
+          "generation_count": 32,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794671323049/antibmpnn_input_5bv7_h3gly.pdb",
+          "residue_positions_to_design": {
+            "C": "96-114"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "request_reconciliation_note": "Corrected against the original observable tool-call arguments; the earlier descriptive payload is preserved separately. No request was executed.",
+      "original_pointer": "/stages/0/tool_calls/0",
+      "recovered_records": [
+        "C01.R01"
+      ]
+    },
+    "C01.R01": {
+      "call_id": "call_-7077311191260852909:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "failed",
+      "inputs": {
+        "saved_request": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/inputs/submitted_requests/message_17956_subcall_0.json",
+        "sha256": "d0683b97baad1c0ef7cf35300dbdfe0d8e27ed816358950a9a9fc4f8e2c0e99a"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "C"
+        ],
+        "generation_count": 32,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671323049/antibmpnn_input_5bv7_h3gly.pdb",
+        "residue_positions_to_design": {
+          "C": "96-114"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "C"
+          ],
+          "generation_count": 32,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794671323049/antibmpnn_input_5bv7_h3gly.pdb",
+          "residue_positions_to_design": {
+            "C": "96-114"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "C"
+        ],
+        "generation_count": 32,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671323049/antibmpnn_input_5bv7_h3gly.pdb",
+        "residue_positions_to_design": {
+          "C": "96-114"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110408_5c556e",
+        "message_id": 17956,
+        "tool_call_id": "call_-7077311191260852909",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T15:48:53.325696+00:00",
+        "doc_id": "6af882e5239a6b9f38bec0b4",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C01",
+      "original_pointer": "/stages/0/tool_calls/0/recovered_submissions/0"
+    },
+    "C02": {
+      "call_id": "a1",
+      "tool": "AntiBMPNN",
+      "identifier": "Boltzmann platform job 6af884b7239a6b9f38bec1e5 (experiment AntiBMPNN - 20261114-155638Z - ad4974)",
+      "purpose": "fixed-backbone H3 sequence design",
+      "source": "boltzmann",
+      "status": "completed",
+      "selection_reason": "Boltzmann priority 1; user-authorized declared native-backbone track",
+      "model_version": "AntiBMPNN (platform; model antibmpnn_020 per FASTA header, T=0.1)",
+      "inputs": {
+        "input_path": "uploaded antibmpnn_input_5bv7_seq.pdb (receipt 6632033784ec47cda454eaed4007f31a)",
+        "upload_sha256": "e5333129601dad3ea4fdca4411d82a4923cb0ea3499b2da95684b9b75b1ccd22"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "C"
+        ],
+        "residue_positions_to_design": {
+          "C": "96-114"
+        },
+        "generation_count": 32
+      },
+      "parameters": {
+        "chains_to_design": [
+          "C"
+        ],
+        "residue_positions_to_design": {
+          "C": "96-114"
+        },
+        "generation_count": 32
+      },
+      "parameter_descriptions": {
+        "chains_to_design": "heavy chain C only",
+        "residue_positions_to_design": "1-based 96-114 = the 19-res H3 mask (sequential numbering)",
+        "generation_count": "32 to match pool protocols"
+      },
+      "resources": {
+        "node": "boltzmann7",
+        "runtime_s": 98,
+        "billing": "1 unit (rounded 2 min @ 20/hr)"
+      },
+      "execution": {
+        "submitted_at": "2026-11-14T15:56:38Z",
+        "completed": "2026-11-14T15:58Z",
+        "doc_id": "6af884b7239a6b9f38bec1e5",
+        "status": "Success",
+        "notes": "partial-validation approval on upload+submit (chain/position scientific suitability verified locally: chain C exists, 96-114 = H3); results zip downloaded via fresh signed URL after connector download 400"
+      },
+      "outputs": [
+        "antibmpnn_results.zip -> antibmpnn_out/ (results.csv 32 rows, raw FASTA, metrics, manifest, logs)"
+      ],
+      "output_hashes": {
+        "antibmpnn_results.zip": "sha256 e3929c995ece433e2374294d4350808089a18e9a4bc78ec6acea835a1eca308e"
+      },
+      "validation": "32 sequences; framework 95+114 identical, VL identical (after restoring domain-cropped terminal residue); 32 unique H3s; 0 native copies; diffs confined to H3",
+      "fallback": null,
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "metadata_gaps": {},
+      "original_pointer": "/stages/1/tool_calls/0",
+      "recovered_records": [
+        "C02.R01"
+      ]
+    },
+    "C02.R01": {
+      "call_id": "call_-7077307789646756081:subcall:0",
+      "tool_name": "AntiBMPNN",
+      "actual_identifier": "AntiBMPNN",
+      "purpose": null,
+      "source": "boltzmann",
+      "model_version": null,
+      "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+      "status": "Success",
+      "inputs": {
+        "saved_request": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/inputs/submitted_requests/message_18012_subcall_0.json",
+        "sha256": "8a205f3ff73a71b4bdb0c3666fa62a0b40cd8d2dd4c90f82b85244710f25690d"
+      },
+      "request_payload": {
+        "chains_to_design": [
+          "C"
+        ],
+        "generation_count": 32,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671791622/antibmpnn_input_5bv7_seq.pdb",
+        "residue_positions_to_design": {
+          "C": "96-114"
+        }
+      },
+      "submitted_tool_arguments": {
+        "allow_partial_validation": true,
+        "experiment_data": {
+          "chains_to_design": [
+            "C"
+          ],
+          "generation_count": 32,
+          "input_path": "users/680f678c1b1d883c92aa706c/1794671791622/antibmpnn_input_5bv7_seq.pdb",
+          "residue_positions_to_design": {
+            "C": "96-114"
+          }
+        },
+        "job_name": "AntiBMPNN"
+      },
+      "parameters": {
+        "chains_to_design": [
+          "C"
+        ],
+        "generation_count": 32,
+        "input_path": "users/680f678c1b1d883c92aa706c/1794671791622/antibmpnn_input_5bv7_seq.pdb",
+        "residue_positions_to_design": {
+          "C": "96-114"
+        }
+      },
+      "parameter_descriptions": null,
+      "resources": null,
+      "execution": {
+        "session_id": "20261114_110408_5c556e",
+        "message_id": 18012,
+        "tool_call_id": "call_-7077307789646756081",
+        "subcall_index": 0,
+        "timestamp_utc": "2026-11-14T15:56:38.893454+00:00",
+        "doc_id": "6af884b7239a6b9f38bec1e5",
+        "experiment_name": null,
+        "evidence_type": "original_observable_request_and_responses"
+      },
+      "outputs": null,
+      "validation": {
+        "request_matches_export": true,
+        "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+      },
+      "fallback": null,
+      "metadata_gaps": {
+        "model_version": "Not recorded in the original request/response; no defaults inferred.",
+        "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+        "resources": "Not recorded in the original request/response; no defaults inferred."
+      },
+      "parent_record": "C02",
+      "original_pointer": "/stages/1/tool_calls/0/recovered_submissions/0"
+    },
+    "C03": {
+      "call_id": "a2",
+      "tool": "local python",
+      "identifier": "rebuild_antibmpnn_models.py (freeze block)",
+      "purpose": "model-score-ascending freeze",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "AntiBMPNN's own FASTA-header score is the tool-native confidence",
+      "parameters": {
+        "ordering": "model score asc, tie-break candidate_id"
+      },
+      "parameter_descriptions": {
+        "ordering": "lower score = higher model confidence (ProteinMPNN convention: negative log-prob related)"
+      },
+      "execution": {
+        "executed_at": "2026-11-14T16:04Z",
+        "exit": 0
+      },
+      "outputs": [
+        "antibmpnn_prep.json (frozen)"
+      ],
+      "validation": "32 entries with scores; PDB sha256 recorded",
+      "fallback": null,
+      "tool_name": "local python",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/2/tool_calls/0"
+    },
+    "C04": {
+      "call_id": "a3",
+      "tool": "AbFlow evaluator",
+      "identifier": "cal_metrics.cal_metrics @ df39b47",
+      "purpose": "score native-backbone models",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "same evaluator across runs",
+      "inputs": {
+        "mod_pdbs": "32 native-backbone graft models",
+        "ref": "sealed native",
+        "chains": "C/B/[A]"
+      },
+      "parameters": {
+        "cdr_type": "['H3']"
+      },
+      "parameter_descriptions": {
+        "cdr_type": "authors' H3 path"
+      },
+      "execution": {
+        "command": "PATH=<env>/bin:$PATH python score_runs23_final.py",
+        "executed_at": "2026-11-14T16:07-16:10Z",
+        "exit": 0
+      },
+      "outputs": [
+        "scored_antibmpnn/metrics_per_candidate.json"
+      ],
+      "validation": "n=32; AAR H3 mean 0.5526; rank-1 0.5789",
+      "fallback": {
+        "prior_call": "a3-attempt-1",
+        "error": "same DockQ cwd artifact as run_002",
+        "recovery": "same chdir fix + rescore",
+        "protocol_difference": "none"
+      },
+      "tool_name": "AbFlow evaluator",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/3/tool_calls/0"
+    },
+    "C05": {
+      "call_id": "a4",
+      "tool": "local python",
+      "identifier": "build script",
+      "purpose": "results tree",
+      "source": "open_source",
+      "status": "completed",
+      "selection_reason": "contract packaging",
+      "parameters": {
+        "per_run_tree": true
+      },
+      "parameter_descriptions": {
+        "per_run_tree": "§6 layout"
+      },
+      "execution": {
+        "executed_at": "2026-11-14T16:20Z"
+      },
+      "outputs": [
+        "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_003_antibmpnn_native_backbone/"
+      ],
+      "validation": "complete",
+      "fallback": null,
+      "tool_name": "local python",
+      "actual_identifier": null,
+      "metadata_gaps": {
+        "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+        "model_version": "Not recorded in the historical configuration; no value inferred.",
+        "inputs": "Not recorded in the historical configuration; no value inferred.",
+        "request_payload": "Not recorded in the historical configuration; no value inferred.",
+        "resources": "Not recorded in the historical configuration; no value inferred."
+      },
+      "model_version": null,
+      "inputs": null,
+      "request_payload": null,
+      "resources": null,
+      "original_pointer": "/stages/4/tool_calls/0"
+    }
+  }
+}

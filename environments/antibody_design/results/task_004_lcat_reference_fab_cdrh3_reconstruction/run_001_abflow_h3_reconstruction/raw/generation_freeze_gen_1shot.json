@@ -1,0 +1,10 @@
+{
+  "n_candidates": 1,
+  "seed": 2023,
+  "ckpt": "/home/boltzmann10/lcat_task004/AbFlow/checkpoints/paratope_centric_design.ckpt",
+  "generated_at": "2026-11-14 11:23:56",
+  "candidate_pdb_sha256": {
+    "5bv7_h3_000": "9f3a450bacb37f2d2625df25aadfc1b7e19e9499e9b954d7904acb71ff6601d3"
+  },
+  "ranking_rule": "model pmets (mean NLL of H3 seq under model, lower=better) frozen BEFORE native scoring"
+}

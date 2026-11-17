@@ -1,0 +1,36 @@
+# IgDesign config: task_005 run_002 heavy-CDR123 codesign on BDBV-43/Gal-3BP reference complex
+structure_path: "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design/src/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign/inputs/igdesign_input_complex.pdb"
+lmdesign_checkpoint: "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igdesign_acvr2b_holdout.ckpt"
+pmpnn_checkpoint: "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igmpnn_acvr2b_holdout.ckpt"
+save_path: "/home/boltzmann10/.sci/cache/scratch/gal3bp_run/igdesign_run002_results.csv"
+
+region_order: ["hcdr1", "hcdr2", "hcdr3"]
+
+lmdesign_num_decoding_orders: 10
+lmdesign_num_pmpnn_seqs: 10
+lmdesign_num_lm_seqs: 1  # 100 samples
+lmdesign_pmpnn_logit_temperature: 0.5
+lmdesign_output_logit_temperature: 0.5
+
+independent_loss: true
+condition_on_light_chain: true
+condition_on_antigen: true
+predict_light_chain: false
+batch_size: 1
+num_batches: 1
+random_seed: 0
+epitope_idxs_or_all: all
+antigen_chain_id: "C"
+heavy_chain_id: "A"
+light_chain_id: "B"
+
+regions:
+  hcdr1:
+    positions: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+    chain: "heavy"
+  hcdr2:
+    positions: [50, 51, 52, 53, 54, 55, 56, 57, 58]
+    chain: "heavy"
+  hcdr3:
+    positions: [96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111]
+    chain: "heavy"

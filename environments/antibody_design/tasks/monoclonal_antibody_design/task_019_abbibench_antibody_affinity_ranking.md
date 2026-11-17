@@ -30,7 +30,7 @@ Prioritize the supplied paired monoclonal antibody variants for binding to a def
 
 Source references: [AbBiBench manuscript v3, 3 November 2026](https://arxiv.org/html/2506.04235v3), [released data](https://huggingface.co/datasets/AbBibench/Antibody_Binding_Benchmark_Dataset), [MSBMI-SAFE/AbBiBench @ `85645eaa9441`](https://github.com/MSBMI-SAFE/AbBiBench/tree/85645eaa94418034ee6ef6e21666b683c142fa02).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_019_abbibench_antibody_affinity_ranking.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_019_abbibench_antibody_affinity_ranking/reference.md).
 
 ## Expected Output
 
@@ -46,6 +46,6 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Use source experimental labels only to evaluate the frozen ranking.
 - Predictive ranking performance does not assign a measured affinity to a newly generated sequence.

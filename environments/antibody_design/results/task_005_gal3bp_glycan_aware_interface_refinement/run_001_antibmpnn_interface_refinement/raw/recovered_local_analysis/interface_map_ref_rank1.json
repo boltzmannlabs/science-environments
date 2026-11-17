@@ -1,0 +1,172 @@
+{
+  "definition": "antibody-antigen residue pair if CA-CA < 6.0 A; same definition for reference and candidates",
+  "n_contact_pairs": 30,
+  "n_paratope_residues": 11,
+  "n_epitope_residues": 15,
+  "paratope_region_counts": {
+    "H2": 1,
+    "FR": 6,
+    "H3": 3,
+    "L1": 1
+  },
+  "paratope_residues": [
+    {
+      "residue": "A056",
+      "chain": "VH",
+      "region": "H2"
+    },
+    {
+      "residue": "A102",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A103",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A104",
+      "chain": "VH",
+      "region": "FR"
+    },
+    {
+      "residue": "A105",
+      "chain": "VH",
+      "region": "H3"
+    },
+    {
+      "residue": "A106",
+      "chain": "VH",
+      "region": "H3"
+    },
+    {
+      "residue": "A107",
+      "chain": "VH",
+      "region": "H3"
+    },
+    {
+      "residue": "B032",
+      "chain": "VL",
+      "region": "L1"
+    },
+    {
+      "residue": "B092",
+      "chain": "VL",
+      "region": "FR"
+    },
+    {
+      "residue": "B093",
+      "chain": "VL",
+      "region": "FR"
+    },
+    {
+      "residue": "B094",
+      "chain": "VL",
+      "region": "FR"
+    }
+  ],
+  "epitope_residues": [
+    "C276",
+    "C306",
+    "C307",
+    "C308",
+    "C309",
+    "C310",
+    "C311",
+    "C312",
+    "C313",
+    "C314",
+    "C315",
+    "C317",
+    "C318",
+    "C346",
+    "C350"
+  ],
+  "epitope_domain_counts": {
+    "BACK(260-360)": 13,
+    "C-term(361-585)": 2
+  },
+  "epitope_mature_range": [
+    276,
+    350
+  ],
+  "cdr_position_map_1based": {
+    "H1": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "H2": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "H3": [
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      112,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ],
+    "L1": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "L2": [
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "L3": [
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ]
+  },
+  "caveat": "epitope mapped on the computational ternary assembly (Boltz2 pair models), not on the study's unavailable reference model; paper-defined E1 could not be verified (NEEDS_INPUT)"
+}

@@ -1,0 +1,121 @@
+{
+  "diffab_grafted_n32": {
+    "population": "DiffAb in-context H3 co-design, grafted onto native IMGT scaffold, n=32",
+    "n": 32,
+    "AAR H3": {
+      "mean": 0.2747,
+      "std": 0.0693,
+      "min": 0.1579,
+      "max": 0.4737
+    },
+    "CAAR H3": {
+      "mean": 0.1458,
+      "std": 0.0833,
+      "min": 0.0,
+      "max": 0.3333
+    },
+    "RMSD(CA) CDRH3": {
+      "mean": 4.5504,
+      "std": 1.0196,
+      "min": 2.7666,
+      "max": 7.3121
+    },
+    "RMSD(CA) CDRH3 aligned": {
+      "mean": 2.9005,
+      "std": 0.4679,
+      "min": 2.0453,
+      "max": 4.2198
+    },
+    "RMSD(CA) aligned": {
+      "mean": 1.2576,
+      "std": 0.2753,
+      "min": 0.7774,
+      "max": 2.0095
+    },
+    "TMscore": {
+      "mean": 0.9785,
+      "std": 0.004,
+      "min": 0.9703,
+      "max": 0.9869
+    },
+    "LDDT": {
+      "mean": 0.8956,
+      "std": 0.0024,
+      "min": 0.8888,
+      "max": 0.9003
+    },
+    "DockQ": {
+      "mean": 0.5877,
+      "std": 0.1569,
+      "min": 0.311,
+      "max": 0.894
+    }
+  },
+  "antibmpnn_fixedbb_n32": {
+    "population": "AntiBMPNN fixed-backbone H3 sequence design (Boltzmann platform), n=32",
+    "n": 32,
+    "AAR H3": {
+      "mean": 0.5526,
+      "std": 0.0671,
+      "min": 0.3684,
+      "max": 0.6316
+    },
+    "CAAR H3": {
+      "mean": 0.3542,
+      "std": 0.0691,
+      "min": 0.1667,
+      "max": 0.4167
+    },
+    "RMSD(CA) CDRH3": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "RMSD(CA) CDRH3 aligned": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "RMSD(CA) aligned": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "TMscore": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "LDDT": {
+      "mean": 0.9354,
+      "std": 0.0,
+      "min": 0.9354,
+      "max": 0.9354
+    },
+    "DockQ": {
+      "mean": 1.139,
+      "std": 0.0,
+      "min": 1.139,
+      "max": 1.139
+    }
+  },
+  "metric_definitions": {
+    "AAR H3": "CDR-H3 identity fraction, positions 95-113 (19 aa) of heavy chain, authors cal_metrics",
+    "CAAR H3": "AAR restricted to H3 residues in antigen contact (<6.6 A any-atom) in native",
+    "RMSD(CA) aligned": "whole-antibody (VH+VL) CA RMSD AFTER Kabsch superposition (compute_rmsd aligned=False applies kabsch)",
+    "RMSD(CA) CDRH3": "CDR-H3 CA RMSD in complex frame WITHOUT superposition (compute_rmsd aligned=True skips kabsch) \u2014 paper Appendix C Table-1 RMSD definition",
+    "RMSD(CA) CDRH3 aligned": "CDR-H3 CA RMSD after Kabsch superposition of the loop itself",
+    "TMscore": "TM-score of antibody (H+L merged), TMscore binary in repo",
+    "LDDT": "lDDT of antibody vs native, lddt binary (-x); agreement-to-reference, NOT predicted confidence",
+    "DockQ": "DockQ v1 (repo binary) on antigen vs CDR-H3-only reduced complex (cdrh3_only=True, HERN-consistent)"
+  },
+  "evaluator_provenance": "AbFlow repo @ df39b47, cal_metrics.cal_metrics (same evaluator as run_001/run_004)",
+  "protocol_notes": {
+    "diffab": "DiffAb outputs Chothia-renumbered terminally-cropped complexes; evaluation models transplant the full-atom designed H3 block onto the native IMGT scaffold 1:1 by sequence position. ALL design content (H3 seq+structure+sidechains) is DiffAb-generated; framework/pose conditioning is the in-context protocol (native complex provided), declared separate from pose-blind AbFlow tracks.",
+    "antibmpnn": "AntiBMPNN designed H3 sequences on the native backbone (fixed-backbone track, user-authorized declared variant). Models = native complex with H3 residues mutated to designed sequence (backbone atoms + CB only). Sequence-recovery metrics are informative; RMSD/TM/lDDT/DockQ are structural-trivial (backbone native) and reported as such."
+  }
+}

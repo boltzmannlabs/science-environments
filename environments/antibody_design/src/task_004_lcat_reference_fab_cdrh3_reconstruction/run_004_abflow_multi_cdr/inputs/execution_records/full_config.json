@@ -1,0 +1,555 @@
+{
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_004_abflow_multi_cdr",
+  "workflow_id": "wf_abflow_multi_cdr_design",
+  "status": "completed",
+  "lineage": {
+    "parent": "run_001_abflow_h3_reconstruction",
+    "derived_from": "same masked 5bv7 inputs and sealed reference as run_001; distinct checkpoint (multi_cdr_design.ckpt)",
+    "historical_components": []
+  },
+  "task_requirements": {
+    "objective": "All-CDR sequence/structure co-design for 5bv7 as a declared separate evaluation track (paper Table 2 protocol)",
+    "constraints": [
+      "Task md: six-CDR design only as a declared separate track — declared here; metrics never merged with the single-CDR-H3 track",
+      "Same masking/isolation contract as run_001 (native H3 seq/coords/pose withheld until freeze)",
+      "Framework, disulfides, pairing, antigen protected; H3 length conserved"
+    ],
+    "metrics": [
+      "AAR",
+      "CAAR",
+      "RMSD (Appendix C + Kabsch variants)",
+      "TMscore",
+      "lDDT",
+      "DockQ v1 cdrh3_only"
+    ],
+    "benchmark": "benchmark/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction/reference.md (Table 2 multi-CDR rows)",
+    "historical_benchmark_reference": "benchmark/monoclonal_antibody_design/task_004_lcat_reference_fab_cdrh3_reconstruction.md (Table 2 multi-CDR rows)"
+  },
+  "input_inventory": {
+    "masked_input_5bv7.json": {
+      "path": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/inputs/masked_input_5bv7.json",
+      "sha256": "18d76e2ad1c43514a8feb5bec9297f5ad60d2af80fc0b12ddf64b83b6549ce1c",
+      "provenance": "authors test.json 5bv7 entry minus cdrh3_seq (same file as run_001 S1 output)"
+    },
+    "multi_cdr_design.ckpt": {
+      "sha256": "ae5d78d583615b2c4c0d0a01081206c2fdf7121773e922d2575b973aa870eac4",
+      "provenance": "HF wenda8759/AbFlow checkpoints/multi_cdr_design.ckpt (paper Table 2 model)"
+    },
+    "heldout_reference": {
+      "path": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction/inputs/heldout_reference_5bv7_dataset_entry.json",
+      "sha256": "28487ca965dccfdbe4a46723c7bb92c52a4bec1f4109b93a18500efb01059d91",
+      "provenance": "sealed reference shared with run_001"
+    }
+  },
+  "workflow_plan": {
+    "designed": 4,
+    "selected": 4,
+    "planning_table": [
+      {
+        "run_id": "run_001_abflow_h3_reconstruction",
+        "objective": "benchmark-matched CDR-H3 reconstruction via authors H3 ckpt",
+        "tools": "AbFlow paratope_centric (open_source)",
+        "source": "open_source",
+        "selected": true,
+        "reason": "only route with published Table-1 comparators | only route with published Table-1 comparators",
+        "status": "completed",
+        "readiness": "executed"
+      },
+      {
+        "run_id": "run_004_abflow_multi_cdr",
+        "objective": "all-CDR co-design, declared separate track (Table 2)",
+        "tools": "AbFlow multi_cdr (open_source)",
+        "source": "open_source",
+        "selected": true,
+        "reason": "authors released the Table-2 checkpoint; covers the task md second track at zero extra setup | authors Table-2 checkpoint; task md second track",
+        "status": "completed",
+        "readiness": "executed"
+      },
+      {
+        "run_id": "run_002_diffab_local",
+        "objective": "DiffAb CDR-H3 comparator",
+        "tools": "DiffAb local",
+        "source": "open_source",
+        "selected": true,
+        "reason": "no installed evaluation stack (IgFold+HDock+Rosetta) and no comparable published column | user-authorized open-source execution; DiffAb single-CDR co-design baseline family",
+        "status": "completed",
+        "readiness": "executed"
+      },
+      {
+        "run_id": "run_003_antibmpnn_native_backbone",
+        "objective": "AntiBMPNN fixed-backbone H3 redesign",
+        "tools": "AntiBMPNN",
+        "source": "boltzmann",
+        "selected": true,
+        "reason": "blocked: requires native H3 loop coordinates, violating isolation constraint | Boltzmann priority 1; user-authorized declared native-backbone variant",
+        "status": "completed",
+        "readiness": "executed"
+      }
+    ],
+    "stages": [
+      {
+        "id": "S1",
+        "purpose": "mask inputs, seal reference (shared with run_001)",
+        "depends": [],
+        "status": "completed"
+      },
+      {
+        "id": "S2",
+        "purpose": "multi-CDR generation",
+        "depends": [
+          "S1"
+        ],
+        "status": "completed"
+      },
+      {
+        "id": "S3",
+        "purpose": "freeze ranking before scoring",
+        "depends": [
+          "S2"
+        ],
+        "status": "completed"
+      },
+      {
+        "id": "S4",
+        "purpose": "native-reference scoring, authors evaluator",
+        "depends": [
+          "S3"
+        ],
+        "status": "completed"
+      },
+      {
+        "id": "S5",
+        "purpose": "per-run results tree + bundle",
+        "depends": [
+          "S4"
+        ],
+        "status": "completed"
+      }
+    ],
+    "executed": 4,
+    "planning_note": "after user authorization 2026-11-14: all 4 designed workflows selected and executed end-to-end"
+  },
+  "stages": [
+    {
+      "id": "S1",
+      "purpose": "masking + reference sealing (inherited from run_001 S1)",
+      "depends": [],
+      "acceptance": "masked input, sealed reference",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "mc1",
+          "tool": "build_run.py",
+          "identifier": "local python",
+          "purpose": "mask+seal (same artifacts reused)",
+          "source": "open_source",
+          "status": "completed",
+          "inputs": {
+            "test_set": "authors RAbD test.json 5bv7 entry (heavy C, light B, antigen [A], IMGT)"
+          },
+          "parameters": {
+            "n_replicates": 32
+          },
+          "parameter_descriptions": {
+            "n_replicates": "replicate count for pool runs; this run uses the single-entry input"
+          },
+          "resources": {
+            "cpu": "workstation",
+            "gpu": null
+          },
+          "execution": {
+            "command": "python build_run.py run_5bv7_abflow 32",
+            "executed_at": "2026-11-14T11:17:00Z"
+          },
+          "outputs": [
+            "input/test_5bv7.json",
+            "reference/freeze_manifest.json"
+          ],
+          "validation": "field-diff confirmed only cdrh3_seq removed",
+          "fallback": null,
+          "selection_reason": "reuse of run_001 S1 artifacts (identical inputs; no re-execution needed)",
+          "tool_name": "build_run.py",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null
+        }
+      ],
+      "stage_id": "historical_stage_1",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S2",
+      "purpose": "all-CDR generation",
+      "depends": [
+        "S1"
+      ],
+      "acceptance": "CDR-only changes, framework preserved, no native copy",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "mc2",
+          "tool": "AbFlow",
+          "identifier": "multi_cdr_design.ckpt @ repo df39b47",
+          "purpose": "all-CDR 1-shot co-design",
+          "source": "open_source",
+          "status": "completed",
+          "model_version": "multi_cdr_design.ckpt (HF wenda8759/AbFlow, sha256 ae5d78d583615b2c...)",
+          "inputs": {
+            "test_set": "run_5bv7_abflow/input/test_5bv7.json (masked)",
+            "surf_file": "AbFlow/all_data/RAbD/test_surf.pkl",
+            "pep_file": "AbFlow/all_data/RAbD/test.pkl"
+          },
+          "parameters": {
+            "seed": 2023,
+            "batch_size": 1,
+            "gpu": 0,
+            "ckpt": "AbFlow/checkpoints/multi_cdr_design.ckpt"
+          },
+          "parameter_descriptions": {
+            "seed": "2023 = authors generate.py default (setup_seed(2023)); explicit choice for reproducibility",
+            "batch_size": "1 = single-sample 1-shot protocol (paper Table 2 sampling convention, matches Table 1 1-shot)",
+            "gpu": "RTX 3090 24GB, GPU 0 (free at run time)",
+            "ckpt": "authors Table-2 all-CDR checkpoint; selected because it is the benchmark-referenced method for this track"
+          },
+          "resources": {
+            "gpu": "RTX 3090 24GB",
+            "gpu_mem_approx": "~6 GB",
+            "runtime": "~9 s"
+          },
+          "execution": {
+            "command": "python generate_candidates.py --repo AbFlow --test-set run_5bv7_abflow/input/test_5bv7.json --save-dir run_5bv7_abflow/gen_mcdr_1shot --surf-file AbFlow/all_data/RAbD/test_surf.pkl --pep-file AbFlow/all_data/RAbD/test.pkl --ckpt AbFlow/checkpoints/multi_cdr_design.ckpt --seed 2023 --batch-size 1",
+            "executed_at": "2026-11-14T15:28:42Z",
+            "exit": 0,
+            "env": "conda abflow_benchmark"
+          },
+          "outputs": [
+            "gen_mcdr_1shot/5bv7_h3_000.pdb",
+            "gen_mcdr_1shot/candidates.csv",
+            "gen_mcdr_1shot/generation_freeze.json"
+          ],
+          "output_hashes": {
+            "5bv7_h3_000.pdb": "sha256 2d5c24b42316ec4de689be885288c098226a35bdbf22b1ab4e8b2b050e016dcc"
+          },
+          "validation": "VH FW identity 106/107 outside H3; changes only in CDR positions (VH {51,98-114}, VL {28-31,49-51,88-96}); H3 len 19; no native copy",
+          "fallback": null,
+          "selection_reason": "authors Table-2 all-CDR checkpoint — only benchmark-referenced route for this declared track",
+          "tool_name": "AbFlow",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred."
+          },
+          "request_payload": null
+        }
+      ],
+      "stage_id": "historical_stage_2",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S3",
+      "purpose": "freeze before scoring",
+      "depends": [
+        "S2"
+      ],
+      "acceptance": "ranking frozen, hashes verified",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "mc3",
+          "tool": "freeze_rankings.py",
+          "identifier": "local python",
+          "purpose": "pmets-asc freeze + hash verify",
+          "source": "open_source",
+          "status": "completed",
+          "inputs": {
+            "pool": "gen_mcdr_1shot"
+          },
+          "parameters": {
+            "ordering": "pmets asc, tie-break candidate_id"
+          },
+          "parameter_descriptions": {
+            "ordering": "pose-blind model confidence; frozen before any native metric exists"
+          },
+          "execution": {
+            "command": "python freeze_rankings.py run_5bv7_abflow/gen_mcdr_1shot",
+            "executed_at": "2026-11-14T15:29:33Z",
+            "exit": 0
+          },
+          "outputs": [
+            "shortlist_frozen.csv",
+            "freeze_record.json"
+          ],
+          "validation": "PDB sha256 verified against generation_freeze.json; protocol label corrected post-hoc in freeze_record.json (documentation only)",
+          "fallback": null,
+          "selection_reason": "freeze-before-score contract (same rule as run_001)",
+          "tool_name": "freeze_rankings.py",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_3",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S4",
+      "purpose": "native-reference scoring",
+      "depends": [
+        "S3"
+      ],
+      "acceptance": "authors evaluator unmodified; candidate scored",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "mc4",
+          "tool": "AbFlow evaluator",
+          "identifier": "cal_metrics.cal_metrics @ df39b47",
+          "purpose": "recovery/structure/interface metrics vs sealed native",
+          "source": "open_source",
+          "status": "completed",
+          "inputs": {
+            "mod_pdb": "gen_mcdr_1shot/5bv7_h3_000.pdb",
+            "ref_pdb": "reference/native_5bv7.pdb (sealed)",
+            "chains": "H=C, L=B, A=[A]"
+          },
+          "parameters": {
+            "cdr_type": "['H3']"
+          },
+          "parameter_descriptions": {
+            "cdr_type": "evaluator's H3-scoring path (same as run_001); full-antibody metrics unaffected by this list; AAR H3 computed on positions 95-113"
+          },
+          "resources": {
+            "cpu": "workstation",
+            "runtime_s": 4.9
+          },
+          "execution": {
+            "command": "PATH=<env>/bin:$PATH python score_candidates.py",
+            "executed_at": "2026-11-14T15:31Z",
+            "exit": 0
+          },
+          "outputs": [
+            "gen_mcdr_1shot/metrics_per_candidate.json"
+          ],
+          "validation": "AAR H3 0.4211, CAAR 0.25, TM 0.9593, lDDT 0.7686, RMSD(AppC) 19.8398 A, DockQ 0.345",
+          "fallback": null,
+          "selection_reason": "authors evaluator — same scoring path as run_001 for cross-run consistency",
+          "tool_name": "AbFlow evaluator",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null
+        },
+        {
+          "call_id": "mc4b",
+          "tool": "AbFlow evaluator",
+          "identifier": "cal_metrics.cal_metrics @ df39b47, cdr list H1-H3/L1-L3",
+          "purpose": "per-CDR Kabsch RMSDs for repo-benchmark Table-2 comparison",
+          "source": "open_source",
+          "status": "completed",
+          "selection_reason": "repo benchmark md Table-2 rows are per-CDR RMSDs; requires full CDR list",
+          "inputs": {
+            "mod_pdb": "gen_mcdr_1shot/5bv7_h3_000.pdb",
+            "ref_pdb": "sealed native",
+            "chains": "C/B/[A]"
+          },
+          "parameters": {
+            "cdr_type": "['H1','H2','H3','L1','L2','L3']"
+          },
+          "parameter_descriptions": {
+            "cdr_type": "evaluator emits per-CDR RMSD(CA) CDRx + aligned (Kabsch) pairs"
+          },
+          "execution": {
+            "command": "cal_metrics([mod, ref, C, B, [A], [H1..L3]])",
+            "executed_at": "2026-11-14T16:35Z",
+            "exit": 0
+          },
+          "outputs": [
+            "gen_mcdr_1shot/metrics_allcdrs.json"
+          ],
+          "validation": "H1/H2 Kabsch 0.61/0.53 vs published 0.63/0.55 — definition confirmed",
+          "fallback": null,
+          "tool_name": "AbFlow evaluator",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_4",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    },
+    {
+      "id": "S5",
+      "purpose": "packaging",
+      "depends": [
+        "S4"
+      ],
+      "acceptance": "per-run results tree complete",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "mc5",
+          "tool": "local python",
+          "identifier": "build script",
+          "purpose": "per-run tree + planning updates",
+          "source": "open_source",
+          "status": "completed",
+          "execution": {
+            "executed_at": "2026-11-14T15:40Z"
+          },
+          "outputs": [
+            "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/"
+          ],
+          "validation": "all contract files present",
+          "fallback": null,
+          "parameters": {
+            "per_run_tree": true,
+            "planning_updates": true
+          },
+          "parameter_descriptions": {
+            "per_run_tree": "write full §6 results tree for this run",
+            "planning_updates": "update all planning tables to 4 designed / 2 selected / 2 executed"
+          },
+          "selection_reason": "reproducible per-run packaging",
+          "tool_name": "local python",
+          "actual_identifier": null,
+          "metadata_gaps": {
+            "actual_identifier": "Not recorded in the historical configuration; no value inferred.",
+            "model_version": "Not recorded in the historical configuration; no value inferred.",
+            "inputs": "Not recorded in the historical configuration; no value inferred.",
+            "request_payload": "Not recorded in the historical configuration; no value inferred.",
+            "resources": "Not recorded in the historical configuration; no value inferred."
+          },
+          "model_version": null,
+          "inputs": null,
+          "request_payload": null,
+          "resources": null
+        }
+      ],
+      "stage_id": "historical_stage_5",
+      "dependencies": null,
+      "metadata_gaps": {
+        "dependencies": "Not recorded in the historical configuration; inspect source-session evidence.",
+        "acceptance_criteria": "Not recorded in the historical configuration; inspect source-session evidence."
+      },
+      "acceptance_criteria": null
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr.json",
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/workflow.md",
+    "code": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/code",
+    "inputs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/inputs",
+    "agent_log": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs/execution_summary.md",
+    "report_md": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/report.md",
+    "candidates_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/candidates.csv",
+    "shortlist_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/shortlist.csv",
+    "sequences_fasta": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/sequences.fasta",
+    "metrics_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/metrics.csv",
+    "benchmark_comparison_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/benchmark_comparison.csv",
+    "structures": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/structures",
+    "raw": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/raw"
+  },
+  "completion_summary": {
+    "last_update": "2026-11-14T16:40:00Z",
+    "counts": {
+      "candidates_generated": 1,
+      "candidates_evaluated": 1,
+      "unique_h3": 1,
+      "native_copies": 0
+    },
+    "remaining_requirements": [
+      "multi-CDR track is 1-shot single-case; paper Table 2 aggregate not reproduced (single case cannot reproduce aggregates)",
+      "DockQ v2 not computed (no installation identified)"
+    ]
+  },
+  "historical_artifact_links": {
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/workflow.md",
+    "logs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs/",
+    "results_run": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/",
+    "workspace": "/home/boltzmann10/lcat_task004"
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "80b7229cacde86ac6f11ca2b16d5f0b7f5951b75e60c32ed55aafe650c680463",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/workflow.md",
+    "config_json": "configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr.json",
+    "inputs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/inputs",
+    "code": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/code",
+    "logs": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs",
+    "agent_log": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/logs/execution_summary.md",
+    "file_manifest": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110408_5c556e.jsonl",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr",
+    "report_md": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/report.md",
+    "candidates_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/candidates.csv",
+    "shortlist_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/shortlist.csv",
+    "sequences_fasta": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/sequences.fasta",
+    "metrics_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/metrics.csv",
+    "benchmark_comparison_csv": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/benchmark_comparison.csv",
+    "structures": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/structures",
+    "raw": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/raw"
+  }
+}

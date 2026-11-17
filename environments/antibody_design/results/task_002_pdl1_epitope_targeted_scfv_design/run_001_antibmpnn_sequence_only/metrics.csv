@@ -1,0 +1,21 @@
+entity_id,kind,metric,value,unit,protocol,source
+t002r1_bmpnn_02,candidate,iptm,0.4559,unitless,"Boltz2 AG+scFv 2-chain prospective, no template",structures/*/boltz2_prediction.pdb
+t002r1_bmpnn_02,candidate,complex_plddt,0.898,unitless,Boltz2,same
+t002r1_bmpnn_02,candidate,epitope_coverage,0.536,fraction of 28,antigen residues within 5 A of scFv heavy atoms,code/score_candidates_v2.py + agcdr1 scorer
+t002r1_bmpnn_02,candidate,n_hotspots_hit,0,count of 5,hotspots 37/39/41/96/98 within 5 A,same
+t002r1_bmpnn_03,candidate,iptm,0.4427,unitless,"Boltz2 AG+scFv 2-chain prospective, no template",structures/*/boltz2_prediction.pdb
+t002r1_bmpnn_03,candidate,complex_plddt,0.8885,unitless,Boltz2,same
+t002r1_bmpnn_03,candidate,epitope_coverage,0.357,fraction of 28,antigen residues within 5 A of scFv heavy atoms,code/score_candidates_v2.py + agcdr1 scorer
+t002r1_bmpnn_03,candidate,n_hotspots_hit,0,count of 5,hotspots 37/39/41/96/98 within 5 A,same
+t002r1_bmpnn_00,candidate,iptm,0.3213,unitless,"Boltz2 AG+scFv 2-chain prospective, no template",structures/*/boltz2_prediction.pdb
+t002r1_bmpnn_00,candidate,complex_plddt,0.8924,unitless,Boltz2,same
+t002r1_bmpnn_00,candidate,epitope_coverage,0.429,fraction of 28,antigen residues within 5 A of scFv heavy atoms,code/score_candidates_v2.py + agcdr1 scorer
+t002r1_bmpnn_00,candidate,n_hotspots_hit,0,count of 5,hotspots 37/39/41/96/98 within 5 A,same
+t002r1_bmpnn_01,candidate,iptm,0.3195,unitless,"Boltz2 AG+scFv 2-chain prospective, no template",structures/*/boltz2_prediction.pdb
+t002r1_bmpnn_01,candidate,complex_plddt,0.9304,unitless,Boltz2,same
+t002r1_bmpnn_01,candidate,epitope_coverage,0.0,fraction of 28,antigen residues within 5 A of scFv heavy atoms,code/score_candidates_v2.py + agcdr1 scorer
+t002r1_bmpnn_01,candidate,n_hotspots_hit,0,count of 5,hotspots 37/39/41/96/98 within 5 A,same
+t002r1_bmpnn_recomb23,candidate,iptm,0.2809,unitless,Boltz2 AG+scFv 2-chain prospective,structures/candidates/recomb_23_v2_boltz2_prediction.pdb
+t002r1_bmpnn_recomb23,candidate,complex_plddt,0.924,unitless,Boltz2 AG+scFv 2-chain prospective,structures/candidates/recomb_23_v2_boltz2_prediction.pdb
+t002r1_bmpnn_recomb23,candidate,epitope_coverage,0.0,fraction of 28,Boltz2 AG+scFv 2-chain prospective,structures/candidates/recomb_23_v2_boltz2_prediction.pdb
+t002r1_bmpnn_recomb23,candidate,n_hotspots_hit,0,count of 5,hotspots 37/39/41/96/98 within 5 A,same

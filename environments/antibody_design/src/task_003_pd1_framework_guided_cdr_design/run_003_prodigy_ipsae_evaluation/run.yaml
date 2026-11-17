@@ -1,0 +1,22 @@
+run_id: run_003_prodigy_ipsae_evaluation
+task_id: task_003_pd1_framework_guided_cdr_design
+workflow_id: WF4_interface_evaluation_prodigy_ipsae
+status: completed
+lineage:
+  parent: run_002_agcdr_antibmpnn
+  relation: 'downstream evaluation phase on run_002_agcdr_antibmpnn''s Boltz2 models:
+    independent interface-affinity and PAE-based interface scoring, filling the gap
+    left by the unavailable Antigen_Antibody_binding property'
+config_json: ../../../configs/task_003_pd1_framework_guided_cdr_design/run_003_prodigy_ipsae_evaluation.json
+config_sha256: 854d57edf2eb45712cb3450040e3551afdc7ee47e1131874df90e5db3d473ce1
+counts:
+  models_evaluated: 12
+  prodigy_jobs: 12
+  ipsae_jobs: 1
+config:
+  path: ../../../results/task_003_pd1_framework_guided_cdr_design/run_003_prodigy_ipsae_evaluation/run.json
+  sha256: 03a3f72873f271c36f629b7317f89719d34c294eb07d0a083638156a93142f9e
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'

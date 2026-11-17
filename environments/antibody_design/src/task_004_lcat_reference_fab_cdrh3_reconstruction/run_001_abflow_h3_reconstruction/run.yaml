@@ -1,0 +1,28 @@
+run_id: run_001_abflow_h3_reconstruction
+task_id: task_004_lcat_reference_fab_cdrh3_reconstruction
+workflow_id: wf_abflow_paratope_centric_h3
+status: completed
+lineage:
+  parent: null
+  derived_from: AbFlow released RAbD test entry 5bv7 (datasets.zip sha256 5a964e006f503ef4...)
+  historical_components:
+  - 'pilot pool gen_smoke (seed 2023, 32 draws, 2026-11-14T11:19Z): superseded - per-batch
+    pmets indexing bug; sequences valid, ranking not; retained as diagnostic only'
+  - 'gen_g30_prev first g30 attempt (14:59Z): same bug; superseded by deterministic
+    regeneration (32/32 sequence-identical)'
+counts:
+  designed_workflows: 4
+  selected_workflows: 4
+  candidates_generated: 65
+  candidates_evaluated: 33
+  unique_h3_sequences: 4
+config:
+  path: ../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction/run.json
+  sha256: 4b506ad94fc5d22d6913f1724c2c8011e4f40f0eaae006669f3b5cfc9daae101
+last_update: 2026-11-14 16:25:00+00:00
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_001_abflow_h3_reconstruction.json
+config_sha256: 06343b80fef66fdb184ca57e743a27facb4b03dd4113e5420dd16740b0a29a5b

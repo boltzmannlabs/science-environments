@@ -1,0 +1,30 @@
+{
+ "valid": [
+  {
+   "candidate": "G3I-01",
+   "doc_id": "6af9a0ce9de6b44b075d9527",
+   "payload": "payload_G3I-01.txt",
+   "ag_sha12": "c58e032f7acc"
+  },
+  {
+   "candidate": "G3I-02",
+   "doc_id": "6af9a0d7d29658acc304fdb4",
+   "payload": "payload_G3I-02.txt",
+   "ag_sha12": "c58e032f7acc"
+  },
+  {
+   "candidate": "G3I-03",
+   "doc_id": "6af9a105d29658acc304fdc5",
+   "payload": "payload_G3I-03.txt",
+   "ag_sha12": "c58e032f7acc",
+   "note": "clean resubmit"
+  }
+ ],
+ "voided": [
+  {
+   "doc_id": "6af9a0e39030bff416449703",
+   "candidate": "G3I-03",
+   "reason": "antigen duplicated segment (hand-transcription corruption: PMMLPEELFELQFNLSLYWSHEALFQKKTLQALEFHTVPF inserted twice); caught pre-download by submitter diff vs payload file; superseded by 6af9a105d29658acc304fdc5"
+  }
+ ]
+}

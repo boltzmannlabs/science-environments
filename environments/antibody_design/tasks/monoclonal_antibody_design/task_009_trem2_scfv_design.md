@@ -33,7 +33,7 @@ Design scFv variants derived from the supplied anti-TREM2 reference against huma
 
 Source references: [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv).
 
-Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_009_trem2_scfv_design.md).
+Computational reference: [task-specific benchmark](../../benchmark/monoclonal_antibody_design/task_009_trem2_scfv_design/reference.md).
 
 ## Expected Output
 
@@ -50,7 +50,7 @@ Computational reference: [task-specific benchmark](../../benchmark/monoclonal_an
 ## Important Instructions
 
 - Select methods independently within the user's access and computational constraints; no particular workflow is required.
-- Report missing essential inputs as `NEEDS_INPUT`. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Record the exact target construct, reference sequence, editable regions or candidate panel, methods and evaluation settings used.
 - Retain the supplied source record as the parent; attribute every proposed edit to that reference.
 - Use interface metrics only for the chain pairs and structural models from which they were calculated.
 - Computational scores do not establish experimental affinity, TREM2 agonism, antagonism or cellular activity.

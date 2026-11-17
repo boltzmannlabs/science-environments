@@ -1,0 +1,16 @@
+{
+  "valid_jobs": {
+    "G3BPD-17": {"doc_id": "6af8a897445ae94313c3cfa6", "submitted": "2026-11-14T18:29:42Z", "status": "running", "note": "resubmit after 6af89cb1 voided as chimera"},
+    "G3BPD-14": {"doc_id": "6af89d409850a93adf67dbf3", "submitted": "2026-11-14T17:41:20Z", "status": "completed", "iptm_rank1": 0.68},
+    "G3BPD-04": {"doc_id": "6af89d539030bff41644864d", "submitted": "2026-11-14T17:41:39Z", "status": "completed", "iptm_rank1": 0.66}
+  },
+  "voided_jobs_handcorrupted_payload": [
+    {"doc_id": "6af89c88445ae94313c3cd2a", "reason": "VH matched G3BPD-13; VL hand-typed, differs from intended G3BPD-14"},
+    {"doc_id": "6af89c8f9de6b44b075d8b57", "reason": "VH matched G3BPD-01; VL hand-typed, differs from intended G3BPD-04"},
+    {"doc_id": "6af89c96d29658acc304ef31", "reason": "G3BPD-17 payload with antigen truncated (~200 residues) by hand-splicing"},
+    {"doc_id": "6af89d1ed29658acc304ef47", "reason": "G3BPD-14 with H2 position-60 N->T transposition"},
+    {"doc_id": "6af89d269de6b44b075d8b7c", "reason": "G3BPD-04 with corrupted antigen (missing chunk)"},
+    {"doc_id": "6af89cb19de6b44b075d8b69", "reason": "G3BPD-17 VH + G3BPD-14 VL chimera (VL S32N); caught by post-download sequence verification"}
+  ],
+  "note": "Voided entries are real submits that consumed platform credit but evaluate wrong sequences; they are excluded from all scientific results. Corrected payloads were generated programmatically from candidate_designs.json (sha256-verified segments 122/106/567)."
+}

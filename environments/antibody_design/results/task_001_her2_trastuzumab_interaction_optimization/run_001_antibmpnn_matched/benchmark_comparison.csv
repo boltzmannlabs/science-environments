@@ -1,0 +1,23 @@
+record_type,record_id,metric,value,scope,source
+published_reference,trastuzumab_initial_REF15_div6,REF15,-49.6996,Ab-SELDON diversity run 6 initial (per-run log),JCIM 2026 10.1021/acs.jcim.5c01924 + Zenodo 15803983
+published_reference,trastuzumab_final_REF15_div6,REF15,-94.8663,Ab-SELDON diversity run 6 final (best),JCIM 2026 10.1021/acs.jcim.5c01924 + Zenodo 15803983
+published_reference,trastuzumab_final_REF15_ran4,REF15,-92.6947,Ab-SELDON random run 4 final (best),JCIM 2026 10.1021/acs.jcim.5c01924 + Zenodo 15803983
+published_reference,published_candidate_level_iptm_plddt_pae_pdockq,iptm/plddt/pae/pDockQ,,not verified from released evidence (benchmark md line 33) -> report unavailable,not_retrieved
+individual_new_candidate,REFERENCE,prodigy_dG_VL_record,-8.7,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C005,prodigy_dG_VL_record,-9.6,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C005,iptm_VL_record,0.797,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C004,prodigy_dG_VL_record,-9.7,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C004,iptm_VL_record,0.738,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C001,prodigy_dG_VL_record,-8.7,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C001,iptm_VL_record,0.701,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C003,prodigy_dG_VL_record,-8.7,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C003,iptm_VL_record,0.753,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C008,prodigy_dG_VL_record,-9.6,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C008,iptm_VL_record,0.808,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C007,prodigy_dG_VL_record,-10.1,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C007,iptm_VL_record,0.569,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C002,prodigy_dG_VL_record,-9.5,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C002,iptm_VL_record,0.792,our Boltz2 prediction,run_001
+individual_new_candidate,T001-C006,prodigy_dG_VL_record,-9.5,our Boltz2+Prodigy matched protocol,run_001
+individual_new_candidate,T001-C006,iptm_VL_record,0.781,our Boltz2 prediction,run_001
+comparison_verdict,REF15_vs_prodigy,protocol_compatibility,not_comparable,"REF15 (Rosetta REU, design-protocol internal) vs Prodigy dG (empirical interfacial-contact model on predicted structure): different scores, structures and conditions",benchmark md evaluation-criteria rule

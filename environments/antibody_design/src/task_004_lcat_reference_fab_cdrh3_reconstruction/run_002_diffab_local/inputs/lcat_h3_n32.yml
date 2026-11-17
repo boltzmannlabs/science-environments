@@ -1,0 +1,15 @@
+mode: lcat_h3_codesign
+model:
+  checkpoint: /home/boltzmann10/Dileep_kumar/Rabies/design_setup/tool_repos/diffab/trained_models/codesign_single.pt
+
+sampling:
+  seed: 20261114
+  sample_structure: true
+  sample_sequence: true
+  cdrs:
+    - H_CDR3
+  num_samples: 32
+
+dataset:
+  test:
+    type: custom_exact_cdr

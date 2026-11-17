@@ -1,0 +1,518 @@
+{
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "run_003_rf_antibody",
+  "workflow_id": "wf_rf_antibody",
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "historical_components": [
+      "run1_epitope_abgen"
+    ],
+    "relationship": "Retrospective separation of the four workflows explicitly declared in the combined workflow plan; no new execution.",
+    "historical_config": "src/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen/inputs/historical_provenance/combined_config.json",
+    "retrospective_workflow_id": "W3"
+  },
+  "task_requirements": {
+    "objective": "framework-conditioned, epitope-directed design of paired VH/VL candidates (scFv output) against human PD-L1 with H5/35TL as comparator only",
+    "constraints": [
+      "framework = study trastuzumab scFv (Germinal pdbs/scfv.pdb), VH-first, linker AGGGGSGGGGSGGGS",
+      "CDR edit boundaries H1 26-33, H2 51-58, H3 97-109, L1 24-29, L2 50-55, L3 89-97",
+      "epitope = 5 hotspots (A37/A39/A41/A96/A98, study numbering) + 4.5 A neighbor shell (28 residues total)",
+      "H5 (35TL) held out from generation"
+    ],
+    "metrics": [
+      "H5 reconstruction control: global complex CA RMSD vs 35TL (published AF3 1.25 A)",
+      "PD-L1 interface-residue recovery",
+      "per-CDR RMSD, ipTM/complex pLDDT"
+    ]
+  },
+  "input_inventory": [
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/antibody_framework_placed.pdb",
+      "sha256": "c23013a8752488b0e5f22825361d4c5879796d23e4e4b7880a49e0a58801d2a1",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/antigen_pdl1_Vdomain.pdb",
+      "sha256": "79612be97be4785cc9e83d2c6e1a33beffc8d5db052e477849daa0c327902768",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/eval_35TL_experimental.pdb",
+      "sha256": "cffc4623e7139143f59ce1b10b1fc889851e2b9a182300a6a2c838c463808406",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/placed_complex_framework.pdb",
+      "sha256": "59caf0aa38ffa4acaed1c7eec16e911e3c120f5f8e078b3fbac81ff917a2f8d3",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/pose_donor_5X8M_durvalumab.pdb",
+      "sha256": "72c7afc6526ca5695246c76c533b3864666d1216623e487bf707afb02dcd64af",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/prep_record.json",
+      "sha256": "e35dd37c551eba0cb254732b883461aa8f90f0ab8c51d5be7d64c5ae6fe9adb8",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/study_framework_scfv.pdb",
+      "sha256": "cbdb24aac3fe9b15b738816421fa02b422d341fde5ccd6ffb12a763763516a93",
+      "provenance": "Existing saved task input"
+    },
+    {
+      "path": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/study_target_pdl1_seedcomplex.pdb",
+      "sha256": "d7351a441c34cbb9c799798425295106f25beca45428f96d8d8a8f63c586e132",
+      "provenance": "Existing saved task input"
+    }
+  ],
+  "workflow_plan": {
+    "title": "RF-Antibody generation, excluded outputs",
+    "prepared_workflows": 4,
+    "ordered_tools": "rfdiffusion_proteinmpnn",
+    "selection_reason": "Generation returned VH-only designs, which were excluded against the paired-chain requirement. Downstream candidate evaluation was not executed for excluded outputs.",
+    "status_scope": "This workflow only; historical control and other workflow results are separately attributed."
+  },
+  "stages": [
+    {
+      "stage_id": "W3_generation_and_evaluation",
+      "purpose": "RF-Antibody generation, excluded outputs",
+      "dependencies": [],
+      "acceptance_criteria": "Original task constraints and the saved route-specific success/exclusion records.",
+      "status": "completed",
+      "tool_calls": [
+        {
+          "call_id": "call_-7077301742332803893:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pd11_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "unknown",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18023_subcall_0.json",
+            "sha256": "3480ddb3e4b8c38d68fbf9fab5a5a8138d09628a7a3f1272c657684e75385046"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pd11_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18023,
+            "tool_call_id": "call_-7077301742332803893",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:14.342556+00:00",
+            "doc_id": null,
+            "experiment_name": "task002_rfab_pd11_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18023_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077311912815356043:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pdl1_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "not_started",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18026_subcall_0.json",
+            "sha256": "93ed645bf9c62d84e7d7ff63ba1fe3ad03007474cb9bca7e6144228c39171338"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18026,
+            "tool_call_id": "call_-7077311912815356043",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:18.441285+00:00",
+            "doc_id": null,
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18026_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077301673613326577:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pdl1_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "not_started",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18030_subcall_0.json",
+            "sha256": "4ce0df59628174647568ce3837d1d9ea4b36b16bef2c6d9a1db1fbc069a900f2"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "scfv",
+            "antigen_pdb_path": "users/68d12a5de5b6fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antibody_type": "scfv",
+              "antigen_pdb_path": "users/68d12a5de5b6fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "scfv",
+            "antigen_pdb_path": "users/68d12a5de5b6fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18030,
+            "tool_call_id": "call_-7077301673613326577",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:22.343994+00:00",
+            "doc_id": null,
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18030_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077303529039196934:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pdl1_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "unknown",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18033_subcall_0.json",
+            "sha256": "dc4bcb7799f34731f26686e45e7e4b5bdfffcb874eba1f5003ce36470b4b0246"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "scFv",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antibody_type": "scFv",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "scFv",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18033,
+            "tool_call_id": "call_-7077303529039196934",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:26.413184+00:00",
+            "doc_id": null,
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18033_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077287689199807721:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pdl1_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "approval_required",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18043_subcall_0.json",
+            "sha256": "c4b6e4197f0d4c51c07287516f5c85c9efd177aaf6d1d761b29d8bf9be3b8365"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "antibody",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antibody_type": "antibody",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "antibody",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18043,
+            "tool_call_id": "call_-7077287689199807721",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:44.050333+00:00",
+            "doc_id": null,
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18043_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        },
+        {
+          "call_id": "call_-7077401351214330016:subcall:0",
+          "tool_name": "rfdiffusion_proteinmpnn",
+          "actual_identifier": "rfdiffusion_proteinmpnn",
+          "purpose": "task002_rfab_pdl1_run1",
+          "source": "boltzmann",
+          "model_version": null,
+          "selection_reason": "Historical request recovered from this run's observable Agent-Scientist session; see workflow rationale.",
+          "status": "accepted",
+          "inputs": {
+            "saved_request": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/submitted_requests/message_18047_subcall_0.json",
+            "sha256": "1192bd6b95753167f7a91b664394303b3e08edb597d410cfdecaccc6741380a6"
+          },
+          "request_payload": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "antibody",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "submitted_tool_arguments": {
+            "allow_partial_validation": true,
+            "experiment_data": {
+              "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+              "antibody_type": "antibody",
+              "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+              "num_sequences": 8
+            },
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "job_name": "rfdiffusion_proteinmpnn"
+          },
+          "parameters": {
+            "antibody_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb",
+            "antibody_type": "antibody",
+            "antigen_pdb_path": "users/68d12a5de5b6a2fdc0e3c443/1794655271659/antigen_pdl1_Vdomain.pdb",
+            "num_sequences": 8
+          },
+          "parameter_descriptions": null,
+          "resources": null,
+          "execution": {
+            "session_id": "20261114_110304_1c10da",
+            "message_id": 18047,
+            "tool_call_id": "call_-7077401351214330016",
+            "subcall_index": 0,
+            "timestamp_utc": "2026-11-14T15:57:48.530937+00:00",
+            "doc_id": "6af884fc9de6b44b075d8594",
+            "experiment_name": "task002_rfab_pdl1_run1",
+            "evidence_type": "original_observable_request_and_responses"
+          },
+          "outputs": {
+            "observable_responses": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw/observed_submission_responses/message_18047_subcall_0.json"
+          },
+          "validation": {
+            "request_matches_export": true,
+            "note": "Saved arguments match exported historical tool-call arguments; this does not revalidate the scientific inputs or confirm an unresolved server job."
+          },
+          "fallback": null,
+          "metadata_gaps": {
+            "model_version": "Not recorded in the original request/response; no defaults inferred.",
+            "parameter_descriptions": "Not recorded in the original request/response; no defaults inferred.",
+            "resources": "Not recorded in the original request/response; no defaults inferred."
+          }
+        }
+      ]
+    }
+  ],
+  "artifact_links": {
+    "config_json": "configs/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody.json",
+    "workflow_md": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/workflow.md",
+    "code": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/code",
+    "inputs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs",
+    "agent_log": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/logs/execution_summary.md",
+    "report_md": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/report.md",
+    "candidates_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/candidates.csv",
+    "shortlist_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/shortlist.csv",
+    "benchmark_comparison_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/benchmark_comparison.csv",
+    "structures": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/structures",
+    "raw": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw"
+  },
+  "completion_summary": {
+    "status": "completed",
+    "reason": "Generation returned VH-only designs, which were excluded against the paired-chain requirement. Downstream candidate evaluation was not executed for excluded outputs.",
+    "inventory_rows": 1,
+    "inventory_note": "RF-Antibody's historical candidate row is a group-level exclusion; its original complete generation files are retained in raw/.",
+    "packaged_at": "2026-11-15T11:14:35+00:00",
+    "historical_submission_attempts_recovered": 6,
+    "submission_count_note": "Unique observable call/subcall identities, including validation rejections and failed attempts; not a count of successful server jobs."
+  },
+  "packaging": {
+    "updated_utc": "2026-11-15T11:14:35+00:00",
+    "path_base": "antibody_design environment root",
+    "operation": "Organization and provenance recovery only; no scientific execution or score recalculation.",
+    "historical_paths": [
+      {
+        "original": "results/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen",
+        "saved": "results/task_002_pdl1_epitope_targeted_scfv_design/_historical/run1_combined_results"
+      }
+    ],
+    "metadata_policy": "Null values and metadata_gaps identify missing historical fields; existing scientific payloads and parameters are unchanged.",
+    "unavailable_standard_result_files": [
+      "sequences.fasta",
+      "metrics.csv"
+    ],
+    "missing_file_policy": "No empty scientific outputs created to hide a missing result. See report and execution summary for the actual outcome.",
+    "source_code_note": "Historical source is preserved without scientific rewrites. Original code may retain working-directory assumptions; path relocations and exact saved paths are recorded separately.",
+    "code_path_map": "maintenance/package_repair_20261115/PATH_MOVES.json"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "2de7794fd30a8f4ae27b86e54cffdbccb35b8e75b77b777978f371a1d51be128",
+    "source_status": "completed",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/workflow.md",
+    "config_json": "configs/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody.json",
+    "inputs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs",
+    "code": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/code",
+    "logs": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/logs",
+    "agent_log": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/logs/execution_summary.md",
+    "file_manifest": "src/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/inputs/saved_artifacts.csv",
+    "source_session": "maintenance/package_repair_20261115/sessions/20261114_110304_1c10da.jsonl",
+    "results": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody",
+    "report_md": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/report.md",
+    "candidates_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/candidates.csv",
+    "shortlist_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/shortlist.csv",
+    "benchmark_comparison_csv": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/benchmark_comparison.csv",
+    "structures": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/structures",
+    "raw": "results/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody/raw"
+  }
+}

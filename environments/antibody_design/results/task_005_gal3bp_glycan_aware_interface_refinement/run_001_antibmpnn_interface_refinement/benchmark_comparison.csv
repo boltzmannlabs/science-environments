@@ -1,0 +1,10 @@
+metric,study_reported_value,this_work_value,candidate,verdict,notes
+interface interactions (ref complex),161 (ref) / 165 (candidate),26 residue pairs; 1387 atom contacts (ref),BDBV43_reference,not_comparable,study full text unobtainable (NEEDS_INPUT); definitions of 'interaction' unknown; our values from AFM model
+H-bond share of interactions,~67%,4.7% (9/193 donor-acceptor class) / 9 H-bonds total,BDBV43_reference,not_comparable,same NEEDS_INPUT caveat; different contact definition
+interface RMSD selection boundary,"5 A (heated MD replicas, 3 replicas)",18-28 A across 5 independent AFM models; 0/130 pairs persist in >=3 models,BDBV43_reference,not_comparable,predictor sampling is not heated-MD replica sampling; protocol incomparable
+E1 glycan dSASA,2.9 A2 (study definition),"245.3 A2 occlusion at N344 (simplified model, BACK-domain window)",BDBV43_reference,not_comparable,E1 epitope residue list NEEDS_INPUT; simplified glycan model per skill script conventions
+"engine confidence, ref vs redesigned",not reported in abstract,iptm 0.32 ref -> 0.68/0.66/0.56 (G3BPD-14/04/17),G3BPD-14,computational_only,confidence is not affinity; redesigned CDRs predicted more confident interfaces
+binding affinity (Prodigy),not reported in obtainable text,-9.2 ref; -8.6 to -8.7 candidates (kcal/mol),G3BPD-14,computational_only,"Prodigy ICC predicted values, not measurements"
+"glycan occlusion dSASA (candidates; simplified model, N344, C276-350)","2.9 A2 (E1, study definition)",222.2 / 217.2 / 217.5 A2 (G3BPD-14/-04/-17),G3BPD-14/-04/-17,not_comparable,same conventions as reference; study E1 residues NEEDS_INPUT
+interface persistence (candidates),study: Mut1 stable across 3 heated-MD replicas (per task md),"0/6, 0/7, 0/2 rank-1 pairs persist >=3/5 AFM models; inter-model RMSD 6.1-45.3 A",G3BPD-14/-04/-17,not_comparable,predictor sampling != heated-MD replicas; no candidate shows a reproducible pose
+Mut1 published comparator,165 interactions (study),not re-generated; Mut1 sequence/metrics NEEDS_INPUT,-,not_comparable,retained as published control only per task constraint

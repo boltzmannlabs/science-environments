@@ -1,0 +1,5 @@
+metric,published_value,our_value,scope,comparability,note
+interface iptm (IgDesign candidates),study: n/a (Mut1 metrics NEEDS_INPUT),0.27-0.29 across 15 models (3 cand x 5 ranks),G3I-01/02/03 vs AFM ref,not_comparable,no confidence gain vs reference band 0.26-0.32; engine differs from AntiBMPNN run yet conclusion matches
+Prodigy dG,Mut1 study value NEEDS_INPUT,-9.1 / -8.4 / -9.2 kcal/mol,matched rank-1 models,not_comparable,G3I-01/03 tie the reference -9.2; not an improvement
+interface persistence,study: Mut1 stable in heated-MD (task md),"0/18, 0/22, 0/19 rank-1 pairs persist >=3/5; RMSD 5.8-51 A",predictor sampling,not_comparable,same non-persistence verdict as AntiBMPNN run; two independent engines agree
+glycan occlusion dSASA,"2.9 A2 (E1, study def)",217.1 / 220.6 / 213.3 A2 (simplified N344 model),C276-350 window,not_comparable,0 clashes each; conventions as recorded in run run_001_antibmpnn_interface_refinement

@@ -1,0 +1,24 @@
+run_id: run_002_agcdr_antibmpnn
+task_id: task_003_pd1_framework_guided_cdr_design
+workflow_id: WF2_backbone_diversified_agcdr_antibmpnn_screening
+status: completed
+lineage:
+  parent: run_001_rf_antibody
+  relation: 'backbone-diversified successor: run_001_rf_antibody''s scaffold-anchored
+    routes yielded 0 eligible (RF) and 0 eligible (scaffold AntiBMPNN, Cys artifact),
+    motivating CDR-backbone diversification before sequence design'
+  historical_components: Executed 2026-11-14 under the earlier flat layout; reorganized
+    into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution. All
+    doc IDs, payloads and artifacts unchanged.
+config_json: ../../../configs/task_003_pd1_framework_guided_cdr_design/run_002_agcdr_antibmpnn.json
+config_sha256: 378328f691a575dcc73d22ba9cb944e97eaa5429742fd4f8855b2f0e2bfa8ff5
+counts:
+  candidates_generated: 160
+  gate_pass: 115
+config:
+  path: ../../../results/task_003_pd1_framework_guided_cdr_design/run_002_agcdr_antibmpnn/run.json
+  sha256: 9626e4a3893a2bc3996f01fe5b1c273db9879d46849b13affb8db23676dc73ef
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'

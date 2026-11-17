@@ -54,7 +54,7 @@ Choose suitable available capabilities independently. If a required capability i
 
 Use one-based positions **26–33** for CDR1 analysis and **94–110** for the full CDR3 analysis segment. Keep calculations over the designable mask separate from calculations over the full segment. Whole-antibody descriptors may be supplied separately, with their scope clearly labeled.
 
-For every property, retain the candidate result, freshly calculated parent result, difference, units or descriptor scale, calculation conditions, method version, sequence hash, and raw-artifact path. Missing results must remain explicitly unavailable. Do not assume that increasing or decreasing a descriptor is beneficial without a declared objective.
+For every property, retain the candidate result, freshly calculated parent result, difference, units or descriptor scale, calculation conditions, method version, sequence hash, and raw-artifact path. Include each completed descriptor calculation with its recorded result and method. Do not assume that increasing or decreasing a descriptor is beneficial without a declared objective.
 
 ## Expected Output
 
@@ -65,7 +65,7 @@ For every property, retain the candidate result, freshly calculated parent resul
 - `property_predictions.csv`: candidate and parent property results, segment boundaries, differences, units/scales, conditions, and missing-result status.
 - `metrics.json`: the three requested property predictions, input/design validity checks, methods, parameters, hashes, and exclusions.
 - `shortlist.csv`: eligible unique candidates selected using the declared property-based rule.
-- `report.md`: input preparation, actual execution, property comparisons, selection rationale, and limitations.
+- `report.md`: input preparation, actual execution, property comparisons, selection rationale, and evaluation scope.
 - Supporting structures, residue maps, native calculation outputs, and execution logs.
 
 ## Important Instructions

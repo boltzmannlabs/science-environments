@@ -1,0 +1,22 @@
+COMMAND: /usr/local/bin/python3.11 -u /app/Running_AntiBMPNN_run.py --jsonl_path /app/outputs/6af89b4ed29658acc304eef4/antibmpnn_artifacts/parsed_pdbs.jsonl --chain_id_jsonl /app/outputs/6af89b4ed29658acc304eef4/antibmpnn_artifacts/assigned_pdbs.jsonl --fixed_positions_jsonl /app/outputs/6af89b4ed29658acc304eef4/antibmpnn_artifacts/fixed_pdbs.jsonl --out_folder /app/outputs/6af89b4ed29658acc304eef4/antibmpnn_artifacts/model_output --path_to_model_weights /app/antibmpnn_model_weights --model_name antibmpnn_020 --num_seq_per_target 20 --sampling_temp 0.1 --batch_size 10 --backbone_noise 0.0 --seed 37 --omit_AAs X
+
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+discarded {'bad_chars': 0, 'too_long': 0, 'bad_seq_length': 0}
+Backbone_noise: 0.0
+Number of edges: 48
+Training noise level: 0.2A
+----------------------------------------
+Number of edges: 48
+Training noise level: 0.2A
+Generating sequences for: 6af89b4ed29658acc304eef4_AntiBMPNN - 20261114-173302Z - f10b85
+20 sequences of length 795 generated in 61.3946 seconds

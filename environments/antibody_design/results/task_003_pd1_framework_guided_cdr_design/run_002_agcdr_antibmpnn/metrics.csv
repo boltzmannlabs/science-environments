@@ -1,0 +1,68 @@
+record_id,record_type,metric,value,unit,tool,scope
+H965_control,control,iptm_PD1_VH,0.8953,,Boltz2,our prediction
+H965_control,control,iptm_PD1_VL,0.7172,,Boltz2,our prediction
+H965_control,control,KD,81.6,nM,SPR,published measurement (Suppl. Table 7)
+PD1T3-069,candidate,iptm_PD1_VH,0.7218,,Boltz2,our prediction
+PD1T3-069,candidate,iplddt_PD1_VH,0.734,,Boltz2,our prediction
+PD1T3-069,candidate,contacts_lt5A_PD1_VH,54,count,local analysis,model-derived
+PD1T3-069,candidate,iptm_PD1_VL,0.8334,,Boltz2,our prediction
+PD1T3-069,candidate,iplddt_PD1_VL,0.7855,,Boltz2,our prediction
+PD1T3-069,candidate,contacts_lt5A_PD1_VL,51,count,local analysis,model-derived
+PD1T3-069,candidate,thermal_stability_esm,68.31668853759766,C,Antibody_Prediction,prediction
+PD1T3-069,candidate,solubility_esm,1,,Antibody_Prediction,prediction
+PD1T3-019,candidate,iptm_PD1_VH,0.9453,,Boltz2,our prediction
+PD1T3-019,candidate,iplddt_PD1_VH,0.8278,,Boltz2,our prediction
+PD1T3-019,candidate,contacts_lt5A_PD1_VH,75,count,local analysis,model-derived
+PD1T3-019,candidate,iptm_PD1_VL,0.9163,,Boltz2,our prediction
+PD1T3-019,candidate,iplddt_PD1_VL,0.7794,,Boltz2,our prediction
+PD1T3-019,candidate,contacts_lt5A_PD1_VL,67,count,local analysis,model-derived
+PD1T3-019,candidate,thermal_stability_esm,79.04932403564453,C,Antibody_Prediction,prediction
+PD1T3-019,candidate,solubility_esm,1,,Antibody_Prediction,prediction
+PD1T3-011,candidate,iptm_PD1_VH,0.9404,,Boltz2,our prediction
+PD1T3-011,candidate,iplddt_PD1_VH,0.8508,,Boltz2,our prediction
+PD1T3-011,candidate,contacts_lt5A_PD1_VH,74,count,local analysis,model-derived
+PD1T3-011,candidate,iptm_PD1_VL,0.677,,Boltz2,our prediction
+PD1T3-011,candidate,iplddt_PD1_VL,0.7387,,Boltz2,our prediction
+PD1T3-011,candidate,contacts_lt5A_PD1_VL,50,count,local analysis,model-derived
+PD1T3-011,candidate,thermal_stability_esm,77.66149139404297,C,Antibody_Prediction,prediction
+PD1T3-011,candidate,solubility_esm,1,,Antibody_Prediction,prediction
+PD1T3-038,candidate,iptm_PD1_VH,0.8716,,Boltz2,our prediction
+PD1T3-038,candidate,iplddt_PD1_VH,0.8256,,Boltz2,our prediction
+PD1T3-038,candidate,contacts_lt5A_PD1_VH,72,count,local analysis,model-derived
+PD1T3-038,candidate,iptm_PD1_VL,0.8559,,Boltz2,our prediction
+PD1T3-038,candidate,iplddt_PD1_VL,0.7501,,Boltz2,our prediction
+PD1T3-038,candidate,contacts_lt5A_PD1_VL,69,count,local analysis,model-derived
+PD1T3-038,candidate,thermal_stability_esm,80.1585464477539,C,Antibody_Prediction,prediction
+PD1T3-038,candidate,solubility_esm,1,,Antibody_Prediction,prediction
+PD1T3-054,candidate,iptm_PD1_VH,0.8818,,Boltz2,our prediction
+PD1T3-054,candidate,iplddt_PD1_VH,0.7716,,Boltz2,our prediction
+PD1T3-054,candidate,contacts_lt5A_PD1_VH,60,count,local analysis,model-derived
+PD1T3-054,candidate,iptm_PD1_VL,0.789,,Boltz2,our prediction
+PD1T3-054,candidate,iplddt_PD1_VL,0.7688,,Boltz2,our prediction
+PD1T3-054,candidate,contacts_lt5A_PD1_VL,69,count,local analysis,model-derived
+PD1T3-054,candidate,thermal_stability_esm,69.59105682373047,C,Antibody_Prediction,prediction
+PD1T3-054,candidate,solubility_esm,1,,Antibody_Prediction,prediction
+H965_control,control,prodigy_PD1_VH,-13.1,predicted units (raw),Prodigy,run_004 prediction
+H965_control,control,prodigy_PD1_VL,-9.7,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-069,candidate,prodigy_PD1_VH,-7.9,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-069,candidate,prodigy_PD1_VL,-10.9,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-019,candidate,prodigy_PD1_VH,-10.9,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-019,candidate,prodigy_PD1_VL,-10.1,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-011,candidate,prodigy_PD1_VH,-12.4,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-011,candidate,prodigy_PD1_VL,-8.9,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-038,candidate,prodigy_PD1_VH,-12.6,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-038,candidate,prodigy_PD1_VL,-13.7,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-054,candidate,prodigy_PD1_VH,-10.9,predicted units (raw),Prodigy,run_004 prediction
+PD1T3-054,candidate,prodigy_PD1_VL,-11.8,predicted units (raw),Prodigy,run_004 prediction
+H965_control,control,ipSAE_PD1_VL,0.269031,,ipsae-protein,run_004 prediction
+H965_control,control,ipSAE_PD1_VH,0.785058,,ipsae-protein,run_004 prediction
+PD1T3-069,candidate,ipSAE_PD1_VH,0.31789,,ipsae-protein,run_004 prediction
+PD1T3-069,candidate,ipSAE_PD1_VL,0.468605,,ipsae-protein,run_004 prediction
+PD1T3-019,candidate,ipSAE_PD1_VH,0.899311,,ipsae-protein,run_004 prediction
+PD1T3-019,candidate,ipSAE_PD1_VL,0.815554,,ipsae-protein,run_004 prediction
+PD1T3-011,candidate,ipSAE_PD1_VH,0.891207,,ipsae-protein,run_004 prediction
+PD1T3-011,candidate,ipSAE_PD1_VL,0.181306,,ipsae-protein,run_004 prediction
+PD1T3-038,candidate,ipSAE_PD1_VH,0.726325,,ipsae-protein,run_004 prediction
+PD1T3-038,candidate,ipSAE_PD1_VL,0.641322,,ipsae-protein,run_004 prediction
+PD1T3-054,candidate,ipSAE_PD1_VH,0.755745,,ipsae-protein,run_004 prediction
+PD1T3-054,candidate,ipSAE_PD1_VL,0.390241,,ipsae-protein,run_004 prediction

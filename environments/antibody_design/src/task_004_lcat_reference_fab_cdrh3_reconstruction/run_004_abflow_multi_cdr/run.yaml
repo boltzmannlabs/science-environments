@@ -1,0 +1,24 @@
+run_id: run_004_abflow_multi_cdr
+task_id: task_004_lcat_reference_fab_cdrh3_reconstruction
+workflow_id: wf_abflow_multi_cdr_design
+status: completed
+lineage:
+  parent: run_001_abflow_h3_reconstruction
+  derived_from: same masked 5bv7 inputs and sealed reference as run_001; distinct
+    checkpoint (multi_cdr_design.ckpt)
+  historical_components: []
+counts:
+  designed_workflows: 4
+  selected_workflows: 4
+  candidates_generated: 1
+  candidates_evaluated: 1
+config:
+  path: ../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr/run.json
+  sha256: 448768e05c73c89471835f7f9c0598ecb6e48ed750562c9e160b1615929900a3
+last_update: 2026-11-14 16:25:00+00:00
+packaging_updated_utc: '2026-11-15T11:14:35+00:00'
+artifact_manifest: inputs/saved_artifacts.csv
+consolidated_utc: '2026-11-16T05:06:52+00:00'
+config_presentation_updated: '2026-11-16'
+config_json: ../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_004_abflow_multi_cdr.json
+config_sha256: 93d05b837b85f90a672c170d1bd1a7355537472819fcffa250a847bdfeb16925

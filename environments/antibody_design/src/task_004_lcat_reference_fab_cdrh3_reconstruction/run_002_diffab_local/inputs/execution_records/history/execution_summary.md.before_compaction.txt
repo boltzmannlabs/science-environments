@@ -1,0 +1,21 @@
+# execution_summary — run_002_diffab_local
+
+- Workflow: DiffAb in-context CDR-H3 co-design (codesign_single.pt, open source), declared protocol-different comparator (pose-conditioned, NOT pose-blind).
+- Tools: DiffAb local repo (env diffab); authors' cal_metrics evaluator; local graft builder.
+- Counts: 32 generated / 32 evaluated / 32 unique H3 / 0 native copies. Completed S2-S5; no failures outstanding (3 bugs found and fixed mid-run, all documented).
+- Results (n=32): AAR H3 0.2747 ± 0.0693 (rank-1 0.2105); CAAR 0.1458; RMSD H3 in-place 4.5504 Å; TM 0.9785; lDDT 0.8956; DockQ 0.5877.
+- Published-context: AbFlow paper's DiffAb numbers used IgFold+HDock+Rosetta — different protocol; labelled comparator only.
+- Links: [workflow.md](../workflow.md) | [config](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local.json) | [report.md](../../../../results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local/report.md) | [log](agent_scientist_log.md)
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"last_update": "2026-11-14T16:20:00Z", "counts": {"candidates_generated": 32, "candidates_evaluated": 32, "unique_h3": 32, "native_copies": 0}, "remaining_requirements": ["protocol-different comparator (in-context, not pose-blind); never merged with run_001"]}
+```
+
+Unavailable standard result files: none. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

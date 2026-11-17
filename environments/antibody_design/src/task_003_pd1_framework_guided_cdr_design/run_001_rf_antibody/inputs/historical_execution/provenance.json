@@ -1,0 +1,76 @@
+{
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_001",
+  "date": "2026-11-14",
+  "objective": "Design paired VH/VL candidates against the human PD-1 ligand-binding region on the paper's humanized IGHV3-23/IGKV1-5 framework (IGHJ4/IGKJ1), and compare candidate evidence with the published anti-PD-1-H965 final design.",
+  "verified_inputs": {
+    "paper": {
+      "doi": "10.1038/s41467-025-67361-9",
+      "pmc": "PMC12815924",
+      "title": "De novo design of epitope-specific antibodies via a structure-driven computational workflow",
+      "supplementary": "41467_2025_67361_MOESM1_ESM.pdf (Tables 6-8: full VH/VL + KD for designed panels)"
+    },
+    "framework_template_table1": {
+      "scheme": "Chothia (paper Table 1)",
+      "FR-H1": "EVQLLESGGGLVQPGGSLRLSCAAS",
+      "FR-H2": "AMSWVRQAPGKGLEWVSAI",
+      "FR-H3": "TYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAK",
+      "FR-H4": "WGQGTLVTVSS",
+      "FR-L1": "DIQMTQSPSTLSASVGDRVTITC",
+      "FR-L2": "WYQQKPGKAPKLLIY",
+      "FR-L3": "GVPSRFSGSGSGTEFTLTISSLQPDDFATYYC",
+      "FR-L4": "FGQGTKVEIK",
+      "cdr_lengths": {"H1": 7, "H2": 6, "H3": "7-18", "L1": 11, "L2": 7, "L3": "9-11"}
+    },
+    "h965_reference": {
+      "source": "Supplementary Table 7 (PD-1 panel), moesm1",
+      "VH": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGGGSYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKEYINTFTYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSTLSASVGDRVTITCRASQSISSWLAWYQQKPGKAPKLLIYAASRLQSGVPSRFSGSGSGTEFTLTISSLQPDDFATYYCQQSYSYPPLTFGQGTKVEIK",
+      "KD_nM": 81.6,
+      "note": "Published final-design comparator; not the design parent; not an input to new design."
+    },
+    "pd1_panel_published": {
+      "source": "Supplementary Table 7",
+      "members": ["H965", "H303", "H698", "HC33", "HA11", "HA88", "H434", "HB26", "HB07", "HA09"],
+      "note": "10 published PD-1 binders with KD; used only as comparison controls."
+    },
+    "target": {
+      "uniprot": "Q15116 (PDCD1_HUMAN)",
+      "ecd_residues": "33-150 (IgV domain ~33-134); mature protein lacks signal peptide 1-20",
+      "structure_origin": "PDB 4ZQK chain B (PD-1 33-146 observed, 85-92 disordered, S93 construct substitution vs UniProt C93)",
+      "ligand_binding_interface": "PD-1 residues contacting PD-L1 in 4ZQK (CA<10A): 63-84, 124-134 (approximate; full side-chain contact map in inputs/)"
+    },
+    "structural_references": {
+      "PDB_4ZQK": "PD-1/PD-L1 complex; source of ligand-binding epitope definition",
+      "PDB_5GGS": "PD-1 + pembrolizumab Fab; independent anti-PD-1 epitope cross-check",
+      "PDB_5GGR": "PD-1 + nivolumab Fab; independent anti-PD-1 epitope cross-check (not downloaded)"
+    }
+    },
+  "constraints_declared": {
+    "editable_regions": "Six CDRs only, paper lengths: H1=7, H2=6, H3 7-18, L1=11, L2=7, L3 9-11 (Chothia per Table 1)",
+    "protected": "All eight FR blocks from Table 1, VH/VL pairing per candidate",
+    "controls": "H965 and the 9 other published PD-1 designs are comparison controls only; never design inputs",
+    "frozen_before_ranking": "Gates and weights (see ranking_policy in metrics.json) frozen before candidate ranking",
+    "liability_policy": "No Cys in designed CDRs; framework-inherited liabilities recorded as inherited"
+  },
+  "methods_selected": {
+    "primary": "rfdiffusion_proteinmpnn (RF-Antibody) target-conditioned CDR design on staged PD-1:framework complex",
+    "conservative": "AntiBMPNN sequence redesign on the staged complex (CDR masks via 1-based ranges)",
+    "complex_plausibility": "Boltz2 per-candidate [PD-1, VH, VL] predictions with ipTM/PAE; interface contacts computed locally",
+    "properties": "Antibody_Prediction (Thermal_Stability_ESM, Solubility_ESM, Antigen_Antibody_binding, CDR_Prediction), scheme imgt",
+    "numbering": "Antibody_Numbering (IMGT) for CDR boundary definition"
+  },
+  "stages": {
+    "selected": ["input staging + verification", "CDR boundary definition (IMGT)", "framework PDB staging", "primary design track", "conservative design track", "candidate pooling + constraint QC", "complex plausibility + contacts", "property screening", "ranking + shortlist", "benchmark comparison + report"],
+    "attempted": [],
+    "completed": [],
+    "blocked": [],
+    "unexecuted": []
+  },
+  "honesty_notes": [
+    "H965 KD 81.6 nM is measured; nothing computed here is a binding measurement.",
+    "Published AUROC 0.76 / enrichment 7.41 / discrimination AUROC 0.95 / AAR 0.317 are paper aggregate benchmarks, not candidate-level evidence; they are reported as published values, never assigned to new candidates.",
+    "Individual H965 ipTM/PAE/DockQ values are not published; NEEDS_INPUT for that comparison row.",
+    "Structural overlap with the PD-L1 site supports a competition hypothesis only; no functional blockade is demonstrated."
+  ]
+}

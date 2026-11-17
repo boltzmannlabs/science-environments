@@ -1,0 +1,118 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_004_lcat_reference_fab_cdrh3_reconstruction",
+  "run_id": "run_002_diffab_local",
+  "workflow_id": "wf_diffab_incontext_h3",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local",
+    "results": "results/task_004_lcat_reference_fab_cdrh3_reconstruction/run_002_diffab_local"
+  },
+  "preparation": {
+    "objective": "DiffAb in-context CDR-H3 co-design comparator for 5bv7",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "historical_stage_1",
+      "purpose": "DiffAb in-context H3 generation",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "DiffAb",
+          "source": "open_source",
+          "records": ["C01"],
+          "model_version": "DiffAb codesign_single.pt (sha256 53d1c240020ce87c...)",
+          "inputs": {"pdb": "native_5bv7_complex.pdb (native complex, in-context)", "cdr": "H_CDR3 (0-based 95-113, len 19)"},
+          "parameters": {"seed": 20261114, "num_samples": 32, "sample_structure": true, "sample_sequence": true, "cdrs": ["H_CDR3"]},
+          "outputs": {"value": ["out_h3_n32/... 32 candidate PDBs"]},
+          "states": {"completed": 1}
+        },
+        {
+          "tool": "graft_diffab.py",
+          "source": "open_source",
+          "records": ["C02"],
+          "inputs": {"candidates": "32 DiffAb PDBs", "scaffold": "native IMGT complex"},
+          "parameters": {"renumber": "H3 block -> native IMGT keys, 1:1 by sequence position"},
+          "outputs": {"value": ["gen_diffab_grafted/ (32 models)"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_2",
+      "purpose": "freeze ranking",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C03"],
+          "inputs": null,
+          "parameters": {"ordering": "filename (sampling) order"},
+          "outputs": {"value": ["diffab_frozen_shortlist.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_3",
+      "purpose": "scoring",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AbFlow evaluator",
+          "source": "open_source",
+          "records": ["C04"],
+          "inputs": {"mod_pdbs": "32 grafted models", "ref": "sealed native 5bv7", "chains": "C/B/[A]"},
+          "parameters": {"cdr_type": "['H3']"},
+          "outputs": {"value": ["scored_diffab/metrics_per_candidate.json"]},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "historical_stage_4",
+      "purpose": "packaging",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "records": ["C05"],
+          "inputs": null,
+          "parameters": {"per_run_tree": true},
+          "outputs": {"value": ["@results/"]},
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"counts": {"candidates_generated": 32, "candidates_evaluated": 32, "unique_h3": 32, "native_copies": 0}},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "c22f64dbb69c77b15979447afa94c33cc58e0a60585de99c893fb60dea859f6d"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": "run_001_abflow_h3_reconstruction",
+    "derived_from": "same 5bv7 native complex and sealed reference; DiffAb codesign_single.pt",
+    "historical_components": [
+      "originally designed not_selected (no evaluation stack); user authorized end-to-end execution of all designed workflows via available open-source tools 2026-11-14; reclassified selected+executed"
+    ]
+  }
+}

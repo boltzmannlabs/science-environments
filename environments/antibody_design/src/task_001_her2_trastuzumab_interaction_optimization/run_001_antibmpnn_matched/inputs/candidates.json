@@ -1,0 +1,1160 @@
+{
+  "reference": {
+    "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+    "VL": "DIQMTQSPSSLSASVGDRVTITCRASQDVNTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQHYTTPPTFGQGTKVEIK",
+    "mask": {
+      "H": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "L": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    }
+  },
+  "generated": 40,
+  "unique": 38,
+  "candidates": [
+    {
+      "sample": 12,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASYRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L53FY",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2376,
+      "global_score": 1.9005,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C001"
+    },
+    {
+      "sample": 14,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEVPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY",
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FS",
+        "L91HY",
+        "L93TE",
+        "L94TV"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2392,
+      "global_score": 1.9082,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C002"
+    },
+    {
+      "sample": 7,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEAPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L91HY",
+        "L93TE",
+        "L94TA"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2449,
+      "global_score": 1.9014,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C003"
+    },
+    {
+      "sample": 20,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVWSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NW",
+        "L31TS",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.252,
+      "global_score": 1.92,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C004"
+    },
+    {
+      "sample": 30,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASYRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FY",
+        "L54LR",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2582,
+      "global_score": 1.9146,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C005"
+    },
+    {
+      "sample": 26,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGPGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H102DP"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2599,
+      "global_score": 1.8776,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C006"
+    },
+    {
+      "sample": 27,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSYVAWYQQKPGKAPKLLIYSASYRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AY",
+        "L53FY",
+        "L54LR",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2613,
+      "global_score": 1.9155,
+      "seq_recovery": 0.8214,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 10,
+      "candidate_id": "T001-C007"
+    },
+    {
+      "sample": 13,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEVPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L93TE",
+        "L94TV"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2618,
+      "global_score": 1.9168,
+      "seq_recovery": 0.8929,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 6,
+      "candidate_id": "T001-C008"
+    },
+    {
+      "sample": 24,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYNYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L93TN",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2639,
+      "global_score": 1.9059,
+      "seq_recovery": 0.8929,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 6,
+      "candidate_id": "T001-C009"
+    },
+    {
+      "sample": 25,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASSRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L53FS",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2654,
+      "global_score": 1.9107,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C010"
+    },
+    {
+      "sample": 36,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FS",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.269,
+      "global_score": 1.9061,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C011"
+    },
+    {
+      "sample": 38,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSYVAWYQQKPGKAPKLLIYSASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L32AY",
+        "L53FT",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2732,
+      "global_score": 1.9277,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C012"
+    },
+    {
+      "sample": 23,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L91HS",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2753,
+      "global_score": 1.8917,
+      "seq_recovery": 0.8929,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 6,
+      "candidate_id": "T001-C013"
+    },
+    {
+      "sample": 15,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFRYTGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L54LR",
+        "L56ST",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2756,
+      "global_score": 1.8932,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C014"
+    },
+    {
+      "sample": 17,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2778,
+      "global_score": 1.9109,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C015"
+    },
+    {
+      "sample": 19,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FS",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2803,
+      "global_score": 1.9139,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C016"
+    },
+    {
+      "sample": 28,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASYLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FY",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2836,
+      "global_score": 1.906,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C017"
+    },
+    {
+      "sample": 10,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSYVAWYQQKPGKAPKLLIYSASNRYTGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEAPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AY",
+        "L53FN",
+        "L54LR",
+        "L56ST",
+        "L91HY",
+        "L93TE",
+        "L94TA"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2849,
+      "global_score": 1.9196,
+      "seq_recovery": 0.8214,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 10,
+      "candidate_id": "T001-C018"
+    },
+    {
+      "sample": 9,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSYVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYEAPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AY",
+        "L91HS",
+        "L93TE",
+        "L94TA"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.285,
+      "global_score": 1.9338,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C019"
+    },
+    {
+      "sample": 21,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYNYVAWYQQKPGKAPKLLIYSASNLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEWPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TN",
+        "L32AY",
+        "L53FN",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TW"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2852,
+      "global_score": 1.9111,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C020"
+    },
+    {
+      "sample": 40,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASSRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYARYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FS",
+        "L54LR",
+        "L91HY",
+        "L92YA",
+        "L93TR",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.289,
+      "global_score": 1.891,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C021"
+    },
+    {
+      "sample": 16,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYARYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L91HY",
+        "L92YA",
+        "L93TR",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2905,
+      "global_score": 1.92,
+      "seq_recovery": 0.875,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 7,
+      "candidate_id": "T001-C022"
+    },
+    {
+      "sample": 29,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASSRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L53FS",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2935,
+      "global_score": 1.8938,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C023"
+    },
+    {
+      "sample": 3,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSYVAWYQQKPGKAPKLLIYSASTRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L32AY",
+        "L53FT",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2936,
+      "global_score": 1.9239,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C024"
+    },
+    {
+      "sample": 2,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSYVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L32AY",
+        "L53FS",
+        "L91HS",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2945,
+      "global_score": 1.9022,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C025"
+    },
+    {
+      "sample": 1,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPANGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYTAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYRYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H54TA"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L91HS",
+        "L93TR",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.295,
+      "global_score": 1.9063,
+      "seq_recovery": 0.8929,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 6,
+      "candidate_id": "T001-C026"
+    },
+    {
+      "sample": 35,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYNYVAWYQQKPGKAPKLLIYSASNRYTGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TN",
+        "L32AY",
+        "L53FN",
+        "L54LR",
+        "L56ST",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2953,
+      "global_score": 1.9085,
+      "seq_recovery": 0.8214,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 10,
+      "candidate_id": "T001-C027"
+    },
+    {
+      "sample": 31,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSSVAWYQQKPGKAPKLLIYSASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AS",
+        "L53FT",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2956,
+      "global_score": 1.9047,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C028"
+    },
+    {
+      "sample": 32,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYARWPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L53FS",
+        "L91HY",
+        "L92YA",
+        "L93TR",
+        "L94TW"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.2976,
+      "global_score": 1.9019,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C029"
+    },
+    {
+      "sample": 6,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSYVAWYQQKPGKAPKLLIYSASYRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AY",
+        "L53FY",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3005,
+      "global_score": 1.9081,
+      "seq_recovery": 0.8214,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 10,
+      "candidate_id": "T001-C030"
+    },
+    {
+      "sample": 8,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASFRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEVPPTFGQGTKVEIK",
+      "mut_H": [
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TV"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3007,
+      "global_score": 1.904,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C031"
+    },
+    {
+      "sample": 18,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3007,
+      "global_score": 1.9306,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C032"
+    },
+    {
+      "sample": 11,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSYVAWYQQKPGKAPKLLIYSASNRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEVPWTFGQGTKVEIK",
+      "mut_H": [
+        "H99WY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L32AY",
+        "L53FN",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TV",
+        "L96PW"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3028,
+      "global_score": 1.9152,
+      "seq_recovery": 0.8036,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 11,
+      "candidate_id": "T001-C033"
+    },
+    {
+      "sample": 4,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSTAVAWYQQKPGKAPKLLIYSASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYRYPPTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L53FT",
+        "L91HY",
+        "L93TR",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3048,
+      "global_score": 1.8953,
+      "seq_recovery": 0.8929,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 6,
+      "candidate_id": "T001-C034"
+    },
+    {
+      "sample": 34,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRYGGSGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASFRYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYYEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY",
+        "H99WY",
+        "H102DS"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L54LR",
+        "L91HY",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3053,
+      "global_score": 1.9169,
+      "seq_recovery": 0.8214,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 10,
+      "candidate_id": "T001-C035"
+    },
+    {
+      "sample": 5,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTRYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASTLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPWTFGQGTKVEIK",
+      "mut_H": [],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L53FT",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY",
+        "L96PW"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3123,
+      "global_score": 1.9248,
+      "seq_recovery": 0.8393,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 9,
+      "candidate_id": "T001-C036"
+    },
+    {
+      "sample": 39,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASNRYTGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYARYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NS",
+        "L31TS",
+        "L53FN",
+        "L54LR",
+        "L56ST",
+        "L91HY",
+        "L92YA",
+        "L93TR",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3153,
+      "global_score": 1.9208,
+      "seq_recovery": 0.8036,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 11,
+      "candidate_id": "T001-C037"
+    },
+    {
+      "sample": 37,
+      "VH": "EVQLVESGGGLVQPGGSLRLSCAASGFNIKDTYIHWVRQAPGKGLEWVARIYPTNGYTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCSRWGGDGFYAMDYWGQGTLVTVSS",
+      "VL": "DIQMTQSPSSLSASVGDRVTITCRASQSVYSAVAWYQQKPGKAPKLLIYSASFLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQYAEYPPTFGQGTKVEIK",
+      "mut_H": [
+        "H59RY"
+      ],
+      "mut_L": [
+        "L28DS",
+        "L30NY",
+        "L31TS",
+        "L91HY",
+        "L92YA",
+        "L93TE",
+        "L94TY"
+      ],
+      "mask_ok": true,
+      "notes": [],
+      "score": 0.3339,
+      "global_score": 1.9101,
+      "seq_recovery": 0.8571,
+      "liabilities": [
+        "H_CDR_NG_deamidation",
+        "H_CDR_DS_isomerization",
+        "H_CDR_DT_isomerization"
+      ],
+      "n_mutations": 8,
+      "candidate_id": "T001-C038"
+    }
+  ]
+}

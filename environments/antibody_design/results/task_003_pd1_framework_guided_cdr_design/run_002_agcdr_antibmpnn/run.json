@@ -1,0 +1,187 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_003_pd1_framework_guided_cdr_design",
+  "run_id": "run_002_agcdr_antibmpnn",
+  "workflow_id": "WF2_backbone_diversified_agcdr_antibmpnn_screening",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_003_pd1_framework_guided_cdr_design/run_002_agcdr_antibmpnn",
+    "results": "results/task_003_pd1_framework_guided_cdr_design/run_002_agcdr_antibmpnn"
+  },
+  "preparation": {
+    "objective": "Diversify CDR backbones on the fixed framework (agcdr_diff), redesign CDR sequences on each backbone (AntiBMPNN), enforce frozen gates, select 5 diverse candidates + H965 control, screen with Boltz2 and property predictors",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S1_backbone_diversification",
+      "purpose": "Sample CDR backbone conformations with framework+antigen preserved",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "agcdr_diff (Antibody RFD3)",
+          "source": "boltzmann",
+          "records": ["C01"],
+          "model_version": "Antibody RFD3 diffusion",
+          "inputs": {"saved_request": "@src/inputs/submitted_requests/message_17379_subcall_0.json"},
+          "parameters": {"num_samples": 20, "num_steps": 50},
+          "outputs": {
+            "recorded_outputs": {"backbones": 20, "cdr_rmsd_vs_scaffold_A": 10.9, "framework_preserved": true},
+            "saved_artifacts": ["@results/raw/agcdr_metrics.json", "@results/raw/recovered_backbone_generation"]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_antibmpnn_on_backbones",
+      "purpose": "Design CDR sequences on each diversified backbone",
+      "status": "completed",
+      "dependencies": ["S1_backbone_diversification"],
+      "tools": [
+        {
+          "tool": "AntiBMPNN",
+          "source": "boltzmann",
+          "records": ["C02"],
+          "model_version": "AntiBMPNN",
+          "inputs": {
+            "payload": {
+              "job_name": "AntiBMPNN",
+              "experiment_data": {
+                "input_path": "users/680f678c1b1d883c92aa706c/1794669616517/agcdr_backbones.zip",
+                "chains_to_design": ["H", "L"],
+                "residue_positions_to_design": {"H": "26-32,52-57,98-105", "L": "24-34,50-56,89-98"},
+                "generation_count": 8
+              }
+            }
+          },
+          "parameters": {"generation_count": 8, "mask_H": "26-32,52-57,98-105 (H1/H2/H3)", "mask_L": "24-34,50-56,89-98 (L1/L2/L3)"},
+          "outputs": {
+            "recorded_outputs": {"sequences": 160, "gate_pass": 115},
+            "saved_artifacts": ["@results/raw/antibmpnn_agcdr.csv", "@results/raw/antibmpnn_fv_round1.csv", "@results/raw/antibmpnn_fv_round2.csv"]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_selection",
+      "purpose": "Select 5 diverse candidates for screening (frozen rule)",
+      "status": "completed",
+      "dependencies": ["S2_antibmpnn_on_backbones"],
+      "tools": [
+        {
+          "tool": "select_screening.py",
+          "source": "open_source",
+          "records": ["C03"],
+          "inputs": {"pool": "candidates/agcdr_pool.json (115 eligible)"},
+          "parameters": null,
+          "outputs": {"selected": 5, "min_pairwise_hamming": 32, "output": "candidates/screening_selection.json"},
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_boltz2_screening",
+      "purpose": "Complex plausibility per selected candidate + H965 control",
+      "status": "completed",
+      "dependencies": ["S3_selection"],
+      "tools": [
+        {
+          "tool": "Boltz2",
+          "source": "boltzmann",
+          "records": ["C04"],
+          "model_version": "Boltz2 boltz-structure-prediction",
+          "inputs": {
+            "sequences": "PD-1 + candidate VH/VL (control uses H965 VH/VL; control antigen 33-145 S93 form, candidates 33-134 C93 form — disclosed)"
+          },
+          "parameters": {},
+          "outputs": {
+            "recorded_outputs": {"per_job": "PD1:VH + PD1:VL predictions (models, confidence JSON, PAE/plddt npz)"},
+            "saved_artifacts": [
+              "@results/raw/boltz2_H965_control.zip",
+              "@results/raw/boltz2_cand_rank1.zip",
+              "@results/raw/boltz2_cand_rank2.zip",
+              "@results/raw/boltz2_cand_rank3.zip",
+              "@results/raw/boltz2_cand_rank4.zip",
+              "@results/raw/boltz2_cand_rank5.zip"
+            ]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    },
+    {
+      "stage_id": "S5_properties",
+      "purpose": "Thermal stability, solubility, CDR prediction on 5 candidates + H965",
+      "status": "completed",
+      "dependencies": ["S3_selection"],
+      "tools": [
+        {
+          "tool": "Antibody_Prediction (AB_PROP)",
+          "source": "boltzmann",
+          "records": ["C05"],
+          "inputs": {
+            "by_record": {
+              "C05": {
+                "payload": {
+                  "job_name": "Antibody_Prediction",
+                  "experiment_data": {
+                    "dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv",
+                    "scheme": "imgt",
+                    "property_name": ["<one per job>"]
+                  }
+                }
+              },
+              "C05.R01": {"dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv"},
+              "C05.R02": {"dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv"},
+              "C05.R03": {"dataPath": "users/680f678c1b1d883c92aa706c/1794670032131/properties_input.csv"}
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C05": {"value": null},
+              "C05.R01": {"property_name": ["Thermal_Stability_ESM"], "scheme": "imgt"},
+              "C05.R02": {"property_name": ["Solubility_ESM"], "scheme": "imgt"},
+              "C05.R03": {"property_name": ["CDR_Prediction"], "scheme": "imgt"}
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {"csv": "output-{1,2,3}.csv"},
+            "saved_artifacts": [
+              "@results/raw/properties_cdr_prediction.csv",
+              "@results/raw/properties_solubility.csv",
+              "@results/raw/properties_thermal_stability.csv"
+            ]
+          },
+          "states": {"completed": 1}
+        }
+      ]
+    }
+  ],
+  "outcome": {"generated": 160, "gate_pass": 115, "selected": 5, "screened": 6},
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "7fd5009ac3fd121a0929a79d41787055029db3350afe507abfb72fc9d7dc22fc"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": "run_001_rf_antibody",
+    "relation": "backbone-diversified successor: run_001_rf_antibody's scaffold-anchored routes yielded 0 eligible (RF) and 0 eligible (scaffold AntiBMPNN, Cys artifact), motivating CDR-backbone diversification before sequence design",
+    "historical_components": "Executed 2026-11-14 under the earlier flat layout; reorganized into src/<task_id>/<run_id>/ per tasks/monoclonal.md without re-execution. All doc IDs, payloads and artifacts unchanged."
+  }
+}

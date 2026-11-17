@@ -29,7 +29,7 @@ Design monoclonal antibody variants derived from trastuzumab against human HER2.
 | Binding-region retention | Mapped contacts and pose agreement with the reference epitope | Explain any material change in binding orientation. |
 | Candidate quality | Sequence liabilities, diversity and uncertainty | Rank eligible, nonduplicate pairs; report unresolved properties. |
 
-Published comparison data: [HER2: Trastuzumab Interaction Optimization benchmark](../../benchmark/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization.md).
+Published comparison data: [HER2: Trastuzumab Interaction Optimization benchmark](../../benchmark/monoclonal_antibody_design/task_001_her2_trastuzumab_interaction_optimization/reference.md).
 
 ## Expected Output
 
@@ -46,5 +46,5 @@ Published comparison data: [HER2: Trastuzumab Interaction Optimization benchmark
 
 - Select methods independently within the user's access constraints; no particular design workflow is required.
 - Treat the reported best scores as comparison results, not universal acceptance thresholds.
-- Report missing essential inputs as `NEEDS_INPUT`. Never copy published numbers into the new-run result fields.
+- Verify essential input identities before execution and keep readiness decisions in the technical run record. Never copy published numbers into the new-run result fields.
 - Computational interaction improvement does not establish experimental affinity or therapeutic activity.

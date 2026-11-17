@@ -1,0 +1,17 @@
+# execution_summary.md — run_002_igdesign_codesign
+
+## Stages
+
+| # | Stage | Tool | Status |
+|---|---|---|---|
+| G1 | Generation (100 samples) | local IgDesign fp16 | in flight |
+| G2 | Gates | local | pending |
+| G3 | Matched AFM eval top-3 | Boltzmann Multimer | pending |
+| G4 | Chemistry/Prodigy/glycan/persistence | local | pending |
+| G5 | Packaging | local | pending |
+
+## Counts
+
+Generated: 0 (job starting). 
+
+Links: [workflow.md](../workflow.md) | [activity log](agent_scientist_log.md) | [config](../../../../configs/task_005_gal3bp_glycan_aware_interface_refinement/run_002_igdesign_codesign.json)

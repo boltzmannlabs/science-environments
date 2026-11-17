@@ -1,0 +1,14 @@
+# Execution summary
+
+
+## Current packaging record — 2026-11-15T11:14:35+00:00
+
+Status: **completed**. [Workflow](../workflow.md), [configuration](../../../../configs/task_002_pdl1_epitope_targeted_scfv_design/run_003_rf_antibody.json), [activity log](agent_scientist_log.md).
+
+Recorded completion summary (historical values retained):
+
+```json
+{"status": "completed", "reason": "Generation returned VH-only designs, which were excluded against the paired-chain requirement. Downstream candidate evaluation was not executed for excluded outputs.", "inventory_rows": 1, "inventory_note": "RF-Antibody's historical candidate row is a group-level exclusion; its original complete generation files are retained in raw/.", "packaged_at": "2026-11-15T11:14:35+00:00"}
+```
+
+Unavailable standard result files: sequences.fasta, metrics.csv. Missing historical fields remain null with explanations in the JSON. No placeholder scientific results were created.

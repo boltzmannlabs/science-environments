@@ -1,0 +1,136 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_002_pdl1_epitope_targeted_scfv_design",
+  "run_id": "run_001_antibmpnn_sequence_only",
+  "workflow_id": "wf_antibmpnn_sequence_only",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_002_pdl1_epitope_targeted_scfv_design/run_001_antibmpnn_sequence_only",
+    "results": "results/task_002_pdl1_epitope_targeted_scfv_design/run_001_antibmpnn_sequence_only"
+  },
+  "preparation": {
+    "objective": "framework-conditioned, epitope-directed design of paired VH/VL candidates (scFv output) against human PD-L1 with H5/35TL as comparator only",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "W2_generation_and_evaluation",
+      "purpose": "Sequence-only baseline",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AntiBMPNN",
+          "source": "boltzmann",
+          "records": ["C01", "C02"],
+          "inputs": {
+            "common": {"input_path": "users/68d12a5de5b6a2fdc0e3c443/1794655276746/antibody_framework_placed.pdb"},
+            "by_record": {
+              "C01": {"saved_request": "@src/inputs/submitted_requests/message_18023_subcall_1.json"},
+              "C02": {"saved_request": "@src/inputs/submitted_requests/message_18049_subcall_0.json"}
+            }
+          },
+          "parameters": {
+            "chains_to_design": ["H", "L"],
+            "generation_count": 8,
+            "residue_positions_to_design": {"H": "26-33,51-58,97-109", "L": "24-29,50-55,89-97"}
+          },
+          "outputs": {"saved_artifacts": ["@results/raw/generation_sequences.csv", "@results/raw/recovered_native/antibmpnn_raw"]},
+          "states": {"unknown": 1, "accepted": 1}
+        },
+        {
+          "tool": "Boltz2",
+          "source": "boltzmann",
+          "records": ["C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11"],
+          "inputs": {
+            "common": {"DNA_Sequences": [], "RNA_Sequences": [], "SMILES": []},
+            "by_record": {
+              "C03": {
+                "saved_request": "@src/inputs/submitted_requests/message_18236_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C03#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C04": {
+                "saved_request": "@src/inputs/submitted_requests/message_18239_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C04#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C05": {
+                "saved_request": "@src/inputs/submitted_requests/message_18244_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C05#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C06": {
+                "saved_request": "@src/inputs/submitted_requests/message_18249_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C06#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C07": {
+                "saved_request": "@src/inputs/submitted_requests/message_18570_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C07#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C08": {
+                "saved_request": "@src/inputs/submitted_requests/message_18572_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C08#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C09": {
+                "saved_request": "@src/inputs/submitted_requests/message_18574_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C09#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C10": {
+                "saved_request": "@src/inputs/submitted_requests/message_18576_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C10#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              },
+              "C11": {
+                "saved_request": "@src/inputs/submitted_requests/message_18578_subcall_0.json",
+                "Protein_Sequences": {"value_ref": "C11#/parameters/Protein_Sequences", "sequence_lengths": [114, 242]}
+              }
+            }
+          },
+          "parameters": {},
+          "outputs": {
+            "saved_artifacts": [
+              "@results/raw/recovered_native/eval_cand0_raw",
+              "@results/raw/recovered_native/eval_cand0_v2_raw",
+              "@results/raw/recovered_native/eval_cand1_raw",
+              "@results/raw/recovered_native/eval_cand1_v2_raw",
+              "@results/raw/recovered_native/eval_cand2_raw",
+              "@results/raw/recovered_native/eval_cand2_v2_raw",
+              "@results/raw/recovered_native/eval_cand3_raw",
+              "@results/raw/recovered_native/eval_cand3_v2_raw",
+              "@results/raw/recovered_native/eval_recomb_23_v2_raw"
+            ]
+          },
+          "states": {"accepted": 9}
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "reason": "Execution and evaluation completed. The recorded result was negative; completion does not imply successful target engagement.",
+    "inventory_rows": 9,
+    "historical_submission_attempts_recovered": 11
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "original_config": "@src/inputs/execution_records/full_config.json",
+    "original_config_sha256": "fa97f5b6147a2d60e2433e0f1d08ff76cc051455c3dae22b59dceaa4b9b945d2"
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "historical_components": ["run1_epitope_abgen"],
+    "relationship": "Retrospective separation of the four workflows explicitly declared in the combined workflow plan; no new execution.",
+    "historical_config": "src/task_002_pdl1_epitope_targeted_scfv_design/run1_epitope_abgen/inputs/historical_provenance/combined_config.json",
+    "retrospective_workflow_id": "W2"
+  }
+}

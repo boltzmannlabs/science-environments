@@ -1,0 +1,84 @@
+{
+  "definition": "H-bond: donor(N/S/O-H)-acceptor(N/O/S) <=3.5A (no H, angle proxy); salt bridge: D/E carboxyl to K/R/H N within 4A; contact: any heavy-atom pair <=5A; chains AB=antibody",
+  "n_interface_residue_pairs_CA_independent": 55,
+  "n_heavy_atom_contacts_5A": 608,
+  "n_hbonds": 5,
+  "hbond_share_of_contacts_pct": 0.8,
+  "hbonds": [
+    {
+      "donor": "A75 LYS:NZ",
+      "acceptor": "C491 SER:OG",
+      "dist_A": 3.0
+    },
+    {
+      "donor": "B49 TYR:OH",
+      "acceptor": "C414 TYR:OH",
+      "dist_A": 2.98
+    },
+    {
+      "donor": "C414 TYR:OH",
+      "acceptor": "B49 TYR:OH",
+      "dist_A": 2.98
+    },
+    {
+      "donor": "C469 GLN:NE2",
+      "acceptor": "B94 TRP:NE1",
+      "dist_A": 2.1
+    },
+    {
+      "donor": "B94 TRP:NE1",
+      "acceptor": "C473 ASN:OD1",
+      "dist_A": 2.48
+    }
+  ],
+  "n_salt_bridges": 0,
+  "salt_bridges": [],
+  "n_carbon_carbon_contacts_5A": 306,
+  "paratope_residues": [
+    "A102",
+    "A103",
+    "A104",
+    "A105",
+    "A106",
+    "A107",
+    "A31",
+    "A34",
+    "A48",
+    "A53",
+    "A55",
+    "A56",
+    "A58",
+    "A59",
+    "A60",
+    "A61",
+    "A75",
+    "B28",
+    "B49",
+    "B53",
+    "B54",
+    "B92",
+    "B93",
+    "B94"
+  ],
+  "epitope_residues": [
+    "C405",
+    "C414",
+    "C438",
+    "C439",
+    "C440",
+    "C461",
+    "C462",
+    "C463",
+    "C469",
+    "C471",
+    "C472",
+    "C473",
+    "C474",
+    "C475",
+    "C476",
+    "C489",
+    "C491",
+    "C522",
+    "C96"
+  ]
+}

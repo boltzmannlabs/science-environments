@@ -1,3 +1,3 @@
 # Antibody Design Tests
 
-Validation resources for antibody design will be published here, with test instructions and expected outcomes. Planned checks cover input integrity, workflow behavior, output consistency and task-specific evaluation criteria.
+This directory is reserved for environment validation resources. The [environment specification](../ENVIRONMENT_SPEC.md) defines the directory, identity, configuration and artifact conventions. Scientific evaluation requirements are specified in the [task definitions](../tasks/monoclonal_antibody_design/README.md).
