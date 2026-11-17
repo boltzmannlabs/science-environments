@@ -15,3 +15,5 @@ The separate AtHOL1 assessment completed three 30 ns trajectories, 750 field sna
 ## Future enhancements
 
 Resolve remaining scientific evidence and exact-reproduction gaps; add further configured runs and experimental results when available.
+
+Assisted execution exports are available for RML, original LEH, Sun LEH and Zhang hydrolases, with their own sequences, scores, workflow JPGs and outcome summaries. BLA and AtHOL1 have agent-alone executions only.

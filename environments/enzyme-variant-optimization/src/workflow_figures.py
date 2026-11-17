@@ -60,7 +60,51 @@ SPECS = [{'task': 'task_001_rml_stability',
              ['M2/M5 mutation scoring', 'ESM-2'],
              ['Verify and rank', 'Python'],
              ['Seal comparisons', 'Python']],
-  'later': 'Enzymes + NetSolP: properties     |     EvoEF1: whole-variant folding'}]
+  'later': 'Enzymes + NetSolP: properties     |     EvoEF1: whole-variant folding'},
+ {'task': 'task_001_rml_stability',
+  'title': 'RML stability',
+  'approach': 'agent-with-specialist',
+  'stages': [['Parent checks', 'Python · 3TGL sequence'],
+             ['Generation and revision', 'SolubleMPNN'],
+             ['Property screening', 'Enzymes · NetSolP'],
+             ['Complex models', 'Boltz2'],
+             ['Quality and exposure', 'MolProbity · PepPatch'],
+             ['Review outputs', 'Native proposer + critic']],
+  'footer_title': 'EXPORTED RESULTS',
+  'later': 'Sequences · property screens · structural measurements · sealed shortlist'},
+ {'task': 'task_002_leh_stability',
+  'title': 'LEH stability',
+  'approach': 'agent-with-specialist',
+  'stages': [['Parent checks', 'Python · 1NWW dimer'],
+             ['Generation and revision', 'SolubleMPNN'],
+             ['Property screening', 'Enzymes · NetSolP'],
+             ['Complex and pose models', 'Boltz2 · Vina'],
+             ['Quality and exposure', 'MolProbity · PepPatch'],
+             ['Review outputs', 'Native proposer + critic']],
+  'footer_title': 'EXPORTED RESULTS',
+  'later': 'Sequences · property screens · structural measurements · original selection'},
+ {'task': 'task_005_sun_leh_pythia',
+  'title': 'Sun LEH / Pythia study',
+  'approach': 'agent-with-specialist',
+  'stages': [['Freeze inputs', 'Python · 1NWW mapping'],
+             ['Review plan', 'Native proposer + critic'],
+             ['Score substitutions', 'Pythia'],
+             ['Select mutation library', 'Python · summed score'],
+             ['Review results', 'Native proposer + critic'],
+             ['Verify and retain outputs', 'Python audit']],
+  'footer_title': 'EXPORTED RESULTS',
+  'later': '2755 mapped substitution scores · 33-mutation sum-score library'},
+ {'task': 'task_006_zhang_hydrolases',
+  'title': 'Zhang cellulase / β-glucanase study',
+  'approach': 'agent-with-specialist',
+  'stages': [['Freeze inputs', 'Python'],
+             ['WT structures', 'AlphaFold2 / ColabFold'],
+             ['WT scores', 'Pythia'],
+             ['M2/M5 scores', 'ESM-2'],
+             ['Review', 'Native proposer + critic']],
+  'footer_title': 'EXPORTED RESULTS',
+  'later': 'Pythia · ESM-2 · structure quality · published-score agreement'}]
+
 
 def build_zhang(env, spec):
     """Keep WT structure scoring and stabilized-sequence scoring in separate lanes."""
@@ -69,7 +113,7 @@ def build_zhang(env, spec):
     ax.set(xlim=(0, 12), ylim=(0, 9))
     ax.axis("off")
     ax.text(.5, 8.45, spec["title"], fontsize=22, weight="bold", color="#16334b")
-    ax.text(.5, 7.98, "AGENT ALONE · TWO SCORING BACKGROUNDS", fontsize=10,
+    ax.text(.5, 7.98, "SPECIALIST-ASSISTED · NATIVE PROPOSER + CRITIC" if spec.get("approach") else "AGENT ALONE · TWO SCORING BACKGROUNDS", fontsize=10,
             weight="bold", color="#647789")
 
     def card(x, y, width, height, title, subtitle):
@@ -101,10 +145,10 @@ def build_zhang(env, spec):
     ax.add_patch(FancyBboxPatch((.5, .55), 11, 1.2,
                  boxstyle="round,pad=.035,rounding_size=.13",
                  facecolor="#fbf5e9", edgecolor="#e9d9b5"))
-    ax.text(.75, 1.4, "LATER BENCHMARK CALCULATIONS", fontsize=10,
+    ax.text(.75, 1.4, spec.get("footer_title", "LATER BENCHMARK CALCULATIONS"), fontsize=10,
             weight="bold", color="#886627")
     ax.text(.75, .93, spec["later"], fontsize=11.5, color="#5b503d")
-    target = env / "results" / spec["task"] / "agent-alone/figures/workflow.jpg"
+    target = env / "results" / spec["task"] / spec.get("approach", "agent-alone") / "figures/workflow.jpg"
     target.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(target, dpi=140, format="jpg", pil_kwargs={"quality": 93}, facecolor="white")
     plt.close(fig)
@@ -120,7 +164,7 @@ def build(env):
         ax.set(xlim=(0, 12), ylim=(0, 9))
         ax.axis("off")
         ax.text(.5, 8.45, spec["title"], fontsize=23, weight="bold", color="#16334b", va="center")
-        ax.text(.5, 7.94, "FINAL METHOD PATH · AGENT ALONE", fontsize=10, weight="bold", color="#647789")
+        ax.text(.5, 7.94, "SPECIALIST-ASSISTED · NATIVE PROPOSER + CRITIC" if spec.get("approach") else "FINAL METHOD PATH · AGENT ALONE", fontsize=10, weight="bold", color="#647789")
         positions = [(0.5, 5.45), (4.35, 5.45), (8.2, 5.45), (8.2, 2.95), (4.35, 2.95), (.5, 2.95)]
         edges = [(0,1),(1,2),(2,3),(3,4),(4,5)]
         width, height = 3.3, 1.6
@@ -139,9 +183,9 @@ def build(env):
                 a=(x+width/2,y);b=(xx+width/2,yy+height)
             ax.add_patch(FancyArrowPatch(a,b,arrowstyle="-|>",mutation_scale=13,color="#8198aa",linewidth=1.5,shrinkA=6,shrinkB=6))
         ax.add_patch(FancyBboxPatch((.5,.55),11,1.5,boxstyle="round,pad=.04,rounding_size=.14",facecolor="#fbf5e9",edgecolor="#e9d9b5"))
-        ax.text(.75,1.67,"LATER BENCHMARK CALCULATIONS",fontsize=10,weight="bold",color="#886627")
+        ax.text(.75,1.67,spec.get("footer_title", "LATER BENCHMARK CALCULATIONS"),fontsize=10,weight="bold",color="#886627")
         ax.text(.75,1.12,spec["later"],fontsize=12,color="#5b503d",va="center",linespacing=1.5)
-        target=env/"results"/spec["task"]/"agent-alone"/"figures"/"workflow.jpg"
+        target=env/"results"/spec["task"]/spec.get("approach", "agent-alone")/"figures"/"workflow.jpg"
         target.parent.mkdir(parents=True,exist_ok=True)
         fig.savefig(target,dpi=140,format="jpg",pil_kwargs={"quality":93},facecolor="white")
         plt.close(fig)

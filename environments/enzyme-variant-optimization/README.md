@@ -28,7 +28,9 @@ enzyme-variant-optimization/
 │       ├── references.md
 │       └── comparisions/benchmark_report.md  # available numerical results
 └── results/
-    └── task_<id>/agent-alone/
+    └── task_<id>/
+        ├── agent-alone/
+        └── agent-with-specialist/  # four executed task groups
 ```
 
 This naming pattern applies to all six tasks. There is no environment `tests/` directory. `comparisions/` uses the requested folder spelling. Hidden `.gitignore` rules protect local/private artifacts.
@@ -43,7 +45,7 @@ This naming pattern applies to all six tasks. There is no environment `tests/` d
 | [scripts/](scripts/README.md) | Native launch preparation, resume instructions, offline evaluation and report generation. |
 | [src/](src/README.md) | Actual agent-alone code and the retained offline evaluator. |
 | [benchmark/](benchmark/README.md) | Published reference values and comparisons with agent-alone outputs. |
-| [results/](results/README.md) | Actual agent-alone execution evidence. |
+| [results/](results/README.md) | Agent-alone and specialist-assisted execution evidence. |
 
 ## Tasks and run configs
 
@@ -69,7 +71,7 @@ Use an available native SCI installation and access to the required scientific c
 
 The JSON files in `configs/` are compact historical records, not SCI launch profiles. Fresh execution requires a separately supplied frozen settings file. Historical campaigns retain their original frozen settings and paths.
 
-Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results include agent-alone score tables, exact sequences and usage snapshots. Benchmark tables label published predictions and calculations in this work. Parent identity, methods and run status are explained in each results folder. Report generation does not restart historical campaigns.
+Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results include separate agent-alone and specialist-assisted score tables, exact sequences and short usage summaries. Benchmark tables label published predictions and calculations in this work. Parent identity, methods and run status are explained in each results folder. Report generation does not restart historical campaigns.
 
 ## Offline comparison helper
 
@@ -90,3 +92,5 @@ The [benchmark index](benchmark/README.md) and task-specific Markdown reports co
 [Results](results/README.md) retain exact candidate sequences and full-precision values, including exploratory candidates lacking qualification. Historical runs have no assigned configuration version. Compact run configs summarize actual executions. No config-version comparison is presented.
 
 [Source](src/README.md) retains actual agent-alone code with relocation provenance, and [scripts](scripts/README.md) provides launch/resume guidance and offline report commands. The working branch contains the available results and benchmark reports for review. The ten native arms are operationally closed, with unresolved scientific assessments recorded in results. The separate AtHOL1 reaction-site assessment and its descriptive comparison are complete. Original run workspaces are unchanged.
+
+Specialist-assisted results are available for RML, original LEH, Sun LEH and Zhang hydrolases in the [results index](results/README.md). The existing benchmark reports retain their agent-alone scope.
