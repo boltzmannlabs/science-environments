@@ -12,8 +12,23 @@ As of 16 November 2026, all ten native arms are operationally closed under the o
 
 The separate AtHOL1 assessment completed three 30 ns trajectories, 750 field snapshots and 75 explicit C–I localized-orbital calculations. Its numerical export is included with source labels, identities and a matched comparison figure.
 
+Assisted execution exports are available for RML, original LEH, Sun LEH and Zhang hydrolases, with their own sequences, scores, workflow JPGs and outcome summaries. BLA and AtHOL1 have agent-alone executions only.
+
+## Delivery evidence — 18 November 2026
+
+The current publication package supports the weekly parent [#171](https://github.com/boltzmannlabs/science-environments/issues/171). The owner approved compact actual-run configs and concise results; earlier nested templates and separate result metadata files were removed. Review and merge remain pending.
+
+| Sub-issue | Delivered evidence |
+|---|---|
+| [#172: tasks and configs](https://github.com/boltzmannlabs/science-environments/issues/172) | [Six task assignments](tasks/README.md) and [ten actual-run config summaries](configs/README.md). |
+| [#173: execution and evaluation](https://github.com/boltzmannlabs/science-environments/issues/173) | [Ten native-arm outcomes](results/README.md), sequences, scores and scientific limitations. |
+| [#174: benchmarks](https://github.com/boltzmannlabs/science-environments/issues/174) | [Six Markdown benchmarks](benchmark/README.md), 16 comparison figures and completed AtHOL1 field/LMO results. |
+| [#175: results publication](https://github.com/boltzmannlabs/science-environments/issues/175) | [Six agent-alone and four assisted result packages](results/README.md), ten compact workflow JPGs and readable usage summaries. |
+| [#176: reusable source](https://github.com/boltzmannlabs/science-environments/issues/176) | [Retained agent-generated helpers](src/README.md), offline comparison/report code and workflow-image renderer; no fully portable scientific replay is claimed. |
+| [#177: scripts and instructions](https://github.com/boltzmannlabs/science-environments/issues/177) | [Launch, native resume, evaluation and reporting instructions](scripts/README.md); new launches require explicit frozen settings. |
+
+Operational closure includes unsuccessful and inconclusive outcomes. It does not establish that every scientific requirement passed or that the variants outperform published enzymes.
+
 ## Future enhancements
 
 Resolve remaining scientific evidence and exact-reproduction gaps; add further configured runs and experimental results when available.
-
-Assisted execution exports are available for RML, original LEH, Sun LEH and Zhang hydrolases, with their own sequences, scores, workflow JPGs and outcome summaries. BLA and AtHOL1 have agent-alone executions only.
