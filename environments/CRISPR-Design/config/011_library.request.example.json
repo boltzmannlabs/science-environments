@@ -1,0 +1,14 @@
+{
+  "brief_id": "genome_wide_library_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "user-supplied-gene-list-at-intake", "sequence_supplied": false},
+  "application": "library_screen_design",
+  "nuclease": "spcas9",
+  "objective": "Pooled library design: per-gene guide quality + multi-targeting avoidance + seed/copy-number confound control; compact-library efficiency evidence (score-based 3-guide libraries match larger ones — Lukasiak 2024); illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match", "poly_t_termination_risk"],
+    "weights": {"on_target": 0.40, "specificity": 0.35, "outcome_quality": 0.15, "context": 0.10}
+  },
+  "constraints": {"review_window": 100, "panel_size": 6, "site_distinct": true, "genome_assembly": "GRCh38.p14", "expression_system": "u6_pol_iii"},
+  "success_criteria": "Screen replication quality (library-level LFC consistency) — downstream evidence."
+}

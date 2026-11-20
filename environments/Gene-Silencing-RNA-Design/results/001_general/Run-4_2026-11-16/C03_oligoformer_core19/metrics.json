@@ -1,0 +1,21 @@
+{
+  "n": 301,
+  "n_positive": 229,
+  "n_negative": 72,
+  "auc": 0.6595099466278506,
+  "spearman": 0.3416707731553813,
+  "pearson": 0.4376671170192737,
+  "precision_top10": 0.9,
+  "auc_ci95_row_bootstrap": [
+    0.5861747937894226,
+    0.7335653202328967
+  ],
+  "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+  "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+  "config_id": "C03_oligoformer_core19",
+  "macro_auc": 0.6627434037563814,
+  "ordinal": 3,
+  "retrospective_loto_selected_macro_auc": 0.7101581264155615,
+  "panel_size": 5,
+  "mean_panel_stability": 1.0
+}

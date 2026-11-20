@@ -1,0 +1,69 @@
+-----------------Start inferring!-----------------
+target
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_004456.5/runtime/RNA-FM/redevelop/.
+2026-11-16 10:22:42,755 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:22:42,755 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:22:42,756 prediction INFO: Model File:none
+2026-11-16 10:22:42,756 prediction INFO: Batch Size:1
+2026-11-16 10:22:42,756 prediction INFO: Threshold:0.5
+2026-11-16 10:22:42,756 prediction INFO: Prediction Dataset: ../../data/infer/target/mRNA.fa
+Sequence Num: 9
+2026-11-16 10:22:44,300 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/9]
+saved embedding shape: (57, 640)
+Iteration[2/9]
+saved embedding shape: (57, 640)
+Iteration[3/9]
+saved embedding shape: (57, 640)
+Iteration[4/9]
+saved embedding shape: (57, 640)
+Iteration[5/9]
+saved embedding shape: (57, 640)
+Iteration[6/9]
+saved embedding shape: (57, 640)
+Iteration[7/9]
+saved embedding shape: (57, 640)
+Iteration[8/9]
+saved embedding shape: (57, 640)
+Iteration[9/9]
+saved embedding shape: (57, 640)
+2026-11-16 10:22:44,762 prediction.inference INFO: Finish Prediction
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_004456.5/runtime/RNA-FM/redevelop/.
+2026-11-16 10:22:49,826 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:22:49,826 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:22:49,827 prediction INFO: Model File:none
+2026-11-16 10:22:49,827 prediction INFO: Batch Size:1
+2026-11-16 10:22:49,827 prediction INFO: Threshold:0.5
+2026-11-16 10:22:49,827 prediction INFO: Prediction Dataset: ../../data/infer/target/siRNA.fa
+Sequence Num: 9
+2026-11-16 10:22:51,372 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/9]
+saved embedding shape: (19, 640)
+Iteration[2/9]
+saved embedding shape: (19, 640)
+Iteration[3/9]
+saved embedding shape: (19, 640)
+Iteration[4/9]
+saved embedding shape: (19, 640)
+Iteration[5/9]
+saved embedding shape: (19, 640)
+Iteration[6/9]
+saved embedding shape: (19, 640)
+Iteration[7/9]
+saved embedding shape: (19, 640)
+Iteration[8/9]
+saved embedding shape: (19, 640)
+Iteration[9/9]
+saved embedding shape: (19, 640)
+2026-11-16 10:22:51,884 prediction.inference INFO: Finish Prediction
+          0
+0  1.020287
+1  1.029328
+2  0.979849
+3  0.995967
+4  0.983573
+5  1.022629
+6  0.963797
+7  0.963634
+8  0.923841
+14 seconds 0.23333333333333334 minutes

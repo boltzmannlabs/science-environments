@@ -1,0 +1,5 @@
+benchmark,published_reference,prior,run3,delta_vs_prior_rounded,comparability,n
+Simone RN.Ai AUC,No published RN.Ai value on this cohort verified,0.7021,0.7021412837457097,0,"Paired 322-row fresh replay, all predictions exactly equal",322
+HTT RN.Ai Spearman vs -log10 IC50,"Pfister reports IC50, not RN.Ai correlation",0.296,0.2630140842182471,-0.03298591578175286,NOT_LIKE_FOR_LIKE: explicitly constructed 19-nt site with absent real flanks; proxy-context recipe changed,26
+Immune UGUGU sensitivity,"Goodchild describes sequence dependence, no validated UGUGU-only sensitivity",0.1,0.14285714285714285,,"NOT_LIKE_FOR_LIKE: stricter row exclusions, explicit pathogen exclusion and exact duplex deduplication; no rule tuning.",8
+HTT RNAduplex vs log DR Spearman,Paper Table 2 reporter outcomes; no RNAduplex correlation,,-0.3080322933387836,,Exact paper mismatch identities including secondary mismatches; earlier 5-row KD% weakest-of-three proxy differs,21

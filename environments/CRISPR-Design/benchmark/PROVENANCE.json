@@ -1,0 +1,290 @@
+[
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/predictions/RS3_common_holdout_fresh.csv",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/predictions.csv",
+    "sha256": "49be4bae74173fabf9638d56b0a77a9a48e41766cffcbf045827800105645357",
+    "bytes": 5638148
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/protocols/RS3_inference_identity.json",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/model_identity.json",
+    "sha256": "b66a19eb1c87dfd69bda8e866f74bcce53419a9c6f2622f46ef09a505429b09e",
+    "bytes": 626
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/cas9_RS3.json",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/source_cohort_protocol.json",
+    "sha256": "485b9bb933a6459afc562b04d68858c3aec7719404fe15c6681f227a95b1e98c",
+    "bytes": 1633
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/cas9_exact_source_replay.json",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/source_replay_protocol.json",
+    "sha256": "e6e9c03dacefdf643b14fd7c7884e0a3c2c33f5be0eff5ff04564037683c9eaf",
+    "bytes": 1188
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/RS3_execution.json",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/execution.json",
+    "sha256": "8857a632825734cb21fd739af4f4e136fbd67a695db51f010ed7d82dda4e138a",
+    "bytes": 555
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/RS3_fresh_inference.log",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/execution.log",
+    "sha256": "0d62fb382125f9d1f4fc431f59ef3d6507d785cbb85a83739882b428108bc011",
+    "bytes": 7468
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/scripts/rs3_fresh_inference.py",
+    "destination": "benchmark/001_RS3_Sequence/Run-4_2026-11-12/scripts/inference.py",
+    "sha256": "547f7e9cf2cf1ac1e0e1a809dfa8f73a521f69af17c1a8f7f1c4b232dcdb3b24",
+    "bytes": 1484
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/predictions/cas9_fresh_shared_holdout_joined.csv",
+    "destination": "benchmark/002_CRISPRon/Run-4_2026-11-12/predictions.csv",
+    "sha256": "9c89d19494f453fb07fa114bbe1788b73d0c84607675d14855edaadecb08d521",
+    "bytes": 6630888
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/CRISPRon_external_panel.json",
+    "destination": "benchmark/002_CRISPRon/Run-4_2026-11-12/protocol.json",
+    "sha256": "f2aca644787cdafc06d3b914a7b81b65f73f97aaeb02fb4bd7a7bb5d8cb43600",
+    "bytes": 650
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/logs/CRISPRon_fresh.log",
+    "destination": "benchmark/002_CRISPRon/Run-4_2026-11-12/execution.log",
+    "sha256": "82b06b61092f43ea475c2a049a36d71c7f9f6798efbdedaabd9eb5f7dd2f886a",
+    "bytes": 46089
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/reports/CRISPRon_fresh_external_panel_metrics.csv",
+    "destination": "benchmark/002_CRISPRon/Run-4_2026-11-12/prior_metrics.csv",
+    "sha256": "f624371fffe717d83005f1eb560dfebfcc2ce86d6506ea38ecf2350e2c0e0952",
+    "bytes": 828
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Publication-label-benchmarks/Run-3_2026-11-12/reports/Cas9_paired_differences.csv",
+    "destination": "benchmark/002_CRISPRon/Run-4_2026-11-12/paired_Cas9_comparison.csv",
+    "sha256": "9ad94ca35eed8f22cfa8b3035d92be1605e03af07400294c0b1d31a49a1db854",
+    "bytes": 590
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/predictions/CFD_assay_verified_pairs.csv",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/predictions.csv",
+    "sha256": "96f867778e24d34286cb96ae6ff95bb5a8d2984f5f6429e5179ee2a0a9d438b4",
+    "bytes": 1694196
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/specificity_CFD_v2.json",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/protocol.json",
+    "sha256": "854b19b464df1f5ef58e7e13826f8ad3de9475795cb9399425d4c73cf85be8b6",
+    "bytes": 2322
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Publication-label-benchmarks/Run-3_2026-11-12/reports/specificity.json",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/metrics.json",
+    "sha256": "06fc30c4794577088c9818a1f5d33cedd0c4d50dbba328289bc73964ba0bb0eb",
+    "bytes": 535
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/reports/specificity_v2_per_guide_recall_at_K.csv",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/recall_at_K.csv",
+    "sha256": "84bd2d81f075c099986b85dcaaad7d9d89d1c4c693032b2266ca1090ad0e7add",
+    "bytes": 2714
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/CFD_execution.json",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/execution.json",
+    "sha256": "6a41dd4d710e8ff5968d4cba1b4c5fc44bee6a96443f274d402f451646fdcc3c",
+    "bytes": 752
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/CFD_fresh_inference.log",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/execution.log",
+    "sha256": "fc518c01bc2ff4cd96bea665616fc1e74c7a2be577117e5399c630a4200f800a",
+    "bytes": 36
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/scripts/score_CFD.R",
+    "destination": "benchmark/003_CFD2016/Run-4_2026-11-12/scripts/inference.R",
+    "sha256": "dd4777c392e0834ab5f1762d1e9a5d0152469729a6605cb797a3b2e87fa18e8a",
+    "bytes": 760
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/predictions/BEHive_BE4_HEK293T_external_predictions.csv",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/predictions.csv",
+    "sha256": "c97cf17b96eb8408cb9d3a65d255abe88b15900706140970bb04a634e8903d62",
+    "bytes": 1292827
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/BEHive_external_BE4.json",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/protocol.json",
+    "sha256": "b992edb5f82026663eae3eacf0580f575eb4c6e67167e4e5622070fdf70bb06c",
+    "bytes": 1727
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/protocols/BEHive_model_identity.json",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/model_identity.json",
+    "sha256": "f4581e209e107fa012bc0da16b1904e85f5328bcba3511155f54b20fdc4808b0",
+    "bytes": 1085
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/reports/BEHive_fresh_metric.json",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/fresh_metric.json",
+    "sha256": "9650626fdf384eaba65434be7578eb21a74e67a9e85ed52ff5a9c4744dcc523c",
+    "bytes": 50
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/BEHive_execution.json",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/execution.json",
+    "sha256": "523892f00f10ec170d44e1f3fa1528cd060d9daf8ed3f127fb007816e8cd4f87",
+    "bytes": 507
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/BEHive_fresh_inference.log",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/execution.log",
+    "sha256": "7c60df0103c74e619007a9ed5f5bd9b9dea82dc44e8a09f70ec3539fba41db92",
+    "bytes": 1247
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/scripts/score_BEHive_legacy.py",
+    "destination": "benchmark/004_BEHive_BE4/Run-4_2026-11-12/scripts/inference.py",
+    "sha256": "179821c21aaf7b06938b45225ebce6c6c3702603c7173bac1347dead13244607",
+    "bytes": 2251
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/predictions/PRIDICT2_OOF/OOF_ensemble_predictions_with_labels.csv",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/predictions.csv",
+    "sha256": "f4b3cb39c5dc67f32c01898021972a0d1be46b8819561258f31a21085d5b3c26",
+    "bytes": 7809569
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/protocols/PRIDICT2_evaluation.json",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/protocol.json",
+    "sha256": "a99c6f4e3367a44925c9a057e62328e7b839f56c8e7ca576a75354e2e8efbaeb",
+    "bytes": 1111
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/PRIDICT2_fold_identity.json",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/fold_identity.json",
+    "sha256": "5ec0d497a9bd9cc5e0ce046e305c6f798a99e1b91893fbd8ad19337162324650",
+    "bytes": 1315
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/reports/PRIDICT2_original_split_and_score_concordance.json",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/published_split_concordance.json",
+    "sha256": "f6613898085d23f8667fad86ff72b34cf67fe2b95d4b1a48d29806a447ae3726",
+    "bytes": 891
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/reports/PRIDICT2_measured_label_OOF_metrics.csv",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/native_metrics.csv",
+    "sha256": "669dd1fc960ef3baa56e07bf22084e19925f91e82683c741ff533af560878151",
+    "bytes": 707
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/PRIDICT2_execution.json",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/execution.json",
+    "sha256": "9955082d9f6faf8c6f35f31d074893a1e06f64a65b9570abbd3c670c46d911dd",
+    "bytes": 509
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/PRIDICT2_fresh_inference.log",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/execution.log",
+    "sha256": "541b4c4044f8c16a62d20eb582ee5320f24dc4d59c09bd908ce3eaac46c40b80",
+    "bytes": 53261
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/scripts/evaluate_PRIDICT2_OOF.py",
+    "destination": "benchmark/005_PRIDICT2/Run-4_2026-11-12/scripts/inference.py",
+    "sha256": "674012be5c943b1058ba8393a58512aa146ace5cfd99312ff663cb05be2db75f",
+    "bytes": 5919
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/predictions/DeepPrime_base_fixed_test_predictions.csv",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/predictions.csv",
+    "sha256": "ae118846db781b0ffed21d47a3448709c0b31444c90de9536339dfe0632bf3a7",
+    "bytes": 12605612
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/DeepPrime_base_heldout.json",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/protocol.json",
+    "sha256": "94ee06622497bdc51d7ea85f8e4a712b21f6bb3c11ececb354daff64346b268b",
+    "bytes": 1238
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/protocols/DeepPrime_inference_identity.json",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/model_identity.json",
+    "sha256": "a4935d23a9633e35a61680fe66093bed3c538a7cb318322a0f6d4a068b3db1d8",
+    "bytes": 1430
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/reports/DeepPrime_base_heldout_metrics.json",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/native_metrics.json",
+    "sha256": "44e595ee7353d7641682cbbc26a016b8e37270aedaa2faeed86e16d3527f271b",
+    "bytes": 886
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/DeepPrime_execution.json",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/execution.json",
+    "sha256": "5c6455cc070edc54e4efb7c228bb19daad7f82b8cd4d7a2e6b7b0b41cc17e7e8",
+    "bytes": 514
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/logs/DeepPrime_fresh_inference.log",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/execution.log",
+    "sha256": "782b1dbc69f1f363c331a0b3770b97703957968a458d50c4fee05370d5aeaa32",
+    "bytes": 1220
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z/scripts/evaluate_DeepPrime_test.py",
+    "destination": "benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/scripts/inference.py",
+    "sha256": "c218537b0abb35543d3e2ddaeffbcd5211678c3a3c83640b472d0e3ccba5f2cf",
+    "bytes": 4573
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/reports/cas13_RFcombined_1000_resampling_metrics.csv",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/metrics.csv",
+    "sha256": "206a07972afce3fab0cb75ae54a4306f91dc9b5987371839816dbecebb7d230e",
+    "bytes": 88626
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/reports/cas13_RFcombined_leave_screen_out.csv",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/leave_screen_out.csv",
+    "sha256": "d3d5ae11c7ac55b7eff7b7c025cf536e77e6a957410e3fd8a3437dc8dd2c2dfb",
+    "bytes": 307
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/cas13_RFcombined.json",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/protocol.json",
+    "sha256": "e4c3431e278c18dd22d13946cf35872df00a0815c518a8d3fbd1905d36a1cf3f",
+    "bytes": 1599
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/protocols/cas13_recovered_seed_schedule.csv",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/source_seed_schedule.csv",
+    "sha256": "1166620deb76f5c766b4ff2ce820ffdc7cf7b0d9a7778e5dc4608b39fb8c13ac",
+    "bytes": 8803
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Protocol-reproduction/Run-2_2026-11-12/cas13_completion_verification.json",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/independent_verification.json",
+    "sha256": "6a067559abb60acb89b09829edb20e10da2ea854bba6e62e20f822a4731275af",
+    "bytes": 1399
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/logs/cas13_source_audited_v2.log",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/execution.log",
+    "sha256": "0e9a20e8a31834e7b530e22995f2835f5d08b2695a46c10cb2efea8d725ed905",
+    "bytes": 3214
+  },
+  {
+    "source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z/scripts/cas13_full_reproduction.R",
+    "destination": "benchmark/007_RFcombined/Run-4_2026-11-12/scripts/inference.R",
+    "sha256": "f2c6fe41033ae68a9335c7bda4d3070d350f972f6ee602a345ee43ae169f3e74",
+    "bytes": 6741
+  }
+]

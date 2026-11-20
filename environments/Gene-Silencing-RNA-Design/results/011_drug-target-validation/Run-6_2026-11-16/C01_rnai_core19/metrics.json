@@ -1,0 +1,36 @@
+{
+  "n": 95,
+  "n_positive": 73,
+  "n_negative": 22,
+  "auc": 0.7229140722291407,
+  "spearman": 0.3707464752424339,
+  "pearson": 0.4399538961493426,
+  "precision_top10": 0.8,
+  "auc_ci95_row_bootstrap": [
+    0.5876556662515567,
+    0.8564990660024906
+  ],
+  "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+  "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+  "config_id": "C01_rnai_core19",
+  "gene": "HK2",
+  "ordinal": 1,
+  "paired_n": 95,
+  "auc_delta_vs_C00": 0.005292652552926547,
+  "auc_delta_ci95_exploratory": [
+    -0.040473225404732305,
+    0.049509651307596485
+  ],
+  "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority.",
+  "external_gene_selection": {
+    "held_gene": "HK2",
+    "selection_genes": [
+      "HIF1A",
+      "HPSE"
+    ],
+    "chosen_config": "C01_rnai_core19",
+    "selection_macro_auc": 0.7190213815789475,
+    "held_gene_auc": 0.7229140722291407,
+    "held_gene_baseline_auc": 0.7176214196762142
+  }
+}

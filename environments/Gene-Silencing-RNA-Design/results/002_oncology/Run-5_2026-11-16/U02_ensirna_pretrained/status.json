@@ -1,0 +1,13 @@
+{
+  "model": "ENsiRNA",
+  "status": "BLOCKED_MISSING_STRUCTURAL_INPUTS",
+  "stage_verified": "Author CSVs/implementation inspected and public structure access tried by download and file-view routes.",
+  "reason": "Pre-folded PDB link redirects to Google sign-in; file-view returned HTTP 401. No verified per-row PDBs or authorized Rosetta installation available. RNA-FM/PyG dependencies also absent. No zero coordinates, substituted structures or Rosetta terms accepted.",
+  "evidence": "ENsiRNA_asset_assessment.json",
+  "efficacy_predictions_produced": 0,
+  "software_diagnostics_only": true,
+  "config_id": "U02_ensirna_pretrained",
+  "auc": null,
+  "performance_delta": null,
+  "best_design": null
+}

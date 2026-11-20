@@ -1,0 +1,150 @@
+{
+  "simone": {
+    "n": 322,
+    "n_positive": 241,
+    "cutoff": 0.7,
+    "auc": 0.7021412837457097,
+    "pearson": 0.5073771907440527,
+    "spearman": 0.39303730529043396,
+    "auc_ci95_stratified_row_bootstrap": [
+      0.6286486348035448,
+      0.7705202090056862
+    ],
+    "bootstrap_replicates": 2000,
+    "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+    "n_total": 322,
+    "n_scored_ok": 322,
+    "n_excluded": 0,
+    "fresh_inference": true,
+    "model": "RN.Ai-Predict",
+    "per_accession": {
+      "NM_000189.5": {
+        "n": 95,
+        "n_positive": 73,
+        "cutoff": 0.7,
+        "auc": 0.7176214196762142,
+        "pearson": 0.4319257054537113,
+        "spearman": 0.34696437776757044,
+        "auc_ci95_stratified_row_bootstrap": [
+          0.5765722291407223,
+          0.8536892901618928
+        ],
+        "bootstrap_replicates": 2000,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+      },
+      "NM_001098540.3": {
+        "n": 106,
+        "n_positive": 76,
+        "cutoff": 0.7,
+        "auc": 0.6366228070175438,
+        "pearson": 0.47410492350363126,
+        "spearman": 0.29671298837335774,
+        "auc_ci95_stratified_row_bootstrap": [
+          0.5236842105263158,
+          0.7467269736842105
+        ],
+        "bootstrap_replicates": 2000,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+      },
+      "NM_001530.4": {
+        "n": 100,
+        "n_positive": 80,
+        "cutoff": 0.7,
+        "auc": 0.7803125,
+        "pearson": 0.6728842269942514,
+        "spearman": 0.4902714500136178,
+        "auc_ci95_stratified_row_bootstrap": [
+          0.6425,
+          0.8921953125
+        ],
+        "bootstrap_replicates": 2000,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+      },
+      "NM_001904.4": {
+        "n": 5,
+        "n_positive": 5,
+        "cutoff": 0.7,
+        "auc": null,
+        "pearson": 0.3794805687045979,
+        "spearman": 0.49999999999999994,
+        "auc_ci95_stratified_row_bootstrap": null,
+        "bootstrap_replicates": 0,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+      },
+      "NM_002467.6": {
+        "n": 7,
+        "n_positive": 1,
+        "cutoff": 0.7,
+        "auc": 1.0,
+        "pearson": 0.532225006488381,
+        "spearman": -0.10714285714285716,
+        "auc_ci95_stratified_row_bootstrap": null,
+        "bootstrap_replicates": 0,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+      },
+      "NM_004456.5": {
+        "n": 9,
+        "n_positive": 6,
+        "cutoff": 0.7,
+        "auc": 0.4722222222222222,
+        "pearson": 0.10003837830006912,
+        "spearman": -0.06722689075630253,
+        "auc_ci95_stratified_row_bootstrap": null,
+        "bootstrap_replicates": 0,
+        "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+        "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+      }
+    },
+    "n_paired_prior_predictions": 322,
+    "max_abs_prediction_delta_vs_prior": 0.0,
+    "prior_auc": 0.7021,
+    "delta_auc_vs_prior": 4.128374570977478e-05,
+    "comparison_to_published_oligoformer_auc": "Not like-for-like: different model, cohort and experimental protocol; no superiority delta.",
+    "auc_ci95_transcript_cluster_bootstrap": [
+      0.6271821074263039,
+      0.8016746411483253
+    ],
+    "cluster_bootstrap_caution": "Only 6 transcript clusters; exploratory interval, not robust cross-gene validation.",
+    "delta_auc_vs_prior_rounded": 0.0,
+    "prior_delta_note": "The tiny unrounded delta is rounding, not a changed prediction; all 322 paired scores match exactly."
+  },
+  "allele_reporter": {
+    "n_reporter_guides": 26,
+    "n_uncensored_discrimination_ratios": 21,
+    "n_censored_ratios": 5,
+    "spearman_ddg_vs_log10_dr_uncensored": -0.3080322933387836,
+    "method": "RNAduplex -T 37; exact PRIMARY TABLE reporter mismatch identities and secondary mismatches. Prior weakest-of-three method is not like-for-like.",
+    "design_status": "BLOCKED_PENDING_REFERENCE_VERIFIED_VARIANT_AND_ALLELE_OBJECTIVE",
+    "evaluation_status": "PUBLISHED_REPORTER_EVALUATION_EXECUTED",
+    "best_design": null,
+    "limitations": "Reporter footprint reconstruction is not transcript/ClinVar/dbSNP/VEP verification; RNAduplex optimal local pairing may realign around a mismatch; thermodynamic margin is not cellular allele selectivity."
+  },
+  "neuro": {
+    "n": 26,
+    "spearman_vs_neglog10_ic50": 0.2630140842182471,
+    "prior_spearman": 0.296,
+    "fresh_inference": true,
+    "context": "NO_REAL_FLANKS_N_PADDED_OUT_OF_DOMAIN; explicitly invalidates adapter length-only in_domain label. Not mathematically guaranteed to be a lower bound.",
+    "status": "DEGRADED_CONTEXT_EVALUATION_ONLY",
+    "design_status": "NOT_RUN_NO_CONFIRMED_CNS_ISOFORM_OR_REFERENCE",
+    "best_design": null
+  },
+  "immune": {
+    "n": 8,
+    "tp": 1,
+    "fn": 6,
+    "tn": 1,
+    "fp": 0,
+    "sensitivity": 0.14285714285714285,
+    "specificity": 1.0,
+    "prior_sensitivity": 0.1,
+    "prior_specificity": 1.0,
+    "comparison": "NOT_LIKE_FOR_LIKE: stricter row exclusions, explicit pathogen exclusion and exact duplex deduplication; no rule tuning.",
+    "limitations": "Small heterogeneous assays; negative motif result does not establish immune safety; do not optimize immune-evasion sequences."
+  }
+}

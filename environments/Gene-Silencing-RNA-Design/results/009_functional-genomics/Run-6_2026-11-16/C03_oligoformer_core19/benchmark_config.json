@@ -1,0 +1,18 @@
+{
+  "task": "009_functional-genomics",
+  "run_id": "Run-6_2026-11-16",
+  "config": {
+    "config_id": "C03_oligoformer_core19",
+    "ordinal": 3,
+    "model": "OligoFormer",
+    "guide_projection": "first_19_nt",
+    "score_units": "native_class1_times_1.341",
+    "purpose": "Fresh native paired OligoFormer forward inference; no cached efficacy scores in final comparisons."
+  },
+  "mode": "benchmark_evaluate_only",
+  "status": "FROZEN_BEFORE_INFERENCE",
+  "frozen_plan_sha256": "639219498ab08e85ce534c889e08d44b4d9e71d22a237226a2040e3a7153189b",
+  "thresholds_sha256": "b7ad48084c0a38e4975b12b6f885543d98fc0196b78f176493211c4a215cdfb3",
+  "labels_used_for_candidate_generation": false,
+  "best_design": null
+}

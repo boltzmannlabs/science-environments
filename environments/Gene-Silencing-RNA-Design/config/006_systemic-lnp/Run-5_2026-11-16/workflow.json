@@ -1,0 +1,31 @@
+{
+  "task": "006_systemic-lnp",
+  "run_id": "Run-5_2026-11-16",
+  "mode": "benchmark_evaluate_only",
+  "workflow_status": "CONTROL_PLUS_BLOCKED_CHALLENGERS",
+  "plan_sha256": "416ae22e69f7e97d36635e9af454638a6a8a99a08d224abfbecfa97ef43c3a2d",
+  "retained_incumbent": "U00_retained_rnai",
+  "model_readiness": [
+    {
+      "model": "SiaRNA",
+      "status": "BLOCKED_INVALID_FEATURE_PIPELINE",
+      "stage_verified": "Strict pretrained state_dict load and executable software diagnostic passed; efficacy forward pass intentionally not run.",
+      "reason": "Author preprocess.py overwrites computed mRNA folding vectors with unseeded random vectors. Genuine cohort AGO2 features unavailable. Native CLI returns first pair only. No substitutions allowed.",
+      "evidence": "siarna_software_probe.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    },
+    {
+      "model": "ENsiRNA",
+      "status": "BLOCKED_MISSING_STRUCTURAL_INPUTS",
+      "stage_verified": "Author CSVs/implementation inspected and public structure access tried by download and file-view routes.",
+      "reason": "Pre-folded PDB link redirects to Google sign-in; file-view returned HTTP 401. No verified per-row PDBs or authorized Rosetta installation available. RNA-FM/PyG dependencies also absent. No zero coordinates, substituted structures or Rosetta terms accepted.",
+      "evidence": "ENsiRNA_asset_assessment.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    }
+  ],
+  "reason": "Control inference allowed; no eligible new challenger or workflow promotion.",
+  "full_application_complete": false,
+  "best_design": null
+}

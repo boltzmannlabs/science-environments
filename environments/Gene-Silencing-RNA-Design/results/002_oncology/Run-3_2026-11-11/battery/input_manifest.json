@@ -1,0 +1,51 @@
+{
+  "job_id": "HK2_Run-3_2026-11-11",
+  "transcript_fasta": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/00_inputs/transcript.fa",
+  "candidates_csv": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/00_inputs/battery_candidates.csv",
+  "candidate_lengths": [
+    19,
+    21
+  ],
+  "thresholds": {
+    "max_full_length_offtarget_hits": {
+      "value": 10,
+      "provenance": "user_operational"
+    },
+    "max_seed_occurrence_fold": {
+      "value": 2.0,
+      "provenance": "user_operational"
+    },
+    "max_pots_percentile": {
+      "value": 90.0,
+      "provenance": "user_operational"
+    },
+    "min_seed_viability_avg_human": {
+      "value": 50.0,
+      "provenance": "user_operational"
+    },
+    "min_rnai_predict_score": {
+      "value": 50.0,
+      "provenance": "user_operational"
+    },
+    "min_rnaispline_score": {
+      "value": 0.5,
+      "provenance": "user_operational"
+    },
+    "min_duplex_delta_g": {
+      "value": -45.0,
+      "provenance": "user_operational"
+    },
+    "max_duplex_delta_g": {
+      "value": -25.0,
+      "provenance": "user_operational"
+    },
+    "gc_min": {
+      "value": 0.3,
+      "provenance": "literature_supported"
+    },
+    "gc_max": {
+      "value": 0.7,
+      "provenance": "literature_supported"
+    }
+  }
+}

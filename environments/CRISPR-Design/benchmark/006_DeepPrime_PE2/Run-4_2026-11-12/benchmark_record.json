@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "006",
+  "model": "DeepPrime_PE2",
+  "title": "DeepPrime base fixed test",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "004",
+    "006"
+  ],
+  "publication": "https://github.com/hkimlab/DeepPrime",
+  "benchmark_scope": "OriginalHEK293T/PE2/conventional-scaffold fixed test n28883against259910trainingrows;zero exact-input and74nt-target overlaps. Native74nt/24numeric inputs,source mean/std and5checkpoint ensemble.",
+  "scientific_limits": "Only this matched editor/cell/scaffold condition evaluated;author-provided upstreamDeepSpCas9 feature retained,not substituted. No unintended-edit or purity conclusion.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Fresh native inference retry completed"
+}

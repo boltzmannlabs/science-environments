@@ -1,0 +1,20 @@
+{
+  "task": "006_systemic-lnp",
+  "run_id": "Run-4_2026-11-16",
+  "config": {
+    "config_id": "C02_rnaispline_core19",
+    "ordinal": 2,
+    "model": "RNAiSpline",
+    "guide_projection": "first_19_nt",
+    "score_units": "native_effective_class_softmax",
+    "purpose": "Alternate independent efficacy endpoint; never averaged with RN.Ai/OligoFormer."
+  },
+  "mode": "benchmark_or_evaluate_only",
+  "status": "PLANNED",
+  "selection_status": "DESCRIPTIVE_ONLY",
+  "frozen_plan_sha256": "2f9098447234a58361625487bda8639e0d4ba0fc397c60e9ef7fb185a82b1c86",
+  "thresholds_sha256": "b7ad48084c0a38e4975b12b6f885543d98fc0196b78f176493211c4a215cdfb3",
+  "labels_used_for_candidate_generation": false,
+  "data_exposure": "Previously examined retrospective public-cohort data",
+  "best_design": null
+}

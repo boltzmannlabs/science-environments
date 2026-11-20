@@ -1,0 +1,25 @@
+{
+  "run_id": "Run-6_2026-11-16",
+  "task_folders": 11,
+  "tasks_with_executed_configs": 9,
+  "task_config_results": 35,
+  "unique_efficacy_configs": 4,
+  "unique_physical_configs": 4,
+  "unique_missing_context_configs": 3,
+  "skipped_tasks": {
+    "005_metabolic-liver-galnac": "No matched measured PCSK9 sequence-efficacy cohort verified; clinical inclisiran outcomes are not predictor labels.",
+    "008_inflammation-immune": "No matched TNF efficacy cohort; immune set has only one retained negative and is unsuitable for performance-driven rule tuning. Frozen hazard rules unchanged."
+  },
+  "figures_original_png": 10,
+  "frozen_configs_sha256": "639219498ab08e85ce534c889e08d44b4d9e71d22a237226a2040e3a7153189b",
+  "baseline_macro_auc": 0.7115189088979194,
+  "best_observed_fixed_config": "C01_rnai_core19",
+  "best_observed_fixed_macro_auc": 0.7203189451290118,
+  "retrospective_loto_selected_macro_auc_final": 0.7101581264155615,
+  "selection_claim": "Exploratory retrospective improvement only; all cohorts previously examined; no production default automatically changed.",
+  "full_application_tasks_completed": 0,
+  "new_models_trained": 0,
+  "new_generation_runs": 0,
+  "all_native_endpoints_separate": true,
+  "old_results_preserved": true
+}

@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETED",
+  "measured_rows": 322,
+  "common_measured_rows": 322,
+  "configurations": 4,
+  "native_baseline_max_abs_score_delta_vs_prior": 0.0,
+  "model_fit_performed": false,
+  "upstream_code_modified": false,
+  "helper_sha256": "4db75e0c05baead3eb9dd37013b1e609cae883da1e0dae4e7d6b640ea947a114",
+  "frozen_plan_sha256": "639219498ab08e85ce534c889e08d44b4d9e71d22a237226a2040e3a7153189b",
+  "timings": [
+    {
+      "config_id": "C00_rnai_native21",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 16.63000418501906
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 0.4489207479637116
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 11.498883618041873
+    },
+    {
+      "config_id": "C00_rnai_native21",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.4475049290340394
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.0011223650071769953
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 5.673577649053186
+    },
+    {
+      "config_id": "C03_oligoformer_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.0005213830154389143
+    }
+  ],
+  "notes": "Final OligoFormer vectors are fresh native paired inference; the explicitly named initial-stage files retain the cached reference only. Identical TTR C00/C01 inputs share one identical vector. No new generation, training or panel reranking.",
+  "fresh_oligoformer_pairs": 920,
+  "oligoformer_native_mode": "Training/dropout behavior retained; seed=42, coordinate order frozen; do not attribute subset/order variation to improved model quality."
+}

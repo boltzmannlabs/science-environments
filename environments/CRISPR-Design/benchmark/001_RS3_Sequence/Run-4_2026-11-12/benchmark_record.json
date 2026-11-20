@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "001",
+  "model": "RS3_Sequence",
+  "title": "RS3 Sequence held-out activity",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "001",
+    "002",
+    "011"
+  ],
+  "publication": "https://europepmc.org/articles/PMC9448816",
+  "benchmark_scope": "Six author-defined activity cohorts; native30nt context and Hsu2013/Chen2013 tracr features. Exact20mer four-model training-union exclusions;23629unique contexts/26915deduplicated dataset observations.",
+  "scientific_limits": "RS3 Sequence only, not Sequence+Target. Gene-cluster intervals for genomewide cohorts, guide-row intervals otherwise. Original source duplicate-row weighting is a separate retained reproduction, not extra independent observations.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Fresh native inference retry completed"
+}

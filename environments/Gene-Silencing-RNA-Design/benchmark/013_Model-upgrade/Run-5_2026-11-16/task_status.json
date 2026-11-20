@@ -1,0 +1,79 @@
+[
+  {
+    "task": "001_general",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 301,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "002_oncology",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 95,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "003_genetic-disease-total-lowering",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 598,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "004_genetic-disease-allele-selective",
+    "status": "SKIPPED_NO_APPLICABLE_NEW_MODEL_BENCHMARK",
+    "reason": "On-target efficacy models do not establish allele discrimination; reference-verified allele design inputs remain unresolved.",
+    "new_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "005_metabolic-liver-galnac",
+    "status": "SKIPPED_NO_APPLICABLE_NEW_MODEL_BENCHMARK",
+    "reason": "No matched measured PCSK9 sequence-efficacy cohort verified; clinical inclisiran outcomes are not predictor labels.",
+    "new_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "006_systemic-lnp",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 598,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "007_neuro-cns",
+    "status": "SKIPPED_NO_APPLICABLE_NEW_MODEL_BENCHMARK",
+    "reason": "HTT reporters lack genuine transcript flanks and resolved CNS reference/isoform inputs. Do not fabricate context or apply new efficacy models as CNS validation.",
+    "new_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "008_inflammation-immune",
+    "status": "SKIPPED_NO_APPLICABLE_NEW_MODEL_BENCHMARK",
+    "reason": "No matched TNF efficacy cohort; immune set has only one retained negative and is unsuitable for performance-driven rule tuning. Frozen hazard rules unchanged.",
+    "new_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "009_functional-genomics",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 95,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "010_gene-regulation",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 7,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  },
+  {
+    "task": "011_drug-target-validation",
+    "status": "CONTROL_RERUN_COMPLETE_UPGRADE_BLOCKED",
+    "control_prediction_rows": 95,
+    "new_model_efficacy_predictions": 0,
+    "full_application_complete": false
+  }
+]

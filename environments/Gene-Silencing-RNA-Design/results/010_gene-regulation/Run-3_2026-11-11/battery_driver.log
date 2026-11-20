@@ -1,0 +1,40 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794401486.351992 1591199 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+W0000 00:00:1794401488.817758 1591199 gpu_device.cc:2365] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2026-11-11 12:51:30,755 - INFO - Using device: cpu
+2026-11-11 12:51:30,781 - INFO - Model loaded successfully!
+2026-11-11 12:54:36,703 - INFO - job MYC_Run-3_2026-11-11 complete in 190.8s
+== input validation ==
+  transcript OK (3721 nt)
+  24 candidates OK (alphabet, length, unique ids checked)
+  thresholds loaded from /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/010_gene-regulation/Run-3_2026-11-11/00_inputs/harness_thresholds.yaml (10 entries)
+
+== running pipeline (job MYC_Run-3_2026-11-11) ==
+
+== evidence summary ==
+  NEEDS_EXPERIMENTAL_VALIDATION    17
+  REJECTED_INPUT                   7
+
+== top 15 filtered & ranked designs ==
+         candidate_id               guide  eff_RN.Ai-Predict  eff_RNAiSpline  guide_target_duplex_delta_g_kcal_mol  full_length_offtarget_hits  seed_occurrence_fold_over_expected  pots_seed_percentile  seed_tox_viability_avg_human  rank_score
+NM_002467.6_site_3568 UAAUCAACAUCAUUUCUGG              88.37          0.6852                                 -26.8                           0                               0.823             20.208740                          80.5      1.4053
+NM_002467.6_site_2467 UUAACUGCUACCUUUGACC              92.55          0.6879                                 -31.2                           0                               0.780             45.727539                          90.0      1.3758
+NM_002467.6_site_1185 AACAACAUCGAUUUCUUCC              86.54          0.6834                                 -28.1                           0                               1.171             13.525391                          84.9      1.2694
+NM_002467.6_site_2448 UCUUGUAUCUCCUUUGCCU              81.20          0.6790                                 -32.0                           0                               0.863             55.633545                          89.4      1.2329
+NM_002467.6_site_2746 UUACAUAACCUCUUUGAGC              91.61          0.6868                                 -29.2                           0                               1.125              9.216309                          78.4      1.2327
+NM_002467.6_site_1555 UUUCAUUGUUUUCCAACUC              87.88          0.6868                                 -26.2                           0                               1.512              4.583740                          69.1      1.1335
+NM_002467.6_site_1184 ACAACAUCGAUUUCUUCCU              79.73          0.6703                                 -28.8                           0                               1.228             22.698975                          83.6      1.0939
+NM_002467.6_site_2439 UCCUUUGCCUACCUCUCAC              76.56          0.6575                                 -36.0                           0                               1.449             27.416992                          78.7      1.0649
+NM_002467.6_site_1729 UCGUUUUCCUUACUUUUCC              88.62          0.6860                                 -27.8                           0                               0.559             73.309326                          89.8      1.0587
+NM_002467.6_site_1178 UCGAUUUCUUCCUCAUCUU              74.88          0.6695                                 -29.2                           0                               0.336             80.413818                          81.0      0.9599
+NM_002467.6_site_1725 UUUCCUUACUUUUCCUUAC              86.65          0.6864                                 -26.5                           0                               1.494              3.314209                          65.2      0.9307
+NM_002467.6_site_1182 AACAUCGAUUUCUUCCUCA              76.49          0.6242                                 -29.0                           0                               0.244             87.988281                          83.4      0.9007
+NM_002467.6_site_2870 UAAACCUUCUUGAUCUCAG              83.90          0.6820                                 -29.1                           0                               1.332             21.124268                          81.5      0.8967
+NM_002467.6_site_1186 AAACAACAUCGAUUUCUUC              78.19          0.6704                                 -25.7                           0                               1.693             14.501953                          83.7      0.8451
+NM_002467.6_site_1188 AGAAACAACAUCGAUUUCU              75.25          0.6596                                 -26.4                           0                               1.690              4.107666                          76.0      0.7499
+
+outputs: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/010_gene-regulation/Run-3_2026-11-11/battery
+full report: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/010_gene-regulation/Run-3_2026-11-11/battery/final_report.md
+gate decisions per candidate: /home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/010_gene-regulation/Run-3_2026-11-11/battery/09_filter_decisions.csv

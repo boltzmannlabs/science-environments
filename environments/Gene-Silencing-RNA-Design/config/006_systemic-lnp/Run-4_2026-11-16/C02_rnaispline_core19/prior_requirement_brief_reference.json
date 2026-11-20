@@ -1,0 +1,34 @@
+{
+  "brief_id": "006_systemic-lnp_Run-3_2026-11-11",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "TTR",
+    "transcript": "ENST00000237014.8",
+    "sequence_supplied": true
+  },
+  "application": "systemic_lnp",
+  "objective": "Single-reference human TTR computational knockdown reagent prioritization; application context only, not therapeutic validation.",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu"
+    ],
+    "weights": {
+      "efficacy": 0.35,
+      "specificity": 0.25,
+      "seed_tox": 0.1,
+      "immune": 0.25,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 70
+    }
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true,
+    "delivery_context": "lnp"
+  },
+  "success_criteria": "Computational benchmark campaign only; no measured knockdown asserted."
+}

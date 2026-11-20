@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "replicates_verified": 1000,
+  "per_replicate_partition_rows": 2918,
+  "all_partition_train_test_disjoint": true,
+  "all_test_predictions_match_partition": true,
+  "max_recomputed_spearman_difference": 6.661338147750939e-16,
+  "median_spearman_full_precision": 0.6673083742916215,
+  "mean_spearman_full_precision": 0.6669169716129948,
+  "split_refit_interval": [
+    0.6298954555379912,
+    0.7001266891035433
+  ],
+  "interval_type": "split/refit percentiles; NOT an independent-target confidence interval",
+  "LOSO": [
+    {
+      "screen": "CD46",
+      "n": 704,
+      "spearman": 0.618579017529186,
+      "pearson_squared": 0.389796385473095,
+      "MSE": 0.171019258194656
+    },
+    {
+      "screen": "CD55",
+      "n": 925,
+      "spearman": 0.633169214767487,
+      "pearson_squared": 0.39053241026676,
+      "MSE": 0.171752361877484
+    },
+    {
+      "screen": "CD71",
+      "n": 890,
+      "spearman": 0.623238787354509,
+      "pearson_squared": 0.381209456833017,
+      "MSE": 0.283859425395528
+    },
+    {
+      "screen": "GFP",
+      "n": 399,
+      "spearman": 0.294688479993955,
+      "pearson_squared": 0.0905739382533353,
+      "MSE": 0.212423385818106
+    }
+  ],
+  "source_json_rounding": "Original summary JSON rounded by jsonlite; full-precision CSV and this recomputation are retained",
+  "pilot": "Rejected initial globally-scaled pilot is excluded"
+}

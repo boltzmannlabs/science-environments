@@ -1,0 +1,49 @@
+-----------------Start inferring!-----------------
+target
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_001904.4/runtime/RNA-FM/redevelop/.
+2026-11-16 10:21:42,940 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:21:42,940 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:21:42,941 prediction INFO: Model File:none
+2026-11-16 10:21:42,941 prediction INFO: Batch Size:1
+2026-11-16 10:21:42,941 prediction INFO: Threshold:0.5
+2026-11-16 10:21:42,941 prediction INFO: Prediction Dataset: ../../data/infer/target/mRNA.fa
+Sequence Num: 5
+2026-11-16 10:21:44,504 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/5]
+saved embedding shape: (57, 640)
+Iteration[2/5]
+saved embedding shape: (57, 640)
+Iteration[3/5]
+saved embedding shape: (57, 640)
+Iteration[4/5]
+saved embedding shape: (57, 640)
+Iteration[5/5]
+saved embedding shape: (57, 640)
+2026-11-16 10:21:44,958 prediction.inference INFO: Finish Prediction
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_001904.4/runtime/RNA-FM/redevelop/.
+2026-11-16 10:21:50,015 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:21:50,015 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:21:50,015 prediction INFO: Model File:none
+2026-11-16 10:21:50,015 prediction INFO: Batch Size:1
+2026-11-16 10:21:50,015 prediction INFO: Threshold:0.5
+2026-11-16 10:21:50,015 prediction INFO: Prediction Dataset: ../../data/infer/target/siRNA.fa
+Sequence Num: 5
+2026-11-16 10:21:51,559 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/5]
+saved embedding shape: (19, 640)
+Iteration[2/5]
+saved embedding shape: (19, 640)
+Iteration[3/5]
+saved embedding shape: (19, 640)
+Iteration[4/5]
+saved embedding shape: (19, 640)
+Iteration[5/5]
+saved embedding shape: (19, 640)
+2026-11-16 10:21:52,020 prediction.inference INFO: Finish Prediction
+          0
+0  0.841225
+1  1.003514
+2  0.979730
+3  0.927231
+4  0.914066
+14 seconds 0.23333333333333334 minutes

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/.venv/bin/python",
+    "-B",
+    "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/inference.py",
+    "--transcript",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/00_inputs/transcript.fa",
+    "--candidates",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/00_inputs/battery_candidates.csv",
+    "--job-id",
+    "HK2_Run-3_2026-11-11",
+    "--out-dir",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/battery",
+    "--config",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/002_oncology/Run-3_2026-11-11/00_inputs/harness_thresholds.yaml"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 189.10185320000164
+}

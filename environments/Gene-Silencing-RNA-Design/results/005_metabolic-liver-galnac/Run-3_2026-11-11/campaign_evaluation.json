@@ -1,0 +1,19 @@
+{
+  "gene": "PCSK9",
+  "status": "COMPUTATIONAL_BATTERY_EXECUTED",
+  "pool_windows": 3619,
+  "reviewed": 100,
+  "n_evaluated": 24,
+  "generation_source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/005_metabolic-liver-galnac/Run-3_2026-11-11/generation/all_generated_candidates.csv",
+  "generation_sha256": "b4cd3a85be77081b1f96993caec9402194eace6a970363c02a522be4a3ec2f01",
+  "best_design": null,
+  "not_run": [
+    "E4e RNAhybrid broken-binary",
+    "GTEx/HPA tissue context",
+    "OpenTargets orthogonal context",
+    "6/8-mer transcriptome counts (adapter provides only 7-mer)",
+    "experimental validation",
+    "sequence-based delivery/chemistry prediction"
+  ],
+  "scope": "Single declared transcript; not all-isoform coverage; expression and clinical suitability unverified."
+}

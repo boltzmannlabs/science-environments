@@ -1,0 +1,31 @@
+{
+  "model": "DeepPrime base",
+  "source_commit": "99272383d1420576551d271d865b9972a63466c0",
+  "primary_source": "Cell2023 supplementaryTableS2, sheet1 Library-ClinVar-HEK293T-PE2",
+  "workbook_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0092867423003318-mmc2.xlsx",
+  "workbook_sha256": "22d996020e5ddbb05da5eb1b6b2e26ab5bef7d70e4b61f32e736d8c44ed32673",
+  "condition_summary_row": [
+    1,
+    "Dataset1",
+    "Library-ClinVar",
+    288793,
+    "HEK293T",
+    "PE2",
+    "Conventional",
+    "DeepPrime",
+    259910,
+    28883
+  ],
+  "split_counts": {
+    "Train": 259910,
+    "Test": 28883
+  },
+  "test_rows": 28883,
+  "exact_predictive_input_train_test_overlaps": 0,
+  "target74_train_test_overlaps": 0,
+  "input_features": "Provided74nt unedited+masked edited target and all native24 numerical features, not regenerated approximations",
+  "labels": "Measured_PE_efficiency from source workbook; no target labels passed to predictor",
+  "prediction": "Native DeepPrime_base5-checkpoint ensemble, source normalization mean/std, no fine-tuned other-cell/editor models",
+  "feature_scope": "exact original HEK293T/PE2/conventional scaffold condition; not generalized across8 systems/7 cells",
+  "frozen_before_inference": true
+}

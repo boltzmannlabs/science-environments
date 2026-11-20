@@ -1,0 +1,55 @@
+{
+  "prior_run": "Run-4_2026-11-16",
+  "prior_results_reference": "results/011_drug-target-validation/Run-4_2026-11-16/performance_history.json",
+  "fresh_control": {
+    "config_id": "U00_retained_rnai",
+    "status": "COMPLETED_CONTROL_REPLAY",
+    "model": "RN.Ai-Predict",
+    "new_model": false,
+    "best_design": null,
+    "full_application_complete": false,
+    "n": 95,
+    "n_positive": 73,
+    "n_negative": 22,
+    "auc": 0.7176214196762142,
+    "spearman": 0.34696437776757044,
+    "pearson": 0.4319257054537113,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.5790395392278954,
+      0.8574252801992528
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "paired_n": 95,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": [
+      0.0,
+      0.0
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority.",
+    "gene": "HK2",
+    "execution": "FRESH_CONTROL_REPLAY"
+  },
+  "challengers": [
+    {
+      "model": "SiaRNA",
+      "status": "BLOCKED_INVALID_FEATURE_PIPELINE",
+      "stage_verified": "Strict pretrained state_dict load and executable software diagnostic passed; efficacy forward pass intentionally not run.",
+      "reason": "Author preprocess.py overwrites computed mRNA folding vectors with unseeded random vectors. Genuine cohort AGO2 features unavailable. Native CLI returns first pair only. No substitutions allowed.",
+      "evidence": "siarna_software_probe.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    },
+    {
+      "model": "ENsiRNA",
+      "status": "BLOCKED_MISSING_STRUCTURAL_INPUTS",
+      "stage_verified": "Author CSVs/implementation inspected and public structure access tried by download and file-view routes.",
+      "reason": "Pre-folded PDB link redirects to Google sign-in; file-view returned HTTP 401. No verified per-row PDBs or authorized Rosetta installation available. RNA-FM/PyG dependencies also absent. No zero coordinates, substituted structures or Rosetta terms accepted.",
+      "evidence": "ENsiRNA_asset_assessment.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    }
+  ],
+  "interpretation": "This extends the run history with a software-control replay and explicitly unavailable challenger endpoints, not an improved model."
+}

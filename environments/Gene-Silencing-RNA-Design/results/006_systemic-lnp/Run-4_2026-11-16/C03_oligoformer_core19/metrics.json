@@ -1,0 +1,31 @@
+{
+  "config_id": "C03_oligoformer_core19",
+  "ordinal": 3,
+  "status": "ANCHOR_DIAGNOSTIC_ONLY",
+  "n": 598,
+  "anchors": [
+    {
+      "config_id": "C03_oligoformer_core19",
+      "ordinal": 3,
+      "anchor": "patisiran",
+      "rank": 107.0,
+      "pool_n": 598,
+      "percentile": 82.24455611390285,
+      "native_score": 0.85100617146492,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    },
+    {
+      "config_id": "C03_oligoformer_core19",
+      "ordinal": 3,
+      "anchor": "vutrisiran",
+      "rank": 62.0,
+      "pool_n": 598,
+      "percentile": 89.7822445561139,
+      "native_score": 0.8977579275369644,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    }
+  ],
+  "selection": "No anchor-based best config selected; not measured efficacy.",
+  "panel_size": 5,
+  "mean_panel_stability": 1.0
+}

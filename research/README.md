@@ -4,6 +4,7 @@ Store research notes and scientific references by environment. Link each specifi
 
 | Topic | Notes | References | Environment |
 | --- | --- | --- | --- |
+| CRISPR Design (application-aware, modality tasks; curation-complete, pre-runtime) | [Research notes](CRISPR-Design/research-notes.md) | [References](CRISPR-Design/references.md) | [Environment](../environments/CRISPR-Design/README.md) |
 | Enzyme variant optimization | [Research notes](enzyme-variant-optimization/research-notes.md) | [References](enzyme-variant-optimization/references.md) | [Environment](../environments/enzyme-variant-optimization/README.md) |
 | Formulation dissolution (in progress; Rebolt branch) | [Research notes](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/research-notes.md) | [References](https://github.com/boltzmannlabs/science-environments/blob/Rebolt/research/formulation_dissolution/references.md) | [Environment](https://github.com/boltzmannlabs/science-environments/tree/Rebolt/environments/formulation_dissolution) |
 | Gene Silencing RNA Design (application-aware siRNA; In Progress) | [Research notes](Gene-Silencing-RNA-Design/research-notes.md) | [References](Gene-Silencing-RNA-Design/references.md) | [Environment](../environments/Gene-Silencing-RNA-Design/README.md) |

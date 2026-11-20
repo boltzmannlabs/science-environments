@@ -1,0 +1,30 @@
+{
+  "model": "CFD2016 SpCas9",
+  "source_url": "https://ccsm.uth.edu/CRISPRoffT/table_summary/allframe_update_addEpige.txt",
+  "source_sha256": "522ac5c6852a86e3c6ca8d5a305fea36a6b4ea0c5a643095d75f36a0491b3899",
+  "stratum": {
+    "PMID": "28459459",
+    "Technology_others": "SITE-seq_HEK293 cells_SpCas9_sgRNA_sgRNP Incubation_4h_HEK293 cells_sgRNA transfection_3d",
+    "Targeted_method": "AmpliSeq, sensitivity is 0.1%"
+  },
+  "selected_before_scoring": true,
+  "rows": 1687,
+  "guides": 9,
+  "positives": 109,
+  "negatives": 1578,
+  "positive_definition": "Background-corrected indel >=0.1%, exactly matches source Validation labels on eligible rows",
+  "negative_definition": "experimentally assayed boolean-Validation rows with finite corrected indel <=0.1%; unassayed candidates, PCR failures and missing/censored values excluded",
+  "detection_limit": "study/database nominal0.1% targeted-sequencing sensitivity; no read-depth-based site-specific LoD can be independently established from summary table",
+  "nuclease": "WT SpCas9 only",
+  "guide_context": "20nt standard sgRNA with intended NGG; no HF variants, prime/base editors or crRNA modifications pooled",
+  "score_scope": "all eligible ungapped assayed20nt pairs, with native target-PAM CFD scoring; prior workflow NGG/<=3mm coverage reported separately",
+  "training_exclusion": "CFD learned mismatch/PAM rules derive from Doench2016 mismatch screen; no retraining/tuning here. Selected independent study PMID recorded; if26780180 is selected, block as training-source overlap.",
+  "metrics": "average precision, trapezoid PR-AUC, per-guide recall@K on assayed candidate universe, precision@K; no genome-wide or clinical recall claim",
+  "population": "no variant panels, phased haplotypes, bulges or structural variants evaluated",
+  "important_limit": "selection conditions on nomination/assay testing; summary-table labels do not create a representative genome-wide negative set",
+  "version": "v2_source_concordant",
+  "n": 1684,
+  "explicit_bulged_alignments_excluded": 3,
+  "scope_correction": "V1 strict>0.1 and length-based ungapped eligibility retained as sensitivity. V2 excludes3 explicitly annotated bulges and resolves2 threshold-boundary source positives. No score-based selection or tuning.",
+  "frozen_before_metric_recalculation": true
+}
