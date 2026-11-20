@@ -1,0 +1,96 @@
+{
+  "C01": {
+    "tool": "AntiBMPNN",
+    "source": "Boltzmann platform",
+    "doc_id": "6afafc87239a6b9f38bf3f9f",
+    "inputs": {
+      "pdb": "users/680f678c1b1d883c92aa706c/1794833528006/complex_hla.pdb",
+      "sha256": "c49f7b8987abb2b4a37135017ac4976e103dc47f2a82976cf6bf5cd0cfa57f48"
+    },
+    "parameters": {
+      "input_path": "users/680f678c1b1d883c92aa706c/1794833528006/complex_hla.pdb",
+      "chains_to_design": [
+        "H",
+        "L"
+      ],
+      "residue_positions_to_design": {
+        "H": "26-32,52-56,98-108",
+        "L": "24-34,50-56,89-97"
+      },
+      "generation_count": 20
+    },
+    "outputs": {
+      "sequences": 20,
+      "artifacts": "inputs/execution_records/raw/antibmpnn_out/",
+      "native_zip": "AntiBMPNN_6afafc87239a6b9f38bf3f9f_antibmpnn_results.zip"
+    },
+    "outcome": "completed; all 20 designs CDR-only (framework 100% preserved), 20/20 unique"
+  },
+  "C02": {
+    "tool": "Boltz2",
+    "source": "Boltzmann platform",
+    "doc_ids": {
+      "reference": "6afb00f5445ae94313c45679",
+      "cet_008_r1_s15": "6afb0163445ae94313c456a2",
+      "cet_008_r1_s18": "6afb016f9de6b44b075e03df",
+      "cet_008_r1_s14": "6afb017ad29658acc305632c",
+      "cet_008_r1_s02": "6afb01929de6b44b075e03f1",
+      "cet_008_r1_s08": "6afb023b445ae94313c45721",
+      "cet_008_r1_s06": "6afb0263239a6b9f38bf418c"
+    },
+    "inputs": {
+      "entities_per_job": [
+        "scFv candidate",
+        "EGFR ECD 1YY9 construct"
+      ],
+      "payload_files": {
+        "reference": "boltz2_reference.json",
+        "cet_008_r1_s15": "boltz2_cet_008_r1_s15.json",
+        "cet_008_r1_s18": "boltz2_cet_008_r1_s18.json",
+        "cet_008_r1_s14": "boltz2_cet_008_r1_s14.json",
+        "cet_008_r1_s02": "boltz2_cet_008_r1_s02.json",
+        "cet_008_r1_s08": "boltz2_cet_008_r1_s08.json",
+        "cet_008_r1_s06": "boltz2_cet_008_r1_s06.json"
+      }
+    },
+    "parameters": {
+      "matching": "identical conditions reference vs candidates",
+      "void_discarded": {
+        "6afb0131239a6b9f38bf4145": "s15 first submit: scFv string transcribed from raw results CSV row, did not match shortlist; resubmitted as _v2",
+        "6afb019c9030bff41644f267": "s08 first submit: EGFR antigen corrupted in transcription (dropped P); resubmitted as _v2",
+        "6afb02449de6b44b075e0426": "s06 first submit: EGFR antigen corrupted (R->A); resubmitted as _v2"
+      }
+    },
+    "outputs": {
+      "metrics": "results/.../run_001_antibmpnn_matched/metrics.csv",
+      "structures": "structures/ (7)",
+      "raw": "raw/"
+    },
+    "outcome": "completed; reference ipTM 0.9065; best candidate s15 0.8549"
+  },
+  "task_id": "task_008_egfr_scfv_design",
+  "run_id": "run_001_antibmpnn_matched",
+  "method_summary": [
+    {
+      "stage": "Prepare reference",
+      "tool_and_settings": "PDB extraction; ANARCI Chothia numbering",
+      "result": "Exact parent VH/VL sequence match"
+    },
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "AntiBMPNN; 20 samples; H/L CDR edits",
+      "result": "20 recorded candidates"
+    },
+    {
+      "stage": "Screen sequences",
+      "tool_and_settings": "Mask, uniqueness, cysteine, glycosylation-sequon and sequence-property checks",
+      "result": "6 selected candidates"
+    },
+    {
+      "stage": "Evaluate complexes",
+      "tool_and_settings": "Boltz2; same EGFR construct and conditions for designs and reference",
+      "result": "6 candidate models + native control"
+    }
+  ],
+  "completed_outcome": "Highest candidate ipTM: cet_008_r1_s15, 0.8549; matched native control 0.9065. No candidate improves the reference interface score."
+}

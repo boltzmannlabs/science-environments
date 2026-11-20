@@ -1,0 +1,96 @@
+{
+ "reference_scFv": {
+  "sequence": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSYYYMGWVRQAPGKGLEWVSGISPSSGYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARYYYGYYYSHMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSRSGLHTFGQGTKLEIK",
+  "length": 245,
+  "VH_len": 123,
+  "linker": "GGGGSGGGGSGGGGS",
+  "VL_len": 107
+ },
+ "trem2_uniprot": {
+  "accession": "Q9NZC2",
+  "length": 230
+ },
+ "structures": {
+  "esmfold": {
+   "chains": {
+    "A": {
+     "length": 245,
+     "sequence": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSYYYMGWVRQAPGKGLEWVSGISPSSGYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARYYYGYYYSHMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSRSGLHTFGQGTKLEIK",
+     "mean_plddt": 86.7476,
+     "plddt_min": 29.56,
+     "plddt_max": 96.81,
+     "identity_to_scFv_pct": 100.0,
+     "best_identity_to_TREM2_pct": 6.53
+    }
+   }
+  },
+  "boltz2": {
+   "chains": {
+    "B": {
+     "length": 245,
+     "sequence": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSYYYMGWVRQAPGKGLEWVSGISPSSGYTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARYYYGYYYSHMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSRSGLHTFGQGTKLEIK",
+     "mean_plddt": 92.6497,
+     "plddt_min": 49.365,
+     "plddt_max": 98.874,
+     "identity_to_scFv_pct": 100.0,
+     "best_identity_to_TREM2_pct": 6.53
+    },
+    "A": {
+     "length": 126,
+     "sequence": "TGHNTTVFQGVAGQSLQVSCPYDSMKHWGRRKAWCRQLGEKGPCQRVVSTHNLWLLSFLRRWNGSTAITDDTLGGTLTITLRNLQPHDAGLYQCQSLHGSEADTLRKVLVEVLADPLGTKHHHHHH",
+     "mean_plddt": 93.3827,
+     "plddt_min": 50.164,
+     "plddt_max": 98.812,
+     "identity_to_scFv_pct": 3.27,
+     "best_identity_to_TREM2_pct": 91.27
+    }
+   }
+  }
+ },
+ "trem2_construct": {
+  "length": 126,
+  "uniprot_range_1based": [
+   17,
+   142
+  ],
+  "identity_pct": 91.27,
+  "sequence": "TGHNTTVFQGVAGQSLQVSCPYDSMKHWGRRKAWCRQLGEKGPCQRVVSTHNLWLLSFLRRWNGSTAITDDTLGGTLTITLRNLQPHDAGLYQCQSLHGSEADTLRKVLVEVLADPLGTKHHHHHH"
+ },
+ "trem2_features_uniprot_numbering": {
+  "signal_peptide": [
+   1,
+   18
+  ],
+  "extracellular_domain": [
+   19,
+   174
+  ],
+  "ig_like_v_type_domain": [
+   29,
+   112
+  ],
+  "transmembrane": [
+   175,
+   195
+  ],
+  "cytoplasmic": [
+   196,
+   230
+  ],
+  "n_glycosylation": [
+   20,
+   79
+  ],
+  "disulfides": [
+   [
+    36,
+    110
+   ],
+   [
+    51,
+    60
+   ]
+  ],
+  "note": "UniProt Q9NZC2 precursor numbering; construct mapped range above is exact-match contiguous"
+ }
+}

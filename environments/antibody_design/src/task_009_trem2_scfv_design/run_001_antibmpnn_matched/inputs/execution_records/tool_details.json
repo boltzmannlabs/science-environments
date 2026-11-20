@@ -1,0 +1,174 @@
+{
+  "stages": [
+    {
+      "stage_id": "stage_0_verification",
+      "purpose": "reference/target identity verification",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python (ANARCI IMGT)",
+          "source": "open_source",
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "stage_1_input_prep",
+      "purpose": "H/L/antigen split PDBs from ref_boltz2.cif",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "stage_2_reference_control",
+      "purpose": "Boltz2 control (unmodified scFv + TREM2)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "Boltz2",
+          "source": "boltzmann",
+          "records": [
+            "doc 6af92bea9030bff416448a17"
+          ],
+          "outputs": {
+            "iptm": 0.8987,
+            "ptm": 0.9316,
+            "complex_plddt": 0.9424,
+            "pde": 0.3989
+          },
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "stage_3_antibmpnn_design",
+      "purpose": "CDR redesign 40 generations (run1 doc zombie; run2 executed)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "AntiBMPNN",
+          "source": "boltzmann",
+          "records": [
+            "doc 6af99b6b9850a93adf67e2fd (run2)"
+          ],
+          "parameters": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "residue_positions_to_design": {
+              "H": "28-35,53-60,99-112",
+              "L (VL-local)": "27-32,50-52,89-97"
+            },
+            "generation_count": 40
+          },
+          "outputs": {
+            "value": [
+              "40 paired candidates, 39 unique"
+            ]
+          },
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "stage_4_gates",
+      "purpose": "mask/Cys/length/FR/architecture/pairing gates",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "outputs": {
+            "value": [
+              "outputs_antibmpnn_run2/gate_report.json",
+              "candidates_gated.csv"
+            ]
+          },
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "stage_5_boltz2_top4",
+      "purpose": "matched complex predictions for top-4 candidates (v2 corrected evaluations)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "Boltz2",
+          "source": "boltzmann",
+          "records": [
+            "doc 6afb60b97fc9c7f56da82d44 (cand10, v2 corrected, echo-verified)",
+            "doc 6afb60ceef7b50fcff15c21f (cand33, v2 corrected, echo-verified)",
+            "doc 6afb60ae75ff2e0d02e6f0de (cand07, v2 corrected, echo-verified)",
+            "doc 6afb60c475ff2e0d02e6f0ea (cand13, v2 corrected, echo-verified)"
+          ],
+          "states": {
+            "completed": 8,
+            "superseded_v1_docs": "6afafcb59de6b44b075dfff7, 6afafd1e445ae94313c45281, 6afafd28d29658acc3056199, 6afafd409030bff41644ee91 (wrong literal inputs; excluded)"
+          }
+        }
+      ],
+      "outputs_note": "4 PDBs + confidence JSONs + PAE/PDE/plddt npz in results/raw + structures/"
+    },
+    {
+      "stage_id": "stage_6_shortlist_bundle",
+      "purpose": "ranked shortlist 3 + antibody_design_bundle (evaluation revision v2)",
+      "status": "completed",
+      "tools": [
+        {
+          "tool": "local python",
+          "source": "open_source",
+          "outputs": {
+            "value": [
+              "trem2_results/ bundle (fasta, shortlist.csv, metrics.json, benchmark_comparison.csv, reference_comparison.csv, report.md, CHECKSUMS)"
+            ]
+          },
+          "states": {
+            "completed": 1
+          }
+        }
+      ]
+    }
+  ],
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_001_antibmpnn_matched",
+  "method_summary": [
+    {
+      "stage": "Verify reference",
+      "tool_and_settings": "Saved structures, CDR numbering and TREM2 construct",
+      "result": "Matched native control"
+    },
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "AntiBMPNN; 40 samples",
+      "result": "40 candidates"
+    },
+    {
+      "stage": "Apply sequence gates",
+      "tool_and_settings": "CDR-only substitutions and identity checks",
+      "result": "40 pass; 39 unique sequences"
+    },
+    {
+      "stage": "Evaluate complexes",
+      "tool_and_settings": "Boltz2, verified exact submitted VH/VL",
+      "result": "4 candidate predictions"
+    }
+  ],
+  "completed_outcome": "Candidate ipTM 0.3062\u20130.7969; matched native control 0.8987. cand13_T009-C13 is excluded from follow-up because of low interface confidence; its measured result is retained."
+}

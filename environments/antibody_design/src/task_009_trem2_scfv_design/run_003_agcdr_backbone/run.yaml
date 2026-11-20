@@ -1,0 +1,16 @@
+task_id: task_009_trem2_scfv_design
+run_id: run_003_agcdr_backbone
+workflow_id: wf_trem2_agcdr_antibmpnn_cdr_redesign
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_009_trem2_scfv_design/run_003_agcdr_backbone/run.json
+    sha256: a8f65694070e22cebc574b2f8a48826909684456c70773fd3e92e8694e55914b
+  agent_settings:
+    path: ../../../configs/task_009_trem2_scfv_design/run_003_agcdr_backbone.json
+    sha256: 60a9808e0303ac19e205f79d6484124c7cca72d443be16e9a2373cea25b09570
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

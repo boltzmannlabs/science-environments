@@ -1,0 +1,126 @@
+{
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [
+      "run_001_antibmpnn_matched"
+    ],
+    "relationship": "Shared evaluation of recorded source-run candidates"
+  },
+  "paths": {
+    "src": "src/task_008_egfr_scfv_design/run_002_esmfold_proteinmpnn_evaluation",
+    "results": "results/task_008_egfr_scfv_design/run_002_esmfold_proteinmpnn_evaluation"
+  },
+  "preparation": {
+    "description": "The six selected sequences from run_001 and its native reference, each a 241-residue VH\u2013linker\u2013VL scFv. This run evaluates the supplied panel without generating new designs.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Prepare panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Saved FASTA and run_001 shortlist",
+          "outputs": {
+            "recorded_result": "7 sequences"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Predict scFv structures",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "ESMFold",
+          "outputs": {
+            "recorded_result": "7 accepted single-chain models"
+          }
+        }
+      ],
+      "depends_on": [
+        "Prepare panel"
+      ]
+    },
+    {
+      "purpose": "Score sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "ProteinMPNN score-only on each sequence\u2019s own ESMFold backbone",
+          "outputs": {
+            "recorded_result": "Negative log likelihood; lower is preferred"
+          }
+        }
+      ],
+      "depends_on": [
+        "Predict scFv structures"
+      ]
+    },
+    {
+      "purpose": "Summarize",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Whole-scFv confidence and sequence properties",
+          "outputs": {
+            "recorded_result": "Seven-row metrics table"
+          }
+        }
+      ],
+      "depends_on": [
+        "Score sequences"
+      ]
+    }
+  ],
+  "outputs": {
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "sequences": "@results/sequences.fasta",
+    "structures": "@results/structures",
+    "raw": "@results/raw"
+  },
+  "outcome": {
+    "evaluated": 7,
+    "reference_plddt": 85.4,
+    "reference_mpnn": 1.4692,
+    "best_plddt": "cet_008_r1_s02",
+    "best_mpnn": "cet_008_r1_s18",
+    "summary": "Candidate ESMFold pLDDT 85.07\u201385.84; reference 85.40. Lowest candidate own-backbone ProteinMPNN NLL: cet_008_r1_s18, 1.4510; reference 1.4692."
+  },
+  "artifact_links": {
+    "report": "@results/report.md",
+    "metrics": "@results/metrics.csv",
+    "sequences": "@results/sequences.fasta",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "logs": [
+      "@src/logs/agent_scientist_log.md",
+      "@src/logs/execution_summary.md"
+    ],
+    "usage_basis": "Approximate (~) per-run share of the session LLM usage recorded by the hosting chat; exact per-run token split was not instrumented. Chat totals differ from per-run attribution.",
+    "agent_config_file": "configs/task_008_egfr_scfv_design/run_002_esmfold_proteinmpnn_evaluation.json",
+    "agent_config_sha256": "38e30dfc3ff9a5570f22b04d514e439590144154f1bef9e66ebba0790de0c388",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "932edec7d80de62ddeaf548a79f04e73c8f4f66bcd99ea004a20a5180dacda59",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "task_id": "task_008_egfr_scfv_design",
+  "run_id": "run_002_esmfold_proteinmpnn_evaluation",
+  "workflow_id": "Benchmark-matched open-source evaluation: ESMFold pLDDT + ProteinMPNN score (recorded fallback lane)"
+}

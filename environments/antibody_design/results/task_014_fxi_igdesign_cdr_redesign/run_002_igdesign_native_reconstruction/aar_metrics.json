@@ -1,0 +1,191 @@
+{
+ "native_sequences": {
+  "hcdr1": "GFTFSQYG",
+  "hcdr2": "IGPSGGST",
+  "hcdr3": "TRGGPYYYYGMDV"
+ },
+ "evaluated_positions_zero_based": {
+  "hcdr1": [
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32
+  ],
+  "hcdr2": [
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57
+  ],
+  "hcdr3": [
+   96,
+   97,
+   98,
+   99,
+   100,
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108
+  ]
+ },
+ "aar_definition": "fraction of designed CDR positions matching the native Osocimab CDR (position-aligned masked native reconstruction)",
+ "runs": {
+  "hcdr3_1shot": {
+   "scope": [
+    "hcdr3"
+   ],
+   "n_samples": 1,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr3": 0.6923076923076923
+    },
+    "overall_aar": 0.6923076923076923,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRAGPSYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr3": 0.6923076923076923
+    },
+    "overall_aar": 0.6923076923076923,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRAGPSYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr3": 0.6923076923076923
+   },
+   "best_rule": "max overall recovery over 1 samples"
+  },
+  "hcdr3_best100": {
+   "scope": [
+    "hcdr3"
+   ],
+   "n_samples": 100,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7692307692307693,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRGGPWYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr3": 0.8461538461538461
+    },
+    "overall_aar": 0.8461538461538461,
+    "sample_index": 22,
+    "sequences": {
+     "hcdr3": "TRGGPYYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr3": 0.7153846153846153
+   },
+   "best_rule": "max overall recovery over 100 samples"
+  },
+  "hcdr123_1shot": {
+   "scope": [
+    "hcdr1",
+    "hcdr2",
+    "hcdr3"
+   ],
+   "n_samples": 1,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7241379310344828,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGDST",
+     "hcdr3": "TRGGPSYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7241379310344828,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGDST",
+     "hcdr3": "TRGGPSYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.625,
+    "hcdr3": 0.7692307692307693
+   },
+   "best_rule": "max overall recovery over 1 samples"
+  },
+  "hcdr123_best100": {
+   "scope": [
+    "hcdr1",
+    "hcdr2",
+    "hcdr3"
+   ],
+   "n_samples": 100,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.6153846153846154
+    },
+    "overall_aar": 0.6551724137931034,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGNST",
+     "hcdr3": "TREGYWYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.75,
+     "hcdr3": 0.8461538461538461
+    },
+    "overall_aar": 0.7931034482758621,
+    "sample_index": 90,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "INPGGGST",
+     "hcdr3": "TRGGPYYYYYFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr1": 0.7575,
+    "hcdr2": 0.56375,
+    "hcdr3": 0.7038461538461539
+   },
+   "best_rule": "max overall recovery over 100 samples"
+  }
+ }
+}

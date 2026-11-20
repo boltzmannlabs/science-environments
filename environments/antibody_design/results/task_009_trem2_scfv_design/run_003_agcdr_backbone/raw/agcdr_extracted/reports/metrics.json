@@ -1,0 +1,36 @@
+{
+  "cdr_rmsd": [
+    7.316051959991455,
+    7.122420310974121,
+    7.343832015991211,
+    7.27529239654541,
+    7.25839900970459,
+    7.484796047210693,
+    7.209253787994385,
+    7.359475612640381
+  ],
+  "mean_cdr_rmsd": 7.296190142631531,
+  "best_cdr_rmsd": 7.122420310974121,
+  "num_samples": 8,
+  "num_steps": 10,
+  "seed": 0,
+  "generation_mode": "chunked",
+  "requested_gpu_batch_size": 4,
+  "gpu_batch_size": 4,
+  "effective_gpu_batch_sizes": [
+    4,
+    4
+  ],
+  "effective_num_steps": 10,
+  "generation_seconds": 8.84689377527684,
+  "chunk_seconds": [
+    6.806581863202155,
+    1.5965971276164055
+  ],
+  "mean_sample_seconds": 1.105861721909605,
+  "chunk_seeds": [
+    0,
+    4
+  ],
+  "oom_retries": 0
+}

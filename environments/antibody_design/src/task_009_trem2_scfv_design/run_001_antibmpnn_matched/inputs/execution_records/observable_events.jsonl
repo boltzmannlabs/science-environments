@@ -1,0 +1,8 @@
+{"ts": "2026-11-14T11:29:00Z", "event": "sibling-session stage-0 verification: reference sequence, VH/VL boundaries, TREM2 construct Q9NZC2 17-142+His, interface residues, IMGT numbering, CDR mask (retrospective capture from run.json lineage)"}
+{"ts": "2026-11-16T04:30:00Z", "event": "Boltz2 reference control doc 6af92bea9030bff416448a17 Success: ipTM 0.8987, pTM 0.9316, complex pLDDT 0.9424 (retrospective capture from results raw)"}
+{"ts": "2026-11-16T05:00:00Z", "event": "AntiBMPNN run2 doc 6af99b6b9850a93adf67e2fd terminal Success: 40 sequences (retrospective capture from tool records)"}
+{"ts": "2026-11-16T12:30:00Z", "event": "gates: 40/40 pass, 39 unique; first-pass alignment bug (SM stub) fixed before gating (retrospective, from logs/history)"}
+{"ts": "2026-11-16T13:05:00Z", "event": "top-4 Boltz2 matched evaluations completed (docs 6afafcb5..., 6afafd1e..., 6afafd28..., 6afafd40...); shortlist cand33/cand10/cand07; cand13 excluded (retrospective capture from trem2_results)"}
+{"ts": "2026-11-16T13:10:00Z", "event": "bundle metrics.json written; results verified (retrospective)"}
+{"ts": "2026-11-16T19:25:00Z", "event": "record truth pass: run.yaml status/counts updated from in_flight/0 to completed/40-4-3 per run.json+results; dual config hash links added; observable_events populated with grounded retrospective events (labeled); no scientific change"}
+{"ts": "2026-11-16T20:25:00Z", "event": "run_001 evaluation revision v2: four wrong-input Boltz2 jobs (tool_calls 20413/20422/20424/20429, transcript-audited) superseded by corrected echo-verified evaluations docs 6afb60b9/6afb60ce/6afb60ae/6afb60c4; metrics/interface recomputed from v2 models; v1 bundle preserved at excluded_wrong_input_v1/; v2 shortlist cand10/cand33/cand07"}

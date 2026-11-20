@@ -1,0 +1,13 @@
+26/11/16 14:07:11 | INFO | root | Reading sequences from inputs/eval_set.fasta
+26/11/16 14:07:11 | INFO | root | Loaded 7 sequences from inputs/eval_set.fasta
+26/11/16 14:07:11 | INFO | root | Loading model
+26/11/16 14:08:10 | INFO | root | Starting Predictions
+/home/boltzmann10/anaconda3/envs/igdesign/lib/python3.11/site-packages/openfold/utils/tensor_utils.py:92: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/python_variable_indexing.cpp:375.)
+  return data[ranges]
+26/11/16 14:08:31 | INFO | root | Predicted structure for reference_cetuximab_scFv with length 241, pLDDT 82.7, pTM 0.849 in 5.3s (amortized, batch size 4). 1 / 7 completed.
+26/11/16 14:08:31 | INFO | root | Predicted structure for cet_008_r1_s15 with length 241, pLDDT 82.9, pTM 0.865 in 5.3s (amortized, batch size 4). 2 / 7 completed.
+26/11/16 14:08:31 | INFO | root | Predicted structure for cet_008_r1_s18 with length 241, pLDDT 82.8, pTM 0.843 in 5.3s (amortized, batch size 4). 3 / 7 completed.
+26/11/16 14:08:31 | INFO | root | Predicted structure for cet_008_r1_s14 with length 241, pLDDT 82.9, pTM 0.863 in 5.3s (amortized, batch size 4). 4 / 7 completed.
+26/11/16 14:08:47 | INFO | root | Predicted structure for cet_008_r1_s02 with length 241, pLDDT 83.2, pTM 0.866 in 5.2s (amortized, batch size 3). 5 / 7 completed.
+26/11/16 14:08:47 | INFO | root | Predicted structure for cet_008_r1_s08 with length 241, pLDDT 82.8, pTM 0.849 in 5.2s (amortized, batch size 3). 6 / 7 completed.
+26/11/16 14:08:47 | INFO | root | Predicted structure for cet_008_r1_s06 with length 241, pLDDT 82.2, pTM 0.851 in 5.2s (amortized, batch size 3). 7 / 7 completed.

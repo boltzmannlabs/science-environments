@@ -1,0 +1,4 @@
+{"ts": "2026-11-16T13:1x:00Z", "run": "run_001_igdesign_hcdr3_native_reconstruction", "event": "input verification completed (6u6u chains, CDR masks, source CSV hash)", "evidence": "@src/inputs/execution_records/input_hashes.json"}
+{"ts": "2026-11-16T13:2x:00Z", "run": "run_001_igdesign_hcdr3_native_reconstruction", "event": "stage executed: 10 decoding orders x 10 pmpnn x 1 lm = 100 samples", "evidence": "@results/raw"}
+{"ts": "2026-11-16T16:4x:00Z", "run": "run_001_igdesign_hcdr3_native_reconstruction", "event": "analysis and metrics computed from raw artifacts", "evidence": "@results"}
+{"ts": "2026-11-16T17:0x:00Z", "run": "run_001_igdesign_hcdr3_native_reconstruction", "event": "per-run packaging completed (run.json, report.md, logs, configs, execution_records)", "evidence": "@results/run.json"}

@@ -1,0 +1,385 @@
+{
+  "status": "PASS",
+  "run_name": "task009_epitope_abgen_local_correction_v2",
+  "device": "cuda",
+  "model_name": "protenix-v2",
+  "split": "valid",
+  "allow_test_split": false,
+  "task_set": "gold_safe_practical",
+  "items": 1,
+  "samples_per_task": 4,
+  "output_dir": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2",
+  "dataset_filter_report": {
+    "require_design_antigen_contact": true,
+    "require_design_epitope_contact": true,
+    "input_rows": 1,
+    "kept_rows": 1,
+    "dropped_rows": 0,
+    "dropped_design_antigen_contact_sample": [],
+    "dropped_design_epitope_contact_sample": []
+  },
+  "checkpoint_preflight": {
+    "checkpoint_path": "/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+    "exists": true,
+    "size_bytes": 1860692365,
+    "will_load_weights": true,
+    "usable": true
+  },
+  "checkpoint_load": {
+    "checkpoint_path": "/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+    "strict": false,
+    "sample_key": "module.input_embedder.atom_attention_encoder.linear_no_bias_ref_pos.weight",
+    "target_key_count": 4174,
+    "checkpoint_key_count": 4174,
+    "shape_matched_key_count": 4174,
+    "missing_key_count": 0,
+    "unexpected_key_count": 0,
+    "key_coverage": 1.0,
+    "min_key_coverage": 0.99,
+    "checked_matched_tensor_count": 4174,
+    "nonzero_matched_tensor_count": 4174,
+    "nonfinite_matched_tensor_count": 0,
+    "nonfinite_matched_tensors": [],
+    "missing_keys": [],
+    "unexpected_keys": []
+  },
+  "conditioning_checkpoint": {
+    "checkpoint_path": "/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+    "checkpoint_file": {
+      "path": "/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+      "size_bytes": 1860692365,
+      "sha256": "f6879339bbd4cd495047e7e45622aa744d701f3ebaed4f34e108eaae831fb3d8"
+    },
+    "checkpoint_schema_version": 2,
+    "monitor_metric": "taskwise_max_px_abdiff_selection_score",
+    "best_metric": 112.30478697549552,
+    "best_record": {
+      "step": 1250,
+      "micro_step": 20000,
+      "epoch": 1,
+      "train": {
+        "design_coord": 124.93484681844711,
+        "known_coord": 126.25688004493713,
+        "contact": 3.4826889485120773,
+        "epitope": 7.845202401280403,
+        "clash": 2.902654617287226e-05,
+        "epitope_focus": 4.666617102921009,
+        "epitope_native_contact": 3.1785852778702974,
+        "total": 126.74694085121155
+      },
+      "grad_norm": 3.7101082801818848,
+      "learning_rate": {
+        "lr_scale": 1.0,
+        "current_lrs": [
+          2.5e-05
+        ]
+      },
+      "epitope_downsampling": {
+        "items": 16,
+        "full_epitope_count_min": 14,
+        "full_epitope_count_max": 38,
+        "sampled_epitope_count_min": 1,
+        "sampled_epitope_count_max": 16,
+        "sampled_total": 59,
+        "full_total": 406,
+        "sampled_fraction": 0.14532019704433496,
+        "strict_subset_items": 16,
+        "design_epitope_contact_preserved_items": 16,
+        "design_epitope_contact_forced_items": 2
+      },
+      "valid": {
+        "design_coord": 47.72093963623047,
+        "known_coord": 50.15312623977661,
+        "contact": 3.300173655152321,
+        "epitope": 5.8192979991436005,
+        "clash": 0.00028068634106404033,
+        "epitope_focus": 2.5191243030130863,
+        "epitope_native_contact": 3.300173655152321,
+        "total": 49.24430751800537,
+        "design_ca_rmse": 95.24767398834229,
+        "finite_coordinate_rate": 0.9999999925494194,
+        "epitope_contact_fraction": 0.1698929090052843,
+        "off_epitope_contact_fraction": 0.19047619899113974,
+        "px_abdiff_selection_score": 108.2113973616312,
+        "taskwise_max_px_abdiff_selection_score": 112.30478697549552,
+        "taskwise_mean_px_abdiff_selection_score": 108.45241796442617
+      },
+      "valid_taskwise": {
+        "HCDR3": {
+          "design_coord": 49.22013807296753,
+          "known_coord": 51.23249578475952,
+          "contact": 5.4619384706020355,
+          "epitope": 8.6848324239254,
+          "clash": 1.9904652635460707e-05,
+          "epitope_focus": 3.222893826663494,
+          "epitope_native_contact": 5.4619384706020355,
+          "total": 51.627803802490234,
+          "design_ca_rmse": 97.22241020202637,
+          "finite_coordinate_rate": 0.9999999850988388,
+          "epitope_contact_fraction": 0.19910090463235974,
+          "off_epitope_contact_fraction": 0.0,
+          "px_abdiff_selection_score": 112.30478697549552
+        },
+        "heavy_CDR": {
+          "design_coord": 44.87683296203613,
+          "known_coord": 48.796085834503174,
+          "contact": 3.3214237792417407,
+          "epitope": 5.285206079483032,
+          "clash": 4.610833032536732e-05,
+          "epitope_focus": 1.9637823589146137,
+          "epitope_native_contact": 3.3214237792417407,
+          "total": 46.34141516685486,
+          "design_ca_rmse": 91.06755590438843,
+          "finite_coordinate_rate": 0.9999999701976776,
+          "epitope_contact_fraction": 0.12504760175943375,
+          "off_epitope_contact_fraction": 0.0,
+          "px_abdiff_selection_score": 104.12039556121454
+        },
+        "all_CDR": {
+          "design_coord": 46.55864071846008,
+          "known_coord": 49.68791437149048,
+          "contact": 3.5091412598267198,
+          "epitope": 5.330791760236025,
+          "clash": 6.0221681621897005e-05,
+          "epitope_focus": 1.8216504622250795,
+          "epitope_native_contact": 3.5091412598267198,
+          "total": 48.07562232017517,
+          "design_ca_rmse": 95.26426029205322,
+          "finite_coordinate_rate": 1.0,
+          "epitope_contact_fraction": 0.07521554455161095,
+          "off_epitope_contact_fraction": 0.0,
+          "px_abdiff_selection_score": 108.93207135656849
+        }
+      }
+    },
+    "step": 1250,
+    "epoch": 1,
+    "training_provenance": {
+      "provenance_version": 1,
+      "model_name": "protenix-v2",
+      "task_set": "gold_safe_practical",
+      "split": "train",
+      "valid_split": "valid",
+      "mask_types": [
+        "HCDR3",
+        "heavy_CDR",
+        "all_CDR"
+      ],
+      "taskwise_validation_mask_types": [
+        "HCDR3",
+        "heavy_CDR",
+        "all_CDR"
+      ],
+      "required_validation_metrics": [
+        "design_ca_rmse",
+        "finite_coordinate_rate",
+        "epitope_contact_fraction",
+        "off_epitope_contact_fraction",
+        "px_abdiff_selection_score"
+      ],
+      "max_tokens": 384,
+      "seed": 357,
+      "deterministic_algorithms_requested": true,
+      "torch_deterministic_algorithms_enabled": true,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "learning_rate": 2.5e-05,
+      "protenix_learning_rate": null,
+      "weight_decay": 0.01,
+      "lr_schedule": null,
+      "lr_warmup_steps": 1000,
+      "min_checkpoint_key_coverage": 0.99,
+      "unfreeze_last_pairformer_fraction": null,
+      "epitope_downsampling": {
+        "enabled": true,
+        "p": 0.3,
+        "min_tokens": 1,
+        "seed_offset": 1009,
+        "contact_policy": "force_one_design_contact"
+      },
+      "pair_feature_masking_policy": {
+        "enabled": true,
+        "scope": "native_px_abdiff",
+        "antibody_antigen_token_bonds": "zero_required",
+        "constraint_feature": "absent_or_zero_antibody_antigen",
+        "template_features": "forbidden",
+        "relp_antibody_antigen": "canonical_inter_chain_different_entity",
+        "post_update_atom_pairs": "zero_d_lm_v_lm_antibody_antigen"
+      },
+      "sequence_hypothesis_recycle": {
+        "enabled": false
+      },
+      "loss_weights": {
+        "design_coord": 1.0,
+        "contact": 0.25,
+        "epitope": 0.12,
+        "known_coord": 0.0,
+        "clash": 0.03,
+        "sequence": 0.0
+      },
+      "monitor_metric": "taskwise_max_px_abdiff_selection_score",
+      "monitor_mode": "min",
+      "train_items": 8103,
+      "valid_items": 1406,
+      "train_task_table": {
+        "path": "/home/boltzmann20/Nagajyothi/abscidiff_protenixv2_training_transfer_bundle_20260527/abdata_replica_protenixv2_abscigen_model_inputs/metadata/practical_tasks.parquet",
+        "size_bytes": 337344,
+        "sha256": "c7f1a39d01754df021665c4e6db22abbb7e1097e669950db09b96587a294f98d"
+      },
+      "train_split_file": {
+        "path": "/home/boltzmann20/Nagajyothi/abscidiff_protenixv2_training_transfer_bundle_20260527/abdata_replica_protenixv2_abscigen_model_inputs/splits/train_gold_safe_practical_tasks.txt",
+        "size_bytes": 261618,
+        "sha256": "eb8dbdcbcb9100db02332511b4bbebc2bc51ba971460bec1be22a56e8e12de4f"
+      },
+      "valid_task_table": {
+        "path": "/home/boltzmann20/Nagajyothi/abscidiff_protenixv2_training_transfer_bundle_20260527/abdata_replica_protenixv2_abscigen_model_inputs/metadata/practical_tasks.parquet",
+        "size_bytes": 337344,
+        "sha256": "c7f1a39d01754df021665c4e6db22abbb7e1097e669950db09b96587a294f98d"
+      },
+      "valid_split_file": {
+        "path": "/home/boltzmann20/Nagajyothi/abscidiff_protenixv2_training_transfer_bundle_20260527/abdata_replica_protenixv2_abscigen_model_inputs/splits/valid_gold_safe_practical_tasks.txt",
+        "size_bytes": 45702,
+        "sha256": "14dfe03550afa36918959bcebbfb6bd9f515682713c08bcb95ca68849498fe26"
+      },
+      "require_design_antigen_contact": true,
+      "require_design_epitope_contact": true,
+      "task_balanced_sampling": true,
+      "task_balanced_mask_types": [
+        "HCDR3",
+        "heavy_CDR",
+        "all_CDR"
+      ],
+      "package_root": "/home/boltzmann20/Nagajyothi/abscidiff_protenixv2_training_transfer_bundle_20260527/abdata_replica_protenixv2_abscigen_model_inputs",
+      "fingerprint": "7d33a0641f39d3998307c387c99b5e3396b090a970b0eaace4df39c8603cbb3c"
+    },
+    "finite_payload_report": {
+      "status": "PASS",
+      "context": "conditioning_checkpoint:/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+      "checked_float_tensors": 20,
+      "nonfinite_tensor_count": 0,
+      "nonfinite_tensors": []
+    },
+    "adapter_state_report": {
+      "status": "PASS",
+      "context": "conditioning_checkpoint:/home/boltzmann10/agent_sci_boltpro_errors_tools/epitope_abgen/checkpoints/abscidiff_best.pt",
+      "state_source": "trainable_state_dict",
+      "checkpoint_schema_version": 2,
+      "loaded_parameter_count": 10,
+      "loaded_parameter_names": [
+        "condition_embedder.cdr_embedding.weight",
+        "condition_embedder.pair_mlp.0.bias",
+        "condition_embedder.pair_mlp.0.weight",
+        "condition_embedder.pair_mlp.3.bias",
+        "condition_embedder.pair_mlp.3.weight",
+        "condition_embedder.role_embedding.weight",
+        "condition_embedder.single_mlp.0.bias",
+        "condition_embedder.single_mlp.0.weight",
+        "condition_embedder.single_mlp.3.bias",
+        "condition_embedder.single_mlp.3.weight"
+      ],
+      "missing_model_key_count": 4174,
+      "missing_model_key_sample": [
+        "protenix_model.confidence_head.input_strunk_ln.bias",
+        "protenix_model.confidence_head.input_strunk_ln.weight",
+        "protenix_model.confidence_head.linear_no_bias_d.weight",
+        "protenix_model.confidence_head.linear_no_bias_d_wo_onehot.weight",
+        "protenix_model.confidence_head.linear_no_bias_pae.weight",
+        "protenix_model.confidence_head.linear_no_bias_pde.weight",
+        "protenix_model.confidence_head.linear_no_bias_s1.weight",
+        "protenix_model.confidence_head.linear_no_bias_s2.weight",
+        "protenix_model.confidence_head.lower_bins",
+        "protenix_model.confidence_head.pae_ln.bias",
+        "protenix_model.confidence_head.pae_ln.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_g.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_k.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_o.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_q.bias",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_q.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.attention.linear_v.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.layernorm_a.bias",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.layernorm_a.weight",
+        "protenix_model.confidence_head.pairformer_stack.blocks.0.attention_pair_bias.layernorm_z.bias"
+      ],
+      "unexpected_parameter_count": 0,
+      "trainable_checkpoint_coverage": {
+        "status": "PASS",
+        "current_trainable_parameter_count": 10,
+        "saved_trainable_parameter_count": 10,
+        "covered_current_trainable_parameter_count": 10,
+        "missing_current_trainable_parameter_count": 0,
+        "extra_saved_parameter_count": 0,
+        "missing_current_trainable_parameter_sample": [],
+        "extra_saved_parameter_sample": []
+      }
+    }
+  },
+  "samples": [
+    {
+      "task_id": "trem2_ref_scFv_T009_v2_all_CDR_platform",
+      "complex_id": "trem2_ref_scFv_T009_v2",
+      "mask_type": "all_CDR",
+      "sample_index": 0,
+      "seed": 2026,
+      "pt_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample000_seed2026.pt",
+      "pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample000_seed2026.pdb",
+      "metrics": {
+        "design_ca_rmse": 14.266079902648926,
+        "finite_coordinate_rate": 1.0,
+        "epitope_contact_fraction": 0.3958333432674408,
+        "off_epitope_contact_fraction": 0.0625
+      }
+    },
+    {
+      "task_id": "trem2_ref_scFv_T009_v2_all_CDR_platform",
+      "complex_id": "trem2_ref_scFv_T009_v2",
+      "mask_type": "all_CDR",
+      "sample_index": 1,
+      "seed": 2027,
+      "pt_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample001_seed2027.pt",
+      "pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample001_seed2027.pdb",
+      "metrics": {
+        "design_ca_rmse": 13.796005249023438,
+        "finite_coordinate_rate": 1.0,
+        "epitope_contact_fraction": 0.25,
+        "off_epitope_contact_fraction": 0.0416666679084301
+      }
+    },
+    {
+      "task_id": "trem2_ref_scFv_T009_v2_all_CDR_platform",
+      "complex_id": "trem2_ref_scFv_T009_v2",
+      "mask_type": "all_CDR",
+      "sample_index": 2,
+      "seed": 2028,
+      "pt_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample002_seed2028.pt",
+      "pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample002_seed2028.pdb",
+      "metrics": {
+        "design_ca_rmse": 12.690528869628906,
+        "finite_coordinate_rate": 1.0,
+        "epitope_contact_fraction": 0.25,
+        "off_epitope_contact_fraction": 0.0416666679084301
+      }
+    },
+    {
+      "task_id": "trem2_ref_scFv_T009_v2_all_CDR_platform",
+      "complex_id": "trem2_ref_scFv_T009_v2",
+      "mask_type": "all_CDR",
+      "sample_index": 3,
+      "seed": 2029,
+      "pt_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample003_seed2029.pt",
+      "pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/outputs/correction_v2/trem2_ref_scFv_T009_v2_all_CDR_platform_sample003_seed2029.pdb",
+      "metrics": {
+        "design_ca_rmse": 16.167020797729492,
+        "finite_coordinate_rate": 1.0,
+        "epitope_contact_fraction": 0.2916666865348816,
+        "off_epitope_contact_fraction": 0.0416666679084301
+      }
+    }
+  ],
+  "failures": [],
+  "notes": [
+    "Generated design residues are written as UNK in PDB because PX-AbDiff is structure generation; sequence design is a later PX-IgDesign stage.",
+    "Metrics compare to native labels only because this smoke generator uses curated training/evaluation tasks.",
+    "Generated PT sample payloads intentionally omit native-derived metrics; metrics remain only in this generation report.",
+    "Generated PT sample payloads include role_ids and cdr_ids because they are safe conditioning tensors needed to audit antigen-only epitopes and antibody-CDR-only design masks."
+  ]
+}

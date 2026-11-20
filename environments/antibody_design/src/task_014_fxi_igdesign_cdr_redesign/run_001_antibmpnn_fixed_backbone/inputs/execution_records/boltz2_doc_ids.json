@@ -1,0 +1,93 @@
+{
+ "job_name": "Boltz2",
+ "purpose": "task_014 run_001 matched structural evaluation (sequence-only Fv predictions, AntiBMPNN candidates)",
+ "submitted_utc": "2026-11-16T16:45-16:55Z",
+ "reference_reused_from_run_002": {
+  "doc_id": "6afb0ef99850a93adf684d5e",
+  "candidate_id": "t014_reference_osocimab"
+ },
+ "records": {
+  "D01": {
+   "label": "hcdr3_s02",
+   "candidate_id": "t014r001_hcdr3_scope_s02",
+   "doc_id": "6afb336d445ae94313c4664f"
+  },
+  "D02": {
+   "label": "hcdr3_s15",
+   "candidate_id": "t014r001_hcdr3_scope_s15",
+   "doc_id": "6afb33789030bff41644f710"
+  },
+  "D03": {
+   "label": "hcdr3_s16",
+   "candidate_id": "t014r001_hcdr3_scope_s16",
+   "doc_id": "6afb338d9de6b44b075e09f3"
+  },
+  "D04": {
+   "label": "hcdr3_s11",
+   "candidate_id": "t014r001_hcdr3_scope_s11",
+   "doc_id": "6afb3393239a6b9f38bf4871"
+  },
+  "D05": {
+   "label": "hcdr3_s01",
+   "candidate_id": "t014r001_hcdr3_scope_s01",
+   "doc_id": "6afb3399445ae94313c46676"
+  },
+  "D06": {
+   "label": "hcdr123_s02",
+   "candidate_id": "t014r001_hcdr123_scope_s02",
+   "doc_id": "6afb33a49850a93adf6850ec"
+  },
+  "D07": {
+   "label": "hcdr123_s01",
+   "candidate_id": "t014r001_hcdr123_scope_s01",
+   "doc_id": "6afb33ae9030bff41644f724"
+  },
+  "D08": {
+   "label": "hcdr123_s13",
+   "candidate_id": "t014r001_hcdr123_scope_s13",
+   "doc_id": "6afb44b47426d09ad749d5fe",
+   "version": "v3_corrected"
+  },
+  "D09": {
+   "label": "hcdr123_s16",
+   "candidate_id": "t014r001_hcdr123_scope_s16",
+   "doc_id": "6afb3444dc1d60e5b46010aa"
+  },
+  "D10": {
+   "label": "hcdr123_s05",
+   "candidate_id": "t014r001_hcdr123_scope_s05",
+   "doc_id": "6afb347e7fc9c7f56da8265b"
+  }
+ },
+ "ambiguous_submission": {
+  "experiment_name": "task014_run001_boltz2_hcdr123_s17",
+  "candidate_id": "t014r001_hcdr123_scope_s17",
+  "result": "Service request failed without a usable diagnostic; no doc_id returned; outcome unknown",
+  "handling": "NOT resubmitted (contract: never resubmit an ambiguously submitted job). Slot filled by next-ranked unique candidate s05 per the predeclared ranking rule. If the platform later shows s17 completed, its result can be adopted additively without any duplicate charge."
+ },
+ "wrong_input_evidence": {
+  "v1": {
+   "experiment_name": "task014_run001_boltz2_hcdr123_s13",
+   "doc_id": "6afb3433dc1d60e5b460109a",
+   "error": "agent transcription error at 0-based pos105 (intended G, typed A); returned model faithfully echoed wrong input",
+   "raw_preserved": "results/raw/boltz2/hcdr123_s13_v1_wronginput/"
+  },
+  "v2": {
+   "experiment_name": "task014_run001_boltz2_hcdr123_s13_v2",
+   "doc_id": "6afb43617fc9c7f56da829a3",
+   "error": "second manual transcription error at 0-based pos32 (intended A, typed G); model echoes wrong input",
+   "raw_preserved": "results/raw/boltz2/hcdr123_s13_v2_wronginput/ (native PDB retrieved 2026-11-16T18:46Z via programmatic status+download of the already-completed job; identity_evidence.json carries job ID, billing and residue verification)",
+   "platform_job_id": "task-structurepred-boltz2vpzfx"
+  },
+  "v3": {
+   "experiment_name": "task014_run001_boltz2_hcdr123_s13_v3",
+   "doc_id": "6afb44b47426d09ad749d5fe",
+   "method": "programmatic submission from saved payload JSON with pre-submit equality assertions (payload==CSV row13; VL==reference; pos32=A; pos105=G)",
+   "verification": "returned model VH/VL byte-identical to intended candidate (227/227 residues)",
+   "record": "results/raw/submission_record_s13_corrected.json"
+  }
+ },
+ "provenance_note": {
+  "outputs-2.zip": "workspace outputs-2.zip (mtime 17:54:05Z) is v1's full outputs.zip from the 17:53Z status poll \u2014 it predates v2 acceptance (17:54:46Z) and was never v2 output; misattribution corrected 2026-11-16T18:46Z"
+ }
+}

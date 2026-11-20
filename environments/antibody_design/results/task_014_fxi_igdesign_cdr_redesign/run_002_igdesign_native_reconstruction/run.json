@@ -1,0 +1,140 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_014_fxi_igdesign_cdr_redesign",
+  "run_id": "run_002_igdesign_native_reconstruction",
+  "workflow_id": "igdesign_masked_native_reconstruction",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction",
+    "results": "results/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction"
+  },
+  "preparation": {
+    "description": "Same Osocimab VH/VL and masks as run_001. The saved YAML configurations specify separate 1-shot and 100-sample executions for HCDR3 and HCDR123.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Generate samples",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; 1 + 100 samples per scope",
+          "outputs": {
+            "recorded_result": "202 samples"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Verify and deduplicate",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Native framework/VL preservation and sequence identity",
+          "outputs": {
+            "recorded_result": "158 unique sequences"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate samples"
+      ]
+    },
+    {
+      "purpose": "Measure native recovery",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Position-aligned designed-scope AAR",
+          "outputs": {
+            "recorded_result": "1-shot and best-of-100 endpoints"
+          }
+        }
+      ],
+      "depends_on": [
+        "Verify and deduplicate"
+      ]
+    },
+    {
+      "purpose": "Evaluate geometry",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Five designs per scope; Boltz2; C\u03b1 framework fit",
+          "outputs": {
+            "recorded_result": "10 candidate models + native control"
+          }
+        }
+      ],
+      "depends_on": [
+        "Measure native recovery"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "counts": {
+      "samples_generated": 202,
+      "unique_candidates": 158,
+      "evaluated_structurally": 10,
+      "shortlist": 10,
+      "controls": 1
+    },
+    "headline": {
+      "hcdr3_best100_best_AAR": 0.8461538461538461,
+      "hcdr123_best100_best_AAR": {
+        "hcdr1": 0.75,
+        "hcdr2": 0.75,
+        "hcdr3": 0.846
+      },
+      "best_boltz2_scrmsd_A": {
+        "candidate": "t014r002_hcdr3_best100_012",
+        "hcdr3": 1.314,
+        "fv": 0.438
+      },
+      "hcdr123_best100_joint_AAR": 0.7931034482758621,
+      "hcdr123_best100_best_AAR_scope": "per-CDR values of the one sequence with best joint AAR"
+    },
+    "summary": "Designed-scope AAR is 0.6923/0.8462 for HCDR3 1-shot/best-of-100 and 0.7241/0.7931 for HCDR123. t014r002_hcdr3_best100_012 has HCDR3 deviation 1.3144 \u00c5 and Fv deviation 0.4382 \u00c5 from the predicted native Fv."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "2338ed3f250f2bcb0028cc7d2e710b7f7872e939364476412507f0fd6a330591",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction.json",
+    "agent_config_sha256": "74d74bba5bff4671a057f8712d0f82623ef225c0b95b59323fdb70c34367d9f3",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "designed_sequences_fasta": "@results/sequences.fasta",
+    "metrics_csv": "@results/metrics.csv",
+    "metrics_json": "@results/metrics.json",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  }
+}

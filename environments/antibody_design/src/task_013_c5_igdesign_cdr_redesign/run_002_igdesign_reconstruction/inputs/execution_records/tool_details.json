@@ -1,0 +1,56 @@
+{
+  "T01": {
+    "tool": "IgDesign (local, github.com/boltzmann10 fork; ckpt sha-recorded)",
+    "purpose": "reference-backbone masked native reconstruction, HCDR3-only scope",
+    "budgets": {
+      "1shot": 1,
+      "pool": 100
+    },
+    "backbone": "5I5K Fv fixed",
+    "outputs": "results/run_002_igdesign_reconstruction/raw/hcdr3_{1shot,100}.csv (+config.pkl)",
+    "seed_policy": "per-config pkl",
+    "status": "completed"
+  },
+  "T02": {
+    "tool": "IgDesign (local)",
+    "purpose": "masked native reconstruction, HCDR123 scope",
+    "budgets": {
+      "1shot": 1,
+      "pool": 100
+    },
+    "backbone": "5I5K Fv fixed",
+    "outputs": "raw/hcdr123_{1shot,100}.csv (+config.pkl)",
+    "status": "completed"
+  },
+  "T03": {
+    "tool": "evaluate_aar.py (stdlib)",
+    "purpose": "per-CDR AAR vs native, both scopes/budgets + released benchmark rows",
+    "outputs": "results/task_013_c5_igdesign_cdr_redesign/aar_evaluation.json",
+    "status": "completed"
+  },
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_002_igdesign_reconstruction",
+  "method_summary": [
+    {
+      "stage": "Generate HCDR3 pool",
+      "tool_and_settings": "IgDesign; separate 1-shot and 100-sample executions",
+      "result": "101 samples"
+    },
+    {
+      "stage": "Generate HCDR123 pool",
+      "tool_and_settings": "IgDesign; separate 1-shot and 100-sample executions",
+      "result": "101 samples"
+    },
+    {
+      "stage": "Measure native recovery",
+      "tool_and_settings": "Position-aligned per-CDR AAR",
+      "result": "202 sample-level metric rows"
+    },
+    {
+      "stage": "Select shared evaluation panel",
+      "tool_and_settings": "Four recorded designs",
+      "result": "Boltz2 and ESMFold evaluation retained in run_001"
+    }
+  ],
+  "completed_outcome": "HCDR3-only 1-shot AAR is 0.4667; the separate 100-sample pool has mean 0.5193 and maximum 0.6667. HCDR123 pool mean HCDR3 AAR is 0.5160; maximum 0.6667."
+}

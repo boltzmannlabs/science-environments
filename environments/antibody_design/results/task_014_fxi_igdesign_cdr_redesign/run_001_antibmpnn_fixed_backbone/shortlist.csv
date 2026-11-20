@@ -1,0 +1,12 @@
+rank,candidate_id,scope,changes_from_reference,n_substitutions,designed_scope_aar,scrmpnn_score,boltz2_hcdr1_scrmsd_A,boltz2_hcdr2_scrmsd_A,boltz2_hcdr3_scrmsd_A,boltz2_hcdr123_scrmsd_A,boltz2_fv_scrmsd_A,sequence_hash,entry_role,source_candidate_id
+1,t014r001_hcdr123_scope_s02,hcdr123_scope,HCDR1:GFTFSQYG->GFTFSSYA;HCDR2:IGPSGGST->ISSSGGST;HCDR3:TRGGPYYYYGMDV->ARDGDYYYYGMDY,8,0.7241,0.4012,0.6746,0.5157,3.1205,2.1364,0.8117,bddf2d44a0f60ce5,designed_candidate,t014r001_hcdr123_scope_s02
+2,t014r001_hcdr123_scope_s01,hcdr123_scope,HCDR1:GFTFSQYG->GFTFSSYG;HCDR2:IGPSGGST->ISSSGGST;HCDR3:TRGGPYYYYGMDV->ARDGYYNYYAMDY,9,0.6897,0.4074,0.2556,0.4338,2.3541,1.5982,0.609,9f9f1be9bf3b8f84,designed_candidate,t014r001_hcdr123_scope_s01
+4,t014r001_hcdr123_scope_s13,hcdr123_scope,HCDR1:GFTFSQYG->GFTFSSYA;HCDR2:IGPSGGST->ISSSGGST;HCDR3:TRGGPYYYYGMDV->ARDGDYDYYGMDY,9,0.6897,0.4218,0.1959,0.3784,2.934,1.9771,0.7472,e92938d7ae81c443,designed_candidate,t014r001_hcdr123_scope_s13
+5,t014r001_hcdr123_scope_s16,hcdr123_scope,HCDR1:GFTFSQYG->GFTFSSYA;HCDR2:IGPSGGST->ISSSGGST;HCDR3:TRGGPYYYYGMDV->ARDGYYYYYAMDY,9,0.6897,0.4442,0.3374,0.4689,4.8308,3.2486,1.1911,71f0cc2b066e3399,designed_candidate,t014r001_hcdr123_scope_s16
+5,t014r001_hcdr123_scope_s05,hcdr123_scope,HCDR1:GFTFSQYG->GFTFSSYG;HCDR2:IGPSGGST->ISSSGGST;HCDR3:TRGGPYYYYGMDV->ARDGYYDYYAMDY,9,0.6897,0.4704,0.4437,0.4375,1.3367,0.9529,0.3978,5aa2550ea74e4bf1,designed_candidate,t014r001_hcdr123_scope_s05
+1,t014r001_hcdr3_scope_s02,hcdr3_scope,HCDR3:TRGGPYYYYGMDV->ARDGDYYYYGMDY,4,0.6923,0.5397,0.8432,0.9029,2.6003,1.858,0.7974,36bc7fa9ca03f729,designed_candidate,t014r001_hcdr3_scope_s02
+2,t014r001_hcdr3_scope_s15,hcdr3_scope,HCDR3:TRGGPYYYYGMDV->ARDGYYDYYGMDY,5,0.6154,0.5314,0.5049,0.5593,3.7995,2.5745,0.9492,aa767b748b795f64,designed_candidate,t014r001_hcdr3_scope_s15
+3,t014r001_hcdr3_scope_s16,hcdr3_scope,HCDR3:TRGGPYYYYGMDV->ARDGYYYYYAMDY,5,0.6154,0.5598,0.3726,0.3011,2.2366,1.5185,0.6317,772a03cd66b80392,designed_candidate,t014r001_hcdr3_scope_s16
+4,t014r001_hcdr3_scope_s11,hcdr3_scope,HCDR3:TRGGPYYYYGMDV->ARDGYYNYYGMDY,5,0.6154,0.648,0.2556,0.1813,2.9316,1.9697,0.7386,f65930eaaa3b02b0,designed_candidate,t014r001_hcdr3_scope_s11
+5,t014r001_hcdr3_scope_s01,hcdr3_scope,HCDR3:TRGGPYYYYGMDV->ARDGYYNYYAMDY,6,0.5385,0.5116,0.2675,0.1736,2.3062,1.5531,0.591,6e53dac9783f61d7,designed_candidate,t014r001_hcdr3_scope_s01
+0,t014_reference_osocimab (control),none,none (reference),0,1.0,,0.0,0.0,0.0,0.0,0.0,c68fa3f8c065f5e1,reference_control,t014_reference_osocimab

@@ -1,0 +1,136 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_002_igdesign_local",
+  "workflow_id": "wf_trem2_igdesign_hcdr_redesign",
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  },
+  "paths": {
+    "src": "src/task_009_trem2_scfv_design/run_002_igdesign_local",
+    "results": "results/task_009_trem2_scfv_design/run_002_igdesign_local"
+  },
+  "preparation": {
+    "description": "Paired reference VH/VL and prepared TREM2 complex. The native heavy CDRs are redesigned while VL and VH framework are fixed. Exact regions, conditioning and sampling settings are retained in inputs/hcdr123_trem2.yaml.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Prepare conditioning",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Reference complex and heavy-CDR mask",
+          "outputs": {
+            "recorded_result": "Paired light-chain and antigen context"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; 100 samples",
+          "outputs": {
+            "recorded_result": "100 native candidate rows"
+          }
+        }
+      ],
+      "depends_on": [
+        "Prepare conditioning"
+      ]
+    },
+    {
+      "purpose": "Apply sequence gates",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Protected-residue and sequence checks",
+          "outputs": {
+            "recorded_result": "95 passing unique candidates"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Evaluate complexes",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2; exact model sequence verification",
+          "outputs": {
+            "recorded_result": "4 accepted candidate predictions"
+          }
+        }
+      ],
+      "depends_on": [
+        "Apply sequence gates"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "counts": {
+      "generated": 100,
+      "gates_pass": 95,
+      "unique": 95,
+      "evaluated": 4
+    },
+    "best": {
+      "candidate": "cand067",
+      "iptm": 0.8618,
+      "doc_id": "6afb3e597fc9c7f56da82908"
+    },
+    "deltas_vs_reference": {
+      "cand067": -0.0369,
+      "cand016": -0.074,
+      "cand019": -0.0794,
+      "cand001": -0.1661
+    },
+    "summary": "Best candidate cand067: ipTM 0.8618, pTM 0.9198; matched reference ipTM 0.8987. Four candidates span ipTM 0.7326\u20130.8618."
+  },
+  "artifact_links": {
+    "report_md": "@results/report.md",
+    "metrics": "@results/metrics.csv",
+    "shortlist": "@results/shortlist.csv",
+    "designed_sequences": "@results/sequences.fasta",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "gate_report": "@results/raw/native_generation/outputs/gate_report.json",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "sequences": "@results/sequences.fasta",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "excluded_wrong_input_evidence": {
+      "as_submitted_excluded_panel_metrics": "@results/raw/igdesign_boltz2_metrics.csv",
+      "as_submitted_submission_records": "@results/raw/submission_records_corrected.json",
+      "note": "both belong to the EXCLUDED as-submitted panel (payload deviations), retained as evidence only"
+    },
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "panel_of_record_evidence": "@results/raw/v3_metrics_and_echo.json",
+    "agent_usage_basis": "session GLM usage attributed per-run (approximate) (moved from config per guide lines 83-84 shape)",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "5f5f94eff907de4d93ea13dfd9603acc3c848b47dc3a92a687d5ab39d409ed11",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_009_trem2_scfv_design/run_002_igdesign_local.json",
+    "agent_config_sha256": "abbdb9806a4b47e8520fd8b1dcbc29b85337648172e46960c509f1240e624fe7",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  }
+}

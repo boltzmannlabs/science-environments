@@ -1,0 +1,24 @@
+{
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_antibmpnn_fixed_backbone_cdr_redesign",
+  "objective": "Fixed-backbone AntiBMPNN CDR redesign of eculizumab VH (HCDR3-only and HCDR123 scopes) with matched Boltz2/ESMFold structural evaluation against the unmodified native reference",
+  "inputs": {
+    "pdb": "@src/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched/inputs/5i5k_HLB.pdb",
+    "masks": "@src/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched/inputs/masks.json",
+    "reference_sequences": {
+      "vh": "QVQLVQSGAEVKKPGASVKVSCKASGYIFSNYWIQWVRQAPGQGLEWMGEILPGSGSTEYTENFKDRVTMTRDTSTSTVYMELSSLRSEDTAVYYCARYFFGSSPNWYFDVWGQGTLVTVSS",
+      "vl": "DIQMTQSPSSLSASVGDRVTITCGASENIYGALNWYQQKPGKAPKLLIYGATNLADGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQNVLNTPLTFGQGTKVEIK"
+    }
+  },
+  "parameters": {
+    "antibmpnn_samples_per_scope": 100,
+    "antibmpnn_temperature": 0.1,
+    "cdr_definitions": {"HCDR1": [26, 33], "HCDR2": [51, 58], "HCDR3": [97, 111]},
+    "selection_rule": "top-2 per pool by CDR-AAR sum (tie: first occurrence); native reference excluded",
+    "structure_predictors": ["Boltz2 (platform)", "ESMFold v0 3B (local, fair-esm 2.0.1)"],
+    "scrmsd_protocol": "Kabsch alignment on framework CA (VH non-CDR + all VL), CA RMSD on declared regions"
+  },
+  "outputs": {"results_root": "@results/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched"},
+  "evaluation": {"aar_convention": "length mismatch = 0; identical-position fraction otherwise", "benchmark_reference": "@benchmark/monoclonal_antibody_design/task_013_c5_igdesign_cdr_redesign/reference.md"}
+}

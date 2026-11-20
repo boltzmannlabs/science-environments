@@ -1,0 +1,16 @@
+task_id: task_015_il36r_igdesign_cdr_redesign
+run_id: run_004_antibmpnn_hcdr123_redesign
+workflow_id: wf_il36r_antibmpnn_hcdr123_redesign
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign/run.json
+    sha256: cc8a392a0f5a1222bc008fcb76ae5b27e1ec6d721dfea9c07858be5f568c5f9d
+  agent_settings:
+    path: ../../../configs/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign.json
+    sha256: 98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

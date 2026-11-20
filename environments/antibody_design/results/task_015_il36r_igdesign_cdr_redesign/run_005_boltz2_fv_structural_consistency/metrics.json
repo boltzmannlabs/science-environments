@@ -1,0 +1,340 @@
+{
+ "task_id": "task_015_il36r_igdesign_cdr_redesign",
+ "generated_utc": "2026-11-16",
+ "definitions": {
+  "predictor": "Boltz-2 (boltz-structure-prediction, platform job Boltz2)",
+  "reference_structure": "6u6u crystal Fv (chains H/L variable domains), Spesolimab Fab in complex with IL-36R (chain R)",
+  "atom_selection": "backbone N, CA, C, O",
+  "alignment": "global Fv framework (all non-CDR VH+VL residues), Kabsch superposition",
+  "regions_1_based": {
+   "VH": {
+    "hcdr1": [
+     26,
+     33
+    ],
+    "hcdr2": [
+     51,
+     58
+    ],
+    "hcdr3": [
+     97,
+     108
+    ]
+   },
+   "VL_masks_for_alignment_exclusion": {
+    "lcdr1": [
+     24,
+     34
+    ],
+    "lcdr2": [
+     50,
+     56
+    ],
+    "lcdr3": [
+     89,
+     97
+    ]
+   }
+  },
+  "scRMSd_units": "angstrom",
+  "plddt_source": "PDB B-factor column of Boltz2 output (0-100)"
+ },
+ "reference_control": {
+  "member": "reference (unmodified Spesolimab Fv)",
+  "boltz2_doc_id": "6afb16c5d29658acc30565c0",
+  "scrmsd_A": {
+   "vh_hcdr1": 0.5299,
+   "vh_hcdr2": 0.3994,
+   "vh_hcdr3": 0.3713,
+   "vh_hcdr123": 0.43,
+   "fv_all": 0.3178,
+   "fv_framework_fit": 0.306
+  },
+  "mean_plddt": {
+   "vh": 98.53,
+   "vl": 98.74,
+   "vh_cdrs": 98.77
+  },
+  "role": "self-consistency floor for the predictor protocol (same-protocol reproduction of the crystal Fv)"
+ },
+ "native_recovery": {
+  "run_001_igdesign_hcdr3_1shot_aar": 0.5833333333333334,
+  "run_001_igdesign_hcdr3_best100_aar": 0.8333333333333334,
+  "run_002_igdesign_hcdr123_1shot_aar": {
+   "hcdr1": 0.75,
+   "hcdr2": 0.625,
+   "hcdr3": 0.5833333333333334
+  },
+  "run_002_igdesign_hcdr123_best100_aar": {
+   "hcdr1": 1.0,
+   "hcdr2": 0.75,
+   "hcdr3": 0.8333333333333334
+  },
+  "sampling": "1-shot and best-of-100 masked native reconstruction, identical masks and evaluator",
+  "native_sequences": {
+   "hcdr1": "GYSFTSSW",
+   "hcdr2": "INPGNVRT",
+   "hcdr3": "TVVFYGEPYFPY"
+  }
+ },
+ "structural_consistency_boltz2": {
+  "antibmpnn_hcdr3_top3": {
+   "rank": 1,
+   "doc_id": "6afb1751239a6b9f38bf43fe",
+   "mean_plddt": {
+    "vh": 96.41,
+    "vh_cdrs": 95.41
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.7235,
+    "vh_hcdr2": 0.5111,
+    "vh_hcdr3": 0.7288,
+    "vh_hcdr123": 0.6722,
+    "fv_all": 0.4022,
+    "fv_framework_fit": 0.3527
+   }
+  },
+  "igdesign_hcdr3_top1": {
+   "rank": 2,
+   "doc_id": "6afb16ec9de6b44b075e0673",
+   "mean_plddt": {
+    "vh": 97.72,
+    "vh_cdrs": 97.01
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.9824,
+    "vh_hcdr2": 0.5787,
+    "vh_hcdr3": 0.7846,
+    "vh_hcdr123": 0.797,
+    "fv_all": 0.4578,
+    "fv_framework_fit": 0.3844
+   }
+  },
+  "antibmpnn_hcdr3_top2": {
+   "rank": 3,
+   "doc_id": "6afb1748d29658acc30565ea",
+   "mean_plddt": {
+    "vh": 96.68,
+    "vh_cdrs": 95.36
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.893,
+    "vh_hcdr2": 0.619,
+    "vh_hcdr3": 0.7853,
+    "vh_hcdr123": 0.7756,
+    "fv_all": 0.4778,
+    "fv_framework_fit": 0.4207
+   }
+  },
+  "antibmpnn_hcdr123_top2": {
+   "rank": 4,
+   "doc_id": "6afb175f9030bff41644f4f8",
+   "mean_plddt": {
+    "vh": 96.74,
+    "vh_cdrs": 95.8
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.0035,
+    "vh_hcdr2": 0.5489,
+    "vh_hcdr3": 1.1687,
+    "vh_hcdr123": 0.9794,
+    "fv_all": 0.4822,
+    "fv_framework_fit": 0.3609
+   }
+  },
+  "igdesign_hcdr3_top2": {
+   "rank": 5,
+   "doc_id": "6afb16f4239a6b9f38bf43e3",
+   "mean_plddt": {
+    "vh": 97.68,
+    "vh_cdrs": 96.91
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.1315,
+    "vh_hcdr2": 0.6227,
+    "vh_hcdr3": 0.8909,
+    "vh_hcdr123": 0.9037,
+    "fv_all": 0.4914,
+    "fv_framework_fit": 0.3939
+   }
+  },
+  "antibmpnn_hcdr123_top1": {
+   "rank": 6,
+   "doc_id": "6afb17589de6b44b075e069f",
+   "mean_plddt": {
+    "vh": 97.07,
+    "vh_cdrs": 96.21
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.0437,
+    "vh_hcdr2": 0.5971,
+    "vh_hcdr3": 1.664,
+    "vh_hcdr123": 1.2648,
+    "fv_all": 0.5507,
+    "fv_framework_fit": 0.3434
+   }
+  },
+  "igdesign_hcdr123_top1": {
+   "rank": 7,
+   "doc_id": "6afb17029850a93adf684eb6",
+   "mean_plddt": {
+    "vh": 98.15,
+    "vh_cdrs": 97.78
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.9211,
+    "vh_hcdr2": 0.78,
+    "vh_hcdr3": 1.0304,
+    "vh_hcdr123": 0.9334,
+    "fv_all": 0.5538,
+    "fv_framework_fit": 0.4738
+   }
+  },
+  "igdesign_hcdr3_top3": {
+   "rank": 8,
+   "doc_id": "6afb16fa9850a93adf684ea3",
+   "mean_plddt": {
+    "vh": 97.58,
+    "vh_cdrs": 96.74
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.0003,
+    "vh_hcdr2": 0.6495,
+    "vh_hcdr3": 1.4588,
+    "vh_hcdr123": 1.1483,
+    "fv_all": 0.5538,
+    "fv_framework_fit": 0.3918
+   }
+  },
+  "igdesign_hcdr123_top3": {
+   "rank": 9,
+   "doc_id": "6afb170f9de6b44b075e068d",
+   "mean_plddt": {
+    "vh": 98.57,
+    "vh_cdrs": 98.59
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.1936,
+    "vh_hcdr2": 0.8958,
+    "vh_hcdr3": 0.9898,
+    "vh_hcdr123": 1.0277,
+    "fv_all": 0.5669,
+    "fv_framework_fit": 0.4662
+   }
+  },
+  "antibmpnn_hcdr3_top1": {
+   "rank": 10,
+   "doc_id": "6afb1717445ae94313c45d80",
+   "mean_plddt": {
+    "vh": 96.54,
+    "vh_cdrs": 95.18
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.939,
+    "vh_hcdr2": 0.671,
+    "vh_hcdr3": 1.7788,
+    "vh_hcdr123": 1.3178,
+    "fv_all": 0.5865,
+    "fv_framework_fit": 0.3739
+   }
+  },
+  "igdesign_hcdr123_top2": {
+   "rank": 11,
+   "doc_id": "6afb1709445ae94313c45d6e",
+   "mean_plddt": {
+    "vh": 97.88,
+    "vh_cdrs": 97.57
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 0.9267,
+    "vh_hcdr2": 0.7048,
+    "vh_hcdr3": 0.6926,
+    "vh_hcdr123": 0.77,
+    "fv_all": 0.5912,
+    "fv_framework_fit": 0.5763
+   }
+  },
+  "antibmpnn_hcdr123_top3": {
+   "rank": 12,
+   "doc_id": "6afb1768445ae94313c45db4",
+   "mean_plddt": {
+    "vh": 97.01,
+    "vh_cdrs": 95.79
+   },
+   "scrmsd_A_vs_6u6u": {
+    "vh_hcdr1": 1.336,
+    "vh_hcdr2": 0.7501,
+    "vh_hcdr3": 1.7285,
+    "vh_hcdr123": 1.3969,
+    "fv_all": 0.6374,
+    "fv_framework_fit": 0.4455
+   }
+  }
+ },
+ "candidate_counts": {
+  "igdesign_hcdr3_generated": 100,
+  "igdesign_hcdr123_generated": 100,
+  "antibmpnn_hcdr3_generated": 40,
+  "antibmpnn_hcdr123_generated": 40,
+  "panel_evaluated_with_boltz2": 13,
+  "ranked_shortlist": 12,
+  "mask_verification": {
+   "run_003": {
+    "n": 40,
+    "vl_identical": 40,
+    "framework_identical": 40,
+    "len119": 40
+   },
+   "run_004": {
+    "n": 40,
+    "vl_identical": 40,
+    "framework_identical": 40,
+    "len119": 40
+   }
+  }
+ },
+ "sequence_hashes": {
+  "antibmpnn_hcdr3_top3": "7b589aa0b5889b5f",
+  "igdesign_hcdr3_top1": "d2e1308a5fd676e8",
+  "antibmpnn_hcdr3_top2": "8a0463a5d93f2fff",
+  "antibmpnn_hcdr123_top2": "65d3e3e1af5f9f31",
+  "igdesign_hcdr3_top2": "9fddea2e7a3c88f0",
+  "antibmpnn_hcdr123_top1": "ae9932c2f2c535b2",
+  "igdesign_hcdr123_top1": "5036409d9099d724",
+  "igdesign_hcdr3_top3": "b86ba6e767296e9b",
+  "igdesign_hcdr123_top3": "bcf04b5f3e6d11fe",
+  "antibmpnn_hcdr3_top1": "70829fc196d02415",
+  "igdesign_hcdr123_top2": "4f942c65b30d7822",
+  "antibmpnn_hcdr123_top3": "436bea6cae617206"
+ },
+ "provenance": {
+  "reference_structure": "PDB 6u6u (Spesolimab Fab + IL-36R)",
+  "source_csv": "Spesolimab-IL36R.csv (sha256 5ee0782ad74cd0a5b955403ee5ee9fd374df6503be964f25a559a9c6670244ca)",
+  "boltz2_jobs": {
+   "reference": "6afb16c5d29658acc30565c0",
+   "igdesign_hcdr3_top1": "6afb16ec9de6b44b075e0673",
+   "igdesign_hcdr3_top2": "6afb16f4239a6b9f38bf43e3",
+   "igdesign_hcdr3_top3": "6afb16fa9850a93adf684ea3",
+   "igdesign_hcdr123_top1": "6afb17029850a93adf684eb6",
+   "igdesign_hcdr123_top2": "6afb1709445ae94313c45d6e",
+   "igdesign_hcdr123_top3": "6afb170f9de6b44b075e068d",
+   "antibmpnn_hcdr3_top1": "6afb1717445ae94313c45d80",
+   "antibmpnn_hcdr3_top2": "6afb1748d29658acc30565ea",
+   "antibmpnn_hcdr3_top3": "6afb1751239a6b9f38bf43fe",
+   "antibmpnn_hcdr123_top1": "6afb17589de6b44b075e069f",
+   "antibmpnn_hcdr123_top2": "6afb175f9030bff41644f4f8",
+   "antibmpnn_hcdr123_top3": "6afb1768445ae94313c45db4"
+  },
+  "excluded_job": {
+   "member_id": "antibmpnn_hcdr3_top2",
+   "doc_id": "6afb1723d29658acc30565dd",
+   "experiment_name": "Boltz-2 - 20261116-144555Z - 2813c9",
+   "reason": "payload transcription error in VL (RLASGGVDR at positions 58-63 instead of RLASGVPDR); job excluded from comparison; corrected resubmission 6afb1748d29658acc30565ea"
+  },
+  "igdesign_checkpoint": "IgDesign (local GPU, memory-safe inference; configs in raw/*_config.pkl)",
+  "antibmpnn_jobs": {
+   "run_003": "experiment 6afb145e239a6b9f38bf435f (antibmpnn_020, T=0.1, N=40, seed 37, HCDR3 97-108)",
+   "run_004": "experiment 6afb146f9de6b44b075e05f3 (antibmpnn_020, T=0.1, N=40, seed 37, HCDR1/2/3)"
+  }
+ }
+}

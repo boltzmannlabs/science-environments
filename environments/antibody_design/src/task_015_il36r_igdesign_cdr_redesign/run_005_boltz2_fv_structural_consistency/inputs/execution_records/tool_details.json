@@ -1,0 +1,38 @@
+{
+  "records": {
+    "C01": {
+      "tool": "Boltz-2 x13",
+      "docs": "@src/inputs/job_map.json",
+      "experiment_names": "see job_map.json"
+    },
+    "C02": {
+      "tool": "local analysis (numpy Kabsch)",
+      "script": "@src/code/analyze_boltz2.py"
+    }
+  },
+  "task_id": "task_015_il36r_igdesign_cdr_redesign",
+  "run_id": "run_005_boltz2_fv_structural_consistency",
+  "method_summary": [
+    {
+      "stage": "Assemble panel",
+      "tool_and_settings": "Saved boltz2_panel.json; 12 designs + reference",
+      "result": "13 exact sequence pairs"
+    },
+    {
+      "stage": "Predict Fv structures",
+      "tool_and_settings": "Matched Boltz2 settings",
+      "result": "13 accepted models"
+    },
+    {
+      "stage": "Verify model identity",
+      "tool_and_settings": "Exact VH and VL sequence checks",
+      "result": "All 13 panel members verified"
+    },
+    {
+      "stage": "Measure structure and confidence",
+      "tool_and_settings": "Framework Kabsch fit; N/C\u03b1/C/O backbone vs experimental 6U6U",
+      "result": "12 ranked candidates and native control"
+    }
+  ],
+  "completed_outcome": "Lowest candidate Fv deviation is antibmpnn_hcdr3_top3, 0.4022 \u00c5; native control 0.3178 \u00c5. Lowest candidate HCDR3 deviation is igdesign_hcdr123_top2, 0.6926 \u00c5. The AntiBMPNN subsets are the fixed recorded panels, selected in descending NLL order."
+}

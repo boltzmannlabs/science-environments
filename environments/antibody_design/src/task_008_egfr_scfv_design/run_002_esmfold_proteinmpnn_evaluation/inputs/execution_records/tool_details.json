@@ -1,0 +1,57 @@
+{
+  "C01": {
+    "tool": "ESMFold",
+    "source": "open-source (igdesign conda env esm-fold CLI)",
+    "revision": "esm-fold CLI, --num-recycles 4",
+    "inputs": {
+      "eval_set": "inputs/eval_set.fasta (reference + 6 shortlist)"
+    },
+    "outputs": {
+      "structures": "inputs/esmfold_out/ (7)",
+      "metrics": "metrics.csv esmfold_mean_plddt"
+    },
+    "outcome": "completed; pLDDT 85.1-85.8 (ref 85.40)"
+  },
+  "C02": {
+    "tool": "ProteinMPNN",
+    "source": "open-source (upstream runner <local-path>, weights v_48_020)",
+    "parameters": {
+      "score_only": 1,
+      "pdb_path per entity": true,
+      "fixed chains": "all (score own sequence on own backbone)"
+    },
+    "inputs": {
+      "backbones": "inputs/mpnn_in/ (ESMFold outputs)"
+    },
+    "outputs": {
+      "npz": "inputs/mpnn_score/*/score_only/*.npz (copied to results raw/)",
+      "metrics": "metrics.csv mpnn_score_own_backbone"
+    },
+    "outcome": "completed; ref 1.4692; best s18 1.4510; recovery 0.921-0.942"
+  },
+  "task_id": "task_008_egfr_scfv_design",
+  "run_id": "run_002_esmfold_proteinmpnn_evaluation",
+  "method_summary": [
+    {
+      "stage": "Prepare panel",
+      "tool_and_settings": "Saved FASTA and run_001 shortlist",
+      "result": "7 sequences"
+    },
+    {
+      "stage": "Predict scFv structures",
+      "tool_and_settings": "ESMFold",
+      "result": "7 accepted single-chain models"
+    },
+    {
+      "stage": "Score sequences",
+      "tool_and_settings": "ProteinMPNN score-only on each sequence\u2019s own ESMFold backbone",
+      "result": "Negative log likelihood; lower is preferred"
+    },
+    {
+      "stage": "Summarize",
+      "tool_and_settings": "Whole-scFv confidence and sequence properties",
+      "result": "Seven-row metrics table"
+    }
+  ],
+  "completed_outcome": "Candidate ESMFold pLDDT 85.07\u201385.84; reference 85.40. Lowest candidate own-backbone ProteinMPNN NLL: cet_008_r1_s18, 1.4510; reference 1.4692."
+}

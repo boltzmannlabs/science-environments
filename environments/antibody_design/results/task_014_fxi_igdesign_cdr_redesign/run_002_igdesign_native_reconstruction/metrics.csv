@@ -1,0 +1,71 @@
+metric,scope,sampling_rule,value,unit,definition
+AAR,hcdr3,1-shot,0.6923,fraction,overall identity over designed CDR positions (first sample)
+AAR_HCDR3,hcdr3,1-shot,0.6923,fraction,hcdr3 identity vs native TRGGPYYYYGMDV
+AAR,hcdr3,1-shot,0.7692,fraction,overall identity over designed CDR positions (first sample)
+AAR_HCDR3,hcdr3,1-shot,0.7692,fraction,hcdr3 identity vs native TRGGPYYYYGMDV
+AAR,hcdr3,best-of-100,0.8462,fraction,max overall recovery over samples
+AAR_HCDR3,hcdr3,best-of-100,0.8462,fraction,hcdr3 identity vs native
+AAR_mean,hcdr3,mean-over-100,0.7154,fraction,mean per-CDR AAR averaged over samples
+AAR,hcdr1+hcdr2+hcdr3,1-shot,0.7241,fraction,overall identity over designed CDR positions (first sample)
+AAR_HCDR1,hcdr1+hcdr2+hcdr3,1-shot,0.75,fraction,hcdr1 identity vs native GFTFSQYG
+AAR_HCDR2,hcdr1+hcdr2+hcdr3,1-shot,0.625,fraction,hcdr2 identity vs native IGPSGGST
+AAR_HCDR3,hcdr1+hcdr2+hcdr3,1-shot,0.7692,fraction,hcdr3 identity vs native TRGGPYYYYGMDV
+AAR,hcdr1+hcdr2+hcdr3,1-shot,0.6552,fraction,overall identity over designed CDR positions (first sample)
+AAR_HCDR1,hcdr1+hcdr2+hcdr3,1-shot,0.75,fraction,hcdr1 identity vs native GFTFSQYG
+AAR_HCDR2,hcdr1+hcdr2+hcdr3,1-shot,0.625,fraction,hcdr2 identity vs native IGPSGGST
+AAR_HCDR3,hcdr1+hcdr2+hcdr3,1-shot,0.6154,fraction,hcdr3 identity vs native TRGGPYYYYGMDV
+AAR,hcdr1+hcdr2+hcdr3,best-of-100,0.7931,fraction,max overall recovery over samples
+AAR_HCDR1,hcdr1+hcdr2+hcdr3,best-of-100,0.75,fraction,hcdr1 identity vs native
+AAR_HCDR2,hcdr1+hcdr2+hcdr3,best-of-100,0.75,fraction,hcdr2 identity vs native
+AAR_HCDR3,hcdr1+hcdr2+hcdr3,best-of-100,0.8462,fraction,hcdr3 identity vs native
+AAR_mean,hcdr1+hcdr2+hcdr3,mean-over-100,0.675,fraction,mean per-CDR AAR averaged over samples
+scRMSD_HCDR1,t014r002_hcdr3_best100_012,Boltz2 single model,0.3785,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr3_best100_012,Boltz2 single model,0.4428,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr3_best100_012,Boltz2 single model,1.3144,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr3_best100_012,Boltz2 single model,0.9317,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr3_best100_012,Boltz2 single model,0.4382,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr3_best100_022,Boltz2 single model,0.4239,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr3_best100_022,Boltz2 single model,0.5697,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr3_best100_022,Boltz2 single model,1.7987,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr3_best100_022,Boltz2 single model,1.2607,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr3_best100_022,Boltz2 single model,0.5464,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr3_best100_027,Boltz2 single model,0.9069,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr3_best100_027,Boltz2 single model,0.9185,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr3_best100_027,Boltz2 single model,4.1817,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr3_best100_027,Boltz2 single model,2.8807,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr3_best100_027,Boltz2 single model,1.131,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr3_best100_065,Boltz2 single model,1.1334,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr3_best100_065,Boltz2 single model,1.205,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr3_best100_065,Boltz2 single model,1.7719,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr3_best100_065,Boltz2 single model,1.4705,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr3_best100_065,Boltz2 single model,0.7657,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr3_best100_082,Boltz2 single model,0.5015,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr3_best100_082,Boltz2 single model,0.4545,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr3_best100_082,Boltz2 single model,2.9435,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr3_best100_082,Boltz2 single model,2.0026,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr3_best100_082,Boltz2 single model,0.7759,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr123_best100_034,Boltz2 single model,0.3512,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr123_best100_034,Boltz2 single model,0.6185,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr123_best100_034,Boltz2 single model,1.6161,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr123_best100_034,Boltz2 single model,1.1447,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr123_best100_034,Boltz2 single model,0.4829,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr123_best100_035,Boltz2 single model,0.6599,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr123_best100_035,Boltz2 single model,0.5976,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr123_best100_035,Boltz2 single model,3.8252,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr123_best100_035,Boltz2 single model,2.6034,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr123_best100_035,Boltz2 single model,0.9821,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr123_best100_067,Boltz2 single model,0.3164,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr123_best100_067,Boltz2 single model,0.4499,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr123_best100_067,Boltz2 single model,3.8835,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr123_best100_067,Boltz2 single model,2.6162,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr123_best100_067,Boltz2 single model,0.9744,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr123_best100_070,Boltz2 single model,0.284,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr123_best100_070,Boltz2 single model,0.3734,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr123_best100_070,Boltz2 single model,1.8404,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr123_best100_070,Boltz2 single model,1.2566,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr123_best100_070,Boltz2 single model,0.5061,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r002_hcdr123_best100_082,Boltz2 single model,0.4211,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r002_hcdr123_best100_082,Boltz2 single model,0.6601,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r002_hcdr123_best100_082,Boltz2 single model,3.8016,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r002_hcdr123_best100_082,Boltz2 single model,2.5783,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r002_hcdr123_best100_082,Boltz2 single model,0.9728,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv

@@ -1,0 +1,16 @@
+task_id: task_009_trem2_scfv_design
+run_id: run_004_epitope_abgen_local
+workflow_id: wf_trem2_epitope_abgen_local_correction
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_009_trem2_scfv_design/run_004_epitope_abgen_local/run.json
+    sha256: 8f0ceadc074a2352442fb1749dad7c210258f280ffd74599f5cbefc479f6c378
+  agent_settings:
+    path: ../../../configs/task_009_trem2_scfv_design/run_004_epitope_abgen_local.json
+    sha256: 3dabcd88c55cdbe47ee5cb101d1c9c0843ec6db969e3de2f36b7cb52e3c1138b
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

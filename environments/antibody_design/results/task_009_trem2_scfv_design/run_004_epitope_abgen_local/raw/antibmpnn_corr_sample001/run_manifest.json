@@ -1,0 +1,84 @@
+{
+  "request": {
+    "job_name": "task009_corr_epitope_antibmpnn_sample1_seed2027",
+    "experiment_id": "task009_corrected_epitope_local",
+    "user_id": "local_adapter",
+    "input_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/inputs/correction_v2/repaired_for_antibmpnn/trem2_ref_scFv_T009_v2_all_CDR_platform_sample001_seed2027_repaired.pdb",
+    "chains_to_design": [
+      "H",
+      "L"
+    ],
+    "residue_positions_to_design": {
+      "H": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "L": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        50,
+        51,
+        52,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    "generation_count": 40,
+    "model_name": "antibmpnn_020",
+    "sampling_temperature": 0.1,
+    "backbone_noise": 0.0,
+    "seed": 37
+  },
+  "fixed_chains_by_pdb": {
+    "trem2_ref_scFv_T009_v2_all_CDR_platform_sample001_seed2027_repaired": [
+      "A"
+    ]
+  },
+  "pdb_count": 1,
+  "sequence_count": 40,
+  "expected_sequence_count": 40,
+  "csv_columns": [
+    "pdb_name",
+    "heavy_chain",
+    "light_chain"
+  ]
+}

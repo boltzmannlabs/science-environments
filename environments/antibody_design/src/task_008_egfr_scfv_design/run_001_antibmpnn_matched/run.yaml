@@ -1,0 +1,17 @@
+task_id: task_008_egfr_scfv_design
+run_id: run_001_antibmpnn_matched
+workflow_id: AntiBMPNN CDR-restricted redesign + Boltz2 matched evaluation (Boltzmann
+  lane)
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_008_egfr_scfv_design/run_001_antibmpnn_matched/run.json
+    sha256: cab73c3ed13209ad58bb382c93d4135109fec7f2c71ef59064f703b56b5deedc
+  agent_settings:
+    path: ../../../configs/task_008_egfr_scfv_design/run_001_antibmpnn_matched.json
+    sha256: c67724c349cd8ccb079857d1d1f5035dc6e619c197543d4e473ff81ffc19af31
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

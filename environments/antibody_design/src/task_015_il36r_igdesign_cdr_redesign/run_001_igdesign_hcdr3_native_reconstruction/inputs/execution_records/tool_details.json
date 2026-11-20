@@ -1,0 +1,37 @@
+{
+  "records": {
+    "C01": {
+      "tool": "IgDesign 1shot",
+      "config": "@src/code/hcdr3_1shot.yaml"
+    },
+    "C02": {
+      "tool": "IgDesign best100",
+      "config": "@src/code/hcdr3_100.yaml"
+    }
+  },
+  "task_id": "task_015_il36r_igdesign_cdr_redesign",
+  "run_id": "run_001_igdesign_hcdr3_native_reconstruction",
+  "method_summary": [
+    {
+      "stage": "Generate 1-shot",
+      "tool_and_settings": "IgDesign; saved one-sample configuration",
+      "result": "1 sample"
+    },
+    {
+      "stage": "Generate 100-sample pool",
+      "tool_and_settings": "IgDesign; separate saved configuration",
+      "result": "100 samples"
+    },
+    {
+      "stage": "Measure native recovery",
+      "tool_and_settings": "Per-CDR position identity",
+      "result": "HCDR3 AAR for 101 samples"
+    },
+    {
+      "stage": "Select evaluation entries",
+      "tool_and_settings": "Ascending HCDR3 cross-entropy loss; distinct recorded sequences",
+      "result": "3 panel members evaluated in run_005"
+    }
+  ],
+  "completed_outcome": "HCDR3 AAR: 1-shot 0.5833; maximum over the separate 100-sample pool 0.8333. Structural evaluation is retained in run_005."
+}

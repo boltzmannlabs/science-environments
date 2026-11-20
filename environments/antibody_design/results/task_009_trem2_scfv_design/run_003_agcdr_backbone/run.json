@@ -1,0 +1,130 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_003_agcdr_backbone",
+  "workflow_id": "wf_trem2_agcdr_antibmpnn_cdr_redesign",
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  },
+  "paths": {
+    "src": "src/task_009_trem2_scfv_design/run_003_agcdr_backbone",
+    "results": "results/task_009_trem2_scfv_design/run_003_agcdr_backbone"
+  },
+  "preparation": {
+    "description": "Prepared reference Fv and TREM2 antigen structures. AgCDR generates eight backbone samples; the evaluated sequence panel comes from sample 7. Framework and chain-local CDR constraints are checked before selection.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Diversify backbone",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AgCDR; 8 samples, 10 steps",
+          "outputs": {
+            "recorded_result": "8 backbone samples"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Select backbone",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Recorded sample-7 backbone",
+          "outputs": {
+            "recorded_result": "One backbone for sequence generation"
+          }
+        }
+      ],
+      "depends_on": [
+        "Diversify backbone"
+      ]
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Local AntiBMPNN; 40 samples",
+          "outputs": {
+            "recorded_result": "40 candidate sequences"
+          }
+        }
+      ],
+      "depends_on": [
+        "Select backbone"
+      ]
+    },
+    {
+      "purpose": "Evaluate complexes",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2; exact sequence identity check",
+          "outputs": {
+            "recorded_result": "4 predictions; cand032 retained"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "counts": {
+      "generated": 40,
+      "gates_pass": 40,
+      "unique": 40,
+      "evaluated": 4
+    },
+    "best": {
+      "candidate": "cand032",
+      "iptm": 0.7412578463554382,
+      "doc_id": "6afb4961ef7b50fcff15c07f"
+    },
+    "reference_control": {
+      "iptm": 0.8987,
+      "doc": "6af92bea9030bff416448a17",
+      "source": "run_001 evaluation set"
+    },
+    "summary": "Best candidate cand032: ipTM 0.7413, pTM 0.8636; matched reference ipTM 0.8987. The full evaluated range is 0.3633\u20130.7413."
+  },
+  "artifact_links": {
+    "report_md": "@results/report.md",
+    "metrics": "@results/metrics.csv",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "saved_artifacts": "@results/saved_artifacts.json",
+    "gate_report": "@results/raw/native_generation/outputs/gate_report.json",
+    "report": "@results/report.md",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "agent_usage_basis": "session GLM usage attributed per-run (approximate) (moved from config per guide lines 83-84 shape)",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "81ce28a72ce5ddcc92a5cfd14ccfe92f9baaa01b8ef7b0b9f3ed848bed5b72df",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_009_trem2_scfv_design/run_003_agcdr_backbone.json",
+    "agent_config_sha256": "60a9808e0303ac19e205f79d6484124c7cca72d443be16e9a2373cea25b09570",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  }
+}

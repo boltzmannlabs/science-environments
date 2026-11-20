@@ -1,0 +1,5 @@
+{"utc": "2026-11-16T14:05:00Z", "event": "lane decision", "note": "open-source fallback recorded: endpoints defined on ESMFold/ProteinMPNN; no Boltzmann equivalent"}
+{"utc": "2026-11-16T14:10-14:50Z", "event": "run", "tool": "ESMFold (esm-fold CLI)", "note": "7/7 structures, 4 recycles; log tool_logs/esmfold_run.log"}
+{"utc": "2026-11-16T14:50:00Z", "event": "failure + recovery", "tool": "ProteinMPNN (feb_work fork)", "note": "folder-mode CLI/position_list/empty-CSV bugs; switched to her2_design/ProteinMPNN upstream runner"}
+{"utc": "2026-11-16T15:00-15:35Z", "event": "run", "tool": "ProteinMPNN score_only (v_48_020)", "note": "7/7 npz; logs tool_logs/mpnn_*.log"}
+{"utc": "2026-11-16T15:40:00Z", "event": "assembly", "note": "metrics.csv/benchmark_comparison.csv/sequences/structures/raw written"}

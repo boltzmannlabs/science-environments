@@ -1,0 +1,20 @@
+{
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_002_igdesign_reconstruction",
+  "workflow_id": "wf_igdesign_reference_backbone_reconstruction",
+  "objective": "IgDesign reference-backbone masked native reconstruction (HCDR3-only and HCDR123 scopes, 1-shot + 100-sample budgets) reproducing the released Eculizumab-C5 AAR benchmark",
+  "inputs": {
+    "pdb": "@src/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction/inputs/5i5k_HLB.pdb",
+    "masks": "@src/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction/inputs/masks.json",
+    "ag_crop": "@src/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction/inputs/ag_crop.json",
+    "benchmark_csv": "@src/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched/inputs/Eculizumab-C5.csv"
+  },
+  "parameters": {
+    "budgets": {"1shot": 1, "pool": 100},
+    "cdr_definitions": {"HCDR1": [26, 33], "HCDR2": [51, 58], "HCDR3": [97, 111]},
+    "backbone_conditioning": "reference 5I5K Fv, fixed",
+    "native_in_evaluator": true
+  },
+  "outputs": {"results_root": "@results/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction"},
+  "evaluation": {"aar_convention": "length mismatch = 0; identical-position fraction otherwise"}
+}

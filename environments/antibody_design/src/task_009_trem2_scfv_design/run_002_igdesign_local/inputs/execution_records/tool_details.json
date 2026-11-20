@@ -1,0 +1,97 @@
+{
+  "C01": {
+    "tool": "IgDesign (local open source, AbSciBio weights; memory-safe fp16)",
+    "purpose": "H-CDR1/2/3 redesign conditioned on paired VL + TREM2 antigen",
+    "code": "code/run_igdesign_mmap.py",
+    "config": "inputs/hcdr123_trem2.yaml",
+    "parameters": {
+      "region_order": [
+        "hcdr1",
+        "hcdr2",
+        "hcdr3"
+      ],
+      "positions_0based": "25-32/50-57/96-109",
+      "samples": "10x10x1=100",
+      "seed": 0,
+      "condition_on_light_chain": true,
+      "condition_on_antigen": true,
+      "precision": "fp16"
+    },
+    "outputs": {
+      "generated": 100,
+      "gates_pass": "see outputs/gate_report.json"
+    }
+  },
+  "C02": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "evaluation of IgDesign candidates",
+    "records": {
+      "as_submitted_panel": {
+        "docs": [
+          "6afb36537fc9c7f56da826c9",
+          "6afb369d7426d09ad749d1d1",
+          "6afb36addc1d60e5b460113a",
+          "6afb36d975ff2e0d02e6eb96"
+        ],
+        "note": "payload deviations excluded from panel of record; retained as evidence (raw/igdesign_boltz2_metrics.csv)"
+      },
+      "v3_corrected_panel": {
+        "cand001": {
+          "doc_id": "6afb3e4375ff2e0d02e6ec9d",
+          "iptm": 0.7326,
+          "ptm": 0.8729,
+          "echo_exact_match": true
+        },
+        "cand019": {
+          "doc_id": "6afb3e4ec3dde753301b1ada",
+          "iptm": 0.8193,
+          "ptm": 0.9088,
+          "echo_exact_match": true
+        },
+        "cand067": {
+          "doc_id": "6afb3e597fc9c7f56da82908",
+          "iptm": 0.8618,
+          "ptm": 0.9198,
+          "echo_exact_match": true
+        },
+        "cand016": {
+          "doc_id": "6afb3e64c3dde753301b1ae5",
+          "iptm": 0.8247,
+          "ptm": 0.9047,
+          "echo_exact_match": true
+        }
+      }
+    },
+    "reference_control": {
+      "doc": "6af92bea9030bff416448a17",
+      "iptm": 0.8987,
+      "ptm": 0.9316,
+      "complex_plddt": 0.9424
+    }
+  },
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_002_igdesign_local",
+  "method_summary": [
+    {
+      "stage": "Prepare conditioning",
+      "tool_and_settings": "Reference complex and heavy-CDR mask",
+      "result": "Paired light-chain and antigen context"
+    },
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "IgDesign; 100 samples",
+      "result": "100 native candidate rows"
+    },
+    {
+      "stage": "Apply sequence gates",
+      "tool_and_settings": "Protected-residue and sequence checks",
+      "result": "95 passing unique candidates"
+    },
+    {
+      "stage": "Evaluate complexes",
+      "tool_and_settings": "Boltz2; exact model sequence verification",
+      "result": "4 accepted candidate predictions"
+    }
+  ],
+  "completed_outcome": "Best candidate cand067: ipTM 0.8618, pTM 0.9198; matched reference ipTM 0.8987. Four candidates span ipTM 0.7326\u20130.8618."
+}

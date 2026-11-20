@@ -1,0 +1,310 @@
+{
+ "format": "antibody_design_bundle",
+ "task_id": "task_009_trem2_scfv_design",
+ "run_id": "run_001_antibmpnn_matched",
+ "generated": "2026-11-16T20:20:00Z",
+ "units_and_definitions": {
+  "iptm": "Boltz2 inter-chain predicted TM (0-1); complex confidence for chain docking",
+  "ptm": "Boltz2 predicted TM (0-1); intra-chain fold confidence",
+  "complex_plddt": "Boltz2 mean per-residue pLDDT over the full complex (0-1 raw scale)",
+  "complex_pde": "Boltz2 complex predicted distance error (A, lower better)",
+  "interface_residues": "residues with any heavy atom <5 A of the other chain (computed from PDB)",
+  "contacts": "heavy-atom pairs <5 A across the interface",
+  "h/l_loop_plddt": "mean per-residue pLDDT (B-factor, 0-100) over CDR positions in scFv numbering",
+  "antibmpnn_score": "AntiBMPNN negative log-likelihood of designed sequence (lower better)",
+  "seq_recovery": "fraction of designed positions matching the input sequence"
+ },
+ "structural_scope": {
+  "complex": "TREM2 ectodomain construct 126 aa (UniProt Q9NZC2 19-142 + C-terminal His6) = chain A; scFv 245 aa (SM + VH 121 + (G4S)3 + VL 107) = chain B",
+  "designed_regions": "CDR-only mask: H 28-35,53-60,99-112 and VL 27-32,50-52,89-97 (IMGT; scFv numbering)",
+  "protected": "all framework positions incl. Cys22/Cys96 (H) and Cys23/Cys88 (L); linker fixed"
+ },
+ "provenance": {
+  "reference": "proteinbase.com/proteins/golden-gecko-stone (retrieved 2026-11-14)",
+  "reference_control_boltz2": {
+   "doc_id": "6af92bea9030bff416448a17",
+   "iptm": 0.8987,
+   "ptm": 0.9316,
+   "complex_plddt": 0.9424,
+   "pde": 0.3989
+  },
+  "antibmpnn_generation": {
+   "doc_id": "6af99b6b9850a93adf67e2fd",
+   "generations": 40,
+   "experiment": "task009_antibmpnn_cdr_run1 (run2 submission)"
+  },
+  "candidate_boltz2": {
+   "cand10": {
+    "doc_id": "6afafcb59de6b44b075dfff7"
+   },
+   "cand33": {
+    "doc_id": "6afafd1e445ae94313c45281"
+   },
+   "cand07": {
+    "doc_id": "6afafd28d29658acc3056199"
+   },
+   "cand13": {
+    "doc_id": "6afafd409030bff41644ee91"
+   }
+  },
+  "software": "Boltz2 via Boltzmann platform (boltz-structure-prediction); AntiBMPNN platform tool"
+ },
+ "candidates": {
+  "cand33": {
+   "candidate_id": "cand33_T009-C33",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSDYYMGWVRQAPGKGLEWVSGISWSGSSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARDRYGYYYSAMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSYSGLYTFGQGTKLEIK",
+   "scfv_sha256": "acb4480a2d808e6f7aacd8b58735f232c4fe89f9c2f3f99e860fa8ef9a077cec",
+   "mutations_H": [
+    "Y31D",
+    "P53W",
+    "S55G",
+    "G56S",
+    "Y57S",
+    "Y99D",
+    "Y100R",
+    "H107A"
+   ],
+   "mutations_L": [
+    "R92Y",
+    "H96Y"
+   ],
+   "antibmpnn_score": 0.351,
+   "seq_recovery": 0.7917,
+   "gates_passed": [
+    "G1 mask",
+    "G2 no-new-Cys",
+    "G3 length",
+    "G4 framework identity",
+    "G5 architecture",
+    "G6 pairing"
+   ],
+   "boltz2": {
+    "iptm": 0.7439042925834656,
+    "ptm": 0.8736187219619751,
+    "complex_plddt": 0.9000076055526733,
+    "complex_pde": 0.5273948311805725,
+    "doc_id": "6afb60ceef7b50fcff15c21f",
+    "echo_exact_match": true,
+    "antigen_match": true,
+    "submission_bodies": "@results/raw/corrected_v2_submission_bodies.json"
+   },
+   "interface": {
+    "antigen_residues": 20,
+    "scfv_residues": 22,
+    "contacts_5A": 362,
+    "h_cdr_plddt": 84.1717,
+    "l_cdr_plddt": 88.6922
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.1548,
+    "complex_plddt": -0.0424,
+    "ptm": -0.058,
+    "pde": 0.1285
+   },
+   "superseded_wrong_input_evaluation": {
+    "doc_id": "6afafd1e445ae94313c45281",
+    "reason": "literal submitted scFv did not match intended candidate (transcript audit task9_r1_original_literal_submission_audit.json; public tool_calls 20413/20422/20424/20429; 13/12/16/15 mismatches; replay 20420 duplicate)",
+    "excluded_evidence": "@results/excluded_wrong_input_v1 and @results/raw original zips"
+   }
+  },
+  "cand10": {
+   "candidate_id": "cand10_T009-C10",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSSYYMGWVRQAPGKGLEWVSGISSSGSSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARDRYGYYYSAMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSYSGLTTFGQGTKLEIK",
+   "scfv_sha256": "1600bb7f916061ae57860593b8507b5acfab5e67a29a5f2380724018298ddc07",
+   "mutations_H": [
+    "Y31S",
+    "P53S",
+    "S55G",
+    "G56S",
+    "Y57S",
+    "Y99D",
+    "Y100R",
+    "H107A"
+   ],
+   "mutations_L": [
+    "R92Y",
+    "H96T"
+   ],
+   "antibmpnn_score": 0.3391,
+   "seq_recovery": 0.7917,
+   "gates_passed": [
+    "G1 mask",
+    "G2 no-new-Cys",
+    "G3 length",
+    "G4 framework identity",
+    "G5 architecture",
+    "G6 pairing"
+   ],
+   "boltz2": {
+    "iptm": 0.7969349026679993,
+    "ptm": 0.8913440704345703,
+    "complex_plddt": 0.912638783454895,
+    "complex_pde": 0.5012456774711609,
+    "doc_id": "6afb60b97fc9c7f56da82d44",
+    "echo_exact_match": true,
+    "antigen_match": true,
+    "submission_bodies": "@results/raw/corrected_v2_submission_bodies.json"
+   },
+   "interface": {
+    "antigen_residues": 19,
+    "scfv_residues": 18,
+    "contacts_5A": 278,
+    "h_cdr_plddt": 89.0227,
+    "l_cdr_plddt": 89.285
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.1018,
+    "complex_plddt": -0.0298,
+    "ptm": -0.0403,
+    "pde": 0.1023
+   },
+   "superseded_wrong_input_evaluation": {
+    "doc_id": "6afafcb59de6b44b075dfff7",
+    "reason": "literal submitted scFv did not match intended candidate (transcript audit task9_r1_original_literal_submission_audit.json; public tool_calls 20413/20422/20424/20429; 13/12/16/15 mismatches; replay 20420 duplicate)",
+    "excluded_evidence": "@results/excluded_wrong_input_v1 and @results/raw original zips"
+   }
+  },
+  "cand07": {
+   "candidate_id": "cand07_T009-C07",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFSSYYMGWVRQAPGKGLEWVSGISSSGSSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARDKYGYIYSAMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSYSGLWTFGQGTKLEIK",
+   "scfv_sha256": "e17979e836ebd5e609b80da5cd10baadf12b47d9879d10cde26a9865ff792379",
+   "mutations_H": [
+    "Y31S",
+    "P53S",
+    "S55G",
+    "G56S",
+    "Y57S",
+    "Y99D",
+    "Y100K",
+    "Y104I",
+    "H107A"
+   ],
+   "mutations_L": [
+    "R92Y",
+    "H96W"
+   ],
+   "antibmpnn_score": 0.3625,
+   "seq_recovery": 0.7708,
+   "gates_passed": [
+    "G1 mask",
+    "G2 no-new-Cys",
+    "G3 length",
+    "G4 framework identity",
+    "G5 architecture",
+    "G6 pairing"
+   ],
+   "boltz2": {
+    "iptm": 0.615519642829895,
+    "ptm": 0.8306338787078857,
+    "complex_plddt": 0.9146313667297363,
+    "complex_pde": 0.6114914417266846,
+    "doc_id": "6afb60ae75ff2e0d02e6f0de",
+    "echo_exact_match": true,
+    "antigen_match": true,
+    "submission_bodies": "@results/raw/corrected_v2_submission_bodies.json"
+   },
+   "interface": {
+    "antigen_residues": 18,
+    "scfv_residues": 19,
+    "contacts_5A": 247,
+    "h_cdr_plddt": 91.2647,
+    "l_cdr_plddt": 90.5083
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.2832,
+    "complex_plddt": -0.0278,
+    "ptm": -0.101,
+    "pde": 0.2126
+   },
+   "superseded_wrong_input_evaluation": {
+    "doc_id": "6afafd28d29658acc3056199",
+    "reason": "literal submitted scFv did not match intended candidate (transcript audit task9_r1_original_literal_submission_audit.json; public tool_calls 20413/20422/20424/20429; 13/12/16/15 mismatches; replay 20420 duplicate)",
+    "excluded_evidence": "@results/excluded_wrong_input_v1 and @results/raw original zips"
+   }
+  },
+  "cand13": {
+   "candidate_id": "cand13_T009-C13",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGFTFDDYYMGWVRQAPGKGLEWVSGINWNSGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARDRYGYYYSAMDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSISSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCQQSYSGLWTFGQGTKLEIK",
+   "scfv_sha256": "d6c8692095d6d396c4a95341be95b1b8811aec7e2808bdbb3c98b06a818b7cb8",
+   "mutations_H": [
+    "S30D",
+    "Y31D",
+    "S52N",
+    "P53W",
+    "S54N",
+    "Y57S",
+    "Y99D",
+    "Y100R",
+    "H107A"
+   ],
+   "mutations_L": [
+    "R92Y",
+    "H96W"
+   ],
+   "antibmpnn_score": 0.3652,
+   "seq_recovery": 0.7708,
+   "gates_passed": [
+    "G1 mask",
+    "G2 no-new-Cys",
+    "G3 length",
+    "G4 framework identity",
+    "G5 architecture",
+    "G6 pairing"
+   ],
+   "boltz2": {
+    "iptm": 0.306171715259552,
+    "ptm": 0.7214952707290649,
+    "complex_plddt": 0.8760640025138855,
+    "complex_pde": 0.8108102083206177,
+    "doc_id": "6afb60c475ff2e0d02e6f0ea",
+    "echo_exact_match": true,
+    "antigen_match": true,
+    "submission_bodies": "@results/raw/corrected_v2_submission_bodies.json"
+   },
+   "interface": {
+    "antigen_residues": 11,
+    "scfv_residues": 15,
+    "contacts_5A": 183,
+    "h_cdr_plddt": 76.78,
+    "l_cdr_plddt": 82.2994
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.5925,
+    "complex_plddt": -0.0663,
+    "ptm": -0.2101,
+    "pde": 0.4119
+   },
+   "superseded_wrong_input_evaluation": {
+    "doc_id": "6afafd409030bff41644ee91",
+    "reason": "literal submitted scFv did not match intended candidate (transcript audit task9_r1_original_literal_submission_audit.json; public tool_calls 20413/20422/20424/20429; 13/12/16/15 mismatches; replay 20420 duplicate)",
+    "excluded_evidence": "@results/excluded_wrong_input_v1 and @results/raw original zips"
+   }
+  }
+ },
+ "evaluation_revision": "v2 2026-11-16: corrected Boltz2 evaluations (echo-verified scFv+antigen) replace wrong-input v1 jobs; interface metrics recomputed from v2 models with original definitions; v1 bundle preserved at excluded_wrong_input_v1/",
+ "reference_interface": {
+  "antigen_residues": 22,
+  "scfv_residues": 23,
+  "contacts_5A": 469,
+  "h_cdr_plddt": 98.1503,
+  "l_cdr_plddt": 97.0839
+ },
+ "excluded_wrong_input_deviations": {
+  "cand10": {
+   "doc_id": "6afafcb59de6b44b075dfff7",
+   "note": "submitted scFv mismatched intended candidate; output preserved (excluded_wrong_input_v1/, raw/ zips, structures/) but excluded from metrics"
+  },
+  "cand33": {
+   "doc_id": "6afafd1e445ae94313c45281",
+   "note": "submitted scFv mismatched intended candidate; output preserved (excluded_wrong_input_v1/, raw/ zips, structures/) but excluded from metrics"
+  },
+  "cand07": {
+   "doc_id": "6afafd28d29658acc3056199",
+   "note": "submitted scFv mismatched intended candidate; output preserved (excluded_wrong_input_v1/, raw/ zips, structures/) but excluded from metrics"
+  },
+  "cand13": {
+   "doc_id": "6afafd409030bff41644ee91",
+   "note": "submitted scFv mismatched intended candidate; output preserved (excluded_wrong_input_v1/, raw/ zips, structures/) but excluded from metrics"
+  }
+ }
+}

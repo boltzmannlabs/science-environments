@@ -1,0 +1,26 @@
+{
+  "job": "AntiBMPNN",
+  "lane": "boltzmann",
+  "purpose": "CDR-restricted redesign of cetuximab Fv in the experimental 1YY9 Fv:EGFR complex context (run_001 stage 2)",
+  "submitted_utc": "2026-11-16T12:52:23Z",
+  "doc_id": "6afafc87239a6b9f38bf3f9f",
+  "experiment_name": "AntiBMPNN - 20261116-125223Z - 5ce2de",
+  "receipt_attempt_id": "ae0d6dfe04ba4258bce6c6d45e920751",
+  "upload": {
+    "receipt_id": "5c9e00f9463c45bd9f43b951e460aa2d",
+    "s3_path": "users/680f678c1b1d883c92aa706c/1794833528006/complex_hla.pdb",
+    "local": "src/task_008_egfr_scfv_design/run_001/inputs/shared/complex_hla.pdb",
+    "sha256": "c49f7b8987abb2b4a37135017ac4976e103dc47f2a82976cf6bf5cd0cfa57f48"
+  },
+  "payload": {
+    "input_path": "users/680f678c1b1d883c92aa706c/1794833528006/complex_hla.pdb",
+    "chains_to_design": ["H", "L"],
+    "residue_positions_to_design": {
+      "H": "26-32,52-56,98-108",
+      "L": "24-34,50-56,89-97"
+    },
+    "generation_count": 20
+  },
+  "position_basis": "ANARCI Chothia per-chain numbering (H: H1 26-32, H2 52-56, H3 98-108; L: L1 24-34, L2 50-56, L3 89-97); chains renumbered 1..n sequentially in complex_hla.pdb so Chothia positions == file positions",
+  "validation": "partial (PDB coordinate syntax checked; scientific suitability reviewed by agent: experimental complex, Fv chains only designed, CDR-only mask)"
+}

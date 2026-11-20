@@ -1,0 +1,10 @@
+{"ts": "2026-11-16T13:5xZ", "event": "input_verification", "detail": "CSV sha256 matches reference.md; 6HHC chain map verified; CDR positions verified vs released CSV"}
+{"ts": "2026-11-16T14:01Z", "event": "igdesign_execution", "detail": "hcdr3_1shot DONE (n=1, seed 0)"}
+{"ts": "2026-11-16T14:02Z", "event": "igdesign_execution", "detail": "hcdr3_best100 DONE (n=100, seed 1)"}
+{"ts": "2026-11-16T14:03Z", "event": "igdesign_execution", "detail": "hcdr123_1shot DONE (n=1, seed 0)"}
+{"ts": "2026-11-16T14:04Z", "event": "igdesign_execution", "detail": "hcdr123_best100 DONE (n=100, seed 1)"}
+{"ts": "2026-11-16T14:1xZ", "event": "aar_computed", "detail": "per-CDR AAR 1-shot and best-of-100 written (aar_metrics.json)"}
+{"ts": "2026-11-16T14:2xZ", "event": "boltz2_submissions", "detail": "11 Boltz2 jobs accepted (1 reference + 10 candidates); doc IDs recorded"}
+{"ts": "2026-11-16T14:1x-15:0xZ", "event": "boltz2_terminal", "detail": "all 11 jobs Success; one download tool call failed SignatureDoesNotMatch, recovered via fresh-status + immediate curl (documented); sequence echo verified 11/11"}
+{"ts": "2026-11-16T15:0xZ", "event": "scrmsd_computed", "detail": "framework-fitted CA scRMSD, self-check 0.000, written (scrmsd_results.json)"}
+{"ts": "2026-11-16T15:1xZ", "event": "bundle_built", "detail": "candidates.csv(158) shortlist.csv(10+control) fasta metrics.csv metrics.json benchmark_comparison.csv report.md structures/"}

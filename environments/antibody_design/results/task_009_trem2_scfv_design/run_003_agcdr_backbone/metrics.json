@@ -1,0 +1,207 @@
+{
+ "format": "antibody_design_bundle",
+ "task_id": "task_009_trem2_scfv_design",
+ "run_id": "run_003_agcdr_backbone",
+ "generated": "2026-11-16T18:40:09Z",
+ "workflow": "agCDR-backbone AntiBMPNN CDR redesign (platform path rejected input at domain-classification; authorized bounded local fallback with antigen-A fixed context, H/L full ANARCII gates)",
+ "reference_control": {
+  "iptm": 0.8987,
+  "source": "run_001 reference control (native CDRs), same TREM2 construct"
+ },
+ "samples": {
+  "cand027": {
+   "candidate_id": "cand027_T009R3-027",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGSTFSSYAMGWVRQAPGKGLEWVSGYDYSGSFTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCADRDLGGYSGGGDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSASSSLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCYGFSRYADGFGQGTKLEIK",
+   "scfv_sha256": "ddac8132ac1585c057f996b3a72199c27bb7a1fe7054a35d870c2b3a0fa23820",
+   "mutations_H": [
+    "F27S",
+    "Y31S",
+    "Y33A",
+    "I51Y",
+    "S52D",
+    "P53Y",
+    "S55G",
+    "G56S",
+    "Y57F",
+    "R98D",
+    "Y99R",
+    "Y100D",
+    "Y101L",
+    "Y103G",
+    "Y105S",
+    "S106G",
+    "H107G",
+    "M108G"
+   ],
+   "mutations_L": [
+    "I29A",
+    "Y32S",
+    "Q89Y",
+    "Q90G",
+    "S91F",
+    "R92S",
+    "S93R",
+    "G94Y",
+    "L95A",
+    "H96D",
+    "T97G"
+   ],
+   "design_method": "AntiBMPNN CDR redesign on agCDR sample-7 backbone (local fallback; antigen-fixed context)",
+   "boltz2": {
+    "iptm": 0.649969220161438,
+    "ptm": 0.8112215399742126,
+    "doc_id": "6afb49567fc9c7f56da82a7c",
+    "echo_exact_match": true
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.2487
+   }
+  },
+  "cand032": {
+   "candidate_id": "cand032_T009R3-032",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGDTFSSYAMGWVRQAPGKGLEWVSGYDTSGGNTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCADSRLGGYSGGGDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQYASSSLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCYGFSRYADGFGQGTKLEIK",
+   "scfv_sha256": "4b8515c403547cec73cfbf3cbd8581a913eb5c182d3d034530df2ece894f13af",
+   "mutations_H": [
+    "F27D",
+    "Y31S",
+    "Y33A",
+    "I51Y",
+    "S52D",
+    "P53T",
+    "S55G",
+    "Y57N",
+    "R98D",
+    "Y99S",
+    "Y100R",
+    "Y101L",
+    "Y103G",
+    "Y105S",
+    "S106G",
+    "H107G",
+    "M108G"
+   ],
+   "mutations_L": [
+    "S28Y",
+    "I29A",
+    "Y32S",
+    "Q89Y",
+    "Q90G",
+    "S91F",
+    "R92S",
+    "S93R",
+    "G94Y",
+    "L95A",
+    "H96D",
+    "T97G"
+   ],
+   "design_method": "AntiBMPNN CDR redesign on agCDR sample-7 backbone (local fallback; antigen-fixed context)",
+   "boltz2": {
+    "iptm": 0.7412578463554382,
+    "ptm": 0.8636427521705627,
+    "doc_id": "6afb4961ef7b50fcff15c07f",
+    "echo_exact_match": true
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.1574
+   }
+  },
+  "cand036": {
+   "candidate_id": "cand036_T009R3-036",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGPTFGSYPMGWVRQAPGKGLEWVSGYDLSGGVTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCADDRLGGYSGGGDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSASSSLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCYGFSRYADGFGQGTKLEIK",
+   "scfv_sha256": "330266eb673430a0b9fea04038cf324de2c32f4914647b49d90684ab764f11aa",
+   "mutations_H": [
+    "F27P",
+    "S30G",
+    "Y31S",
+    "Y33P",
+    "I51Y",
+    "S52D",
+    "P53L",
+    "S55G",
+    "Y57V",
+    "R98D",
+    "Y99D",
+    "Y100R",
+    "Y101L",
+    "Y103G",
+    "Y105S",
+    "S106G",
+    "H107G",
+    "M108G"
+   ],
+   "mutations_L": [
+    "I29A",
+    "Y32S",
+    "Q89Y",
+    "Q90G",
+    "S91F",
+    "R92S",
+    "S93R",
+    "G94Y",
+    "L95A",
+    "H96D",
+    "T97G"
+   ],
+   "design_method": "AntiBMPNN CDR redesign on agCDR sample-7 backbone (local fallback; antigen-fixed context)",
+   "boltz2": {
+    "iptm": 0.3633335530757904,
+    "ptm": 0.6395508050918579,
+    "doc_id": "6afb496c7426d09ad749d7c5",
+    "echo_exact_match": true
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.5354
+   }
+  },
+  "cand006": {
+   "candidate_id": "cand006_T009R3-006",
+   "scfv_seq": "SMEVQLLESGGGLVSPGGSLRLSCAASGPTSRSYWMGWVRQAPGKGLEWVSGYSLSGSSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCADDRGGGYSGGGDYWGQGTLVTVSSGGGGSGGGGSGGGGSDIQMTQSPSSLSASVGDRVTITCRASQSASSSLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFATYYCYAFSRYADGFGQGTKLEIK",
+   "scfv_sha256": "41a2efbdfa90cb4aaf6e1f4bfcaf4b841b8322be489f16d2478424440d8b5825",
+   "mutations_H": [
+    "F27P",
+    "F29S",
+    "S30R",
+    "Y31S",
+    "Y33W",
+    "I51Y",
+    "P53L",
+    "S55G",
+    "G56S",
+    "Y57S",
+    "R98D",
+    "Y99D",
+    "Y100R",
+    "Y101G",
+    "Y103G",
+    "Y105S",
+    "S106G",
+    "H107G",
+    "M108G"
+   ],
+   "mutations_L": [
+    "I29A",
+    "Y32S",
+    "Q89Y",
+    "Q90A",
+    "S91F",
+    "R92S",
+    "S93R",
+    "G94Y",
+    "L95A",
+    "H96D",
+    "T97G"
+   ],
+   "design_method": "AntiBMPNN CDR redesign on agCDR sample-7 backbone (local fallback; antigen-fixed context)",
+   "boltz2": {
+    "iptm": 0.7342348098754883,
+    "ptm": 0.8378045558929443,
+    "doc_id": "6afb497775ff2e0d02e6ee18",
+    "echo_exact_match": true
+   },
+   "deltas_vs_reference": {
+    "iptm": -0.1645
+   }
+  }
+ },
+ "erratum": "mutations_L in the initial 2026-11-16 packaging listed 101 entries: the VL slice was taken at [123:230] (linker start offset wrong by 15); corrected to [138:245] matching the gate computation. ipTM/pTM/mutation_H counts and all sequences were always correct; only the L-mutation lists were wrong."
+}

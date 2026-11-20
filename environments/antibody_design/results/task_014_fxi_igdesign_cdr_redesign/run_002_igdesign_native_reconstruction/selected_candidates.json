@@ -1,0 +1,208 @@
+{
+ "reference": {
+  "candidate_id": "t014_reference_osocimab",
+  "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPYYYYGMDVWGQGTTVTVSS",
+  "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+  "cdrs": {
+   "hcdr1": "GFTFSQYG",
+   "hcdr2": "IGPSGGST",
+   "hcdr3": "TRGGPYYYYGMDV"
+  },
+  "ce_loss_sum": null,
+  "note": "unmodified Osocimab Fv (positive control)"
+ },
+ "hcdr3_best100": [
+  {
+   "candidate_id": "t014r002_hcdr3_best100_012",
+   "scope": "hcdr3",
+   "execution": "hcdr3_best100",
+   "sample_index": 12,
+   "cdrs": {
+    "hcdr3": "TRDGPSYYYAFDV"
+   },
+   "ce_loss_sum": 0.5097,
+   "per_cdr_aar": {
+    "hcdr3": 0.6923
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRDGPSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 4,
+   "sequence_hash": "beaec57f25a1a006"
+  },
+  {
+   "candidate_id": "t014r002_hcdr3_best100_082",
+   "scope": "hcdr3",
+   "execution": "hcdr3_best100",
+   "sample_index": 82,
+   "cdrs": {
+    "hcdr3": "TRDGYSYYYAFDV"
+   },
+   "ce_loss_sum": 0.534,
+   "per_cdr_aar": {
+    "hcdr3": 0.6154
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRDGYSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 5,
+   "sequence_hash": "e893bc8e210445fc"
+  },
+  {
+   "candidate_id": "t014r002_hcdr3_best100_022",
+   "scope": "hcdr3",
+   "execution": "hcdr3_best100",
+   "sample_index": 22,
+   "cdrs": {
+    "hcdr3": "TRGGPYYYYAFDV"
+   },
+   "ce_loss_sum": 0.5352,
+   "per_cdr_aar": {
+    "hcdr3": 0.8462
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPYYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 2,
+   "sequence_hash": "be51462a31306eef"
+  },
+  {
+   "candidate_id": "t014r002_hcdr3_best100_027",
+   "scope": "hcdr3",
+   "execution": "hcdr3_best100",
+   "sample_index": 27,
+   "cdrs": {
+    "hcdr3": "TRGGPSYYYAFDV"
+   },
+   "ce_loss_sum": 0.5387,
+   "per_cdr_aar": {
+    "hcdr3": 0.7692
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 3,
+   "sequence_hash": "fff5176e40577293"
+  },
+  {
+   "candidate_id": "t014r002_hcdr3_best100_065",
+   "scope": "hcdr3",
+   "execution": "hcdr3_best100",
+   "sample_index": 65,
+   "cdrs": {
+    "hcdr3": "TRGGSYYYYAFDV"
+   },
+   "ce_loss_sum": 0.5394,
+   "per_cdr_aar": {
+    "hcdr3": 0.7692
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGSYYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 3,
+   "sequence_hash": "6dd18f815ff5f48a"
+  }
+ ],
+ "hcdr123_best100": [
+  {
+   "candidate_id": "t014r002_hcdr123_best100_070",
+   "scope": "hcdr1+hcdr2+hcdr3",
+   "execution": "hcdr123_best100",
+   "sample_index": 70,
+   "cdrs": {
+    "hcdr1": "GFTFSSYA",
+    "hcdr2": "ISSDGSST",
+    "hcdr3": "TRDGPSYYYAFDV"
+   },
+   "ce_loss_sum": 1.2085,
+   "per_cdr_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.5,
+    "hcdr3": 0.6923
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMDWVRQAPGKGLEWVSGISSDGSSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRDGPSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 10,
+   "sequence_hash": "958f5e7d821121c6"
+  },
+  {
+   "candidate_id": "t014r002_hcdr123_best100_035",
+   "scope": "hcdr1+hcdr2+hcdr3",
+   "execution": "hcdr123_best100",
+   "sample_index": 35,
+   "cdrs": {
+    "hcdr1": "GFTFSSYA",
+    "hcdr2": "ISPDGSST",
+    "hcdr3": "TRGGPSYYYAFDV"
+   },
+   "ce_loss_sum": 1.2162,
+   "per_cdr_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.625,
+    "hcdr3": 0.7692
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMDWVRQAPGKGLEWVSGISPDGSSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 8,
+   "sequence_hash": "e4442065221be553"
+  },
+  {
+   "candidate_id": "t014r002_hcdr123_best100_082",
+   "scope": "hcdr1+hcdr2+hcdr3",
+   "execution": "hcdr123_best100",
+   "sample_index": 82,
+   "cdrs": {
+    "hcdr1": "GFTFSSYA",
+    "hcdr2": "ISPDGSST",
+    "hcdr3": "TRDGYSYYYAFDV"
+   },
+   "ce_loss_sum": 1.2248,
+   "per_cdr_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.625,
+    "hcdr3": 0.6154
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMDWVRQAPGKGLEWVSGISPDGSSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRDGYSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 10,
+   "sequence_hash": "b06cf4880c71c898"
+  },
+  {
+   "candidate_id": "t014r002_hcdr123_best100_034",
+   "scope": "hcdr1+hcdr2+hcdr3",
+   "execution": "hcdr123_best100",
+   "sample_index": 34,
+   "cdrs": {
+    "hcdr1": "GFTFSSYA",
+    "hcdr2": "ISSDGSST",
+    "hcdr3": "TRGGPYYYYAFDV"
+   },
+   "ce_loss_sum": 1.2809,
+   "per_cdr_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.5,
+    "hcdr3": 0.8462
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMDWVRQAPGKGLEWVSGISSDGSSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPYYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 8,
+   "sequence_hash": "11f0b13ef126f992"
+  },
+  {
+   "candidate_id": "t014r002_hcdr123_best100_067",
+   "scope": "hcdr1+hcdr2+hcdr3",
+   "execution": "hcdr123_best100",
+   "sample_index": 67,
+   "cdrs": {
+    "hcdr1": "GFTFSSYA",
+    "hcdr2": "ISSDGSST",
+    "hcdr3": "TRGGDSYYYAFDV"
+   },
+   "ce_loss_sum": 1.281,
+   "per_cdr_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.5,
+    "hcdr3": 0.6923
+   },
+   "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSSYAMDWVRQAPGKGLEWVSGISSDGSSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGDSYYYAFDVWGQGTTVTVSS",
+   "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+   "n_substitutions": 10,
+   "sequence_hash": "f8a9cbb9e7e7123e"
+  }
+ ]
+}

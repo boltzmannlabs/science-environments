@@ -1,0 +1,16 @@
+{
+ "payload_canonical": "same as run_002 canonical submission (see inputs/local_payload.json for first-attempt raw-mode payload; corrected lane used prepared_feature mode with inputs/correction_v2/payload_v2.json)",
+ "environment": "/home/boltzmann10/anaconda3 conda base (unchanged); EXCLUSIVE flock -x on local_gpu.lock for all inference",
+ "tool_source_sha256": {
+  "main.py": "a8b91bce2cdb5f12c682df11f9c46ddd4addf98ae7b2db6219312c0c98e0c7f5",
+  "build_platform_inference_feature.py": "76bdd68c010d4bcbb1a8e061648b92c4315272eda0ee5e8887deec55ad103d1a",
+  "generate_px_abdiff_candidates.py": "50823cae28a546a32648ea4321cc847643cee7456c1b853b552ab3d248a5eb71",
+  "checkpoint": "f6879339bbd4cd495047e7e45622aa744d701f3ebaed4f34e108eaae831fb3d8",
+  "configs/inference.json": "eaf614e5ebbd23c556a2cfe0fed5c50a7280657c2162ef17daca5d3f69bc633d"
+ },
+ "input_bytes": {
+  "antibody_HL_sha256": "9882368f310bdc1fc9804a08abc4b0dfacb605645887fefa5a20d8000c187548",
+  "antigen_sha256": "0f036755cc61960b95af667c8303fb08d48e9ff8cc393b43e96e3b2260f60760"
+ },
+ "correction": "explicit masked_regions via tool's own feature builder; frames proven from input bytes; see correction_v2/mask_verification.json"
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_014_fxi_igdesign_cdr_redesign",
+  "run_id": "run_001_antibmpnn_fixed_backbone",
+  "workflow_id": "antibmpnn_fixed_backbone_cdr_redesign",
+  "status": "completed",
+  "completed_utc": "2026-11-16T17:40:00Z",
+  "paths": {
+    "src": "src/task_014_fxi_igdesign_cdr_redesign/run_001_antibmpnn_fixed_backbone",
+    "results": "results/task_014_fxi_igdesign_cdr_redesign/run_001_antibmpnn_fixed_backbone"
+  },
+  "preparation": {
+    "description": "Osocimab Fv from 6HHC: VH 120 aa, VL 107 aa. Editable VH positions: 97\u2013109 for HCDR3-only, or 26\u201333/51\u201358/97\u2013109 for HCDR123. Framework and VL are fixed.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AntiBMPNN; 20 per scope",
+          "outputs": {
+            "recorded_result": "40 samples"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Verify and deduplicate",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "VL identity, VH length, protected residues and mask checks",
+          "outputs": {
+            "recorded_result": "40 pass; 11 HCDR3 + 15 HCDR123 unique sequences"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Select panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Five sequences per scope",
+          "outputs": {
+            "recorded_result": "10 candidate sequence pairs"
+          }
+        }
+      ],
+      "depends_on": [
+        "Verify and deduplicate"
+      ]
+    },
+    {
+      "purpose": "Evaluate geometry",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2; exact sequence checks; C\u03b1 framework fit",
+          "outputs": {
+            "recorded_result": "10 candidate models + native control"
+          }
+        }
+      ],
+      "depends_on": [
+        "Select panel"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "counts": {
+      "samples_generated": 40,
+      "candidates": 26,
+      "evaluated": 10
+    },
+    "summary": "Best recovery is 0.6923 (HCDR3) and 0.7241 (HCDR123). Geometry leader t014r001_hcdr123_scope_s05 has AAR 0.6897, nine substitutions, Fv deviation 0.3978 \u00c5 and HCDR3 deviation 1.3367 \u00c5 from the predicted native Fv."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "run_files": "@src/inputs/execution_records/run_files.csv",
+    "observable_events": "@src/inputs/execution_records/observable_events.jsonl",
+    "figures": "@benchmark/monoclonal_antibody_design/task_014_fxi_igdesign_cdr_redesign/figures/",
+    "original_config_sha256_provenance": "corrected 2026-11-16T19:10Z: earlier value 59be32a04f6324aa1d133b12b6bfbc49f6801ed1af624e0d793ba574985be0ec matched no preserved artifact in the repo or git history; the preserved full_config.json snapshot (1406 bytes, hashed 20616ea5\u2026 in run_files.csv since first write) is authoritative and was not mutated",
+    "tool_details_note": "retrospective reconstruction 2026-11-16T18:25Z from saved submission records; full_config.json bytes preserved",
+    "v2_wronginput_archive_provenance": "native PDB retrieved 2026-11-16T18:46Z from already-completed doc 6afb43617fc9c7f56da829a3 (job task-structurepred-boltz2vpzfx) via programmatic status+download; pos32=G (v2 error echoed), pos105=G, VL identical; excluded from intended metrics; identity_evidence.json in the same directory",
+    "figures_note": "PNG only; values derived programmatically from metrics.json/candidates.csv at render time; operational troubleshooting kept in run records, not on the public diagram",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "20616ea5fa9b7523980cd90e8b34c92e03361b37e9ff36694885b66d1e7b1d8a",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_014_fxi_igdesign_cdr_redesign/run_001_antibmpnn_fixed_backbone.json",
+    "agent_config_sha256": "4c4f704fff795dc785f91923b17ec2c477fe96376d70f85630c69a052d88c2f8",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "input_verification": "@src/inputs/execution_records/input_verification.json",
+    "run_json": "@results/run.json",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "workflow": "@src/workflow.md"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  }
+}

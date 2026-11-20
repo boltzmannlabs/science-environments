@@ -1,0 +1,354 @@
+{
+ "definition": {
+  "predictor": "Boltz-2 (boltz-structure-prediction, platform job Boltz2)",
+  "reference_structure": "6u6u crystal Fv (chains H/L variable domains), Spesolimab Fab in complex with IL-36R (chain R)",
+  "atom_selection": "backbone N, CA, C, O",
+  "alignment": "global Fv framework (all non-CDR VH+VL residues), Kabsch superposition",
+  "regions_1_based": {
+   "VH": {
+    "hcdr1": [
+     26,
+     33
+    ],
+    "hcdr2": [
+     51,
+     58
+    ],
+    "hcdr3": [
+     97,
+     108
+    ]
+   },
+   "VL_masks_for_alignment_exclusion": {
+    "lcdr1": [
+     24,
+     34
+    ],
+    "lcdr2": [
+     50,
+     56
+    ],
+    "lcdr3": [
+     89,
+     97
+    ]
+   }
+  },
+  "scRMSd_units": "angstrom",
+  "plddt_source": "PDB B-factor column of Boltz2 output (0-100)"
+ },
+ "members": {
+  "reference": {
+   "doc_id": "6afb16c5d29658acc30565c0",
+   "experiment_name": "Boltz-2 - 20261116-144421Z - 87207e",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 98.53,
+    "vl": 98.74,
+    "vh_cdrs": 98.77
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.5299,
+    "vh_hcdr2": 0.3994,
+    "vh_hcdr3": 0.3713,
+    "vh_hcdr123": 0.43,
+    "fv_all": 0.3178,
+    "fv_framework_fit": 0.306
+   },
+   "vh_mutations_vs_reference": 0
+  },
+  "igdesign_hcdr3_top1": {
+   "doc_id": "6afb16ec9de6b44b075e0673",
+   "experiment_name": "Boltz-2 - 20261116-144500Z - 0c9154",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.72,
+    "vl": 98.26,
+    "vh_cdrs": 97.01
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.9824,
+    "vh_hcdr2": 0.5787,
+    "vh_hcdr3": 0.7846,
+    "vh_hcdr123": 0.797,
+    "fv_all": 0.4578,
+    "fv_framework_fit": 0.3844
+   },
+   "vh_mutations_vs_reference": 4
+  },
+  "igdesign_hcdr3_top2": {
+   "doc_id": "6afb16f4239a6b9f38bf43e3",
+   "experiment_name": "Boltz-2 - 20261116-144508Z - cf6e7e",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.68,
+    "vl": 98.16,
+    "vh_cdrs": 96.91
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.1315,
+    "vh_hcdr2": 0.6227,
+    "vh_hcdr3": 0.8909,
+    "vh_hcdr123": 0.9037,
+    "fv_all": 0.4914,
+    "fv_framework_fit": 0.3939
+   },
+   "vh_mutations_vs_reference": 5
+  },
+  "igdesign_hcdr3_top3": {
+   "doc_id": "6afb16fa9850a93adf684ea3",
+   "experiment_name": "Boltz-2 - 20261116-144514Z - 5aa423",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.58,
+    "vl": 98.14,
+    "vh_cdrs": 96.74
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.0003,
+    "vh_hcdr2": 0.6495,
+    "vh_hcdr3": 1.4588,
+    "vh_hcdr123": 1.1483,
+    "fv_all": 0.5538,
+    "fv_framework_fit": 0.3918
+   },
+   "vh_mutations_vs_reference": 6
+  },
+  "igdesign_hcdr123_top1": {
+   "doc_id": "6afb17029850a93adf684eb6",
+   "experiment_name": "Boltz-2 - 20261116-144522Z - 40e89e",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 98.15,
+    "vl": 98.6,
+    "vh_cdrs": 97.78
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.9211,
+    "vh_hcdr2": 0.78,
+    "vh_hcdr3": 1.0304,
+    "vh_hcdr123": 0.9334,
+    "fv_all": 0.5538,
+    "fv_framework_fit": 0.4738
+   },
+   "vh_mutations_vs_reference": 7
+  },
+  "igdesign_hcdr123_top2": {
+   "doc_id": "6afb1709445ae94313c45d6e",
+   "experiment_name": "Boltz-2 - 20261116-144529Z - b02025",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.88,
+    "vl": 98.43,
+    "vh_cdrs": 97.57
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.9267,
+    "vh_hcdr2": 0.7048,
+    "vh_hcdr3": 0.6926,
+    "vh_hcdr123": 0.77,
+    "fv_all": 0.5912,
+    "fv_framework_fit": 0.5763
+   },
+   "vh_mutations_vs_reference": 8
+  },
+  "igdesign_hcdr123_top3": {
+   "doc_id": "6afb170f9de6b44b075e068d",
+   "experiment_name": "Boltz-2 - 20261116-144535Z - 995b01",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 98.57,
+    "vl": 98.74,
+    "vh_cdrs": 98.59
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.1936,
+    "vh_hcdr2": 0.8958,
+    "vh_hcdr3": 0.9898,
+    "vh_hcdr123": 1.0277,
+    "fv_all": 0.5669,
+    "fv_framework_fit": 0.4662
+   },
+   "vh_mutations_vs_reference": 6
+  },
+  "antibmpnn_hcdr3_top1": {
+   "doc_id": "6afb1717445ae94313c45d80",
+   "experiment_name": "Boltz-2 - 20261116-144543Z - b0e6d1",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 96.54,
+    "vl": 97.53,
+    "vh_cdrs": 95.18
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.939,
+    "vh_hcdr2": 0.671,
+    "vh_hcdr3": 1.7788,
+    "vh_hcdr123": 1.3178,
+    "fv_all": 0.5865,
+    "fv_framework_fit": 0.3739
+   },
+   "vh_mutations_vs_reference": 6
+  },
+  "antibmpnn_hcdr3_top2": {
+   "doc_id": "6afb1748d29658acc30565ea",
+   "experiment_name": "Boltz-2 - 20261116-144632Z - fa276a",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 96.68,
+    "vl": 97.88,
+    "vh_cdrs": 95.36
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.893,
+    "vh_hcdr2": 0.619,
+    "vh_hcdr3": 0.7853,
+    "vh_hcdr123": 0.7756,
+    "fv_all": 0.4778,
+    "fv_framework_fit": 0.4207
+   },
+   "vh_mutations_vs_reference": 7
+  },
+  "antibmpnn_hcdr3_top3": {
+   "doc_id": "6afb1751239a6b9f38bf43fe",
+   "experiment_name": "Boltz-2 - 20261116-144641Z - 48a48a",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 96.41,
+    "vl": 97.41,
+    "vh_cdrs": 95.41
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 0.7235,
+    "vh_hcdr2": 0.5111,
+    "vh_hcdr3": 0.7288,
+    "vh_hcdr123": 0.6722,
+    "fv_all": 0.4022,
+    "fv_framework_fit": 0.3527
+   },
+   "vh_mutations_vs_reference": 7
+  },
+  "antibmpnn_hcdr123_top1": {
+   "doc_id": "6afb17589de6b44b075e069f",
+   "experiment_name": "Boltz-2 - 20261116-144648Z - b389cd",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.07,
+    "vl": 98.05,
+    "vh_cdrs": 96.21
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.0437,
+    "vh_hcdr2": 0.5971,
+    "vh_hcdr3": 1.664,
+    "vh_hcdr123": 1.2648,
+    "fv_all": 0.5507,
+    "fv_framework_fit": 0.3434
+   },
+   "vh_mutations_vs_reference": 13
+  },
+  "antibmpnn_hcdr123_top2": {
+   "doc_id": "6afb175f9030bff41644f4f8",
+   "experiment_name": "Boltz-2 - 20261116-144655Z - d3dd61",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 96.74,
+    "vl": 97.77,
+    "vh_cdrs": 95.8
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.0035,
+    "vh_hcdr2": 0.5489,
+    "vh_hcdr3": 1.1687,
+    "vh_hcdr123": 0.9794,
+    "fv_all": 0.4822,
+    "fv_framework_fit": 0.3609
+   },
+   "vh_mutations_vs_reference": 11
+  },
+  "antibmpnn_hcdr123_top3": {
+   "doc_id": "6afb1768445ae94313c45db4",
+   "experiment_name": "Boltz-2 - 20261116-144704Z - edc553",
+   "sequence_check": {
+    "vh_exact": true,
+    "vl_exact": true,
+    "vh_len": 119,
+    "vl_len": 108
+   },
+   "mean_plddt": {
+    "vh": 97.01,
+    "vl": 97.82,
+    "vh_cdrs": 95.79
+   },
+   "scrmsd_A_frame_aligned_vs_6u6u": {
+    "vh_hcdr1": 1.336,
+    "vh_hcdr2": 0.7501,
+    "vh_hcdr3": 1.7285,
+    "vh_hcdr123": 1.3969,
+    "fv_all": 0.6374,
+    "fv_framework_fit": 0.4455
+   },
+   "vh_mutations_vs_reference": 14
+  }
+ }
+}

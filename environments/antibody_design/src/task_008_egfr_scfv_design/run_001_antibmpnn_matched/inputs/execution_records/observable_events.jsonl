@@ -1,0 +1,5 @@
+{"utc": "2026-11-16T12:52:23Z", "event": "submit", "tool": "AntiBMPNN", "doc_id": "6afafc87239a6b9f38bf3f9f", "note": "CDR-only mask, generation_count 20, allow_partial_validation"}
+{"utc": "2026-11-16T12:54:30Z", "event": "terminal completed", "tool": "AntiBMPNN", "doc_id": "6afafc87239a6b9f38bf3f9f"}
+{"utc": "2026-11-16T13:15:00Z", "event": "submit x7", "tool": "Boltz2", "doc_ids": ["6afb00f5445ae94313c45679", "6afb0163445ae94313c456a2", "6afb016f9de6b44b075e03df", "6afb017ad29658acc305632c", "6afb01929de6b44b075e03f1", "6afb023b445ae94313c45721", "6afb0263239a6b9f38bf418c"], "note": "reference + 6 shortlist, matched conditions"}
+{"utc": "2026-11-16T13:15-13:20Z", "event": "void submissions x3", "tool": "Boltz2", "doc_ids": ["6afb0131239a6b9f38bf4145", "6afb019c9030bff41644f267", "6afb02449de6b44b075e0426"], "note": "sequence transcription errors; resubmitted corrected"}
+{"utc": "2026-11-16T13:55:00Z", "event": "terminal completed x7", "tool": "Boltz2", "note": "outputs + PDB zips fetched, metrics computed"}

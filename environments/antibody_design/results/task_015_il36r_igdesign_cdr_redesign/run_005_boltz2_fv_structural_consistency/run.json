@@ -1,0 +1,140 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_015_il36r_igdesign_cdr_redesign",
+  "run_id": "run_005_boltz2_fv_structural_consistency",
+  "workflow_id": "wf_il36r_boltz2_fv_structural_consistency",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_015_il36r_igdesign_cdr_redesign/run_005_boltz2_fv_structural_consistency",
+    "results": "results/task_015_il36r_igdesign_cdr_redesign/run_005_boltz2_fv_structural_consistency"
+  },
+  "preparation": {
+    "description": "Twelve fixed sequence pairs from runs 001\u2013004, three per generation run, plus the unmodified Spesolimab VH/VL reference. All modelled chains were checked against the supplied sequences.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Assemble panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Saved boltz2_panel.json; 12 designs + reference",
+          "outputs": {
+            "recorded_result": "13 exact sequence pairs"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Predict Fv structures",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Matched Boltz2 settings",
+          "outputs": {
+            "recorded_result": "13 accepted models"
+          }
+        }
+      ],
+      "depends_on": [
+        "Assemble panel"
+      ]
+    },
+    {
+      "purpose": "Verify model identity",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Exact VH and VL sequence checks",
+          "outputs": {
+            "recorded_result": "All 13 panel members verified"
+          }
+        }
+      ],
+      "depends_on": [
+        "Predict Fv structures"
+      ]
+    },
+    {
+      "purpose": "Measure structure and confidence",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Framework Kabsch fit; N/C\u03b1/C/O backbone vs experimental 6U6U",
+          "outputs": {
+            "recorded_result": "12 ranked candidates and native control"
+          }
+        }
+      ],
+      "depends_on": [
+        "Verify model identity"
+      ]
+    }
+  ],
+  "inputs": {
+    "input_files": [
+      "boltz2_payloads.json",
+      "boltz2_panel.json",
+      "6u6u.pdb",
+      "Spesolimab-IL36R.csv",
+      "job_map.json"
+    ],
+    "hashes": "@src/inputs/execution_records/input_hashes.json"
+  },
+  "outputs": {
+    "raw_files": [
+      "boltz2_metrics.json"
+    ],
+    "structures": "@results/structures"
+  },
+  "outcome": {
+    "status": "completed",
+    "summary": "Lowest candidate Fv deviation is antibmpnn_hcdr3_top3, 0.4022 \u00c5; native control 0.3178 \u00c5. Lowest candidate HCDR3 deviation is igdesign_hcdr123_top2, 0.6926 \u00c5. The AntiBMPNN subsets are the fixed recorded panels, selected in descending NLL order."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "config_json": "configs/task_015_il36r_igdesign_cdr_redesign/run_005_boltz2_fv_structural_consistency.json",
+    "report_md": "@results/report.md",
+    "logs": [
+      "@src/logs/agent_scientist_log.md",
+      "@src/logs/execution_summary.md"
+    ],
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "agent_scientist_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "usage_basis": "session-scoped approximate attribution: chat-level totals for the 2026-11-16 GLM session split evenly across the five task_015 runs; marked ~ because per-run token metering is not exposed by the runtime",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "standard_table_provenance": "Standard candidate/sequence/metric views were transcribed from preserved native CSV/JSON outputs during package arrangement. Reassembled IgDesign variable domains use only the saved native framework and declared CDR placements. No generation, model prediction, ranking policy or measured endpoint was rerun. Generation-run shortlists point to the existing evaluation run; they do not represent additional predictions.",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_015_il36r_igdesign_cdr_redesign/run_005_boltz2_fv_structural_consistency.json",
+    "agent_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [
+      "run_001_igdesign_hcdr3_native_reconstruction",
+      "run_002_igdesign_hcdr123_native_reconstruction",
+      "run_003_antibmpnn_hcdr3_redesign",
+      "run_004_antibmpnn_hcdr123_redesign"
+    ],
+    "relationship": "Shared evaluation of recorded source-run candidates"
+  }
+}

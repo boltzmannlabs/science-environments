@@ -1,0 +1,139 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_015_il36r_igdesign_cdr_redesign",
+  "run_id": "run_001_igdesign_hcdr3_native_reconstruction",
+  "workflow_id": "wf_il36r_igdesign_hcdr3_native_reconstruction",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction",
+    "results": "results/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction"
+  },
+  "preparation": {
+    "description": "Spesolimab Fv from 6U6U: VH 119 aa, VL 108 aa. Only VH 97\u2013108 is editable; native VL, framework and HCDR1/2 remain fixed.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Generate 1-shot",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; saved one-sample configuration",
+          "outputs": {
+            "recorded_result": "1 sample"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate 100-sample pool",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; separate saved configuration",
+          "outputs": {
+            "recorded_result": "100 samples"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate 1-shot"
+      ]
+    },
+    {
+      "purpose": "Measure native recovery",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Per-CDR position identity",
+          "outputs": {
+            "recorded_result": "HCDR3 AAR for 101 samples"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate 100-sample pool"
+      ]
+    },
+    {
+      "purpose": "Select evaluation entries",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Ascending HCDR3 cross-entropy loss; distinct recorded sequences",
+          "outputs": {
+            "recorded_result": "3 panel members evaluated in run_005"
+          }
+        }
+      ],
+      "depends_on": [
+        "Measure native recovery"
+      ]
+    }
+  ],
+  "inputs": {
+    "input_files": [
+      "native_cdrs.json",
+      "6u6u.pdb",
+      "Spesolimab-IL36R.csv"
+    ],
+    "hashes": "@src/inputs/execution_records/input_hashes.json"
+  },
+  "outputs": {
+    "raw_files": [
+      "hcdr3_1shot.csv",
+      "hcdr3_1shot_aar.json",
+      "hcdr3_1shot_config.pkl",
+      "hcdr3_100.csv",
+      "hcdr3_100_aar.json",
+      "hcdr3_100_config.pkl"
+    ],
+    "structures": "@results/structures"
+  },
+  "outcome": {
+    "status": "completed",
+    "summary": "HCDR3 AAR: 1-shot 0.5833; maximum over the separate 100-sample pool 0.8333. Structural evaluation is retained in run_005."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "config_json": "configs/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction.json",
+    "report_md": "@results/report.md",
+    "logs": [
+      "@src/logs/agent_scientist_log.md",
+      "@src/logs/execution_summary.md"
+    ],
+    "report": "@results/report.md",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "agent_scientist_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "usage_basis": "session-scoped approximate attribution: chat-level totals for the 2026-11-16 GLM session split evenly across the five task_015 runs; marked ~ because per-run token metering is not exposed by the runtime",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "standard_table_provenance": "Standard candidate/sequence/metric views were transcribed from preserved native CSV/JSON outputs during package arrangement. Reassembled IgDesign variable domains use only the saved native framework and declared CDR placements. No generation, model prediction, ranking policy or measured endpoint was rerun. Generation-run shortlists point to the existing evaluation run; they do not represent additional predictions.",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction.json",
+    "agent_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run",
+    "evaluated_in": "run_005_boltz2_fv_structural_consistency"
+  }
+}

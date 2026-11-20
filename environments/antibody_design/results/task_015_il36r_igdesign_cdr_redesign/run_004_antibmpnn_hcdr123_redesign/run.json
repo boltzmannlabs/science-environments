@@ -1,0 +1,136 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_015_il36r_igdesign_cdr_redesign",
+  "run_id": "run_004_antibmpnn_hcdr123_redesign",
+  "workflow_id": "wf_il36r_antibmpnn_hcdr123_redesign",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign",
+    "results": "results/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign"
+  },
+  "preparation": {
+    "description": "Same Spesolimab\u2013IL-36R prepared complex. Editable VH positions 26\u201333, 51\u201358 and 97\u2013108; light chain and VH framework remain fixed.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Prepare complex",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Saved H/L/antigen structure and declared edit mask",
+          "outputs": {
+            "recorded_result": "Exact native-chain mapping"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AntiBMPNN; 40 samples",
+          "outputs": {
+            "recorded_result": "40 native output rows"
+          }
+        }
+      ],
+      "depends_on": [
+        "Prepare complex"
+      ]
+    },
+    {
+      "purpose": "Record evaluation panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Three sequences selected in descending reported score order",
+          "outputs": {
+            "recorded_result": "Fixed panel; lower NLL is preferred"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Evaluate panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Shared Boltz2 evaluation",
+          "outputs": {
+            "recorded_result": "See run_005"
+          }
+        }
+      ],
+      "depends_on": [
+        "Record evaluation panel"
+      ]
+    }
+  ],
+  "inputs": {
+    "input_files": [
+      "complex_hlr_6u6u.pdb",
+      "6u6u.pdb",
+      "Spesolimab-IL36R.csv"
+    ],
+    "hashes": "@src/inputs/execution_records/input_hashes.json"
+  },
+  "outputs": {
+    "raw_files": [
+      "antibmpnn_results.csv",
+      "antibmpnn_generation_metrics.csv",
+      "run_manifest.json"
+    ],
+    "structures": "@results/structures"
+  },
+  "outcome": {
+    "status": "completed",
+    "summary": "Three recorded sequence pairs were evaluated in run_005. AntiBMPNN selection used descending negative log likelihood, so the fixed panel is not a best-likelihood selection from the generation pool."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "config_json": "configs/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign.json",
+    "report_md": "@results/report.md",
+    "logs": [
+      "@src/logs/agent_scientist_log.md",
+      "@src/logs/execution_summary.md"
+    ],
+    "report": "@results/report.md",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "agent_scientist_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "usage_basis": "session-scoped approximate attribution: chat-level totals for the 2026-11-16 GLM session split evenly across the five task_015 runs; marked ~ because per-run token metering is not exposed by the runtime",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "standard_table_provenance": "Standard candidate/sequence/metric views were transcribed from preserved native CSV/JSON outputs during package arrangement. Reassembled IgDesign variable domains use only the saved native framework and declared CDR placements. No generation, model prediction, ranking policy or measured endpoint was rerun. Generation-run shortlists point to the existing evaluation run; they do not represent additional predictions.",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_015_il36r_igdesign_cdr_redesign/run_004_antibmpnn_hcdr123_redesign.json",
+    "agent_config_sha256": "98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run",
+    "evaluated_in": "run_005_boltz2_fv_structural_consistency"
+  }
+}

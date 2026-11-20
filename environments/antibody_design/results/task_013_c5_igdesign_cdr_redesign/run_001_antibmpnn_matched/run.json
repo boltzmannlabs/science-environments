@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_antibmpnn_fixed_backbone_cdr_redesign",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched",
+    "results": "results/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched"
+  },
+  "preparation": {
+    "description": "Eculizumab Fv from 5I5K: VH 122 aa, VL 107 aa. Editable VH positions are 97\u2013111 for HCDR3-only, or 26\u201333/51\u201358/97\u2013111 for HCDR123. VL and VH framework are fixed.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AntiBMPNN; temperature 0.1; 100 per scope",
+          "outputs": {
+            "recorded_result": "200 generated sequences"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Assemble evaluation panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "2 AntiBMPNN designs + 4 designs imported from run_002 + native control",
+          "outputs": {
+            "recorded_result": "7 fixed sequence pairs"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Predict structures",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2 Fv and ESMFold VH\u2013linker\u2013VL",
+          "outputs": {
+            "recorded_result": "14 accepted models"
+          }
+        }
+      ],
+      "depends_on": [
+        "Assemble evaluation panel"
+      ]
+    },
+    {
+      "purpose": "Measure recovery and geometry",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Native AAR; C\u03b1 scRMSD after framework fit",
+          "outputs": {
+            "recorded_result": "Candidate consistency vs same-predictor native model; native control vs 5I5K crystal"
+          }
+        }
+      ],
+      "depends_on": [
+        "Predict structures"
+      ]
+    }
+  ],
+  "outcome": {
+    "counts": {
+      "candidates_generated": 200,
+      "candidates_selected": 6,
+      "structures_evaluated": 14,
+      "predictors": 2,
+      "excluded_deviations": 1
+    },
+    "shortlist": [
+      "ig_hcdr3_s002",
+      "ig_hcdr3_s031",
+      "ig_hcdr123_s069",
+      "ab_hcdr3only_s045",
+      "ab_hcdr123_s065",
+      "ig_hcdr123_s063"
+    ],
+    "summary": "AntiBMPNN maximum HCDR3 AAR is 0.4000 in each 100-sample scope. The closest candidate Fv is ig_hcdr3_s002 for Boltz2 (0.371 \u00c5) and ig_hcdr3_s031 for ESMFold (0.139 \u00c5)."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "c91a8745cb7213cf6e8ecb208bc9a8d16b0b24457bd573bd5bd43ba24066fc28",
+    "standard_table_provenance": "Standard candidate/sequence/metric views were transcribed from preserved native CSV/JSON outputs during package arrangement. Reassembled IgDesign variable domains use only the saved native framework and declared CDR placements. No generation, model prediction, ranking policy or measured endpoint was rerun. Generation-run shortlists point to the existing evaluation run; they do not represent additional predictions.",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched.json",
+    "agent_config_sha256": "aa989d02a1a91e2e397754fc53099bb348cbb422b242291fa8bf41575cd9b1dc",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/selected_evaluated_candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "metrics_summary": "@results/metrics_summary.json",
+    "sequences": "@results/sequences.fasta",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "metrics": "@results/metrics.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [
+      "run_002_igdesign_reconstruction"
+    ],
+    "relationship": "Shared evaluation of recorded source-run candidates"
+  }
+}

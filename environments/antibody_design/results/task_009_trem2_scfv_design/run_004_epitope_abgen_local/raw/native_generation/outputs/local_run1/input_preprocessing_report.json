@@ -1,0 +1,529 @@
+{
+  "status": "PASS",
+  "input_mode": "raw_antigen_and_masked_antibody_framework_pdb",
+  "complex_id": "trem2_ref_scFv_T009",
+  "task_id": "trem2_ref_scFv_T009_all_CDR_platform",
+  "mask_type": "all_CDR",
+  "selected_cdrs": [
+    "HCDR1",
+    "HCDR2",
+    "HCDR3",
+    "LCDR1",
+    "LCDR2",
+    "LCDR3"
+  ],
+  "mask_source": "imgt_default",
+  "imgt_numbering": {
+    "H": {
+      "chain_id": "H",
+      "scheme": "imgt",
+      "cdrs": {
+        "HCDR1": {
+          "residue_count": 8,
+          "ranges": [
+            {
+              "chain": "H",
+              "start": 26,
+              "end": 33,
+              "cdr": "CDR1",
+              "cdr_label": "HCDR1",
+              "source": "imgt_default",
+              "imgt_start": "H27",
+              "imgt_end": "H38"
+            }
+          ]
+        },
+        "HCDR2": {
+          "residue_count": 8,
+          "ranges": [
+            {
+              "chain": "H",
+              "start": 51,
+              "end": 58,
+              "cdr": "CDR2",
+              "cdr_label": "HCDR2",
+              "source": "imgt_default",
+              "imgt_start": "H56",
+              "imgt_end": "H65"
+            }
+          ]
+        },
+        "HCDR3": {
+          "residue_count": 14,
+          "ranges": [
+            {
+              "chain": "H",
+              "start": 97,
+              "end": 110,
+              "cdr": "CDR3",
+              "cdr_label": "HCDR3",
+              "source": "imgt_default",
+              "imgt_start": "H105",
+              "imgt_end": "H117"
+            }
+          ]
+        }
+      }
+    },
+    "L": {
+      "chain_id": "L",
+      "scheme": "imgt",
+      "cdrs": {
+        "LCDR1": {
+          "residue_count": 6,
+          "ranges": [
+            {
+              "chain": "L",
+              "start": 27,
+              "end": 32,
+              "cdr": "CDR1",
+              "cdr_label": "LCDR1",
+              "source": "imgt_default",
+              "imgt_start": "L27",
+              "imgt_end": "L38"
+            }
+          ]
+        },
+        "LCDR2": {
+          "residue_count": 3,
+          "ranges": [
+            {
+              "chain": "L",
+              "start": 50,
+              "end": 52,
+              "cdr": "CDR2",
+              "cdr_label": "LCDR2",
+              "source": "imgt_default",
+              "imgt_start": "L56",
+              "imgt_end": "L65"
+            }
+          ]
+        },
+        "LCDR3": {
+          "residue_count": 9,
+          "ranges": [
+            {
+              "chain": "L",
+              "start": 89,
+              "end": 97,
+              "cdr": "CDR3",
+              "cdr_label": "LCDR3",
+              "source": "imgt_default",
+              "imgt_start": "L105",
+              "imgt_end": "L117"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "heavy_chain": "H",
+  "light_chain": "L",
+  "antigen_chain_map": {
+    "A": "A"
+  },
+  "masked_regions": [
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 26,
+      "end": 26,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 27,
+      "end": 27,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 28,
+      "end": 28,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 29,
+      "end": 29,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 30,
+      "end": 30,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 31,
+      "end": 31,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 32,
+      "end": 32,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 33,
+      "end": 33,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 51,
+      "end": 51,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 52,
+      "end": 52,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 53,
+      "end": 53,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 54,
+      "end": 54,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 55,
+      "end": 55,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 56,
+      "end": 56,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 57,
+      "end": 57,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 58,
+      "end": 58,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 97,
+      "end": 97,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 98,
+      "end": 98,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 99,
+      "end": 99,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 100,
+      "end": 100,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 101,
+      "end": 101,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 102,
+      "end": 102,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 103,
+      "end": 103,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 104,
+      "end": 104,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 105,
+      "end": 105,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 106,
+      "end": 106,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 107,
+      "end": 107,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 108,
+      "end": 108,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 109,
+      "end": 109,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "H",
+      "output_chain": "H",
+      "start": 110,
+      "end": 110,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 27,
+      "end": 27,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 28,
+      "end": 28,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 29,
+      "end": 29,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 30,
+      "end": 30,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 31,
+      "end": 31,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 32,
+      "end": 32,
+      "cdr": "CDR1",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 50,
+      "end": 50,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 51,
+      "end": 51,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 52,
+      "end": 52,
+      "cdr": "CDR2",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 89,
+      "end": 89,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 90,
+      "end": 90,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 91,
+      "end": 91,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 92,
+      "end": 92,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 93,
+      "end": 93,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 94,
+      "end": 94,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 95,
+      "end": 95,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 96,
+      "end": 96,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    },
+    {
+      "source_chain": "L",
+      "output_chain": "L",
+      "start": 97,
+      "end": 97,
+      "cdr": "CDR3",
+      "source": "explicit_region"
+    }
+  ],
+  "design_residue_count": 48,
+  "epitope_source": "explicit",
+  "epitope_residue_count": 20,
+  "framework_residue_count": 182,
+  "antigen_residue_count": 126,
+  "total_token_count": 356,
+  "conditioning_pair_count": 960,
+  "interpolated_target_residue_count": 0,
+  "synthetic_target_sequence_residue_count": 48,
+  "feature_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/inputs/local_run1/features/trem2_ref_scFv_T009_platform.pt",
+  "combined_input_pdb": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_003_epitope_abgen_local/inputs/local_run1/data/interim/cleaned_complexes/trem2_ref_scFv_T009.pdb",
+  "notes": [
+    "Design positions are inferred only from explicit masked_regions, UNK/MSK/GAP residues, or internal residue-number gaps.",
+    "Visible aatype and coords hide selected design residues; target_aatype/target_coords are hidden runner targets.",
+    "When a masked residue has no supplied backbone, its hidden target backbone is interpolated from same-chain flanks.",
+    "Masked residues without known sequence use alanine only in the hidden target tensor; this is not exposed to the model input.",
+    "Conditioning pairs connect design tokens to requested or automatically selected epitope tokens and are not native labels."
+  ]
+}

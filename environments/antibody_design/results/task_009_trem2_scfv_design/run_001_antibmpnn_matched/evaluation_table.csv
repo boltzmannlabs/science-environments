@@ -1,0 +1,5 @@
+rank,candidate_id,ranked_by,iptm,complex_plddt,ptm,pde,cdr_edits_H,cdr_edits_L,mutations_H,mutations_L,scfv_sha256_12,status,exclusion_reason
+1,cand10_T009-C10,"Boltz2 ipTM (matched complex prediction, v2 corrected)",0.7969,0.9126,0.8913,0.5012,8,2,Y31S;P53S;S55G;G56S;Y57S;Y99D;Y100R;H107A,R92Y;H96T,1600bb7f9160,included,
+2,cand33_T009-C33,"Boltz2 ipTM (matched complex prediction, v2 corrected)",0.7439,0.9,0.8736,0.5274,8,2,Y31D;P53W;S55G;G56S;Y57S;Y99D;Y100R;H107A,R92Y;H96Y,acb4480a2d80,included,
+3,cand07_T009-C07,"Boltz2 ipTM (matched complex prediction, v2 corrected)",0.6155,0.9146,0.8306,0.6115,9,2,Y31S;P53S;S55G;G56S;Y57S;Y99D;Y100K;Y104I;H107A,R92Y;H96W,e17979e836eb,included,
+4,cand13_T009-C13,"Boltz2 ipTM (matched complex prediction, v2 corrected)",0.3062,0.8761,0.7215,0.8108,9,2,S30D;Y31D;S52N;P53W;S54N;Y57S;Y99D;Y100R;H107A,R92Y;H96W,d6c8692095d6,excluded,ipTM 0.3062 << reference 0.8987; CDR-H3 pose disruption predicted (carried from v1 selection)

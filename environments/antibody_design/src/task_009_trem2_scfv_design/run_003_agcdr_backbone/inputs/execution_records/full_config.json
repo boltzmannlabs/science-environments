@@ -1,0 +1,6 @@
+{
+ "note": "original scientific config snapshot",
+ "content": "{\n  \"use_subagent\": false,\n  \"llm_model\": \"glm\",\n  \"llm_version\": \"5.3\",\n  \"tokens_used\": {\n    \"input_output\": \"~36000\",\n    \"cache_reads\": \"~180000\",\n    \"basis\": \"session GLM usage attributed per-run (approximate)\"\n  },\n  \"time_budget\": {\n    \"minutes\": 300\n  }\n}",
+ "sha256_note": "configs/run_003_agcdr_backbone.json was replaced by the five-key agent-settings file per guide; this is the pre-replacement scientific content recovered from session history",
+ "content_sha256": "2fde8156e34fcb394da363d1a7f2827fadbc23fe4a2b1d0161935374134a3660"
+}

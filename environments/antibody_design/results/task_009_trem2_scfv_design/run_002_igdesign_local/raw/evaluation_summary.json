@@ -1,0 +1,55 @@
+{
+ "reference_control": {
+  "iptm": 0.8987,
+  "ptm": 0.9316,
+  "complex_plddt": 0.9424
+ },
+ "as_submitted_panel": [
+  {
+   "candidate": "cand067",
+   "doc_id": "6afb36addc1d60e5b460113a",
+   "iptm": 0.8648,
+   "ptm": 0.9198,
+   "complex_plddt": 0.9182,
+   "atom_contacts_5A": 387,
+   "interface_res_pairs": 54,
+   "cdr_plddt": 92.37
+  },
+  {
+   "candidate": "cand001",
+   "doc_id": "6afb36537fc9c7f56da826c9",
+   "iptm": 0.7677,
+   "ptm": 0.8822,
+   "complex_plddt": 0.8846,
+   "atom_contacts_5A": 432,
+   "interface_res_pairs": 62,
+   "cdr_plddt": 83.16
+  },
+  {
+   "candidate": "cand016",
+   "doc_id": "6afb36d975ff2e0d02e6eb96",
+   "iptm": 0.7626,
+   "ptm": 0.8821,
+   "complex_plddt": 0.9171,
+   "atom_contacts_5A": 375,
+   "interface_res_pairs": 49,
+   "cdr_plddt": 92.34
+  },
+  {
+   "candidate": "cand019",
+   "doc_id": "6afb369d7426d09ad749d1d1",
+   "iptm": 0.4018,
+   "ptm": 0.7531,
+   "complex_plddt": 0.8856,
+   "atom_contacts_5A": 408,
+   "interface_res_pairs": 60,
+   "cdr_plddt": 83.86
+  }
+ ],
+ "erratum": {
+  "finding": "All 4 Boltz2 submissions carried the REFERENCE H2 (VH 50-57 'ISPSSGYT') instead of the designed H2 'ISPSGGYT' (single S54G mutation lost in transcription from the script-printed payload to the submission calls).",
+  "scope": "Exactly one residue (scFv index 56 / VH 0-based 54) per candidate; H1 and H3 designs correctly applied; TREM2 antigen exact; framework exact.",
+  "consequence": "Measured ipTM/pTM/pLDDT correspond to as-submitted sequences (designed H1+H3, reference H2), not the full intended H1+H2+H3 design. Documented per no-new-submissions directive.",
+  "discovered": "2026-11-16T17:35Z via PDB-echo sequence verification"
+ }
+}

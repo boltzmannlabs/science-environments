@@ -1,0 +1,6 @@
+{"ts": "2026-11-16T13:1x:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "input verification completed (6u6u chains, CDR masks, source CSV hash)", "evidence": "@src/inputs/execution_records/input_hashes.json"}
+{"ts": "2026-11-16T13:2x:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "stage executed: framework-aligned scRMSD + pLDDT; reference self-control floor 0.318 A; shortlist ranked", "evidence": "@results/raw"}
+{"ts": "2026-11-16T14:44:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "13 Bolt-2 jobs submitted; 1 excluded for VL transcription error and corrected-resubmitted (docs in job_map.json)", "evidence": "@src/inputs/job_map.json"}
+{"ts": "2026-11-16T15:2x:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "13/13 models downloaded and sequence-verified", "evidence": "@results/raw/boltz2_zips"}
+{"ts": "2026-11-16T16:4x:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "analysis and metrics computed from raw artifacts", "evidence": "@results"}
+{"ts": "2026-11-16T17:0x:00Z", "run": "run_005_boltz2_fv_structural_consistency", "event": "per-run packaging completed (run.json, report.md, logs, configs, execution_records)", "evidence": "@results/run.json"}

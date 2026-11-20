@@ -1,0 +1,22 @@
+COMMAND: /home/boltzmann10/anaconda3/bin/python3.12 -u /home/boltzmann10/agent_sci_boltpro_errors_tools/antibmpnn/Running_AntiBMPNN_run.py --jsonl_path /home/boltzmann10/science-environments/environments/antibody_design/results/task_009_trem2_scfv_design/run_003_epitope_abgen_local/raw/antibmpnn_corr_sample002/antibmpnn_artifacts/parsed_pdbs.jsonl --chain_id_jsonl /home/boltzmann10/science-environments/environments/antibody_design/results/task_009_trem2_scfv_design/run_003_epitope_abgen_local/raw/antibmpnn_corr_sample002/antibmpnn_artifacts/assigned_pdbs.jsonl --fixed_positions_jsonl /home/boltzmann10/science-environments/environments/antibody_design/results/task_009_trem2_scfv_design/run_003_epitope_abgen_local/raw/antibmpnn_corr_sample002/antibmpnn_artifacts/fixed_pdbs.jsonl --out_folder /home/boltzmann10/science-environments/environments/antibody_design/results/task_009_trem2_scfv_design/run_003_epitope_abgen_local/raw/antibmpnn_corr_sample002/antibmpnn_artifacts/model_output --path_to_model_weights /home/boltzmann10/agent_sci_boltpro_errors_tools/antibmpnn/antibmpnn_model_weights --model_name antibmpnn_020 --num_seq_per_target 40 --sampling_temp 0.1 --batch_size 10 --backbone_noise 0.0 --seed 37 --omit_AAs X
+
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+discarded {'bad_chars': 0, 'too_long': 0, 'bad_seq_length': 0}
+Backbone_noise: 0.0
+Number of edges: 48
+Training noise level: 0.2A
+----------------------------------------
+Number of edges: 48
+Training noise level: 0.2A
+Generating sequences for: trem2_ref_scFv_T009_v2_all_CDR_platform_sample002_seed2028_repaired
+40 sequences of length 356 generated in 4.9991 seconds
