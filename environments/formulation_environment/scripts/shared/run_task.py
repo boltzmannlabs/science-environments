@@ -7,7 +7,7 @@ import io
 import json
 import sys
 
-ENV = Path(__file__).resolve().parents[1]
+ENV = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ENV / 'src'))
 
 
@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--task', default='Task - 01', help='Exact registered task ID')
     parser.add_argument('--out', type=Path, required=True, help='New output directory')
     args = parser.parse_args()
-    registry = json.loads((ENV / 'config/tasks.json').read_text())
+    registry = json.loads((ENV / 'config/shared/tasks.json').read_text())
     task = registry['tasks'].get(args.task)
     if task is None:
         parser.error('Unknown task; registered tasks: ' + ', '.join(registry['tasks']))
@@ -24,11 +24,11 @@ def main():
     if output.exists() and any(output.iterdir()):
         parser.error('Output directory is not empty; use a new run directory.')
     output.mkdir(parents=True, exist_ok=True)
-    if task['entrypoint'] == 'formulation_environment.task01:run_task01':
-        from formulation_environment.task01 import run_task01 as run
+    if task['entrypoint'] == 'formulation_environment.task_01_clarithromycin_ir_formulation_dissolution:run_task01':
+        from formulation_environment.task_01_clarithromycin_ir_formulation_dissolution import run_task01 as run
         inputs = ENV / task['benchmark_dir'] / 'inputs'
-    elif task['entrypoint'] == 'formulation_environment.ranolazine_task02:run_task02':
-        from formulation_environment.ranolazine_task02 import run_task02 as run
+    elif task['entrypoint'] == 'formulation_environment.task_02_ranolazine_er_dissolution:run_task02':
+        from formulation_environment.task_02_ranolazine_er_dissolution import run_task02 as run
         inputs = ENV / task['config_dir']
     else:
         parser.error('Unsupported entrypoint; extend the explicit dispatch when adding tasks.')

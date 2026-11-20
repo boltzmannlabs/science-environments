@@ -9,11 +9,10 @@ import io
 import json
 import platform
 import re
-import sys
 import unittest
 import zipfile
 
-ENV = Path(__file__).resolve().parents[1]
+ENV = Path(__file__).resolve().parents[2]
 REPO = ENV.parents[1]
 
 
@@ -35,7 +34,7 @@ def main():
     if not result.wasSuccessful():
         failures.append('scientific_contract_tests_failed')
     docs = [p for p in public_files() if p.suffix == '.md']
-    docs += [REPO / 'README.md', REPO / 'research/README.md']
+    docs += [REPO / 'README.md', REPO / 'CONTRIBUTING.md', REPO / 'research/README.md']
     docs += list((REPO / 'research/clarithromycin-ir-formulation').glob('*.md'))
     docs += list((REPO / 'research/Task - 02 - Ranolazine ER Tablet Dissolution Investigation').glob('*.md'))
     docs += list((REPO / 'docs/decisions/Task - 02 - Ranolazine ER Tablet Dissolution Investigation').glob('*.md'))
@@ -77,7 +76,6 @@ def main():
             failures.append('publication_source_hash_mismatch:' + artifact['path'])
     comparison = None
     if args.run:
-        import pandas as pd
         run = args.run.resolve()
         expected = json.loads((ENV / 'benchmark/task-01-clarithromycin-ir-formulation-dissolution/expected_metrics.json').read_text())
         actual = json.loads((run / 'model_comparison.json').read_text())

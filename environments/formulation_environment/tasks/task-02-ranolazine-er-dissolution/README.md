@@ -51,16 +51,16 @@ References and provenance: [research notes](../../../formulation_dissolution/res
 
 ## Publication and execution status
 
-The investigation remains archived. `scripts/run_task.py --task "Task - 02"` now dispatches a task-specific archive verifier: it checks hashes and saved aggregate arithmetic, not new fitting or product performance. Original ranolazine algorithms and historical evidence remain in [formulation_dissolution](../../../formulation_dissolution/README.md), unchanged. Tracking: [issue #197](https://github.com/boltzmannlabs/science-environments/issues/197).
+The investigation remains archived. `scripts/shared/run_task.py --task "Task - 02"` now dispatches a task-specific archive verifier: it checks hashes and saved aggregate arithmetic, not new fitting or product performance. Original ranolazine algorithms and historical evidence remain in [formulation_dissolution](../../../formulation_dissolution/README.md), unchanged. Tracking: [issue #197](https://github.com/boltzmannlabs/science-environments/issues/197).
 
 ## Task-owned folders throughout the repository
 
 - [Configuration](../../config/task-02-ranolazine-er-dissolution/README.md)
-- [Source package](../../src/formulation_environment/ranolazine_task02/README.md)
+- [Source package](../../src/formulation_environment/task_02_ranolazine_er_dissolution/README.md)
 - [Scripts](../../scripts/task-02-ranolazine-er-dissolution/README.md)
-- [Tests](../../tests/ranolazine_task02/README.md)
+- [Tests](../../tests/task_02_ranolazine_er_dissolution/README.md)
 - [Documentation and ownership map](../../docs/task-02-ranolazine-er-dissolution/README.md)
 - [Research notes](../../../../research/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/research-notes.md) and [references](../../../../research/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/references.md)
 - [Architecture decision](../../../../docs/decisions/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md)
 
-The benchmark and results folders retain the same descriptive task name. Python source/tests use `ranolazine_task02` for valid imports and discovery; the registry maps this name explicitly. Task-01 content is not moved or pooled.
+The benchmark and results folders retain the same descriptive task name. Python source/tests use `task_02_ranolazine_er_dissolution` for valid imports and discovery; the registry maps this name explicitly. Task-01 content is not moved or pooled.

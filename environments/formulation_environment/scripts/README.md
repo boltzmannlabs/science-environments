@@ -1,6 +1,7 @@
 # Execution scripts
 
-- `run_task.py --task 'Task - 01' --out .runs/new-name`: registry-dispatched offline calculation; refuses nonempty outputs.
-- `validate_environment.py`: folders, records, links, evidence boundaries and privacy scan; generates an actual validation receipt.
+- [Shared tools](shared/README.md): registry dispatch and environment validation.
+- [Task-01](task-01-clarithromycin-ir-formulation-dissolution/README.md): offline analysis entrypoint.
+- [Task-02](task-02-ranolazine-er-dissolution/README.md): archive verification entrypoint.
 
-Use the environment root in documented commands. The source does not depend on Agent Scientist's local profile, absolute user paths, credentials, a model provider or a laboratory backend.
+Run commands from the environment root, or use absolute script/output paths from any directory. Every runner refuses nonempty output directories.

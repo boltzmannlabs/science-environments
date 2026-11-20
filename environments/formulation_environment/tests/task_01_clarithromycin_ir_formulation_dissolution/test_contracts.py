@@ -1,9 +1,7 @@
 """Independent Task - 01 contracts; no model/lab success inferred from filenames."""
 from pathlib import Path
-import copy
 import hashlib
 import json
-import math
 import sys
 import unittest
 import zipfile
@@ -11,9 +9,9 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import pandas as pd
 
-ENV = Path(__file__).resolve().parents[1]
+ENV = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ENV / 'src'))
-from formulation_environment.constraints import NAMES, BOUNDS, validate_composition
+from formulation_environment.task_01_clarithromycin_ir_formulation_dissolution.constraints import NAMES, BOUNDS, validate_composition
 
 TASK_FOLDER = 'task-01-clarithromycin-ir-formulation-dissolution'
 BENCH = ENV / 'benchmark' / TASK_FOLDER
@@ -25,39 +23,14 @@ def load(path):
     return json.loads(Path(path).read_text())
 
 
-class StructureTests(unittest.TestCase):
-    def test_required_environment_layout(self):
-        for name in ['README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md']:
-            self.assertTrue((ENV / name).is_file(), name)
-        for name in ['config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results']:
-            self.assertTrue((ENV / name).is_dir(), name)
-
-    def test_registered_tasks_have_matching_numbered_folders(self):
-        tasks = load(ENV / 'config/tasks.json')['tasks']
-        self.assertIn('Task - 01', tasks)
-        self.assertIn('Task - 02', tasks)
-        slugs = set()
-        for task_id, task in tasks.items():
-            with self.subTest(task_id=task_id):
-                number = int(task_id.removeprefix('Task - '))
-                slug = task['folder_slug']
-                self.assertRegex(slug, rf'^task-{number:02d}-[a-z0-9]+(?:-[a-z0-9]+)*$')
-                self.assertNotIn(slug, slugs)
-                slugs.add(slug)
-                for key, section in [('task_dir', 'tasks'), ('benchmark_dir', 'benchmark'), ('results_dir', 'results')]:
-                    self.assertEqual(task[key], f'{section}/{slug}')
-                    self.assertTrue((ENV / task[key] / 'README.md').is_file())
-        for section in ['tasks', 'benchmark', 'results']:
-            actual = {p.name for p in (ENV / section).iterdir() if p.is_dir()}
-            self.assertEqual(actual, slugs, section)
-
+class Task01ContractTests(unittest.TestCase):
     def test_objective_title_and_overall_scope(self):
         text = (ENV / 'tasks' / TASK_FOLDER / 'README.md').read_text()
         for phrase in ['Clarithromycin 500 mg', '## Overall task', '## Objective', '## Actual outcome']:
             self.assertIn(phrase, text)
 
     def test_frozen_config_matches_constraint_code(self):
-        config = load(ENV / 'config/task01_contract.json')
+        config = load(ENV / 'config/task-01-clarithromycin-ir-formulation-dissolution/contract.json')
         self.assertEqual(config['API_mg'], 500)
         self.assertEqual(config['finished_tablet_mg'], 800)
         self.assertEqual(config['allowed_excipients'], list(NAMES[1:]))

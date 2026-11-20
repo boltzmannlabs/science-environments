@@ -10,5 +10,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
-    sys.argv = [str(ENV / "scripts/run_task.py"), "--task", "Task - 02", "--out", str(args.out)]
-    runpy.run_path(str(ENV / "scripts/run_task.py"), run_name="__main__")
+    sys.argv = [str(ENV / "scripts/shared/run_task.py"), "--task", "Task - 02", "--out", str(args.out)]
+    runpy.run_path(str(ENV / "scripts/shared/run_task.py"), run_name="__main__")

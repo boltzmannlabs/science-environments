@@ -7,9 +7,6 @@ import hashlib
 import json
 import math
 
-NAME = "task-02-ranolazine-er-dissolution"
-
-
 def _equal(actual, expected, label):
     if not math.isfinite(actual) or not math.isclose(actual, expected, abs_tol=1e-10, rel_tol=1e-10):
         raise ValueError("Metric mismatch: " + label)

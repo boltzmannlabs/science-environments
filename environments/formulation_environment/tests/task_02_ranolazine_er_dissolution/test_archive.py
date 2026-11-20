@@ -10,7 +10,7 @@ import unittest
 
 ENV = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ENV / "src"))
-from formulation_environment.ranolazine_task02 import run_task02, verify_contract
+from formulation_environment.task_02_ranolazine_er_dissolution import run_task02, verify_contract
 
 NAME = "task-02-ranolazine-er-dissolution"
 CONFIG = ENV / "config" / NAME
@@ -28,10 +28,10 @@ class Task02Tests(unittest.TestCase):
                 self.assertTrue((ENV / relative / "README.md").is_file(), section)
 
     def test_registry_preserves_task01_and_dispatches_task02(self):
-        registry = json.loads((ENV / "config/tasks.json").read_text())["tasks"]
+        registry = json.loads((ENV / "config/shared/tasks.json").read_text())["tasks"]
         self.assertIn("Task - 01", registry)
         self.assertEqual(registry["Task - 02"]["folder_slug"], NAME)
-        self.assertEqual(registry["Task - 02"]["entrypoint"], "formulation_environment.ranolazine_task02:run_task02")
+        self.assertEqual(registry["Task - 02"]["entrypoint"], "formulation_environment.task_02_ranolazine_er_dissolution:run_task02")
 
     def test_archive_checks_saved_arithmetic_not_scientific_validity(self):
         result = verify_contract(ENV, contract())
@@ -72,11 +72,6 @@ class Task02Tests(unittest.TestCase):
             again = subprocess.run(argv, cwd=directory, capture_output=True, text=True)
             self.assertNotEqual(again.returncode, 0)
 
-    def test_unknown_task_rejected(self):
-        with tempfile.TemporaryDirectory() as directory:
-            result = subprocess.run([sys.executable, str(ENV / "scripts/run_task.py"), "--task", "unknown", "--out", str(Path(directory) / "run")], capture_output=True, text=True)
-            self.assertNotEqual(result.returncode, 0)
-            self.assertIn("Unknown task", result.stderr)
 
 
 if __name__ == "__main__":

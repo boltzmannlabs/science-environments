@@ -4,4 +4,4 @@
 
 - [Task - 01: Clarithromycin 500 mg IR formulation and dissolution investigation](task-01-clarithromycin-ir-formulation-dissolution/README.md) — [benchmark](../benchmark/task-01-clarithromycin-ir-formulation-dissolution/README.md) — [results](../results/task-01-clarithromycin-ir-formulation-dissolution/README.md).
 
-Add future task IDs using the [unified structure](../TASK_STRUCTURE.md).
+Add future task IDs using the [unified structure](../docs/shared/TASK_STRUCTURE.md).

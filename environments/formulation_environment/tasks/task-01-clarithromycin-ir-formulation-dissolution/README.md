@@ -10,7 +10,7 @@ Generate and constraint-check at least ten distinct compositions under a fixed *
 
 ## Inputs and provenance
 
-[User-supplied specification](../../benchmark/task-01-clarithromycin-ir-formulation-dissolution/specification.md), [frozen contract](../../config/task01_contract.json), twelve supplied plus twelve generated recipe inputs, and published R1 numeric mean/SD profiles. All eight excipients are preserved; HPMC/TiO2/PEG4000 are coat solids. This is not the earlier 750 mg screen or ranolazine ER.
+[User-supplied specification](../../benchmark/task-01-clarithromycin-ir-formulation-dissolution/specification.md), [frozen contract](../../config/task-01-clarithromycin-ir-formulation-dissolution/contract.json), twelve supplied plus twelve generated recipe inputs, and published R1 numeric mean/SD profiles. All eight excipients are preserved; HPMC/TiO2/PEG4000 are coat solids. This is not the earlier 750 mg screen or ranolazine ER.
 
 ## Work performed
 
@@ -30,9 +30,9 @@ Generate and constraint-check at least ten distinct compositions under a fixed *
 From the environment root:
 
 ```bash
-python scripts/run_task.py --task 'Task - 01' --out .runs/task01-new-run
+python scripts/shared/run_task.py --task 'Task - 01' --out .runs/task01-new-run
 python -m unittest discover -s tests -v
-python scripts/validate_environment.py
+python scripts/shared/validate_environment.py
 ```
 
 ## Linked sections

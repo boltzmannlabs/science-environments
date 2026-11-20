@@ -4,7 +4,7 @@
 
 ## Frozen objective and inputs
 
-The [specification](specification.md) is the user-supplied benchmark; its bounds/defaults are design assumptions, not regulatory limits. [Contract](../../config/task01_contract.json) freezes 500 mg API and 800 mg finished mass. [Input snapshots](inputs/) contain 24 original design-only records and sixteen published profile records (one duplicated reference is excluded during evaluation).
+The [specification](specification.md) is the user-supplied benchmark; its bounds/defaults are design assumptions, not regulatory limits. [Contract](../../config/task-01-clarithromycin-ir-formulation-dissolution/contract.json) freezes 500 mg API and 800 mg finished mass. [Input snapshots](inputs/) contain 24 original design-only records and sixteen published profile records (one duplicated reference is excluded during evaluation).
 
 R1 numeric means/SD are from different roughly 875 mg coated recipes with croscarmellose, starch/talc and a different coat. No exact eight-excipient experimental dataset was supplied. Source numeric transcription is not independent laboratory verification.
 

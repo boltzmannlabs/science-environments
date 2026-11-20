@@ -11,3 +11,7 @@ Use dedicated Task-02 config, task, benchmark, results, scripts, docs and root r
 ## Consequences
 
 Task-01 stays unchanged except permitting additional registry tasks. Task-02 execution verifies archived integrity/arithmetic only; it does not refit models or establish pharmaceutical performance. All new validation outputs stay within Task-02. See the [folder map](../../../environments/formulation_environment/docs/task-02-ranolazine-er-dissolution/README.md).
+
+## Complete environment ownership (2026-11-20)
+
+Both tasks now own configuration, documentation, scripts, source and tests as well as tasks, benchmark and results folders. The registry lives under `config/shared/`; common execution tools live under `scripts/shared/`. Source/test packages now use the complete numbered task slug with hyphens replaced by underscores. The earlier `ranolazine_task02` package name is superseded.

@@ -2,7 +2,7 @@
 
 ## Task - 02 ownership and execution
 
-Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](docs/task-02-ranolazine-er-dissolution/README.md).
+Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](../task-02-ranolazine-er-dissolution/README.md).
 
 **Lifecycle: In Progress. Scientific tier: DESIGN_ONLY.**
 
@@ -27,3 +27,9 @@ No candidate manufactured, measured or independently replicated. No controlled Q
 ## Governance
 
 User requested publication to **Rebolt**, not main. No main merge, reviewer approval or completed scientific qualification is claimed. Repository license selection remains pending. Existing environments and prior result versions are preserved.
+
+## Structure cleanup validation (2026-11-20)
+
+Both tasks now have dedicated config, docs, scripts, source and tests folders. Common registry, execution tools and documentation live in shared folders. All 37 tests passed after relocation, including checks for every registered ownership path and unexpected loose files.
+
+The previous folder-renaming check found that fresh Task-01 replay exceeds the archived metric tolerance even with documented dependency versions. Running the unchanged baseline produced byte-identical outputs, confirming the discrepancy predates the folder changes. Historical success receipts describe their original execution; the archived-metric replay remains an open issue.

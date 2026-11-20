@@ -1,3 +1,7 @@
 # Configuration
 
-`tasks.json` registers exact task IDs and their matching directories. `task01_contract.json` freezes the 800 mg composition and scientific-evidence contract. The source implementation is Task-01-specific; adding a registry entry alone does not make an arbitrary API/process scientifically supported. Extend dispatch, implementation and tests deliberately.
+- [Shared registry](shared/tasks.json): task IDs, entrypoints and ownership paths.
+- [Task-01 contract](task-01-clarithromycin-ir-formulation-dissolution/contract.json): fixed composition and evidence rules.
+- [Task-02 contract](task-02-ranolazine-er-dissolution/contract.json): archive hashes and consistency checks.
+
+Each task owns its configuration folder. Register new paths before extending shared dispatch.
