@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "task_id": "Task - 01",
+  "folder_slug": "task-01-clarithromycin-ir-formulation-dissolution",
+  "title": "Clarithromycin 500 mg immediate-release formulation and dissolution investigation",
+  "task": "../../tasks/task-01-clarithromycin-ir-formulation-dissolution/README.md",
+  "benchmark": "../../benchmark/task-01-clarithromycin-ir-formulation-dissolution/README.md",
+  "result_versions": {
+    "v1": "v1/README.md",
+    "v2": "v2/README.md"
+  },
+  "status": "DESIGN_ONLY",
+  "actual_scope": [
+    "constraint_checks",
+    "published_mean_curve_analysis",
+    "actual_archived_PTCalc_execution",
+    "within_curve_heldout_diagnostics",
+    "experimental_design_algebra"
+  ],
+  "candidate_lab_observations": 0,
+  "candidate_recipe_predictions": 0,
+  "efficacy_rank": null,
+  "external_model_validation": null,
+  "calibrated_candidate_intervals": null,
+  "literature_product_superiority": "NOT_ESTABLISHED",
+  "v2_valid_recipes": 28,
+  "v2_unique_published_profiles": 15,
+  "v2_model_configurations": 11,
+  "v2_profile_model_split_evaluations": 1155,
+  "planned_batches": 11,
+  "planned_units": 198,
+  "planned_blank_timepoint_records": 1980,
+  "publication_validation": "repository_validation.json",
+  "scientific_review": "PENDING",
+  "license": "repository license selection pending"
+}

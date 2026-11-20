@@ -1,0 +1,22 @@
+{
+  "old_selected_unique_designs": 3,
+  "old_main_effect_rank": 3,
+  "old_main_effect_residual_df": 0,
+  "new_factorial_unique_designs": 9,
+  "new_factorial_quadratic_columns": [
+    "intercept",
+    "CP",
+    "PVP",
+    "CP*PVP",
+    "CP^2",
+    "PVP^2"
+  ],
+  "new_factorial_matrix_rank": 6,
+  "new_unique_design_lack_of_fit_df": 3,
+  "planned_batches_with_center_repeats": 11,
+  "planned_quadratic_total_residual_df": 5,
+  "planned_pure_error_df": 2,
+  "new_unique_recipes_added": 4,
+  "total_valid_recipe_pool": 28,
+  "limitation": "Algebraic estimability, not a fitted response model. Only center batch replication initially; no other factors/scale effects estimated."
+}

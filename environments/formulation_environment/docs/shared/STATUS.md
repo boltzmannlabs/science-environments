@@ -1,0 +1,40 @@
+# Status
+
+## Task - 02 ownership and execution
+
+Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](../task-02-ranolazine-er-dissolution/README.md).
+
+**Lifecycle: In Progress. Scientific tier: DESIGN_ONLY.**
+
+## Implemented and actually executed in the source investigation
+
+- 12 supplied plus 12 generated 800 mg designs, with hard gates and ten deliberate rejection controls.
+- PubChem/Europe PMC source retrieval, RDKit descriptors, 100 Optuna information-design trials with exact verification.
+- Actual PTCalc.Core 1.1.0 execution: 288 descriptive fit records across sixteen published profile records; independent arithmetic review. Not a target-recipe predictor.
+- Improvement study: fifteen deduplicated profiles, eleven configurations, 1,155 profile/model/split evaluations; four additional valid recipes; 28-recipe pool.
+- Held-out forward error improved for selected configurations; other LOTO errors worsened. No superiority over a literature tablet is established.
+
+## Repository integration
+
+Portable source, explicit task registry, matching descriptive task/benchmark/results folders, source snapshots, versioned curated results, research notes and executable regression tests.
+
+Executed integration validation: **29 tests passed, zero failures/errors/skips** on Python 3.13.7. A fresh portable runner execution reproduced all 33 aggregate metric rows within absolute tolerance 1e-7 and generated the 28-recipe pool. Link/source-hash/publication scans, CLI overwrite/unknown-task rejection and Python compilation passed. Receipts are in `results/task-01-clarithromycin-ir-formulation-dissolution/repository_validation.json`, `repository_tests.txt` and `repository_run_receipt.json`. Unrelated existing environment suites were not rerun.
+
+## Not accomplished
+
+No candidate manufactured, measured or independently replicated. No controlled QC specification, assay reconciliation, trained formulation surrogate, external batch validation, calibrated candidate intervals, approved clinical equivalence, shelf life or manufacturing window. Draft method/material gates require scientific approval. Early sampling and eleven pilot batches are PLANNED_NOT_RUN.
+
+## Governance
+
+User requested publication to **Rebolt**, not main. No main merge, reviewer approval or completed scientific qualification is claimed. Repository license selection remains pending. Existing environments and prior result versions are preserved.
+
+## Structure cleanup validation (2026-11-20)
+
+Both tasks now have dedicated config, docs, scripts, source and tests folders. Common registry, execution tools and documentation live in shared folders. All 37 tests passed after relocation, including checks for every registered ownership path and unexpected loose files.
+
+The previous folder-renaming check found that fresh Task-01 replay exceeds the archived metric tolerance even with documented dependency versions. Running the unchanged baseline produced byte-identical outputs, confirming the discrepancy predates the folder changes. Historical success receipts describe their original execution; the archived-metric replay remains an open issue.
+
+
+## Main publication (2026-11-20)
+
+The user subsequently authorized publication to main. The structured formulation environment, linked research/decisions and required original ranolazine evidence were applied to the current main checkout without importing unrelated Rebolt changes. All 37 tests and 47 artifact hashes passed. Link validation identified four pre-existing broken links in the main research index, outside the formulation topics; no new link failures were introduced. The previously documented archived-metric replay discrepancy remains open.

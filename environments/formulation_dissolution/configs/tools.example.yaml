@@ -1,0 +1,6 @@
+# No tool is connected by default. Register documented Python callables with
+# tools.boltzmann_adapters.Registry.register(contract, approved=True).
+# Required contract: name, version, capability, invoke(payload, request_id),
+# validate_request(payload), validate_response(Observation), timeout_seconds,
+# retries. Configure credentials outside this file; never commit them.
+tools: {}
