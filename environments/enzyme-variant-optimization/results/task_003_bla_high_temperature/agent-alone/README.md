@@ -18,17 +18,27 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The design pipeline is paused. Current candidates and property predictions are available; full candidate assessment and final selection are unfinished.
+Completed with unresolved blockers. Attempt81reached topology+manager; report warning stopped remaining assessment; empty selection.
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_003_bla_high_temperature/references.md)
 
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 24,934,982 |
+| Cache-read tokens | 1,108,961,536 |
+| Reported cumulative total, lower bound | 1,133,896,518 |
+| Recorded activity span, hours | 97.47 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

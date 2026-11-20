@@ -1,25 +1,20 @@
-# Executed workflow
+# Sun LEH / Pythia study — workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+![Final workflow tools](figures/workflow.jpg)
 
-| Step | Agent operation and outcome | Records |
-|---|---|---|
-| parent preparation | The native149-residue LEH sequence and 1NWW coordinates were prepared for structure-conditioned scoring. | [Step record](steps/01_parent_preparation/README.md) |
-| pythia scoring | Pythia scanned2755 coordinate-mapped substitutions. C/P component scores, their sum and mean sensitivity are retained separately. | [Step record](steps/02_pythia_scoring/README.md) |
-| ranking | The summed-score cutoff <−2 selected33 mutations. D101V and T85V are the retained score leaders. D101V changes catalytic Asp101; ranking does not establish retained function. | [Step record](steps/03_ranking/README.md) |
+The diagram shows the final method path, with later benchmark calculations in a separate panel. Relevant screens and assessments were repeated after sequence revisions.
 
-## Separate property assessments
+| Stage | Tools | Work performed | Results |
+|---|---|---|---|
+| Prepare inputs | Python freeze_inputs.py | Map the native LEH sequence to 1NWW and freeze inputs. | [Records](steps/01_parent_preparation/README.md) |
+| Score mutations | Pythia / run_full_scan.py | Score all 2,755 mapped nonidentity substitutions. | [Records](steps/02_pythia_scoring/all_scores.csv) |
+| Verify and rank | Python verify_results.py; selection.py | Check coverage and rank by the declared summed-score convention. | [Records](steps/02_pythia_scoring/all_scores_ranked.csv) |
+| Select and seal | Python selection.py; final_audit.py | Apply score < −2, retaining 33 mutations and the scoring evidence. | [Records](steps/03_ranking/selected_sum_lt_minus2.csv) |
 
-Original selected sequences were subsequently assessed with shared temperature, pHPred and NetSolP predictors. Reconstructable reference variants were assessed without restarting the design runs. [Results](reference_comparison/README.md).
+## Benchmark calculations
 
-## Current outcome
+Later comparisons reused the Pythia scan and used Enzymes, NetSolP and DDGun_SEQ for common properties. D101V and T85V are score leaders; P57A is a reference comparison. These are prediction rankings.
 
-Declared scoring execution completed; provenance review separately recorded.
+[Property comparison](reference_comparison/README.md)
 
-Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
-
-## Additional open-source metric comparison
-
-The original Pythia scan supplies matched P57A/D101V/T85V score comparisons. New DDGun predictions were completed for P57A and D101V; exact T85V output was reused. No scan or sequence generation was repeated.
-
-This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).
+[Results and outcome](README.md) · [Sequences](sequences/identities.json) · [Usage and time](README.md#usage-and-time)

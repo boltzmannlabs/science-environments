@@ -1,27 +1,21 @@
-# Executed workflow
+# RML stability — workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+![Final workflow tools](figures/workflow.jpg)
 
-| Step | Agent operation and outcome | Records |
-|---|---|---|
-| parent preparation | Public 3TGL mature sequence (269 residues) was retained as the common parent. The exact laboratory starting construct was not established. | [Step record](steps/01_parent_preparation/README.md) |
-| variant generation | Constrained generation produced the candidates recorded in candidate_history.csv. Parent identity and protected positions were carried through revision. | [Step record](steps/02_variant_generation/README.md) |
-| property screening | Enzymes Tm and NetSolP predictions screened parent and variants. Full-precision measurements are retained in outputs.csv. | [Step record](steps/03_property_screening/README.md) |
-| structure and chemical assessment | Folded models, MolProbity, docking and retained-pose geometry were assessed. Ligand preparation and output compatibility problems required additional assessment; see job status and measurement records. | [Step record](steps/04_structure_and_chemical_assessment/README.md) |
-| revision and re evaluation | The agent revised sequences after reviewing earlier predictions, then re-evaluated them. RML_R2_02 and RML_R2_01 are retained for descriptive comparison; full functional qualification remains open. | [Step record](steps/05_revision_and_re_evaluation/README.md) |
+The diagram shows the final method path, with later benchmark calculations in a separate panel. Relevant screens and assessments were repeated after sequence revisions.
 
-## Separate property assessments
+| Stage | Tools | Work performed | Results |
+|---|---|---|---|
+| Parent checks | Python | Freeze the 269-residue 3TGL parent and protected positions. | [Records](steps/01_parent_preparation/README.md) |
+| Generation and revision | SolubleMPNN | Generate variants, then generate revised sequences after reviewing scores. | [Records](sequences/candidate_history.csv) |
+| Property screening | Enzymes / TemBERTureTm; NetSolP | Compare temperature and solubility predictions for parent and variants. | [Records](steps/03_property_screening/outputs.csv) |
+| Structures and substrate poses | Protein Structure Prediction; Vina | Build protein/complex models, propose poses and score retained substrate states. | [Records](steps/04_structure_and_chemical_assessment/outputs.csv) |
+| Quality assessment | MolProbity; local CCTBX/OpenMM preparation | Measure structure quality and inspect prepared chemical states. | [Records](steps/04_structure_and_chemical_assessment/README.md) |
 
-Original selected sequences were subsequently assessed with shared temperature, pHPred and NetSolP predictors. Reconstructable reference variants were assessed without restarting the design runs. [Results](reference_comparison/README.md).
+## Benchmark calculations
 
-## Current outcome
+Later benchmark calculations used Enzymes (TemBERTureTm and raw pHPred), NetSolP and verified existing DDGun_SEQ outputs. RML_R2_02 and RML_R2_01 are the retained comparison sequences.
 
-Paused
+[Property comparison](reference_comparison/README.md)
 
-Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
-
-## Additional open-source metric comparison
-
-Existing exact-sequence DDGun results were verified and reused; no new molecular calculation was submitted for this task. Parent comparisons remain the agreed basis.
-
-This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).
+[Results and outcome](README.md) · [Sequences](sequences/identities.json) · [Usage and time](README.md#usage-and-time)

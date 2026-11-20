@@ -26,11 +26,11 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The original structural assessment did not qualify the retained models. Their raw predictions are reported, with model findings retained in the execution records.
+Closed: no supported final candidate. Reviewed empty selection retained.
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_002_leh_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
@@ -39,7 +39,17 @@ The original structural assessment did not qualify the retained models. Their ra
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 10,068,190 |
+| Cache-read tokens | 561,620,864 |
+| Reported cumulative total, lower bound | 571,689,054 |
+| Recorded activity span, hours | 86.37 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

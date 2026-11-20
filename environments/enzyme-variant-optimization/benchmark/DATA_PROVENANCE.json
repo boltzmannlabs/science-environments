@@ -3,44 +3,168 @@
   "supplemental_timing": "Reference property and DDGun assessments followed original selection; original design qualification is unchanged.",
   "files": [
     {
-      "path": "results/EXPORT_MANIFEST.json",
-      "sha256": "6403671e91571e81e3dca9ea2f29f6790170322f0989e9c9288ba2ebcc7a96d6"
+      "path": "benchmark/README.md",
+      "sha256": "ce238037c1e40dacfc29f959c98b6cf92fb864f8f9252851aeacba841742d845"
     },
     {
-      "path": "results/OPEN_SOURCE_ASSESSMENT_USAGE.json",
-      "sha256": "2d8d4b1e0b69f6d8a2248dfc07449c53959f01c4b7e24441d0bff38784c71b29"
+      "path": "benchmark/report_data.json",
+      "sha256": "c726f103cb555d40de977ae851afe639a3eaed559ef44ff30d361093cd41cea5"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/README.md",
+      "sha256": "22f0cebcbda0f735101553a71c45e3e72378789554eaa98586bbc779956b1687"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/benchmark_report.md",
+      "sha256": "7aaf844049a31adc5b90cfb265617d0d5fbd0e0117d418440a867b3dee12b328"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_01.png",
+      "sha256": "bb64ab3b8b1990e3de3557214a25e8c1f3860c03a911d4903d5ec402489a2e0f"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_02.png",
+      "sha256": "209eabed9105c627fd07aeb36040396e18f210e06b61a24008830fdee2039ffa"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/comparisions/reference_predictions.csv",
+      "sha256": "e1e87ab0a85ee872eefe6166ae1db5ae5c70d392c75873811785186a1e23dc85"
+    },
+    {
+      "path": "benchmark/task_001_rml_stability/references.md",
+      "sha256": "23ef0aed656b983bbc4a73ebc13b047b9d50a5e59adc0432af70ebb27bbe646f"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/README.md",
+      "sha256": "bd053bd95619054f19b21d72756cbcf2800243531d60b4640e6c2f7a2c3ace82"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/benchmark_report.md",
+      "sha256": "a1cf2725eaf861ef50b9cfce88aeea6815a8310592e0f3b5100e7b3f3e8feb92"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_01.png",
+      "sha256": "e7eff1f1bc4a5307efd89447fe5ed65e55c570f70c51dedc0b5febe4ecaf15db"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_02.png",
+      "sha256": "832917de3f3b611534630539d51c2bc9aa1a6dd3d0ddae7223d0003d978bb304"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
+      "sha256": "d9ebbeb5e907d003f236c79e959d819ef391e3260ebeef7592d6f0f062ffe5b2"
+    },
+    {
+      "path": "benchmark/task_002_leh_stability/references.md",
+      "sha256": "b8307d098dc2d327c8fc8992d4e442801f6e5a2035c225f83aa6b3f4062a75f2"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md",
+      "sha256": "914eaf99872498ad7022c9b0620de94adf44aeccc8d7347e01413350d1303122"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_01.png",
+      "sha256": "b57fb2ca45db97b698c5e2b7faf517618f1291e1ded6156d855b938bba3d4c0f"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_02.png",
+      "sha256": "1b70a4ef251f8dc46ca466b1ba946f80850d8e410ad403071007cb225683562e"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_03.png",
+      "sha256": "ea9473cc74d3522c6c9375b233f2af1a8d2fbdb93aba84929d238f23bd8d658b"
+    },
+    {
+      "path": "benchmark/task_003_bla_high_temperature/references.md",
+      "sha256": "920dc1df4025be3137a35ee788d62d43f44d67ed43a2214264c73288e0911f7a"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md",
+      "sha256": "27c3cee41059957a10160dcb98dc94465b6bc4d6d75d12e27e4b27a69e518471"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_01.png",
+      "sha256": "31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_02.png",
+      "sha256": "d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_03.png",
+      "sha256": "f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7"
+    },
+    {
+      "path": "benchmark/task_004_athol1_substrate/references.md",
+      "sha256": "26c37acb825441a940495b5bab2f0a6f01a8647bdb72a12ed58666e9d82167fb"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/README.md",
+      "sha256": "6ef2d27a2f22c20318312c4965d402a61471a727e6ae9224429469da126a779f"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md",
+      "sha256": "5101d8e85edd0750feaaf234e82f3da33ca17caced693ddeacb6c778be85346b"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_01.png",
+      "sha256": "f4b66fdd4c9d5a758c3547d6d846098697c2467c1310e4f329045606b2c9570a"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_02.png",
+      "sha256": "85e6d91fafb77bf112df7e657737060b416dee02a3dd7df872672a6cd68d8e3d"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_03.png",
+      "sha256": "8ae34f198e042c7686d7d92cc9f1fa5639e7554c9a7b46136fc8d7eca32f06bf"
+    },
+    {
+      "path": "benchmark/task_005_sun_leh_pythia/references.md",
+      "sha256": "80b7ebfb4e59139d43bb946eca721d94533e61415d91d2d9c681e04c4f114e90"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/README.md",
+      "sha256": "7118991a4f63b488a6403d64cc635247de7af36370f419619a4b93b34817d5ea"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md",
+      "sha256": "e5cd651e58a5bbbfe39d639aee09e793a51b2b3a2396ff1a02fd5b8ef3b669e8"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_01.png",
+      "sha256": "4fe7443699e786c445bd5dfa525dff0fd05ff49cb230e2c0ef57a1e58733b021"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_02.png",
+      "sha256": "a1b29c046e45b81a36b12041018d6a852a31d0d749fe50dfd6999fcaa0c835c6"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_03.png",
+      "sha256": "2eb256e9ff365afab0bbd3c0dd62afef86626ce0806d64e8b83a93e080ec18a1"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/comparisions/published_prediction_only.csv",
+      "sha256": "014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e"
+    },
+    {
+      "path": "benchmark/task_006_zhang_hydrolases/references.md",
+      "sha256": "8a3ed6046205de2199caed8df083a9d30e7c466e5777db2415778c9484df99a9"
     },
     {
       "path": "results/README.md",
-      "sha256": "ec486f5f1158ca0bb1fad2e1f1a288677e977cdfb2a6f2ae2b14ed4bd3743dd0"
-    },
-    {
-      "path": "results/REFERENCE_ASSESSMENT_USAGE.json",
-      "sha256": "33fae46a715b86c89edfdf9c53ca538a6b2f87dff1afd3ccd2dadfc5677ca7c5"
-    },
-    {
-      "path": "results/task_001_rml_stability/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "74467d2d4173a8550c2f6e17bbecec3084d74d10e2f401952c9080d8783444a5"
-    },
-    {
-      "path": "results/task_001_rml_stability/agent-alone/EXECUTION_STATUS.json",
-      "sha256": "be81d68efcf591664fd2a60ea87c3f1de2f7fc32e7be58f72af34d8df4194dd8"
+      "sha256": "44533ebbfd77ad070c13d1289c1d2e5f1e7beed70ca6d5b0aec2bbdafe7ee8a2"
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/README.md",
-      "sha256": "b9eaaf00e9c253ad941b023b74143f5f5e210345fa14d079c59665ce7dcea7fc"
-    },
-    {
-      "path": "results/task_001_rml_stability/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "67dcdab480c6d1354219f59d688df4d79f662b412099015d99fc749f43fefdf0"
-    },
-    {
-      "path": "results/task_001_rml_stability/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "f4a7930df9ae1fb1d94bf0457dc3ed2fc00b065e4734b0b29a507dd834f30243"
+      "sha256": "dec95a76608d3004502be8d0349bce455da07b42278a23111edf30b266f724ac"
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/WORKFLOW.md",
-      "sha256": "65b50722585709372b0f5a38f0935a5d2280b03f18e14870b7c2714e3aa174ec"
+      "sha256": "257e7f436fc691404bc4ec996a9bcf11cc1e7ac1ce9deabb4048a318f40db606"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-alone/figures/workflow.jpg",
+      "sha256": "a17e445cdcaed454be25fbdf3d39f37dd8519d553cf4ba7c615ff00e2b18ec70"
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/reference_comparison/README.md",
@@ -108,7 +232,7 @@
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/settings.json",
-      "sha256": "e51dd2660c1743c6754225c2ae8e0fffc1741a4e6e144690a2f32811ea0b37f7"
+      "sha256": "fc1f583127e22c50d672b4341476bc48171f3b3e9ee295ec8fc2af3c3eab7254"
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/steps/02_variant_generation/README.md",
@@ -156,7 +280,7 @@
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/README.md",
-      "sha256": "78449c0cab2c481fbb976bb05576d12bd80988bcdda319f569d59ee5e0785db6"
+      "sha256": "add7fd0b9f54469e3f968aa83252a234582558146a6c00f54f63b66f4a7b9f79"
     },
     {
       "path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/input.json",
@@ -175,28 +299,56 @@
       "sha256": "84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b"
     },
     {
-      "path": "results/task_002_leh_stability/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "492e08e5b55c2353a8a06cad990470dac430beb5d04857c5a0e7ca3db976eb3e"
+      "path": "results/task_001_rml_stability/agent-with-specialist/README.md",
+      "sha256": "da275c6b6aa55e872f2502a4c1e172e195cdb368eec978278a8cf8ab264e3288"
     },
     {
-      "path": "results/task_002_leh_stability/agent-alone/EXECUTION_STATUS.json",
-      "sha256": "a06dc3e8b9a020d35225d41d6fade12557daf3d33e6f96c7ac2169ca610693ab"
+      "path": "results/task_001_rml_stability/agent-with-specialist/WORKFLOW.md",
+      "sha256": "19aa2813043cfd71cd7b1e790db7bb76143ded790c18f6c546295fb6dfc56c45"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/figures/workflow.jpg",
+      "sha256": "5aa9eeab044d4e7c508e41771f94c3eb6f3d71a5d4df3cbafd9e4da13b1f66ed"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/sequences/candidate_history.csv",
+      "sha256": "b7e06e4c55580bb6d56352b9f85173082f9158249b20c47a81c51cb4279ec054"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/sequences/candidates.fasta",
+      "sha256": "fe2a490c884c1464019f0973c850bbb4e1635b6510c43e698743650f9ce94d96"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/sequences/parent.fasta",
+      "sha256": "54255b2373fb257c75b32e7330db3782ec96c2048c6d0210ae450d3fa490e8eb"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/candidate_summary.csv",
+      "sha256": "ac9bce8f7b35489060a98fcf7889769c19694d3199a444b92408b0db463e83fc"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/measurements.csv",
+      "sha256": "30cfbf3db1e40ce73dbeeafda15433a88069b1236f19a815c800d62d63d0e689"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/steps/02_structure_assessment/measurements.csv",
+      "sha256": "548dedf751cb233a9fe12c4fa9977fcb159e7650bfd2cc8b307c91b19bcff7ef"
+    },
+    {
+      "path": "results/task_001_rml_stability/agent-with-specialist/steps/03_review/sealed_selection.csv",
+      "sha256": "a03e49ad8f8c7a2a55dd107eaed3ede49582f0a03ea8c50cda8541088b02a581"
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/README.md",
-      "sha256": "ab94eadf08f69668ab9c707aa3a9ebe68caac038ca7e00918356fa91e7363389"
-    },
-    {
-      "path": "results/task_002_leh_stability/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "014ec545cba4584c432104c48d2e4969c810d216d935c6319fe88be72d5d458a"
-    },
-    {
-      "path": "results/task_002_leh_stability/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "984e8e2010eeb132aebb525ef0429bff16982395715ec41dc16347fc46b6d9da"
+      "sha256": "3eaebcf1b9928c638a2868bbde580e3b0f79b19cdffcc207b7687f16f586c89a"
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/WORKFLOW.md",
-      "sha256": "35a8fe1a0aa2fad8c98d6209e9b7bf579da9b4a3839c51dd6531fb5a9cbd7f23"
+      "sha256": "ed71ddf6e35ed72aeb945c54a67d03be0c8d6aa435336d70c1f9fa7844752bea"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-alone/figures/workflow.jpg",
+      "sha256": "fad13faa3267db19d2f2ce8b10f6a66006adcb3837c9d05291d3056982898f0a"
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/reference_comparison/README.md",
@@ -264,7 +416,7 @@
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/settings.json",
-      "sha256": "809492b3fd645796d394a9cd1509ff33844145193a6a731d7501766a9464c1ba"
+      "sha256": "2af84186c465dddd6d035d507907b8e2ee8e56e9b626deab0793749ebcc4c5e1"
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/steps/02_variant_generation/README.md",
@@ -296,7 +448,7 @@
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/README.md",
-      "sha256": "061b5981e5c5d81e323d5c3f8a627094917614e75add5d8f834c758d72bbb258"
+      "sha256": "12820149c0c61c3f2c4a8a815fbdbf0c0793106f70656f32f20e5c213510799d"
     },
     {
       "path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/input.json",
@@ -315,28 +467,60 @@
       "sha256": "3bddf8a7023e1c6f3f70efda17ba14447c4de281b4d855e5dc104171a86e6e98"
     },
     {
+      "path": "results/task_002_leh_stability/agent-with-specialist/README.md",
+      "sha256": "e8f799b650f18e2934ce6f4822783993521c59b9a9080e37d94122a151dca51c"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/WORKFLOW.md",
+      "sha256": "10474409fd571aad55eb7129aaedb992cfe00d0f08d703e366e221bdc583a897"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/figures/workflow.jpg",
+      "sha256": "2ff1b42d7ed0ed7fcefdc10f64e0eb1a66367f063dfdcbe42e1aa6443cc310a9"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/sequences/candidate_history.csv",
+      "sha256": "b6e4f8f04196f859663fa49703c3e38a37e3d028801c117fe0b80c18912096b1"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/sequences/candidates.fasta",
+      "sha256": "a3a1e8d07796bcd94ecba084535e192f2c6fb24413e94a8dc65ef385657cb1d9"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/sequences/parent.fasta",
+      "sha256": "463e2a8309e362f0cec6109553902d3c6362627d9781bd233258b7564b7937a3"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/steps/01_property_screening/candidate_summary.csv",
+      "sha256": "a9bf15425c6b3343152b50d8fabc6ef399d04efb2c60c607c42623228fe87b56"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/steps/01_property_screening/measurements.csv",
+      "sha256": "e7246658ac75dc33dd2798cc036caaf7fc2e12951b87060e66c6b73aeb00e8f9"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/steps/02_structure_assessment/measurements.csv",
+      "sha256": "92ecf5ea0ef874df5c07b9cbff92c46874ab90effedceb34977560d244772b59"
+    },
+    {
+      "path": "results/task_002_leh_stability/agent-with-specialist/steps/03_review/sealed_selection.csv",
+      "sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3"
+    },
+    {
       "path": "results/task_003_bla_high_temperature/README.md",
       "sha256": "29d0fd32e235249bae85c0fab29576ac186e04dc85eea21e8f1bdb7aaae8fd4c"
     },
     {
-      "path": "results/task_003_bla_high_temperature/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "d4c3626f233dff2ab723aa28d8dd646ac4707d2c77577ad3d5a761415ae2522d"
-    },
-    {
       "path": "results/task_003_bla_high_temperature/agent-alone/README.md",
-      "sha256": "6a3c23484c628dc027f213aed8797ace7b7e903c69d5a5d5fefaf46271621630"
-    },
-    {
-      "path": "results/task_003_bla_high_temperature/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "31499ef24da685a902b7a3b16df02f478342d71155473bb86804758c4c3e4058"
-    },
-    {
-      "path": "results/task_003_bla_high_temperature/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "f9cf70faf7f0131f4d910c2fb85dd335ae6a49ba940faab54e16d2f3c355ea36"
+      "sha256": "86d9b342c43967dbc06186594e5f2394c7a8898556a459d5e545f14c11e3a338"
     },
     {
       "path": "results/task_003_bla_high_temperature/agent-alone/WORKFLOW.md",
-      "sha256": "22ccdecaad6e12976d5f108ed62bc0c11673d7a3120dbdb05ece9864c0b4fca3"
+      "sha256": "267551504feab1e3022bc5c88c19680d8913044df3781e788a4e85fca13e0712"
+    },
+    {
+      "path": "results/task_003_bla_high_temperature/agent-alone/figures/workflow.jpg",
+      "sha256": "766131e082fbeec9f72154c3fd9cf89fe5cb58ff023291e773817fc289c52c45"
     },
     {
       "path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/README.md",
@@ -435,24 +619,16 @@
       "sha256": "bbbb503b8c138c509aad2c5065b05426ed0c3aaa17c68725c7ce7d0ac1cfc697"
     },
     {
-      "path": "results/task_004_athol1_substrate/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "49a2a59bf3ae8c5361d9f3e0f96256485e4dbe2c4464844fa95d81e0e2f62ad7"
-    },
-    {
       "path": "results/task_004_athol1_substrate/agent-alone/README.md",
-      "sha256": "58e006552b6f0de6a30bab05ce8d128ccb10989cd7f9efe7a9a6894fe0330891"
-    },
-    {
-      "path": "results/task_004_athol1_substrate/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "3a9769bc326b533e9a7525bbe8c4f98fba5845dd498152907de6399def93fffb"
-    },
-    {
-      "path": "results/task_004_athol1_substrate/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "cc2737f3eea9a776994524e678d3165900c936eb11cfb1a19c83f22a6df59043"
+      "sha256": "4e62b895448f0eba5a6e2b73871725804ca4005b911d42be33f1d7fae15785a3"
     },
     {
       "path": "results/task_004_athol1_substrate/agent-alone/WORKFLOW.md",
-      "sha256": "ed6cfed0ce5e058fffd864b38e0ca634f8ea0178d99542dd57b4833a9fa30c59"
+      "sha256": "0adad4fa738f9f11213ae49724f861ca479661b7c8e003aae76b8592f31573a6"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/figures/workflow.jpg",
+      "sha256": "bc69a95179f573ac341c52183a876e23efac546b04a5142a10f0c101557b2a9c"
     },
     {
       "path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/README.md",
@@ -539,24 +715,28 @@
       "sha256": "64703e87de70235a2379af8a95e8bc78290bdd3f6a0b4981c72c8d7df3011d7e"
     },
     {
-      "path": "results/task_005_sun_leh_pythia/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "bdf8a0073c1d9e7171ba800a656f664aaf799392792c56367daab86b11a827fb"
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/PROVENANCE.json",
+      "sha256": "9af71c8b155424b4bbea3ab71e42471c254a86ec12c19a07ee570f7801e229c8"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md",
+      "sha256": "c35eda30543b115add8287dd158647f4f9aa732d4e9267196b4d9c7c758230d5"
+    },
+    {
+      "path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/predictions.csv",
+      "sha256": "d3b9170840e9a3f906d3625d38a30ace1bcd3197134ccb02a163afe8ee70ed4d"
     },
     {
       "path": "results/task_005_sun_leh_pythia/agent-alone/README.md",
-      "sha256": "904d4e361e2cb216530c3b882588e386ae789c40706b31d71a937b6688961431"
-    },
-    {
-      "path": "results/task_005_sun_leh_pythia/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "3c5b55bb86416323f322a6ff7e3e15667e12f6f92b3e77a5990b1be001f02baf"
-    },
-    {
-      "path": "results/task_005_sun_leh_pythia/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "b4ce0fd1dd48f9fb53fc78931108578133f3c07507b68e6005d5d06d5b719ce7"
+      "sha256": "1aa5ea7808379672a54ecd413f3fae754465d227de7c159292962e25b0caa2b7"
     },
     {
       "path": "results/task_005_sun_leh_pythia/agent-alone/WORKFLOW.md",
-      "sha256": "fdd722d3c7e4bac73b0aaa6aeabeb28ea96e344b7d0e79de0d825bb14aa3b1c6"
+      "sha256": "6b70b96a999af165dbc41a297886af5ea57d0b58901daecca843ba3c1caa49dd"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-alone/figures/workflow.jpg",
+      "sha256": "abf6b6a6b12aa496a8edb13847c59b5c4b1bd7297fe04d889cc7d30338cd4ed9"
     },
     {
       "path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/README.md",
@@ -624,7 +804,7 @@
     },
     {
       "path": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/settings.json",
-      "sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37"
+      "sha256": "d021148aaf5305a31e94f71476870b4764cc77aa8c1b79017f65ff7f19382f90"
     },
     {
       "path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/README.md",
@@ -655,24 +835,48 @@
       "sha256": "5f4e35be072a0b9714a93fd2e669d589eb982d1ff4df16a32fbc5f3ee20a82de"
     },
     {
-      "path": "results/task_006_zhang_hydrolases/agent-alone/EXECUTION_METADATA.json",
-      "sha256": "03c545a49b11436ab786674b5107d97de07cb52633d978007c2d735c804e0d41"
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/README.md",
+      "sha256": "e76acd4c319457ed9b1dd1174138548d78c3271341ce1ef80a24f6a4e4d7fbf3"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/WORKFLOW.md",
+      "sha256": "05fd7e249a1fcc47577d4e1dbdbd02a614b9b1a2c4f4a441ea98590bf88467a7"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/figures/workflow.jpg",
+      "sha256": "2a841262398a21e08210e7c593d4fd3eef89dc2cc2fb048b7fc9d13ee309552c"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/sequences/parent.fasta",
+      "sha256": "463e2a8309e362f0cec6109553902d3c6362627d9781bd233258b7564b7937a3"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/sequences/selected_mutations.fasta",
+      "sha256": "48428d7469cba1d5c48d0f187896a4383b69fefdd8a39c6e096664457b37bf9d"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/01_pythia_scoring/all_scores.csv",
+      "sha256": "8415d11a2d455dc56aa085505f7f77df19e84801b87cb42ef5b3f1ce760edf8d"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/02_ranking/selected_mean_lt_minus2.csv",
+      "sha256": "0b7eb01cf31b1822098e2e06d1e1abbe80bc02acb0fb8c3e0804c1be5575065f"
+    },
+    {
+      "path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/02_ranking/selected_sum_lt_minus2.csv",
+      "sha256": "2d999a852ef63883924554f75fbc087e172b0b79280ca281eef7bba14722c998"
     },
     {
       "path": "results/task_006_zhang_hydrolases/agent-alone/README.md",
-      "sha256": "cbe31e6e2b46eb4ef79fc4f50934a4e88e4e756e538f3eeffc0cdd013599e5ad"
-    },
-    {
-      "path": "results/task_006_zhang_hydrolases/agent-alone/USAGE_AND_TIME.md",
-      "sha256": "da99397ff30ed8fdaa6c7dbd53ed5cae1b91427567bb5f0cf6f3ae4c10ffcd69"
-    },
-    {
-      "path": "results/task_006_zhang_hydrolases/agent-alone/USAGE_SNAPSHOT.json",
-      "sha256": "6388db70edbbb094b13eab562b1689abd7a27498d77cf039b757d0e1e1cba1ad"
+      "sha256": "3fb74b03aee63fe032622b71a57e652dfcb734a28b655e7cce038c423ea2f2f0"
     },
     {
       "path": "results/task_006_zhang_hydrolases/agent-alone/WORKFLOW.md",
-      "sha256": "85a2e6b25b171e37c63d342739fa773604dd9d3df38c860f6ffbd8e8c2423ad1"
+      "sha256": "5ed518a35d577bd426acd6ebf1d5cc3836036027079f565eeabd24ba5c457ee8"
+    },
+    {
+      "path": "results/task_006_zhang_hydrolases/agent-alone/figures/workflow.jpg",
+      "sha256": "a28e37046f2f45ad13f870d0c69db74617769fce1e49011d5dde37556b369660"
     },
     {
       "path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/README.md",
@@ -736,7 +940,7 @@
     },
     {
       "path": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/settings.json",
-      "sha256": "091246f9649a5d3e5dff3822c7269bdfa5e1d3db58d1661d1f4f33c737777d37"
+      "sha256": "d021148aaf5305a31e94f71476870b4764cc77aa8c1b79017f65ff7f19382f90"
     },
     {
       "path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_beta_glucanase_WT.csv",
@@ -771,90 +975,181 @@
       "sha256": "38d2cc5ab4f6f6cf727cfbc36225cacf67ceebb0a98821d299363bd9691d7722"
     },
     {
-      "path": "benchmark/README.md",
-      "sha256": "d02a50c53239b3df0640cadc7bb5a4e8eef3264f60f49289b089367d179ce338"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/README.md",
+      "sha256": "8b81deb2af45172a45090a70642f43e42f2e7ebf085095b6736be92a80f21675"
     },
     {
-      "path": "benchmark/report_data.json",
-      "sha256": "dd3c5815678756ccdc1d6dec75a1ebad0898ce3e85aa5aa7438f2d90dbffa1ed"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/WORKFLOW.md",
+      "sha256": "5d630d13d63d020cb9ee383510c5ac174f424a3e1b255c4be19f8ef201889d08"
     },
     {
-      "path": "benchmark/task_001_rml_stability/comparisions/README.md",
-      "sha256": "96df8dd9799851fdd8464b7eb74dfab063ff6fc37722848228788c2bd982c29b"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/figures/workflow.jpg",
+      "sha256": "f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc"
     },
     {
-      "path": "benchmark/task_001_rml_stability/comparisions/benchmark_report.pdf",
-      "sha256": "15fe5470391d895e832e07777e1a68867a22b49d89c4341442becd93507063b6"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/sequences/backgrounds.fasta",
+      "sha256": "7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b"
     },
     {
-      "path": "benchmark/task_001_rml_stability/comparisions/reference_predictions.csv",
-      "sha256": "e1e87ab0a85ee872eefe6166ae1db5ae5c70d392c75873811785186a1e23dc85"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/sequences/score_leaders.fasta",
+      "sha256": "6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed"
     },
     {
-      "path": "benchmark/task_001_rml_stability/references.md",
-      "sha256": "23ef0aed656b983bbc4a73ebc13b047b9d50a5e59adc0432af70ebb27bbe646f"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/01_structure_prediction/models.csv",
+      "sha256": "186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e"
     },
     {
-      "path": "benchmark/task_002_leh_stability/comparisions/README.md",
-      "sha256": "4d9d4436a6dc580df615152c6d8d36e237ac9b33a06c2b732785b8901b001379"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/beta-glucanase-WT.csv",
+      "sha256": "fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82"
     },
     {
-      "path": "benchmark/task_002_leh_stability/comparisions/benchmark_report.pdf",
-      "sha256": "372c9748e8bd3ab63c88684148c43eaacf72c4ddedc279434bc8162edf2f0079"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/cellulase-WT.csv",
+      "sha256": "73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e"
     },
     {
-      "path": "benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
-      "sha256": "d9ebbeb5e907d003f236c79e959d819ef391e3260ebeef7592d6f0f062ffe5b2"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/beta-glucanase-M5.csv",
+      "sha256": "8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081"
     },
     {
-      "path": "benchmark/task_002_leh_stability/references.md",
-      "sha256": "b8307d098dc2d327c8fc8992d4e442801f6e5a2035c225f83aa6b3f4062a75f2"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/cellulase-M2.csv",
+      "sha256": "9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f"
     },
     {
-      "path": "benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.pdf",
-      "sha256": "20d0b8daf1089454c223d67d2422cc56c04c0ba912d9861b19511c3f9ec23e87"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/paper_score_agreement.csv",
+      "sha256": "264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80"
     },
     {
-      "path": "benchmark/task_003_bla_high_temperature/references.md",
-      "sha256": "920dc1df4025be3137a35ee788d62d43f44d67ed43a2214264c73288e0911f7a"
+      "path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/score_leaders.csv",
+      "sha256": "2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f"
     },
     {
-      "path": "benchmark/task_004_athol1_substrate/comparisions/benchmark_report.pdf",
-      "sha256": "295f9a337aa3ae650e2e9c0fda81b606f603c2aea352635d521c6d343d2ccda3"
+      "path": "configs/README.md",
+      "sha256": "5355c5a8f0a44fc34577e24de6725cce1db4fdde004dc300f7bea596d5c7758d"
     },
     {
-      "path": "benchmark/task_004_athol1_substrate/references.md",
-      "sha256": "26c37acb825441a940495b5bab2f0a6f01a8647bdb72a12ed58666e9d82167fb"
+      "path": "configs/task_001_rml_stability/run_001_agent_alone.json",
+      "sha256": "50ac847573a738c581a6777ca49ef7e57aa84ea5c9966e78625b36b092c7175a"
     },
     {
-      "path": "benchmark/task_005_sun_leh_pythia/comparisions/README.md",
-      "sha256": "b7dd41ff8a6e7bdaef13347a283844d5f27ef73b7075277691d020edad45d656"
+      "path": "configs/task_001_rml_stability/run_002_agent_with_specialist.json",
+      "sha256": "b2c0d394e2fab21b30ebe7ae735e96c699cecfff2653c5b2653a79dc57ae2559"
     },
     {
-      "path": "benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf",
-      "sha256": "1521b04283ede01aaab48265dde1b763d16b49bf9575e542c908ddf2524181fe"
+      "path": "configs/task_002_leh_stability/run_001_agent_alone.json",
+      "sha256": "8a51d9064a5a28617939e2159836f067869835b91f8bc32a368e9450ea5d4504"
     },
     {
-      "path": "benchmark/task_005_sun_leh_pythia/references.md",
-      "sha256": "80b7ebfb4e59139d43bb946eca721d94533e61415d91d2d9c681e04c4f114e90"
+      "path": "configs/task_002_leh_stability/run_002_agent_with_specialist.json",
+      "sha256": "a3fa7ccaf8d57de8549fa0d41e12219f86a453d83bcc3022ba8ec501863dab91"
     },
     {
-      "path": "benchmark/task_006_zhang_hydrolases/comparisions/README.md",
-      "sha256": "b912be31f1dc0908ffdd318112314f488d750aceab97afad41473f60686399e5"
+      "path": "configs/task_003_bla_high_temperature/run_001_agent_alone.json",
+      "sha256": "fbef3ec26da8972a2f0bc8546142f48f3336ef66855fdbedb489ab78c2919066"
     },
     {
-      "path": "benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.pdf",
-      "sha256": "dc788061c0ea52ab60ba0aa37ad31599d4192a5e09fb9b0c87ef9035d4bf309b"
+      "path": "configs/task_004_athol1_substrate/run_001_agent_alone.json",
+      "sha256": "b78a3d8f32c3bd50c1b0b1314777941c85c1f9574540a4ed7fc1f9e700451df8"
     },
     {
-      "path": "benchmark/task_006_zhang_hydrolases/comparisions/published_prediction_only.csv",
-      "sha256": "014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e"
+      "path": "configs/task_005_sun_leh_pythia/run_001_agent_alone.json",
+      "sha256": "24603eebcbcd4cda5eac7c92e3d806d44254e7c713247df6ba91fd4b7657be65"
     },
     {
-      "path": "benchmark/task_006_zhang_hydrolases/references.md",
-      "sha256": "8a3ed6046205de2199caed8df083a9d30e7c466e5777db2415778c9484df99a9"
+      "path": "configs/task_005_sun_leh_pythia/run_002_agent_with_specialist.json",
+      "sha256": "8583108b7f368a442f412b60958e0258115869e4260301028979dab027283fd3"
+    },
+    {
+      "path": "configs/task_006_zhang_hydrolases/run_001_agent_alone.json",
+      "sha256": "ac94731d14762eddf500207912253b6ca28f88d585210d148d29e479758e1464"
+    },
+    {
+      "path": "configs/task_006_zhang_hydrolases/run_002_agent_with_specialist.json",
+      "sha256": "1cd0dffee43a8a7d289baafd88dc78f6fd30e1b91dabbff28a22c4cf50169016"
     }
   ],
   "archived_evidence": "Exact original source exports, source acquisition diagnostics, native audits and obsolete report copies remain in the local execution archive, outside Git.",
-  "open_source_assessment_status": "Supported folding comparisons and static BLA entropy complete; AtHOL1 sampled reaction-electrostatics remains in progress."
+  "open_source_assessment_status": "Supported folding comparisons, static BLA entropy and separate AtHOL1 30 ns field/LMO assessment completed; method-specific interpretation retained.",
+  "snapshot_utc": "2026-11-16T19:45:37.918678+00:00",
+  "assisted_source_snapshots": [
+    {
+      "archive_key": "rml/agent-with-specialist/candidate_history.csv",
+      "sha256": "aea841c1514dd50abdb050aa6f7af070c5c3664d9c18afc77a5c7433eefcdecd"
+    },
+    {
+      "archive_key": "rml/agent-with-specialist/observations.csv",
+      "sha256": "469f25c23ece2414a3ac19f54ed8e8a47471ac3cf6cc12b02411b9ea61097bf9"
+    },
+    {
+      "archive_key": "rml/agent-with-specialist/selection.csv",
+      "sha256": "a03e49ad8f8c7a2a55dd107eaed3ede49582f0a03ea8c50cda8541088b02a581"
+    },
+    {
+      "archive_key": "leh/agent-with-specialist/candidate_history.csv",
+      "sha256": "33f061d7cf02a01f1f70430008a596454be9cb2ac9c8bdb3180b592bc3e9dfbb"
+    },
+    {
+      "archive_key": "leh/agent-with-specialist/observations.csv",
+      "sha256": "87a37c0a6f5229cf5415dc040b2e5739ecc18b6dde976dc1c834f75ea87052b6"
+    },
+    {
+      "archive_key": "leh/agent-with-specialist/selection.csv",
+      "sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3"
+    },
+    {
+      "archive_key": "sun_leh/agent-with-specialist/results/sun_leh_full_001/eligible.csv",
+      "sha256": "13ac82aa3bbb444b4b2352b2e4267b6f85b70c7d2c1456593b33305d567a1924"
+    },
+    {
+      "archive_key": "sun_leh/agent-with-specialist/results/sun_leh_full_001/selected_sum_lt_minus2.csv",
+      "sha256": "6f259095d89a6a9355868c690447bc02dfbf8754febfd3e82f780fa5c99093f6"
+    },
+    {
+      "archive_key": "sun_leh/agent-with-specialist/results/sun_leh_full_001/selected_mean_lt_minus2.csv",
+      "sha256": "92dec27cfca4eff7eec70ada2e4ccdc87789aad167d8b8393380be0e7f0533d1"
+    },
+    {
+      "archive_key": "sun_leh/agent-with-specialist/inputs/LEH_full_parent.fasta",
+      "sha256": "606dae19694d3d401029a4cfe7af2d0057d21526d15a31d65aec8dd30e5770c4"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/pythia_full_001/qa/cellulase-WT.all_nonidentity.csv",
+      "sha256": "0e0d67af96bd081f987d48ff7fc4c865135df1e302bab4638b4d9c86fd013c90"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/pythia_full_001/qa/beta-glucanase-WT.all_nonidentity.csv",
+      "sha256": "e02ee5a0aba77a3af23be18f00b842e3500cd249c0c751604319721e7a685a09"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/esm_full_001/qa/cellulase-M2.nonidentity.full.csv",
+      "sha256": "962ffde15377203d3b4024e6655d422b7bba25cb560fa536054a9b846f35afc8"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/esm_full_001/qa/beta-glucanase-M5.nonidentity.full.csv",
+      "sha256": "7b6d25e9adbb816938d50b57e529733b81da312399c2e76c0d3b21660ae617ef"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/af2_full_001/qa/all_ten_model_QA.csv",
+      "sha256": "0721cd2188ddd84b7d15d899aadd97d3b1ac8e356c63f65d0a8adfde5020e253"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/results/paper_score_agreement_summary.csv",
+      "sha256": "3206aa74c8ec76e19c0a8e2ee6096baeb4571eab538f43773b4bba85dee6ea20"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/inputs/cellulase-WT.fasta",
+      "sha256": "fc35ed08d5c6c3997b6d9359896630ea8ddcf9d7a72ecc632b112bb4cbd00eb1"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/inputs/beta-glucanase-WT.fasta",
+      "sha256": "5747a37077049a60c03786e0883423f145ce4e5209ab0ad5ee1288ea5e2e523e"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/inputs/cellulase-M2.fasta",
+      "sha256": "0bd7264bd0b3cc5d8b9886f087831f87139d43ba4ff093a7b32377b52ca2a36a"
+    },
+    {
+      "archive_key": "zhang_hydrolases/agent-with-specialist/inputs/beta-glucanase-M5.fasta",
+      "sha256": "274537f720b155dbeabd3cdd128a5f5b371f07f4514401352ca0c64f8ec2e3c0"
+    }
+  ]
 }

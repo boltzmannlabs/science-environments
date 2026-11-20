@@ -44,7 +44,7 @@ Execute the following workflow using appropriate tools selected through native S
 | 7. Re-evaluate revisions | Repeat affected stability/property and candidate-specific structure/complex assessments, including direct evaluation of combinations. | Revised metrics, actual structures, functional safeguards and comparisons with the parent and initial batch. |
 | 8. Select and compare | Apply mandatory evidence requirements, rank eligible variants, seal the selection and obtain a separate common-protocol evaluation. | Final sequences, sealed ranking, quantitative comparison, failures, usage and final report. |
 
-Execution settings belong in the selected [configuration version](../config/task_001_rml_stability/README.md). Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
+Historical model and usage summaries are in [run configs](../configs/task_001_rml_stability/). Fresh executions require separately frozen settings. Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
 
 ## Evaluation Metrics
 
@@ -85,4 +85,4 @@ Freeze the common final stability endpoint, functional safeguards and tie-breake
 - Use existing SCI discovery, current input contracts and normal execution/artifact handling. No separate registry, approval layer or custom job runner is required.
 - Preserve available results and report what remains unresolved.
 - Missing essential evidence leaves the workflow unfinished. A complete run can report no supported improvement. Computational stability, docking and geometry are not experimental performance.
-- The [environment specification](../ENVIRONMENT_SPEC.md), [configuration versions](../config/task_001_rml_stability/README.md) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the full task workflow stated above.
+- The [environment specification](../ENVIRONMENT_SPEC.md), [run configs](../configs/task_001_rml_stability/) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the full task workflow stated above.

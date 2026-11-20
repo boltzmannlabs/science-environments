@@ -1,27 +1,21 @@
-# Executed workflow
+# AtHOL1 substrate expansion — workflow
 
-This record describes actual agent-alone execution. Original design work is paused; reference comparison is a separate completed assessment.
+![Final workflow tools](figures/workflow.jpg)
 
-| Step | Agent operation and outcome | Records |
-|---|---|---|
-| parent preparation | The full 235-residue 3LCC construct consists of native227 plus LEHHHHHH. SAH and ethyl iodide define the requested reaction inputs. | [Step record](steps/01_parent_preparation/README.md) |
-| variant generation | The failed mutagenesis route was replaced by SolubleMPNN. Its first12 records produced one unique V140A variant; the next8 produced A144S. Later ThermalMPNN landscapes expanded the candidate set. | [Step record](steps/02_variant_generation/README.md) |
-| property screening | CatPred supplied the primary sequence/reaction prediction; Enzymes and NetSolP supplied property screens. ATH_R2_09 is the retained post-revision property candidate. | [Step record](steps/03_property_screening/README.md) |
-| structure and chemical assessment | Boltz2, MolProbity and Placer outputs were inspected. A disconnected-reactant Boltz job failed; another route returned separate complexes. Native Placer crops required chemical-state review. | [Step record](steps/04_structure_and_chemical_assessment/README.md) |
-| revision and re evaluation | Search positions and subsequent landscapes were revised after earlier measurements. Current chemical/function acceptance remains open; descriptive property comparison uses the exact retained sequence. | [Step record](steps/05_revision_and_re_evaluation/README.md) |
+The diagram shows the final method path, with later benchmark calculations in a separate panel. Relevant screens and assessments were repeated after sequence revisions.
 
-## Separate property assessments
+| Stage | Tools | Work performed | Results |
+|---|---|---|---|
+| Parent and reaction | Python | Freeze the full 235-residue 3LCC construct with SAH and ethyl iodide. | [Records](steps/01_parent_preparation/README.md) |
+| Generation and revision | SolubleMPNN; ThermalMPNN | Generate variants and use mutation landscapes for later revisions. | [Records](sequences/candidate_history.csv) |
+| Property screening | CatPred; Enzymes | Compare sequence/reaction predictions and general property screens. | [Records](steps/03_property_screening/outputs.csv) |
+| Structure and ligand modeling | Protein Structure Prediction; Boltz2; Placer | Investigate protein structures, complex models and ligand states. | [Records](steps/04_structure_and_chemical_assessment/outputs.csv) |
+| Quality assessment | MolProbity | Inspect the structure and chemical-state evidence for retained models. | [Records](steps/04_structure_and_chemical_assessment/README.md) |
 
-Original selected sequences were subsequently assessed with shared temperature, pHPred and NetSolP predictors. Reconstructable reference variants were assessed without restarting the design runs. [Results](reference_comparison/README.md).
+## Benchmark calculations
 
-## Current outcome
+Later benchmark calculations used Enzymes, NetSolP and EvoEF1. A separate matched assessment used OpenMM (30 ns per sequence), protein-field analysis and PySCF/GPU4PySCF for C–I localized-orbital calculations on the parent, V140T and ATH_R2_09.
 
-Paused
+[Property comparison](reference_comparison/README.md) · [Reaction-site assessment](steps/10_reaction_electrostatics/README.md)
 
-Sequence identities: [sequences/](sequences/). Usage: [USAGE_AND_TIME.md](USAGE_AND_TIME.md).
-
-## Additional open-source metric comparison
-
-EvoEF1 folding comparisons for the reference and our retained candidate are complete. Reaction-site OpenMM/PySCF assessment is in progress; MD heating failures and corrected preparation are being diagnosed. Prepared-state quantum preflight is capability evidence only and is excluded from final comparison values.
-
-This is an operator-guided post-selection assessment, separate from the original agent-alone design execution. Exact sequence identities and original selections are unchanged. [Metric records](reference_comparison/open_source_metrics.csv).
+[Results and outcome](README.md) · [Sequences](sequences/identities.json) · [Usage and time](README.md#usage-and-time)

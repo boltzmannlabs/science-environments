@@ -44,7 +44,7 @@ Execute each stage with appropriate current native SCI tools selected from Boltz
 | 7. Re-evaluate revisions | Repeat affected objective, stability and candidate-specific reaction-complex checks on revised variants, including direct evaluation of combinations. | Revised observations, actual structures, reaction-state safeguards and matched parent/initial-batch comparisons. |
 | 8. Select and compare | Apply mandatory evidence rules, rank eligible variants, seal the selection and obtain a separate common-protocol evaluation. | Final sequences, sealed ranking, numerical comparison, failed/unresolved stages, usage and final report. |
 
-Execution settings belong in the selected [configuration version](../config/task_004_athol1_substrate/README.md). Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
+Historical model and usage summaries are in [run configs](../configs/task_004_athol1_substrate/). Fresh executions require separately frozen settings. Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
 
 ## Evaluation Metrics
 
@@ -85,4 +85,4 @@ Freeze the primary endpoint, eligibility requirements and tie-breakers before de
 - Use SCI's existing discovery, current input contracts, validation, submissions and artifact handling. Do not add another catalogue, approval layer or job runner.
 - Preserve available results and report what remains unresolved.
 - Missing required evidence leaves the workflow unfinished. A complete workflow can report no supported improvement. Computed interaction/reactivity scores are not experimental conversion or kinetic measurements.
-- The [environment specification](../ENVIRONMENT_SPEC.md), [configuration versions](../config/task_004_athol1_substrate/README.md) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the complete workflow above.
+- The [environment specification](../ENVIRONMENT_SPEC.md), [run configs](../configs/task_004_athol1_substrate/) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the complete workflow above.

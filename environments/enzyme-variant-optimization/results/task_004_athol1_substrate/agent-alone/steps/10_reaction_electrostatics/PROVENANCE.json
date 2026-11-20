@@ -1,0 +1,20 @@
+{
+  "record_type": "post_selection_alternative_computation",
+  "status": "completed",
+  "protocol": {
+    "production_ns": 30,
+    "discard_ns": 5,
+    "analysis_frames": 250,
+    "QM_frames": 25,
+    "blocks": 5
+  },
+  "sequence_sha256": {
+    "parent": "7a11b6534e3d4c598e2eabe3bb5b2c190400ffb83dd426d8b0b4a021895e4d52",
+    "reference": "092b3e5c32d83dff14a9657426e1be4a8c20d81855113a3228ce2117e8be74fb",
+    "retained_candidate": "2a85ab14a674db7b9dd324468245d9909ba4dc35cae1b93d52f9fb3afb319825"
+  },
+  "design_selection_changed": false,
+  "original_source_csv_sha256": "68d2e220a7b22336970de61fd2687498448c05699493bc35c0046e10c16cc5da",
+  "exported_csv_sha256": "d3b9170840e9a3f906d3625d38a30ace1bcd3197134ccb02a163afe8ee70ed4d",
+  "export_transform": "CRLF to LF line endings only; all parsed CSV values unchanged."
+}

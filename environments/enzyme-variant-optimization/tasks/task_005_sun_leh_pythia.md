@@ -45,7 +45,7 @@ Execute the full task-specific stages through native SCI, using the pinned upstr
 | 7. Review and seal | Review task coverage, method differences and selection provenance; freeze the original ranking and candidate identities before evaluator comparison. | `selection.csv`, sequence hashes, `selection_seal.json`, exclusions/concerns and a completion record. |
 | 8. Compare and report | Compare only clearly reported numerical predictions on compatible identities/definitions; retain missing candidate values and unresolved settings explicitly. | Separate same-variant comparison, source-linked report, failures and usage records. Computational completion and exact historical reproduction are reported separately. |
 
-Execution settings belong in the selected [configuration version](../config/task_005_sun_leh_pythia/README.md). Record the actual SCI model/provider, scientific model versions, resource policies and authorized amendments with the run. The LLM and Pythia are different models and must be named separately.
+Historical model and usage summaries are in [run configs](../configs/task_005_sun_leh_pythia/). Fresh executions require separately frozen settings. Record the actual SCI model/provider, scientific model versions, resource policies and authorized amendments with the run. The LLM and Pythia are different models and must be named separately.
 
 ## Evaluation Metrics
 
@@ -71,7 +71,7 @@ Execution settings belong in the selected [configuration version](../config/task
 - `verification.json` and a missing-position record: coverage, numerical checks, identity controls and preservation hashes.
 - `selection.csv` and `selection_seal.json`: frozen original selection and its content hash before retrospective comparison.
 - `jobs.json`, `errors.md` and `usage.json`: actual execution attempts, known IDs, diagnostic/correction history, permissions and cumulative accounting without credentials.
-- `REPORT.md` in the execution workspace: actual stages completed, selected library, functional concerns, method ambiguities and unresolved paper comparisons. The repository's public comparison report is [comparison.pdf](../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf).
+- `REPORT.md` in the execution workspace: actual stages completed, selected library, functional concerns, method ambiguities and unresolved paper comparisons. The repository's public comparison report is [comparison.pdf](../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md).
 
 ## Important Instructions
 

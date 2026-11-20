@@ -44,7 +44,7 @@ Execute the following stages using current native SCI tools selected from Boltzm
 | 7. Re-evaluate revisions | Repeat affected property and structural/complex checks on revised variants, directly assessing combinations and all proposed final candidates. | Revised metrics, actual structures, catalytic/metal safeguards and matched parent/initial-batch comparisons. |
 | 8. Select and compare | Apply mandatory requirements, rank eligible designs, seal the selection and obtain a separate common-protocol evaluation. | Final sequences, sealed ranking, numerical comparison, unresolved/failed stages, usage and final report. |
 
-Execution settings belong in the selected [configuration version](../config/task_003_bla_high_temperature/README.md). Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
+Historical model and usage summaries are in [run configs](../configs/task_003_bla_high_temperature/). Fresh executions require separately frozen settings. Freeze the selected approach, actual SCI model/settings, budgets and authorized amendments with the run. Scientific requirements remain in [ENVIRONMENT_SPEC.md](../ENVIRONMENT_SPEC.md).
 
 ## Evaluation Metrics
 
@@ -85,4 +85,4 @@ Freeze the primary endpoint, eligibility criteria and tie-breakers before design
 - Use SCI's native discovery, input validation, current contracts, submissions and artifacts. No new catalogue, approval layer or custom job runner is required.
 - Preserve available results and report what remains unresolved.
 - Missing required evidence leaves the workflow unfinished. A complete run can return no supported improvement; computational scores are not experimental high-temperature performance.
-- The [environment specification](../ENVIRONMENT_SPEC.md), [configuration versions](../config/task_003_bla_high_temperature/README.md) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the complete workflow stated above.
+- The [environment specification](../ENVIRONMENT_SPEC.md), [run configs](../configs/task_003_bla_high_temperature/) and [comparison protocol](../ENVIRONMENT_SPEC.md#common-comparison-protocol) supplement the complete workflow stated above.

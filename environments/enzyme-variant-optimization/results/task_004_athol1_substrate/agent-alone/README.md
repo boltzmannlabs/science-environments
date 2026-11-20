@@ -18,17 +18,27 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The design pipeline is paused. The numerical screen, chemical preparation and written evidence review are retained; reaction-specific functional support remains open.
+Closed with limitations. Existing execution/review retained; CatPred definitions/build, A025 and historical protocol gap unresolved.
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_004_athol1_substrate/references.md)
 
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 4,922,898 |
+| Cache-read tokens | 198,167,680 |
+| Reported cumulative total, lower bound | 203,090,578 |
+| Recorded activity span, hours | 83.45 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.

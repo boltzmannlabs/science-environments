@@ -12,12 +12,10 @@ enzyme-variant-optimization/
 ├── ENVIRONMENT_SPEC.md
 ├── STATUS.md
 ├── MODELS_AND_TOOLS.md
-├── config/
+├── configs/
 │   └── task_<id>_<case>/
-│       ├── v1/
-│       │   ├── agent_alone.json
-│       │   └── agent_with_specialist.json
-│       └── v2/README.md
+│       ├── run_001_agent_alone.json
+│       └── run_002_agent_with_specialist.json  # where executed
 ├── tasks/task_<id>_<case>.md
 ├── scripts/
 ├── src/
@@ -28,9 +26,11 @@ enzyme-variant-optimization/
 ├── benchmark/
 │   └── task_<id>/
 │       ├── references.md
-│       └── comparisions/benchmark_report.pdf  # available numerical results
+│       └── comparisions/benchmark_report.md  # available numerical results
 └── results/
-    └── task_<id>/agent-alone/
+    └── task_<id>/
+        ├── agent-alone/
+        └── agent-with-specialist/  # four executed task groups
 ```
 
 This naming pattern applies to all six tasks. There is no environment `tests/` directory. `comparisions/` uses the requested folder spelling. Hidden `.gitignore` rules protect local/private artifacts.
@@ -40,38 +40,38 @@ This naming pattern applies to all six tasks. There is no environment `tests/` d
 | [ENVIRONMENT_SPEC.md](ENVIRONMENT_SPEC.md) | Shared workflow stages, protected constraints, evidence, recovery, comparison protocol and completion criteria. |
 | [STATUS.md](STATUS.md) | Implemented work, work in progress and future enhancements. |
 | [MODELS_AND_TOOLS.md](MODELS_AND_TOOLS.md) | Required capabilities, method families, selection criteria and limitations. SCI discovery/contracts define current APIs. |
-| [config/](config/README.md) | Task/version/approach settings: LLM, parameters, budgets, concurrency, limits and exclusions. |
+| [configs/](configs/README.md) | Compact actual-run records: specialist use, model/version, tokens and time budget. |
 | [tasks/](tasks/README.md) | Numbered scientific assignments. |
 | [scripts/](scripts/README.md) | Native launch preparation, resume instructions, offline evaluation and report generation. |
 | [src/](src/README.md) | Actual agent-alone code and the retained offline evaluator. |
 | [benchmark/](benchmark/README.md) | Published reference values and comparisons with agent-alone outputs. |
-| [results/](results/README.md) | Actual agent-alone execution evidence. |
+| [results/](results/README.md) | Agent-alone and specialist-assisted execution evidence. |
 
-## Tasks and versions
+## Tasks and run configs
 
 | ID | Case | Configuration |
 | --- | --- | --- |
-| `task_001_rml_stability` | [RML stability](tasks/task_001_rml_stability.md) | [Versions](config/task_001_rml_stability/README.md) |
-| `task_002_leh_stability` | [LEH stability](tasks/task_002_leh_stability.md) | [Versions](config/task_002_leh_stability/README.md) |
-| `task_003_bla_high_temperature` | [BLA high-temperature performance](tasks/task_003_bla_high_temperature.md) | [Versions](config/task_003_bla_high_temperature/README.md) |
-| `task_004_athol1_substrate` | [AtHOL1 substrate expansion](tasks/task_004_athol1_substrate.md) | [Versions](config/task_004_athol1_substrate/README.md) |
-| `task_005_sun_leh_pythia` | [Sun LEH / Pythia reproduction](tasks/task_005_sun_leh_pythia.md) | [Versions](config/task_005_sun_leh_pythia/README.md) |
-| `task_006_zhang_hydrolases` | [Zhang cellulase and β-glucanase reproduction](tasks/task_006_zhang_hydrolases.md) | [Versions](config/task_006_zhang_hydrolases/README.md) |
+| `task_001_rml_stability` | [RML stability](tasks/task_001_rml_stability.md) | [Run configs](configs/task_001_rml_stability/) |
+| `task_002_leh_stability` | [LEH stability](tasks/task_002_leh_stability.md) | [Run configs](configs/task_002_leh_stability/) |
+| `task_003_bla_high_temperature` | [BLA high-temperature performance](tasks/task_003_bla_high_temperature.md) | [Run configs](configs/task_003_bla_high_temperature/) |
+| `task_004_athol1_substrate` | [AtHOL1 substrate expansion](tasks/task_004_athol1_substrate.md) | [Run configs](configs/task_004_athol1_substrate/) |
+| `task_005_sun_leh_pythia` | [Sun LEH / Pythia reproduction](tasks/task_005_sun_leh_pythia.md) | [Run configs](configs/task_005_sun_leh_pythia/) |
+| `task_006_zhang_hydrolases` | [Zhang cellulase and β-glucanase reproduction](tasks/task_006_zhang_hydrolases.md) | [Run configs](configs/task_006_zhang_hydrolases/) |
 
-Each executable configuration version includes both approaches. A later version represents a deliberate settings change, such as a different LLM or budget. Repeated executions retain the version and get distinct run IDs. The v2 folders currently explain future contents rather than claiming selected settings. Actual BLA and AtHOL1 runs used gpt-6.1-sol via openai-codex; their frozen runtime settings remain with the run records.
+Compact run configs follow the antibody-design format. BLA and AtHOL1 have agent-alone records only; the other four task groups also have assisted records. No unexecuted v1/v2 templates are included.
 
 ## Prerequisites and start
 
 Use an available native SCI installation and access to the required scientific capabilities. Assisted runs additionally require the reviewed native saved `enzyme-variant-proposer` and `enzyme-variant-critic`; SCI owns their models, tools, permissions and lifecycle. Check current tool contracts and setup requirements before execution. Opening the environment does not authorize scientific submissions, installations or GPU work.
 
-1. Read the chosen task, [shared specification](ENVIRONMENT_SPEC.md) and configuration version/approach.
+1. Read the chosen task and [shared specification](ENVIRONMENT_SPEC.md); choose and freeze settings for the intended approach.
 2. Prepare and freeze the exact public parent, chemistry, mappings, protected features and final evaluation protocol. Record actual model/settings, explicit budget policies and authorized amendments in the run.
-3. Start `sci` with this environment as its working directory. Use the corresponding prompt in `scripts/`, replace `RUN_ID` and select matching task/config/input/output paths.
+3. Start `sci` with this environment as its working directory. Use the corresponding prompt in `scripts/`, replace `RUN_ID` and select matching task/configs/input/output paths.
 4. Keep approaches and repeats isolated, retain native artifacts/failures/unknown IDs, exclude MLDE, and seal selections before independent evaluation.
 
-The JSON profiles document settings; they are not an automatic SCI configuration loader. Default prompts select task_001 RML/v1. Freeze the effective profile and actual SCI settings with each run. Current ongoing campaigns retain their original frozen environment and paths.
+The JSON files in `configs/` are compact historical records, not SCI launch profiles. Fresh execution requires a separately supplied frozen settings file. Historical campaigns retain their original frozen settings and paths.
 
-Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results include agent-alone score tables, exact sequences and usage snapshots. Benchmark tables label published predictions and calculations in this work. Parent identity, methods and run status are explained in each results folder. The ongoing campaigns keep their original frozen environment and are not restarted from this checkout.
+Keep large/private evidence in a dedicated workspace or ignored `results/local/`. Tracked results include separate agent-alone and specialist-assisted score tables, exact sequences and short usage summaries. Benchmark tables label published predictions and calculations in this work. Parent identity, methods and run status are explained in each results folder. Report generation does not restart historical campaigns.
 
 ## Offline comparison helper
 
@@ -87,8 +87,10 @@ Supporting literature remains in [research notes](../../research/enzyme-variant-
 
 ## Available agent-alone benchmarks
 
-The [benchmark index](benchmark/README.md) and task-specific PDF reports compare original published reference values with actual agent-alone outputs only. Each available task comparison has its own PDF report with embedded figures. RML and original LEH show changes from our selected parent. The other tasks also include reference-variant property predictions calculated in this work when available.
+The [benchmark index](benchmark/README.md) and task-specific Markdown reports compare original published reference values with actual agent-alone outputs only. Each available task comparison has its own Markdown page with linked figures. RML and original LEH show changes from our selected parent. The other tasks also include reference-variant property predictions calculated in this work when available.
 
-[Results](results/README.md) retain exact candidate sequences and full-precision values, including exploratory candidates lacking qualification. Historical runs have no assigned configuration version. Existing config files are proposed future templates; no config-version comparison is presented. Actual model/provider/settings are recorded with each run.
+[Results](results/README.md) retain exact candidate sequences and full-precision values, including exploratory candidates lacking qualification. Historical runs have no assigned configuration version. Compact run configs summarize actual executions. No config-version comparison is presented.
 
-[Source](src/README.md) retains actual agent-alone code with relocation provenance, and [scripts](scripts/README.md) provides launch/resume guidance and offline report commands. The working branch contains the available results and benchmark reports for review. Original design campaigns remain paused and their workspaces are unchanged. The separate AtHOL1 reaction-site assessment is in progress; its final comparison will be added after verification.
+[Source](src/README.md) retains actual agent-alone code with relocation provenance, and [scripts](scripts/README.md) provides launch/resume guidance and offline report commands. The working branch contains the available results and benchmark reports for review. The ten native arms are operationally closed, with unresolved scientific assessments recorded in results. The separate AtHOL1 reaction-site assessment and its descriptive comparison are complete. Original run workspaces are unchanged.
+
+Specialist-assisted results are available for RML, original LEH, Sun LEH and Zhang hydrolases in the [results index](results/README.md). The existing benchmark reports retain their agent-alone scope.

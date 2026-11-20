@@ -18,11 +18,11 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 ## Run status
 
-The Pythia scan is complete. D101V changes catalytic Asp101; its favorable property score does not establish retained enzyme function.
+Computational execution completed. Sealed scoring/ranking and comparison retained; exact paper provenance unresolved.
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.pdf)
+- [Benchmark report](../../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md)
 - [Published reference values](../../../benchmark/task_005_sun_leh_pythia/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
@@ -30,7 +30,17 @@ The Pythia scan is complete. D101V changes catalytic Asp101; its favorable prope
 ## Execution records
 
 - [Actual workflow](WORKFLOW.md)
-- [Usage and time](USAGE_AND_TIME.md)
 - [Sequence identities](sequences/identities.json)
 - [Reference property comparison](reference_comparison/README.md)
 - [Step outputs](steps/)
+
+## Usage and time
+
+| Measurement | Value |
+|---|---:|
+| Uncached input + output | 238,313 |
+| Cache-read tokens | 9,045,760 |
+| Reported cumulative total, lower bound | 9,284,073 |
+| Recorded activity span, hours | 0.65 |
+
+Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.
