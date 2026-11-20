@@ -332,13 +332,34 @@
       "unresolved_cells": 89
     }
   },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "category_overlap": 0.8902,
+      "count_correlation": 0.9619,
+      "top20_marker_share": 0.6917,
+      "program_overlap": 0.225
+    },
+    "score": 0.6922,
+    "sensitivity": {
+      "double_weight_on_category_overlap": 0.7318,
+      "double_weight_on_count_correlation": 0.7461,
+      "double_weight_on_top20_marker_share": 0.6921,
+      "double_weight_on_program_overlap": 0.5987
+    },
+    "sensitivity_range": [
+      0.5987,
+      0.7461
+    ]
+  },
   "notes": [
     "The comparison is at the level of counts, gene lists and programs. No per-cell reference labels were used.",
     "The paper's categories include 'unclassified' (511 cells). The agent's 'unresolved' (89) is not the same thing, and the agent split out plasma cells and dendritic cells, which the paper's table does not have.",
     "category_overlap is an upper bound on cell-by-cell agreement: it counts cells that could have the same category in the same tumor, not cells shown to have it.",
     "Table S3 lists are short and were selected by the paper's own method. The agent's lists are its top 60 Wilcoxon markers, so the overlap shares depend on both list lengths.",
     "Table S2 states a total of 4,645 cells, but its category counts sum to 4,644 (see reference_table_check). The comparison uses the category counts.",
-    "Table S5 (cell cycle genes) was not available, so the agent's cell_cycle program is not compared. The paper reports cell cycle as a program."
+    "Table S5 (cell cycle genes) was not available, so the agent's cell_cycle program is not compared. The paper reports cell cycle as a program.",
+    "Cell types whose count correlation could not be computed (the agent's count was the same in every tumor, for example zero) are listed as null in per_cell_type and count as 0 in the count_correlation item."
   ],
   "reference_table_check": {
     "table_s2": {
@@ -359,7 +380,7 @@
       "table_s7.xlsx": "54d719ab538a74843388ecfea94b235edad03c41f5127f52493200d403b64c97",
       "table_s8.xlsx": "e05ea80b11f100ecdb93fef3f3a4237a1f2ed6faac8d63288976f57324f75f9e"
     },
-    "script_sha256": "a06f76d77380dc646ad0084614b00d99297a417d6a587d4833ef93d1c17a7dcc",
+    "script_sha256": "e1742ec8bc73f30793d1aed9ad6e714612d568c7243a4ff5ff18e1b02249e551",
     "scorer": {
       "python": "3.13.18",
       "numpy": "2.5.3",

@@ -13,7 +13,7 @@ The agent's clusters are compared with the clusters in Paul et al. 2015, *Cell* 
 
 ## How to score
 
-There are no weights, no overall score and no pass/fail. Each metric is reported on its own. `benchmark_result.json` is the direct output of `scripts/06_myeloid_progenitor_lineages/compare_paul.py` (command in the file header), run on the files in this folder and the agent's output files.
+Each task has one score: the equal-weight mean of a few items, each between 0 and 1 (see Score). There are no weights and no pass/fail. All other metrics are reported on their own. `benchmark_result.json` is the direct output of `scripts/paul/compare_paul.py` (command in the file header), run on the files in this folder and the agent's output files.
 
 ## Output files read
 
@@ -27,8 +27,9 @@ There are no weights, no overall score and no pass/fail. Each metric is reported
 1. `paper_reported`: what the paper reports (cells, clusters, fates, cluster-to-fate map, the excluded cluster, the main claim).
 2. `agent_reported`: what the agent reports (cells, clusters and labels, fates identified, cluster relationships, model).
 3. `metrics`: how the agent's clusters compare with the paper's.
-4. `notes`: how to read the metrics.
-5. `provenance`: SHA256 of every input file and of the script, and the software versions used.
+4. `score`: the score, its items and a sensitivity check (see Score).
+5. `notes`: how to read the metrics.
+6. `provenance`: SHA256 of every input file and of the script, and the software versions used.
 
 ## Definitions
 
@@ -48,12 +49,27 @@ The paper has no per-cell cluster labels in its supplement, so cells cannot be c
 
 **Reading labels as fates.** A label is read as a fate by keyword: megakaryocyte, erythroid (= erythrocyte), neutrophil or granulocyte (= neutrophil, eosinophil or basophil), granulocyte/monocyte (= any of those and monocyte), dendritic, monocyte, T/NK (= the paper's excluded C19). Labels with "mixed" or "cycling", or with no fate word, are not scored.
 
+## Score
+
+The score is the plain mean of the items below. Each item is a number from 0 to 1 and every item counts the same, because no weighting could be justified.
+
+| Item | Calculation |
+|---|---|
+| `fates_recovered` | paper fates that are the best match of at least one agent cluster ÷ 7 |
+| `label_consistency` | agent clusters whose label agrees with the best-matching paper cluster ÷ agent clusters whose label names a fate |
+
+Only two items are scored because the paper gives few direct measures at cluster level. Not in the score and still reported in `metrics`: the per-cluster matches, the paper clusters that no agent cluster matches and the report marker check.
+
+For this run: `fates_recovered` 0.7143, `label_consistency` 0.8889. Score 0.8016.
+
+`sensitivity` in the JSON scores the same run with each item counted twice in turn and reports the lowest and highest result (0.7725 to 0.8307 for this run). This shows how much the score depends on the choice of equal weights. The score is for this task only and should not be averaged with other tasks.
+
 ## How the spec was made
 
 - The 19 paper clusters and the fate of each come from the paper's main text. Table S3 provides the expression profile of each cluster.
 - Matching by mean z-score uses no threshold and no weight. A threshold on the score would have to be invented.
 - Z-scores are taken across the paper's clusters, so a gene counts as a marker of a paper cluster only relative to the other 18.
-- There are no weights and no pass/fail cutoffs, because none could be justified.
+- The score uses equal weights, because no weighting could be justified, and there are no pass/fail cutoffs.
 
 ## Limits
 

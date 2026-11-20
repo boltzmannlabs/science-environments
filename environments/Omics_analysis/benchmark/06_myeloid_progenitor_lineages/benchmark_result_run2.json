@@ -1,0 +1,479 @@
+{
+  "task_id": "myeloid_progenitor_lineages",
+  "reference": {
+    "paper": "Paul et al. 2015, Cell 163:1663-1677 (doi 10.1016/j.cell.2015.11.013)",
+    "dataset": "GSE72857",
+    "tables": "Supplementary Table S3 (mean expression of 3,461 genes in 19 clusters); Table S2 (batches)"
+  },
+  "paper_reported": {
+    "cells_clustered": 2730,
+    "clusters": 19,
+    "differential_genes": 3461,
+    "cluster_frequency_range": "0.3% to 13%",
+    "fates": [
+      "erythrocyte",
+      "megakaryocyte",
+      "monocyte",
+      "dendritic cell",
+      "neutrophil",
+      "eosinophil",
+      "basophil"
+    ],
+    "cluster_fate_map (from the main text)": {
+      "1": "erythrocyte",
+      "2": "erythrocyte",
+      "3": "erythrocyte",
+      "4": "erythrocyte",
+      "5": "erythrocyte",
+      "6": "erythrocyte",
+      "7": "erythrocyte",
+      "8": "megakaryocyte",
+      "11": "dendritic cell",
+      "13": "basophil",
+      "14": "monocyte",
+      "15": "monocyte",
+      "16": "neutrophil",
+      "17": "neutrophil",
+      "18": "eosinophil",
+      "19": "NK-like (excluded by the paper)"
+    },
+    "excluded_cluster": "C19, Ccl5+ NK-like cells (mis-sorted)",
+    "main_claim": "cells are transcriptionally primed toward single fates; no progenitors of mixed lineages in unperturbed cells"
+  },
+  "agent_reported": {
+    "cells_input": 10368,
+    "cells_retained": 8399,
+    "n_clusters": 12,
+    "fates_identified": [
+      "granulocytic (neutrophil)",
+      "erythroid",
+      "megakaryocytic",
+      "dendritic cell (MHCII+)",
+      "monocytic (putative, Ccl5+/MHC-low precursor)"
+    ],
+    "clusters": {
+      "0": {
+        "label": "megakaryocyte (Nrgn+, Pf4+, Itga2b+)",
+        "n_cells": 382
+      },
+      "1": {
+        "label": "early erythroid (Car1/Car2+, Apoe+)",
+        "n_cells": 1369
+      },
+      "2": {
+        "label": "multipotent myeloid progenitor (Gata2+, Srgn+)",
+        "n_cells": 110
+      },
+      "3": {
+        "label": "mature neutrophil (Mpo+, Elane+, Prtn3+)",
+        "n_cells": 1484
+      },
+      "4": {
+        "label": "immature granulocyte/progranulocyte (Mpo+, Ramp1+)",
+        "n_cells": 1445
+      },
+      "5": {
+        "label": "mature erythroid (Klf1+, Car1/Car2+)",
+        "n_cells": 1927
+      },
+      "6": {
+        "label": "ribosome-rich late erythroid/megakaryocyte (Blvrb+, Aqp1+)",
+        "n_cells": 165
+      },
+      "7": {
+        "label": "MHC-low myeloid precursor (Ccl5+, H2-K1+)",
+        "n_cells": 59
+      },
+      "8": {
+        "label": "MHCII+ dendritic cell (Cd74+, H2-Aa+)",
+        "n_cells": 471
+      },
+      "9": {
+        "label": "granulocyte-macrophage progenitor (Plac8+, B2m+)",
+        "n_cells": 153
+      },
+      "10": {
+        "label": "common myeloid progenitor (Cd34+)",
+        "n_cells": 568
+      },
+      "11": {
+        "label": "neutrophil-like, Cebpe-KO-enriched (Elane+, Ly6c2+)",
+        "n_cells": 266
+      }
+    },
+    "cluster_relationships": "PAGA on the amp-batch-aware kNN graph yields three major axes from a shared myeloid progenitor pool: (1) a granulocytic axis Cd34+ CMP (cl10) / Plac8+ GMP (cl9) -> immature granulocyte (cl4) -> mature neutrophil (cl3), with a Cebpe-KO-enriched neutrophil-like branch (cl11); (2) an erythroid/megakaryocytic axis Gata2+ multipotent progenitor (cl2) -> early erythroid (cl1) -> mature (cl5) and ribosome-rich late (cl6), with the megakaryocyte cluster (cl0) branching off the early state; (3) a DC axis Cd34+ CMP (cl10) -> MHC-low precursor (cl7) -> MHCII+ DC (cl8). Cebpa-KO cells are predominantly in the erythroid clusters (erythroid skewing); Cebpe-KO cells concentrate in cl11 plus mature neutrophil cl3.",
+    "model": "QC filtering (drop empty wells; total UMI >=500; genes in >=3 cells) -> library-size normalization to 1e4 + log1p -> 3000 Seurat-style HVGs (amp-batch-aware) -> PCA (30 dims) -> batch-aware kNN graph (global k=100, trimmed to <=13 neighbors per amplification batch, ~50 total, UMAP fuzzy-simplicial connectivities) -> UMAP -> Leiden (res 0.7) -> t-test marker ranking -> PAGA cluster relationship graph -> diffusion-pseudotime from the Cd34+ CMP root."
+  },
+  "metrics": {
+    "fates": {
+      "paper_fates": 7,
+      "paper_fates_with_a_best_matching_agent_cluster": 6,
+      "agent_clusters_best_matching_each_fate": {
+        "erythrocyte": [
+          1,
+          5,
+          6
+        ],
+        "megakaryocyte": [
+          0
+        ],
+        "monocyte": [
+          4,
+          9,
+          10
+        ],
+        "dendritic cell": [
+          8
+        ],
+        "neutrophil": [
+          3,
+          11
+        ],
+        "eosinophil": [],
+        "basophil": [
+          2
+        ]
+      }
+    },
+    "per_agent_cluster": {
+      "0": {
+        "agent_label": "megakaryocyte (Nrgn+, Pf4+, Itga2b+)",
+        "n_cells": 382,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 18,
+        "best_paper_cluster": 8,
+        "best_paper_cluster_fate": "megakaryocyte",
+        "best_score": 2.89,
+        "second_paper_cluster": 9,
+        "second_score": 0.21,
+        "label_read_as": [
+          "megakaryocyte"
+        ],
+        "label_consistent_with_best_match": true
+      },
+      "1": {
+        "agent_label": "early erythroid (Car1/Car2+, Apoe+)",
+        "n_cells": 1369,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 18,
+        "best_paper_cluster": 3,
+        "best_paper_cluster_fate": "erythrocyte",
+        "best_score": 0.98,
+        "second_paper_cluster": 4,
+        "second_score": 0.72,
+        "label_read_as": [
+          "erythrocyte"
+        ],
+        "label_consistent_with_best_match": true
+      },
+      "2": {
+        "agent_label": "multipotent myeloid progenitor (Gata2+, Srgn+)",
+        "n_cells": 110,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 20,
+        "best_paper_cluster": 13,
+        "best_paper_cluster_fate": "basophil",
+        "best_score": 1.49,
+        "second_paper_cluster": 12,
+        "second_score": 0.98,
+        "label_read_as": null,
+        "label_consistent_with_best_match": null
+      },
+      "3": {
+        "agent_label": "mature neutrophil (Mpo+, Elane+, Prtn3+)",
+        "n_cells": 1484,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 20,
+        "best_paper_cluster": 16,
+        "best_paper_cluster_fate": "neutrophil",
+        "best_score": 2.19,
+        "second_paper_cluster": 17,
+        "second_score": 1.99,
+        "label_read_as": [
+          "basophil",
+          "eosinophil",
+          "neutrophil"
+        ],
+        "label_consistent_with_best_match": true
+      },
+      "4": {
+        "agent_label": "immature granulocyte/progranulocyte (Mpo+, Ramp1+)",
+        "n_cells": 1445,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 18,
+        "best_paper_cluster": 15,
+        "best_paper_cluster_fate": "monocyte",
+        "best_score": 1.5,
+        "second_paper_cluster": 14,
+        "second_score": 1.41,
+        "label_read_as": [
+          "basophil",
+          "eosinophil",
+          "neutrophil"
+        ],
+        "label_consistent_with_best_match": false
+      },
+      "5": {
+        "agent_label": "mature erythroid (Klf1+, Car1/Car2+)",
+        "n_cells": 1927,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 20,
+        "best_paper_cluster": 3,
+        "best_paper_cluster_fate": "erythrocyte",
+        "best_score": 1.88,
+        "second_paper_cluster": 1,
+        "second_score": 1.79,
+        "label_read_as": [
+          "erythrocyte"
+        ],
+        "label_consistent_with_best_match": true
+      },
+      "6": {
+        "agent_label": "ribosome-rich late erythroid/megakaryocyte (Blvrb+, Aqp1+)",
+        "n_cells": 165,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 11,
+        "best_paper_cluster": 3,
+        "best_paper_cluster_fate": "erythrocyte",
+        "best_score": 1.75,
+        "second_paper_cluster": 2,
+        "second_score": 1.72,
+        "label_read_as": [
+          "megakaryocyte"
+        ],
+        "label_consistent_with_best_match": false
+      },
+      "7": {
+        "agent_label": "MHC-low myeloid precursor (Ccl5+, H2-K1+)",
+        "n_cells": 59,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 18,
+        "best_paper_cluster": 19,
+        "best_paper_cluster_fate": "NK-like (excluded by the paper)",
+        "best_score": 2.48,
+        "second_paper_cluster": 11,
+        "second_score": 0.71,
+        "label_read_as": null,
+        "label_consistent_with_best_match": null
+      },
+      "8": {
+        "agent_label": "MHCII+ dendritic cell (Cd74+, H2-Aa+)",
+        "n_cells": 471,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 20,
+        "best_paper_cluster": 11,
+        "best_paper_cluster_fate": "dendritic cell",
+        "best_score": 3.18,
+        "second_paper_cluster": 14,
+        "second_score": 0.46,
+        "label_read_as": [
+          "dendritic cell"
+        ],
+        "label_consistent_with_best_match": true
+      },
+      "9": {
+        "agent_label": "granulocyte-macrophage progenitor (Plac8+, B2m+)",
+        "n_cells": 153,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 14,
+        "best_paper_cluster": 14,
+        "best_paper_cluster_fate": "monocyte",
+        "best_score": 1.44,
+        "second_paper_cluster": 15,
+        "second_score": 1.32,
+        "label_read_as": [
+          "basophil",
+          "eosinophil",
+          "neutrophil"
+        ],
+        "label_consistent_with_best_match": false
+      },
+      "10": {
+        "agent_label": "common myeloid progenitor (Cd34+)",
+        "n_cells": 568,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 13,
+        "best_paper_cluster": 14,
+        "best_paper_cluster_fate": "monocyte",
+        "best_score": 1.4,
+        "second_paper_cluster": 15,
+        "second_score": 1.15,
+        "label_read_as": null,
+        "label_consistent_with_best_match": null
+      },
+      "11": {
+        "agent_label": "neutrophil-like, Cebpe-KO-enriched (Elane+, Ly6c2+)",
+        "n_cells": 266,
+        "n_markers": 20,
+        "n_markers_in_paper_table": 20,
+        "best_paper_cluster": 17,
+        "best_paper_cluster_fate": "neutrophil",
+        "best_score": 2.45,
+        "second_paper_cluster": 16,
+        "second_score": 2.22,
+        "label_read_as": [
+          "basophil",
+          "eosinophil",
+          "neutrophil"
+        ],
+        "label_consistent_with_best_match": true
+      }
+    },
+    "labels_consistent_with_best_match": {
+      "consistent": 6,
+      "scored_labels": 9
+    },
+    "per_paper_cluster": {
+      "1": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 5,
+        "best_score": 1.79
+      },
+      "2": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 6,
+        "best_score": 1.72
+      },
+      "3": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 5,
+        "best_score": 1.88
+      },
+      "4": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 5,
+        "best_score": 1.53
+      },
+      "5": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 6,
+        "best_score": 0.99
+      },
+      "6": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 1,
+        "best_score": 0.42
+      },
+      "7": {
+        "fate": "erythrocyte",
+        "best_agent_cluster": 1,
+        "best_score": 0.12
+      },
+      "8": {
+        "fate": "megakaryocyte",
+        "best_agent_cluster": 0,
+        "best_score": 2.89
+      },
+      "9": {
+        "fate": "early / unassigned",
+        "best_agent_cluster": 0,
+        "best_score": 0.21
+      },
+      "10": {
+        "fate": "early / unassigned",
+        "best_agent_cluster": 10,
+        "best_score": 0.37
+      },
+      "11": {
+        "fate": "dendritic cell",
+        "best_agent_cluster": 8,
+        "best_score": 3.18
+      },
+      "12": {
+        "fate": "early / unassigned",
+        "best_agent_cluster": 2,
+        "best_score": 0.98
+      },
+      "13": {
+        "fate": "basophil",
+        "best_agent_cluster": 2,
+        "best_score": 1.49
+      },
+      "14": {
+        "fate": "monocyte",
+        "best_agent_cluster": 9,
+        "best_score": 1.44
+      },
+      "15": {
+        "fate": "monocyte",
+        "best_agent_cluster": 4,
+        "best_score": 1.5
+      },
+      "16": {
+        "fate": "neutrophil",
+        "best_agent_cluster": 11,
+        "best_score": 2.22
+      },
+      "17": {
+        "fate": "neutrophil",
+        "best_agent_cluster": 11,
+        "best_score": 2.45
+      },
+      "18": {
+        "fate": "eosinophil",
+        "best_agent_cluster": 2,
+        "best_score": 0.71
+      },
+      "19": {
+        "fate": "NK-like (excluded by the paper)",
+        "best_agent_cluster": 7,
+        "best_score": 2.48
+      }
+    },
+    "paper_clusters_that_are_the_best_match_of_an_agent_cluster": [
+      3,
+      8,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19
+    ],
+    "report_marker_claims": {
+      "genes_cited_per_cluster_and_recognized": 0,
+      "cited_but_absent_from_that_cluster_marker_table": []
+    }
+  },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "fates_recovered": 0.8571,
+      "label_consistency": 0.6667
+    },
+    "score": 0.7619,
+    "sensitivity": {
+      "double_weight_on_fates_recovered": 0.7937,
+      "double_weight_on_label_consistency": 0.7302
+    },
+    "sensitivity_range": [
+      0.7302,
+      0.7937
+    ]
+  },
+  "notes": [
+    "The paper's supplement has no per-cell cluster labels, so cells cannot be compared one by one. The comparison is at the level of clusters, marker genes and fates.",
+    "The agent's 12 clusters and the paper's 19 clusters come from different cell sets and resolutions, so cluster counts are reported side by side and not compared.",
+    "best_paper_cluster is the paper cluster with the highest mean z-score of the agent cluster's marker genes in Table S3. This mapping is this benchmark's own method, not the paper's.",
+    "A label is scored only if it names a fate. Labels with 'mixed', 'cycling' or no fate word are not scored. The paper does not report C19 as a fate, so a T/NK label matching C19 counts as consistent.",
+    "No agent cluster has eosinophil (paper C18) or basophil (paper C13) as its best match. The agent's summary lists neither fate."
+  ],
+  "provenance": {
+    "inputs_sha256": {
+      "cluster_assignments.csv": "151ab61f61c971d86a2344310bffa17ff72e5d70e5254b7718322a9fb45268bb",
+      "cluster_markers.csv": "772ac01f1e6bf5efd6c7812e4002c20a15cf9e24787a170f93557a2d182cb4af",
+      "summary.json": "ef20c8c757a77108cf29d6483d7200dd7fde083e6624fd3713e30b2f1075470c",
+      "analysis_report.txt": "4f0a7bc7189b1c3d7195bcfc24bf4258f4c6ba8e1f335bbb747018ce1011486a",
+      "paul_table_s3.xlsx": "bc38d78e97e1b2d4ec5cb18d96829201eb290913f1b7ba61fe2d824475c86925"
+    },
+    "script_sha256": "b7e1320dc8112b9f757ee5115fef257f63267705c10ff54cc1de0b89808722ac",
+    "scorer": {
+      "python": "3.13.18",
+      "numpy": "2.1.3",
+      "pandas": "3.1.0",
+      "scipy": "1.16.3",
+      "openpyxl": "3.1.5"
+    }
+  }
+}

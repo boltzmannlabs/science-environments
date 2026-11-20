@@ -16,7 +16,7 @@ The agent's output is compared with the tables of Tirosh et al. 2016, *Science* 
 
 ## How to score
 
-There are no weights, no overall score and no pass/fail. Each metric is reported on its own. `benchmark_result.json` is the direct output of `scripts/melanoma_tumor_ecosystem/compare_melanoma.py` (command in the file header), run on the files in this folder and the agent's output files.
+Each task has one score: the equal-weight mean of a few items, each between 0 and 1 (see Score). There are no weights and no pass/fail. All other metrics are reported on their own. `benchmark_result.json` is the direct output of `scripts/melanoma/compare_melanoma.py` (command in the file header), run on the files in this folder and the agent's output files.
 
 ## Output files read
 
@@ -33,9 +33,10 @@ There are no weights, no overall score and no pass/fail. Each metric is reported
 2. `paper_reported`: what the paper reports (cells, patients, counts by category, gene list sizes, claims).
 3. `agent_reported`: what the agent reports (cells, cell types found, data used, model, programs).
 4. `metrics`: how the agent's output compares with the paper.
-5. `notes`: how to read the metrics.
-6. `reference_table_check`: the total stated in Table S2 against the sum of its counts.
-7. `provenance`: SHA256 of every input file and of the script, and the software versions used.
+5. `score`: the score, its items and a sensitivity check (see Score).
+6. `notes`: how to read the metrics.
+7. `reference_table_check`: the total stated in Table S2 against the sum of its counts.
+8. `provenance`: SHA256 of every input file and of the script, and the software versions used.
 
 ## Definitions
 
@@ -54,12 +55,29 @@ Agent cell types are matched to Table S2 columns as follows: T cell = T-cells, B
 
 Table S3 has no list for NK cells, plasma cells, dendritic cells or unresolved cells, so their markers are not compared.
 
+## Score
+
+The score is the plain mean of the items below. Each item is a number from 0 to 1 and every item counts the same, because no weighting could be justified.
+
+| Item | Calculation |
+|---|---|
+| `category_overlap` | `category_overlap.share_of_cells` |
+| `count_correlation` | the mean of `pearson_across_19_tumors` over the seven cell types that have a paper counterpart (unclassified is left out because its definition differs) |
+| `top20_marker_share` | the mean over the six cell types with a Table S3 list of the share of the agent's top 20 markers that are in the list |
+| `program_overlap` | the mean of two shares: the most MITF genes in any one agent program ÷ 100, and the most AXL genes in any one agent program ÷ 100 |
+
+`program_overlap` is low for any agent, because the two paper lists have 100 specific genes each. Not in the score and still reported in `metrics`: the per-type totals, `paper_genes_found_share`, the markers of types without a paper list and the file consistency checks.
+
+For this run: `category_overlap` 0.8902, `count_correlation` 0.9619, `top20_marker_share` 0.6917, `program_overlap` 0.225. Score 0.6922.
+
+`sensitivity` in the JSON scores the same run with each item counted twice in turn and reports the lowest and highest result (0.5987 to 0.7461 for this run). This shows how much the score depends on the choice of equal weights. The score is for this task only and should not be averaged with other tasks.
+
 ## How the spec was made
 
 - The paper's tables give counts, gene lists and programs, not labels for single cells. The comparison therefore uses counts, overlaps and correlations.
 - `category_overlap` is an upper bound, because it counts cells that could have the same category, not cells shown to have it.
 - Correlations are reported per cell type and not averaged, because the types differ greatly in size.
-- There are no weights and no pass/fail cutoffs, because none could be justified.
+- The score uses equal weights, because no weighting could be justified, and there are no pass/fail cutoffs.
 
 ## Limits
 

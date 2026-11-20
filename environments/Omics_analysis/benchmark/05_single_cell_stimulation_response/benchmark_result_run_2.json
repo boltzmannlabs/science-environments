@@ -1,0 +1,335 @@
+{
+  "task_id": "single_cell_stimulation_response",
+  "reference": {
+    "paper": "Kang et al. 2018, Nat Biotechnol (PMID 29227470)",
+    "dataset": "GSE96583",
+    "table": "Supplementary Table 1"
+  },
+  "paper_reported": {
+    "source": "Supplementary Table 1, one sheet per cell type; every row is a gene called by DESeq2 with abs(log2FC) > 1 and baseMean > 1",
+    "genes_per_cell_type": {
+      "CD14+ Monocytes": 2251,
+      "FCGR3A+ Monocytes": 1221,
+      "B cells": 583,
+      "Dendritic cells": 581,
+      "CD4 T cells": 537,
+      "NK cells": 351,
+      "CD8 T cells": 248
+    },
+    "megakaryocyte_genes": 107,
+    "unique_genes_all_8_sheets": 3055
+  },
+  "agent_reported": {
+    "comparisons": [
+      "all_cells",
+      "B cells",
+      "CD14+ Monocytes",
+      "CD4 T cells",
+      "CD8 T cells",
+      "Dendritic cells",
+      "FCGR3A+ Monocytes",
+      "Megakaryocytes",
+      "NK cells"
+    ],
+    "significant_genes_per_cell_type (adj_p<0.05 and abs_log2fc>1)": {
+      "all_cells": 1388,
+      "B cells": 478,
+      "CD14+ Monocytes": 2142,
+      "CD4 T cells": 505,
+      "CD8 T cells": 195,
+      "Dendritic cells": 416,
+      "FCGR3A+ Monocytes": 900,
+      "Megakaryocytes": 58,
+      "NK cells": 315
+    },
+    "genes_tested_per_cell_type": {
+      "CD14+ Monocytes": 8962,
+      "FCGR3A+ Monocytes": 6244,
+      "B cells": 6433,
+      "Dendritic cells": 3659,
+      "CD4 T cells": 9177,
+      "NK cells": 5418,
+      "CD8 T cells": 4727
+    },
+    "megakaryocytes": "not tested (see the agent's report)",
+    "top_induced_genes": [
+      "CCL8",
+      "CXCL11",
+      "NUPR1",
+      "IFIT1",
+      "CXCL10",
+      "TGM1",
+      "RSAD2",
+      "HESX1",
+      "CCNA1",
+      "CH25H",
+      "IL27",
+      "HRASLS2",
+      "IFIT2",
+      "IFIT3",
+      "ISG15",
+      "PDGFRL",
+      "DEFB1",
+      "CMPK2",
+      "IFI27",
+      "SCIN"
+    ],
+    "top_repressed_genes": [
+      "HTRA1",
+      "C19orf59",
+      "CLEC5A",
+      "THBD",
+      "VCAN",
+      "CST6",
+      "CD93",
+      "LINC00984",
+      "MMP7",
+      "PDPN",
+      "SDC2",
+      "PTGFRN",
+      "COL7A1",
+      "GLIS3",
+      "FARP1",
+      "KCNJ15",
+      "HBEGF",
+      "MMP9",
+      "VNN1",
+      "IL1B"
+    ],
+    "data_used": {
+      "wells": null,
+      "labels_used": "condition (ctrl vs stim), donor (ind, 8 donors), cell type (cell, 8 labels), doublet status (multiplets: kept singlets only)",
+      "cells_with_conflicting_condition_label": null
+    },
+    "model": "Pseudobulk DESeq2 (PyDESeq2 0.5.4): raw counts summed per donor x condition (8 donors x 2 conditions = 16 samples), negative-binomial Wald test with design '~ donor + condition' (donor as fixed-effect covariate, parametric dispersion trend), contrast stimulated vs control; Cook's distance outlier filtering and independent filtering enabled, Benjamini-Hochlinger FDR on the unfiltered gene set. Analysis repeated for all cells and within each of the 8 provided cell-type labels."
+  },
+  "metrics": {
+    "per_cell_type": {
+      "CD14+ Monocytes": {
+        "n_paper_genes_tested": 2165,
+        "coverage": 0.962,
+        "n_same_direction_significant": 1795,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 370,
+        "agreement": 0.829,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.988,
+        "n_agent_only_significant": 347,
+        "agent_only_near_cutoff_share": 0.859,
+        "paper_baseMean_median_tested": 9.4,
+        "paper_baseMean_median_untested": 1.2,
+        "agent_significant_to_paper_genes_ratio": 0.952
+      },
+      "FCGR3A+ Monocytes": {
+        "n_paper_genes_tested": 1122,
+        "coverage": 0.919,
+        "n_same_direction_significant": 810,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 312,
+        "agreement": 0.722,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.991,
+        "n_agent_only_significant": 90,
+        "agent_only_near_cutoff_share": 0.944,
+        "paper_baseMean_median_tested": 7.1,
+        "paper_baseMean_median_untested": 1.2,
+        "agent_significant_to_paper_genes_ratio": 0.737
+      },
+      "B cells": {
+        "n_paper_genes_tested": 539,
+        "coverage": 0.925,
+        "n_same_direction_significant": 437,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 102,
+        "agreement": 0.811,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.995,
+        "n_agent_only_significant": 41,
+        "agent_only_near_cutoff_share": 0.976,
+        "paper_baseMean_median_tested": 8.0,
+        "paper_baseMean_median_untested": 1.4,
+        "agent_significant_to_paper_genes_ratio": 0.82
+      },
+      "Dendritic cells": {
+        "n_paper_genes_tested": 521,
+        "coverage": 0.897,
+        "n_same_direction_significant": 400,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 121,
+        "agreement": 0.768,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.991,
+        "n_agent_only_significant": 16,
+        "agent_only_near_cutoff_share": 0.938,
+        "paper_baseMean_median_tested": 7.2,
+        "paper_baseMean_median_untested": 1.3,
+        "agent_significant_to_paper_genes_ratio": 0.716
+      },
+      "CD4 T cells": {
+        "n_paper_genes_tested": 501,
+        "coverage": 0.933,
+        "n_same_direction_significant": 439,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 62,
+        "agreement": 0.876,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.986,
+        "n_agent_only_significant": 66,
+        "agent_only_near_cutoff_share": 0.939,
+        "paper_baseMean_median_tested": 16.6,
+        "paper_baseMean_median_untested": 1.4,
+        "agent_significant_to_paper_genes_ratio": 0.94
+      },
+      "NK cells": {
+        "n_paper_genes_tested": 320,
+        "coverage": 0.912,
+        "n_same_direction_significant": 274,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 46,
+        "agreement": 0.856,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.992,
+        "n_agent_only_significant": 41,
+        "agent_only_near_cutoff_share": 0.829,
+        "paper_baseMean_median_tested": 9.8,
+        "paper_baseMean_median_untested": 1.3,
+        "agent_significant_to_paper_genes_ratio": 0.897
+      },
+      "CD8 T cells": {
+        "n_paper_genes_tested": 216,
+        "coverage": 0.871,
+        "n_same_direction_significant": 167,
+        "n_significant_wrong_direction": 0,
+        "n_tested_not_significant": 49,
+        "agreement": 0.773,
+        "sign_agreement": 1.0,
+        "lfc_pearson": 0.984,
+        "n_agent_only_significant": 28,
+        "agent_only_near_cutoff_share": 0.893,
+        "paper_baseMean_median_tested": 9.7,
+        "paper_baseMean_median_untested": 1.7,
+        "agent_significant_to_paper_genes_ratio": 0.786
+      }
+    },
+    "all_seven_cell_types_mean": {
+      "coverage": 0.917,
+      "agreement": 0.805,
+      "sign_agreement": 1.0,
+      "lfc_pearson": 0.99
+    },
+    "negative_control_mean_agreement_mismatched_cell_types": 0.562,
+    "cell_type_ranking_spearman": {
+      "on_raw_counts": 0.893,
+      "paper_genes_tested_only": 0.893
+    },
+    "top_20_genes": {
+      "induced_found_in_paper_same_direction": "20 of 20",
+      "repressed_found_in_paper_same_direction": "20 of 20",
+      "found_in_paper_opposite_direction": 0
+    },
+    "megakaryocytes_in_all_cells_table": {
+      "paper_genes": 107,
+      "present_in_agent_all_cells": 107,
+      "significant_same_direction": 101,
+      "note": "the agent ran no megakaryocyte comparison; this uses its all_cells test"
+    },
+    "report": {
+      "claims_checked": 32,
+      "claims_confirmed": 32,
+      "counts_in_report_match_de_results": false
+    }
+  },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "agreement": 0.805,
+      "coverage": 0.917,
+      "fold_change_correlation": 0.99,
+      "top_20_genes_found": 1.0
+    },
+    "score": 0.928,
+    "sensitivity": {
+      "double_weight_on_agreement": 0.9034,
+      "double_weight_on_coverage": 0.9258,
+      "double_weight_on_fold_change_correlation": 0.9404,
+      "double_weight_on_top_20_genes_found": 0.9424
+    },
+    "sensitivity_range": [
+      0.9034,
+      0.9424
+    ]
+  },
+  "notes": [
+    "Coverage and agreement are reported separately and are not combined. There are no weights and no pass/fail flags.",
+    "Coverage is limited by the agent's expression filter: compare paper_baseMean_median_tested with paper_baseMean_median_untested.",
+    "Counts of significant genes are not a measure of agreement; use the coverage and agreement metrics.",
+    "The paper's table is a reference, not ground truth: its padj column reaches 0.05 to 0.14 and has NA values, so it was not filtered at BH padj < 0.05.",
+    "Megakaryocytes: no agent comparison, so they are outside the seven-cell-type metrics."
+  ],
+  "reference_table_check": {
+    "nk": {
+      "min_abs_lfc": 1.002,
+      "max_padj": 0.0584116307959957,
+      "n_padj_NA": 17,
+      "min_baseMean": 1.01
+    },
+    "cd16 mono": {
+      "min_abs_lfc": 1.001,
+      "max_padj": 0.10900337048574,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.01
+    },
+    "megakaryocyte": {
+      "min_abs_lfc": 1.006,
+      "max_padj": 0.0834084671376338,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.06
+    },
+    "dc": {
+      "min_abs_lfc": 1.0,
+      "max_padj": 0.0870516014202223,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.01
+    },
+    "cd19": {
+      "min_abs_lfc": 1.0,
+      "max_padj": 0.0751609227979522,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.03
+    },
+    "cd8": {
+      "min_abs_lfc": 1.0,
+      "max_padj": 0.0511592243207341,
+      "n_padj_NA": 5,
+      "min_baseMean": 1.11
+    },
+    "cd4": {
+      "min_abs_lfc": 1.002,
+      "max_padj": 0.0699702411215222,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.01
+    },
+    "cd14": {
+      "min_abs_lfc": 1.001,
+      "max_padj": 0.135304802687402,
+      "n_padj_NA": 0,
+      "min_baseMean": 1.0
+    }
+  },
+  "provenance": {
+    "inputs_sha256": {
+      "de_results.csv": "673aca1a74ca50765eb535d86c24c2ce0a2f9d1ca520ae49fe655cd7009bd700",
+      "supp_table1.xlsx": "a7e15a95495bc4632502929b66a1c61390bbedf40d90e3d8103eeb1c5e1b32e4",
+      "summary.json": "902dd7abb3d3e609d85c89afb411c1bda83fae767cd765a15c2303d91618c161",
+      "analysis_report.txt": "aa85567797475d66dfac7d2b8e67cfdf3bc5441cda258171f6b41c65d2169cc3"
+    },
+    "script_sha256": "5922be2e39618bb6d4116f2bb28c93f98dcf86e47f466d3dba0e02e0218083cf",
+    "scorer": {
+      "python": "3.13.18",
+      "numpy": "2.1.3",
+      "pandas": "3.1.0",
+      "scipy": "1.16.3",
+      "openpyxl": "3.1.5"
+    }
+  }
+}

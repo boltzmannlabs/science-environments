@@ -282,37 +282,37 @@
     "per_reference_label": {
       "Layer_1": {
         "n_spots": 273,
-        "best_agent_domain": 4,
+        "best_agent_domain": "4",
         "share_in_best_domain": 0.758
       },
       "Layer_2": {
         "n_spots": 253,
-        "best_agent_domain": 1,
+        "best_agent_domain": "1",
         "share_in_best_domain": 0.711
       },
       "Layer_3": {
         "n_spots": 989,
-        "best_agent_domain": 1,
+        "best_agent_domain": "1",
         "share_in_best_domain": 0.38
       },
       "Layer_4": {
         "n_spots": 218,
-        "best_agent_domain": 0,
+        "best_agent_domain": "0",
         "share_in_best_domain": 0.477
       },
       "Layer_5": {
         "n_spots": 673,
-        "best_agent_domain": 0,
+        "best_agent_domain": "0",
         "share_in_best_domain": 0.444
       },
       "Layer_6": {
         "n_spots": 692,
-        "best_agent_domain": 6,
+        "best_agent_domain": "6",
         "share_in_best_domain": 0.48
       },
       "WM": {
         "n_spots": 513,
-        "best_agent_domain": 2,
+        "best_agent_domain": "2",
         "share_in_best_domain": 0.992
       }
     },
@@ -386,51 +386,51 @@
       "reference_6nn_same_label": 0.9046
     },
     "interpretation_claims_that_name_a_layer": {
-      "2": {
-        "agent_claim": "white-matter-like",
-        "reference_labels_counted": [
-          "WM"
-        ],
-        "share_of_labelled_spots_in_those_labels": 0.882
-      },
       "1": {
-        "agent_claim": "upper/supragranular-like",
+        "agent_claim": "Upper/supragranular-like cortical territory, suggested by CUX2, CALB2, HPCAL1 and CAMK2N1; layer assignment remains a hypothesis without histology.",
         "reference_labels_counted": [
           "Layer_1",
           "Layer_2",
           "Layer_3"
         ],
         "share_of_labelled_spots_in_those_labels": 1.0
+      },
+      "2": {
+        "agent_claim": "Myelin-rich white-matter-like compartment, supported by coordinated MOBP, MAG, MBP, PLP1, CNP, and MOG enrichment.",
+        "reference_labels_counted": [
+          "WM"
+        ],
+        "share_of_labelled_spots_in_those_labels": 0.882
       }
     },
     "paper_named_markers_in_agent_marker_tables": {
       "SNAP25": [
         {
-          "domain": 0,
+          "domain": "0",
           "rank": 3,
           "adjusted_p_value": 7.619632595727258e-78
         },
         {
-          "domain": 5,
+          "domain": "5",
           "rank": 16,
           "adjusted_p_value": 3.8383442840883325e-21
         }
       ],
       "MOBP": [
         {
-          "domain": 2,
+          "domain": "2",
           "rank": 1,
           "adjusted_p_value": 0.0
         }
       ],
       "PCP4": [
         {
-          "domain": 0,
+          "domain": "0",
           "rank": 7,
           "adjusted_p_value": 2.2084534729087924e-50
         },
         {
-          "domain": 5,
+          "domain": "5",
           "rank": 19,
           "adjusted_p_value": 1.6767559526288683e-20
         }
@@ -469,11 +469,30 @@
       ]
     }
   },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "adjusted_rand_index": 0.3212,
+      "normalized_mutual_information": 0.4791,
+      "layer_claims_supported": 0.941
+    },
+    "score": 0.5804,
+    "sensitivity": {
+      "double_weight_on_adjusted_rand_index": 0.5156,
+      "double_weight_on_normalized_mutual_information": 0.5551,
+      "double_weight_on_layer_claims_supported": 0.6706
+    },
+    "sensitivity_range": [
+      0.5156,
+      0.6706
+    ]
+  },
   "notes": [
     "The reference is a manual annotation of 7 labels. The agent's number of domains was not fixed, so ARI and NMI are used because they do not need matching labels.",
     "28 spots have no reference label and are left out of the agreement metrics. They are counted in the coherence of the agent's domains.",
     "Domains the agent called 'uncertain' are not scored as errors by these metrics. per_agent_domain shows which reference labels they contain.",
-    "The reference is itself a manual annotation, not an independent truth."
+    "The reference is itself a manual annotation, not an independent truth.",
+    "Layer claims are read from the agent's domain_interpretations text by keyword (white matter, layer numbers, upper/supragranular, deep/infragranular). If no interpretation names a layer, that item is left out of the score."
   ],
   "provenance": {
     "inputs_sha256": {
@@ -484,7 +503,7 @@
       "hidden_labels.csv": "390d122af2b498ec269d0b91e992c94dfedc3a19694c3ad700335e999a7d329b",
       "agent_input.h5ad": "baebbb9d829454a1db6bf29e09123bed53adf05a866040d5f5b71a4d6f052b2c"
     },
-    "script_sha256": "d16f9ebb6f5b781a81dd9d15e7396bd045005507268f4839caed8a5b93ac4beb",
+    "script_sha256": "fc0e8d499f48adec8a1b47a372ffbd31a16e15c72142b2855f2d17dc2741e0b6",
     "scorer": {
       "python": "3.13.18",
       "numpy": "2.5.3",

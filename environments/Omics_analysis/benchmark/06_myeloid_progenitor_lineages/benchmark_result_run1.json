@@ -438,6 +438,22 @@
       ]
     }
   },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "fates_recovered": 0.7143,
+      "label_consistency": 0.8889
+    },
+    "score": 0.8016,
+    "sensitivity": {
+      "double_weight_on_fates_recovered": 0.7725,
+      "double_weight_on_label_consistency": 0.8307
+    },
+    "sensitivity_range": [
+      0.7725,
+      0.8307
+    ]
+  },
   "notes": [
     "The paper's supplement has no per-cell cluster labels, so cells cannot be compared one by one. The comparison is at the level of clusters, marker genes and fates.",
     "The agent's 12 clusters and the paper's 19 clusters come from different cell sets and resolutions, so cluster counts are reported side by side and not compared.",
@@ -453,7 +469,7 @@
       "analysis_report.txt": "04cd4cf6148c3ea176704b399a099247abb945f0efeba757f5ef55d634b28d90",
       "paul_table_s3.xlsx": "bc38d78e97e1b2d4ec5cb18d96829201eb290913f1b7ba61fe2d824475c86925"
     },
-    "script_sha256": "279fe44ef777c20547c79fc1806b16138382685f1f92236f680dcce0419259aa",
+    "script_sha256": "b7e1320dc8112b9f757ee5115fef257f63267705c10ff54cc1de0b89808722ac",
     "scorer": {
       "python": "3.13.18",
       "numpy": "2.5.3",

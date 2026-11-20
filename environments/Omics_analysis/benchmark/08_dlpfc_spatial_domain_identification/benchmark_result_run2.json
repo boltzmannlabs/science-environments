@@ -1,0 +1,1641 @@
+{
+  "task_id": "dlpfc_spatial_domain_identification",
+  "reference": {
+    "labels_file": "DLPFC_151673_hidden_labels.csv (columns spot_id, truth)",
+    "source": "Maynard et al. 2021, Nature Neuroscience, doi 10.1038/s41593-020-00787-0",
+    "sample": "151673",
+    "labels": [
+      "Layer_1",
+      "Layer_2",
+      "Layer_3",
+      "Layer_4",
+      "Layer_5",
+      "Layer_6",
+      "WM"
+    ],
+    "reference_label_counts": {
+      "Layer_3": 989,
+      "Layer_6": 692,
+      "Layer_5": 673,
+      "WM": 513,
+      "Layer_1": 273,
+      "Layer_2": 253,
+      "Layer_4": 218
+    },
+    "spots_without_label": 28
+  },
+  "paper_reported": {
+    "design": "12 Visium samples from 3 neurotypical adult donors (two pairs of adjacent sections per donor)",
+    "spots_total": 47681,
+    "spots_assigned_to": "six cortical layers or white matter (manual, 'supervised' annotation)",
+    "orientation_markers": {
+      "SNAP25": "gray matter / neurons",
+      "MOBP": "white matter / oligodendrocytes",
+      "PCP4": "layer 5"
+    },
+    "evaluation_used_in_paper": "adjusted Rand index against the manual layer annotation as gold standard (values are in Figure 7F, not extracted here)"
+  },
+  "agent_reported": {
+    "spots_input": 3639,
+    "spots_analyzed": 3639,
+    "n_domains": 14,
+    "domain_interpretations": [
+      {
+        "domain_id": "D1",
+        "spot_count": 419,
+        "fraction": 0.1151,
+        "median_x": 6881.0,
+        "median_y": 4422.0,
+        "median_umis": 3144.0,
+        "median_genes": 1772.0,
+        "markers": [
+          "KRT19",
+          "SCGB2A2",
+          "MBP",
+          "PLP1",
+          "HLA-B",
+          "IFI27",
+          "ISG15",
+          "CPB1"
+        ],
+        "interpretation_hypothesis": "KRT19/SCGB2A2 with modest MBP/PLP1 and inflammatory transcripts: a mixed glial/secretory-like edge compartment; secretory signal is atypical for cortex, so contamination or tissue handling is plausible."
+      },
+      {
+        "domain_id": "D2",
+        "spot_count": 90,
+        "fraction": 0.0247,
+        "median_x": 2916.5,
+        "median_y": 4531.0,
+        "median_umis": 1784.0,
+        "median_genes": 1135.0,
+        "markers": [
+          "MALAT1",
+          "HBA2",
+          "COX6C",
+          "MYL9",
+          "HLA-A",
+          "ACTA2",
+          "KRT19",
+          "HBB"
+        ],
+        "interpretation_hypothesis": "HBA2/HBB with ACTA2/MYL9 supports vascular or blood-associated expression; low RNA depth and MALAT1 enrichment warrant caution."
+      },
+      {
+        "domain_id": "D3",
+        "spot_count": 292,
+        "fraction": 0.0802,
+        "median_x": 4353.5,
+        "median_y": 4721.0,
+        "median_umis": 2580.0,
+        "median_genes": 1457.0,
+        "markers": [
+          "COX6C",
+          "ENC1",
+          "MT-ATP8",
+          "HOPX",
+          "CD74",
+          "CCK",
+          "CAMK2N1",
+          "MT-ND5"
+        ],
+        "interpretation_hypothesis": "ENC1/HOPX/CCK and mitochondrial transcripts indicate a weakly differentiated neuronal/glial mixed compartment; exact cellular identity unresolved."
+      },
+      {
+        "domain_id": "D4",
+        "spot_count": 516,
+        "fraction": 0.1418,
+        "median_x": 9625.5,
+        "median_y": 5096.0,
+        "median_umis": 3434.0,
+        "median_genes": 1854.0,
+        "markers": [
+          "PLP1",
+          "MBP",
+          "CNP",
+          "GFAP",
+          "CRYAB",
+          "MOBP",
+          "TF",
+          "PPP1R14A"
+        ],
+        "interpretation_hypothesis": "Strong PLP1/MBP/MOBP/CNP with GFAP/CRYAB supports a myelinated, glia-enriched region, compatible with white-matter-like tissue."
+      },
+      {
+        "domain_id": "D5",
+        "spot_count": 160,
+        "fraction": 0.044,
+        "median_x": 7366.5,
+        "median_y": 6358.0,
+        "median_umis": 3150.0,
+        "median_genes": 1750.0,
+        "markers": [
+          "PLP1",
+          "MBP",
+          "GFAP",
+          "TF",
+          "MOBP",
+          "CNP",
+          "CRYAB",
+          "SEPT4"
+        ],
+        "interpretation_hypothesis": "PLP1/MBP/MOBP and GFAP indicate a weaker myelinated glial compartment, possibly transitional to the strongly myelinated D4."
+      },
+      {
+        "domain_id": "D6",
+        "spot_count": 197,
+        "fraction": 0.0541,
+        "median_x": 5328.0,
+        "median_y": 6508.0,
+        "median_umis": 3782.0,
+        "median_genes": 2022.0,
+        "markers": [
+          "SYT1",
+          "NEFL",
+          "STMN2",
+          "PCP4",
+          "TUBB2A",
+          "CHN1",
+          "SNAP25",
+          "RTN1"
+        ],
+        "interpretation_hypothesis": "SYT1/SNAP25/SLC17A7 and NEFL/STMN2 support a neuron-enriched cortical compartment, without evidence sufficient to name a layer."
+      },
+      {
+        "domain_id": "D7",
+        "spot_count": 227,
+        "fraction": 0.0624,
+        "median_x": 3527.0,
+        "median_y": 6733.0,
+        "median_umis": 3449.0,
+        "median_genes": 1814.0,
+        "markers": [
+          "ENC1",
+          "HOPX",
+          "MT-ATP8",
+          "MT-ND5",
+          "YWHAH",
+          "MT-ND1",
+          "FABP3",
+          "MT-ND4L"
+        ],
+        "interpretation_hypothesis": "ENC1/HOPX and oxidative/mitochondrial transcripts suggest a mixed neuronal compartment or metabolic gradient rather than a distinct cell type."
+      },
+      {
+        "domain_id": "D8",
+        "spot_count": 274,
+        "fraction": 0.0753,
+        "median_x": 8094.5,
+        "median_y": 8008.5,
+        "median_umis": 5234.0,
+        "median_genes": 2493.5,
+        "markers": [
+          "SCGB2A2",
+          "SCGB1D2",
+          "TUBB2A",
+          "SNAP25",
+          "DIRAS2",
+          "SYT1",
+          "DCLK1",
+          "HBB"
+        ],
+        "interpretation_hypothesis": "TUBB2A/SNAP25/SYT1 support neurons, while SCGB2A2/SCGB1D2 and HBB are atypical for pure cortical neurons; mixed/technical signal possible."
+      },
+      {
+        "domain_id": "D9",
+        "spot_count": 117,
+        "fraction": 0.0322,
+        "median_x": 4736.0,
+        "median_y": 8170.0,
+        "median_umis": 4639.0,
+        "median_genes": 2273.0,
+        "markers": [
+          "PCP4",
+          "NEFL",
+          "NEFH",
+          "NEFM",
+          "STMN2",
+          "SAA1",
+          "CHGA",
+          "SCN1B"
+        ],
+        "interpretation_hypothesis": "PCP4/NEFL/NEFH/NEFM and SNAP25 indicate a neuronal, neurofilament-enriched compartment; SAA1/FABP4 add possible vascular admixture."
+      },
+      {
+        "domain_id": "D10",
+        "spot_count": 221,
+        "fraction": 0.0607,
+        "median_x": 6175.0,
+        "median_y": 8431.0,
+        "median_umis": 5463.0,
+        "median_genes": 2535.0,
+        "markers": [
+          "PCP4",
+          "NEFL",
+          "NAPB",
+          "DIRAS2",
+          "SNAP25",
+          "SYT1",
+          "NEFM",
+          "YWHAG"
+        ],
+        "interpretation_hypothesis": "PCP4/NEFL/SNAP25/SYT1 support a neuronal, neurofilament-enriched compartment; distinction from D9 is quantitative and spatial, not a validated layer boundary."
+      },
+      {
+        "domain_id": "D11",
+        "spot_count": 379,
+        "fraction": 0.1041,
+        "median_x": 9888.0,
+        "median_y": 8473.0,
+        "median_umis": 5621.0,
+        "median_genes": 2709.0,
+        "markers": [
+          "SCGB2A2",
+          "SCGB1D2",
+          "TFF1",
+          "MGP",
+          "MUC1",
+          "SYT1",
+          "MEG3",
+          "NSF"
+        ],
+        "interpretation_hypothesis": "SCGB2A2/SCGB1D2/TFF1/MUC1 give a strong secretory-like expression signature atypical of DLPFC; consider ambient/technical or unexpected tissue signal before anatomical interpretation."
+      },
+      {
+        "domain_id": "D12",
+        "spot_count": 240,
+        "fraction": 0.066,
+        "median_x": 3129.5,
+        "median_y": 8829.5,
+        "median_umis": 5253.0,
+        "median_genes": 2410.5,
+        "markers": [
+          "ENC1",
+          "HOPX",
+          "HPCAL1",
+          "MT-ATP8",
+          "CAMK2N1",
+          "CCK",
+          "CXCL14",
+          "YJEFN3"
+        ],
+        "interpretation_hypothesis": "ENC1/HOPX/CAMK2N1/CCK and CXCL14 support a neuronal/glial mixed cortex-like compartment; layer attribution unverified."
+      },
+      {
+        "domain_id": "D13",
+        "spot_count": 194,
+        "fraction": 0.0533,
+        "median_x": 4877.5,
+        "median_y": 9988.0,
+        "median_umis": 6266.0,
+        "median_genes": 2759.0,
+        "markers": [
+          "SAA1",
+          "FABP4",
+          "HOPX",
+          "ENC1",
+          "MT-ATP8",
+          "HPCAL1",
+          "CAMK2N1",
+          "NSG2"
+        ],
+        "interpretation_hypothesis": "SAA1/FABP4 suggest vascular/inflammatory association alongside ENC1/HOPX neuronal expression; likely admixture, not a uniquely defined cell type."
+      },
+      {
+        "domain_id": "D14",
+        "spot_count": 313,
+        "fraction": 0.086,
+        "median_x": 7753.0,
+        "median_y": 10068.0,
+        "median_umis": 7686.0,
+        "median_genes": 3257.0,
+        "markers": [
+          "SCGB2A2",
+          "MGP",
+          "HOPX",
+          "ENC1",
+          "SAA1",
+          "HPCAL1",
+          "CAMK2A",
+          "MEG3"
+        ],
+        "interpretation_hypothesis": "MGP/SAA1 and ENC1/HOPX/CAMK2A suggest mixed vascular and neuronal contributions; secretory-like SCGB2A2 is atypical and requires validation."
+      }
+    ],
+    "domain_markers": {
+      "D1": [
+        {
+          "gene": "KRT19",
+          "effect_size": 0.8358731269836426,
+          "adjusted_p_value": 3.2555191959296526e-50
+        },
+        {
+          "gene": "SCGB2A2",
+          "effect_size": 0.6716434955596924,
+          "adjusted_p_value": 2.233661107319054e-17
+        },
+        {
+          "gene": "MBP",
+          "effect_size": 0.4057600498199463,
+          "adjusted_p_value": 8.895874899551044e-17
+        },
+        {
+          "gene": "PLP1",
+          "effect_size": 0.4003171920776367,
+          "adjusted_p_value": 7.713549425184768e-10
+        },
+        {
+          "gene": "HLA-B",
+          "effect_size": 0.3932259678840637,
+          "adjusted_p_value": 1.4716703382898183e-12
+        },
+        {
+          "gene": "IFI27",
+          "effect_size": 0.39210230112075806,
+          "adjusted_p_value": 2.4022232827104164e-11
+        },
+        {
+          "gene": "ISG15",
+          "effect_size": 0.3761018216609955,
+          "adjusted_p_value": 1.3848565610365023e-12
+        },
+        {
+          "gene": "CPB1",
+          "effect_size": 0.36104816198349,
+          "adjusted_p_value": 9.013969783985065e-10
+        }
+      ],
+      "D2": [
+        {
+          "gene": "MALAT1",
+          "effect_size": 1.3962538242340088,
+          "adjusted_p_value": 5.711249356559676e-39
+        },
+        {
+          "gene": "HBA2",
+          "effect_size": 0.7056072354316711,
+          "adjusted_p_value": 0.0008526818519690023
+        },
+        {
+          "gene": "COX6C",
+          "effect_size": 0.6387572288513184,
+          "adjusted_p_value": 1.6464512620427214e-16
+        },
+        {
+          "gene": "MYL9",
+          "effect_size": 0.6278655529022217,
+          "adjusted_p_value": 0.0014942435069125045
+        },
+        {
+          "gene": "HLA-A",
+          "effect_size": 0.5846855044364929,
+          "adjusted_p_value": 0.00017371628982584255
+        },
+        {
+          "gene": "ACTA2",
+          "effect_size": 0.5492483377456665,
+          "adjusted_p_value": 0.0032733335216664446
+        },
+        {
+          "gene": "KRT19",
+          "effect_size": 0.5331055521965027,
+          "adjusted_p_value": 0.0009412456550712303
+        },
+        {
+          "gene": "HBB",
+          "effect_size": 0.49275103211402893,
+          "adjusted_p_value": 0.039267327570036786
+        }
+      ],
+      "D3": [
+        {
+          "gene": "COX6C",
+          "effect_size": 0.41419029235839844,
+          "adjusted_p_value": 1.346784410567108e-25
+        },
+        {
+          "gene": "ENC1",
+          "effect_size": 0.3812236785888672,
+          "adjusted_p_value": 7.160214257503785e-14
+        },
+        {
+          "gene": "MT-ATP8",
+          "effect_size": 0.24802732467651367,
+          "adjusted_p_value": 1.46423852408656e-07
+        },
+        {
+          "gene": "HOPX",
+          "effect_size": 0.23945343494415283,
+          "adjusted_p_value": 0.00020205120064375708
+        },
+        {
+          "gene": "CD74",
+          "effect_size": 0.19032150506973267,
+          "adjusted_p_value": 0.024134638843057978
+        },
+        {
+          "gene": "CCK",
+          "effect_size": 0.18787527084350586,
+          "adjusted_p_value": 0.00017380669853470134
+        },
+        {
+          "gene": "CAMK2N1",
+          "effect_size": 0.16653728485107422,
+          "adjusted_p_value": 5.568957279754561e-07
+        },
+        {
+          "gene": "MT-ND5",
+          "effect_size": 0.16426944732666016,
+          "adjusted_p_value": 4.6331017015855843e-10
+        }
+      ],
+      "D4": [
+        {
+          "gene": "PLP1",
+          "effect_size": 2.5148372650146484,
+          "adjusted_p_value": 2.2907519092889844e-255
+        },
+        {
+          "gene": "MBP",
+          "effect_size": 2.3024659156799316,
+          "adjusted_p_value": 2.966267795985541e-262
+        },
+        {
+          "gene": "CNP",
+          "effect_size": 2.1079978942871094,
+          "adjusted_p_value": 5.197813768036716e-237
+        },
+        {
+          "gene": "GFAP",
+          "effect_size": 2.0884170532226562,
+          "adjusted_p_value": 1.08705012284248e-233
+        },
+        {
+          "gene": "CRYAB",
+          "effect_size": 2.0827088356018066,
+          "adjusted_p_value": 1.850496735028237e-237
+        },
+        {
+          "gene": "MOBP",
+          "effect_size": 2.028268814086914,
+          "adjusted_p_value": 3.4082841719040814e-231
+        },
+        {
+          "gene": "TF",
+          "effect_size": 2.002669334411621,
+          "adjusted_p_value": 3.5746015763379457e-215
+        },
+        {
+          "gene": "PPP1R14A",
+          "effect_size": 1.7444339990615845,
+          "adjusted_p_value": 8.242295951221385e-187
+        }
+      ],
+      "D5": [
+        {
+          "gene": "PLP1",
+          "effect_size": 1.3301804065704346,
+          "adjusted_p_value": 4.260851862221183e-34
+        },
+        {
+          "gene": "MBP",
+          "effect_size": 1.2695636749267578,
+          "adjusted_p_value": 1.4597596893997024e-38
+        },
+        {
+          "gene": "GFAP",
+          "effect_size": 1.0593392848968506,
+          "adjusted_p_value": 2.681579514740281e-23
+        },
+        {
+          "gene": "TF",
+          "effect_size": 0.8829079866409302,
+          "adjusted_p_value": 1.3547685307493567e-17
+        },
+        {
+          "gene": "MOBP",
+          "effect_size": 0.8610519170761108,
+          "adjusted_p_value": 1.3547685307493567e-17
+        },
+        {
+          "gene": "CNP",
+          "effect_size": 0.7990272045135498,
+          "adjusted_p_value": 5.567535893102832e-15
+        },
+        {
+          "gene": "CRYAB",
+          "effect_size": 0.7588709592819214,
+          "adjusted_p_value": 5.567535893102832e-15
+        },
+        {
+          "gene": "SEPT4",
+          "effect_size": 0.6903154253959656,
+          "adjusted_p_value": 5.567535893102832e-15
+        }
+      ],
+      "D6": [
+        {
+          "gene": "SYT1",
+          "effect_size": 0.5589122772216797,
+          "adjusted_p_value": 1.362839970430434e-20
+        },
+        {
+          "gene": "NEFL",
+          "effect_size": 0.5336190462112427,
+          "adjusted_p_value": 3.9336251876406656e-13
+        },
+        {
+          "gene": "STMN2",
+          "effect_size": 0.5052061080932617,
+          "adjusted_p_value": 5.753247818459215e-13
+        },
+        {
+          "gene": "PCP4",
+          "effect_size": 0.4637625217437744,
+          "adjusted_p_value": 6.641479093147058e-09
+        },
+        {
+          "gene": "TUBB2A",
+          "effect_size": 0.4425647258758545,
+          "adjusted_p_value": 3.4786425819643436e-13
+        },
+        {
+          "gene": "CHN1",
+          "effect_size": 0.43131351470947266,
+          "adjusted_p_value": 1.5906145384394666e-12
+        },
+        {
+          "gene": "SNAP25",
+          "effect_size": 0.4274282455444336,
+          "adjusted_p_value": 4.1581022398938093e-20
+        },
+        {
+          "gene": "RTN1",
+          "effect_size": 0.40189313888549805,
+          "adjusted_p_value": 3.538253722099491e-10
+        }
+      ],
+      "D7": [
+        {
+          "gene": "ENC1",
+          "effect_size": 0.4010312557220459,
+          "adjusted_p_value": 5.975503922373793e-10
+        },
+        {
+          "gene": "HOPX",
+          "effect_size": 0.36547839641571045,
+          "adjusted_p_value": 1.3811500151409197e-06
+        },
+        {
+          "gene": "MT-ATP8",
+          "effect_size": 0.32683253288269043,
+          "adjusted_p_value": 3.1572098129839347e-06
+        },
+        {
+          "gene": "MT-ND5",
+          "effect_size": 0.29073667526245117,
+          "adjusted_p_value": 2.0803012611026475e-11
+        },
+        {
+          "gene": "YWHAH",
+          "effect_size": 0.28064942359924316,
+          "adjusted_p_value": 2.1783556322673297e-06
+        },
+        {
+          "gene": "MT-ND1",
+          "effect_size": 0.2656130790710449,
+          "adjusted_p_value": 5.193598909425619e-29
+        },
+        {
+          "gene": "FABP3",
+          "effect_size": 0.2606286406517029,
+          "adjusted_p_value": 0.0016264489625782911
+        },
+        {
+          "gene": "MT-ND4L",
+          "effect_size": 0.25235819816589355,
+          "adjusted_p_value": 8.70149408382101e-05
+        }
+      ],
+      "D8": [
+        {
+          "gene": "SCGB2A2",
+          "effect_size": 0.8254131078720093,
+          "adjusted_p_value": 6.445632688905255e-18
+        },
+        {
+          "gene": "SCGB1D2",
+          "effect_size": 0.5018390417098999,
+          "adjusted_p_value": 1.9079139364147023e-10
+        },
+        {
+          "gene": "TUBB2A",
+          "effect_size": 0.4404942989349365,
+          "adjusted_p_value": 8.461437810972067e-19
+        },
+        {
+          "gene": "SNAP25",
+          "effect_size": 0.430206298828125,
+          "adjusted_p_value": 4.603748906737174e-27
+        },
+        {
+          "gene": "DIRAS2",
+          "effect_size": 0.40822160243988037,
+          "adjusted_p_value": 5.140994064790411e-10
+        },
+        {
+          "gene": "SYT1",
+          "effect_size": 0.3947713375091553,
+          "adjusted_p_value": 8.45948845093394e-13
+        },
+        {
+          "gene": "DCLK1",
+          "effect_size": 0.39071130752563477,
+          "adjusted_p_value": 7.769930899319355e-10
+        },
+        {
+          "gene": "HBB",
+          "effect_size": 0.3897603452205658,
+          "adjusted_p_value": 1.9368696517512125e-05
+        }
+      ],
+      "D9": [
+        {
+          "gene": "PCP4",
+          "effect_size": 0.7809164524078369,
+          "adjusted_p_value": 8.114092012259157e-15
+        },
+        {
+          "gene": "NEFL",
+          "effect_size": 0.6384236812591553,
+          "adjusted_p_value": 1.8557901492210668e-11
+        },
+        {
+          "gene": "NEFH",
+          "effect_size": 0.5763773918151855,
+          "adjusted_p_value": 3.224470375181077e-09
+        },
+        {
+          "gene": "NEFM",
+          "effect_size": 0.5674989223480225,
+          "adjusted_p_value": 7.435788804546212e-08
+        },
+        {
+          "gene": "STMN2",
+          "effect_size": 0.5013822317123413,
+          "adjusted_p_value": 2.5809051442232103e-06
+        },
+        {
+          "gene": "SAA1",
+          "effect_size": 0.4893801510334015,
+          "adjusted_p_value": 6.776407747199423e-05
+        },
+        {
+          "gene": "CHGA",
+          "effect_size": 0.4817478656768799,
+          "adjusted_p_value": 1.6906035522690178e-06
+        },
+        {
+          "gene": "SCN1B",
+          "effect_size": 0.44103509187698364,
+          "adjusted_p_value": 1.5647630590013875e-05
+        }
+      ],
+      "D10": [
+        {
+          "gene": "PCP4",
+          "effect_size": 0.5187373161315918,
+          "adjusted_p_value": 1.6927655668557892e-12
+        },
+        {
+          "gene": "NEFL",
+          "effect_size": 0.4686911106109619,
+          "adjusted_p_value": 1.318460550889148e-09
+        },
+        {
+          "gene": "NAPB",
+          "effect_size": 0.46368348598480225,
+          "adjusted_p_value": 3.655228007601951e-12
+        },
+        {
+          "gene": "DIRAS2",
+          "effect_size": 0.44383424520492554,
+          "adjusted_p_value": 1.2631885910803196e-09
+        },
+        {
+          "gene": "SNAP25",
+          "effect_size": 0.4365980625152588,
+          "adjusted_p_value": 1.1970198351652924e-20
+        },
+        {
+          "gene": "SYT1",
+          "effect_size": 0.40480709075927734,
+          "adjusted_p_value": 5.655039268982205e-09
+        },
+        {
+          "gene": "NEFM",
+          "effect_size": 0.4036290645599365,
+          "adjusted_p_value": 1.897537295377144e-06
+        },
+        {
+          "gene": "YWHAG",
+          "effect_size": 0.40201854705810547,
+          "adjusted_p_value": 5.432895094956982e-09
+        }
+      ],
+      "D11": [
+        {
+          "gene": "SCGB2A2",
+          "effect_size": 1.6657168865203857,
+          "adjusted_p_value": 1.979660031940067e-117
+        },
+        {
+          "gene": "SCGB1D2",
+          "effect_size": 1.1946979761123657,
+          "adjusted_p_value": 7.073840724206836e-91
+        },
+        {
+          "gene": "TFF1",
+          "effect_size": 0.541772723197937,
+          "adjusted_p_value": 7.734355071155582e-30
+        },
+        {
+          "gene": "MGP",
+          "effect_size": 0.47904372215270996,
+          "adjusted_p_value": 2.5697877415541177e-19
+        },
+        {
+          "gene": "MUC1",
+          "effect_size": 0.4020121693611145,
+          "adjusted_p_value": 5.259080198273677e-14
+        },
+        {
+          "gene": "SYT1",
+          "effect_size": 0.3361330032348633,
+          "adjusted_p_value": 1.0100488360446575e-07
+        },
+        {
+          "gene": "MEG3",
+          "effect_size": 0.3177987337112427,
+          "adjusted_p_value": 1.6870729412537267e-07
+        },
+        {
+          "gene": "NSF",
+          "effect_size": 0.29788219928741455,
+          "adjusted_p_value": 5.034654205567111e-05
+        }
+      ],
+      "D12": [
+        {
+          "gene": "ENC1",
+          "effect_size": 0.6876378059387207,
+          "adjusted_p_value": 5.970815774766947e-31
+        },
+        {
+          "gene": "HOPX",
+          "effect_size": 0.6299304366111755,
+          "adjusted_p_value": 9.770073975991235e-24
+        },
+        {
+          "gene": "HPCAL1",
+          "effect_size": 0.5925433039665222,
+          "adjusted_p_value": 1.7573039055003224e-19
+        },
+        {
+          "gene": "MT-ATP8",
+          "effect_size": 0.504467248916626,
+          "adjusted_p_value": 1.6595176527913605e-17
+        },
+        {
+          "gene": "CAMK2N1",
+          "effect_size": 0.4980025291442871,
+          "adjusted_p_value": 2.6753387455656326e-32
+        },
+        {
+          "gene": "CCK",
+          "effect_size": 0.4240577220916748,
+          "adjusted_p_value": 4.428517992054078e-12
+        },
+        {
+          "gene": "CXCL14",
+          "effect_size": 0.4049617052078247,
+          "adjusted_p_value": 5.578214313164378e-08
+        },
+        {
+          "gene": "YJEFN3",
+          "effect_size": 0.3712630271911621,
+          "adjusted_p_value": 2.336972343965811e-09
+        }
+      ],
+      "D13": [
+        {
+          "gene": "SAA1",
+          "effect_size": 0.7354012727737427,
+          "adjusted_p_value": 3.196758141024153e-30
+        },
+        {
+          "gene": "FABP4",
+          "effect_size": 0.6329678893089294,
+          "adjusted_p_value": 2.04220454791168e-24
+        },
+        {
+          "gene": "HOPX",
+          "effect_size": 0.5656126737594604,
+          "adjusted_p_value": 4.662444039458932e-15
+        },
+        {
+          "gene": "ENC1",
+          "effect_size": 0.5440599918365479,
+          "adjusted_p_value": 1.002422451491557e-13
+        },
+        {
+          "gene": "MT-ATP8",
+          "effect_size": 0.47374916076660156,
+          "adjusted_p_value": 1.01363449183123e-11
+        },
+        {
+          "gene": "HPCAL1",
+          "effect_size": 0.44576001167297363,
+          "adjusted_p_value": 6.8944824368136826e-09
+        },
+        {
+          "gene": "CAMK2N1",
+          "effect_size": 0.4288361072540283,
+          "adjusted_p_value": 2.1955915759735223e-17
+        },
+        {
+          "gene": "NSG2",
+          "effect_size": 0.41846585273742676,
+          "adjusted_p_value": 1.2071925710247191e-08
+        }
+      ],
+      "D14": [
+        {
+          "gene": "SCGB2A2",
+          "effect_size": 0.7100570201873779,
+          "adjusted_p_value": 1.1232236019780562e-12
+        },
+        {
+          "gene": "MGP",
+          "effect_size": 0.6410554647445679,
+          "adjusted_p_value": 1.408821540193539e-26
+        },
+        {
+          "gene": "HOPX",
+          "effect_size": 0.5615649819374084,
+          "adjusted_p_value": 1.4506484870514049e-22
+        },
+        {
+          "gene": "ENC1",
+          "effect_size": 0.5613052845001221,
+          "adjusted_p_value": 2.8905587201631474e-22
+        },
+        {
+          "gene": "SAA1",
+          "effect_size": 0.5330260396003723,
+          "adjusted_p_value": 5.660099203448646e-27
+        },
+        {
+          "gene": "HPCAL1",
+          "effect_size": 0.4823141098022461,
+          "adjusted_p_value": 7.609110261049492e-18
+        },
+        {
+          "gene": "CAMK2A",
+          "effect_size": 0.4637531042098999,
+          "adjusted_p_value": 2.591068591336583e-14
+        },
+        {
+          "gene": "MEG3",
+          "effect_size": 0.46089017391204834,
+          "adjusted_p_value": 1.817940437579292e-14
+        }
+      ]
+    },
+    "model": {
+      "method": "Expression-weighted spatial kNN graph with unsupervised Leiden partition; PCA on highly-variable log-normalized transcripts",
+      "hvg": 3000,
+      "pca_components": 30,
+      "spatial_neighbors_graph": 18,
+      "spatial_neighbors_validation": 6,
+      "leiden_resolution": 0.6,
+      "random_seed": 42,
+      "selection": "maximize PC silhouette + 0.16*(spatial coherence - size-null) + 0.08*adjacent-resolution ARI - small-domain penalty",
+      "marker_test": "Scanpy Wilcoxon one versus rest on log1p counts normalized per 10,000; Benjamini-Hochberg corrected within each domain across genes",
+      "marker_effect_size": "Mean log1p(CP10k) in-domain minus out-domain"
+    },
+    "reported_coherence": null,
+    "limitations": [
+      "No histology or anatomical-domain labels supplied: precise cortical layers cannot be confirmed.",
+      "Spatially autocorrelated spots violate independence assumptions of spot-wise Wilcoxon tests; adjusted p-values are exploratory, not spatially corrected.",
+      "PC-space silhouette is negative, so expression distributions overlap despite high spatial coherence; graph segmentation may favor spatial continuity over expression separation.",
+      "SCGB2A2/SCGB1D2/TFF1/MUC1 secretory signatures are atypical for DLPFC; ambient RNA, technical contamination, or specimen heterogeneity cannot be excluded.",
+      "Visium spots mix cell types and variable RNA depth; marker associations are not cell-type-specific.",
+      "Only one tissue section; no cross-sample validation or external-reference labels used.",
+      "The selection criterion and graph parameters may alter domain boundaries; spot-level uncertainty near transitions is not calibrated."
+    ]
+  },
+  "metrics": {
+    "identifiers": {
+      "agent_rows": 3639,
+      "agent_ids_unique": true,
+      "reference_rows": 3639,
+      "input_spots": 3639,
+      "agent_ids_equal_input_ids": true,
+      "agent_ids_equal_reference_ids": true
+    },
+    "agreement": {
+      "spots_compared": 3611,
+      "spots_without_reference_label": 28,
+      "adjusted_rand_index": 0.2147,
+      "normalized_mutual_information": 0.3882,
+      "homogeneity": 0.4669,
+      "completeness": 0.3322
+    },
+    "per_agent_domain": {
+      "D1": {
+        "n_labelled_spots": 419,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.401,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.069,
+          "Layer_4": 0.069,
+          "Layer_5": 0.401,
+          "Layer_6": 0.387,
+          "WM": 0.074
+        }
+      },
+      "D10": {
+        "n_labelled_spots": 221,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.462,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.127,
+          "Layer_4": 0.109,
+          "Layer_5": 0.462,
+          "Layer_6": 0.303,
+          "WM": 0.0
+        }
+      },
+      "D11": {
+        "n_labelled_spots": 351,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.336,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.054,
+          "Layer_3": 0.336,
+          "Layer_4": 0.08,
+          "Layer_5": 0.251,
+          "Layer_6": 0.279,
+          "WM": 0.0
+        }
+      },
+      "D12": {
+        "n_labelled_spots": 240,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.629,
+        "share_in_each_label": {
+          "Layer_1": 0.154,
+          "Layer_2": 0.217,
+          "Layer_3": 0.629,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D13": {
+        "n_labelled_spots": 194,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.68,
+        "share_in_each_label": {
+          "Layer_1": 0.052,
+          "Layer_2": 0.232,
+          "Layer_3": 0.68,
+          "Layer_4": 0.036,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D14": {
+        "n_labelled_spots": 313,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.649,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.22,
+          "Layer_3": 0.649,
+          "Layer_4": 0.083,
+          "Layer_5": 0.048,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D2": {
+        "n_labelled_spots": 90,
+        "dominant_reference_label": "Layer_1",
+        "dominant_share": 1.0,
+        "share_in_each_label": {
+          "Layer_1": 1.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.0,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D3": {
+        "n_labelled_spots": 292,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.51,
+        "share_in_each_label": {
+          "Layer_1": 0.271,
+          "Layer_2": 0.144,
+          "Layer_3": 0.51,
+          "Layer_4": 0.065,
+          "Layer_5": 0.01,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D4": {
+        "n_labelled_spots": 516,
+        "dominant_reference_label": "WM",
+        "dominant_share": 0.859,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.0,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.141,
+          "WM": 0.859
+        }
+      },
+      "D5": {
+        "n_labelled_spots": 160,
+        "dominant_reference_label": "Layer_6",
+        "dominant_share": 0.756,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.0,
+          "Layer_4": 0.0,
+          "Layer_5": 0.0,
+          "Layer_6": 0.756,
+          "WM": 0.244
+        }
+      },
+      "D6": {
+        "n_labelled_spots": 197,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.599,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.056,
+          "Layer_4": 0.147,
+          "Layer_5": 0.599,
+          "Layer_6": 0.198,
+          "WM": 0.0
+        }
+      },
+      "D7": {
+        "n_labelled_spots": 227,
+        "dominant_reference_label": "Layer_3",
+        "dominant_share": 0.59,
+        "share_in_each_label": {
+          "Layer_1": 0.251,
+          "Layer_2": 0.115,
+          "Layer_3": 0.59,
+          "Layer_4": 0.044,
+          "Layer_5": 0.0,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      },
+      "D8": {
+        "n_labelled_spots": 274,
+        "dominant_reference_label": "Layer_6",
+        "dominant_share": 0.482,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.022,
+          "Layer_4": 0.062,
+          "Layer_5": 0.434,
+          "Layer_6": 0.482,
+          "WM": 0.0
+        }
+      },
+      "D9": {
+        "n_labelled_spots": 117,
+        "dominant_reference_label": "Layer_5",
+        "dominant_share": 0.513,
+        "share_in_each_label": {
+          "Layer_1": 0.0,
+          "Layer_2": 0.0,
+          "Layer_3": 0.239,
+          "Layer_4": 0.248,
+          "Layer_5": 0.513,
+          "Layer_6": 0.0,
+          "WM": 0.0
+        }
+      }
+    },
+    "per_reference_label": {
+      "Layer_1": {
+        "n_spots": 273,
+        "best_agent_domain": "D2",
+        "share_in_best_domain": 0.33
+      },
+      "Layer_2": {
+        "n_spots": 253,
+        "best_agent_domain": "D14",
+        "share_in_best_domain": 0.273
+      },
+      "Layer_3": {
+        "n_spots": 989,
+        "best_agent_domain": "D14",
+        "share_in_best_domain": 0.205
+      },
+      "Layer_4": {
+        "n_spots": 218,
+        "best_agent_domain": "D1",
+        "share_in_best_domain": 0.133
+      },
+      "Layer_5": {
+        "n_spots": 673,
+        "best_agent_domain": "D1",
+        "share_in_best_domain": 0.25
+      },
+      "Layer_6": {
+        "n_spots": 692,
+        "best_agent_domain": "D1",
+        "share_in_best_domain": 0.234
+      },
+      "WM": {
+        "n_spots": 513,
+        "best_agent_domain": "D4",
+        "share_in_best_domain": 0.864
+      }
+    },
+    "contingency_agent_domain_by_reference_label": {
+      "D1": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 29,
+        "Layer_4": 29,
+        "Layer_5": 168,
+        "Layer_6": 162,
+        "WM": 31
+      },
+      "D10": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 28,
+        "Layer_4": 24,
+        "Layer_5": 102,
+        "Layer_6": 67,
+        "WM": 0
+      },
+      "D11": {
+        "Layer_1": 0,
+        "Layer_2": 19,
+        "Layer_3": 118,
+        "Layer_4": 28,
+        "Layer_5": 88,
+        "Layer_6": 98,
+        "WM": 0
+      },
+      "D12": {
+        "Layer_1": 37,
+        "Layer_2": 52,
+        "Layer_3": 151,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D13": {
+        "Layer_1": 10,
+        "Layer_2": 45,
+        "Layer_3": 132,
+        "Layer_4": 7,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D14": {
+        "Layer_1": 0,
+        "Layer_2": 69,
+        "Layer_3": 203,
+        "Layer_4": 26,
+        "Layer_5": 15,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D2": {
+        "Layer_1": 90,
+        "Layer_2": 0,
+        "Layer_3": 0,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D3": {
+        "Layer_1": 79,
+        "Layer_2": 42,
+        "Layer_3": 149,
+        "Layer_4": 19,
+        "Layer_5": 3,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D4": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 0,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 73,
+        "WM": 443
+      },
+      "D5": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 0,
+        "Layer_4": 0,
+        "Layer_5": 0,
+        "Layer_6": 121,
+        "WM": 39
+      },
+      "D6": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 11,
+        "Layer_4": 29,
+        "Layer_5": 118,
+        "Layer_6": 39,
+        "WM": 0
+      },
+      "D7": {
+        "Layer_1": 57,
+        "Layer_2": 26,
+        "Layer_3": 134,
+        "Layer_4": 10,
+        "Layer_5": 0,
+        "Layer_6": 0,
+        "WM": 0
+      },
+      "D8": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 6,
+        "Layer_4": 17,
+        "Layer_5": 119,
+        "Layer_6": 132,
+        "WM": 0
+      },
+      "D9": {
+        "Layer_1": 0,
+        "Layer_2": 0,
+        "Layer_3": 28,
+        "Layer_4": 29,
+        "Layer_5": 60,
+        "Layer_6": 0,
+        "WM": 0
+      }
+    },
+    "spatial_coherence": {
+      "agent_6nn_same_domain": 0.9397,
+      "reference_6nn_same_label": 0.9046
+    },
+    "interpretation_claims_that_name_a_layer": {
+      "D4": {
+        "agent_claim": "Strong PLP1/MBP/MOBP/CNP with GFAP/CRYAB supports a myelinated, glia-enriched region, compatible with white-matter-like tissue.",
+        "reference_labels_counted": [
+          "WM"
+        ],
+        "share_of_labelled_spots_in_those_labels": 0.859
+      }
+    },
+    "paper_named_markers_in_agent_marker_tables": {
+      "SNAP25": [
+        {
+          "domain": "D1",
+          "rank": 478,
+          "adjusted_p_value": 0.1732098647651736
+        },
+        {
+          "domain": "D2",
+          "rank": 1488,
+          "adjusted_p_value": 0.2635595057188592
+        },
+        {
+          "domain": "D3",
+          "rank": 228,
+          "adjusted_p_value": 0.0005025145490185498
+        },
+        {
+          "domain": "D4",
+          "rank": 25,
+          "adjusted_p_value": 4.3101223202237335e-155
+        },
+        {
+          "domain": "D5",
+          "rank": 169,
+          "adjusted_p_value": 0.004153105367688551
+        },
+        {
+          "domain": "D6",
+          "rank": 3,
+          "adjusted_p_value": 4.1581022398938093e-20
+        },
+        {
+          "domain": "D7",
+          "rank": 2159,
+          "adjusted_p_value": 1.0
+        },
+        {
+          "domain": "D8",
+          "rank": 2,
+          "adjusted_p_value": 4.603748906737174e-27
+        },
+        {
+          "domain": "D9",
+          "rank": 5,
+          "adjusted_p_value": 2.0704548338165295e-10
+        },
+        {
+          "domain": "D10",
+          "rank": 3,
+          "adjusted_p_value": 1.1970198351652924e-20
+        },
+        {
+          "domain": "D11",
+          "rank": 281,
+          "adjusted_p_value": 0.02340390756017948
+        },
+        {
+          "domain": "D12",
+          "rank": 1346,
+          "adjusted_p_value": 0.999923916576191
+        },
+        {
+          "domain": "D13",
+          "rank": 3477,
+          "adjusted_p_value": 0.9997368533884894
+        },
+        {
+          "domain": "D14",
+          "rank": 3351,
+          "adjusted_p_value": 0.04398861779782031
+        }
+      ],
+      "MOBP": [
+        {
+          "domain": "D1",
+          "rank": 972,
+          "adjusted_p_value": 0.42641546597013197
+        },
+        {
+          "domain": "D2",
+          "rank": 26,
+          "adjusted_p_value": 0.00038787774415591393
+        },
+        {
+          "domain": "D3",
+          "rank": 7,
+          "adjusted_p_value": 7.30399149700042e-21
+        },
+        {
+          "domain": "D4",
+          "rank": 6,
+          "adjusted_p_value": 3.4082841719040814e-231
+        },
+        {
+          "domain": "D5",
+          "rank": 5,
+          "adjusted_p_value": 1.3547685307493567e-17
+        },
+        {
+          "domain": "D6",
+          "rank": 110,
+          "adjusted_p_value": 0.001843328313308604
+        },
+        {
+          "domain": "D7",
+          "rank": 21,
+          "adjusted_p_value": 3.858847666420889e-11
+        },
+        {
+          "domain": "D8",
+          "rank": 714,
+          "adjusted_p_value": 0.43884770822908703
+        },
+        {
+          "domain": "D9",
+          "rank": 397,
+          "adjusted_p_value": 0.5991911138425745
+        },
+        {
+          "domain": "D10",
+          "rank": 671,
+          "adjusted_p_value": 0.15233111869170593
+        },
+        {
+          "domain": "D11",
+          "rank": 356,
+          "adjusted_p_value": 0.03533522029982118
+        },
+        {
+          "domain": "D12",
+          "rank": 26,
+          "adjusted_p_value": 1.2796159638687609e-11
+        },
+        {
+          "domain": "D13",
+          "rank": 42,
+          "adjusted_p_value": 3.702549231468735e-06
+        },
+        {
+          "domain": "D14",
+          "rank": 89,
+          "adjusted_p_value": 2.3821641950330638e-08
+        }
+      ],
+      "PCP4": [
+        {
+          "domain": "D1",
+          "rank": 1525,
+          "adjusted_p_value": 0.6150410296964418
+        },
+        {
+          "domain": "D2",
+          "rank": 659,
+          "adjusted_p_value": 0.08985629684320529
+        },
+        {
+          "domain": "D3",
+          "rank": 162,
+          "adjusted_p_value": 0.00010539359734146801
+        },
+        {
+          "domain": "D4",
+          "rank": 283,
+          "adjusted_p_value": 3.060726841761292e-41
+        },
+        {
+          "domain": "D5",
+          "rank": 107,
+          "adjusted_p_value": 0.00033321620383822847
+        },
+        {
+          "domain": "D6",
+          "rank": 19,
+          "adjusted_p_value": 6.641479093147058e-09
+        },
+        {
+          "domain": "D7",
+          "rank": 16030,
+          "adjusted_p_value": 1.0
+        },
+        {
+          "domain": "D8",
+          "rank": 48,
+          "adjusted_p_value": 3.5975243868319277e-05
+        },
+        {
+          "domain": "D9",
+          "rank": 3,
+          "adjusted_p_value": 8.114092012259157e-15
+        },
+        {
+          "domain": "D10",
+          "rank": 8,
+          "adjusted_p_value": 1.6927655668557892e-12
+        },
+        {
+          "domain": "D11",
+          "rank": 309,
+          "adjusted_p_value": 0.02769274641993297
+        },
+        {
+          "domain": "D12",
+          "rank": 16198,
+          "adjusted_p_value": 0.999923916576191
+        },
+        {
+          "domain": "D13",
+          "rank": 1255,
+          "adjusted_p_value": 0.386429559580256
+        },
+        {
+          "domain": "D14",
+          "rank": 2358,
+          "adjusted_p_value": 0.015356420618854399
+        }
+      ]
+    },
+    "agent_file_consistency": {
+      "n_domains_in_answers_equals_csv": true,
+      "spots_analyzed_equals_csv_rows": true,
+      "domain_sizes_in_answers_equal_csv": {
+        "D1": null,
+        "D10": null,
+        "D11": null,
+        "D12": null,
+        "D13": null,
+        "D14": null,
+        "D2": null,
+        "D3": null,
+        "D4": null,
+        "D5": null,
+        "D6": null,
+        "D7": null,
+        "D8": null,
+        "D9": null
+      },
+      "reported_6nn_coherence": null,
+      "recomputed_6nn_coherence": 0.9397,
+      "marker_rows_per_domain": {
+        "D1": 16198,
+        "D10": 16198,
+        "D11": 16198,
+        "D12": 16198,
+        "D13": 16198,
+        "D14": 16198,
+        "D2": 16198,
+        "D3": 16198,
+        "D4": 16198,
+        "D5": 16198,
+        "D6": 16198,
+        "D7": 16198,
+        "D8": 16198,
+        "D9": 16198
+      },
+      "marker_columns": [
+        "domain_id",
+        "gene",
+        "effect_size",
+        "p_value",
+        "adjusted_p_value",
+        "rank",
+        "fraction_in",
+        "fraction_out"
+      ]
+    }
+  },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "adjusted_rand_index": 0.2147,
+      "normalized_mutual_information": 0.3882,
+      "layer_claims_supported": 0.859
+    },
+    "score": 0.4873,
+    "sensitivity": {
+      "double_weight_on_adjusted_rand_index": 0.4192,
+      "double_weight_on_normalized_mutual_information": 0.4625,
+      "double_weight_on_layer_claims_supported": 0.5802
+    },
+    "sensitivity_range": [
+      0.4192,
+      0.5802
+    ]
+  },
+  "notes": [
+    "The reference is a manual annotation of 7 labels. The agent's number of domains was not fixed, so ARI and NMI are used because they do not need matching labels.",
+    "28 spots have no reference label and are left out of the agreement metrics. They are counted in the coherence of the agent's domains.",
+    "Domains the agent called 'uncertain' are not scored as errors by these metrics. per_agent_domain shows which reference labels they contain.",
+    "The reference is itself a manual annotation, not an independent truth.",
+    "Layer claims are read from the agent's domain_interpretations text by keyword (white matter, layer numbers, upper/supragranular, deep/infragranular). If no interpretation names a layer, that item is left out of the score."
+  ],
+  "provenance": {
+    "inputs_sha256": {
+      "spatial_domains.csv": "01a83d9bdc239c3ac4a6e6ef1a88e586b6cc53bc557ae79f246ac81045fbe454",
+      "domain_markers.csv": "f998dff02988fb11d7e4aa7f9c338285f1916bc94e22ba704532bbecbeb26ec5",
+      "answers.json": "64f74539d6effc6333f493712cd36c744952dc6b1996e4bdbeb760c712da9238",
+      "analysis_report.txt": "439f6890d17877eaabdb3011d85857ac7bf3884c601f66cba8703d6494b65ff0",
+      "hidden_labels.csv": "390d122af2b498ec269d0b91e992c94dfedc3a19694c3ad700335e999a7d329b",
+      "agent_input.h5ad": "baebbb9d829454a1db6bf29e09123bed53adf05a866040d5f5b71a4d6f052b2c"
+    },
+    "script_sha256": "1b59141296e91473b6b1c2c1d07a84b0cd301710aeb4ea6e3c643d5edfd6e0a4",
+    "scorer": {
+      "python": "3.13.7",
+      "numpy": "2.5.5",
+      "pandas": "3.1.1",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "anndata": "0.13.4"
+    }
+  }
+}

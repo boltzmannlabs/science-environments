@@ -248,6 +248,26 @@
       "counts_in_report_match_de_results": true
     }
   },
+  "score": {
+    "rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+    "items": {
+      "agreement": 0.961,
+      "coverage": 0.565,
+      "fold_change_correlation": 0.987,
+      "top_20_genes_found": 1.0
+    },
+    "score": 0.8782,
+    "sensitivity": {
+      "double_weight_on_agreement": 0.8948,
+      "double_weight_on_coverage": 0.8156,
+      "double_weight_on_fold_change_correlation": 0.9,
+      "double_weight_on_top_20_genes_found": 0.9026
+    },
+    "sensitivity_range": [
+      0.8156,
+      0.9026
+    ]
+  },
   "notes": [
     "Coverage and agreement are reported separately and are not combined. There are no weights and no pass/fail flags.",
     "Coverage is limited by the agent's expression filter: compare paper_baseMean_median_tested with paper_baseMean_median_untested.",
@@ -312,7 +332,7 @@
       "summary.json": "c59ef547823f59fdfe96ad3cf5889f61516f5bb85d35672ea6ea45692fe0ce3e",
       "analysis_report.txt": "fdaa733c31fa52b96df61123b5887a9ccaa901b906dfce968c2e5b4d22c5f414"
     },
-    "script_sha256": "8214b62fd2d987c82616b9a6c45e66784f7b2a35482a3379c9b00d47164e70e4",
+    "script_sha256": "5922be2e39618bb6d4116f2bb28c93f98dcf86e47f466d3dba0e02e0218083cf",
     "scorer": {
       "python": "3.13.18",
       "numpy": "2.5.3",
