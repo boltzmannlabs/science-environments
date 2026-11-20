@@ -1,0 +1,136 @@
+{
+  "records": {
+    "C00_igdesign_executions": {
+      "tool": "IgDesign local inference (4 executions)",
+      "commands": [
+        "PYTHONPATH=<igdesign>/src:<igdesign> python code/run_igdesign_mmap.py inputs/hcdr3_1shot.yaml",
+        "PYTHONPATH=<igdesign>/src:<igdesign> python code/run_igdesign_mmap.py inputs/hcdr3_best100.yaml",
+        "PYTHONPATH=<igdesign>/src:<igdesign> python code/run_igdesign_mmap.py inputs/hcdr123_1shot.yaml",
+        "PYTHONPATH=<igdesign>/src:<igdesign> python code/run_igdesign_mmap.py inputs/hcdr123_best100.yaml"
+      ]
+    },
+    "C01": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0ef99850a93adf684d5e",
+      "candidate_id": "t014_reference_osocimab",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014_reference_osocimab.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9"
+    },
+    "C02": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f029de6b44b075e0549",
+      "candidate_id": "t014r002_hcdr3_best100_012",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr3_best100_012.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr3_c012"
+    },
+    "C03": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f0ad29658acc3056488",
+      "candidate_id": "t014r002_hcdr3_best100_022",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr3_best100_022.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr3_c022"
+    },
+    "C04": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f12445ae94313c459fe",
+      "candidate_id": "t014r002_hcdr3_best100_027",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr3_best100_027.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr3_c027"
+    },
+    "C05": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f18239a6b9f38bf42ad",
+      "candidate_id": "t014r002_hcdr3_best100_065",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr3_best100_065.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr3_c065"
+    },
+    "C06": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f20445ae94313c45a0a",
+      "candidate_id": "t014r002_hcdr3_best100_082",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr3_best100_082.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr3_c082"
+    },
+    "C07": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f26d29658acc305649b",
+      "candidate_id": "t014r002_hcdr123_best100_034",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr123_best100_034.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr123_c034"
+    },
+    "C08": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f2c445ae94313c45a19",
+      "candidate_id": "t014r002_hcdr123_best100_035",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr123_best100_035.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr123_c035"
+    },
+    "C09": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f429030bff41644f3b8",
+      "candidate_id": "t014r002_hcdr123_best100_067",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr123_best100_067.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr123_c067"
+    },
+    "C10": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f489850a93adf684d7c",
+      "candidate_id": "t014r002_hcdr123_best100_070",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr123_best100_070.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr123_c070"
+    },
+    "C11": {
+      "tool": "Boltz2 (boltz-structure-prediction)",
+      "doc_id": "6afb0f599030bff41644f3c6",
+      "candidate_id": "t014r002_hcdr123_best100_082",
+      "payload_file": "@src/inputs/submitted_requests/boltz2_t014r002_hcdr123_best100_082.json",
+      "outcome": "Success (job_terminal_confirmed)",
+      "node": "boltzmann9",
+      "artifacts": "@results/raw/boltz2/hcdr123_c082"
+    }
+  },
+  "task_id": "task_014_fxi_igdesign_cdr_redesign",
+  "run_id": "run_002_igdesign_native_reconstruction",
+  "method_summary": [
+    {
+      "stage": "Generate samples",
+      "tool_and_settings": "IgDesign; 1 + 100 samples per scope",
+      "result": "202 samples"
+    },
+    {
+      "stage": "Verify and deduplicate",
+      "tool_and_settings": "Native framework/VL preservation and sequence identity",
+      "result": "158 unique sequences"
+    },
+    {
+      "stage": "Measure native recovery",
+      "tool_and_settings": "Position-aligned designed-scope AAR",
+      "result": "1-shot and best-of-100 endpoints"
+    },
+    {
+      "stage": "Evaluate geometry",
+      "tool_and_settings": "Five designs per scope; Boltz2; C\u03b1 framework fit",
+      "result": "10 candidate models + native control"
+    }
+  ],
+  "completed_outcome": "Designed-scope AAR is 0.6923/0.8462 for HCDR3 1-shot/best-of-100 and 0.7241/0.7931 for HCDR123. t014r002_hcdr3_best100_012 has HCDR3 deviation 1.3144 \u00c5 and Fv deviation 0.4382 \u00c5 from the predicted native Fv."
+}

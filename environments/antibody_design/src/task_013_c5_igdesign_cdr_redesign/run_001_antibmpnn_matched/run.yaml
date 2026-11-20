@@ -1,0 +1,16 @@
+task_id: task_013_c5_igdesign_cdr_redesign
+run_id: run_001_antibmpnn_matched
+workflow_id: wf_antibmpnn_fixed_backbone_cdr_redesign
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched/run.json
+    sha256: 9e411c1c6f4996ea72c8037e842f9873c489908fb45a0dcc25caf1595edf3264
+  agent_settings:
+    path: ../../../configs/task_013_c5_igdesign_cdr_redesign/run_001_antibmpnn_matched.json
+    sha256: aa989d02a1a91e2e397754fc53099bb348cbb422b242291fa8bf41575cd9b1dc
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

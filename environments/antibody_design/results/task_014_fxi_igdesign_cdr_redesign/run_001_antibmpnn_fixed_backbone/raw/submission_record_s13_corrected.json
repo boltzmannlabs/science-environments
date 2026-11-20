@@ -1,0 +1,21 @@
+{
+ "experiment_name": "task014_run001_boltz2_hcdr123_s13_v3",
+ "vh_sha256": "f40d2b292b4c788436d7a48fc0385650467a612f51b122e429b523b69a71e327",
+ "vl_sha256": "d53de0910c5dd00fb407ccceed34b330ed936236c7ca494183f91bbe0e9de6f2",
+ "sequence_hash": "e92938d7ae81c443",
+ "pre_submit_assertions": "VH==CSV13; VL==CSV13==ref; pos32=A; pos105=G",
+ "submit_response": {
+  "success": true,
+  "message": "Experiment processed successfully",
+  "apiResponse": {
+   "task_name": "boltz-structure-prediction",
+   "status": "queued",
+   "job_name": "task-structurepred-boltz2fgtx7"
+  },
+  "docId": "6afb44b47426d09ad749d5fe",
+  "creditsUsed": 1,
+  "remainingCredits": 97984.09000000017,
+  "totalFreezedCredits": 953,
+  "estimated_time": "0 hr 0 min 3 sec"
+ }
+}

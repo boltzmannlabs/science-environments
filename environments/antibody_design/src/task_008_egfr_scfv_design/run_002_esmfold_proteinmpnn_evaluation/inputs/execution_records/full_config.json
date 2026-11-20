@@ -1,0 +1,16 @@
+{
+  "config": {
+    "use_subagent": false,
+    "llm_model": "glm",
+    "llm_version": "5.3",
+    "tokens_used": {
+      "input_output": "~104000",
+      "cache_reads": "~690000"
+    },
+    "time_budget": {
+      "minutes": "~95"
+    }
+  },
+  "usage_basis": "Approximate (~) per-run share of the session LLM usage recorded by the hosting chat; exact per-run token split was not instrumented. Chat totals differ from per-run attribution.",
+  "submitted_requests": {}
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_002_igdesign_reconstruction",
+  "workflow_id": "wf_igdesign_reference_backbone_reconstruction",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction",
+    "results": "results/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction"
+  },
+  "preparation": {
+    "description": "Same Eculizumab VH/VL pair and heavy-chain edit masks as run_001. One sample and a separate 100-sample pool are generated for each scope; the raw CSVs and serialized sampling configurations are retained.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Generate HCDR3 pool",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; separate 1-shot and 100-sample executions",
+          "outputs": {
+            "recorded_result": "101 samples"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate HCDR123 pool",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "IgDesign; separate 1-shot and 100-sample executions",
+          "outputs": {
+            "recorded_result": "101 samples"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate HCDR3 pool"
+      ]
+    },
+    {
+      "purpose": "Measure native recovery",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Position-aligned per-CDR AAR",
+          "outputs": {
+            "recorded_result": "202 sample-level metric rows"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate HCDR123 pool"
+      ]
+    },
+    {
+      "purpose": "Select shared evaluation panel",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Four recorded designs",
+          "outputs": {
+            "recorded_result": "Boltz2 and ESMFold evaluation retained in run_001"
+          }
+        }
+      ],
+      "depends_on": [
+        "Measure native recovery"
+      ]
+    }
+  ],
+  "outcome": {
+    "counts": {
+      "samples_generated": 202,
+      "configs": 4,
+      "full_native_cdr_recoveries": 0
+    },
+    "key_values": {
+      "hcdr3_pool_hcdr3_mean_aar": 0.5193,
+      "hcdr3_pool_hcdr3_max_aar": 0.6667,
+      "hcdr123_pool_hcdr1_mean": 0.645,
+      "hcdr123_pool_hcdr2_mean": 0.725
+    },
+    "summary": "HCDR3-only 1-shot AAR is 0.4667; the separate 100-sample pool has mean 0.5193 and maximum 0.6667. HCDR123 pool mean HCDR3 AAR is 0.5160; maximum 0.6667."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "0ae166e29f347a1566e4e4e17283cb466cdff212751ec4fac9222e9cdfff6340",
+    "standard_table_provenance": "Standard candidate/sequence/metric views were transcribed from preserved native CSV/JSON outputs during package arrangement. Reassembled IgDesign variable domains use only the saved native framework and declared CDR placements. No generation, model prediction, ranking policy or measured endpoint was rerun. Generation-run shortlists point to the existing evaluation run; they do not represent additional predictions.",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction.json",
+    "agent_config_sha256": "864aa5134438556503b4b669c937d9c66196b740114ed9db6402fdd173c9d9d1",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "aar_table_csv": "@results/aar_table.csv",
+    "aar_evaluation_json": "@results/aar_evaluation.json",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json",
+    "report": "@results/report.md",
+    "structures": "@results/structures",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run",
+    "evaluated_in": "run_001_antibmpnn_matched"
+  }
+}

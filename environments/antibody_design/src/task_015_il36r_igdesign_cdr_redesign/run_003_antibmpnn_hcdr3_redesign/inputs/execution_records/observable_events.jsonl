@@ -1,0 +1,4 @@
+{"ts": "2026-11-16T13:1x:00Z", "run": "run_003_antibmpnn_hcdr3_redesign", "event": "input verification completed (6u6u chains, CDR masks, source CSV hash)", "evidence": "@src/inputs/execution_records/input_hashes.json"}
+{"ts": "2026-11-16T13:2x:00Z", "run": "run_003_antibmpnn_hcdr3_redesign", "event": "stage executed: upload complex PDB, submit HCDR3-only job", "evidence": "@results/raw"}
+{"ts": "2026-11-16T16:4x:00Z", "run": "run_003_antibmpnn_hcdr3_redesign", "event": "analysis and metrics computed from raw artifacts", "evidence": "@results"}
+{"ts": "2026-11-16T17:0x:00Z", "run": "run_003_antibmpnn_hcdr3_redesign", "event": "per-run packaging completed (run.json, report.md, logs, configs, execution_records)", "evidence": "@results/run.json"}

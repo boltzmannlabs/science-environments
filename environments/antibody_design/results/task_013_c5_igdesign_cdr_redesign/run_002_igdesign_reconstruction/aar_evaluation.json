@@ -1,0 +1,134 @@
+{
+ "run_001_hcdr3only": {
+  "pool": "run_001_antibmpnn_hcdr3only",
+  "n": 100,
+  "HCDR1": {
+   "mean_aar": 1.0,
+   "max_aar": 1.0,
+   "n_full_recovery": 100
+  },
+  "HCDR2": {
+   "mean_aar": 1.0,
+   "max_aar": 1.0,
+   "n_full_recovery": 100
+  },
+  "HCDR3": {
+   "mean_aar": 0.2827,
+   "max_aar": 0.4,
+   "n_full_recovery": 0
+  }
+ },
+ "run_001_hcdr123": {
+  "pool": "run_001_antibmpnn_hcdr123",
+  "n": 100,
+  "HCDR1": {
+   "mean_aar": 0.6262,
+   "max_aar": 0.75,
+   "n_full_recovery": 0
+  },
+  "HCDR2": {
+   "mean_aar": 0.6275,
+   "max_aar": 0.75,
+   "n_full_recovery": 0
+  },
+  "HCDR3": {
+   "mean_aar": 0.282,
+   "max_aar": 0.4,
+   "n_full_recovery": 0
+  }
+ },
+ "run_002_hcdr3_1shot": {
+  "pool": "run_002_igdesign_hcdr3_1shot",
+  "n": 1,
+  "HCDR3": {
+   "mean_aar": 0.4667,
+   "max_aar": 0.4667,
+   "n_full_recovery": 0
+  },
+  "HCDR1": null,
+  "HCDR2": null,
+  "note": "HCDR3-only scope; HCDR1/2 kept native (AAR 1.0 by construction)"
+ },
+ "run_002_hcdr3_100": {
+  "pool": "run_002_igdesign_hcdr3_100",
+  "n": 100,
+  "HCDR3": {
+   "mean_aar": 0.5193,
+   "max_aar": 0.6667,
+   "n_full_recovery": 0
+  },
+  "HCDR1": null,
+  "HCDR2": null,
+  "note": "HCDR3-only scope; HCDR1/2 kept native (AAR 1.0 by construction)"
+ },
+ "run_002_hcdr123_1shot": {
+  "pool": "run_002_igdesign_hcdr123_1shot",
+  "n": 1,
+  "HCDR1": {
+   "mean_aar": 0.625,
+   "max_aar": 0.625,
+   "n_full_recovery": 0
+  },
+  "HCDR2": {
+   "mean_aar": 0.5,
+   "max_aar": 0.5,
+   "n_full_recovery": 0
+  },
+  "HCDR3": {
+   "mean_aar": 0.5333,
+   "max_aar": 0.5333,
+   "n_full_recovery": 0
+  }
+ },
+ "run_002_hcdr123_100": {
+  "pool": "run_002_igdesign_hcdr123_100",
+  "n": 100,
+  "HCDR1": {
+   "mean_aar": 0.645,
+   "max_aar": 0.75,
+   "n_full_recovery": 0
+  },
+  "HCDR2": {
+   "mean_aar": 0.725,
+   "max_aar": 0.875,
+   "n_full_recovery": 0
+  },
+  "HCDR3": {
+   "mean_aar": 0.516,
+   "max_aar": 0.6667,
+   "n_full_recovery": 0
+  }
+ },
+ "benchmark_hcdr3": {
+  "pool": "benchmark_inverse_folding_HCDR3",
+  "n": 62,
+  "HCDR1": {
+   "mean_aar": 1.0,
+   "max_aar": 1.0
+  },
+  "HCDR2": {
+   "mean_aar": 1.0,
+   "max_aar": 1.0
+  },
+  "HCDR3": {
+   "mean_aar": 0.4828,
+   "max_aar": 0.5333
+  }
+ },
+ "benchmark_hcdr123": {
+  "pool": "benchmark_inverse_folding_HCDR123",
+  "n": 67,
+  "HCDR1": {
+   "mean_aar": 0.625,
+   "max_aar": 0.625
+  },
+  "HCDR2": {
+   "mean_aar": 0.75,
+   "max_aar": 0.75
+  },
+  "HCDR3": {
+   "mean_aar": 0.4776,
+   "max_aar": 0.5333
+  }
+ }
+}

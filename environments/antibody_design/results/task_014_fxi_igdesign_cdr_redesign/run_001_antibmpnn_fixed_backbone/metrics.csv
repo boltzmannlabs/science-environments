@@ -1,0 +1,58 @@
+metric,scope,value,unit,definition
+n_unique_candidates,hcdr3_scope,11,count,unique VH sequences among 20 samples
+n_unique_candidates,hcdr123_scope,15,count,unique VH sequences among 20 samples
+gate_pass,both,40/40,count,VL identical + VH len 120 + edits inside mask
+mean_designed_scope_aar,hcdr3_scope,0.5577,fraction,"mean identity over designed positions, 20 samples"
+best_designed_scope_aar,hcdr3_scope,0.6923,fraction,best identity over designed positions among samples
+mean_designed_scope_aar,hcdr123_scope,0.6673,fraction,"mean identity over designed positions, 20 samples"
+best_designed_scope_aar,hcdr123_scope,0.7241,fraction,best identity over designed positions among samples
+scRMSD_HCDR1,t014r001_hcdr3_scope_s02,0.8432,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr3_scope_s02,0.9029,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr3_scope_s02,2.6003,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr3_scope_s02,1.858,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr3_scope_s02,0.7974,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr3_scope_s15,0.5049,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr3_scope_s15,0.5593,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr3_scope_s15,3.7995,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr3_scope_s15,2.5745,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr3_scope_s15,0.9492,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr3_scope_s16,0.3726,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr3_scope_s16,0.3011,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr3_scope_s16,2.2366,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr3_scope_s16,1.5185,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr3_scope_s16,0.6317,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr3_scope_s11,0.2556,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr3_scope_s11,0.1813,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr3_scope_s11,2.9316,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr3_scope_s11,1.9697,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr3_scope_s11,0.7386,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr3_scope_s01,0.2675,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr3_scope_s01,0.1736,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr3_scope_s01,2.3062,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr3_scope_s01,1.5531,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr3_scope_s01,0.591,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr123_scope_s02,0.6746,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr123_scope_s02,0.5157,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr123_scope_s02,3.1205,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr123_scope_s02,2.1364,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr123_scope_s02,0.8117,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr123_scope_s01,0.2556,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr123_scope_s01,0.4338,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr123_scope_s01,2.3541,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr123_scope_s01,1.5982,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr123_scope_s01,0.609,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr123_scope_s13,0.1959,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr123_scope_s13,0.3784,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr123_scope_s13,2.934,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr123_scope_s13,1.9771,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr123_scope_s13,0.7472,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr123_scope_s16,0.3374,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr123_scope_s16,0.4689,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr123_scope_s16,4.8308,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr123_scope_s16,3.2486,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr123_scope_s16,1.1911,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR1,t014r001_hcdr123_scope_s05,0.4437,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR2,t014r001_hcdr123_scope_s05,0.4375,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR3,t014r001_hcdr123_scope_s05,1.3367,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_HCDR123,t014r001_hcdr123_scope_s05,0.9529,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv
+scRMSD_FV,t014r001_hcdr123_scope_s05,0.3978,A,CA RMSD after framework Kabsch fit vs Boltz2 reference Fv

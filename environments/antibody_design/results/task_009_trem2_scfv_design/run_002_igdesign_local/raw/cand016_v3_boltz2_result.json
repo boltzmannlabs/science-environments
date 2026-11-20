@@ -1,0 +1,38 @@
+{
+  "status": "Success",
+  "OutputData": {
+    "pdb_zip": {
+      "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/pdbs_outputs.zip",
+      "download_link": [
+        "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/pdbs_outputs.zip"
+      ]
+    },
+    "csv_path": {
+      "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/paths.csv",
+      "download_link": [
+        "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/paths.csv"
+      ]
+    },
+    "zip_path": {
+      "path": "users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/outputs.zip",
+      "download_link": [
+        "https://storage.googleapis.com/boltbio-bz/users/680f678c1b1d883c92aa706c/Boltz2/boltz_structure_prediction/6afb3e64c3dde753301b1ae5/outputs.zip"
+      ]
+    }
+  },
+  "billing": [
+    {
+      "job_name": "task-structurepred-boltz25sks6",
+      "tool_name": "boltz-structure-prediction",
+      "node": "boltzmann9",
+      "duration_seconds": 222,
+      "total_tool_runtime": 220,
+      "tool_lifetime_seconds": 627,
+      "rounded_minutes": 4,
+      "rate_per_hour": 50,
+      "amount": 4
+    }
+  ],
+  "time_taken": "0:03:37.688381",
+  "public_record_note": "Signed download URL query parameters removed; scientific outputs and identifiers retained."
+}

@@ -1,0 +1,62 @@
+{
+  "request": {
+    "job_name": "task014_run001_antibmpnn_hcdr123",
+    "experiment_id": "6afb3228239a6b9f38bf4802",
+    "user_id": "680f678c1b1d883c92aa706c",
+    "input_path": "/app/inputs/6afb3228239a6b9f38bf4802/6afb3228239a6b9f38bf4802_task014_run001_antibmpnn_hcdr123.pdb",
+    "chains_to_design": [
+      "A"
+    ],
+    "residue_positions_to_design": {
+      "A": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ]
+    },
+    "generation_count": 20,
+    "model_name": "antibmpnn_020",
+    "sampling_temperature": 0.1,
+    "backbone_noise": 0.0,
+    "seed": 37
+  },
+  "fixed_chains_by_pdb": {
+    "6afb3228239a6b9f38bf4802_task014_run001_antibmpnn_hcdr123": [
+      "B"
+    ]
+  },
+  "pdb_count": 1,
+  "sequence_count": 20,
+  "expected_sequence_count": 20,
+  "csv_columns": [
+    "pdb_name",
+    "heavy_chain",
+    "light_chain"
+  ]
+}

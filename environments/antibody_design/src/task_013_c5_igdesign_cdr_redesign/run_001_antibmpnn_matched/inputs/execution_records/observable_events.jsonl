@@ -1,0 +1,12 @@
+{"utc": "2026-11-16T16:52Z", "event": "submitted AntiBMPNN hcdr3only doc 6afb34bb7fc9c7f56da82672"}
+{"utc": "2026-11-16T16:52Z", "event": "submitted AntiBMPNN hcdr123 doc 6afb34cbdc1d60e5b46010d6"}
+{"utc": "2026-11-16T17:21Z", "event": "AntiBMPNN hcdr3only terminal Success; results downloaded+verified 100 rows, constraints 200/200"}
+{"utc": "2026-11-16T17:22Z", "event": "AntiBMPNN hcdr123 terminal Success; results downloaded+verified 100 rows, constraints 200/200"}
+{"utc": "2026-11-16T17:24Z", "event": "selection: 6 candidates + native from frozen rule (top-2/pool by AAR sum)"}
+{"utc": "2026-11-16T17:24Z..17:26Z", "event": "submitted 7 Boltz2 jobs (native + 6 candidates)"}
+{"utc": "2026-11-16T18:06Z", "event": "independent literal audit: s031 original request had VH pos98 Y vs intended W; job EXCLUDED"}
+{"utc": "2026-11-16T18:11Z", "event": "corrected s031 submitted programmatically (doc 6afb4636c3dde753301b1c12), pre-submit assertions passed"}
+{"utc": "2026-11-16T18:18Z", "event": "all 7 Boltz2 jobs terminal Success; outputs downloaded; 7/7 identity checks PASS"}
+{"utc": "2026-11-16T18:24Z", "event": "ESMFold track completed (7 models, native pLDDT 88.11); matched scRMSD analysis computed"}
+{"utc": "2026-11-16T18:27Z", "event": "benchmark comparison computed: native Boltz2 Fv scRMSD vs crystal 1.161 A; ESMFold 1.266 A (released ESMFold row 1.204 A)"}
+{"utc": "2026-11-16T18:50Z", "event": "configs/<task>/<run>.json replaced with 5-key Agent-Scientist settings record; config tokens/time are ~estimates: chat-attributed GLM usage for this run's window; tokens input_output + cache_reads recorded separately; not a per-token metered total"}

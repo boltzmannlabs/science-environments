@@ -1,0 +1,16 @@
+task_id: task_009_trem2_scfv_design
+run_id: run_001_antibmpnn_matched
+workflow_id: wf_trem2_antibmpnn_cdr_redesign
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/run.json
+    sha256: 2a5cc2b77974562f0aa1d002570b7800044a288387762d37d8ca5f9fdb0efd0c
+  agent_settings:
+    path: ../../../configs/task_009_trem2_scfv_design/run_001_antibmpnn_matched.json
+    sha256: 5242d15d6a02ae513f4bafce41e3b93d9c24101781cf2fc55e5e8cc11f112a2e
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

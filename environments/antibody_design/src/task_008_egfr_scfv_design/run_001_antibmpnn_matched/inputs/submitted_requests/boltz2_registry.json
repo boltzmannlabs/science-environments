@@ -1,0 +1,38 @@
+{
+  "lane": "boltzmann",
+  "tool": "Boltz2",
+  "purpose": "Matched structure+affinity evaluation of reference vs shortlisted AntiBMPNN CDR-redesign candidates (task008 run_001 stage 4). Each job: scFv entity + EGFR ECD (1YY9 construct, UNP 25-642) entity, identical conditions.",
+  "submitted_utc": "2026-11-16T13:15Z",
+  "payload_files": {
+    "reference": "boltz2_reference.json",
+    "cet_008_r1_s15": "boltz2_cet_008_r1_s15.json",
+    "cet_008_r1_s18": "boltz2_cet_008_r1_s18.json",
+    "cet_008_r1_s14": "boltz2_cet_008_r1_s14.json",
+    "cet_008_r1_s02": "boltz2_cet_008_r1_s02.json",
+    "cet_008_r1_s08": "boltz2_cet_008_r1_s08.json",
+    "cet_008_r1_s06": "boltz2_cet_008_r1_s06.json"
+  },
+  "valid_jobs": {
+    "reference": "6afb00f5445ae94313c45679",
+    "cet_008_r1_s15": "6afb0163445ae94313c456a2",
+    "cet_008_r1_s18": "6afb016f9de6b44b075e03df",
+    "cet_008_r1_s14": "6afb017ad29658acc305632c",
+    "cet_008_r1_s02": "6afb01929de6b44b075e03f1",
+    "cet_008_r1_s08": "6afb023b445ae94313c45721",
+    "cet_008_r1_s06": "6afb0263239a6b9f38bf418c"
+  },
+  "void_discarded": {
+    "6afb0131239a6b9f38bf4145": "s15 first submit: scFv string transcribed from raw results CSV row, did not match shortlist; resubmitted as _v2",
+    "6afb019c9030bff41644f267": "s08 first submit: EGFR antigen corrupted in transcription (dropped P); resubmitted as _v2",
+    "6afb02449de6b44b075e0426": "s06 first submit: EGFR antigen corrupted (R->A); resubmitted as _v2"
+  },
+  "experiment_names": {
+    "reference": "task008_r1_reference",
+    "cet_008_r1_s15": "task008_r1_cet_008_r1_s15_v2",
+    "cet_008_r1_s18": "task008_r1_cet_008_r1_s18",
+    "cet_008_r1_s14": "task008_r1_cet_008_r1_s14",
+    "cet_008_r1_s02": "task008_r1_cet_008_r1_s02",
+    "cet_008_r1_s08": "task008_r1_cet_008_r1_s08_v2",
+    "cet_008_r1_s06": "task008_r1_cet_008_r1_s06_v2"
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "cand001": {
+  "doc": "6afb36537fc9c7f56da826c9",
+  "TREM2_match": true,
+  "n_scfv_diffs_vs_design": 1,
+  "diffs": [
+   [
+    56,
+    "S",
+    "G"
+   ]
+  ],
+  "diffs_all_within_H_CDR_mask": true
+ },
+ "cand019": {
+  "doc": "6afb369d7426d09ad749d1d1",
+  "TREM2_match": true,
+  "n_scfv_diffs_vs_design": 1,
+  "diffs": [
+   [
+    56,
+    "S",
+    "G"
+   ]
+  ],
+  "diffs_all_within_H_CDR_mask": true
+ },
+ "cand067": {
+  "doc": "6afb36addc1d60e5b460113a",
+  "TREM2_match": true,
+  "n_scfv_diffs_vs_design": 1,
+  "diffs": [
+   [
+    56,
+    "S",
+    "G"
+   ]
+  ],
+  "diffs_all_within_H_CDR_mask": true
+ },
+ "cand016": {
+  "doc": "6afb36d975ff2e0d02e6eb96",
+  "TREM2_match": true,
+  "n_scfv_diffs_vs_design": 1,
+  "diffs": [
+   [
+    56,
+    "S",
+    "G"
+   ]
+  ],
+  "diffs_all_within_H_CDR_mask": true
+ },
+ "erratum": {
+  "finding": "All 4 Boltz2 submissions carried the REFERENCE H2 (VH 50-57 'ISPSSGYT') instead of the designed H2 'ISPSGGYT' (single S54G mutation lost in transcription from the script-printed payload to the submission calls).",
+  "scope": "Exactly one residue (scFv index 56 / VH 0-based 54) per candidate; H1 and H3 designs correctly applied; TREM2 antigen exact; framework exact.",
+  "consequence": "Measured ipTM/pTM/pLDDT correspond to as-submitted sequences (designed H1+H3, reference H2), not the full intended H1+H2+H3 design. Documented per no-new-submissions directive.",
+  "discovered": "2026-11-16T17:35Z via PDB-echo sequence verification"
+ }
+}

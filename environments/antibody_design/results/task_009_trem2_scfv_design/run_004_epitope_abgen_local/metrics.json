@@ -1,0 +1,96 @@
+{
+ "definitions": {
+  "iptm/ptm/complex_plddt/complex_pde": "Boltz2 native confidence json (raw scales retained)",
+  "cdr_plddt_mean": "mean pLDDT over CDR positions H28-35/53-60/99-112 (123-num incl SM), L27-32/50-52/89-97 (107-num) \u2014 original stage5b definition",
+  "contacts_5A": "ALL heavy atoms incl backbone (all ATOM records), strict <5.0 A, per-atom pair count (original task009 definition, task009_r1_v2_bundle.py interface_stats)",
+  "contacts_5A_erratum": "earlier values 160/228/178 were sidechain-only (backbone atoms excluded); recomputed 2026-11-16 from identical saved PDBs; matches independent root audit 704/824/343"
+ },
+ "reference": {
+  "iptm": 0.8987,
+  "ptm": 0.9316,
+  "complex_plddt": 0.9424,
+  "complex_pde": 0.3989,
+  "note": "reference control from run_001 matched evaluation (same protocol)"
+ },
+ "candidates": {
+  "s1_cand13": {
+   "source_backbone_sample": 1,
+   "panel_row": 13,
+   "antibmpnn_score": 0.7774,
+   "seq_recovery": 0.3958,
+   "n_mutations_H": 25,
+   "n_mutations_L": 12,
+   "boltz2": {
+    "doc_id": "6afb7e1375ff2e0d02e6f23f",
+    "iptm": 0.3125,
+    "ptm": 0.6944,
+    "complex_plddt": 0.8365,
+    "complex_pde": 1.1213,
+    "cdr_plddt_mean": 0.6367,
+    "contacts_5A": 704,
+    "echo_verified": true,
+    "contacts_5A_erratum": 160
+   },
+   "scfv_sha256": "29a52473afbf5da9a501646eb9e28cd91a1b3e24e860bc397df746936152186e",
+   "contacts_5A_erratum": 160,
+   "contacts_5A_erratum_note": "sidechain-only pairs (N/CA/C/O excluded), <=5.0A \u2014 mislabeled as all-heavy-atom; preserved as erratum",
+   "contacts_5A": 704
+  },
+  "s2_cand13": {
+   "source_backbone_sample": 2,
+   "panel_row": 13,
+   "antibmpnn_score": 0.6289,
+   "seq_recovery": 0.5208,
+   "n_mutations_H": 23,
+   "n_mutations_L": 18,
+   "boltz2": {
+    "doc_id": "6afb7e1e7426d09ad749df43",
+    "iptm": 0.6039,
+    "ptm": 0.7904,
+    "complex_plddt": 0.8402,
+    "complex_pde": 0.8276,
+    "cdr_plddt_mean": 0.6373,
+    "contacts_5A": 824,
+    "echo_verified": true,
+    "contacts_5A_erratum": 228
+   },
+   "scfv_sha256": "763bf99aa90585dddcdda6a83d5ed8dcf02e0e9b228dee89767d0c8bac9612b3",
+   "contacts_5A_erratum": 228,
+   "contacts_5A_erratum_note": "sidechain-only pairs (N/CA/C/O excluded), <=5.0A \u2014 mislabeled as all-heavy-atom; preserved as erratum",
+   "contacts_5A": 824
+  },
+  "s3_cand36": {
+   "source_backbone_sample": 3,
+   "panel_row": 36,
+   "antibmpnn_score": 0.5107,
+   "seq_recovery": 0.1458,
+   "n_mutations_H": 16,
+   "n_mutations_L": 7,
+   "boltz2": {
+    "doc_id": "6afb7e29c3dde753301b20aa",
+    "iptm": 0.5455,
+    "ptm": 0.8056,
+    "complex_plddt": 0.8795,
+    "complex_pde": 0.6661,
+    "cdr_plddt_mean": 0.786,
+    "contacts_5A": 343,
+    "echo_verified": true,
+    "contacts_5A_erratum": 178
+   },
+   "scfv_sha256": "84d68d54f667d64ed46c0e76972d6728ec0e3a6d7ba2df036b603661a72545d0",
+   "contacts_5A_erratum": 178,
+   "contacts_5A_erratum_note": "sidechain-only pairs (N/CA/C/O excluded), <=5.0A \u2014 mislabeled as all-heavy-atom; preserved as erratum",
+   "contacts_5A": 343
+  }
+ },
+ "not_evaluated": {
+  "s0_panel": "sample-0 backbone: 0/40 AntiBMPNN candidates passed gates (all 40 introduced CDR Cys) \u2014 no candidate from this backbone",
+  "s1_cand30": "submitted and ACCEPTED (experiment task009_trem2_corrEpitope_s1_cand30_boltz2) but the submit-response docId was lost to a local client crash before receipt capture; outcome_unknown; NOT resubmitted (would duplicate an accepted job). Panel slot filled by s1_cand13, the next-best distinct candidate under the established rule.",
+  "s1_cand30_scfv_sha256_prefix": "93877f5d964356b7"
+ },
+ "provenance": {
+  "generation": "epitope_abgen local core (corrected feature), checkpoint sha256 f6879339bbd4cd49\u2026",
+  "inverse_fold": "local AntiBMPNN adapter (v3 contract), 40/panel, gates G1-G3",
+  "evaluation": "Boltz2 platform, matched protocol to run_001 reference control"
+ }
+}

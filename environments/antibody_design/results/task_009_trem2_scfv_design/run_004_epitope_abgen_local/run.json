@@ -1,0 +1,117 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_004_epitope_abgen_local",
+  "workflow_id": "wf_trem2_epitope_abgen_local_correction",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_009_trem2_scfv_design/run_004_epitope_abgen_local",
+    "results": "results/task_009_trem2_scfv_design/run_004_epitope_abgen_local"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  },
+  "preparation": {
+    "description": "Saved reference framework, TREM2 antigen and 20-residue epitope. The accepted prepared-feature generation uses explicit local masks: H 28\u201335, 53\u201360, 99\u2013112 on the 123-residue H chain; L 27\u201332, 50\u201352, 89\u201397 on the 107-residue L chain. The actual input mask and protected cysteine were verified before generation.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Prepare features",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Explicit chain-local CDR masks; saved epitope and feature tensors",
+          "outputs": {
+            "recorded_result": "10/10 recorded mask checks"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate backbones",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "epitope_abgen local core; 4 samples; seed 2026; max_tokens 384",
+          "outputs": {
+            "recorded_result": "4 finite backbone samples"
+          }
+        }
+      ],
+      "depends_on": [
+        "Prepare features"
+      ]
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Local AntiBMPNN; 40 sequences per backbone",
+          "outputs": {
+            "recorded_result": "160 sequences; 94 pass gates (0/25/32/37)"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate backbones"
+      ]
+    },
+    {
+      "purpose": "Evaluate complexes",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Matched Boltz2; exact sequence identity check",
+          "outputs": {
+            "recorded_result": "3 accepted predictions; s2_cand13 retained"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "completed_utc": "2026-11-16T22:40:00Z",
+    "summary": "Best candidate s2_cand13: ipTM 0.6039 vs matched reference 0.8987. Sample-0 designs fail the CDR cysteine gate. The evaluated panel has one replacement for an unverified prediction, so only the three saved verified models enter the benchmark."
+  },
+  "artifact_links": {
+    "structures": "@results/structures",
+    "raw_receipts": "@results/raw",
+    "report_md": "@results/report.md",
+    "excluded_lane": "@results/raw/native_generation/outputs/local_run1",
+    "excluded_lane_note": "first local execution preserved as wrong-mask deviation (imgt frame binding); not active results",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "raw": "@results/raw",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "mask_verification": "@src/inputs/correction_v2/mask_verification.json",
+    "note_native_report": "generator report notes are generic smoke/curated-task notes; native design_ca_rmse compares curated labels, not independent grading",
+    "agent_usage_basis": "session GLM usage attributed to this continuation segment, 2026-11-16 20:45-22:40Z (approximate)",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "0c9d0c00a99504099766fa099ad858c3262dd24f3707be80922ece37cbb1c13c",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_009_trem2_scfv_design/run_004_epitope_abgen_local.json",
+    "agent_config_sha256": "3dabcd88c55cdbe47ee5cb101d1c9c0843ec6db969e3de2f36b7cb52e3c1138b",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  }
+}

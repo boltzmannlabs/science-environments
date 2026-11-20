@@ -1,0 +1,119 @@
+{
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_trem2_antibmpnn_cdr_redesign",
+  "status": "in_flight",
+  "lineage": {
+    "parent": null,
+    "derived_from": "released anti-TREM2 scFv golden-gecko-stone (proteinbase.com); reference structures ref_boltz2.cif / ref_esmfold.cif (sibling session stage-0 verification)",
+    "historical_components": [
+      "stage-0 verification (sibling session 2026-11-14 11:29): reference sequence, VH/VL boundaries, TREM2 construct Q9NZC2 17-142+His, interface residues, IMGT numbering, CDR mask"
+    ]
+  },
+  "task_requirements": {
+    "objective": "reference-guided scFv sequence/interface optimization against human TREM2 with matched reference/candidate evaluation and ranked shortlist",
+    "constraints": [
+      "CDR-only edits (IMGT-derived mask; H 28-35,53-60,99-112 / L 42-47,65-67,104-112 chain-local), framework and linker protected",
+      "VH-(G4S)3-VL order, paired domains, conserved Cys locked, no Cys introduced in CDRs, fixed loop lengths",
+      "identical evaluation protocol for reference and candidates"
+    ],
+    "metrics": [
+      "Boltz2 ipTM, complex pLDDT, PDE",
+      "ESMFold pLDDT (reference)",
+      "interface evidence per chain pair"
+    ]
+  },
+  "input_inventory": {
+    "prepared_inputs": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/inputs/prepared/ (trem2_antibody_HL.pdb, trem2_antigen.pdb, placed_complex.pdb)",
+    "remote_uploads": {
+      "antibody_HL": "users/680f678c1b1d883c92aa706c/1794714572264/trem2_antibody_HL.pdb (sha256 9882368f...)"
+    }
+  },
+  "workflow_plan": {
+    "stages": [
+      {
+        "name": "stage-0 verification (sibling session)",
+        "status": "complete",
+        "evidence": "inputs/verify_report.json"
+      },
+      {
+        "name": "input preparation (VH=H 1-123, VL=L 1-107 from ref_boltz2.cif chain B; antigen A 1-126)",
+        "status": "complete",
+        "evidence": "inputs/prepared/; sequences asserted identical to reference"
+      },
+      {
+        "name": "reference control Boltz2 (unmodified scFv + TREM2)",
+        "status": "complete",
+        "job": {
+          "doc_id": "6af92bea9030bff416448a17",
+          "result": "ipTM 0.8987, complex pLDDT 0.9424, pTM 0.9316, PDE 0.3989"
+        }
+      },
+      {
+        "name": "AntiBMPNN CDR redesign (40 generations, CDR mask)",
+        "status": "in_flight",
+        "job": {
+          "doc_id": "6af92bd89850a93adf67dfca",
+          "experiment": "task009_antibmpnn_cdr_run1",
+          "params": {
+            "chains_to_design": [
+              "H",
+              "L"
+            ],
+            "residue_positions_to_design": {
+              "H": "28-35,53-60,99-112",
+              "L": "42-47,65-67,104-112"
+            },
+            "generation_count": 40
+          }
+        },
+        "note": "receipt state running ~2.3 h at closeout; background poller active (10-min interval, 20-h cap)"
+      },
+      {
+        "name": "gate checks (mask compliance, Cys policy, loop lengths, FR byte-identity)",
+        "status": "pending",
+        "dependencies": "AntiBMPNN output"
+      },
+      {
+        "name": "Boltz2 top-4 candidate evaluation + interface analysis",
+        "status": "pending",
+        "dependencies": "gates"
+      },
+      {
+        "name": "shortlist 3 + report + benchmark comparison",
+        "status": "pending",
+        "dependencies": "evaluation"
+      }
+    ]
+  },
+  "stages": [],
+  "artifact_links": {
+    "config_json": "configs/task_009_trem2_scfv_design/run_001_antibmpnn_matched.json",
+    "workflow_md": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/workflow.md",
+    "code": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/code",
+    "inputs": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/inputs",
+    "agent_log": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/logs/agent_scientist_log.md",
+    "execution_summary": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/logs/execution_summary.md",
+    "report_md": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/report.md",
+    "structures": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/structures",
+    "raw": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/raw"
+  },
+  "completion_summary": {
+    "last_update": "2026-11-14T20:30:00Z",
+    "status": "in_flight",
+    "reason": "reference control complete; AntiBMPNN 40-generation job running (receipt state running); downstream gates/evaluation/shortlist pending its output; background poller proc_df8ce73705fb active"
+  },
+  "consolidation": {
+    "copied_from": "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design",
+    "source_config_sha256": "cf2d0e7c60b99159810f3b337b103bd209a1ef2f03d2b6438362ee2ad7425599",
+    "source_status": "in_flight",
+    "canonical_environment": "/home/boltzmann10/science-environments/environments/antibody_design",
+    "recorded_utc": "2026-11-16T05:06:52+00:00",
+    "operation": "Artifact copy and metadata reconciliation; no scientific execution."
+  },
+  "historical_artifact_links_before_consolidation": {
+    "workflow_md": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched/workflow.md",
+    "reference_control_prediction": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/structures/reference_scFv_TREM2_boltz2_prediction.pdb",
+    "reference_control_result": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched/raw/reference_control_nodeapi_result.json"
+  }
+}

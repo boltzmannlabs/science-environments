@@ -1,0 +1,301 @@
+{
+  "metric_definitions": {
+    "aar": "per-CDR identical-position fraction vs native CDR; length mismatch = 0",
+    "fv_scrmsd": "CA RMSD (A) over VH+VL after Kabsch alignment on framework CA (VH non-CDR + all VL)",
+    "hcdr_scrmsd": "CA RMSD (A) on declared CDR positions in the framework-defined frame",
+    "mean_plddt": "mean per-residue pLDDT (Boltz2/B-factor column; ESMFold/B-factor column)"
+  },
+  "structural_scope": "Fv (VH 1-122, VL 1-107); CDRs HCDR1 26-33, HCDR2 51-58, HCDR3 97-111 (1-based VH)",
+  "native_control_vs_crystal_5i5k_A": {
+    "boltz2": {
+      "fv": 1.161,
+      "hcdr1": 1.0482,
+      "hcdr2": 1.1395,
+      "hcdr3": 1.7256,
+      "hcdr123": 1.4351
+    },
+    "esmfold": {
+      "fv": 1.2664,
+      "hcdr1": 1.0146,
+      "hcdr2": 1.0029,
+      "hcdr3": 2.2404,
+      "hcdr123": 1.7187
+    }
+  },
+  "released_positive_control_A": {
+    "ABB2": {
+      "hcdr1": 1.1479202508926392,
+      "hcdr2": 1.081245183944702,
+      "hcdr3": 2.228909969329834,
+      "hcdr123": 1.7451785302182168,
+      "fv": 1.295030117034912
+    },
+    "ABB3": {
+      "hcdr1": 1.3176456689834597,
+      "hcdr2": 1.1440647840499878,
+      "hcdr3": 2.399800062179565,
+      "hcdr123": 1.890094721890852,
+      "fv": 1.3016934394836426
+    },
+    "ABB3-LM": {
+      "hcdr1": 1.202331781387329,
+      "hcdr2": 1.1967530250549316,
+      "hcdr3": 1.8353559970855715,
+      "hcdr123": 1.5403239150829118,
+      "fv": 1.244105577468872
+    },
+    "ESMFold": {
+      "hcdr1": 0.8493518829345703,
+      "hcdr2": 1.0667686462402344,
+      "hcdr3": 1.6619681119918823,
+      "hcdr123": 1.347724747004441,
+      "fv": 1.2043689489364624
+    }
+  },
+  "aar_endpoints": {
+    "run_001_hcdr3only": {
+      "pool": "run_001_antibmpnn_hcdr3only",
+      "n": 100,
+      "HCDR1": {
+        "mean_aar": 1.0,
+        "max_aar": 1.0,
+        "n_full_recovery": 100
+      },
+      "HCDR2": {
+        "mean_aar": 1.0,
+        "max_aar": 1.0,
+        "n_full_recovery": 100
+      },
+      "HCDR3": {
+        "mean_aar": 0.2827,
+        "max_aar": 0.4,
+        "n_full_recovery": 0
+      }
+    },
+    "run_001_hcdr123": {
+      "pool": "run_001_antibmpnn_hcdr123",
+      "n": 100,
+      "HCDR1": {
+        "mean_aar": 0.6262,
+        "max_aar": 0.75,
+        "n_full_recovery": 0
+      },
+      "HCDR2": {
+        "mean_aar": 0.6275,
+        "max_aar": 0.75,
+        "n_full_recovery": 0
+      },
+      "HCDR3": {
+        "mean_aar": 0.282,
+        "max_aar": 0.4,
+        "n_full_recovery": 0
+      }
+    },
+    "run_002_hcdr3_1shot": {
+      "pool": "run_002_igdesign_hcdr3_1shot",
+      "n": 1,
+      "HCDR3": {
+        "mean_aar": 0.4667,
+        "max_aar": 0.4667,
+        "n_full_recovery": 0
+      },
+      "HCDR1": null,
+      "HCDR2": null,
+      "note": "HCDR3-only scope; HCDR1/2 kept native (AAR 1.0 by construction)"
+    },
+    "run_002_hcdr3_100": {
+      "pool": "run_002_igdesign_hcdr3_100",
+      "n": 100,
+      "HCDR3": {
+        "mean_aar": 0.5193,
+        "max_aar": 0.6667,
+        "n_full_recovery": 0
+      },
+      "HCDR1": null,
+      "HCDR2": null,
+      "note": "HCDR3-only scope; HCDR1/2 kept native (AAR 1.0 by construction)"
+    },
+    "run_002_hcdr123_1shot": {
+      "pool": "run_002_igdesign_hcdr123_1shot",
+      "n": 1,
+      "HCDR1": {
+        "mean_aar": 0.625,
+        "max_aar": 0.625,
+        "n_full_recovery": 0
+      },
+      "HCDR2": {
+        "mean_aar": 0.5,
+        "max_aar": 0.5,
+        "n_full_recovery": 0
+      },
+      "HCDR3": {
+        "mean_aar": 0.5333,
+        "max_aar": 0.5333,
+        "n_full_recovery": 0
+      }
+    },
+    "run_002_hcdr123_100": {
+      "pool": "run_002_igdesign_hcdr123_100",
+      "n": 100,
+      "HCDR1": {
+        "mean_aar": 0.645,
+        "max_aar": 0.75,
+        "n_full_recovery": 0
+      },
+      "HCDR2": {
+        "mean_aar": 0.725,
+        "max_aar": 0.875,
+        "n_full_recovery": 0
+      },
+      "HCDR3": {
+        "mean_aar": 0.516,
+        "max_aar": 0.6667,
+        "n_full_recovery": 0
+      }
+    }
+  },
+  "candidates": {
+    "ab_hcdr123_s065": {
+      "vh_sha256_16": "da1b48a2119de51a",
+      "pool": "hcdr123",
+      "aar_sum": 1.775,
+      "boltz2": {
+        "fv_scrmsd": 0.777,
+        "mean_plddt": 95.99,
+        "hcdr1_scrmsd": 0.497,
+        "hcdr2_scrmsd": 0.363,
+        "hcdr3_scrmsd": 2.718,
+        "hcdr123_scrmsd": 1.917
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.356,
+        "mean_plddt": 88.4,
+        "hcdr1_scrmsd": 0.481,
+        "hcdr2_scrmsd": 0.246,
+        "hcdr3_scrmsd": 1.235,
+        "hcdr123_scrmsd": 0.902
+      }
+    },
+    "ab_hcdr3only_s045": {
+      "vh_sha256_16": "96f4801b18f3e732",
+      "pool": "hcdr3only",
+      "aar_sum": 2.4,
+      "boltz2": {
+        "fv_scrmsd": 0.441,
+        "mean_plddt": 96.76,
+        "hcdr1_scrmsd": 0.192,
+        "hcdr2_scrmsd": 0.19,
+        "hcdr3_scrmsd": 1.419,
+        "hcdr123_scrmsd": 0.997
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.221,
+        "mean_plddt": 87.4,
+        "hcdr1_scrmsd": 0.06,
+        "hcdr2_scrmsd": 0.061,
+        "hcdr3_scrmsd": 0.841,
+        "hcdr123_scrmsd": 0.587
+      }
+    },
+    "ig_hcdr123_s069": {
+      "vh_sha256_16": "160244c49df2758f",
+      "pool": "hcdr123",
+      "aar_sum": 2.1667,
+      "boltz2": {
+        "fv_scrmsd": 0.374,
+        "mean_plddt": 97.0,
+        "hcdr1_scrmsd": 0.397,
+        "hcdr2_scrmsd": 0.204,
+        "hcdr3_scrmsd": 0.712,
+        "hcdr123_scrmsd": 0.545
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.204,
+        "mean_plddt": 89.68,
+        "hcdr1_scrmsd": 0.437,
+        "hcdr2_scrmsd": 0.211,
+        "hcdr3_scrmsd": 0.587,
+        "hcdr123_scrmsd": 0.477
+      }
+    },
+    "ig_hcdr123_s063": {
+      "vh_sha256_16": "09e7f447d0fc53fb",
+      "pool": "hcdr123",
+      "aar_sum": 2.1583,
+      "boltz2": {
+        "fv_scrmsd": 0.631,
+        "mean_plddt": 96.69,
+        "hcdr1_scrmsd": 0.193,
+        "hcdr2_scrmsd": 0.163,
+        "hcdr3_scrmsd": 2.332,
+        "hcdr123_scrmsd": 1.628
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.594,
+        "mean_plddt": 86.89,
+        "hcdr1_scrmsd": 0.26,
+        "hcdr2_scrmsd": 0.24,
+        "hcdr3_scrmsd": 2.262,
+        "hcdr123_scrmsd": 1.584
+      }
+    },
+    "ig_hcdr3_s002": {
+      "vh_sha256_16": "10a486a77e9e2ef9",
+      "pool": "hcdr3",
+      "aar_sum": 2.6667,
+      "boltz2": {
+        "fv_scrmsd": 0.371,
+        "mean_plddt": 95.93,
+        "hcdr1_scrmsd": 0.267,
+        "hcdr2_scrmsd": 0.218,
+        "hcdr3_scrmsd": 1.021,
+        "hcdr123_scrmsd": 0.732
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.162,
+        "mean_plddt": 87.75,
+        "hcdr1_scrmsd": 0.231,
+        "hcdr2_scrmsd": 0.173,
+        "hcdr3_scrmsd": 0.525,
+        "hcdr123_scrmsd": 0.394
+      }
+    },
+    "ig_hcdr3_s031": {
+      "vh_sha256_16": "e0d9bae97362845b",
+      "pool": "hcdr3",
+      "aar_sum": 2.6667,
+      "boltz2": {
+        "fv_scrmsd": 0.437,
+        "mean_plddt": 95.19,
+        "hcdr1_scrmsd": 0.494,
+        "hcdr2_scrmsd": 0.48,
+        "hcdr3_scrmsd": 1.083,
+        "hcdr123_scrmsd": 0.831
+      },
+      "esmfold": {
+        "fv_scrmsd": 0.139,
+        "mean_plddt": 88.22,
+        "hcdr1_scrmsd": 0.172,
+        "hcdr2_scrmsd": 0.2,
+        "hcdr3_scrmsd": 0.362,
+        "hcdr123_scrmsd": 0.285
+      }
+    }
+  },
+  "provenance": {
+    "antibmpnn_docs": [
+      "6afb34bb7fc9c7f56da82672 (hcdr3only)",
+      "6afb34cbdc1d60e5b46010d6 (hcdr123)"
+    ],
+    "boltz2_docs": {
+      "native": "6afb3c52dc1d60e5b460120e",
+      "ab_hcdr123_s065": "6afb3c747426d09ad749d3c8",
+      "ab_hcdr3only_s045": "6afb3c9775ff2e0d02e6ec64",
+      "ig_hcdr123_s069": "6afb3ca5c3dde753301b1a9e",
+      "ig_hcdr123_s063": "6afb3cb4ef7b50fcff15bec7",
+      "ig_hcdr3_s002": "6afb3cc27fc9c7f56da828d2",
+      "ig_hcdr3_s031": "6afb4636c3dde753301b1c12 (corrected; original 6afb3cd1ef7b50fcff15bed4 excluded deviation)"
+    },
+    "esmfold": "local fair-esm 2.0.1 esmfold_3B_v0, fp32, 4 recycles, (G4S)3 linker"
+  }
+}

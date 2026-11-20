@@ -1,0 +1,16 @@
+task_id: task_014_fxi_igdesign_cdr_redesign
+run_id: run_002_igdesign_native_reconstruction
+workflow_id: igdesign_masked_native_reconstruction
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction/run.json
+    sha256: 70098992b0cd80023094fa6804a05312160e1c42d1c0abe95ca1bbb7f8314d34
+  agent_settings:
+    path: ../../../configs/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction.json
+    sha256: 74d74bba5bff4671a057f8712d0f82623ef225c0b95b59323fdb70c34367d9f3
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

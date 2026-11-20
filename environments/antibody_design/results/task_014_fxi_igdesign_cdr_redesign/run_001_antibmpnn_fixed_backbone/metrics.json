@@ -1,0 +1,152 @@
+{
+ "task_id": "task_014_fxi_igdesign_cdr_redesign",
+ "run_id": "run_001_antibmpnn_fixed_backbone",
+ "generated_utc": "2026-11-16T18:39:56.120220Z",
+ "method": "Boltzmann AntiBMPNN fixed-backbone sequence design (model antibmpnn_020, T=0.1, N=0.0, platform seed) on the Osocimab Fv (6HHC); VL + VH framework fully protected by residue mask; matched Boltz2 scRMSD evaluation",
+ "sampling": {
+  "hcdr3_scope": {
+   "mask_A_1based": "97-109",
+   "generation_count": 20
+  },
+  "hcdr123_scope": {
+   "mask_A_1based": "26-33,51-58,97-109",
+   "generation_count": 20
+  }
+ },
+ "counts": {
+  "samples": 40,
+  "gate_pass": "40/40",
+  "unique_vh": {
+   "hcdr3_scope": 11,
+   "hcdr123_scope": 15
+  },
+  "exact_native": 0,
+  "evaluated_structurally": 10
+ },
+ "aar_definition": "fraction of designed-positions identical to native over the scope mask",
+ "scrmsd": {
+  "protocol": {
+   "predictor": "Boltz2 (boltz-structure-prediction), single model per sequence",
+   "reference": "Boltz2 prediction of unmodified Osocimab Fv (run_002 doc 6afb0ef99850a93adf684d5e)",
+   "atoms": "CA",
+   "units": "angstrom",
+   "alignment": "Kabsch on framework CA (VH non-CDR + all VL), single fit, no refit",
+   "correspondence": "positional, sorted by (chain, residue number) \u2014 identical to run_002",
+   "regions_0based_vh": {
+    "hcdr1": "25-32",
+    "hcdr2": "50-57",
+    "hcdr3": "96-108"
+   }
+  },
+  "self_check": {
+   "hcdr1": 0.0,
+   "hcdr2": 0.0,
+   "hcdr3": 0.0,
+   "hcdr123": 0.0,
+   "fv": 0.0
+  },
+  "framework_fit_rmsd": {
+   "hcdr3_s02": 0.4727,
+   "hcdr3_s15": 0.2494,
+   "hcdr3_s16": 0.346,
+   "hcdr3_s11": 0.2393,
+   "hcdr3_s01": 0.2171,
+   "hcdr123_s02": 0.2947,
+   "hcdr123_s01": 0.226,
+   "hcdr123_s13": 0.2598,
+   "hcdr123_s16": 0.2842,
+   "hcdr123_s05": 0.2201
+  },
+  "candidates": {
+   "t014r001_hcdr3_scope_s02": {
+    "hcdr1": 0.8432,
+    "hcdr2": 0.9029,
+    "hcdr3": 2.6003,
+    "hcdr123": 1.858,
+    "fv": 0.7974
+   },
+   "t014r001_hcdr3_scope_s15": {
+    "hcdr1": 0.5049,
+    "hcdr2": 0.5593,
+    "hcdr3": 3.7995,
+    "hcdr123": 2.5745,
+    "fv": 0.9492
+   },
+   "t014r001_hcdr3_scope_s16": {
+    "hcdr1": 0.3726,
+    "hcdr2": 0.3011,
+    "hcdr3": 2.2366,
+    "hcdr123": 1.5185,
+    "fv": 0.6317
+   },
+   "t014r001_hcdr3_scope_s11": {
+    "hcdr1": 0.2556,
+    "hcdr2": 0.1813,
+    "hcdr3": 2.9316,
+    "hcdr123": 1.9697,
+    "fv": 0.7386
+   },
+   "t014r001_hcdr3_scope_s01": {
+    "hcdr1": 0.2675,
+    "hcdr2": 0.1736,
+    "hcdr3": 2.3062,
+    "hcdr123": 1.5531,
+    "fv": 0.591
+   },
+   "t014r001_hcdr123_scope_s02": {
+    "hcdr1": 0.6746,
+    "hcdr2": 0.5157,
+    "hcdr3": 3.1205,
+    "hcdr123": 2.1364,
+    "fv": 0.8117
+   },
+   "t014r001_hcdr123_scope_s01": {
+    "hcdr1": 0.2556,
+    "hcdr2": 0.4338,
+    "hcdr3": 2.3541,
+    "hcdr123": 1.5982,
+    "fv": 0.609
+   },
+   "t014r001_hcdr123_scope_s13": {
+    "hcdr1": 0.1959,
+    "hcdr2": 0.3784,
+    "hcdr3": 2.934,
+    "hcdr123": 1.9771,
+    "fv": 0.7472
+   },
+   "t014r001_hcdr123_scope_s16": {
+    "hcdr1": 0.3374,
+    "hcdr2": 0.4689,
+    "hcdr3": 4.8308,
+    "hcdr123": 3.2486,
+    "fv": 1.1911
+   },
+   "t014r001_hcdr123_scope_s05": {
+    "hcdr1": 0.4437,
+    "hcdr2": 0.4375,
+    "hcdr3": 1.3367,
+    "hcdr123": 0.9529,
+    "fv": 0.3978
+   }
+  }
+ },
+ "sequence_echo": {
+  "verified": "10/10 chains exact (VH and VL)",
+  "note": "hcdr123_s13 required a corrected v3 submission: v1 (doc 6afb3433dc1d60e5b460109a) and v2 (doc 6afb43617fc9c7f56da829a3) echoed agent transcription errors at 0-based pos105 (G->A) and pos32 (A->G) respectively; both native outputs preserved as excluded wrong-input evidence (results/raw/boltz2/hcdr123_s13_v1_wronginput/, results/raw/boltz2/hcdr123_s13_v2_wronginput/ with identity_evidence.json; workspace outputs-2.zip belongs to v1, reattributed 18:46Z); v3 (doc 6afb44b47426d09ad749d5fe, submitted programmatically from the saved payload with pre-submit equality assertions) verified 227/227 residues identical to the intended candidate"
+ },
+ "provenance": {
+  "input_pdb": "src/inputs/fv_osocimab.pdb (sha256 c59de3b4361ffe29d336329a2bd4e8efe564eb8e5b25ca013e3be3d6176dc100)",
+  "upload_receipt": "df02d18cbb784586be7085843f4f6d7d (partial validation, user-approved best-effort)",
+  "antibmpnn_docs": {
+   "hcdr3": "6afb320f9de6b44b075e0980",
+   "hcdr123": "6afb3228239a6b9f38bf4802"
+  },
+  "boltz2_docs": "src/inputs/execution_records/boltz2_doc_ids.json (D01-D10)",
+  "reference_prediction": "reused run_002 doc 6afb0ef99850a93adf684d5e (identical sequences)"
+ },
+ "caveats": [
+  "AntiBMPNN sampling temperature fixed by platform (T=0.1); not chosen.",
+  "scRMSD is a computational consistency metric vs a Boltz2-predicted reference, not experimental.",
+  "No affinity/activity claim."
+ ]
+}

@@ -1,0 +1,78 @@
+{
+  "complex_id": "trem2_ref_scFv_T009_v2",
+  "heavy_chain_id": "H",
+  "light_chain_id": "L",
+  "antigen_chain_ids": [
+    "A"
+  ],
+  "mask_cdrs": [
+    "HCDR1",
+    "HCDR2",
+    "HCDR3",
+    "LCDR1",
+    "LCDR2",
+    "LCDR3"
+  ],
+  "masked_regions": [
+    {
+      "chain": "H",
+      "start": 28,
+      "end": 35,
+      "cdr": "CDR1"
+    },
+    {
+      "chain": "H",
+      "start": 53,
+      "end": 60,
+      "cdr": "CDR2"
+    },
+    {
+      "chain": "H",
+      "start": 99,
+      "end": 112,
+      "cdr": "CDR3"
+    },
+    {
+      "chain": "L",
+      "start": 27,
+      "end": 32,
+      "cdr": "CDR1"
+    },
+    {
+      "chain": "L",
+      "start": 50,
+      "end": 52,
+      "cdr": "CDR2"
+    },
+    {
+      "chain": "L",
+      "start": 89,
+      "end": 97,
+      "cdr": "CDR3"
+    }
+  ],
+  "epitope_residues": [
+    "A:7",
+    "A:12",
+    "A:36",
+    "A:38",
+    "A:39",
+    "A:40",
+    "A:41",
+    "A:42",
+    "A:43",
+    "A:45",
+    "A:86",
+    "A:87",
+    "A:89",
+    "A:90",
+    "A:91",
+    "A:109",
+    "A:111",
+    "A:112",
+    "A:113",
+    "A:114"
+  ],
+  "max_tokens": 384,
+  "max_feature_tokens": 512
+}

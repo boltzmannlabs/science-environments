@@ -1,46 +1,30 @@
-# Benchmark: EGFR: Reference-Guided scFv Design
-
-**Task ID:** `task_008_egfr_scfv_design`
+# Benchmark: EGFR scFv design
 
 **Task:** [EGFR: Reference-Guided scFv Design](../../../tasks/monoclonal_antibody_design/task_008_egfr_scfv_design.md)
 
-## Published Results
+## Published computational reference
 
-**Source:** [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv); the **21 EGFR reference records** listed below. Values were retrieved from those records on 10 November 2026.
+Source: [ProteinBase scFv catalog](https://proteinbase.com/proteins?proteinCategory=scfv). The saved 10 November 2026 snapshot contains 21 EGFR records. The table reports one minimum–maximum range per metric across those records; domain scores have their own scope.
 
-The table gives the observed minimum and maximum for each reported computational metric. Whole-structure scores and domain scores are separated. Domain ranges summarize all reported domain entries; database-match ranges summarize the reported hits in each database.
-
-| Computational metric | Minimum | Maximum | Scope |
-| --- | ---: | ---: | --- |
-| Molecular weight (Da) | 25714.1494 | 25929.3209 | Sequence / general annotation |
-| Isoelectric point (pH) | 4.969796944 | 7.80791111 | Sequence / general annotation |
-| ESMFold pLDDT (0–100) | 82.39856752 | 83.71150302 | Whole ESMFold structure |
+| Metric | Minimum | Maximum | Scope |
+| --- | --- | --- | --- |
+| Molecular weight (Da) | 25714.1494 | 25929.3209 | Whole sequence |
+| Isoelectric point (pH) | 4.969796944 | 7.80791111 | Whole sequence |
+| ESMFold pLDDT (0–100) | 82.39856752 | 83.71150302 | Whole structure |
 | ESMFold pLDDT (0–100) | 83.75149336 | 86.74728535 | Source-annotated domains |
-| Original-sequence ProteinMPNN score | 1.4344 | 1.4958 | ESMFold prediction |
-| Redesigned-sequence ProteinMPNN score | 0.7567 | 0.78516 | ESMFold prediction |
-| ProteinMPNN sequence recovery (raw) | 0.49875 | 0.52987 | ESMFold prediction |
-| TED confidence class | 2 | 2 | Source-annotated domains |
-| AFDB50 Sequence identity (%) | 51.7 | 70.4 | Source-domain database matches |
-| AFDB50 E-value | 3.671e-17 | 2.052e-12 | Source-domain database matches |
-| AFDB50 TM-score (raw) | 0.91918 | 0.99157 | Source-domain database matches |
-| AFDB50 RMSD (Å) | 0.35 | 1.19 | Source-domain database matches |
-| AFDB50 Aligned residues | 97 | 115 | Source-domain database matches |
-| CATH50 Sequence identity (%) | 43.3 | 61.4 | Source-domain database matches |
-| CATH50 E-value | 1.298e-14 | 1.19e-12 | Source-domain database matches |
-| CATH50 TM-score (raw) | 0.35471 | 0.98369 | Source-domain database matches |
-| CATH50 RMSD (Å) | 0.47 | 4.93 | Source-domain database matches |
-| CATH50 Aligned residues | 68 | 111 | Source-domain database matches |
-| PDB100 Sequence identity (%) | 88.5 | 100 | Source-domain database matches |
-| PDB100 E-value | 3.272e-21 | 5.552e-14 | Source-domain database matches |
-| PDB100 TM-score (raw) | 0.29438 | 0.98262 | Source-domain database matches |
-| PDB100 RMSD (Å) | 0.5 | 5.15 | Source-domain database matches |
-| PDB100 Aligned residues | 61 | 103 | Source-domain database matches |
+| ProteinMPNN original-sequence score | 1.4344 | 1.4958 | Sequence scored on its ESMFold prediction |
+| ProteinMPNN redesigned-sequence score | 0.7567 | 0.78516 | Separate source redesign calculation |
+| ProteinMPNN sequence recovery (raw) | 0.49875 | 0.52987 | Source redesign calculation |
 
-ProteinMPNN recovery and TM-score retain the raw source scales. TED confidence values are categorical classes. Database-match RMSD and TM-score describe structural-search alignments, not accuracy against an experimentally resolved antibody–antigen complex.
+ProteinMPNN scores retain the source scale; lower negative log likelihood is preferred. The redesigned-sequence scores and recovery describe the catalog's own redesign calculation. They are separate from scoring the submitted sequences on their own predicted backbones in this task.
 
-## Reference Records
+## Matched reference and input structure
 
-The computational ranges above summarize these released EGFR scFv records:
+The sequence comparator is cetuximab scFv [vast-bear-marble](https://proteinbase.com/proteins/vast-bear-marble). The prepared construct contains VH (119 residues), a 15-residue `(G4S)3` linker, and VL (107 residues), for 241 residues total. Its VH/VL pair matches the Fv extracted from the experimental [1YY9 cetuximab–EGFR complex](https://www.rcsb.org/structure/1YY9). The saved EGFR input contains 613 residues.
+
+The editable Chothia CDR positions in each variable domain are VH 26–32, 52–56 and 98–108; VL 24–34, 50–56 and 89–97. Framework residues and linker are protected. The run's matched reference scores are reported in [comparison.md](comparison.md), separately from the catalog snapshot.
+
+## Reference records
 
 - [vast-bear-marble](https://proteinbase.com/proteins/vast-bear-marble)
 - [scarlet-seal-granite](https://proteinbase.com/proteins/scarlet-seal-granite)

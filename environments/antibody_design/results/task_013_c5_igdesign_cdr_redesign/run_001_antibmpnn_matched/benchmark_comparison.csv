@@ -1,0 +1,27 @@
+endpoint,comparator,hcdr1,hcdr2,hcdr3,hcdr123,fv,sample_scope
+native Boltz2 vs crystal 5I5K scRMSD (A),Released positive-control ABB3; different predictor/evaluation protocol,1.0482,1.1395,1.7256,1.4351,1.161,"native unmodified reference Fv, framework-aligned CA"
+native ESMFold vs crystal 5I5K scRMSD (A),released positive-control ESMFold released row (A),1.0146,1.0029,2.2404,1.7187,1.2664,"native unmodified reference Fv, framework-aligned CA"
+released reference ABB2 scRMSD (A),published CSV row,1.1479,1.0812,2.2289,1.7452,1.295,released positive control
+released reference ABB3 scRMSD (A),published CSV row,1.3176,1.1441,2.3998,1.8901,1.3017,released positive control
+released reference ABB3-LM scRMSD (A),published CSV row,1.2023,1.1968,1.8354,1.5403,1.2441,released positive control
+released reference ESMFold scRMSD (A),published CSV row,0.8494,1.0668,1.662,1.3477,1.2044,released positive control
+ab_hcdr123_s065 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.497,0.363,2.718,1.917,0.777,"hcdr123 pool, aar_sum 1.775"
+ab_hcdr123_s065 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.481,0.246,1.235,0.902,0.356,"hcdr123 pool, aar_sum 1.775"
+ab_hcdr3only_s045 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.192,0.19,1.419,0.997,0.441,"hcdr3only pool, aar_sum 2.4"
+ab_hcdr3only_s045 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.06,0.061,0.841,0.587,0.221,"hcdr3only pool, aar_sum 2.4"
+ig_hcdr123_s069 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.397,0.204,0.712,0.545,0.374,"hcdr123 pool, aar_sum 2.1667"
+ig_hcdr123_s069 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.437,0.211,0.587,0.477,0.204,"hcdr123 pool, aar_sum 2.1667"
+ig_hcdr123_s063 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.193,0.163,2.332,1.628,0.631,"hcdr123 pool, aar_sum 2.1583"
+ig_hcdr123_s063 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.26,0.24,2.262,1.584,0.594,"hcdr123 pool, aar_sum 2.1583"
+ig_hcdr3_s002 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.267,0.218,1.021,0.732,0.371,"hcdr3 pool, aar_sum 2.6667"
+ig_hcdr3_s002 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.231,0.173,0.525,0.394,0.162,"hcdr3 pool, aar_sum 2.6667"
+ig_hcdr3_s031 Boltz2 scRMSD vs Boltz2-native (A),same-predictor native model,0.494,0.48,1.083,0.831,0.437,"hcdr3 pool, aar_sum 2.6667"
+ig_hcdr3_s031 ESMFold scRMSD vs ESMFold-native (A),same-predictor native model,0.172,0.2,0.362,0.285,0.139,"hcdr3 pool, aar_sum 2.6667"
+run_002 IgDesign HCDR3 1-shot AAR (fraction),released HCDR3-only IF row mean 0.4828/max 0.5333,,,,,,"n=1; mean 0.4667, max 0.4667, full recoveries 0"
+run_002 IgDesign HCDR3 best-of-100 AAR (fraction),released HCDR3-only IF row mean 0.4828/max 0.5333,,,,,,"n=100; mean 0.5193, max 0.6667, full recoveries 0"
+run_002 IgDesign HCDR123 1-shot HCDR3 AAR (fraction),released HCDR123 IF row mean 0.4776/max 0.5333,,,,,,"n=1; mean 0.5333, max 0.5333, full recoveries 0"
+run_002 IgDesign HCDR123 best-of-100 HCDR3 AAR (fraction),released HCDR123 IF row mean 0.4776/max 0.5333,,,,,,"n=100; mean 0.516, max 0.6667, full recoveries 0"
+run_002 IgDesign HCDR123 best-of-100 HCDR1 AAR (fraction),released HCDR123 IF row 0.6250,,,,,,"n=100; mean 0.645, max 0.75, full recoveries 0"
+run_002 IgDesign HCDR123 best-of-100 HCDR2 AAR (fraction),released HCDR123 IF row 0.7500,,,,,,"n=100; mean 0.725, max 0.875, full recoveries 0"
+run_001 AntiBMPNN HCDR3-only HCDR3 AAR AAR (fraction),released HCDR3-only IF row mean 0.4828,,,,,,"n=100; mean 0.2827, max 0.4, full recoveries 0"
+run_001 AntiBMPNN HCDR123 HCDR3 AAR AAR (fraction),released HCDR123 IF row mean 0.4776,,,,,,"n=100; mean 0.282, max 0.4, full recoveries 0"

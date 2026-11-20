@@ -1,0 +1,18 @@
+{"ts": "2026-11-16T13:55Z", "event": "input_preparation", "detail": "fv_osocimab.pdb prepared from 6hhc_remap.pdb (VH 1-120 chain A, VL 1-107 chain B); native CDRs verified at 1-based masks"}
+{"ts": "2026-11-16T14:1xZ", "event": "upload_partial_validation", "detail": "AntiBMPNN upload partial validation (PDB syntax only); approval dialog timed out; nothing submitted"}
+{"ts": "2026-11-16T14:2xZ", "event": "upload_partial_validation", "detail": "second identical attempt; dialog timed out; run closed as blocked-documented"}
+{"ts": "2026-11-16T16:41Z", "event": "user_approval", "detail": "MONITOR_CONTINUATION_20261116T163918: best-effort/partial validation + both predeclared jobs + charges approved"}
+{"ts": "2026-11-16T16:42Z", "event": "upload_accepted", "detail": "receipt df02d18cbb784586be7085843f4f6d7d (allow_partial_validation=true)"}
+{"ts": "2026-11-16T16:43Z", "event": "job_accepted", "detail": "AntiBMPNN hcdr3 doc 6afb320f9de6b44b075e0980"}
+{"ts": "2026-11-16T16:43Z", "event": "job_terminal", "detail": "hcdr3 Success 28 s; archive downloaded"}
+{"ts": "2026-11-16T16:44Z", "event": "job_accepted", "detail": "AntiBMPNN hcdr123 doc 6afb3228239a6b9f38bf4802"}
+{"ts": "2026-11-16T16:44Z", "event": "job_terminal", "detail": "hcdr123 Success 37 s; archive downloaded"}
+{"ts": "2026-11-16T16:50Z", "event": "mask_gate", "detail": "40/40 pass; 26 unique VH (11 hcdr3, 15 hcdr123); 0 exact-native"}
+{"ts": "2026-11-16T16:52Z", "event": "boltz2_submissions", "detail": "10 candidate jobs D01-D10 submitted one-at-a-time; s17 ambiguous (no doc_id) \u2014 recorded, NOT resubmitted; slot filled by next-ranked s05"}
+{"ts": "2026-11-16T17:35Z", "event": "downloads_complete", "detail": "10/10 zips extracted; echo 10/10 VL, 9/10 VH (s13 pos105 discrepancy)"}
+{"ts": "2026-11-16T17:25Z", "event": "scrmsd_computed", "detail": "framework-fit protocol shared with run_002; self-check 0.000; correspondence bug fixed (sorted chain+resnum)"}
+{"ts": "2026-11-16T17:40Z", "event": "bundle_written", "detail": "candidates.csv(26) shortlist.csv(10+control) fasta metrics benchmark_comparison structures(11)"}
+{"ts": "2026-11-16T17:55Z", "event": "user_audit_finding", "detail": "literal-request audit proved s13 v1 carried agent transcription error pos105 G->A; v2 retry introduced pos32 A->G \u2014 both preserved as wrong-input evidence"}
+{"ts": "2026-11-16T18:01Z", "event": "corrected_submission", "detail": "s13 v3 submitted programmatically (doc 6afb44b47426d09ad749d5fe) with pre-submit assertions; 227/227 echo verified"}
+{"ts": "2026-11-16T18:15Z", "event": "records_rebuilt", "detail": "echo/scRMSD/bundle/metrics/report/run.json regenerated; v1/v2 preserved as excluded evidence"}
+{"ts": "2026-11-16T18:46Z", "event": "provenance_correction", "detail": "outputs-2.zip (mtime 17:54:05Z) reattributed to v1 (predates v2 acceptance 17:54:46Z); real v2 output retrieved from already-completed doc 6afb43617fc9c7f56da829a3 via programmatic status+download; identity verified (pos32 G error echoed, pos105 G, VL ref); archived under raw/boltz2/hcdr123_s13_v2_wronginput/; excluded from intended metrics"}

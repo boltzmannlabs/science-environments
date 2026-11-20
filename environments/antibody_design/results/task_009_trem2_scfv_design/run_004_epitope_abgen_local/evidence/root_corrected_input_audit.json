@@ -1,0 +1,77 @@
+{
+  "checked_utc": "2026-11-16T21:56:40.448022+00:00",
+  "scope": "Corrected input mask/epitope/full-context retention and protected cysteine proof; does not claim geometry/biological acceptance",
+  "preprocessing_mask_exact": true,
+  "checkpoint_coverage": 1.0,
+  "conditioner_coverage": "PASS",
+  "samples": [
+    {
+      "sample": 0,
+      "exact_original_mask": true,
+      "exact_original_epitope": true,
+      "all356_input_residues_retained": true,
+      "conserved_cysteines_intact": true,
+      "protected_residues": {
+        "H:24": "CYS",
+        "H:98": "CYS",
+        "L:23": "CYS",
+        "L:88": "CYS"
+      },
+      "design_PDB_resnames": [
+        "UNK"
+      ],
+      "finite_coordinates": true
+    },
+    {
+      "sample": 1,
+      "exact_original_mask": true,
+      "exact_original_epitope": true,
+      "all356_input_residues_retained": true,
+      "conserved_cysteines_intact": true,
+      "protected_residues": {
+        "H:24": "CYS",
+        "H:98": "CYS",
+        "L:23": "CYS",
+        "L:88": "CYS"
+      },
+      "design_PDB_resnames": [
+        "UNK"
+      ],
+      "finite_coordinates": true
+    },
+    {
+      "sample": 2,
+      "exact_original_mask": true,
+      "exact_original_epitope": true,
+      "all356_input_residues_retained": true,
+      "conserved_cysteines_intact": true,
+      "protected_residues": {
+        "H:24": "CYS",
+        "H:98": "CYS",
+        "L:23": "CYS",
+        "L:88": "CYS"
+      },
+      "design_PDB_resnames": [
+        "UNK"
+      ],
+      "finite_coordinates": true
+    },
+    {
+      "sample": 3,
+      "exact_original_mask": true,
+      "exact_original_epitope": true,
+      "all356_input_residues_retained": true,
+      "conserved_cysteines_intact": true,
+      "protected_residues": {
+        "H:24": "CYS",
+        "H:98": "CYS",
+        "L:23": "CYS",
+        "L:88": "CYS"
+      },
+      "design_PDB_resnames": [
+        "UNK"
+      ],
+      "finite_coordinates": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# IgDesign config: task_014 run_002 hcdr123_1shot (hcdr1+hcdr2+hcdr3, 1 sample(s), seed 0)
+structure_path: "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design/src/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction/inputs/6hhc_seqres.pdb"
+lmdesign_checkpoint: "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igdesign_acvr2b_holdout.ckpt"
+pmpnn_checkpoint: "/home/boltzmann10/agent_sci_boltpro_errors_tools/igdesign/ckpts/igmpnn_acvr2b_holdout.ckpt"
+save_path: "/home/boltzmann10/new_agent_scienece_env/science-environments/environments/antibody_design/results/task_014_fxi_igdesign_cdr_redesign/run_002_igdesign_native_reconstruction/raw/hcdr123_1shot_samples.csv"
+region_order: ['hcdr1', 'hcdr2', 'hcdr3']
+lmdesign_num_decoding_orders: 1
+lmdesign_num_pmpnn_seqs: 1
+lmdesign_num_lm_seqs: 1
+lmdesign_pmpnn_logit_temperature: 0.5
+lmdesign_output_logit_temperature: 0.5
+independent_loss: true
+condition_on_light_chain: true
+condition_on_antigen: true
+predict_light_chain: false
+batch_size: 1
+num_batches: 1
+random_seed: 0
+epitope_idxs_or_all: all
+antigen_chain_id: "C"
+heavy_chain_id: "B"
+light_chain_id: "A"
+regions:
+  hcdr1:
+    positions: [25, 26, 27, 28, 29, 30, 31, 32]
+    chain: "heavy"
+  hcdr2:
+    positions: [50, 51, 52, 53, 54, 55, 56, 57]
+    chain: "heavy"
+  hcdr3:
+    positions: [96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108]
+    chain: "heavy"
+

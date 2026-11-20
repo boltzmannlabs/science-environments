@@ -1,0 +1,27 @@
+sample,candidate_id,vl_identical,vh_len_120,edits_outside_mask,gate_pass,is_exact_native,cdrs,n_substitutions,designed_scope_aar,scrmpnn_score,global_score,seq_recovery,status,n_occurrences
+1,t014r001_hcdr3_scope_s01,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYNYYAMDY'}",6,0.5385,0.5116,0.3065,0.5385,evaluated,5
+2,t014r001_hcdr3_scope_s02,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGDYYYYGMDY'}",4,0.6923,0.5397,0.3125,0.6923,evaluated,2
+3,t014r001_hcdr3_scope_s03,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGDYDYYAMDY'}",6,0.5385,0.5787,0.3268,0.5385,eligible_not_evaluated,2
+5,t014r001_hcdr3_scope_s05,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYDYYAMDY'}",6,0.5385,0.627,0.3107,0.5385,eligible_not_evaluated,4
+10,t014r001_hcdr3_scope_s10,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYYVYAMDY'}",6,0.5385,0.5839,0.3334,0.5385,eligible_not_evaluated,1
+11,t014r001_hcdr3_scope_s11,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYNYYGMDY'}",5,0.6154,0.648,0.3358,0.6154,evaluated,1
+12,t014r001_hcdr3_scope_s12,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYSSYYAMDY'}",7,0.4615,0.6768,0.3134,0.4615,eligible_not_evaluated,1
+13,t014r001_hcdr3_scope_s13,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARSGYYDYYAMDY'}",6,0.5385,0.6632,0.3246,0.5385,eligible_not_evaluated,1
+14,t014r001_hcdr3_scope_s14,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYRNYYAMDY'}",7,0.4615,0.676,0.3445,0.4615,eligible_not_evaluated,1
+15,t014r001_hcdr3_scope_s15,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYDYYGMDY'}",5,0.6154,0.5314,0.3123,0.6154,evaluated,1
+16,t014r001_hcdr3_scope_s16,True,True,0,True,False,"{'hcdr1': 'GFTFSQYG', 'hcdr2': 'IGPSGGST', 'hcdr3': 'ARDGYYYYYAMDY'}",5,0.6154,0.5598,0.3313,0.6154,evaluated,1
+1,t014r001_hcdr123_scope_s01,True,True,0,True,False,"{'hcdr1': 'GFTFSSYG', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYNYYAMDY'}",9,0.6897,0.4074,0.2536,0.6897,evaluated,1
+2,t014r001_hcdr123_scope_s02,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGDYYYYGMDY'}",8,0.7241,0.4012,0.2592,0.7241,evaluated,2
+3,t014r001_hcdr123_scope_s03,True,True,0,True,False,"{'hcdr1': 'GFTFSSYG', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGDYDYYAMDY'}",9,0.6897,0.4365,0.2826,0.6897,eligible_not_evaluated,2
+4,t014r001_hcdr123_scope_s04,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGDSYYYGMDY'}",9,0.6897,0.4791,0.2938,0.6897,eligible_not_evaluated,1
+5,t014r001_hcdr123_scope_s05,True,True,0,True,False,"{'hcdr1': 'GFTFSSYG', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYDYYAMDY'}",9,0.6897,0.4704,0.2653,0.6897,evaluated,1
+6,t014r001_hcdr123_scope_s06,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGDYDTYAMDY'}",11,0.6207,0.4162,0.2651,0.6207,eligible_not_evaluated,1
+7,t014r001_hcdr123_scope_s07,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYDYYAMDY'}",10,0.6552,0.4101,0.2542,0.6552,eligible_not_evaluated,1
+8,t014r001_hcdr123_scope_s08,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYNYYAMDY'}",10,0.6552,0.4646,0.2598,0.6552,eligible_not_evaluated,3
+10,t014r001_hcdr123_scope_s10,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYDVYAMDY'}",11,0.6207,0.4524,0.2809,0.6207,eligible_not_evaluated,1
+11,t014r001_hcdr123_scope_s11,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARAGDYNYYGMAY'}",10,0.6552,0.4643,0.282,0.6552,eligible_not_evaluated,1
+12,t014r001_hcdr123_scope_s12,True,True,0,True,False,"{'hcdr1': 'GFTFSSYG', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGRRYYYAMDY'}",9,0.6897,0.4725,0.2614,0.6897,eligible_not_evaluated,1
+13,t014r001_hcdr123_scope_s13,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGDYDYYGMDY'}",9,0.6897,0.4218,0.267,0.6897,evaluated,1
+14,t014r001_hcdr123_scope_s14,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYSNYYAMDY'}",11,0.6207,0.4529,0.2898,0.6207,eligible_not_evaluated,2
+16,t014r001_hcdr123_scope_s16,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYYYYYAMDY'}",9,0.6897,0.4442,0.2837,0.6897,evaluated,1
+18,t014r001_hcdr123_scope_s18,True,True,0,True,False,"{'hcdr1': 'GFTFSSYA', 'hcdr2': 'ISSSGGST', 'hcdr3': 'ARDGYRNYYAMDY'}",11,0.6207,0.4673,0.2839,0.6207,eligible_not_evaluated,1

@@ -1,0 +1,26 @@
+{
+ "stage": "S1_input_preparation",
+ "tool": "local verification from ATOM CA records (prep_fv_pdb.py output re-verified 2026-11-16)",
+ "input_file": "inputs/fv_osocimab.pdb",
+ "sha256": "c59de3b4361ffe29d336329a2bd4e8efe564eb8e5b25ca013e3be3d6176dc100",
+ "sequences": {
+  "vh": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPYYYYGMDVWGQGTTVTVSS",
+  "vl": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK"
+ },
+ "checks": {
+  "chain_A_VH_length_120": true,
+  "chain_B_VL_length_107": true,
+  "hcdr1_positions_26_33_value": "GFTFSQYG",
+  "hcdr1_matches_native": true,
+  "hcdr2_positions_51_58_value": "IGPSGGST",
+  "hcdr2_matches_native": true,
+  "hcdr3_positions_97_109_value": "TRGGPYYYYGMDV",
+  "hcdr3_matches_native": true,
+  "vl_identical_to_reference": true,
+  "vh_identical_to_reference": true,
+  "numbering_contiguous_A_1_120": true,
+  "numbering_contiguous_B_1_107": true
+ },
+ "all_checks_passed": true,
+ "correction_note": "earlier draft workflow.md said VL 109 aa; actual Fv PDB chain B is 107 aa (crystal construct ends K107) and byte-identical to the reference VL \u2014 corrected in workflow.md"
+}

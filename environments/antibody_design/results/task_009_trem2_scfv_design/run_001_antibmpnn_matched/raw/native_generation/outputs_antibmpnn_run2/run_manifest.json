@@ -1,0 +1,82 @@
+{
+  "request": {
+    "job_name": "task009_antibmpnn_cdr_run2_fixedmask",
+    "experiment_id": "6af99b6b9850a93adf67e2fd",
+    "user_id": "680f678c1b1d883c92aa706c",
+    "input_path": "/app/inputs/6af99b6b9850a93adf67e2fd/6af99b6b9850a93adf67e2fd_task009_antibmpnn_cdr_run2_fixedmask.pdb",
+    "chains_to_design": [
+      "H",
+      "L"
+    ],
+    "residue_positions_to_design": {
+      "H": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "L": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        50,
+        51,
+        52,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    "generation_count": 40,
+    "model_name": "antibmpnn_020",
+    "sampling_temperature": 0.1,
+    "backbone_noise": 0.0,
+    "seed": 37
+  },
+  "fixed_chains_by_pdb": {
+    "6af99b6b9850a93adf67e2fd_task009_antibmpnn_cdr_run2_fixedmask": []
+  },
+  "pdb_count": 1,
+  "sequence_count": 40,
+  "expected_sequence_count": 40,
+  "csv_columns": [
+    "pdb_name",
+    "heavy_chain",
+    "light_chain"
+  ]
+}

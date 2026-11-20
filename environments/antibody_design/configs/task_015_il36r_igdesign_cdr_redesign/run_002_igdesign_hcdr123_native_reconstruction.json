@@ -1,0 +1,12 @@
+{
+ "use_subagent": false,
+ "llm_model": "glm",
+ "llm_version": "5.3",
+ "tokens_used": {
+  "input_output": "~450000",
+  "cache_reads": "~5000000"
+ },
+ "time_budget": {
+  "minutes": "~75"
+ }
+}

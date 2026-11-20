@@ -1,0 +1,2085 @@
+[
+ {
+  "id": "019cdcf1-7eb6-17fb-03d7-13d25f0e8c74",
+  "metric": {
+   "name": "Design Class",
+   "slug": "design_class",
+   "description": "Predicted design category of the protein, such as miniprotein, peptide, or nanobody. Proteins that cannot be classified into a defined category receive label \"Other\"",
+   "categoryName": "General",
+   "categorySlug": "general"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "keys": [
+     {
+      "key": "slug",
+      "type": "str"
+     },
+     {
+      "key": "humand_readable",
+      "type": "str"
+     }
+    ],
+    "type": "dict",
+    "unit": "classification",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#design-class-designclassschema",
+    "description": "Design class"
+   }
+  },
+  "type": "computational",
+  "valueType": "label",
+  "value": "scFv",
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "labelMetadata": {
+   "slug": "scfv",
+   "color": "#A855F7"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-802d-53a5-e380-0c2a7f004099",
+  "metric": {
+   "name": "Molecular Weight",
+   "slug": "molecular_weight",
+   "description": "Molecular weight of the protein in daltons, computed from its amino-acid composition.",
+   "categoryName": "General",
+   "categorySlug": "general"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "daltons",
+    "direction": "none",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#molecular-weight-molecularweightschema",
+    "description": "Molecular weight"
+   }
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 26183.685699999987,
+  "unit": "Da",
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-819e-1920-98cd-c8e297ea990e",
+  "metric": {
+   "name": "Isoelectric Point",
+   "slug": "isoelectric_point",
+   "description": "Theoretical isoelectric point (pI), the pH at which the protein carries no net charge, computed from its sequence.",
+   "categoryName": "General",
+   "categorySlug": "general"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "pH",
+    "direction": "none",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#isoelectric-point-isoelectricpointschema",
+    "description": "Isoelectric point"
+   }
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 8.755274009704593,
+  "unit": "pH",
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-830c-8b57-6f78-9caa189f9f60",
+  "metric": {
+   "name": "SeqIdentity",
+   "slug": "seqidentity",
+   "description": "Percent identity of the query sequence to its closest match in the searched databases, from 0 to 100. Higher values mean the sequence is more similar to a known protein."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#sequence-identity-seqidentityschema",
+    "description": "sequence identity"
+   }
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "date": null,
+   "match": null,
+   "value": 0,
+   "databases": null
+  },
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-847a-91b3-9dcb-98c30edf953e",
+  "metric": {
+   "name": "Novelty",
+   "slug": "novelty",
+   "description": "Novelty score from 1 to 4 combining sequence and structural similarity to known proteins. Higher values indicate a sequence and fold more distinct from existing databases."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "int",
+    "unit": "classification",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#novelty",
+    "description": "Novelty of a sequence against known protein structures/sequences"
+   }
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 2,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-85ef-0ece-c7d8-206549915aeb",
+  "metric": {
+   "name": "Esmfold Plddt",
+   "slug": "esmfold_plddt",
+   "description": "ESMFold per-residue confidence (predicted lDDT), reported from 0 to 100. Higher values indicate a more confidently predicted local structure.",
+   "categoryName": "ESMFold Structure",
+   "categorySlug": "esmfold-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "domainEnd": 122,
+   "domainStart": 6,
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#predicted-local-distance-difference-test-af2plddtschema",
+    "description": "ESMFold Predicted Local Distance Difference Test (pLDDT)"
+   },
+   "domainDescription": "TED confidence: mid"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 85.79458785249469,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-875f-c53e-0b8a-891712b05c0a",
+  "metric": {
+   "name": "Foldstring",
+   "slug": "foldstring",
+   "description": "Compact string summarizing the secondary-structure topology, using E for \u03b2-strand and H for \u03b1-helix. Serves as a fingerprint of the protein's fold.",
+   "categoryName": "ESMFold Structure",
+   "categorySlug": "esmfold-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "domainEnd": 122,
+   "domainStart": 6,
+   "metricSchema": {
+    "keys": [
+     {
+      "key": "slug",
+      "type": "str"
+     },
+     {
+      "key": "humand_readable",
+      "type": "str"
+     }
+    ],
+    "type": "dict",
+    "unit": "classification",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#foldstring-foldstringschema",
+    "description": "Fold string"
+   },
+   "domainDescription": "TED confidence: mid"
+  },
+  "type": "computational",
+  "valueType": "label",
+  "value": "EEEEEEEE",
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "labelMetadata": {
+   "slug": "eeeeeeee"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-88d0-1f60-d88a-b346bd9d46c1",
+  "metric": {
+   "name": "Classification",
+   "slug": "classification",
+   "description": "Secondary-structure-based class of the protein, indicating whether it is predominantly alpha, beta, mixed, or has little secondary structure.",
+   "categoryName": "ESMFold Structure",
+   "categorySlug": "esmfold-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "domainEnd": 122,
+   "domainStart": 6,
+   "metricSchema": {
+    "type": "str",
+    "unit": "classification",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#classification",
+    "description": "Protein classification based on secondary structure content"
+   },
+   "domainDescription": "TED confidence: mid"
+  },
+  "type": "computational",
+  "valueType": "label",
+  "value": "Mainly Beta",
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "labelMetadata": {
+   "slug": "mainly_beta",
+   "color": "#166534"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-8a41-9636-4864-56d39bc02ace",
+  "metric": {
+   "name": "Ted Confidence",
+   "slug": "ted_confidence",
+   "description": "Confidence of the TED domain segmentation (Lau et al., Science 2024) for the assigned domain boundaries. Higher values indicate more reliable domain calls. Consenus between Chainsaw, Merizo and Unidoc"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "domainEnd": 122,
+   "domainStart": 6,
+   "metricSchema": {
+    "type": "int",
+    "unit": "confidence",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#ted-confidence-tedconfidenceschema",
+    "description": "TED confidence Lau et al, Science (2024)"
+   },
+   "domainDescription": "TED confidence: mid"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 2,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-8bb4-240d-7acd-ba169acf9a6a",
+  "metric": {
+   "name": "Domain Match",
+   "slug": "domainmatch",
+   "description": "Domain match with database entry including all metrics"
+  },
+  "metadata": {
+   "source": "domain_match",
+   "domainEnd": 122,
+   "databaseId": "AF-A0A5C2GG21-F1-model_v6",
+   "domainStart": 6,
+   "databaseName": "afdb50",
+   "matchDescription": "IG c200_heavy_IGHV3-48_IGHD6-19_IGHJ3"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "metrics": [
+    {
+     "name": "SeqIdentity(afdb50)",
+     "slug": "seqidentity_afdb50",
+     "value": {
+      "seqIdentity": 78.4
+     }
+    },
+    {
+     "name": "Evalue(afdb50)",
+     "slug": "evalue_afdb50",
+     "value": 1.706e-16
+    },
+    {
+     "name": "Tm Score(afdb50)",
+     "slug": "tm_score_afdb50",
+     "value": 0.95759
+    },
+    {
+     "name": "Rmsd(afdb50)",
+     "slug": "rmsd_afdb50",
+     "value": 0.81
+    },
+    {
+     "name": "Aligned Length(afdb50)",
+     "slug": "aligned_length_afdb50",
+     "value": 115
+    }
+   ],
+   "databaseId": "AF-A0A5C2GG21-F1-model_v6",
+   "description": "IG c200_heavy_IGHV3-48_IGHD6-19_IGHJ3",
+   "domainRange": "6-122",
+   "databaseName": "afdb50"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a1ca-dc90-4587-2b40-0c8aa653f947",
+   "name": "Proteintyper",
+   "type": "computational",
+   "summary": null,
+   "slug": "proteintyper",
+   "tags": null,
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-8d23-1588-c635-21f7700a9a5d",
+  "metric": {
+   "name": "Esmfold Plddt",
+   "slug": "esmfold_plddt",
+   "description": "ESMFold per-residue confidence (predicted lDDT), reported from 0 to 100. Higher values indicate a more confidently predicted local structure.",
+   "categoryName": "ESMFold Structure",
+   "categorySlug": "esmfold-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#predicted-local-distance-difference-test-af2plddtschema",
+    "description": "ESMFold Predicted Local Distance Difference Test (pLDDT)"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureFile": "01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureDescription": "ESMFold prediction"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 84.24698317959857,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-8e92-6bac-8d83-67a1f5d27070",
+  "metric": {
+   "name": "Proteinmpnn Score",
+   "slug": "proteinmpnn_score",
+   "description": "ProteinMPNN design score (negative log-likelihood, default model) of the original sequence given its predicted backbone. Lower scores indicate a sequence ProteinMPNN considers more designable for that fold.",
+   "categoryName": "ESMFold Structure",
+   "categorySlug": "esmfold-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "desc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#proteinmpnn_score",
+    "description": "ProteinMPNN design score using default model for the original sequence"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureFile": "01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureDescription": "ESMFold prediction"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 1.2852,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9000-797c-802e-8698d7faa10e",
+  "metric": {
+   "name": "Redesigned Proteinmpnn Score",
+   "slug": "redesigned_proteinmpnn_score",
+   "description": "ProteinMPNN design score (negative log-likelihood, default model) for sequences redesigned on the predicted structure of the original sequence. A value close to the original score suggests ProteinMPNN favors the original sequence, and lower is better."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "desc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#redesigned_proteinmpnn_score",
+    "description": "ProteinMPNN design score using default model for redesigned sequences given predicted structure of the original sequence"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureFile": "01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureDescription": "ESMFold prediction"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.76449,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-916e-41f8-7c9f-26b87a3a7a17",
+  "metric": {
+   "name": "Proteinmpnn Seq Recovery",
+   "slug": "proteinmpnn_seq_recovery",
+   "description": "Percentage of positions at which ProteinMPNN redesigns recover the original amino acid, from 0 to 100. Higher recovery indicates the original sequence is well matched to its backbone."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#proteinmpnn_seq_recovery",
+    "description": "ProteinMPNN sequence recovery"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureFile": "01KKEEYP9H4XACDXCQP4WGWPJ2.cif",
+   "structureDescription": "ESMFold prediction"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.5820299999999999,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-92df-8908-120f-12b4eb9309eb",
+  "metric": {
+   "name": "Pae File",
+   "slug": "pae_file",
+   "description": "Reference to the predicted alignment error (PAE) matrix file, stored as a downloadable artifact for the predicted structure."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "file",
+    "unit": "file",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#paefile",
+    "description": "PAE File"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "file": {
+    "url": "s3://proteinbase-pub/01KKEF10P37RW5B44MPZT4TSF2.json",
+    "filename": "01KKEF10P37RW5B44MPZT4TSF2.json",
+    "filetype": "json"
+   }
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-944e-e72b-5a48-9f2bd504340b",
+  "metric": {
+   "name": "Boltz2 Plddt",
+   "slug": "boltz2_plddt",
+   "description": "Boltz2 per-residue confidence (predicted lDDT) in the predicted structure. Higher values indicate higher confidence.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-plddt-boltz2plddtschema",
+    "description": "Boltz2 predicted pLDDT"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.9233810305595398,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-95bf-c21e-95ae-f73ea9afc8a7",
+  "metric": {
+   "name": "Boltz2 Ptm",
+   "slug": "boltz2_ptm",
+   "description": "Boltz2 predicted TM-score for the overall fold, ranging from 0 to 1. Higher values indicate higher confidence in the predicted structure.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-ptm-boltz2ptmschema",
+    "description": "Boltz2 predicted pTM"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.9327809810638428,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9731-255c-6a20-0c916c61153c",
+  "metric": {
+   "name": "Boltz2 Iptm",
+   "slug": "boltz2_iptm",
+   "description": "Boltz2 predicted interface TM-score for the complex, ranging from 0 to 1. Higher values indicate higher confidence in the predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-iptm-boltz2iptmschema",
+    "description": "Boltz2 predicted iPTM"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.9009589552879333,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-98a0-9cde-6a2d-ef463dcfe0ed",
+  "metric": {
+   "name": "Boltz2 Complex Plddt",
+   "slug": "boltz2_complex_plddt",
+   "description": "Boltz2 per-residue confidence (predicted lDDT) for the complex. Higher values indicate higher confidence in the predicted complex structure.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-complex-plddt-boltz2complexplddtschema",
+    "description": "Boltz2 predicted complex pLDDT"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.9289866089820862,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9a0e-f048-0d0c-832988a64573",
+  "metric": {
+   "name": "Boltz2 Complex Iplddt",
+   "slug": "boltz2_complex_iplddt",
+   "description": "Boltz2 interface per-residue confidence (predicted lDDT) for the complex. Higher values indicate higher confidence in the predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "percentage",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-complex-iplddt-boltz2complexiplddtschema",
+    "description": "Boltz2 predicted complex iPLDDT"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.9373155236244202,
+  "unit": "%",
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9b7e-c313-749f-6734dcad8f60",
+  "metric": {
+   "name": "Boltz2 Complex Pde",
+   "slug": "boltz2_complex_pde",
+   "description": "Boltz2 predicted distance error for the complex, estimating expected error in inter-residue distances. Lower values indicate higher confidence.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "confidence",
+    "direction": "desc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#boltz2-complex-pde-boltz2complexpdeschema",
+    "description": "Boltz2 predicted complex PDE"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.3970271944999695,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9cec-1650-4e6e-e71db643d274",
+  "metric": {
+   "name": "Boltz2 Ipsae",
+   "slug": "boltz2_ipsae",
+   "description": "Interface predicted aligned error score (ipSAE), a confidence measure for the binder\u2013target interface that is robust to disordered residues, here taking the maximum over the chain pair. Higher values indicate a more confidently predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "desc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#ipsae-ipsaeschema",
+    "description": "Interface Predicted Alignment Error (ipsae) score"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.862584,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9e5d-709a-9f11-b6a0b99cd617",
+  "metric": {
+   "name": "Boltz2 Pdockq",
+   "slug": "boltz2_pdockq",
+   "description": "Predicted DockQ score estimating complex/interface quality from interface pLDDT (Bryant et al.), ranging from 0 to 1. Higher values indicate a more reliable predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#pdockq-pdockqschema",
+    "description": "Predicted DockQ (pDockQ)"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.0183,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-9fcd-6be1-3fdb-24d28ac0a193",
+  "metric": {
+   "name": "Boltz2 Pdockq2",
+   "slug": "boltz2_pdockq2",
+   "description": "Predicted DockQ2 score estimating interface quality from per-pair predicted alignment error (Zhu et al.), ranging from 0 to 1. Higher values indicate a more reliable predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#pdockq2-pdockq2schema",
+    "description": "Predicted DockQ2 (pDockQ2)"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.0073,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a13b-8dc3-ee77-0752b88f1f10",
+  "metric": {
+   "name": "Boltz2 Lis",
+   "slug": "boltz2_lis",
+   "description": "Local Interaction Score derived from a transform of the predicted alignment error at the interface (Kim et al.). Higher values indicate stronger predicted inter-chain interactions.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#lis-lisschema",
+    "description": "Ligand Interaction Score (LIS)"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.6473,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a2a8-a7aa-a585-d8ee857714d0",
+  "metric": {
+   "name": "Boltz2 Min Ipsae",
+   "slug": "boltz2_min_ipsae",
+   "description": "Interface predicted aligned error score (ipSAE) for the binder\u2013target interface, taking the minimum over the chain pair as proposed by Overath et al. Higher values indicate a more confidently predicted interface.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "desc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#ipsae-ipsaeschema",
+    "description": "minimum Interface Predicted Alignment Error (ipsae) score"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 0.759702,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a418-14b2-17b4-17da41a2bf46",
+  "metric": {
+   "name": "Interface Residues",
+   "slug": "interface_residues",
+   "description": "List of residues forming the interface, each given as a chain and residue number. A residue is counted as interface if any of its atoms lie within 4.5 \u00c5 of the other chain."
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "list",
+    "unit": "residue_list",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#interface-residue-interfaceresidueschema",
+    "description": "List of interface residues with chain and residue number"
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": [
+   {
+    "chain": "B",
+    "residue": "1"
+   },
+   {
+    "chain": "B",
+    "residue": "32"
+   },
+   {
+    "chain": "B",
+    "residue": "33"
+   },
+   {
+    "chain": "B",
+    "residue": "35"
+   },
+   {
+    "chain": "B",
+    "residue": "55"
+   },
+   {
+    "chain": "B",
+    "residue": "56"
+   },
+   {
+    "chain": "B",
+    "residue": "58"
+   },
+   {
+    "chain": "B",
+    "residue": "59"
+   },
+   {
+    "chain": "B",
+    "residue": "61"
+   },
+   {
+    "chain": "B",
+    "residue": "102"
+   },
+   {
+    "chain": "B",
+    "residue": "103"
+   },
+   {
+    "chain": "B",
+    "residue": "104"
+   },
+   {
+    "chain": "B",
+    "residue": "105"
+   },
+   {
+    "chain": "B",
+    "residue": "106"
+   },
+   {
+    "chain": "B",
+    "residue": "107"
+   },
+   {
+    "chain": "B",
+    "residue": "109"
+   },
+   {
+    "chain": "B",
+    "residue": "169"
+   },
+   {
+    "chain": "B",
+    "residue": "170"
+   },
+   {
+    "chain": "B",
+    "residue": "187"
+   },
+   {
+    "chain": "B",
+    "residue": "188"
+   },
+   {
+    "chain": "B",
+    "residue": "191"
+   },
+   {
+    "chain": "B",
+    "residue": "192"
+   },
+   {
+    "chain": "B",
+    "residue": "193"
+   },
+   {
+    "chain": "B",
+    "residue": "194"
+   },
+   {
+    "chain": "B",
+    "residue": "195"
+   },
+   {
+    "chain": "A",
+    "residue": "7"
+   },
+   {
+    "chain": "A",
+    "residue": "12"
+   },
+   {
+    "chain": "A",
+    "residue": "36"
+   },
+   {
+    "chain": "A",
+    "residue": "38"
+   },
+   {
+    "chain": "A",
+    "residue": "39"
+   },
+   {
+    "chain": "A",
+    "residue": "40"
+   },
+   {
+    "chain": "A",
+    "residue": "41"
+   },
+   {
+    "chain": "A",
+    "residue": "42"
+   },
+   {
+    "chain": "A",
+    "residue": "43"
+   },
+   {
+    "chain": "A",
+    "residue": "45"
+   },
+   {
+    "chain": "A",
+    "residue": "86"
+   },
+   {
+    "chain": "A",
+    "residue": "87"
+   },
+   {
+    "chain": "A",
+    "residue": "89"
+   },
+   {
+    "chain": "A",
+    "residue": "90"
+   },
+   {
+    "chain": "A",
+    "residue": "91"
+   },
+   {
+    "chain": "A",
+    "residue": "109"
+   },
+   {
+    "chain": "A",
+    "residue": "111"
+   },
+   {
+    "chain": "A",
+    "residue": "112"
+   },
+   {
+    "chain": "A",
+    "residue": "113"
+   },
+   {
+    "chain": "A",
+    "residue": "114"
+   }
+  ],
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a588-783f-599e-c2c25009ba0c",
+  "metric": {
+   "name": "Shape Complimentarity Boltz2 Binder Ss",
+   "slug": "shape_complimentarity_boltz2_binder_ss",
+   "description": "Shape complementarity of the binder\u2013target interface for the Boltz2-predicted complex (binder predicted without an MSA). Higher values indicate better-fitting interface geometry.",
+   "categoryName": "Boltz2 Structure",
+   "categorySlug": "boltz2-structure"
+  },
+  "metadata": {
+   "source": "ProteinTyper",
+   "metricSchema": {
+    "type": "float",
+    "unit": "score",
+    "direction": "asc",
+    "reference": "https://internal.adaptyvbio.com/api-reference/ml/protein-typer/metrics#shape-complementarity-boltz2-binder-ss-shapecomplimentarityboltz2schema",
+    "description": "Shape complementarity score for for complex predicted by Boltz2 (no MSA for binder)."
+   },
+   "structureUrl": "s3://proteinbase-pub/01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureFile": "01KKEF103MS6FN15FQ2QHPXFE8.cif",
+   "structureDescription": "Boltz2_Binder_SS"
+  },
+  "type": "computational",
+  "valueType": "numeric",
+  "value": 48.16170347962753,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a6f7-b97a-3d9e-57fe9770fc92",
+  "metric": {
+   "name": "ESMFold Structure Prediction",
+   "slug": "esmfold_structure_prediction"
+  },
+  "metadata": {
+   "source": "structure_url",
+   "description": "ESMFold PDB file URL"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "url": "https://proteinbase-pub.t3.storage.dev/01KKEEYP9H4XACDXCQP4WGWPJ2.cif"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a868-e03e-da61-7efd5e5d5612",
+  "metric": {
+   "name": "ESMFold Stylized Image",
+   "slug": "esmfold_stylized_image"
+  },
+  "metadata": {
+   "source": "structure_image_url",
+   "description": "ESMFold stylized image URL"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "url": "https://proteinbase-pub.t3.storage.dev/01KKEF2QT30081D9Z4DKZ790FD.png"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-28f6-5061-79533f14da5c",
+   "name": "ESMFold",
+   "type": "computational",
+   "summary": "Fast protein structure prediction",
+   "slug": "esmfold",
+   "tags": [
+    "structure-prediction",
+    "ai",
+    "language-model"
+   ],
+   "url": null
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019cdcf1-a9d6-1e0f-c945-2b68dd10bf4d",
+  "metric": {
+   "name": "Boltz2 Structure Prediction",
+   "slug": "boltz2_structure_prediction"
+  },
+  "metadata": {
+   "source": "structure_url",
+   "description": "Boltz2 structure file URL"
+  },
+  "type": "computational",
+  "valueType": "json",
+  "value": {
+   "url": "https://proteinbase-pub.t3.storage.dev/01KKEF103MS6FN15FQ2QHPXFE8.cif"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "019a3fa3-c8c7-32ac-9bf9-d4d4c9dd5298",
+   "name": "Boltz2",
+   "type": "computational",
+   "summary": null,
+   "slug": "boltz2",
+   "tags": null,
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {}
+ },
+ {
+  "id": "019e0495-776b-58f3-15ea-ac7108785d4d",
+  "metric": {
+   "name": "Expressed",
+   "slug": "expressed",
+   "categoryName": "Expression",
+   "categorySlug": "expression"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "boolean",
+  "value": true,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-0149-aa68-76042610c2c3",
+  "metric": {
+   "name": "Binding",
+   "slug": "binding",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "boolean",
+  "value": true,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-9928-1be2-098809473c7a",
+  "metric": {
+   "name": "Binding Strength",
+   "slug": "binding_strength",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "label",
+  "value": "Strong",
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "labelMetadata": {
+   "slug": "strong",
+   "color": "oklch(68.5% 0.169 237.323)"
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-acc3-8f9e-361c182aa974",
+  "metric": {
+   "name": "KD",
+   "slug": "kd",
+   "description": "Apparent dissociation constant (KD_app) of the selected binding model; lower means tighter binding. Comparable across binding models, and equal to the 1:1 KD for 1:1 binders.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 2.89203858290826e-08,
+  "unit": "M",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-08c4-9c66-02b5d021e899",
+  "metric": {
+   "name": "Kon (1:1)",
+   "slug": "kon",
+   "description": "Association rate constant from the 1:1 (standard) fit; for other binding models a rough 1:1 approximation.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 35737.7218162637,
+  "unit": "M-1s-1",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-2c07-b655-bff51485c809",
+  "metric": {
+   "name": "Koff (1:1)",
+   "slug": "koff",
+   "description": "Dissociation rate constant from the 1:1 (standard) fit; for other binding models a rough 1:1 approximation.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 0.00103354870357877,
+  "unit": "s-1",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-cfbf-2554-b2c87d73fdfe",
+  "metric": {
+   "name": "SPR Kinetic Curves",
+   "slug": "spr_kinetic_curves",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 1,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17cf-4c2b-01c6-0cef7751e9b9",
+   "foundryReplicateInternalId": "019db569-f060-0777-3350-0363d223c496"
+  },
+  "type": "experimental",
+  "valueType": "json",
+  "value": {
+   "url": "https://proteinbase-pub.t3.storage.dev/kinetic-curves/019db569-f060-0777-3350-0363d223c496.json"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-8a70-8df7-e256a9851be4",
+  "metric": {
+   "name": "Expressed",
+   "slug": "expressed",
+   "categoryName": "Expression",
+   "categorySlug": "expression"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "boolean",
+  "value": true,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-6695-9771-d14dab91f384",
+  "metric": {
+   "name": "Binding",
+   "slug": "binding",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "boolean",
+  "value": true,
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-2527-b4aa-a75153371fcc",
+  "metric": {
+   "name": "Binding Strength",
+   "slug": "binding_strength",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "label",
+  "value": "Strong",
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "labelMetadata": {
+   "slug": "strong",
+   "color": "oklch(68.5% 0.169 237.323)"
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-60de-d1d9-dc91cccbf845",
+  "metric": {
+   "name": "KD",
+   "slug": "kd",
+   "description": "Apparent dissociation constant (KD_app) of the selected binding model; lower means tighter binding. Comparable across binding models, and equal to the 1:1 KD for 1:1 binders.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 1.44029970693229e-08,
+  "unit": "M",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776b-0d41-dd28-b064dbb040b6",
+  "metric": {
+   "name": "Kon (1:1)",
+   "slug": "kon",
+   "description": "Association rate constant from the 1:1 (standard) fit; for other binding models a rough 1:1 approximation.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 69240.3291769152,
+  "unit": "M-1s-1",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776c-0c8d-d43c-6974993424ea",
+  "metric": {
+   "name": "Koff (1:1)",
+   "slug": "koff",
+   "description": "Dissociation rate constant from the 1:1 (standard) fit; for other binding models a rough 1:1 approximation.",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "numeric",
+  "value": 0.000997268258214061,
+  "unit": "s-1",
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ },
+ {
+  "id": "019e0495-776c-32fa-9009-60e6647a58c9",
+  "metric": {
+   "name": "SPR Kinetic Curves",
+   "slug": "spr_kinetic_curves",
+   "categoryName": "Binding",
+   "categorySlug": "binding"
+  },
+  "metadata": {
+   "source": "foundry",
+   "foundryReplicate": 2,
+   "foundryVersionId": "019df7c0-0829-4508-69d5-8c00c95e49c3",
+   "foundryCollectionId": "019e01fa-8334-06d0-53a9-6395be587d06",
+   "foundryExperimentId": "019d2026-b9c6-1071-bff3-def46d880059",
+   "foundryResultPublicId": "019df7c0-19cd-6467-5569-134be0f34078",
+   "foundryTargetMaterialId": "019c32aa-ad5d-97ba-09a6-bf0c937d119d",
+   "foundryReplicatePublicId": "019df7c0-17dc-2bb7-fd30-b4054be40e89",
+   "foundryReplicateInternalId": "019df755-5b1a-e9c2-a3ba-e952fc337e35"
+  },
+  "type": "experimental",
+  "valueType": "json",
+  "value": {
+   "url": "https://proteinbase-pub.t3.storage.dev/kinetic-curves/019df755-5b1a-e9c2-a3ba-e952fc337e35.json"
+  },
+  "unit": null,
+  "evaluationMethod": {
+   "id": "0199a19c-ecd5-33d8-9110-f7aad5f5cff1",
+   "name": "BLI",
+   "type": "experimental",
+   "summary": "Gator Bio",
+   "slug": "bli",
+   "tags": [
+    "binding",
+    "kinetics",
+    "affinity"
+   ],
+   "url": null
+  },
+  "target": {
+   "id": "019c5bfc-abe9-5334-6462-8a0681f8cd7f",
+   "name": "TREM2",
+   "slug": "trem2"
+  },
+  "methodParams": {
+   "key": "foundry_sync_default_bli_params",
+   "description": "Default shared BLI method params for Foundry sync"
+  }
+ }
+]

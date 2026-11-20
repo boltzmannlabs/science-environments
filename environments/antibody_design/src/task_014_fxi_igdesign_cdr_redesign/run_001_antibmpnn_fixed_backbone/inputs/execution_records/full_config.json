@@ -1,0 +1,50 @@
+{
+ "executed_jobs": [
+  {
+   "job_name": "AntiBMPNN",
+   "scope": "hcdr3",
+   "doc_id": "6afb320f9de6b44b075e0980",
+   "experiment_name": "task014_run001_antibmpnn_hcdr3",
+   "experiment_data": {
+    "chains_to_design": [
+     "A"
+    ],
+    "residue_positions_to_design": {
+     "A": "97-109"
+    },
+    "generation_count": 20,
+    "input_path": "users/680f678c1b1d883c92aa706c/1794847234959/fv_osocimab.pdb"
+   }
+  },
+  {
+   "job_name": "AntiBMPNN",
+   "scope": "hcdr123",
+   "doc_id": "6afb3228239a6b9f38bf4802",
+   "experiment_name": "task014_run001_antibmpnn_hcdr123",
+   "experiment_data": {
+    "chains_to_design": [
+     "A"
+    ],
+    "residue_positions_to_design": {
+     "A": "26-33,51-58,97-109"
+    },
+    "generation_count": 20,
+    "input_path": "users/680f678c1b1d883c92aa706c/1794847234959/fv_osocimab.pdb"
+   }
+  }
+ ],
+ "boltz2_jobs": {
+  "D01": "6afb336d445ae94313c4664f",
+  "D02": "6afb33789030bff41644f710",
+  "D03": "6afb338d9de6b44b075e09f3",
+  "D04": "6afb3393239a6b9f38bf4871",
+  "D05": "6afb3399445ae94313c46676",
+  "D06": "6afb33a49850a93adf6850ec",
+  "D07": "6afb33ae9030bff41644f724",
+  "D08": "6afb3433dc1d60e5b460109a",
+  "D09": "6afb3444dc1d60e5b46010aa",
+  "D10": "6afb347e7fc9c7f56da8265b"
+ },
+ "boltz2_reference_reused": "6afb0ef99850a93adf684d5e (run_002, identical sequences)",
+ "ambiguous_submission": "task014_run001_boltz2_hcdr123_s17 (no doc_id; not resubmitted)"
+}

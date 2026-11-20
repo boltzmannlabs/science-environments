@@ -1,0 +1,56 @@
+{
+  "C01": {
+    "tool": "epitope_abgen local core (raw_pdb mode, imgt_default)",
+    "status": "EXCLUDED wrong-mask deviation",
+    "evidence": "root_mask_binding_diagnostic.json; H98=CYS designed; outputs/local_run1 preserved but excluded"
+  },
+  "C02": {
+    "tool": "build_platform_inference_feature.py + run_core_tool (prepared_feature, explicit masked_regions)",
+    "status": "completed 4/4 VALIDATED; mask checks 10/10; finite 1.0; exclusive flock -x"
+  },
+  "C03": {
+    "tool": "local AntiBMPNN v3 adapter (4 panels x 40)",
+    "status": "completed",
+    "input_repair": "48 UNK->GLY design residues (sequence alphabet only; byte-identity verified elsewhere; service fixed_positions = complement of design set, placeholders fully redesigned)",
+    "gate_results": "s0 0/40 (CDR Cys), s1 25/40, s2 32/40, s3 37/40"
+  },
+  "C04": {
+    "tool": "Boltz2 (established submit-job pattern)",
+    "status": "3/3 Success echo-exact",
+    "docs": {
+      "s1_cand13": "6afb7e1375ff2e0d02e6f23f",
+      "s2_cand13": "6afb7e1e7426d09ad749df43",
+      "s3_cand36": "6afb7e29c3dde753301b20aa"
+    },
+    "lost_receipt": "s1_cand30 accepted-but-docId-lost (client crash); outcome_unknown; not resubmitted"
+  },
+  "C05": {
+    "tool": "reference/metrics pipeline",
+    "status": "references loaded programmatically from primary bytes (FASTA cross-verified, SHA-256 proof in evidence); metrics with original definitions"
+  },
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_004_epitope_abgen_local",
+  "method_summary": [
+    {
+      "stage": "Prepare features",
+      "tool_and_settings": "Explicit chain-local CDR masks; saved epitope and feature tensors",
+      "result": "10/10 recorded mask checks"
+    },
+    {
+      "stage": "Generate backbones",
+      "tool_and_settings": "epitope_abgen local core; 4 samples; seed 2026; max_tokens 384",
+      "result": "4 finite backbone samples"
+    },
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "Local AntiBMPNN; 40 sequences per backbone",
+      "result": "160 sequences; 94 pass gates (0/25/32/37)"
+    },
+    {
+      "stage": "Evaluate complexes",
+      "tool_and_settings": "Matched Boltz2; exact sequence identity check",
+      "result": "3 accepted predictions; s2_cand13 retained"
+    }
+  ],
+  "completed_outcome": "Best candidate s2_cand13: ipTM 0.6039 vs matched reference 0.8987. Sample-0 designs fail the CDR cysteine gate. The evaluated panel has one replacement for an unverified prediction, so only the three saved verified models enter the benchmark."
+}

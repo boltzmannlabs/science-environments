@@ -1,0 +1,40 @@
+{
+ "s1_cand13": {
+  "iptm": 0.3125,
+  "ptm": 0.6944,
+  "complex_plddt": 0.8365,
+  "complex_pde": 1.1213,
+  "cdr_plddt_mean": 0.6367,
+  "contacts_5A": 704,
+  "contacts_5A_erratum": 160,
+  "contacts_5A_erratum_note": "sidechain-only (N/CA/C/O excluded), <=5.0 A \u2014 mislabeled; preserved as erratum"
+ },
+ "s2_cand13": {
+  "iptm": 0.6039,
+  "ptm": 0.7904,
+  "complex_plddt": 0.8402,
+  "complex_pde": 0.8276,
+  "cdr_plddt_mean": 0.6373,
+  "contacts_5A": 824,
+  "contacts_5A_erratum": 228,
+  "contacts_5A_erratum_note": "sidechain-only (N/CA/C/O excluded), <=5.0 A \u2014 mislabeled; preserved as erratum"
+ },
+ "s3_cand36": {
+  "iptm": 0.5455,
+  "ptm": 0.8056,
+  "complex_plddt": 0.8795,
+  "complex_pde": 0.6661,
+  "cdr_plddt_mean": 0.786,
+  "contacts_5A": 343,
+  "contacts_5A_erratum": 178,
+  "contacts_5A_erratum_note": "sidechain-only (N/CA/C/O excluded), <=5.0 A \u2014 mislabeled; preserved as erratum"
+ },
+ "reference_control": {
+  "iptm": 0.8987,
+  "ptm": 0.9316,
+  "complex_plddt": 0.9424,
+  "complex_pde": 0.3989,
+  "note": "reference control from run_001 matched evaluation (same protocol)"
+ },
+ "definitions_contacts_5A": "ALL heavy atoms incl backbone (all ATOM records), strict <5.0 A, per-atom pair count (original task009 definition, task009_r1_v2_bundle.py interface_stats)"
+}

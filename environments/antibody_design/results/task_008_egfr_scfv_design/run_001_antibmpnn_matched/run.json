@@ -1,0 +1,128 @@
+{
+  "status": "completed",
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  },
+  "paths": {
+    "src": "src/task_008_egfr_scfv_design/run_001_antibmpnn_matched",
+    "results": "results/task_008_egfr_scfv_design/run_001_antibmpnn_matched"
+  },
+  "preparation": {
+    "description": "Prepared 1YY9 Fv and 613-residue EGFR construct. VH 119 aa, VL 107 aa; scFv linker `(G4S)3`. Editable variable-domain positions: VH 26\u201332, 52\u201356, 98\u2013108; VL 24\u201334, 50\u201356, 89\u201397. Framework and linker are fixed.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Prepare reference",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "PDB extraction; ANARCI Chothia numbering",
+          "outputs": {
+            "recorded_result": "Exact parent VH/VL sequence match"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AntiBMPNN; 20 samples; H/L CDR edits",
+          "outputs": {
+            "recorded_result": "20 recorded candidates"
+          }
+        }
+      ],
+      "depends_on": [
+        "Prepare reference"
+      ]
+    },
+    {
+      "purpose": "Screen sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Mask, uniqueness, cysteine, glycosylation-sequon and sequence-property checks",
+          "outputs": {
+            "recorded_result": "6 selected candidates"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Evaluate complexes",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2; same EGFR construct and conditions for designs and reference",
+          "outputs": {
+            "recorded_result": "6 candidate models + native control"
+          }
+        }
+      ],
+      "depends_on": [
+        "Screen sequences"
+      ]
+    }
+  ],
+  "inputs_and_parameters_ref": "@src/inputs/submitted_requests",
+  "outputs": {
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "structures": "@results/structures",
+    "raw": "@results/raw"
+  },
+  "outcome": {
+    "designed": 20,
+    "shortlisted": 6,
+    "evaluated": 7,
+    "reference_iptm": 0.9065271615982056,
+    "best_candidate": "cet_008_r1_s15",
+    "best_candidate_iptm": 0.8548718690872192,
+    "summary": "Highest candidate ipTM: cet_008_r1_s15, 0.8549; matched native control 0.9065. No candidate improves the reference interface score."
+  },
+  "artifact_links": {
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "metrics": "@results/metrics.csv",
+    "structures": "@results/structures",
+    "sequences": "@results/sequences.fasta",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "raw": "@results/raw",
+    "workflow": "@src/workflow.md"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "logs": [
+      "@src/logs/agent_scientist_log.md",
+      "@src/logs/execution_summary.md"
+    ],
+    "usage_basis": "Approximate (~) per-run share of the session LLM usage recorded by the hosting chat; exact per-run token split was not instrumented. Chat totals differ from per-run attribution.",
+    "agent_config_file": "configs/task_008_egfr_scfv_design/run_001_antibmpnn_matched.json",
+    "agent_config_sha256": "c67724c349cd8ccb079857d1d1f5035dc6e619c197543d4e473ff81ffc19af31",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "2de458c2774477922a0d1ab101715d9d9b05f15544e02eb71d5f984623d38d57",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "task_id": "task_008_egfr_scfv_design",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "AntiBMPNN CDR-restricted redesign + Boltz2 matched evaluation (Boltzmann lane)"
+}

@@ -1,0 +1,38 @@
+{
+  "experiment_id": "task009_trem2_epitope_abgen_run1_exact_epitope_LOCAL",
+  "complex_id": "trem2_ref_scFv_T009",
+  "antigen_pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_002_epitope_abgen/inputs/trem2_antigen.pdb",
+  "antibody_pdb_path": "/home/boltzmann10/science-environments/environments/antibody_design/src/task_009_trem2_scfv_design/run_002_epitope_abgen/inputs/trem2_antibody_HL.pdb",
+  "heavy_chain_id": "H",
+  "light_chain_id": "L",
+  "antigen_chain_ids": [
+    "A"
+  ],
+  "mask_cdrs": "all_cdrs",
+  "samples_per_task": 4,
+  "seed": 2026,
+  "max_tokens": 384,
+  "epitope_residues": [
+    "A:7",
+    "A:12",
+    "A:36",
+    "A:38",
+    "A:39",
+    "A:40",
+    "A:41",
+    "A:42",
+    "A:43",
+    "A:45",
+    "A:86",
+    "A:87",
+    "A:89",
+    "A:90",
+    "A:91",
+    "A:109",
+    "A:111",
+    "A:112",
+    "A:113",
+    "A:114"
+  ],
+  "run_name": "task009_epitope_abgen_local_v1"
+}

@@ -1,0 +1,16 @@
+task_id: task_013_c5_igdesign_cdr_redesign
+run_id: run_002_igdesign_reconstruction
+workflow_id: wf_igdesign_reference_backbone_reconstruction
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction/run.json
+    sha256: 960c5ed2098f348311178c81cf832254359eef313dcde72d3c39657a9159dd98
+  agent_settings:
+    path: ../../../configs/task_013_c5_igdesign_cdr_redesign/run_002_igdesign_reconstruction.json
+    sha256: 864aa5134438556503b4b669c937d9c66196b740114ed9db6402fdd173c9d9d1
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

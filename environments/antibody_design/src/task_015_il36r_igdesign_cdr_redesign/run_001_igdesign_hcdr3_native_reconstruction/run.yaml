@@ -1,0 +1,16 @@
+task_id: task_015_il36r_igdesign_cdr_redesign
+run_id: run_001_igdesign_hcdr3_native_reconstruction
+workflow_id: wf_il36r_igdesign_hcdr3_native_reconstruction
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction/run.json
+    sha256: e2eddc3295a058f5133cdd3fb724676d012ca5f44965a991451f142d79b44b04
+  agent_settings:
+    path: ../../../configs/task_015_il36r_igdesign_cdr_redesign/run_001_igdesign_hcdr3_native_reconstruction.json
+    sha256: 98ba1c44215aa42fcf8a4f1a31e19fcdc7014b51a60a1fc3f26f8c115ecfc473
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv

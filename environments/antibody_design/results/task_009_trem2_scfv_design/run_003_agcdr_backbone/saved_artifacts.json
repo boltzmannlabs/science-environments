@@ -1,0 +1,238 @@
+{
+ "run_id": "run_003_agcdr_backbone",
+ "as_of": "2026-11-16T19:28:00Z",
+ "saved_artifacts": [
+  {
+   "path": "CHECKSUMS.sha256",
+   "bytes": 1960
+  },
+  {
+   "path": "benchmark_comparison.csv",
+   "bytes": 678
+  },
+  {
+   "path": "candidates.csv",
+   "bytes": 497
+  },
+  {
+   "path": "metrics.csv",
+   "bytes": 354
+  },
+  {
+   "path": "metrics.json",
+   "bytes": 5364
+  },
+  {
+   "path": "raw/agcdr_extracted/README.txt",
+   "bytes": 570
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/all_generated_samples.pdb",
+   "bytes": 922963
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_1.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_2.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_3.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_4.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_5.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_6.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_7.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/generated_structures/generated_sample_8.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/reference/input_structure.pdb",
+   "bytes": 115351
+  },
+  {
+   "path": "raw/agcdr_extracted/reports/metrics.json",
+   "bytes": 716
+  },
+  {
+   "path": "raw/agcdr_extracted/reports/preprocessing.json",
+   "bytes": 356
+  },
+  {
+   "path": "raw/agcdr_extracted/reports/run_information.json",
+   "bytes": 1451
+  },
+  {
+   "path": "raw/agcdr_results.zip",
+   "bytes": 420171
+  },
+  {
+   "path": "raw/antibmpnn_local_run4/antibmpnn_artifacts/parsed_pdbs.jsonl",
+   "bytes": 37346
+  },
+  {
+   "path": "raw/antibmpnn_local_run4/input_pdbs/agcdr_sample7_design_input.pdb",
+   "bytes": 115356
+  },
+  {
+   "path": "raw/antibmpnn_local_run4/logs/01_parse_pdbs.log",
+   "bytes": 530
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_artifacts/antibody_domains.json",
+   "bytes": 778
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_artifacts/assigned_pdbs.jsonl",
+   "bytes": 52
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_artifacts/fixed_pdbs.jsonl",
+   "bytes": 1305
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_artifacts/model_output/seqs/agcdr_sample7_design_input|antibmpnn_020|N-0.0|T-0.1.fa",
+   "bytes": 12627
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_artifacts/parsed_pdbs.jsonl",
+   "bytes": 37346
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_generation_metrics.csv",
+   "bytes": 3547
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_results.csv",
+   "bytes": 10514
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/antibmpnn_results.zip",
+   "bytes": 20661
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/input_pdbs/agcdr_sample7_design_input.pdb",
+   "bytes": 115356
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/logs/01_parse_pdbs.log",
+   "bytes": 530
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/logs/02_antibmpnn.log",
+   "bytes": 1943
+  },
+  {
+   "path": "raw/antibmpnn_local_run5/run_manifest.json",
+   "bytes": 1470
+  },
+  {
+   "path": "raw/boltz2_metrics_and_echo.json",
+   "bytes": 577
+  },
+  {
+   "path": "raw/boltz2_submission_records.json",
+   "bytes": 2246
+  },
+  {
+   "path": "raw/cand006_boltz2_result.json",
+   "bytes": 3710
+  },
+  {
+   "path": "raw/cand006_outputs.zip",
+   "bytes": 5680692
+  },
+  {
+   "path": "raw/cand006_pdbs.zip",
+   "bytes": 50808
+  },
+  {
+   "path": "raw/cand027_boltz2_result.json",
+   "bytes": 3710
+  },
+  {
+   "path": "raw/cand027_outputs.zip",
+   "bytes": 5755963
+  },
+  {
+   "path": "raw/cand027_pdbs.zip",
+   "bytes": 51025
+  },
+  {
+   "path": "raw/cand032_boltz2_result.json",
+   "bytes": 3710
+  },
+  {
+   "path": "raw/cand032_outputs.zip",
+   "bytes": 5913272
+  },
+  {
+   "path": "raw/cand032_pdbs.zip",
+   "bytes": 50797
+  },
+  {
+   "path": "raw/cand036_boltz2_result.json",
+   "bytes": 3710
+  },
+  {
+   "path": "raw/cand036_outputs.zip",
+   "bytes": 5764627
+  },
+  {
+   "path": "raw/cand036_pdbs.zip",
+   "bytes": 50675
+  },
+  {
+   "path": "report.md",
+   "bytes": 2937
+  },
+  {
+   "path": "run.json",
+   "bytes": 5793
+  },
+  {
+   "path": "saved_artifacts.json",
+   "bytes": 4876
+  },
+  {
+   "path": "sequences.fasta",
+   "bytes": 1224
+  },
+  {
+   "path": "shortlist.csv",
+   "bytes": 167
+  },
+  {
+   "path": "structures/cand006/cand006_scFv_TREM2_boltz2.pdb",
+   "bytes": 225504
+  },
+  {
+   "path": "structures/cand027/cand027_scFv_TREM2_boltz2.pdb",
+   "bytes": 225828
+  },
+  {
+   "path": "structures/cand032/cand032_scFv_TREM2_boltz2.pdb",
+   "bytes": 225504
+  },
+  {
+   "path": "structures/cand036/cand036_scFv_TREM2_boltz2.pdb",
+   "bytes": 225099
+  }
+ ]
+}

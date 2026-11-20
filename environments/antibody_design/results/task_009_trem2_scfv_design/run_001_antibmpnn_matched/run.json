@@ -1,0 +1,115 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_001_antibmpnn_matched",
+  "workflow_id": "wf_trem2_antibmpnn_cdr_redesign",
+  "status": "completed",
+  "paths": {
+    "src": "src/task_009_trem2_scfv_design/run_001_antibmpnn_matched",
+    "results": "results/task_009_trem2_scfv_design/run_001_antibmpnn_matched"
+  },
+  "preparation": {
+    "description": "Saved reference scFv, prepared TREM2 construct and chain-local CDR mask. VH/VL framework residues and the scFv linker are protected; exact masks and numbering are retained in inputs/cdr_mask.json and inputs/imgt_numbering.json.",
+    "original_configuration": "@src/inputs/execution_records/full_config.json",
+    "submitted_requests": "@src/inputs/submitted_requests"
+  },
+  "stages": [
+    {
+      "purpose": "Verify reference",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Saved structures, CDR numbering and TREM2 construct",
+          "outputs": {
+            "recorded_result": "Matched native control"
+          }
+        }
+      ],
+      "depends_on": []
+    },
+    {
+      "purpose": "Generate sequences",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "AntiBMPNN; 40 samples",
+          "outputs": {
+            "recorded_result": "40 candidates"
+          }
+        }
+      ],
+      "depends_on": [
+        "Verify reference"
+      ]
+    },
+    {
+      "purpose": "Apply sequence gates",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "CDR-only substitutions and identity checks",
+          "outputs": {
+            "recorded_result": "40 pass; 39 unique sequences"
+          }
+        }
+      ],
+      "depends_on": [
+        "Generate sequences"
+      ]
+    },
+    {
+      "purpose": "Evaluate complexes",
+      "state": "completed",
+      "tools": [
+        {
+          "name": "Boltz2, verified exact submitted VH/VL",
+          "outputs": {
+            "recorded_result": "4 candidate predictions"
+          }
+        }
+      ],
+      "depends_on": [
+        "Apply sequence gates"
+      ]
+    }
+  ],
+  "outcome": {
+    "status": "completed",
+    "completed_utc": "2026-11-16T20:25:00Z",
+    "summary": "Candidate ipTM 0.3062\u20130.7969; matched native control 0.8987. cand13_T009-C13 is excluded from follow-up because of low interface confidence; its measured result is retained."
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "execution_summary": "@src/logs/execution_summary.md",
+    "full_config": "@src/inputs/execution_records/full_config.json",
+    "full_config_sha256": "0f36670bcb1898b2ace8e1550cb9eacef5eb7ef4eb0f4f4551b1bb3f879d6d86",
+    "run_files_inventory": "@src/inputs/execution_records/run_files.csv",
+    "log_semantics": "Retrospective scientific summaries of the retained completed execution; no reconstructed timestamps.",
+    "agent_config_file": "configs/task_009_trem2_scfv_design/run_001_antibmpnn_matched.json",
+    "agent_config_sha256": "5242d15d6a02ae513f4bafce41e3b93d9c24101781cf2fc55e5e8cc11f112a2e",
+    "public_documentation": "Methods and logs summarize the final saved scientific execution. Signed download query strings and superseded operational/layout copies are omitted."
+  },
+  "artifact_links": {
+    "workflow_md": "@src/workflow.md",
+    "report_md": "@results/report.md",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json",
+    "reference_structure": "@results/structures/reference_scFv_TREM2_boltz2_prediction.pdb",
+    "report": "@results/report.md",
+    "candidates": "@results/candidates.csv",
+    "shortlist": "@results/shortlist.csv",
+    "sequences": "@results/sequences.fasta",
+    "metrics": "@results/metrics.csv",
+    "benchmark_comparison": "@results/benchmark_comparison.csv",
+    "workflow": "@src/workflow.md"
+  },
+  "lineage": {
+    "parent": null,
+    "retry_of": null,
+    "source_runs": [],
+    "relationship": "Independent completed generation run"
+  },
+  "planning_record": "@src/inputs/execution_records/full_config.json"
+}

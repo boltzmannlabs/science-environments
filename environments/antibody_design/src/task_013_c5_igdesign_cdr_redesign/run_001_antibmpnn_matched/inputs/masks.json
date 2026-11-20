@@ -1,0 +1,15 @@
+{
+  "numbering": "ANARCI/IgDesign IMGT-style, 0-based positions within the truncated variable domain (fwr1..fwr4)",
+  "VH_domain_len": 122,
+  "VL_domain_len": 107,
+  "hcdr1": {"positions_0based": [25,26,27,28,29,30,31,32], "native": "GYIFSNYW"},
+  "hcdr2": {"positions_0based": [50,51,52,53,54,55,56,57], "native": "ILPGSGST"},
+  "hcdr3": {"positions_0based": [96,97,98,99,100,101,102,103,104,105,106,107,108,109,110], "native": "ARYFFGSSPNWYFDV"},
+  "antiBMPNN_1based_full_chain_H": {
+    "note": "AntiBMPNN numbers residues within the parsed H chain (221 residues, VH 1-122), matching old run positions",
+    "hcdr3_only": {"H": [[97,111]]},
+    "hcdr123": {"H": [[26,33],[51,58],[97,111]]}
+  },
+  "ag_custom_crop_200closest": "indices into parsed B chain (1634 residues), computed as 200 residues with minimal CA distance to H/L",
+  "provenance": {"structure": "PDB 5I5K chains H,L,B (cognate Fab1), sha256 a5cac42b...", "csv": "Eculizumab-C5.csv sha256 787d4406...b065ad"}
+}

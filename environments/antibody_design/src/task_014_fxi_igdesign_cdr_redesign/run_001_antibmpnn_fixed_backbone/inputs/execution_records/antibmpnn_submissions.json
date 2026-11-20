@@ -1,0 +1,43 @@
+{
+ "approved_by": "user (MONITOR_CONTINUATION_20261116T163918): best-effort/partial validation + both predeclared jobs + normal charges",
+ "upload": {
+  "receipt_id": "df02d18cbb784586be7085843f4f6d7d",
+  "s3_path": "users/680f678c1b1d883c92aa706c/1794847234959/fv_osocimab.pdb",
+  "sha256": "c59de3b4361ffe29d336329a2bd4e8efe564eb8e5b25ca013e3be3d6176dc100",
+  "validation": "partial (PDB syntax) \u2014 local chain/mask review recorded prior"
+ },
+ "jobs": [
+  {
+   "experiment": "hcdr3_scope",
+   "experiment_name": "task014_run001_antibmpnn_hcdr3",
+   "doc_id": "6afb320f9de6b44b075e0980",
+   "receipt_attempt_id": "33d276b25f8642ab8a783ea9b35ec3af",
+   "status": "accepted",
+   "payload": {
+    "chains_to_design": [
+     "A"
+    ],
+    "residue_positions_to_design": {
+     "A": "97-109"
+    },
+    "generation_count": 20
+   }
+  },
+  {
+   "experiment": "hcdr123_scope",
+   "experiment_name": "task014_run001_antibmpnn_hcdr123",
+   "doc_id": "6afb3228239a6b9f38bf4802",
+   "receipt_attempt_id": "9bfa9f9e0b694c1a9b2e89ed61a87ad1",
+   "status": "accepted",
+   "payload": {
+    "chains_to_design": [
+     "A"
+    ],
+    "residue_positions_to_design": {
+     "A": "26-33,51-58,97-109"
+    },
+    "generation_count": 20
+   }
+  }
+ ]
+}

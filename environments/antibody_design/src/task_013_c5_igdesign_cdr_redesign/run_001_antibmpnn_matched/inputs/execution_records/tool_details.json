@@ -1,0 +1,117 @@
+{
+  "T01": {
+    "tool": "AntiBMPNN (Boltzmann platform)",
+    "doc_id": "6afb34bb7fc9c7f56da82672",
+    "experiment_name": "AntiBMPNN - 20261116-165210Z - 8bca1a",
+    "scope": "hcdr3only",
+    "samples": 100,
+    "temperature": 0.1,
+    "input_pdb": "5i5k_HLB uploaded (fixed backbone)",
+    "outputs": "raw/antibmpnn_hcdr3only_results.csv (+metrics)",
+    "status": "Success, terminal confirmed"
+  },
+  "T02": {
+    "tool": "AntiBMPNN (Boltzmann platform)",
+    "doc_id": "6afb34cbdc1d60e5b46010d6",
+    "experiment_name": "AntiBMPNN - 20261116-165225Z - 44f8ed",
+    "scope": "hcdr123",
+    "samples": 100,
+    "temperature": 0.1,
+    "input_pdb": "5i5k_HLB uploaded (fixed backbone)",
+    "outputs": "raw/antibmpnn_hcdr123_results.csv (+metrics)",
+    "status": "Success, terminal confirmed"
+  },
+  "T03": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "native reference Fv prediction",
+    "doc_id": "6afb3c52dc1d60e5b460120e",
+    "experiment_name": "Boltz-2 - 20261116-172432Z - b095d6",
+    "outputs": "raw/boltz2/boltz2_native_model_0.pdb",
+    "mean_plddt_bfactor": 96.37,
+    "status": "Success, terminal confirmed"
+  },
+  "T04": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ab_hcdr123_s065",
+    "doc_id": "6afb3c747426d09ad749d3c8",
+    "outputs": "raw/boltz2/boltz2_ab_hcdr123_s065_model_0.pdb",
+    "status": "Success"
+  },
+  "T05": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ab_hcdr3only_s045",
+    "doc_id": "6afb3c9775ff2e0d02e6ec64",
+    "outputs": "raw/boltz2/boltz2_ab_hcdr3only_s045_model_0.pdb",
+    "status": "Success"
+  },
+  "T06": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ig_hcdr123_s069",
+    "doc_id": "6afb3ca5c3dde753301b1a9e",
+    "outputs": "raw/boltz2/boltz2_ig_hcdr123_s069_model_0.pdb",
+    "status": "Success"
+  },
+  "T07": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ig_hcdr123_s063",
+    "doc_id": "6afb3cb4ef7b50fcff15bec7",
+    "outputs": "raw/boltz2/boltz2_ig_hcdr123_s063_model_0.pdb",
+    "status": "Success"
+  },
+  "T08": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ig_hcdr3_s002",
+    "doc_id": "6afb3cc27fc9c7f56da828d2",
+    "outputs": "raw/boltz2/boltz2_ig_hcdr3_s002_model_0.pdb",
+    "status": "Success"
+  },
+  "T09": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ig_hcdr3_s031 ORIGINAL (excluded deviation: VH pos98 Y-vs-W transcription error)",
+    "doc_id": "6afb3cd1ef7b50fcff15bed4",
+    "outputs": "raw/boltz2/boltz2_ig_hcdr3_s031_deviation_model_0.pdb (archived, excluded)",
+    "status": "Success but EXCLUDED from analysis"
+  },
+  "T10": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "ig_hcdr3_s031 CORRECTED (programmatic submit from selected_candidates.json, sha16 e0d9bae97362845b)",
+    "doc_id": "6afb4636c3dde753301b1c12",
+    "job_name": "task-structurepred-boltz2tvxfl",
+    "outputs": "raw/boltz2/boltz2_ig_hcdr3_s031_model_0.pdb",
+    "identity_verified": "VH/VL match selected_candidates.json",
+    "status": "Success, terminal confirmed"
+  },
+  "T11": {
+    "tool": "ESMFold v0 3B (local, fair-esm 2.0.1, fp32, 4 recycles)",
+    "purpose": "matched second predictor track: native + 6 candidates",
+    "venv": "<local-path>",
+    "outputs": "structures/esmfold/esmfold_*.pdb (7 models)",
+    "native_mean_plddt": 88.11,
+    "status": "completed ALL DONE"
+  },
+  "task_id": "task_013_c5_igdesign_cdr_redesign",
+  "run_id": "run_001_antibmpnn_matched",
+  "method_summary": [
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "AntiBMPNN; temperature 0.1; 100 per scope",
+      "result": "200 generated sequences"
+    },
+    {
+      "stage": "Assemble evaluation panel",
+      "tool_and_settings": "2 AntiBMPNN designs + 4 designs imported from run_002 + native control",
+      "result": "7 fixed sequence pairs"
+    },
+    {
+      "stage": "Predict structures",
+      "tool_and_settings": "Boltz2 Fv and ESMFold VH\u2013linker\u2013VL",
+      "result": "14 accepted models"
+    },
+    {
+      "stage": "Measure recovery and geometry",
+      "tool_and_settings": "Native AAR; C\u03b1 scRMSD after framework fit",
+      "result": "Candidate consistency vs same-predictor native model; native control vs 5I5K crystal"
+    }
+  ],
+  "completed_outcome": "AntiBMPNN maximum HCDR3 AAR is 0.4000 in each 100-sample scope. The closest candidate Fv is ig_hcdr3_s002 for Boltz2 (0.371 \u00c5) and ig_hcdr3_s031 for ESMFold (0.139 \u00c5)."
+}

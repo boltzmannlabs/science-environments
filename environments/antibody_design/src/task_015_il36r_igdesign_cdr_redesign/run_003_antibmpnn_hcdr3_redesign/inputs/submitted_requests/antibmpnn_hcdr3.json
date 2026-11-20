@@ -1,0 +1,25 @@
+{
+  "job_name": "AntiBMPNN",
+  "experiment_name": "AntiBMPNN - 20261116-143406Z - 2465ae",
+  "doc_id": "6afb145e239a6b9f38bf435f",
+  "submitted_utc": "2026-11-16T14:34:06Z",
+  "experiment_data": {
+    "input_path": "users/680f678c1b1d883c92aa706c/1794839632763/complex_hlr_6u6u.pdb",
+    "input_sha256": "0c41871ea7e8fdeaa9d77e83d9636d50d9697783a8cc496358bc7538b1f9a7a0",
+    "upload_receipt_id": "6efd1c287a664e9ebfb71bebf6c6d731",
+    "chains_to_design": ["H"],
+    "residue_positions_to_design": {"H": "97-108"},
+    "generation_count": 40
+  },
+  "validation": {
+    "level": "partial",
+    "reviewed_locally": [
+      "chain H = Spesolimab VH+CH1 (221 aa, contiguous 1-221, SEQRES-verified)",
+      "chain L = kappa VL+CL (214 aa)",
+      "chain R = IL-36R ECD residues 21-217 (197 aa)",
+      "HCDR3 mask 1-based 97-108 (0-based 96-107, ANARCI-verified) == native TVVFYGEPYFPY",
+      "HCDR1/HCDR2, framework, VL and antigen excluded from design (fixed conditioning)"
+    ],
+    "approval": "allow_partial_validation per prior session approval pattern for AntiBMPNN partial-validation warnings; chains/mask verified programmatically (prep_complex_pdb.py assertions)"
+  }
+}

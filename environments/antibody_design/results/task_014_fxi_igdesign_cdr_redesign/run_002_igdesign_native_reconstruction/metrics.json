@@ -1,0 +1,337 @@
+{
+ "task_id": "task_014_fxi_igdesign_cdr_redesign",
+ "run_id": "run_002_igdesign_native_reconstruction",
+ "generated_utc": "2026-11-16T14:58:26.147565Z",
+ "method": "IgDesign (LM-Design + IgMPNN) masked native reconstruction, AbSciBio/igdesign @ 70431eef0afa, fp16 memory-safe protocol",
+ "native": {
+  "vh_variable_domain": "EVQLLESGGGLVQPGGSLRLSCAASGFTFSQYGMDWVRQAPGKGLEWVSGIGPSGGSTVYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCTRGGPYYYYGMDVWGQGTTVTVSS",
+  "vl_variable_domain": "DIQMTQSPSSLSASVGDRVTITCQASQDISNYLNWYQQKPGKAPKLLIYDASNLETGVPSRFSGSGSGTDFTFTISSLQPEDIATYYCQQANSFPVTFGGGTKVEIK",
+  "cdrs": {
+   "hcdr1": "GFTFSQYG",
+   "hcdr2": "IGPSGGST",
+   "hcdr3": "TRGGPYYYYGMDV"
+  }
+ },
+ "evaluated_positions_zero_based": {
+  "hcdr1": [
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32
+  ],
+  "hcdr2": [
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57
+  ],
+  "hcdr3": [
+   96,
+   97,
+   98,
+   99,
+   100,
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108
+  ]
+ },
+ "aar": {
+  "hcdr3_1shot": {
+   "scope": [
+    "hcdr3"
+   ],
+   "n_samples": 1,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr3": 0.6923076923076923
+    },
+    "overall_aar": 0.6923076923076923,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRAGPSYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr3": 0.6923076923076923
+    },
+    "overall_aar": 0.6923076923076923,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRAGPSYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr3": 0.6923076923076923
+   },
+   "best_rule": "max overall recovery over 1 samples"
+  },
+  "hcdr3_best100": {
+   "scope": [
+    "hcdr3"
+   ],
+   "n_samples": 100,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7692307692307693,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr3": "TRGGPWYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr3": 0.8461538461538461
+    },
+    "overall_aar": 0.8461538461538461,
+    "sample_index": 22,
+    "sequences": {
+     "hcdr3": "TRGGPYYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr3": 0.7153846153846153
+   },
+   "best_rule": "max overall recovery over 100 samples"
+  },
+  "hcdr123_1shot": {
+   "scope": [
+    "hcdr1",
+    "hcdr2",
+    "hcdr3"
+   ],
+   "n_samples": 1,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7241379310344828,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGDST",
+     "hcdr3": "TRGGPSYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.7692307692307693
+    },
+    "overall_aar": 0.7241379310344828,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGDST",
+     "hcdr3": "TRGGPSYYYAFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr1": 0.75,
+    "hcdr2": 0.625,
+    "hcdr3": 0.7692307692307693
+   },
+   "best_rule": "max overall recovery over 1 samples"
+  },
+  "hcdr123_best100": {
+   "scope": [
+    "hcdr1",
+    "hcdr2",
+    "hcdr3"
+   ],
+   "n_samples": 100,
+   "one_shot": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.625,
+     "hcdr3": 0.6153846153846154
+    },
+    "overall_aar": 0.6551724137931034,
+    "sample_index": 0,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "ISPDGNST",
+     "hcdr3": "TREGYWYYYAFDV"
+    }
+   },
+   "best_of_n": {
+    "per_cdr_aar": {
+     "hcdr1": 0.75,
+     "hcdr2": 0.75,
+     "hcdr3": 0.8461538461538461
+    },
+    "overall_aar": 0.7931034482758621,
+    "sample_index": 90,
+    "sequences": {
+     "hcdr1": "GFTFSSYA",
+     "hcdr2": "INPGGGST",
+     "hcdr3": "TRGGPYYYYYFDV"
+    }
+   },
+   "mean_aar": {
+    "hcdr1": 0.7575,
+    "hcdr2": 0.56375,
+    "hcdr3": 0.7038461538461539
+   },
+   "best_rule": "max overall recovery over 100 samples"
+  }
+ },
+ "aar_definition": "fraction of designed CDR positions matching the native Osocimab CDR (position-aligned masked native reconstruction)",
+ "sampling": {
+  "hcdr3": {
+   "one_shot": {
+    "grid": "1x1x1",
+    "seed": 0
+   },
+   "best_of_100": {
+    "grid": "10 orders x 10 pmpnn x 1 lm",
+    "seed": 1
+   }
+  },
+  "hcdr123": {
+   "one_shot": {
+    "grid": "1x1x1",
+    "seed": 0
+   },
+   "best_of_100": {
+    "grid": "10x10x1",
+    "seed": 1
+   }
+  }
+ },
+ "scrmsd": {
+  "protocol": {
+   "predictor": "Boltz2 (boltz-structure-prediction), single model per sequence",
+   "reference": "Boltz2 prediction of unmodified Osocimab Fv (doc 6afb0ef99850a93adf684d5e)",
+   "atoms": "CA",
+   "units": "angstrom",
+   "alignment": "Kabsch on framework CA (VH non-CDR + all VL), single fit, no refit",
+   "correspondence": "positional (sequence-echo verified)",
+   "regions_0based_vh": {
+    "hcdr1": "25-32",
+    "hcdr2": "50-57",
+    "hcdr3": "96-108"
+   }
+  },
+  "self_check": {
+   "hcdr1": 0.0,
+   "hcdr2": 0.0,
+   "hcdr3": 0.0,
+   "hcdr123": 0.0,
+   "fv": 0.0
+  },
+  "candidates": {
+   "t014r002_hcdr3_best100_012": {
+    "hcdr1": 0.3785,
+    "hcdr2": 0.4428,
+    "hcdr3": 1.3144,
+    "hcdr123": 0.9317,
+    "fv": 0.4382
+   },
+   "t014r002_hcdr3_best100_022": {
+    "hcdr1": 0.4239,
+    "hcdr2": 0.5697,
+    "hcdr3": 1.7987,
+    "hcdr123": 1.2607,
+    "fv": 0.5464
+   },
+   "t014r002_hcdr3_best100_027": {
+    "hcdr1": 0.9069,
+    "hcdr2": 0.9185,
+    "hcdr3": 4.1817,
+    "hcdr123": 2.8807,
+    "fv": 1.131
+   },
+   "t014r002_hcdr3_best100_065": {
+    "hcdr1": 1.1334,
+    "hcdr2": 1.205,
+    "hcdr3": 1.7719,
+    "hcdr123": 1.4705,
+    "fv": 0.7657
+   },
+   "t014r002_hcdr3_best100_082": {
+    "hcdr1": 0.5015,
+    "hcdr2": 0.4545,
+    "hcdr3": 2.9435,
+    "hcdr123": 2.0026,
+    "fv": 0.7759
+   },
+   "t014r002_hcdr123_best100_034": {
+    "hcdr1": 0.3512,
+    "hcdr2": 0.6185,
+    "hcdr3": 1.6161,
+    "hcdr123": 1.1447,
+    "fv": 0.4829
+   },
+   "t014r002_hcdr123_best100_035": {
+    "hcdr1": 0.6599,
+    "hcdr2": 0.5976,
+    "hcdr3": 3.8252,
+    "hcdr123": 2.6034,
+    "fv": 0.9821
+   },
+   "t014r002_hcdr123_best100_067": {
+    "hcdr1": 0.3164,
+    "hcdr2": 0.4499,
+    "hcdr3": 3.8835,
+    "hcdr123": 2.6162,
+    "fv": 0.9744
+   },
+   "t014r002_hcdr123_best100_070": {
+    "hcdr1": 0.284,
+    "hcdr2": 0.3734,
+    "hcdr3": 1.8404,
+    "hcdr123": 1.2566,
+    "fv": 0.5061
+   },
+   "t014r002_hcdr123_best100_082": {
+    "hcdr1": 0.4211,
+    "hcdr2": 0.6601,
+    "hcdr3": 3.8016,
+    "hcdr123": 2.5783,
+    "fv": 0.9728
+   }
+  }
+ },
+ "candidate_counts": {
+  "samples_generated": 202,
+  "unique_cdr_tuples_hcdr3_best100": 59,
+  "unique_cdr_tuples_hcdr123_best100": 99,
+  "evaluated_structurally": 10,
+  "shortlist": 10
+ },
+ "provenance": {
+  "reference_complex": "6HHC (osocimab/BAY 1213790 Fab : FXIa 388-623), chains remapped A=VL B=VH C=FXI",
+  "benchmark_csv_sha256": "850552125e42524d2ff33e2ff003e4f9b4b413124db9eb69dc0623a24e50fd28",
+  "checkpoints": [
+   "igdesign_acvr2b_holdout.ckpt",
+   "igmpnn_acvr2b_holdout.ckpt"
+  ],
+  "boltz2_doc_ids": "inputs/execution_records/boltz2_doc_ids.json",
+  "sequence_echo_verification": "raw/boltz2/sequence_echo_report.json (11/11 match)"
+ },
+ "caveats": [
+  "Computational recovery and scRMSD do not establish experimental affinity or activity.",
+  "Boltz2 single-model scRMSD is not protocol-identical to the published ABB2/ABB3/ABB3-LM/ESMFold ensemble values.",
+  "fp16 inference protocol (memory-safe loader) documented; not claimed fp32-identical."
+ ]
+}

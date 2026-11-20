@@ -1,0 +1,101 @@
+{
+ "protocol": {
+  "predictor": "Boltz2 (boltz-structure-prediction), single model per sequence",
+  "reference": "Boltz2 prediction of unmodified Osocimab Fv (doc 6afb0ef99850a93adf684d5e)",
+  "atoms": "CA",
+  "units": "angstrom",
+  "alignment": "Kabsch on framework CA (VH non-CDR + all VL), single fit, no refit",
+  "correspondence": "positional (sequence-echo verified)",
+  "regions_0based_vh": {
+   "hcdr1": "25-32",
+   "hcdr2": "50-57",
+   "hcdr3": "96-108"
+  }
+ },
+ "self_check": {
+  "hcdr1": 0.0,
+  "hcdr2": 0.0,
+  "hcdr3": 0.0,
+  "hcdr123": 0.0,
+  "fv": 0.0
+ },
+ "candidates": {
+  "_self_check_reference_vs_itself": {
+   "hcdr1": 0.0,
+   "hcdr2": 0.0,
+   "hcdr3": 0.0,
+   "hcdr123": 0.0,
+   "fv": 0.0
+  },
+  "hcdr3_c012": {
+   "hcdr1": 0.3785,
+   "hcdr2": 0.4428,
+   "hcdr3": 1.3144,
+   "hcdr123": 0.9317,
+   "fv": 0.4382
+  },
+  "hcdr3_c022": {
+   "hcdr1": 0.4239,
+   "hcdr2": 0.5697,
+   "hcdr3": 1.7987,
+   "hcdr123": 1.2607,
+   "fv": 0.5464
+  },
+  "hcdr3_c027": {
+   "hcdr1": 0.9069,
+   "hcdr2": 0.9185,
+   "hcdr3": 4.1817,
+   "hcdr123": 2.8807,
+   "fv": 1.131
+  },
+  "hcdr3_c065": {
+   "hcdr1": 1.1334,
+   "hcdr2": 1.205,
+   "hcdr3": 1.7719,
+   "hcdr123": 1.4705,
+   "fv": 0.7657
+  },
+  "hcdr3_c082": {
+   "hcdr1": 0.5015,
+   "hcdr2": 0.4545,
+   "hcdr3": 2.9435,
+   "hcdr123": 2.0026,
+   "fv": 0.7759
+  },
+  "hcdr123_c034": {
+   "hcdr1": 0.3512,
+   "hcdr2": 0.6185,
+   "hcdr3": 1.6161,
+   "hcdr123": 1.1447,
+   "fv": 0.4829
+  },
+  "hcdr123_c035": {
+   "hcdr1": 0.6599,
+   "hcdr2": 0.5976,
+   "hcdr3": 3.8252,
+   "hcdr123": 2.6034,
+   "fv": 0.9821
+  },
+  "hcdr123_c067": {
+   "hcdr1": 0.3164,
+   "hcdr2": 0.4499,
+   "hcdr3": 3.8835,
+   "hcdr123": 2.6162,
+   "fv": 0.9744
+  },
+  "hcdr123_c070": {
+   "hcdr1": 0.284,
+   "hcdr2": 0.3734,
+   "hcdr3": 1.8404,
+   "hcdr123": 1.2566,
+   "fv": 0.5061
+  },
+  "hcdr123_c082": {
+   "hcdr1": 0.4211,
+   "hcdr2": 0.6601,
+   "hcdr3": 3.8016,
+   "hcdr123": 2.5783,
+   "fv": 0.9728
+  }
+ }
+}

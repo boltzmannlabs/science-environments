@@ -1,0 +1,15 @@
+scope_budget,cdr,n,mean_aar,max_aar,n_full_recovery
+hcdr3 1-shot,HCDR3,1,0.4667,0.4667,0
+hcdr3 best-of-100,HCDR3,100,0.5193,0.6667,0
+hcdr123 1-shot,HCDR1,1,0.625,0.625,0
+hcdr123 1-shot,HCDR2,1,0.5,0.5,0
+hcdr123 1-shot,HCDR3,1,0.5333,0.5333,0
+hcdr123 best-of-100,HCDR1,100,0.645,0.75,0
+hcdr123 best-of-100,HCDR2,100,0.725,0.875,0
+hcdr123 best-of-100,HCDR3,100,0.516,0.6667,0
+released HCDR3-only IF row,HCDR1,62,1.0,1.0,
+released HCDR3-only IF row,HCDR2,62,1.0,1.0,
+released HCDR3-only IF row,HCDR3,62,0.4828,0.5333,
+released HCDR123 IF row,HCDR1,67,0.625,0.625,
+released HCDR123 IF row,HCDR2,67,0.75,0.75,
+released HCDR123 IF row,HCDR3,67,0.4776,0.5333,

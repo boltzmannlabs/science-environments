@@ -1,0 +1,118 @@
+{
+  "C01": {
+    "tool": "agcdr_diff (Boltzmann platform)",
+    "doc_id": "6afb32c39850a93adf6850b6",
+    "purpose": "backbone diversification of reference scFv-TREM2 complex",
+    "status": "Success",
+    "inputs": {
+      "antibody_pdb": "inputs/trem2_antibody_HL.pdb",
+      "antigen_pdb": "inputs/trem2_antigen.pdb"
+    },
+    "parameters": {
+      "num_samples": 8,
+      "num_steps": 10
+    },
+    "outputs": {
+      "samples": 8,
+      "selected_backbone": "sample-7"
+    }
+  },
+  "C02": {
+    "tool": "antibmpnn (Boltzmann platform)",
+    "purpose": "CDR redesign on antigen-containing input",
+    "conclusion": "input-driven deterministic platform rejection; no schema field for chain roles"
+  },
+  "C03": {
+    "tool": "antibmpnn service (local, authorized fallback)",
+    "purpose": "same scientific objective locally",
+    "code": "code/task009_antibmpnn_local_v3.py",
+    "protocol": "platform antibmpnn_service.py UNMODIFIED in-process; domain_backend: keyed bulk ANARCII numberer.number(map, scfv=True) for declared H/L with full confidence/boundary gates; antigen chain A only -> chain_type F fixed context",
+    "precheck": {
+      "H": "chain_type H score 30.53",
+      "L": "chain_type K score 30.36",
+      "antigen": "A -> F fixed"
+    },
+    "parameters": {
+      "chains_to_design": [
+        "H",
+        "L"
+      ],
+      "generation_count": 40,
+      "residue_positions_to_design": {
+        "H": "26-33,51-58,97-110 (121-numbering)",
+        "L": "27-32,50-52,89-97"
+      }
+    },
+    "outputs": {
+      "job": "task009_trem2_antibmpnn_agcdr_sample7_run5_local",
+      "sequences": 40,
+      "csv": "results/run_003_agcdr_backbone/raw/antibmpnn_local_run5/antibmpnn_results.csv"
+    },
+    "failed_local_attempts": [
+      {
+        "attempt": "run3 (in-service gate)",
+        "evidence": "raw/antibmpnn_local_run3"
+      },
+      {
+        "attempt": "run4 (v2 per-chain protocol bug)",
+        "evidence": "logs moved to inputs/history/, code/FAILED_v2_evidence.py"
+      }
+    ]
+  },
+  "C04": {
+    "tool": "Boltz2 (Boltzmann platform)",
+    "purpose": "complex confidence evaluation of top-4",
+    "records": {
+      "cand006": {
+        "doc_id": "6afb497775ff2e0d02e6ee18",
+        "iptm": 0.7342,
+        "ptm": 0.8378,
+        "echo_exact_match": true
+      },
+      "cand027": {
+        "doc_id": "6afb49567fc9c7f56da82a7c",
+        "iptm": 0.65,
+        "ptm": 0.8112,
+        "echo_exact_match": true
+      },
+      "cand032": {
+        "doc_id": "6afb4961ef7b50fcff15c07f",
+        "iptm": 0.7413,
+        "ptm": 0.8636,
+        "echo_exact_match": true
+      },
+      "cand036": {
+        "doc_id": "6afb496c7426d09ad749d7c5",
+        "iptm": 0.3633,
+        "ptm": 0.6396,
+        "echo_exact_match": true
+      }
+    },
+    "outputs": "results/run_003_agcdr_backbone/raw/{cand}_outputs.zip + pdbs.zip + boltz2_result.json"
+  },
+  "task_id": "task_009_trem2_scfv_design",
+  "run_id": "run_003_agcdr_backbone",
+  "method_summary": [
+    {
+      "stage": "Diversify backbone",
+      "tool_and_settings": "AgCDR; 8 samples, 10 steps",
+      "result": "8 backbone samples"
+    },
+    {
+      "stage": "Select backbone",
+      "tool_and_settings": "Recorded sample-7 backbone",
+      "result": "One backbone for sequence generation"
+    },
+    {
+      "stage": "Generate sequences",
+      "tool_and_settings": "Local AntiBMPNN; 40 samples",
+      "result": "40 candidate sequences"
+    },
+    {
+      "stage": "Evaluate complexes",
+      "tool_and_settings": "Boltz2; exact sequence identity check",
+      "result": "4 predictions; cand032 retained"
+    }
+  ],
+  "completed_outcome": "Best candidate cand032: ipTM 0.7413, pTM 0.8636; matched reference ipTM 0.8987. The full evaluated range is 0.3633\u20130.7413."
+}
