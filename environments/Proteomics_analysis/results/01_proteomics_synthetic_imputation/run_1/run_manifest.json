@@ -1,0 +1,8 @@
+{
+  "total_input_proteins": 215,
+  "retained_proteins": 182,
+  "excluded_proteins": 33,
+  "imputed_value_cells": 140,
+  "filter_rule": "Retain protein rows with at least 3 of 6 positive, finite observed intensities; exclude rows with 1-2 values as excessive_missing_values and rows with 0 values as no_valid_values.",
+  "imputation_method": "Log2 scale: for a missing replicate with >=1 observed in its condition, impute mean(observed log2 intensities in same condition) - 0.15; if all 3 in that condition are absent, impute mean(observed log2 intensities in other condition) - 0.70. Observed values unchanged beyond log2; no random draws."
+}

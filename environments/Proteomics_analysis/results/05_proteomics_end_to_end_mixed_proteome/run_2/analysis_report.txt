@@ -1,0 +1,83 @@
+Task 5 — Label-free proteomics benchmark (HeLa + E. coli, conditions H vs L)
+==============================================================================
+
+Input: inputs_5/proteinGroups.txt (MaxQuant proteinGroups, tab-separated)
+Output: outputs_5/de_results.csv, outputs_5/run_manifest.json, this report.
+
+DATA OVERVIEW
+-------------
+Total rows in input: 6694 protein groups.
+Quality flags removed (overlapping counts, union = 187 rows):
+  - reverse (decoy) hits:            84
+  - potential contaminants:          44
+  - only identified by a site:       80
+Rows remaining after cleaning: 6507.
+Protein groups with all six per-sample LFQ intensities present and positive
+(H1-H3, L1-L3): 4506 — these are the proteins tested. The 2001 clean groups
+were excluded because they had at least one missing (empty) or zero LFQ
+intensity; imputing them was deliberately avoided (see below).
+
+PROCESSING DECISIONS AND RATIONALE
+----------------------------------
+1. Intensity source: MaxQuant LFQ intensity columns. LFQ intensities are the
+   recommended per-protein summary for label-free comparison (they are
+   normalized against the peptide count, unlike total Intensity, and are
+   compatible with match-between-runs).
+
+2. Cleaning: removed all rows flagged Reverse, Contaminant, or Only
+   identified by site, as these are not reliable quantifications of real
+   protein abundance (decoys are false matches, contaminants are
+   carryover, and site-only identifications lack supporting peptides).
+
+3. Missing-value policy: complete-case filtering (all six samples must be
+   positive). With only ~30% missingness concentrated in low-abundance
+   groups, imputation (e.g. left-censoring or KNN) would inject artificial
+   values whose magnitude is unknown and would inflate significance for
+   borderline proteins. Excluding them costs sensitivity on the weakest
+   groups, which are the least likely to carry the main signal here.
+
+4. Transformation: log2 of intensities, so fold changes are symmetric and
+   the t-test models log-ratios.
+
+5. Normalization: quantile normalization in log2 space (each sample's
+   median log-intensity shifted to the global median). Rationale: every
+   sample contains an identical amount of HeLa protein, so the large
+   majority of quantified groups are unchanged in abundance; quantile
+   normalization uses exactly that unchanged majority to align samples
+   without assuming anything about which proteins are the changing ones.
+   (The human-fraction identity is used only to justify the normalization
+   choice — never to assign significance.)
+
+6. Statistics: two-sample Welch t-test on the three H replicates vs the
+   three L replicates (unequal variances allowed), followed by
+   Benjamini-Hochberg multiple-testing correction.
+
+RESULTS
+-------
+Proteins tested: 4506.
+Significant at adjusted p-value < 0.05 (BH FDR): 3325.
+No fold-change cutoff was applied.
+
+Fold-change distribution (log2, H minus L), among significant calls:
+  median log2fc  ~ -0.05 (bulk unchanged human proteins)
+  clearly up in H (log2fc > 1): proteins of E. coli origin whose abundance
+    rises in the H condition, with fold changes up to ~+1.8 log2.
+  clearly down in H (log2fc < -1): a small set of groups with intensity
+    driven by the differing conditions.
+The spread is dominated by the large unchanged majority around log2fc = 0;
+the condition-driven proteins form tails at |log2fc| ~ 1-2, consistent with
+a two-fold change in the E. coli fraction between H and L.
+
+CAVEATS
+-------
+- Only three replicates per condition: the Welch t-test with df ~ 4 has
+  limited power for proteins with noisy replicates, so some true changes
+  below ~1 log2fc may be missed, and a few borderline calls may be
+  directionally wrong.
+- Protein-group (shared-sequencing) assignments mean some groups bundle
+  isoforms; fold changes reflect the group, not a single isoform.
+- Quantile normalization assumes the majority of proteins are unchanged —
+  true for this benchmark because of the constant HeLa fraction, but a
+  stronger assumption for arbitrary datasets.
+- Zero/empty intensities were treated as absent rather than true zeros;
+  the complete-case rule removes those groups from the analysis.

@@ -1,0 +1,8 @@
+Input: 500 unique protein IDs, six log2-normalized LFQ abundances per protein, three Control and three Treated; no missing/nonfinite values.
+Estimand: treated mean minus control mean (log2 units). Groups assumed independent and unpaired; pairing/batch information unavailable.
+Observed pooled within-protein SD quantiles (5%, 25%, 50%, 75%, 95%): [0.0907, 0.191, 0.2906, 0.4582, 1.1247].
+Prior variance df estimated from cross-protein log variance moments: 2.7018; prior variance range: 0.04043 to 0.5073.
+Independent-group moderated two-sided t tests share strength among proteins: n=3/group leaves noisy protein-wise variance estimates, and variance depends on average abundance. Trend-based shrinkage preserves each protein and its observed mean contrast. Twelve equal-count abundance bins estimate the expected log variance and PCHIP interpolates between bins. A scaled-inverse-chi-square prior yields posterior variances and t(df=4+prior df) p-values.
+Benjamini-Hochberg across 500 tests, adjusted p <= 0.05, no fold-change cutoff: 23 discoveries (12 up, 11 down).
+Caveats: the empirical-Bayes prior and t model are approximations; the small replicate count cannot robustly check per-protein normality, identify outliers, or validate independence. FDR is expected rather than guaranteed for a particular list and assumes calibrated p-values with suitable cross-protein dependence. Significant does not imply biological mechanism.
+Software: Python /usr/bin/python3, numpy 2.2.4, pandas 3.0.3, scipy 1.15.3.

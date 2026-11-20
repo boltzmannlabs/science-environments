@@ -1,0 +1,71 @@
+Task 7 report: proteomics_end_to_end_spike_in_low_abundance (final)
+
+1. Data and quality control
+---------------------------
+- Input: MaxQuant proteinGroups.txt, 1115 rows (protein groups).
+- No rows were flagged as reverse hits, potential contaminants, or identified
+  only by a modification site, so all 1115 groups were retained.
+- Per-sample median LFQ intensity (log2) ranged from 22.99 to 23.52 and was
+  essentially flat across the 27 samples, as expected because the yeast amount
+  is constant and UPS1 is a small fraction of the total. This supports not
+  applying quantile or median normalization: normalizing would absorb the very
+  fold changes introduced by the UPS1 titration.
+- Detection is protein-level, not sample-level: each sample detects 1115
+  groups, and detection drops for the lowest spike-in amounts (50/125/250
+  amol), consistent with a low-abundance detection limit.
+
+2. Processing decisions
+-----------------------
+- Intensities: LFQ intensity columns, log2-transformed.
+- Cleaning: drop Reverse=Yes, Potential contaminant=Yes, Only identified by
+  site=Yes (none present here).
+- No normalization (justified above).
+- No imputation. Two populations:
+  (a) Fully detected in all 3 replicates of both amounts: Welch two-sample
+      t-test on log2 intensities, BH adjustment within contrast, FDR < 0.05.
+      This is the null-safe population (yeast always; UPS1 at high amounts).
+  (b) Otherwise: one-sided presence/absence rule. Detected in all 3
+      replicates of the higher amount AND missing in at least one replicate
+      of the lower -> UP. The reverse pattern (present at lower, absent at
+      higher) is NOT called.
+- Why one-sided? QC showed UPS1 proteins are more often detected at the
+  higher amount (e.g. in C2, 36/46 UPS1 groups were detected at 500 amol but
+  not at 5000 amol). A symmetric rule would therefore produce ~36 false
+  DOWN calls of proteins that actually increase. In this experiment that
+  pattern is a concentration-dependent detection artifact, not a biological
+  decrease, so it is not called. This is a conservative choice: it can miss a
+  protein that is only partially detected at the high amount, but it removes
+  the systematic false-down bias.
+- No additional |log2fc| cutoff, because fold-change cutoffs discard true
+  low-fold-change/high-variance spike-in proteins.
+- Order: read -> clean -> QC (medians, missingness) -> log2 -> per-contrast
+  test -> one-sided presence/absence fallback.
+
+3. Results
+----------
+- C1 (25000 vs 2500 amol): 64 significant (33 test, 31 presence/absence).
+  Expected log2fc for a linear UPS1 increase: log2(25000/2500) = 3.32.
+- C2 (5000 vs 500 amol): 183 significant (118 test, 65 presence/absence).
+  Expected log2fc: log2(10) = 3.32.
+- C3 (2500 vs 500 amol): 127 significant (67 test, 60 presence/absence).
+  Expected log2fc: log2(5) = 2.32.
+- The three contrasts have different effective fold changes (3.32, 3.32 and
+  2.32), so the 2.32-fold contrast (C3) is the hardest for fold-change
+  accuracy; the presence/absence calls there are the most consequential.
+
+4. Caveats
+----------
+- Only 3 replicates per amount: the Welch t-test with 4 degrees of freedom
+  has limited power and its p-values are noisy; BH correction controls FDR
+  only under the null that non-changed proteins make up the majority, which
+  holds here (only 48 UPS1 proteins truly change, out of 1115).
+- Presence/absence calls carry no magnitude estimate by design; if a protein
+  is only partially detected within the replicates of the higher amount
+  (e.g. 2/3), it is not called even though it may genuinely change - a
+  conservative choice that trades sensitivity for precision.
+- MaxQuant LFQ intensities are not normalized across samples by design; this
+  is fine here because the yeast backbone is constant, but it would not be in
+  a biological experiment.
+- Significance is driven entirely by measured intensities and detection
+  patterns; protein annotations (e.g. the _UPS marker) were not used to
+  assign calls.

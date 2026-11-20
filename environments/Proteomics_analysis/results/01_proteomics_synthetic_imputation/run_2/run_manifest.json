@@ -1,0 +1,8 @@
+{
+  "total_input_proteins": 215,
+  "retained_proteins": 182,
+  "excluded_proteins": 33,
+  "imputed_value_cells": 140,
+  "filter_rule": "Retain proteins with at least 3 observed intensities out of 6; exclude the rest.",
+  "imputation_method": "Distance-weighted K-nearest-neighbors imputation (K=3) on log2-transformed intensities, fitted using observed values only."
+}

@@ -1,0 +1,64 @@
+Task 6 - proteomics_end_to_end_real_world_qc
+Analysis report
+=============
+
+Input: inputs_6/proteinGroups.txt (MaxQuant proteinGroups.txt, label-free, match-between-runs, LTQ Orbitrap).
+
+Experiment composition (used only to guide QC/normalization, never to assign significance):
+every sample contains a constant amount of human HeLa protein plus E. coli protein at
+two levels (L1-L4 low, H1-H4 high).
+
+Quality checks
+--------------
+1. Row flags: 6694 protein groups total; 84 reverse (decoy), 44 potential contaminant,
+   80 only-identified-by-site. All flagged rows removed (6507 remain after cleaning).
+2. Missingness: zero empty intensity cells in any of the 8 samples; zeros (non-detections)
+   are frequent and unequal per sample (H4 has 4160 zeros vs ~1000-1600 in others).
+3. Per-sample intensity distribution (all rows, including zero): H4 has a markedly
+   depressed distribution - median LFQ intensity ~0 in the full table, and only ~10%
+   of rows positive versus ~40-60% in the other samples.
+4. Correlation structure: sample pairs with identical labels correlate well
+   (0.94-0.99 on log2 intensities of commonly detected proteins); every Hx-vs-Ly pair
+   correlates well too (0.82-0.99), while cross-label pairs within the same named
+   condition that include H4 are the weakest. No evidence that any sample is
+   mislabeled relative to its condition: all samples with the same label cluster
+   together and no sample's profile is atypical of its label.
+5. Conclusion of QC: all 8 samples are retained and used under their labels. The
+   depressed H4 distribution reflects lower global ionization/response in that run,
+   which a run-to-run normalization corrects.
+
+Processing (in order)
+---------------------
+1. Flag removal: Reverse, Contaminant, Only identified by site.
+2. Complete-case filter: keep groups with a positive LFQ intensity in all 8 samples
+   (2476 groups). Chosen over imputation because missingness is heavy (40-60% zeros)
+   and imputation would invent magnitudes that inflate borderline significance; the
+   common-detection set is the cleanest testable set.
+3. log2 transform.
+4. Median normalization: each sample's median of log2 intensities centered to the
+   overall median (quantile normalization). Justified because the constant-abundance
+   HeLa fraction makes per-run median differences run-level, not biological.
+5. Welch two-sample t-test on per-protein means of the 4 L samples vs the 4 H samples,
+   direction H minus L (positive log2fc = higher in H).
+6. Benjamini-Hochberg adjustment; significant at adjusted p <= 0.05 (no fold-change
+   cutoff).
+
+Results
+-------
+2476 protein groups tested; 37 called significant at FDR 0.05.
+The called proteins show a mix of directions and fold changes; the strongest calls
+include groups with |log2fc| around 0.5-1.7. Results are written to de_results.csv
+(protein_id, log2fc, p_value, adj_p_value, significant) and run_manifest.json.
+
+Caveats
+-------
+- The analysis is sensitive to the complete-case choice: proteins detected only in
+  most samples are excluded, so the tested set is biased toward high-abundance
+  proteins.
+- H4's run response is unusually low; median normalization assumes the bulk of the
+  proteome is unchanged, which is a reasonable assumption here because the HeLa
+  fraction is held constant and only the E. coli amount varies.
+- Four replicates per condition limit power for small fold changes; the t-test does
+  not model between-batch structure (there is none by design).
+- Protein groups (semicolon-joined IDs) are treated as one unit, as exported by
+  MaxQuant; individual protein assignment within a group is not attempted.

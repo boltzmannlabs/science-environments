@@ -1,0 +1,47 @@
+LFQ proteomics preprocessing report
+====================================
+
+Input: /home/boltzmann6/.sci/profiles/prot_rerun/workspace/input_2/raw_protein_intensities.csv
+Unique input proteins: 250
+Missing input cells: 29 (one per affected protein; 29 proteins affected)
+
+Processing order:
+1. Convert raw linear intensities to log2 (no pseudocount).
+2. Centre each of the six samples at its log2 median (computed from observed values).
+3. Impute each missing cell with the mean of the same protein's two same-condition replicates.
+4. Re-centre each complete sample at its log2 median so every sample median is exactly 0.
+
+Rationale:
+- LFQ run-to-run technical differences (loading, injection, ionization) are
+  multiplicative, so on the log2 scale they are additive per-sample offsets.
+  Subtracting each sample's log2 median removes these offsets.
+- Median centering rescales nothing, so within-sample protein ordering and
+  Control/Treated fold changes (biological differences) are preserved.
+- Each missing value has two same-protein, same-condition replicate partners
+  remaining. In the shift-removed space these directly estimate the missing
+  protein-condition value, which is more accurate than cross-protein KNN.
+
+Per-sample summaries, raw linear intensities (before processing):
+Control_Rep1: median=1.960e+06 mean=1.415e+07 std=5.060e+07 min=9.600e+04 max=4.271e+08
+Control_Rep2: median=8.811e+05 mean=6.141e+06 std=2.213e+07 min=4.575e+04 max=2.037e+08
+Control_Rep3: median=5.080e+06 mean=3.426e+07 std=1.232e+08 min=2.402e+05 max=9.128e+08
+Treated_Rep1: median=1.932e+06 mean=7.432e+07 std=3.880e+08 min=8.986e+04 max=3.510e+09
+Treated_Rep2: median=1.276e+06 mean=4.387e+07 std=2.231e+08 min=3.979e+04 max=1.564e+09
+Treated_Rep3: median=4.181e+06 mean=1.530e+08 std=7.900e+08 min=1.754e+05 max=5.872e+09
+
+Per-sample summaries, final centered log2 (after processing):
+Control_Rep1: median=0.000000 mean=0.249475 std=2.274398 min=-4.321453 max=7.797754
+Control_Rep2: median=0.000000 mean=0.285518 std=2.228933 min=-4.271484 max=7.848733
+Control_Rep3: median=0.000000 mean=0.177671 std=2.256407 min=-4.390183 max=7.501467
+Treated_Rep1: median=0.000000 mean=0.289259 std=2.664064 min=-4.426195 max=10.827381
+Treated_Rep2: median=0.000000 mean=0.217641 std=2.675721 min=-5.023897 max=10.239148
+Treated_Rep3: median=0.000000 mean=0.197747 std=2.663002 min=-4.551077 max=10.479698
+
+Assessment:
+Raw run medians span several orders of magnitude, consistent with the
+described sample-wise technical shifts. After centering, every sample has
+median 0 and comparable spread, while proteins that are higher or lower
+under Treated remain distinguishable (biological signal preserved).
+
+No protein filtering, differential-expression statistics, or classification
+was performed, per the task constraints.

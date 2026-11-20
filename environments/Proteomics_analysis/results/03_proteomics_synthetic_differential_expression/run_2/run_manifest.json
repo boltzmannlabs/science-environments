@@ -1,0 +1,10 @@
+{
+  "total_proteins": 500,
+  "n_significant": 44,
+  "n_up": 25,
+  "n_down": 19,
+  "fdr_threshold": 0.05,
+  "test_method": "moderated t-test (empirical Bayes variance moderation), n=3/group, robust prior variance s0^2=median(per-protein residual variance)=0.08444, prior df0=10, dfmod=14",
+  "multiple_testing_correction": "Benjamini-Hochberg (false discovery rate)",
+  "fold_change_cutoff": null
+}

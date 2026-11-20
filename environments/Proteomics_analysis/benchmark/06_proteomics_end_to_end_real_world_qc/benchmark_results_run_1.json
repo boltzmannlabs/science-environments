@@ -1,0 +1,122 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "fault_handling": {
+      "score": 1.0,
+      "duplicate_L4_handled": true,
+      "failed_run_H4_excluded": true,
+      "swap_L3_H3": "corrected (relabelled)",
+      "samples_in_wrong_condition": [],
+      "good_samples_not_used": [],
+      "samples_used": {
+        "L": [
+          "L1",
+          "L2",
+          "H3"
+        ],
+        "H": [
+          "L3",
+          "H1",
+          "H2"
+        ]
+      },
+      "samples_excluded": [
+        "L4",
+        "H4"
+      ],
+      "notes_given_for": [
+        "H3",
+        "H4",
+        "L3",
+        "L4"
+      ]
+    },
+    "fdr": {
+      "score": 0.6507,
+      "stated_threshold": 0.05,
+      "actual_false_discovery_proportion": 0.1485,
+      "allowed_fdp_given_number_of_calls": 0.0611,
+      "true_calls_ecoli": 1302,
+      "false_calls_human": 227
+    },
+    "detection": {
+      "score": 0.5979,
+      "recall": 0.8325,
+      "recall_relative_to_clean_reference": 0.9188,
+      "ecoli_groups_quantifiable": 1564
+    },
+    "ranking": {
+      "score": 0.7628,
+      "recall_at_98pct_precision": 0.5492,
+      "published_recall_at_98pct": 0.72
+    },
+    "fold_change": {
+      "score": 0.9994,
+      "human_median_log2fc (expected 0)": -0.0441,
+      "ecoli_minus_human (expected ~1.585)": 1.7304,
+      "reference_separation": 1.7291
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_protein_groups": true,
+        "removed_reverse": true,
+        "removed_contaminant": true,
+        "removed_only_identified_by_site": true,
+        "protein_groups_after_cleaning": true,
+        "proteins_tested": true,
+        "n_significant": true,
+        "fdr_threshold_valid": true,
+        "significant_matches_cutoffs": true,
+        "samples_excluded_consistent": true,
+        "qc_notes_for_changed_samples": true,
+        "flagged_rows_not_tested": true
+      },
+      "expected": {
+        "total_protein_groups": 6694,
+        "removed_reverse": 84,
+        "removed_contaminant": 44,
+        "removed_only_identified_by_site": 80,
+        "protein_groups_after_cleaning": 6507,
+        "proteins_tested": 5019,
+        "n_significant": 1529
+      }
+    }
+  },
+  "integrity": {
+    "p_value_spearman_vs_reference": 0.971,
+    "p_values_data_driven": "True"
+  },
+  "reference_pipelines": {
+    "clean_design_expert": {
+      "recall": 0.906,
+      "fdp": 0.0528
+    },
+    "blind_all_8_samples_as_labelled": {
+      "recall": 0.0,
+      "fdp": 0.0,
+      "recall_at_98pct_precision": 0.0
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "sample_qc_notes": {
+      "L3": "Reassigned to H: E. coli/human LFQ sum ratio 1.958, matching H1/H2 (~1.9) rather than L1/L2/H3 (~0.6); raw intensity agrees.",
+      "H3": "Reassigned to L: E. coli/human LFQ sum ratio 0.631, matching L1/L2 rather than H1/H2; raw intensity agrees.",
+      "L4": "Excluded: identical to L1 in every row for LFQ, raw intensity, iBAQ, peptide and MS/MS-count columns (duplicate, not independent).",
+      "H4": "Excluded: 2504/6507 cleaned proteins have positive LFQ versus 4958-5648 in other samples; human median protein-centered LFQ is ~4 log2 below others. Severe run-quality/quantification failure."
+    }
+  },
+  "score": 0.8434,
+  "weights": {
+    "fault_handling": 0.35,
+    "detection": 0.2,
+    "fdr": 0.15,
+    "ranking": 0.1,
+    "fold_change": 0.1,
+    "bookkeeping": 0.1
+  }
+}

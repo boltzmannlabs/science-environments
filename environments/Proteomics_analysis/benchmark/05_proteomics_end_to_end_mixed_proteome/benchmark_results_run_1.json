@@ -1,0 +1,151 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": [],
+    "fold_change_vs_measured_spearman": {
+      "LFQ intensity": 1.0,
+      "Intensity": 0.825
+    }
+  },
+  "sections": {
+    "cleaning": {
+      "score": 1.0,
+      "flagged_groups_tested": 0,
+      "flagged_groups_with_enough_data": 46,
+      "tested_by_flag": {
+        "Reverse": 0,
+        "Contaminant": 0,
+        "Only identified by site": 0
+      }
+    },
+    "fdr": {
+      "score": 1.0,
+      "stated_threshold": 0.05,
+      "actual_false_discovery_proportion": 0.0506,
+      "allowed_fdp_given_number_of_calls": 0.0611,
+      "true_calls_ecoli": 1463,
+      "false_calls_human": 78
+    },
+    "detection": {
+      "score": 1.0,
+      "recall": 0.9354,
+      "recall_relative_to_best_reference": 1.0332,
+      "fdr_multiplier": 1.0,
+      "ecoli_groups_quantifiable": 1564,
+      "ecoli_groups_tested": 1564,
+      "human_groups_tested": 3209
+    },
+    "ranking": {
+      "score": 1.0,
+      "unclipped_skill": 1.0701,
+      "recall_at_98pct_precision": 0.7705,
+      "recall_at_95pct_precision": 0.8696,
+      "published_recall_at_98pct": 0.72,
+      "published_recall_at_95pct": 0.88
+    },
+    "fold_change": {
+      "score": 0.9988,
+      "reference_human_median": -0.0655,
+      "reference_separation": 1.7282,
+      "human_median_log2fc (expected 0)": 0.0124,
+      "ecoli_median_log2fc (expected 1.585)": 1.7431,
+      "ecoli_minus_human (expected 1.585)": 1.7306,
+      "human_log2fc_iqr": 0.4118,
+      "ecoli_log2fc_iqr": 0.4306
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_protein_groups": true,
+        "removed_reverse": true,
+        "removed_contaminant": true,
+        "removed_only_identified_by_site": true,
+        "protein_groups_after_cleaning": true,
+        "proteins_tested": true,
+        "n_significant": true,
+        "fdr_threshold_valid": true,
+        "significant_matches_cutoffs": true,
+        "adj_p_not_below_p": true,
+        "method_strings_present": true
+      },
+      "expected": {
+        "total_protein_groups": 6694,
+        "removed_reverse": 84,
+        "removed_contaminant": 44,
+        "removed_only_identified_by_site": 80,
+        "protein_groups_after_cleaning": 6507,
+        "proteins_tested": 5019,
+        "n_significant": 1552
+      },
+      "rows_inconsistent_with_cutoffs": 0
+    }
+  },
+  "integrity": {
+    "p_value_spearman_vs_reference": 0.948,
+    "distinct_p_value_fraction_by_species": [
+      1.0,
+      1.0
+    ],
+    "p_values_data_driven": true,
+    "note": "if false, detection, FDR and ranking are scored 0 (calls not derived from the data)"
+  },
+  "reference_pipelines": {
+    "none_moderated_fc0": {
+      "tp": 1390,
+      "fp": 1628,
+      "recall": 0.8887,
+      "fdp": 0.5394,
+      "recall_at_98pct_precision": 0.0332
+    },
+    "none_moderated_fc1": {
+      "tp": 1158,
+      "fp": 231,
+      "recall": 0.7404,
+      "fdp": 0.1663
+    },
+    "median_all_moderated_fc0": {
+      "tp": 1359,
+      "fp": 1780,
+      "recall": 0.8689,
+      "fdp": 0.5671,
+      "recall_at_98pct_precision": 0.0051
+    },
+    "median_all_moderated_fc1": {
+      "tp": 1056,
+      "fp": 286,
+      "recall": 0.6752,
+      "fdp": 0.2131
+    },
+    "median_human_moderated_fc0": {
+      "tp": 1448,
+      "fp": 246,
+      "recall": 0.9258,
+      "fdp": 0.1452,
+      "recall_at_98pct_precision": 0.7398
+    },
+    "median_human_moderated_fc1": {
+      "tp": 1416,
+      "fp": 72,
+      "recall": 0.9054,
+      "fdp": 0.0484
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_intensity_columns_used": "LFQ intensity H1, LFQ intensity H2, LFQ intensity H3, LFQ intensity L1, LFQ intensity L2, LFQ intensity L3 (MaxQuant LFQ; positive values only)",
+    "manifest_filtering_rule": "Test only clean protein groups with positive LFQ intensities in at least 2 of 3 H and at least 2 of 3 L runs; zero or blank is missing, not quantified. No significance test for others.",
+    "manifest_normalization_method": "Log2 LFQ; subtract per-run median of protein groups identified as human and observed in all 6 samples (human protein amount fixed by design); subtract remaining median H-minus-L of these same complete human groups from each H run. Avoid whole-proteome scaling because E. coli mass intentionally changes.",
+    "manifest_imputation_method": "none",
+    "manifest_test_method": "Independent-group two-sided empirical-Bayes moderated pooled-variance t test on log2 LFQ values, n=2-3 per group, residual df=nH+nL-2; prior variance from log-variance moments of 6-run complete tested groups (prior df=3.30672, prior variance=0.0492111); BH correction across all tested groups; significant when adjusted p < 0.05 and absolute log2FC >= 1.0.",
+    "manifest_processing_order": "Read input -> remove + reverse, contaminant and only-by-site rows (union) -> zero LFQ to missing -> log2 -> normalize each run to complete human anchor and residual H-L offset -> retain >=2 valid runs per condition -> estimate H-L log2FC and moderated t p-values -> BH-adjust over tested groups -> apply FDR and fold-change cutoffs."
+  },
+  "score": 0.9998,
+  "weights": {
+    "cleaning": 0.1,
+    "detection": 0.25,
+    "fdr": 0.2,
+    "ranking": 0.15,
+    "fold_change": 0.15,
+    "bookkeeping": 0.15
+  }
+}
