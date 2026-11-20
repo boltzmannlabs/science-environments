@@ -1,0 +1,156 @@
+{
+  "origin": "source-run historical outputs, NOT fresh experimental data",
+  "six_model_source_sha256": "3b74a784f4b18f40b8082e1752c79fcc9abae25a61342b053c67d936b9d5b916",
+  "synthetic_seed": 31415,
+  "synthetic_batch_counts": {
+    "train": 12,
+    "validation": 4,
+    "test": 8
+  },
+  "synthetic_model_metrics": {
+    "weibull": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 1.6270406084810412,
+      "macro_rmse_pp": 1.8416606256783075,
+      "macro_bias_pp": -0.03816098649273618,
+      "residual_bias_by_time_min": {
+        "30": -0.4416001740037111,
+        "60": -0.3022599830307724,
+        "120": -0.9023816754596958,
+        "240": 1.0894646941251915,
+        "480": 0.06255671256952589,
+        "720": 0.3096170721293312,
+        "1440": -0.0825235517790226
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 6.248833248355099,
+      "test_interval_coverage": 1,
+      "test_interval_width_pp": 12.497666496710197,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": 84.33015555250303,
+      "f2_evaluable_batches": 8,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    },
+    "first_order": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 3.184167966767879,
+      "macro_rmse_pp": 3.67080514410764,
+      "macro_bias_pp": -0.6421256478566901,
+      "residual_bias_by_time_min": {
+        "30": -3.2633620812359676,
+        "60": -3.898731219340066,
+        "120": -4.583327432314322,
+        "240": -0.9994677452095333,
+        "480": 1.4423851485150188,
+        "720": 3.571324799861568,
+        "1440": 3.2362989947264715
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 5.7203290324219935,
+      "test_interval_coverage": 0.875,
+      "test_interval_width_pp": 11.440658064843987,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": 71.07554718590593,
+      "f2_evaluable_batches": 8,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    },
+    "zero_order": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 17.93955183753031,
+      "macro_rmse_pp": 18.98388760297289,
+      "macro_bias_pp": -11.342149586438712,
+      "residual_bias_by_time_min": {
+        "30": -7.244232833226028,
+        "60": -11.448014511086772,
+        "120": -18.138070793858702,
+        "240": -22.688534431428472,
+        "480": -25.068987469320255,
+        "720": -17.89811494497134,
+        "1440": 23.09090787882059
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 32.5626704174465,
+      "test_interval_coverage": 1,
+      "test_interval_width_pp": 65.125340834893,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": null,
+      "f2_evaluable_batches": 0,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    },
+    "higuchi": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 4.588713621432974,
+      "macro_rmse_pp": 5.203067926591842,
+      "macro_bias_pp": 0.3308344645273975,
+      "residual_bias_by_time_min": {
+        "30": 4.625071161739775,
+        "60": 3.9297808222133925,
+        "120": 0.7935452212728191,
+        "240": -1.5469277144283078,
+        "480": -6.433723338257547,
+        "720": -5.659864327370212,
+        "1440": 6.607959426521862
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 13.43063095600229,
+      "test_interval_coverage": 1,
+      "test_interval_width_pp": 26.86126191200458,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": 68.37566896095896,
+      "f2_evaluable_batches": 4,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    },
+    "korsmeyer_peppas": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 12.21785517663505,
+      "macro_rmse_pp": 22.742986446712525,
+      "macro_bias_pp": 11.299310037612926,
+      "residual_bias_by_time_min": {
+        "30": 0.30910475066159926,
+        "60": -0.08792363766755185,
+        "120": -1.4952929230552985,
+        "240": 0.7363940839175287,
+        "480": 5.7781532237910405,
+        "720": 16.48609218162285,
+        "1440": 57.368642584020314
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 72.19952616318668,
+      "test_interval_coverage": 0.9464285714285714,
+      "test_interval_width_pp": 144.39905232637335,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": null,
+      "f2_evaluable_batches": 0,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    },
+    "hixson_crowell": {
+      "status": "synthetic_fixture_only",
+      "eligible_test_batches": 8,
+      "macro_mae_pp": 5.237299124236209,
+      "macro_rmse_pp": 5.852321237325078,
+      "macro_bias_pp": -0.7708723060430964,
+      "residual_bias_by_time_min": {
+        "30": -4.2036884042978,
+        "60": -5.570567754709069,
+        "120": -7.182038384896378,
+        "240": -3.8462556117004754,
+        "480": 1.3416935131543664,
+        "720": 6.81762621487897,
+        "1440": 7.247124285268711
+      },
+      "nominal_90pct_interval_halfwidth_pp_from_four_validation_batches": 8.68004927018455,
+      "test_interval_coverage": 0.875,
+      "test_interval_width_pp": 17.3600985403691,
+      "interval_calibration": "not_established_four_validation_batches_only",
+      "mean_f2_math_only_not_regulatory": 61.34508174298233,
+      "f2_evaluable_batches": 8,
+      "regulatory_f2": "not_evaluated_unapproved_method_and_insufficient_unit_variance"
+    }
+  },
+  "published_fit_count": 59,
+  "scenario_source_sha256": "96245cd751fc319b91bdb5b27ba7d26a0c9dc0eab3c3c64eead19a15510ce364",
+  "scenario_grid_size": 117,
+  "scenario_count_per_candidate": 256,
+  "scenario_status": "exploratory_assumption_conditional_NOT_product_prediction",
+  "experimental_validation": null
+}

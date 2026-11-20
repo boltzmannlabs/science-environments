@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "task_id": "Task - 01",
+  "API": "Clarithromycin",
+  "API_mg": 500,
+  "finished_tablet_mg": 800,
+  "potency_assumption": "100% as-is; correct real charge and rebalance before manufacture",
+  "allowed_excipients": [
+    "Microcrystalline Cellulose",
+    "Crospovidone",
+    "Povidone K30",
+    "Colloidal Silicon Dioxide",
+    "Magnesium Stearate",
+    "Hypromellose",
+    "Titanium Dioxide",
+    "PEG 4000"
+  ],
+  "bounds_percent_finished_tablet": {
+    "Microcrystalline Cellulose": [
+      15,
+      32.5
+    ],
+    "Crospovidone": [
+      2,
+      6
+    ],
+    "Povidone K30": [
+      1.5,
+      4.5
+    ],
+    "Colloidal Silicon Dioxide": [
+      0.25,
+      1.25
+    ],
+    "Magnesium Stearate": [
+      0.25,
+      1.25
+    ],
+    "Hypromellose": [
+      1,
+      3
+    ],
+    "Titanium Dioxide": [
+      0.5,
+      1.5
+    ],
+    "PEG 4000": [
+      0.5,
+      2
+    ]
+  },
+  "coat_components": [
+    "Hypromellose",
+    "Titanium Dioxide",
+    "PEG 4000"
+  ],
+  "composition_sum_tolerance_percentage_points": 0.1,
+  "near_duplicate_rule": "reject if every non-API ingredient mass differs by <1 mg",
+  "route": "PVP K30 wet granulation, assumed, NOT_RUN",
+  "candidate_efficacy_rank": null,
+  "candidate_predictions": "NOT_PREDICTED",
+  "external_model_validation": null,
+  "source_values_above100": "preserved, not clipped or endpoint-normalized",
+  "acceptance": "computational artifact completeness only; no laboratory gate passed"
+}

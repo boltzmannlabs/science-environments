@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "published_input": "data/processed/literature_profiles.json",
+  "published_runner": "evaluation.published_benchmark.run",
+  "six_model_runner": "evaluation.six_model_pipeline",
+  "scenario_problem": "configs/environment.yaml",
+  "scenario_parameters": "configs/exploratory_ranolazine_500.json",
+  "metrics": ["profile_macro_mae_pp", "profile_macro_rmse_pp", "signed_bias_pp", "time_residuals", "illustrative_interval_coverage", "mathematical_f1_f2_when_eligible"],
+  "synthetic_seed": 31415,
+  "scenario_seed": 2931,
+  "split_policy": "whole formulation for descriptive published LOFO; whole batch train/validation/test for synthetic fixture",
+  "commercial_measured_performance": "not_evaluated",
+  "experimental_validation": null
+}

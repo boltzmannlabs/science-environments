@@ -1,0 +1,26 @@
+{
+  "source": "PubChem_PUG_REST_CID_84029; raw returned SMILES retained in sources",
+  "pubchem": {
+    "CID": 84029,
+    "MolecularFormula": "C38H69NO13",
+    "MolecularWeight": "748.0",
+    "SMILES": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O",
+    "ConnectivitySMILES": "CCC1C(C(C(C(=O)C(CC(C(C(C(C(C(=O)O1)C)OC2CC(C(C(O2)C)O)(C)OC)C)OC3C(C(CC(O3)C)N(C)C)O)(C)OC)C)C)O)(C)O",
+    "XLogP": 3.2,
+    "TPSA": 183,
+    "HBondDonorCount": 4,
+    "HBondAcceptorCount": 14
+  },
+  "rdkit_version": "2026.03.1",
+  "rdkit": {
+    "formula": "C38H69NO13",
+    "molecular_weight": 747.9640000000002,
+    "exact_mass": 747.476891268,
+    "MolLogP": 2.439700000000005,
+    "TPSA": 182.91,
+    "HBD": 4,
+    "HBA": 14,
+    "rotatable_bonds": 8
+  },
+  "interpretation": "Molecular descriptors differ by definitions/rounding; do not establish pH-dependent solubility, polymorph, tablet release or compatibility."
+}

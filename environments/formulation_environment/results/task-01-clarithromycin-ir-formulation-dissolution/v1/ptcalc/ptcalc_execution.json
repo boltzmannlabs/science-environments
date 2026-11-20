@@ -1,0 +1,145 @@
+{
+  "tool": "PTCalc.Core",
+  "version": "1.1.0.0",
+  "archive_version": "1.1.0",
+  "runtime": "10.0.15",
+  "catalog_model_count": 16,
+  "catalog_models": [
+    "Zero-order",
+    "First-order",
+    "Higuchi",
+    "Hixson-Crowell",
+    "Korsmeyer-Peppas",
+    "Weibull",
+    "Hopfenberg",
+    "Baker-Lonsdale",
+    "Makoid-Banakar",
+    "Peppas-Sahlin",
+    "Peppas-Sahlin-2",
+    "Logistic",
+    "Gompertz",
+    "Probit",
+    "Logistic (Fmax)",
+    "Gompertz (Fmax)"
+  ],
+  "profiles": [
+    {
+      "profile_id": "R1_T9_F4",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 68.55,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T9_F5",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 68.84,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T9_F6",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 71.04,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T9_F7",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 69.38,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T9_F8",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 69.19,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T9_Innovator",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 80.88,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF1",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 70.28,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF2",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 69.04,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF3",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 68.65,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF4",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 70.59,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF5",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 69.19,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF6",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 68.59,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF7",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 70.83,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF8",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 69.54,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_OF9",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 68.73,
+      "points_at_or_below_60": 0
+    },
+    {
+      "profile_id": "R1_T10_Innovator",
+      "ranked_full_profile_fits": 15,
+      "restricted_fits": 0,
+      "earliest_observed_release_percent": 80.88,
+      "points_at_or_below_60": 0
+    }
+  ],
+  "fit_records": 288,
+  "explicit_failure_records": 0,
+  "identity_f1_f2_checks": "PASSED",
+  "data_scope": "published_R1_means_not_new_recipes",
+  "candidate_predictions": 0,
+  "convention_note": "PTCalc RmsE=sqrt(SS/(n-p)); AIC=n*ln(SS)\u002B2p; AICc excludes residual variance from p. Prior SciPy report used mean RMSE and counted variance in information criteria."
+}

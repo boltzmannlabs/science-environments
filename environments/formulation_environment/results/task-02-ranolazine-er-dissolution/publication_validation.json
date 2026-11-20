@@ -1,0 +1,36 @@
+{
+  "task_id": "Task - 02",
+  "checked_utc": "2026-11-16T05:22:10.363454+00:00",
+  "scope": "archive_publication_only_no_source_migration_no_new_scientific_execution",
+  "existing_environment_test_command": "python3.13 -m unittest discover -s tests -v",
+  "test_exit_code": 0,
+  "relative_links_checked": 28,
+  "archived_artifacts": [
+    {
+      "path": "environments/formulation_environment/results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/literature_model_comparison.json",
+      "sha256": "7928b022098e3d56038be6c76a11c614faf095edf8c94717432e8eb6e3b52c92",
+      "source_sha256": "7928b022098e3d56038be6c76a11c614faf095edf8c94717432e8eb6e3b52c92",
+      "matches_saved_prior_run": true,
+      "only_output_locators_redacted": false
+    },
+    {
+      "path": "environments/formulation_environment/results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/literature_model_comparison.csv",
+      "sha256": "70c0b39ba5ca306ba861a13147f93aa70425a244efdee784fa38f55e05f8e905",
+      "source_sha256": "70c0b39ba5ca306ba861a13147f93aa70425a244efdee784fa38f55e05f8e905",
+      "matches_saved_prior_run": true,
+      "only_output_locators_redacted": false
+    },
+    {
+      "path": "environments/formulation_environment/results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/existing_lofo_rerun.json",
+      "sha256": "d89673a6beb5c6c0a92650208b25124864978cb73ec5fa045d756feb44ad9086",
+      "source_sha256": "fab5588ee274fadd3d513e2432bac8ef0d9947816c582bb7f493053acc61ff5e",
+      "matches_saved_prior_run": false,
+      "only_output_locators_redacted": true
+    }
+  ],
+  "input_sha256": "26830f3fb5a539b0ce81c20266856c1f1b22013aae701b51857e8f72e21777ce",
+  "failures": [],
+  "passed": true,
+  "candidate_lab_validation": "NOT_RUN",
+  "review_approval": "NOT_CLAIMED"
+}
