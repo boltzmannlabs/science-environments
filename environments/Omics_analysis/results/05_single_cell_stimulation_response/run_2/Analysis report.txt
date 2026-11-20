@@ -1,0 +1,153 @@
+ANALYSIS REPORT — GSE96583: IFN-beta stimulation response in human PBMCs (single-cell RNA-seq)
+==============================================================================================
+
+1. DATASET AND EXPERIMENTAL DESIGN
+----------------------------------
+Source: NCBI GEO accession GSE96583 ("Multiplexing droplet-based single cell
+RNA-sequencing using genetic barcodes"), human PBMCs, 10x Genomics droplet
+scRNA-seq (Illumina HiSeq 2500).
+
+The series contains two experiments. Batch 1 (samples A, B, C) is a pooled
+set of unstimulated samples used to demonstrate sample multiplexing and was
+NOT used here. Batch 2 is the experiment comparing a control and a
+stimulated condition: sample 2.1 (6-hour culture, no stimulation) versus
+sample 2.2 (6-hour culture with IFN-beta). This is the control-versus-
+stimulated experiment used for this analysis.
+
+Raw data used:
+  - GSM2560248_2.1.mtx.gz + GSM2560248_barcodes.tsv.gz (control)
+  - GSM2560249_2.2.mtx.gz  + GSM2560249_barcodes.tsv.gz (stimulated)
+    (both extracted from GSE96583_RAW.tar)
+  - GSE96583_batch2.total.tsne.df.tsv.gz — per-cell metadata
+  - GSE96583_batch2.genes.tsv.gz — Ensembl gene id to symbol map, in matrix
+    row order (35,635 genes)
+
+The matrices contain 35,635 genes x 14,619 control cells and 35,635 genes x
+14,446 stimulated cells (29,065 cells total).
+
+Per-cell labels used (and why):
+  - condition ('stim': ctrl vs stim) — the experimental contrast.
+  - donor ('ind') — 8 unrelated donors (101, 107, 1015, 1016, 1039, 1244,
+    1256, 1488), each contributing cells to BOTH conditions; used to account
+    for inter-donor variability (the multiplexing design of the study).
+  - cell type ('cell') — the 8 author-provided labels: B cells, CD4 T cells,
+    CD8 T cells, CD14+ Monocytes, FCGR3A+ Monocytes, NK cells, Dendritic
+    cells, Megakaryocytes. Used for cell-type-specific analyses.
+  - doublet status ('multiplets') — demuxlet assignments: singlet / doublet /
+    ambs (ambiguous). Only 'singlet' cells were retained.
+
+Two small data quirks encountered and handled:
+  - 313 16-nt barcodes appear in both the control and stimulated barcode
+    files (with different cell-index suffixes, e.g. -1 vs -11). Cells were
+    therefore keyed by (barcode-base, condition), which gives a perfect 1:1
+    alignment for all 29,065 cells.
+  - The first download of GSE96583_batch2.genes.tsv.gz was a corrupted
+    (truncated) gzip; a fresh download yielded the complete, valid 35,635-line
+    file, which was verified against canonical highly expressed PBMC genes
+    (FTH1, MALAT1, FTL, B2M, TMSB4X, ribosomal proteins at the top).
+
+2. QUALITY CONTROL AND PREPROCESSING
+------------------------------------
+Per-cell metrics were computed on raw counts: total counts and detected gene
+number. The 13 mitochondrial genes in this reference (MT-*) carry ZERO counts
+in this dataset, so a percent-mitochondrial filter was not applicable;
+n_genes and total_counts were used instead (see qc_plots.png).
+
+Filters applied:
+  - kept demuxlet 'singlet' cells only (excluded 'doublet' and 'ambs');
+  - n_genes >= 200 and total_counts >= 500.
+Result: 24,562 cells retained (12,261 control, 12,301 stimulated).
+
+No normalization was applied for the differential expression test: raw
+counts were passed to DESeq2, which estimates library (size) factors
+internally. Per-cell QC metrics were computed directly on raw counts.
+
+Cell-type labels were taken as provided by the authors. Nine cells had no
+cell-type label; they remain in the all-cells analysis but are excluded from
+per-cell-type analyses. All 8 cell types contain cells from every one of the
+8 donors in both conditions.
+
+3. HANDLING OF DONORS AND REPLICATES; STATISTICAL MODEL
+-------------------------------------------------------
+Cells from the 8 donors were pooled and demultiplexed, with each donor
+present in both the control and the stimulated condition. To account for
+inter-donor variability and the paired (donor-matched) design, counts were
+pseudobulked: for each donor and condition, raw counts were summed over all
+cells of that donor in that condition, giving 8 x 2 = 16 pseudobulk samples.
+
+Differential expression was then performed with PyDESeq2 (DESeq2
+implementation) on the pseudobulk counts using the design formula
+'~ donor + condition': a negative-binomial model with donor as a fixed-effect
+covariate and the Wald test for the stimulated-versus-control contrast
+(parametric dispersion trend; Cook's-distance outlier filtering and
+DESeq2-style independent filtering enabled; Benjamini-Hochlinger adjustment
+of p-values). The same procedure was repeated within each of the 8 cell
+types, using only that type's cells.
+
+4. MAIN FINDINGS
+----------------
+All cells: 3,666 genes passed adj_p < 0.05 (1,948 induced, 1,718
+repressed); 1,388 also had |log2FC| > 1. The response is dominated by a
+textbook interferon-stimulated gene (ISG) program:
+  - strongest induced genes include the chemokines CCL8, CXCL11, CXCL10,
+    CXCL9, and ISGs IFIT1/IFIT2/IFIT3, ISG15, RSAD2, NUPR1, IFI27, IL27,
+    TGM1, CCNA1 (see volcano_plot.png and summary.json).
+  - strongest repressed genes include the pro-inflammatory and
+    tissue-remodeling genes IL1B, CXCL5, MMP9, MMP7, CLEC5A, THBD,
+    consistent with IFN-beta's anti-inflammatory action.
+
+Cell-type-specific responses (genes with adj_p < 0.05 AND |log2FC| > 1):
+  - CD14+ Monocytes: 2,142 (largest response; 1,666 induced / 1,585
+    repressed) — monocytes show the strongest and most bidirectional
+    response to IFN-beta.
+  - FCGR3A+ Monocytes: 900 (734 induced / 541 repressed).
+  - CD4 T cells: 505; B cells: 478; Dendritic cells: 416; NK cells: 315;
+    CD8 T cells: 195 (weakest lymphoid response).
+  - Megakaryocytes: 58 (58 induced / 3 repressed) — a nearly exclusively
+    induced, modest response in this small, quiescent population.
+  - In every cell type, more genes were induced than repressed.
+
+Overall, IFN-beta robustly induces the ISG/chemokine program in all cell
+types while repressing IL-1beta-driven inflammatory and matrix-remodeling
+genes, with the myeloid compartment (especially CD14+ monocytes) showing the
+largest magnitude of change.
+
+5. UNCERTAINTIES AND LIMITATIONS
+--------------------------------
+  - Small donor number: only 8 donors, so the donor covariate has 7 degrees
+    of freedom and statistical power is limited; only the most robust effects
+    are detectable. Pseudobulking is appropriate here but each "replicate"
+    is one donor-condition aggregate.
+  - Single time point: only the 6-hour response was measured; no time course,
+    so no conclusions about response kinetics or sustained effects.
+  - The control arm was also cultured for 6 hours (matched culture control),
+    so this measures stimulation vs unstimulated-cultured cells, not fresh
+    vs stimulated cells.
+  - Donor population: samples are annotated as SLE patients in the series
+    metadata; the response may not generalize to healthy donors.
+  - Cell-type labels and doublet calls are the authors' demuxlet outputs,
+    used as provided; misclassification would affect per-type results.
+    Ambiguous (ambs) cells were excluded, which is conservative.
+  - Mitochondrial genes carry zero counts in this dataset, so the standard
+    percent-mt QC filter could not be used.
+  - Gene symbols are not unique in this reference (2,697 duplicated symbol
+    rows). Per the task, the 'gene' column of de_results.csv uses the symbol
+    as it appears in the input; analysis itself was run on unique Ensembl
+    gene ids, so genes sharing a symbol appear as separate rows.
+  - DESeq2 independent filtering leaves a subset of low-count genes with NaN
+    p-values (not testable); these are reported as NaN.
+  - PyDESeq2 is a reimplementation of DESeq2; minor numerical differences
+    from R DESeq2 are possible.
+  - Nine cells lacked a cell-type label (excluded from per-type analyses).
+  - Four cell-type dispersion-trend fits did not converge parametrically and
+    PyDESeq2 automatically fell back to a mean-based trend (standard DESeq2
+    fallback behavior).
+
+6. SOFTWARE
+-----------
+Python 3.14.7; scanpy 1.12.1; anndata 0.12.16; pandas 2.3.3; numpy 2.4.3;
+scipy 1.14.1; matplotlib 3.10.3; PyDESeq2 0.5.4 (with formulaic 1.2.2 and
+formulaic-contrasts 1.0.0). PyDESeq2 and its dependencies were installed from
+a local wheel cache because PyPI was not reachable from this environment.
+A local monkeypatch (matplotlib_fix.py) was required for a
+matplotlib-3.10.3 Path.__deepcopy__ infinite-recursion bug on Python 3.14.

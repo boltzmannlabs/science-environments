@@ -1,0 +1,52 @@
+DLPFC spatial domain identification — analysis report
+=======================================================
+Dataset: 10x Genomics Visium, human dorsolateral prefrontal cortex, sample 151673.
+Input: 3639 spots x 33538 genes; 3639 spots analyzed (none empty; min n_counts=210).
+
+Quality control
+- n_counts and n_genes computed per spot from raw counts.
+- No empty/blank spots; all input spots retained in the analysis and in spatial_domains.csv.
+- Mito percent unavailable: var metadata carries no chromosome info in this export.
+
+Preprocessing
+- Counts normalized to 1e4 CPM, log1p; 3000 highly variable genes (min_mean=0.01, max_mean=10, min_disp=0.5);
+  z-score scaled (clip +/-10); PCA with 50 components (arpack, seed 42).
+
+Spatial domain identification
+- PCA scores smoothed over the Delaunay spatial graph (row-stochastic, 3 passes) to suppress
+  spot-level noise and emphasize spatially coherent signal.
+- kNN graph (k=30) in smoothed 50-PC space; Leiden clustering at resolutions [0.2, 0.3, 0.5, 0.7].
+- Resolution 0.3 selected by silhouette score: 0.165
+  (scores: {'0.2': 0.134, '0.3': 0.165, '0.5': 0.07, '0.7': 0.08}).
+- n_domains = 7; sizes: {'0': 593, '1': 461, '2': 592, '3': 419, '4': 504, '5': 639, '6': 431}.
+- Spatial coherence: 0.956 of Delaunay edges are within-domain.
+
+Marker genes
+- Domain vs rest via Scanpy rank_genes_groups (t-test) on log-normalized expression;
+  top 10 per domain by rank (domain_markers.csv). effect_size = logfoldchange.
+
+Spatial organization
+- Domains are contiguous regions of the section (spatial_domains.png). The kNN graph and Leiden
+  optimization favor spatially coherent partitions; 95.6% of spatial edges are
+  within-domain, and the silhouette peak supports separation in latent space.
+
+Interpretations (hypotheses, not confirmed identities)
+  - Domain 0 (593 spots): a spatially coherent region with a excitatory-neuronal profile (NRGN, CCK, OLFM1, SCGB2A2) signature. Top markers: SCGB2A2, ENC1, NRGN, SCGB1D2, VSNL1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 1 (461 spots): a spatially coherent region with a vascular/smooth-muscle profile with strong mitochondrial OXPHOS (MYL9, HOPX, MT-*) signature. Top markers: COX6C, MT-ND1, MALAT1, MT-CO1, ENC1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 2 (592 spots): a spatially coherent region with a myelinated/oligodendrocyte profile (MBP, PLP1, CNP, MOBP, GFAP) signature. Top markers: MBP, PLP1, GFAP, CNP, CRYAB. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 3 (419 spots): a spatially coherent region with a high-metabolism neuronal profile (dominant mitochondrial OXPHOS, CAMK2N1) signature. Top markers: MT-CO1, MT-ND1, MT-ATP6, MT-ND3, MT-CYB. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 4 (504 spots): a spatially coherent region with a epithelial/immune-active profile (KRT19, HLA-B, ISG15, IFI27) signature. Top markers: KRT19, CPB1, COX6C, IFI27, ISG15. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 5 (639 spots): a spatially coherent region with a mature-neuronal profile (SNAP25, SYT1, NEFL, UCHL1, TUBA1B) signature. Top markers: SNAP25, TUBA1B, NEFL, TMSB10, UCHL1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+  - Domain 6 (431 spots): a spatially coherent region with a excitatory-neuronal profile overlapping domain 0 (SCGB2A2, SNAP25, SYT1, KRT17) signature. Top markers: SCGB2A2, SCGB1D2, TMSB10, DIRAS2, SNAP25. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.
+
+Limitations
+  - Single Visium section, no spatial replication: boundaries and interpretations cannot be validated across samples.
+  - Visium spots pool multiple cells; markers reflect mixtures and may not map one-to-one to a single cell type or cortical layer.
+  - Leiden resolution was selected on an internal silhouette criterion in smoothed PCA space; this does not guarantee biological correctness.
+  - No anatomical labels were used (by design); proposed biological interpretations are hypotheses requiring independent validation (e.g., immunofluorescence, cell-type deconvolution).
+  - Spatial smoothing (3 Delaunay passes) trades sharp boundaries for coherence; true domain boundaries may be slightly eroded.
+
+Reproducibility
+- Script: /home/boltzmann6/.sci/profiles/dplfc/workspace/scripts/dlpfc_spatial_domains_final.py
+- Seed 42; package versions in answers.json.
+- Original spot IDs preserved exactly; coordinates from input obsm['spatial'] (um).
