@@ -2,7 +2,7 @@
 
 ## Task - 02 ownership and execution
 
-Task-02 has its own registered archive-verification implementation, folder contract and tests. It checks saved hashes, group/fold counts and aggregate arithmetic only; no fresh kinetic fitting or product prediction is provided. See the [task folder map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+Task-02 has its own registered archive-verification implementation, folder contract and tests. It checks saved hashes, group/fold counts and aggregate arithmetic only; no fresh kinetic fitting or product prediction is provided. See the [task folder map](docs/task-02-ranolazine-er-dissolution/README.md).
 
 ## Scientific contract
 
@@ -12,8 +12,8 @@ PVP wet granulation is a provisional process stratum, not an executed or validat
 
 ## State and provenance
 
-- Immutable numeric source snapshots and user-supplied specification: `benchmark/clarithromycin-500mg-ir-formulation-dissolution/`.
-- Append-only conceptual result versions: `results/clarithromycin-500mg-ir-formulation-dissolution/v1/` and `v2/`; fresh local runs go to `.runs/`.
+- Immutable numeric source snapshots and user-supplied specification: `benchmark/task-01-clarithromycin-ir-formulation-dissolution/`.
+- Append-only conceptual result versions: `results/task-01-clarithromycin-ir-formulation-dissolution/v1/` and `v2/`; fresh local runs go to `.runs/`.
 - Model outputs, literature observations and planned experiments must remain distinguishable.
 - Candidate endpoints remain null / NOT_PREDICTED / UNKNOWN; a composition pass never implies a physical-quality pass.
 

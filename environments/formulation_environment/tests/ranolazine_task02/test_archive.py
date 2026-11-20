@@ -12,7 +12,7 @@ ENV = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ENV / "src"))
 from formulation_environment.ranolazine_task02 import run_task02, verify_contract
 
-NAME = "Task - 02 - Ranolazine ER Tablet Dissolution Investigation"
+NAME = "task-02-ranolazine-er-dissolution"
 CONFIG = ENV / "config" / NAME
 
 

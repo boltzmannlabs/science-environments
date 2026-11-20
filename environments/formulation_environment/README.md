@@ -2,11 +2,11 @@
 
 **Status: In Progress / DESIGN_ONLY. No validated pharmaceutical product or recipe-to-release predictor.**
 
-A reusable, evidence-gated task collection for formulation design, dissolution analysis and experimental planning. Task-02 has dedicated folders for its [ranolazine investigation](tasks/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md), including configuration, source, scripts, tests, documentation, research, benchmark and results. The original [ranolazine implementation/evidence](../formulation_dissolution/README.md) remains unchanged; its synthetic scenarios are not pooled with clarithromycin literature data.
+A reusable, evidence-gated task collection for formulation design, dissolution analysis and experimental planning. Task-02 has dedicated folders for its [ranolazine investigation](tasks/task-02-ranolazine-er-dissolution/README.md), including configuration, source, scripts, tests, documentation, research, benchmark and results. The original [ranolazine implementation/evidence](../formulation_dissolution/README.md) remains unchanged; its synthetic scenarios are not pooled with clarithromycin literature data.
 
 ## Current work
 
-[Task - 01 — Clarithromycin 500 mg immediate-release formulation and dissolution investigation](tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md).
+[Task - 01 — Clarithromycin 500 mg immediate-release formulation and dissolution investigation](tasks/task-01-clarithromycin-ir-formulation-dissolution/README.md).
 
 - Fixed 500 mg API in an assumed 800 mg finished coated tablet; eight specified excipients only.
 - Original 24 valid recipes, expanded to 28; nine matched CP/PVP designs support future interaction/curvature estimation.
@@ -29,7 +29,7 @@ Run from this directory. `scripts/run_task.py` resolves checkout inputs independ
 
 ## Task - 02: separate ranolazine folders
 
-[Ownership map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md). Run archive verification from this environment:
+[Ownership map](docs/task-02-ranolazine-er-dissolution/README.md). Run archive verification from this environment:
 
     python scripts/run_task.py --task "Task - 02" --out .runs/task02/new-run
 
@@ -41,15 +41,18 @@ This verifies archived hashes and arithmetic only. It does not rerun model fitti
 formulation_environment/
   README.md  ENVIRONMENT_SPEC.md  STATUS.md  MODELS_AND_TOOLS.md
   config/          task registry and frozen benchmark contract
-  tasks/clarithromycin-500mg-ir-formulation-dissolution/  objective, overall work, execution and acceptance
-  benchmark/clarithromycin-500mg-ir-formulation-dissolution/  benchmark specification, numeric inputs and metric contract
-  results/clarithromycin-500mg-ir-formulation-dissolution/    curated v1/v2 results, reports and provenance
+  tasks/task-01-clarithromycin-ir-formulation-dissolution/  objective, overall work, execution and acceptance
+  tasks/task-02-ranolazine-er-dissolution/  ranolazine investigation and archive verification
+  benchmark/task-01-clarithromycin-ir-formulation-dissolution/  benchmark specification, numeric inputs and metric contract
+  benchmark/task-02-ranolazine-er-dissolution/  ranolazine benchmark contract
+  results/task-01-clarithromycin-ir-formulation-dissolution/    curated v1/v2 results, reports and provenance
+  results/task-02-ranolazine-er-dissolution/  ranolazine artifacts and verification receipts
   scripts/         portable execution and publication checks
   src/             reusable implementation and hard constraints
   tests/           independent data/scientific-contract regression tests
 ```
 
-Use the **same descriptive folder slug** under all three task roots; retain numbering as a separate logical task ID. [Task structure standard](TASK_STRUCTURE.md) explains adding Task - 02 without overwriting Task - 01.
+Use the **same `task-NN-short-title` folder slug** under all three task roots. Keep the existing logical task IDs for records and CLI selection. The [task structure standard](TASK_STRUCTURE.md) explains how to add future tasks.
 
 ## Navigation
 

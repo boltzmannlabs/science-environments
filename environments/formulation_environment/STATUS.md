@@ -2,7 +2,7 @@
 
 ## Task - 02 ownership and execution
 
-Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+Task-02 has dedicated folders throughout the repository and explicit archive-verifier dispatch. The original Task-01 study and curated results are preserved. Current checks and limitations are recorded separately under Task-02 results; historical Task-01 counts below refer to their original run. See the [task folder map](docs/task-02-ranolazine-er-dissolution/README.md).
 
 **Lifecycle: In Progress. Scientific tier: DESIGN_ONLY.**
 
@@ -18,7 +18,7 @@ Task-02 has dedicated folders throughout the repository and explicit archive-ver
 
 Portable source, explicit task registry, matching descriptive task/benchmark/results folders, source snapshots, versioned curated results, research notes and executable regression tests.
 
-Executed integration validation: **29 tests passed, zero failures/errors/skips** on Python 3.13.7. A fresh portable runner execution reproduced all 33 aggregate metric rows within absolute tolerance 1e-7 and generated the 28-recipe pool. Link/source-hash/publication scans, CLI overwrite/unknown-task rejection and Python compilation passed. Receipts are in `results/clarithromycin-500mg-ir-formulation-dissolution/repository_validation.json`, `repository_tests.txt` and `repository_run_receipt.json`. Unrelated existing environment suites were not rerun.
+Executed integration validation: **29 tests passed, zero failures/errors/skips** on Python 3.13.7. A fresh portable runner execution reproduced all 33 aggregate metric rows within absolute tolerance 1e-7 and generated the 28-recipe pool. Link/source-hash/publication scans, CLI overwrite/unknown-task rejection and Python compilation passed. Receipts are in `results/task-01-clarithromycin-ir-formulation-dissolution/repository_validation.json`, `repository_tests.txt` and `repository_run_receipt.json`. Unrelated existing environment suites were not rerun.
 
 ## Not accomplished
 

@@ -10,7 +10,7 @@ Generate and constraint-check at least ten distinct compositions under a fixed *
 
 ## Inputs and provenance
 
-[User-supplied specification](../../benchmark/clarithromycin-500mg-ir-formulation-dissolution/specification.md), [frozen contract](../../config/task01_contract.json), twelve supplied plus twelve generated recipe inputs, and published R1 numeric mean/SD profiles. All eight excipients are preserved; HPMC/TiO2/PEG4000 are coat solids. This is not the earlier 750 mg screen or ranolazine ER.
+[User-supplied specification](../../benchmark/task-01-clarithromycin-ir-formulation-dissolution/specification.md), [frozen contract](../../config/task01_contract.json), twelve supplied plus twelve generated recipe inputs, and published R1 numeric mean/SD profiles. All eight excipients are preserved; HPMC/TiO2/PEG4000 are coat solids. This is not the earlier 750 mg screen or ranolazine ER.
 
 ## Work performed
 
@@ -37,4 +37,4 @@ python scripts/validate_environment.py
 
 ## Linked sections
 
-[Matching benchmark](../../benchmark/clarithromycin-500mg-ir-formulation-dissolution/README.md) · [Matching results](../../results/clarithromycin-500mg-ir-formulation-dissolution/README.md) · [Research](../../../../research/clarithromycin-ir-formulation/research-notes.md).
+[Matching benchmark](../../benchmark/task-01-clarithromycin-ir-formulation-dissolution/README.md) · [Matching results](../../results/task-01-clarithromycin-ir-formulation-dissolution/README.md) · [Research](../../../../research/clarithromycin-ir-formulation/research-notes.md).

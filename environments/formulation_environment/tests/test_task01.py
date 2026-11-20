@@ -15,7 +15,7 @@ ENV = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ENV / 'src'))
 from formulation_environment.constraints import NAMES, BOUNDS, validate_composition
 
-TASK_FOLDER = 'clarithromycin-500mg-ir-formulation-dissolution'
+TASK_FOLDER = 'task-01-clarithromycin-ir-formulation-dissolution'
 BENCH = ENV / 'benchmark' / TASK_FOLDER
 RESULTS = ENV / 'results' / TASK_FOLDER
 V2 = RESULTS / 'v2'
@@ -32,15 +32,24 @@ class StructureTests(unittest.TestCase):
         for name in ['config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results']:
             self.assertTrue((ENV / name).is_dir(), name)
 
-    def test_literal_task_id_and_three_paths(self):
+    def test_registered_tasks_have_matching_numbered_folders(self):
         tasks = load(ENV / 'config/tasks.json')['tasks']
-        self.assertIn('Task - 01', tasks)  # Other tasks must not replace Task-01.
-        for key in ['task_dir', 'benchmark_dir', 'results_dir']:
-            path = Path(tasks['Task - 01'][key])
-            self.assertEqual(path.name, TASK_FOLDER)
-            self.assertEqual(path.name, tasks['Task - 01']['folder_slug'])
-            self.assertTrue((ENV / path / 'README.md').is_file())
-            self.assertFalse((ENV / path.parent / 'Task - 01').exists())
+        self.assertIn('Task - 01', tasks)
+        self.assertIn('Task - 02', tasks)
+        slugs = set()
+        for task_id, task in tasks.items():
+            with self.subTest(task_id=task_id):
+                number = int(task_id.removeprefix('Task - '))
+                slug = task['folder_slug']
+                self.assertRegex(slug, rf'^task-{number:02d}-[a-z0-9]+(?:-[a-z0-9]+)*$')
+                self.assertNotIn(slug, slugs)
+                slugs.add(slug)
+                for key, section in [('task_dir', 'tasks'), ('benchmark_dir', 'benchmark'), ('results_dir', 'results')]:
+                    self.assertEqual(task[key], f'{section}/{slug}')
+                    self.assertTrue((ENV / task[key] / 'README.md').is_file())
+        for section in ['tasks', 'benchmark', 'results']:
+            actual = {p.name for p in (ENV / section).iterdir() if p.is_dir()}
+            self.assertEqual(actual, slugs, section)
 
     def test_objective_title_and_overall_scope(self):
         text = (ENV / 'tasks' / TASK_FOLDER / 'README.md').read_text()

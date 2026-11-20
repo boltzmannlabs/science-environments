@@ -19,7 +19,7 @@ The computational investigation completed. The literature-summary rerun reproduc
 - Selected scenario candidate vs F8 at matched assumed hardness: score 0.7280 vs 0.5122 and toy-goal fraction 86.72% vs 61.33%; simulated 2 h/24 h medians are 19.576%/90.986% vs 20.054%/91.355%.
 - Synthetic fixture: Weibull test MAE/RMSE 1.63/1.84 pp vs first-order 3.18/3.67 pp; Weibull was the generating law.
 
-All scientific caveats and full comparisons are in the [Task-02 benchmark report](../../benchmark/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md). Machine-readable outputs are adjacent in this folder. Global release/software validation receipts remain in [original validation JSON](../../../formulation_dissolution/results/validation.json) and [original validation log](../../../formulation_dissolution/results/validation.txt); historical test counts in those receipts describe their original execution environment.
+All scientific caveats and full comparisons are in the [Task-02 benchmark report](../../benchmark/task-02-ranolazine-er-dissolution/README.md). Machine-readable outputs are adjacent in this folder. Global release/software validation receipts remain in [original validation JSON](../../../formulation_dissolution/results/validation.json) and [original validation log](../../../formulation_dissolution/results/validation.txt); historical test counts in those receipts describe their original execution environment.
 
 ## Files
 

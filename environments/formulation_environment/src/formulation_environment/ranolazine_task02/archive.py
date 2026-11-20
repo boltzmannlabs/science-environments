@@ -7,7 +7,7 @@ import hashlib
 import json
 import math
 
-NAME = "Task - 02 - Ranolazine ER Tablet Dissolution Investigation"
+NAME = "task-02-ranolazine-er-dissolution"
 
 
 def _equal(actual, expected, label):

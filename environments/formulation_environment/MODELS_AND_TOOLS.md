@@ -2,7 +2,7 @@
 
 ## Task - 02 ownership and execution
 
-Task-02 uses a standard-library archive verifier in `formulation_environment.ranolazine_task02`, not the clarithromycin fitting engine. Original ranolazine models/results remain separate and unchanged. See the [task folder map](docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+Task-02 uses a standard-library archive verifier in `formulation_environment.ranolazine_task02`, not the clarithromycin fitting engine. Original ranolazine models/results remain separate and unchanged. See the [task folder map](docs/task-02-ranolazine-er-dissolution/README.md).
 
 | Component | Actual role | Boundary |
 |---|---|---|

@@ -26,4 +26,4 @@ No measured candidate dissolution, compatibility, stability or manufacturing dat
 
 ## Reproducibility
 
-[Task](../../environments/formulation_environment/tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md), [benchmark](../../environments/formulation_environment/benchmark/clarithromycin-500mg-ir-formulation-dissolution/README.md), [results](../../environments/formulation_environment/results/clarithromycin-500mg-ir-formulation-dissolution/README.md), [references](references.md). Root license selection remains pending; citations do not convey rights to full articles.
+[Task](../../environments/formulation_environment/tasks/task-01-clarithromycin-ir-formulation-dissolution/README.md), [benchmark](../../environments/formulation_environment/benchmark/task-01-clarithromycin-ir-formulation-dissolution/README.md), [results](../../environments/formulation_environment/results/task-01-clarithromycin-ir-formulation-dissolution/README.md), [references](references.md). Root license selection remains pending; citations do not convey rights to full articles.

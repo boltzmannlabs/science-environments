@@ -10,4 +10,4 @@ Use dedicated Task-02 config, task, benchmark, results, scripts, docs and root r
 
 ## Consequences
 
-Task-01 stays unchanged except permitting additional registry tasks. Task-02 execution verifies archived integrity/arithmetic only; it does not refit models or establish pharmaceutical performance. All new validation outputs stay within Task-02. See the [folder map](../../../environments/formulation_environment/docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+Task-01 stays unchanged except permitting additional registry tasks. Task-02 execution verifies archived integrity/arithmetic only; it does not refit models or establish pharmaceutical performance. All new validation outputs stay within Task-02. See the [folder map](../../../environments/formulation_environment/docs/task-02-ranolazine-er-dissolution/README.md).

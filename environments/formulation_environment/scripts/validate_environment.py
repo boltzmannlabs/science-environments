@@ -70,7 +70,7 @@ def main():
         scanned += 1
         if any(p.search(content) for p in patterns):
             failures.append('private_path_or_credential_pattern:' + str(file.relative_to(ENV)))
-    sources = json.loads((ENV / 'results/clarithromycin-500mg-ir-formulation-dissolution/publication_sources.json').read_text())['artifacts']
+    sources = json.loads((ENV / 'results/task-01-clarithromycin-ir-formulation-dissolution/publication_sources.json').read_text())['artifacts']
     for artifact in sources:
         path = ENV / artifact['path']
         if hashlib.sha256(path.read_bytes()).hexdigest() != artifact['sha256']:
@@ -79,7 +79,7 @@ def main():
     if args.run:
         import pandas as pd
         run = args.run.resolve()
-        expected = json.loads((ENV / 'benchmark/clarithromycin-500mg-ir-formulation-dissolution/expected_metrics.json').read_text())
+        expected = json.loads((ENV / 'benchmark/task-01-clarithromycin-ir-formulation-dissolution/expected_metrics.json').read_text())
         actual = json.loads((run / 'model_comparison.json').read_text())
         if len(actual) != len(expected['metrics']):
             failures.append('offline_replay_metric_count')

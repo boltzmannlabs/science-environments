@@ -51,9 +51,9 @@ At the paper-reported F8 hardness, simulated 24 h medians were 89.381% (first-or
 
 ## Reproducibility and source files
 
-- [literature_model_comparison.json](../../results/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/literature_model_comparison.json): per-profile folds, metrics, nested model selections, and source hash.
-- [literature_model_comparison.csv](../../results/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/literature_model_comparison.csv): compact macro comparison table.
-- [existing_lofo_rerun.json](../../results/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/existing_lofo_rerun.json): rerun of the existing published LOFO runner with verifier findings.
+- [literature_model_comparison.json](../../results/task-02-ranolazine-er-dissolution/literature_model_comparison.json): per-profile folds, metrics, nested model selections, and source hash.
+- [literature_model_comparison.csv](../../results/task-02-ranolazine-er-dissolution/literature_model_comparison.csv): compact macro comparison table.
+- [existing_lofo_rerun.json](../../results/task-02-ranolazine-er-dissolution/existing_lofo_rerun.json): rerun of the existing published LOFO runner with verifier findings.
 - Existing kinetic fit, synthetic holdout, and candidate artifacts remain under [the original ranolazine data folder](../../../formulation_dissolution/data/processed/README.md) with their source labels and hashes.
 - Published references and source-verification details: `../../../formulation_dissolution/references.md`.
 

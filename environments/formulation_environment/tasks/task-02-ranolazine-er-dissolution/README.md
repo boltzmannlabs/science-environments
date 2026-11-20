@@ -39,7 +39,7 @@ This Task-02 record covers the work already run: source/evidence inventory, meth
 - The assumed-scenario winner was `grid_C84_B42_H8.5`; the toy-goal fraction was 86.72% versus 61.33% for research F8 under shared invented draws. These are not tablet pass rates. At the compared scenario settings, the selected mixture’s median release was slightly below F8 at both 2 h and 24 h; its predicted F8 24 h endpoint also differed from the literature-reported 99.5% by about 10 pp at the paper-reported hardness.
 - The synthetic batch experiment favored Weibull on data generated from a Weibull law; this validates computation contracts only.
 
-Detailed side-by-side fold/model values are in [Task-02 benchmark](../../benchmark/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md); saved output and evidence labels are in [Task-02 results](../../results/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md).
+Detailed side-by-side fold/model values are in [Task-02 benchmark](../../benchmark/task-02-ranolazine-er-dissolution/README.md); saved output and evidence labels are in [Task-02 results](../../results/task-02-ranolazine-er-dissolution/README.md).
 
 ## Completion criteria and limitations
 
@@ -55,11 +55,11 @@ The investigation remains archived. `scripts/run_task.py --task "Task - 02"` now
 
 ## Task-owned folders throughout the repository
 
-- [Configuration](../../config/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md)
+- [Configuration](../../config/task-02-ranolazine-er-dissolution/README.md)
 - [Source package](../../src/formulation_environment/ranolazine_task02/README.md)
-- [Scripts](../../scripts/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md)
+- [Scripts](../../scripts/task-02-ranolazine-er-dissolution/README.md)
 - [Tests](../../tests/ranolazine_task02/README.md)
-- [Documentation and ownership map](../../docs/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md)
+- [Documentation and ownership map](../../docs/task-02-ranolazine-er-dissolution/README.md)
 - [Research notes](../../../../research/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/research-notes.md) and [references](../../../../research/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/references.md)
 - [Architecture decision](../../../../docs/decisions/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md)
 

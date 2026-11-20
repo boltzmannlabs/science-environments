@@ -1,15 +1,35 @@
 # Unified formulation task structure
 
-Use a descriptive folder name for the work, with the same `folder_slug` under `tasks/`, singular `benchmark/` and `results/`. The current folder is **clarithromycin-500mg-ir-formulation-dissolution**. Its stable logical task ID remains **Task - 01** in the registry, records and CLI; folder names and numbering are separate fields.
+Every formulation task must use the same `task-NN-short-title` folder name under `tasks/`, singular `benchmark/` and `results/`. Use lowercase words separated by hyphens, with a two-digit task number matching the registered ID. Full titles belong in the registry and task README.
+
+| Task ID / CLI selector | Folder name in all three sections |
+| --- | --- |
+| `Task - 01` | `task-01-clarithromycin-ir-formulation-dissolution` |
+| `Task - 02` | `task-02-ranolazine-er-dissolution` |
 
 ```text
-tasks/clarithromycin-500mg-ir-formulation-dissolution/README.md
-benchmark/clarithromycin-500mg-ir-formulation-dissolution/README.md
-results/clarithromycin-500mg-ir-formulation-dissolution/README.md
+tasks/
+  task-01-clarithromycin-ir-formulation-dissolution/
+  task-02-ranolazine-er-dissolution/
+benchmark/
+  task-01-clarithromycin-ir-formulation-dissolution/
+  task-02-ranolazine-er-dissolution/
+results/
+  task-01-clarithromycin-ir-formulation-dissolution/
+  task-02-ranolazine-er-dissolution/
 ```
 
-Task README: title, overall task, objective, input provenance, actual execution, scope, acceptance and links to matching benchmark/results. Benchmark README: comparator eligibility, frozen bounds, source data, metrics and what success does not mean. Results README: versioned artifacts, actual findings, failures, limitations and links back.
+Task README: title, overall task, objective, input provenance, actual execution, scope, acceptance and links to matching benchmark/results. Benchmark README: comparator eligibility, frozen bounds, source data, metrics and acceptance boundaries. Results README: versioned artifacts, actual findings, failures, limitations and links back.
 
-Task - 02 is [Ranolazine ER Tablet Dissolution Investigation](tasks/Task%20-%2002%20-%20Ranolazine%20ER%20Tablet%20Dissolution%20Investigation/README.md). It has task-specific folders under config/, tasks/, benchmark/, results/, scripts/, docs/, root research/ and root docs/decisions/. Python source and tests use identifier-safe `ranolazine_task02` subpackages. The shared registry records every ownership path, and explicit runner dispatch executes archive consistency checks only. Never overwrite Task - 01 or silently change its dose/method/model. Shared functionality belongs in `src/`, not duplicated task scripts. Keep old result versions; new runs need new directories.
+To add a task:
 
-Publishing rules: no personal paths, credentials, account-scoped exports, full copyrighted articles, SDK/cache directories or fabricated laboratory results. Preserve source citations and distinguish computed, literature-observed, planned and measured endpoints. Generated HTML/SVG artifacts retain byte-identical Matplotlib formatting; scoped `.gitattributes` disable whitespace checks only for those generated artifacts, not implementation or documentation. Run tests, offline replay and publication validation before pushing. Do not claim a main merge or review approval from a branch push.
+1. Assign the next task number and choose one short title, for example `task-03-short-title`.
+2. Create matching folders with a README under all three required sections. Keep inputs/specifications in benchmark, work definition in tasks, and versioned output artifacts in results.
+3. Register the stable task ID, full title, `folder_slug`, `task_dir`, `benchmark_dir` and `results_dir` in [config/tasks.json](config/tasks.json). Add any extra task-specific ownership paths there too. The structure check requires matching numbered names and no unregistered task directories in the three sections.
+4. Extend runner dispatch, implementation and scientific contracts as needed. Run tests, offline replay and publication validation before pushing.
+
+[Task - 02](tasks/task-02-ranolazine-er-dissolution/README.md) also uses its slug under config/, scripts/ and docs/. Python source and tests use identifier-safe `ranolazine_task02` subpackages. Shared runners, indexes and reusable code stay at environment level. Existing root research/ and docs/decisions/ topics retain their names and are linked through the ownership map.
+
+Keep old result versions; new runs need new directories. Historical execution receipts retain the paths recorded at execution time. Current registry paths, contracts and publication manifests point to the renamed folders; scientific inputs, numeric results, reports and artifact hashes remain unchanged.
+
+Preserve source citations and distinguish computed, literature-observed, planned and measured endpoints. Generated HTML/SVG artifacts retain byte-identical Matplotlib formatting; scoped `.gitattributes` disable whitespace checks only for those generated artifacts. Publication checks cover links, source hashes and accidental private data. A branch push does not imply scientific review or physical validation.
