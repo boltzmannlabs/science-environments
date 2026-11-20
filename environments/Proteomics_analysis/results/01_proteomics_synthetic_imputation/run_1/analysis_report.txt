@@ -1,0 +1,38 @@
+Simulated LFQ protein matrix: exploratory QC and imputation report
+
+Inspected all 215 source rows and six samples; 215 unique protein IDs.
+Intensity units are unspecified, raw positive linear intensities; blank cells
+are missing. Raw observed intensity range: 754689 to 1.44674e+09;
+median 2.02725e+07; 10th/90th percentiles
+4.76919e+06 / 9.30786e+07.
+Observed log2 intensity range: 19.526 to 30.430;
+median 24.273; 10th/90th percentiles
+22.185 / 26.472.
+Log2 compresses the high-intensity tail; it is applied without pseudocount.
+
+Input missing cells: 306 of 1290.
+Missing by sample: {'Control_Rep1': 61, 'Control_Rep2': 40, 'Control_Rep3': 53, 'Treated_Rep1': 55, 'Treated_Rep2': 51, 'Treated_Rep3': 46}.
+Protein row detection frequencies (valid samples -> rows): {0: 14, 1: 6, 2: 13, 3: 14, 4: 23, 5: 52, 6: 93}.
+Proteins with fewer observed samples tend to have lower observed intensity,
+consistent with abundance-dependent nondetection, but the mechanism cannot be
+verified without detection limits and acquisition metadata. Blank cells are
+assumed to indicate missing intensities, not genuine measured zeros.
+
+QC: require at least 3 observed positive intensities of six; 182
+retained, 33 excluded, including 14 without any
+measurement. This avoids trying to estimate entirely or nearly unobserved
+protein rows, while retaining proteins with adequate support.
+
+Imputation: condition-specific observed mean on the log2 scale, downshifted by
+0.15 for a partly observed condition. For a condition with no
+observations, use the other condition's observed mean downshifted by
+0.7, recognizing elevated uncertainty and possible genuine
+condition effects. The smaller shift was compared with unshifted group means
+using artificial masking of low values in fully observed rows; it was better
+under low-intensity-weighted masking, but no simulated mask can identify the
+actual unknown missing-value mechanism. These shifts are heuristics, not
+estimated detection limits, and values are point estimates, not observations.
+No across-sample normalization, testing, or classification was performed.
+Imputed retained cells: 140; by sample: {'Control_Rep3': 23, 'Treated_Rep1': 28, 'Treated_Rep3': 22, 'Control_Rep2': 15, 'Control_Rep1': 30, 'Treated_Rep2': 22}.
+No observed value was modified except by log2 transformation.
+Software: Python standard library (csv, math, statistics, json).

@@ -1,0 +1,8 @@
+{
+  "total_input_proteins": 250,
+  "output_proteins": 250,
+  "imputed_value_cells": 29,
+  "normalization_method": "log2 median centering: subtract each sample's log2 median from all proteins in that sample (final pass on the complete matrix so every sample median is exactly 0)",
+  "imputation_method": "condition-aware protein replication: mean of the two same-protein, same-condition (Control or Treated) replicates in centered log2 space",
+  "processing_order": "log2 -> sample median centering -> condition-aware imputation -> final sample median re-centering"
+}

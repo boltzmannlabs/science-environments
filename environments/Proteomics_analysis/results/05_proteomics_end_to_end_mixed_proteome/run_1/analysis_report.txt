@@ -1,0 +1,15 @@
+Input: /home/boltzmann6/.sci/profiles/prot_5/workspace/proteinGroups.txt
+Rows: 6694; independently flagged reverse 84, contaminant 44, site-only 80; union removed 187; clean 6507.
+
+LFQ positive detections by run: {'LFQ intensity H1': 5307, 'LFQ intensity H2': 5462, 'LFQ intensity H3': 4958, 'LFQ intensity L1': 5171, 'LFQ intensity L2': 5332, 'LFQ intensity L3': 5648}
+Human complete-case normalization anchor rows: 3062; per-run log2 medians: {'LFQ intensity H1': 25.6133, 'LFQ intensity H2': 25.6666, 'LFQ intensity H3': 25.461, 'LFQ intensity L1': 26.0899, 'LFQ intensity L2': 26.1005, 'LFQ intensity L3': 26.0615}; residual median H-L human offset removed: -0.0206. The human component is fixed by design, whereas whole-proteome median normalization would be confounded by the E. coli spike.
+
+Tested 5019 groups (>=2 measured LFQ values in each condition, no imputation); excluded 1488 clean groups for insufficient coverage. Complete-case tested: 4506. Log2 fold change is mean normalized log2(H) minus mean normalized log2(L).
+
+Two-sided empirical-Bayes moderated t test with shared variance prior (df0=3.3067, s0^2=0.04921); BH FDR 0.05, plus |log2FC| >= 1.0 (twofold minimum). Called 1552 groups. Observed LFQ fold-change quantiles among tested proteins: {'5%': -0.502, '25%': -0.091, '50%': 0.2, '75%': 1.499, '95%': 2.144}.
+
+Descriptive QC, not labels used to assign significance: annotated human tested 3455, called 89; annotated E. coli tested 1564, called 1463; median E. coli tested log2FC 1.743. LFQ complete-case human raw log2 H-L median was approximately -0.524, so anchoring is important. Raw Intensity was inspected as a diagnostic but not included in the final inferential analysis: more groups quantified but noticeably greater human log2FC dispersion (MAD ~0.317 vs ~0.192 for LFQ complete cases).
+
+Caveats: LFQ missingness can be abundance-dependent, so excluding proteins missing in a condition sacrifices detection and may bias near-limit effects. The variance prior pools proteins and assumes exchangeable residual variances; the BH guarantee requires appropriate p-value behavior and dependence assumptions. Even after normalization and a twofold cutoff, some constant-human proteins are called; these may reflect peptide-sharing, interference, batch effects, or model miscalibration and are not validated biological changes. Three runs per condition limit variance estimation. Protein groups need not map one-to-one to gene products. No external benchmark or publication results were used.
+
+Environment: pandas 3.1.1; numpy 2.5.4; scipy 1.18.1; statsmodels 0.15.0.

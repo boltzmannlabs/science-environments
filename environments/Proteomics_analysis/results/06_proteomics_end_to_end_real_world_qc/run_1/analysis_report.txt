@@ -1,0 +1,12 @@
+Input: proteinGroups.txt; MaxQuant LFQ protein-group intensities. Python dependencies: pandas 3.0.3, numpy 2.1.3.
+
+QC: 6694 rows, flags reverse=84, contaminant=44, site-only=80; union removed 187, cleaned 6507. Sample positive-LFQ counts: L1=5171, L2=5332, L3=4958, L4=5171, H1=5307, H2=5462, H3=5648, H4=2504.
+L1/L4 identical in all checked abundance and peptide columns: duplicate excluded. H4 has severe quantification loss: excluded. E. coli/human abundance ratios in both LFQ and raw intensity separate L3 with H1/H2 and H3 with L1/L2; two samples reassigned (sample labels are not accepted blindly). Ratio diagnostics use protein annotations solely for QC, not to directly assign significance.
+
+Measured log2 LFQ zero is undetected rather than zero abundance. Normalization uses the known invariant human component instead of global-proteome median, which could suppress real E. coli shifts. Human median-centered sample offsets in log2: L1=+0.222, L2=+0.277, H3=+0.199, L3=-0.277, H1=-0.229, H2=-0.199. Anchor comprises 3390 human-annotated proteins quantified in >=5 samples. Test uses observed measurements only and >=2 in each condition, avoids optimistic left-censor imputation. Pooled-variance t test with two-sided alternative and BH FDR 0.05 across 5019 tested groups; 0 undefined test p values assigned 1 (conservative). No fold-change threshold.
+
+Result: 1529 significant protein groups; among tested, E. coli 1564 with 1302 significant, human 3455. Note: E. coli IDs may include ambiguous groups; a protein group is not necessarily a unique protein.
+
+Human controls: 227 tested human groups called significant despite invariant human protein; possible residual technical effects, test misspecification or false positives. Tested median log2(H/L): E. coli 1.686, human -0.044. 
+
+Limitations: sample reassignments inferred from reference-internal organism composition; confirm with core/facility if available. Biological versus technical replication cannot be determined from the export. Missingness is intensity-dependent; requiring bilateral detection omits condition-specific-only proteins. H4 is not rescued by normalization because its detection rate and LFQ distribution are abnormal. Equal variance and sample independence are assumptions with limited ability to check using only 2-3 measurements per group. Results are exploratory without independent validation. Source table unchanged.

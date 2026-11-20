@@ -1,0 +1,117 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "integrity": {
+      "score": 1.0,
+      "spearman_vs_log2_input": {
+        "Control_Rep1": 1.0,
+        "Control_Rep2": 1.0,
+        "Control_Rep3": 1.0,
+        "Treated_Rep1": 1.0,
+        "Treated_Rep2": 1.0,
+        "Treated_Rep3": 1.0
+      },
+      "info_sd_of_per_sample_adjustment": {
+        "Control_Rep1": 0.0,
+        "Control_Rep2": 0.0,
+        "Control_Rep3": 0.0,
+        "Treated_Rep1": 0.0,
+        "Treated_Rep2": 0.0,
+        "Treated_Rep3": 0.0
+      },
+      "info": "SD ~0 means a constant per-sample shift (median/mean centring); >0 means a shape-changing method (e.g. quantile)"
+    },
+    "alignment": {
+      "score": 1.0,
+      "rms_residual_offset": 0.0375,
+      "rms_offset_without_normalization": 0.8416,
+      "residual_sample_offsets_log2": {
+        "Control_Rep1": 0.02,
+        "Control_Rep2": 0.043,
+        "Control_Rep3": 0.028,
+        "Treated_Rep1": -0.03,
+        "Treated_Rep2": -0.067,
+        "Treated_Rep3": 0.004
+      },
+      "sample_medians_after": {
+        "Control_Rep1": 20.872,
+        "Control_Rep2": 20.852,
+        "Control_Rep3": 20.962,
+        "Treated_Rep1": 20.882,
+        "Treated_Rep2": 20.937,
+        "Treated_Rep3": 20.995
+      }
+    },
+    "accuracy": {
+      "score": 1.0,
+      "offset_free_rmse_log2": 0.0376,
+      "rmse_without_normalization": 0.8421,
+      "global_offset_removed": -0.02
+    },
+    "biology": {
+      "score": 1.0,
+      "fold_change_bias_log2": -0.0615,
+      "fold_change_distortion_rms_log2": 0.0,
+      "trap_protein_fc_error_log2": -0.0615,
+      "note": "bias = systematic shift of all Treated-vs-Control ratios (e.g. total-sum normalization); distortion = protein-specific fold-change damage (e.g. quantile normalization on the trap proteins)"
+    },
+    "imputation": {
+      "score": 1.0,
+      "n_scored_cells": 29,
+      "agent_rmse_log2": 0.2961,
+      "reference_rmse_log2": {
+        "column_median": 1.9134,
+        "row_mean": 0.3955,
+        "knn_k5": 0.3021
+      }
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_input_proteins": true,
+        "output_proteins": true,
+        "imputed_value_cells": true,
+        "integer_types": true
+      },
+      "expected_imputed_value_cells": 29
+    }
+  },
+  "reference_methods": {
+    "median_centring": {
+      "rms_residual_offset": 0.0705,
+      "offset_free_rmse": 0.0706,
+      "fc_bias": -0.1148,
+      "fc_distortion": 0.0
+    },
+    "mean_centring": {
+      "rms_residual_offset": 0.055,
+      "offset_free_rmse": 0.055,
+      "fc_bias": -0.1065,
+      "fc_distortion": 0.0
+    },
+    "quantile": {
+      "rms_residual_offset": 0.0193,
+      "offset_free_rmse": 0.293,
+      "fc_bias": 0.0049,
+      "fc_distortion": 0.5996
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_normalization_method": "log2 median-of-ratios (subtract each sample's median protein-centered log2 intensity; offsets centered at their median)",
+    "manifest_imputation_method": "mean of the other two same-condition replicates on normalized log2 scale (median of two)",
+    "manifest_processing_order": "log2 -> estimate sample offsets from observed values -> normalize observed values -> impute missing values"
+  },
+  "score": 1.0,
+  "weights": {
+    "alignment": 0.3,
+    "biology": 0.25,
+    "accuracy": 0.15,
+    "integrity": 0.1,
+    "imputation": 0.1,
+    "bookkeeping": 0.1
+  }
+}

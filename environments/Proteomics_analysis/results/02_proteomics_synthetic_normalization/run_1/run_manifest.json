@@ -1,0 +1,8 @@
+{
+  "total_input_proteins": 250,
+  "output_proteins": 250,
+  "imputed_value_cells": 29,
+  "normalization_method": "log2 median-of-ratios (subtract each sample's median protein-centered log2 intensity; offsets centered at their median)",
+  "imputation_method": "mean of the other two same-condition replicates on normalized log2 scale (median of two)",
+  "processing_order": "log2 -> estimate sample offsets from observed values -> normalize observed values -> impute missing values"
+}

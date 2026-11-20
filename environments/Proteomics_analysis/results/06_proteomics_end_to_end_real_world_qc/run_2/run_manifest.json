@@ -1,0 +1,33 @@
+{
+  "samples_used": {
+    "L": [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "H": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ]
+  },
+  "samples_excluded": [],
+  "sample_qc_notes": {},
+  "total_protein_groups": 6694,
+  "removed_reverse": 84,
+  "removed_contaminant": 44,
+  "removed_only_identified_by_site": 80,
+  "protein_groups_after_cleaning": 6507,
+  "proteins_tested": 2476,
+  "n_significant": 37,
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": null,
+  "intensity_columns_used": "LFQ intensity H1..H4, LFQ intensity L1..L4",
+  "filtering_rule": "removed Reverse, Contaminant and Only-identified-by-site rows; then complete-case filter requiring positive LFQ intensity in all 8 samples",
+  "normalization_method": "median normalization: per-sample median of log2 intensities centered to the overall median",
+  "imputation_method": "none (complete-case filtering)",
+  "test_method": "Welch two-sample t-test on per-protein sample means of log2 LFQ intensity, H minus L; Benjamini-Hochberg adjustment",
+  "processing_order": "flag removal -> complete-case filter -> log2 -> median normalization -> Welch t-test -> BH correction"
+}

@@ -1,0 +1,251 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "contrasts": {
+    "C1": {
+      "comparison": "25000amol vs 2500amol",
+      "score": 0.9938,
+      "detection": {
+        "score": 1.0,
+        "ups_found": 40,
+        "ups_detectable": 43,
+        "recall": 0.9302,
+        "recall_relative_to_best_reference": 1.0,
+        "best_reference": "strict_fc1",
+        "ups_found_by_presence_absence": 0
+      },
+      "fdr": {
+        "score": 1.0,
+        "false_calls_yeast": 1,
+        "actual_false_discovery_proportion": 0.0244,
+        "allowed_fdp_given_number_of_calls": 0.1181
+      },
+      "fold_change": {
+        "score": 0.9688,
+        "ups_median_log2fc": 3.939,
+        "true_log2fc": 3.322,
+        "best_reference_error": 0.565,
+        "yeast_median_log2fc (expected 0)": 0.011
+      },
+      "p_values_data_driven": true,
+      "p_value_spearman_vs_reference": 1.0,
+      "reference_pipelines": {
+        "strict_no_fc_cutoff": {
+          "tp": 40,
+          "fp": 8,
+          "recall": 0.9302,
+          "fdp": 0.1667,
+          "median_ups_log2fc": 3.887,
+          "f1": 0.8791
+        },
+        "strict_fc1": {
+          "tp": 40,
+          "fp": 1,
+          "recall": 0.9302,
+          "fdp": 0.0244,
+          "median_ups_log2fc": 3.887,
+          "f1": 0.9524
+        },
+        "strict_fc1_plus_presence_absence": {
+          "tp": 40,
+          "fp": 7,
+          "recall": 0.9302,
+          "fdp": 0.1489,
+          "median_ups_log2fc": 3.887,
+          "f1": 0.8889
+        },
+        "downshift_impute_fc1": {
+          "tp": 41,
+          "fp": 8,
+          "recall": 0.9535,
+          "fdp": 0.1633,
+          "median_ups_log2fc": 4.008,
+          "f1": 0.8913
+        }
+      }
+    },
+    "C2": {
+      "comparison": "5000amol vs 500amol",
+      "score": 0.9817,
+      "detection": {
+        "score": 0.9678,
+        "ups_found": 30,
+        "ups_detectable": 43,
+        "recall": 0.6977,
+        "recall_relative_to_best_reference": 0.9678,
+        "best_reference": "downshift_impute_fc1",
+        "ups_found_by_presence_absence": 19
+      },
+      "fdr": {
+        "score": 1.0,
+        "false_calls_yeast": 3,
+        "actual_false_discovery_proportion": 0.0909,
+        "allowed_fdp_given_number_of_calls": 0.3611
+      },
+      "fold_change": {
+        "score": 0.9891,
+        "ups_median_log2fc": 3.287,
+        "true_log2fc": 3.322,
+        "best_reference_error": 0.067,
+        "yeast_median_log2fc (expected 0)": -0.018
+      },
+      "p_values_data_driven": true,
+      "p_value_spearman_vs_reference": 0.997,
+      "reference_pipelines": {
+        "strict_no_fc_cutoff": {
+          "tp": 11,
+          "fp": 16,
+          "recall": 0.2558,
+          "fdp": 0.5926,
+          "median_ups_log2fc": 3.255,
+          "f1": 0.3143
+        },
+        "strict_fc1": {
+          "tp": 11,
+          "fp": 2,
+          "recall": 0.2558,
+          "fdp": 0.1538,
+          "median_ups_log2fc": 3.255,
+          "f1": 0.3928
+        },
+        "strict_fc1_plus_presence_absence": {
+          "tp": 30,
+          "fp": 14,
+          "recall": 0.6977,
+          "fdp": 0.3182,
+          "median_ups_log2fc": 3.255,
+          "f1": 0.6897
+        },
+        "downshift_impute_fc1": {
+          "tp": 31,
+          "fp": 14,
+          "recall": 0.7209,
+          "fdp": 0.3111,
+          "median_ups_log2fc": 2.846,
+          "f1": 0.7045
+        }
+      }
+    },
+    "C3": {
+      "comparison": "2500amol vs 500amol",
+      "score": 0.9996,
+      "detection": {
+        "score": 1.0,
+        "ups_found": 18,
+        "ups_detectable": 40,
+        "recall": 0.45,
+        "recall_relative_to_best_reference": 1.0588,
+        "best_reference": "strict_fc1_plus_presence_absence",
+        "ups_found_by_presence_absence": 14
+      },
+      "fdr": {
+        "score": 1.0,
+        "false_calls_yeast": 1,
+        "actual_false_discovery_proportion": 0.0526,
+        "allowed_fdp_given_number_of_calls": 0.2773
+      },
+      "fold_change": {
+        "score": 0.9978,
+        "ups_median_log2fc": 1.974,
+        "true_log2fc": 2.322,
+        "best_reference_error": 0.359,
+        "yeast_median_log2fc (expected 0)": -0.004
+      },
+      "p_values_data_driven": true,
+      "p_value_spearman_vs_reference": 0.998,
+      "reference_pipelines": {
+        "strict_no_fc_cutoff": {
+          "tp": 4,
+          "fp": 9,
+          "recall": 0.1,
+          "fdp": 0.6923,
+          "median_ups_log2fc": 1.963,
+          "f1": 0.1509
+        },
+        "strict_fc1": {
+          "tp": 3,
+          "fp": 1,
+          "recall": 0.075,
+          "fdp": 0.25,
+          "median_ups_log2fc": 1.963,
+          "f1": 0.1364
+        },
+        "strict_fc1_plus_presence_absence": {
+          "tp": 17,
+          "fp": 5,
+          "recall": 0.425,
+          "fdp": 0.2273,
+          "median_ups_log2fc": 1.963,
+          "f1": 0.5484
+        },
+        "downshift_impute_fc1": {
+          "tp": 10,
+          "fp": 5,
+          "recall": 0.25,
+          "fdp": 0.3333,
+          "median_ups_log2fc": 1.776,
+          "f1": 0.3636
+        }
+      }
+    }
+  },
+  "sections": {
+    "cleaning": {
+      "score": 1.0,
+      "flagged_rows_assessed": 0
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_protein_groups": true,
+        "removed_reverse": true,
+        "removed_contaminant": true,
+        "removed_only_identified_by_site": true,
+        "protein_groups_after_cleaning": true,
+        "proteins_assessed": true,
+        "n_significant": true,
+        "fdr_threshold_valid": true,
+        "test_calls_match_cutoffs": true,
+        "method_strings_present": true
+      },
+      "expected": {
+        "total_protein_groups": 1115,
+        "removed_reverse": 11,
+        "removed_contaminant": 10,
+        "removed_only_identified_by_site": 21,
+        "protein_groups_after_cleaning": 1074
+      },
+      "test_rows_inconsistent_with_cutoffs": 0
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_intensity_columns_used": "All 27 LFQ intensity <amount>amol_<replicate> columns: six specified contrast columns per comparison; all 27 for stable yeast-reference sample-median normalization; 12500, 25000 and 50000 amol for presence-only high-dose consistency QC.",
+    "manifest_filtering_rule": "Remove union of MaxQuant Reverse, Potential contaminant and Only identified by site (+). For tests require >=2 positive LFQ values per condition. Additionally assess complete 3/0 or 0/3 detection patterns separately; remaining rows not assessed.",
+    "manifest_missing_value_strategy": "Treat zero LFQ intensities as undetected (NaN), not measured zeros; never impute. Tests use observed replicates only. Presence-only results have empty numeric fields.",
+    "manifest_normalization_method": "Log2 transform positive LFQ intensities, then subtract per-sample median among non-UPS groups detected in at least 24 of 27 runs; add grand median of sample medians. Reference selected independently of contrast outcomes.",
+    "manifest_test_method": "Two-sided independent-groups pooled-variance t test with inverse-chi-square empirical-Bayes variance moderation fit independently per contrast via residual-log-variance moments; BH adjustment within each contrast over all tested groups. Significant if adjusted p<=0.05 AND absolute log2 fold change >=1.",
+    "manifest_presence_absence_rule": "In either-direction 3/0 detections assess as presence_absence, with significant positive-direction call only if higher group detected in all 3, lower group absent in all 3, AND detected in all 3 replicates at each 12500, 25000, 50000 amol (external levels used only for detection reliability QC); reverse 0/3 and failed QC remain not significant. Presence calls have no numeric FC/p and are not included in BH family; their empirical FDR is not guaranteed by the stated test threshold.",
+    "manifest_processing_order": "Read original TSV -> remove union of three MaxQuant flags -> map zero LFQ values to missing -> identify stable non-UPS reference by global detection count -> log2 transform -> sample-median normalize -> per contrast assess replicate detection -> moderated t tests where >=2 per condition -> BH-adjust tests and apply FC cutoff -> assess disjoint complete presence/absence cases with high-dose detection QC -> write and validate artifacts."
+  },
+  "score": 0.9923,
+  "weights": {
+    "top": {
+      "contrasts": 0.85,
+      "cleaning": 0.05,
+      "bookkeeping": 0.1
+    },
+    "contrasts": {
+      "C1": 0.25,
+      "C2": 0.4,
+      "C3": 0.35
+    },
+    "within_contrast": {
+      "detection": 0.5,
+      "fdr": 0.3,
+      "fold_change": 0.2
+    }
+  }
+}

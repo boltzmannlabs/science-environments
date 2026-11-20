@@ -1,0 +1,26 @@
+{
+  "total_protein_groups": 1115,
+  "removed_reverse": 0,
+  "removed_contaminant": 0,
+  "removed_only_identified_by_site": 0,
+  "protein_groups_after_cleaning": 1115,
+  "proteins_assessed": {
+    "C1": 1115,
+    "C2": 1115,
+    "C3": 1115
+  },
+  "n_significant": {
+    "C1": 64,
+    "C2": 183,
+    "C3": 127
+  },
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": null,
+  "intensity_columns_used": "LFQ intensity 50amol_1, LFQ intensity 50amol_2, LFQ intensity 50amol_3, LFQ intensity 125amol_1, LFQ intensity 125amol_2, LFQ intensity 125amol_3, LFQ intensity 250amol_1, LFQ intensity 250amol_2, LFQ intensity 250amol_3, LFQ intensity 500amol_1, LFQ intensity 500amol_2, LFQ intensity 500amol_3, LFQ intensity 2500amol_1, LFQ intensity 2500amol_2, LFQ intensity 2500amol_3, LFQ intensity 5000amol_1, LFQ intensity 5000amol_2, LFQ intensity 5000amol_3, LFQ intensity 12500amol_1, LFQ intensity 12500amol_2, LFQ intensity 12500amol_3, LFQ intensity 25000amol_1, LFQ intensity 25000amol_2, LFQ intensity 25000amol_3, LFQ intensity 50000amol_1, LFQ intensity 50000amol_2, LFQ intensity 50000amol_3",
+  "filtering_rule": "Removed rows flagged Reverse=Yes, Potential contaminant=Yes, or Only identified by site=Yes",
+  "missing_value_strategy": "No imputation. Proteins detected in all 6 replicates of a contrast (3 per amount) are tested with a t-test; other proteins are handled by a one-sided presence/absence rule",
+  "normalization_method": "None (constant yeast amount and controlled UPS1 spike-in; sample medians inspected as QC only)",
+  "test_method": "Two-sample Welch t-test on log2 LFQ intensities (3 vs 3 replicates), BH adjustment within each contrast, FDR cutoff 0.05",
+  "presence_absence_rule": "Detected in all 3 replicates of the higher amount and missing in at least one replicate of the lower -> significant up. The reverse pattern (present at lower, absent at higher) is not called: in this concentration-dependent spike-in it is an expected detection artifact, not a decrease. Mixed detection within an amount is not called.",
+  "processing_order": "read -> clean (decoy/contaminant/site flags) -> QC medians and missingness -> log2 transform -> contrast-wise two-sample t-test with BH correction for fully detected proteins -> one-sided presence/absence rule for the rest"
+}

@@ -1,0 +1,26 @@
+{
+  "total_protein_groups": 1115,
+  "removed_reverse": 11,
+  "removed_contaminant": 10,
+  "removed_only_identified_by_site": 21,
+  "protein_groups_after_cleaning": 1074,
+  "proteins_assessed": {
+    "C1": 973,
+    "C2": 977,
+    "C3": 976
+  },
+  "n_significant": {
+    "C1": 41,
+    "C2": 33,
+    "C3": 19
+  },
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": 1.0,
+  "intensity_columns_used": "All 27 LFQ intensity <amount>amol_<replicate> columns: six specified contrast columns per comparison; all 27 for stable yeast-reference sample-median normalization; 12500, 25000 and 50000 amol for presence-only high-dose consistency QC.",
+  "filtering_rule": "Remove union of MaxQuant Reverse, Potential contaminant and Only identified by site (+). For tests require >=2 positive LFQ values per condition. Additionally assess complete 3/0 or 0/3 detection patterns separately; remaining rows not assessed.",
+  "missing_value_strategy": "Treat zero LFQ intensities as undetected (NaN), not measured zeros; never impute. Tests use observed replicates only. Presence-only results have empty numeric fields.",
+  "normalization_method": "Log2 transform positive LFQ intensities, then subtract per-sample median among non-UPS groups detected in at least 24 of 27 runs; add grand median of sample medians. Reference selected independently of contrast outcomes.",
+  "test_method": "Two-sided independent-groups pooled-variance t test with inverse-chi-square empirical-Bayes variance moderation fit independently per contrast via residual-log-variance moments; BH adjustment within each contrast over all tested groups. Significant if adjusted p<=0.05 AND absolute log2 fold change >=1.",
+  "presence_absence_rule": "In either-direction 3/0 detections assess as presence_absence, with significant positive-direction call only if higher group detected in all 3, lower group absent in all 3, AND detected in all 3 replicates at each 12500, 25000, 50000 amol (external levels used only for detection reliability QC); reverse 0/3 and failed QC remain not significant. Presence calls have no numeric FC/p and are not included in BH family; their empirical FDR is not guaranteed by the stated test threshold.",
+  "processing_order": "Read original TSV -> remove union of three MaxQuant flags -> map zero LFQ values to missing -> identify stable non-UPS reference by global detection count -> log2 transform -> sample-median normalize -> per contrast assess replicate detection -> moderated t tests where >=2 per condition -> BH-adjust tests and apply FC cutoff -> assess disjoint complete presence/absence cases with high-dose detection QC -> write and validate artifacts."
+}

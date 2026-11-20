@@ -1,0 +1,102 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "fdr_threshold_valid": true,
+        "significant_matches_threshold": true,
+        "adj_p_not_below_p": true,
+        "total_proteins": true,
+        "n_significant": true,
+        "n_up": true,
+        "n_down": true,
+        "integer_types": true
+      },
+      "rows_inconsistent_with_threshold": 0
+    },
+    "fdr": {
+      "score": 1.0,
+      "stated_threshold": 0.05,
+      "actual_false_discovery_proportion": 0.0435,
+      "allowed_fdp_given_number_of_calls": 0.1409,
+      "n_called": 23,
+      "note": "penalises only exceeding the stated threshold; calling nothing scores 1 here but 0 on detection"
+    },
+    "detection": {
+      "score": 1.0,
+      "recall_relative_to_moderated_t": 1.2941,
+      "fdr_multiplier": 1.0,
+      "tp": 22,
+      "fp": 1,
+      "fn": 28,
+      "precision": 0.9565,
+      "recall": 0.44,
+      "f1": 0.6027,
+      "fdp": 0.0435,
+      "true_changed": 50,
+      "fdr_threshold_used": 0.05,
+      "note": "recall relative to a moderated t-test at your threshold, multiplied by the FDR score, so calls are credited only when false discoveries stay controlled"
+    },
+    "ranking": {
+      "score": 1.0,
+      "unclipped_skill": 1.016,
+      "average_precision": 0.8729
+    },
+    "effect": {
+      "score": 1.0,
+      "log2fc_rmse": 0.4508,
+      "reference_mean_difference_rmse": 0.4508,
+      "direction_accuracy_on_true_calls": 1.0
+    }
+  },
+  "reference_methods_at_your_threshold": {
+    "student_t": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 43,
+      "precision": 1.0,
+      "recall": 0.14,
+      "f1": 0.2456,
+      "fdp": 0.0,
+      "average_precision": 0.7817
+    },
+    "welch_t": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 47,
+      "precision": 1.0,
+      "recall": 0.06,
+      "f1": 0.1132,
+      "fdp": 0.0,
+      "average_precision": 0.756
+    },
+    "moderated_t": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 33,
+      "precision": 1.0,
+      "recall": 0.34,
+      "f1": 0.5075,
+      "fdp": 0.0,
+      "average_precision": 0.8591
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_test_method": "Two-sided independent-groups moderated pooled-variance t test; 3 versus 3 replicates; residual df=4; empirical-Bayes scaled-inverse-chi-square variance prior with 12-bin PCHIP abundance trend; prior df fitted from log-variance moments; posterior df=4+prior df",
+    "manifest_multiple_testing_correction": "Benjamini-Hochberg FDR across all 500 proteins",
+    "manifest_fold_change_cutoff": null
+  },
+  "score": 1.0,
+  "weights": {
+    "detection": 0.3,
+    "fdr": 0.25,
+    "ranking": 0.15,
+    "effect": 0.1,
+    "bookkeeping": 0.2
+  }
+}

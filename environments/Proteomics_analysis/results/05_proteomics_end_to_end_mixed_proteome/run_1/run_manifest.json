@@ -1,0 +1,17 @@
+{
+  "total_protein_groups": 6694,
+  "removed_reverse": 84,
+  "removed_contaminant": 44,
+  "removed_only_identified_by_site": 80,
+  "protein_groups_after_cleaning": 6507,
+  "proteins_tested": 5019,
+  "n_significant": 1552,
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": 1.0,
+  "intensity_columns_used": "LFQ intensity H1, LFQ intensity H2, LFQ intensity H3, LFQ intensity L1, LFQ intensity L2, LFQ intensity L3 (MaxQuant LFQ; positive values only)",
+  "filtering_rule": "Test only clean protein groups with positive LFQ intensities in at least 2 of 3 H and at least 2 of 3 L runs; zero or blank is missing, not quantified. No significance test for others.",
+  "normalization_method": "Log2 LFQ; subtract per-run median of protein groups identified as human and observed in all 6 samples (human protein amount fixed by design); subtract remaining median H-minus-L of these same complete human groups from each H run. Avoid whole-proteome scaling because E. coli mass intentionally changes.",
+  "imputation_method": "none",
+  "test_method": "Independent-group two-sided empirical-Bayes moderated pooled-variance t test on log2 LFQ values, n=2-3 per group, residual df=nH+nL-2; prior variance from log-variance moments of 6-run complete tested groups (prior df=3.30672, prior variance=0.0492111); BH correction across all tested groups; significant when adjusted p < 0.05 and absolute log2FC >= 1.0.",
+  "processing_order": "Read input -> remove + reverse, contaminant and only-by-site rows (union) -> zero LFQ to missing -> log2 -> normalize each run to complete human anchor and residual H-L offset -> retain >=2 valid runs per condition -> estimate H-L log2FC and moderated t p-values -> BH-adjust over tested groups -> apply FDR and fold-change cutoffs."
+}

@@ -1,0 +1,19 @@
+Input: /home/boltzmann6/.sci/profiles/prot_7/workspace/proteinGroups.txt
+Rows: 1115 raw; 1074 after union of MaxQuant flags. Flags counted individually (overlap is possible): {'Reverse': 11, 'Potential contaminant': 10, 'Only identified by site': 21}.
+LFQ zeros treated as non-detection; 27 runs, 3 replicates at each of 9 amounts. Cleaned _UPS annotation used for QC/reference selection only: 44 rows.
+Stable non-UPS normalization references (>=24 positive runs): 882. Median sample correction range on log2 scale: 0.406.
+Each contrast compares only its two sample groups; others supply reference medians and high-dose detection QC.
+Unit: log2 LFQ intensity; observed log2FC = higher-minus-lower sample means. No known expected spike-in ratio used to set calls or rescale effect estimates.
+Two-sided empirical-Bayes moderated pooled t; per-contrast BH <= 0.05 plus |log2FC| >= 1.0. Presence-only discoveries have no p-value or finite fold change and are not statistically FDR controlled.
+Test eligibility: >=2 observed replicates in each arm. Presence eligibility: 3/0 or 0/3 detected. Sparse other patterns are not assessed.
+High-dose 12500/25000/50000amol complete detection is required for a positive-direction presence-only discovery to limit stochastic missingness. This QC rule may miss genuine low-signal proteins.
+Observed results (testable; presence assessed; presence called; tested UPS; total significant [test/presence]):
+  C1: 967; 6; 0; 40; 41 [41/0]. Prior df=2.02, prior SD=0.0868.
+    Annotation QC among calls: 40 marked _UPS and 1 other groups; annotation was not a direct calling criterion.
+  C2: 946; 31; 20; 14; 33 [13/20]. Prior df=1.86, prior SD=0.0749.
+    Annotation QC among calls: 30 marked _UPS and 3 other groups; annotation was not a direct calling criterion.
+  C3: 958; 18; 14; 14; 19 [5/14]. Prior df=1.76, prior SD=0.0734.
+    Annotation QC among calls: 18 marked _UPS and 1 other groups; annotation was not a direct calling criterion.
+Caveats: Three technical replicates, shared peptide/protein-group ambiguity and intensity-dependent left censoring constrain sensitivity and precision. Variance shrinkage assumes exchangeability of protein residual variances; tested BH FDR does not extend to the untested presence rule or jointly across contrasts. Dataset-specific detection QC does not guarantee generalization.
+Local software: Python/pandas 3.0.3; NumPy 2.2.4; SciPy 1.15.3.
+Evidence: provided proteinGroups.txt and task description only; no publication, reference calls or external dataset accessed.

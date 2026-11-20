@@ -1,0 +1,76 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "profile": {
+      "score": 0.0,
+      "unclipped_skill": -0.1483,
+      "profile_rmse_log2": 0.3585
+    },
+    "fold_change": {
+      "score": 0.1504,
+      "unclipped_skill": 0.1504,
+      "fc_rmse_log2": 0.4219,
+      "fc_bias_log2": 0.0085,
+      "fc_rmse_on_proteins_with_outlier_peptides": 0.5278,
+      "fc_rmse_on_other_proteins": 0.3542,
+      "n_proteins_with_outlier_peptides": 103
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_peptides": true,
+        "unique_peptides": true,
+        "shared_peptides": true,
+        "quantified_proteins": true,
+        "integer_types": true,
+        "method_strings_present": true
+      },
+      "expected": {
+        "total_peptides": 2525,
+        "unique_peptides": 2338,
+        "shared_peptides": 187,
+        "quantified_proteins": 300
+      }
+    }
+  },
+  "reference_methods": {
+    "sum_all_peptides": {
+      "profile_rmse": 0.3265,
+      "fc_rmse": 0.4748
+    },
+    "sum_unique": {
+      "profile_rmse": 0.299,
+      "fc_rmse": 0.3942
+    },
+    "mean_log_unique": {
+      "profile_rmse": 0.2917,
+      "fc_rmse": 0.3569
+    },
+    "top3_unique": {
+      "profile_rmse": 0.2893,
+      "fc_rmse": 0.425
+    },
+    "median_polish_unique": {
+      "profile_rmse": 0.112,
+      "fc_rmse": 0.1236
+    },
+    "maxlfq_like_unique": {
+      "profile_rmse": 0.1108,
+      "fc_rmse": 0.1359
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_quantification_method": "For each protein and each sample, the protein log2 abundance is the median of the log2-transformed intensities of all peptides uniquely matched to that protein. Peptides not observed in a sample (missing intensity) are naturally excluded from that sample's median; if no peptide is observed for a protein in a sample, the value is imputed with the protein's median across its observed samples.",
+    "manifest_shared_peptide_handling": "Excluded: peptides whose Proteins field listed more than one protein ID (semicolon-separated) were not assigned to any single protein and were omitted from quantification."
+  },
+  "score": 0.3026,
+  "weights": {
+    "profile": 0.4,
+    "fold_change": 0.35,
+    "bookkeeping": 0.25
+  }
+}

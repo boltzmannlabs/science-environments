@@ -1,0 +1,37 @@
+Differential abundance report (Control vs Treated)
+===============================================
+
+Proteins tested: 500; replicates per condition: 3
+Prior variance s0^2 (robust median of per-protein residual variances): 0.08444
+Prior degrees of freedom df0: fixed at 10 (moderate shrinkage, dfmod=14)
+Moderated df per protein: 14.0
+
+Data characteristics:
+- Within-group residual variance spread: min 0.0007875, median 0.08444, max 12.74 (ratio ~151x).
+  Strong heteroscedasticity justifies variance moderation rather than a plain t-test.
+- log2 fold-change range: -4.026 to 2.391; median 0.015.
+
+Why this test:
+- With only 3 replicates per condition, each protein has df=4 and its
+  variance estimate is noisy, so per-protein p-values are unstable and
+  conservative (low effective df).
+- The empirical-Bayes moderated t-test borrows information across all
+  proteins to stabilize the variance and raises the effective df (14),
+  improving ranking and power while still respecting each protein's own
+  variance.
+- The prior variance is the robust median (not the mean) because the data
+  is strongly heteroscedastic; the mean would be dominated by a few
+  high-variance proteins and overstate the variance for most proteins.
+- Benjamini-Hochberg controls the false discovery rate at the stated cutoff.
+
+Results:
+- Significant (adj_p < 0.05): 44 (25 up, 19 down).
+- Unadjusted p < 0.05: 82.
+
+Caveats:
+- n=3 per condition limits power; small true changes may be missed and the
+  FDR estimate has wide uncertainty.
+- No fold-change filter was applied, so some calls may have small effect
+  sizes; the moderated test + BH FDR is the sole significance criterion.
+- The prior df0 is a fixed modelling choice (10); it does not change the
+  log2fc estimates, only the p-values/ranking.
