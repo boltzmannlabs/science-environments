@@ -1,0 +1,56 @@
+{
+  "status": "COMPLETED",
+  "measured_rows": 322,
+  "common_measured_rows": 308,
+  "configurations": 4,
+  "native_baseline_max_abs_score_delta_vs_prior": 0.0,
+  "model_fit_performed": false,
+  "upstream_code_modified": false,
+  "helper_sha256": "4db75e0c05baead3eb9dd37013b1e609cae883da1e0dae4e7d6b640ea947a114",
+  "frozen_plan_sha256": "2f9098447234a58361625487bda8639e0d4ba0fc397c60e9ef7fb185a82b1c86",
+  "timings": [
+    {
+      "config_id": "C00_rnai_native21",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 21.80825285008177
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 0.4219520529732108
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "dataset": "Simone",
+      "rows": 322,
+      "elapsed_seconds": 11.63547105784528
+    },
+    {
+      "config_id": "C00_rnai_native21",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.4522717408835888
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.0005772120784968138
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 5.612669809022918
+    },
+    {
+      "config_id": "C03_oligoformer_core19",
+      "dataset": "TTR",
+      "rows": 598,
+      "elapsed_seconds": 0.0005334687884896994
+    }
+  ],
+  "notes": "Identical TTR C00/C01 inputs share predictions explicitly. OligoFormer scores are reused, not freshly generated. Three HTT context and four physical-model controls are descriptive only."
+}

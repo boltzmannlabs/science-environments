@@ -1,0 +1,38 @@
+{
+  "brief_id": "htt_allele_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "HTT",
+    "transcript": "ENST00000284679?resolve-at-intake",
+    "sequence_supplied": false,
+    "allele": {
+      "variant_id": "rs362307",
+      "expected_consequence": "synonymous SNP in exon 67 \u2014 verify at intake"
+    }
+  },
+  "application": "genetic_disease_allele_selective",
+  "objective": "Mutant-selective lowering with wild-type sparing for a verified coding SNP; BLOCKED until ClinVar/dbSNP + VEP verification completes; mutant-vs-WT duplex delta-delta-G reported per candidate",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu"
+    ],
+    "weights": {
+      "efficacy": 0.3,
+      "specificity": 0.25,
+      "seed_tox": 0.1,
+      "immune": 0.15,
+      "stability": 0.2
+    },
+    "min_standards": {
+      "rnai": 70
+    }
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true,
+    "delivery_context": "in_vitro_only"
+  },
+  "success_criteria": "Mutant allele >=70% knockdown with WT <=30% in a dual-luciferase or allele-specific qPCR assay; delta-delta-G margin direction confirmed \u2014 illustrative syntax only; not an approved run."
+}

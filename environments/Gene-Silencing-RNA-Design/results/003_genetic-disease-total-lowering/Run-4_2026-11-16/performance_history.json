@@ -1,0 +1,126 @@
+[
+  {
+    "config_id": "C00_rnai_native21",
+    "ordinal": 0,
+    "status": "ANCHOR_DIAGNOSTIC_ONLY",
+    "n": 598,
+    "anchors": [
+      {
+        "config_id": "C00_rnai_native21",
+        "ordinal": 0,
+        "anchor": "patisiran",
+        "rank": 151.0,
+        "pool_n": 598,
+        "percentile": 74.87437185929649,
+        "native_score": 75.16,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      },
+      {
+        "config_id": "C00_rnai_native21",
+        "ordinal": 0,
+        "anchor": "vutrisiran",
+        "rank": 19.0,
+        "pool_n": 598,
+        "percentile": 96.98492462311557,
+        "native_score": 85.02,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      }
+    ],
+    "selection": "No anchor-based best config selected; not measured efficacy.",
+    "panel_size": 5,
+    "mean_panel_stability": 1.0
+  },
+  {
+    "config_id": "C01_rnai_core19",
+    "ordinal": 1,
+    "status": "ANCHOR_DIAGNOSTIC_ONLY",
+    "n": 598,
+    "anchors": [
+      {
+        "config_id": "C01_rnai_core19",
+        "ordinal": 1,
+        "anchor": "patisiran",
+        "rank": 151.0,
+        "pool_n": 598,
+        "percentile": 74.87437185929649,
+        "native_score": 75.16,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      },
+      {
+        "config_id": "C01_rnai_core19",
+        "ordinal": 1,
+        "anchor": "vutrisiran",
+        "rank": 19.0,
+        "pool_n": 598,
+        "percentile": 96.98492462311557,
+        "native_score": 85.02,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      }
+    ],
+    "selection": "No anchor-based best config selected; not measured efficacy.",
+    "panel_size": 5,
+    "mean_panel_stability": 1.0
+  },
+  {
+    "config_id": "C02_rnaispline_core19",
+    "ordinal": 2,
+    "status": "ANCHOR_DIAGNOSTIC_ONLY",
+    "n": 598,
+    "anchors": [
+      {
+        "config_id": "C02_rnaispline_core19",
+        "ordinal": 2,
+        "anchor": "patisiran",
+        "rank": 104.0,
+        "pool_n": 598,
+        "percentile": 82.74706867671692,
+        "native_score": 0.6401,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      },
+      {
+        "config_id": "C02_rnaispline_core19",
+        "ordinal": 2,
+        "anchor": "vutrisiran",
+        "rank": 9.0,
+        "pool_n": 598,
+        "percentile": 98.65996649916248,
+        "native_score": 0.6844,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      }
+    ],
+    "selection": "No anchor-based best config selected; not measured efficacy.",
+    "panel_size": 5,
+    "mean_panel_stability": 0.7785714285714285
+  },
+  {
+    "config_id": "C03_oligoformer_core19",
+    "ordinal": 3,
+    "status": "ANCHOR_DIAGNOSTIC_ONLY",
+    "n": 598,
+    "anchors": [
+      {
+        "config_id": "C03_oligoformer_core19",
+        "ordinal": 3,
+        "anchor": "patisiran",
+        "rank": 107.0,
+        "pool_n": 598,
+        "percentile": 82.24455611390285,
+        "native_score": 0.85100617146492,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      },
+      {
+        "config_id": "C03_oligoformer_core19",
+        "ordinal": 3,
+        "anchor": "vutrisiran",
+        "rank": 62.0,
+        "pool_n": 598,
+        "percentile": 89.7822445561139,
+        "native_score": 0.8977579275369644,
+        "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+      }
+    ],
+    "selection": "No anchor-based best config selected; not measured efficacy.",
+    "panel_size": 5,
+    "mean_panel_stability": 1.0
+  }
+]

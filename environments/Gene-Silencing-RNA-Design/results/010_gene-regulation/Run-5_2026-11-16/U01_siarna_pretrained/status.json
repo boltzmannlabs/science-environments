@@ -1,0 +1,13 @@
+{
+  "model": "SiaRNA",
+  "status": "BLOCKED_INVALID_FEATURE_PIPELINE",
+  "stage_verified": "Strict pretrained state_dict load and executable software diagnostic passed; efficacy forward pass intentionally not run.",
+  "reason": "Author preprocess.py overwrites computed mRNA folding vectors with unseeded random vectors. Genuine cohort AGO2 features unavailable. Native CLI returns first pair only. No substitutions allowed.",
+  "evidence": "siarna_software_probe.json",
+  "efficacy_predictions_produced": 0,
+  "software_diagnostics_only": true,
+  "config_id": "U01_siarna_pretrained",
+  "auc": null,
+  "performance_delta": null,
+  "best_design": null
+}

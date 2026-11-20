@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/verify_config_sweep_20261116.py",
+      "sha256": "096ee269277f3f8d149cca0ce8e002e89c9f4bca3cfa67294633ada7445bb03d"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/config_sweep_20261116.py",
+      "sha256": "987bcfd905a1405741ebe54b78519ef07edf41d99c3962810b98aa8570e789ae"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/document_config_sweep_20261116.py",
+      "sha256": "ee1acde9394d083b5db0c7b0467928a0bb61111ffb33737893aebf5589686486"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/analyze_config_sweep_20261116.py",
+      "sha256": "e848622f0c3e8ca14211dd486791c40f7d73fa7ed64a9409eb4bf19a60a9a5ac"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/runtime/sirna_context_audit.py",
+      "sha256": "4db75e0c05baead3eb9dd37013b1e609cae883da1e0dae4e7d6b640ea947a114"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/tests/test_config_sweep_20261116.py",
+      "sha256": "3dc1f69f48bb655721e252ec57da70adca1a7de7524d03fa51e28fa7ed08e94f"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/RN.Ai-predict/RN.Ai-predict.model.keras",
+      "sha256": "9ccaa25b2ff21bd7dfe9aaaa335e44a9796b6178f5ff181555c3f2a02d3a11ad"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/RNAiSpline/checkpoints/best_model.pth",
+      "sha256": "b50e37c246cc071ee81eeac5a438772b579cd2fdc9c8bce631be16ce6b2c48bc"
+    },
+    {
+      "path": "/home/boltzmann13/IMRAN/OCT26/siRNA-Bench/external/RN.Ai-predict/features.py",
+      "sha256": "4900770e3dfac2f8d384d1831cd693f0b0029e843cbf075d8323ce295c087bc5"
+    }
+  ],
+  "note": "No upstream files edited; no checkpoints copied. Final code includes plotting-label and overwrite-guard hardening after inference, which do not change model scores or frozen configs."
+}

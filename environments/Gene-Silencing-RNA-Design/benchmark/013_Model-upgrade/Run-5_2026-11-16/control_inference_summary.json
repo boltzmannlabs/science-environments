@@ -1,0 +1,30 @@
+{
+  "status": "CONTROL_REPLAY_COMPLETED_NEW_MODELS_BLOCKED",
+  "fresh_measured_pairs": 322,
+  "fresh_ttr_windows": 598,
+  "measured_max_abs_delta_percentage_points": 0.0,
+  "ttr_max_abs_delta_percentage_points": 0.0,
+  "new_challenger_efficacy_predictions": 0,
+  "training_performed": false,
+  "author_assets_unchanged": true,
+  "frozen_plan_sha256": "416ae22e69f7e97d36635e9af454638a6a8a99a08d224abfbecfa97ef43c3a2d",
+  "python": "/home/boltzmann13/.sci/profiles/imran-sirna-task/workspace/model-backends/run5-env/bin/python",
+  "environment": "Isolated run5 venv inherits pinned scientific dependencies read-only through .pth; no packages installed or existing environments changed.",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "sklearn": "1.8.0",
+    "Bio": "1.86",
+    "flask": {
+      "unavailable": "No module named 'flask'"
+    },
+    "fm": {
+      "unavailable": "No module named 'fm'"
+    },
+    "torch_geometric": {
+      "unavailable": "No module named 'torch_geometric'"
+    }
+  }
+}

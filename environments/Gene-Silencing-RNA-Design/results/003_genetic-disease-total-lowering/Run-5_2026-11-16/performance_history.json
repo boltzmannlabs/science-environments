@@ -1,0 +1,55 @@
+{
+  "prior_run": "Run-4_2026-11-16",
+  "prior_results_reference": "results/003_genetic-disease-total-lowering/Run-4_2026-11-16/performance_history.json",
+  "fresh_control": {
+    "config_id": "U00_retained_rnai",
+    "status": "COMPLETED_CONTROL_REPLAY",
+    "model": "RN.Ai-Predict",
+    "new_model": false,
+    "best_design": null,
+    "full_application_complete": false,
+    "anchors": [
+      {
+        "config_id": "U00_retained_rnai",
+        "anchor": "patisiran",
+        "rank": 151.0,
+        "pool_n": 598,
+        "percentile": 74.87437185929649,
+        "native_score": 75.16,
+        "interpretation": "Projected core anchor recovery only; no measured clinical potency labels."
+      },
+      {
+        "config_id": "U00_retained_rnai",
+        "anchor": "vutrisiran",
+        "rank": 19.0,
+        "pool_n": 598,
+        "percentile": 96.98492462311557,
+        "native_score": 85.02,
+        "interpretation": "Projected core anchor recovery only; no measured clinical potency labels."
+      }
+    ],
+    "n": 598,
+    "metric": "known_anchor_rank_no_efficacy_ground_truth"
+  },
+  "challengers": [
+    {
+      "model": "SiaRNA",
+      "status": "BLOCKED_INVALID_FEATURE_PIPELINE",
+      "stage_verified": "Strict pretrained state_dict load and executable software diagnostic passed; efficacy forward pass intentionally not run.",
+      "reason": "Author preprocess.py overwrites computed mRNA folding vectors with unseeded random vectors. Genuine cohort AGO2 features unavailable. Native CLI returns first pair only. No substitutions allowed.",
+      "evidence": "siarna_software_probe.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    },
+    {
+      "model": "ENsiRNA",
+      "status": "BLOCKED_MISSING_STRUCTURAL_INPUTS",
+      "stage_verified": "Author CSVs/implementation inspected and public structure access tried by download and file-view routes.",
+      "reason": "Pre-folded PDB link redirects to Google sign-in; file-view returned HTTP 401. No verified per-row PDBs or authorized Rosetta installation available. RNA-FM/PyG dependencies also absent. No zero coordinates, substituted structures or Rosetta terms accepted.",
+      "evidence": "ENsiRNA_asset_assessment.json",
+      "efficacy_predictions_produced": 0,
+      "software_diagnostics_only": true
+    }
+  ],
+  "interpretation": "This extends the run history with a software-control replay and explicitly unavailable challenger endpoints, not an improved model."
+}

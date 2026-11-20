@@ -1,0 +1,849 @@
+## Full-Text Articles
+**Articles Returned:** 1
+
+**Unavailable (1):**
+- [pmid] 40194620 — no-oa
+  chain: pmc:not-attempted (PMID has no PMC counterpart) → europepmc:no-fulltext (EPMC does not mark this record open access; fullTextXML covers its open-access subset only) → unpaywall:no-oa (No open-access copy indexed)
+
+**Truncated (truncate mode):** 38000 of 49942 body characters returned across 1 article(s); 11 section(s) omitted; 7 table(s) omitted whole; 5 asset(s) omitted whole
+Budget applied: maxCharacters 38000
+- PMC13488420 (pmc): 38000 of 49942 characters, 7 table(s) dropped whole: TABLE 1, TABLE 2, TABLE 3, TABLE 4, TABLE 5, TABLE 6, TABLE 7, 5 asset(s) dropped whole: d69e329, FIGURE 1, FIGURE 2, FIGURE 3, SM1
+  - 1 Introduction — 6127 of 6127 characters (truncated: false)
+  - 2 Results — 9095 of 9095 characters (truncated: false)
+  - 3 Methodology — 21151 of 21151 characters (truncated: false)
+  - 4 Discussion — 1625 of 4576 characters (truncated: true)
+    - 4.1 Use of 21-nucleotide siRNAs — 1370 of 1370 characters (truncated: false)
+    - 4.2 Pairwise modelling of siRNA-mRNA interactions — 102 of 1837 characters (truncated: true)
+    - 4.3 Bidirectional cross-attention for mutual context modelling — 0 of 1216 characters (truncated: true) — dropped
+  - 5 Conclusion — 0 of 2884 characters (truncated: true) — dropped
+  - Acknowledgments — 2 of 212 characters (truncated: true)
+  - Footnotes — 0 of 156 characters (truncated: true) — dropped
+  - Footnotes — 0 of 705 characters (truncated: true) — dropped
+  - Data availability statement — 0 of 164 characters (truncated: true) — dropped
+  - Ethics statement — 0 of 359 characters (truncated: true) — dropped
+  - Author contributions — 0 of 661 characters (truncated: true) — dropped
+  - Conflict of interest — 0 of 172 characters (truncated: true) — dropped
+  - Generative AI statement — 0 of 398 characters (truncated: true) — dropped
+  - Publisher’s note — 0 of 346 characters (truncated: true) — dropped
+  - Supplementary material — 0 of 176 characters (truncated: true) — dropped
+
+### SiaRNA: a siamese neural network with bidirectional cross-attention for pairwise siRNA-mRNA efficacy prediction
+**Source:** PMC (structured JATS)
+
+**Authors (6):**
+- Vaishnavi Sapireddy
+- Rajkumar Nathi
+- Venkata Harshit Meruva
+- Varun Raju Nannapuraju
+- Bhargava Chary Basangari
+- Vani Kondaparthi
+
+**Affiliations:**
+- 1 Department of Computer Science, Neil Gogte Institute of Technology, Hyderabad, Telangana, India
+- 2 Drugparadigm Research Lab, Hyderabad, Telangana, India
+- 3 Department of Computer Science and Engineering (AI&ML), Keshav Memorial Engineering College, Hyderabad, Telangana, India
+- 4 Department of Computer Science and Engineering, Keshav Memorial Engineering College, Hyderabad, Telangana, India
+- 5 Department of Chemistry, Keshav Memorial Engineering College, Hyderabad, Telangana, India
+
+**Journal:** Frontiers in Bioinformatics, **6**, 1827877, ISSN 2673-7647
+**Type:** research-article
+**Published:** 2026-08-05
+**PMCID:** PMC13488420
+**PMID:** 42621926
+**DOI:** 10.3389/fbinf.2026.1827877
+**PMC:** <https://pmc.ncbi.nlm.nih.gov/articles/PMC13488420/>
+**PubMed:** <https://pubmed.ncbi.nlm.nih.gov/42621926/>
+**Keywords:** cross-attention mechanism, deep learning, pairwise interaction modelling, post-transcriptional gene silencing, RNA interference (RNAi), siamese neural network, siRNA efficacy prediction
+
+**License:** [https://creativecommons.org/licenses/by/4.0/](<https://creativecommons.org/licenses/by/4.0/>)
+This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.
+
+> Body shortened to fit the requested character budget — 38000 of 49942 characters returned. See `truncation` for per-section counts.
+
+#### Abstract
+Introduction: Small interfering RNA (siRNA) therapeutics have extraordinary potential for targeted gene silencing. They mediate post-transcriptional gene regulation by binding to complementary messenger RNA (mRNA) sequences and degrading them, thereby preventing the production of unwanted proteins. Recent machine learning and deep learning frameworks for predicting siRNA efficacy have only achieved moderate success as these models solely rely either on handcrafted features or on sequential relations and therefore cannot capture the full complexity of siRNA-mRNA interactions.
+
+Methods: In the above context, we propose SiaRNA, which uses a Siamese Neural Network for feature-derived representations and a bidirectional cross-attention mechanism for sequence-level relationships. It uniquely identifies mRNAs and their corresponding siRNAs as paired entities, allowing unified and context-aware modeling. Unlike previous models, which discard 2-nucleotide (2-nt) overhangs at the 3′ end while using 21-nt efficacy labels, SiaRNA both trains and tests on 21-nt sequences to ensure biologically consistent predictions.
+
+Results: Our model sets a new performance benchmark, outperforming previous state-of-the-art models. SiaRNA is trained on the HUVK dataset, achieving an accuracy of 0.881, and its generalization is confirmed by testing on the independent Simone dataset.
+
+Discussion: The results prove SiaRNA’s potential as a reliable and biologically accurate framework to guide siRNA design and improve therapeutic outcomes. On performing a case study using Patisiran siRNA and its target transthyretin (TTR) mRNA, an efficacy value of 0.7134 was observed indicating that our model can successfully identify therapeutically effective targets.
+
+#### 1 Introduction
+RNA interference (RNAi) (Hannon, 2002) is a natural cellular defense mechanism found across eukaryotic organisms that regulates gene expression at post-transcriptional level. Transcription is the first step in gene expression, where genetic information encoded in DNA is copied into messenger RNA (mRNA) within the cell nucleus by RNA polymerase enzymes. The newly synthesized mRNA molecule then exits the nucleus and enters the cytoplasm, where translation occurs, during which the ribosomes decode the mRNA to synthesize the corresponding proteins.
+
+Proteins are essential molecules in the body, responsible for carrying out almost every cellular function. However, protein production can be disrupted due to genetic mutations, transcription or translation errors (Yuan et al., 2024) and viral infections (Rozman et al., 2023), leading to serious conditions such as cancer (Hashemi et al., 2023), genetic disorder, metabolic disorder and neurodegenerative diseases. To control such abnormalities, cells employ the RNA interference (RNAi) pathway, which regulates protein production through double-stranded RNA (dsRNA). dsRNA is a type of RNA that can naturally form within the cells, such as during viral infections. Inside the cell, the long double-stranded RNA (dsRNA) is recognized by an enzyme called Dicer, a special type of ribonuclease (RNase). Dicer cleaves the dsRNA into smaller fragments known as small interfering RNAs (siRNAs) (Wilson and Doudna, 2013), typically 19–23 nucleotides in length. To induce RNAi, small interfering RNAs (siRNAs) or short hairpin RNAs (shRNAs) are introduced into the cell, where they mimic the natural products of the RNAi pathway. These siRNAs are then incorporated into the RNA-induced silencing complex (RISC), which is a multi-protein effector complex that carries out gene silencing. Inside RISC, the siRNA loses one of its strands, called passenger strand, while the other strand, guide strand, is retained. The guide strand serves as a template to find complementary mRNA. By means of base-pairing interactions, it scans the cellular mRNA to identify target sequences. Once the siRNA-mRNA duplex forms, Argonaute 2 (AGO2) protein, which is the catalytic core of RISC, cleaves the target mRNA at the site of the complementary region. The resulting mRNA fragments are then degraded by RNA-degrading enzymes that prevent the translation of mRNA into protein, thus silencing the target gene. This selective process makes sure that only specific genes are silenced, allowing the cell to accurately control the synthesis of proteins and maintain cellular balance.
+
+Advancements in computational biology and machine learning have helped grow the study of RNA interference beyond traditional experimental methods. Various state-of-the-art computational models have been developed for the prediction and analysis of siRNA-mRNA interactions like s-Biopredsi (Huesken et al., 2005), DSIR (Filhol et al., 2012) and i-Score (Ichihara et al., 2007). These developed models for siRNA efficacy prediction span rule-based frameworks to neural network architectures and advanced data mining techniques. Despite the progress made with the help of these frameworks, there are still many persistent challenges such as inconsistency in performance across datasets due to variations in experimental procedures, high dependency on feature selection and an inability to model non-linear interactions.
+
+To address these limitations, Convolution Neural Network (CNN) (Han et al., 2018) based models were employed to analyze sequence context along with thermodynamic properties which provided better results than previous models but still struggled in capturing high level interaction. Later, Graph Neural Networks (GNN) became prominent in this field due to their ability in capturing intricate relationships between multiple siRNA-mRNA pairs through message passing. Models such as GNN4siRNA (La Rosa et al., 2022) and siRNADiscovery (Long et al., 2024) have since become state-of-the-art GNN models. GNNs require large and diverse data which is difficult to obtain in this domain and cannot be efficiently parallelized due to complex dependencies inherent in graph structures. Moreover, graph-based models tend to lose key structural details when handling imbalanced data, leading to over-smoothing (Keriven, 2022) or signal dilution, resulting in degraded performance.
+
+To overcome these challenges, we introduce SiaRNA, a deep learning model that integrates a Siamese Neural Network (SNN) (Bromley et al., 1993) with bi-directional cross-attention (Vaswani et al., 2017) mechanism and thermodynamic feature integration for siRNA efficacy prediction. A Siamese Neural Network is a type of deep learning model that is good at understanding the similarity or compatibility between pairs of inputs by projecting them into a shared embedding space. The cross-attention mechanism is applied to capture the context-dependent relationships within sequential data. The feature representations of siRNA and mRNA independently processed before projecting them into a shared embedding space, enabling the model to learn biologically meaningful relationships between interacting molecules. In parallel, a bidirectional cross-attention module analyzes the nucleotide sequences of both siRNA and mRNA, allowing each sequence to identify and focus on the most relevant regions of its binding partner. This interaction-aware mechanism captures contextual dependencies that are difficult to model using conventional feature-based approaches alone. The outputs of these modules are further combined with thermodynamic stability features, which provide information about duplex formation and strand selection during RNA interference. By integrating feature-based learning, sequence-level interaction modelling and thermodynamic information within a unified architecture, SiaRNA provides a comprehensive framework for predicting siRNA efficacy. The model is trained and evaluated exclusively on experimentally validated 21-nucleotide siRNAs, ensuring consistency between biological observations and computational inputs.
+
+#### 2 Results
+
+##### 2.1 Model training
+All experiments were conducted on a NVIDIA A100 GPU, which provided the computational capacity necessary to train the model on high-dimensional biological sequences. From the total 2,816 siRNA-mRNA pairs in Dataset_HUVK, 1971 were used for training, 423 for validation, and 422 for testing.
+
+The model was trained using the Adam optimizer, chosen for its effective convergence. Gradient clipping was used to ensure numeric stability while training. This technique mitigates exploding gradients which is a common source of instability in deep networks. In addition, layer normalization was used to stabilize activation across layers, which improves training stability. This mechanism guarantees that the model’s weights are updated smoothly, leading to more stable convergence.
+
+##### 2.2 Hyperparameter configuration
+The model’s training was controlled by a set of precise hyper parameters, summarized in Table 1. These parameters define the dimensions of all layers, from the initial high-dimensional projection of input features to the output dimensions of the shared Siamese embedder. They also specify the number of heads used in the cross-attention module and the layer sizes within the fusion layer and the regression Multi-Layer Perceptron (MLP).
+
+Table 1 lists the key training parameters and model parameters along with their corresponding values used during model development.
+
+##### 2.3 Performance on dataset_HUVK
+To test the model, we benchmarked its performance on Dataset_HUVK against siRNADiscovery, using 422 siRNA-mRNA pairs (15% of the total dataset). The comparison validation metrics are presented in Table 2. The results demonstrate that SiaRNA achieves performance that is highly competitive and on par with the current benchmarks. Among the compared models, i-Score exhibited the weakest performance, having PCC, SPCC and MSE of 0.602, 0.623 and 0.064 respectively.
+
+Table 2 reports the validation metrics obtained on Dataset_HUVK, demonstrating the predictive performance of the proposed architecture. The best results are presented in bold.
+
+##### 2.4 Performance on the simone dataset
+To further assess the robustness and generalization of SiaRNA, it was evaluated on the independent external Simone dataset, which contained 322 siRNA-mRNA pairs. The results show that SiaRNA demonstrates strong predictive capability and achieves consistently higher performance across the evaluation metrics. SiaRNA achieves a PCC of 0.5163, SPCC of 0.3849 and AUC of 0.7586, compared to siRNADiscovery’s PCC of 0.464, SPCC of 0.32 and AUC of 0.702. As seen in Figure 1, SiaRNA outperforms other state-of-the-art models on the Simone dataset. These findings suggest that SiaRNA provides improved generalization on unseen data and effectively addresses some of the limitations observed in previous architectures.
+
+[Figure: FIGURE 1]
+
+Figure 1 represents three graphs comparing the performance of models against three important evaluation metrics, namely, Pearson correlation coefficient (PCC), Area under the ROC curve (AUC), and Spearman correlation coefficient (SPCC). For each graph, the x-axis represents the models, while its y-axis represents the corresponding evaluation metric score. All three graphs compare SiaRNA to existing state-of-the-art models and demonstrate overall improvements in predictive accuracy and generalization on the external Simone dataset. The values are given in Supplementary data Supplementary Table S1.
+
+2.4.1 Statistical significance of the model performance
+Statistical significance testing on the Simone dataset showed that SiaRNA achieved a modest improvement in PCC compared with siRNADiscovery; however, this difference did not reach statistical significance (paired t-test, p = 0.074). In contrast, SiaRNA demonstrated a statistically significant improvement in SPCC over siRNADiscovery (paired t-test, p = 0.0018), accompanied by a large effect size (Cohen’s d = 1.38), indicating enhanced preservation of the relative ranking of siRNA efficacies. Furthermore, SiaRNA significantly reduced prediction error, as measured by MSE, relative to siRNADiscovery (paired t-test, p = 0.002), with a large effect size (|Cohen’s d| = 1.36). Detailed statistical results are provided in Table 3.
+
+Table 3 shows the statistical test results for the comparison between siRNADiscovery and SiaRNA on the Simone Dataset.
+
+2.4.2 Performance on Independent Datasets
+For the Taka dataset, SiaRNA exhibited predictive performance comparable to siRNADiscovery, with no statistically significant differences observed for PCC, SPCC, or MSE. In contrast, on the Reynolds dataset, SiaRNA achieved significantly higher PCC and SPCC values than siRNADiscovery, indicating improved predictive generalization and ranking performance. The results are given in Table 4.
+
+Table 4 shows the testing results on Independent Datasets.
+
+Statistical comparison between SiaRNA and siRNADiscovery on the Taka dataset showed no significant differences in PCC, SPCC, or MSE (all p > 0.05). The observed effect sizes were small, and the corresponding confidence intervals included zero, suggesting that the two models’ predictive performance was comparable on this dataset, as shown in Table 5.
+
+Table 5 shows the statistical test results for comparison between siRNADiscovery and SiaRNA on the Taka Dataset.
+
+On the Reynolds dataset, statistical testing demonstrated that SiaRNA significantly outperformed siRNADiscovery in both PCC and SPCC (paired t-test and Wilcoxon test, p < 0.01). These improvements were associated with very large effect sizes, indicating a substantial advantage of SiaRNA over siRNADiscovery in capturing and ranking siRNA efficacy patterns. Although SiaRNA achieved a lower MSE, this difference was not statistically significant. The detailed statistical results are presented in Table 6.
+
+Table 6 shows the statistical test results for comparison between siRNADiscovery and SiaRNA on the Reynolds Dataset.
+
+##### 2.5 Ablation study
+An ablation study was conducted as a means to investigate the individual contribution of key model components separately. The key components considered were the bidirectional cross attentional module, thermodynamic features and contrastive loss. The ablation of these model components was chosen because they represent the conceptually and functionally distinct elements in the architecture. The observed results of the ablation study are visualized in Figure 2.
+
+[Figure: FIGURE 2]
+
+Figure 2 shows ablation experiments done to validate the contribution of key modules and components of the proposed model architecture. In this, “W/O” stands for “without”, implying that certain modules, such as cross-attention, thermodynamic features, or contrastive loss, were removed to test their contribution individually.
+
+The bidirectional cross-attention module is a core structural component that models the contextual dependencies between the mRNA and siRNA sequences. Evaluating its removal helps determine how much of the model’s predictive power comes from explicit sequence-level interaction learning. The thermodynamic feature module acts as an independent source of information derived from biophysical principles. By removing it, we investigate the degree to which the thermodynamic properties of the siRNA-mRNA pairs complement the learned features from the SNN and bidirectional cross-attention modules. Finally, the contrastive loss was ablated because it represents a novel addition to the learning objective, intended to enforce alignment between the siRNA and mRNA embeddings in the shared latent space. The removal of this component shows precisely its contribution in promoting generalization.
+
+The effects of the handcrafted features were also investigated on model performance for each category mentioned in section 3.3.1. This ablation study showed that sequence composition and encoding-based features had the most effect on the model performance. The metrics for this ablation study are outlined in Supplementary Data Supplementary Tables S2, S3.
+
+##### 2.6 Case study
+To assess the practical applicability of SiaRNA beyond benchmark datasets, a case study was conducted using Patisiran (Urits et al., 2020), a FDA-approved siRNA therapeutic. Patisiran targets the transthyretin (TTR) gene and has demonstrated clinical efficacy in the treatment of hereditary transthyretin-mediated amyloidosis. For this analysis, the validated Patisiran siRNA sequence and its target TTR mRNA transcript were provided as inputs to the model. The target mRNA aligned FASTA sequence (Gene Sequence ID: NM_000371.4) was downloaded from NCBI BLAST, annotated as Homo sapiens transthyretin (TTR), mRNA (Sequence ID: NP_000362.1). The image of the screen with the information is provided in Supplementary Figure S1.
+
+SiaRNA predicted an efficacy score of 0.7134 for this validated siRNA-mRNA interaction, indicating a high likelihood of effective target silencing. The successful prediction of a high efficacy score for a clinically approved therapeutic suggests that the model can capture biologically meaningful determinants of siRNA activity. This case study provides additional evidence that SiaRNA may serve as a useful tool for prioritizing candidate siRNAs and supporting RNAi-based therapeutic design.
+
+#### 3 Methodology
+
+##### 3.1 Overview
+SiaRNA is designed to capture thermodynamic, compositional, and contextual dependencies between siRNA and its target mRNA. Specifically, the model first processes a set of handcrafted input features using a Siamese Neural Network. In parallel, the raw nucleotide sequences of siRNA and the corresponding mRNA region are numerically encoded based on nucleotide identity and passed through a shared bi-directional cross attention mechanism.
+
+The outputs from the feature-based and attention-based modules are then fused with thermodynamic features (Xia et al., 1998) and passed through fully connected layers to predict the final efficacy. The hybrid design enables the model to leverage both biologically interpretable features and to learn deep representations, achieving a comprehensive understanding of siRNA-mRNA interactions.
+
+##### 3.2 Data collection and characteristics
+To train the model, 2,816 unique siRNA-mRNA pairs and their respective efficacies from Massimo et al (La Rosa et al., 2022) are used, which were originally derived from the studies of Huesken et al. (2005), Harborth et al. (2003), Ui-Tei et al. (2004), Vickers et al. (2003), and Khvorova et al. (2003) and presented in Table 7. This combined dataset is referred to as Dataset_HUVK. Further, the Simone dataset (Sciabola et al., 2013), consisting of 322 unique siRNA-mRNA pairs is used to test the model. A cell line is a population of cells derived from a specific tissue. They provide controlled biological environments for evaluating siRNA-mediated gene silencing and are widely used to assess the efficacy of RNA interference experiments. Dataset_HUVK encompasses cell lines H1299, HeLa, T24 and HEK293 and Simone encompasses Hep3B.
+
+Table 7 summarizes the datasets used in this study, including their original sources, the number of siRNAs and target mRNAs, and the corresponding cell lines in which the efficacy measurements were experimentally obtained.
+
+A 10-fold validation strategy is employed, splitting Dataset_HUVK (2,816 siRNA-mRNA pairs) in a 70:15:15 ratio into training (1971 siRNA-mRNA pairs), validation (423 siRNA-mRNA pairs) and test (422 siRNA-mRNA pairs) splits. The data is split ten times, and each time using different random seeds to generate ten distinct folds of data, which reduces sampling bias and ensures reliable evaluation of performance. The unique siRNAs and mRNAs count is presented in the Supplementary Data Supplementary Table S5.
+
+Besides 10-fold validation, two additional data-splitting strategies were employed to evaluate model generalization under different levels of sequence similarity. For the transcript-level split, unique mRNA transcripts were partitioned into training, development, and test sets using a random seed of 42, ensuring that all siRNA samples associated with a given transcript were assigned exclusively to a single subset. This resulted in 2,006 training samples (27 transcripts), 540 development samples (9 transcripts), and 270 test samples (5 transcripts). For the homology-aware split, mRNA sequences were clustered using CD-HIT-EST at an 80% sequence identity threshold. The 41 unique mRNA transcripts were grouped into 40 clusters, and entire clusters were assigned to the training, development, or test set to prevent homologous sequences from appearing across multiple partitions. This yielded 1,968 training samples (24 unique mRNAs), 423 development samples (7 unique mRNAs), and 425 test samples (10 unique mRNAs), with no cluster leakage detected between subsets.
+
+##### 3.3 Feature engineering
+The proposed framework utilizes two distinct input streams - one for the feature-engineered representations through the Siamese Neural Network (SNN) block and another for sequence-based representations for the Bidirectional Cross-Attention block.
+
+3.3.1 Feature inputs for siamese neural network
+For the SNN component, comprehensive feature vectors are constructed from the sequences of siRNA and mRNA.
+
+3.3.1.1 Sequence composition and encoding
+- One-Hot Encoding: To capture positional nucleotide identity, both the siRNA and mRNA sequences are encoded using binary one-hot encoding scheme with each base (N, A, G, C, U/T) being assigned a unique four-dimensional vector: N=<0,0,0,0>, A=<1,0,0,0>, C=<0,1,0,0>, G=<0,0,1,0>, U/T=<0,0,0,1> (Zeng et al., 2016).
+- Nucleotide Frequencies (siRNA Only): To quantify the influence of short sequence motifs on siRNA function, the frequency of short segments (k-mers) is calculated for the sequences. Previous work shows that k-mers significantly influence knockdown efficacy (Vert et al., 2006). For example, dimer and trimer compositions have emerged as strong predictors of potency in machine learning models (Wang et al., 2010) and specific motifs such as UCC or A/U-rich regions - are statistically associated with enhanced silencing efficacy (Reynolds et al., 2004). The calculated frequencies are: 1-mer (A,U,C,G) with 4 motifs, 2-mer (e.g., AU, CG, etc.) with 16 possible motifs, 3-mer (e.g., AUC, UCG, etc.) with 64 possible motifs, 4-mer (e.g., AUCG, UCGA, etc.) with 256 possible motifs and 5-mer (e.g., AUCGA, UCGUA, etc.) with 1,024 possible motifs
+- G/C Percentages: GC content for both the siRNA guide strand and the mRNA target sequence is computed. GC content is a critical factor influencing the stability of the siRNA-mRNA binding. Low GC content can lead to weak, non-specific binding, while excessively high GC content can hinder the essential unwinding of the siRNA duplex by the RISC complex, thus impeding efficacy (Reynolds et al., 2004; Liu et al., 2013).
+
+3.3.1.2 Interaction and rule-based features
+- RNA-AGO2 Interaction Score: The score represents a quantitative measure of the RNA-protein interaction (Birmingham et al., 2006) between the RNA (siRNA or mRNA) transcript and the Argonaute 2 (AgO2) protein (Sasaki and Tomari, 2012). The score is computed using ZHMolGraph (Liu et al., 2025), a framework designed to capture the structural and chemical interactions between RNAs and proteins. The computed score represents the RISC loading potential of siRNA guide strand, which is a key biological feature for predicting efficacy.
+- Rule Codes (siRNA Only): To encode the established knowledge that certain nucleotides at specific positions enhance or impair siRNA function, simplified rule codes are applied to the siRNA guide strand, based on the findings of He et al (Sciabola et al., 2013). The original preference scores (1 for enhancing, −1 for reducing, 0 for no preference) are converted into unique-three dimensional binary vectors: 1=<0,0,1>, 0=<0,1,0>, −1=<1,0,0>.
+
+3.3.1.3 Structural features
+- Base Pairing Probabilities: The nucleotide base pairing within the individual strands (siRNA and mRNA) drives the formation of their secondary structures. This folding is biologically relevant because, within the cellular environment, both RNA transcripts exist primarily as folded species, not as linear strands. Both canonical (A-U, C-G) and non-canonical (G-U) interactions are considered. The RNAfold tool from ViennaRNA (Lorenz et al., 2011) package is used to obtain the base-pairing probability matrix for the individual siRNA and mRNA sequences. Due to the size and sparsity of these base-pairing probability matrices, truncated Singular Value Decomposition (SVD) is applied for dimensionality reduction, yielding compact representations of six dimensions for siRNA and one hundred dimensions for mRNA, which are subsequently used as model features.
+
+3.3.2 Feature inputs for bidirectional cross attention
+For the bi-directional cross attention module, siRNA and mRNA sequences are represented as tokenized nucleotide indices (Ji et al., 2021). Each siRNA (21-nt) is fully encoded, while for the mRNA, a fixed 57-nt (Qiu et al., 2005) slice centered around the siRNA binding site is extracted. The mRNA slice has 28-nt upstream and 29-nt downstream of the target binding site. If the extracted mRNA sequence is shorter than 57-nt, suitable padding is applied to ensure compatible input length. Each nucleotide within these sequences is then numerically encoded into integer indices using a predefined mapping as: adenine (A) to 0, thymine (T) and uracil (U) to 1, guanine (G) to 2, cytosine (C) to 3 and ambiguous bases (N) to 4. This encoding is implemented by converting each nucleotide into its corresponding integer index and forming a tensor, which acts as the input to the attention mechanism. This representation allows the siRNA and target mRNA to be in uniform and computationally efficient format to analyze the contextual dependencies between them.
+
+##### 3.4 Architectural framework and core components
+The proposed architecture of SiaRNA integrates sequence-derived, contextual and thermodynamic information in order to achieve accurate modelling of siRNA-mRNA interactions. As depicted in Figure 3, it consists of three key components: a Siamese Neural Network (SNN), a bidirectional cross-attention module and a thermodynamic-MLP component, where precomputed thermodynamic stability features are concatenated with the learned embeddings and processed through a MLP for final efficacy prediction.
+
+[Figure: FIGURE 3]
+
+3.4.1 Siamese neural network
+A Siamese Neural Network (SNN) is a specialized architecture that consists of two or more identical subnetworks, each sharing weights and parameters, designed to process pairs of inputs in parallel. While traditional neural networks predict specific outputs over individual inputs, SNNs are good at comparing features which makes them particularly effective for applications where the relationship or compatibility between two entities is to be studied.
+
+3.4.1.1 Linear projection layers
+The linear projection layers provide the starting point for dealing with the raw handcrafted features of the siRNA and mRNA. These transform the features of different sizes and scales into fixed dimension vectors and project these vectors into the respective siRNA and mRNA embedding spaces. Independent processing of handcrafted features allows the model to learn more effectively by allowing the siRNA and mRNA to develop their own feature representations before interacting.
+
+3.4.1.2 Shared embedder
+The shared embedder component processes the standardized siRNA and mRNA features using the same weights for both inputs, projecting them into a shared embedding space, thereby forcing the model to learn a common language. This allows the model to measure the compatibility, or “distance,” between the siRNA and mRNA in the shared space, a step essential for learning patterns that define a successful interaction.
+
+3.4.1.3 Fusion layer
+The Fusion Layer is designed to concatenate the shared representations of the siRNA and mRNA feature vectors into a single, cohesive vector. The combined vector is then fed into a fully connected layer which models the complex, non-linear interactions between the siRNA-mRNA pairs. The goal of this component is to move beyond the individual characteristics and create a unified representation ( h_{SNN}) that captures the relational properties of the siRNA-mRNA pairs.
+
+3.4.2 Bi-directional cross attention for nucleotide-level interaction
+The Bidirectional Cross-Attention mechanism is a key component of the model, designed to simulate the subtle yet dynamic interaction between the 21-nt siRNA and its target 57-nt mRNA slice. The task of this component, beyond simple matching of sequences, is to learn complex position-dependent dependencies that influence binding affinity. This mechanism operates as a bi-directional, two-way process, effectively modelling the interaction between the two sequences to determine their compatibility.
+
+The attention mechanism provides the model with the ability to selectively concentrate on the most relevant parts of the input. It computes a weighted sum of input features, where the weights indicate the importance of each input element for the current output. Mathematically, given queries Q, keys K and values V, attention is calculated as:
+
+Attention(Q,K,V)=Softmax (\frac{QK^{T}}{\sqrt{d_{k}}})V
+
+Here, QK^{T} computes similarity scores between the query and keys, scaled by \sqrt{d_{k}} (the dimension of the keys) for numerical stability. The softmax function normalizes these scores into attention weights, which are then used to compute a weighted sum of the values V. This process allows the model to prioritize relevant information dynamically for each step in the output generation.
+
+In our model, the interaction is performed bi-directionally using shared weight matrices (W\_{Q},W\_{K},W\_{V}) for the linear projections of the query, key and value inputs. First, the input encoding of the mRNA slice (X\_{mRNA}) is projected to form the query (Q\_{mRNA}=X\_{mRNA}W\_{Q}). Simultaneously, the siRNA encoding (X\_{siRNA}) is projected to form the key (K\_{siRNA}=X\_{siRNA}W\_{K}) and value (V\_{siRNA}=X\_{siRNA}W\_{V}). For each nucleotide in the mRNA, the attention mechanism scans the entire siRNA, resulting in a contextualized representation of mRNA (H\_{mRNA}) informed by the most salient features of its binding partner.
+
+H\_{mRNA}=Softmax (\frac{Q\_{mRNA}K\_{siRNA}^{T}}{\sqrt{d\_{k}}})(V\_{siRNA})
+
+Then, the roles are reversed, but the same shared projection weights (W\_{Q},W\_{K},W\_{V}) are utilized. The siRNA sequence forms the query (Q\_{siRNA}=X\_{siRNA}W\_{Q}), while the mRNA sequence forms the key (K\_{mRNA}=X\_{mRNA}W\_{K}) and value (V\_{mRNA}=X\_{mRNA}W\_{V}). This creates a contextualized representation of the siRNA (H\_{siRNA}), with its features now structurally informed by the mRNA target region.
+
+H\_{siRNA}=(\frac{Q\_{siRNA}K\_{mRNA}^{T}}{\sqrt{d\_{k}}})(V\_{mRNA})
+
+Finally, a single output vector is acquired by computing the element-wise average of the two attention output matrices.
+
+h\_{CA}=\frac{H\_{mRNA}+H\_{siRNA}}{2}
+
+The shared bidirectional cross-attention mechanism captures the reciprocal nature of siRNA-mRNA interactions. It provides for the two sequences to be projected onto a common embedding space through the use of shared query, key, and value projections for symmetrical information exchange. siRNA-mRNA pairing is not a one-way recognition process but a mutually aligned biologically meaningful interaction. Each sequence refines its internal representation based on cues emanating from its partner through the bidirectional cross-attention mechanism, effectively mirroring the mutual recognition process inherent in RNA-RNA binding. This allows the model to learn higher-order relational dependencies and generalize to diverse sequence contexts. The bidirectional cross-attention comparison of shared and separate weights is presented in the Supplementary data Supplementary Table S6.
+
+3.4.3 Thermodynamics features and MLP
+The thermodynamic stability profile of the siRNA duplex is one of the key determinants of its silencing efficiency. The energy asymmetry between the two ends of the duplex determines which strand is preferentially loaded into the RNA-induced silencing complex (RISC), thereby affecting the overall gene-silencing outcome. To quantitatively assess this property, feature engineering is performed to compute multiple thermodynamic parameters like the Watson- Crick pair free energy (ΔG) between adjacent nucleotide pairs, the total duplex free energy and the thermodynamic asymmetry between the 5′ and 3′ ends (Lu et al., 2006). The thermodynamic features were calculated using the methodologies described by Xia et al. (1998), Consecutive nucleotide pairs were considered and assigned values for each pair from this study. The free energy (ΔG) serves as a measure of thermodynamic favorability, where lower values generally indicate more stable and energetically favorable interactions. These features which are derived from established biophysical and thermodynamic models represent the duplex’s energy landscape and its contribution to efficacy prediction.
+
+To perform the efficacy prediction, the feature representations obtained from the cross-attention module and SNN are concatenated with the pre-computed thermodynamic feature vector ( h\_{SNN}). This gives a unified feature vector ( h\_{concat}) that has sequential, structural and biophysical information:
+
+h\_{concat}=Concat(h\_{SNN},h\_{CA},h\_{thermo})
+
+The comprehensive and high-dimensional feature vector is then passed into a MLP (Multi-layer perceptron) which acts as a regression head (Qin et al., 2022). The MLP captures complex, non-linear relationships within the integrated features. Its output layer then transforms the learned representation into a single continuous value, representing the model’s predicted siRNA-mRNA efficacy score.
+
+##### 3.5 Loss functions
+The model is trained using a hybrid objective that integrates a regression loss for efficacy prediction and contrastive loss to align the latent representations of the siRNA and mRNA embeddings.
+
+The primary objective is the Mean Squared Error (MSE) (Huesken et al., 2005) between the predicted and experimentally measured efficacies to perform regression:
+
+L\_{reg}=\frac{1}{N}∑\_{i=1}^{N}(y\_{i}−y\_{i}^{^})^{2}
+
+To encourage the model to differentiate effective from ineffective interactions, contrastive loss (Hadsell et al., 2006) between the siRNA and mRNA embeddings is obtained from the shared embedding space:
+
+L\_{con}=\frac{1}{N}∑\_{i=1}^{N}[y\_{i}d\_{i}^{2}+(1−y\_{i}) max(0,m−d\_{i})^{2}]
+
+where d\_{i}=‖z\_{m,i}−z\_{s,i}‖\_{2} denotes the Euclidean distance between the paired embeddings, y\_{i } is a binary label derived from efficacy (1 for efficacy >0.7, 0 otherwise (Qureshi et al., 2013), and m is contrastive margin.
+
+The final loss is a weighted sum of the two objectives:
+
+L=L\_{reg}+λL\_{con}
+
+where λ controls the contribution of the contrastive term.
+
+The joint optimization encourages the network to produce both accurate efficacy predictions and semantically align the siRNA-mRNA embeddings, improving generalization and learning meaningful relationships between interacting molecules.
+
+##### 3.6 Evaluation metrics
+The performance of the model is evaluated using both regression and classification-based metrics.
+
+For regression, the metrics reported are:
+
+Mean Squared Error (MSE) (La Rosa et al., 2022): It is the mean squared difference between predicted and the experimentally validated efficacy values. It helps us understand how close the model’s predictions are to the truth values.
+
+Pearson Correlation Coefficient (PCC): It is used to measure the strength and direction of the linear relationship between the predicted efficacy values and the actual efficacy values.
+
+Spearman Correlation Coefficient (SPCC) (Long et al., 2024): It is used to measure the monotonic relationship between predicted values and ground truth values independent of scale.
+
+For classification-based evaluation, siRNAs with efficacy >0.7 are considered effective, and the rest are considered as ineffective. Using this binary threshold, Area Under Receiver Operating Characteristic Curve (AUC) is computed as a metric, showing the model’s ability to distinguish functional from non-functional siRNAs.
+
+Using both regression and classification-based metrics is important as knockdown efficacy is inherently continuous, yet it is biologically interpreted in discrete terms such as effective or ineffective. This combined evaluation captures both the quantitative prediction accuracy and the functional relevance of the model in the biological context of RNAi.
+
+3.6.1 Statistical analysis
+To assess whether the performance differences between SiaRNA and siRNADiscovery were statistically significant, both models were trained and evaluated using the same experimental protocol. The HUVK dataset was partitioned ten times into training and validation subsets using ten distinct random seeds. While the same set of experimentally validated siRNA–mRNA pairs was repartitioned across runs, each partition represented an independent realization of the train-validation split. Both SiaRNA and siRNADiscovery were trained independently from random initialization on each partition and subsequently evaluated on the same external Simone dataset, which remained unchanged throughout all experiments. This procedure yielded 10 pairs of performance values (PCC, SPCC, MSE, and AUC) for each model.
+
+The statistical unit of analysis was the aggregated performance metric from each experimental run rather than the individual siRNA–mRNA predictions. Treating individual predictions as independent observations would violate the independence assumption because predictions within a run originate from the same trained model and because the training data are repeatedly partitioned from the same HUVK dataset. Instead, statistical comparisons were performed on the ten paired aggregate metrics, with each pair corresponding to the performance of SiaRNA and siRNADiscovery trained under the same data partition and evaluated on the identical external Simone dataset.
+
+The paired observations were compared using a paired Student’s t-test as the primary statistical test. To validate the results without assuming normality of the paired differences, the Wilcoxon signed-rank test was additionally performed. The magnitude of the observed differences was quantified using Cohen’s d, while 95% confidence intervals (CI) were calculated to estimate the precision of the mean paired differences. (Rainio et al., 2024).
+
+#### 4 Discussion
+In this section, the key design decisions underlying our model were reflected and their implications for siRNA-mRNA efficacy prediction were interpreted.
+
+##### 4.1 Use of 21-nucleotide siRNAs
+Many earlier deep learning approaches have adopted 19-nucleotide (nt) siRNA sequences, largely to maintain consistency with early datasets and simplify preprocessing. Some recent deep learning approaches use efficacy labels derived from 21-nt sequences to train models on truncated 19-nt sequences (Bai et al., 2024), introducing a fundamental inconsistency in the input-output mapping. In contrast, the experimentally validated Huesken dataset, which we employ for training and validation, provides efficacy measurements for 21-nt sequences. The 21-nt length includes the characteristic two-nucleotide 3′ overhangs that are crucial for recognition and loading of the siRNA by the RNA-induced silencing complex (RISC). Experimental evidence suggests that 21-nt siRNAs exhibit superior stability and silencing efficiency compared to their 19-nt counterparts, as the 3′ overhang facilitates AGO2-mediated strand loading and target recognition (Martinez et al., 2002). This fuller representation allows deep learning models to learn more effective features, often leading to superior performance when trained on the 21-nt sequences compared to the truncated 19-nt version (Supplementary data Supplementary Table S4). This biologically grounded choice ensures alignment with experimental conditions under which efficacy labels were derived, thereby improving model validity.
+
+##### 4.2 Pairwise modelling of siRNA-mRNA interactions
+Most graph-based RNA interference models represent mRNAs as central hubs connected to multiple siRNAs,
+
+#### Acknowledgments
+We
+
+#### References (39)
+- [B1] Bai Y., Zhong H., Wang T., Lu Z. J. (2024). OligoFormer: an accurate and robust prediction method for siRNA design. Bioinformatics 40 (10), btae577. DOI 10.1093/bioinformatics/btae577 PMID 39321261 PMCID PMC11494384
+- [B2] Birmingham A., Anderson E. M., Reynolds A., Ilsley-Tyree D., Leake D., Fedorov Y., et al. (2006). 3' UTR seed matches, but not overall identity, are associated with RNAi off-targets. Nat. Methods 3 (3), 199–204. DOI 10.1038/nmeth854 PMID 16489337
+- [B3] Bromley J., Bentz J., Bottou L., Guyon I., Lecun Y., Moore C., et al. (1993). Signature verification using a “siamese” time delay neural network. Int. J. Pattern Recognit. Artif. Intell. 07 (04), 669–688. DOI 10.1142/s0218001493000339
+- [B4] Filhol O., Ciais D., Lajaunie C., Charbonnier P., Foveau N., Vert J. P., et al. (2012). DSIR: assessing the design of highly potent siRNA by testing a set of cancer-relevant target genes. PLoS One. 7 (10), e48057. DOI 10.1371/journal.pone.0048057 PMID 23118925 PMCID PMC3484153
+- [B5] Hadsell R., Chopra S., LeCun Y. (2006). “Dimensionality reduction by learning an invariant mapping,” in Proceedings of the 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition - Volume 2 (IEEE Computer Society), 1735–1742.
+- [B6] Han Y., He F., Chen Y., Liu Y., Yu H. (2018). SiRNA silencing efficacy prediction based on a deep architecture. BMC Genomics 19 (Suppl. 7), 669. DOI 10.1186/s12864-018-5028-8 PMID 30255786 PMCID PMC6157246
+- [B7] Hannon G. J. (2002). RNA interference. Nature. 418 (6894), 244–251. DOI 10.1038/418244a PMID 12110901
+- [B8] Harborth J., Elbashir S. M., Vandenburgh K., Manninga H., Scaringe S. A., Weber K., et al. (2003). Sequence, chemical, and structural variation of small interfering RNAs and short hairpin RNAs and the effect on mammalian gene silencing. Antisense Nucleic Acid. Drug Dev. 13 (2), 83–105. DOI 10.1089/108729003321629638 PMID 12804036
+- [B9] Hashemi M., Aparviz R., Beickzade M., Paskeh M. D. A., Kheirabad S. K., Koohpar Z. K., et al. (2023). Advances in RNAi therapies for gastric cancer: targeting drug resistance and nanoscale delivery. Biomed. Pharmacother. 169, 115927. DOI 10.1016/j.biopha.2023.115927 PMID 38006616
+- [B10] Huesken D., Lange J., Mickanin C., Weiler J., Asselbergs F., Warner J., et al. (2005). Design of a genome-wide siRNA library using an artificial neural network. Nat. Biotechnol. 23 (8), 995–1001. DOI 10.1038/nbt1118 PMID 16025102
+- [B11] Ichihara M., Murakumo Y., Masuda A., Matsuura T., Asai N., Jijiwa M., et al. (2007). Thermodynamic instability of siRNA duplex is a prerequisite for dependable prediction of siRNA activities. Nucleic Acids Res. 35 (18), e123. DOI 10.1093/nar/gkm699 PMID 17884914 PMCID PMC2094068
+- [B12] Ji Y., Zhou Z., Liu H., Davuluri R. V. (2021). DNABERT: pre-trained bidirectional encoder representations from transformers model for DNA-language in genome. Bioinformatics 37 (15), 2112–2120. DOI 10.1093/bioinformatics/btab083 PMID 33538820 PMCID PMC11025658
+- [B13] Keriven N. (2022). “Not too little, not too much: a theoretical analysis of graph (over)smoothing,” in Proceedings of the 36th International Conference on Neural Information Processing Systems (New Orleans, LA, USA: Curran Associates Inc).
+- [B14] Khvorova A., Reynolds A., Jayasena S. D. (2003). Functional siRNAs and miRNAs exhibit strand bias. Cell. 115 (2), 209–216. DOI 10.1016/s0092-8674(03)00801-8 PMID 14567918
+- [B15] La Rosa M., Fiannaca A., La Paglia L., Urso A. (2022). A graph neural network approach for the analysis of siRNA-Target biological networks. Int. J. Mol. Sci. 23 (22), 14211. DOI 10.3390/ijms232214211 PMID 36430688 PMCID PMC9696923
+- [B16] Liu L., Li Q. Z., Lin H., Zuo Y. C. (2013). The effect of regions flanking target site on siRNA potency. Genomics. 102 (4), 215–222. DOI 10.1016/j.ygeno.2013.07.009 PMID 23891614
+- [B17] Liu H., Jian Y., Zeng C., Zhao Y. (2025). RNA-protein interaction prediction using network-guided deep learning. Commun. Biol. 8 (1), 247. DOI 10.1038/s42003-025-07694-9 PMID 39956833 PMCID PMC11830795
+- [B18] Long R., Guo Z., Han D., Liu B., Yuan X., Chen G., et al. (2024). siRNADiscovery: a graph neural network for siRNA efficacy prediction via deep RNA sequence analysis. Brief. Bioinform 25 (6), bbae563. DOI 10.1093/bib/bbae563 PMID 39503523 PMCID PMC11539000
+- [B19] Lorenz R., Bernhart S. H., Honer Zu Siederdissen C., Tafer H., Flamm C., Stadler P. F., et al. (2011). ViennaRNA Package 2.0. Algorithms Mol. Biol. 6, 26. DOI 10.1186/1748-7188-6-26 PMID 22115189 PMCID PMC3319429
+- [B20] Lu Z. J., Turner D. H., Mathews D. H. (2006). A set of nearest neighbor parameters for predicting the enthalpy change of RNA secondary structure formation. Nucleic Acids Res. 34 (17), 4912–4924. DOI 10.1093/nar/gkl472 PMID 16982646 PMCID PMC1635246
+- [B21] Martinez J., Patkaniowska A., Urlaub H., Luhrmann R., Tuschl T. (2002). Single-stranded antisense siRNAs guide target RNA cleavage in RNAi. Cell 110 (5), 563–574. DOI 10.1016/s0092-8674(02)00908-x PMID 12230974
+- [B22] Qin Y., Li C., Shi X., Wang W. (2022). MLP-based regression prediction model for compound bioactivity. Front. Bioeng. Biotechnol. 10, 946329. DOI 10.3389/fbioe.2022.946329 PMID 35910022 PMCID PMC9326362
+- [B23] Qiu S., Adema C. M., Lane T. (2005). A computational study of off-target effects of RNA interference. Nucleic Acids Res. 33 (6), 1834–1847. DOI 10.1093/nar/gki324 PMID 15800213 PMCID PMC1072799
+- [B24] Qureshi A., Thakur N., Kumar M. (2013). VIRsiRNApred: a web server for predicting inhibition efficacy of siRNAs targeting human viruses. J. Transl. Med. 11, 305. DOI 10.1186/1479-5876-11-305 PMID 24330765 PMCID PMC3878835
+- [B25] Rainio O., Teuho J., Klen R. (2024). Evaluation metrics and statistical tests for machine learning. Sci. Rep. 14 (1), 6086. DOI 10.1038/s41598-024-56706-x PMID 38480847 PMCID PMC10937649
+- [B26] Reynolds A., Leake D., Boese Q., Scaringe S., Marshall W. S., Khvorova A. (2004). Rational siRNA design for RNA interference. Nat. Biotechnol. 22 (3), 326–330. DOI 10.1038/nbt936 PMID 14758366
+- [B27] Rozman B., Fisher T., Stern-Ginossar N. (2023). Translation-A tug of war during viral infection. Mol. Cell. 83 (3), 481–495. DOI 10.1016/j.molcel.2022.10.012 PMID 36334591
+- [B28] Sasaki H. M., Tomari Y. (2012). The true core of RNA silencing revealed. Nat. Struct. Mol. Biol. 19 (7), 657–660. DOI 10.1038/nsmb.2302 PMID 22767235
+- [B29] Sciabola S., Cao Q., Orozco M., Faustino I., Stanton R. V. (2013). Improved nucleic acid descriptors for siRNA efficacy prediction. Nucleic Acids Res. 41 (3), 1383–1394. DOI 10.1093/nar/gks1191 PMID 23241392 PMCID PMC3561943
+- [B30] Ui-Tei K., Naito Y., Takahashi F., Haraguchi T., Ohki-Hamazaki H., Juni A., et al. (2004). Guidelines for the selection of highly effective siRNA sequences for mammalian and chick RNA interference. Nucleic Acids Res. 32 (3), 936–948. DOI 10.1093/nar/gkh247 PMID 14769950 PMCID PMC373388
+- [B31] Urits I., Swanson D., Swett M. C., Patel A., Berardino K., Amgalan A., et al. (2020). A review of patisiran (ONPATTRO(R)) for the treatment of polyneuropathy in people with hereditary transthyretin amyloidosis. Neurol. Ther. 9 (2), 301–315. DOI 10.1007/s40120-020-00208-1 PMID 32785879 PMCID PMC7606409
+- [B32] Vaswani A., Shazeer N., Parmar N., Uszkoreit J., Jones L., Gomez A. N., et al. (2017). Attention is all you Need. Neural Information Processing Systems.
+- [B33] Vert J. P., Foveau N., Lajaunie C., Vandenbrouck Y. (2006). An accurate and interpretable model for siRNA efficacy prediction. BMC Bioinforma. 7, 520. DOI 10.1186/1471-2105-7-520 PMID 17137497 PMCID PMC1698581
+- [B34] Vickers T. A., Koo S., Bennett C. F., Crooke S. T., Dean N. M., Baker B. F. (2003). Efficient reduction of target RNAs by small interfering RNA and RNase H-dependent antisense agents. A comparative analysis. J. Biol. Chem. 278 (9), 7108–7118. DOI 10.1074/jbc.M210326200 PMID 12500975
+- [B35] Wang L., Huang C., Yang J. Y. (2010). Predicting siRNA potency with random forests and support vector machines. BMC Genomics. 11 (Suppl. 3), S2. DOI 10.1186/1471-2164-11-S3-S2 PMID 21143784 PMCID PMC2999347
+- [B36] Wilson R. C., Doudna J. A. (2013). Molecular mechanisms of RNA interference. Annu. Rev. Biophys. 42, 217–239. DOI 10.1146/annurev-biophys-083012-130404 PMID 23654304 PMCID PMC5895182
+- [B37] Xia T., SantaLucia J. Jr., Burkard M. E., Kierzek R., Schroeder S. J., Jiao X., et al. (1998). Thermodynamic parameters for an expanded nearest-neighbor model for formation of RNA duplexes with watson-crick base pairs. Biochemistry 37 (42), 14719–14735. DOI 10.1021/bi9809425 PMID 9778347
+- [B38] Yuan S., Zhou G., Xu G. (2024). Translation machinery: the basis of translational control. J. Genet. Genomics. 51 (4), 367–378. DOI 10.1016/j.jgg.2023.07.009 PMID 37536497
+- [B39] Zeng H., Edwards M. D., Liu G., Gifford D. K. (2016). Convolutional neural network architectures for predicting DNA-protein binding. Bioinformatics 32 (12), i121–i127. DOI 10.1093/bioinformatics/btw255 PMID 27307608 PMCID PMC4908339
+
+
+**truncated:** true
+> Full text was shortened to fit the requested character budget: 38000 of 49942 body characters returned across 1 article in truncate mode. 11 section(s) were dropped once the budget ran out. 7 table(s) were dropped whole rather than cut mid-row: TABLE 1, TABLE 2, TABLE 3, TABLE 4, TABLE 5, TABLE 6, TABLE 7. 5 figure/supplementary item(s) were dropped whole rather than returned with a shortened caption: d69e329, FIGURE 1, FIGURE 2, FIGURE 3, SM1. See `truncation` for per-article and per-section counts, and raise `maxCharacters` or narrow `sections` to retrieve more.
+
+<mcp-result-metadata>
+{
+ "structuredContent": {
+  "articles": [
+   {
+    "abstract": "Introduction: Small interfering RNA (siRNA) therapeutics have extraordinary potential for targeted gene silencing. They mediate post-transcriptional gene regulation by binding to complementary messenger RNA (mRNA) sequences and degrading them, thereby preventing the production of unwanted proteins. Recent machine learning and deep learning frameworks for predicting siRNA efficacy have only achieved moderate success as these models solely rely either on handcrafted features or on sequential relations and therefore cannot capture the full complexity of siRNA-mRNA interactions.\n\nMethods: In the above context, we propose SiaRNA, which uses a Siamese Neural Network for feature-derived representations and a bidirectional cross-attention mechanism for sequence-level relationships. It uniquely identifies mRNAs and their corresponding siRNAs as paired entities, allowing unified and context-aware modeling. Unlike previous models, which discard 2-nucleotide (2-nt) overhangs at the 3′ end while using 21-nt efficacy labels, SiaRNA both trains and tests on 21-nt sequences to ensure biologically consistent predictions.\n\nResults: Our model sets a new performance benchmark, outperforming previous state-of-the-art models. SiaRNA is trained on the HUVK dataset, achieving an accuracy of 0.881, and its generalization is confirmed by testing on the independent Simone dataset.\n\nDiscussion: The results prove SiaRNA’s potential as a reliable and biologically accurate framework to guide siRNA design and improve therapeutic outcomes. On performing a case study using Patisiran siRNA and its target transthyretin (TTR) mRNA, an efficacy value of 0.7134 was observed indicating that our model can successfully identify therapeutically effective targets.",
+    "affiliations": [
+     "1 Department of Computer Science, Neil Gogte Institute of Technology, Hyderabad, Telangana, India",
+     "2 Drugparadigm Research Lab, Hyderabad, Telangana, India",
+     "3 Department of Computer Science and Engineering (AI&ML), Keshav Memorial Engineering College, Hyderabad, Telangana, India",
+     "4 Department of Computer Science and Engineering, Keshav Memorial Engineering College, Hyderabad, Telangana, India",
+     "5 Department of Chemistry, Keshav Memorial Engineering College, Hyderabad, Telangana, India"
+    ],
+    "articleType": "research-article",
+    "authors": [
+     {
+      "givenNames": "Vaishnavi",
+      "lastName": "Sapireddy"
+     },
+     {
+      "givenNames": "Rajkumar",
+      "lastName": "Nathi"
+     },
+     {
+      "givenNames": "Venkata Harshit",
+      "lastName": "Meruva"
+     },
+     {
+      "givenNames": "Varun Raju",
+      "lastName": "Nannapuraju"
+     },
+     {
+      "givenNames": "Bhargava Chary",
+      "lastName": "Basangari"
+     },
+     {
+      "givenNames": "Vani",
+      "lastName": "Kondaparthi"
+     }
+    ],
+    "doi": "10.3389/fbinf.2026.1827877",
+    "journal": {
+     "elocationId": "1827877",
+     "issn": "2673-7647",
+     "title": "Frontiers in Bioinformatics",
+     "volume": "6"
+    },
+    "keywords": [
+     "cross-attention mechanism",
+     "deep learning",
+     "pairwise interaction modelling",
+     "post-transcriptional gene silencing",
+     "RNA interference (RNAi)",
+     "siamese neural network",
+     "siRNA efficacy prediction"
+    ],
+    "licenses": [
+     {
+      "text": "This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.",
+      "urls": [
+       "https://creativecommons.org/licenses/by/4.0/"
+      ]
+     }
+    ],
+    "pmcId": "PMC13488420",
+    "pmcUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13488420/",
+    "pmid": "42621926",
+    "publicationDate": {
+     "day": "05",
+     "month": "8",
+     "year": "2026"
+    },
+    "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42621926/",
+    "references": [
+     {
+      "citation": "Bai Y., Zhong H., Wang T., Lu Z. J. (2024). OligoFormer: an accurate and robust prediction method for siRNA design. Bioinformatics 40 (10), btae577. DOI 10.1093/bioinformatics/btae577 PMID 39321261 PMCID PMC11494384",
+      "id": "B1"
+     },
+     {
+      "citation": "Birmingham A., Anderson E. M., Reynolds A., Ilsley-Tyree D., Leake D., Fedorov Y., et al. (2006). 3' UTR seed matches, but not overall identity, are associated with RNAi off-targets. Nat. Methods 3 (3), 199–204. DOI 10.1038/nmeth854 PMID 16489337",
+      "id": "B2"
+     },
+     {
+      "citation": "Bromley J., Bentz J., Bottou L., Guyon I., Lecun Y., Moore C., et al. (1993). Signature verification using a “siamese” time delay neural network. Int. J. Pattern Recognit. Artif. Intell. 07 (04), 669–688. DOI 10.1142/s0218001493000339",
+      "id": "B3"
+     },
+     {
+      "citation": "Filhol O., Ciais D., Lajaunie C., Charbonnier P., Foveau N., Vert J. P., et al. (2012). DSIR: assessing the design of highly potent siRNA by testing a set of cancer-relevant target genes. PLoS One. 7 (10), e48057. DOI 10.1371/journal.pone.0048057 PMID 23118925 PMCID PMC3484153",
+      "id": "B4"
+     },
+     {
+      "citation": "Hadsell R., Chopra S., LeCun Y. (2006). “Dimensionality reduction by learning an invariant mapping,” in Proceedings of the 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition - Volume 2 (IEEE Computer Society), 1735–1742.",
+      "id": "B5"
+     },
+     {
+      "citation": "Han Y., He F., Chen Y., Liu Y., Yu H. (2018). SiRNA silencing efficacy prediction based on a deep architecture. BMC Genomics 19 (Suppl. 7), 669. DOI 10.1186/s12864-018-5028-8 PMID 30255786 PMCID PMC6157246",
+      "id": "B6"
+     },
+     {
+      "citation": "Hannon G. J. (2002). RNA interference. Nature. 418 (6894), 244–251. DOI 10.1038/418244a PMID 12110901",
+      "id": "B7"
+     },
+     {
+      "citation": "Harborth J., Elbashir S. M., Vandenburgh K., Manninga H., Scaringe S. A., Weber K., et al. (2003). Sequence, chemical, and structural variation of small interfering RNAs and short hairpin RNAs and the effect on mammalian gene silencing. Antisense Nucleic Acid. Drug Dev. 13 (2), 83–105. DOI 10.1089/108729003321629638 PMID 12804036",
+      "id": "B8"
+     },
+     {
+      "citation": "Hashemi M., Aparviz R., Beickzade M., Paskeh M. D. A., Kheirabad S. K., Koohpar Z. K., et al. (2023). Advances in RNAi therapies for gastric cancer: targeting drug resistance and nanoscale delivery. Biomed. Pharmacother. 169, 115927. DOI 10.1016/j.biopha.2023.115927 PMID 38006616",
+      "id": "B9"
+     },
+     {
+      "citation": "Huesken D., Lange J., Mickanin C., Weiler J., Asselbergs F., Warner J., et al. (2005). Design of a genome-wide siRNA library using an artificial neural network. Nat. Biotechnol. 23 (8), 995–1001. DOI 10.1038/nbt1118 PMID 16025102",
+      "id": "B10"
+     },
+     {
+      "citation": "Ichihara M., Murakumo Y., Masuda A., Matsuura T., Asai N., Jijiwa M., et al. (2007). Thermodynamic instability of siRNA duplex is a prerequisite for dependable prediction of siRNA activities. Nucleic Acids Res. 35 (18), e123. DOI 10.1093/nar/gkm699 PMID 17884914 PMCID PMC2094068",
+      "id": "B11"
+     },
+     {
+      "citation": "Ji Y., Zhou Z., Liu H., Davuluri R. V. (2021). DNABERT: pre-trained bidirectional encoder representations from transformers model for DNA-language in genome. Bioinformatics 37 (15), 2112–2120. DOI 10.1093/bioinformatics/btab083 PMID 33538820 PMCID PMC11025658",
+      "id": "B12"
+     },
+     {
+      "citation": "Keriven N. (2022). “Not too little, not too much: a theoretical analysis of graph (over)smoothing,” in Proceedings of the 36th International Conference on Neural Information Processing Systems (New Orleans, LA, USA: Curran Associates Inc).",
+      "id": "B13"
+     },
+     {
+      "citation": "Khvorova A., Reynolds A., Jayasena S. D. (2003). Functional siRNAs and miRNAs exhibit strand bias. Cell. 115 (2), 209–216. DOI 10.1016/s0092-8674(03)00801-8 PMID 14567918",
+      "id": "B14"
+     },
+     {
+      "citation": "La Rosa M., Fiannaca A., La Paglia L., Urso A. (2022). A graph neural network approach for the analysis of siRNA-Target biological networks. Int. J. Mol. Sci. 23 (22), 14211. DOI 10.3390/ijms232214211 PMID 36430688 PMCID PMC9696923",
+      "id": "B15"
+     },
+     {
+      "citation": "Liu L., Li Q. Z., Lin H., Zuo Y. C. (2013). The effect of regions flanking target site on siRNA potency. Genomics. 102 (4), 215–222. DOI 10.1016/j.ygeno.2013.07.009 PMID 23891614",
+      "id": "B16"
+     },
+     {
+      "citation": "Liu H., Jian Y., Zeng C., Zhao Y. (2025). RNA-protein interaction prediction using network-guided deep learning. Commun. Biol. 8 (1), 247. DOI 10.1038/s42003-025-07694-9 PMID 39956833 PMCID PMC11830795",
+      "id": "B17"
+     },
+     {
+      "citation": "Long R., Guo Z., Han D., Liu B., Yuan X., Chen G., et al. (2024). siRNADiscovery: a graph neural network for siRNA efficacy prediction via deep RNA sequence analysis. Brief. Bioinform 25 (6), bbae563. DOI 10.1093/bib/bbae563 PMID 39503523 PMCID PMC11539000",
+      "id": "B18"
+     },
+     {
+      "citation": "Lorenz R., Bernhart S. H., Honer Zu Siederdissen C., Tafer H., Flamm C., Stadler P. F., et al. (2011). ViennaRNA Package 2.0. Algorithms Mol. Biol. 6, 26. DOI 10.1186/1748-7188-6-26 PMID 22115189 PMCID PMC3319429",
+      "id": "B19"
+     },
+     {
+      "citation": "Lu Z. J., Turner D. H., Mathews D. H. (2006). A set of nearest neighbor parameters for predicting the enthalpy change of RNA secondary structure formation. Nucleic Acids Res. 34 (17), 4912–4924. DOI 10.1093/nar/gkl472 PMID 16982646 PMCID PMC1635246",
+      "id": "B20"
+     },
+     {
+      "citation": "Martinez J., Patkaniowska A., Urlaub H., Luhrmann R., Tuschl T. (2002). Single-stranded antisense siRNAs guide target RNA cleavage in RNAi. Cell 110 (5), 563–574. DOI 10.1016/s0092-8674(02)00908-x PMID 12230974",
+      "id": "B21"
+     },
+     {
+      "citation": "Qin Y., Li C., Shi X., Wang W. (2022). MLP-based regression prediction model for compound bioactivity. Front. Bioeng. Biotechnol. 10, 946329. DOI 10.3389/fbioe.2022.946329 PMID 35910022 PMCID PMC9326362",
+      "id": "B22"
+     },
+     {
+      "citation": "Qiu S., Adema C. M., Lane T. (2005). A computational study of off-target effects of RNA interference. Nucleic Acids Res. 33 (6), 1834–1847. DOI 10.1093/nar/gki324 PMID 15800213 PMCID PMC1072799",
+      "id": "B23"
+     },
+     {
+      "citation": "Qureshi A., Thakur N., Kumar M. (2013). VIRsiRNApred: a web server for predicting inhibition efficacy of siRNAs targeting human viruses. J. Transl. Med. 11, 305. DOI 10.1186/1479-5876-11-305 PMID 24330765 PMCID PMC3878835",
+      "id": "B24"
+     },
+     {
+      "citation": "Rainio O., Teuho J., Klen R. (2024). Evaluation metrics and statistical tests for machine learning. Sci. Rep. 14 (1), 6086. DOI 10.1038/s41598-024-56706-x PMID 38480847 PMCID PMC10937649",
+      "id": "B25"
+     },
+     {
+      "citation": "Reynolds A., Leake D., Boese Q., Scaringe S., Marshall W. S., Khvorova A. (2004). Rational siRNA design for RNA interference. Nat. Biotechnol. 22 (3), 326–330. DOI 10.1038/nbt936 PMID 14758366",
+      "id": "B26"
+     },
+     {
+      "citation": "Rozman B., Fisher T., Stern-Ginossar N. (2023). Translation-A tug of war during viral infection. Mol. Cell. 83 (3), 481–495. DOI 10.1016/j.molcel.2022.10.012 PMID 36334591",
+      "id": "B27"
+     },
+     {
+      "citation": "Sasaki H. M., Tomari Y. (2012). The true core of RNA silencing revealed. Nat. Struct. Mol. Biol. 19 (7), 657–660. DOI 10.1038/nsmb.2302 PMID 22767235",
+      "id": "B28"
+     },
+     {
+      "citation": "Sciabola S., Cao Q., Orozco M., Faustino I., Stanton R. V. (2013). Improved nucleic acid descriptors for siRNA efficacy prediction. Nucleic Acids Res. 41 (3), 1383–1394. DOI 10.1093/nar/gks1191 PMID 23241392 PMCID PMC3561943",
+      "id": "B29"
+     },
+     {
+      "citation": "Ui-Tei K., Naito Y., Takahashi F., Haraguchi T., Ohki-Hamazaki H., Juni A., et al. (2004). Guidelines for the selection of highly effective siRNA sequences for mammalian and chick RNA interference. Nucleic Acids Res. 32 (3), 936–948. DOI 10.1093/nar/gkh247 PMID 14769950 PMCID PMC373388",
+      "id": "B30"
+     },
+     {
+      "citation": "Urits I., Swanson D., Swett M. C., Patel A., Berardino K., Amgalan A., et al. (2020). A review of patisiran (ONPATTRO(R)) for the treatment of polyneuropathy in people with hereditary transthyretin amyloidosis. Neurol. Ther. 9 (2), 301–315. DOI 10.1007/s40120-020-00208-1 PMID 32785879 PMCID PMC7606409",
+      "id": "B31"
+     },
+     {
+      "citation": "Vaswani A., Shazeer N., Parmar N., Uszkoreit J., Jones L., Gomez A. N., et al. (2017). Attention is all you Need. Neural Information Processing Systems.",
+      "id": "B32"
+     },
+     {
+      "citation": "Vert J. P., Foveau N., Lajaunie C., Vandenbrouck Y. (2006). An accurate and interpretable model for siRNA efficacy prediction. BMC Bioinforma. 7, 520. DOI 10.1186/1471-2105-7-520 PMID 17137497 PMCID PMC1698581",
+      "id": "B33"
+     },
+     {
+      "citation": "Vickers T. A., Koo S., Bennett C. F., Crooke S. T., Dean N. M., Baker B. F. (2003). Efficient reduction of target RNAs by small interfering RNA and RNase H-dependent antisense agents. A comparative analysis. J. Biol. Chem. 278 (9), 7108–7118. DOI 10.1074/jbc.M210326200 PMID 12500975",
+      "id": "B34"
+     },
+     {
+      "citation": "Wang L., Huang C., Yang J. Y. (2010). Predicting siRNA potency with random forests and support vector machines. BMC Genomics. 11 (Suppl. 3), S2. DOI 10.1186/1471-2164-11-S3-S2 PMID 21143784 PMCID PMC2999347",
+      "id": "B35"
+     },
+     {
+      "citation": "Wilson R. C., Doudna J. A. (2013). Molecular mechanisms of RNA interference. Annu. Rev. Biophys. 42, 217–239. DOI 10.1146/annurev-biophys-083012-130404 PMID 23654304 PMCID PMC5895182",
+      "id": "B36"
+     },
+     {
+      "citation": "Xia T., SantaLucia J. Jr., Burkard M. E., Kierzek R., Schroeder S. J., Jiao X., et al. (1998). Thermodynamic parameters for an expanded nearest-neighbor model for formation of RNA duplexes with watson-crick base pairs. Biochemistry 37 (42), 14719–14735. DOI 10.1021/bi9809425 PMID 9778347",
+      "id": "B37"
+     },
+     {
+      "citation": "Yuan S., Zhou G., Xu G. (2024). Translation machinery: the basis of translational control. J. Genet. Genomics. 51 (4), 367–378. DOI 10.1016/j.jgg.2023.07.009 PMID 37536497",
+      "id": "B38"
+     },
+     {
+      "citation": "Zeng H., Edwards M. D., Liu G., Gifford D. K. (2016). Convolutional neural network architectures for predicting DNA-protein binding. Bioinformatics 32 (12), i121–i127. DOI 10.1093/bioinformatics/btw255 PMID 27307608 PMCID PMC4908339",
+      "id": "B39"
+     }
+    ],
+    "sections": [
+     {
+      "label": "1",
+      "text": "RNA interference (RNAi) (Hannon, 2002) is a natural cellular defense mechanism found across eukaryotic organisms that regulates gene expression at post-transcriptional level. Transcription is the first step in gene expression, where genetic information encoded in DNA is copied into messenger RNA (mRNA) within the cell nucleus by RNA polymerase enzymes. The newly synthesized mRNA molecule then exits the nucleus and enters the cytoplasm, where translation occurs, during which the ribosomes decode the mRNA to synthesize the corresponding proteins.\n\nProteins are essential molecules in the body, responsible for carrying out almost every cellular function. However, protein production can be disrupted due to genetic mutations, transcription or translation errors (Yuan et al., 2024) and viral infections (Rozman et al., 2023), leading to serious conditions such as cancer (Hashemi et al., 2023), genetic disorder, metabolic disorder and neurodegenerative diseases. To control such abnormalities, cells employ the RNA interference (RNAi) pathway, which regulates protein production through double-stranded RNA (dsRNA). dsRNA is a type of RNA that can naturally form within the cells, such as during viral infections. Inside the cell, the long double-stranded RNA (dsRNA) is recognized by an enzyme called Dicer, a special type of ribonuclease (RNase). Dicer cleaves the dsRNA into smaller fragments known as small interfering RNAs (siRNAs) (Wilson and Doudna, 2013), typically 19–23 nucleotides in length. To induce RNAi, small interfering RNAs (siRNAs) or short hairpin RNAs (shRNAs) are introduced into the cell, where they mimic the natural products of the RNAi pathway. These siRNAs are then incorporated into the RNA-induced silencing complex (RISC), which is a multi-protein effector complex that carries out gene silencing. Inside RISC, the siRNA loses one of its strands, called passenger strand, while the other strand, guide strand, is retained. The guide strand serves as a template to find complementary mRNA. By means of base-pairing interactions, it scans the cellular mRNA to identify target sequences. Once the siRNA-mRNA duplex forms, Argonaute 2 (AGO2) protein, which is the catalytic core of RISC, cleaves the target mRNA at the site of the complementary region. The resulting mRNA fragments are then degraded by RNA-degrading enzymes that prevent the translation of mRNA into protein, thus silencing the target gene. This selective process makes sure that only specific genes are silenced, allowing the cell to accurately control the synthesis of proteins and maintain cellular balance.\n\nAdvancements in computational biology and machine learning have helped grow the study of RNA interference beyond traditional experimental methods. Various state-of-the-art computational models have been developed for the prediction and analysis of siRNA-mRNA interactions like s-Biopredsi (Huesken et al., 2005), DSIR (Filhol et al., 2012) and i-Score (Ichihara et al., 2007). These developed models for siRNA efficacy prediction span rule-based frameworks to neural network architectures and advanced data mining techniques. Despite the progress made with the help of these frameworks, there are still many persistent challenges such as inconsistency in performance across datasets due to variations in experimental procedures, high dependency on feature selection and an inability to model non-linear interactions.\n\nTo address these limitations, Convolution Neural Network (CNN) (Han et al., 2018) based models were employed to analyze sequence context along with thermodynamic properties which provided better results than previous models but still struggled in capturing high level interaction. Later, Graph Neural Networks (GNN) became prominent in this field due to their ability in capturing intricate relationships between multiple siRNA-mRNA pairs through message passing. Models such as GNN4siRNA (La Rosa et al., 2022) and siRNADiscovery (Long et al., 2024) have since become state-of-the-art GNN models. GNNs require large and diverse data which is difficult to obtain in this domain and cannot be efficiently parallelized due to complex dependencies inherent in graph structures. Moreover, graph-based models tend to lose key structural details when handling imbalanced data, leading to over-smoothing (Keriven, 2022) or signal dilution, resulting in degraded performance.\n\nTo overcome these challenges, we introduce SiaRNA, a deep learning model that integrates a Siamese Neural Network (SNN) (Bromley et al., 1993) with bi-directional cross-attention (Vaswani et al., 2017) mechanism and thermodynamic feature integration for siRNA efficacy prediction. A Siamese Neural Network is a type of deep learning model that is good at understanding the similarity or compatibility between pairs of inputs by projecting them into a shared embedding space. The cross-attention mechanism is applied to capture the context-dependent relationships within sequential data. The feature representations of siRNA and mRNA independently processed before projecting them into a shared embedding space, enabling the model to learn biologically meaningful relationships between interacting molecules. In parallel, a bidirectional cross-attention module analyzes the nucleotide sequences of both siRNA and mRNA, allowing each sequence to identify and focus on the most relevant regions of its binding partner. This interaction-aware mechanism captures contextual dependencies that are difficult to model using conventional feature-based approaches alone. The outputs of these modules are further combined with thermodynamic stability features, which provide information about duplex formation and strand selection during RNA interference. By integrating feature-based learning, sequence-level interaction modelling and thermodynamic information within a unified architecture, SiaRNA provides a comprehensive framework for predicting siRNA efficacy. The model is trained and evaluated exclusively on experimentally validated 21-nucleotide siRNAs, ensuring consistency between biological observations and computational inputs.",
+      "title": "Introduction"
+     },
+     {
+      "label": "2",
+      "subsections": [
+       {
+        "label": "2.1",
+        "text": "All experiments were conducted on a NVIDIA A100 GPU, which provided the computational capacity necessary to train the model on high-dimensional biological sequences. From the total 2,816 siRNA-mRNA pairs in Dataset_HUVK, 1971 were used for training, 423 for validation, and 422 for testing.\n\nThe model was trained using the Adam optimizer, chosen for its effective convergence. Gradient clipping was used to ensure numeric stability while training. This technique mitigates exploding gradients which is a common source of instability in deep networks. In addition, layer normalization was used to stabilize activation across layers, which improves training stability. This mechanism guarantees that the model’s weights are updated smoothly, leading to more stable convergence.",
+        "title": "Model training"
+       },
+       {
+        "label": "2.2",
+        "text": "The model’s training was controlled by a set of precise hyper parameters, summarized in Table 1. These parameters define the dimensions of all layers, from the initial high-dimensional projection of input features to the output dimensions of the shared Siamese embedder. They also specify the number of heads used in the cross-attention module and the layer sizes within the fusion layer and the regression Multi-Layer Perceptron (MLP).\n\nTable 1 lists the key training parameters and model parameters along with their corresponding values used during model development.",
+        "title": "Hyperparameter configuration"
+       },
+       {
+        "label": "2.3",
+        "text": "To test the model, we benchmarked its performance on Dataset_HUVK against siRNADiscovery, using 422 siRNA-mRNA pairs (15% of the total dataset). The comparison validation metrics are presented in Table 2. The results demonstrate that SiaRNA achieves performance that is highly competitive and on par with the current benchmarks. Among the compared models, i-Score exhibited the weakest performance, having PCC, SPCC and MSE of 0.602, 0.623 and 0.064 respectively.\n\nTable 2 reports the validation metrics obtained on Dataset_HUVK, demonstrating the predictive performance of the proposed architecture. The best results are presented in bold.",
+        "title": "Performance on dataset_HUVK"
+       },
+       {
+        "label": "2.4",
+        "text": "To further assess the robustness and generalization of SiaRNA, it was evaluated on the independent external Simone dataset, which contained 322 siRNA-mRNA pairs. The results show that SiaRNA demonstrates strong predictive capability and achieves consistently higher performance across the evaluation metrics. SiaRNA achieves a PCC of 0.5163, SPCC of 0.3849 and AUC of 0.7586, compared to siRNADiscovery’s PCC of 0.464, SPCC of 0.32 and AUC of 0.702. As seen in Figure 1, SiaRNA outperforms other state-of-the-art models on the Simone dataset. These findings suggest that SiaRNA provides improved generalization on unseen data and effectively addresses some of the limitations observed in previous architectures.\n\n[Figure: FIGURE 1]\n\nFigure 1 represents three graphs comparing the performance of models against three important evaluation metrics, namely, Pearson correlation coefficient (PCC), Area under the ROC curve (AUC), and Spearman correlation coefficient (SPCC). For each graph, the x-axis represents the models, while its y-axis represents the corresponding evaluation metric score. All three graphs compare SiaRNA to existing state-of-the-art models and demonstrate overall improvements in predictive accuracy and generalization on the external Simone dataset. The values are given in Supplementary data Supplementary Table S1.\n\n2.4.1 Statistical significance of the model performance\nStatistical significance testing on the Simone dataset showed that SiaRNA achieved a modest improvement in PCC compared with siRNADiscovery; however, this difference did not reach statistical significance (paired t-test, p = 0.074). In contrast, SiaRNA demonstrated a statistically significant improvement in SPCC over siRNADiscovery (paired t-test, p = 0.0018), accompanied by a large effect size (Cohen’s d = 1.38), indicating enhanced preservation of the relative ranking of siRNA efficacies. Furthermore, SiaRNA significantly reduced prediction error, as measured by MSE, relative to siRNADiscovery (paired t-test, p = 0.002), with a large effect size (|Cohen’s d| = 1.36). Detailed statistical results are provided in Table 3.\n\nTable 3 shows the statistical test results for the comparison between siRNADiscovery and SiaRNA on the Simone Dataset.\n\n2.4.2 Performance on Independent Datasets\nFor the Taka dataset, SiaRNA exhibited predictive performance comparable to siRNADiscovery, with no statistically significant differences observed for PCC, SPCC, or MSE. In contrast, on the Reynolds dataset, SiaRNA achieved significantly higher PCC and SPCC values than siRNADiscovery, indicating improved predictive generalization and ranking performance. The results are given in Table 4.\n\nTable 4 shows the testing results on Independent Datasets.\n\nStatistical comparison between SiaRNA and siRNADiscovery on the Taka dataset showed no significant differences in PCC, SPCC, or MSE (all p > 0.05). The observed effect sizes were small, and the corresponding confidence intervals included zero, suggesting that the two models’ predictive performance was comparable on this dataset, as shown in Table 5.\n\nTable 5 shows the statistical test results for comparison between siRNADiscovery and SiaRNA on the Taka Dataset.\n\nOn the Reynolds dataset, statistical testing demonstrated that SiaRNA significantly outperformed siRNADiscovery in both PCC and SPCC (paired t-test and Wilcoxon test, p < 0.01). These improvements were associated with very large effect sizes, indicating a substantial advantage of SiaRNA over siRNADiscovery in capturing and ranking siRNA efficacy patterns. Although SiaRNA achieved a lower MSE, this difference was not statistically significant. The detailed statistical results are presented in Table 6.\n\nTable 6 shows the statistical test results for comparison between siRNADiscovery and SiaRNA on the Reynolds Dataset.",
+        "title": "Performance on the simone dataset"
+       },
+       {
+        "label": "2.5",
+        "text": "An ablation study was conducted as a means to investigate the individual contribution of key model components separately. The key components considered were the bidirectional cross attentional module, thermodynamic features and contrastive loss. The ablation of these model components was chosen because they represent the conceptually and functionally distinct elements in the architecture. The observed results of the ablation study are visualized in Figure 2.\n\n[Figure: FIGURE 2]\n\nFigure 2 shows ablation experiments done to validate the contribution of key modules and components of the proposed model architecture. In this, “W/O” stands for “without”, implying that certain modules, such as cross-attention, thermodynamic features, or contrastive loss, were removed to test their contribution individually.\n\nThe bidirectional cross-attention module is a core structural component that models the contextual dependencies between the mRNA and siRNA sequences. Evaluating its removal helps determine how much of the model’s predictive power comes from explicit sequence-level interaction learning. The thermodynamic feature module acts as an independent source of information derived from biophysical principles. By removing it, we investigate the degree to which the thermodynamic properties of the siRNA-mRNA pairs complement the learned features from the SNN and bidirectional cross-attention modules. Finally, the contrastive loss was ablated because it represents a novel addition to the learning objective, intended to enforce alignment between the siRNA and mRNA embeddings in the shared latent space. The removal of this component shows precisely its contribution in promoting generalization.\n\nThe effects of the handcrafted features were also investigated on model performance for each category mentioned in section 3.3.1. This ablation study showed that sequence composition and encoding-based features had the most effect on the model performance. The metrics for this ablation study are outlined in Supplementary Data Supplementary Tables S2, S3.",
+        "title": "Ablation study"
+       },
+       {
+        "label": "2.6",
+        "text": "To assess the practical applicability of SiaRNA beyond benchmark datasets, a case study was conducted using Patisiran (Urits et al., 2020), a FDA-approved siRNA therapeutic. Patisiran targets the transthyretin (TTR) gene and has demonstrated clinical efficacy in the treatment of hereditary transthyretin-mediated amyloidosis. For this analysis, the validated Patisiran siRNA sequence and its target TTR mRNA transcript were provided as inputs to the model. The target mRNA aligned FASTA sequence (Gene Sequence ID: NM_000371.4) was downloaded from NCBI BLAST, annotated as Homo sapiens transthyretin (TTR), mRNA (Sequence ID: NP_000362.1). The image of the screen with the information is provided in Supplementary Figure S1.\n\nSiaRNA predicted an efficacy score of 0.7134 for this validated siRNA-mRNA interaction, indicating a high likelihood of effective target silencing. The successful prediction of a high efficacy score for a clinically approved therapeutic suggests that the model can capture biologically meaningful determinants of siRNA activity. This case study provides additional evidence that SiaRNA may serve as a useful tool for prioritizing candidate siRNAs and supporting RNAi-based therapeutic design.",
+        "title": "Case study"
+       }
+      ],
+      "text": "",
+      "title": "Results"
+     },
+     {
+      "label": "3",
+      "subsections": [
+       {
+        "label": "3.1",
+        "text": "SiaRNA is designed to capture thermodynamic, compositional, and contextual dependencies between siRNA and its target mRNA. Specifically, the model first processes a set of handcrafted input features using a Siamese Neural Network. In parallel, the raw nucleotide sequences of siRNA and the corresponding mRNA region are numerically encoded based on nucleotide identity and passed through a shared bi-directional cross attention mechanism.\n\nThe outputs from the feature-based and attention-based modules are then fused with thermodynamic features (Xia et al., 1998) and passed through fully connected layers to predict the final efficacy. The hybrid design enables the model to leverage both biologically interpretable features and to learn deep representations, achieving a comprehensive understanding of siRNA-mRNA interactions.",
+        "title": "Overview"
+       },
+       {
+        "label": "3.2",
+        "text": "To train the model, 2,816 unique siRNA-mRNA pairs and their respective efficacies from Massimo et al (La Rosa et al., 2022) are used, which were originally derived from the studies of Huesken et al. (2005), Harborth et al. (2003), Ui-Tei et al. (2004), Vickers et al. (2003), and Khvorova et al. (2003) and presented in Table 7. This combined dataset is referred to as Dataset_HUVK. Further, the Simone dataset (Sciabola et al., 2013), consisting of 322 unique siRNA-mRNA pairs is used to test the model. A cell line is a population of cells derived from a specific tissue. They provide controlled biological environments for evaluating siRNA-mediated gene silencing and are widely used to assess the efficacy of RNA interference experiments. Dataset_HUVK encompasses cell lines H1299, HeLa, T24 and HEK293 and Simone encompasses Hep3B.\n\nTable 7 summarizes the datasets used in this study, including their original sources, the number of siRNAs and target mRNAs, and the corresponding cell lines in which the efficacy measurements were experimentally obtained.\n\nA 10-fold validation strategy is employed, splitting Dataset_HUVK (2,816 siRNA-mRNA pairs) in a 70:15:15 ratio into training (1971 siRNA-mRNA pairs), validation (423 siRNA-mRNA pairs) and test (422 siRNA-mRNA pairs) splits. The data is split ten times, and each time using different random seeds to generate ten distinct folds of data, which reduces sampling bias and ensures reliable evaluation of performance. The unique siRNAs and mRNAs count is presented in the Supplementary Data Supplementary Table S5.\n\nBesides 10-fold validation, two additional data-splitting strategies were employed to evaluate model generalization under different levels of sequence similarity. For the transcript-level split, unique mRNA transcripts were partitioned into training, development, and test sets using a random seed of 42, ensuring that all siRNA samples associated with a given transcript were assigned exclusively to a single subset. This resulted in 2,006 training samples (27 transcripts), 540 development samples (9 transcripts), and 270 test samples (5 transcripts). For the homology-aware split, mRNA sequences were clustered using CD-HIT-EST at an 80% sequence identity threshold. The 41 unique mRNA transcripts were grouped into 40 clusters, and entire clusters were assigned to the training, development, or test set to prevent homologous sequences from appearing across multiple partitions. This yielded 1,968 training samples (24 unique mRNAs), 423 development samples (7 unique mRNAs), and 425 test samples (10 unique mRNAs), with no cluster leakage detected between subsets.",
+        "title": "Data collection and characteristics"
+       },
+       {
+        "label": "3.3",
+        "text": "The proposed framework utilizes two distinct input streams - one for the feature-engineered representations through the Siamese Neural Network (SNN) block and another for sequence-based representations for the Bidirectional Cross-Attention block.\n\n3.3.1 Feature inputs for siamese neural network\nFor the SNN component, comprehensive feature vectors are constructed from the sequences of siRNA and mRNA.\n\n3.3.1.1 Sequence composition and encoding\n- One-Hot Encoding: To capture positional nucleotide identity, both the siRNA and mRNA sequences are encoded using binary one-hot encoding scheme with each base (N, A, G, C, U/T) being assigned a unique four-dimensional vector: N=<0,0,0,0>, A=<1,0,0,0>, C=<0,1,0,0>, G=<0,0,1,0>, U/T=<0,0,0,1> (Zeng et al., 2016).\n- Nucleotide Frequencies (siRNA Only): To quantify the influence of short sequence motifs on siRNA function, the frequency of short segments (k-mers) is calculated for the sequences. Previous work shows that k-mers significantly influence knockdown efficacy (Vert et al., 2006). For example, dimer and trimer compositions have emerged as strong predictors of potency in machine learning models (Wang et al., 2010) and specific motifs such as UCC or A/U-rich regions - are statistically associated with enhanced silencing efficacy (Reynolds et al., 2004). The calculated frequencies are: 1-mer (A,U,C,G) with 4 motifs, 2-mer (e.g., AU, CG, etc.) with 16 possible motifs, 3-mer (e.g., AUC, UCG, etc.) with 64 possible motifs, 4-mer (e.g., AUCG, UCGA, etc.) with 256 possible motifs and 5-mer (e.g., AUCGA, UCGUA, etc.) with 1,024 possible motifs\n- G/C Percentages: GC content for both the siRNA guide strand and the mRNA target sequence is computed. GC content is a critical factor influencing the stability of the siRNA-mRNA binding. Low GC content can lead to weak, non-specific binding, while excessively high GC content can hinder the essential unwinding of the siRNA duplex by the RISC complex, thus impeding efficacy (Reynolds et al., 2004; Liu et al., 2013).\n\n3.3.1.2 Interaction and rule-based features\n- RNA-AGO2 Interaction Score: The score represents a quantitative measure of the RNA-protein interaction (Birmingham et al., 2006) between the RNA (siRNA or mRNA) transcript and the Argonaute 2 (AgO2) protein (Sasaki and Tomari, 2012). The score is computed using ZHMolGraph (Liu et al., 2025), a framework designed to capture the structural and chemical interactions between RNAs and proteins. The computed score represents the RISC loading potential of siRNA guide strand, which is a key biological feature for predicting efficacy.\n- Rule Codes (siRNA Only): To encode the established knowledge that certain nucleotides at specific positions enhance or impair siRNA function, simplified rule codes are applied to the siRNA guide strand, based on the findings of He et al (Sciabola et al., 2013). The original preference scores (1 for enhancing, −1 for reducing, 0 for no preference) are converted into unique-three dimensional binary vectors: 1=<0,0,1>, 0=<0,1,0>, −1=<1,0,0>.\n\n3.3.1.3 Structural features\n- Base Pairing Probabilities: The nucleotide base pairing within the individual strands (siRNA and mRNA) drives the formation of their secondary structures. This folding is biologically relevant because, within the cellular environment, both RNA transcripts exist primarily as folded species, not as linear strands. Both canonical (A-U, C-G) and non-canonical (G-U) interactions are considered. The RNAfold tool from ViennaRNA (Lorenz et al., 2011) package is used to obtain the base-pairing probability matrix for the individual siRNA and mRNA sequences. Due to the size and sparsity of these base-pairing probability matrices, truncated Singular Value Decomposition (SVD) is applied for dimensionality reduction, yielding compact representations of six dimensions for siRNA and one hundred dimensions for mRNA, which are subsequently used as model features.\n\n3.3.2 Feature inputs for bidirectional cross attention\nFor the bi-directional cross attention module, siRNA and mRNA sequences are represented as tokenized nucleotide indices (Ji et al., 2021). Each siRNA (21-nt) is fully encoded, while for the mRNA, a fixed 57-nt (Qiu et al., 2005) slice centered around the siRNA binding site is extracted. The mRNA slice has 28-nt upstream and 29-nt downstream of the target binding site. If the extracted mRNA sequence is shorter than 57-nt, suitable padding is applied to ensure compatible input length. Each nucleotide within these sequences is then numerically encoded into integer indices using a predefined mapping as: adenine (A) to 0, thymine (T) and uracil (U) to 1, guanine (G) to 2, cytosine (C) to 3 and ambiguous bases (N) to 4. This encoding is implemented by converting each nucleotide into its corresponding integer index and forming a tensor, which acts as the input to the attention mechanism. This representation allows the siRNA and target mRNA to be in uniform and computationally efficient format to analyze the contextual dependencies between them.",
+        "title": "Feature engineering"
+       },
+       {
+        "label": "3.4",
+        "text": "The proposed architecture of SiaRNA integrates sequence-derived, contextual and thermodynamic information in order to achieve accurate modelling of siRNA-mRNA interactions. As depicted in Figure 3, it consists of three key components: a Siamese Neural Network (SNN), a bidirectional cross-attention module and a thermodynamic-MLP component, where precomputed thermodynamic stability features are concatenated with the learned embeddings and processed through a MLP for final efficacy prediction.\n\n[Figure: FIGURE 3]\n\n3.4.1 Siamese neural network\nA Siamese Neural Network (SNN) is a specialized architecture that consists of two or more identical subnetworks, each sharing weights and parameters, designed to process pairs of inputs in parallel. While traditional neural networks predict specific outputs over individual inputs, SNNs are good at comparing features which makes them particularly effective for applications where the relationship or compatibility between two entities is to be studied.\n\n3.4.1.1 Linear projection layers\nThe linear projection layers provide the starting point for dealing with the raw handcrafted features of the siRNA and mRNA. These transform the features of different sizes and scales into fixed dimension vectors and project these vectors into the respective siRNA and mRNA embedding spaces. Independent processing of handcrafted features allows the model to learn more effectively by allowing the siRNA and mRNA to develop their own feature representations before interacting.\n\n3.4.1.2 Shared embedder\nThe shared embedder component processes the standardized siRNA and mRNA features using the same weights for both inputs, projecting them into a shared embedding space, thereby forcing the model to learn a common language. This allows the model to measure the compatibility, or “distance,” between the siRNA and mRNA in the shared space, a step essential for learning patterns that define a successful interaction.\n\n3.4.1.3 Fusion layer\nThe Fusion Layer is designed to concatenate the shared representations of the siRNA and mRNA feature vectors into a single, cohesive vector. The combined vector is then fed into a fully connected layer which models the complex, non-linear interactions between the siRNA-mRNA pairs. The goal of this component is to move beyond the individual characteristics and create a unified representation ( h_{SNN}) that captures the relational properties of the siRNA-mRNA pairs.\n\n3.4.2 Bi-directional cross attention for nucleotide-level interaction\nThe Bidirectional Cross-Attention mechanism is a key component of the model, designed to simulate the subtle yet dynamic interaction between the 21-nt siRNA and its target 57-nt mRNA slice. The task of this component, beyond simple matching of sequences, is to learn complex position-dependent dependencies that influence binding affinity. This mechanism operates as a bi-directional, two-way process, effectively modelling the interaction between the two sequences to determine their compatibility.\n\nThe attention mechanism provides the model with the ability to selectively concentrate on the most relevant parts of the input. It computes a weighted sum of input features, where the weights indicate the importance of each input element for the current output. Mathematically, given queries Q, keys K and values V, attention is calculated as:\n\nAttention(Q,K,V)=Softmax (\\frac{QK^{T}}{\\sqrt{d_{k}}})V\n\nHere, QK^{T} computes similarity scores between the query and keys, scaled by \\sqrt{d_{k}} (the dimension of the keys) for numerical stability. The softmax function normalizes these scores into attention weights, which are then used to compute a weighted sum of the values V. This process allows the model to prioritize relevant information dynamically for each step in the output generation.\n\nIn our model, the interaction is performed bi-directionally using shared weight matrices (W_{Q},W_{K},W_{V}) for the linear projections of the query, key and value inputs. First, the input encoding of the mRNA slice (X_{mRNA}) is projected to form the query (Q_{mRNA}=X_{mRNA}W_{Q}). Simultaneously, the siRNA encoding (X_{siRNA}) is projected to form the key (K_{siRNA}=X_{siRNA}W_{K}) and value (V_{siRNA}=X_{siRNA}W_{V}). For each nucleotide in the mRNA, the attention mechanism scans the entire siRNA, resulting in a contextualized representation of mRNA (H_{mRNA}) informed by the most salient features of its binding partner.\n\nH_{mRNA}=Softmax (\\frac{Q_{mRNA}K_{siRNA}^{T}}{\\sqrt{d_{k}}})(V_{siRNA})\n\nThen, the roles are reversed, but the same shared projection weights (W_{Q},W_{K},W_{V}) are utilized. The siRNA sequence forms the query (Q_{siRNA}=X_{siRNA}W_{Q}), while the mRNA sequence forms the key (K_{mRNA}=X_{mRNA}W_{K}) and value (V_{mRNA}=X_{mRNA}W_{V}). This creates a contextualized representation of the siRNA (H_{siRNA}), with its features now structurally informed by the mRNA target region.\n\nH_{siRNA}=(\\frac{Q_{siRNA}K_{mRNA}^{T}}{\\sqrt{d_{k}}})(V_{mRNA})\n\nFinally, a single output vector is acquired by computing the element-wise average of the two attention output matrices.\n\nh_{CA}=\\frac{H_{mRNA}+H_{siRNA}}{2}\n\nThe shared bidirectional cross-attention mechanism captures the reciprocal nature of siRNA-mRNA interactions. It provides for the two sequences to be projected onto a common embedding space through the use of shared query, key, and value projections for symmetrical information exchange. siRNA-mRNA pairing is not a one-way recognition process but a mutually aligned biologically meaningful interaction. Each sequence refines its internal representation based on cues emanating from its partner through the bidirectional cross-attention mechanism, effectively mirroring the mutual recognition process inherent in RNA-RNA binding. This allows the model to learn higher-order relational dependencies and generalize to diverse sequence contexts. The bidirectional cross-attention comparison of shared and separate weights is presented in the Supplementary data Supplementary Table S6.\n\n3.4.3 Thermodynamics features and MLP\nThe thermodynamic stability profile of the siRNA duplex is one of the key determinants of its silencing efficiency. The energy asymmetry between the two ends of the duplex determines which strand is preferentially loaded into the RNA-induced silencing complex (RISC), thereby affecting the overall gene-silencing outcome. To quantitatively assess this property, feature engineering is performed to compute multiple thermodynamic parameters like the Watson- Crick pair free energy (ΔG) between adjacent nucleotide pairs, the total duplex free energy and the thermodynamic asymmetry between the 5′ and 3′ ends (Lu et al., 2006). The thermodynamic features were calculated using the methodologies described by Xia et al. (1998), Consecutive nucleotide pairs were considered and assigned values for each pair from this study. The free energy (ΔG) serves as a measure of thermodynamic favorability, where lower values generally indicate more stable and energetically favorable interactions. These features which are derived from established biophysical and thermodynamic models represent the duplex’s energy landscape and its contribution to efficacy prediction.\n\nTo perform the efficacy prediction, the feature representations obtained from the cross-attention module and SNN are concatenated with the pre-computed thermodynamic feature vector ( h_{SNN}). This gives a unified feature vector ( h_{concat}) that has sequential, structural and biophysical information:\n\nh_{concat}=Concat(h_{SNN},h_{CA},h_{thermo})\n\nThe comprehensive and high-dimensional feature vector is then passed into a MLP (Multi-layer perceptron) which acts as a regression head (Qin et al., 2022). The MLP captures complex, non-linear relationships within the integrated features. Its output layer then transforms the learned representation into a single continuous value, representing the model’s predicted siRNA-mRNA efficacy score.",
+        "title": "Architectural framework and core components"
+       },
+       {
+        "label": "3.5",
+        "text": "The model is trained using a hybrid objective that integrates a regression loss for efficacy prediction and contrastive loss to align the latent representations of the siRNA and mRNA embeddings.\n\nThe primary objective is the Mean Squared Error (MSE) (Huesken et al., 2005) between the predicted and experimentally measured efficacies to perform regression:\n\nL_{reg}=\\frac{1}{N}∑_{i=1}^{N}(y_{i}−y_{i}^{^})^{2}\n\nTo encourage the model to differentiate effective from ineffective interactions, contrastive loss (Hadsell et al., 2006) between the siRNA and mRNA embeddings is obtained from the shared embedding space:\n\nL_{con}=\\frac{1}{N}∑_{i=1}^{N}[y_{i}d_{i}^{2}+(1−y_{i}) max(0,m−d_{i})^{2}]\n\nwhere d_{i}=‖z_{m,i}−z_{s,i}‖_{2} denotes the Euclidean distance between the paired embeddings, y_{i } is a binary label derived from efficacy (1 for efficacy >0.7, 0 otherwise (Qureshi et al., 2013), and m is contrastive margin.\n\nThe final loss is a weighted sum of the two objectives:\n\nL=L_{reg}+λL_{con}\n\nwhere λ controls the contribution of the contrastive term.\n\nThe joint optimization encourages the network to produce both accurate efficacy predictions and semantically align the siRNA-mRNA embeddings, improving generalization and learning meaningful relationships between interacting molecules.",
+        "title": "Loss functions"
+       },
+       {
+        "label": "3.6",
+        "text": "The performance of the model is evaluated using both regression and classification-based metrics.\n\nFor regression, the metrics reported are:\n\nMean Squared Error (MSE) (La Rosa et al., 2022): It is the mean squared difference between predicted and the experimentally validated efficacy values. It helps us understand how close the model’s predictions are to the truth values.\n\nPearson Correlation Coefficient (PCC): It is used to measure the strength and direction of the linear relationship between the predicted efficacy values and the actual efficacy values.\n\nSpearman Correlation Coefficient (SPCC) (Long et al., 2024): It is used to measure the monotonic relationship between predicted values and ground truth values independent of scale.\n\nFor classification-based evaluation, siRNAs with efficacy >0.7 are considered effective, and the rest are considered as ineffective. Using this binary threshold, Area Under Receiver Operating Characteristic Curve (AUC) is computed as a metric, showing the model’s ability to distinguish functional from non-functional siRNAs.\n\nUsing both regression and classification-based metrics is important as knockdown efficacy is inherently continuous, yet it is biologically interpreted in discrete terms such as effective or ineffective. This combined evaluation captures both the quantitative prediction accuracy and the functional relevance of the model in the biological context of RNAi.\n\n3.6.1 Statistical analysis\nTo assess whether the performance differences between SiaRNA and siRNADiscovery were statistically significant, both models were trained and evaluated using the same experimental protocol. The HUVK dataset was partitioned ten times into training and validation subsets using ten distinct random seeds. While the same set of experimentally validated siRNA–mRNA pairs was repartitioned across runs, each partition represented an independent realization of the train-validation split. Both SiaRNA and siRNADiscovery were trained independently from random initialization on each partition and subsequently evaluated on the same external Simone dataset, which remained unchanged throughout all experiments. This procedure yielded 10 pairs of performance values (PCC, SPCC, MSE, and AUC) for each model.\n\nThe statistical unit of analysis was the aggregated performance metric from each experimental run rather than the individual siRNA–mRNA predictions. Treating individual predictions as independent observations would violate the independence assumption because predictions within a run originate from the same trained model and because the training data are repeatedly partitioned from the same HUVK dataset. Instead, statistical comparisons were performed on the ten paired aggregate metrics, with each pair corresponding to the performance of SiaRNA and siRNADiscovery trained under the same data partition and evaluated on the identical external Simone dataset.\n\nThe paired observations were compared using a paired Student’s t-test as the primary statistical test. To validate the results without assuming normality of the paired differences, the Wilcoxon signed-rank test was additionally performed. The magnitude of the observed differences was quantified using Cohen’s d, while 95% confidence intervals (CI) were calculated to estimate the precision of the mean paired differences. (Rainio et al., 2024).",
+        "title": "Evaluation metrics"
+       }
+      ],
+      "text": "",
+      "title": "Methodology"
+     },
+     {
+      "label": "4",
+      "subsections": [
+       {
+        "label": "4.1",
+        "text": "Many earlier deep learning approaches have adopted 19-nucleotide (nt) siRNA sequences, largely to maintain consistency with early datasets and simplify preprocessing. Some recent deep learning approaches use efficacy labels derived from 21-nt sequences to train models on truncated 19-nt sequences (Bai et al., 2024), introducing a fundamental inconsistency in the input-output mapping. In contrast, the experimentally validated Huesken dataset, which we employ for training and validation, provides efficacy measurements for 21-nt sequences. The 21-nt length includes the characteristic two-nucleotide 3′ overhangs that are crucial for recognition and loading of the siRNA by the RNA-induced silencing complex (RISC). Experimental evidence suggests that 21-nt siRNAs exhibit superior stability and silencing efficiency compared to their 19-nt counterparts, as the 3′ overhang facilitates AGO2-mediated strand loading and target recognition (Martinez et al., 2002). This fuller representation allows deep learning models to learn more effective features, often leading to superior performance when trained on the 21-nt sequences compared to the truncated 19-nt version (Supplementary data Supplementary Table S4). This biologically grounded choice ensures alignment with experimental conditions under which efficacy labels were derived, thereby improving model validity.",
+        "title": "Use of 21-nucleotide siRNAs"
+       },
+       {
+        "label": "4.2",
+        "text": "Most graph-based RNA interference models represent mRNAs as central hubs connected to multiple siRNAs,",
+        "title": "Pairwise modelling of siRNA-mRNA interactions"
+       }
+      ],
+      "text": "In this section, the key design decisions underlying our model were reflected and their implications for siRNA-mRNA efficacy prediction were interpreted.",
+      "title": "Discussion"
+     },
+     {
+      "text": "We",
+      "title": "Acknowledgments"
+     }
+    ],
+    "source": "pmc",
+    "title": "SiaRNA: a siamese neural network with bidirectional cross-attention for pairwise siRNA-mRNA efficacy prediction",
+    "viaSource": "pmc"
+   }
+  ],
+  "notice": "Full text was shortened to fit the requested character budget: 38000 of 49942 body characters returned across 1 article in truncate mode. 11 section(s) were dropped once the budget ran out. 7 table(s) were dropped whole rather than cut mid-row: TABLE 1, TABLE 2, TABLE 3, TABLE 4, TABLE 5, TABLE 6, TABLE 7. 5 figure/supplementary item(s) were dropped whole rather than returned with a shortened caption: d69e329, FIGURE 1, FIGURE 2, FIGURE 3, SM1. See `truncation` for per-article and per-section counts, and raise `maxCharacters` or narrow `sections` to retrieve more.",
+  "totalReturned": 1,
+  "truncated": true,
+  "truncation": {
+   "articles": [
+    {
+     "id": "PMC13488420",
+     "omittedAssetNames": [
+      "d69e329",
+      "FIGURE 1",
+      "FIGURE 2",
+      "FIGURE 3",
+      "SM1"
+     ],
+     "omittedAssets": 5,
+     "omittedTableNames": [
+      "TABLE 1",
+      "TABLE 2",
+      "TABLE 3",
+      "TABLE 4",
+      "TABLE 5",
+      "TABLE 6",
+      "TABLE 7"
+     ],
+     "omittedTables": 7,
+     "originalCharacters": 49942,
+     "returnedCharacters": 38000,
+     "sections": [
+      {
+       "label": "1",
+       "originalCharacters": 6127,
+       "returnedCharacters": 6127,
+       "title": "Introduction",
+       "truncated": false
+      },
+      {
+       "label": "2",
+       "originalCharacters": 9095,
+       "returnedCharacters": 9095,
+       "title": "Results",
+       "truncated": false
+      },
+      {
+       "label": "3",
+       "originalCharacters": 21151,
+       "returnedCharacters": 21151,
+       "title": "Methodology",
+       "truncated": false
+      },
+      {
+       "label": "4",
+       "originalCharacters": 4576,
+       "returnedCharacters": 1625,
+       "subsections": [
+        {
+         "label": "4.1",
+         "originalCharacters": 1370,
+         "returnedCharacters": 1370,
+         "title": "Use of 21-nucleotide siRNAs",
+         "truncated": false
+        },
+        {
+         "label": "4.2",
+         "originalCharacters": 1837,
+         "returnedCharacters": 102,
+         "title": "Pairwise modelling of siRNA-mRNA interactions",
+         "truncated": true
+        },
+        {
+         "label": "4.3",
+         "originalCharacters": 1216,
+         "returnedCharacters": 0,
+         "title": "Bidirectional cross-attention for mutual context modelling",
+         "truncated": true
+        }
+       ],
+       "title": "Discussion",
+       "truncated": true
+      },
+      {
+       "label": "5",
+       "originalCharacters": 2884,
+       "returnedCharacters": 0,
+       "title": "Conclusion",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 212,
+       "returnedCharacters": 2,
+       "title": "Acknowledgments",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 156,
+       "returnedCharacters": 0,
+       "title": "Footnotes",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 705,
+       "returnedCharacters": 0,
+       "title": "Footnotes",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 164,
+       "returnedCharacters": 0,
+       "title": "Data availability statement",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 359,
+       "returnedCharacters": 0,
+       "title": "Ethics statement",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 661,
+       "returnedCharacters": 0,
+       "title": "Author contributions",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 172,
+       "returnedCharacters": 0,
+       "title": "Conflict of interest",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 398,
+       "returnedCharacters": 0,
+       "title": "Generative AI statement",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 346,
+       "returnedCharacters": 0,
+       "title": "Publisher’s note",
+       "truncated": true
+      },
+      {
+       "originalCharacters": 176,
+       "returnedCharacters": 0,
+       "title": "Supplementary material",
+       "truncated": true
+      }
+     ],
+     "source": "pmc"
+    }
+   ],
+   "maxCharacters": 38000,
+   "mode": "truncate",
+   "omittedAssets": 5,
+   "omittedSections": 11,
+   "omittedTables": 7,
+   "originalCharacters": 49942,
+   "returnedCharacters": 38000
+  },
+  "unavailable": [
+   {
+    "id": "40194620",
+    "idType": "pmid",
+    "reason": "no-oa",
+    "triedTiers": [
+     {
+      "detail": "PMID has no PMC counterpart",
+      "outcome": "not-attempted",
+      "tier": "pmc"
+     },
+     {
+      "detail": "EPMC does not mark this record open access; fullTextXML covers its open-access subset only",
+      "outcome": "no-fulltext",
+      "tier": "europepmc"
+     },
+     {
+      "detail": "No open-access copy indexed",
+      "outcome": "no-oa",
+      "tier": "unpaywall"
+     }
+    ]
+   }
+  ]
+ }
+}
+</mcp-result-metadata>

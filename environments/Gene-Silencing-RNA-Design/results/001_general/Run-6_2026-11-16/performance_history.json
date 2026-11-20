@@ -1,0 +1,78 @@
+[
+  {
+    "n": 301,
+    "n_positive": 229,
+    "n_negative": 72,
+    "auc": 0.7032387190684134,
+    "spearman": 0.4081797708923445,
+    "pearson": 0.542962734164129,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.6333371239689471,
+      0.7692678008248423
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C00_rnai_native21",
+    "macro_auc": 0.7115189088979194,
+    "ordinal": 0,
+    "retrospective_loto_selected_macro_auc": 0.7115189088979194
+  },
+  {
+    "n": 301,
+    "n_positive": 229,
+    "n_negative": 72,
+    "auc": 0.7126394953905871,
+    "spearman": 0.43441411446794054,
+    "pearson": 0.5530433724795873,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.6353044638524988,
+      0.7826381307617661
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C01_rnai_core19",
+    "macro_auc": 0.7203189451290118,
+    "ordinal": 1,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615
+  },
+  {
+    "n": 301,
+    "n_positive": 229,
+    "n_negative": 72,
+    "auc": 0.6953541969917516,
+    "spearman": 0.39215044594551074,
+    "pearson": 0.5087548949166573,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.6157538816108685,
+      0.7625068231441048
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C02_rnaispline_core19",
+    "macro_auc": 0.6966222767509267,
+    "ordinal": 2,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615
+  },
+  {
+    "n": 301,
+    "n_positive": 229,
+    "n_negative": 72,
+    "auc": 0.6528384279475983,
+    "spearman": 0.3426512696566025,
+    "pearson": 0.44167233675849354,
+    "precision_top10": 0.9,
+    "auc_ci95_row_bootstrap": [
+      0.5740523410965551,
+      0.729265223192625
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C03_oligoformer_core19",
+    "macro_auc": 0.6591696206841303,
+    "ordinal": 3,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615
+  }
+]

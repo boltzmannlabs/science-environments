@@ -1,0 +1,378 @@
+[
+  {
+    "n": 100,
+    "n_positive": 80,
+    "n_negative": 20,
+    "auc": 0.7803125,
+    "spearman": 0.4902714500136178,
+    "pearson": 0.6728842269942514,
+    "precision_top10": 0.9,
+    "auc_ci95_row_bootstrap": [
+      0.6425,
+      0.889390625
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C00_rnai_native21",
+    "gene": "HIF1A",
+    "ordinal": 0,
+    "paired_n": 100,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": [
+      0.0,
+      0.0
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 106,
+    "n_positive": 76,
+    "n_negative": 30,
+    "auc": 0.6366228070175438,
+    "spearman": 0.29671298837335774,
+    "pearson": 0.47410492350363126,
+    "precision_top10": 1.0,
+    "auc_ci95_row_bootstrap": [
+      0.5236842105263158,
+      0.7482456140350877
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C00_rnai_native21",
+    "gene": "HPSE",
+    "ordinal": 0,
+    "paired_n": 106,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": [
+      0.0,
+      0.0
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 95,
+    "n_positive": 73,
+    "n_negative": 22,
+    "auc": 0.7176214196762142,
+    "spearman": 0.34696437776757044,
+    "pearson": 0.4319257054537113,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.5790395392278954,
+      0.8574252801992528
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C00_rnai_native21",
+    "gene": "HK2",
+    "ordinal": 0,
+    "paired_n": 95,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": [
+      0.0,
+      0.0
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 7,
+    "n_positive": 1,
+    "n_negative": 6,
+    "auc": 1.0,
+    "spearman": -0.10714285714285716,
+    "pearson": 0.532225006488381,
+    "precision_top10": 0.14285714285714285,
+    "auc_ci95_row_bootstrap": null,
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C00_rnai_native21",
+    "gene": "MYC",
+    "ordinal": 0,
+    "paired_n": 7,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": null,
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 100,
+    "n_positive": 80,
+    "n_negative": 20,
+    "auc": 0.7709375,
+    "spearman": 0.4907662804427087,
+    "pearson": 0.6685645481184279,
+    "precision_top10": 0.9,
+    "auc_ci95_row_bootstrap": [
+      0.6268125,
+      0.8887578125000001
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C01_rnai_core19",
+    "gene": "HIF1A",
+    "ordinal": 1,
+    "paired_n": 100,
+    "auc_delta_vs_C00": -0.009374999999999911,
+    "auc_delta_ci95_exploratory": [
+      -0.05719531249999995,
+      0.03312499999999996
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 106,
+    "n_positive": 76,
+    "n_negative": 30,
+    "auc": 0.6671052631578948,
+    "spearman": 0.34862806381054123,
+    "pearson": 0.5096564622210544,
+    "precision_top10": 0.9,
+    "auc_ci95_row_bootstrap": [
+      0.5447149122807018,
+      0.7776315789473685
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C01_rnai_core19",
+    "gene": "HPSE",
+    "ordinal": 1,
+    "paired_n": 106,
+    "auc_delta_vs_C00": 0.030482456140350944,
+    "auc_delta_ci95_exploratory": [
+      -0.013157894736842039,
+      0.07720394736842105
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 95,
+    "n_positive": 73,
+    "n_negative": 22,
+    "auc": 0.7229140722291407,
+    "spearman": 0.3707464752424339,
+    "pearson": 0.4399538961493426,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.5876556662515567,
+      0.8564990660024906
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C01_rnai_core19",
+    "gene": "HK2",
+    "ordinal": 1,
+    "paired_n": 95,
+    "auc_delta_vs_C00": 0.005292652552926547,
+    "auc_delta_ci95_exploratory": [
+      -0.040473225404732305,
+      0.049509651307596485
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 7,
+    "n_positive": 1,
+    "n_negative": 6,
+    "auc": 1.0,
+    "spearman": 0.4642857142857144,
+    "pearson": 0.601860484315003,
+    "precision_top10": 0.14285714285714285,
+    "auc_ci95_row_bootstrap": null,
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C01_rnai_core19",
+    "gene": "MYC",
+    "ordinal": 1,
+    "paired_n": 7,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": null,
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 100,
+    "n_positive": 80,
+    "n_negative": 20,
+    "auc": 0.7790625,
+    "spearman": 0.5124337168783758,
+    "pearson": 0.6950778096819178,
+    "precision_top10": 1.0,
+    "auc_ci95_row_bootstrap": [
+      0.6543593750000001,
+      0.8847265624999999
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C02_rnaispline_core19",
+    "gene": "HIF1A",
+    "ordinal": 2,
+    "paired_n": 100,
+    "auc_delta_vs_C00": -0.0012499999999999734,
+    "auc_delta_ci95_exploratory": [
+      -0.12596093750000004,
+      0.12721093749999998
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 106,
+    "n_positive": 76,
+    "n_negative": 30,
+    "auc": 0.6451754385964912,
+    "spearman": 0.3138177618284142,
+    "pearson": 0.43082966511935944,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.5118311403508772,
+      0.7570285087719298
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C02_rnaispline_core19",
+    "gene": "HPSE",
+    "ordinal": 2,
+    "paired_n": 106,
+    "auc_delta_vs_C00": 0.008552631578947367,
+    "auc_delta_ci95_exploratory": [
+      -0.07198464912280701,
+      0.09211622807017539
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 95,
+    "n_positive": 73,
+    "n_negative": 22,
+    "auc": 0.6656288916562889,
+    "spearman": 0.29924327956600744,
+    "pearson": 0.35502082202145424,
+    "precision_top10": 0.7,
+    "auc_ci95_row_bootstrap": [
+      0.5248521170610212,
+      0.8070049813200498
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C02_rnaispline_core19",
+    "gene": "HK2",
+    "ordinal": 2,
+    "paired_n": 95,
+    "auc_delta_vs_C00": -0.051992528019925266,
+    "auc_delta_ci95_exploratory": [
+      -0.136986301369863,
+      0.02958437110834371
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 7,
+    "n_positive": 1,
+    "n_negative": 6,
+    "auc": 1.0,
+    "spearman": 0.642857142857143,
+    "pearson": 0.5127995569961675,
+    "precision_top10": 0.14285714285714285,
+    "auc_ci95_row_bootstrap": null,
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C02_rnaispline_core19",
+    "gene": "MYC",
+    "ordinal": 2,
+    "paired_n": 7,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": null,
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 100,
+    "n_positive": 80,
+    "n_negative": 20,
+    "auc": 0.739375,
+    "spearman": 0.36687942809522145,
+    "pearson": 0.6317503256961337,
+    "precision_top10": 1.0,
+    "auc_ci95_row_bootstrap": [
+      0.6055937499999999,
+      0.8656874999999999
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C03_oligoformer_core19",
+    "gene": "HIF1A",
+    "ordinal": 3,
+    "paired_n": 100,
+    "auc_delta_vs_C00": -0.04093749999999996,
+    "auc_delta_ci95_exploratory": [
+      -0.17409375000000002,
+      0.08689062500000003
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 106,
+    "n_positive": 76,
+    "n_negative": 30,
+    "auc": 0.5942982456140351,
+    "spearman": 0.21846495672837413,
+    "pearson": 0.31188318114085,
+    "precision_top10": 0.7,
+    "auc_ci95_row_bootstrap": [
+      0.46709429824561405,
+      0.7228289473684211
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C03_oligoformer_core19",
+    "gene": "HPSE",
+    "ordinal": 3,
+    "paired_n": 106,
+    "auc_delta_vs_C00": -0.04232456140350871,
+    "auc_delta_ci95_exploratory": [
+      -0.16317982456140345,
+      0.07552631578947362
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 95,
+    "n_positive": 73,
+    "n_negative": 22,
+    "auc": 0.6438356164383562,
+    "spearman": 0.3024577574610452,
+    "pearson": 0.30641680997113463,
+    "precision_top10": 0.8,
+    "auc_ci95_row_bootstrap": [
+      0.48443337484433374,
+      0.7846980074719799
+    ],
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C03_oligoformer_core19",
+    "gene": "HK2",
+    "ordinal": 3,
+    "paired_n": 95,
+    "auc_delta_vs_C00": -0.073785803237858,
+    "auc_delta_ci95_exploratory": [
+      -0.25094956413449565,
+      0.08474470734744702
+    ],
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  },
+  {
+    "n": 7,
+    "n_positive": 1,
+    "n_negative": 6,
+    "auc": 1.0,
+    "spearman": 0.42857142857142866,
+    "pearson": 0.4877243755539215,
+    "precision_top10": 0.14285714285714285,
+    "auc_ci95_row_bootstrap": null,
+    "ci_caveat": "Exploratory within-cohort class-stratified row bootstrap; overlapping sites violate independence. No interval for fewer than five observations in either class.",
+    "reference": "Sciabola PMID 23241392; prior Run-3 same-cohort RN.Ai predictions. OligoFormer paper PMID 39321261 Mixset AUC .8163 is DIFFERENT cohort/protocol, not a matched superiority target.",
+    "config_id": "C03_oligoformer_core19",
+    "gene": "MYC",
+    "ordinal": 3,
+    "paired_n": 7,
+    "auc_delta_vs_C00": 0.0,
+    "auc_delta_ci95_exploratory": null,
+    "multiplicity": "Four fixed configs, exploratory intervals without multiplicity correction; do not infer confirmed superiority."
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "config_id": "C02_rnaispline_core19",
+  "ordinal": 2,
+  "status": "ANCHOR_DIAGNOSTIC_ONLY",
+  "n": 598,
+  "anchors": [
+    {
+      "config_id": "C02_rnaispline_core19",
+      "ordinal": 2,
+      "anchor": "patisiran",
+      "rank": 104.0,
+      "pool_n": 598,
+      "percentile": 82.74706867671692,
+      "native_score": 0.6401,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "ordinal": 2,
+      "anchor": "vutrisiran",
+      "rank": 9.0,
+      "pool_n": 598,
+      "percentile": 98.65996649916248,
+      "native_score": 0.6844,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    }
+  ],
+  "selection": "No anchor-based best config selected; not measured efficacy.",
+  "panel_size": 5,
+  "mean_panel_stability": 0.7785714285714285
+}

@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/home/boltzmann13/.sci/profiles/imran/workspace/oligoformer-integration/venv/bin/python",
+    "-B",
+    "/home/boltzmann13/.sci/profiles/imran/workspace/oligoformer-integration/launch_upstream.py",
+    "--infer",
+    "1",
+    "-i1",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_001098540.3/runtime/target.fa",
+    "-i2",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_001098540.3/runtime/guides.fa",
+    "--output_dir",
+    "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_001098540.3/runtime/result/"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 28.661599658895284,
+  "input_sha256": "6200256b888359a8fcaebc6d73e8871c51f05bc1ad945b6514e534f00d4fa7dc",
+  "input_accession": "NM_001098540.3",
+  "pairs_requested": 106,
+  "labels_supplied_to_model": false,
+  "python": "/home/boltzmann13/.sci/profiles/imran/workspace/oligoformer-integration/venv/bin/python",
+  "torch": "2.2.1+cu121",
+  "cuda_available": true,
+  "rng_seed": 42,
+  "native_model_mode": "Author inference CLI does not call eval(); training-mode/dropout behavior retained. Subset/order can affect scores even with a fixed seed. Not a claimed model improvement.",
+  "score_units": "native_class1_times_1.341_not_calibrated_percent",
+  "author_files": {
+    "/home/boltzmann13/.sci/profiles/imran/workspace/tools/OligoFormer/model/best_model.pth": "8c2fb4bc847e20c63dfe69381c5dc5c341be71e65c011f4e9a4cd6fdb0e34eca",
+    "/home/boltzmann13/.sci/profiles/imran/workspace/tools/OligoFormer/scripts/infer.py": "ec77cffdc9e76e478068430f37b284f1f9d83780675c44cc6078e7ccbfd5127f",
+    "/home/boltzmann13/.sci/profiles/imran/workspace/oligoformer-integration/torch-cache/hub/checkpoints/RNA-FM_pretrained.pth": "5b5d7d87b37c291ef42c140ef9edf7aea29f255fa2a4fd435f776c52e93d5e99"
+  },
+  "status": "COMPLETED",
+  "pairs_returned": 106,
+  "original_assets_unchanged": true,
+  "source_commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+  "rnafm_commit": "348951516e0963d22bbb33b3c9fc18c89081d38e",
+  "output_sha256": "7e9a7407fd4f24309858dc998bec002134370f95e4235329d292ff9d154f8023",
+  "disposable_execution_tree_removed": true
+}

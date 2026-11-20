@@ -1,0 +1,26 @@
+[
+  {
+    "config_id": "C00_rnai_native21",
+    "paired_rows": 322,
+    "max_absolute_native_score_change": 0.0,
+    "interpretation": "Same input/weights paired replay; native units retained."
+  },
+  {
+    "config_id": "C01_rnai_core19",
+    "paired_rows": 322,
+    "max_absolute_native_score_change": 0.0,
+    "interpretation": "Same input/weights paired replay; native units retained."
+  },
+  {
+    "config_id": "C02_rnaispline_core19",
+    "paired_rows": 322,
+    "max_absolute_native_score_change": 0.0,
+    "interpretation": "Same input/weights paired replay; native units retained."
+  },
+  {
+    "config_id": "C03_oligoformer_core19",
+    "paired_rows": 308,
+    "max_absolute_native_score_change": 0.08564696949720374,
+    "interpretation": "Native OligoFormer subset/order dropout stream differs from historical full-pool generation; change is not attributed to improved checkpoint quality."
+  }
+]

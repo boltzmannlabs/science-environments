@@ -1,0 +1,111 @@
+{
+  "run_id": "Run-4_2026-11-16",
+  "created_utc": "2026-11-16T06:01:55.144489+00:00",
+  "status": "FIXED_CONFIGS_FROZEN_BEFORE_NEW_INFERENCE",
+  "question": "Do explicitly declared input projections or existing independent predictors improve retrospective measured-cohort ordering over native RN.Ai?",
+  "provider": "Pinned local backends under prior explicit local-fallback approval; no new remote jobs. Boltzmann siRNA contract inspected; it exposes no RN.Ai core-tokenization, RNAiSpline, batching or physical-dangle configuration controls.",
+  "config_order": [
+    {
+      "config_id": "C00_rnai_native21",
+      "ordinal": 0,
+      "model": "RN.Ai-Predict",
+      "guide_projection": "source_verbatim_19_to_21",
+      "score_units": "predicted_percent_inhibition",
+      "purpose": "Prior RN.Ai convention; explicit site/context audit added."
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "ordinal": 1,
+      "model": "RN.Ai-Predict",
+      "guide_projection": "first_19_nt",
+      "score_units": "predicted_percent_inhibition",
+      "purpose": "Input-length ablation: zero-pad guide tokens 20/21 rather than retaining source overhang tokens."
+    },
+    {
+      "config_id": "C02_rnaispline_core19",
+      "ordinal": 2,
+      "model": "RNAiSpline",
+      "guide_projection": "first_19_nt",
+      "score_units": "native_effective_class_softmax",
+      "purpose": "Alternate independent efficacy endpoint; never averaged with RN.Ai/OligoFormer."
+    },
+    {
+      "config_id": "C03_oligoformer_core19",
+      "ordinal": 3,
+      "model": "OligoFormer",
+      "guide_projection": "first_19_nt",
+      "score_units": "native_class1_times_1.341",
+      "purpose": "Reuse full-pool native scores with coordinate/sequence identity checks; no fresh OligoFormer forward pass."
+    }
+  ],
+  "duplex_sensitivity_configs": [
+    {
+      "config_id": "D00_dangles2",
+      "ordinal": 0,
+      "dangles": 2,
+      "noLP": false
+    },
+    {
+      "config_id": "D01_dangles0",
+      "ordinal": 1,
+      "dangles": 0,
+      "noLP": false
+    },
+    {
+      "config_id": "D02_dangles1",
+      "ordinal": 2,
+      "dangles": 1,
+      "noLP": false
+    },
+    {
+      "config_id": "D03_dangles2_noLP",
+      "ordinal": 3,
+      "dangles": 2,
+      "noLP": true
+    }
+  ],
+  "degraded_context_controls": [
+    {
+      "config_id": "N00_rnai_native21_Nflanks",
+      "ordinal": 0,
+      "projection": "native21",
+      "context": "N19_core19_N19"
+    },
+    {
+      "config_id": "N01_rnai_core19_Nflanks",
+      "ordinal": 1,
+      "projection": "core19",
+      "context": "N19_core19_N19"
+    },
+    {
+      "config_id": "N02_rnai_native21_footprint_only",
+      "ordinal": 2,
+      "projection": "native21",
+      "context": "reported_guide_reverse_complement_only"
+    }
+  ],
+  "selection_protocol": {
+    "comparison_cohorts": [
+      "HIF1A",
+      "HPSE",
+      "HK2"
+    ],
+    "small_n_descriptive_only": [
+      "MYC"
+    ],
+    "common_oligoformer_cohort_n_expected": 308,
+    "primary_efficacy_metric": "ROC AUC at observed label >=0.7; native endpoints kept separate",
+    "selection": "For each of three eligible target genes, choose among each prefix of frozen configs using mean AUC on the OTHER TWO genes; report selected config AUC on that gene. No ensemble or refit.",
+    "exposure_warning": "All these historical cohorts were examined previously. Retrospective leave-one-target-out is NOT an untouched prospective holdout.",
+    "bootstrap": "1000 paired class-stratified row resamples for exploratory AUC/delta intervals; shared/overlapping sites violate row independence; no superiority claim. Small class counts <5 suppress intervals.",
+    "TTR": "Two fixed known drug-core anchors ranked among all 598 windows. No config is selected to optimize their rank. Clinical outcomes never treated as sequence labels.",
+    "HTT": "Thermodynamic dangle/noLP and missing-context sensitivity only. No new allele/CNS design or config promotion."
+  },
+  "immutable_gates": {
+    "path": "config/thresholds.v1.0.frozen.json",
+    "sha256": "b7ad48084c0a38e4975b12b6f885543d98fc0196b78f176493211c4a215cdfb3"
+  },
+  "models_refitted": false,
+  "weights_downloaded": false,
+  "prior_results_overwritten": false
+}

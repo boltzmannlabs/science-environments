@@ -1,0 +1,35 @@
+{
+  "brief_id": "tnf_inflammation_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "TNF",
+    "transcript": "NM_000594?resolve-to-GENCODE-at-intake",
+    "sequence_supplied": false
+  },
+  "application": "inflammation_immune_modulation",
+  "objective": "Pathway modulation with innate-response confound control: UGUGU and GU-top-decile are HARD vetoes here (scanner benchmark: specificity 1.00, sensitivity 0.10 \u2014 incompleteness known)",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu",
+      "gu_top_decile"
+    ],
+    "weights": {
+      "efficacy": 0.3,
+      "specificity": 0.25,
+      "seed_tox": 0.1,
+      "immune": 0.3,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 70
+    }
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true,
+    "delivery_context": "in_vitro_only"
+  },
+  "success_criteria": "TNF mRNA >=70% in LPS-stimulated macrophages with NO IFN-alpha/cytokine induction above non-targeting control \u2014 illustrative syntax only; not an approved run."
+}
