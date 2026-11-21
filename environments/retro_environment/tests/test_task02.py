@@ -12,7 +12,7 @@ BENCH = BASE / 'benchmark' / TASK
 
 class TestTask02(unittest.TestCase):
     def test_task_structure_and_expected_outcomes(self):
-        for section in ('tasks', 'benchmark', 'results'):
+        for section in ('tasks', 'benchmark', 'benchmarks', 'results'):
             self.assertTrue((BASE / section / TASK / 'README.md').is_file())
         text = (BASE / 'tasks' / TASK / 'README.md').read_text()
         for heading in ('Overall objective', 'Problem statement', 'Execution approach', 'Expected outcomes', 'Actual outcomes'):
@@ -21,7 +21,7 @@ class TestTask02(unittest.TestCase):
     def test_artifact_links_and_no_private_records(self):
         record = json.loads((RESULTS / 'task_record.json').read_text())
         self.assertEqual(record['task_id'], TASK)
-        for key in ('task_definition', 'benchmark_definition', 'reference_catalog', 'metrics'):
+        for key in ('task_definition', 'benchmark_definition', 'benchmark_workspace', 'reference_catalog', 'metrics'):
             self.assertTrue((RESULTS / record[key]).is_file())
         for name in record['results']:
             self.assertTrue((RESULTS / name).is_file())

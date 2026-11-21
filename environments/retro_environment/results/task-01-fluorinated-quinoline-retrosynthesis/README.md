@@ -2,7 +2,7 @@
 
 ## Start here
 
-[Achievements and literature comparison](achievements_and_comparison.md) provides the numerical results and reaction-level comparison tables. We obtained 16 computational pathways and identified unsupported conditions in the selected route; no experimentally improved synthesis was demonstrated.
+[Achievements and literature comparison](achievements_and_comparison.md) provides the numerical results and reaction-level comparison tables; the [structured comparison](comparison_report.md) connects findings with the [benchmark workspace](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/README.md). We obtained 16 computational pathways and identified unsupported conditions in the selected route; no experimentally improved synthesis was demonstrated.
 
 | Output | What it contains |
 |---|---|

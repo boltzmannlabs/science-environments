@@ -1,6 +1,6 @@
 # Retro Environment — task-scoped route audits
 
-Research-prototype environment for auditing computational retrosynthesis of the target
+Research-prototype environment for two existing retrosynthesis tasks. Task 01 audits the target
 `CC1=C(C=C2C=CC(=C(C2=N1)F)F)OC3=C(C(=CC=C3)F)C(C)(C)O`.
 
 This package contains a sanitized, reproducible analysis of 16 model-generated routes and a three-step review of `top0`. Start with the [achieved numbers and literature comparison tables](results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md), [paper catalog](benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md), [metric definitions](benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json), and [task objectives with actual outcomes](tasks/README.md). The catalog distinguishes papers, an inspected experimental reference for a different substrate, and non-matching patent hits.
@@ -10,12 +10,15 @@ It does **not** contain an experimentally validated synthesis, a transferable AP
 ## Unified task layout
 
 ```text
-tasks/task-01-fluorinated-quinoline-retrosynthesis/       # overall objective, inputs, expected outcomes and phase documents
-benchmark/task-01-fluorinated-quinoline-retrosynthesis/   # papers, source links, metric definitions and comparison evidence
-results/task-01-fluorinated-quinoline-retrosynthesis/     # observed model outputs, numerical tables and DOCX
+tasks/task-01-fluorinated-quinoline-retrosynthesis/       # objectives and target structures
+benchmarks/task-01-fluorinated-quinoline-retrosynthesis/  # linked benchmark evidence
+results/task-01-fluorinated-quinoline-retrosynthesis/     # route outputs and comparisons
+tasks/task-02-impurity-retrosynthesis/
+benchmarks/task-02-impurity-retrosynthesis/
+results/task-02-impurity-retrosynthesis/
 ```
 
-Use the same `task-NN-descriptive-topic` name in all three sections for each future study. See the [reusable task-folder standard](TASK_STRUCTURE.md) for required sections, evidence fields and validation. The existing three phase documents belong to task-01-fluorinated-quinoline-retrosynthesis, not three separate target tasks.
+Use the same `task-NN-descriptive-topic` name in all three sections. The [benchmark workspace](benchmarks/README.md) links to the original canonical `benchmark/` evidence, retained unchanged for existing scripts and links. See the [task-folder standard](TASK_STRUCTURE.md). The three Task 01 phases are not separate target tasks.
 
 ## Structure
 
@@ -46,4 +49,4 @@ No live Boltzmann job is run by these scripts. See [specification](ENVIRONMENT_S
 
 ## Task 02 — Impurity retrosynthesis and literature benchmarking
 
-[Task definition](tasks/task-02-impurity-retrosynthesis/README.md), [literature and metrics](benchmark/task-02-impurity-retrosynthesis/README.md), [results](results/task-02-impurity-retrosynthesis/README.md), and [gaps to outperform literature](results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md). This case is separate from the Task-01 target described above. The existing `benchmark/` directory is retained (not duplicated as `benchmarks/`). All sections share the same task folder name.
+[Task definition](tasks/task-02-impurity-retrosynthesis/README.md), [literature and metrics](benchmarks/task-02-impurity-retrosynthesis/README.md), [results](results/task-02-impurity-retrosynthesis/README.md), and [gaps to outperform literature](results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md). This case is separate from Task 01's target; matching task folder names link their respective evidence.

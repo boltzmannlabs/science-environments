@@ -25,4 +25,4 @@ None of the 16 routes has an experimentally verified same-target preparation est
 
 ## Task 02
 
-Added linked impurity test case, literature/experimental reference context, achieved metrics, output files and gap plan under `task-02-impurity-retrosynthesis`. A/M model summaries include 19 paths/59 nodes; racemic completion remains owner-confirmed, metrics unlinked. No new service jobs or wet-lab experiments were run for repository organization. See [Task-02 results](results/task-02-impurity-retrosynthesis/README.md).
+Added linked impurity test case, literature reference context, achieved metrics, output files and gap plan under `task-02-impurity-retrosynthesis`. A/M model summaries include 19 paths/59 nodes; the separate recovered parent run has 7 paths and 25 step comparisons. No new service jobs or wet-lab experiments were run for repository organization. See [Task-02 results](results/task-02-impurity-retrosynthesis/README.md).

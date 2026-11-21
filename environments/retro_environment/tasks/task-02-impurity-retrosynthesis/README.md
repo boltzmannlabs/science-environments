@@ -5,7 +5,7 @@
 The prior retro_case execution artifacts have now been recovered: parent racemic ibuprofen has **7 routes and 25 reaction-node comparisons**, distinct from the A/M subset. Comparator patents are US3385886A Example 4, EP0337803A1 and US5166418A; no measured superiority was found. See the recovered parent comparison and JSON linked from the Task-02 results index. Earlier owner-confirmed/unlinked wording below is a historical state, not current availability.
 
 
-Task ID/folder: `task-02-impurity-retrosynthesis`. Use this identical name under tasks/, benchmark/ and results/. This is the current impurity project, distinct from Task 01's fluorinated quinoline.
+Task ID/folder: `task-02-impurity-retrosynthesis`. Use this identical name under tasks/, benchmarks/ and results/. This is the current impurity project, distinct from Task 01's fluorinated quinoline.
 
 ## Overall objective
 
@@ -17,10 +17,18 @@ Evaluate candidate synthesis routes against literature for 100 g isolated materi
 |---|---|---|
 | Ibuprofen EP impurity A, CAS 66622-47-7 | Do meta-isobutyl acid routes match the intended structure and direct patent precedents? | 12 paths/38 reaction nodes; PubChem-provisional identity; stereo/form specification open |
 | Ibuprofen EP impurity M, CAS 60057-62-7 | Can the alpha-hydroxy para-isobutyl acid be made without losing OH or creating a related compound? | 7 paths/21 reaction nodes; provisional structure; conditions and exact-substrate precedent incomplete |
-| Racemic ibuprofen parent | Compare completed parent-compound run with its actual literature baseline | Owner confirms completed run/comparison; numerical export and reference mapping not linked here |
+| Racemic ibuprofen parent | Compare completed parent-compound run with its actual literature baseline | Recovered sanitized output: 7 routes/25 reaction-node comparisons; no measured project performance |
 | Original osimertinib label/CAS proposal | Resolve whether supplied Impurity A name means CAS 1421373-98-9 / AZ5104 | Historical identity hold; separate from racemic task; no generated export in snapshot |
 
 Inputs: authorized route export, independently reviewed target SMILES, scope/form/purity method, primary paper/patent examples, supplier pack/date/INR evidence, and measured yields/recoveries if available. Raw service/account records are not published. This task excludes formulation optimization, biological efficacy comparison and unsupervised physical synthesis.
+
+## Target structures and provenance
+
+- Impurity A provisional candidate SMILES: `CC(C)CC1=CC(=CC=C1)C(C)C(=O)O`.
+- Impurity M provisional candidate SMILES: `CC(C)CC1=CC=C(C=C1)C(C)(C(=O)O)O`.
+- Parent ibuprofen input SMILES: `CC(C)Cc1ccc(cc1)C(C)C(=O)O`; unspecified stereochemistry alone does not demonstrate a measured racemic composition.
+
+The A/M strings are reproduced from the existing [target configuration](../../../impurity-retrosynthesis/config/targets.json), which identifies them as provisional candidates; identity, stereochemistry and form still require independent confirmation. The parent string is preserved in the [recovered parent result](../../results/task-02-impurity-retrosynthesis/racemic_ibuprofen_recovered.json). These strings are not new structure validation.
 
 ## Execution approach
 
@@ -42,4 +50,4 @@ Inputs: authorized route export, independently reviewed target SMILES, scope/for
 
 ## Actual outcomes
 
-A/M: 19 model paths and 59 reaction nodes screened, 19/19 provisional root matches, no nonempty exported node citation/procedure fields. Direct A product literature found, but no exact complete generated route experimentally confirmed. No observed yield/purity or INR superiority. Racemic completion is owner-confirmed, not independently reconstructed from linked numerical output. See [achieved metrics](../../benchmark/task-02-impurity-retrosynthesis/achieved_metrics.json), [comparison](../../results/task-02-impurity-retrosynthesis/achievements_and_comparison.md) and [gap analysis](../../results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md).
+A/M: 19 model paths and 59 reaction nodes screened, 19/19 provisional root matches, no nonempty exported node citation/procedure fields. Direct A product literature found, but no exact complete generated route experimentally confirmed. No observed yield/purity or INR superiority. The separate [recovered parent output](../../results/task-02-impurity-retrosynthesis/racemic_ibuprofen_recovered.json) and [comparison](../../results/task-02-impurity-retrosynthesis/racemic_ibuprofen_comparison.md) contain 7 routes and 25 step comparisons. See [achieved metrics](../../benchmark/task-02-impurity-retrosynthesis/achieved_metrics.json), [structured comparison](../../results/task-02-impurity-retrosynthesis/comparison_report.md) and [gap analysis](../../results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md).

@@ -26,7 +26,7 @@ CN108794319B reports example yields 82.3%, 60.3%, 95% and claimed final purity 9
 | Experimentally validated lead routes | 0 | 0 |
 | Measured yield, purity, INR/100 g | Unavailable | Unavailable |
 
-[achieved_metrics.json](achieved_metrics.json) preserves the counts and separately labels patent-reported values. Racemic parent metrics are null because its owner-confirmed run artifacts are not linked. These counts are inventory/structure checks, not success rates of synthesis.
+[achieved_metrics.json](achieved_metrics.json) preserves the counts and separately labels patent-reported values. The recovered parent metrics are separately recorded as 7 routes and 25 step comparisons. These counts are inventory/structure checks, not success rates of synthesis.
 
 ## Evaluation rule
 

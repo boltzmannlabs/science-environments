@@ -41,7 +41,7 @@ class TestComparisons(unittest.TestCase):
         self.assertEqual(numeric[0]['experimental_yield_pct'], 32)
 
     def test_task_folder_layout(self):
-        for section in ('tasks', 'benchmark', 'results'):
+        for section in ('tasks', 'benchmark', 'benchmarks', 'results'):
             self.assertTrue((BASE / section / 'task-01-fluorinated-quinoline-retrosynthesis' / 'README.md').is_file())
             loose = [f.name for f in (BASE / section).iterdir() if f.is_file() and f.name != 'README.md']
             self.assertEqual(loose, [], f'Task-specific files at section root: {section}')
@@ -51,7 +51,7 @@ class TestComparisons(unittest.TestCase):
         self.assertIn('Actual outcomes', objective)
 
     def test_local_links(self):
-        locations = [BASE / s for s in ('benchmark', 'tasks', 'results')]
+        locations = [BASE / s for s in ('benchmark', 'benchmarks', 'tasks', 'results')]
         for directory in locations:
             for f in directory.rglob('*.md'):
                 for link in re.findall(r'\]\(([^)]+)\)', f.read_text()):

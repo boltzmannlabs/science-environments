@@ -10,7 +10,7 @@
 
 ## Racemic ibuprofen
 
-Run and literature comparison are completed according to the project owner. This case is recorded in case_studies.json. Its original output and literature mapping are not linked to this checkout, so route counts, outcome metrics and exact comparative findings cannot be reconstructed here. This is an artifact gap, not a statement that the task was unexecuted. Do not substitute impurity A or M rows for parent racemic ibuprofen.
+Run and literature comparison were recovered from historical records. The sanitized [parent route data](racemic_ibuprofen_recovered.json) contain seven routes and 25 step comparisons; the [parent comparison](racemic_ibuprofen_comparison.md) maps them to inspected patents. No matched experimental superiority was established. Do not substitute impurity A or M rows for parent racemic ibuprofen.
 
 ## Original osimertinib proposal
 

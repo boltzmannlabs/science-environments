@@ -1,12 +1,14 @@
 # Reusable task-folder standard
 
-Use one identifier `task-NN-descriptive-topic` under `tasks/`, `benchmark/` and `results/`. The repository's established directory is singular `benchmark/`; do not create a parallel `benchmarks/` tree. Each README must link to its matching task, benchmark and results sections using repository-relative links.
+Use one identifier `task-NN-descriptive-topic` under `tasks/`, `benchmarks/` and `results/`. The plural benchmark folder indexes the existing singular `benchmark/` canonical files, which remain in place for execution and historical links; do not duplicate scientific snapshots. Each README links its matching task, benchmark and results sections using repository-relative links.
 
 ## tasks/<id>/README.md
 
 Required sections: Overall objective; Problem statement and scope; exact target/input and source provenance; Execution approach; Expected outcomes and acceptance criteria; Actual outcomes with links. State whether physical experiments, model jobs, simulations or documentary reviews actually ran. Keep distinct chemical targets distinct.
 
-## benchmark/<id>/
+## benchmarks/<id>/ and canonical benchmark/<id>/
+
+The plural workspace README identifies source references, benchmark datasets and comparison criteria, with direct links to the canonical files and the matching task and results. Keep the existing singular `benchmark/` path for source catalogs and metrics used by scripts.
 
 README.md: evaluation boundary, comparator eligibility and metric interpretation.
 
@@ -20,7 +22,7 @@ README.md: output inventory, actual achievements, observations, limitations and 
 
 task_record.json: schema version, shared task ID, reference/metric/artifact links, evidence and validation scope. Data filenames can vary by test case; preserve original route identifiers and avoid unnecessary duplicate formats.
 
-Keep sanitized JSON/CSV or reports, achievements_and_comparison.md and gaps_and_improvement_plan.md as relevant. Add new authorized experimental records with explicit measured provenance and dated protocol; do not relabel predictions as experiments or overwrite historical records. Account-scoped raw exports, credentials, signed URLs and personal paths are not public task outputs.
+Keep sanitized JSON/CSV or reports, `comparison_report.md`, achievements_and_comparison.md and gaps_and_improvement_plan.md as relevant. State run provenance and explicitly distinguish recorded outputs from new executions. Add new authorized experimental records with explicit measured provenance and dated protocol; do not relabel predictions as experiments or overwrite historical records. Account-scoped raw exports, credentials, signed URLs and personal paths are not public task outputs.
 
 ## Validation
 

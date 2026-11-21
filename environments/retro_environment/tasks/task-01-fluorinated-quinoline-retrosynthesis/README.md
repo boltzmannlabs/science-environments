@@ -35,7 +35,7 @@ The three phases below are parts of **task-01-fluorinated-quinoline-retrosynthes
 
 16 model pathways and 56 reaction-node occurrences across routes; one three-step route separately reviewed. Two expected products ranked first, while the key protected ether ranked last with score zero. The central coupling and protection conditions were unsupported. No exact-target experimental route, measured yield/selectivity or superiority over literature was established.
 
-See [task-01-fluorinated-quinoline-retrosynthesis benchmarks](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/README.md) and [task-01-fluorinated-quinoline-retrosynthesis results](../../results/task-01-fluorinated-quinoline-retrosynthesis/README.md).
+See [task-01-fluorinated-quinoline-retrosynthesis benchmarks](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/README.md) and [task-01-fluorinated-quinoline-retrosynthesis results](../../results/task-01-fluorinated-quinoline-retrosynthesis/README.md).
 
 ---
 
