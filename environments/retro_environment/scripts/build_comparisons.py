@@ -11,7 +11,7 @@ BASE = Path(__file__).resolve().parents[1]
 def render():
     data = json.loads((BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/route_summary.json').read_text())
     audit = json.loads((BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/top0_validation.json').read_text())
-    papers = json.loads((BASE / 'benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.json').read_text())['references']
+    papers = json.loads((BASE / 'benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.json').read_text())['references']
     routes = data['routes']
     steps = audit['steps']
     total = sum(r['explicit_tree_steps'] for r in routes)
@@ -41,7 +41,7 @@ def render():
         'literature_superiority_demonstrated': False,
         'limitations': 'No matched experimental target results, calibrated uncertainty, measured purity/selectivity or exact-route precedent; no yield improvement or yield error can be computed.'
     }
-    (BASE / 'benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json').write_text(json.dumps(metrics, indent=2) + '\n')
+    (BASE / 'benchmarks/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json').write_text(json.dumps(metrics, indent=2) + '\n')
     rows = [['route', 'explicit_tree_steps', 'reported_num_steps', 'model_ranking_score', 'model_step_yields_pct', 'illustrative_product_pct_NOT_observed_yield', 'measured_target_yield_pct', 'exact_target_literature_match']]
     for r in routes:
         rows.append([r['route'], r['explicit_tree_steps'], r['reported_num_steps'], r['model_ranking_score'], '; '.join(f"{s['model_reaction_yield_pct']:.2f}" for s in r['steps']), r['illustrative_sequential_product_pct'], 'not measured', 'not established'])
@@ -67,14 +67,14 @@ def render():
         text.append(f"| {r['route']} | {r['explicit_tree_steps']} | {yy} | {r['illustrative_sequential_product_pct']:.2f} |")
     text += ['', '## Tool versus literature: selected route', '',
              '| Step | Tool output (model-only) | Literature comparator | Conclusion |', '|---|---|---|---|',
-             '| 1: TBS protection | Forward score 0.999999812; mapping confidence 0.27964; condition-tool yield 81.26%; TBAF/THF, 20–30 °C | [L1](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): protection class only; no same-substrate yield extracted | Reject fluoride condition for forming/retaining TBS ether. High score did not establish compatible conditions. |',
-             '| 2: aryl ether formation | Protected product ranked last, forward score 0; mapping confidence 0.21971; condition-tool yield 77.94%; pyridine/THF, no coupling catalyst | [L2](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): Ullmann-type diaryl-ether class only; exact pairing not established | Unresolved central step; model yield not credible evidence of feasible coupling. |',
-             '| 3: deprotection | Forward score 0.999999837; mapping confidence 0.66765; condition-tool yield 62.02%; TBAF/THF, 20–30 °C | [L3](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md): TBAF/THF, 0 °C to room temperature, 45 min; 32% isolated yield for a DIFFERENT compound | Plausible class analogy only; 62.02% versus 32% is NOT a matched yield improvement. |', '',
+             '| 1: TBS protection | Forward score 0.999999812; mapping confidence 0.27964; condition-tool yield 81.26%; TBAF/THF, 20–30 °C | [L1](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md): protection class only; no same-substrate yield extracted | Reject fluoride condition for forming/retaining TBS ether. High score did not establish compatible conditions. |',
+             '| 2: aryl ether formation | Protected product ranked last, forward score 0; mapping confidence 0.21971; condition-tool yield 77.94%; pyridine/THF, no coupling catalyst | [L2](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md): Ullmann-type diaryl-ether class only; exact pairing not established | Unresolved central step; model yield not credible evidence of feasible coupling. |',
+             '| 3: deprotection | Forward score 0.999999837; mapping confidence 0.66765; condition-tool yield 62.02%; TBAF/THF, 20–30 °C | [L3](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md): TBAF/THF, 0 °C to room temperature, 45 min; 32% isolated yield for a DIFFERENT compound | Plausible class analogy only; 62.02% versus 32% is NOT a matched yield improvement. |', '',
              'The condition-tool yields above are a different prediction output from the retrosynthesis step-yield fields in the all-route table; they are not substituted into one another.', '',
              '## What was not achieved', '',
              'No matched experimental accuracy, yield improvement, selectivity improvement, purity improvement, cost advantage or calibrated uncertainty was established. Literature sources support reaction-family context rather than an exact complete route. Starting-material availability and target-route practicality remain unverified.', '',
              '## Source files', '',
-             '- [All routes](route_summary.json)', '- [Selected-route tool audit](top0_validation.json)', '- [Numeric CSV](route_yield_comparison.csv)', '- [Metric definitions and values](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json)', '- [Literature catalog](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md)', '- [Existing DOCX structure report](retro_benchmark_report.docx)', '']
+             '- [All routes](route_summary.json)', '- [Selected-route tool audit](top0_validation.json)', '- [Numeric CSV](route_yield_comparison.csv)', '- [Metric definitions and values](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json)', '- [Literature catalog](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md)', '- [Existing DOCX structure report](retro_benchmark_report.docx)', '']
     rendered='\n'.join(text)
     (BASE / 'results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md').write_text(rendered)
     lines=['# Papers and public references used in the comparison', '', 'This catalog links to papers rather than redistributing publisher PDFs. Evidence access and substrate match are explicit; no complete exact-target route was established.', '', '| ID | Reference / source | Compared step | Numeric experimental evidence | Access and evidence limit |', '|---|---|---|---|---|']
@@ -82,7 +82,7 @@ def render():
         yy = str(p['experimental_yield_pct']) + '% for different substrate' if p['experimental_yield_pct'] is not None else 'Not extracted / not applicable'
         lines.append(f"| {p['id']} | [{p['title']}]({p['url']}) | {p['comparison_step']} | {yy} | {p['access']}; {p['claim_supported']} |")
     lines += ['', '## Search scope', '', 'Existing research used Crossref/OpenAlex bibliographic queries, Europe PMC and Google Patents text queries. Publisher access limits, incomplete patent screening and lack of chemical-structure search prevent exhaustive absence/novelty conclusions. P1/P2 are negative screening records, not validated route precedents.', '', 'See [machine-readable catalog](papers.json) and [results comparison](../../results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md).', '']
-    (BASE / 'benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md').write_text('\n'.join(lines))
+    (BASE / 'benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md').write_text('\n'.join(lines))
     print(f'Generated comparison tables: {len(routes)} routes, {total} reaction occurrences, {rank1}/{len(steps)} rank-1 agreements; no experimental superiority claim.')
 
 

@@ -15,7 +15,7 @@ Historical computational screening covers impurity A: 12 paths/38 reaction nodes
 | Parent ibuprofen | Seven recovered model routes, 25 step comparisons | Inspected sources yielded one analogous and one indirect multi-operation analogy; 23 steps were not assessed across the full literature | No complete exact comparator or experimentally established advantage. Model alternatives remain unvalidated. |
 | Across cases | No project-measured isolated yield, purity or INR cost | Patent-reported yields are external evidence and may not share substrate, scale or boundary | Better/underperformed experimental performance is not assessable; a numerical winner would be unsupported. |
 
-Sources and detailed findings: [A/M comparison](achievements_and_comparison.md), [parent comparison](racemic_ibuprofen_comparison.md) and [paper catalog](../../benchmark/task-02-impurity-retrosynthesis/papers.md). The parent recovery supersedes older unlinked-artifact statements in historical records.
+Sources and detailed findings: [A/M comparison](achievements_and_comparison.md), [parent comparison](racemic_ibuprofen_comparison.md) and [paper catalog](../../benchmarks/task-02-impurity-retrosynthesis/papers.md). The parent recovery supersedes older unlinked-artifact statements in historical records.
 
 ## Scientific interpretation and next evidence
 

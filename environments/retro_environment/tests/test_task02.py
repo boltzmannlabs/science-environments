@@ -7,12 +7,12 @@ import unittest
 BASE = Path(__file__).resolve().parents[1]
 TASK = 'task-02-impurity-retrosynthesis'
 RESULTS = BASE / 'results' / TASK
-BENCH = BASE / 'benchmark' / TASK
+BENCH = BASE / 'benchmarks' / TASK
 
 
 class TestTask02(unittest.TestCase):
     def test_task_structure_and_expected_outcomes(self):
-        for section in ('tasks', 'benchmark', 'benchmarks', 'results'):
+        for section in ('tasks', 'benchmarks', 'results'):
             self.assertTrue((BASE / section / TASK / 'README.md').is_file())
         text = (BASE / 'tasks' / TASK / 'README.md').read_text()
         for heading in ('Overall objective', 'Problem statement', 'Execution approach', 'Expected outcomes', 'Actual outcomes'):

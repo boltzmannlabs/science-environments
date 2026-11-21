@@ -15,10 +15,11 @@ class TestWorkspace(unittest.TestCase):
 
         tasks = folders('tasks')
         self.assertTrue(tasks)
-        for section in ('benchmark', 'benchmarks', 'results'):
+        self.assertFalse((BASE / 'benchmark').exists(), 'obsolete duplicate benchmark directory')
+        for section in ('benchmarks', 'results'):
             self.assertEqual(tasks, folders(section), section)
         for task in tasks:
-            for section in ('tasks', 'benchmark', 'benchmarks', 'results'):
+            for section in ('tasks', 'benchmarks', 'results'):
                 self.assertTrue((BASE / section / task / 'README.md').is_file(), (section, task))
             report = BASE / 'results' / task / 'comparison_report.md'
             self.assertTrue(report.is_file(), task)
@@ -26,7 +27,8 @@ class TestWorkspace(unittest.TestCase):
             benchmark = (BASE / 'benchmarks' / task / 'README.md').read_text()
             self.assertIn(f'../../tasks/{task}/README.md', benchmark)
             self.assertIn(f'../../results/{task}/README.md', benchmark)
-            self.assertIn(f'../../benchmark/{task}/', benchmark)
+            self.assertIn('../../tasks/', benchmark)
+            self.assertIn('../../results/', benchmark)
 
     def test_documented_target_structures_match_source_records(self):
         task01 = (BASE / 'tasks/task-01-fluorinated-quinoline-retrosynthesis/README.md').read_text()

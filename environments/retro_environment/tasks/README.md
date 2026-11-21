@@ -1,6 +1,6 @@
 # Task index
 
-Each numbered folder represents one complete scientific task, not one tool call. Use the same folder name in `tasks/`, `benchmarks/` and `results/`; canonical historical inputs remain in `benchmark/`.
+Each numbered folder represents one complete scientific task, not one tool call. Use the same folder name in `tasks/`, `benchmarks/` and `results/`.
 
 | Task | Overall objective | Expected outputs | Actual status |
 |---|---|---|---|
@@ -12,3 +12,7 @@ Each numbered folder represents one complete scientific task, not one tool call.
 ## Task 02 — Impurity retrosynthesis
 
 [Complete task](../tasks/task-02-impurity-retrosynthesis/README.md) · [Literature and achieved metrics](../benchmarks/task-02-impurity-retrosynthesis/README.md) · [Outputs and improvement gaps](../results/task-02-impurity-retrosynthesis/README.md). A/M: 19 paths and 59 reaction nodes screened. The separate parent racemic-ibuprofen run has 7 recovered paths and 25 node comparisons. No experimental literature superiority is claimed.
+
+## Task 03 — Indole forward prediction
+
+[Task and reactants](task-03-indole-forward-prediction/README.md) · [Literature references](../benchmarks/task-03-indole-forward-prediction/README.md) · [Results and all transcribed candidates](../results/task-03-indole-forward-prediction/README.md).

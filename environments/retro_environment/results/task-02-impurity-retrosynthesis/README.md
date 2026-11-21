@@ -18,7 +18,7 @@ The prior retro_case execution artifacts have now been recovered: parent racemic
 | [gaps_and_improvement_plan.md](gaps_and_improvement_plan.md) | Prioritized evidence/chemistry/process gaps and requirements for an actual literature-superiority claim. |
 | [recovery_and_comparison_protocol.md](recovery_and_comparison_protocol.md) | Historical recovery protocol; its earlier missing-artifact status is superseded by the linked recovered parent records below. |
 | [task_record.json](task_record.json) | Standardized task ID and cross-folder artifact links; expected reproducibility and validation state. |
-| [benchmark metrics](../../benchmark/task-02-impurity-retrosynthesis/achieved_metrics.json) | Computational metrics and separately labelled literature-reported values; absent measured metrics are null. |
+| [benchmark metrics](../../benchmarks/task-02-impurity-retrosynthesis/achieved_metrics.json) | Computational metrics and separately labelled literature-reported values; absent measured metrics are null. |
 
 ## What was obtained
 

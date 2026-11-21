@@ -27,4 +27,4 @@ Reference numbers are literature-reported observations (see benchmark papers): C
 
 First recover the racemic parent artifacts and confirm authoritative structures and primary examples. Then choose one exact, feasible candidate and its literature baseline, agree on measurement/scale/cost boundaries, and obtain safety authorization for a controlled comparison. Until then, the correct result is an evidence-qualified hold—not an invented optimum.
 
-[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmark/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)
+[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmarks/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)

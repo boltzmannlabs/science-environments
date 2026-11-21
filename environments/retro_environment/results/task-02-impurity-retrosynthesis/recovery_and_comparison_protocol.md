@@ -31,4 +31,4 @@ A qualified review must assess reactive intermediates, incompatibilities, therma
 
 The original racemic run is now recovered; review its mapped comparator steps rather than creating a replacement run. Confirm intended form and purity measurement basis and identify the responsible laboratory/process-safety team. Agree on one matched comparator, common starting-material boundary, primary endpoint and meaningful margin before any experimental benchmark.
 
-[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmark/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)
+[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmarks/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)

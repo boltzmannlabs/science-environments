@@ -9,3 +9,7 @@ Every output for Task 01 is under `task-01-fluorinated-quinoline-retrosynthesis/
 ## Task 02 — Impurity retrosynthesis
 
 [Complete task](../tasks/task-02-impurity-retrosynthesis/README.md) · [Literature and achieved metrics](../benchmarks/task-02-impurity-retrosynthesis/README.md) · [Outputs and improvement gaps](../results/task-02-impurity-retrosynthesis/README.md). A/M: 19 paths and 59 reaction nodes screened; the separately recovered racemic parent run has 7 paths and 25 node comparisons. No experimental literature superiority is claimed.
+
+## Task 03 — Indole forward prediction
+
+[Saved results and candidate files](task-03-indole-forward-prediction/README.md) · [Task](../tasks/task-03-indole-forward-prediction/README.md) · [Literature benchmark](../benchmarks/task-03-indole-forward-prediction/README.md).

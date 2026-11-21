@@ -22,4 +22,4 @@ Target: supplied parent racemic ibuprofen SMILES `CC(C)Cc1ccc(cc1)C(C)C(=O)O`, P
 
 25 recovered step comparisons: zero exact matches in the inspected source set, one analogous transformation, one indirect multi-operation analogy and 23 not assessed across the full literature. This is not a global negative literature verdict. No independent forward, atom-mapping, condition-recommendation or impurity-prediction service was executed in that historical run. Model-internal scores remain model outputs; no measured isolated yield, purity, process cost or superiority is established. The two impurity A/M cases remain separate (19 paths/59 nodes); these seven parent routes must not be counted inside their totals.
 
-[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmark/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)
+[Task](../../tasks/task-02-impurity-retrosynthesis/README.md) · [Benchmark](../../benchmarks/task-02-impurity-retrosynthesis/README.md) · [Results](README.md)

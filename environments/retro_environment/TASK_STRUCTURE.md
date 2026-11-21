@@ -1,14 +1,14 @@
 # Reusable task-folder standard
 
-Use one identifier `task-NN-descriptive-topic` under `tasks/`, `benchmarks/` and `results/`. The plural benchmark folder indexes the existing singular `benchmark/` canonical files, which remain in place for execution and historical links; do not duplicate scientific snapshots. Each README links its matching task, benchmark and results sections using repository-relative links.
+Use one identifier `task-NN-descriptive-topic` under `tasks/`, `benchmarks/` and `results/`. `benchmarks/` is the sole benchmark directory and contains the source catalogs and metrics. Each README links its matching task, benchmark and results sections using repository-relative links.
 
 ## tasks/<id>/README.md
 
 Required sections: Overall objective; Problem statement and scope; exact target/input and source provenance; Execution approach; Expected outcomes and acceptance criteria; Actual outcomes with links. State whether physical experiments, model jobs, simulations or documentary reviews actually ran. Keep distinct chemical targets distinct.
 
-## benchmarks/<id>/ and canonical benchmark/<id>/
+## benchmarks/<id>/
 
-The plural workspace README identifies source references, benchmark datasets and comparison criteria, with direct links to the canonical files and the matching task and results. Keep the existing singular `benchmark/` path for source catalogs and metrics used by scripts.
+The workspace README identifies source references, benchmark datasets and comparison criteria, with direct links to the source files and matching task and results.
 
 README.md: evaluation boundary, comparator eligibility and metric interpretation.
 
