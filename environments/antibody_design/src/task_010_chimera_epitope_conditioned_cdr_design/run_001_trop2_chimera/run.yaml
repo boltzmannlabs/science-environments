@@ -1,0 +1,13 @@
+task_id: task_010_chimera_epitope_conditioned_cdr_design
+run_id: run_001_trop2_chimera
+workflow_id: wf_trop2_chimera_epitope_conditioned_cdr_design
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_010_chimera_epitope_conditioned_cdr_design/run_001_trop2_chimera/run.json
+    sha256: ad337eb78890805414dce6246b6844dd6877c735f3eb7ab1d452750e6922f907
+  agent_settings:
+    path: ../../../configs/task_010_chimera_epitope_conditioned_cdr_design/run_001_trop2_chimera.json
+    sha256: c86c1a3f0528bd1a9376b858dc5678154e9f1b78b9135ea8f645e57ae0c0ebdc
+workflow: workflow.md
+artifact_manifest: ../../../results/task_010_chimera_epitope_conditioned_cdr_design/run_001_trop2_chimera/sha256_manifest.json

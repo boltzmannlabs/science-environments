@@ -1,0 +1,26 @@
+{
+  "record_type": "historical_run_record",
+  "executable": false,
+  "task_id": "task_001_rfdiffusion2_retroaldolase",
+  "run_id": "GLP1_p03_variable_s02",
+  "target": "Retroaldolase (GLP1 p03 variable scaffold)",
+  "source_task": "tasks/task_001_rfdiffusion2_retroaldolase.md",
+  "benchmark_directory": "BM/task_001_rfdiffusion2_retroaldolase",
+  "result_directory": "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02",
+  "aggregate_results": [
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/metrics.csv",
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md",
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/benchmark_comparison.csv",
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/shortlist.csv",
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/candidate_properties.json",
+    "Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sha256_manifest.json"
+  ],
+  "excluded_from_package": [
+    "generated_sequences.fasta",
+    "structures/",
+    "runnable_workflows",
+    "raw/per_candidate_assessment",
+    "audit_scripts"
+  ],
+  "purpose": "Non-executable provenance record indexing the archived task and benchmark records and run outputs. Does not contain parameters for rerunning design."
+}

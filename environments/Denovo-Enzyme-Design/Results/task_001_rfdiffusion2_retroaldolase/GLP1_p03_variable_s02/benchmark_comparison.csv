@@ -1,0 +1,5 @@
+metric,paper_value,paper_units,workflow_value,workflow_units,comparison_scope,source
+Catalytic heavy-atom RMSD,<1.5,angstrom,0.9930–1.1914,angstrom,Published AME Results cutoff; same catalytic N/CA/C fit and all41-heavy-atom measurement; threshold coverage10/10; original5 and confirmation5 retained separately,Article Results: AME benchmark; raw/paper_comparison/lead_remeasurement.json
+Closest retrieved PDB TM-score,0.47; 6SU3,TM-score,6.161E-01; 4kkn-assembly1_A,query-normalized TM-score,Paper Fig4a exemplar versus local PDB100250101 retrieval/top20 TM-align; distinct database snapshots/search implementations,Figure4a; raw/paper_comparison/novelty/summary.json
+Ligand short-contact threshold,1.5,angstrom,8/10 models without protein–free-ligand heavy pairs below1.5A,model count,All protein/ligand heavy atoms; separate from the design-backbone-only clearance component3.4262A,Article AME criterion; raw/lead_completion/metrics.json
+kcat/KM of paper designed retroaldolase,6.34 +/-0.92,M^-1 s^-1,Not recorded,M^-1 s^-1,Published enzyme value retained separately from structural metrics; not a value for native5AN7,Article Retroaldolases section and Figure4a

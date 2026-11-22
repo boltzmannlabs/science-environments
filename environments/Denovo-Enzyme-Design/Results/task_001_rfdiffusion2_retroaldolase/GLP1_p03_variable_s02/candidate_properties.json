@@ -1,0 +1,71 @@
+{
+  "GLP1_p03_variable_s02": {
+    "sequence": "GKLTYNHPEEVTIAVGSTVTVDGEITVTGGSEVKGTKYLTDEAGNKTTIFEGVGTPLADGTSLGEIKLNDHVSVTMWGENGVMKYTMTLKATASTKGTFVNSAKDTGSGDKGKEGRVVIK",
+    "fixed_positions": {
+      "5": "Y",
+      "37": "K",
+      "101": "N",
+      "85": "Y"
+    },
+    "nonmotif_lysine_positions": [
+      2,
+      34,
+      46,
+      67,
+      84,
+      90,
+      96,
+      104,
+      111,
+      113,
+      120
+    ],
+    "sequence_sha256": "18d6c7f31d00eb642fd3413208ed51f2b13cc74f0497793fcee6d3af4fea3ba6",
+    "sidechain_symmetry_RMSD_means_A": {
+      "5": 0.6523696433585697,
+      "37": 1.489752086444705,
+      "101": 1.6635154819746738,
+      "85": 1.3959719856657533
+    },
+    "report_role": "structural comparison representative",
+    "submitted_ligand_SMILES": "COc1ccc2cc(ccc2c1)C(=O)/C=C/C"
+  },
+  "KCR1_s01": {
+    "sequence": "ATLVYEHPALLTVAVGSTVTVDGRITVTGGSTVRGTKYHVDPAGNRTTIFEGDGTPMPDGTSLGEIQLNDHLSVTMRGENGVMVYTETLVATAATAGVFVNSAEDTDSGARGAEGHVRVT",
+    "fixed_positions": {
+      "5": "Y",
+      "37": "K",
+      "101": "N",
+      "85": "Y"
+    },
+    "nonmotif_lysine_positions": [],
+    "sequence_sha256": "8b6f268822d20b06b9b5947565685128ed9c81a87e9b86168c637d779f900774",
+    "sidechain_symmetry_RMSD_means_A": {
+      "5": 2.412643276634736,
+      "37": 3.3863164936093777,
+      "101": 2.026832714673893,
+      "85": 1.5610413706314892
+    },
+    "report_role": "sequence-constraint comparison",
+    "submitted_ligand_SMILES": "COc1ccc2cc(ccc2c1)C(=O)/C=C/C"
+  },
+  "KCR1_s02": {
+    "sequence": "GTLTYNHPAELTIPVGSTVTVDGTITVTGGTTVAGTKYHVDTAGNRTTIFSGNGTPLPDGTSLGTIALDDWYTVTMRGENGAMVYTETLVATAARAGTFVNSAQDTDSGDTGAEGHVVIT",
+    "fixed_positions": {
+      "5": "Y",
+      "37": "K",
+      "101": "N",
+      "85": "Y"
+    },
+    "nonmotif_lysine_positions": [],
+    "sequence_sha256": "6ad0d3139ca7682d9ed5275c4da9436338bd814639f8eb4ef9916ecbe297c15d",
+    "sidechain_symmetry_RMSD_means_A": {
+      "5": 1.925022295381567,
+      "37": 1.9077362485201708,
+      "101": 1.9038897217438833,
+      "85": 7.842551967355419
+    },
+    "report_role": "sequence-constraint comparison",
+    "submitted_ligand_SMILES": "COc1ccc2cc(ccc2c1)C(=O)/C=C/C"
+  }
+}
