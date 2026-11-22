@@ -1,0 +1,22 @@
+{
+  "schema_version": "archived-case-index-v1",
+  "task_id": "task_007_huj3_gp120_fixed_framework_design",
+  "run_id": "run_20261109_001",
+  "note": "Indexes previously executed data; not a new model run.",
+  "candidate_count": {
+    "cdr1_unique": 4,
+    "cdr3_assessed": 4
+  },
+  "methods": [
+    "AntiBMPNN",
+    "ProteinMPNN",
+    "peptides",
+    "Boltz-2"
+  ],
+  "files": {
+    "report": "report.md",
+    "sequences": "sequences.fasta",
+    "paper_style_properties": "property_predictions_paper_style.csv",
+    "raw": "raw"
+  }
+}

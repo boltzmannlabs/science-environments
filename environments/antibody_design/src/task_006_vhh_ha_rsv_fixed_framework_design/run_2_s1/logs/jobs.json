@@ -1,0 +1,34 @@
+{
+  "run_id": "run_20261104_205147",
+  "experiment_name": "monoclonal_antibodies1_bz",
+  "job": "ppiflownanobody",
+  "submitted_at": "2026-11-05",
+  "campaigns": {
+    "HA": {
+      "doc_id": "6aec265176df80f7ddc9f936",
+      "receipt_attempt_id": "f297290e1dee4255be7dab8679f89c8b",
+      "antigen": "5VLI",
+      "antigen_chain": "B",
+      "hotspots": "B521,B545,B552",
+      "status": "accepted"
+    },
+    "RSV": {
+      "doc_id": "6aec26707a249fbc80026c06",
+      "receipt_attempt_id": "be091207e44e49efa5960f63bb6a9860",
+      "antigen": "7LUC",
+      "antigen_chain": "A",
+      "hotspots": "A305,B456",
+      "status": "accepted"
+    }
+  },
+  "shared_inputs": {
+    "framework_pdb": "users/6908525f989512db60f7be03/1793861116289/framework_3EAK_A.pdb",
+    "framework_sha256": "583a2a4d96bf0137bd9602bd9d913255f6e21ee7dba15e1b948f4c0491e27990",
+    "cdr_length": "CDRH1,7-7,CDRH2,6-6,CDRH3,5-13",
+    "heavy_chain": "A",
+    "samples_per_target": 10,
+    "task_name": "nanobody"
+  },
+  "polling": "poll each doc_id with boltzmann_status; never resubmit",
+  "note": "Accepted != completed. These are the only job IDs for this run."
+}

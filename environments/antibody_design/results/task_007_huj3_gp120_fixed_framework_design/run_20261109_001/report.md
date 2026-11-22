@@ -1,7 +1,7 @@
 # task_007_huj3_gp120_fixed_framework_design — Results
 
-**Task ID:** `task_007_huj3_gp120_fixed_framework_design`
-**Run:** `run_20261109_001`
+**Task ID:** `task_007_huj3_gp120_fixed_framework_design`  
+**Run:** `run_20261109_001`  
 **Published comparison:** Sun et al., *Advanced Science* (2025), DOI: 10.1002/advs.202504278.
 
 ## 1. End-to-end workflow and actual execution
