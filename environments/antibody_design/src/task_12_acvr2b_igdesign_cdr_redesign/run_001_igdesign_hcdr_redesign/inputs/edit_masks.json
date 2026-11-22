@@ -1,0 +1,42 @@
+{
+  "vh_length": 113,
+  "vl_length": 111,
+  "cdr_windows_0indexed": {
+    "HCDR1": [
+      24,
+      32
+    ],
+    "HCDR2": [
+      49,
+      57
+    ],
+    "HCDR3": [
+      95,
+      103
+    ]
+  },
+  "scopes": {
+    "HCDR3-only": {
+      "edited": [
+        "HCDR3"
+      ],
+      "preserved": [
+        "HCDR1",
+        "HCDR2",
+        "framework",
+        "VL"
+      ]
+    },
+    "HCDR123": {
+      "edited": [
+        "HCDR1",
+        "HCDR2",
+        "HCDR3"
+      ],
+      "preserved": [
+        "framework",
+        "VL"
+      ]
+    }
+  }
+}

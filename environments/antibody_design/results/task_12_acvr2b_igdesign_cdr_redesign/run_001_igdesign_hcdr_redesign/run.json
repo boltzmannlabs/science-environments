@@ -1,0 +1,281 @@
+{
+  "schema_version": "compact-run-config-v2",
+  "task_id": "task_12_acvr2b_igdesign_cdr_redesign",
+  "run_id": "run_001_igdesign_hcdr_redesign",
+  "workflow_id": "wf_igdesign_backbone_conditioned_cdr",
+  "status": "complete",
+  "paths": {
+    "src": "src/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign",
+    "results": "results/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign"
+  },
+  "preparation": {
+    "objective": "Reference-backbone-conditioned heavy-chain CDR redesign of Bimagrumab Fv against human ACVR2B",
+    "inputs": "@src/inputs",
+    "inventory": "@src/inputs/execution_records/run_files.csv"
+  },
+  "stages": [
+    {
+      "stage_id": "S0_prep",
+      "purpose": "verify 5NGV VH/VL/ACVR2B sequences, CDR numbering, antigen identity",
+      "status": "complete",
+      "tools": [
+        {
+          "tool": "stage0_fetch_verify.py",
+          "source": "open_source",
+          "records": [
+            "C01"
+          ],
+          "inputs": {
+            "pdb": "inputs/5ngv.pdb (chains A=antigen, H=VH, L=VL)"
+          },
+          "outputs": {
+            "outputs": [
+              "inputs/reference_sequences.json",
+              "inputs/cdr_positions.json"
+            ]
+          },
+          "states": {
+            "complete": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S1_design",
+      "purpose": "IgDesign reference-backbone-conditioned CDR design, two scopes",
+      "status": "complete",
+      "dependencies": [
+        "S0_prep"
+      ],
+      "tools": [
+        {
+          "tool": "IgDesign",
+          "source": "open_source",
+          "records": [
+            "C02",
+            "C03"
+          ],
+          "inputs": {
+            "by_record": {
+              "C02": {
+                "scope": "HCDR3-only",
+                "condition": "VH backbone + VL + ACVR2B"
+              },
+              "C03": {
+                "scope": "HCDR123",
+                "condition": "VH backbone + VL + ACVR2B"
+              }
+            }
+          },
+          "parameters": {
+            "by_record": {
+              "C02": {
+                "samples": 100,
+                "temperature": 0.5,
+                "seed": 0
+              },
+              "C03": {
+                "samples": 100,
+                "temperature": 0.5,
+                "seed": 0
+              }
+            }
+          },
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C02": {
+                  "outputs": [
+                    "raw/igdesign/acvr2b_hcdr3_results.csv (100 samples, 44 unique)"
+                  ]
+                },
+                "C03": {
+                  "outputs": [
+                    "raw/igdesign/acvr2b_hcdr123_results.csv (100 samples, 89 unique)"
+                  ]
+                }
+              }
+            },
+            "saved_artifacts": [
+              "@results/raw/igdesign"
+            ]
+          },
+          "states": {
+            "complete": 2
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S2_verify",
+      "purpose": "edit-mask verification, dedupe, native-recovery AAR",
+      "status": "complete",
+      "dependencies": [
+        "S1_design"
+      ],
+      "tools": [
+        {
+          "tool": "stage2_verify_mask.py",
+          "source": "open_source",
+          "records": [
+            "C04"
+          ],
+          "inputs": {
+            "input": "raw/igdesign/*.csv"
+          },
+          "outputs": {
+            "outputs": [
+              "raw/igdesign/aar.json"
+            ]
+          },
+          "states": {
+            "complete": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S3_structure",
+      "purpose": "matched AF2-Multimer v3 prediction: reference + 20 candidates",
+      "status": "complete",
+      "dependencies": [
+        "S2_verify"
+      ],
+      "tools": [
+        {
+          "tool": "Multimer_Structure_Prediction",
+          "source": "boltzmann",
+          "records": [
+            "C05"
+          ],
+          "inputs": {
+            "Protein_Sequences": "VH+VL multimer per candidate"
+          },
+          "parameters": {
+            "model": "AlphaFold2-Multimer v3 / ColabFold",
+            "rank": "rank_001"
+          },
+          "outputs": {
+            "recorded_outputs": {
+              "by_record": {
+                "C05": {
+                  "outputs": [
+                    "structures/ (19 of 20 candidates + reference)"
+                  ]
+                }
+              }
+            },
+            "saved_artifacts": [
+              "@results/structures"
+            ]
+          },
+          "states": {
+            "complete": 20
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S4_evaluation",
+      "purpose": "C-alpha scRMSD vs 5NGV (whole-Fv Kabsch)",
+      "status": "complete",
+      "dependencies": [
+        "S3_structure"
+      ],
+      "tools": [
+        {
+          "tool": "stage4_compute_rmsd.py",
+          "source": "open_source",
+          "records": [
+            "C06"
+          ],
+          "inputs": {
+            "inputs": "structures/ + 5ngv.pdb"
+          },
+          "parameters": {
+            "atoms": "C-alpha",
+            "alignment": "whole-Fv (224 CA) Kabsch onto 5NGV",
+            "regions": "HCDR1/2/3/123 (VH), Fv_whole (VH+VL)"
+          },
+          "outputs": {
+            "outputs": [
+              "raw/evaluation/candidate_rmsd.json"
+            ]
+          },
+          "states": {
+            "complete": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage_id": "S5_evaluation",
+      "purpose": "consolidated metrics + artifacts",
+      "status": "complete",
+      "dependencies": [
+        "S4_evaluation"
+      ],
+      "tools": [
+        {
+          "tool": "stage5_artifacts.py",
+          "source": "open_source",
+          "records": [
+            "C07"
+          ],
+          "inputs": {
+            "inputs": "candidate_rmsd.json + aar.json + igdesign CSVs"
+          },
+          "parameters": {
+            "rank_key": "executed HCDR123 scRMSD (lower=better)"
+          },
+          "outputs": {
+            "outputs": [
+              "candidates.csv (20)",
+              "shortlist.csv (19 ranked)",
+              "sequences.fasta (42)",
+              "metrics.csv",
+              "benchmark_comparison.csv",
+              "report.md"
+            ]
+          },
+          "states": {
+            "complete": 1
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "workflows_designed": 1,
+    "selected": 1,
+    "executed": 1,
+    "generated": 200,
+    "unique_candidates": 133,
+    "shortlist": 5,
+    "evaluated": 20,
+    "unevaluated": 114,
+    "top_shortlist": "T12-C008 (HCDR3-only, HCDR123 scRMSD 0.3803 A)",
+    "integrative_lead": "T12-C011 (HCDR123, HCDR123 scRMSD 0.3879 A)"
+  },
+  "evidence": {
+    "tool_details": "@src/inputs/execution_records/tool_details.json",
+    "activity_log": "@src/logs/agent_scientist_log.md",
+    "original_config_sha256": "5775fdfa2b23802aa4a295e7b98d3bbd52f4bd83440e33a3c9a0fca723dfcae9"
+  },
+  "artifact_links": {
+    "report_md": "@results/report.md",
+    "candidates_csv": "@results/candidates.csv",
+    "shortlist_csv": "@results/shortlist.csv",
+    "metrics_csv": "@results/metrics.csv",
+    "benchmark_comparison_csv": "@results/benchmark_comparison.csv",
+    "sequences_fasta": "@results/sequences.fasta",
+    "structures": "@results/structures",
+    "raw": "@results/raw",
+    "run_json": "@results/run.json"
+  },
+  "lineage": {
+    "parent": null,
+    "derived_from": "PDB 5NGV (Bimagrumab Fv + ACVR2B fragment)",
+    "historical_components": []
+  }
+}
