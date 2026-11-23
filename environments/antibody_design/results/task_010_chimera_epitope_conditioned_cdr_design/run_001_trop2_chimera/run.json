@@ -1,0 +1,28 @@
+{
+  "schema_version": "archived-case-index-v1",
+  "task_id": "task_010_chimera_epitope_conditioned_cdr_design",
+  "original_task_id": "task_008_chimera_epitope_conditioned_cdr_design",
+  "note": "Archive of completed prior calculations; no new scientific model run. Separate from ACVR2B Task 010.",
+  "generated_samples": 100,
+  "unique_pairs": 70,
+  "structurally_modeled_pairs": 5,
+  "methods": [
+    "RAAD",
+    "AntiBMPNN",
+    "AlphaFold2-multimer/ColabFold",
+    "DockQ 2.1.3",
+    "MolProbity"
+  ],
+  "files": {
+    "report": "report.md",
+    "candidate_inventory": "candidates.csv",
+    "assessed_metrics": "metrics.csv",
+    "shortlist": "shortlist.csv",
+    "sequences": "sequences.fasta",
+    "benchmark_comparison": "benchmark_comparison.csv",
+    "raw": "raw",
+    "structures": "structures",
+    "figures": "../../../BM/task_010_chimera_epitope_conditioned_cdr_design/figures",
+    "source_hashes": "sha256_manifest.json"
+  }
+}

@@ -1,0 +1,13 @@
+metric,published_reference_RAAD_H3,published_scope,executed_value,executed_scope
+aar,0.38±0.13,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.3685,"this work, epitope_group/H3, 292 test complexes, mean"
+caar,0.21±0.23,"paper 4.5 Å native heavy-atom paratope; benchmark aggregation",0.1950,"this work 8 Å C-alpha native H3 contacts; not the paper-described CAAR mask"
+ppl,3.31±0.47,"paper-defined native-token PPL; source implementation equivalence unverified",3.3691,"generated-argmax-token PPL, not native-target PPL; not directly comparable"
+rmsd,1.95±0.87,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",1.9761,"this work, epitope_group/H3, 292 test complexes, mean"
+tm_score,0.21±0.13,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.1998,"this work, epitope_group/H3, 292 test complexes, mean"
+fnat,0.49±0.30,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.5265,"this work, epitope_group/H3, 292 test complexes, mean"
+irmsd,1.64±0.86,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",1.6593,"this work, epitope_group/H3, 292 test complexes, mean"
+dockq_ca_proxy,0.64±0.21,"paper CA-based DockQ-like score; exact evaluation scope and K unverified",0.6451,"this work H3 CA 8 Å fixed-native-context proxy; not canonical DockQ"
+epitope_f1,0.67±0.27,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.6689,"this work, epitope_group/H3, 292 test complexes, mean"
+n_liabilities,0.71±0.62,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.4349,"this work, epitope_group/H3, 292 test complexes, mean"
+chimera_s,0.48±0.11,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.4763,"this work, epitope_group/H3, 292 test complexes, mean"
+chimera_b,0.48±0.20,"CHIMERA-Bench leaderboard, epitope_group/H3, official run (mean±std)",0.4924,"this work, epitope_group/H3, 292 test complexes, mean"
