@@ -1,0 +1,233 @@
+{
+ "generated_utc": "2026-11-14T07:20:41.419492+00:00",
+ "target": "Human ACVR2B (UniProt Q13705), exact supplied reference construct = 5NGV chain A fragment, mature residues 25-117 (93 aa)",
+ "reference_antibody": "Bimagrumab (PDB 5NGV)",
+ "reference_structure": "/home/boltzmann4/.sci/profiles/ab_task_10/workspace/igdesign_repo/examples/5ngv.pdb (chains A=antigen, H=VH, L=VL)",
+ "native_sequences": {
+  "VH": "VQLVQSGAEVKKPGASVKVSCKASGYTFTSSYINWVRQAPGQGLEWMGTINPVSGSTSYAQKFQGRVTMTRDTSISTAYMELSRLRSDDTAVYYCARGSYFDYWGQGTLVTVS",
+  "VL": "SALTQPASVSGSPGQSITISCTGTSSDVGSYNYVNWYQQHPGKAPKLMIYGVSKRPSGVSNRFSGSKSGNTASLTISGLQAEDEADYYCGTFAGGSYYGVFGGGTKLTVLW",
+  "HCDR1": "GYTFTSSY",
+  "HCDR2": "INPVSGST",
+  "HCDR3": "ARGGWFDY"
+ },
+ "cdr_positions_0indexed": {
+  "HCDR1": "24:32",
+  "HCDR2": "49:57",
+  "HCDR3": "95:103"
+ },
+ "design_engine": "IgDesign (AbSciBio/igdesign @ 70431ee), checkpoint igdesign_acvr2b_holdout.ckpt, seed 0, temperature 0.5, 100 samples/scope (10 decoding orders x 10 ProteinMPNN seqs x 1 LM seq), condition on VL and ACVR2B, light chain not predicted, VL and framework preserved",
+ "structure_predictor": "Boltzmann platform Multimer_Structure_Prediction (AlphaFold2-Multimer v3 / ColabFold), top-ranked (rank_001) model per job, VH+VL multimer",
+ "scRMSD_protocol": "C-alpha atoms; whole-Fv (VH+VL, 224 CA) Kabsch superposition of predicted onto reference 5NGV (chain H VH with duplicate-resseq-10 GLU artifact excluded, chain L VL); regional C-alpha RMSD for HCDR1/2/3/123 (VH) and Fv_whole (all VH+VL). Units: angstrom. Same predictor, reference, atoms, alignment and regions for reference and all candidates.",
+ "metric_definitions": {
+  "AAR": "per-position identity vs native CDR over generated samples (1-shot = first sample; best-of-100 = max over 100)",
+  "scRMSD": "C-alpha RMSD in angstrom after whole-Fv Kabsch alignment"
+ },
+ "AAR": {
+  "HCDR3_only": {
+   "native": "ARGGWFDY",
+   "one_shot": 0.875,
+   "best_of_100": 0.875,
+   "mean": 0.75,
+   "one_shot_seq": "ARGSWFDY"
+  },
+  "HCDR123": {
+   "HCDR1": {
+    "native": "GYTFTSSY",
+    "one_shot": 0.75,
+    "best_of_100": 1.0,
+    "mean": 0.897
+   },
+   "HCDR2": {
+    "native": "INPVSGST",
+    "one_shot": 0.75,
+    "best_of_100": 0.875,
+    "mean": 0.703
+   },
+   "HCDR3": {
+    "native": "ARGGWFDY",
+    "one_shot": 0.75,
+    "best_of_100": 1.0,
+    "mean": 0.757
+   }
+  }
+ },
+ "reference_rmsd_executed": {
+  "HCDR1": 0.2347,
+  "HCDR2": 0.6304,
+  "HCDR3": 0.3705,
+  "HCDR123": 0.4434,
+  "Fv_whole": 1.214
+ },
+ "candidate_rmsd_executed": {
+  "acvr2b_hcdr3_01": {
+   "HCDR1": 0.24662615977664,
+   "HCDR2": 0.5051580059718854,
+   "HCDR3": 0.3584784658970156,
+   "HCDR123": 0.38493111253640433,
+   "Fv_whole": 1.203311155339435
+  },
+  "acvr2b_hcdr3_02": {
+   "HCDR1": 0.2339130245163975,
+   "HCDR2": 0.6121082311890762,
+   "HCDR3": 0.39266137161959247,
+   "HCDR123": 0.4410497864905232,
+   "Fv_whole": 1.2204491925369907
+  },
+  "acvr2b_hcdr3_03": {
+   "HCDR1": 0.2925834753009922,
+   "HCDR2": 0.6067514793023531,
+   "HCDR3": 0.4193684097353875,
+   "HCDR123": 0.4581201846454661,
+   "Fv_whole": 1.2399749585371795
+  },
+  "acvr2b_hcdr3_04": {
+   "HCDR1": 0.24419524533451173,
+   "HCDR2": 0.5136981987022922,
+   "HCDR3": 0.3789967151617305,
+   "HCDR123": 0.39461190525094564,
+   "Fv_whole": 1.17989394461923
+  },
+  "acvr2b_hcdr3_05": {
+   "HCDR1": 0.28802678908164275,
+   "HCDR2": 0.5361100031679874,
+   "HCDR3": 0.4588656069830785,
+   "HCDR123": 0.4400496229583696,
+   "Fv_whole": 1.2377462291478025
+  },
+  "acvr2b_hcdr3_06": {
+   "HCDR1": 0.27554415993848685,
+   "HCDR2": 0.6076795973947678,
+   "HCDR3": 0.3919868608474302,
+   "HCDR123": 0.44678584588260184,
+   "Fv_whole": 1.2193912187223472
+  },
+  "acvr2b_hcdr3_07": {
+   "HCDR1": 0.29682647108224736,
+   "HCDR2": 0.4799662674225267,
+   "HCDR3": 0.3405387030224268,
+   "HCDR123": 0.38054354987519684,
+   "Fv_whole": 1.199881628219219
+  },
+  "acvr2b_hcdr3_08": {
+   "HCDR1": 0.26014796579144545,
+   "HCDR2": 0.5013783551593523,
+   "HCDR3": 0.338702992377613,
+   "HCDR123": 0.3802529579868617,
+   "Fv_whole": 1.1398534520240051
+  },
+  "acvr2b_hcdr3_09": {
+   "HCDR1": 0.2747484609469278,
+   "HCDR2": 0.5010012648131751,
+   "HCDR3": 0.40240419448000864,
+   "HCDR123": 0.4034923047065505,
+   "Fv_whole": 1.201439674991206
+  },
+  "acvr2b_hcdr3_10": {
+   "HCDR1": 0.27494763220976337,
+   "HCDR2": 0.5437036531727127,
+   "HCDR3": 0.39042344914937277,
+   "HCDR123": 0.41778795761199305,
+   "Fv_whole": 1.2206507578961188
+  },
+  "acvr2b_hcdr123_01": {
+   "HCDR1": 0.243039893260396,
+   "HCDR2": 0.5190821699415608,
+   "HCDR3": 0.3506254169139723,
+   "HCDR123": 0.3879230472887464,
+   "Fv_whole": 1.219916553012001
+  },
+  "acvr2b_hcdr123_02": {
+   "HCDR1": 0.3623172377401246,
+   "HCDR2": 0.5110373090732171,
+   "HCDR3": 0.4687468152312554,
+   "HCDR123": 0.45172133327892666,
+   "Fv_whole": 1.1264755336032257
+  },
+  "acvr2b_hcdr123_03": null,
+  "acvr2b_hcdr123_04": {
+   "HCDR1": 0.2927025678252988,
+   "HCDR2": 0.5476795556152613,
+   "HCDR3": 0.3670856750931098,
+   "HCDR123": 0.4164851264687283,
+   "Fv_whole": 1.231060416811983
+  },
+  "acvr2b_hcdr123_05": {
+   "HCDR1": 0.2670194635875172,
+   "HCDR2": 0.5084454786521254,
+   "HCDR3": 0.36515393874486646,
+   "HCDR123": 0.3929179717944718,
+   "Fv_whole": 1.1809805252946846
+  },
+  "acvr2b_hcdr123_06": {
+   "HCDR1": 0.27473859365105596,
+   "HCDR2": 0.5289887590641058,
+   "HCDR3": 0.32842118850461716,
+   "HCDR123": 0.39292530211068866,
+   "Fv_whole": 1.19199259953063
+  },
+  "acvr2b_hcdr123_07": {
+   "HCDR1": 0.24284847901689424,
+   "HCDR2": 0.5077255469068513,
+   "HCDR3": 0.3680540418341517,
+   "HCDR123": 0.3882543807235731,
+   "Fv_whole": 1.190080239643874
+  },
+  "acvr2b_hcdr123_08": {
+   "HCDR1": 0.31502779901230227,
+   "HCDR2": 0.5109400745217182,
+   "HCDR3": 0.3586920319662443,
+   "HCDR123": 0.40371699976545766,
+   "Fv_whole": 1.1730131784944005
+  },
+  "acvr2b_hcdr123_09": {
+   "HCDR1": 0.2551583371184139,
+   "HCDR2": 0.5777666597848073,
+   "HCDR3": 0.3426897222915727,
+   "HCDR123": 0.4148720027205992,
+   "Fv_whole": 1.1804123492888212
+  },
+  "acvr2b_hcdr123_10": {
+   "HCDR1": 0.2912168652261862,
+   "HCDR2": 0.5767176672832515,
+   "HCDR3": 0.3997704558670712,
+   "HCDR123": 0.43864448312688936,
+   "Fv_whole": 1.2386818310066432
+  }
+ },
+ "candidate_hashes_vh_sha256_16": {
+  "acvr2b_hcdr3_01": "d860cf11c0705595",
+  "acvr2b_hcdr3_02": "f2f6f9aca603af0e",
+  "acvr2b_hcdr3_03": "956c533815257a7e",
+  "acvr2b_hcdr3_04": "d4d190acb03cd735",
+  "acvr2b_hcdr3_05": "0602e7420aead195",
+  "acvr2b_hcdr3_06": "fd18a6e82d84932d",
+  "acvr2b_hcdr3_07": "1eac16ad0833a786",
+  "acvr2b_hcdr3_08": "fe3aa44543041a94",
+  "acvr2b_hcdr3_09": "2d1204c6f32c3d52",
+  "acvr2b_hcdr3_10": "0d439bb4c71bc166",
+  "acvr2b_hcdr123_01": "91d3945fe4900e63",
+  "acvr2b_hcdr123_02": "ccde357ea0de9054",
+  "acvr2b_hcdr123_03": "f70c59e964d1fac8",
+  "acvr2b_hcdr123_04": "302b822bf9d421fb",
+  "acvr2b_hcdr123_05": "117470141737d73b",
+  "acvr2b_hcdr123_06": "ea9d3d5e7106841a",
+  "acvr2b_hcdr123_07": "03e4525dd3b338d0",
+  "acvr2b_hcdr123_08": "08132c2861157809",
+  "acvr2b_hcdr123_09": "28a015188247bb0f",
+  "acvr2b_hcdr123_10": "9f25958dc95d4635"
+ },
+ "selection_criteria": "Top 10 per scope by summed independent IgDesign ce_loss from 100 samples (distinct CDR combos); shortlist ranked by executed HCDR123 scRMSD (lower=better)",
+ "candidate_counts": {
+  "samples_per_scope": 100,
+  "unique_hcdr3_combos": 44,
+  "unique_hcdr123_combos": 89,
+  "shortlist_per_scope": 10,
+  "structures_predicted": 19,
+  "structures_missing": 1
+ },
+ "provenance": {
+  "source_csv": "Bimagrumab-ACVR2B.csv (SHA-256 5775fdfa2b23802aa4a295e7b98d3bbd52f4bd83440e33a3c9a0fca723dfcae9)",
+  "igdesign_commit": "70431eef0afaf0496d7d84e22dfdc1980ec9e70e",
+  "boltzmann_jobs": "see scrmsd_preds/job_ledger.json (21 submissions: 1 reference + 20 candidates, 19 completed, 1 unknown-state)"
+ }
+}

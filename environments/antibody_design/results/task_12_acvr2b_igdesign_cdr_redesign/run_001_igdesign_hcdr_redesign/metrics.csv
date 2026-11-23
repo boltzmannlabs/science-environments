@@ -1,0 +1,44 @@
+candidate_id,metric,value,units,source,protocol
+REFERENCE,scRMSD_HCDR1,0.2347,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+REFERENCE,scRMSD_HCDR2,0.6304,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+REFERENCE,scRMSD_HCDR3,0.3705,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+REFERENCE,scRMSD_HCDR123,0.4434,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+REFERENCE,scRMSD_Fv_whole,1.2140,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+REFERENCE,AAR_HCDR3_only_one_shot,0.875,fraction,IgDesign ACVR2B-holdout,"per-position identity vs native, 1 sample"
+REFERENCE,AAR_HCDR3_only_best_of_100,0.875,fraction,IgDesign ACVR2B-holdout,max over 100 samples
+REFERENCE,AAR_HCDR1_one_shot,0.750,fraction,IgDesign ACVR2B-holdout,"per-position identity vs native, 1 sample"
+REFERENCE,AAR_HCDR1_best_of_100,1.000,fraction,IgDesign ACVR2B-holdout,max over 100 samples
+REFERENCE,AAR_HCDR2_one_shot,0.750,fraction,IgDesign ACVR2B-holdout,"per-position identity vs native, 1 sample"
+REFERENCE,AAR_HCDR2_best_of_100,0.875,fraction,IgDesign ACVR2B-holdout,max over 100 samples
+REFERENCE,AAR_HCDR3_one_shot,0.750,fraction,IgDesign ACVR2B-holdout,"per-position identity vs native, 1 sample"
+REFERENCE,AAR_HCDR3_best_of_100,1.000,fraction,IgDesign ACVR2B-holdout,max over 100 samples
+T12-C001,scRMSD_HCDR1,0.2466,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C001,scRMSD_HCDR2,0.5052,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C001,scRMSD_HCDR3,0.3585,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C001,scRMSD_HCDR123,0.3849,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C001,scRMSD_Fv_whole,1.2033,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C001,ce_loss_sum,0.5019,nats/token,IgDesign ACVR2B-holdout,summed independent CDR cross-entropy
+T12-C007,scRMSD_HCDR1,0.2968,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C007,scRMSD_HCDR2,0.4800,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C007,scRMSD_HCDR3,0.3405,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C007,scRMSD_HCDR123,0.3805,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C007,scRMSD_Fv_whole,1.1999,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C007,ce_loss_sum,0.6313,nats/token,IgDesign ACVR2B-holdout,summed independent CDR cross-entropy
+T12-C008,scRMSD_HCDR1,0.2601,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C008,scRMSD_HCDR2,0.5014,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C008,scRMSD_HCDR3,0.3387,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C008,scRMSD_HCDR123,0.3803,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C008,scRMSD_Fv_whole,1.1399,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C008,ce_loss_sum,0.6378,nats/token,IgDesign ACVR2B-holdout,summed independent CDR cross-entropy
+T12-C011,scRMSD_HCDR1,0.2430,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C011,scRMSD_HCDR2,0.5191,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C011,scRMSD_HCDR3,0.3506,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C011,scRMSD_HCDR123,0.3879,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C011,scRMSD_Fv_whole,1.2199,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C011,ce_loss_sum,0.9748,nats/token,IgDesign ACVR2B-holdout,summed independent CDR cross-entropy
+T12-C017,scRMSD_HCDR1,0.2428,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C017,scRMSD_HCDR2,0.5077,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C017,scRMSD_HCDR3,0.3681,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C017,scRMSD_HCDR123,0.3883,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C017,scRMSD_Fv_whole,1.1901,A,AlphaFold2-Multimer v3 (Boltzmann),"C-alpha, whole-Fv Kabsch onto 5NGV"
+T12-C017,ce_loss_sum,1.0365,nats/token,IgDesign ACVR2B-holdout,summed independent CDR cross-entropy

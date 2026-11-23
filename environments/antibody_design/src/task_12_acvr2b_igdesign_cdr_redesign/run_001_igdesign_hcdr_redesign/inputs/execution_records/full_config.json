@@ -1,0 +1,33 @@
+{
+  "task_id": "task_12_acvr2b_igdesign_cdr_redesign",
+  "run_id": "run_001_igdesign_hcdr_redesign",
+  "workflow_id": "wf_igdesign_reference_backbone_redesign",
+  "objective": "Reference-backbone-conditioned IgDesign CDR redesign of Bimagrumab (5NGV Fv) against the exact ACVR2B fragment; HCDR3-only and HCDR123 scopes, 100 samples each; AAR native recovery; matched AlphaFold2-Multimer v3 scRMSD evaluation of the top-10 panel per scope",
+  "inputs": {
+    "pdb": "@src/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign/inputs/5ngv.pdb",
+    "sequences": "@src/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign/inputs/sequences.json",
+    "edit_masks": "@src/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign/inputs/edit_masks.json",
+    "benchmark_csv": "@src/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign/inputs/Bimagrumab-ACVR2B.csv"
+  },
+  "generator": {
+    "software": "igdesign (commit 70431ee)",
+    "checkpoints": "ACVR2B-holdout IgDesign + ProteinMPNN holdout",
+    "conditioning": "VH backbone + VL + ACVR2B antigen (reference-backbone)",
+    "samples_per_scope": 100,
+    "temperature": 0.5,
+    "seed": 0,
+    "dedup": true,
+    "selection": "top 10 per scope by summed independent cross-entropy loss"
+  },
+  "evaluation": {
+    "predictor": "AlphaFold2-Multimer v3 (Boltzmann Multimer_Structure_Prediction, rank-1)",
+    "metric": "C-alpha scRMSD after whole-Fv Kabsch onto 5NGV; regions HCDR1/2/3/123 (VH) and Fv (VH+VL)",
+    "native_reference": {
+      "HCDR1": 0.2347,
+      "HCDR2": 0.6304,
+      "HCDR3": 0.3705,
+      "HCDR123": 0.4434,
+      "Fv_whole": 1.214
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "tool": "igdesign",
+    "version": "commit 70431ee",
+    "purpose": "reference-backbone CDR redesign",
+    "checkpoints": "ACVR2B-holdout IgDesign + ProteinMPNN holdout",
+    "runs": "HCDR3-only (100), HCDR123 (100)",
+    "device": "CUDA, 2 GPUs, torch 2.11.0+cu128"
+  },
+  {
+    "tool": "compute_aar",
+    "version": "local script",
+    "purpose": "native-recovery AAR (1-shot, best-of-100, mean)"
+  },
+  {
+    "tool": "Boltzmann Multimer_Structure_Prediction",
+    "version": "AlphaFold2-Multimer v3 / ColabFold",
+    "purpose": "native + 20-candidate structure prediction",
+    "rank": "rank-1 model"
+  },
+  {
+    "tool": "compute_fv_rmsd",
+    "version": "local script",
+    "purpose": "whole-Fv Kabsch regional C-alpha scRMSD"
+  }
+]

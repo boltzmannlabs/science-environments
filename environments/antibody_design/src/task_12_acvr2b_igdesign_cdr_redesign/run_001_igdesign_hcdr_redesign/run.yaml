@@ -1,0 +1,16 @@
+task_id: task_12_acvr2b_igdesign_cdr_redesign
+run_id: run_001_igdesign_hcdr_redesign
+workflow_id: wf_igdesign_reference_backbone_redesign
+status: completed
+config:
+  scientific:
+    path: ../../../results/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign/run.json
+    sha256: e7acee9877b324bf073308e5a8bf16c2ae2e1326c7a52444f26405e514427feb
+  agent_settings:
+    path: ../../../configs/task_12_acvr2b_igdesign_cdr_redesign/run_001_igdesign_hcdr_redesign.json
+    sha256: 9464b37916abdd639f3e4a210bc4c023f21e5bc54961dbd37561223d485021cb
+workflow: workflow.md
+logs:
+- logs/agent_scientist_log.md
+- logs/execution_summary.md
+artifact_manifest: inputs/saved_artifacts.csv
