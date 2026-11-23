@@ -1,0 +1,25 @@
+{
+  "n_gate_survivors": 10,
+  "n_panel": 6,
+  "primary_efficacy_column": "oligoformer_native_score",
+  "stability_post_diversity_jaccard": {
+    "efficacy0.75": 0.7142857142857143,
+    "efficacy1.25": 1.0,
+    "specificity0.75": 1.0,
+    "specificity1.25": 0.7142857142857143,
+    "seed_tox0.75": 0.7142857142857143,
+    "seed_tox1.25": 1.0,
+    "immune0.75": 1.0,
+    "immune1.25": 1.0,
+    "stability0.75": 1.0,
+    "stability1.25": 1.0
+  },
+  "mean_panel_jaccard_pm25pct": 0.9142857142857143,
+  "immune_dimension": "Hard filters inherited; weighted immune component absent and explicitly contributes zero.",
+  "gates_recomputed": false,
+  "gate_decision_source": "results/002_oncology/Run-3_2026-11-11/gate_decisions.csv",
+  "gate_source_sha256": "10a4466dd8f90b6f712b228d06b9d0b92312df5c23cd343f60f8f8cc0aba013f",
+  "new_model_inference": false,
+  "interpretation": "Fresh reranking of previously evaluated gate-clean candidates, not fresh generation or a new battery. No efficacy endpoints averaged. Missing application-context stages remain unrun.",
+  "best_design": null
+}

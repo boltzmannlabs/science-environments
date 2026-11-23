@@ -1,0 +1,45 @@
+{
+  "model": "RS3 Sequence",
+  "source": "gpp-rnd/rs_dev/code/07_test_seq_model.ipynb",
+  "source_commit": "e92c3a8dc1d2452ffd979c094ec7d9e1f9b754e9",
+  "training_datasets": [
+    "Doench2014_human",
+    "Doench2014_mouse",
+    "Doench2016",
+    "Kim2019_train",
+    "Munoz2016",
+    "Wang2014",
+    "Xiang2021"
+  ],
+  "train_exclusion": "exact 20mer union for RS3, CRISPRon, Azimuth and DeepSpCas9, as official RS3 notebook; not the different CRISPRon <=3mm publication protocol",
+  "training_20mers": 46517,
+  "before_exclusion_rows": 80355,
+  "heldout_rows": 26915,
+  "unique_contexts": 23629,
+  "dataset_counts": {
+    "Aguirre2016": 7716,
+    "Behan2019": 6974,
+    "Chari2015": 1129,
+    "Kim2019_test": 518,
+    "Koike-Yusa2014": 6666,
+    "Shalem2014": 3912
+  },
+  "expected_counts_from_notebook": {
+    "Aguirre2016": 7828,
+    "Behan2019": 7025,
+    "Chari2015": 1130,
+    "Kim2019_test": 518,
+    "Koike-Yusa2014": 6718,
+    "Shalem2014": 3968
+  },
+  "counts_match": false,
+  "features": "30nt contexts plus per-dataset Hsu2013/Chen2013 tracr; no target model substitution",
+  "labels": "official author-processed activity columns via datasets.py, exact source transformations retained",
+  "metrics": {
+    "spearman": "dataset-wise, as original",
+    "bootstrap": "1000 resamples with random_state i=0..999, as core.py; guide-row CIs primary, target-cluster sensitivity secondary",
+    "ndcg": "supplemental within-gene rank-relevance nDCG@20, explicitly not an original RS3 endpoint",
+    "rank_loss": "within-gene mean absolute rank error for genomewide datasets, original metric"
+  },
+  "frozen_before_scoring": true
+}

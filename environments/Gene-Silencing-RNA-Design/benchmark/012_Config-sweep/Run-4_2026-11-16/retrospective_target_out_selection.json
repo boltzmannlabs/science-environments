@@ -1,0 +1,170 @@
+[
+  {
+    "step": 0,
+    "new_config": "C00_rnai_native21",
+    "fixed_config_macro_auc": 0.7115189088979194,
+    "retrospective_loto_selected_macro_auc": 0.7115189088979194,
+    "folds": [
+      {
+        "held_gene": "HIF1A",
+        "selection_genes": [
+          "HPSE",
+          "HK2"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.677122113346879,
+        "held_gene_auc": 0.7803125,
+        "held_gene_baseline_auc": 0.7803125
+      },
+      {
+        "held_gene": "HPSE",
+        "selection_genes": [
+          "HIF1A",
+          "HK2"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.748966959838107,
+        "held_gene_auc": 0.6366228070175438,
+        "held_gene_baseline_auc": 0.6366228070175438
+      },
+      {
+        "held_gene": "HK2",
+        "selection_genes": [
+          "HIF1A",
+          "HPSE"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.7084676535087719,
+        "held_gene_auc": 0.7176214196762142,
+        "held_gene_baseline_auc": 0.7176214196762142
+      }
+    ],
+    "warning": "Previously exposed data, not a clean holdout. Leave-target-out protects this config-selection step only; no claim that pretrained checkpoints were trained without these cohorts."
+  },
+  {
+    "step": 1,
+    "new_config": "C01_rnai_core19",
+    "fixed_config_macro_auc": 0.7203189451290118,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615,
+    "folds": [
+      {
+        "held_gene": "HIF1A",
+        "selection_genes": [
+          "HPSE",
+          "HK2"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.6950096676935178,
+        "held_gene_auc": 0.7709375,
+        "held_gene_baseline_auc": 0.7803125
+      },
+      {
+        "held_gene": "HPSE",
+        "selection_genes": [
+          "HIF1A",
+          "HK2"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.748966959838107,
+        "held_gene_auc": 0.6366228070175438,
+        "held_gene_baseline_auc": 0.6366228070175438
+      },
+      {
+        "held_gene": "HK2",
+        "selection_genes": [
+          "HIF1A",
+          "HPSE"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.7190213815789475,
+        "held_gene_auc": 0.7229140722291407,
+        "held_gene_baseline_auc": 0.7176214196762142
+      }
+    ],
+    "warning": "Previously exposed data, not a clean holdout. Leave-target-out protects this config-selection step only; no claim that pretrained checkpoints were trained without these cohorts."
+  },
+  {
+    "step": 2,
+    "new_config": "C02_rnaispline_core19",
+    "fixed_config_macro_auc": 0.6966222767509267,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615,
+    "folds": [
+      {
+        "held_gene": "HIF1A",
+        "selection_genes": [
+          "HPSE",
+          "HK2"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.6950096676935178,
+        "held_gene_auc": 0.7709375,
+        "held_gene_baseline_auc": 0.7803125
+      },
+      {
+        "held_gene": "HPSE",
+        "selection_genes": [
+          "HIF1A",
+          "HK2"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.748966959838107,
+        "held_gene_auc": 0.6366228070175438,
+        "held_gene_baseline_auc": 0.6366228070175438
+      },
+      {
+        "held_gene": "HK2",
+        "selection_genes": [
+          "HIF1A",
+          "HPSE"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.7190213815789475,
+        "held_gene_auc": 0.7229140722291407,
+        "held_gene_baseline_auc": 0.7176214196762142
+      }
+    ],
+    "warning": "Previously exposed data, not a clean holdout. Leave-target-out protects this config-selection step only; no claim that pretrained checkpoints were trained without these cohorts."
+  },
+  {
+    "step": 3,
+    "new_config": "C03_oligoformer_core19",
+    "fixed_config_macro_auc": 0.6627434037563814,
+    "retrospective_loto_selected_macro_auc": 0.7101581264155615,
+    "folds": [
+      {
+        "held_gene": "HIF1A",
+        "selection_genes": [
+          "HPSE",
+          "HK2"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.6950096676935178,
+        "held_gene_auc": 0.7709375,
+        "held_gene_baseline_auc": 0.7803125
+      },
+      {
+        "held_gene": "HPSE",
+        "selection_genes": [
+          "HIF1A",
+          "HK2"
+        ],
+        "chosen_config": "C00_rnai_native21",
+        "selection_macro_auc": 0.748966959838107,
+        "held_gene_auc": 0.6366228070175438,
+        "held_gene_baseline_auc": 0.6366228070175438
+      },
+      {
+        "held_gene": "HK2",
+        "selection_genes": [
+          "HIF1A",
+          "HPSE"
+        ],
+        "chosen_config": "C01_rnai_core19",
+        "selection_macro_auc": 0.7190213815789475,
+        "held_gene_auc": 0.7229140722291407,
+        "held_gene_baseline_auc": 0.7176214196762142
+      }
+    ],
+    "warning": "Previously exposed data, not a clean holdout. Leave-target-out protects this config-selection step only; no claim that pretrained checkpoints were trained without these cohorts."
+  }
+]

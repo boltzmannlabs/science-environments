@@ -1,0 +1,30 @@
+{
+  "config_id": "U00_retained_rnai",
+  "status": "COMPLETED_CONTROL_REPLAY",
+  "model": "RN.Ai-Predict",
+  "new_model": false,
+  "best_design": null,
+  "full_application_complete": false,
+  "anchors": [
+    {
+      "config_id": "U00_retained_rnai",
+      "anchor": "patisiran",
+      "rank": 151.0,
+      "pool_n": 598,
+      "percentile": 74.87437185929649,
+      "native_score": 75.16,
+      "interpretation": "Projected core anchor recovery only; no measured clinical potency labels."
+    },
+    {
+      "config_id": "U00_retained_rnai",
+      "anchor": "vutrisiran",
+      "rank": 19.0,
+      "pool_n": 598,
+      "percentile": 96.98492462311557,
+      "native_score": 85.02,
+      "interpretation": "Projected core anchor recovery only; no measured clinical potency labels."
+    }
+  ],
+  "n": 598,
+  "metric": "known_anchor_rank_no_efficacy_ground_truth"
+}

@@ -1,0 +1,19 @@
+{
+  "gene": "TTR",
+  "status": "COMPUTATIONAL_BATTERY_EXECUTED",
+  "pool_windows": 598,
+  "reviewed": 100,
+  "n_evaluated": 24,
+  "generation_source": "/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/results/003_genetic-disease-total-lowering/Run-3_2026-11-11/generation/all_generated_candidates.csv",
+  "generation_sha256": "84dcb79d88cbab0dda2f3ba281f86c24b2378a50fcc7820d624561539243df19",
+  "best_design": null,
+  "not_run": [
+    "E4e RNAhybrid broken-binary",
+    "GTEx/HPA tissue context",
+    "OpenTargets orthogonal context",
+    "6/8-mer transcriptome counts (adapter provides only 7-mer)",
+    "experimental validation",
+    "sequence-based delivery/chemistry prediction"
+  ],
+  "scope": "Single declared transcript; not all-isoform coverage; expression and clinical suitability unverified."
+}

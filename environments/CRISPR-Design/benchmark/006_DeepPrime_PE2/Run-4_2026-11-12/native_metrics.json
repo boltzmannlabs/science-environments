@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETED_OFFICIAL_FIXED_TEST_REPRODUCTION",
+  "n": 28883,
+  "target74_groups": 5494,
+  "train_rows": 259910,
+  "test_rows": 28883,
+  "exact_input_and74nt_target_overlap": 0,
+  "condition": "HEK293T/PE2/conventional scaffold",
+  "spearman": 0.8614735878371184,
+  "pearson": 0.8339661207264397,
+  "pair_bootstrap_spearman_ci95": [
+    0.8580158915221335,
+    0.8646109060867881
+  ],
+  "target_cluster_spearman_ci95": [
+    0.8563976728217211,
+    0.866396281674453
+  ],
+  "MAE_native_percent_units": 1.5689884966077141,
+  "prediction_range": [
+    6.890009204285619e-06,
+    0.518585616263334,
+    42.60467900109532
+  ],
+  "limitation": "One official matched system/cell dataset only; not evidence across all8 systems/7cells. Upstream DeepSpCas9 input scores are author-provided features, not recomputed with a different model. No unintended-edit/purity score inferred."
+}

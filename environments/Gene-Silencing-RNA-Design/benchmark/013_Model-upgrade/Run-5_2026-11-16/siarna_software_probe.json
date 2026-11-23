@@ -1,0 +1,52 @@
+{
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "sklearn": "1.8.0",
+    "Bio": "1.86",
+    "flask": {
+      "unavailable": "No module named 'flask'"
+    },
+    "fm": {
+      "unavailable": "No module named 'fm'"
+    },
+    "torch_geometric": {
+      "unavailable": "No module named 'torch_geometric'"
+    }
+  },
+  "checkpoint_strict_load": "PASSED",
+  "checkpoint_shapes": {
+    "proj_mRNA.weight": [
+      256,
+      39126
+    ],
+    "proj_mRNA.bias": [
+      256
+    ],
+    "proj_siRNA.weight": [
+      256,
+      1513
+    ],
+    "proj_siRNA.bias": [
+      256
+    ],
+    "fc_mlp1.weight": [
+      64,
+      181
+    ],
+    "fc_mlp1.bias": [
+      64
+    ]
+  },
+  "preprocessing_random_override": {
+    "file": "preprocess.py",
+    "line": 170,
+    "code": "df_mrna = [np.random.randn(100).astype(np.float32) for _ in range(2)]",
+    "demonstration": "Executed exact upstream assignment twice; replaces prior biological feature vector with two random 100-element vectors; outputs differ. These are software diagnostics, not biological predictions.",
+    "max_absolute_difference": 4.263439655303955
+  },
+  "model_status": "BLOCKED_FOR_VALID_EFFICACY_COMPARISON",
+  "reason": "Native preprocessing overwrites actual mRNA folding features with unseeded random numbers; native inference prints/returns first pair only; genuine AGO2 features are not supplied for the measured cohort. Do not invent or zero-fill learned inputs."
+}

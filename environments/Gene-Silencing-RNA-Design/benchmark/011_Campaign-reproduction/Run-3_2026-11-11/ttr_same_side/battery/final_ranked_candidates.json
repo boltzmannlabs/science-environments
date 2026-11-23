@@ -1,0 +1,30 @@
+[
+  {
+    "candidate_id": "patisiran_derived_19nt_core",
+    "evidence_status": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "rank_score": 0.8121,
+    "rank_components": {
+      "efficacy_RN.Ai-Predict": 0.7515999999999999,
+      "efficacy_RNAiSpline": 0.6401,
+      "offtarget_penalty": -0.24151611328125,
+      "seed_penalty": -0.5625,
+      "accessibility": 0.49539231052631577,
+      "seed_tox_penalty": -0.27099999999999996
+    },
+    "rejection_reasons": ""
+  },
+  {
+    "candidate_id": "vutrisiran_derived_19nt_core",
+    "evidence_status": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "rank_score": 0.5271,
+    "rank_components": {
+      "efficacy_RN.Ai-Predict": 0.8502,
+      "efficacy_RNAiSpline": 0.6844,
+      "offtarget_penalty": -0.379638671875,
+      "seed_penalty": -0.687,
+      "accessibility": 0.4881660263157894,
+      "seed_tox_penalty": -0.429
+    },
+    "rejection_reasons": ""
+  }
+]

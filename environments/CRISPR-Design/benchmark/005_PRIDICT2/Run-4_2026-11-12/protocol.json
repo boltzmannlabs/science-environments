@@ -1,0 +1,16 @@
+{
+  "model": "PRIDICT2.0, source CLI August2023 model_A/model_B ensemble",
+  "source_commit": "c133c35e205062e766bf515d1766169167e993b9",
+  "dataset": "Library-Diverse 22956 preprocessed rows",
+  "cell_heads": [
+    "HEK",
+    "K562"
+  ],
+  "normalization": "official max normalization, wsize20, no MFE/addendum features",
+  "prediction_rule": "Use each row only in its own grouped held-out fold; average two base-pretraining families within that fold, never average the5 folds",
+  "split_identity": "protocols/PRIDICT2_fold_identity.json",
+  "frozen_before_inference": true,
+  "qualification": "Group disjointness verified within Library-Diverse fine-tuning; source pretraining libraries are not fully present here, so overlap with >400k base training cannot be fully audited. Do not call this independently unseen-locus evaluation across all pretraining data.",
+  "hardware": "CPU, torch2.0.1+cpu, one compute thread; Python3.10.21, pandas2.0.3, NumPy1.24.4",
+  "labels": "native HEK/K562 averageedited,averageunedited,averageunintended_clamped; cell-specific missing indices excluded, not treated as zeros"
+}

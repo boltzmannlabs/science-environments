@@ -1,0 +1,29 @@
+{
+  "config_id": "C01_rnai_core19",
+  "ordinal": 1,
+  "status": "ANCHOR_DIAGNOSTIC_ONLY",
+  "n": 598,
+  "anchors": [
+    {
+      "config_id": "C01_rnai_core19",
+      "ordinal": 1,
+      "anchor": "patisiran",
+      "rank": 151.0,
+      "pool_n": 598,
+      "percentile": 74.87437185929649,
+      "native_score": 75.16,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    },
+    {
+      "config_id": "C01_rnai_core19",
+      "ordinal": 1,
+      "anchor": "vutrisiran",
+      "rank": 19.0,
+      "pool_n": 598,
+      "percentile": 96.98492462311557,
+      "native_score": 85.02,
+      "label": "Known projected 19-nt core; no clinical potency labels; do not optimize to anchor recovery."
+    }
+  ],
+  "selection": "No anchor-based best config selected; not measured efficacy."
+}

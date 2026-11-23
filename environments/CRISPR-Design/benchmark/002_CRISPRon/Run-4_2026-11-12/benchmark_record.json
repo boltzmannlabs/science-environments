@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "002",
+  "model": "CRISPRon",
+  "title": "CRISPRon v1 external activity",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "001",
+    "002",
+    "011"
+  ],
+  "publication": "https://europepmc.org/articles/PMC8163799 ; comparator protocol https://europepmc.org/articles/PMC9448816",
+  "benchmark_scope": "Completed native v1 inference on the same six RS3-publication common-exclusion cohorts; exact30nt contexts and native thermodynamic inputs.",
+  "scientific_limits": "This is the RS3 comparative held-out protocol, not CRISPRon_v0 internal0.80 reproduction or its different<=3mm training-exclusion procedure. No cross-assay universal superiority claim.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Prior completed native execution retained, not rerun in this retry"
+}

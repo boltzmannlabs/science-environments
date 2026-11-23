@@ -1,0 +1,68 @@
+[
+  {
+    "task": "001_general",
+    "configs_executed": 4,
+    "status": "EXECUTED_RETROSPECTIVE_ANALYSIS",
+    "full_application_complete": false
+  },
+  {
+    "task": "002_oncology",
+    "configs_executed": 4,
+    "status": "EXECUTED_RETROSPECTIVE_ANALYSIS",
+    "full_application_complete": false
+  },
+  {
+    "task": "003_genetic-disease-total-lowering",
+    "configs_executed": 4,
+    "status": "EXECUTED_DESCRIPTIVE_SENSITIVITY",
+    "full_application_complete": false
+  },
+  {
+    "task": "004_genetic-disease-allele-selective",
+    "configs_executed": 4,
+    "status": "EXECUTED_DESCRIPTIVE_SENSITIVITY",
+    "full_application_complete": false
+  },
+  {
+    "task": "005_metabolic-liver-galnac",
+    "configs_executed": 0,
+    "status": "SKIPPED_NO_MATCHED_BENCHMARK",
+    "reason": "No matched measured PCSK9 sequence-efficacy cohort verified; clinical inclisiran outcomes are not predictor labels."
+  },
+  {
+    "task": "006_systemic-lnp",
+    "configs_executed": 4,
+    "status": "EXECUTED_DESCRIPTIVE_SENSITIVITY",
+    "full_application_complete": false
+  },
+  {
+    "task": "007_neuro-cns",
+    "configs_executed": 3,
+    "status": "EXECUTED_DESCRIPTIVE_SENSITIVITY",
+    "full_application_complete": false
+  },
+  {
+    "task": "008_inflammation-immune",
+    "configs_executed": 0,
+    "status": "SKIPPED_NO_MATCHED_BENCHMARK",
+    "reason": "No matched TNF efficacy cohort; immune set has only one retained negative and is unsuitable for performance-driven rule tuning. Frozen hazard rules unchanged."
+  },
+  {
+    "task": "009_functional-genomics",
+    "configs_executed": 4,
+    "status": "EXECUTED_RETROSPECTIVE_ANALYSIS",
+    "full_application_complete": false
+  },
+  {
+    "task": "010_gene-regulation",
+    "configs_executed": 4,
+    "status": "EXECUTED_DESCRIPTIVE_SENSITIVITY",
+    "full_application_complete": false
+  },
+  {
+    "task": "011_drug-target-validation",
+    "configs_executed": 4,
+    "status": "EXECUTED_RETROSPECTIVE_ANALYSIS",
+    "full_application_complete": false
+  }
+]

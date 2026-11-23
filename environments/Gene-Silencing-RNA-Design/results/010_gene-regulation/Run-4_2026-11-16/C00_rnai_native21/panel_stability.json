@@ -1,0 +1,25 @@
+{
+  "n_gate_survivors": 17,
+  "n_panel": 6,
+  "primary_efficacy_column": "eff_RN.Ai-Predict",
+  "stability_post_diversity_jaccard": {
+    "efficacy0.75": 1.0,
+    "efficacy1.25": 1.0,
+    "specificity0.75": 1.0,
+    "specificity1.25": 1.0,
+    "seed_tox0.75": 1.0,
+    "seed_tox1.25": 1.0,
+    "immune0.75": 1.0,
+    "immune1.25": 1.0,
+    "stability0.75": 1.0,
+    "stability1.25": 1.0
+  },
+  "mean_panel_jaccard_pm25pct": 1.0,
+  "immune_dimension": "Hard filters inherited; weighted immune component absent and explicitly contributes zero.",
+  "gates_recomputed": false,
+  "gate_decision_source": "results/010_gene-regulation/Run-3_2026-11-11/gate_decisions.csv",
+  "gate_source_sha256": "693558cf91a7de666d2754f6b9694227f4135e24f7ca81d36f8a0c9c3564e08e",
+  "new_model_inference": false,
+  "interpretation": "Fresh reranking of previously evaluated gate-clean candidates, not fresh generation or a new battery. No efficacy endpoints averaged. Missing application-context stages remain unrun.",
+  "best_design": null
+}

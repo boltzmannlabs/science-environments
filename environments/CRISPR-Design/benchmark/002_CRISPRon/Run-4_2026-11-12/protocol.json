@@ -1,0 +1,10 @@
+{
+  "model": "CRISPRon v1",
+  "evaluation": "external held-out panel from RS3 publication common-exclusion protocol, not CRISPRon_v0 internal test replication",
+  "train_exclusion": "exact 20mer union of all four compared models; original CRISPRon paper additionally applies <=3mm exclusion, NOT claimed here",
+  "label_types": "author-processed integrated-target and genomewide phenotypes; separated by dataset, no mixing with Day10+dox",
+  "n_unique_inputs": 23629,
+  "input_sha256": "07c3a5d145404a9e9f14e135c6299b04de0b563f2d890a64febc0432209c8c1e",
+  "previous_reference_predictions_used_for_selection": false,
+  "calibration_or_tuning": false
+}

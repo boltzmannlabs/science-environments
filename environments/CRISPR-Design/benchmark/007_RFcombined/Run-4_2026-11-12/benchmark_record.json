@@ -1,0 +1,17 @@
+{
+  "benchmark_id": "007",
+  "model": "RFcombined",
+  "title": "RFcombined published-method refit evaluation",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "009"
+  ],
+  "publication": "https://europepmc.org/articles/PMC7294996",
+  "benchmark_scope": "Completed1000native randomForest2000tree/mtry12fits using published2918row35feature matrix,sourceR3.5seed schedule,screen-balanced70/30splits and training-only scaling. All1000partitions/predictions independently verified.",
+  "scientific_limits": "Completed qualified published-method reimplementation,not exact replay of conflicting source variants:comparative code uses defaults/finalCVmtry10. Published precomputed features/globalfeatureselection inherited. Refit percentile spread is not independent-targetCI. GFPLOSO0.294688 limits transfer.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Prior completed native execution retained, not rerun in this retry"
+}

@@ -1,0 +1,20 @@
+{
+  "job_id": "MYC_Run-3_2026-11-11",
+  "executed_at_utc": "2026-11-11T12:54:36Z",
+  "pipeline_version": "0.1.0",
+  "n_candidates": 24,
+  "modules": {
+    "structure": "RNAfold 2.7.2",
+    "efficacy": {
+      "RN.Ai-Predict": "AVAILABLE_PRETRAINED",
+      "RNAiSpline": "AVAILABLE_PRETRAINED",
+      "siRNADiscovery": "CODE_ONLY"
+    },
+    "offtarget": "bowtie2 GENCODE v50 + siSPOTR POTS(Apache-2.0) + 6merDB(MIT)",
+    "seed_toxicity": "6merDB (NW_CellToxicityDB v1.5)",
+    "nupack": "LICENSE_RESTRICTED (not installed)",
+    "rnastructure": "NOT_INSTALLED (optional; academic license)",
+    "pkpd": "NCA of supplied data only; PBPK NOT_EVALUATED"
+  },
+  "runtime_s": 190.8
+}

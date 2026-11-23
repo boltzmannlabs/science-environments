@@ -1,0 +1,59 @@
+-----------------Start inferring!-----------------
+target
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_002467.6/runtime/RNA-FM/redevelop/.
+2026-11-16 10:22:12,933 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:22:12,933 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:22:12,933 prediction INFO: Model File:none
+2026-11-16 10:22:12,933 prediction INFO: Batch Size:1
+2026-11-16 10:22:12,933 prediction INFO: Threshold:0.5
+2026-11-16 10:22:12,933 prediction INFO: Prediction Dataset: ../../data/infer/target/mRNA.fa
+Sequence Num: 7
+2026-11-16 10:22:14,504 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/7]
+saved embedding shape: (57, 640)
+Iteration[2/7]
+saved embedding shape: (57, 640)
+Iteration[3/7]
+saved embedding shape: (57, 640)
+Iteration[4/7]
+saved embedding shape: (57, 640)
+Iteration[5/7]
+saved embedding shape: (57, 640)
+Iteration[6/7]
+saved embedding shape: (57, 640)
+Iteration[7/7]
+saved embedding shape: (57, 640)
+2026-11-16 10:22:14,951 prediction.inference INFO: Finish Prediction
+work_dir:/home/boltzmann13/IMRAN/NOV26/science-environments/environments/Gene-Silencing-RNA-Design/benchmark/014_Workflow-rerun/Run-6_2026-11-16/native_oligoformer/NM_002467.6/runtime/RNA-FM/redevelop/.
+2026-11-16 10:22:20,049 prediction INFO: Using 1 GPUS, GPU ID: 0
+2026-11-16 10:22:20,049 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-11-16 10:22:20,049 prediction INFO: Model File:none
+2026-11-16 10:22:20,050 prediction INFO: Batch Size:1
+2026-11-16 10:22:20,050 prediction INFO: Threshold:0.5
+2026-11-16 10:22:20,050 prediction INFO: Prediction Dataset: ../../data/infer/target/siRNA.fa
+Sequence Num: 7
+2026-11-16 10:22:21,609 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/7]
+saved embedding shape: (19, 640)
+Iteration[2/7]
+saved embedding shape: (19, 640)
+Iteration[3/7]
+saved embedding shape: (19, 640)
+Iteration[4/7]
+saved embedding shape: (19, 640)
+Iteration[5/7]
+saved embedding shape: (19, 640)
+Iteration[6/7]
+saved embedding shape: (19, 640)
+Iteration[7/7]
+saved embedding shape: (19, 640)
+2026-11-16 10:22:22,046 prediction.inference INFO: Finish Prediction
+          0
+0  0.948287
+1  0.966517
+2  0.854652
+3  0.993337
+4  0.797804
+5  0.728671
+6  1.048605
+14 seconds 0.23333333333333334 minutes

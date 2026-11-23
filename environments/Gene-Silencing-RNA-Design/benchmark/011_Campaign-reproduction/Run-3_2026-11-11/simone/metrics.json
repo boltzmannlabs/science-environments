@@ -1,0 +1,114 @@
+{
+  "n": 322,
+  "n_positive": 241,
+  "cutoff": 0.7,
+  "auc": 0.7021412837457097,
+  "pearson": 0.5073771907440527,
+  "spearman": 0.39303730529043396,
+  "auc_ci95_stratified_row_bootstrap": [
+    0.6286486348035448,
+    0.7705202090056862
+  ],
+  "bootstrap_replicates": 2000,
+  "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+  "n_total": 322,
+  "n_scored_ok": 322,
+  "n_excluded": 0,
+  "fresh_inference": true,
+  "model": "RN.Ai-Predict",
+  "per_accession": {
+    "NM_000189.5": {
+      "n": 95,
+      "n_positive": 73,
+      "cutoff": 0.7,
+      "auc": 0.7176214196762142,
+      "pearson": 0.4319257054537113,
+      "spearman": 0.34696437776757044,
+      "auc_ci95_stratified_row_bootstrap": [
+        0.5765722291407223,
+        0.8536892901618928
+      ],
+      "bootstrap_replicates": 2000,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+    },
+    "NM_001098540.3": {
+      "n": 106,
+      "n_positive": 76,
+      "cutoff": 0.7,
+      "auc": 0.6366228070175438,
+      "pearson": 0.47410492350363126,
+      "spearman": 0.29671298837335774,
+      "auc_ci95_stratified_row_bootstrap": [
+        0.5236842105263158,
+        0.7467269736842105
+      ],
+      "bootstrap_replicates": 2000,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+    },
+    "NM_001530.4": {
+      "n": 100,
+      "n_positive": 80,
+      "cutoff": 0.7,
+      "auc": 0.7803125,
+      "pearson": 0.6728842269942514,
+      "spearman": 0.4902714500136178,
+      "auc_ci95_stratified_row_bootstrap": [
+        0.6425,
+        0.8921953125
+      ],
+      "bootstrap_replicates": 2000,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Within-gene overlapping windows; descriptive uncertainty only."
+    },
+    "NM_001904.4": {
+      "n": 5,
+      "n_positive": 5,
+      "cutoff": 0.7,
+      "auc": null,
+      "pearson": 0.3794805687045979,
+      "spearman": 0.49999999999999994,
+      "auc_ci95_stratified_row_bootstrap": null,
+      "bootstrap_replicates": 0,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+    },
+    "NM_002467.6": {
+      "n": 7,
+      "n_positive": 1,
+      "cutoff": 0.7,
+      "auc": 1.0,
+      "pearson": 0.532225006488381,
+      "spearman": -0.10714285714285716,
+      "auc_ci95_stratified_row_bootstrap": null,
+      "bootstrap_replicates": 0,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+    },
+    "NM_004456.5": {
+      "n": 9,
+      "n_positive": 6,
+      "cutoff": 0.7,
+      "auc": 0.4722222222222222,
+      "pearson": 0.10003837830006912,
+      "spearman": -0.06722689075630253,
+      "auc_ci95_stratified_row_bootstrap": null,
+      "bootstrap_replicates": 0,
+      "ci_scope": "Within-cohort descriptive row resampling; overlapping sites and shared genes violate row independence. Not an external generalization CI.",
+      "adequacy_note": "Exploratory small n; no row-bootstrap interval when either class has fewer than five observations."
+    }
+  },
+  "n_paired_prior_predictions": 322,
+  "max_abs_prediction_delta_vs_prior": 0.0,
+  "prior_auc": 0.7021,
+  "delta_auc_vs_prior": 4.128374570977478e-05,
+  "comparison_to_published_oligoformer_auc": "Not like-for-like: different model, cohort and experimental protocol; no superiority delta.",
+  "auc_ci95_transcript_cluster_bootstrap": [
+    0.6271821074263039,
+    0.8016746411483253
+  ],
+  "cluster_bootstrap_caution": "Only 6 transcript clusters; exploratory interval, not robust cross-gene validation.",
+  "delta_auc_vs_prior_rounded": 0.0,
+  "prior_delta_note": "The tiny unrounded delta is rounding, not a changed prediction; all 322 paired scores match exactly."
+}

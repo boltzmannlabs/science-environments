@@ -1,0 +1,14 @@
+{
+  "brief_id": "ecoli_crispri_example",
+  "mode": "design",
+  "target": {"organism": "escherichia-coli-K12", "gene": "user-supplied-at-intake", "sequence_supplied": false},
+  "application": "microbial_crispr_design",
+  "nuclease": "dcas9_krab",
+  "objective": "Bacterial CRISPRi guide design using bacterial models only (Guo-2018 activity predictor; Yu-2024 mixed-effect CRISPRi model); toxic 5-nt seed motifs flagged as confound (Cui 2018); human models never applied; illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match"],
+    "weights": {"on_target": 0.40, "specificity": 0.30, "outcome_quality": 0.10, "context": 0.20}
+  },
+  "constraints": {"review_window": 100, "panel_size": 6, "site_distinct": true, "expression_system": "unspecified"},
+  "success_criteria": "Growth/essentiality phenotype in the user's strain — downstream evidence."
+}

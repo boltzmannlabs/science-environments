@@ -1,0 +1,17 @@
+{
+  "model": "CFD2016",
+  "sites": 1684,
+  "positives": 108,
+  "negatives": 1576,
+  "guides": 9,
+  "average_precision": 0.18603938497133019,
+  "guide_cluster_AP_ci": [
+    0.08740410244460901,
+    0.30826662003630484
+  ],
+  "PR_AUC_trapezoid": 0.17899107048917237,
+  "endpoint": "corrected indels>=0.1% in matched assayed-site panel",
+  "detection_limit": "nominal0.1%, per-site raw-read LoD not available",
+  "not_genomewide": "recall@500 saturates because every tested panel has<500 sites",
+  "population_variants": "not evaluated"
+}

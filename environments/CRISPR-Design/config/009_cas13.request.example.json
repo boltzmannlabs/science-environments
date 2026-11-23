@@ -1,0 +1,14 @@
+{
+  "brief_id": "malat1_cas13_example",
+  "mode": "design",
+  "target": {"organism": "human", "gene": "MALAT1", "transcript": "resolve-to-GENCODE-49-at-intake", "sequence_supplied": false},
+  "application": "rna_targeting_cas13",
+  "nuclease": "cas13d",
+  "objective": "Cas13d crRNA design respecting spacer nt 15-21 mismatch-intolerance region and transcript accessibility; collateral-activity caveat disclosed; reuses RNA structure/accessibility battery (ViennaRNA) from the siRNA environment; illustrative syntax only.",
+  "priorities": {
+    "hard_vetoes": ["gc_out_of_band"],
+    "weights": {"on_target": 0.40, "specificity": 0.35, "outcome_quality": 0.05, "context": 0.20}
+  },
+  "constraints": {"review_window": 100, "panel_size": 6, "site_distinct": true, "expression_system": "u6_pol_iii"},
+  "success_criteria": "Transcript knockdown by RT-qPCR in the user's system — downstream evidence."
+}

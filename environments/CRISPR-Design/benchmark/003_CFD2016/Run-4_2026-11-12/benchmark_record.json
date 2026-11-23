@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "003",
+  "model": "CFD2016",
+  "title": "CFD2016 experimentally assayed specificity",
+  "run_id": "Run-4_2026-11-12",
+  "status": "COMPLETED",
+  "tasks_supported": [
+    "002",
+    "003"
+  ],
+  "publication": "Study PMID28459459; curated data https://ccsm.uth.edu/CRISPRoffT/",
+  "benchmark_scope": "Native WTSpCas9 CFD2016 scores joined to1684explicitly assayed cellular sites:108positive,1576negative across9guides;correctedindel>=0.1%,3annotatedbulges excluded.",
+  "scientific_limits": "Negatives mean below the assay threshold in this condition, not universal noncleavage. Nominal0.1%AmpliSeq sensitivity, no individual-site read-depthLoD. Recall@500saturates due to panel exhaustion and is not genomewide recall. No variant/haplotype/SV evaluation.",
+  "endpoint_validated_not_complete_application": true,
+  "heuristic_or_surrogate_scores_added": false,
+  "data_root": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/06_completed_benchmark_retry/Run_20261112T060348Z",
+  "inference_note": "Fresh native inference retry completed"
+}

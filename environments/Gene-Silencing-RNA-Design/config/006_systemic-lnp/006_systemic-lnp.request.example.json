@@ -1,0 +1,34 @@
+{
+  "brief_id": "ttr_lnp_example",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "TTR",
+    "transcript": "ENST00000237014.8",
+    "sequence_supplied": false
+  },
+  "application": "systemic_lnp",
+  "objective": "Systemic (LNP) exposure arm on TTR; TLR3 >=21-nt class effect framed as a formulation problem; sequence cannot predict biodistribution \u2014 stated, not approximated",
+  "priorities": {
+    "hard_vetoes": [
+      "immune_ugugu"
+    ],
+    "weights": {
+      "efficacy": 0.35,
+      "specificity": 0.25,
+      "seed_tox": 0.1,
+      "immune": 0.25,
+      "stability": 0.05
+    },
+    "min_standards": {
+      "rnai": 70
+    }
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "seed_distinct": true,
+    "delivery_context": "lnp"
+  },
+  "success_criteria": "TTR knockdown >=50% in serum after systemic dosing in the declared model; delivery-uncertainty statement carried in every conclusion \u2014 illustrative syntax only; not an approved run."
+}

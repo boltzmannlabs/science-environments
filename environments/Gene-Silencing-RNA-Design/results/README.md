@@ -23,3 +23,10 @@ results/00N_<application>/<RunID>_<date>/artifacts...
 | 005_metabolic-liver-galnac | HIF1A Run-1 explorer consensus panel (mechanism demo caveat) + Run-1b corrected battery deliverable |
 | 009_functional-genomics | panel-construction outputs (3 pools) |
 | 010_gene-regulation | MYC sub-agent panel |
+
+## Run-3_2026-11-11
+
+New execution artifacts are under `results/00N_<application>/Run-3_2026-11-11/` for all 11 task IDs. Nine application frames have computational panels (51 rows / 31 unique guides); 004 and 007 contain published-reporter EVALUATE results, not new designs. The 120 target candidates were freshly evaluated; HK2/MYC generation pools were reused and TTR/PCSK9/TNF generation was fresh. Application context/annotation gaps are explicit: no fully complete application task or experimental validation is claimed.
+
+Start with the [campaign report](../benchmark/011_Campaign-reproduction/Run-3_2026-11-11/REPORT.md) and [task-status ledger](../benchmark/011_Campaign-reproduction/Run-3_2026-11-11/task_execution_status.csv). Each task folder contains `REPORT.md` and provenance; panel-bearing tasks also contain gate decisions, independent endpoint values, and post-diversity weight-stability reports. Historical artifacts and frozen gates are unchanged.
+
