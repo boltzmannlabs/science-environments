@@ -1,21 +1,27 @@
-# Synthetic Chemistry — target-specific route audit
+# Retro Environment — task-scoped route audits
 
-Research-prototype environment for auditing computational retrosynthesis of the target
+Research-prototype workspace for two retrosynthesis tasks and a separate forward-prediction task. Task 01 audits the target
 `CC1=C(C=C2C=CC(=C(C2=N1)F)F)OC3=C(C(=CC=C3)F)C(C)(C)O`.
 
-This package contains a sanitized, reproducible analysis of 16 model-generated routes and a three-step review of `top0`. Start with the [achieved numbers and literature comparison tables](results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md), [paper catalog](benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md), [metric definitions](benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json), and [task objectives with actual outcomes](tasks/README.md). The catalog distinguishes papers, an inspected experimental reference for a different substrate, and non-matching patent hits.
+This package contains a sanitized, reproducible analysis of 16 model-generated routes and a three-step review of `top0`. Start with the [achieved numbers and literature comparison tables](results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md), [paper catalog](benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md), [metric definitions](benchmarks/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json), and [task objectives with actual outcomes](tasks/README.md). The catalog distinguishes papers, an inspected experimental reference for a different substrate, and non-matching patent hits.
 
-It does **not** contain an experimentally validated synthesis, a transferable API credential, or the original account-scoped service export. For scientific interpretation see [research notes](../../research/retro_environment/research-notes.md), [references](../../research/retro_environment/references.md), [benchmark methodology](benchmark/README.md), and [status](STATUS.md).
+It does **not** contain an experimentally validated synthesis, a transferable API credential, or the original account-scoped service export. For scientific interpretation see [research notes](../../research/retro_environment/research-notes.md), [references](../../research/retro_environment/references.md), [benchmark methodology](benchmarks/README.md), and [status](STATUS.md).
 
 ## Unified task layout
 
 ```text
-tasks/task-01-fluorinated-quinoline-retrosynthesis/       # overall objective, inputs, expected outcomes and phase documents
-benchmark/task-01-fluorinated-quinoline-retrosynthesis/   # papers, source links, metric definitions and comparison evidence
-results/task-01-fluorinated-quinoline-retrosynthesis/     # observed model outputs, numerical tables and DOCX
+tasks/task-01-fluorinated-quinoline-retrosynthesis/       # objectives and target structures
+benchmarks/task-01-fluorinated-quinoline-retrosynthesis/  # linked benchmark evidence
+results/task-01-fluorinated-quinoline-retrosynthesis/     # route outputs and comparisons
+tasks/task-02-impurity-retrosynthesis/
+benchmarks/task-02-impurity-retrosynthesis/
+results/task-02-impurity-retrosynthesis/
+tasks/task-03-indole-forward-prediction/
+benchmarks/task-03-indole-forward-prediction/
+results/task-03-indole-forward-prediction/
 ```
 
-Use the same `task-NN-descriptive-topic` name in all three sections for each future study. The existing three phase documents belong to task-01-fluorinated-quinoline-retrosynthesis, not three separate target tasks.
+Use the same `task-NN-descriptive-topic` name in all three sections. `benchmarks/` is the sole benchmark directory; source catalogs and metrics were moved there from the former singular directory, and maintained scripts and internal links now use the new path. See the [task-folder standard](TASK_STRUCTURE.md). The three Task 01 phases are not separate target tasks.
 
 ## Structure
 
@@ -32,14 +38,22 @@ Use the same `task-NN-descriptive-topic` name in all three sections for each fut
 From the repository root:
 
 ```sh
-python -m unittest discover -s environments/synthetic_chemistry/tests -v
-python environments/synthetic_chemistry/scripts/derive_routes.py --input /path/to/authorized-scored-paths.json --output /path/to/derived-summary.json
+python -m unittest discover -s environments/retro_environment/tests -v
+python environments/retro_environment/scripts/derive_routes.py --input /path/to/authorized-scored-paths.json --output /path/to/derived-summary.json
 ```
 
 The raw export is intentionally excluded. To rebuild the report, create an isolated Python environment and install `python-docx` and `rdkit` there; then run:
 
 ```sh
-python environments/synthetic_chemistry/scripts/build_report.py
+python environments/retro_environment/scripts/build_report.py
 ```
 
 No live Boltzmann job is run by these scripts. See [specification](ENVIRONMENT_SPEC.md) and [tasks](tasks/README.md) for input expectations and reproducibility limits.
+
+## Task 02 — Impurity retrosynthesis and literature benchmarking
+
+[Task definition](tasks/task-02-impurity-retrosynthesis/README.md), [literature and metrics](benchmarks/task-02-impurity-retrosynthesis/README.md), [results](results/task-02-impurity-retrosynthesis/README.md), and [gaps to outperform literature](results/task-02-impurity-retrosynthesis/gaps_and_improvement_plan.md). This case is separate from Task 01's target; matching task folder names link their respective evidence.
+
+## Task 03 — Indole forward prediction
+
+[Task and supplied inputs](tasks/task-03-indole-forward-prediction/README.md) · [Literature benchmark](benchmarks/task-03-indole-forward-prediction/README.md) · [Saved results](results/task-03-indole-forward-prediction/README.md). This is a forward-reaction evaluation, not a retrosynthesis run. Candidate files are transcribed derivatives, not original machine-readable service outputs.
