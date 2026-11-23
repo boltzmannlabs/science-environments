@@ -1,4 +1,0 @@
-# Preserve copied evidence bytes and the csv.writer CRLF convention.
-*.csv -text whitespace=cr-at-eol
-# Raw public XML is hash-bound source data; do not trim its original spacing.
-data/raw/*.xml -text -whitespace
