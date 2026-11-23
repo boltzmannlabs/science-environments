@@ -1,0 +1,69 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "integrity": {
+      "score": 1.0,
+      "observed_cells": 952,
+      "altered_cells": 0,
+      "max_abs_diff": 3.552713678800501e-15
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "status_values_valid": true,
+        "reasons_valid": true,
+        "qc_retained_matches_matrix": true,
+        "total_input_proteins": true,
+        "retained_proteins": true,
+        "excluded_proteins": true,
+        "imputed_value_cells": true,
+        "integer_types": true
+      },
+      "expected_imputed_value_cells": 140
+    },
+    "qc": {
+      "score": 1.0,
+      "spike_exclusion_recall": 1.0,
+      "coverage_of_well_measured": 1.0,
+      "retained": 182,
+      "excluded": 33,
+      "spikes_retained": []
+    },
+    "imputation": {
+      "score": 0.9895,
+      "note": "unclipped skill 0.990",
+      "n_scored_cells": 140,
+      "agent_rmse_log2": 0.4317,
+      "agent_bias_log2": 0.0638,
+      "reference_rmse_log2": {
+        "column_median": 1.9739,
+        "row_mean": 0.4286,
+        "knn_k5": 0.4154,
+        "downshift_1.8sd": 2.0309
+      },
+      "reference_bias_log2": {
+        "column_median": 1.376,
+        "row_mean": 0.0952,
+        "knn_k5": 0.1126,
+        "downshift_1.8sd": -1.4594
+      },
+      "legacy_score_1_over_1_plus_rmse": 0.6985
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "analysis_report_chars": 728,
+    "manifest_filter_rule": "Retain proteins with at least 3 observed intensities out of 6; exclude the rest.",
+    "manifest_imputation_method": "Distance-weighted K-nearest-neighbors imputation (K=3) on log2-transformed intensities, fitted using observed values only."
+  },
+  "score": 0.9953,
+  "weights": {
+    "integrity": 0.15,
+    "bookkeeping": 0.15,
+    "qc": 0.25,
+    "imputation": 0.45
+  }
+}

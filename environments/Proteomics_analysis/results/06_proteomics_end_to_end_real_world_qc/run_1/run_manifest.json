@@ -1,0 +1,39 @@
+{
+  "samples_used": {
+    "L": [
+      "L1",
+      "L2",
+      "H3"
+    ],
+    "H": [
+      "L3",
+      "H1",
+      "H2"
+    ]
+  },
+  "samples_excluded": [
+    "L4",
+    "H4"
+  ],
+  "sample_qc_notes": {
+    "L3": "Reassigned to H: E. coli/human LFQ sum ratio 1.958, matching H1/H2 (~1.9) rather than L1/L2/H3 (~0.6); raw intensity agrees.",
+    "H3": "Reassigned to L: E. coli/human LFQ sum ratio 0.631, matching L1/L2 rather than H1/H2; raw intensity agrees.",
+    "L4": "Excluded: identical to L1 in every row for LFQ, raw intensity, iBAQ, peptide and MS/MS-count columns (duplicate, not independent).",
+    "H4": "Excluded: 2504/6507 cleaned proteins have positive LFQ versus 4958-5648 in other samples; human median protein-centered LFQ is ~4 log2 below others. Severe run-quality/quantification failure."
+  },
+  "total_protein_groups": 6694,
+  "removed_reverse": 84,
+  "removed_contaminant": 44,
+  "removed_only_identified_by_site": 80,
+  "protein_groups_after_cleaning": 6507,
+  "proteins_tested": 5019,
+  "n_significant": 1529,
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": null,
+  "intensity_columns_used": "LFQ intensity L1, L2, H3 (condition L); LFQ intensity L3, H1, H2 (condition H); MaxQuant LFQ intensity columns, positive values only",
+  "filtering_rule": "Flagged decoy/reverse, contaminant or only-identified-by-site rows removed; zero LFQ treated as missing; >=2 positive measurements in each of the reassigned L and H conditions; no peptide-count cutoff.",
+  "normalization_method": "Log2 LFQ followed by per-sample additive offsets: median over human-annotated proteins detected in >=5 of 6 used samples of (log2 LFQ minus within-protein across-sample median); offsets median-centered and subtracted. Human protein amount is invariant by design.",
+  "imputation_method": "None; available-case means and t tests on proteins observed in >=2 samples of each condition.",
+  "test_method": "Independent two-sided pooled-variance Student t-test on normalized log2 LFQ H vs L, with available replicates (2-3 each); Benjamini-Hochberg across all tested protein groups, significant if adjusted p < 0.05.",
+  "processing_order": "Inspect flagged hits, species ratios, detection, run outliers and duplicate profiles; remove three types of flagged rows; reassign L3 to H and H3 to L using E. coli/human ratios; exclude duplicate L4 and failed H4; set nonpositive LFQ missing, log2-transform; human-anchor normalize; retain >=2 observed in each condition; H-L sample means and two-sided pooled t test; BH adjustment and significance call."
+}

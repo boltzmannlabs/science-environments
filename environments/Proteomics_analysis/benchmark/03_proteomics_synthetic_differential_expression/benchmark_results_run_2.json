@@ -1,0 +1,102 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "fdr_threshold_valid": true,
+        "significant_matches_threshold": true,
+        "adj_p_not_below_p": true,
+        "total_proteins": true,
+        "n_significant": true,
+        "n_up": true,
+        "n_down": true,
+        "integer_types": true
+      },
+      "rows_inconsistent_with_threshold": 0
+    },
+    "fdr": {
+      "score": 0.7357,
+      "stated_threshold": 0.05,
+      "actual_false_discovery_proportion": 0.1818,
+      "allowed_fdp_given_number_of_calls": 0.1157,
+      "n_called": 44,
+      "note": "penalises only exceeding the stated threshold; calling nothing scores 1 here but 0 on detection"
+    },
+    "detection": {
+      "score": 0.7357,
+      "recall_relative_to_moderated_t": 2.1176,
+      "fdr_multiplier": 0.7357,
+      "tp": 36,
+      "fp": 8,
+      "fn": 14,
+      "precision": 0.8182,
+      "recall": 0.72,
+      "f1": 0.766,
+      "fdp": 0.1818,
+      "true_changed": 50,
+      "fdr_threshold_used": 0.05,
+      "note": "recall relative to a moderated t-test at your threshold, multiplied by the FDR score, so calls are credited only when false discoveries stay controlled"
+    },
+    "ranking": {
+      "score": 0.9917,
+      "unclipped_skill": 0.9917,
+      "average_precision": 0.852
+    },
+    "effect": {
+      "score": 1.0,
+      "log2fc_rmse": 0.4508,
+      "reference_mean_difference_rmse": 0.4508,
+      "direction_accuracy_on_true_calls": 1.0
+    }
+  },
+  "reference_methods_at_your_threshold": {
+    "student_t": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 43,
+      "precision": 1.0,
+      "recall": 0.14,
+      "f1": 0.2456,
+      "fdp": 0.0,
+      "average_precision": 0.7817
+    },
+    "welch_t": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 47,
+      "precision": 1.0,
+      "recall": 0.06,
+      "f1": 0.1132,
+      "fdp": 0.0,
+      "average_precision": 0.756
+    },
+    "moderated_t": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 33,
+      "precision": 1.0,
+      "recall": 0.34,
+      "f1": 0.5075,
+      "fdp": 0.0,
+      "average_precision": 0.8591
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "manifest_test_method": "moderated t-test (empirical Bayes variance moderation), n=3/group, robust prior variance s0^2=median(per-protein residual variance)=0.08444, prior df0=10, dfmod=14",
+    "manifest_multiple_testing_correction": "Benjamini-Hochberg (false discovery rate)",
+    "manifest_fold_change_cutoff": null
+  },
+  "score": 0.8534,
+  "weights": {
+    "detection": 0.3,
+    "fdr": 0.25,
+    "ranking": 0.15,
+    "effect": 0.1,
+    "bookkeeping": 0.2
+  }
+}

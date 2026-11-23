@@ -1,0 +1,114 @@
+{
+  "gate": {
+    "passed": true,
+    "errors": []
+  },
+  "sections": {
+    "fault_handling": {
+      "score": 0.0,
+      "duplicate_L4_handled": false,
+      "failed_run_H4_excluded": false,
+      "swap_L3_H3": "not handled",
+      "samples_in_wrong_condition": [
+        "H3",
+        "L3"
+      ],
+      "good_samples_not_used": [],
+      "samples_used": {
+        "L": [
+          "L1",
+          "L2",
+          "L3",
+          "L4"
+        ],
+        "H": [
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ]
+      },
+      "samples_excluded": [],
+      "notes_given_for": []
+    },
+    "fdr": {
+      "score": 0.0,
+      "stated_threshold": 0.05,
+      "actual_false_discovery_proportion": 0.8108,
+      "allowed_fdp_given_number_of_calls": 0.1217,
+      "true_calls_ecoli": 7,
+      "false_calls_human": 30
+    },
+    "detection": {
+      "score": 0.0,
+      "recall": 0.0045,
+      "recall_relative_to_clean_reference": 0.0049,
+      "ecoli_groups_quantifiable": 1564
+    },
+    "ranking": {
+      "score": 0.0,
+      "recall_at_98pct_precision": 0.0,
+      "published_recall_at_98pct": 0.72
+    },
+    "fold_change": {
+      "score": 0.576,
+      "human_median_log2fc (expected 0)": -0.3347,
+      "ecoli_minus_human (expected ~1.585)": 0.8611,
+      "reference_separation": 1.7291
+    },
+    "bookkeeping": {
+      "score": 1.0,
+      "checks": {
+        "total_protein_groups": true,
+        "removed_reverse": true,
+        "removed_contaminant": true,
+        "removed_only_identified_by_site": true,
+        "protein_groups_after_cleaning": true,
+        "proteins_tested": true,
+        "n_significant": true,
+        "fdr_threshold_valid": true,
+        "significant_matches_cutoffs": true,
+        "samples_excluded_consistent": true,
+        "qc_notes_for_changed_samples": true,
+        "flagged_rows_not_tested": true
+      },
+      "expected": {
+        "total_protein_groups": 6694,
+        "removed_reverse": 84,
+        "removed_contaminant": 44,
+        "removed_only_identified_by_site": 80,
+        "protein_groups_after_cleaning": 6507,
+        "proteins_tested": 2476,
+        "n_significant": 37
+      }
+    }
+  },
+  "integrity": {
+    "p_value_spearman_vs_reference": -0.03,
+    "p_values_data_driven": false
+  },
+  "reference_pipelines": {
+    "clean_design_expert": {
+      "recall": 0.906,
+      "fdp": 0.0528
+    },
+    "blind_all_8_samples_as_labelled": {
+      "recall": 0.0,
+      "fdp": 0.0,
+      "recall_at_98pct_precision": 0.0
+    }
+  },
+  "optional": {
+    "analysis_report_present": true,
+    "sample_qc_notes": {}
+  },
+  "score": 0.1576,
+  "weights": {
+    "fault_handling": 0.35,
+    "detection": 0.2,
+    "fdr": 0.15,
+    "ranking": 0.1,
+    "fold_change": 0.1,
+    "bookkeeping": 0.1
+  }
+}

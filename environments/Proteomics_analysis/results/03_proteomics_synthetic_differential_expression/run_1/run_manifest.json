@@ -1,0 +1,10 @@
+{
+  "total_proteins": 500,
+  "n_significant": 23,
+  "n_up": 12,
+  "n_down": 11,
+  "fdr_threshold": 0.05,
+  "test_method": "Two-sided independent-groups moderated pooled-variance t test; 3 versus 3 replicates; residual df=4; empirical-Bayes scaled-inverse-chi-square variance prior with 12-bin PCHIP abundance trend; prior df fitted from log-variance moments; posterior df=4+prior df",
+  "multiple_testing_correction": "Benjamini-Hochberg FDR across all 500 proteins",
+  "fold_change_cutoff": null
+}

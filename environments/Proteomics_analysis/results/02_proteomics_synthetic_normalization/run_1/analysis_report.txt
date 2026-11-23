@@ -1,0 +1,17 @@
+Input: simulated LFQ protein intensities, raw linear scale.
+Protein rows: 250; missing intensity cells: 29; nonpositive observed intensities: 0.
+Sample distribution (observed log2 median before; estimated sample offset; log2 median after):
+  Control_Rep1: 20.9026; +0.0000; 20.8721
+  Control_Rep2: 19.7489; -1.0831; 20.8519
+  Control_Rep3: 22.2764; +1.3020; 20.9622
+  Treated_Rep1: 20.8816; +0.0000; 20.8816
+  Treated_Rep2: 20.2834; -0.6329; 20.9367
+  Treated_Rep3: 21.9955; +0.9762; 20.9953
+The large sample-wide median shifts relative to within-condition agreement indicate run-level effects.
+Median-of-ratios uses protein-centered data to reduce dependence on which proteins happen to be missing and assumes most proteins do not have a directional condition-wide response.
+Offsets are estimated before imputation to avoid letting filled cells influence normalization.
+A single offset is subtracted per sample, preserving observed within-sample ranking and all protein-specific condition contrasts apart from global run shifts.
+Median per-protein Treated-minus-Control contrast after processing: -0.0305 log2; individual contrasts are NOT forced to zero.
+Missing cells are filled using the two observed same-condition replicates after run correction; this assumes replicate variation is predominantly technical.
+Uncertainty: without external controls, a truly global biological change is not identifiable separately from a technical sample shift.
+No proteins were filtered; no differential-expression tests or classifiers were run.

@@ -1,0 +1,24 @@
+Proteomics QC and imputation report
+====================================
+Input proteins: 215
+Retained: 182
+Excluded: 33
+Missing cells among retained proteins: 140
+
+Raw observed intensities:
+- min: 754688.954
+- median: 20272533.925
+- max: 1446740178.605
+- skew: 7.136
+
+Log2 imputed matrix:
+- min: 21.062
+- median: 24.166
+- max: 30.430
+- skew: 0.498
+
+Missingness is nonrandom: proteins with few detections are excluded, while retained
+proteins contain scattered missing runs. Transforming first places LFQ intensities on
+a scale with smaller dynamic range and more symmetric protein-wise distributions.
+KNN in protein-by-sample space uses abundance similarity to estimate absent runs while
+leaving every observed value unchanged.

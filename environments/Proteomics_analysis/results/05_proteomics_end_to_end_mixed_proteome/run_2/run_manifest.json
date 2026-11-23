@@ -1,0 +1,17 @@
+{
+  "total_protein_groups": 6694,
+  "removed_reverse": 84,
+  "removed_contaminant": 44,
+  "removed_only_identified_by_site": 80,
+  "protein_groups_after_cleaning": 6507,
+  "proteins_tested": 4506,
+  "n_significant": 3325,
+  "fdr_threshold": 0.05,
+  "fold_change_cutoff": null,
+  "intensity_columns_used": "LFQ intensity H1, LFQ intensity H2, LFQ intensity H3, LFQ intensity L1, LFQ intensity L2, LFQ intensity L3",
+  "filtering_rule": "kept only protein groups with all six per-sample LFQ intensities present and positive (no missing, no zero); no imputation needed",
+  "normalization_method": "per-sample quantile normalization in log2 space: each sample's log intensities shifted so its median equals the overall matrix median; appropriate because the constant human fraction makes the majority of groups unchanged",
+  "imputation_method": "none",
+  "test_method": "two-sample Welch t-test on log2 LFQ intensities, H minus L",
+  "processing_order": "parse -> remove reverse/contaminant/site rows -> require complete positive measurements -> log2 transform -> quantile normalization -> Welch t-test -> BH FDR -> significant at adj_p < 0.05"
+}

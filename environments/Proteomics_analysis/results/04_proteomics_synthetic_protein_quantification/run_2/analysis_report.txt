@@ -1,0 +1,80 @@
+Task 4 — Protein Quantification from Peptide Intensities
+=========================================================
+
+1. INPUT DATA SUMMARY
+---------------------
+- Total peptide rows: 2,525
+- Peptides matching exactly one protein (unique): 2,338
+- Peptides matching more than one protein (shared): 187
+- Proteins with at least one unique peptide: 300
+- Peptides per protein: min 3, median 8, max 12
+- Missing values per sample: ~370–424 out of 2,525 (~15–17%)
+- Intensity range: linear scale, from ~1e5 to ~5e9
+
+2. WITHIN-PROTEIN PEPTIDE CONSISTENCY
+-------------------------------------
+- Mean max-min spread of log2 intensities across peptides of the same
+  protein in the same sample: ~3.7 log2 units (median 3.69).
+  This means peptides from the same protein can differ by up to
+  ~13x in linear intensity even in the same sample, confirming the
+  task's note that peptides ionize differently.
+- ~55% of peptides fall within 1 MAD of their protein-sample median,
+  as expected for a symmetric distribution.
+- The high within-protein spread argues against using a simple mean:
+  a single outlier peptide (high ionization efficiency) would pull
+  the mean upward.
+
+3. METHOD CHOICE
+----------------
+Chosen method: per-sample median of log2-transformed peptide intensities.
+
+Rationale:
+- The median is robust to the large within-protein intensity spread.
+  A small number of very bright peptides (high ionization) or very
+  dim peptides will not bias the protein-level estimate the way a
+  mean would.
+- The task says the absolute level of each protein is not evaluated,
+  only its pattern across samples. The median is a consistent
+  estimator of the central tendency of the peptide distribution
+  within each protein, which should track the true protein
+  abundance across samples.
+- Log2 transformation is applied first so that the median operates
+  on a scale where multiplicative ionization differences become
+  additive and the distribution is approximately symmetric.
+- No further sample normalization, imputation, or differential
+  analysis was applied, per the task constraints.
+
+Shared peptide handling:
+- Peptides whose Proteins field contained more than one ID were
+  excluded from quantification. They cannot be unambiguously
+  assigned to a single protein, and including them would introduce
+  bias (a peptide shared by two proteins would artificially inflate
+  both).
+
+Missing value handling:
+- If a peptide is missing in a sample, it simply does not contribute
+  to that sample's median (the median is computed over observed
+  peptides only).
+- In the rare case where no peptide for a protein is observed in a
+  sample, the value is imputed with the protein's median across its
+  observed samples. (In practice this was not needed: every protein
+  had at least one observed peptide in every sample.)
+
+4. OUTPUTS
+----------
+- protein_matrix_log2.csv: 300 proteins x 6 samples, log2 scale,
+  no missing values, column order matches input.
+- run_manifest.json: counts and method description.
+
+5. CAVEATS
+----------
+- The median assumes peptide intensities within a protein are
+  exchangeable conditional on protein abundance. If some peptides
+  are systematically biased (e.g., post-translational modification
+  peptides, low-charge-state peptides with different recovery),
+  the median is less affected than the mean but not immune.
+- Shared peptides (187) were excluded entirely. For proteins with
+  few unique peptides, this reduces the effective peptide count and
+  increases variance, though the median remains defined.
+- The task states that samples are already normalized; no
+  additional normalization was applied.
