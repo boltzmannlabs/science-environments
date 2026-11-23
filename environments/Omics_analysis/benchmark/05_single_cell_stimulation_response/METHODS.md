@@ -13,7 +13,7 @@ The agent's output is compared with the differential expression results publishe
 
 ## How to score
 
-There are no weights, no overall score and no pass/fail. Each metric is reported on its own. `benchmark_result.json` is the direct output of `scripts/05_single_cell_stimulation_response/compare_kang.py` (command in the file header), run on the files in this folder and the agent's `de_results.csv`, `summary.json` and report.
+Each task has one score: the equal-weight mean of a few items, each between 0 and 1 (see Score). There are no weights and no pass/fail. All other metrics are reported on their own. `benchmark_result.json` is the direct output of `scripts/kang/compare_kang.py` (command in the file header), run on the files in this folder and the agent's `de_results.csv`, `summary.json` and report.
 
 ## Output files read
 
@@ -26,9 +26,10 @@ There are no weights, no overall score and no pass/fail. Each metric is reported
 1. `paper_reported`: what the paper reports (genes per cell type, megakaryocytes, unique genes).
 2. `agent_reported`: what the agent reports (comparisons run, significant genes and genes tested per cell type, top genes, data used, model).
 3. `metrics`: how the agent's results compare with the paper, per cell type and as the mean of the seven cell types analyzed by both.
-4. `notes`: how to read the metrics.
-5. `reference_table_check`: for each paper sheet, the smallest absolute log2 fold change and baseMean, the largest `padj` and the number of NA `padj` values, which show how the paper's table was filtered.
-6. `provenance`: SHA256 of every input file and of the script, and the software versions used.
+4. `score`: the score, its items and a sensitivity check (see Score).
+5. `notes`: how to read the metrics.
+6. `reference_table_check`: for each paper sheet, the smallest absolute log2 fold change and baseMean, the largest `padj` and the number of NA `padj` values, which show how the paper's table was filtered.
+7. `provenance`: SHA256 of every input file and of the script, and the software versions used.
 
 ## Definitions
 
@@ -63,11 +64,28 @@ Other items in `metrics`:
 - **`megakaryocytes_in_all_cells_table`:** the agent ran no megakaryocyte comparison. This counts how many of the paper's 107 megakaryocyte genes appear in the agent's `all_cells` results and are significant in the same direction.
 - **`report`:** the number of claims in the report that were checked against `de_results.csv` and `summary.json`, and whether the counts it states match.
 
+## Score
+
+The score is the plain mean of the items below. Each item is a number from 0 to 1 and every item counts the same, because no weighting could be justified.
+
+| Item | Calculation |
+|---|---|
+| `agreement` | the mean of `agreement` over the seven cell types |
+| `coverage` | the mean of `coverage` over the seven cell types |
+| `fold_change_correlation` | the mean of `lfc_pearson` over the seven cell types (a negative value counts as 0) |
+| `top_20_genes_found` | the share of the agent's top 20 induced genes and top 20 repressed genes found in a paper sheet in the same direction, averaged over the two lists |
+
+Not in the score and still reported in `metrics`: `sign_agreement`, the counts of wrong-direction and agent-only calls, the negative control, the cell-type ranking, the megakaryocyte check and the report check.
+
+For this run: `agreement` 0.961, `coverage` 0.565, `fold_change_correlation` 0.987, `top_20_genes_found` 1.0. Score 0.8782.
+
+`sensitivity` in the JSON scores the same run with each item counted twice in turn and reports the lowest and highest result (0.8156 to 0.9026 for this run). This shows how much the score depends on the choice of equal weights. The score is for this task only and should not be averaged with other tasks.
+
 ## How the spec was made
 
 - Coverage and agreement are reported separately and not combined. Coverage depends mainly on the agent's low-expression filter, and agreement depends on the calls on genes both tested. A combined number would hide which one moved.
 - The 1.25 and 0.01 values in `agent_only_near_cutoff_share` are chosen to show how many extra calls are close to the cutoffs. They are not thresholds for a score.
-- There are no weights and no pass/fail cutoffs, because none could be justified.
+- The score uses equal weights, because no weighting could be justified, and there are no pass/fail cutoffs.
 
 ## Limits
 

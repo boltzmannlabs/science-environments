@@ -13,7 +13,7 @@ The agent's spatial domains are compared with the manual layer annotation of hum
 
 ## How to score
 
-There are no weights, no overall score and no pass/fail. Each metric is reported on its own. `benchmark_result.json` is the direct output of `scripts/08_dlpfc_spatial_domain_identification/compare_dlpfc.py` (command in the file header), run on the files in this folder and the agent's output files.
+Each task has one score: the equal-weight mean of a few items, each between 0 and 1 (see Score). There are no weights and no pass/fail. All other metrics are reported on their own. `benchmark_result.json` is the direct output of `scripts/dlpfc/compare_dlpfc.py` (command in the file header), run on the files in this folder and the agent's output files.
 
 ## Output files read
 
@@ -28,8 +28,9 @@ There are no weights, no overall score and no pass/fail. Each metric is reported
 2. `paper_reported`: what the paper reports about the design, the annotation and the metric.
 3. `agent_reported`: what the agent reports (counts, number of domains, interpretations, markers, model, limitations).
 4. `metrics`: how the agent's output compares with the reference.
-5. `notes`: how to read the metrics.
-6. `provenance`: SHA256 of every input file and of the script, and the software versions used.
+5. `score`: the score, its items and a sensitivity check (see Score).
+6. `notes`: how to read the metrics.
+7. `provenance`: SHA256 of every input file and of the script, and the software versions used.
 
 ## Definitions
 
@@ -49,12 +50,28 @@ Metrics that compare labels use the spots that have a reference label (3,611 of 
 | `paper_named_markers_in_agent_marker_tables` | Whether the markers the paper names appear in the agent's tables | domains and ranks in which SNAP25, MOBP and PCP4 are listed |
 | `agent_file_consistency` | Whether the agent's files agree | domain count, spot count and domain sizes in `answers.json` against the CSV, and the reported coherence against the recomputed value |
 
+## Score
+
+The score is the plain mean of the items below. Each item is a number from 0 to 1 and every item counts the same, because no weighting could be justified.
+
+| Item | Calculation |
+|---|---|
+| `adjusted_rand_index` | ARI against the reference labels (a negative value counts as 0) |
+| `normalized_mutual_information` | NMI against the reference labels |
+| `layer_claims_supported` | the mean of the shares in `interpretation_claims_that_name_a_layer`: for each domain whose interpretation names white matter, a layer number, "upper/supragranular" or "deep/infragranular", the share of its labelled spots in the named reference labels. If no interpretation names one, this item is left out. |
+
+ARI and NMI are used as they are, without rescaling, so a run with moderate agreement gets a moderate score. Not in the score and still reported in `metrics`: homogeneity and completeness, the contingency table, spatial coherence, the paper-named markers and the file consistency checks.
+
+For this run: `adjusted_rand_index` 0.3212, `normalized_mutual_information` 0.4791, `layer_claims_supported` 0.941. Score 0.5804.
+
+`sensitivity` in the JSON scores the same run with each item counted twice in turn and reports the lowest and highest result (0.5156 to 0.6706 for this run). This shows how much the score depends on the choice of equal weights. The score is for this task only and should not be averaged with other tasks.
+
 ## How the spec was made
 
 - ARI and NMI do not need the agent's number of domains to equal 7, and the task says not to force a number.
 - Agreement metrics are reported together and not combined. Homogeneity and completeness show which side of a mismatch a result falls on.
 - Only the two agent claims that name a layer are tested. The agent's "uncertain" interpretations make no claim to test, and `per_agent_domain` shows what those domains contain.
-- There are no weights and no pass/fail cutoffs, because none could be justified.
+- The score uses equal weights, because no weighting could be justified, and there are no pass/fail cutoffs.
 
 ## Limits
 

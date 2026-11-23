@@ -109,6 +109,25 @@ out = {
                  "analysis_report.txt": sha(rep_path), "paul_table_s3.xlsx": sha(s3_path)},
    "script_sha256": sha(__file__),
    "scorer": {"python": platform.python_version(), "numpy": np.__version__, "pandas": pd.__version__, "scipy": scipy.__version__, "openpyxl": openpyxl.__version__}}}
+
+# ---- score: unweighted mean of a few 0-to-1 items; no weights, no pass/fail ----
+def make_score(items):
+    names = list(items); vals = [min(1.0, max(0.0, float(items[n]))) for n in names]
+    eq = sum(vals) / len(vals); sens = {}
+    for i, n in enumerate(names):
+        w = [2.0 if j == i else 1.0 for j in range(len(names))]
+        sens["double_weight_on_" + n] = round(sum(a * b for a, b in zip(w, vals)) / sum(w), 4)
+    allv = [eq] + list(sens.values())
+    return {"rule": "equal-weight mean of the items below, each between 0 and 1. No weights and no pass/fail. Other checks stay in metrics.",
+            "items": {n: round(v, 4) for n, v in zip(names, vals)}, "score": round(eq, 4),
+            "sensitivity": sens, "sensitivity_range": [round(min(allv), 4), round(max(allv), 4)]}
+
+_m = out["metrics"]
+_score = make_score({"fates_recovered": _m["fates"]["paper_fates_with_a_best_matching_agent_cluster"] / _m["fates"]["paper_fates"],
+    "label_consistency": _m["labels_consistent_with_best_match"]["consistent"] / _m["labels_consistent_with_best_match"]["scored_labels"]})
+
+out = {k2: v2 for k, v in out.items() for k2, v2 in ([(k, v), ("score", _score)] if k == "metrics" else [(k, v)])}
+
 json.dump(out, open(out_path, "w"), indent=2)
 print(json.dumps({"fates": out["metrics"]["fates"], "consistent": out["metrics"]["labels_consistent_with_best_match"],
                   "report_marker_claims": out["metrics"]["report_marker_claims"]}, indent=1))

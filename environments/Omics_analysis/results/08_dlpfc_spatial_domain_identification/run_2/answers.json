@@ -1,0 +1,93 @@
+{
+  "dataset_id": "DLPFC_151673",
+  "spots_input": 3639,
+  "spots_analyzed": 3639,
+  "n_domains": 7,
+  "domain_interpretations": {
+    "0": "Domain 0 (593 spots): a spatially coherent region with a excitatory-neuronal profile (NRGN, CCK, OLFM1, SCGB2A2) signature. Top markers: SCGB2A2, ENC1, NRGN, SCGB1D2, VSNL1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "1": "Domain 1 (461 spots): a spatially coherent region with a vascular/smooth-muscle profile with strong mitochondrial OXPHOS (MYL9, HOPX, MT-*) signature. Top markers: COX6C, MT-ND1, MALAT1, MT-CO1, ENC1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "2": "Domain 2 (592 spots): a spatially coherent region with a myelinated/oligodendrocyte profile (MBP, PLP1, CNP, MOBP, GFAP) signature. Top markers: MBP, PLP1, GFAP, CNP, CRYAB. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "3": "Domain 3 (419 spots): a spatially coherent region with a high-metabolism neuronal profile (dominant mitochondrial OXPHOS, CAMK2N1) signature. Top markers: MT-CO1, MT-ND1, MT-ATP6, MT-ND3, MT-CYB. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "4": "Domain 4 (504 spots): a spatially coherent region with a epithelial/immune-active profile (KRT19, HLA-B, ISG15, IFI27) signature. Top markers: KRT19, CPB1, COX6C, IFI27, ISG15. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "5": "Domain 5 (639 spots): a spatially coherent region with a mature-neuronal profile (SNAP25, SYT1, NEFL, UCHL1, TUBA1B) signature. Top markers: SNAP25, TUBA1B, NEFL, TMSB10, UCHL1. Interpretation is a hypothesis from expression, not a confirmed anatomical identity.",
+    "6": "Domain 6 (431 spots): a spatially coherent region with a excitatory-neuronal profile overlapping domain 0 (SCGB2A2, SNAP25, SYT1, KRT17) signature. Top markers: SCGB2A2, SCGB1D2, TMSB10, DIRAS2, SNAP25. Interpretation is a hypothesis from expression, not a confirmed anatomical identity."
+  },
+  "domain_markers": {
+    "0": [
+      "SCGB2A2",
+      "ENC1",
+      "NRGN",
+      "SCGB1D2",
+      "VSNL1"
+    ],
+    "1": [
+      "COX6C",
+      "MT-ND1",
+      "MALAT1",
+      "MT-CO1",
+      "ENC1"
+    ],
+    "2": [
+      "MBP",
+      "PLP1",
+      "GFAP",
+      "CNP",
+      "CRYAB"
+    ],
+    "3": [
+      "MT-CO1",
+      "MT-ND1",
+      "MT-ATP6",
+      "MT-ND3",
+      "MT-CYB"
+    ],
+    "4": [
+      "KRT19",
+      "CPB1",
+      "COX6C",
+      "IFI27",
+      "ISG15"
+    ],
+    "5": [
+      "SNAP25",
+      "TUBA1B",
+      "NEFL",
+      "TMSB10",
+      "UCHL1"
+    ],
+    "6": [
+      "SCGB2A2",
+      "SCGB1D2",
+      "TMSB10",
+      "DIRAS2",
+      "SNAP25"
+    ]
+  },
+  "supporting_evidence": {
+    "0": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 593 spots. Domain-vs-rest t-test (rank_genes_groups) identifies SCGB2A2, ENC1, NRGN, SCGB1D2, VSNL1 as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "1": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 461 spots. Domain-vs-rest t-test (rank_genes_groups) identifies COX6C, MT-ND1, MALAT1, MT-CO1, ENC1 as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "2": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 592 spots. Domain-vs-rest t-test (rank_genes_groups) identifies MBP, PLP1, GFAP, CNP, CRYAB as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "3": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 419 spots. Domain-vs-rest t-test (rank_genes_groups) identifies MT-CO1, MT-ND1, MT-ATP6, MT-ND3, MT-CYB as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "4": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 504 spots. Domain-vs-rest t-test (rank_genes_groups) identifies KRT19, CPB1, COX6C, IFI27, ISG15 as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "5": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 639 spots. Domain-vs-rest t-test (rank_genes_groups) identifies SNAP25, TUBA1B, NEFL, TMSB10, UCHL1 as top-enriched genes. Overall partition spatial edge contiguity: 0.956.",
+    "6": "Leiden partition at resolution 0.3 on 3-pass Delaunay-smoothed 50-PC embedding (silhouette 0.165); 431 spots. Domain-vs-rest t-test (rank_genes_groups) identifies SCGB2A2, SCGB1D2, TMSB10, DIRAS2, SNAP25 as top-enriched genes. Overall partition spatial edge contiguity: 0.956."
+  },
+  "model": "Raw UMI counts -> CPM (1e4) + log1p -> 3000 highly variable genes -> z-score scale -> PCA (50) -> 3-pass Delaunay spatial smoothing of PC scores -> kNN (k=30) -> Leiden. Resolution 0.3 selected from [0.2, 0.3, 0.5, 0.7] by silhouette in smoothed space. Markers: rank_genes_groups domain-vs-rest t-test on log-normalized expression.",
+  "software_used": {
+    "python": "3.14.7",
+    "anndata": "0.12.16",
+    "scanpy": "1.12.1",
+    "pandas": "2.3.3",
+    "numpy": "2.1.3",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.10.3"
+  },
+  "limitations": [
+    "Single Visium section, no spatial replication: boundaries and interpretations cannot be validated across samples.",
+    "Visium spots pool multiple cells; markers reflect mixtures and may not map one-to-one to a single cell type or cortical layer.",
+    "Leiden resolution was selected on an internal silhouette criterion in smoothed PCA space; this does not guarantee biological correctness.",
+    "No anatomical labels were used (by design); proposed biological interpretations are hypotheses requiring independent validation (e.g., immunofluorescence, cell-type deconvolution).",
+    "Spatial smoothing (3 Delaunay passes) trades sharp boundaries for coherence; true domain boundaries may be slightly eroded."
+  ]
+}

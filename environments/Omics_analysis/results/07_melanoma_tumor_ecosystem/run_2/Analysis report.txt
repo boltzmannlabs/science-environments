@@ -1,0 +1,76 @@
+METASTATIC MELANOMA SINGLE-CELL RNA-SEQ — ANALYSIS REPORT
+=========================================================
+Dataset: GSE72056, "Single cell RNA-seq analysis of melanoma" (Smart-seq2, Illumina NextSeq 500)
+File used: GSE72056_melanoma_single_cell_revised_v2.txt.gz
+Assay: Human melanoma cells from freshly resected metastatic samples, dissociated and sorted into single cells.
+
+1. Data and table structure
+- The downloaded table contains 23,689 rows and 4,645 cells.
+- The first four rows are annotation rows, not genes:
+    * "Cell" row (cell identifiers)
+    * "tumor" row (tumor of origin — used only as sample metadata)
+    * malignant classification row (1=no, 2=yes, 0=unresolved) — NOT used
+    * non-malignant cell-type code row (1=T,2=B,3=Macrophage,4=Endothelial,5=CAF,6=NK) — NOT used
+- The remaining 23,686 rows are genes with numeric expression values.
+- The values are log-scale expression levels (E values, zero = absent). The distribution (many exact zeros, log10-scale dynamic range, values up to ~9.4) is consistent with log-scaled normalized expression rather than raw counts or TPM. A few cells show near-constant low expression (see Limitations).
+- The malignant and cell-type annotation rows were deliberately excluded from analysis, per task instructions. The tumor-of-origin row was used only as sample metadata.
+
+2. Quality control
+- All 4,645 input cells were retained. In this dataset every cell has at least 50 detected (non-zero) genes, so a typical detected-gene filter removes nothing; dropping cells on that criterion would have been uninformative.
+- No further filtering was applied: the assay is Smart-seq2 (full-transcriptome, high sensitivity), and the data are already log-scaled, so standard count-based QC (nUMI, mitochondrial %, etc.) is not directly applicable.
+
+3. Normalization and preprocessing
+- The matrix was used as the log-scale E matrix as provided.
+- For clustering, each gene column was standardized to a z-score (gene-wise mean 0, SD 1) so that all genes contribute comparably and high- and low-expressing genes do not dominate the distance metric.
+- PCA on the z-scored matrix, kNN graph (k=20) on the first 30 PCs, Leiden clustering at resolution 0.5, and UMAP for visualization.
+
+4. Malignant vs. non-malignant calls
+- Malignant cells were identified by expression, not by the provided annotation row.
+- A melanocyte-lineage signature was constructed from established melanocyte/melanoma marker genes: MITF, PAX3, SOX10, TYR, TYRP1, TYRP2, DCT, MLANA, MC1R, MLPH, PMEL, PDLIM4.
+- A pan-immune signature was constructed from canonical T-cell, B-cell, myeloid, endothelial, fibroblast, and NK-cell markers.
+- A Leiden cluster was called malignant if its median melanocyte z-score was > 0.15 AND its median pan-immune z-score was < 0.15. This yielded 5 malignant clusters and 1,163 malignant cells.
+- Cells in other clusters were called non-malignant (3,482 cells).
+
+5. Non-malignant cell types
+- Each non-malignant cell was assigned the cell type whose marker panel (from general immunology knowledge, NOT from the annotation rows) had the highest mean z-score. If the best panel score was < 0.2 the cell was left "unresolved."
+- Identified types and cell counts:
+    * T cell: 1,292
+    * B cell: 614
+    * NK cell: 498
+    * Fibroblast/CAF: 238
+    * Macrophage: 205
+    * Endothelial: 90
+    * unresolved: 545
+- The 545 unresolved cells likely include mixtures, doublets, or cells outside these canonical panels (e.g., dendritic cells, mast cells, or poorly captured cells). They are reported as unresolved rather than force-assigned.
+
+6. Marker genes
+- For each cell type, Welch's t-test was computed on the z-scored expression matrix (type vs. all other cells), with Benjamini-Hochberg FDR correction. Genes with adjusted p < 0.05 were retained and ranked by |t|. The top 25 per type were written to cell_type_markers.csv with log2 fold change computed on the raw E values with a pseudocount of 0.5.
+- Expected canonical markers were recovered (e.g., CD3D/CD3E/CD8A for T cells; CD19/MS4A1 for B cells; CD14/CD68/FCGR3A for macrophages; PECAM1/CDH5 for endothelium; COL1A1/PDGFRA for fibroblasts; NKG7/KLRD1 for NK cells).
+
+7. Tumor vs. type grouping
+- The UMAP (umap.png) shows two panels: cell type (left) and tumor of origin (right).
+- Malignant cells: malignant cells are not cleanly separated by tumor — cells from different tumors intermingle within the malignant regions of the UMAP. This suggests that tumor of origin is not the dominant axis of variation among malignant cells; instead, expression state dominates.
+- Non-malignant cells: non-malignant cells do group primarily by cell type across tumors (T cells cluster together regardless of tumor, B cells together, etc.), with tumor identity being a secondary axis. This is the expected biological pattern — shared cell-type programs dominate over tumor-of-origin effects for stromal and immune populations.
+
+8. Malignant expression programs
+- L1-regularized NMF (k=4, l1_ratio=0.4) was run on the z-scored malignant-cell expression matrix (shifted per gene to be non-negative for NMF).
+- Each program's top 100 genes by row-normalized loading are listed in malignant_programs.csv.
+- The four programs capture distinct gene sets; because the malignant clusters are heterogeneous, these programs represent recurrently co-varying gene modules rather than hard subpopulations.
+
+9. Uncertainties and limitations
+- The table is a log-scaled expression matrix, not raw counts. Standard count-based QC (mitochondrial fraction, nUMI) cannot be computed. A handful of cells appear near-constant/low-expression; without raw data we cannot determine whether these are empty droplets, low-quality cells, or genuine biological states.
+- The malignant call is signature-based, not copy-number-based (the provided malignant row was not used). Borderline cells — e.g., dedifferentiated melanoma cells that downregulate melanocytic markers, or immune cells with high melanocyte-gene noise — may be misclassified.
+- Cell-type assignment used a fixed marker panel; types outside the panel (dendritic cells, mast cells, plasmablasts, etc.) are reported as "unresolved" (545 cells). The panel was defined from general knowledge, not from the annotation rows.
+- The NMF decomposition (k=4) is a choice; different k or regularization would yield different partitions. Programs are gene modules, not validated molecular subtypes.
+- Tumor of origin has many levels (numerical codes) and some tumors contribute very few cells; tumor-level grouping is therefore descriptive, not statistical.
+- The Smart-seq2 assay has lower sequencing depth than typical droplet methods; dropout and capture bias may affect marker-gene and program identification.
+- No batch correction beyond z-scoring was applied; if library/protocol batches correlate with tumor, batch effects could confound tumor-grouping interpretations.
+
+10. Files produced (all in /home/boltzmann6/.sci/profiles/trial/workspace/outputs)
+- cell_annotations.csv
+- cell_type_counts.csv
+- cell_type_markers.csv
+- malignant_programs.csv
+- summary.json
+- umap.png
+- Analysis report.txt (this file)

@@ -1,73 +1,56 @@
 # Omics Analysis
 
-A benchmark environment for evaluating AI agent on practical omics data-analysis tasks.
-
-Each task gives an AI agent a scientific objective, input data, permitted tools, required outputs, and task-specific evaluation criteria. Tasks are independent and may use different datasets, omics modalities, analytical methods, and biological questions.
+A benchmark environment for evaluating AI agents on practical omics data-analysis tasks. Each task defines a scientific objective, dataset and input instructions, required outputs, constraints, and task-specific evaluation criteria. Tasks are independent and span multiple datasets and analysis types.
 
 ## Available tasks
 
-The repository currently includes four single-cell RNA-seq tasks based on the 10x Genomics PBMC3k dataset:
+The repository currently contains eight task specifications:
 
-1. [PBMC3k quality control and filtering](tasks/01_pbmc3k_qc_filtering.md)
-2. [PBMC3k clustering](tasks/02_pbmc3k_clustering.md)
-3. [PBMC3k cluster-level cell-type annotation](tasks/03_pbmc3k_annotation.md)
-4. [PBMC3k end-to-end cell-type annotation](tasks/04_3KPBMC_celltype_annotation.md)
+| # | Task | Data and analysis |
+|---|---|---|
+| 01 | [PBMC3k quality control and filtering](tasks/01_pbmc3k_qc_filtering.md) | Human PBMC single-cell RNA-seq; assess cell quality and filter cells. |
+| 02 | [PBMC3k clustering](tasks/02_pbmc3k_clustering.md) | Human PBMC single-cell RNA-seq; cluster cells and characterize the result. |
+| 03 | [PBMC3k cluster-level cell-type annotation](tasks/03_pbmc3k_annotation.md) | Human PBMC single-cell RNA-seq; identify cluster markers and assign cell types. |
+| 04 | [PBMC3k end-to-end cell-type annotation](tasks/04_3KPBMC_celltype_annotation.md) | Human PBMC single-cell RNA-seq; perform an end-to-end clustering and annotation workflow. |
+| 05 | [Single-cell stimulation response](tasks/05_single_cell_stimulation_response.md) | Human PBMC single-cell RNA-seq; compare control and cytokine-stimulated cells, accounting for donors. |
+| 06 | [Myeloid progenitor lineages](tasks/06_myeloid_progenitor_lineages.md) | Mouse bone-marrow single-cell RNA-seq; identify progenitor populations, markers, and lineage relationships. |
+| 07 | [Melanoma tumor ecosystem](tasks/07_melanoma_tumor_ecosystem.md) | Human metastatic melanoma single-cell RNA-seq; characterize cell populations and malignant-cell programs across tumors. |
+| 08 | [DLPFC spatial domain identification](tasks/08_dlpfc_spatial_domain_identification/08_dlpfc_spatial_domain_identification.md) | Human dorsolateral prefrontal cortex Visium data; identify spatially coherent expression domains. |
 
-These tasks cover quality control, filtering, normalization, clustering, marker-gene analysis, and cell-type annotation.
-
-## Planned tasks
-
-Five additional independent omics-analysis tasks are planned. They will not necessarily use PBMC3k data or follow the same workflow.
-
-Each future task will be added with its own:
-
-- Task specification
-- Input and output requirements
-- Evaluation criteria
-- Benchmark references, where applicable
-- Scoring logic
-- Agent results, when available
-
-The planned tasks are not yet included in this repository and are not currently available for execution or evaluation.
+Tasks 01 and 04–07 identify their source data in their specifications. Tasks 02 and 03 expect prepared AnnData inputs described in their specifications; those input files are not checked into this repository. Task 08 includes its agent-accessible AnnData input at `tasks/08_dlpfc_spatial_domain_identification/DLPFC_151673_agent_input.h5ad`.
 
 ## How tasks are evaluated
 
-An AI agent receives the public task instructions and the permitted input data. It must produce the outputs specified by the task.
+Each task describes its required outputs and evaluation criteria. Depending on the task, evaluation may consider whether outputs are present and valid, analytical and biological reasoning, evidence for conclusions, identifier consistency, and reproducibility. Some tasks include reference-based or heuristic scoring; the task specification and benchmark materials define the applicable criteria.
 
-Evaluation may consider:
-
-- Whether required outputs are present and valid
-- Correctness and completeness of the analysis
-- Biological plausibility
-- Marker- or feature-based evidence
-- Handling of uncertainty and ambiguous results
-- Reproducibility and provenance
-- Agreement with task-specific benchmark criteria
-
-The benchmark reference is a curated computational baseline, not necessarily biological ground truth. Agreement with a reference output should not be interpreted as proof of biological correctness.
+Benchmark references are computational or curated baselines, not necessarily biological ground truth. Agreement with a reference should not be interpreted as proof of biological correctness. Results from these tasks do not establish generalization to other datasets, tissues, organisms, technologies, or conditions.
 
 ## Repository structure
 
 ```text
 .
-├── ENVIRONMENT_SPEC.md        # Overall environment specification
-├── tasks/                     # Instructions provided to AI agents
-├── benchmark/                 # Evaluator-only references and scoring metadata
-├── results/                   # Agent outputs and benchmark results
-├── scripts/                   # Scoring and evaluation utilities
-├── config/                    # Environment configuration
-├── tests/                     # Repository tests
-└── skills/                    # Agent workflow guidance
+├── ENVIRONMENT_SPEC.md        # Shared environment principles and task model
+├── STATUS.md                  # Environment status notes
+├── tasks/                     # Agent-facing task specifications and task 08 input
+├── benchmark/                 # Evaluation references, methods, and scoring data (not task inputs)
+├── results/                   # Existing task outputs and analysis reports
+├── scripts/                   # Benchmark scorers and task comparison utilities
+├── config/                    # Configuration directory (currently empty)
+└── tests/                     # Test directory (currently empty)
 ```
 
-## Results and limitations
+The `benchmark/` directory contains evaluation reference material, including hidden labels; do not use it when solving the tasks. The PBMC3k scorer documentation is in [scripts/pbmc3k_benchmark/scripts_pbmc3k_benchmark_README.md](scripts/pbmc3k_benchmark/scripts_pbmc3k_benchmark_README.md). Each task's specification is authoritative for its inputs, constraints, required outputs, and evaluation procedure.
 
-Agent outputs and benchmark results are stored under [`results/`](results/). Evaluator references and scoring metadata are stored under [`benchmark/`](benchmark/).
+The `results/` folders contain checked-in analysis artifacts for all eight tasks.
 
-The current tasks use PBMC3k, so their results should not be interpreted as evidence of generalization to other tissues, organisms, technologies, or disease contexts. Some grading criteria are heuristic and may use keyword- or rule-based checks.
+For tasks 05–08, results are organized into two runs:
+
+- `run_1` — GPT-6-Sol
+- `run_2` — discoveryrsi
 
 ## Further documentation
 
 - [Environment specification](ENVIRONMENT_SPEC.md)
 - [Task specifications](tasks/)
-- [Benchmark scorer documentation](scripts/pbmc3k_benchmark/scripts_pbmc3k_benchmark_README.md)
+- Benchmark references and scoring data are evaluator-only; see `benchmark/` when working on evaluation.
+- [Existing results](results/)

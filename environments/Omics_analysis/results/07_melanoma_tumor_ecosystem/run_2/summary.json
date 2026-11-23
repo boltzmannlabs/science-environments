@@ -1,0 +1,19 @@
+{
+  "cells_input": 4645,
+  "cells_retained": 4645,
+  "cell_types_found": {
+    "T cell": 1292,
+    "malignant": 1163,
+    "B cell": 614,
+    "unresolved": 545,
+    "NK cell": 498,
+    "Fibroblast/CAF": 238,
+    "Macrophage": 205,
+    "Endothelial": 90
+  },
+  "n_malignant": 1163,
+  "n_nonmalignant": 3482,
+  "data_used": "GSE72056_melanoma_single_cell_revised_v2.txt.gz, log-scale expression matrix (E values, zero=absent)",
+  "model": "Per-gene z-score normalization of log-scaled expression; PCA/leiden clustering on z-scores; malignant clusters identified by high melanocyte signature (MITF/PAX3/SOX10/TYR/PMEL/PDLIM4) and low pan-immune signature; non-malignant types assigned by best-scoring marker panel (T, B, macrophage, endothelial, fibroblast/CAF, NK); markers from Welch t-test with BH FDR; malignant heterogeneity via l1-regularized NMF (k=4)",
+  "software_used": "numpy 2.1.3, pandas 2.3.3, scanpy 1.12.1, anndata 0.12.16, scipy 1.14.1, scikit-learn 1.6.1, matplotlib 3.10.3; GEOparse installed via pip"
+}

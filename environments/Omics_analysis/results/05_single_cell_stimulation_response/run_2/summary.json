@@ -1,0 +1,80 @@
+{
+  "cell_types_analyzed": [
+    "all_cells",
+    "B cells",
+    "CD14+ Monocytes",
+    "CD4 T cells",
+    "CD8 T cells",
+    "Dendritic cells",
+    "FCGR3A+ Monocytes",
+    "Megakaryocytes",
+    "NK cells"
+  ],
+  "n_significant_per_cell_type": {
+    "all_cells": 1388,
+    "B cells": 478,
+    "CD14+ Monocytes": 2142,
+    "CD4 T cells": 505,
+    "CD8 T cells": 195,
+    "Dendritic cells": 416,
+    "FCGR3A+ Monocytes": 900,
+    "Megakaryocytes": 58,
+    "NK cells": 315
+  },
+  "top_induced_genes": [
+    "CCL8",
+    "CXCL11",
+    "NUPR1",
+    "IFIT1",
+    "CXCL10",
+    "TGM1",
+    "RSAD2",
+    "HESX1",
+    "CCNA1",
+    "CH25H",
+    "IL27",
+    "HRASLS2",
+    "IFIT2",
+    "IFIT3",
+    "ISG15",
+    "PDGFRL",
+    "DEFB1",
+    "CMPK2",
+    "IFI27",
+    "SCIN"
+  ],
+  "top_repressed_genes": [
+    "HTRA1",
+    "C19orf59",
+    "CLEC5A",
+    "THBD",
+    "VCAN",
+    "CST6",
+    "CD93",
+    "LINC00984",
+    "MMP7",
+    "PDPN",
+    "SDC2",
+    "PTGFRN",
+    "COL7A1",
+    "GLIS3",
+    "FARP1",
+    "KCNJ15",
+    "HBEGF",
+    "MMP9",
+    "VNN1",
+    "IL1B"
+  ],
+  "data_used": {
+    "count_matrices": [
+      "GSE96583_RAW.tar: GSM2560248_2.1.mtx.gz (6h control)",
+      "GSE96583_RAW.tar: GSM2560249_2.2.mtx.gz (6h IFN-beta stimulation)"
+    ],
+    "cell_metadata": "GSE96583_batch2.total.tsne.df.tsv.gz (per-cell: condition 'stim', donor 'ind', cell type 'cell', doublet status 'multiplets', cluster, tSNE coordinates)",
+    "gene_annotation": "GSE96583_batch2.genes.tsv.gz (Ensembl gene id -> gene symbol, in matrix row order)",
+    "labels_used": "condition (ctrl vs stim), donor (ind, 8 donors), cell type (cell, 8 labels), doublet status (multiplets: kept singlets only)",
+    "experiment": "GSE96583 batch 2 (samples 2.1 control vs 2.2 IFN-beta stimulated); batch 1 (samples A/B/C) is a separate unstimulated multiplexing demo and was not used"
+  },
+  "model": "Pseudobulk DESeq2 (PyDESeq2 0.5.4): raw counts summed per donor x condition (8 donors x 2 conditions = 16 samples), negative-binomial Wald test with design '~ donor + condition' (donor as fixed-effect covariate, parametric dispersion trend), contrast stimulated vs control; Cook's distance outlier filtering and independent filtering enabled, Benjamini-Hochlinger FDR on the unfiltered gene set. Analysis repeated for all cells and within each of the 8 provided cell-type labels.",
+  "software_used": "Python 3.14.7; scanpy 1.12.1; anndata 0.12.16; pandas 2.3.3; numpy 2.4.3; scipy 1.14.1; matplotlib 3.10.3 (with a local monkeypatch for a Path.__deepcopy__ recursion bug on Python 3.14); PyDESeq2 0.5.4 (installed from a local uv cache wheel because PyPI was unreachable, with formulaic 1.2.2 and formulaic-contrasts 1.0.0 dependencies)"
+}

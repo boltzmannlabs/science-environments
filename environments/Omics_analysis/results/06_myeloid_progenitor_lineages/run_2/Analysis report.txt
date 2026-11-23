@@ -1,0 +1,225 @@
+BONE MARROW MYELOID PROGENITORS (GSE72857) — SINGLE-CELL RNA-SEQ ANALYSIS REPORT
+================================================================================
+
+1. DATASET SUMMARY
+------------------
+Source: NCBI GEO accession GSE72857 (Mus musculus). Two supplementary files were
+used: GSE72857_umitab.txt.gz (UMI count matrix, 27,297 genes x 10,368 cells;
+cells are well IDs, e.g. W29953) and GSE72857_experimental_design.txt.gz (one row
+per well, mapping each cell to its well, sequencing batch, amplification batch,
+mouse, plate and sorting/genotype "Batch_desc"). Every matrix column matched a
+design-table well ID exactly (no mismatches, no extra cells).
+
+The design table shows 10,368 sorted wells, of which 108 are EMPTY wells
+(Number_of_cells = 0) — these were retained in the matrix and used to estimate
+the ambient/background UMI floor. The 10,260 non-empty wells come from 8
+sorting/genotype conditions (Batch_desc), one mouse per condition, 27 sorting
+plates, 54 amplification (cDNA) batches and 6 Illumina sequencing batches:
+  - Unsorted myeloid (3,072 wells)
+  - Cebpa KO (2,304) vs Cebpa control (1,152)
+  - Cebpe KO (768) vs Cebpe control (384)
+  - CMP CD41 (384), CMP Flt3+ Csf1r+ (1,152), CMP Irf8-GFP+ MHCII+ (1,152)
+
+A critical structural feature: each sorting fraction was sequenced in its own
+sequencing batch, so Batch_desc is fully confounded with Seq_batch_ID and with
+the set of amplification batches. Amplification batches nest perfectly inside
+fractions (no amp batch spans two fractions), and within a fraction cells from
+one mouse share multiple amp batches. Batch handling was designed around this
+(confounding means we cannot "correct away" sorting/genotype as if it were a
+technical factor — see section 2).
+
+2. QUALITY CONTROL AND BATCH HANDLING
+-------------------------------------
+Cell QC (applied to raw UMI counts before any transformation):
+  - All 108 empty wells removed (by design flag Number_of_cells = 0).
+  - Non-empty wells with < 500 total UMI removed. Justification: the empty-well
+    ambient floor has a MAX of 233 UMI (p95 ~118), and the non-empty UMI
+    distribution shows a low-abundance tail (p10 = 166) separated from the main
+    population (p25 = 860). The <500-UMI cells have a flat, non-cell-like gene
+    concentration profile (top-50-gene UMI fraction ~0.13-0.16, similar to or
+    lower than the population mean), consistent with ambient RNA/poor capture
+    rather than a biological population. Note this tail is enriched in Cebpa KO
+    (37% <400 UMI) vs the CMP fractions (<2%): low UMI is a technical property
+    of those sorts, not evidence that Cebpa KO cells are "dying", so the cut is
+    set by the ambient floor rather than a per-batch percentile.
+  - Result: 10,368 input -> 8,399 retained cells.
+Gene QC: genes detected in >= 3 cells retained -> 14,225 genes.
+No mitochondrial-gene filter was applied: the gene panel contains no mt-/* genes
+(0% mitochondrial content in every cell), so such a filter would have been a
+no-op. Ribosomal content (median ~10%) was monitored but not used to discard
+cells.
+
+Batch handling:
+  - HVG selection was amp-batch-aware (Seurat flavor, batch_key = Amp_batch_ID)
+    so that genes variable within any single fraction could enter the analysis,
+    avoiding a bias toward genes variable across the (confounded) sorting
+    fractions.
+  - The neighbor graph was built bbknn-style: a GLOBAL k=100 kNN in 30-D PCA,
+    trimmed to at most 13 neighbors per amplification batch (~50 total), then
+    UMAP fuzzy-simplicial-set connectivities. This forces cross-batch mixing
+    (a cell's local neighborhood cannot be monopolized by its own amp batch)
+    while preserving biology. An early attempt using within-batch-only
+    connectivity produced ~54 uniform clusters equal to the amp batches (total
+    overcorrection) and was discarded.
+  - Because sorting fraction and genotype are confounded with sequencing and
+    amplification batches, integration was intentionally NOT used to merge the
+    fractions: the biological question is precisely how these distinct
+    progenitor populations relate. Residual batch structure that coincides with
+    fraction is therefore expected and is reported per cluster below.
+
+3. NORMALIZATION, CLUSTERING, TRAJECTORY METHODS AND PARAMETERS
+---------------------------------------------------------------
+  - Normalization: library-size normalization to 1e4 UMI/cell, then log1p. Raw
+    integer counts kept in a layer.
+  - Features: 3,000 Seurat-style highly variable genes (amp-batch-aware),
+    z-score scaled (clipped at +/-10).
+  - Dimensionality reduction: PCA, 50 components computed, 30 used for the
+    graph; UMAP (n_neighbors=50, min_dist=0.3) on the batch-aware graph.
+  - Clustering: Leiden (igraph flavor, n_iterations=2) on the batch-aware
+    kNN graph. Resolution 0.7 was selected from a range (0.3/0.5/0.7/1.0):
+    0.3 merged lineages that have distinct marker programs; 1.0 began splitting
+    clusters along batch/genotype lines rather than transcriptional state.
+    12 clusters resulted.
+  - Markers: two-sample t-test per cluster vs the rest, BH-adjusted p-values,
+    top 20 genes per cluster (score = t-statistic magnitude, log2 fold change
+    with pseudocount).
+  - Relationships: PAGA (partitioned graph analysis) on the same batch-aware
+    graph, 12 cluster states.
+  - Pseudotime: diffusion pseudotime implemented directly on the batch-aware
+    connectivity graph (random-walk transition matrix, 7 non-trivial diffusion
+    eigen-coordinates, Euclidean diffusion distance from a Cd34+ CMP root
+    cell), normalized to [0,1]. Each cell also carries a lineage/branch label
+    derived from its cluster.
+
+4. SUBPOPULATIONS, FATES AND EVIDENCE
+-------------------------------------
+12 clusters were identified (n = cells; top markers with log2FC):
+
+  cl 10  common myeloid progenitor (CMP), n=568. Cd34 (2.79), H2-Aa, Eef1a1.
+         Enriched in the CMP Irf8-GFP+ MHCII+ sort (511/568) and CMP Flt3+
+         Csf1r+ sort. The most progenitor-like state (Cd34+, low lineage
+         commitment); root of the pseudotime.
+  cl 2   multipotent myeloid progenitor, n=110. Gata2 (4.07), Srgn, Lmo4,
+         Lgals1, Ly6e. Small, from unsorted myeloid and Cebpe KO. Gata2 is a
+         hematopoietic progenitor factor; this state sits between the CMP and
+         the erythroid branch on PAGA (cl2<->cl1 weight 0.87).
+  cl 9   granulocyte-macrophage progenitor (GMP), n=153. Plac8 (4.60), B2m,
+         Atpase6. From CMP Flt3+ Csf1r+ (119/153) — the Flt3+Csf1r+ gate is
+         the classical GMP marker combination. Strongest PAGA edge to the
+         immature granulocyte cluster (cl9<->cl4 = 1.00).
+  cl 4   immature granulocyte / progranulocyte, n=1,445. Mpo (2.23), Prtn3
+         (2.30), Ramp1 (2.16), H2afy, Lgals1. From CMP Flt3+ Csf1r+
+         (993/1,445). Granulocytic enzymes present but at lower fold change
+         than mature states; the committed granulocytic entry point.
+  cl 3   mature neutrophil, n=1,484. Prtn3 (4.13), Mpo (3.41), Ctsg (3.73),
+         Elane (5.07), Calr. Mostly unsorted myeloid (1,023/1,484) plus Cebpa
+         and Cebpe controls. The canonical mature neutrophil granule program.
+  cl 11  neutrophil-like, Cebpe-KO-enriched, n=266. Elane (6.25), Prtn3 (4.33),
+         Mpo (3.53), Ly6c2 (5.34), Ctsg, Hp. 260/266 are Cebpe KO and the
+         cluster is concentrated in four Cebpe-KO amplification batches
+         (AB283/284/291/292). It is transcriptionally a neutrophil state but
+         its separation from cl 3 is reinforced by genotype/batch, so treat its
+         distinctness with caution (see limitations).
+  cl 1   early erythroid, n=1,369. Apoe (3.19), Car1 (2.15), Car2 (1.73),
+         Vamp5, S100a10. Enriched in Cebpa KO (869/1,369): Cebpa-deficient
+         progenitors fail to commit to granulopoiesis and skew erythroid,
+         which is exactly what this cluster shows. Car1/Car2 (erythrocyte
+         carboxypeptidases) are established erythroid markers.
+  cl 5   mature erythroid, n=1,927. Car2 (4.59), Blvrb (4.31), Car1 (4.90),
+         Klf1 (4.41), Fam132a, Mt2. Klf1 is the erythroid master transcription
+         factor. The largest single cluster; spans unsorted and both Cebpa
+         conditions.
+  cl 6   ribosome-rich late erythroid/megakaryocyte, n=165. Ribosomal proteins
+         (Rps5, Rpl14, Rpl13a) dominate, with Blvrb (2.90), Aqp1 (2.97), Ftl1
+         among non-ribosomal markers. Aqp1 and Blvrb mark late erythroid /
+         megakaryocytic cells; the ribosomal dominance reflects the
+         translational burst of terminal erythroid maturation. Enriched in
+         Cebpa control (151/165). PAGA links it to both erythroid clusters
+         (cl1<->cl6 0.72, cl5<->cl6 0.74) and the megakaryocyte cluster.
+  cl 0   megakaryocyte, n=382. Nrgn (4.54), Itga2b (6.29), Pf4 (8.29),
+         Serpina3f, Gpr56, Cdcrel-1. Itga2b (CD41) and Pf4 are specific
+         megakaryocyte/platelet markers. 307/382 from the CMP CD41 sort — the
+         same CD41 (Itga2b) marker used to sort the progenitors is highly
+         expressed here, consistent with this being the mature CD41 lineage
+         output.
+  cl 7   MHC-low myeloid precursor, n=59. Ccl5 (9.91), H2-K1 (2.28), Cd52,
+         Tcb. Small; from unsorted and the Irf8-GFP+ MHCII+ sort. A
+         low-MHCII myeloid state bridging the CMP and the MHCII+ DC cluster on
+         PAGA.
+  cl 8   MHCII+ dendritic cell, n=471. Cd74 (9.55), H2-Aa (9.06), Cst3 (4.74),
+         H2-Ab1 (7.87), Actb, Lsp1. MHC class II (and HLA-DM homolog Cd74)
+         defines this population; 413/471 from the CMP Irf8-GFP+ MHCII+ sort,
+         the fraction explicitly enriched for Irf8 (the DC-lineage factor).
+
+Differentiation fates identified:
+  - Granulocytic/neutrophil: cl9 (GMP) -> cl4 (immature) -> cl3 (mature), with
+    the cl11 Cebpe-KO branch.
+  - Erythroid: cl2 (progenitor) -> cl1 (early) -> cl5 (mature) / cl6 (late,
+    ribosome-rich).
+  - Megakaryocytic: cl0 (megakaryocyte), branching from the early erythroid
+    state (shared CD41/Itga2b and Blvrb programs, as expected for the
+    megakaryocyte-erythroid progenitor compartment).
+  - Dendritic (MHCII+): cl10 (Cd34+ CMP) -> cl7 (MHC-low) -> cl8 (MHCII+ DC).
+  - A monocytic fate is not cleanly resolved: no cluster shows a strong
+    monocyte program (e.g. Csf1r, Ly6c+ monocytic signature) distinct from the
+    states above; Csf1r appears only as a sort marker, not a strong cluster
+    marker. Monocytic commitment, if present, is either minor or not captured
+    at this QC/depth.
+
+Relationships (PAGA, edge weights): the graph is organized around the cl10
+Cd34+ CMP and the cl9 GMP as shared myeloid entry points. Granulocytic axis:
+cl10/cl9 -> cl4 (w=1.00) -> cl3 (w=0.62) <-> cl11 (w=0.62). Erythroid axis:
+cl2 -> cl1 (w=0.87) -> cl5 (w=0.28) and cl6 (w=0.72-0.74); cl0 attaches to
+cl1 (w=0.51) and cl6 (w=0.49). DC axis: cl10 -> cl7 (w=0.17) -> cl8
+(weak direct edge; cl8 mainly contacts cl10 w=0.06 and cl4 w=0.06). The
+progenitor clusters (cl10, cl9, cl2) form the hub from which all branches
+emanate.
+
+Pseudotime (diffusion distance from the cl10 root, 0=most progenitor-like):
+mean values rise monotonically from progenitors (cl10 0.07) through committed
+states (cl4/cl9 ~0.11, cl1 ~0.13) to the most differentiated/terminal states
+(cl0 0.24, cl8 0.26). This is a global differentiation-depth axis, not a
+single linear trajectory: the dataset is cross-sectional (distinct sorted
+fractions and genotypes, not a time course), so "pseudotime" here orders states
+by inferred differentiation distance from the progenitor pool.
+
+5. UNCERTAINTIES AND LIMITATIONS
+--------------------------------
+  - Cross-sectional, mixed-fraction design: the fractions (CD41, Flt3+Csf1r+,
+    Irf8-GFP+MHCII+, unsorted, Cebpa +/-, Cebpe +/-) were sorted from one
+    mouse each and sequenced in separate batches. There is no time course and
+    no within-mouse mixing, so trajectories are inferred from transcriptional
+    continuity, not observed transitions. Pseudotime is a differentiation-depth
+    proxy and should not be read as a clock.
+  - Confounded batch/genotype/fraction: sorting fraction is inseparable from
+    sequencing and amplification batch. Batch-aware kNN trimming reduces
+    amplification-batch structure but cannot and should not "correct"
+    biological differences between fractions. Residual structure aligned with
+    fraction therefore remains; cluster identities lean on marker biology and
+    are annotated accordingly.
+  - cl11 (Cebpe-KO neutrophil-like) is concentrated in four Cebpe-KO amp
+    batches; its separation from cl3 may reflect a real Cebpe-KO-specific
+    transcriptional state, a residual batch effect, or both. It is labeled as
+    such and should be interpreted cautiously.
+  - cl6 is defined by ribosomal dominance; its terminal erythroid/megakaryocyte
+    identity rests on Aqp1/Blvrb/Ftl1 rather than a broad erythroid program.
+    It could partly reflect a high-translation cell cycle / maturation state.
+  - No doublet call was made (no 3' doublet index in the data); the highest
+    UMI cells (max ~26,000) were retained, so multiplets, if present, are not
+    removed.
+  - Marker tests are two-sample t-tests on log-normalized HVG counts; for rare
+    genes or small clusters (cl2 n=110, cl7 n=59) scores are less stable.
+  - The monocytic branch is not resolved; absence of a cluster marker does not
+    prove absence of monocytes.
+  - Gene names with aliases ("Gene;Alias") were collapsed to the primary name
+    (verified unique); no annotation database was used, so labels rely on
+    standard mouse gene knowledge (e.g. Klf1=erythroid TF, Itga2b=CD41).
+  - 2015-era UMI protocol: total UMI counts (median ~2,100) are low by modern
+    standards; rare populations and subtle state differences may be underpowered.
+
+SOFTWARE
+--------
+python 3.14, scanpy 1.12.1, anndata 0.12.16, pandas 2.3.3, numpy 2.1.3,
+scipy 1.14.1, scikit-learn 1.6.1, matplotlib 3.10.3, umap-learn 0.6.0,
+leidenalg 0.12.0, igraph 1.0.0, statsmodels 0.15.0. All pre-installed in the
+analysis environment; nothing was installed for this analysis.
