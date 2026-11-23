@@ -1,3 +1,4 @@
+# task_006_vhh_ha_rsv_fixed_framework_design — Results
 
 **Task ID:** `task_006_vhh_ha_rsv_fixed_framework_design`
 
@@ -121,3 +122,9 @@ Local analysis: Biopython 1.84, NumPy 1.26.4. Platform model/service build versi
 - `HA_confidence_1_model_0.pdb`, `HA_confidence_pae_1_model_0.npz`, `HA_confidence_plddt_1_model_0.npz`, `HA_confidence_confidence_1_model_0.json`: confidence-assessment artifacts.
 - `surface_residue_contributions.csv`: residue-level surface contributions.
 - `audit.json`, `audit_method.py`, `sha256_manifest.json`: verified mappings, RMSD calculations and provenance.
+
+## Saved outputs
+
+[Run index](run.json) · [Candidate inventory](candidates.csv) · [Assessed metrics](metrics.csv) · [Retained shortlist](shortlist.csv) · [Sequences](sequences.fasta) · [Selected sequence](selected_sequence.fasta) · [Benchmark comparison](benchmark_comparison.csv) · [Structures](structures) · [Raw evidence](raw) · [Source checksums](sha256_manifest.json).
+
+This folder contains the selected-candidate evidence used for the results and benchmark; it indexes existing calculations and does not represent a new model run.

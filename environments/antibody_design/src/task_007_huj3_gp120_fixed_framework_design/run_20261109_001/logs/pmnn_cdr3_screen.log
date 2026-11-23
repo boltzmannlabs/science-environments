@@ -1,0 +1,162 @@
+Traceback (most recent call last):
+  File "/home/boltzmann4/srivani/Agent_Sci_Ab/Ab_design_testing/08_results/task_007_huj3_gp120_fixed_framework_design/run_20261109_001/design_cdr3_pmnn.py", line 13, in <module>
+    from proteinmpnn import ProteinMPNN
+ImportError: cannot import name 'ProteinMPNN' from 'proteinmpnn' (/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_venv/lib/python3.11/site-packages/proteinmpnn/__init__.py)
+DONE
+usage: protein_mpnn_run.py [-h] [--suppress_print SUPPRESS_PRINT] [--ca_only]
+                           [--path_to_model_weights PATH_TO_MODEL_WEIGHTS]
+                           [--model_name MODEL_NAME] [--use_soluble_model]
+                           [--seed SEED] [--save_score SAVE_SCORE]
+                           [--save_probs SAVE_PROBS] [--score_only SCORE_ONLY]
+                           [--path_to_fasta PATH_TO_FASTA]
+                           [--conditional_probs_only CONDITIONAL_PROBS_ONLY]
+                           [--conditional_probs_only_backbone CONDITIONAL_PROBS_ONLY_BACKBONE]
+                           [--unconditional_probs_only UNCONDITIONAL_PROBS_ONLY]
+                           [--backbone_noise BACKBONE_NOISE]
+                           [--num_seq_per_target NUM_SEQ_PER_TARGET]
+                           [--batch_size BATCH_SIZE] [--max_length MAX_LENGTH]
+                           [--sampling_temp SAMPLING_TEMP]
+                           [--out_folder OUT_FOLDER] [--pdb_path PDB_PATH]
+                           [--pdb_path_chains PDB_PATH_CHAINS]
+                           [--jsonl_path JSONL_PATH]
+                           [--chain_id_jsonl CHAIN_ID_JSONL]
+                           [--fixed_positions_jsonl FIXED_POSITIONS_JSONL]
+                           [--omit_AAs OMIT_AAS]
+                           [--bias_AA_jsonl BIAS_AA_JSONL]
+                           [--bias_by_res_jsonl BIAS_BY_RES_JSONL]
+                           [--omit_AA_jsonl OMIT_AA_JSONL]
+                           [--pssm_jsonl PSSM_JSONL] [--pssm_multi PSSM_MULTI]
+                           [--pssm_threshold PSSM_THRESHOLD]
+                           [--pssm_log_odds_flag PSSM_LOG_ODDS_FLAG]
+                           [--pssm_bias_flag PSSM_BIAS_FLAG]
+                           [--tied_positions_jsonl TIED_POSITIONS_JSONL]
+protein_mpnn_run.py: error: ambiguous option: --pdb could match --pdb_path, --pdb_path_chains
+DONE
+usage: protein_mpnn_run.py [-h] [--suppress_print SUPPRESS_PRINT] [--ca_only]
+                           [--path_to_model_weights PATH_TO_MODEL_WEIGHTS]
+                           [--model_name MODEL_NAME] [--use_soluble_model]
+                           [--seed SEED] [--save_score SAVE_SCORE]
+                           [--save_probs SAVE_PROBS] [--score_only SCORE_ONLY]
+                           [--path_to_fasta PATH_TO_FASTA]
+                           [--conditional_probs_only CONDITIONAL_PROBS_ONLY]
+                           [--conditional_probs_only_backbone CONDITIONAL_PROBS_ONLY_BACKBONE]
+                           [--unconditional_probs_only UNCONDITIONAL_PROBS_ONLY]
+                           [--backbone_noise BACKBONE_NOISE]
+                           [--num_seq_per_target NUM_SEQ_PER_TARGET]
+                           [--batch_size BATCH_SIZE] [--max_length MAX_LENGTH]
+                           [--sampling_temp SAMPLING_TEMP]
+                           [--out_folder OUT_FOLDER] [--pdb_path PDB_PATH]
+                           [--pdb_path_chains PDB_PATH_CHAINS]
+                           [--jsonl_path JSONL_PATH]
+                           [--chain_id_jsonl CHAIN_ID_JSONL]
+                           [--fixed_positions_jsonl FIXED_POSITIONS_JSONL]
+                           [--omit_AAs OMIT_AAS]
+                           [--bias_AA_jsonl BIAS_AA_JSONL]
+                           [--bias_by_res_jsonl BIAS_BY_RES_JSONL]
+                           [--omit_AA_jsonl OMIT_AA_JSONL]
+                           [--pssm_jsonl PSSM_JSONL] [--pssm_multi PSSM_MULTI]
+                           [--pssm_threshold PSSM_THRESHOLD]
+                           [--pssm_log_odds_flag PSSM_LOG_ODDS_FLAG]
+                           [--pssm_bias_flag PSSM_BIAS_FLAG]
+                           [--tied_positions_jsonl TIED_POSITIONS_JSONL]
+protein_mpnn_run.py: error: unrecognized arguments: --noise 0.01
+DONE
+----------------------------------------
+chain_id_jsonl is NOT loaded
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+Traceback (most recent call last):
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 469, in <module>
+    main(args)   
+    ^^^^^^^^^^
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 182, in main
+    model.load_state_dict(checkpoint['model_state_dict'])
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2647, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ProteinMPNN:
+        Unexpected key(s) in state_dict: "W_v.weight", "W_v.bias", "features.node_embedding.weight", "features.norm_nodes.weight", "features.norm_nodes.bias". 
+        size mismatch for features.edge_embedding.weight: copying a param with shape torch.Size([128, 167]) from checkpoint, the shape in current model is torch.Size([128, 416]).
+DONE
+----------------------------------------
+chain_id_jsonl is NOT loaded
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+----------------------------------------
+Number of edges: 48
+Training noise level: 0.2A
+Traceback (most recent call last):
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 423, in <module>
+    main(args)   
+    ^^^^^^^^^^
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 168, in main
+    model.load_state_dict(checkpoint['model_state_dict'])
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2647, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ProteinMPNN:
+        Unexpected key(s) in state_dict: "W_v.weight", "W_v.bias", "features.node_embedding.weight", "features.norm_nodes.weight", "features.norm_nodes.bias". 
+        size mismatch for features.edge_embedding.weight: copying a param with shape torch.Size([128, 167]) from checkpoint, the shape in current model is torch.Size([128, 416]).
+DONE
+----------------------------------------
+chain_id_jsonl is NOT loaded
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+----------------------------------------
+Number of edges: 48
+Training noise level: 0.2A
+Traceback (most recent call last):
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 423, in <module>
+    main(args)   
+    ^^^^^^^^^^
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_run.py", line 218, in main
+    X, S, mask, lengths, chain_M, chain_encoding_all, chain_list_list, visible_list_list, masked_list_list, masked_chain_length_list_list, chain_M_pos, omit_AA_mask, residue_idx, dihedral_mask, tied_pos_list_of_lists_list, pssm_coef, pssm_bias, pssm_log_odds_all, bias_by_res_all, tied_beta = tied_featurize(batch_clones, device, chain_id_dict, fixed_positions_dict, omit_AA_dict, tied_positions_dict, pssm_dict, bias_by_res_dict, ca_only=args.ca_only)
+                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/pmnn_src/protein_mpnn_utils.py", line 288, in tied_featurize
+    fixed_pos_list = fixed_position_dict[b['name']][letter]
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: '1_model_0'
+----------------------------------------
+chain_id_jsonl is NOT loaded
+----------------------------------------
+pssm_jsonl is NOT loaded
+----------------------------------------
+omit_AA_jsonl is NOT loaded
+----------------------------------------
+bias_AA_jsonl is NOT loaded
+----------------------------------------
+tied_positions_jsonl is NOT loaded
+----------------------------------------
+bias by residue dictionary is not loaded, or not provided
+----------------------------------------
+----------------------------------------
+Number of edges: 48
+Training noise level: 0.2A
+Generating sequences for: 1_model_0
+DONE
+200 sequences of length 121 generated in 92.8309 seconds

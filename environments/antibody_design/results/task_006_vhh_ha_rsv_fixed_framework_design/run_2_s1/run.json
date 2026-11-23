@@ -1,0 +1,35 @@
+{
+  "schema_version": "archived-case-index-v1",
+  "task_id": "task_006_vhh_ha_rsv_fixed_framework_design",
+  "selected_candidate_label": "run_2_s1",
+  "source_campaign_run_id": "run_20261104_205147",
+  "note": "Indexes previously executed data; not a new model run. run_2_s1 is a candidate label, not the archived campaign run ID.",
+  "candidate_count": 50,
+  "final_assessed_candidate_count": 2,
+  "selected_candidate_id": "ppiflow_HA_nanobody_run_2_s1",
+  "methods": [
+    "PPIFlow",
+    "AntiBMPNN",
+    "Boltz-2",
+    "PRODIGY",
+    "Biopython",
+    "NumPy"
+  ],
+  "files": {
+    "report": "report.md",
+    "selected_sequence": "selected_sequence.fasta",
+    "all_sequences": "sequences.fasta",
+    "generated_sequences_copy": "generated_sequences.fasta",
+    "candidate_inventory": "candidates.csv",
+    "assessed_metrics": "metrics.csv",
+    "shortlist": "shortlist.csv",
+    "benchmark_comparison": "benchmark_comparison.csv",
+    "raw": "raw",
+    "structures": "structures",
+    "figures": "../../../BM/task_006_vhh_ha_rsv_fixed_framework_design/figures",
+    "original_candidate_properties": "candidate_properties.json",
+    "original_scores": "prodigy.csv",
+    "structural_audit": "audit.json",
+    "source_hashes": "sha256_manifest.json"
+  }
+}

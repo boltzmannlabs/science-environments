@@ -1,0 +1,44 @@
+run_id: run_20261109_001
+task_id: task_007_huj3_gp120_fixed_framework_design
+workflow_id: wf_antibmpnn_pmnn_fixed_backbone_cdr
+status: complete
+lineage:
+  parent: null
+  derived_from: huJ3 parent sequence and gp120 from PDB 7RI1
+  historical_components: []
+counts:
+  designed_cdr1_sequences: 4
+  evaluated_cdr1_candidates: 4
+  evaluated_cdr3_candidates: 4
+  selected_candidates: 1
+config:
+  path: ../../../Results/task_007_huj3_gp120_fixed_framework_design/run_20261109_001/run.json
+  sha256: d8f1b6a2882798895cbdbea188ed24c9f779bf844a8ac58db56afaf6586d5275
+last_update: '2026-11-11'
+run_timestamp: '2026-11-09'  # from archived run_id
+stages:
+- stage: S0_prep
+  status: complete
+  tool: Boltz-2
+- stage: S1_cdr1
+  status: complete
+  tool: AntiBMPNN
+- stage: S2_cdr3
+  status: complete
+  tool: ProteinMPNN
+- stage: S3_verify
+  status: complete
+- stage: S4_properties
+  status: complete
+  tool: peptides
+- stage: S5_structure
+  status: complete
+  tool: Boltz-2
+- stage: S6_comparison
+  status: complete
+packaging_updated_utc: '2026-11-22T08:32:49+00:00'
+artifact_manifest: inputs/boltz2_complex_pairs.json
+consolidated_utc: '2026-11-22T08:32:49+00:00'
+config_presentation_updated: '2026-11-22'
+config_json: ../../../configs/task_007_huj3_gp120_fixed_framework_design/run_20261109_001.json
+config_sha256: 662e3745e0ffce9e9fe8565a17b3d3958d281dd6a42bfd85440ca760a1d9983e

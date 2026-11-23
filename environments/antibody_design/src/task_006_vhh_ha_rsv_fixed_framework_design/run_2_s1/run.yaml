@@ -1,0 +1,46 @@
+run_id: run_2_s1
+task_id: task_006_vhh_ha_rsv_fixed_framework_design
+workflow_id: wf_ppiflow_antibmpnn_fixed_framework
+status: complete
+lineage:
+  parent: null
+  derived_from: PDB 3EAK chain A, HA 5VLI, RSV 7LUC crop A250-380
+  historical_components: []
+counts:
+  designed_backbones: 10
+  generated_sequences: 50
+  unique_candidates: 50
+  evaluated_candidates: 2
+  selected_candidates: 1
+config:
+  path: ../../../Results/task_006_vhh_ha_rsv_fixed_framework_design/run_2_s1/run.json
+  sha256: cc7761ba5c8a4bd101b75c0f74f1b621c400b6c854aafb28945cac1193fbdc5c
+last_update: '2026-11-11'
+run_timestamp: '2026-11-04T20:51:00+05:30'  # from archived campaign run_id
+stages:
+- stage: S0_prep
+  status: complete
+- stage: S1_backbone
+  status: complete
+  tool: PPIFlow
+- stage: S2_sequence
+  status: complete
+  tool: AntiBMPNN
+- stage: S3_verify
+  status: complete
+- stage: S4_structure
+  status: complete
+  tool: Boltz-2
+- stage: S5_affinity
+  status: complete
+  tool: PRODIGY
+- stage: S6_properties
+  status: complete
+- stage: S7_comparison
+  status: complete
+packaging_updated_utc: '2026-11-22T08:32:49+00:00'
+artifact_manifest: inputs/shortlist.csv
+consolidated_utc: '2026-11-22T08:32:49+00:00'
+config_presentation_updated: '2026-11-22'
+config_json: ../../../configs/task_006_vhh_ha_rsv_fixed_framework_design/run_2_s1.json
+config_sha256: 662e3745e0ffce9e9fe8565a17b3d3958d281dd6a42bfd85440ca760a1d9983e

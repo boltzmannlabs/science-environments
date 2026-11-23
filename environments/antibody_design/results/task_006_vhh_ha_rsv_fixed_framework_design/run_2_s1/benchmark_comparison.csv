@@ -1,0 +1,6 @@
+criterion,published_reference,our_method,our_value,comparison_scope
+Aggregation propensity,SAP; designed VHHs slightly higher than native VHHs,exposure-filtered Kyte-Doolittle mean,-1.242,different scoring definitions
+Humanness,OASis Identity; designs between random-CDR and therapeutic-CDR controls,unique whole-VHH 9-mer reference-match fraction,0.5487,different repertoires and denominators
+Interface interaction,Rosetta ddG; designed interfaces slightly less favorable than native,PRODIGY HA contact-based dG (kcal/mol),-12.2,REU and kcal/mol are not interchangeable
+HA versus decoy,RF2 normalized pAE-positive fractions over the target/decoy panel,PRODIGY dG(RSV crop) minus dG(HA) (kcal/mol),+1.4,single crop comparison; not a normalized fraction
+Structure consistency,RF2 joint RMSD <2 A and interaction pAE <10 A,Boltz-2 VHH-self RMSD / mean cross-chain PAE,1.929 A / 6.895 A,predictors and alignments differ

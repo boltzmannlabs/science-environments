@@ -1,0 +1,153 @@
+{
+  "versions": {
+    "biopython": "1.84",
+    "numpy": "1.26.4"
+  },
+  "candidate": {
+    "id": "ppiflow_HA_nanobody_run_2_s1",
+    "pdb": "nanobody_run_2.pdb",
+    "seq": "QVQLVESGGGLVQPGGSLRLSCAASGFTFSRYSLGWFRQAPGQGLEAVAAISTGGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAAEVRNVPPDDKFDYWGQGTLVTVS",
+    "humanness": 0.5487,
+    "kd_mean": -0.217,
+    "n_vhh_mers": 113
+  },
+  "design": {
+    "cdr_positions": {
+      "cdr_H1": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "cdr_H2": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "cdr_H3": [
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    },
+    "cdr_sequences": {
+      "cdr_H1": "GFTFSRY",
+      "cdr_H2": "STGGGS",
+      "cdr_H3": "EVRNVPPDDKFDY"
+    },
+    "framework_count": 95,
+    "framework_matches_parent": true,
+    "framework_sequence": "QVQLVESGGGLVQPGGSLRLSCAASSLGWFRQAPGQGLEAVAAITYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAAWGQGTLVTVS",
+    "parent_framework_sequence": "QVQLVESGGGLVQPGGSLRLSCAASSLGWFRQAPGQGLEAVAAITYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAAWGQGTLVTVS",
+    "service_metrics": {
+      "pdb_name": "nanobody_run_2",
+      "sample": "nanobody_run_2.pdb",
+      "pdb_path": "/home/boltzmann10/NAGAJYOTHI/PPIFlow/outputs/6aed65ab628b2707baac1750/nanobody_run_2.pdb",
+      "interface_residues": "A1,A100,A101,A102,A103,A104,A105,A106,A107,A27,A28,A29,A30,A31,A32,A33,A51,A52,A53,A54,A55,A56,A57,A58,A74",
+      "cdr_interface_residues": "A100,A101,A102,A103,A104,A105,A106,A107,A27,A28,A29,A30,A31,A32,A52,A53,A54,A55,A56,A57",
+      "cdr_interface_ratio": "0.8000",
+      "hotspot_coverage": "1.0000",
+      "coverage_hotspot_list": "[21, 45, 52]",
+      "cdr_H1": "[26, 27, 28, 29, 30, 31, 32]",
+      "cdr_H2": "[52, 53, 54, 55, 56, 57]",
+      "cdr_H3": "[99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111]",
+      "chain_A_non_coil_percent": "0.6116",
+      "chain_A_coil_percent": "0.3884",
+      "chain_A_helix_percent": "0.0992",
+      "chain_A_strand_percent": "0.5124",
+      "chain_A_radius_of_gyration": "14.0437",
+      "chain_A_rog_div_by_len": "0.1161",
+      "chain_A_seq_length": "121",
+      "chain_B_non_coil_percent": "0.7000",
+      "chain_B_coil_percent": "0.3000",
+      "chain_B_helix_percent": "0.5647",
+      "chain_B_strand_percent": "0.1353",
+      "chain_B_radius_of_gyration": "26.6628",
+      "chain_B_rog_div_by_len": "0.1568",
+      "chain_B_seq_length": "170",
+      "dsasa": "716.6713",
+      "rmsd_framework": "0.1614",
+      "has_clash": "False"
+    }
+  },
+  "structures": {
+    "old_HA": {
+      "vhh_matches_sequence": true,
+      "antigen_sequence": "GLFGAIAGFIEGGWTGMIDGWYGYHHQNEQGSGYAADQKSTQNAINGITNKVNTVIEKMNIQFTAVGKEFNKLEKRMENLNKKVDDGFLDIWTYNAELLVLLENERTLDFHDSNVKNLYEKVKSQLKNNAKEIGNGCFEFYHKCDNECMESVRNGTYDYPKYSEESKLNR"
+    },
+    "old_RSV": {
+      "vhh_matches_sequence": true,
+      "antigen_sequence": "YMLTNSELLSLINDMPITNDQKKLMSNNVQIVRQQSYSIMSIIKEEVLAYVVQLPLYGVIDTPCWKLHTSPLCTTNTKEGSNICLTRTDRGWYCDNAGSVSFFPQAETCKVQSNRVFCDTMNSLTLPSEVN"
+    },
+    "new_HA": {
+      "vhh_matches_sequence": true,
+      "antigen_sequence": "GLFGAIAGPIEGGWTGMIDGWYGYHHQNEQGSGYAADQKSTQNAINGITNKVNTVIEKMNIQFTAVGKEFNKLEKRMENLNKKVDDGFLDIWTYNAELLVLLENERTLDFHDSNVKNLYEKVKSQLKNNAKEIGNGCFEFYHKCDNECMESVRNGTYDYPKYSEESKLNR",
+      "antigen_changes_vs_old": [
+        {
+          "position": 9,
+          "old": "F",
+          "new": "P"
+        }
+      ],
+      "vhh_CA_self_aligned_RMSD_A": 1.9285339432455364,
+      "framework_CA_self_aligned_RMSD_A": 0.6379773979140259,
+      "antigen_CA_self_aligned_RMSD_A": 8.815761469789862,
+      "target_aligned_vhh_CA_RMSD_A": 20.853676000819664,
+      "PAE_VHH_to_HA_A": 6.40221643447876,
+      "PAE_HA_to_VHH_A": 7.388150215148926,
+      "PAE_symmetric_cross_chain_mean_A": 6.895183563232422,
+      "mean_VHH_pLDDT_0to100": 88.64878416061401,
+      "confidence": {
+        "confidence_score": 0.8192869424819946,
+        "ptm": 0.8621713519096375,
+        "iptm": 0.8147099614143372,
+        "ligand_iptm": 0.0,
+        "protein_iptm": 0.8147099614143372,
+        "complex_plddt": 0.820431113243103,
+        "complex_iplddt": 0.7620485424995422,
+        "complex_pde": 0.5437860488891602,
+        "complex_ipde": 1.8345658779144287,
+        "chains_ptm": {
+          "0": 0.9775087237358093,
+          "1": 0.871029794216156
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9775087237358093,
+            "1": 0.8147099614143372
+          },
+          "1": {
+            "0": 0.783386766910553,
+            "1": 0.871029794216156
+          }
+        }
+      }
+    }
+  },
+  "hashes": {
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/boltz2_run2s1_ha_full.zip": "5f880c3789721ba760486f9803440085f9706c38614a53eb3a1246943ce09347",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/ppiflow50_props.json": "b52433bdd743080396b6bf60a18ce03a22f9d93c8371d943b4c170da3c9fb3a7",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/prodigy_4complexes.csv": "f7fa9bb8ec27fbacbdf1d6335061d592669801ae163e10b30a791c98a0e2aeec",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/surf_agg.py": "24cda787a1be33ebd9aeffda95d13abcd4712d158b4e96856b90116fe363c103",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/props50.py": "3477c45bd3add280badad2f58dae566654a38ece087a2f7f1d43a366393cafd8",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/ppiflow_HA/extracted/nanobody_run_2.pdb": "8801ccc9f326fd79a90e686aa83f1896052ccd2110bafc2376176a98cdb02694",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/boltz2/run2s1/boltz_pdb/1_model_0.pdb": "2cf3c12fc76b86aa812c010a98b3a281c311104d6294363bd5102e84d7ca9928",
+    "/home/boltzmann4/.sci/profiles/monoclonal_antibodies1/cache/scratch/vhh_run/boltz2/run2s1_rsv/boltz_pdb/1_model_0.pdb": "b9847b5d73cac616ef13f80584b244508e2bd6f1a2b55573835064bb54bdbe9f"
+  }
+}
