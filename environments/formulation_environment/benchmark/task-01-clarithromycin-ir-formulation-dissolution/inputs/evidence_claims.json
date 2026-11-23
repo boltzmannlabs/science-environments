@@ -1,0 +1,56 @@
+[
+  {
+    "id": "R1",
+    "tier": "PRIMARY_LITERATURE_FULL_WEB_ARTICLE",
+    "finding": "500 mg IR coated comparator; profiles and physical/stability tables available",
+    "method": "USP II 50 rpm, 900 mL acetate pH5.0, 37 +/-0.5 C, HPLC",
+    "sample_size": "six vessels in methods; mean tables; no raw unit-level data; >=500 tablets prepared per batch reported",
+    "mismatch": "croscarmellose, starch, talc, HPC/ethylcellulose/propylene glycol-containing coat; roughly 875 mg coated weight; unknown matched API form/PSD",
+    "limits": "non-systematic web article; inconsistent detail between single 30-min method and profile times; >100% values; f2 arithmetic discrepancy; no independent verification"
+  },
+  {
+    "id": "R2",
+    "tier": "PRIMARY_LITERATURE_ABSTRACT",
+    "finding": "carboxylate/citrate-associated surface gel inhibits penetration, disintegration and release",
+    "method": "tablet studies and CAM-citrate crystal structure in abstract; full conditions not recovered",
+    "sample_size": "not reported in retrieved abstract",
+    "mismatch": "not exact recipe; buffer-dependent mechanism",
+    "limits": "cannot quantify risk or candidate release"
+  },
+  {
+    "id": "R3",
+    "tier": "PRIMARY_LITERATURE_ABSTRACT",
+    "finding": "form I tablet release suppressed despite faster intrinsic dissolution; surface form IV needle crystals after exposure",
+    "method": "penetration/disintegration, SEM and XRPD in abstract",
+    "sample_size": "not reported in retrieved abstract",
+    "mismatch": "specific solid-form context, exact benchmark materials unknown",
+    "limits": "cannot infer benchmark API solid form or release"
+  },
+  {
+    "id": "A1",
+    "tier": "PRIMARY_LITERATURE_ABSTRACT",
+    "finding": "low-pH tablet surface gel can slow penetration while dissolved clarithromycin decomposes",
+    "method": "pH-dependent stability/dissolution fitted as consecutive reactions; XRPD/HPLC/elemental analysis in abstract",
+    "sample_size": "not reported in retrieved abstract",
+    "mismatch": "different tablet/API conditions; no fitted rates transferred",
+    "limits": "must assay intact API and degradants; gel suppression of decomposition is not universal IR benefit"
+  },
+  {
+    "id": "R4",
+    "tier": "OFFICIAL_PRODUCT_LABEL_XML",
+    "finding": "500 mg product lists MCC, croscarmellose, silica, PVP K30, magnesium stearate, hypromellose and titanium dioxide plus other ingredients",
+    "method": "namespace-aware SPL parsing",
+    "sample_size": "not applicable",
+    "mismatch": "does not list exact required eight-excipient system or quantitative recipe",
+    "limits": "identity plausibility only; not quantitative validation"
+  },
+  {
+    "id": "R6",
+    "tier": "OFFICIAL_FDA_GUIDANCE_WEBPAGE",
+    "finding": "dissolution methods and acceptance criteria should be product-specific",
+    "method": "retrieved FDA Q&A Dissolution section",
+    "sample_size": "not applicable",
+    "mismatch": "no clarithromycin-specific QC method established in this run",
+    "limits": "do not turn illustrative D30/f2 targets into release specifications"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "status": "exploratory_assumption_conditional_NOT_product_prediction",
+  "study_scope": "literature research prototype 500 mg; not Ajanta recalled 1000 mg lot",
+  "selection_rule": "rank by pre-existing arbitrary toy score among 117 assumed grid points",
+  "selected_id": "grid_C84_B42_H8.5",
+  "selected_mixture_mg": {
+    "ranolazine": 500,
+    "compritol": 84,
+    "carbopol_934": 42,
+    "avicel_PH101": 39,
+    "povidone_K30": 10,
+    "aerosil": 5,
+    "titanium_dioxide": 15
+  },
+  "selected_hardness_kg_per_cm2_ASSUMED": 8.5,
+  "benchmark_comparator": "research F8 composition, rerun at same assumed hardness 8.5 kg/cm2",
+  "comparator_id": "grid_C105_B35_H8.5",
+  "selected": {
+    "toy_score": 0.7279687267448082,
+    "joint_toy_goal_fraction": 0.8671875,
+    "median_release_percent_at_2h": 19.57586118830384,
+    "median_release_percent_at_24h": 90.98596550004899,
+    "scenario_p05_p95_at_2h": [
+      15.547738330243421,
+      26.85121257020087
+    ],
+    "scenario_p05_p95_at_24h": [
+      85.71931541736299,
+      94.67360246700869
+    ]
+  },
+  "F8_same_assumed_hardness": {
+    "toy_score": 0.5121736480800967,
+    "joint_toy_goal_fraction": 0.61328125,
+    "median_release_percent_at_2h": 20.054284585457175,
+    "median_release_percent_at_24h": 91.35467546442462,
+    "scenario_p05_p95_at_2h": [
+      13.178726306625,
+      29.27718036999906
+    ],
+    "scenario_p05_p95_at_24h": [
+      80.93364394465439,
+      97.08315835476685
+    ]
+  },
+  "F1_lowest_polymer_same_assumed_hardness": {
+    "toy_score": 0.49682545483545504,
+    "joint_toy_goal_fraction": 0.51171875,
+    "median_release_percent_at_2h": 19.602429827863723,
+    "median_release_percent_at_24h": 90.88151963475244,
+    "scenario_p05_p95_at_2h": [
+      11.952420325502535,
+      31.357883390242026
+    ],
+    "scenario_p05_p95_at_24h": [
+      76.89202084883546,
+      97.85233429340906
+    ]
+  },
+  "scenario_score_difference_unitless": 0.21579507866471148,
+  "zero_effect_negative_control": {
+    "profiles_identical": true,
+    "joint_goal_fraction_identical": true,
+    "selected": {
+      "toy_score": 0.7228436826741949,
+      "joint_toy_goal_fraction": 0.859375,
+      "median_release_percent_at_2h": 19.835180885166807,
+      "median_release_percent_at_24h": 90.8842738146935,
+      "scenario_p05_p95_at_2h": [
+        15.48766540699078,
+        26.750244240576258
+      ],
+      "scenario_p05_p95_at_24h": [
+        86.08581775573145,
+        94.34017497409887
+      ]
+    },
+    "F8_same_assumed_hardness": {
+      "toy_score": 0.7074590672895794,
+      "joint_toy_goal_fraction": 0.859375,
+      "median_release_percent_at_2h": 19.835180885166807,
+      "median_release_percent_at_24h": 90.8842738146935,
+      "scenario_p05_p95_at_2h": [
+        15.48766540699078,
+        26.750244240576258
+      ],
+      "scenario_p05_p95_at_24h": [
+        86.08581775573145,
+        94.34017497409887
+      ]
+    },
+    "F1_lowest_polymer_same_assumed_hardness": {
+      "toy_score": 0.768997528828041,
+      "joint_toy_goal_fraction": 0.859375,
+      "median_release_percent_at_2h": 19.835180885166807,
+      "median_release_percent_at_24h": 90.8842738146935,
+      "scenario_p05_p95_at_2h": [
+        15.48766540699078,
+        26.750244240576258
+      ],
+      "scenario_p05_p95_at_24h": [
+        86.08581775573145,
+        94.34017497409887
+      ]
+    },
+    "interpretation": "with rate effects removed, curve-based preference disappears; score can still differ via polymer-mass preference"
+  },
+  "sign_conditioned_assumption_sensitivity": {
+    "positive_effects": {
+      "selected_toy_score": 0.7284802151845015,
+      "F8_toy_score": 0.5697339232489491,
+      "selected_joint_toy_goal_fraction": 0.8671875,
+      "F8_joint_toy_goal_fraction": 0.6875,
+      "F1_toy_score": 0.305865503420253,
+      "selected_ranks_above_F8_under_same_assumptions": true,
+      "selected_ranks_above_F1_under_same_assumptions": true
+    },
+    "negative_effects": {
+      "selected_toy_score": 0.7040673344057432,
+      "F8_toy_score": 0.5561291168277557,
+      "selected_joint_toy_goal_fraction": 0.8359375,
+      "F8_joint_toy_goal_fraction": 0.66796875,
+      "F1_toy_score": 0.357970534698699,
+      "selected_ranks_above_F8_under_same_assumptions": true,
+      "selected_ranks_above_F1_under_same_assumptions": true
+    }
+  },
+  "published_F8_author_endpoint": {
+    "time_h": 24,
+    "percent_released": 99.5,
+    "evidence_label": "literature_reported",
+    "observed_units_and_variability": "unavailable",
+    "paper_hardness_kg_per_cm2": 9.3,
+    "scenario_median_percent_at_paper_hardness": {
+      "first_order": 89.3809057297187,
+      "weibull": 89.46928777886427
+    },
+    "warning": "endpoint belongs to F8, not the selected formulation; one point cannot validate a simulation"
+  },
+  "input_sha256": "96245cd751fc319b91bdb5b27ba7d26a0c9dc0eab3c3c64eead19a15510ce364",
+  "assumption_config_sha256": "4ca16332e512a358b5b702aa7514aa85ec99ea44c80e7fc2827da82a54cab420",
+  "model_version": "openpkflow 2.9.0 _first_order and _weibull (private, version pinned)",
+  "pdf_integrity_checked_this_run": false,
+  "scenario_count_per_candidate": 256,
+  "source_evidence_label": "literature_reported",
+  "generated_evidence_label": "predicted_scenario_only",
+  "data_origin": "synthetic",
+  "ajanta_specification_attainment": "not_evaluated",
+  "validated_improvement": "not_established",
+  "limits": [
+    "toy 2h/24h windows are unapproved assumptions",
+    "polymer and hardness rate effects are invented uniform priors",
+    "not a prospective experiment or measured release result",
+    "different research dosage/strength and unknown Ajanta approved method",
+    "F8 endpoint already inspected; not a held-out validation set"
+  ]
+}

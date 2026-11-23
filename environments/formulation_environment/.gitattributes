@@ -1,0 +1,4 @@
+# Preserve byte-identical generated reports/figures (Matplotlib SVG paths use
+# trailing spaces). Keep normal whitespace checks for source and documentation.
+results/**/report.html -whitespace
+results/**/*.svg -whitespace

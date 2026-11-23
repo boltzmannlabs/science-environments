@@ -1,0 +1,92 @@
+[
+  {
+    "family": "first_order",
+    "split": "in_sample_all5",
+    "free_RMSE_pp": 2.638447652669069,
+    "cap100_RMSE_pp": 2.638453648470227,
+    "RMSE_reduction_percent": -0.00022724730398657905,
+    "profiles_improved": 0,
+    "profiles_worsened": 1,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "first_order",
+    "split": "LOTO",
+    "free_RMSE_pp": 5.600896696235232,
+    "cap100_RMSE_pp": 5.389527374707333,
+    "RMSE_reduction_percent": 3.773847885285503,
+    "profiles_improved": 10,
+    "profiles_worsened": 5,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "first_order",
+    "split": "forward30",
+    "free_RMSE_pp": 4.33817558056839,
+    "cap100_RMSE_pp": 4.338176097347038,
+    "RMSE_reduction_percent": -1.1912349738563668e-05,
+    "profiles_improved": 6,
+    "profiles_worsened": 9,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "Weibull",
+    "split": "in_sample_all5",
+    "free_RMSE_pp": 1.2434472376722905,
+    "cap100_RMSE_pp": 1.6096730840871054,
+    "RMSE_reduction_percent": -29.452463708905153,
+    "profiles_improved": 0,
+    "profiles_worsened": 14,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "Weibull",
+    "split": "LOTO",
+    "free_RMSE_pp": 6.466730176583076,
+    "cap100_RMSE_pp": 6.778609129419269,
+    "RMSE_reduction_percent": -4.822823039154316,
+    "profiles_improved": 9,
+    "profiles_worsened": 6,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "Weibull",
+    "split": "forward30",
+    "free_RMSE_pp": 3.359548018796058,
+    "cap100_RMSE_pp": 2.0197243449516424,
+    "RMSE_reduction_percent": 39.88106930897688,
+    "profiles_improved": 11,
+    "profiles_worsened": 4,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "logistic",
+    "split": "in_sample_all5",
+    "free_RMSE_pp": 0.9758190230682079,
+    "cap100_RMSE_pp": 1.150601529293953,
+    "RMSE_reduction_percent": -17.911364924634007,
+    "profiles_improved": 0,
+    "profiles_worsened": 11,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "logistic",
+    "split": "LOTO",
+    "free_RMSE_pp": 5.096384916868467,
+    "cap100_RMSE_pp": 5.369739343802109,
+    "RMSE_reduction_percent": -5.363692723225612,
+    "profiles_improved": 8,
+    "profiles_worsened": 7,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  },
+  {
+    "family": "logistic",
+    "split": "forward30",
+    "free_RMSE_pp": 1.8816970005894995,
+    "cap100_RMSE_pp": 1.8151470328230364,
+    "RMSE_reduction_percent": 3.5366994657277093,
+    "profiles_improved": 6,
+    "profiles_worsened": 9,
+    "note": "Positive reduction indicates better diagnostic error; no new experimental evidence."
+  }
+]

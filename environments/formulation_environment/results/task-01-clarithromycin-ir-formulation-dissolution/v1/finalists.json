@@ -1,0 +1,548 @@
+[
+  {
+    "formulation_id": "F02",
+    "namespace": "clarithromycin_800mg_benchmark_v1",
+    "origin": "benchmark_supplied_design",
+    "status": "DESIGN_ONLY",
+    "tablet_total_mg": 800,
+    "clarithromycin_mg": 500,
+    "ingredients": [
+      {
+        "name": "Clarithromycin",
+        "mg": 500.0,
+        "w_w_percent": 62.5,
+        "location": "core"
+      },
+      {
+        "name": "Microcrystalline Cellulose",
+        "mg": 198.0,
+        "w_w_percent": 24.75,
+        "location": "core"
+      },
+      {
+        "name": "Crospovidone",
+        "mg": 35.0,
+        "w_w_percent": 4.375,
+        "location": "core"
+      },
+      {
+        "name": "Povidone K30",
+        "mg": 24.0,
+        "w_w_percent": 3.0,
+        "location": "core"
+      },
+      {
+        "name": "Colloidal Silicon Dioxide",
+        "mg": 5.0,
+        "w_w_percent": 0.625,
+        "location": "core"
+      },
+      {
+        "name": "Magnesium Stearate",
+        "mg": 6.0,
+        "w_w_percent": 0.75,
+        "location": "core"
+      },
+      {
+        "name": "Hypromellose",
+        "mg": 16.0,
+        "w_w_percent": 2.0,
+        "location": "coat"
+      },
+      {
+        "name": "Titanium Dioxide",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      },
+      {
+        "name": "PEG 4000",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      }
+    ],
+    "core_mg": 768.0,
+    "coat_mg": 32.0,
+    "coat_percent_finished": 4.0,
+    "coat_gain_percent_core": 4.166666666666667,
+    "coat_solids_ratios": {
+      "PEG_to_HPMC": 0.5,
+      "TiO2_to_HPMC": 0.5
+    },
+    "hard_constraints": {
+      "passed": true,
+      "failures": [],
+      "uniqueness_min_difference_mg": 1
+    },
+    "process": {
+      "route": "PVP K30 wet granulation",
+      "route_status": "ASSUMED_FIXED_FOR_DESIGN_COMPARISON; NOT_RUN",
+      "solvent": "purified water, process-only and evaporated; suitability not validated",
+      "crospovidone_allocation": "50% intragranular, 50% extragranular, provisional common setting",
+      "MCC_grade": "MCC PH102 provisional; supplier and lot unknown",
+      "crospovidone_grade": "fine pharmaceutical crospovidone, exact grade/PSD unresolved",
+      "hypromellose_grade": "low-viscosity film-coating grade; exact substitution/viscosity/supplier unresolved",
+      "binder_application": "PVP solution; concentration, liquid/solid ratio and endpoint TBD",
+      "lubrication": "same pre-specified regime across candidates; time and shear TBD",
+      "drying": "endpoint and temperature/time TBD pending API and granule studies",
+      "coating": "HPMC/TiO2/PEG4000 only retained solids; application parameters TBD",
+      "API": "500 mg active-equivalent on assumed 100% as-is potency; form, PSD, lot and water unknown"
+    },
+    "dissolution": {
+      "status": "NOT_PREDICTED",
+      "method": null,
+      "D10": null,
+      "D15": null,
+      "D30": null,
+      "D45": null,
+      "D60": null,
+      "t50": null,
+      "t80": null,
+      "f2": null,
+      "predicted_profile": null,
+      "measured_profile": null,
+      "uncertainty": null,
+      "risk_flags": [
+        "carboxylate_buffer_surface_gelation_R2",
+        "metastable_form_I_to_surface_form_IV_R3",
+        "acidic_gelation_and_intact_API_degradation_A1",
+        "method_and_API_form_not_fixed"
+      ]
+    },
+    "stability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "humidity_water_activity_unknown",
+        "reactive_impurities_unmeasured",
+        "aqueous_granulation_exposure_unvalidated",
+        "packaging_and_storage_specification_missing"
+      ]
+    },
+    "compatibility": {
+      "status": "UNKNOWN",
+      "evidence": [
+        "R2,R3,A1 provide API-medium/solid-form mechanisms, not eight-excipient compatibility proof"
+      ],
+      "unknowns": [
+        "binary_and_multicomponent_stress_assays",
+        "actual_grade_lot_moisture_and_impurity_effects"
+      ]
+    },
+    "manufacturability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "granulation_window_unvalidated",
+        "compression_and_ejection_unknown",
+        "coat_plasticizer_pigment_ratios_require_testing"
+      ]
+    },
+    "model": {
+      "status": "NOT_AVAILABLE",
+      "name": null,
+      "version": null,
+      "training_domain": null,
+      "external_validation": null,
+      "applicability_domain": "NOT_ASSESSABLE_NO_MODEL",
+      "calibrated_prediction_interval": null
+    },
+    "endpoint_validation_tiers": {
+      "composition": "DESIGN_ONLY",
+      "dissolution": "NOT_PREDICTED",
+      "stability": "UNKNOWN",
+      "compatibility": "UNKNOWN",
+      "manufacturability": "UNKNOWN",
+      "literature_context": "LITERATURE_SUPPORTED_ANALOGIES_ONLY"
+    },
+    "references": [
+      "R1",
+      "R2",
+      "R3",
+      "A1",
+      "R4",
+      "R6",
+      "R11"
+    ],
+    "experimental_tests": [
+      "API_XRPD_PSD_KF_assay",
+      "binary_and_blend_stress_HPLC",
+      "granule_flow_PSD_density_water",
+      "compression_sweep_ejection_friability_uniformity",
+      "coat_adhesion_weight_gain",
+      "matched_method_replicate_dissolution_intact_API",
+      "packaged_stability_independent_batches"
+    ],
+    "rank": null,
+    "rank_basis": "unrankable_on_efficacy_without_validated_endpoint_models_or_measurements",
+    "selection_order": 1,
+    "selection_rationale": "Common central anchor; neither efficacy-best nor lowest-risk demonstrated"
+  },
+  {
+    "formulation_id": "F03",
+    "namespace": "clarithromycin_800mg_benchmark_v1",
+    "origin": "benchmark_supplied_design",
+    "status": "DESIGN_ONLY",
+    "tablet_total_mg": 800,
+    "clarithromycin_mg": 500,
+    "ingredients": [
+      {
+        "name": "Clarithromycin",
+        "mg": 500.0,
+        "w_w_percent": 62.5,
+        "location": "core"
+      },
+      {
+        "name": "Microcrystalline Cellulose",
+        "mg": 188.0,
+        "w_w_percent": 23.5,
+        "location": "core"
+      },
+      {
+        "name": "Crospovidone",
+        "mg": 45.0,
+        "w_w_percent": 5.625,
+        "location": "core"
+      },
+      {
+        "name": "Povidone K30",
+        "mg": 24.0,
+        "w_w_percent": 3.0,
+        "location": "core"
+      },
+      {
+        "name": "Colloidal Silicon Dioxide",
+        "mg": 5.0,
+        "w_w_percent": 0.625,
+        "location": "core"
+      },
+      {
+        "name": "Magnesium Stearate",
+        "mg": 6.0,
+        "w_w_percent": 0.75,
+        "location": "core"
+      },
+      {
+        "name": "Hypromellose",
+        "mg": 16.0,
+        "w_w_percent": 2.0,
+        "location": "coat"
+      },
+      {
+        "name": "Titanium Dioxide",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      },
+      {
+        "name": "PEG 4000",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      }
+    ],
+    "core_mg": 768.0,
+    "coat_mg": 32.0,
+    "coat_percent_finished": 4.0,
+    "coat_gain_percent_core": 4.166666666666667,
+    "coat_solids_ratios": {
+      "PEG_to_HPMC": 0.5,
+      "TiO2_to_HPMC": 0.5
+    },
+    "hard_constraints": {
+      "passed": true,
+      "failures": [],
+      "uniqueness_min_difference_mg": 1
+    },
+    "process": {
+      "route": "PVP K30 wet granulation",
+      "route_status": "ASSUMED_FIXED_FOR_DESIGN_COMPARISON; NOT_RUN",
+      "solvent": "purified water, process-only and evaporated; suitability not validated",
+      "crospovidone_allocation": "50% intragranular, 50% extragranular, provisional common setting",
+      "MCC_grade": "MCC PH102 provisional; supplier and lot unknown",
+      "crospovidone_grade": "fine pharmaceutical crospovidone, exact grade/PSD unresolved",
+      "hypromellose_grade": "low-viscosity film-coating grade; exact substitution/viscosity/supplier unresolved",
+      "binder_application": "PVP solution; concentration, liquid/solid ratio and endpoint TBD",
+      "lubrication": "same pre-specified regime across candidates; time and shear TBD",
+      "drying": "endpoint and temperature/time TBD pending API and granule studies",
+      "coating": "HPMC/TiO2/PEG4000 only retained solids; application parameters TBD",
+      "API": "500 mg active-equivalent on assumed 100% as-is potency; form, PSD, lot and water unknown"
+    },
+    "dissolution": {
+      "status": "NOT_PREDICTED",
+      "method": null,
+      "D10": null,
+      "D15": null,
+      "D30": null,
+      "D45": null,
+      "D60": null,
+      "t50": null,
+      "t80": null,
+      "f2": null,
+      "predicted_profile": null,
+      "measured_profile": null,
+      "uncertainty": null,
+      "risk_flags": [
+        "carboxylate_buffer_surface_gelation_R2",
+        "metastable_form_I_to_surface_form_IV_R3",
+        "acidic_gelation_and_intact_API_degradation_A1",
+        "method_and_API_form_not_fixed"
+      ]
+    },
+    "stability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "humidity_water_activity_unknown",
+        "reactive_impurities_unmeasured",
+        "aqueous_granulation_exposure_unvalidated",
+        "packaging_and_storage_specification_missing"
+      ]
+    },
+    "compatibility": {
+      "status": "UNKNOWN",
+      "evidence": [
+        "R2,R3,A1 provide API-medium/solid-form mechanisms, not eight-excipient compatibility proof"
+      ],
+      "unknowns": [
+        "binary_and_multicomponent_stress_assays",
+        "actual_grade_lot_moisture_and_impurity_effects"
+      ]
+    },
+    "manufacturability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "granulation_window_unvalidated",
+        "compression_and_ejection_unknown",
+        "coat_plasticizer_pigment_ratios_require_testing"
+      ]
+    },
+    "model": {
+      "status": "NOT_AVAILABLE",
+      "name": null,
+      "version": null,
+      "training_domain": null,
+      "external_validation": null,
+      "applicability_domain": "NOT_ASSESSABLE_NO_MODEL",
+      "calibrated_prediction_interval": null
+    },
+    "endpoint_validation_tiers": {
+      "composition": "DESIGN_ONLY",
+      "dissolution": "NOT_PREDICTED",
+      "stability": "UNKNOWN",
+      "compatibility": "UNKNOWN",
+      "manufacturability": "UNKNOWN",
+      "literature_context": "LITERATURE_SUPPORTED_ANALOGIES_ONLY"
+    },
+    "references": [
+      "R1",
+      "R2",
+      "R3",
+      "A1",
+      "R4",
+      "R6",
+      "R11"
+    ],
+    "experimental_tests": [
+      "API_XRPD_PSD_KF_assay",
+      "binary_and_blend_stress_HPLC",
+      "granule_flow_PSD_density_water",
+      "compression_sweep_ejection_friability_uniformity",
+      "coat_adhesion_weight_gain",
+      "matched_method_replicate_dissolution_intact_API",
+      "packaged_stability_independent_batches"
+    ],
+    "rank": null,
+    "rank_basis": "unrankable_on_efficacy_without_validated_endpoint_models_or_measurements",
+    "selection_order": 2,
+    "selection_rationale": "Higher-disintegrant contrast at fixed binder, coat, glidant and lubricant"
+  },
+  {
+    "formulation_id": "F04",
+    "namespace": "clarithromycin_800mg_benchmark_v1",
+    "origin": "benchmark_supplied_design",
+    "status": "DESIGN_ONLY",
+    "tablet_total_mg": 800,
+    "clarithromycin_mg": 500,
+    "ingredients": [
+      {
+        "name": "Clarithromycin",
+        "mg": 500.0,
+        "w_w_percent": 62.5,
+        "location": "core"
+      },
+      {
+        "name": "Microcrystalline Cellulose",
+        "mg": 206.0,
+        "w_w_percent": 25.75,
+        "location": "core"
+      },
+      {
+        "name": "Crospovidone",
+        "mg": 35.0,
+        "w_w_percent": 4.375,
+        "location": "core"
+      },
+      {
+        "name": "Povidone K30",
+        "mg": 16.0,
+        "w_w_percent": 2.0,
+        "location": "core"
+      },
+      {
+        "name": "Colloidal Silicon Dioxide",
+        "mg": 5.0,
+        "w_w_percent": 0.625,
+        "location": "core"
+      },
+      {
+        "name": "Magnesium Stearate",
+        "mg": 6.0,
+        "w_w_percent": 0.75,
+        "location": "core"
+      },
+      {
+        "name": "Hypromellose",
+        "mg": 16.0,
+        "w_w_percent": 2.0,
+        "location": "coat"
+      },
+      {
+        "name": "Titanium Dioxide",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      },
+      {
+        "name": "PEG 4000",
+        "mg": 8.0,
+        "w_w_percent": 1.0,
+        "location": "coat"
+      }
+    ],
+    "core_mg": 768.0,
+    "coat_mg": 32.0,
+    "coat_percent_finished": 4.0,
+    "coat_gain_percent_core": 4.166666666666667,
+    "coat_solids_ratios": {
+      "PEG_to_HPMC": 0.5,
+      "TiO2_to_HPMC": 0.5
+    },
+    "hard_constraints": {
+      "passed": true,
+      "failures": [],
+      "uniqueness_min_difference_mg": 1
+    },
+    "process": {
+      "route": "PVP K30 wet granulation",
+      "route_status": "ASSUMED_FIXED_FOR_DESIGN_COMPARISON; NOT_RUN",
+      "solvent": "purified water, process-only and evaporated; suitability not validated",
+      "crospovidone_allocation": "50% intragranular, 50% extragranular, provisional common setting",
+      "MCC_grade": "MCC PH102 provisional; supplier and lot unknown",
+      "crospovidone_grade": "fine pharmaceutical crospovidone, exact grade/PSD unresolved",
+      "hypromellose_grade": "low-viscosity film-coating grade; exact substitution/viscosity/supplier unresolved",
+      "binder_application": "PVP solution; concentration, liquid/solid ratio and endpoint TBD",
+      "lubrication": "same pre-specified regime across candidates; time and shear TBD",
+      "drying": "endpoint and temperature/time TBD pending API and granule studies",
+      "coating": "HPMC/TiO2/PEG4000 only retained solids; application parameters TBD",
+      "API": "500 mg active-equivalent on assumed 100% as-is potency; form, PSD, lot and water unknown"
+    },
+    "dissolution": {
+      "status": "NOT_PREDICTED",
+      "method": null,
+      "D10": null,
+      "D15": null,
+      "D30": null,
+      "D45": null,
+      "D60": null,
+      "t50": null,
+      "t80": null,
+      "f2": null,
+      "predicted_profile": null,
+      "measured_profile": null,
+      "uncertainty": null,
+      "risk_flags": [
+        "carboxylate_buffer_surface_gelation_R2",
+        "metastable_form_I_to_surface_form_IV_R3",
+        "acidic_gelation_and_intact_API_degradation_A1",
+        "method_and_API_form_not_fixed"
+      ]
+    },
+    "stability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "humidity_water_activity_unknown",
+        "reactive_impurities_unmeasured",
+        "aqueous_granulation_exposure_unvalidated",
+        "packaging_and_storage_specification_missing"
+      ]
+    },
+    "compatibility": {
+      "status": "UNKNOWN",
+      "evidence": [
+        "R2,R3,A1 provide API-medium/solid-form mechanisms, not eight-excipient compatibility proof"
+      ],
+      "unknowns": [
+        "binary_and_multicomponent_stress_assays",
+        "actual_grade_lot_moisture_and_impurity_effects"
+      ]
+    },
+    "manufacturability": {
+      "status": "UNKNOWN",
+      "predicted": null,
+      "measured": null,
+      "risk_flags": [
+        "granulation_window_unvalidated",
+        "compression_and_ejection_unknown",
+        "coat_plasticizer_pigment_ratios_require_testing"
+      ]
+    },
+    "model": {
+      "status": "NOT_AVAILABLE",
+      "name": null,
+      "version": null,
+      "training_domain": null,
+      "external_validation": null,
+      "applicability_domain": "NOT_ASSESSABLE_NO_MODEL",
+      "calibrated_prediction_interval": null
+    },
+    "endpoint_validation_tiers": {
+      "composition": "DESIGN_ONLY",
+      "dissolution": "NOT_PREDICTED",
+      "stability": "UNKNOWN",
+      "compatibility": "UNKNOWN",
+      "manufacturability": "UNKNOWN",
+      "literature_context": "LITERATURE_SUPPORTED_ANALOGIES_ONLY"
+    },
+    "references": [
+      "R1",
+      "R2",
+      "R3",
+      "A1",
+      "R4",
+      "R6",
+      "R11"
+    ],
+    "experimental_tests": [
+      "API_XRPD_PSD_KF_assay",
+      "binary_and_blend_stress_HPLC",
+      "granule_flow_PSD_density_water",
+      "compression_sweep_ejection_friability_uniformity",
+      "coat_adhesion_weight_gain",
+      "matched_method_replicate_dissolution_intact_API",
+      "packaged_stability_independent_batches"
+    ],
+    "rank": null,
+    "rank_basis": "unrankable_on_efficacy_without_validated_endpoint_models_or_measurements",
+    "selection_order": 3,
+    "selection_rationale": "Lower-binder contrast at fixed disintegrant, coat, glidant and lubricant"
+  }
+]

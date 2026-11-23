@@ -164,3 +164,8 @@ Use the repository's [Pull Request template](.github/PULL_REQUEST_TEMPLATE.md) w
 ## License
 
 Refer to the repository's `LICENSE` file for licensing information.
+
+
+## Unified formulation tasks
+
+The [Formulation Environment](environments/formulation_environment/README.md) provides task-specific configuration, documentation, scripts, source, tests, benchmarks and results. The [task index](environments/formulation_environment/tasks/README.md) briefly describes the clarithromycin immediate-release formulation problem and the ranolazine extended-release dissolution investigation. Historical ranolazine evidence is preserved in [formulation_dissolution](environments/formulation_dissolution/README.md).

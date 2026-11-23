@@ -1,0 +1,31 @@
+{
+  "status": "ARCHIVE_CONSISTENCY_VERIFIED",
+  "scope": "saved_artifact_hashes_and_aggregate_arithmetic_only_not_scientific_reexecution",
+  "checked_artifacts": [
+    {
+      "path": "../formulation_dissolution/data/processed/literature_profiles.json",
+      "sha256": "26830f3fb5a539b0ce81c20266856c1f1b22013aae701b51857e8f72e21777ce"
+    },
+    {
+      "path": "results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/literature_model_comparison.json",
+      "sha256": "7928b022098e3d56038be6c76a11c614faf095edf8c94717432e8eb6e3b52c92"
+    },
+    {
+      "path": "results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/literature_model_comparison.csv",
+      "sha256": "70c0b39ba5ca306ba861a13147f93aa70425a244efdee784fa38f55e05f8e905"
+    },
+    {
+      "path": "results/Task - 02 - Ranolazine ER Tablet Dissolution Investigation/existing_lofo_rerun.json",
+      "sha256": "d89673a6beb5c6c0a92650208b25124864978cb73ec5fa045d756feb44ad9086"
+    }
+  ],
+  "metric_checks": 84,
+  "groups": {
+    "pH6.8_transcribed_unverified": 6,
+    "HCl_primary_table_verified": 3
+  },
+  "candidate_lab_observations": 0,
+  "new_candidate_recipe_predictions": 0,
+  "product_validation": "NOT_EVALUATED",
+  "checked_utc": "2026-11-16T05:38:43.306085+00:00"
+}

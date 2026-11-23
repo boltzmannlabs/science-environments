@@ -1,0 +1,287 @@
+{
+  "scope": "curated_task_artifacts_only; no raw full-text pages, SDK, account files or machine diagnostics",
+  "artifacts": [
+    {
+      "path": "benchmark/task-01-clarithromycin-ir-formulation-dissolution/inputs/candidates.json",
+      "source_run": "immutable_benchmark_input_snapshot",
+      "sha256": "f82277aa8fa8ff2108c1995bd0a21837530109ab1f83789ac0122e82496cc5bf",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "benchmark/task-01-clarithromycin-ir-formulation-dissolution/inputs/literature_profiles.json",
+      "source_run": "immutable_benchmark_input_snapshot",
+      "sha256": "397969ab647f09044af3b5b4a4b6ab0490f609fb13ca0bde18fdafdb4a833693",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "benchmark/task-01-clarithromycin-ir-formulation-dissolution/inputs/evidence_claims.json",
+      "source_run": "immutable_benchmark_input_snapshot",
+      "sha256": "9cc2dc442f5b6b426d0d4a62f16d260aa2865332d5f564ae19856a315c78f785",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "benchmark/task-01-clarithromycin-ir-formulation-dissolution/specification.md",
+      "source_run": "user_supplied_benchmark_specification_v1.0",
+      "sha256": "fc74a5300b8677c5b2677a9ef628c0dacb91cbb39eb7d9519e39955bf328b4c7",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/all_candidates.csv",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "6f9c88bc57d6528e5b79b164a86fa4ae54e6e890c5b62c04ce04f09cee349c39",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/finalists.json",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "6519063c690bce4655831081ed21426b8eb5e7ed38d3cbcbfd3236b770138a3d",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/design_selection.json",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "bb1a5825b76d6bfa483619252ed8268131bd557e49152964e16aa79d57615409",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/optuna_trials.csv",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "2d63a1a74b0885b8cc6f6acaa5299da58702e2760a70f5196805401fc1a127fd",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/verification.json",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "27b050b9db9c9607f2e207218ebe476ec522b921de5c5c0c04a5a39f861eb93d",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/literature_curve_fits.csv",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "10367b575f7f8751d14b6b516fb9ae0dc602cc34dad99f6ee08437719f6ed223",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/literature_profile_metrics.csv",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "802f9085bfcc98170aecc5facc47f69dc02781814b3829dca37ac8661bd84cac",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/molecular_descriptors.json",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "656e212259c6b2de93b4417d021bca5698d8db82bf996c3460b82634aaa2d00d",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/report.html",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "0212b85cf245f74e8a408dcbe47e3ca9be2663e78772ae4f1be52d97c29a24f8",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/clarithromycin_800mg_benchmark_report.docx",
+      "source_run": "800mg_benchmark_and_actual_PTCalc_followup",
+      "sha256": "dd4db0409b51525acfc849801d3bfa15cfda9fbc8257543d237767dbe654634a",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/ptcalc/ptcalc_all_fits_reviewed.csv",
+      "source_run": "actual_PTCalc_Core_1.1.0_execution",
+      "sha256": "f46f4c1b6f09649f2952913b2042449e1b8338ced25c83b349600d05bd3bbf3a",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/ptcalc/ptcalc_profile_metrics.csv",
+      "source_run": "actual_PTCalc_Core_1.1.0_execution",
+      "sha256": "427b8fc8a44b9028db467e913235c8946f3d274dfdb30bd47993a2982528ef0c",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/ptcalc/scipy_ptcalc_comparison.csv",
+      "source_run": "actual_PTCalc_Core_1.1.0_execution",
+      "sha256": "44e4e972e3b840751500ff41cd00b6ad8bbc657f7b96fcaa3dac72bb44c7b261",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/ptcalc/independent_verification.json",
+      "source_run": "actual_PTCalc_Core_1.1.0_execution",
+      "sha256": "bfd6e8ec2a4be39def06a8c5148232a01b6faf72fafd5527d6ea15be3a1f4dca",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v1/ptcalc/ptcalc_execution.json",
+      "source_run": "actual_PTCalc_Core_1.1.0_execution",
+      "sha256": "984b6eed886f24100012fac21bf113409fa5b79c76b9663c6864d160f9f7dda3",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/evaluation_plan.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "5b61dc6007174ee4ba372a033263bd6aaa58e1bf6651c2abd1fec5db708f4118",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/duplicate_reference_audit.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "55491c37bdb3492bf32f033e3da3d6be32f76c4d5a8617d3ce35dfe4048363f0",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/all_evaluation_predictions.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "27bb91d6947c2ced0841b812adbaa4352dc1deee6521275f9ddcba7a23a3f85d",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/all_fit_parameters.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "15df4796af8d23f3ab06d92f16babcb2450d909006bbcb3619053138013d0359",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/model_comparison.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "ef10ee3cca4d3c7195a1a9510d02e7ce49b820fb49c9ab3cbb36d984a0ded3a8",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/model_comparison.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "361b25df33e920de1acfebb192c593ab664a72d040fb60622074a7df1c469f9f",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/per_profile_metrics.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "b3e85728b1ffd4b5b2314a4dd0dee123e78f4dfd5463a69e3d50f8cfe233780a",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/before_after_comparison.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "0e583708b58af96f1b48abc6f5e512fdbfa48fce1930b78fa81028cb254c6af7",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/before_after_comparison.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "de19874c5a9c96b4e955c29cbf707f496648c0e406c651a1ce01a795a63edca6",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/expanded_candidates.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "a0fe06caf41349f8343bd01ce2e0e75d74108d3f8820e8dcedb4d5c307e55adc",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/expanded_candidates.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "4006e4532989d6a8234ec906134f2eefa2684629ec3b46549d41c30f4b7e82be",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/factorial_design.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "47c70cffe9ab5dc9362949ae1e2119fb7b215345368649406e847a2e3ff7841b",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/design_improvement.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "732f428ef18f37d567b385fd2cdd3e560bac006df1e265268c2610c51c456314",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/experimental_protocol_draft.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "80a3ee2480d64ce0202409bcf28a76bc2ad9139cba4fb3e7be6e8360de498750",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/planned_batches.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "eaa57bb43a4f08261241af2531fda3c12c92fbd38d96eced2ed7405883ae2a0b",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/planned_measurement_template.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "d3a4887cfcae4ca392169def6048bdcf5bd00388086cfac90a782500ec18ddfa",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/key_findings.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "388f5f5e7e69637e21cf129fb51f42b6989d4ecd056f59e55d7f107af7b15353",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/heldout_error_by_time.csv",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "ed8422556b71def136ad6adce3457904edd23ee4c601cd0f81fba4f1a67ce8a0",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/verification.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "16da7e139cd47a7e713e25a41f716964ec0f168c14d0ad87bdaa0dc5df56ed62",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/replay_verification.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "04e82d27c3d3a47a2eed33c0666a0393173cc6e0e0293053e94bebea289ffb02",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/final_audit.json",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "c8368e6837524cd147ea0d8f6a0ed081b7f66e7933d5910116891a33bf215a32",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/report.html",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "13ffe2d9cd5e6230976546ce61e06084eb393b94dd379cf713e5312e5a853c79",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/clarithromycin_improvements_v2_report.docx",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "388effd4ff23f054c78c74af16b3a45e58d84ee21af9a08f53ae0ba6619d4c4d",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/validation_errors.svg",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "bfd86183fb3510a4216579e95d7e36f6039867e6581570724362f57b3efac746",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/bounded_tradeoff.svg",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "0f425ed081cd06cde61c197ff5ac72feea298bcb535efeddd42f21d7d774989c",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/OF7_heldout.svg",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "c4a949e165277f28c12d5c79c6c4254dc26c903483db6df23fd8019344451300",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "results/task-01-clarithromycin-ir-formulation-dissolution/v2/factorial_grid.svg",
+      "source_run": "executed_improvement_study_with_heldout_timepoint_diagnostics",
+      "sha256": "1f70c2bf30852a722cab1d63311b78c59576b16cdb8425d7bb6150a3c5f11749",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    },
+    {
+      "path": "benchmark/task-01-clarithromycin-ir-formulation-dissolution/inputs/literature_profiles_long.csv",
+      "source_run": "published_R1_table_9_10_numeric_transcription",
+      "sha256": "53e7750402538e701ed5498672cebf020a71978c41e03383784331a5fe3cf6b8",
+      "evidence": "computed_or_literature_derived_not_new_lab_data"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "COMPUTATIONAL_EVALUATION_AND_EXPERIMENTAL_DESIGN_ONLY",
+  "primary_metric": "RMSE on held-out published mean timepoints, percentage points",
+  "secondary_metrics": [
+    "heldout_MAE",
+    "heldout_MAPE",
+    "forward_30min_RMSE",
+    "in_sample_RMSE",
+    "fitted_asymptote_gt100",
+    "estimated_release_at_t0"
+  ],
+  "configurations": [
+    "mean_baseline",
+    "linear_interpolation_baseline",
+    "first_order_free",
+    "Weibull_free",
+    "logistic_free",
+    "first_order_cap100",
+    "Weibull_cap100",
+    "logistic_cap100",
+    "first_order_fixed100",
+    "Weibull_fixed100",
+    "origin_logistic_cap100"
+  ],
+  "splits": [
+    "in_sample_all5",
+    "leave_one_timepoint_out_each_of5",
+    "forward_train5_10_15_20_predict30"
+  ],
+  "deduplication": "same source formulation identity plus identical times/means: keep first provenance, record aliases",
+  "no_claims": [
+    "external_formulation_validation",
+    "batch_holdout_validation",
+    "candidate_recipe_prediction",
+    "calibrated_prediction_intervals",
+    "experimental_improvement"
+  ],
+  "weighting": "unweighted; source SD is not a substitute for available raw unit observations and covariance",
+  "bounds": "free asymptotes 1..150; capped 1..100; fixed100; all rate/shape constraints recorded in code",
+  "optimization": "deterministic three-start bounded least_squares, best finite converged SSR; tol1e-9 max_nfev2000",
+  "model_selection": "no candidate chosen as efficacy-best; lowest observed diagnostic error is exploratory, requires external confirmation",
+  "new_early_samples_min": [
+    1,
+    2,
+    3
+  ],
+  "new_sample_schedule_min": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    15,
+    20,
+    30,
+    45,
+    60
+  ]
+}
