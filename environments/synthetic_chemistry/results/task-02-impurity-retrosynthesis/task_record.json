@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "task_id": "task-02-impurity-retrosynthesis",
+  "title": "Impurity retrosynthesis and literature benchmarking",
+  "task_definition": "../../tasks/task-02-impurity-retrosynthesis/README.md",
+  "benchmark_definition": "../../benchmarks/task-02-impurity-retrosynthesis/README.md",
+  "benchmark_workspace": "../../benchmarks/task-02-impurity-retrosynthesis/README.md",
+  "reference_catalog": "../../benchmarks/task-02-impurity-retrosynthesis/papers.md",
+  "metrics": "../../benchmarks/task-02-impurity-retrosynthesis/achieved_metrics.json",
+  "results": [
+    "screening_summary.json",
+    "screening_routes.csv",
+    "case_studies.json",
+    "achievements_and_comparison.md",
+    "gaps_and_improvement_plan.md",
+    "comparison_report.md",
+    "racemic_ibuprofen_recovered.json",
+    "racemic_ibuprofen_comparison.md"
+  ],
+  "status": "computational screening and documentary comparison; no experimental superiority",
+  "scope": "A/M artifact-backed summaries; separately recovered sanitized racemic ibuprofen routes and step comparisons",
+  "experimental_data_available": false,
+  "new_model_or_wet_lab_execution_during_packaging": false
+}

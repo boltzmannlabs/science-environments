@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "ibuprofen-impurity-a",
+      "execution_status": "completed",
+      "literature_comparison_status": "completed_documentary_review",
+      "artifact_status": "derived_summary_available",
+      "route_count": 12,
+      "reaction_node_count": 38
+    },
+    {
+      "case_id": "ibuprofen-impurity-m",
+      "execution_status": "completed",
+      "literature_comparison_status": "completed_documentary_review",
+      "artifact_status": "derived_summary_available",
+      "route_count": 7,
+      "reaction_node_count": 21
+    },
+    {
+      "case_id": "racemic-ibuprofen",
+      "execution_status": "completed_artifact_recovered",
+      "literature_comparison_status": "recovered_documentary_step_review",
+      "provenance": "Prior retro_case execution and comparison artifacts recovered read-only",
+      "artifact_status": "sanitized_ibuprofen_derivative_available_in_retro_task02",
+      "route_count": 7,
+      "reaction_node_count": 25,
+      "performance_metrics": {
+        "literature_superiority_demonstrated": false,
+        "measured_yield": null
+      }
+    },
+    {
+      "case_id": "osimertinib-original-proposal",
+      "execution_status": "historically_held_identity_reconciliation",
+      "artifact_status": "no_generated_export_in_snapshot",
+      "note": "Distinct from completed racemic ibuprofen task"
+    }
+  ]
+}

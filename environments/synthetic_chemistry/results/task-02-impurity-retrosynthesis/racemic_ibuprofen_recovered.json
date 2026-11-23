@@ -1,0 +1,1062 @@
+{
+  "provenance": "Recovered read-only from prior retro_case run; sanitized ibuprofen-only derivative; no new model job",
+  "original_input_smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+  "pubchem_cid": 3672,
+  "route_count": 7,
+  "reaction_node_occurrences": 25,
+  "routes": [
+    {
+      "target": "ibuprofen",
+      "route_id": "top0",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "CI",
+        "COC(=O)C(Br)c1ccc(CC(C)C)cc1",
+        "Sc1ccccc1"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "CC(C)Cc1ccc(C(C)(Sc2ccccc2)C(=O)O)cc1"
+          ],
+          "reaction_class": "reduction",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.002,
+          "model_feasibility": 0.9577054559750225,
+          "model_yield": 71.11284637451172,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CC(C)Cc1ccc(C(C)(Sc2ccccc2)C(=O)O)cc1",
+          "reactants": [
+            "COC(=O)C(C)(Sc1ccccc1)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "deprotection",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.483,
+          "model_feasibility": 0.5564738837144302,
+          "model_yield": 78.36290740966797,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(=O)C(C)(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "COC(=O)C(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+            "CI"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.9995560075284639,
+          "model_yield": 71.40984344482422,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(=O)C(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "COC(=O)C(Br)c1ccc(CC(C)C)cc1",
+            "Sc1ccccc1"
+          ],
+          "reaction_class": "heteroatom alkylation and arylation",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.9994516185368579,
+          "model_yield": 65.57013702392578,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 4,
+      "longest_linear_route": 4,
+      "model_pathway_score": 0,
+      "model_ranking_score": 69.26287681943953,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top1",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "CC(C)Cc1ccccc1",
+        "O=S(=O)(Cl)Cl",
+        "CCOC(=O)C(C)Cl"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "CC(C)Cc1ccc(C(C)(Cl)C(=O)O)cc1"
+          ],
+          "reaction_class": "functional group interconversion",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.156,
+          "model_feasibility": 0.9588891962199291,
+          "model_yield": 73.64347076416016,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CC(C)Cc1ccc(C(C)(Cl)C(=O)O)cc1",
+          "reactants": [
+            "CCOC(=O)C(C)(Cl)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "deprotection",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -1.612,
+          "model_feasibility": 0.7981149986566352,
+          "model_yield": 70.30944061279297,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CCOC(=O)C(C)(Cl)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "CC(C)Cc1ccccc1",
+            "CCOC(=O)C(C)(Cl)Cl"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.6115481658963585,
+          "model_yield": 66.6343994140625,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CCOC(=O)C(C)(Cl)Cl",
+          "reactants": [
+            "O=S(=O)(Cl)Cl",
+            "CCOC(=O)C(C)Cl"
+          ],
+          "reaction_class": "functional group interconversion",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.9758538034740724,
+          "model_yield": 57.532047271728516,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 4,
+      "longest_linear_route": 4,
+      "model_pathway_score": 0,
+      "model_ranking_score": 62.114542286152286,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "CS(=O)(=O)Cl",
+        "CC(C)CI",
+        "COC(=O)C(C)c1cccc(OC)c1"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "CC(C)Cc1ccc(C(C)C(=O)O)cc1OS(C)(=O)=O"
+          ],
+          "reaction_class": "functional group interconversion",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -3.084,
+          "model_feasibility": 0.9289102576021581,
+          "model_yield": 75.2109146118164,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1OS(C)(=O)=O",
+          "reactants": [
+            "CC(C)Cc1ccc(C(C)C(=O)O)cc1O",
+            "CS(=O)(=O)Cl"
+          ],
+          "reaction_class": "acylation",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.9977321137140663,
+          "model_yield": 76.68444061279297,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1O",
+          "reactants": [
+            "COc1cc(C(C)C(=O)O)ccc1CC(C)C"
+          ],
+          "reaction_class": "deprotection",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -1.29,
+          "model_feasibility": 0.8259468849868278,
+          "model_yield": 72.68838500976562,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COc1cc(C(C)C(=O)O)ccc1CC(C)C",
+          "reactants": [
+            "COC(=O)C(C)c1ccc(CC(C)C)c(OC)c1"
+          ],
+          "reaction_class": "deprotection",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": 0.0,
+          "model_feasibility": 0.9367666566911766,
+          "model_yield": 76.18810272216797,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(=O)C(C)c1ccc(CC(C)C)c(OC)c1",
+          "reactants": [
+            "CC(C)CI",
+            "COC(=O)C(C)c1cccc(OC)c1"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -9.102,
+          "model_feasibility": 0.7613694765600476,
+          "model_yield": 55.13576889038086,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 5,
+      "longest_linear_route": 5,
+      "model_pathway_score": 0,
+      "model_ranking_score": 59.155712126911446,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top3",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "CCOC(=O)C(C)c1ccc(CC(C)C)cc1",
+        "CCOC(=O)OCC"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "CCOC(=O)C(C)(C(=O)OCC)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "reduction",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": 0.0,
+          "model_feasibility": 0.9431522678733102,
+          "model_yield": 70.08800506591797,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "CCOC(=O)C(C)(C(=O)OCC)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "CCOC(=O)C(C)c1ccc(CC(C)C)cc1",
+            "CCOC(=O)OCC"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.255,
+          "model_feasibility": 0.9922527153665448,
+          "model_yield": 72.53814697265625,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 2,
+      "longest_linear_route": 2,
+      "model_pathway_score": 0,
+      "model_ranking_score": 49.155918529892325,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top4",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "C=C(C#N)c1ccc(CC(C)C)cc1"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "C=C(C(=O)O)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "reduction",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "US05304524",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [
+            "https://patents.google.com/patent/US5304524"
+          ],
+          "model_forward_score": null,
+          "model_feasibility": null,
+          "model_yield": null,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "C=C(C(=O)O)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "C=C(C#N)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "functional group interconversion",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -2.387,
+          "model_feasibility": 0.9990793751784525,
+          "model_yield": 64.72924041748047,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 2,
+      "longest_linear_route": 2,
+      "model_pathway_score": 0,
+      "model_ranking_score": 46.75344773057243,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "[Na+]",
+        "CO",
+        "O",
+        "CCN(CC)CC",
+        "CS(=O)(=O)Cl",
+        "O",
+        "O=C=O",
+        "C=CC",
+        "COC(OC)c1ccc(C)cc1",
+        "CON(C)C(C)=O"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "[Na+]",
+            "COC(OC)(c1ccc(CC(C)C)cc1)C(C)OS(C)(=O)=O",
+            "O=C([O-])O",
+            "CO"
+          ],
+          "reaction_class": "functional group interconversion",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "US04654438",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [
+            "https://patents.google.com/patent/US4654438"
+          ],
+          "model_forward_score": null,
+          "model_feasibility": null,
+          "model_yield": null,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(OC)(c1ccc(CC(C)C)cc1)C(C)OS(C)(=O)=O",
+          "reactants": [
+            "O",
+            "CCN(CC)CC",
+            "COC(OC)(c1ccc(CC(C)C)cc1)C(C)O",
+            "CS(=O)(=O)Cl"
+          ],
+          "reaction_class": "acylation",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "US04654438",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [
+            "https://patents.google.com/patent/US4654438"
+          ],
+          "model_forward_score": null,
+          "model_feasibility": null,
+          "model_yield": null,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(OC)(c1ccc(CC(C)C)cc1)C(C)O",
+          "reactants": [
+            "COC(OC)(C(C)=O)c1ccc(CC(C)C)cc1"
+          ],
+          "reaction_class": "reduction",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -2.659,
+          "model_feasibility": 0.9626238396155417,
+          "model_yield": 80.84074401855469,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(OC)(C(C)=O)c1ccc(CC(C)C)cc1",
+          "reactants": [
+            "COC(OC)(C(C)=O)c1ccc(C)cc1",
+            "C=CC"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -4.838,
+          "model_feasibility": 0.9915399018960367,
+          "model_yield": 75.95198059082031,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "COC(OC)(C(C)=O)c1ccc(C)cc1",
+          "reactants": [
+            "COC(OC)c1ccc(C)cc1",
+            "CON(C)C(C)=O"
+          ],
+          "reaction_class": "c-c coupling",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -5.254,
+          "model_feasibility": 0.9953441954081136,
+          "model_yield": 72.88582611083984,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "O=C([O-])O",
+          "reactants": [
+            "O",
+            "O=C=O"
+          ],
+          "reaction_class": "acylation",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -5.504,
+          "model_feasibility": 0.8603365949043942,
+          "model_yield": 65.8572998046875,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 6,
+      "longest_linear_route": 5,
+      "model_pathway_score": 0,
+      "model_ranking_score": 38.41025058292923,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top6",
+      "target_mol": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+      "model_starting_materials": [
+        "CC(C)=Cc1ccc(C(C)C(=O)O)cc1"
+      ],
+      "steps": [
+        {
+          "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "C=C(C)Cc1ccc(C(C)C(=O)O)cc1"
+          ],
+          "reaction_class": "reduction",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -0.0,
+          "model_feasibility": 0.9839622579113017,
+          "model_yield": 76.19954681396484,
+          "evidence_grade": "not assessed (search pending)"
+        },
+        {
+          "product": "C=C(C)Cc1ccc(C(C)C(=O)O)cc1",
+          "reactants": [
+            "CC(C)=Cc1ccc(C(C)C(=O)O)cc1"
+          ],
+          "reaction_class": "miscellaneous",
+          "reference_flag": "True",
+          "patent_ids_unverified": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "patent_links_unverified": [],
+          "model_forward_score": -4.76,
+          "model_feasibility": 0.988130351108237,
+          "model_yield": 74.78672790527344,
+          "evidence_grade": "not assessed (search pending)"
+        }
+      ],
+      "step_count": 2,
+      "longest_linear_route": 2,
+      "model_pathway_score": 0,
+      "model_ranking_score": 32.79039774068814,
+      "warnings": [],
+      "validation_status": "not literature evaluated"
+    }
+  ],
+  "step_comparison": [
+    {
+      "target": "ibuprofen",
+      "route_id": "top0",
+      "step_no": 1,
+      "reactants": [
+        "CC(C)Cc1ccc(C(C)(Sc2ccccc2)C(=O)O)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top0",
+      "step_no": 2,
+      "reactants": [
+        "COC(=O)C(C)(Sc1ccccc1)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)(Sc2ccccc2)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top0",
+      "step_no": 3,
+      "reactants": [
+        "COC(=O)C(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+        "CI"
+      ],
+      "product": "COC(=O)C(C)(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top0",
+      "step_no": 4,
+      "reactants": [
+        "COC(=O)C(Br)c1ccc(CC(C)C)cc1",
+        "Sc1ccccc1"
+      ],
+      "product": "COC(=O)C(Sc1ccccc1)c1ccc(CC(C)C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top1",
+      "step_no": 1,
+      "reactants": [
+        "CC(C)Cc1ccc(C(C)(Cl)C(=O)O)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top1",
+      "step_no": 2,
+      "reactants": [
+        "CCOC(=O)C(C)(Cl)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)(Cl)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top1",
+      "step_no": 3,
+      "reactants": [
+        "CC(C)Cc1ccccc1",
+        "CCOC(=O)C(C)(Cl)Cl"
+      ],
+      "product": "CCOC(=O)C(C)(Cl)c1ccc(CC(C)C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top1",
+      "step_no": 4,
+      "reactants": [
+        "O=S(=O)(Cl)Cl",
+        "CCOC(=O)C(C)Cl"
+      ],
+      "product": "CCOC(=O)C(C)(Cl)Cl",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "step_no": 1,
+      "reactants": [
+        "CC(C)Cc1ccc(C(C)C(=O)O)cc1OS(C)(=O)=O"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "step_no": 2,
+      "reactants": [
+        "CC(C)Cc1ccc(C(C)C(=O)O)cc1O",
+        "CS(=O)(=O)Cl"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1OS(C)(=O)=O",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "step_no": 3,
+      "reactants": [
+        "COc1cc(C(C)C(=O)O)ccc1CC(C)C"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1O",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "step_no": 4,
+      "reactants": [
+        "COC(=O)C(C)c1ccc(CC(C)C)c(OC)c1"
+      ],
+      "product": "COc1cc(C(C)C(=O)O)ccc1CC(C)C",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top2",
+      "step_no": 5,
+      "reactants": [
+        "CC(C)CI",
+        "COC(=O)C(C)c1cccc(OC)c1"
+      ],
+      "product": "COC(=O)C(C)c1ccc(CC(C)C)c(OC)c1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top3",
+      "step_no": 1,
+      "reactants": [
+        "CCOC(=O)C(C)(C(=O)OCC)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "Boots US3385886A Example 4 separates ester hydrolysis and decarboxylation after methylation; model collapses a diester-to-acid conversion without corroborated one-step procedure",
+      "source_citations": "[6]",
+      "matching_level": "multi-operation analogy, not exact step",
+      "evidence_grade": "C (indirect)",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top3",
+      "step_no": 2,
+      "reactants": [
+        "CCOC(=O)C(C)c1ccc(CC(C)C)cc1",
+        "CCOC(=O)OCC"
+      ],
+      "product": "CCOC(=O)C(C)(C(=O)OCC)c1ccc(CC(C)C)cc1",
+      "published_comparison": "analogous ester alpha-carbethoxylation with ethyl carbonate in Boots US3385886A Example 4; published arylacetate/tert-butyl ring differs from model arylpropionate/isobutyl ring",
+      "source_citations": "[6]",
+      "matching_level": "analogous transformation only",
+      "evidence_grade": "B",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top4",
+      "step_no": 1,
+      "reactants": [
+        "C=C(C(=O)O)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top4",
+      "step_no": 2,
+      "reactants": [
+        "C=C(C#N)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "C=C(C(=O)O)c1ccc(CC(C)C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {
+        "O": 2
+      },
+      "interpretation": "possible omitted reagent/source; atom correspondence not established"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 1,
+      "reactants": [
+        "[Na+]",
+        "COC(OC)(c1ccc(CC(C)C)cc1)C(C)OS(C)(=O)=O",
+        "O=C([O-])O",
+        "CO"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 2,
+      "reactants": [
+        "O",
+        "CCN(CC)CC",
+        "COC(OC)(c1ccc(CC(C)C)cc1)C(C)O",
+        "CS(=O)(=O)Cl"
+      ],
+      "product": "COC(OC)(c1ccc(CC(C)C)cc1)C(C)OS(C)(=O)=O",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 3,
+      "reactants": [
+        "COC(OC)(C(C)=O)c1ccc(CC(C)C)cc1"
+      ],
+      "product": "COC(OC)(c1ccc(CC(C)C)cc1)C(C)O",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 4,
+      "reactants": [
+        "COC(OC)(C(C)=O)c1ccc(C)cc1",
+        "C=CC"
+      ],
+      "product": "COC(OC)(C(C)=O)c1ccc(CC(C)C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 5,
+      "reactants": [
+        "COC(OC)c1ccc(C)cc1",
+        "CON(C)C(C)=O"
+      ],
+      "product": "COC(OC)(C(C)=O)c1ccc(C)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top5",
+      "step_no": 6,
+      "reactants": [
+        "O",
+        "O=C=O"
+      ],
+      "product": "O=C([O-])O",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top6",
+      "step_no": 1,
+      "reactants": [
+        "C=C(C)Cc1ccc(C(C)C(=O)O)cc1"
+      ],
+      "product": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    },
+    {
+      "target": "ibuprofen",
+      "route_id": "top6",
+      "step_no": 2,
+      "reactants": [
+        "CC(C)=Cc1ccc(C(C)C(=O)O)cc1"
+      ],
+      "product": "C=C(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "published_comparison": "no exact match established in inspected source set; broader literature not fully searched",
+      "source_citations": "",
+      "matching_level": "not established",
+      "evidence_grade": "not assessed across full literature",
+      "unlisted_product_heavy_atoms": {},
+      "interpretation": "no missing product heavy atoms in listed inputs; not a reaction feasibility test"
+    }
+  ],
+  "source_sha256": {
+    "route_candidate_audit.json": "bddfd14e794241c4d372b8c2e170300efe14817f7f65095a0114432161a146af",
+    "reaction_chemistry_comparison.json": "8f17ed2b1bf138b97fa388206747f16022338be0b384828bde8f88f5fdbf63c7",
+    "retro_case_chemistry_literature_comparison.md": "85a46c8f6fde52b0c9b1733debe9587f32c67cde2c22616b8655781c929f6f3a"
+  },
+  "literature_superiority_demonstrated": false,
+  "measured_isolated_yield": null,
+  "measured_purity": null
+}

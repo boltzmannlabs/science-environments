@@ -35,7 +35,7 @@ The three phases below are parts of **task-01-fluorinated-quinoline-retrosynthes
 
 16 model pathways and 56 reaction-node occurrences across routes; one three-step route separately reviewed. Two expected products ranked first, while the key protected ether ranked last with score zero. The central coupling and protection conditions were unsupported. No exact-target experimental route, measured yield/selectivity or superiority over literature was established.
 
-See [task-01-fluorinated-quinoline-retrosynthesis benchmarks](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/README.md) and [task-01-fluorinated-quinoline-retrosynthesis results](../../results/task-01-fluorinated-quinoline-retrosynthesis/README.md).
+See [task-01-fluorinated-quinoline-retrosynthesis benchmarks](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/README.md) and [task-01-fluorinated-quinoline-retrosynthesis results](../../results/task-01-fluorinated-quinoline-retrosynthesis/README.md).
 
 ---
 
@@ -78,6 +78,6 @@ Determine whether any generated route matches experimental literature and whethe
 Paper titles, identifiers and links; explicit same-substrate versus analogous chemistry; condition/yield comparisons only where extracted evidence supports them; missing availability/selectivity marked unknown.
 
 ### Actual outcome
-[Paper catalog](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/papers.md) contains protection and diaryl-ether papers (bibliographic/class-level evidence), an inspected public TBS-deprotection experiment, and two non-matching patent screening hits. The experimental 32% yield in the deprotection reference concerns another substrate. No exact target-route precedent or matched experimental yield was established. Literature coverage was incomplete and not structure-indexed; no novelty or freedom-to-operate claim follows.
+[Paper catalog](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/papers.md) contains protection and diaryl-ether papers (bibliographic/class-level evidence), an inspected public TBS-deprotection experiment, and two non-matching patent screening hits. The experimental 32% yield in the deprotection reference concerns another substrate. No exact target-route precedent or matched experimental yield was established. Literature coverage was incomplete and not structure-indexed; no novelty or freedom-to-operate claim follows.
 
-[Comparison tables](../../results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md) distinguish condition-tool predicted yields from retrosynthesis predicted yields. [Metrics](../../benchmark/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json) have null for measured target yield/selectivity and literature yield error. No claim of tool outperformance is supported.
+[Comparison tables](../../results/task-01-fluorinated-quinoline-retrosynthesis/achievements_and_comparison.md) distinguish condition-tool predicted yields from retrosynthesis predicted yields. [Metrics](../../benchmarks/task-01-fluorinated-quinoline-retrosynthesis/achieved_metrics.json) have null for measured target yield/selectivity and literature yield error. No claim of tool outperformance is supported.
