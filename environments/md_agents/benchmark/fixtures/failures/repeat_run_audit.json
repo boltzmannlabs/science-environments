@@ -1,0 +1,15 @@
+{
+  "fixture": "repeat_run_audit.json",
+  "task_id": "MD-61",
+  "parameters": {
+    "runs": 3,
+    "seeds": [
+      11,
+      12,
+      13
+    ],
+    "observable": "density",
+    "tolerance_percent": 2
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}

@@ -1,0 +1,25 @@
+{
+  "edge": "17->1h1q",
+  "charge_source": "public source Jaguar partial charges",
+  "records": {
+    "a": {
+      "source_id": "17",
+      "antechamber_exit": 0,
+      "parmchk2_exit": 0,
+      "gaff2_mol2": "execution/ligand_parameterization/ligand_a_gaff2.mol2",
+      "frcmod": "execution/ligand_parameterization/ligand_a.frcmod"
+    },
+    "b": {
+      "source_id": "1h1q",
+      "antechamber_exit": 0,
+      "parmchk2_exit": 0,
+      "gaff2_mol2": "execution/ligand_parameterization/ligand_b_gaff2.mol2",
+      "frcmod": "execution/ligand_parameterization/ligand_b.frcmod"
+    }
+  },
+  "status": "PASS",
+  "limitations": [
+    "complex and solvent endpoint topologies still require assembly",
+    "source charges are not AM1-BCC/RESP"
+  ]
+}

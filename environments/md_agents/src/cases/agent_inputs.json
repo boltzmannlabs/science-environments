@@ -1,0 +1,1077 @@
+{
+  "benchmark": "md-agent-inputs-v1",
+  "count": 62,
+  "cases": [
+    {
+      "agent_id": "MD-01",
+      "agent_name": "System Input Validation",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box.pdb",
+        "parameters": {
+          "atoms": 3,
+          "box_nm": [
+            2,
+            2,
+            2
+          ],
+          "format": "PDB"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-02",
+      "agent_name": "System Preparation",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_explicit.pdb",
+        "parameters": {
+          "residues": [
+            "ACE",
+            "ALA",
+            "NME"
+          ],
+          "missing_hydrogens": 0
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-03",
+      "agent_name": "Force-Field Selection",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box.pdb",
+        "parameters": {
+          "candidate_forcefields": [
+            "amber14/tip3p",
+            "charmm36m/tip3p"
+          ],
+          "objective": "bulk-water NPT"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-04",
+      "agent_name": "Parameterization",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/caffeine_ligand.mol2",
+        "parameters": {
+          "net_charge": 0,
+          "unknown_atom_types": [
+            "CAFF_X1"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-05",
+      "agent_name": "Solvation and Ion Placement",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+        "parameters": {
+          "box_nm": [
+            3.5,
+            3.5,
+            3.5
+          ],
+          "water_model": "TIP3P",
+          "ions": {
+            "Na+": 2,
+            "Cl-": 2
+          }
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-06",
+      "agent_name": "Energy Minimization",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box_clash.pdb",
+        "parameters": {
+          "minimum_distance_A": 0.25,
+          "steps": 500
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-07",
+      "agent_name": "Equilibration",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+        "parameters": {
+          "temperature_K": 300,
+          "pressure_bar": 1,
+          "steps": 5000
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-08",
+      "agent_name": "Integrator and Timestep",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box.pdb",
+        "parameters": {
+          "integrator": "LangevinMiddle",
+          "timestep_fs": 2,
+          "constraints": "HBonds"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-09",
+      "agent_name": "Thermostat and Barostat",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+        "parameters": {
+          "thermostat": "Langevin",
+          "barostat": "MonteCarlo",
+          "temperature_K": 300,
+          "pressure_bar": 1
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-10",
+      "agent_name": "Simulation Execution",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box.pdb",
+        "parameters": {
+          "engine": "OpenMM",
+          "platform": "CPU",
+          "steps": 1000,
+          "seed": 20261027
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-11",
+      "agent_name": "Failure Diagnosis and Recovery",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/nan_energy.log",
+        "parameters": {
+          "first_bad_step": 417,
+          "error": "Particle coordinate is NaN",
+          "checkpoint": "step_400.chk"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-12",
+      "agent_name": "Sampling Strategy",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+        "parameters": {
+          "replicas": 3,
+          "steps_per_replica": 20000,
+          "seeds": [
+            101,
+            102,
+            103
+          ],
+          "observable": "phi_dihedral"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-13",
+      "agent_name": "Enhanced Sampling",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+        "parameters": {
+          "method": "well-tempered-metadynamics",
+          "cv": "phi",
+          "bias_factor": 10
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-14",
+      "agent_name": "Trajectory Quality Control",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/water_box_repeat1.dcd",
+        "parameters": {
+          "topology_atoms": 3,
+          "trajectory_atoms": 3,
+          "frames": 100
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-15",
+      "agent_name": "Structural Analysis",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
+        "parameters": {
+          "metrics": [
+            "RMSD",
+            "RMSF",
+            "radius_of_gyration"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-16",
+      "agent_name": "Interaction Analysis",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_replica1.dcd",
+        "parameters": {
+          "selection": "residue ALA",
+          "interactions": [
+            "hydrogen_bonds",
+            "contacts"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-17",
+      "agent_name": "Free-Energy Analysis",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/records/fep_window_fixture.json",
+        "parameters": {
+          "windows": 11,
+          "temperature_K": 300,
+          "estimator": "MBAR"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-18",
+      "agent_name": "Statistical and Uncertainty Analysis",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/records/alanine_dipeptide_replicas.json",
+        "parameters": {
+          "replicas": 3,
+          "block_length_ps": 20,
+          "confidence": 0.95
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-19",
+      "agent_name": "Resource Optimization",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/water_box.pdb",
+        "parameters": {
+          "gpu_candidates": [
+            "CUDA",
+            "OpenCL"
+          ],
+          "cpu_threads": 2,
+          "memory_limit_GB": 2
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-20",
+      "agent_name": "MD Orchestrator and Audit",
+      "group": "core",
+      "input": {
+        "fixture": "benchmark/fixtures/records/md_core_task_bundle.json",
+        "parameters": {
+          "stages": [
+            "validate",
+            "minimize",
+            "equilibrate",
+            "production",
+            "analyze"
+          ],
+          "retry_limit": 1
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-21",
+      "agent_name": "Online Scientific Literature",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/research_query_langevin_flow_maps.json",
+        "parameters": {
+          "query": "learned stochastic molecular dynamics integrator",
+          "source_cutoff": "2026-10-27"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-22",
+      "agent_name": "Model and Checkpoint Discovery",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/model_request_langevin_flow_map.json",
+        "parameters": {
+          "framework": "PyTorch",
+          "device": "CUDA",
+          "required": [
+            "checkpoint",
+            "config",
+            "license"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-23",
+      "agent_name": "Scientific Dataset Discovery",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/dataset_request_peptide_forces.json",
+        "parameters": {
+          "format": "parquet",
+          "required_fields": [
+            "coordinates",
+            "forces",
+            "energy"
+          ],
+          "max_download_GB": 1
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-24",
+      "agent_name": "Resource Download and Cache",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/download_manifest_partial.json",
+        "parameters": {
+          "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "resume": true
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-25",
+      "agent_name": "Model Compatibility",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/lfm_checkpoint_metadata.json",
+        "parameters": {
+          "model_elements": [
+            "H",
+            "C",
+            "N",
+            "O"
+          ],
+          "system_elements": [
+            "H",
+            "C",
+            "N",
+            "O",
+            "S"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-26",
+      "agent_name": "Dataset Integrity",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/dataset_subset_corrupt.parquet",
+        "parameters": {
+          "expected_rows": 10000,
+          "expected_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-27",
+      "agent_name": "Scientific Reproduction",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/published_reproduction_manifest.json",
+        "parameters": {
+          "system": "alanine_dipeptide",
+          "engine": "OpenMM",
+          "seed": 1234,
+          "steps": 10000
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-28",
+      "agent_name": "Model Evaluation and Selection",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/ml_potential_candidates.json",
+        "parameters": {
+          "candidates": [
+            "model_A",
+            "model_B"
+          ],
+          "heldout": "water_dimer",
+          "metrics": [
+            "energy_RMSE",
+            "force_RMSE"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-29",
+      "agent_name": "Online Resource Update",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/resource_registry_v1.json",
+        "parameters": {
+          "current": "1.0",
+          "candidate": "1.1",
+          "replacement_policy": "manual-review"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-30",
+      "agent_name": "Provenance and Licence",
+      "group": "online",
+      "input": {
+        "fixture": "benchmark/fixtures/records/resource_metadata.json",
+        "parameters": {
+          "license": "Apache-2.0",
+          "authors": [
+            "Example Lab"
+          ],
+          "citation_required": true
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-31",
+      "agent_name": "Protein Folding and Misfolding Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/protein_villin_headpiece.pdb",
+        "parameters": {
+          "temperature_K": 300,
+          "replicas": 3,
+          "metrics": [
+            "native_contacts",
+            "RMSD",
+            "clusters"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-32",
+      "agent_name": "Protein\u2013Protein Interaction MD Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/barnase_barstar_complex.pdb",
+        "parameters": {
+          "interface_cutoff_A": 4.5,
+          "metrics": [
+            "contacts",
+            "salt_bridges",
+            "H_bonds"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-33",
+      "agent_name": "Membrane Protein MD Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/aquaporin_membrane.gro",
+        "parameters": {
+          "lipid": "POPC",
+          "temperature_K": 310,
+          "bilayer_thickness_target_A": 38
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-34",
+      "agent_name": "Nucleic Acid Dynamics Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/dna_duplex_12mer.pdb",
+        "parameters": {
+          "forcefield": "parmbsc1",
+          "metrics": [
+            "base_pairing",
+            "stacking",
+            "helical_rise"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-35",
+      "agent_name": "Enzyme Mechanism MD Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/lysozyme_substrate_complex.pdb",
+        "parameters": {
+          "active_site_residues": [
+            35,
+            52,
+            101
+          ],
+          "distance_cutoff_A": 3.5,
+          "replicas": 3
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-36",
+      "agent_name": "Binding-Site Water Thermodynamics Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/benzamidine_trypsin_complex.pdb",
+        "parameters": {
+          "water_site_cutoff_A": 2.5,
+          "residence_threshold_ps": 20,
+          "replicas": 3
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-37",
+      "agent_name": "Conformational State Clustering Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/alanine_dipeptide_100ns.dcd",
+        "parameters": {
+          "features": [
+            "phi",
+            "psi",
+            "contacts"
+          ],
+          "k_candidates": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-38",
+      "agent_name": "Markov State Model Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/alanine_dipeptide_states.json",
+        "parameters": {
+          "states": 4,
+          "lag_times_ps": [
+            1,
+            2,
+            5,
+            10
+          ],
+          "tests": [
+            "implied_timescales",
+            "Chapman-Kolmogorov"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-39",
+      "agent_name": "Transition Path Analysis Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/alanine_transition_trajectory.dcd",
+        "parameters": {
+          "state_A": "alpha_R",
+          "state_B": "beta",
+          "progress_coordinate": "phi"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-40",
+      "agent_name": "Replica Exchange MD Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/replica_exchange_8replicas.json",
+        "parameters": {
+          "temperatures_K": [
+            300,
+            315,
+            330,
+            345,
+            360,
+            375,
+            390,
+            405
+          ],
+          "exchange_interval_ps": 1
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-41",
+      "agent_name": "Potential of Mean Force Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/umbrella_phi_windows.json",
+        "parameters": {
+          "centers_deg": [
+            -180,
+            -120,
+            -60,
+            0,
+            60,
+            120,
+            180
+          ],
+          "estimator": "WHAM"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-42",
+      "agent_name": "Ligand Unbinding Pathway Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/benzamidine_trypsin_unbinding.dcd",
+        "parameters": {
+          "contact_cutoff_A": 4.5,
+          "unbound_distance_A": 15,
+          "replicas": 5
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-43",
+      "agent_name": "Relative Binding Affinity Validation Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/ligand_pair_fep_replicas.json",
+        "parameters": {
+          "ligands": [
+            "LIG_A",
+            "LIG_B"
+          ],
+          "replicas": 4,
+          "target": "relative_affinity"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-44",
+      "agent_name": "QM/MM Boundary and Region Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/enzyme_qmmm_partition.pdb",
+        "parameters": {
+          "qm_atoms": [
+            "substrate",
+            "Asp35",
+            "Glu52"
+          ],
+          "boundary_bonds": 2,
+          "link_atom": "H"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-45",
+      "agent_name": "Machine-Learned Potential Validation Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/mlp_water_dimer_test.json",
+        "parameters": {
+          "model": "candidate_mlp_v1",
+          "reference": "DFT_B3LYP_D3",
+          "configurations": 500
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-46",
+      "agent_name": "Adaptive Sampling Controller",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/sampling_state_coverage.json",
+        "parameters": {
+          "under_sampled_states": [
+            "cluster_4",
+            "cluster_7"
+          ],
+          "budget_ns": 20
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-47",
+      "agent_name": "Trajectory Reproducibility Auditor",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/trajectory_manifest_repeat.json",
+        "parameters": {
+          "engine_version": "OpenMM-8.2",
+          "seed": 20261027,
+          "topology_sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-48",
+      "agent_name": "Statistical Convergence and Uncertainty Specialist",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/replica_observables.csv",
+        "parameters": {
+          "replicas": 4,
+          "observable": "RMSD",
+          "block_ps": 10,
+          "confidence": 0.95
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-49",
+      "agent_name": "MD Benchmark Dataset Builder",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/approved_case_sources.json",
+        "parameters": {
+          "case_ids": [
+            "MD-CORE-WATER",
+            "MD-ALA-PHI"
+          ],
+          "required": [
+            "inputs",
+            "versions",
+            "references",
+            "checksums"
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-50",
+      "agent_name": "End-to-End MD Qualification Orchestrator",
+      "group": "domain",
+      "input": {
+        "fixture": "benchmark/fixtures/records/md_end_to_end_bundle.json",
+        "parameters": {
+          "cases": [
+            "valid_water",
+            "nan_energy",
+            "missing_parameter"
+          ],
+          "retry_limit": 1
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-51",
+      "agent_name": "Molecular System Preparation Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/malformed_protein_missing_residue.pdb",
+        "parameters": {
+          "missing_residue": "ALA42",
+          "expected_action": "stop_before_simulation"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-52",
+      "agent_name": "Force-Field and Parameterization Failure Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/ligand_unknown_atomtype.itp",
+        "parameters": {
+          "unknown_type": "CAX",
+          "line": 87,
+          "forcefield": "amber14sb"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-53",
+      "agent_name": "Minimization and Equilibration Failure Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/clashing_water_box.pdb",
+        "parameters": {
+          "min_distance_A": 0.18,
+          "minimization_steps": 1000,
+          "heating_K": [
+            50,
+            150,
+            300
+          ]
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-54",
+      "agent_name": "Production MD Execution Failure Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/interrupted_production.log",
+        "parameters": {
+          "last_step": 75000,
+          "requested_steps": 100000,
+          "checkpoint": "step_70000.chk"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-55",
+      "agent_name": "Trajectory and Structural Analysis Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/trajectories/broken_pbc_trajectory.dcd",
+        "parameters": {
+          "topology_atoms": 1000,
+          "trajectory_atoms": 998,
+          "expected_action": "reject"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-56",
+      "agent_name": "Sampling and Convergence Failure Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/records/replica_disagreement_summary.json",
+        "parameters": {
+          "replica_means": [
+            1.2,
+            1.3,
+            4.8
+          ],
+          "max_allowed_spread": 0.5
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-57",
+      "agent_name": "Drug Discovery and Binding Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/structures/protein_ligand_pose_set.sdf",
+        "parameters": {
+          "ligands": 3,
+          "protonation_states": [
+            "neutral",
+            "cation"
+          ],
+          "binding_metric": "contact_occupancy"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-58",
+      "agent_name": "Machine-Learning Potential Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/ml_model_oob_trace.json",
+        "parameters": {
+          "uncertainty_threshold": 0.2,
+          "observed_uncertainty": 0.47,
+          "action": "stop_and_query_reference"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-59",
+      "agent_name": "Online Model and Dataset Retrieval Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/download_interrupted_checkpoint.json",
+        "parameters": {
+          "bytes_received": 1048576,
+          "bytes_expected": 5242880,
+          "checksum": "bad"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-60",
+      "agent_name": "Compute and Resource Constraint Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/gpu_oom_run.json",
+        "parameters": {
+          "device": "CUDA:0",
+          "memory_GB": 8,
+          "requested_GB": 12,
+          "fallback": "CPU-4threads"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-61",
+      "agent_name": "Scientific Validation and Reproducibility Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/repeat_run_audit.json",
+        "parameters": {
+          "runs": 3,
+          "seeds": [
+            11,
+            12,
+            13
+          ],
+          "observable": "density",
+          "tolerance_percent": 2
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    },
+    {
+      "agent_id": "MD-62",
+      "agent_name": "Autonomous Agent and Orchestration Scenarios",
+      "group": "scenario",
+      "input": {
+        "fixture": "benchmark/fixtures/failures/conflicting_agent_outputs.json",
+        "parameters": {
+          "recommendations": [
+            "extend_sampling",
+            "change_forcefield"
+          ],
+          "evidence_priority": "frozen_protocol"
+        }
+      },
+      "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+      "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria."
+    }
+  ]
+}

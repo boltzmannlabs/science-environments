@@ -1,0 +1,21 @@
+{
+  "task_id": "MD-01",
+  "agent_id": "MD-01",
+  "agent_name": "System Input Validation",
+  "group": "core",
+  "input": {
+    "fixture": "benchmark/fixtures/structures/water_box.pdb",
+    "parameters": {
+      "atoms": 3,
+      "box_nm": [
+        2,
+        2,
+        2
+      ],
+      "format": "PDB"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

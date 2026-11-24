@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-13",
+  "agent_id": "MD-13",
+  "agent_name": "Enhanced Sampling",
+  "group": "core",
+  "input": {
+    "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+    "parameters": {
+      "method": "well-tempered-metadynamics",
+      "cv": "phi",
+      "bias_factor": 10
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

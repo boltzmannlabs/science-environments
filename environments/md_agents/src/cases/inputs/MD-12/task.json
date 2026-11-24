@@ -1,0 +1,22 @@
+{
+  "task_id": "MD-12",
+  "agent_id": "MD-12",
+  "agent_name": "Sampling Strategy",
+  "group": "core",
+  "input": {
+    "fixture": "benchmark/fixtures/structures/alanine_dipeptide_box.pdb",
+    "parameters": {
+      "replicas": 3,
+      "steps_per_replica": 20000,
+      "seeds": [
+        101,
+        102,
+        103
+      ],
+      "observable": "phi_dihedral"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "ABORTED_REVIEW",
+  "engine": "OpenFE/OpenMM",
+  "platform": "OpenCL",
+  "gpu_backend": "NVIDIA GeForce RTX 3060 (OpenCL)",
+  "planned": {"lambda_windows": 11, "equilibration_iterations": 10, "production_ps": 100},
+  "completed": {"leg": "solvent", "equilibration_iterations": 5, "production_iterations": 0},
+  "reason": "Controlled stop due to runtime budget before production; no incomplete output is used for qualification.",
+  "qualification": "REVIEW",
+  "next_action": "Run the 11-window protocol with a production allocation appropriate to the available GPU/CPU runtime, then independently evaluate overlap, blocks, replicas and uncertainty."
+}

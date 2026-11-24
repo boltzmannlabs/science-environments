@@ -1,0 +1,25 @@
+{
+  "task_id": "MD-40",
+  "agent_id": "MD-40",
+  "agent_name": "Replica Exchange MD Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/records/replica_exchange_8replicas.json",
+    "parameters": {
+      "temperatures_K": [
+        300,
+        315,
+        330,
+        345,
+        360,
+        375,
+        390,
+        405
+      ],
+      "exchange_interval_ps": 1
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

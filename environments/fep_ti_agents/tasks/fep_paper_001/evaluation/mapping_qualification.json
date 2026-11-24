@@ -1,0 +1,30 @@
+{
+  "edge": "17->1h1q",
+  "mapper": "OpenFE LomapAtomMapper",
+  "candidate_count": 1,
+  "mapped_atom_count": 45,
+  "ligand_a_chiral_centers": [],
+  "ligand_b_chiral_centers": [],
+  "checks": {
+    "all_elements_match": false,
+    "all_atoms_accounted_for": true,
+    "mapped_atom_count_equal": true,
+    "local_degree_consistency": true,
+    "stereochemistry_explicitly_reviewed": false,
+    "alternative_mapping_candidates_checked": true
+  },
+  "element_mismatches": [
+    {
+      "ligand_a_index": 44,
+      "ligand_b_index": 38,
+      "ligand_a_element": "Br",
+      "ligand_b_element": "H"
+    }
+  ],
+  "status": "REVIEW",
+  "limitations": [
+    "Br-to-H endpoint change requires explicit dummy-atom/topology validation",
+    "bond-order correspondence requires hybrid-topology validation",
+    "stereochemistry is intentionally not auto-approved"
+  ]
+}

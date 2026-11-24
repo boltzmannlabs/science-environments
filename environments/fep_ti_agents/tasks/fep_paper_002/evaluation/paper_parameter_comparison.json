@@ -1,0 +1,19 @@
+{
+  "task_id": "fep_paper_002",
+  "source": "reference/parameters.json",
+  "comparisons": [
+    {"parameter": "protein", "paper_reference": "PTP1B", "agent_value": "PTP1B", "classification": "EXACT"},
+    {"parameter": "pdb_id", "paper_reference": "2QBS", "agent_value": "2QBS", "classification": "EXACT"},
+    {"parameter": "ligand_edge", "paper_reference": "23477->23482", "agent_value": "23477->23482", "classification": "EXACT"},
+    {"parameter": "experimental_ddg_kcal_mol", "paper_reference": -1.16, "agent_value": null, "classification": "WITHHELD_FROM_AGENT", "note": "Evaluator-only reference; absent from Config B inputs."},
+    {"parameter": "source_revision", "paper_reference": "a65d86b782a678c75388566ce00446e45283ee63", "agent_value": "pinned input manifest", "classification": "EXACT"},
+    {"parameter": "engine", "paper_reference": "FEP+ source benchmark", "agent_value": "OpenFE", "classification": "DEVIATION", "note": "Supported local execution engine, not evidence of protocol equivalence."},
+    {"parameter": "force_field", "paper_reference": null, "agent_value": "GAFF2", "classification": "INFERRED", "note": "Local endpoint parameterization choice; not reported as an edge-specific source parameter."},
+    {"parameter": "charge_method", "paper_reference": null, "agent_value": "AM1-BCC", "classification": "INFERRED", "note": "Local endpoint parameterization choice."},
+    {"parameter": "lambda_schedule", "paper_reference": null, "agent_value": null, "classification": "MISSING"},
+    {"parameter": "replica_length", "paper_reference": null, "agent_value": null, "classification": "MISSING"},
+    {"parameter": "production_trajectories", "paper_reference": null, "agent_value": null, "classification": "MISSING"}
+  ],
+  "summary": {"exact": 4, "inferred": 2, "deviation": 1, "missing": 3, "withheld": 1},
+  "qualification": "REVIEW"
+}

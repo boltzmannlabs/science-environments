@@ -1,0 +1,24 @@
+{
+  "task_id": "MD-49",
+  "agent_id": "MD-49",
+  "agent_name": "MD Benchmark Dataset Builder",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/records/approved_case_sources.json",
+    "parameters": {
+      "case_ids": [
+        "MD-CORE-WATER",
+        "MD-ALA-PHI"
+      ],
+      "required": [
+        "inputs",
+        "versions",
+        "references",
+        "checksums"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

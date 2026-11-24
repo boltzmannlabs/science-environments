@@ -1,0 +1,9 @@
+{
+  "version": "md-paper-protocol-targets-v1",
+  "fields": ["engine", "force_field", "water_model", "temperature_K", "pressure_bar", "timestep_fs", "electrostatics", "box_and_ions", "equilibration", "production_length", "replicas", "observable", "reference_value"],
+  "cases": {
+    "MD-PAPER-001": {"system": "villin headpiece (1VII)", "paper_doi": "10.1002/jcc.10349", "required": ["force_field", "water_model", "temperature_K", "timestep_fs", "production_length", "observable"]},
+    "MD-PAPER-002": {"system": "barnase-barstar (1BRS)", "paper_doi": "10.1016/j.jmb.2007.01.051", "required": ["engine", "force_field", "water_model", "temperature_K", "electrostatics", "production_length", "replicas", "observable"]},
+    "MD-PAPER-003": {"system": "DNA duplex", "paper_doi": "NOT_PINNED", "required": ["force_field", "water_model", "temperature_K", "pressure_bar", "electrostatics", "observable"]}
+  }
+}

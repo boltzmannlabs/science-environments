@@ -1,0 +1,30 @@
+{
+  "agent_config": "execution/generated_inputs/config_B_agent_generated.json",
+  "checks": {
+    "engine": true,
+    "toolkit": true,
+    "ligand_forcefield": true,
+    "complex_and_solvent_legs": true,
+    "mapping": true,
+    "charge_methods": true,
+    "target": true,
+    "selected_edge": true,
+    "water_model": true,
+    "ionic_strength_molar": true,
+    "box_padding_nm": true,
+    "sterics_steps": true,
+    "electrostatics_steps": true,
+    "sterics_exponent": true,
+    "timestep_fs": true,
+    "steps_per_iteration": true,
+    "equilibration_iterations": true,
+    "production_iterations": true,
+    "extension_iterations": true,
+    "iterations_per_checkpoint": true
+  },
+  "matched": 20,
+  "total": 20,
+  "parameter_accuracy": 1.0,
+  "status": "REVIEW",
+  "reason": "source-pinned endpoint and protocol fields are compared; unresolved topology, mapping, trajectory and replica evidence prevent scientific PASS"
+}

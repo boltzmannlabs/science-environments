@@ -1,0 +1,14 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+loadamberparams /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/benzamidine.frcmod
+BEN = loadmol2 /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/benzamidine.mol2
+PROT = loadpdb /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_protein_no_waters.pdb
+COMPLEX = combine { PROT BEN }
+check COMPLEX
+solvateBox COMPLEX TIP3PBOX 10.0
+addIonsRand COMPLEX Cl- 6
+check COMPLEX
+saveamberparm COMPLEX /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_benzamidine.prmtop /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_benzamidine.inpcrd
+savepdb COMPLEX /home/boltzmann15/github/science-environments/environments/md_agents/results/benzamidine_parameterization/trypsin_benzamidine.parameterized.pdb
+quit

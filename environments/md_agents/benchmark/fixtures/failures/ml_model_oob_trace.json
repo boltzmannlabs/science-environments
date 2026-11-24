@@ -1,0 +1,10 @@
+{
+  "fixture": "ml_model_oob_trace.json",
+  "task_id": "MD-58",
+  "parameters": {
+    "uncertainty_threshold": 0.2,
+    "observed_uncertainty": 0.47,
+    "action": "stop_and_query_reference"
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}
