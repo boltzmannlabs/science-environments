@@ -1,0 +1,10 @@
+source leaprc.protein.ff14SB
+source leaprc.phosaa10
+source leaprc.gaff2
+loadAmberParams ../../ligand_parameterization/ligand_a.frcmod
+lig = loadMol2 ../../ligand_parameterization/ligand_a_gaff2.mol2
+prot = loadPdb ../../inputs/source_cdk2/protein.pdb
+complex = combine {prot lig}
+saveAmberParm complex complex.prmtop complex.inpcrd
+saveAmberParm lig solvent.prmtop solvent.inpcrd
+quit

@@ -1,0 +1,22 @@
+{
+  "task_id": "MD-CORE-001-water-box",
+  "repeat": 4,
+  "status": "PASS",
+  "engine": "OpenMM",
+  "engine_version": "8.2",
+  "platform": "Linux-6.17.0-41-generic-x86_64-with-glibc2.42",
+  "seed": 20261027,
+  "request_sha256": "20097060322465784ee8b34870a7dd23b4e0ad24df150a348031f247a427fdbe",
+  "structure_sha256": "6f168a8bce7313592124fa771d123ff5e3f35cc73ab971210dbbc905d4d61596",
+  "atom_count": 1482,
+  "trajectory_frames": 10,
+  "minimized_potential_kj_mol": -22794.540859317145,
+  "final_potential_kj_mol": -21563.430141543708,
+  "potential_delta_kj_mol": 1231.1107177734375,
+  "production_steps": 1000,
+  "timestep_fs": 1.0,
+  "wall_time_s": 12.903751,
+  "trajectory_sha256": "6537a0cfdbf04ce88a3c11cad15e99b171f462b2d404c4835cbd5d1fc0744648",
+  "log_sha256": "83f7e393eb8188792955b817e75b58a198adbe0fc820267bdf2edac66665bacf",
+  "platform_name": "CUDA"
+}

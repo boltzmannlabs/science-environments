@@ -1,0 +1,25 @@
+{
+  "task_id": "fep_paper_003",
+  "system": "SAMPL6 octa-acid host-guest",
+  "source_repository": "https://github.com/samplchallenges/SAMPL6",
+  "transformation": "OA-G3->OA-G6",
+  "guest_a": {"name": "5-hexenoic acid", "smiles": "C=CCCCC(O)=O"},
+  "guest_b": {"name": "4-methylpentanoic acid", "smiles": "OC(CCC(C)C)=O"},
+  "experimental_ddg_kcal_mol": 0.21,
+  "experimental_uncertainty_kcal_mol": 0.028,
+  "sign_convention": "DG(OA-G6) - DG(OA-G3)",
+  "input_sha256": {
+    "complex/oa_g3_complex.pdb": "745e28ba79cf381d6043eb07b5806616e1782b5ee2fbb1066f49a024679a92a7",
+    "complex/oa_g6_complex.pdb": "d0369d41fea4b5e4660372850832421ac2bf0018c3f78bff51764908184a85e2",
+    "solvent/oa_g3_solvent.pdb": "5adae3bf78144d2ae814ac8f67eb9a5d6e0afdf374dcbfc9dfdac352119f8094",
+    "solvent/oa_g6_solvent.pdb": "74e048ecd627078f1f735ca7c59463bfb8df34f5b68b30e8d052131da231916a"
+  },
+  "protocol_fields": {
+    "force_field": "NOT_REPORTED",
+    "water_model": "NOT_REPORTED",
+    "lambda_schedule": "NOT_REPORTED",
+    "equilibration": "NOT_REPORTED",
+    "production": "NOT_REPORTED",
+    "estimator": "NOT_REPORTED"
+  }
+}

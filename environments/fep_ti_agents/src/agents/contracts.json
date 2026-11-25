@@ -1,0 +1,12 @@
+[
+{"id":"FEP-PS01","name":"Alchemical Mapping Auditor","problem":"Incorrect atom mapping between reference and target ligands","expected_recovery":"Validate atom correspondence, transformations, and bonded topology"},
+{"id":"FEP-PS02","name":"Transformation Feasibility Agent","problem":"Invalid or chemically inconsistent transformation","expected_recovery":"Check endpoint compatibility, charge changes, and corrections"},
+{"id":"FEP-PS03","name":"Lambda Schedule Optimizer","problem":"Poorly spaced lambda windows or unstable intermediates","expected_recovery":"Propose a schedule from overlap, variance, and difficulty"},
+{"id":"FEP-PS04","name":"Phase-Space Overlap Auditor","problem":"Insufficient neighboring-window overlap","expected_recovery":"Quantify overlap and identify added windows or sampling"},
+{"id":"FEP-PS05","name":"Free-Energy Convergence Agent","problem":"Drift or replica disagreement","expected_recovery":"Assess time dependence, replicas, effective sampling, and uncertainty"},
+{"id":"FEP-PS06","name":"Hysteresis and Cycle-Closure Auditor","problem":"Forward/reverse disagreement or broken cycles","expected_recovery":"Locate problematic legs and quantify inconsistency"},
+{"id":"FEP-PS07","name":"Statistical Uncertainty and Estimator Auditor","problem":"Invalid estimator or uncertainty","expected_recovery":"Check correlations, assumptions, and sample sufficiency"},
+{"id":"FEP-PS08","name":"Charge-Changing Transformation Auditor","problem":"Electrostatic finite-size artifacts","expected_recovery":"Identify corrections and validate assumptions"},
+{"id":"FEP-PS09","name":"Restraint and Standard-State Auditor","problem":"Biased restraints or standard-state terms","expected_recovery":"Audit definitions, release terms, and conventions"},
+{"id":"FEP-PS10","name":"Free-Energy Result Qualification Agent","problem":"Number reported without reliability evidence","expected_recovery":"Combine overlap, convergence, uncertainty, cycles, and provenance"}
+]

@@ -1,0 +1,33 @@
+{
+  "edge": "17->1h1q",
+  "records": {
+    "a": {
+      "ligand": "a",
+      "tleap_exit": 0,
+      "files": {
+        "complex.prmtop": true,
+        "complex.inpcrd": true,
+        "solvent.prmtop": true,
+        "solvent.inpcrd": true
+      },
+      "status": "PASS"
+    },
+    "b": {
+      "ligand": "b",
+      "tleap_exit": 0,
+      "files": {
+        "complex.prmtop": true,
+        "complex.inpcrd": true,
+        "solvent.prmtop": true,
+        "solvent.inpcrd": true
+      },
+      "status": "PASS"
+    }
+  },
+  "status": "PASS",
+  "scope": "unsolvated Amber endpoint topologies; no water box or lambda simulation",
+  "limitations": [
+    "source-compatible Jaguar charges retained",
+    "solvation, ion composition and alchemical hybrid topology remain separate gates"
+  ]
+}

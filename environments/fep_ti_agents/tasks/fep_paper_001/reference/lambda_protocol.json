@@ -1,0 +1,21 @@
+{
+  "source": "inputs/source_cdk2/Alchaware.cfg",
+  "engine": "OpenMM 7.2",
+  "toolkit": "OpenMMTools Hamiltonian replica exchange",
+  "protein_forcefield": "amber/protein.ff14SB.xml",
+  "ligand_forcefield": "gaff/ffxml/gaff-2.11.xml",
+  "water_model": "tip3p",
+  "ionic_strength_molar": 0.15,
+  "box_padding_nm": 0.9,
+  "sterics_steps": 5,
+  "electrostatics_steps": 5,
+  "sterics_exponent": 2.0,
+  "timestep_fs": 4.0,
+  "steps_per_iteration": 1250,
+  "equilibration_iterations": 50,
+  "production_iterations": 1000,
+  "extension_iterations": 1000,
+  "iterations_per_checkpoint": 100,
+  "legs": ["complex", "solvent"],
+  "replicas": "not specified in source config; requires explicit benchmark decision"
+}

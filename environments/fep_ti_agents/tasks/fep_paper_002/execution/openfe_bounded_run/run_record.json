@@ -1,0 +1,33 @@
+{
+  "status": "EXECUTED_REVIEW",
+  "engine": "OpenFE/OpenMM",
+  "platform": "OpenCL",
+  "gpu_backend": "NVIDIA GeForce RTX 3060 (OpenCL)",
+  "cuda_attempt": "FAILED_NO_REGISTERED_CUDA_PLATFORM",
+  "mapping_atoms": 43,
+  "windows": 3,
+  "repeat": 1,
+  "legs": {
+    "solvent": {
+      "setup_ok": true,
+      "setup_result": "ProtocolUnitResult(HybridTopology Setup: 23477 to 23482 repeat 0 generation 0)",
+      "simulation_ok": true,
+      "simulation_result": "ProtocolUnitResult(HybridTopology Simulation: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_ok": false,
+      "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_diagnosis": "REVIEW: one production sample/window is insufficient for convergence or uncertainty."
+    },
+    "complex": {
+      "setup_ok": true,
+      "setup_result": "ProtocolUnitResult(HybridTopology Setup: 23477 to 23482 repeat 0 generation 0)",
+      "simulation_ok": true,
+      "simulation_result": "ProtocolUnitResult(HybridTopology Simulation: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_ok": false,
+      "analysis_result": "ProtocolUnitFailure(HybridTopology Analysis: 23477 to 23482 repeat 0 generation 0)",
+      "analysis_diagnosis": "REVIEW: one production sample/window is insufficient for convergence or uncertainty."
+    }
+  },
+  "qualification": "REVIEW",
+  "qualification_reason": "Bounded 3-window/1-ps run; insufficient sampling for scientific qualification.",
+  "analysis_diagnosis": "OpenFE analysis did not yield a valid uncertainty estimate for one production sample per window; independent NetCDF evaluator confirms insufficient sampling."
+}

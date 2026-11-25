@@ -1,0 +1,21 @@
+{
+  "task_id": "MD-22",
+  "agent_id": "MD-22",
+  "agent_name": "Model and Checkpoint Discovery",
+  "group": "online",
+  "input": {
+    "fixture": "benchmark/fixtures/records/model_request_langevin_flow_map.json",
+    "parameters": {
+      "framework": "PyTorch",
+      "device": "CUDA",
+      "required": [
+        "checkpoint",
+        "config",
+        "license"
+      ]
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

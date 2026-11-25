@@ -1,0 +1,98 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/tleap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/endpoints/b/tleap.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/amino12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminoct12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminont12.lib
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.phosaa10
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.phosaa10 done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.phosaa10
+Reading force field modification type file (frcmod)
+Reading title:
+Bonded parameters and revised vdW parameters for phosphorylated amino acids.
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/phos_amino94.lib
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+Loading parameters: /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/ligand_parameterization/ligand_b.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Mol2 file: /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/execution/ligand_parameterization/ligand_b_gaff2.mol2
+Reading MOLECULE named LIG
+Loading PDB file: /home/boltzmann15/github/science-environments/environments/fep_paper_reproduction/tasks/fep_paper_001/inputs/source_cdk2/protein.pdb
+ (starting new molecule for chain B)
+  total atoms in file: 9013
+Checking Unit.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-1.999700) is not zero.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 1777 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	2
+	LIG	1
+	NSER	1
+	NVAL	1
+  )
+ (no restraints)
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 13 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	LIG	1
+  )
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 1; Notes = 1.

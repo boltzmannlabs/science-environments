@@ -1,0 +1,49 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/leap_23482.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/leap_23482.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.gaff2 done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+Loading parameters: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+Loading Mol2 file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization/23482.mol2
+Reading MOLECULE named LIG
+Checking 'LIG'....
+Checking parameters for unit 'LIG'.
+Checking for bond parameters.
+Checking for angle parameters.
+Unit is OK.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 13 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	LIG	1
+  )
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.

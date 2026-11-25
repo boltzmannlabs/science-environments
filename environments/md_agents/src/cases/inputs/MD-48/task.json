@@ -1,0 +1,18 @@
+{
+  "task_id": "MD-48",
+  "agent_id": "MD-48",
+  "agent_name": "Statistical Convergence and Uncertainty Specialist",
+  "group": "domain",
+  "input": {
+    "fixture": "benchmark/fixtures/records/replica_observables.csv",
+    "parameters": {
+      "replicas": 4,
+      "observable": "RMSD",
+      "block_ps": 10,
+      "confidence": 0.95
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

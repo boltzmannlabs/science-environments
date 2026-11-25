@@ -1,0 +1,26 @@
+{
+  "configs": {
+    "config_A_reference": {
+      "status": "REVIEW",
+      "reason": "setup is valid/readable; lambda trajectories and scientific qualification are absent",
+      "name": "paper_reference"
+    },
+    "config_B_agent": {
+      "status": "REVIEW",
+      "reason": "setup is valid/readable; lambda trajectories and scientific qualification are absent",
+      "name": "agent_generated"
+    },
+    "config_C_alternative": {
+      "status": "REVIEW",
+      "reason": "RESP alternative is specified but RESP endpoint parameters are not generated",
+      "name": "supported_alternative"
+    },
+    "config_D_perturbed": {
+      "status": "FAIL",
+      "reason": "invalid complex/solvent legs, missing atom mapping, duplicate lambda schedule",
+      "name": "deliberately_perturbed"
+    }
+  },
+  "status": "REVIEW",
+  "scope": "configuration matrix and pre-execution gate; not production FEP"
+}

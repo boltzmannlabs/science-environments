@@ -1,0 +1,22 @@
+{
+  "task_id": "MD-61",
+  "agent_id": "MD-61",
+  "agent_name": "Scientific Validation and Reproducibility Scenarios",
+  "group": "scenario",
+  "input": {
+    "fixture": "benchmark/fixtures/failures/repeat_run_audit.json",
+    "parameters": {
+      "runs": 3,
+      "seeds": [
+        11,
+        12,
+        13
+      ],
+      "observable": "density",
+      "tolerance_percent": 2
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

@@ -1,0 +1,13 @@
+{
+  "fixture": "md_end_to_end_bundle.json",
+  "task_id": "MD-50",
+  "parameters": {
+    "cases": [
+      "valid_water",
+      "nan_energy",
+      "missing_parameter"
+    ],
+    "retry_limit": 1
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}

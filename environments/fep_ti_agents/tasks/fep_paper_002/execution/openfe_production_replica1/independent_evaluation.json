@@ -1,0 +1,39 @@
+{
+  "status": "REVIEW",
+  "legs": {
+    "solvent": {
+      "leg": "solvent",
+      "netcdf": "execution/openfe_production_replica1/solvent/scratch/simulation.nc",
+      "iterations": 11,
+      "replicas": 11,
+      "lambda_windows": 11,
+      "finite_energies": true,
+      "production_samples_per_window": 10,
+      "replica_exchange_acceptance": 0.20510894064613072,
+      "adjacent_overlap_proxy": 0.022881689781569577,
+      "convergence": "INSUFFICIENT_SAMPLES",
+      "uncertainty": "NOT_ESTIMABLE",
+      "qualification": "REVIEW"
+    },
+    "complex": {
+      "leg": "complex",
+      "netcdf": "execution/openfe_production_replica1/complex/scratch/simulation.nc",
+      "iterations": 11,
+      "replicas": 11,
+      "lambda_windows": 11,
+      "finite_energies": true,
+      "production_samples_per_window": 10,
+      "replica_exchange_acceptance": 0.15777610818933133,
+      "adjacent_overlap_proxy": 0.014649758531014898,
+      "convergence": "INSUFFICIENT_SAMPLES",
+      "uncertainty": "NOT_ESTIMABLE",
+      "qualification": "REVIEW"
+    }
+  },
+  "criteria": {
+    "minimum_production_samples": 10,
+    "required_replicas": 3,
+    "required_lambda_windows": 11,
+    "note": "Independent evaluator distinguishes execution from convergence and publication-level qualification."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "MD-52",
+  "agent_id": "MD-52",
+  "agent_name": "Force-Field and Parameterization Failure Scenarios",
+  "group": "scenario",
+  "input": {
+    "fixture": "benchmark/fixtures/structures/ligand_unknown_atomtype.itp",
+    "parameters": {
+      "unknown_type": "CAX",
+      "line": 87,
+      "forcefield": "amber14sb"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

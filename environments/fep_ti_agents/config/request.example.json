@@ -1,0 +1,11 @@
+{
+  "task_id": "FEP01_PTP1B",
+  "paper_reference": "PAPER_REFERENCE.md",
+  "endpoint_a": "inputs/ligand_23477.sdf",
+  "endpoint_b": "inputs/ligand_23482.sdf",
+  "protein": "inputs/ptp1b_2QBS_protein.pdb",
+  "mapping": "agent_generated_or_reference_mapping",
+  "lambda_schedule": "reported_or_explicitly_missing",
+  "estimator": "BAR_or_MBAR",
+  "agent_configurations": ["general", "specialist", "agent_subagent"]
+}

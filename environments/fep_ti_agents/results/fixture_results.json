@@ -1,0 +1,66 @@
+{
+  "benchmark": "fep-ti-fixture-v1",
+  "results": [
+    {
+      "agent_id": "FEP-PS01",
+      "status": "PASS",
+      "evidence": "mapping",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS02",
+      "status": "PASS",
+      "evidence": "endpoint compatibility",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS03",
+      "status": "PASS",
+      "evidence": "lambda schedule",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS04",
+      "status": "REVIEW",
+      "evidence": "phase-space overlap",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS05",
+      "status": "REVIEW",
+      "evidence": "replica convergence",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS06",
+      "status": "PASS",
+      "evidence": "cycle closure",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS07",
+      "status": "PASS",
+      "evidence": "uncertainty/estimator",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS08",
+      "status": "PASS",
+      "evidence": "charge correction",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS09",
+      "status": "PASS",
+      "evidence": "restraints/standard state",
+      "case_id": "FEP-FIXTURE-001"
+    },
+    {
+      "agent_id": "FEP-PS10",
+      "status": "REVIEW",
+      "evidence": "final provenance",
+      "case_id": "FEP-FIXTURE-001"
+    }
+  ],
+  "scope": "fixture validation; no production free-energy engine claim"
+}

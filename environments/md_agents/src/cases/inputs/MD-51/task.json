@@ -1,0 +1,16 @@
+{
+  "task_id": "MD-51",
+  "agent_id": "MD-51",
+  "agent_name": "Molecular System Preparation Scenarios",
+  "group": "scenario",
+  "input": {
+    "fixture": "benchmark/fixtures/structures/malformed_protein_missing_residue.pdb",
+    "parameters": {
+      "missing_residue": "ALA42",
+      "expected_action": "stop_before_simulation"
+    }
+  },
+  "expected_output": "Evidence-backed PASS, REVIEW, or FAIL with exact stop reason and provenance.",
+  "acceptance": "Preserve input and settings; do not fabricate data or silently relax scientific criteria.",
+  "execution_status": "input_packet_materialized; engine execution is case-specific"
+}

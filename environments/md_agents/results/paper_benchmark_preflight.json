@@ -1,0 +1,44 @@
+{
+  "manifest": "benchmark/paper_manifest.json",
+  "cases": [
+    {
+      "case_id": "MD-PAPER-001",
+      "status": "CATALOGUED",
+      "task_files": {
+        "README.md": true,
+        "PAPER_REFERENCE.md": true,
+        "TASK.md": true
+      },
+      "input_exists": true,
+      "input_sha256": "44045e20708f4702f2eef490638ea3e5521f2c72d653b5e90f0958207619367d",
+      "qualification": "REVIEW",
+      "anti_overclaim": "A bounded local run is not paper reproduction."
+    },
+    {
+      "case_id": "MD-PAPER-002",
+      "status": "CATALOGUED",
+      "task_files": {
+        "README.md": true,
+        "PAPER_REFERENCE.md": true,
+        "TASK.md": true
+      },
+      "input_exists": true,
+      "input_sha256": "0076aae54252706a8c8c02f7b1e71ce2394b0e928b413590b4ac12aade9e8f6c",
+      "qualification": "REVIEW",
+      "anti_overclaim": "A bounded local run is not paper reproduction."
+    },
+    {
+      "case_id": "MD-PAPER-003",
+      "status": "CATALOGUED",
+      "task_files": {
+        "README.md": true,
+        "PAPER_REFERENCE.md": true,
+        "TASK.md": true
+      },
+      "input_exists": true,
+      "input_sha256": "df42f1506792f191b957227b061360652adcf6f813eb69d9ec553067ea584670",
+      "qualification": "REVIEW",
+      "anti_overclaim": "A bounded local run is not paper reproduction."
+    }
+  ]
+}

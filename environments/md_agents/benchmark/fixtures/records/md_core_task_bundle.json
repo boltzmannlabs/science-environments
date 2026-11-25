@@ -1,0 +1,15 @@
+{
+  "fixture": "md_core_task_bundle.json",
+  "task_id": "MD-20",
+  "parameters": {
+    "stages": [
+      "validate",
+      "minimize",
+      "equilibrate",
+      "production",
+      "analyze"
+    ],
+    "retry_limit": 1
+  },
+  "provenance": "synthetic diagnostic fixture; not a reference result"
+}

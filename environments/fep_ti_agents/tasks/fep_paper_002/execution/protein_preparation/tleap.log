@@ -1,0 +1,102 @@
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/prep to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/lib to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/parm to search path.
+-I: Adding /home/boltzmann15/anaconda3/dat/leap/cmd to search path.
+-f: Source /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/leap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/leap.in
+----- Source: /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB
+----- Source of /home/boltzmann15/anaconda3/dat/leap/cmd/leaprc.protein.ff14SB done
+Log file: ./leap.log
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /home/boltzmann15/anaconda3/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/amino12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminoct12.lib
+Loading library: /home/boltzmann15/anaconda3/dat/leap/lib/aminont12.lib
+Loading PDB file: /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS_prepared.pdb
+Created a new atom named: 1H within residue: .R<ACE 1>
+Created a new atom named: 2H within residue: .R<ACE 1>
+Created a new atom named: 3H within residue: .R<ACE 1>
+Created a new atom named: H2 within residue: .R<GLU 2>
+  Added missing heavy atom: .R<CASP 298>.A<OXT 13>
+  total atoms in file: 4813
+  Leap added 6 missing atoms according to residue templates:
+       1 Heavy
+       5 H / lone pairs
+  The file contained 4 atoms not in residue templates
+Checking 'P'....
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+FATAL:  Atom .R<ACE 1>.A<1H 7> does not have a type.
+FATAL:  Atom .R<ACE 1>.A<2H 8> does not have a type.
+FATAL:  Atom .R<ACE 1>.A<3H 9> does not have a type.
+FATAL:  Atom .R<GLU 2>.A<H2 16> does not have a type.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.279 angstroms between nonbonded atoms H3 and 1H
+-------  .R<ACE 1>.A<H3 4> and .R<ACE 1>.A<1H 7>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.758 angstroms between nonbonded atoms H3 and 3H
+-------  .R<ACE 1>.A<H3 4> and .R<ACE 1>.A<3H 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.785 angstroms between nonbonded atoms H2 and 2H
+-------  .R<ACE 1>.A<H2 3> and .R<ACE 1>.A<2H 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.254 angstroms between nonbonded atoms H2 and 3H
+-------  .R<ACE 1>.A<H2 3> and .R<ACE 1>.A<3H 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.090 angstroms between nonbonded atoms CH3 and 1H
+-------  .R<ACE 1>.A<CH3 2> and .R<ACE 1>.A<1H 7>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.091 angstroms between nonbonded atoms CH3 and 2H
+-------  .R<ACE 1>.A<CH3 2> and .R<ACE 1>.A<2H 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.091 angstroms between nonbonded atoms CH3 and 3H
+-------  .R<ACE 1>.A<CH3 2> and .R<ACE 1>.A<3H 9>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.757 angstroms between nonbonded atoms H1 and 1H
+-------  .R<ACE 1>.A<H1 1> and .R<ACE 1>.A<1H 7>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.254 angstroms between nonbonded atoms H1 and 2H
+-------  .R<ACE 1>.A<H1 1> and .R<ACE 1>.A<2H 8>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 0.078 angstroms between nonbonded atoms H and H2
+-------  .R<GLU 2>.A<H 2> and .R<GLU 2>.A<H2 16>
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+Close contact of 1.010 angstroms between nonbonded atoms N and H2
+-------  .R<GLU 2>.A<N 1> and .R<GLU 2>.A<H2 16>
+Checking parameters for unit 'P'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Errors:  4   Warnings: 12
+Checking Unit.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Warning!
+The unperturbed charge of the unit (-7.000000) is not zero.
+FATAL:  Atom .R<ACE 1>.A<1H 7> does not have a type.
+FATAL:  Atom .R<ACE 1>.A<2H 8> does not have a type.
+FATAL:  Atom .R<ACE 1>.A<3H 9> does not have a type.
+FATAL:  Atom .R<GLU 2>.A<H2 16> does not have a type.
+
+/home/boltzmann15/anaconda3/bin/teLeap: Fatal Error!
+Failed to generate parameters
+
+Exiting LEaP: Errors = 1; Warnings = 13; Notes = 0.

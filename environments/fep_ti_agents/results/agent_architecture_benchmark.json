@@ -1,0 +1,60 @@
+{
+  "task": "FEP-PAPER-001",
+  "experiments": {
+    "A_general_agent": {
+      "selected_roles": [],
+      "setup_status": "REVIEW",
+      "evidence": "paper reconstruction exists but no specialist tool calls"
+    },
+    "B_specialist_assisted": {
+      "selected_roles": [
+        "FEP-AG01",
+        "FEP-AG02",
+        "FEP-AG03",
+        "FEP-AG04",
+        "FEP-AG05"
+      ],
+      "setup_status": "REVIEW",
+      "evidence": "mapping, parameterization, endpoint and frozen lambda evidence"
+    },
+    "C_orchestrated_with_problem_solving": {
+      "selected_roles": [
+        "FEP-AG01",
+        "FEP-AG02",
+        "FEP-AG03",
+        "FEP-AG04",
+        "FEP-AG05",
+        "FEP-AG06",
+        "FEP-AG07",
+        "FEP-AG08",
+        "FEP-AG09",
+        "FEP-AG10",
+        "FEP-AG11",
+        "FEP-AG12",
+        "FEP-AG13",
+        "FEP-AG14",
+        "FEP-AG15",
+        "FEP-PS01",
+        "FEP-PS02",
+        "FEP-PS03",
+        "FEP-PS04",
+        "FEP-PS05",
+        "FEP-PS06",
+        "FEP-PS07",
+        "FEP-PS08",
+        "FEP-PS09",
+        "FEP-PS10"
+      ],
+      "setup_status": "REVIEW",
+      "evidence": "orchestration and fixture diagnostics recorded; no production trajectories"
+    }
+  },
+  "metrics": {
+    "parameter_extraction_accuracy": "20/20 for evaluated fields",
+    "endpoint_topology": "available",
+    "lambda_trajectories": "missing",
+    "scientific_qualification": "REVIEW"
+  },
+  "interpretation": "This is a harness comparison from recorded evidence, not a claim that 25 autonomous AI agents executed model tool calls.",
+  "status": "REVIEW"
+}

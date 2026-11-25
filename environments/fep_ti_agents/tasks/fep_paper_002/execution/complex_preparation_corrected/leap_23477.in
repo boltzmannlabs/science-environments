@@ -1,0 +1,13 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+LIG = loadmol2 /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization_corrected/23477.mol2
+loadamberparams /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/parameterization_corrected/23477.frcmod
+PROT = loadpdb /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/protein_preparation/ptp1b_2QBS_prepared_nohyd.pdb
+COM = combine { PROT LIG }
+saveamberparm COM /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation_corrected/ptp1b_23477_complex_unsolvated.prmtop /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation_corrected/ptp1b_23477_complex_unsolvated.inpcrd
+solvateBox COM TIP3PBOX 10.0
+addionsRand COM Na+ 9
+saveamberparm COM /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation_corrected/ptp1b_23477_complex_solvated.prmtop /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation_corrected/ptp1b_23477_complex_solvated.inpcrd
+savepdb COM /home/boltzmann15/github/science-environments/environments/fep_ti_agents/tasks/fep_paper_002/execution/complex_preparation_corrected/ptp1b_23477_complex_solvated.pdb
+quit

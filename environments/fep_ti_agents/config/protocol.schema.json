@@ -1,0 +1,1 @@
+{"type":"object","required":["engine","temperature_kelvin","replicas","overlap_threshold","uncertainty_method"],"properties":{"engine":{"type":"string"},"temperature_kelvin":{"type":"number"},"replicas":{"type":"integer","minimum":1},"overlap_threshold":{"type":"number"},"uncertainty_method":{"type":"string"},"standard_state":{"type":"string"}}}
