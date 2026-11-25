@@ -1,0 +1,97 @@
+{
+  "task": "sars_cov2_mpro_hit_prioritisation",
+  "target": {
+    "name": "SARS-CoV-2 main protease (Mpro, nsp5)",
+    "pdb": "6LU7",
+    "chain": "A",
+    "co_crystal_inhibitor": "N3 (native bound pose, defines active site)",
+    "catalytic_dyad": ["CYS145", "HIS164"],
+    "oxyanion_hole": ["GLY143", "MET149"]
+  },
+  "workflow": {
+    "tool": "Vina_basic_docking (AutoDock Vina, rigid-receptor mode)",
+    "job_name": "Vina_basic_docking",
+    "doc_id": "6af701d99030bff4164443dc",
+    "experiment_name": "Molecular Docking - SARS-CoV-2 Mpro (6LU7) - 20261113-122601Z - 92fadb",
+    "justification": "Vina basic docking was selected because (a) the task requires a predicted binding score comparable to reference controls, and Vina produces a quantitative docking score; (b) the co-crystal structure (6LU7 with N3) defines a well-characterized active site, making a rigid-receptor, defined-box approach appropriate; (c) the task explicitly excludes molecular dynamics, so a static docking workflow is the highest-throughput method available in the Boltzmann small-molecule suite. DiffDock (blind docking) was not chosen as primary because it does not produce a Vina energy score and its blind search is less targeted for a well-defined site."
+  },
+  "settings": {
+    "binding_box": {
+      "center": [-10.729, 12.418, 68.816],
+      "radius": 14.121,
+      "derivation": "Centroid of the 49 heavy atoms of the co-crystallized N3 inhibitor; radius = max ligand extent (12.121 A) + 2.0 A padding. Verified independently from inputs/targets/6LU7_N3_ligand_native.pdb."
+    },
+    "exhaustiveness": "16",
+    "upload_sdf": "True",
+    "receptor": "Chain A protein only (2367 ATOM records, 0 HETATM), ligand removed.",
+    "poses_per_ligand": "Up to 10; best (lowest score) pose used for analysis."
+  },
+  "inputs": {
+    "target_pdb": "inputs/targets/6LU7_crystal_complex.pdb (source); prepared/6LU7_protein_chainA.pdb (docking receptor)",
+    "libraries": {
+      "approved_drugs": "inputs/library/approved_drugs.csv + .sdf (281 records)",
+      "ritonavir_derivatives": "inputs/library/ritonavir_derivatives.csv + .sdf (117 records)"
+    },
+    "controls": ["remdesivir (inputs/controls/remdesivir.sdf)", "ritonavir (inputs/controls/ritonavir.sdf)", "N3 co-crystal inhibitor (inputs/targets/6LU7_N3_ligand_native.pdb)"]
+  },
+  "selection_criteria": {
+    "primary": "Vina docking score (lower = stronger predicted binding), compared against controls docked in the same run.",
+    "required_qualifier": "Contact with at least one catalytic-dyad residue (CYS145 or HIS164) for priority selection.",
+    "secondary": "Breadth of active-site engagement (number of distinct residues contacted) and hydrogen-bond count.",
+    "control_bar": "All top-20 candidates score substantially better than both controls (remdesivir -7.664, ritonavir -7.239)."
+  },
+  "reference_use": {
+    "remdesivir": {"vina_score": -7.664, "catalytic_contact": ["CYS145"], "oxyanion_contact": ["GLY143"], "role": "Stronger binding control; clinical reference (primarily NS5 polymerase inhibitor, with some Mpro activity)."},
+    "ritonavir": {"vina_score": -7.239, "catalytic_contact": ["CYS145", "HIS164"], "oxyanion_contact": ["GLY143"], "role": "Known Mpro/HIV-protease inhibitor; the more relevant specificity control. Contacts both catalytic residues."},
+    "n3": {"role": "Co-crystallized active-site inhibitor; defines the binding box and the reference active-site geometry. Not docked (already in native pose)."}
+  },
+  "coverage": {
+    "submitted": 399,
+    "docked_with_score": 399,
+    "candidates": 397,
+    "controls": 2,
+    "excluded_from_docking": 1,
+    "excluded_detail": "DB04421 (approved_drugs) has an empty SMILES field and was excluded before submission (unparseable).",
+    "sdf_pose_gap": 7,
+    "sdf_gap_detail": "7 compounds have a CSV score but no SDF pose file in the returned zip: DB00152, DB00188, DB00355, DB00462, DB00495, DB00558, DB03070. None are in the top-20 shortlist; their scores remain valid from the CSV."
+  },
+  "duplicate_identities": [
+    {"group": ["DB00247", "DB00589"], "library": "approved_drugs", "note": "Identical SMILES, distinct identifiers; both docked independently. Neither in top 20."},
+    {"group": ["DB00270", "DB00343"], "library": "approved_drugs", "note": "Identical SMILES, distinct identifiers. Neither in top 20."},
+    {"group": ["DB01601", "DB001601"], "library": "approved_drugs", "note": "Identical SMILES; mixed identifier casing (DB01601 vs DB001601). Treated as duplicate identity. Neither in top 20."},
+    {"group": ["MOL143", "MOL146"], "library": "ritonavir_derivatives", "note": "Identical SMILES, distinct identifiers. Neither in top 20."}
+  ],
+  "interpretations": [
+    "The co-crystallized N3 inhibitor is in inputs/targets/ (6LU7_N3_ligand_native.pdb), not inputs/controls/ as the task text states; the control_registry.csv confirms it (row: N3,6LU7,C,...).",
+    "Vina scores are computational estimates, not measured binding affinities or experimental inhibition.",
+    "Catalytic-dyad contact (CYS145/HIS164) is used as a specificity qualifier because it is the hallmark of Mpro substrate/inhibitor recognition; a high Vina score without catalytic contact is treated as lower-confidence.",
+    "The 3 final priorities are selected from the top-20 by the composite of score + catalytic engagement + pocket breadth + H-bonds, not by score alone."
+  ],
+  "priorities": {
+    "1": {"compound_id": "DB03363", "vina_score": -9.030, "rationale": "Highest Vina score among candidates with strong catalytic engagement: CYS145 contact, 5 H-bonds, 13 active-site residues."},
+    "2": {"compound_id": "DB04023", "vina_score": -8.521, "rationale": "Most complete active-site engagement in the library: contacts BOTH catalytic residues (CYS145+HIS164), 16 residues, 6 H-bonds; strong score."},
+    "3": {"compound_id": "DB00303", "vina_score": -8.406, "rationale": "Robust balance of binding and engagement: CYS145 contact, 4 H-bonds, 13 residues."}
+  },
+  "failures": [
+    "DB04421 excluded pre-submission (empty SMILES).",
+    "7 compounds returned a CSV score but no SDF pose file (artifact gap, not a scoring failure).",
+    "5 prior unknown-state submissions from earlier attempts remain in the receipt store (no doc_id, untrackable); they were not polled or retried. The current job (6af701d99030bff4164443dc) is the authoritative result."
+  ],
+  "limitations": [
+    "Vina docking scores are estimates; no experimental binding or inhibition data were generated.",
+    "Rigid-receptor docking does not capture receptor flexibility or induced fit.",
+    "The binding box is derived from the N3 co-crystal inhibitor; compounds binding in a different mode or outside this box would be missed.",
+    "No ADMET, solubility, or off-target assessment was performed.",
+    "Docking score does not equal IC50/Ki; the controls' scores are on the same Vina scale, not experimental.",
+    "The SDF pose artifact is incomplete for 7 compounds (scores still valid).",
+    "No molecular dynamics was performed (per task constraint)."
+  ],
+  "evidence": {
+    "docking_results_json": "outputs/6af701d99030bff4164443dc_docking_results.json",
+    "docking_sdf_zip": "outputs/6af701d99030bff4164443dc_docking_sdf.zip",
+    "docking_res_csv": "outputs/6af701d99030bff4164443dc_docking_res.csv",
+    "docking_analysis": "results/docking_analysis.json",
+    "pocket_settings": "results/pocket_settings.json",
+    "ranked_candidates": "ranked_candidates.csv"
+  }
+}
