@@ -4,7 +4,7 @@
 
 Improve a declared property of an existing enzyme while retaining the functional features specified by the task. Produce complete new sequences, candidate-specific scientific evidence, a results-driven optimization round and a final comparison with the parent. This is variant optimization, not mandatory de novo backbone generation.
 
-The same environment serves Agent-Scientist alone and Agent-Scientist with an enzyme proposer and critic. Both approaches must execute the same required capabilities and meet the same evidence requirements. Tools and design strategies may differ.
+The same environment serves Agent-Scientist alone and specialist-assisted execution. New assisted configurations use enzyme-method, enzyme-recovery and enzyme-evaluator 1.2.0 with the enzyme-coordinator skill. Historical proposer/critic results retain their original configuration and attribution. Both approaches must execute the same required capabilities and meet the same evidence requirements. Tools and design strategies may differ.
 
 ## Inputs and task preparation
 
@@ -51,7 +51,7 @@ Both approaches receive the same recovery requirements. The agent chooses correc
 
 ## Specialist contribution
 
-In the assisted approach the parent agent delegates an initial design review and reviews after actual result batches to the native saved proposer and critic. The proposer identifies a supported next experiment; the critic tests the reasoning and recommends an actionable correction. The parent selects and executes the next scientific action using its normal tools.
+For new assisted runs, the main agent delegates planning and result-batch interpretation to enzyme-method, meaningful failures to enzyme-recovery and final sealed evidence to enzyme-evaluator. Method and recovery inspect approved catalog and contract sources directly, including feasible multi-tool routes and their handoff constraints. Use intermediate delivery for reviews followed by another action. The main agent executes authorized requests, retains native receipts and validates actual outputs. A specific unavailable capability keeps the affected requirement open. Independent review is complete only when its own native evaluator assignment returns an artifact-backed result.
 
 Pass explicit permitted task files and result paths or inline observations to each child. Do not provide the other approach's results or held-out outcome files. Specialist tools, permissions, setup, transcripts and budgets remain SCI's responsibility. A saved-subagent definition is not an independent evaluator or a newly trained molecular model. Its advice does not guarantee improvement.
 
@@ -66,7 +66,7 @@ Keep each approach and repeat in its own run directory:
 | `candidate_history.csv` | Parentage, sequence hash, edits, generation tool, batch/round and native evidence paths. |
 | `observations.csv` | Candidate IDs, measurements, units, method settings, uncertainty and native output references. |
 | `structure_evidence/` | Final-candidate structures, chemical/residue mappings and quality/catalytic reports. |
-| `decisions.md` | Reasons for shortlisting and revisions; assisted runs link actual proposer/critic receipts. |
+| `decisions.md` | Reasons for shortlisting and revisions; assisted runs link actual specialist receipts. |
 | `jobs.json` | Native job IDs, submitted payload references, statuses, outputs, failures and unresolved requests. Redact credentials. |
 | `usage.json` | Available model/scientific runtime, queue time, resources, billing units and missing accounting fields. |
 | `selection.csv` | Final `candidate_id,rank,sequence_sha256` rows; exclude the parent and hash before independent evaluation. |
@@ -164,3 +164,7 @@ A version identifies model/settings/resource policies; approaches and repeats re
 ## Task-scoped computational reproductions
 
 Tasks005/006 reproduce declared paper computation stages. Their task files and observed configurations govern scope: full Pythia scans, structure prediction where applicable, ESM-2 scoring, verification, sealing and comparison. They do not inherit the original optimization tasks' docking, MolProbity or revised-generation gates. Experimental stabilized backgrounds are supplied retrospective inputs, not newly performed experiments. Preserve raw scores, signs, unverified settings and excluded/unscored positions; computational completion does not establish exact historical reproduction or improved enzyme performance.
+
+## Native continuation for new runs
+
+Use scripts/launch_task.py to prepare a fresh task and scripts/start_goal.py to queue its native SCI /goal command. Keep goals.max_turns=20. On exhaustion use /goal resume in the original session, retaining accounting and job IDs. Preserve the frozen scientific constraints and approved resource policies. Existing runs use native session and assignment resume rather than fresh launch. New packages and skills load in a fresh conversation snapshot after reviewed installation.

@@ -32,3 +32,9 @@ Operational closure includes unsuccessful and inconclusive outcomes. It does not
 ## Future enhancements
 
 Resolve remaining scientific evidence and exact-reproduction gaps; add further configured runs and experimental results when available.
+
+## Assisted execution update — 25 November 2026
+
+New assisted runs use three reviewed specialist packages at version 1.2.0 and the environment-owned coordinator 1.2.0 skill. The native goal launcher binds task settings, profile, interpreter and workspace before starting SCI, preserves the 20-turn allowance and prevents a second fresh start in the same workspace.
+
+Local validation passed 12 focused tests, 11 actual model-driven specialist fixtures and a controlled synthetic workflow with compatible fallback execution and independent closure review. Historical scientific results retain their original execution settings. New real pipeline launches remain a separate execution decision. See [Agent Scientist PR #127](https://github.com/boltzmannlabs/agent-scientist/pull/127) for the native assignment-resume scope fix and package evidence.
