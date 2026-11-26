@@ -70,7 +70,7 @@ Freeze the primary endpoint, eligibility requirements and tie-breakers before de
 - `candidates.fasta` and `candidate_history.csv`: full parent/variant sequences, edits, hashes, lineage, generation tool/round/settings and native-output references.
 - `observations.csv`: baseline, screening and revised/final measurements with units, chemical-state/settings, uncertainty and evidence paths.
 - `structure_evidence/`: candidate reaction complexes, residue/atom/component mappings and quality/catalytic/mechanistic reports.
-- `decisions.md`: shortlist/revision rationale and actual proposer/critic receipt references in assisted runs.
+- `decisions.md`: shortlist/revision rationale and actual specialist receipt references in assisted runs.
 - `jobs.json` and `usage.json`: submissions, real IDs, statuses, outputs, failed/unknown work and available runtime/resource/cost accounting, without credentials.
 - `selection.csv`: final `candidate_id,rank,sequence_sha256` rows excluding the parent; `selection_seal.json` records the selection hash before independent evaluation.
 - `REPORT.md`: completed/unresolved stages, numerical parent comparison, final candidates or honest shortfall, method compatibility and limitations. A separate evaluator writes `evaluation.json`.
@@ -81,7 +81,7 @@ Freeze the primary endpoint, eligibility requirements and tie-breakers before de
 
 - Scientific source: [SubTuner leverages physics-based modeling to complement AI in enzyme engineering toward non-native substrates](https://doi.org/10.1016/j.checat.2025.101334). This case requires extra chemical preparation; missing advanced resources remain explicit rather than replaced by a different endpoint after seeing results.
 - Do not retrieve published winners, mutation identities or outcome tables, read task benchmark reference values and comparison outcomes, or inspect other-arm results during design. Use permitted primary chemistry sources and record unintended exposure.
-- In agent-alone mode do not delegate. In assisted mode use the reviewed native proposer then critic for bounded initial/result-batch advice; the parent executes tools and counts advisory usage within the same budget.
+- Agent-alone runs do not delegate. New assisted runs use the reviewed enzyme-method, enzyme-recovery and enzyme-evaluator roles under ENVIRONMENT_SPEC.md. The main agent executes scientific tools and includes all specialist calls in cumulative accounting. Historical runs retain their frozen specialist setup.
 - Use SCI's existing discovery, current input contracts, validation, submissions and artifact handling. Do not add another catalogue, approval layer or job runner.
 - Preserve available results and report what remains unresolved.
 - Missing required evidence leaves the workflow unfinished. A complete workflow can report no supported improvement. Computed interaction/reactivity scores are not experimental conversion or kinetic measurements.

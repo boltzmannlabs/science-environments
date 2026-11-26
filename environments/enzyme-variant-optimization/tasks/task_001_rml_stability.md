@@ -70,7 +70,7 @@ Freeze the common final stability endpoint, functional safeguards and tie-breake
 - `candidates.fasta` and `candidate_history.csv`: full parent/variant sequences, edits, hashes, generation tool/round, lineage and output provenance.
 - `observations.csv`: baseline, screening and revised/final measurements with units, settings, uncertainty and native evidence references.
 - `structure_evidence/`: candidate-specific structures and pNPL complexes, mappings, quality findings and catalytic measurements.
-- `decisions.md`: shortlisting/revision rationale and actual proposer/critic receipt references in assisted runs.
+- `decisions.md`: shortlisting/revision rationale and actual specialist receipt references in assisted runs.
 - `jobs.json` and `usage.json`: submissions, real IDs, statuses, outputs, failures/unknowns and available resource/runtime/cost accounting; no credentials.
 - `selection.csv`: final `candidate_id,rank,sequence_sha256` rows excluding the parent, plus `selection_seal.json` before independent evaluation.
 - `REPORT.md`: workflow completion, parent-relative results, final candidates or honest shortfall, trade-offs and limitations. A separate evaluator produces `evaluation.json`.
@@ -81,7 +81,7 @@ Freeze the common final stability endpoint, functional safeguards and tie-breake
 
 - Scientific source: [Computer-Aided Design to Improve the Thermal Stability of Rhizomucor miehei Lipase](https://doi.org/10.3390/foods13244023). Establish source construct/model identity without retrieving winner mutations; the task does not reproduce experimental oil conversion or half-life assays.
 - Do not access published winning sequences/mutations, outcome tables, task benchmark reference values and comparison outcomes or the other approach's results during design. Use permitted primary sources for parent identity and chemistry, and log unintended outcome exposure.
-- Agent-alone runs do not delegate. Assisted runs use the reviewed native proposer then critic for initial/result-batch advice; the parent executes tools and includes advisory calls in the same budget.
+- Agent-alone runs do not delegate. New assisted runs use the reviewed enzyme-method, enzyme-recovery and enzyme-evaluator roles under ENVIRONMENT_SPEC.md. The main agent executes scientific tools and includes all specialist calls in cumulative accounting. Historical runs retain their frozen specialist setup.
 - Use existing SCI discovery, current input contracts and normal execution/artifact handling. No separate registry, approval layer or custom job runner is required.
 - Preserve available results and report what remains unresolved.
 - Missing essential evidence leaves the workflow unfinished. A complete run can report no supported improvement. Computational stability, docking and geometry are not experimental performance.
