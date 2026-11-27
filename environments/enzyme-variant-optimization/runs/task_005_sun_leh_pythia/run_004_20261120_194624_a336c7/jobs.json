@@ -1,0 +1,21 @@
+{
+  "scientific_remote_jobs": [],
+  "local_processes": [
+    {
+      "name": "Pythia C/P complete monomer and dimer scan",
+      "pid": 1149918,
+      "start_utc": "2026-11-20T19:54:34.196528+00:00",
+      "end_utc": "2026-11-20T19:54:36.622030+00:00",
+      "elapsed_seconds": 2.4255139576271176,
+      "state": "completed",
+      "device": "cpu",
+      "threads": 4,
+      "outputs": [
+        "all_scores.csv",
+        "raw_monomer_A.npz",
+        "raw_dimer_AB.npz"
+      ]
+    }
+  ],
+  "preparation": "evidence/preparation.log"
+}

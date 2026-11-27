@@ -1,0 +1,101 @@
+{
+  "created_utc": "2026-11-20T19:53:33.002328+00:00",
+  "assignment_id": "f5113ddd8c0f4be2aa11b9db987a22dc",
+  "mode": "fresh assisted, no other-arm or paper outcome access before seal",
+  "llm": {
+    "provider": "boltzmann_models",
+    "model": "codex",
+    "specialists": [
+      "enzyme-method",
+      "enzyme-recovery",
+      "enzyme-evaluator"
+    ]
+  },
+  "scientific_model": "Pythia C and P source/checkpoints in INPUT_MANIFEST.json",
+  "parent": "Q9ZAG3 exact 149-residue construct, see parent.fasta",
+  "contexts": {
+    "monomer_A": {
+      "file": "contexts/monomer_A.pdb",
+      "sha256": "f9c8b11e0705ab5c6ad2dae45ad6c22b3327631cb9f03c98a04db5c2e007feb7",
+      "n": 145,
+      "counts": {
+        "A": 145
+      },
+      "node_shape": [
+        32,
+        145,
+        28
+      ],
+      "edge_shape": [
+        32,
+        145,
+        27
+      ]
+    },
+    "dimer_AB": {
+      "file": "contexts/dimer_AB.pdb",
+      "sha256": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
+      "n": 291,
+      "counts": {
+        "A": 145,
+        "B": 146
+      },
+      "node_shape": [
+        32,
+        291,
+        28
+      ],
+      "edge_shape": [
+        32,
+        291,
+        27
+      ]
+    }
+  },
+  "features": "original read_pdb_to_protbb and get_neighbor(neighbor=32,noise_level=0,train=False), 1st model, no solvent/heterogens as features, missing pseudo-Cbeta per source; no residue imputation",
+  "settings": {
+    "device": "cpu",
+    "torch_threads": 4,
+    "precision": "float32",
+    "eval": true,
+    "masked": true,
+    "checkpoints_weights_only": true
+  },
+  "score": "-ln(p(mut)/p(wt)); sum=C+P; mean=(C+P)/2; unitless; lower is favorable",
+  "selection": "monomer_A, best nonidentity per native position by ascending sum; lexicographic amino-acid tie; keep if sum strictly < -2; global rank sum then native position then mutant; no retrospective exclusion; separate mean threshold -2 sensitivity and dimer chains separately",
+  "functional_concerns": {
+    "positions": [
+      53,
+      55,
+      99,
+      101,
+      132
+    ],
+    "source": "https://www.ebi.ac.uk/thornton-srv/m-csa/entry/644",
+    "effect": "annotate only; no filtering; qualification unknown"
+  },
+  "coverage": "all 20 canonical residue tokens including identity; nonidentity 19 per supported residue; missing positions retained but unscored",
+  "budget_policy": {
+    "scientific_remote_attempts": 0,
+    "compute": "local CPU only; no additional paid service",
+    "threads": 4,
+    "walltime": "bounded to available interactive session; no arbitrary extension",
+    "tokens": "actual model usage where reported; otherwise unknown",
+    "cost": "actual reported or unknown"
+  },
+  "historical_uncertainties": [
+    "actual published monomer/dimer choice and sum-vs-mean mapping not independently established",
+    "source revision labeled by directory rather than git metadata",
+    "torch 2.4.1, Bio 1.83 and lightning 2.4.0 differ from historical requirements; compatibility checked against current source, not equivalence to historical runtime"
+  ],
+  "dependency_versions": {
+    "python": "3.12.12 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 20:16:04) [GCC 11.2.0]",
+    "torch": "2.4.1+cu121",
+    "numpy": "1.26.4",
+    "biopython": "1.83",
+    "pytorch_lightning": "2.4.0",
+    "torchmetrics": "1.4.2"
+  },
+  "submission": "local foreground inference, no remote jobs",
+  "qualification": "scores do not establish activity or stability"
+}

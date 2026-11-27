@@ -44,7 +44,7 @@ enzyme-variant-optimization/
 - [Sun LEH study — Pythia mutation scoring](results/task_005_sun_leh_pythia/README.md)
 - [Zhang study — cellulase and beta-glucanase scoring](results/task_006_zhang_hydrolases/README.md)
 
-The registry includes 23 native workflow starts: ten historical campaigns, nine later Codex/DiscoveryRSI starts (including interrupted preparation), and four HY4 assisted executions. Native continuation sessions stay within the same logical run. Controlled software fixtures are excluded. All six tasks have specialist-assisted evidence; incomplete starts are never presented as complete scientific results.
+The registry includes 19 scientific workflow records: ten historical campaigns, five later Codex/DiscoveryRSI executions, and four HY4 assisted executions. Preparation-only starts and software fixtures are excluded. Native continuation sessions stay within their original logical run. All six tasks have specialist-assisted evidence.
 
 ## Execution
 

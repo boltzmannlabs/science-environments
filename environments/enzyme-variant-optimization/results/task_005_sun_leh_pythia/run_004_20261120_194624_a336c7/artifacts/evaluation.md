@@ -1,0 +1,9 @@
+# Independent evaluator review (saved specialist)
+
+Specialist: enzyme-evaluator; run ID sa-0-baa2be4e; assignment f5113ddd8c0f4be2aa11b9db987a22dc. Review used exact run artifacts read-only and did not access other approaches or benchmark files.
+
+The evaluator found artifact evidence of a completed supported-coordinate scan: 2,755 monomer and 5,529 dimer nonidentity scores and 436 identity controls; A:1–4 and B:1–3 are unscored. The declared strict C+P sum < -2 selects 33 monomer candidates. D101V and N55I are catalytic-site concerns; no candidate is functionally qualified. The published paper describes averaged models and 35 screened mutations; historical structure/settings and direct numerical agreement are unresolved. The reviewer could not independently execute code, inspect NPZ binaries, or recompute hashes, and therefore relied on recorded checks. The evaluator flagged that the recorded verifier did not independently check candidate IDs against mutation positions and did not check every seal field.
+
+Coordinator follow-up after review: updated independent_verify.py to verify each full sequence against its exact mutation identity and position, and to verify all four seal hashes. The coordinator reran it successfully, reconstructing all 8,720 rows from stored probabilities, checking C/P probabilities against logits, recomputing all 436 best-position calls and the 33 selections, and verifying candidate hashes. The pre-freeze hashes were also independently checked. These coordinator checks address the review's stated gaps but are not represented as checks executed by the specialist.
+
+Neither a checksum seal nor an artifact review proves absence of prior knowledge. Completion of computational inference is distinct from historical reproducibility and biological qualification.

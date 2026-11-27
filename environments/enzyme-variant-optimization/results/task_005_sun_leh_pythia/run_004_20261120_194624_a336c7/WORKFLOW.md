@@ -1,9 +1,12 @@
-# Actual recorded workflow
+# Recorded scientific workflow
 
-Native execution: `20261120_194624_a336c7`.
+The native session executed Pythia scoring before interruption.
 
-Scientific job types observed in native submission order (first occurrence only):
+1. Read the assignment and requested enzyme-method review.
+2. Prepared a pinned local inference environment and input/construct mappings.
+3. Executed `prepare.py`, then `scan.py` to generate mutation scores.
+4. Executed `independent_verify.py` and inspected the score/selection tables.
 
+Native terminal calls 242, 260, 305 and 348 establish the preparation, inference and verification commands. The model response was interrupted afterward. The output tables below are retained evidence; no new calculations were run during export.
 
-
-Retries and tool changes remain within this execution. [Call metadata](../../../runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7/activity.json) preserves the order; it is not a claim that each submitted job succeeded. Original reports and reviews, where available, are under `artifacts/` and `reviews/`.
+[Actual output files](artifacts/) · [Generated runners](../../../src/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7) · [Execution call metadata](../../../runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7/activity.json).

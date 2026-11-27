@@ -1,12 +1,12 @@
-# task_005_sun_leh_pythia — 20261120_194624_a336c7
+# Sun LEH — Codex-assisted scoring execution
 
-| Field | Recorded value |
-|---|---|
-| Approach | agent-with-specialist |
-| Model | codex |
+This session ran the Pythia scan and verification before its conversation was interrupted. It contains scientific outputs and is retained separately from preparation-only attempts.
 
-Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.
+- [Workflow and tools](WORKFLOW.md)
+- [Mutation scores](artifacts/all_scores.csv)
+- [Selected variants](artifacts/selection.csv)
+- [Candidate sequences](artifacts/candidates.fasta)
+- [Execution record](../../../runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7/run.json)
+- [Output provenance](provenance.json)
 
-[Execution record](../../../runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7/run.json) · [Configuration](../../../config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json) · [Actual workflow](WORKFLOW.md) · [Output provenance](provenance.json)
-
-Reports, measurements and review findings are retained under `artifacts/` and `reviews/` where available.
+The files preserve the calculations that occurred. They do not by themselves establish that every requested final review or paper comparison was performed.

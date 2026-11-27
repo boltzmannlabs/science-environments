@@ -1,13 +1,62 @@
 {
-  "task_id": "task_005_sun_leh_pythia",
-  "run_id": "20261120_194624_a336c7",
-  "inputs": [
-    {
-      "logical_name": "1NWW.pdb",
+  "pdb_sha256": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
+  "parent_fasta_sha256": "7d300832b18e4aa088e274e29352e637fa348b45979472f2aa2a628cd5347071",
+  "uniprot_fasta_sha256": "747e2c9e4b3026950f8de33161cff7c181ed965582d4dfd9d392f6758571e027",
+  "residue_map_sha256": "a1715582eb63b393b95688778563cb98bb611ff38ac37497a8da8feb27f5f731",
+  "missing_sha256": "ea0572135fe8171f84b917ccd360e1b85aafcd257b9f944f45d39c332e0b9f84",
+  "source_revision_claim": "e1943402092295ae96cde0c93073ddc933ffc433 (directory name; no .git metadata, not independently verified)",
+  "source_files_sha256": {
+    "pythia/masked_ddg_scan.py": "8c7aaf054fc88ff2d0458c7095e1497d8c20414304b7ecd267f1414adfc0aa5c",
+    "pythia/pdb_utils.py": "a5a8b756d9c1f07842cf9376cb27779861ede46dd5ba7e9245a36711b1b44234",
+    "pythia/model.py": "1079d1f58ec06e72d7689b6f1c18cb6e99c05b6be2706f495d6b8872f4602e37",
+    "requirements.txt": "72ff6ce0cc437375c2d4f99b24047dfd072982ef4a809d09624aa8ddfaf74e3b",
+    "pyproject.toml": "90bdb45e205a96041cdeab6b71e134284dfd393b9f3afc6b21723ed3212775fe",
+    "pythia/pythia-c.pt": "3cbfbfcc449ff810e662b3ae5e1ecc0f8636a62b92d10722b00a1931147f93af",
+    "pythia/pythia-p.pt": "17523c65b0b8a36ec16dfa15d1e56154ead3394f907a189bc48d0bc9f7168b81"
+  },
+  "contexts": {
+    "monomer_A": {
+      "file": "contexts/monomer_A.pdb",
+      "sha256": "f9c8b11e0705ab5c6ad2dae45ad6c22b3327631cb9f03c98a04db5c2e007feb7",
+      "n": 145,
+      "counts": {
+        "A": 145
+      },
+      "node_shape": [
+        32,
+        145,
+        28
+      ],
+      "edge_shape": [
+        32,
+        145,
+        27
+      ]
+    },
+    "dimer_AB": {
+      "file": "contexts/dimer_AB.pdb",
       "sha256": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
-      "source": "retained_original_run_archive",
-      "availability": "Original private evidence retained; not included in this public export."
+      "n": 291,
+      "counts": {
+        "A": 145,
+        "B": 146
+      },
+      "node_shape": [
+        32,
+        291,
+        28
+      ],
+      "edge_shape": [
+        32,
+        291,
+        27
+      ]
     }
+  },
+  "source_urls": [
+    "https://www.rcsb.org/structure/1NWW",
+    "https://rest.uniprot.org/uniprotkb/Q9ZAG3.fasta",
+    "https://www.ebi.ac.uk/thornton-srv/m-csa/entry/644"
   ],
-  "coverage": "Hash references recovered from available original workspace inputs; not an assertion that every original input has been reconstructed."
+  "identity": "SEQRES A and B equal UniProt Q9ZAG3 exactly; all observed standard residues match same 1-based position. PDB DBREF says UniProt 0..148 but is inconsistent with exact sequence and M-CSA annotation; index by sequence alignment and PDB numbering."
 }

@@ -1,0 +1,22 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261120_194624_a336c7",
+  "files": [
+    {
+      "path": "prepare.py",
+      "original_sha256": "8487acb63f715d1bcc52a06932230e8410882b1ada41ac45e2b7bec1c73ce9be",
+      "export_sha256": "acb5d599e2518ef4f5cd2fbd69301e36e2dd67daafdc82571c5c7089b7330936"
+    },
+    {
+      "path": "scan.py",
+      "original_sha256": "b56c9ce0c41561e952ba9e6003f7ca699ea7587145c7917c4a8db3061db62fff",
+      "export_sha256": "7a9eb37241060e4f9699406b91515a712c546a3f35a315b05a5206c2e2ee098a"
+    },
+    {
+      "path": "independent_verify.py",
+      "original_sha256": "c83ffefb9901ef646c10ad49aa10a10d352fcff251c7c596e77f60e59979677e",
+      "export_sha256": "c83ffefb9901ef646c10ad49aa10a10d352fcff251c7c596e77f60e59979677e"
+    }
+  ],
+  "note": "Native history confirms execution of scan.py and independent_verify.py in this session. Internal absolute paths are sanitized; no new inference executed by this export."
+}
