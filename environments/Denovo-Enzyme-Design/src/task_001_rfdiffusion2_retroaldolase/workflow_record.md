@@ -14,13 +14,13 @@ It does NOT specify a procedure for generating or modifying protein sequences an
 |----------|------|
 | Task definition | `tasks/task_001_rfdiffusion2_retroaldolase.md` |
 | Benchmark notes | `benchmark/task_001_rfdiffusion2_retroaldolase.md` |
-| Benchmark material & figures | `BM/task_001_rfdiffusion2_retroaldolase/` |
-| Aggregate metrics | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/metrics.csv` |
-| Run report | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md` |
-| Benchmark comparison | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/benchmark_comparison.csv` |
-| Shortlist | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/shortlist.csv` |
-| Candidate properties | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/candidate_properties.json` |
-| SHA-256 manifest | `Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sha256_manifest.json` |
+| Benchmark material & figures | `benchmark/task_001_rfdiffusion2_retroaldolase/` |
+| Aggregate metrics | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/metrics.csv` |
+| Run report | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md` |
+| Benchmark comparison | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/benchmark_comparison.csv` |
+| Shortlist | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/shortlist.csv` |
+| Candidate properties | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/candidate_properties.json` |
+| SHA-256 manifest | `results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sha256_manifest.json` |
 | Run config (this record) | `config/task_001_rfdiffusion2_retroaldolase/run_record.json` |
 
 ## Excluded from this package

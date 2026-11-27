@@ -32,4 +32,4 @@ Workflow: catalytic theozyme → RFdiffusion2 scaffold generation → LigandMPNN
 
 ## Saved workflow results
 
-See [comparison.md](comparison.md) and [the Results report](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md).
+See [comparison.md](comparison.md) and [the results report](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md).
