@@ -67,9 +67,11 @@ def check_files():
     need = ["README.md", "ENVIRONMENT_SPEC.md", "STATUS.md", "MODELS_AND_TOOLS.md",
             "config/environment.yaml", "config/requirement_brief.schema.json",
             "config/candidate.schema.json", "config/thresholds.v0.1.draft.json",
-            "runtime/CONTRACTS.md", "runtime/probe_backends.py",
+            "src/CONTRACTS.md", "src/probe_backends.py",
             "tasks/README.md", "tests/ACCEPTANCE.md",
-            "benchmark/README.md", "benchmark/BENCHMARK_RUNS.md", "results/README.md"]
+            "benchmark/README.md", "benchmark/BENCHMARK_RUNS.md", "results/README.md",
+            "scripts/README.md", "results/HISTORY.md", "results/benchmarks/README.md",
+            "results/benchmarks/PROVENANCE.json", "results/benchmarks/PROVENANCE.sha256"]
     missing = [p for p in need if not os.path.isfile(os.path.join(ENV, p))]
     if missing:
         raise AssertionError(f"missing core files: {missing}")
@@ -237,8 +239,9 @@ def check_thresholds():
 # ==================== 7. cross-references ====================
 def check_cross_references():
     docs = ["README.md", "ENVIRONMENT_SPEC.md", "STATUS.md", "MODELS_AND_TOOLS.md",
-            "runtime/CONTRACTS.md", "tests/ACCEPTANCE.md", "benchmark/README.md",
-            "benchmark/BENCHMARK_RUNS.md", "results/README.md", "tasks/README.md"] + \
+            "src/CONTRACTS.md", "tests/ACCEPTANCE.md", "benchmark/README.md",
+            "benchmark/BENCHMARK_RUNS.md", "results/README.md", "tasks/README.md",
+            "scripts/README.md", "results/HISTORY.md", "results/benchmarks/README.md"] + \
            [os.path.join("tasks", t) for t in TASK_FILES]
     link_re = re.compile(r"\]\(([^)#]+?)(?:#[^)]*)?\)")
     broken = []
@@ -269,6 +272,14 @@ def check_benchmark_docs():
     for row in ledger:
         if not os.path.isfile(os.path.join(ENV, row["report"])):
             raise AssertionError(f"missing completed report: {row['model']}")
+        parts = row["report"].split("/")
+        if (len(parts) != 5 or parts[:2] != ["results", "benchmarks"]
+                or parts[3] != row["run_id"] or parts[4] != "REPORT.md"):
+            raise AssertionError(f"benchmark report outside standard results layout: {row['report']}")
+        if not re.fullmatch(r"Run-[1-9]\d*_\d{4}-\d{2}-\d{2}", row["run_id"]):
+            raise AssertionError(f"invalid benchmark run name: {row['run_id']}")
+        if not os.path.isfile(os.path.join(ENV, "benchmark", parts[2], "README.md")):
+            raise AssertionError(f"missing benchmark definition: {parts[2]}")
         if row.get("heuristic_or_surrogate_scores_added") is not False:
             raise AssertionError(f"surrogate/heuristic score admitted: {row['model']}")
     for marker in ["NOT_EXECUTED", "Future slot", "BLOCKED_MATCHED"]:
@@ -291,14 +302,14 @@ def check_honesty():
         raise AssertionError("README missing maturity statement")
     results_dir = os.path.join(ENV, "results")
     run_dirs = [d for d in os.listdir(results_dir)
-                if os.path.isdir(os.path.join(results_dir, d))]
+                if os.path.isdir(os.path.join(results_dir, d)) and d != "benchmarks"]
     for d in run_dirs:
         if not re.match(r"^\d{3}_", d):
             raise AssertionError(f"results/ run dir not number-first: {d}")
         runs = os.listdir(os.path.join(results_dir, d))
         for rd in runs:
-            if not rd.startswith("Run"):
-                raise AssertionError(f"run dir not Run-prefixed: {d}/{rd}")
+            if not re.fullmatch(r"Run-[1-9]\d*_\d{4}-\d{2}-\d{2}", rd):
+                raise AssertionError(f"run dir must use Run-<number>_<YYYY-MM-DD>: {d}/{rd}")
             brief = os.path.join(results_dir, d, rd, "00_inputs", "requirement_brief.json")
             if not os.path.isfile(brief):
                 raise AssertionError(f"run without hashed brief: {d}/{rd}")
@@ -307,7 +318,7 @@ def check_honesty():
 
 # ==================== 10. runtime probe ====================
 def check_runtime_probe():
-    src = os.path.join(ENV, "runtime", "probe_backends.py")
+    src = os.path.join(ENV, "src", "probe_backends.py")
     spec_ = importlib.util.spec_from_file_location("probe_backends", src)
     mod = importlib.util.module_from_spec(spec_)
     spec_.loader.exec_module(mod)

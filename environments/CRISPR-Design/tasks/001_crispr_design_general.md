@@ -82,7 +82,7 @@ layers on top):
 - Licenses bind use: CRISOT (CC BY-NC 2.0) research-internal only; no-license repos
   (DeepBE, yachielab, Cas13design mirror) never redistributed; research-use portals
   (deepcrispr.info, pridict.it) provenance-only; third-party weights never shipped.
-- Backend liveness probed before every run (`runtime/probe_backends.py`); absolute-path
+- Backend liveness probed before every run (`src/probe_backends.py`); absolute-path
   invocation; fresh run directories; inputs read-only; provenance block mandatory.
 
 **Scope gates**
@@ -116,16 +116,16 @@ dependent claims.
 
 ## Important Instructions
 
-- **Runtime is partial:** task 002's knockout stack has executed end-to-end (Run1,
-  2026-11-10 — see [runtime contracts](../runtime/CONTRACTS.md)); other modality adapters
+- **Runtime is partial:** task 002's knockout stack has executed end-to-end (Run-1,
+  2026-11-10 — see [runtime contracts](../src/CONTRACTS.md)); other modality adapters
   land in later phases. Execute this routing contract against the verified local backends
   with explicit `NOT_IMPLEMENTED` marks for absent adapters; never fake a stage.
 - **Executed evidence (local):** shared component benchmarks — [RS3 Sequence held-out
-  activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
-  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md);
+  activity](../results/benchmarks/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../results/benchmarks/002_CRISPRon/Run-4_2026-11-12/REPORT.md);
   result record [results/001_general/Run-2](../results/001_general/Run-2_2026-11-12/REPORT.md);
   historical Run-2/Run-3 comparisons in
-  [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/001_general-routing/Run-3_2026-11-12/README.md).
+  [execution_history; archive unavailable](../results/HISTORY.md).
   These are endpoint-level model benchmarks, not routing validation: no labeled
   modality-routing corpus exists and no complete all-mode workflow has been validated.
 - **Honesty rules:** shared component benchmarks are not independent task replications;

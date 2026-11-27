@@ -92,10 +92,10 @@ stay computational.
   Pérez 2021 / Álvarez 2022 (confound literature), GuideScan2 (multi-locus-binding
   exclusion — citation UNVERIFIED, curated-only).
 - **Executed evidence (local):** [RS3 Sequence held-out
-  activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
-  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md) —
+  activity](../results/benchmarks/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../results/benchmarks/002_CRISPRon/Run-4_2026-11-12/REPORT.md) —
   shared Cas9 guide-level and within-gene rank-loss evidence; supplemental
-  explicitly-defined nDCG retained ([Run-3 comparison, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/011_library-screen-design/Run-3_2026-11-12/README.md)).
+  explicitly-defined nDCG retained ([Run-3 comparison, execution_history; archive unavailable](../results/HISTORY.md)).
   Result record [Run-2](../results/011_library_screen_design/Run-2_2026-11-12/REPORT.md).
 - **Gaps:** no library-level essential-gene detection, enrichment, screen-power or
   target-diversity validation; shared guides are not independent task benchmarks;

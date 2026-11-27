@@ -1,5 +1,12 @@
 __pycache__/
 *.pyc
-results/*
-!results/README.md
-!results/.gitkeep
+# Keep lightweight evidence in Git; raw task outputs and reference assets stay local.
+results/[0-9][0-9][0-9]_*/Run-*/*
+!results/[0-9][0-9][0-9]_*/Run-*/REPORT.md
+!results/[0-9][0-9][0-9]_*/Run-*/provenance.json
+!results/[0-9][0-9][0-9]_*/Run-*/large_artifact_index.json
+!results/[0-9][0-9][0-9]_*/Run-*/run_record_stage1.json
+!results/[0-9][0-9][0-9]_*/Run-*/00_inputs/
+results/[0-9][0-9][0-9]_*/Run-*/00_inputs/*
+!results/[0-9][0-9][0-9]_*/Run-*/00_inputs/requirement_brief.json
+!results/[0-9][0-9][0-9]_*/Run-*/00_inputs/thresholds.json

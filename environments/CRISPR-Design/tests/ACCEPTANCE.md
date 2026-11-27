@@ -1,11 +1,11 @@
 # Acceptance and validation plan
 
 Three validation layers: package validation (structure/links/schemas), executed-run
-validation (Run1 artifacts), and completed-benchmark publication integrity. Active
+validation (Run-1 artifacts), and completed-benchmark publication integrity. Active
 benchmark evidence is the [completed-only registry](../benchmark/BENCHMARK_RUNS.md) —
 seven completed native-model/endpoint evaluations; model benchmarks do not establish
-full design-application validation, and older mixed evidence is retained as
-[execution history](../execution_history/before_completed_only_20261112T061830Z/README.md).
+full design-application validation, and the older mixed-evidence archive is
+[unavailable in this checkout](../results/HISTORY.md).
 
 ## Specification-package checks
 
@@ -22,7 +22,7 @@ records actual results to [validation.json](validation.json):
 | 6 | `thresholds` | draft gates carry provenance from the declared set; version is 0.1-draft; no_freeze_without calibration list present |
 | 7 | `cross_references` | every relative markdown/JSON link in README, ENVIRONMENT_SPEC, MODELS_AND_TOOLS, tasks, benchmark docs resolves to a real file |
 | 8 | `benchmark_docs` | completed-only registry: completed_benchmarks.json has 7 COMPLETED entries, each report present, no heuristic/surrogate scores, no partial/planning placeholders in benchmark/README or BENCHMARK_RUNS |
-| 9 | `honesty_markers` | README/STATUS/spec carry the maturity and boundary statements (partial workflows + executed model benchmarks; no wet-lab validation); results/ run dirs are Run-prefixed with hashed briefs |
+| 9 | `honesty_markers` | README/STATUS/spec carry the maturity and boundary statements (partial workflows + executed model benchmarks; no wet-lab validation); task run dirs use Run-<number>_<YYYY-MM-DD> with actual briefs; benchmark outputs are separate under results/benchmarks/ |
 | 10 | `runtime_probe` | probe_backends.py parses, BACKENDS map non-empty, stage dependency map consistent; probe runs without exception (findings are data) |
 
 These checks validate **this specification package** on structural fixtures only. They
@@ -32,18 +32,18 @@ efficacy.
 ## Runtime behavior tests
 
 - **Executed-run validation:** `python3 tests/test_first_run.py [run_dir]` validates the
-  Run1 task-002 artifacts — structure, coordinate integrity (independent re-extraction),
+  Run-1 task-002 artifacts — structure, coordinate integrity (independent re-extraction),
   scorer determinism, the Lindel regression anchor, off-target positive/negative
   controls, cross-endpoint sanity, DRAFT-gate conformance and provenance. Current state:
   stage-1 checks pass (coordinate integrity, Lindel anchor, cross-endpoint sanity); the
   stage-2-dependent checks fail on file presence because the stage-2 outputs were not
-  retained in the repo copy (see [runtime contracts](../runtime/CONTRACTS.md)).
-- **Liveness probe:** `python3 runtime/probe_backends.py` reports backend presence,
+  retained in the repo copy (see [runtime contracts](../src/CONTRACTS.md)).
+- **Liveness probe:** `python3 src/probe_backends.py` reports backend presence,
   never scores; run before every execution.
 - **Publication integrity:** `python3 tests/test_completed_benchmarks.py` (requires
   pandas/scipy/sklearn and the indexed source data roots) — completed-only scope,
   copied-artifact hashes, fresh-native-inference verification, independent metric
-  recomputation, active-link resolution and archived-history preservation; results to
+  recomputation, active-link resolution and archived-history preservation. Source-copy verification and archive checks fail because the archive and three indexed source files within it are absent; results to
   [completed_benchmarks_validation.json](completed_benchmarks_validation.json).
 
 ## Scientific validation status
@@ -53,7 +53,7 @@ efficacy.
   ([research notes](../../../research/CRISPR-Design/research-notes.md)).
 - **Local backend evidence** — inherited from the prior KIF11 CRISPR-KO run (crisprScore
   stack installed; Lindel interface test PASS; Bowtie/GRCh38 index built), re-probed on
-  demand by `runtime/probe_backends.py`; first end-to-end execution recorded in Run1.
+  demand by `src/probe_backends.py`; first end-to-end execution recorded in Run-1.
 - **Executed benchmarks are endpoint-level** — the completed-only registry validates
   model endpoints on public measured labels; it does not validate any full design
   application, and no wet-lab validation exists. Unexecuted evaluation slots remain

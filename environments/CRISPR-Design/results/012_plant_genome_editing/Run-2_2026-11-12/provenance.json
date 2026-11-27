@@ -1,0 +1,39 @@
+{
+  "task_id": "012",
+  "task_spec": "tasks/012_crispr_plant-editing.md",
+  "application": "plant_genome_editing",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "AUDIT_ONLY_INACTIVE",
+  "benchmark_status": "PLANT_ASSAY_MATCHED_AUTHOR_SCORE_REPLAY",
+  "finding": "52 N.benthamiana guides across20/32-guide cohorts; author model scores replayed against actual plant mean InDel measurements.",
+  "limitations": "Not fresh inference or species adapter validation; plant DESIGN remains inactive. No mammalian phenotype used as surrogate.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/012",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "012",
+    "brief_id": "plant_example_inactive",
+    "application": "plant_genome_editing",
+    "target": "EXAMPLE-ONLY",
+    "input_sha256": "ddb50b8b89847a7970115e8c936cc9475578b8d9c7d9f71ee0be3b91c789dd38",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "scope": "EXECUTED inactive plant profile refusal"
+    },
+    "blockers": [],
+    "test_input": {
+      "mode": "audit",
+      "species": "Oryza sativa",
+      "target": "EXAMPLE-ONLY",
+      "execution": "inactive-profile gate test; no design model substitution"
+    },
+    "test_input_sha256": "e0bf3e0920ae7685cd91d7c8d82098425565852087dabde7de62b5942736f06b",
+    "status": "AUDIT_COMPLETED_INACTIVE"
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

@@ -104,10 +104,10 @@ probabilities across differently configured models.
   DeepBE (63 editors), BEDICT2.0 (R 0.60–0.94). **No neutral BE benchmark exists** —
   cross-tool claims self-reported.
 - **Executed evidence (local):** [BE-Hive BE4 any-edit
-  efficiency](../benchmark/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) — HEK293T/BE4
+  efficiency](../results/benchmarks/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) — HEK293T/BE4
   external library, n=9,975; Spearman 0.165766, Pearson 0.176357; conservative
   known-training-20mer/31-nt exclusions. Result record [Run-2](../results/005_base_editing/Run-2_2026-11-12/REPORT.md);
-  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/005_base-editing/Run-3_2026-11-12/README.md).
+  historical Run-2/Run-3 comparisons in [execution_history; archive unavailable](../results/HISTORY.md).
 - **Gaps:** weak transfer performance — do not use as a validated BE4max
   correction/purity ranker; bystander-genotype held-out evaluation NOT_RUN; unexecuted
   evaluation slots stay `NOT_EXECUTED`.

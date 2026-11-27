@@ -7,13 +7,13 @@ benchmark is not validation of the full design application or experimental safet
 
 | ID | Model | Run | Report |
 | --- | --- | --- | --- |
-| 001 | RS3 Sequence held-out activity | Run-4_2026-11-12 | [Results](001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) |
-| 002 | CRISPRon v1 external activity | Run-4_2026-11-12 | [Results](002_CRISPRon/Run-4_2026-11-12/REPORT.md) |
-| 003 | CFD2016 experimentally assayed specificity | Run-4_2026-11-12 | [Results](003_CFD2016/Run-4_2026-11-12/REPORT.md) |
-| 004 | BE-Hive BE4 any-edit efficiency | Run-4_2026-11-12 | [Results](004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) |
-| 005 | PRIDICT2.0 published grouped OOF outcomes | Run-4_2026-11-12 | [Results](005_PRIDICT2/Run-4_2026-11-12/REPORT.md) |
-| 006 | DeepPrime base fixed test | Run-4_2026-11-12 | [Results](006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) |
-| 007 | RFcombined published-method refit evaluation | Run-4_2026-11-12 | [Results](007_RFcombined/Run-4_2026-11-12/REPORT.md) |
+| 001 | RS3 Sequence held-out activity | Run-4_2026-11-12 | [Results](../results/benchmarks/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) |
+| 002 | CRISPRon v1 external activity | Run-4_2026-11-12 | [Results](../results/benchmarks/002_CRISPRon/Run-4_2026-11-12/REPORT.md) |
+| 003 | CFD2016 experimentally assayed specificity | Run-4_2026-11-12 | [Results](../results/benchmarks/003_CFD2016/Run-4_2026-11-12/REPORT.md) |
+| 004 | BE-Hive BE4 any-edit efficiency | Run-4_2026-11-12 | [Results](../results/benchmarks/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) |
+| 005 | PRIDICT2.0 published grouped OOF outcomes | Run-4_2026-11-12 | [Results](../results/benchmarks/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) |
+| 006 | DeepPrime base fixed test | Run-4_2026-11-12 | [Results](../results/benchmarks/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) |
+| 007 | RFcombined published-method refit evaluation | Run-4_2026-11-12 | [Results](../results/benchmarks/007_RFcombined/Run-4_2026-11-12/REPORT.md) |
 
 ## Per-benchmark scope and limitations
 
@@ -73,7 +73,7 @@ execution retained, not rerun in this retry.
 ## Governance
 
 Exact input/model manifests are inside each completed run; all copied scientific files
-are bound by [PROVENANCE.json](PROVENANCE.json)/[PROVENANCE.sha256](PROVENANCE.sha256).
+are bound by [PROVENANCE.json](../results/benchmarks/PROVENANCE.json)/[PROVENANCE.sha256](../results/benchmarks/PROVENANCE.sha256).
 Large datasets, weights and environments remain at indexed source locations. Integrity
 is machine-checked by [tests/test_completed_benchmarks.py](../tests/test_completed_benchmarks.py)
 (scope, hashes, fresh-inference verification, metric recomputation, link resolution).

@@ -18,20 +18,20 @@ executed benchmark 2026-11-10; completed-only benchmark registry published 2026-
   machine-checked ([tests/test_completed_benchmarks.py](tests/test_completed_benchmarks.py)
   → [completed_benchmarks_validation.json](tests/completed_benchmarks_validation.json)).
 - **Per-task records (Run-2_2026-11-12):** all 13 tasks have hash-bound result records
-  (brief + provenance + REPORT) under `results/00N_<application>/`, plus archived
-  Run-2/Run-3 benchmark comparisons in
-  [execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+  (brief + provenance + REPORT) under `results/00N_<application>/`, while the older
+  Run-2/Run-3 benchmark comparison archive is
+  [absent from this checkout](results/HISTORY.md).
   Evidence classes are stated per task (fresh component evaluation · matched model
   components · author-score replay · component-only test · blocked endpoint); the
-  [historical campaign report](execution_history/before_completed_only_20261112T061830Z/benchmark/000_Protocol-reproduction/Run-2_2026-11-12/REPORT.md)
-  and [coverage matrix](execution_history/before_completed_only_20261112T061830Z/benchmark/000_Protocol-reproduction/Run-2_2026-11-12/modality_performance_coverage_matrix.csv)
-  describe that pre-reorganization campaign.
-- **Runtime phase (2026-11-10, first executed):** task-002 Run1 executed end-to-end —
+  [historical campaign report](results/HISTORY.md)
+  and [coverage matrix](results/HISTORY.md)
+  are unavailable here; those links explain the missing historical evidence.
+- **Runtime phase (2026-11-10, first executed):** task-002 Run-1 executed end-to-end —
   8,421 windows enumerated, 227 coding-valid scored on **6 endpoints** (RuleSet1,
   RuleSet3-Sequence-Hsu2013, CRISPRater, CRISPRscan-T7-context, **CRISPRon**, Lindel
   frameshift); GRCh38 Bowtie-1.3.1 index rebuilt; off-target + CFD + DRAFT gates +
   R2/R3 ranking. Retained artifacts cover stage-1; the stage-2 outputs were not
-  retained in the repo copy (noted in [runtime contracts](runtime/CONTRACTS.md)), so
+  retained in the repo copy (noted in [runtime contracts](src/CONTRACTS.md)), so
   `tests/test_first_run.py` passes its stage-1 checks (coordinate integrity, Lindel
   regression anchor 0.798, cross-endpoint sanity) and fails the stage-2-dependent
   checks on file presence — regenerate by rerunning `run_002_specificity.R`.
@@ -44,8 +44,8 @@ executed benchmark 2026-11-10; completed-only benchmark registry published 2026-
   evaluation — RS3 **0.516 [0.500–0.530]**, CRISPRon 0.504 [0.489–0.519] (exposed), RS1
   0.222, CRISPRater 0.091 vs **D8/D10 assay concordance 0.615 (not a predictor
   ceiling)**; blind label join; no tuning; methodology correction documented (GEO
-  read-count columns ≠ editing rates) — archived under
-  [execution_history](execution_history/before_completed_only_20261112T061830Z/benchmark/001_Xiang2021-clean-evaluation/README.md).
+  read-count columns ≠ editing rates) — historical report
+  [unavailable in this checkout](results/HISTORY.md).
 - **Curation (2026-11-10):** three-sweep source-verified tool/benchmark curation
   (on-target nucleases · precision editing & regulation · specificity/Cas13/diagnostics/
   libraries) with per-URL primary-source verification; 34-tool registry with licenses,
@@ -66,15 +66,14 @@ executed benchmark 2026-11-10; completed-only benchmark registry published 2026-
   crisprDesign/crisprScore installed with frozen R library; Lindel backend interface
   test PASS (0.798); Bowtie 1.3.1 with checksum-verified GRCh38.p14 index; GENCODE 49;
   transcript/CDS validation pipeline; documented off-target policy v1.0.
-  `runtime/probe_backends.py` re-checks presence on demand.
+  `src/probe_backends.py` re-checks presence on demand.
 - **Package validation:** `tests/validate_spec.py` (stdlib) — files/links, task house
   structure, schema well-formedness, example-brief schema conformance, YAML invariants,
   benchmark-doc structure, results-tree conventions. See
   [tests/validation.json](tests/validation.json).
-- **Reorganization (2026-11-12):** benchmark/ restricted to completed-only evidence;
-  269 prior mixed files preserved byte-identically under `execution_history/`
-  ([inventory](execution_history/before_completed_only_20261112T061830Z/archive_inventory.json));
-  raw original scientific sources unchanged.
+- **Historical reorganization (2026-11-12):** prior documentation recorded 269 mixed
+  benchmark files under `execution_history/`. That archive and its inventory are
+  absent in this checkout; preservation is [unverified here](results/HISTORY.md).
 
 ## Not established
 
@@ -93,7 +92,7 @@ all stated as limitations in the registry and task files.
 1. Runtime phase: backend adapters + ranking implementation (R1–R3) + explorer loop (X1–X5).
 2. Threshold calibration on Kim-2019 held-out + Konstantakos 6-disjoint-set data → gate freeze v1.0.
 3. Remaining benchmark arms (pre-registered plan in
-   [execution_history](execution_history/before_completed_only_20261112T061830Z/benchmark/BENCHMARK_RUNS.md)):
+   [historical plan; archive unavailable](results/HISTORY.md)):
    CFD-vs-Elevation on CHANGE-seq; BEDICT2.0/DeepBE on BE-dataHIVE held-out editors;
    PRIDICT2.0 self-hosted CLI on Mathis held-out.
 4. Bulge-aware + VCF-aware off-target layer (CRISPRitz/CRISPRme install decision;
@@ -102,3 +101,23 @@ all stated as limitations in the registry and task files.
 6. Cas12a decision: Kim-2018 model via crisprScore vs Luo-2019 R package.
 7. Diagnostics EasyDesign replay fix (nonnumeric dash tokens) before any diagnostic
    benchmark claim; epigenetic endpoint unblocking (labels + adapter).
+
+## Repository structure update — 2026-11-27
+
+- Benchmark definitions and evaluation limits remain in `benchmark/`; the seven
+  completed execution packages and hash manifests moved to `results/benchmarks/`.
+- Original inference scripts moved to `scripts/benchmarks/`. All 48 hash-bound copied
+  scientific artifacts retain their original SHA-256 digests and source handles.
+- Run names use `Run-<number>_<YYYY-MM-DD>`: `Run1_20261110` became
+  `Run-1_2026-11-10`; existing Run-2 and Run-4 campaign identifiers are retained.
+- Documentation, test defaults and backend-probe references now use `src/`.
+  Lightweight task evidence is eligible for Git tracking; large local outputs,
+  references and runtime assets remain ignored.
+- Technical validation: package checks pass 10/10. Benchmark integrity records the
+  available artifact, inference-record, metric and link checks separately from the
+  failed source-copy verification and historical-archive checks; see
+  [current results](tests/completed_benchmarks_validation.json).
+- The historical archive and first-run stage-2 outputs were already absent. See
+  [evidence availability](results/HISTORY.md). No scientific workflow was rerun.
+- Work remains on the existing `imran/crispr-design` task branch. Issue assignment,
+  commit, PR, manual review and merge remain pending under the contribution workflow.

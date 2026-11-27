@@ -93,11 +93,11 @@ model; HDR efficiency never predicted beyond rules + context.
   is the later matched-cell model, CUNE (n=30 — thin). No neutral BE/PE benchmark exists —
   cross-tool claims are self-reported.
 - **Executed evidence (local):** [BE-Hive BE4 any-edit
-  efficiency](../benchmark/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) ·
-  [PRIDICT2.0 published grouped OOF outcomes](../benchmark/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
-  [DeepPrime base fixed test](../benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
+  efficiency](../results/benchmarks/004_BEHive_BE4/Run-4_2026-11-12/REPORT.md) ·
+  [PRIDICT2.0 published grouped OOF outcomes](../results/benchmarks/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
+  [DeepPrime base fixed test](../results/benchmarks/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
   PRIDICT2 grouped-OOF and DeepPrime HEK293T/PE2 fixed-test components; BE4 any-edit
   efficiency separately. Result record [Run-2](../results/004_variant_correction_precision_repair/Run-2_2026-11-12/REPORT.md);
-  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/004_variant-correction/Run-3_2026-11-12/README.md).
+  historical Run-2/Run-3 comparisons in [execution_history; archive unavailable](../results/HISTORY.md).
 - **Gaps:** not allele-specific HBB repair or HDR validation; BE4 labels cannot validate
   BE4max intended purity; unexecuted evaluation slots stay `NOT_EXECUTED`.

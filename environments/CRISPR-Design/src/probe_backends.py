@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """CRISPR-Design backend liveness probe (stdlib only).
 
-Reports per-backend presence from the backend map in runtime/CONTRACTS.md.
+Reports per-backend presence from the backend map in src/CONTRACTS.md.
 Never fabricates scores: a missing backend means dependent stages run as
 NOT_RUN(backend-absent). Exit code 0 = probe completed (regardless of findings);
 findings are data, not failures.
 
-Usage: python3 runtime/probe_backends.py [--json]
+Usage: python3 src/probe_backends.py [--json]
 """
 import json
 import os
@@ -18,8 +18,8 @@ PRIOR_RUN = os.path.expanduser(
     "crispr_design_gene_knockout_001_KIF11_GRCh38"
 )
 
-# Backend map mirrors runtime/CONTRACTS.md. kind: path | binary | glob
-CRISPR_ENV = os.path.expanduser("~/IMRAN/NOV26/science-environments/environments/CRISPR-Design")
+# Backend map mirrors src/CONTRACTS.md. kind: path | binary | glob
+CRISPR_ENV = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BACKENDS = {
     "crisprDesign_source": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "reference_software/crisprDesign")},
     "crisprScore_source": {"kind": "path", "loc": os.path.join(PRIOR_RUN, "reference_software/crisprScore")},

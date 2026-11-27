@@ -1,0 +1,59 @@
+{
+  "task_id": "010",
+  "task_spec": "tasks/010_crispr_diagnostics.md",
+  "application": "diagnostics_pathogen",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "REVIEW_ONLY_INCOMPLETE_METRIC_REPLAY",
+  "finding": "Prior synthetic nonpathogen diagnostic geometry only. EasyDesign numeric-score replay attempt is incomplete; no diagnostic model validation accepted.",
+  "limitations": "Latest replay script encountered nonnumeric dash tokens; edits not rerun. Source prediction columns have unequal coverage. No clinical sensitivity/specificity/LoD; no new pathogen design/scoring.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/010",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "010",
+    "brief_id": "contrived_target_diagnostics_example",
+    "application": "diagnostics_pathogen",
+    "target": "SYNTHETIC_NONPATHOGEN_CONTROL",
+    "input_sha256": "50c354e25913faf399ef80771c77d8624a7f04b53663b534fedf5e006bd061d2",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "scope": "EXECUTED nonpathogen artificial target",
+      "native_design": "EXECUTED AsCas12a TTTV enumeration",
+      "primers": "EXECUTED Primer3 30-35nt geometry and heterodimer calculation; not trained RPA/LAMP optimization",
+      "sensitivity": "NOT_RUN(EasyDesign not installed)",
+      "specificity": "NOT_RUN(no biological background supplied; synthetic-reference-only test)",
+      "ranking": "NOT_RUN(no sensitivity endpoint)"
+    },
+    "blockers": [
+      "No detection limit, clinical specificity or assay performance inferred",
+      "Primer3 geometry is not experimental RPA/LAMP validation; EasyDesign sensitivity absent"
+    ],
+    "test_input": {
+      "target": "SYNTHETIC_NONPATHOGEN_CONTROL",
+      "sequence_length": 300,
+      "sequence_file": "reference.fa",
+      "seed": 20261111,
+      "assay": "Cas12a + RPA-like primer geometry test; not validated RPA assay",
+      "primer_lengths": [
+        30,
+        35
+      ],
+      "amplicon_length_range": [
+        120,
+        250
+      ],
+      "background": "synthetic reference only"
+    },
+    "test_input_sha256": "f63ae16efc49936f6daa4d4fa9447564d5c169e447ae107a534491f80ccd16f7",
+    "candidate_count": 9,
+    "compatible_primer_guide_records": 23,
+    "status": "PARTIAL_EXECUTED"
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

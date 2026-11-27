@@ -2,7 +2,7 @@
 
 **Task family:** application-aware CRISPR design — **knockout / gene disruption (incl.
 functional-genomics use)**. **Status:** In Progress; protocol v0.1 (DRAFT gates). This is
-the only task with an executed end-to-end local workflow (Run1, KIF11, 2026-11-10).
+the only task with an executed end-to-end local workflow (Run-1, KIF11, 2026-11-10).
 Executed evidence: fresh Cas9 component evaluation (RS3 Sequence + CRISPRon six-cohort
 held-out inference; CFD assayed-specificity benchmark — endpoint-level, not knockout-
 application validation; see the [completed-only registry](../benchmark/BENCHMARK_RUNS.md)).
@@ -56,7 +56,7 @@ Resolved per request — never defaulted. Example genes (KIF11, KRAS) illustrati
 - Frameshift probability from Lindel (local verified backend) is a first-class endpoint;
   DRAFT floor 0.60 before calibration — treated as a ranking constraint, not a promise of
   knockout; indel profile (incl. 1-bp insertion fractions) reported with it.
-- On-target endpoints (Run1-verified local set): **RuleSet1 + RuleSet3-Sequence (Hsu2013
+- On-target endpoints (Run-1-verified local set): **RuleSet1 + RuleSet3-Sequence (Hsu2013
   tracrRNA) + CRISPRater** as the U6-relevant endpoints, plus **CRISPRscan as a declared
   T7/IVT-context column** (never mixed with U6 interpretation); ≥2 independent endpoints,
   separate columns, native units — RS3's scaled scores may be negative and are never
@@ -114,14 +114,14 @@ baseline only).
   SRP150719) is the reference standard; DeepHF (80,263 pairs) for variants; RS3 corpus for
   rules; **Konstantakos 2022 defines the evaluation protocol** (6 training-disjoint sets,
   Spearman + nDCG@20, realistic ceiling ρ≈0.7).
-- **Executed evidence (local):** [RS3 Sequence held-out activity](../benchmark/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
-  [CRISPRon v1 external activity](../benchmark/002_CRISPRon/Run-4_2026-11-12/REPORT.md) ·
-  [CFD2016 assayed specificity](../benchmark/003_CFD2016/Run-4_2026-11-12/REPORT.md) —
+- **Executed evidence (local):** [RS3 Sequence held-out activity](../results/benchmarks/001_RS3_Sequence/Run-4_2026-11-12/REPORT.md) ·
+  [CRISPRon v1 external activity](../results/benchmarks/002_CRISPRon/Run-4_2026-11-12/REPORT.md) ·
+  [CFD2016 assayed specificity](../results/benchmarks/003_CFD2016/Run-4_2026-11-12/REPORT.md) —
   fresh native inference across six author-defined held-out cohorts with exact-20mer
   four-model training exclusions (23,629 unique contexts); CFD on 1,684 assay-matched
-  sites. Result records: [Run1 (executed workflow)](../results/002_knockout_gene_disruption/Run1_20261110/run_record_stage1.json) ·
+  sites. Result records: [Run-1 (executed workflow)](../results/002_knockout_gene_disruption/Run-1_2026-11-10/run_record_stage1.json) ·
   [Run-2](../results/002_knockout_gene_disruption/Run-2_2026-11-12/REPORT.md); historical
-  Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/002_knockout/Run-3_2026-11-12/README.md).
+  Run-2/Run-3 comparisons in [execution_history; archive unavailable](../results/HISTORY.md).
 - **Gaps:** not an original CRISPRon_v0 internal-split or ≤3-mm-exclusion replication;
   RS3 Sequence+Target absent; no knockout-outcome validation for new KIF11/KRAS guides;
   shared component benchmarks are not independent task replications; unexecuted
