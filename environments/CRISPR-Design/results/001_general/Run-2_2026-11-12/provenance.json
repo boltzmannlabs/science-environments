@@ -1,0 +1,67 @@
+{
+  "task_id": "001",
+  "task_spec": "tasks/001_crispr_design_general.md",
+  "application": "general",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "SHARED_COMPONENT_BENCHMARKS",
+  "finding": "General routing example KIF11; shared Cas9 and specificity components evaluated, routing accuracy not measured.",
+  "limitations": "No labeled modality-routing corpus; no complete all-mode workflow validation.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/001",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "001",
+    "brief_id": "kif11_ko_example",
+    "application": "knockout_gene_disruption",
+    "target": "KIF11",
+    "input_sha256": "5399bc140ad63c80c1ad6c52d1a61e2f4eaab59d8139e3eeee0f4667e3f47917",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference_annotation": "EXECUTED",
+      "spliced_reference_validation": "EXECUTED",
+      "CDS_translation_check": "EXECUTED (partial CDS flags retained)",
+      "enumeration_E1_E6": "EXECUTED",
+      "on_target": "EXECUTED: RS1, RS3-Hsu2013, CRISPRater; separate endpoints",
+      "CRISPRscan": "EXECUTED T7 comparator only; not transferable to U6",
+      "Lindel": "EXECUTED full indel distribution and conditional frameshift ratio",
+      "CRISPRon": "EXECUTED exact 30mer join",
+      "Bowtie_CFD": "EXECUTED genome primary-assembly ungapped <=3mm both strands; NGG filter; intended locus excluded by coordinates",
+      "bulges": "NOT_EVALUATED",
+      "Elevation": "NOT_RUN(adapter unavailable)",
+      "variant_aware": "NOT_RUN(no population VCF specified; not a reference-genome safety assessment)",
+      "gates": "EXECUTED DRAFT v0.1; applicable brief vetoes and frameshift floor enforced",
+      "ranking": "EXECUTED separate endpoint preference panels; no endpoint averaging; eight +/-25% normalized weight perturbations per endpoint",
+      "E6_scope": "PARTIAL GC/poly-T/homopolymer/Wallace Tm evaluated; scaffold self-complementarity and salt-specific thermodynamics NOT_RUN"
+    },
+    "blockers": [
+      "Elevation endpoint not installed/adapter absent",
+      "No experimental evidence; no best_design or efficacy/safety claim"
+    ],
+    "test_input": {
+      "gene": "KIF11",
+      "scope": "all GENCODE49 protein-coding isoforms",
+      "assembly": "GRCh38.p14",
+      "expression": "U6; Hsu2013 as declared model test configuration",
+      "TSS_anchor": null
+    },
+    "test_input_sha256": "461bed3dfbd3ec6dada48853e7b4399eec5c9cd935400e9d18f5c933595109ec",
+    "transcript_count": 7,
+    "protein_coding_transcripts": 5,
+    "windows_total": 8421,
+    "eligible_count": 227,
+    "gate_pass": 176,
+    "status": "PARTIAL_EXECUTED",
+    "validation": {
+      "scored_contexts_roundtrip": 227,
+      "intended_locus_recovered": 227,
+      "all_raw_endpoints_finite": true
+    }
+  },
+  "shared_benchmark_not_independent_per_task": true
+}

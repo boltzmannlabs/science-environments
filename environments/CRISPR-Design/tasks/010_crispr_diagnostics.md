@@ -96,7 +96,7 @@ detection, specificity) from in-silico output alone.
   Flavivirus validation lineage). Gap: no independent diagnostics benchmark.
 - **Executed evidence (local):** incomplete — the EasyDesign numeric-score replay
   encountered nonnumeric dash tokens and was not rerun; source prediction columns have
-  unequal coverage ([Run-3 record, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/010_diagnostics/Run-3_2026-11-12/README.md)).
+  unequal coverage ([Run-3 record, execution_history; archive unavailable](../results/HISTORY.md)).
   Result record [Run-2](../results/010_diagnostics_pathogen/Run-2_2026-11-12/REPORT.md).
 - **Gaps:** no clinical sensitivity/specificity/LoD and no new pathogen design or
   scoring; diagnostic model validation slots stay `NOT_EXECUTED` until the replay is

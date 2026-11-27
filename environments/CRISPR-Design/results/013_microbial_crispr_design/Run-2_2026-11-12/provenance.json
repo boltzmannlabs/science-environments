@@ -1,0 +1,52 @@
+{
+  "task_id": "013",
+  "task_spec": "tasks/013_crispr_microbial.md",
+  "application": "microbial_crispr_design",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "BACTERIAL_PHENOTYPE_AUTHOR_SCORE_REPLAY",
+  "finding": "MERF author gene/dataset-held-out scores:642 comparisons,median rho0.381385 versus paper rounded0.396.",
+  "limitations": "Not fresh bacterial inference or independent9-gene assay; mismatch to paper headline retained. Bacterial CRISPRi depletion cannot validate lacZ nuclease knockout.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/013",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "013",
+    "brief_id": "ecoli_crispri_example",
+    "application": "microbial_crispr_design",
+    "target": "lacZ",
+    "input_sha256": "09acd38825d019eece920b3230bc7a11b7f17b2bd2bdbe66b2dc8a7c5c7cc51a",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "reference": "EXECUTED versioned NCBI assembly+GFF, downloaded-file hashes saved",
+      "native_design": "EXECUTED lacZ CDS NGG both strands; not promoter/TSS-optimized",
+      "offtarget": "EXECUTED strain-only ungapped <=3mm PAM-filtered; intended coordinates annotated",
+      "activity": "NOT_RUN(bacterial-trained model unavailable; no mammalian scores applied)",
+      "toxic_seed": "NOT_RUN(curated motif list unavailable; not guessed)",
+      "ranking": "NOT_RUN(no bacterial activity model)"
+    },
+    "blockers": [
+      "No Guo/Yu trained bacterial activity backend; no canonical bacterial CRISPRi activity prediction",
+      "No toxic-seed model, promoter/TSS map or plasmid reference supplied"
+    ],
+    "test_input": {
+      "organism": "Escherichia coli K-12 substr. MG1655",
+      "assembly": "GCF_000005845.2",
+      "chromosome": "NC_000913.3",
+      "gene": "lacZ",
+      "locus_tag": "b0344",
+      "mode": "dCas9 CRISPRi rules-only test, no KRAB",
+      "plasmid_reference": "none; not evaluated",
+      "scope": "annotated lacZ CDS; no experimentally verified promoter/TSS claimed"
+    },
+    "test_input_sha256": "8d0090d44e5c10839607fe40dbcdd263db83e93c91cc0badbb40e145863ac8dc",
+    "candidate_count": 415,
+    "status": "PARTIAL_EXECUTED"
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

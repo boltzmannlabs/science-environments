@@ -5,7 +5,7 @@ registry](benchmark/BENCHMARK_RUNS.md) (seven native-model/endpoint evaluations;
 benchmarks, not application validation). Executed model evaluations, source-score
 replays and uninstalled tools are distinct states — read the availability markers below
 alongside the per-task evidence status in [tasks/README.md](tasks/README.md); older
-mixed evidence is preserved in [execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+mixed-evidence archive is [unavailable in this checkout](results/HISTORY.md).
 
 Curated 2026-11-10 from the source-verified registry
 (`~/IMRAN/NOV26/cirspr-sci-env/01_tools/TOOL_REGISTRY.csv` — full leakage notes, dataset
@@ -33,7 +33,7 @@ documented) · **[C]** curated web/API only · **[G]** gap (no verified tool exi
 | DeepHF | Wang D et al., *Nat Commun*, 2019 | webserver-only (standalone repo DEAD — izhangcd/DeepHF is 404, verified 2026-11-10); crisprScore `deephf-env` is the only local path (env-pending) | 80,263 pairs, PRJNA522677 | held-out ρ 0.86–0.87 (internal) | cross-study drops to 0.4–0.6; NOT Cell Reports |
 | CRISPRon | Xiang X et al., *Nat Commun*, 2021 | code GitHub+Zenodo | 23,902 gRNAs, GSE173708 | internal ρ 0.80 vs Azimuth 0.56 / DeepSpCas9 0.73 / DeepHF 0.74; external 0.46–0.68 | Kim-2019 rescaled is in training — split discipline required; NOT NAR |
 | RS2/Azimuth | Doench & Fusi et al., *NBT*, 2016 | Broad portal research-use ⚠; **NOT in pinned crisprScore 1.17.2** | 4,390 sgRNAs | must-beat baseline | training widely exposed |
-| RS3 | DeWeirdt et al., *Nat Commun*, 2022 | via crisprScore **[L, rs3-env; Run1-verified]** | 46,526 + 84,609 tiling, PRJNA832308 | > RS2 p<0.002 | NOT "Hart 2017"; native units scaled (can be negative) |
+| RS3 | DeWeirdt et al., *Nat Commun*, 2022 | via crisprScore **[L, rs3-env; Run-1-verified]** | 46,526 + 84,609 tiling, PRJNA832308 | > RS2 p<0.002 | NOT "Hart 2017"; native units scaled (can be negative) |
 | DeepCpf1 | Kim HK et al., *NBT*, 2018 | research web | ~15,000 AsCpf1 targets | exact ρ UNVERIFIED (paywalled) | also a distinct Luo-2019 same-named tool |
 | Lindel | Chen W et al., *NBT*, 2019 | via crisprScoreData (EH6128) | paper corpus | local interface test PASS (0.798) | — |
 | CFD | Doench 2016 (same paper) | open matrix | GUIDE-seq-era | community-standard pair baseline | — |

@@ -1,0 +1,49 @@
+{
+  "task_id": "009",
+  "task_spec": "tasks/009_crispr_rna-targeting-cas13.md",
+  "application": "rna_targeting_cas13",
+  "run_id": "Run-2_2026-11-12",
+  "design_status": "PARTIAL_COMPUTATIONAL_EXAMPLE",
+  "benchmark_status": "COMPLETED_QUALIFIED_RFCOMBINED_REIMPLEMENTATION",
+  "finding": "1000 corrected RF refits verified; median rho0.667308; split/refit interval[0.629895,0.700127].",
+  "limitations": "Paper2000trees/mtry12 retained; comparative source defaults/finalCV mtry10 differ. Precomputed features, inherited global feature selection; LOSO GFP only0.2947; no TIGER/full-transcriptome specificity validation.",
+  "best_design": null,
+  "experimental_validation": false,
+  "example_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/04_workflow_runs/session_archive_20261111T111620Z/crispr_examples_20261111T092524Z/tasks/009",
+  "benchmark_source": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/05_validated_benchmarks/Run_20261111T113324Z",
+  "source_run_record": {
+    "task": "009",
+    "brief_id": "malat1_cas13_example",
+    "application": "rna_targeting_cas13",
+    "target": "MALAT1",
+    "input_sha256": "82415789a1b590332161c0995c8cda67eecc455bc00e64706b1cff83d64421ae",
+    "schema_errors": [],
+    "best_design": null,
+    "evidence_tier": "NEEDS_EXPERIMENTAL_VALIDATION",
+    "stages": {
+      "brief": "CONCRETE_EXAMPLE_SELECTED",
+      "routing": "EXECUTED",
+      "activity": "EXECUTED CasRxRF; native units and omitted/edge predictions retained",
+      "spacer_orientation": "EXECUTED all native spacers reverse-complement verified, U notation separately exported",
+      "specificity": "PARTIAL selected-transcript exact occurrences only; full-transcriptome near-match search NOT_RUN"
+    },
+    "blockers": [
+      "No full-transcriptome specificity or independent second Cas13 endpoint; no collateral-activity prediction"
+    ],
+    "test_input": {
+      "gene": "MALAT1",
+      "transcript": "ENST00000620902.1",
+      "length": 352,
+      "selection": "shortest annotated complete spliced transcript >=300nt, deterministic software-test choice; not canonical/major isoform",
+      "spacer_length": 23,
+      "direct_repeat": "aacccctaccaactggtcggggtttgaaac",
+      "offtarget_scope": "selected transcript exact occurrences only; other isoforms and full transcriptome NOT_RUN"
+    },
+    "test_input_sha256": "3fcd05bea71b779ce14180315376c9bf901d30bca2e98feda0ce11e6ccaeb8be",
+    "model_score_count": 290,
+    "candidate_count": 329,
+    "status": "PARTIAL_EXECUTED",
+    "model_omitted_count": 39
+  },
+  "shared_benchmark_not_independent_per_task": false
+}

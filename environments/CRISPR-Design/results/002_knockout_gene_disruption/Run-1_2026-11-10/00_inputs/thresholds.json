@@ -1,0 +1,86 @@
+{
+  "version": "0.1-draft",
+  "status": "DRAFT — NOT FROZEN. Every threshold below must be calibrated on Kim-2019 held-out + the Konstantakos-2022 6-disjoint-set protocol (on-target) and CHANGE-seq 110-guide set (off-target) before any gate freeze (v1.0). Briefs may tighten; loosening requires explicit logged user instruction even at draft stage.",
+  "provenance_classes": [
+    "published_convention", "prior_run_policy", "draft_calibrate_before_freeze"
+  ],
+  "gates": {
+    "off_target_exact_match_max": {
+      "value": 0,
+      "unit": "count (genome-wide, intended locus excluded)",
+      "provenance": "prior_run_policy",
+      "source": "prior KIF11 CRISPR-KO run off_target_policy.yaml v1.0; standard practice (CRISPOR/WGE reporting conventions)"
+    },
+    "off_target_mismatch_max": {
+      "value": 3,
+      "unit": "mismatches enumerated (Bowtie 1 ungapped; bulges NOT_EVALUATED — disclosed cap)",
+      "provenance": "prior_run_policy",
+      "source": "prior KIF11 run off_target_policy.yaml v1.0"
+    },
+    "cfd_top1_max": {
+      "value": 0.02,
+      "unit": "CFD pair score, highest single off-target",
+      "provenance": "draft_calibrate_before_freeze",
+      "source": "community convention; calibrate on CHANGE-seq before freeze"
+    },
+    "gc_band": {
+      "value": [0.40, 0.80],
+      "unit": "GC fraction; flag, not hard veto, unless brief sets it",
+      "provenance": "published_convention",
+      "source": "Doench 2016 (Rule Set 2 design filters)"
+    },
+    "homopolymer_T_max_run": {
+      "value": 4,
+      "unit": "max consecutive T's in spacer (Pol III termination risk)",
+      "provenance": "published_convention",
+      "source": "CRISPOR warning convention (TTTT)"
+    },
+    "frameshift_probability_min": {
+      "value": 0.60,
+      "unit": "Lindel frameshift probability (knockout tasks only)",
+      "provenance": "draft_calibrate_before_freeze",
+      "source": "draft convention; calibrate on Kim-2019 indel data before freeze"
+    },
+    "on_target_endpoints": {
+      "value": 2,
+      "unit": "minimum independent on-target endpoints scored; separate columns, never averaged",
+      "provenance": "published_convention",
+      "source": "cross-tool disagreement documented by Konstantakos 2022 / Haeussler 2016"
+    },
+    "be_intended_edit_fraction_min": {
+      "value": 0.30,
+      "unit": "BE/PE tasks: predicted intended-edit fraction floor (model-dependent; disclosed per model)",
+      "provenance": "draft_calibrate_before_freeze",
+      "source": "draft; calibrate on BE-dataHIVE/Mathis held-out before freeze"
+    },
+    "be_bystander_purity_min": {
+      "value": 0.70,
+      "unit": "BE tasks: intended / (intended + bystander in window)",
+      "provenance": "draft_calibrate_before_freeze",
+      "source": "draft; align with PRIDICT2.0 purity metric before freeze"
+    },
+    "crispri_tss_window": {
+      "value": [-75, 200],
+      "unit": "bp relative to TSS (CRISPRi narrow-window convention)",
+      "provenance": "published_convention",
+      "source": "Horlbeck 2016 (narrow NDR window downstream of TSS)"
+    },
+    "crisproff_tss_window": {
+      "value": [-500, 500],
+      "unit": "bp relative to TSS (CRISPRoff wide-window rule)",
+      "provenance": "published_convention",
+      "source": "Nunez 2021 tiling-derived rule 1"
+    },
+    "cas13_seed_mismatch_intolerance_region": {
+      "value": [15, 21],
+      "unit": "spacer positions with highest mismatch intolerance",
+      "provenance": "published_convention",
+      "source": "Wessels 2020 (Cas13design)"
+    }
+  },
+  "no_freeze_without": [
+    "calibration run on Kim-2019 held-out set",
+    "off-target calibration on CHANGE-seq 110-guide set",
+    "dated no-tuning attestation recorded in benchmark/BENCHMARK_RUNS.md"
+  ]
+}

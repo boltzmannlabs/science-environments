@@ -1,0 +1,43 @@
+{
+  "source_example": {
+    "brief_id": "kif11_ko_example",
+    "mode": "design",
+    "target": {
+      "organism": "human",
+      "gene": "KIF11",
+      "transcript": "resolve-to-GENCODE-49-at-intake",
+      "sequence_supplied": false
+    },
+    "application": "knockout_gene_disruption",
+    "nuclease": "spcas9",
+    "objective": "Protein-coding knockout of KIF11 with maximal frameshift disruption; illustrative syntax only; not an approved run.",
+    "priorities": {
+      "hard_vetoes": [
+        "off_target_exact_match",
+        "poly_t_termination_risk"
+      ],
+      "weights": {
+        "on_target": 0.4,
+        "specificity": 0.3,
+        "outcome_quality": 0.2,
+        "context": 0.1
+      }
+    },
+    "constraints": {
+      "review_window": 100,
+      "panel_size": 6,
+      "site_distinct": true,
+      "genome_assembly": "GRCh38.p14",
+      "expression_system": "u6_pol_iii"
+    },
+    "success_criteria": "Indel rate >=70% with frameshift fraction >=0.7 per guide in the user's cell line \u2014 downstream experimental evidence, not claimed here."
+  },
+  "concrete_test_input": {
+    "gene": "KIF11",
+    "scope": "all GENCODE49 protein-coding isoforms",
+    "assembly": "GRCh38.p14",
+    "expression": "U6; Hsu2013 as declared model test configuration",
+    "TSS_anchor": null
+  },
+  "authorization": "User explicitly requested choosing example inputs and rerunning; local-only execution retained"
+}

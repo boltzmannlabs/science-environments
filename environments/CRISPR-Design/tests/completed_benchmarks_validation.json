@@ -1,6 +1,6 @@
 {
-  "passed": 6,
-  "failed": 0,
+  "passed": 4,
+  "failed": 2,
   "checks": [
     {
       "name": "completed_only_scope",
@@ -9,8 +9,8 @@
     },
     {
       "name": "copied_artifact_hashes",
-      "status": "PASS",
-      "detail": "48 copied files match immutable source and stored SHA256"
+      "status": "FAIL",
+      "detail": "All 48 destination hashes verified; 45 source hashes verified; 3 source file(s) absent: ['/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Publication-label-benchmarks/Run-3_2026-11-12/reports/Cas9_paired_differences.csv', '/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Publication-label-benchmarks/Run-3_2026-11-12/reports/specificity.json', '/home/boltzmann13/IMRAN/NOV26/science-environments/environments/CRISPR-Design/execution_history/before_completed_only_20261112T061830Z/benchmark/000_Protocol-reproduction/Run-2_2026-11-12/cas13_completion_verification.json']; see results/HISTORY.md"
     },
     {
       "name": "fresh_native_inference",
@@ -25,12 +25,12 @@
     {
       "name": "active_links",
       "status": "PASS",
-      "detail": "265 active document links resolve; archived evidence is outside benchmark/"
+      "detail": "304 active document links resolve; execution evidence is under results/"
     },
     {
       "name": "archived_history",
-      "status": "PASS",
-      "detail": "269 former benchmark files preserved byte-identically outside active benchmark section"
+      "status": "FAIL",
+      "detail": "Historical archive is absent from this checkout; see results/HISTORY.md"
     }
   ]
 }

@@ -89,7 +89,7 @@ methylation predictions are not made (no model exists).
 - **Executed evidence (local):** blocked — functional methylation/durable-repression
   labels and a matched predictor adapter are missing; GSE168012 metadata retrieval
   failed; CpG count is not methylation efficacy ([Run-3 blocker record,
-  execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/008_epigenome-editing/Run-3_2026-11-12/README.md)).
+  execution_history; archive unavailable](../results/HISTORY.md)).
   Result record [Run-2](../results/008_epigenome_editing/Run-2_2026-11-12/REPORT.md).
   Executed metrics from other modalities in the shared campaign do not substitute for
   this endpoint.

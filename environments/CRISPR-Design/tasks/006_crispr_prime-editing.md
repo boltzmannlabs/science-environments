@@ -93,12 +93,12 @@ model-scoped (DeepPE's PBS/RTT-length recommendations are HEK293T-PE2-calibrated
   2026), Cirincione 2024/25 (~240,000 epegRNAs experimental platform). No neutral PE
   benchmark; all cross-tool claims self-reported.
 - **Executed evidence (local):** [PRIDICT2.0 published grouped OOF
-  outcomes](../benchmark/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
-  [DeepPrime base fixed test](../benchmark/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
+  outcomes](../results/benchmarks/005_PRIDICT2/Run-4_2026-11-12/REPORT.md) ·
+  [DeepPrime base fixed test](../results/benchmarks/006_DeepPrime_PE2/Run-4_2026-11-12/REPORT.md) —
   PRIDICT2 intended-edit ρ 0.9056 HEK293T / 0.8081 K562 (source-fold mismatches 0);
   DeepPrime PE2 conventional-scaffold fixed test n=28,883, ρ 0.861474. Result record
   [Run-2](../results/006_prime_editing/Run-2_2026-11-12/REPORT.md); historical Run-2/Run-3
-  comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/006_prime-editing/Run-3_2026-11-12/README.md).
+  comparisons in [execution_history; archive unavailable](../results/HISTORY.md).
 - **Gaps:** cell/editor matched only; pretraining-overlap audit incomplete for PRIDICT2;
   unintended-edit score is not purity; PE3 nicking design not validated; unexecuted
   evaluation slots stay `NOT_EXECUTED`.

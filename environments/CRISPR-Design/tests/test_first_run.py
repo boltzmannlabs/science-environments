@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run-validation tests for CRISPR-Design Run1 (task 002, KIF11).
+"""Run-validation tests for CRISPR-Design Run-1 (task 002, KIF11).
 
 Validates the executed run's artifacts: structure, coordinate integrity
 (independent python re-extraction from the genome), scorer determinism,
@@ -24,7 +24,7 @@ RSCRIPT = f"{BASE}/bootstrap/runtime/bin/Rscript"
 LINDEL_ENV = f"{BASE}/runs/20261105T102927Z/lindel-runtime"
 BOWTIE = f"{BASE}/bootstrap/runtime/bin/bowtie"
 RUN = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
-    ENV, "results/002_knockout_gene_disruption/Run1_20261110")
+    ENV, "results/002_knockout_gene_disruption/Run-1_2026-11-10")
 
 results = {"run": RUN, "tests": [], "passed": 0, "failed": 0}
 

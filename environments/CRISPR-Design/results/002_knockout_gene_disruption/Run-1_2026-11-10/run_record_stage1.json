@@ -1,0 +1,13 @@
+{
+  "run": "stage1_enumerate_and_score",
+  "windows_total": 8421,
+  "coding_valid": 227,
+  "endpoints": ["RuleSet1", "RuleSet3-Sequence-Hsu2013", "CRISPRater", "CRISPRscan-T7-context", "Lindel-frameshift"],
+  "r_version": "4.5.3",
+  "crisprScore": "1.17.2",
+  "crisprDesign": "1.15.10",
+  "rs3_env": "/home/boltzmann13/IMRAN/NOV26/cirspr-sci-env/03_environment/rs3-env",
+  "lindel_env": "/home/boltzmann13/.sci/profiles/generate-sirna/workspace/crispr_design_gene_knockout_001_KIF11_GRCh38/runs/20261105T102927Z/lindel-runtime",
+  "note": "CRISPRscan is a T7/IVT-context endpoint (Haeussler 2016); run context is U6 - reported as context column only",
+  "status": "COMPLETED"
+}

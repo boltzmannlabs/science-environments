@@ -98,10 +98,10 @@ gates).
   ~200,000 RfxCas13d guides; current reference). Arc Institute 2025 Cas13d tool is
   emerging — details UNVERIFIED, curated-only.
 - **Executed evidence (local):** [RFcombined published-method refit
-  evaluation](../benchmark/007_RFcombined/Run-4_2026-11-12/REPORT.md) — 1,000 corrected
+  evaluation](../results/benchmarks/007_RFcombined/Run-4_2026-11-12/REPORT.md) — 1,000 corrected
   RF refits verified; median ρ 0.667308; split/refit interval [0.629895, 0.700127].
   Result record [Run-2](../results/009_rna_targeting_cas13/Run-2_2026-11-12/REPORT.md);
-  historical Run-2/Run-3 comparisons in [execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/009_rna-targeting-cas13/Run-3_2026-11-12/README.md).
+  historical Run-2/Run-3 comparisons in [execution_history; archive unavailable](../results/HISTORY.md).
 - **Gaps:** paper 2,000-trees/mtry-12 settings retained while comparative-source
   defaults/finalCV use mtry 10; precomputed features with inherited global feature
   selection; LOSO GFP-only ρ 0.2947; no TIGER or full-transcriptome specificity

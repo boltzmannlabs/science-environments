@@ -1,0 +1,25 @@
+{
+  "brief_id": "kif11_ko_run1",
+  "mode": "design",
+  "target": {
+    "organism": "human",
+    "gene": "KIF11",
+    "transcript": "all protein-coding GENCODE 49 transcripts resolved and validated against spliced exons (prior-run validation recipe)",
+    "sequence_supplied": false
+  },
+  "application": "knockout_gene_disruption",
+  "nuclease": "spcas9",
+  "objective": "First executed runtime run (smoke + regression scope): enumerate SpCas9 NGG windows across the KIF11 locus, score >=2 independent on-target endpoints, Lindel frameshift, genome-wide Bowtie off-target + CFD, DRAFT gates, ranked shortlist. Computational deliverable capped at NEEDS_EXPERIMENTAL_VALIDATION.",
+  "priorities": {
+    "hard_vetoes": ["off_target_exact_match", "poly_t_termination_risk"],
+    "weights": {"on_target": 0.35, "specificity": 0.25, "outcome_quality": 0.30, "context": 0.10}
+  },
+  "constraints": {
+    "review_window": 100,
+    "panel_size": 6,
+    "site_distinct": true,
+    "genome_assembly": "GRCh38.p14",
+    "expression_system": "u6_pol_iii"
+  },
+  "success_criteria": "Downstream indel rate + frameshift fraction in user cell line (experimental); this run tests the runtime stack: determinism, regression anchor, coordinate integrity, off-target controls."
+}

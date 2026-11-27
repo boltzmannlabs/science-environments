@@ -6,8 +6,8 @@
 Protocol v0.1 (draft — no engine freeze yet); thresholds DRAFT v0.1
 (calibrate-then-freeze). Active benchmark evidence is the [completed-only
 registry](benchmark/BENCHMARK_RUNS.md): seven completed native-model/endpoint
-evaluations, with per-task result records under [results/](results/README.md) and older
-mixed Run-2/Run-3 reports preserved in [execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+evaluations, with per-task result records under [results/](results/README.md) and the older
+mixed Run-2/Run-3 archive [absent from this checkout; see history availability](results/HISTORY.md).
 Model benchmarks validate endpoints, not design applications, and do not activate every
 application adapter or freeze the DRAFT gates; unimplemented stages stay `NOT_RUN(reason)`
 / `NOT_IMPLEMENTED`. No experimental validation is claimed.
@@ -76,7 +76,7 @@ ranking view of §4):
 | Stage | Content | Endpoint semantics |
 | --- | --- | --- |
 | E1 | validation: alphabet, spacer/PAM orientation, coordinates, exon/CDS consequence, isoform coverage | pass/reject with reasons |
-| E2a–c | on-target activity: ≥2 independent endpoints — **Run1-verified local set: RuleSet1, RuleSet3-Sequence (Hsu2013/Chen2013), CRISPRater (U6) + CRISPRscan (declared T7/IVT-context column)**; {CRISPRon, DeepSpCas9, RS2/Azimuth, DeepHF (variant), DeepCpf1} activate on upstream installs (pinned crisprScore 1.17.2 exports only: CasRxRF, CFD, CRISPRater, CRISPRscan, DeepHF*, EnPAMGB*, Lindel, MIT, RuleSet1, RuleSet3 — *env-pending) — separate columns, native units, **never averaged**; expression-system context declared | scores + model identity |
+| E2a–c | on-target activity: ≥2 independent endpoints — **Run-1-verified local set: RuleSet1, RuleSet3-Sequence (Hsu2013/Chen2013), CRISPRater (U6) + CRISPRscan (declared T7/IVT-context column)**; {CRISPRon, DeepSpCas9, RS2/Azimuth, DeepHF (variant), DeepCpf1} activate on upstream installs (pinned crisprScore 1.17.2 exports only: CasRxRF, CFD, CRISPRater, CRISPRscan, DeepHF*, EnPAMGB*, Lindel, MIT, RuleSet1, RuleSet3 — *env-pending) — separate columns, native units, **never averaged**; expression-system context declared | scores + model identity |
 | E3a | genome-wide off-target enumeration: ≤3-mismatch, both strands, intended-locus exclusion (Bowtie 1 local / CRISPRitz with VCFs + bulges for variant-aware tasks) | hit counts by mismatch class; heuristic caps disclosed |
 | E3b | off-target pair scoring: CFD (baseline) + Elevation/ElevationSC (aggregate); CRISOT optional (CC BY-NC — research-internal only, never redistributed) | pair scores + aggregate specificity |
 | E3c | variant-aware layer (allele/therapeutic tasks): CRISPRitz/CRISPRme VCF-panel search | ancestry/allele off-target nominations |
@@ -94,7 +94,7 @@ first benchmark execution). R2: requirement-weighted **cohort-percentile** order
 (per-target normalization), with mandatory ±25% weight-perturbation stability; unstable
 orderings are labeled and the per-dimension table becomes the decision basis; the weighted
 score is disclosed as a preference view, never an efficacy estimate. R3: site-diverse,
-PAM-distinct panel. Implementation lands with the runtime phase (`runtime/`).
+PAM-distinct panel. Implementation lands with the runtime phase under `src/`.
 
 ## 5. Exploratory design loop (protocol draft)
 
@@ -110,7 +110,10 @@ published outcomes; benchmark labels join post-hoc only.
 DESIGN: resolve brief → verify reference → enumerate (all windows retained) → battery →
 ranking → deliver (candidates CSV, per-dimension values, flags, `NOT_RUN` list, provenance
 block, evidence tier, next-evidence recommendation per application). Outputs land in a
-fresh run directory; inputs are read-only.
+fresh `results/00N_<application>/Run-<number>_<YYYY-MM-DD>/` directory; inputs are read-only.
+Benchmark definitions and evaluation criteria belong in `benchmark/`; execution
+outputs belong in `results/benchmarks/00N_<Model>/Run-<number>_<YYYY-MM-DD>/`.
+Original benchmark execution recipes are kept under `scripts/benchmarks/`.
 
 ## 7. Benchmarking (executed local registry + published anchors)
 
@@ -119,8 +122,8 @@ seven completed native-model/endpoint evaluations (RS3 Sequence, CRISPRon, CFD20
 BE-Hive BE4, PRIDICT2.0, DeepPrime PE2, RFcombined), each with predictions, metrics,
 protocol manifest and limitations attached. These are endpoint-level model benchmarks —
 they do not validate any full design application. Older mixed evidence (Run-2/Run-3
-per-task comparisons, replays, blocked attempts) is preserved in
-[execution_history](execution_history/before_completed_only_20261112T061830Z/README.md).
+per-task comparisons, replays, blocked attempts) is
+[unavailable in this checkout; see history availability](results/HISTORY.md).
 All published numbers below are source-verified (see
 [benchmark/README.md](benchmark/README.md) and [research references](../../research/CRISPR-Design/references.md)).
 

@@ -79,7 +79,7 @@ No silent degradation to mammalian scoring under any weighting; no partial activ
   *NAR*) are curated, not executed.
 - **Archived evidence (publication comparison only):** 52 N. benthamiana guides across
   20-/32-guide cohorts; author model scores replayed against actual plant mean indel
-  measurements ([Run-3 comparison, execution_history](../execution_history/before_completed_only_20261112T061830Z/benchmark/012_plant-editing/Run-3_2026-11-12/README.md);
+  measurements ([Run-3 comparison, execution_history; archive unavailable](../results/HISTORY.md);
   result record [Run-2](../results/012_plant_genome_editing/Run-2_2026-11-12/REPORT.md)).
   Not fresh inference or species-adapter validation; plant DESIGN remains inactive; no
   mammalian phenotype was used as surrogate.
