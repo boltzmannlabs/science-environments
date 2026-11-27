@@ -1,4 +1,4 @@
-# task_006_zhang_hydrolases — workflow executions
+# Zhang study — cellulase and beta-glucanase scoring — workflow executions
 
 | Run | Approach | Model | Status | Evidence |
 |---|---|---|---|---|

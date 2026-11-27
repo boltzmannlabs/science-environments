@@ -12,7 +12,7 @@ Existing task IDs and scientific evidence are preserved. [migration_map.json](mi
 - BLA/AtHOL1 HY4 remain partial despite native goal-completion messages. RML DiscoveryRSI completion claims remain unaccepted pending missing-stage review. Sun DiscoveryRSI lacks a returned independent evaluator result.
 - Legacy/generated filenames remain preserved with checksums and mappings. Complete prescribed artifact renaming needs source-verified model/tool/parameter identity or a maintainer-agreed fallback; this export does not claim final naming compliance.
 - Original large artifacts, raw requests and transcripts are retained privately; public copies are sanitized. This is an evidence export, not a new execution or a promise of portable replay.
-- Benchmark comparisons keep their documented legacy layout and historical agent-alone scope; all assisted workflows are discoverable through the results/run indexes.
+- Benchmark definitions, reference notes and evaluated outputs are now separated; all assisted workflows remain discoverable through the results/run indexes.
 
 ## Local validation
 
@@ -24,3 +24,17 @@ Existing task IDs and scientific evidence are preserved. [migration_map.json](mi
 - Maintained launcher, validator and report modules compile; git diff --check passed.
 - New execution/config/result exports checked for internal host paths, private addresses, storage-user identities and signed URL signatures; none found by those checks. This is a scoped scan, not a guarantee about all possible sensitive content.
 - Complete prescribed generated-artifact naming remains a documented review item; safe path characters alone do not establish naming compliance.
+
+## Configuration and naming correction
+
+The complete configuration layout now contains environment.yaml, real schemas, opt-in shared settings and task configurations with descriptive model/approach filenames. Original configuration IDs and all 23 logical native run IDs remain unchanged. Four exact HY4 launch snapshots moved to their run records with checksums. Earlier incomplete settings are explicitly non-launchable. Benchmark comparisons and generated-source snapshots were relocated through additional entries in migration_map.json; no scientific measurements were recalculated.
+
+### Follow-up audit checks
+
+- Environment/configuration YAML and JSON Schemas validate all 23 configuration records; all four populated config areas have real linked content.
+- Complete HY4 launch preparation passes with descriptive task settings; incomplete historical configurations are rejected before launch. No SCI or scientific job started.
+- All four frozen HY4 launch snapshots match the settings in the preceding commit.
+- Schema checks reject missing model settings, invalid model types and non-boolean launch readiness.
+- All six benchmark reports rebuild from the relocated reference/evaluation paths.
+- 23 native run identities and 467 output checksums remain validated; documentation links pass.
+- Native run IDs remain unchanged. Task/config/result indexes provide model and approach labels so users do not need to decode session IDs.

@@ -1,4 +1,4 @@
-# task_005_sun_leh_pythia — workflow executions
+# Sun LEH study — Pythia mutation scoring — workflow executions
 
 | Run | Approach | Model | Status | Evidence |
 |---|---|---|---|---|

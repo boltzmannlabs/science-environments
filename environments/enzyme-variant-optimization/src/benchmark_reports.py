@@ -53,7 +53,7 @@ def add_electrostatics(doc, folder, image, plt):
     image(fig, 'Matched field, geometry and interaction predictions',
           'Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.')
     doc.add_paragraph('The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.')
-    doc.add_paragraph('[Protocol and sequence identities](../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
+    doc.add_paragraph('[Protocol and sequence identities](../../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
 
 
 def add_open_source_metrics(doc, folder, image, plt):
@@ -114,11 +114,9 @@ def build_task(env, task):
 
     doc.add_heading(task['title'] + ' — benchmark report', 0)
     doc.add_paragraph('Agent-alone candidates, published prediction values and reference variants calculated in this work.')
-    run_config = env / 'configs' / tid / 'run_001_agent_alone.json'
-    if run_config.exists():
-        model = json.loads(run_config.read_text())
-        model_name = model['llm_model'] + '-' + model['llm_version']
-        doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
+    run_record = env / 'runs' / tid / folder.name / 'run.json'
+    model_name = json.loads(run_record.read_text())['model']
+    doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
 
     if task.get('metrics'):
         doc.add_heading('Published predictions and our predictions', 1)
@@ -147,7 +145,7 @@ def build_task(env, task):
             charts += 1
 
         if tid == 'task_006_zhang_hydrolases':
-            agreement = env / 'benchmark' / tid / 'comparisions/published_prediction_only.csv'
+            agreement = env / 'benchmark' / 'evaluation' / tid / 'comparisons/published_prediction_only.csv'
             if agreement.exists():
                 pairs = [dict(r, background=r['background'].replace('-', '_'),
                               method='ESM2' if r['method'] == 'ESM' else r['method'],
@@ -237,24 +235,24 @@ def build_task(env, task):
         add_open_source_metrics(doc, folder, image, plt)
         if tid == 'task_004_athol1_substrate':
             add_electrostatics(doc, folder, image, plt)
-        doc.add_paragraph(f'[Results and preparation details](../../../results/{tid}/{folder.name}/README.md) · [Published reference](../references.md).')
+        doc.add_paragraph(f'[Results and preparation details](../../../../results/{tid}/{folder.name}/README.md) · [Published reference](../../../reference_data/{tid}/references.md).')
 
-    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.md'
+    target = env / 'benchmark' / 'evaluation' / tid / 'comparisons/benchmark_report.md'
     target.parent.mkdir(parents=True, exist_ok=True)
     doc.save(target)
     print(f'{tid}: {charts} linked figures; {len(doc.tables)} tables')
 
 
 def build(env):
-    tasks = json.loads((env / 'benchmark/report_data.json').read_text())['tasks']
+    tasks = json.loads((env / 'benchmark/reference_data/report_data.json').read_text())['tasks']
     for task in tasks:
         if task.get('executed'):
             build_task(env, task)
     index = ['# Benchmark comparisons', '', 'Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
-        link = task['id'] + ('/comparisions/benchmark_report.md' if task.get('executed') else '/references.md')
+        link = ('evaluation/' + task['id'] + '/comparisons/benchmark_report.md' if task.get('executed') else 'reference_data/' + task['id'] + '/references.md')
         index.append(f"| {task['title']} | [{'Comparison and figures' if task.get('executed') else 'Published reference'}]({link}) |")
-    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
+    index += ['', '[Benchmark definitions](definitions/README.md) · [Reference data](reference_data/README.md) · [Evaluation records](evaluation/README.md)', '', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
     (env / 'benchmark/README.md').write_text('\n'.join(index))
     manifest_path = env / 'benchmark/DATA_PROVENANCE.json'
     if manifest_path.exists():
@@ -262,7 +260,7 @@ def build(env):
         manifest['files'] = [
             {'path': str(path.relative_to(env)),
              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
-            for folder in ('benchmark', 'results', 'configs')
+            for folder in ('benchmark', 'results', 'config', 'runs')
             for path in sorted((env / folder).rglob('*'))
             if path.is_file() and path != manifest_path
         ]

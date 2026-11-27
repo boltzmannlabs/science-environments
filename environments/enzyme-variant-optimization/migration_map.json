@@ -999,5 +999,323 @@
     }
   ],
   "historical_native_ids_preserved": true,
-  "original_workspaces_unchanged": true
+  "original_workspaces_unchanged": true,
+  "followup_mappings": [
+    {
+      "old_path": "benchmark/report_data.json",
+      "new_path": "benchmark/reference_data/report_data.json"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/README.md",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/README.md"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/comparisions/reference_predictions.csv",
+      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/reference_predictions.csv"
+    },
+    {
+      "old_path": "benchmark/task_001_rml_stability/references.md",
+      "new_path": "benchmark/reference_data/task_001_rml_stability/references.md"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/README.md",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/README.md"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
+      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/reference_predictions.csv"
+    },
+    {
+      "old_path": "benchmark/task_002_leh_stability/references.md",
+      "new_path": "benchmark/reference_data/task_002_leh_stability/references.md"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_03.png",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_03.png"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_003_bla_high_temperature/references.md",
+      "new_path": "benchmark/reference_data/task_003_bla_high_temperature/references.md"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_03.png",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_03.png"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_004_athol1_substrate/references.md",
+      "new_path": "benchmark/reference_data/task_004_athol1_substrate/references.md"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/README.md",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/README.md"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_03.png",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_03.png"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_005_sun_leh_pythia/references.md",
+      "new_path": "benchmark/reference_data/task_005_sun_leh_pythia/references.md"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/README.md",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/README.md"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/benchmark_report.md"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_01.png",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_01.png"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_02.png",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_02.png"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_03.png",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_03.png"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/provenance.json",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/provenance.json"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/published_prediction_only.csv",
+      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/published_prediction_only.csv"
+    },
+    {
+      "old_path": "benchmark/task_006_zhang_hydrolases/references.md",
+      "new_path": "benchmark/reference_data/task_006_zhang_hydrolases/references.md"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261104_183716_b986fa.json",
+      "new_path": "config/tasks/task_001_rml_stability/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261104_183717_92629f.json",
+      "new_path": "config/tasks/task_001_rml_stability/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_194725_f41fd0.json",
+      "new_path": "config/tasks/task_001_rml_stability/03_codex_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_195324_84c6a0.json",
+      "new_path": "config/tasks/task_001_rml_stability/04_discoveryrsi_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_26af1b.json",
+      "new_path": "config/tasks/task_001_rml_stability/05_discoveryrsi_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_270fec.json",
+      "new_path": "config/tasks/task_001_rml_stability/06_codex_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_002_leh_stability/cfg_20261104_183716_0fd35d.json",
+      "new_path": "config/tasks/task_002_leh_stability/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_002_leh_stability/cfg_20261104_183717_b2d404.json",
+      "new_path": "config/tasks/task_002_leh_stability/02_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_002_leh_stability/cfg_20261126_081616_ebc611.json",
+      "new_path": "config/tasks/task_002_leh_stability/03_hy4_flash_free_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_003_bla_high_temperature/cfg_20261112_181250_7cf059.json",
+      "new_path": "config/tasks/task_003_bla_high_temperature/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_003_bla_high_temperature/cfg_20261126_081616_987131.json",
+      "new_path": "config/tasks/task_003_bla_high_temperature/02_hy4_flash_free_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_004_athol1_substrate/cfg_20261112_181250_0bd28c.json",
+      "new_path": "config/tasks/task_004_athol1_substrate/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_004_athol1_substrate/cfg_20261126_081616_9622ce.json",
+      "new_path": "config/tasks/task_004_athol1_substrate/02_hy4_flash_free_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_8cd64c.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_f4aa65.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_193600_0d7f8a.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/03_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_194624_a336c7.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_195207_caf486.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/05_discoveryrsi_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200055_2ab39e.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/06_codex_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200057_20ad9a.json",
+      "new_path": "config/tasks/task_005_sun_leh_pythia/07_discoveryrsi_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_033146_bbf4c0.json",
+      "new_path": "config/tasks/task_006_zhang_hydrolases/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_144016_09fec4.json",
+      "new_path": "config/tasks/task_006_zhang_hydrolases/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261126_081616_5ee44d.json",
+      "new_path": "config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json"
+    },
+    {
+      "old_path": "src/task_001_rml_stability/20261120_200056_270fec/results/local/task_001_rml_stability/fresh/assisted/run-001/homologs/align_homologs.py",
+      "new_path": "src/task_001_rml_stability/20261120_200056_270fec/align_homologs.py"
+    },
+    {
+      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/context_scan_driver.py",
+      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/context_scan_driver.py"
+    },
+    {
+      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/fix_sequences.py",
+      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/fix_sequences.py"
+    },
+    {
+      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/full_scan_driver.py",
+      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/full_scan_driver.py"
+    },
+    {
+      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/monomer_scan_driver.py",
+      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/monomer_scan_driver.py"
+    },
+    {
+      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_esm_scan.py",
+      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/full_esm_scan.py"
+    },
+    {
+      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_pythia_scan.py",
+      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/full_pythia_scan.py"
+    },
+    {
+      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/verify_all.py",
+      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/verify_all.py"
+    }
+  ]
 }

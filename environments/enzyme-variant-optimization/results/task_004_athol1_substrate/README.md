@@ -1,4 +1,4 @@
-# task_004_athol1_substrate — workflow executions
+# AtHOL1 methyltransferase — ethyl iodide substrate expansion — workflow executions
 
 | Run | Approach | Model | Status | Evidence |
 |---|---|---|---|---|

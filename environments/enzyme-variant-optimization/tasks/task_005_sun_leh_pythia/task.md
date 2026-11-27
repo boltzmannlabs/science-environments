@@ -71,7 +71,7 @@ Historical model and usage summaries are in [run configs](../../config/tasks/tas
 - `verification.json` and a missing-position record: coverage, numerical checks, identity controls and preservation hashes.
 - `selection.csv` and `selection_seal.json`: frozen original selection and its content hash before retrospective comparison.
 - `jobs.json`, `errors.md` and `usage.json`: actual execution attempts, known IDs, diagnostic/correction history, permissions and cumulative accounting without credentials.
-- `REPORT.md` in the execution workspace: actual stages completed, selected library, functional concerns, method ambiguities and unresolved paper comparisons. The repository's public comparison report is [comparison.pdf](../../benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md).
+- `REPORT.md` in the execution workspace: actual stages completed, selected library, functional concerns, method ambiguities and unresolved paper comparisons. The repository's public comparison report is [comparison.pdf](../../benchmark/evaluation/task_005_sun_leh_pythia/comparisons/benchmark_report.md).
 
 ## Important Instructions
 

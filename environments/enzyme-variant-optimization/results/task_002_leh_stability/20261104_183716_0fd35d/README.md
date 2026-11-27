@@ -30,8 +30,8 @@ Closed: no supported final candidate. Reviewed empty selection retained.
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_002_leh_stability/comparisions/benchmark_report.md)
-- [Published reference values](../../../benchmark/task_002_leh_stability/references.md)
+- [Benchmark report](../../../benchmark/evaluation/task_002_leh_stability/comparisons/benchmark_report.md)
+- [Published reference values](../../../benchmark/reference_data/task_002_leh_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
 - [Our stability predictions](steps/07_ddgun_stability/README.md)

@@ -37,6 +37,8 @@ def main():
     if not config.is_file():
         parser.error("The supplied frozen settings file does not exist.")
     settings = json.loads(config.read_text())
+    if settings.get("launch_ready") is False:
+        parser.error("This is an incomplete historical configuration, not executable launch settings.")
     model = settings.get("llm", {}).get("model")
     if not model:
         parser.error("The configuration has no selected model; choose and freeze settings first.")

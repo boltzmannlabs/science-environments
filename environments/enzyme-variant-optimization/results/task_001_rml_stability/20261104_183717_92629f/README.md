@@ -30,8 +30,8 @@ Closed with limitations. Design and independent review retained; qualification/c
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_001_rml_stability/comparisions/benchmark_report.md)
-- [Published reference values](../../../benchmark/task_001_rml_stability/references.md)
+- [Benchmark report](../../../benchmark/evaluation/task_001_rml_stability/comparisons/benchmark_report.md)
+- [Published reference values](../../../benchmark/reference_data/task_001_rml_stability/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
 - [Our stability predictions](steps/07_ddgun_stability/README.md)

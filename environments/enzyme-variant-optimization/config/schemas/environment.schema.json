@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Environment configuration index",
+  "type": "object",
+  "required": [
+    "environment_id",
+    "schema_version",
+    "task_catalog",
+    "configuration_catalog",
+    "run_registry",
+    "configuration_schema",
+    "launch_schema",
+    "shared_settings",
+    "apply_shared_settings_automatically"
+  ],
+  "properties": {
+    "environment_id": {
+      "const": "enzyme-variant-optimization"
+    },
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "apply_shared_settings_automatically": {
+      "const": false
+    },
+    "shared_settings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

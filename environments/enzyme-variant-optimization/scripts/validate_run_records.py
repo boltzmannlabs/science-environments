@@ -5,7 +5,43 @@ import json
 from pathlib import Path
 
 
+def validate_configuration_layout(env: Path) -> dict:
+    import yaml
+    from jsonschema import Draft202012Validator
+
+    root = env / 'config'
+    environment = yaml.safe_load((root / 'environment.yaml').read_text())
+    schema = json.loads((root / 'schemas/environment.schema.json').read_text())
+    Draft202012Validator.check_schema(schema)
+    Draft202012Validator(schema).validate(environment)
+    for name in ('schemas', 'shared', 'tasks'):
+        if not (root / name).is_dir() or not any((root / name).iterdir()):
+            raise ValueError(f'Missing populated config directory: {name}')
+    for key in ('task_catalog', 'configuration_catalog', 'run_registry',
+                'results_index', 'specification', 'configuration_schema', 'launch_schema'):
+        if not (root / environment[key]).is_file():
+            raise ValueError(f'Broken environment configuration reference: {key}')
+    for relative in environment['shared_settings'].values():
+        yaml.safe_load((root / relative).read_text())
+    task_schema = json.loads((root / environment['configuration_schema']).read_text())
+    launch_schema = json.loads((root / environment['launch_schema']).read_text())
+    for item in (task_schema, launch_schema):
+        Draft202012Validator.check_schema(item)
+    configs = list((root / 'tasks').glob('task_*/*.json'))
+    for path in configs:
+        config = json.loads(path.read_text())
+        Draft202012Validator(task_schema).validate(config)
+        if config['task_id'] != path.parent.name:
+            raise ValueError(f'Configuration/task directory mismatch: {path}')
+        if 'shared_policy_ref' in config:
+            policy = yaml.safe_load((path.parent / config['shared_policy_ref']).read_text())
+            if config['llm'] != policy['llm'] or config['goal'] != policy['goal']:
+                raise ValueError(f'Shared settings differ from recorded task settings: {path}')
+    return {'configurations_validated': len(configs), 'configuration_layout': 'validated'}
+
+
 def validate(env: Path) -> dict:
+    configuration_checks = validate_configuration_layout(env)
     registry = json.loads((env / 'runs/registry.json').read_text())
     seen = set()
     artifacts = 0
@@ -34,6 +70,13 @@ def validate(env: Path) -> dict:
             raise ValueError(f'Status mismatch: {folder}')
         if not (folder / run['input_manifest']).is_file():
             raise ValueError(f'Missing input manifest: {folder}')
+        if run.get('launch_settings_snapshot'):
+            from jsonschema import Draft202012Validator
+            snapshot = folder / run['launch_settings_snapshot']
+            if hashlib.sha256(snapshot.read_bytes()).hexdigest() != run['launch_settings_sha256']:
+                raise ValueError(f'Launch snapshot checksum mismatch: {folder}')
+            schema = json.loads((env / 'config/schemas/launch_settings.schema.json').read_text())
+            Draft202012Validator(schema).validate(json.loads(snapshot.read_text()))
         if (result / provenance['run_record']).resolve() != folder / 'run.json':
             raise ValueError(f'Broken run backlink: {result}')
         listed = set()
@@ -49,7 +92,7 @@ def validate(env: Path) -> dict:
                   if p.is_file() and p.name != 'provenance.json'}
         if actual != listed:
             raise ValueError(f'Artifact inventory mismatch: {result}')
-    return {'runs': len(seen), 'tasks': len({t for t, _ in seen}),
+    return {**configuration_checks, 'runs': len(seen), 'tasks': len({t for t, _ in seen}),
             'artifacts_verified': artifacts,
             'scope': 'Metadata, identities, paths and hashes; not scientific qualification or full filename-format approval.'}
 

@@ -22,8 +22,8 @@ Closed with limitations. Existing execution/review retained; CatPred definitions
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md)
-- [Published reference values](../../../benchmark/task_004_athol1_substrate/references.md)
+- [Benchmark report](../../../benchmark/evaluation/task_004_athol1_substrate/comparisons/benchmark_report.md)
+- [Published reference values](../../../benchmark/reference_data/task_004_athol1_substrate/references.md)
 
 ## Execution records
 

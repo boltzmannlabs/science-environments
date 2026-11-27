@@ -1,4 +1,4 @@
-# task_002_leh_stability — workflow executions
+# Limonene epoxide hydrolase — stability — workflow executions
 
 | Run | Approach | Model | Status | Evidence |
 |---|---|---|---|---|

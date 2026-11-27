@@ -1,4 +1,4 @@
-# task_003_bla_high_temperature — workflow executions
+# Bacillus licheniformis alpha-amylase — high-temperature performance — workflow executions
 
 | Run | Approach | Model | Status | Evidence |
 |---|---|---|---|---|

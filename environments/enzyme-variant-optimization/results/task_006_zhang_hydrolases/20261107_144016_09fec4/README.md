@@ -24,8 +24,8 @@ Computational execution completed. Sealed structure/inference/scoring outputs re
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md)
-- [Published reference values](../../../benchmark/task_006_zhang_hydrolases/references.md)
+- [Benchmark report](../../../benchmark/evaluation/task_006_zhang_hydrolases/comparisons/benchmark_report.md)
+- [Published reference values](../../../benchmark/reference_data/task_006_zhang_hydrolases/references.md)
 - [Candidate sequences](sequences/candidates.fasta)
 - [Full-precision candidate predictions](reference_comparison/predictions.csv)
 

@@ -1,10 +1,10 @@
-# Task configurations
+# Configuration
 
-Task-linked configurations have explicit IDs and versions. HY4 records preserve authorized launch settings; historical records contain only recovered settings, with missing fields explicit. Tokens, timing and outcomes are under `runs/`.
+| Location | Purpose |
+|---|---|
+| [environment.yaml](environment.yaml) | Environment identity, catalog/schema links and explicit shared-settings policy. |
+| [schemas/](schemas/README.md) | Real validation schemas for task records and launch snapshots. |
+| [shared/](shared/README.md) | Common settings referenced by the applicable tasks, not automatically imposed on history. |
+| [tasks/](tasks/README.md) | Descriptive model/approach filenames for all six tasks. |
 
-- [task_001_rml_stability](tasks/task_001_rml_stability/README.md)
-- [task_002_leh_stability](tasks/task_002_leh_stability/README.md)
-- [task_003_bla_high_temperature](tasks/task_003_bla_high_temperature/README.md)
-- [task_004_athol1_substrate](tasks/task_004_athol1_substrate/README.md)
-- [task_005_sun_leh_pythia](tasks/task_005_sun_leh_pythia/README.md)
-- [task_006_zhang_hydrolases](tasks/task_006_zhang_hydrolases/README.md)
+Tokens, runtime, job status and execution logs belong in [runs](../runs/README.md). Complete original launch settings are preserved there with hashes. Unknown historical settings remain explicit; these records cannot silently become executable defaults.

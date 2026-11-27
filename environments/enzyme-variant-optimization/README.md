@@ -10,10 +10,17 @@ enzyme-variant-optimization/
 ├── STATUS.md
 ├── MODELS_AND_TOOLS.md
 ├── tasks/<task-id>/task.md
-├── config/tasks/<task-id>/<config-id>.json
+├── config/
+│   ├── environment.yaml
+│   ├── schemas/
+│   ├── shared/
+│   └── tasks/<task-id>/<model-and-approach>.json
 ├── runs/<task-id>/<native-logical-run-id>/
 ├── results/<task-id>/<same-run-id>/
 ├── benchmark/
+│   ├── definitions/
+│   ├── reference_data/
+│   └── evaluation/
 ├── scripts/
 └── src/
 ```
@@ -30,12 +37,12 @@ enzyme-variant-optimization/
 
 ## Recorded workflows
 
-- [task_001_rml_stability](results/task_001_rml_stability/README.md)
-- [task_002_leh_stability](results/task_002_leh_stability/README.md)
-- [task_003_bla_high_temperature](results/task_003_bla_high_temperature/README.md)
-- [task_004_athol1_substrate](results/task_004_athol1_substrate/README.md)
-- [task_005_sun_leh_pythia](results/task_005_sun_leh_pythia/README.md)
-- [task_006_zhang_hydrolases](results/task_006_zhang_hydrolases/README.md)
+- [RML lipase — stability](results/task_001_rml_stability/README.md)
+- [Limonene epoxide hydrolase — stability](results/task_002_leh_stability/README.md)
+- [Bacillus licheniformis alpha-amylase — high-temperature performance](results/task_003_bla_high_temperature/README.md)
+- [AtHOL1 methyltransferase — ethyl iodide substrate expansion](results/task_004_athol1_substrate/README.md)
+- [Sun LEH study — Pythia mutation scoring](results/task_005_sun_leh_pythia/README.md)
+- [Zhang study — cellulase and beta-glucanase scoring](results/task_006_zhang_hydrolases/README.md)
 
 The registry includes 23 native workflow starts: ten historical campaigns, nine later Codex/DiscoveryRSI starts (including interrupted preparation), and four HY4 assisted executions. Native continuation sessions stay within the same logical run. Controlled software fixtures are excluded. All six tasks have specialist-assisted evidence; incomplete starts are never presented as complete scientific results.
 
@@ -47,4 +54,4 @@ Read the [environment specification](ENVIRONMENT_SPEC.md), select a task, and su
 
 [Migration notes](MIGRATION.md) and [path mapping](migration_map.json) preserve prior identifiers and evidence. Each result package links its run record and configuration. Large/private artifacts and complete native transcripts remain in retained private archives; public activity logs contain metadata only. Missing original settings or artifact naming components are reported, not invented. No empty tests directory is added; environment-owned validation is available through `python scripts/validate_run_records.py`.
 
-Benchmark reports retain their documented legacy `benchmark/<task>/comparisions/` layout and historical agent-alone scope. They do not silently combine later model runs.
+Benchmark protocols, reference notes and calculations are separated under `benchmark/definitions/`, `benchmark/reference_data/` and `benchmark/evaluation/`. Comparisons retain their historical agent-alone scope; they do not silently combine later model runs.

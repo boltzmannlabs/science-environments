@@ -18,3 +18,5 @@ The specialist definitions are distributed in Agent Scientist's subagent catalog
 ## Execution record validation
 
 Run `python scripts/validate_run_records.py` to check task/config/run/result identity, backlinks and artifact hashes. This check does not establish scientific completion, full historical reconstruction or approval of legacy artifact filenames.
+
+Configuration validation additionally uses installed `PyYAML` and `jsonschema` packages. These are validation dependencies; the standard-library scientific endpoint helper remains unchanged.

@@ -22,8 +22,8 @@ Completed with unresolved blockers. Attempt81reached topology+manager; report wa
 
 ## Files
 
-- [Benchmark report](../../../benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md)
-- [Published reference values](../../../benchmark/task_003_bla_high_temperature/references.md)
+- [Benchmark report](../../../benchmark/evaluation/task_003_bla_high_temperature/comparisons/benchmark_report.md)
+- [Published reference values](../../../benchmark/reference_data/task_003_bla_high_temperature/references.md)
 
 ## Execution records
 
