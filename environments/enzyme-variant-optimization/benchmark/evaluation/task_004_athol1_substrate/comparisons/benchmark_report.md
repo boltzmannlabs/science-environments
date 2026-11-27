@@ -23,7 +23,7 @@ Source: [Shao et al., Figure 8A and electrostatic analysis](https://pmc.ncbi.nlm
 
 ### Candidate and reference property predictions
 
-![Candidate and reference property predictions](figures/comparison_01.png)
+![Candidate and reference property predictions](figures/sha256-31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191-6402d66d_unreported_unreported_0bd28c_unreported_unreported.png)
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 
@@ -38,7 +38,7 @@ Method: EvoEF1 1.1. Units: kcal/mol. Protocol: common WT; protein-only; 3 repair
 
 ### Predicted folding stability change: reference and our sequences
 
-![Predicted folding stability change: reference and our sequences](figures/comparison_02.png)
+![Predicted folding stability change: reference and our sequences](figures/sha256-d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4-4bc672dc_unreported_unreported_0bd28c_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
@@ -54,7 +54,7 @@ Each sequence has one 30 ns trajectory; the first 5 ns are excluded. Field and a
 
 ### Matched field, geometry and interaction predictions
 
-![Matched field, geometry and interaction predictions](figures/comparison_03.png)
+![Matched field, geometry and interaction predictions](figures/sha256-f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7-d31fcad2_unreported_unreported_0bd28c_unreported_unreported.png)
 
 Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.
 

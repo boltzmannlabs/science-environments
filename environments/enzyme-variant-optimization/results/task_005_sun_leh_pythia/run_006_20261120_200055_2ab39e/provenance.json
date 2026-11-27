@@ -24,36 +24,6 @@
       "source_sha256": "3494bd8e342b9e625528596e05bff4c7c6c2eb2f888f6356d90613657ec32cc8"
     },
     {
-      "path": "artifacts/all_scores.csv",
-      "sha256": "7d6c444220d57b396b4850a58679ccfa34ef2f4b8468aaf87e9dd3b783add82e",
-      "source_sha256": "7da6afbd690f2365071646d5e674910aff753769e5556c1cd1fc4ff10a372d1c"
-    },
-    {
-      "path": "artifacts/all_scores_ranked.csv",
-      "sha256": "0b42eacb363dc811736c32ccd1b1a8fb06ac8f79f6c0dbc84898adaad021aa3e",
-      "source_sha256": "4d62d7ade75f19118adb68c40786429b5ee080b8adf1292fe298174e9b3a8ebd"
-    },
-    {
-      "path": "artifacts/best_per_position.csv",
-      "sha256": "69a8ff5310e127ae0a5e13d31427c06363c7576fe2be1e26d8e7a2f7690019a6",
-      "source_sha256": "6109286a60045335bff16b7548ea0779d86c381f89b4f2a9c88184ad504d7107"
-    },
-    {
-      "path": "artifacts/candidates.fasta",
-      "sha256": "cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a",
-      "source_sha256": "cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a"
-    },
-    {
-      "path": "artifacts/candidates_dimer_context.fasta",
-      "sha256": "196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6",
-      "source_sha256": "196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6"
-    },
-    {
-      "path": "artifacts/candidates_mean_sensitivity.fasta",
-      "sha256": "0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d",
-      "source_sha256": "0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d"
-    },
-    {
       "path": "artifacts/decisions.md",
       "sha256": "f9a85b98510962d5c79865ae0ecc16b0f001159c9be2fcc44de1bcad18505e0d",
       "source_sha256": "f9a85b98510962d5c79865ae0ecc16b0f001159c9be2fcc44de1bcad18505e0d"
@@ -69,54 +39,9 @@
       "source_sha256": "9cbf35fe1d8e2f23cab103cdad270bc3c81853bbb93965ddea41f63f8f6252a0"
     },
     {
-      "path": "artifacts/identity_controls.csv",
-      "sha256": "38cfee11a86c57db7efc631714d65e08e49b729f611ab9bf8348ff56b6a16503",
-      "source_sha256": "ce2a56639b36acc48f664ddc9b11777b31f2d2f7e0cd52302ea54232788b0405"
-    },
-    {
       "path": "artifacts/inference_receipt.json",
       "sha256": "fd2d614d810c9d0f46e6d62049e80e02be8d592f97cc2e38eb765b0ee8ab1c03",
       "source_sha256": "fd2d614d810c9d0f46e6d62049e80e02be8d592f97cc2e38eb765b0ee8ab1c03"
-    },
-    {
-      "path": "artifacts/library_mean_monomer_A.csv",
-      "sha256": "024cb9a8e8f593842f6d13248446364588cb82a85827ea2ebdfb16e5da759315",
-      "source_sha256": "2a89d1f602f66cc8af22fed9e961cc708747223113a840fd7ad0f1382481dfdf"
-    },
-    {
-      "path": "artifacts/library_sum_dimer_AB_by_chain.csv",
-      "sha256": "441b8f2a0f0bc77bd19df5af422d9314e9df1042a50d3811a0bb13539529a156",
-      "source_sha256": "9a694a265d1601d38e04ca8bea58b1a8e5b64ebc821268d9e17843f513d024d1"
-    },
-    {
-      "path": "artifacts/library_sum_monomer_A.csv",
-      "sha256": "91420cee5699c4320a617f7fffb0dd5db5470018aa60520d161e9a2a4fc8ade6",
-      "source_sha256": "8ab91b44474635428c944191397679234972a728dbf88e4d905888ee49c6e632"
-    },
-    {
-      "path": "artifacts/missing_positions.csv",
-      "sha256": "1d5571f32bd9be6cc13384b01eb55eba79a4600c7e6488be50548748091a45e8",
-      "source_sha256": "c01b7af8cd4515874e16a58ecd26e6667aee6c95e247097dddf48073782bcd2b"
-    },
-    {
-      "path": "artifacts/paper_score_comparison.csv",
-      "sha256": "a080978c923429ec2b52ec2a05c83df007e78c2564f950fe1ad5abf570e1fa1a",
-      "source_sha256": "9570a9b900d0c54efee61ac9fdcaccdc4653e3c108253bdb17090d5eee42e301"
-    },
-    {
-      "path": "artifacts/parent.fasta",
-      "sha256": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080",
-      "source_sha256": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080"
-    },
-    {
-      "path": "artifacts/residue_map.csv",
-      "sha256": "237c81688c476b920bd7369559abf082db99ab24ea076e8b94fc762ca04103ef",
-      "source_sha256": "62453dc123e4c79fbc1a1b8edd924960b37c7ca54c2ba8da82374e009ca4fc29"
-    },
-    {
-      "path": "artifacts/selection.csv",
-      "sha256": "171eb113a4e17289507a52b892fa03a387899debdab90008881734728e234ea2",
-      "source_sha256": "08782c4bb5db4a83433e620dce5bec6cb2cc55c3b295a74f6589836ce29b36dc"
     },
     {
       "path": "artifacts/selection_seal.json",
@@ -124,12 +49,387 @@
       "source_sha256": "6bdd365e4be9a666ad50a08878bf3bd008dcdf46082db2be8300b0b3eeca6350"
     },
     {
+      "path": "artifacts/sha256-024cb9a8e8f593842f6d13248446364588cb82a85827ea2ebdfb16e5da759315-a649ca8e_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "024cb9a8e8f593842f6d13248446364588cb82a85827ea2ebdfb16e5da759315",
+      "source_sha256": "2a89d1f602f66cc8af22fed9e961cc708747223113a840fd7ad0f1382481dfdf",
+      "filename_components": {
+        "artifact_id": "sha256-024cb9a8e8f593842f6d13248446364588cb82a85827ea2ebdfb16e5da759315-a649ca8e",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "library_mean_monomer_A.csv",
+      "original_relative_path": "artifacts/library_mean_monomer_A.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-0b42eacb363dc811736c32ccd1b1a8fb06ac8f79f6c0dbc84898adaad021aa3e-87af29a6_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "0b42eacb363dc811736c32ccd1b1a8fb06ac8f79f6c0dbc84898adaad021aa3e",
+      "source_sha256": "4d62d7ade75f19118adb68c40786429b5ee080b8adf1292fe298174e9b3a8ebd",
+      "filename_components": {
+        "artifact_id": "sha256-0b42eacb363dc811736c32ccd1b1a8fb06ac8f79f6c0dbc84898adaad021aa3e-87af29a6",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_ranked.csv",
+      "original_relative_path": "artifacts/all_scores_ranked.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d-027b44fc_unreported_unreported_2ab39e_unreported_unreported.fasta",
+      "sha256": "0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d",
+      "source_sha256": "0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d",
+      "filename_components": {
+        "artifact_id": "sha256-0f0273d5a74ae5545b71441dadeb2dcd06543f5c0decf232cfe5a8186856232d-027b44fc",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_mean_sensitivity.fasta",
+      "original_relative_path": "artifacts/candidates_mean_sensitivity.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-171eb113a4e17289507a52b892fa03a387899debdab90008881734728e234ea2-9381f194_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "171eb113a4e17289507a52b892fa03a387899debdab90008881734728e234ea2",
+      "source_sha256": "08782c4bb5db4a83433e620dce5bec6cb2cc55c3b295a74f6589836ce29b36dc",
+      "filename_components": {
+        "artifact_id": "sha256-171eb113a4e17289507a52b892fa03a387899debdab90008881734728e234ea2-9381f194",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "selection.csv",
+      "original_relative_path": "artifacts/selection.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6-ed8964e2_unreported_unreported_2ab39e_unreported_unreported.fasta",
+      "sha256": "196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6",
+      "source_sha256": "196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6",
+      "filename_components": {
+        "artifact_id": "sha256-196c8c775844cbdf582bae9cceed636ca6981c83d51fd9109171f5f09062e4d6-ed8964e2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_dimer_context.fasta",
+      "original_relative_path": "artifacts/candidates_dimer_context.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-1d5571f32bd9be6cc13384b01eb55eba79a4600c7e6488be50548748091a45e8-e23b0097_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "1d5571f32bd9be6cc13384b01eb55eba79a4600c7e6488be50548748091a45e8",
+      "source_sha256": "c01b7af8cd4515874e16a58ecd26e6667aee6c95e247097dddf48073782bcd2b",
+      "filename_components": {
+        "artifact_id": "sha256-1d5571f32bd9be6cc13384b01eb55eba79a4600c7e6488be50548748091a45e8-e23b0097",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "missing_positions.csv",
+      "original_relative_path": "artifacts/missing_positions.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080-c22debd3_unreported_unreported_2ab39e_unreported_unreported.fasta",
+      "sha256": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080",
+      "source_sha256": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080",
+      "filename_components": {
+        "artifact_id": "sha256-234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080-c22debd3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "parent.fasta",
+      "original_relative_path": "artifacts/parent.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-237c81688c476b920bd7369559abf082db99ab24ea076e8b94fc762ca04103ef-c023504b_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "237c81688c476b920bd7369559abf082db99ab24ea076e8b94fc762ca04103ef",
+      "source_sha256": "62453dc123e4c79fbc1a1b8edd924960b37c7ca54c2ba8da82374e009ca4fc29",
+      "filename_components": {
+        "artifact_id": "sha256-237c81688c476b920bd7369559abf082db99ab24ea076e8b94fc762ca04103ef-c023504b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "residue_map.csv",
+      "original_relative_path": "artifacts/residue_map.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-38cfee11a86c57db7efc631714d65e08e49b729f611ab9bf8348ff56b6a16503-95293c72_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "38cfee11a86c57db7efc631714d65e08e49b729f611ab9bf8348ff56b6a16503",
+      "source_sha256": "ce2a56639b36acc48f664ddc9b11777b31f2d2f7e0cd52302ea54232788b0405",
+      "filename_components": {
+        "artifact_id": "sha256-38cfee11a86c57db7efc631714d65e08e49b729f611ab9bf8348ff56b6a16503-95293c72",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "identity_controls.csv",
+      "original_relative_path": "artifacts/identity_controls.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-441b8f2a0f0bc77bd19df5af422d9314e9df1042a50d3811a0bb13539529a156-3ed9de7e_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "441b8f2a0f0bc77bd19df5af422d9314e9df1042a50d3811a0bb13539529a156",
+      "source_sha256": "9a694a265d1601d38e04ca8bea58b1a8e5b64ebc821268d9e17843f513d024d1",
+      "filename_components": {
+        "artifact_id": "sha256-441b8f2a0f0bc77bd19df5af422d9314e9df1042a50d3811a0bb13539529a156-3ed9de7e",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "library_sum_dimer_AB_by_chain.csv",
+      "original_relative_path": "artifacts/library_sum_dimer_AB_by_chain.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-69a8ff5310e127ae0a5e13d31427c06363c7576fe2be1e26d8e7a2f7690019a6-23225e62_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "69a8ff5310e127ae0a5e13d31427c06363c7576fe2be1e26d8e7a2f7690019a6",
+      "source_sha256": "6109286a60045335bff16b7548ea0779d86c381f89b4f2a9c88184ad504d7107",
+      "filename_components": {
+        "artifact_id": "sha256-69a8ff5310e127ae0a5e13d31427c06363c7576fe2be1e26d8e7a2f7690019a6-23225e62",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position.csv",
+      "original_relative_path": "artifacts/best_per_position.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-7d6c444220d57b396b4850a58679ccfa34ef2f4b8468aaf87e9dd3b783add82e-7312ee2b_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "7d6c444220d57b396b4850a58679ccfa34ef2f4b8468aaf87e9dd3b783add82e",
+      "source_sha256": "7da6afbd690f2365071646d5e674910aff753769e5556c1cd1fc4ff10a372d1c",
+      "filename_components": {
+        "artifact_id": "sha256-7d6c444220d57b396b4850a58679ccfa34ef2f4b8468aaf87e9dd3b783add82e-7312ee2b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores.csv",
+      "original_relative_path": "artifacts/all_scores.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-91420cee5699c4320a617f7fffb0dd5db5470018aa60520d161e9a2a4fc8ade6-f53a046f_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "91420cee5699c4320a617f7fffb0dd5db5470018aa60520d161e9a2a4fc8ade6",
+      "source_sha256": "8ab91b44474635428c944191397679234972a728dbf88e4d905888ee49c6e632",
+      "filename_components": {
+        "artifact_id": "sha256-91420cee5699c4320a617f7fffb0dd5db5470018aa60520d161e9a2a4fc8ade6-f53a046f",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "library_sum_monomer_A.csv",
+      "original_relative_path": "artifacts/library_sum_monomer_A.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-a080978c923429ec2b52ec2a05c83df007e78c2564f950fe1ad5abf570e1fa1a-c97593f0_unreported_unreported_2ab39e_unreported_unreported.csv",
+      "sha256": "a080978c923429ec2b52ec2a05c83df007e78c2564f950fe1ad5abf570e1fa1a",
+      "source_sha256": "9570a9b900d0c54efee61ac9fdcaccdc4653e3c108253bdb17090d5eee42e301",
+      "filename_components": {
+        "artifact_id": "sha256-a080978c923429ec2b52ec2a05c83df007e78c2564f950fe1ad5abf570e1fa1a-c97593f0",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "paper_score_comparison.csv",
+      "original_relative_path": "artifacts/paper_score_comparison.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/sha256-cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a-b4a2ae37_unreported_unreported_2ab39e_unreported_unreported.fasta",
+      "sha256": "cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a",
+      "source_sha256": "cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a",
+      "filename_components": {
+        "artifact_id": "sha256-cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a-b4a2ae37",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "2ab39e",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates.fasta",
+      "original_relative_path": "artifacts/candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
       "path": "artifacts/verification.json",
       "sha256": "394ef6f507399f95bdd164a8001ac49c5017db1304d4097e4bbbbc7361464347",
       "source_sha256": "394ef6f507399f95bdd164a8001ac49c5017db1304d4097e4bbbbc7361464347"
     }
   ],
-  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained.",
   "run_folder": "run_006_20261120_200055_2ab39e",
-  "run_number": 6
+  "run_number": 6,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
 }

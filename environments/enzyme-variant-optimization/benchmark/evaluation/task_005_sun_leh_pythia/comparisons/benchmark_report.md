@@ -24,7 +24,7 @@ Source: [Sun et al., LEH case study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11
 
 ### Candidate and reference property predictions
 
-![Candidate and reference property predictions](figures/comparison_01.png)
+![Candidate and reference property predictions](figures/sha256-f4b66fdd4c9d5a758c3547d6d846098697c2467c1310e4f329045606b2c9570a-6402d66d_unreported_unreported_f4aa65_unreported_unreported.png)
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 
@@ -40,7 +40,7 @@ Method: Pythia C+P. Units: dimensionless. Protocol: 1NWW chain A; negative log m
 
 ### Pythia summed mutation score: reference and our sequences
 
-![Pythia summed mutation score: reference and our sequences](figures/comparison_02.png)
+![Pythia summed mutation score: reference and our sequences](figures/sha256-85e6d91fafb77bf112df7e657737060b416dee02a3dd7df872672a6cd68d8e3d-4bc672dc_unreported_unreported_f4aa65_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
@@ -56,7 +56,7 @@ Method: DDGun SEQ. Units: kcal/mol. Protocol: sequence-based complete variant; p
 
 ### Predicted unfolding stability change: reference and our sequences
 
-![Predicted unfolding stability change: reference and our sequences](figures/comparison_03.png)
+![Predicted unfolding stability change: reference and our sequences](figures/sha256-8ae34f198e042c7686d7d92cc9f1fa5639e7554c9a7b46136fc8d7eca32f06bf-d31fcad2_unreported_unreported_f4aa65_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 

@@ -52,3 +52,5 @@ Task-specific entry points below use the full required flags. The two prompt tex
 ## Checks performed — 27 November 2026
 
 All script modules compile and CLI help works. All six reports rebuild; 19 configuration/run packages and 461 output hashes validate. A saved sealed LEH comparison runs successfully. Fresh launch preparation, malformed/mismatched settings rejection, and native-runtime imports were checked. A controlled CLI substitute verified `/goal` handoff, the configured ToolUniverse name and duplicate-start rejection; this was a software test, not live scientific execution.
+
+Scientific artifact names and explicit historical fallbacks are checked by the validator. Legacy input names are resolved through per-result provenance, and a changed rendered figure cannot silently overwrite its checksum-based identity. The naming policy is documented in the environment README.

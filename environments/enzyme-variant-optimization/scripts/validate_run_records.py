@@ -6,6 +6,35 @@ import re
 from pathlib import Path
 
 
+def validate_artifact_names(root: Path, metadata: dict) -> int:
+    extensions = {'.csv', '.tsv', '.fasta', '.fa', '.pdb', '.cif', '.npz', '.png', '.jpg', '.jpeg', '.svg'}
+    checked = 0
+    for item in metadata.get('artifacts', []):
+        path = root / item['path']
+        if path.suffix.lower() not in extensions:
+            continue
+        fields = item.get('filename_components')
+        if not fields or not item.get('original_filename') or not item.get('original_relative_path'):
+            raise ValueError(f'Missing scientific artifact naming provenance: {path}')
+        timestamp = fields['timestamp_utc']
+        if timestamp is not None and not re.fullmatch(r'[0-9]{8}T[0-9]{6}Z', timestamp):
+            raise ValueError(f'Invalid recorded artifact timestamp: {path}')
+        expected = '_'.join([fields['artifact_id'], fields['tool_name'], timestamp or 'unreported',
+                             fields['run_reference'], fields['model_identifier'], fields['parameters']]) + path.suffix
+        if path.name != expected:
+            raise ValueError(f'Artifact components/order differ from metadata: {path}')
+        if not item.get('source_job_id'):
+            suffix = hashlib.sha256(item['original_relative_path'].encode()).hexdigest()[:8]
+            if fields['artifact_id'] != 'sha256-' + item['sha256'] + '-' + suffix:
+                raise ValueError(f'Export checksum identity does not match bytes/path: {path}')
+        if fields['parameters'] == 'metadata':
+            reference = item.get('parameters_reference')
+            if not reference or not (root / reference.split('#', 1)[0]).is_file():
+                raise ValueError(f'Missing recorded parameter reference: {path}')
+        checked += 1
+    return checked
+
+
 def validate_configuration_layout(env: Path) -> dict:
     import yaml
     from jsonschema import Draft202012Validator
@@ -47,6 +76,7 @@ def validate(env: Path) -> dict:
     seen = set()
     numbers = set()
     artifacts = 0
+    named_artifacts = 0
     for entry in registry['runs']:
         key = (entry['task_id'], entry['run_id'])
         if key in seen:
@@ -71,6 +101,7 @@ def validate(env: Path) -> dict:
         digest = hashlib.sha256(config_path.read_bytes()).hexdigest()
         result = (folder / run['result_path']).resolve()
         provenance = json.loads((result / 'provenance.json').read_text())
+        named_artifacts += validate_artifact_names(result, provenance)
         for item in (run, config, provenance):
             if item['task_id'] != task:
                 raise ValueError(f'Task mismatch: {folder}')
@@ -113,9 +144,17 @@ def validate(env: Path) -> dict:
                   if p.is_file() and p.name != 'provenance.json'}
         if actual != listed:
             raise ValueError(f'Artifact inventory mismatch: {result}')
+    for record in (env / 'benchmark/evaluation').glob('*/comparisons/provenance.json'):
+        provenance = json.loads(record.read_text())
+        named_artifacts += validate_artifact_names(record.parent, provenance)
+        for item in provenance.get('artifacts', []):
+            path = record.parent / item['path']
+            if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
+                raise ValueError(f'Benchmark artifact checksum mismatch: {path}')
     return {**configuration_checks, 'runs': len(seen), 'tasks': len({t for t, _ in seen}),
             'artifacts_verified': artifacts,
-            'scope': 'Metadata, identities, paths and hashes; not scientific qualification or full filename-format approval.'}
+            'normalized_artifact_names_validated': named_artifacts,
+            'scope': 'Metadata, paths, hashes and declared naming/fallback rules; not scientific qualification or maintainer approval.'}
 
 
 if __name__ == '__main__':

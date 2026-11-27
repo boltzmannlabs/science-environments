@@ -17,11 +17,11 @@ Scores are unitless. D101V changes catalytic Asp101; a high-ranked score does no
 ## Records
 
 - [Workflow and tools](WORKFLOW.md)
-- [Parent sequence](sequences/parent.fasta)
-- [Selected mutation sequences](sequences/selected_mutations.fasta)
-- [Full mapped scan](steps/01_pythia_scoring/all_scores.csv)
-- [Declared sum-score library](steps/02_ranking/selected_sum_lt_minus2.csv)
-- [Separate mean-score sensitivity](steps/02_ranking/selected_mean_lt_minus2.csv)
+- [Parent sequence](sequences/sha256-463e2a8309e362f0cec6109553902d3c6362627d9781bd233258b7564b7937a3-e29eefc5_unreported_unreported_8cd64c_unreported_unreported.fasta)
+- [Selected mutation sequences](sequences/sha256-48428d7469cba1d5c48d0f187896a4383b69fefdd8a39c6e096664457b37bf9d-bea6ab19_unreported_unreported_8cd64c_unreported_unreported.fasta)
+- [Full mapped scan](steps/01_pythia_scoring/sha256-8415d11a2d455dc56aa085505f7f77df19e84801b87cb42ef5b3f1ce760edf8d-cdab9822_unreported_unreported_8cd64c_unreported_unreported.csv)
+- [Declared sum-score library](steps/02_ranking/sha256-2d999a852ef63883924554f75fbc087e172b0b79280ca281eef7bba14722c998-78d208e4_unreported_unreported_8cd64c_unreported_unreported.csv)
+- [Separate mean-score sensitivity](steps/02_ranking/sha256-0b7eb01cf31b1822098e2e06d1e1abbe80bc02acb0fb8c3e0804c1be5575065f-7174ff3f_unreported_unreported_8cd64c_unreported_unreported.csv)
 
 The saved proposer and critic reviewed the initial plan and final result batches. The scan is a computational scoring execution, not an experimental reproduction. No agent-alone supplemental property calculations are copied into this arm.
 

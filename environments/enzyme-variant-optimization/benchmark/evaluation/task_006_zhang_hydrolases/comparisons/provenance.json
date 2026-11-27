@@ -4,5 +4,112 @@
   "comparison_scope": "Historical agent-alone comparison and separately identified post-selection assessments; does not silently include later assisted outputs.",
   "run_record": "../../../../runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/run.json",
   "result_record": "../../../../results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/provenance.json",
-  "layout_note": "Definitions, reference notes and execution comparisons are separated under benchmark/. Original scientific run identity is retained."
+  "layout_note": "Definitions, reference notes and execution comparisons are separated under benchmark/. Original scientific run identity is retained.",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "566c8bb1bfc65507d642a88151cfa62ba0aeac9501751150f8817d38ac40cb40"
+    },
+    {
+      "path": "benchmark_report.md",
+      "sha256": "a283863ccc2ce57f41ea3dd089cc935ea9de2eab766c62482c5ead57b219d1bd"
+    },
+    {
+      "path": "figures/sha256-2eb256e9ff365afab0bbd3c0dd62afef86626ce0806d64e8b83a93e080ec18a1-d31fcad2_unreported_unreported_09fec4_unreported_unreported.png",
+      "sha256": "2eb256e9ff365afab0bbd3c0dd62afef86626ce0806d64e8b83a93e080ec18a1",
+      "filename_components": {
+        "artifact_id": "sha256-2eb256e9ff365afab0bbd3c0dd62afef86626ce0806d64e8b83a93e080ec18a1-d31fcad2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "09fec4",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_03.png",
+      "original_relative_path": "figures/comparison_03.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "figures/sha256-4fe7443699e786c445bd5dfa525dff0fd05ff49cb230e2c0ef57a1e58733b021-6402d66d_unreported_unreported_09fec4_unreported_unreported.png",
+      "sha256": "4fe7443699e786c445bd5dfa525dff0fd05ff49cb230e2c0ef57a1e58733b021",
+      "filename_components": {
+        "artifact_id": "sha256-4fe7443699e786c445bd5dfa525dff0fd05ff49cb230e2c0ef57a1e58733b021-6402d66d",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "09fec4",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_01.png",
+      "original_relative_path": "figures/comparison_01.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "figures/sha256-a1b29c046e45b81a36b12041018d6a852a31d0d749fe50dfd6999fcaa0c835c6-4bc672dc_unreported_unreported_09fec4_unreported_unreported.png",
+      "sha256": "a1b29c046e45b81a36b12041018d6a852a31d0d749fe50dfd6999fcaa0c835c6",
+      "filename_components": {
+        "artifact_id": "sha256-a1b29c046e45b81a36b12041018d6a852a31d0d749fe50dfd6999fcaa0c835c6-4bc672dc",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "09fec4",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_02.png",
+      "original_relative_path": "figures/comparison_02.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "sha256-014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e-ba2c4403_unreported_unreported_09fec4_unreported_unreported.csv",
+      "sha256": "014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e",
+      "filename_components": {
+        "artifact_id": "sha256-014b2a672590a20487312b1ea30d15393ba4616d8546f3eae0d34e230395d39e-ba2c4403",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "09fec4",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "published_prediction_only.csv",
+      "original_relative_path": "published_prediction_only.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    }
+  ],
+  "artifact_naming_policy": "../../../../README.md#artifact-filenames"
 }

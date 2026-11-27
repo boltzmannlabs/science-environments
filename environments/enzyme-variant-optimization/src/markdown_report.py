@@ -1,5 +1,7 @@
 """GitHub-readable benchmark layout with durable relative image links."""
 from pathlib import Path
+import hashlib
+from run_paths import resolve_artifact
 
 
 class MarkdownReport:
@@ -33,6 +35,12 @@ class MarkdownReport:
         target = Path(target)
         images = target.parent / 'figures'
         images.mkdir(parents=True, exist_ok=True)
+        text = '\n\n'.join(self.parts) + '\n'
         for name, data in self.figures:
-            (images / name).write_bytes(data)
-        target.write_text('\n\n'.join(self.parts) + '\n')
+            destination = resolve_artifact(images / name)
+            if destination != (images / name).resolve() and destination.exists():
+                if hashlib.sha256(data).digest() != hashlib.sha256(destination.read_bytes()).digest():
+                    raise ValueError("Changed figure needs a new artifact identity/provenance entry: " + str(destination))
+            destination.write_bytes(data)
+            text = text.replace('figures/' + name, 'figures/' + destination.name)
+        target.write_text(text)

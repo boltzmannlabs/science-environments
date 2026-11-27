@@ -3,9 +3,9 @@
 This session ran the Pythia scan and verification before its conversation was interrupted. It contains scientific outputs and is retained separately from preparation-only attempts.
 
 - [Workflow and tools](WORKFLOW.md)
-- [Mutation scores](artifacts/all_scores.csv)
-- [Selected variants](artifacts/selection.csv)
-- [Candidate sequences](artifacts/candidates.fasta)
+- [Mutation scores](artifacts/sha256-6727a5b62b5d5958df6191ef1d7f6dac8e4e5e566a2bb053cbcdaa3e1d8d5091-7312ee2b_unreported_unreported_a336c7_unreported_unreported.csv)
+- [Selected variants](artifacts/sha256-171eb113a4e17289507a52b892fa03a387899debdab90008881734728e234ea2-9381f194_unreported_unreported_a336c7_unreported_unreported.csv)
+- [Candidate sequences](artifacts/sha256-4118f70343dac2d15727b392be65329f4c46414c998bf4a07a7e0cb166216297-b4a2ae37_unreported_unreported_a336c7_unreported_unreported.fasta)
 - [Execution record](../../../runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7/run.json)
 - [Output provenance](provenance.json)
 

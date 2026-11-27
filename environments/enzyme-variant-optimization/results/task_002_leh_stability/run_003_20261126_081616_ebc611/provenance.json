@@ -24,16 +24,6 @@
       "source_sha256": "af495d337d239d831928067b56089b7218ca7625c7059be2c3dab29b7c5b050c"
     },
     {
-      "path": "artifacts/candidate_history.csv",
-      "sha256": "af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d",
-      "source_sha256": "af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d"
-    },
-    {
-      "path": "artifacts/candidates.fasta",
-      "sha256": "d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c",
-      "source_sha256": "d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c"
-    },
-    {
       "path": "artifacts/decisions.md",
       "sha256": "94257622cf5f208db6bd54c546ffd6bfc2d1a9d808ab1124a6349a3869c0a7cf",
       "source_sha256": "94257622cf5f208db6bd54c546ffd6bfc2d1a9d808ab1124a6349a3869c0a7cf"
@@ -44,132 +34,644 @@
       "source_sha256": "65a054c067f90aa822dee5aeebad25ca5cc24db3595cc76ab477dee6c5ba5855"
     },
     {
-      "path": "artifacts/evaluation_observations.csv",
-      "sha256": "4d56ff39fac96c9a272697ba44d4e43e749b25b8c8b13d256b975a1f3258106d",
-      "source_sha256": "a04bc67758664788ff8b3ca4bcdae31e8392fe67b59ab40de9e11612e7351052"
-    },
-    {
-      "path": "artifacts/observations.csv",
-      "sha256": "d646214268b755eb86cf2917805b46d36cb44966165b25e7d5dcb0ac715aee2a",
-      "source_sha256": "341ee1884cc19b969b44237a9b75bf97e24f64d1c9f00bc64241b8a82028ff04"
-    },
-    {
-      "path": "artifacts/selection.csv",
-      "sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3",
-      "source_sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3"
-    },
-    {
       "path": "artifacts/selection_seal.json",
       "sha256": "4f27a72921c0e48cd884601a707cc1700eba92a7946635a30e8e2e5c4100978e",
       "source_sha256": "4f27a72921c0e48cd884601a707cc1700eba92a7946635a30e8e2e5c4100978e"
     },
     {
-      "path": "artifacts/structure_evidence/final/boltz2_paths.csv",
-      "sha256": "f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c",
-      "source_sha256": "f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c"
+      "path": "artifacts/sha256-16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3-9381f194_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3",
+      "source_sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3",
+      "filename_components": {
+        "artifact_id": "sha256-16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3-9381f194",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "selection.csv",
+      "original_relative_path": "artifacts/selection.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0.csv",
-      "sha256": "4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97",
-      "source_sha256": "4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97"
+      "path": "artifacts/sha256-4d56ff39fac96c9a272697ba44d4e43e749b25b8c8b13d256b975a1f3258106d-12640e36_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "4d56ff39fac96c9a272697ba44d4e43e749b25b8c8b13d256b975a1f3258106d",
+      "source_sha256": "a04bc67758664788ff8b3ca4bcdae31e8392fe67b59ab40de9e11612e7351052",
+      "filename_components": {
+        "artifact_id": "sha256-4d56ff39fac96c9a272697ba44d4e43e749b25b8c8b13d256b975a1f3258106d-12640e36",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "evaluation_observations.csv",
+      "original_relative_path": "artifacts/evaluation_observations.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0_alphafold_analysis.csv",
-      "sha256": "e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c",
-      "source_sha256": "e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c"
+      "path": "artifacts/sha256-af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d-a5b43c40_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d",
+      "source_sha256": "af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d",
+      "filename_components": {
+        "artifact_id": "sha256-af926e1d310d83afcf30150c13dddc1fe9eac347287c9e62c9ef640a7f51af9d-a5b43c40",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_history.csv",
+      "original_relative_path": "artifacts/candidate_history.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/final_combined_results_1.csv",
-      "sha256": "0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078",
-      "source_sha256": "0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078"
+      "path": "artifacts/sha256-d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c-b4a2ae37_unreported_unreported_ebc611_unreported_unreported.fasta",
+      "sha256": "d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c",
+      "source_sha256": "d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c",
+      "filename_components": {
+        "artifact_id": "sha256-d47f3ceb12d11273b383b582c0b46f175ebeb3c7cc5286d8550c6a645926383c-b4a2ae37",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates.fasta",
+      "original_relative_path": "artifacts/candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/final/prodigy_R2_setD_3_dimer.csv",
+      "path": "artifacts/sha256-d646214268b755eb86cf2917805b46d36cb44966165b25e7d5dcb0ac715aee2a-d8c476ba_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "d646214268b755eb86cf2917805b46d36cb44966165b25e7d5dcb0ac715aee2a",
+      "source_sha256": "341ee1884cc19b969b44237a9b75bf97e24f64d1c9f00bc64241b8a82028ff04",
+      "filename_components": {
+        "artifact_id": "sha256-d646214268b755eb86cf2917805b46d36cb44966165b25e7d5dcb0ac715aee2a-d8c476ba",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "observations.csv",
+      "original_relative_path": "artifacts/observations.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/final/6b080705c45f4015f0eb8d1d-c91077e1_prodigy_unreported_ebc611_unreported_unreported.csv",
       "sha256": "8ad0400b30c5ad9bc78806ec07037a373ac1ccebbfc9a573eed194437b65a337",
-      "source_sha256": "8ad0400b30c5ad9bc78806ec07037a373ac1ccebbfc9a573eed194437b65a337"
+      "source_sha256": "8ad0400b30c5ad9bc78806ec07037a373ac1ccebbfc9a573eed194437b65a337",
+      "filename_components": {
+        "artifact_id": "6b080705c45f4015f0eb8d1d-c91077e1",
+        "tool_name": "prodigy",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "prodigy_R2_setD_3_dimer.csv",
+      "original_relative_path": "artifacts/structure_evidence/final/prodigy_R2_setD_3_dimer.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b080705c45f4015f0eb8d1d",
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/parent/actseek_parent.csv",
-      "sha256": "a6eab44016dd47de22ebbcecc5140f9d1003d8bdcd127bd1716b1290a544e2fc",
-      "source_sha256": "a6eab44016dd47de22ebbcecc5140f9d1003d8bdcd127bd1716b1290a544e2fc"
+      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0/sha256-4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97-6bd77b50_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97",
+      "source_sha256": "4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97",
+      "filename_components": {
+        "artifact_id": "sha256-4431a46bd7ab89d520366b1ab3fdad3a1a863808bf23ac3048b78b6658d43f97-6bd77b50",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0.csv",
+      "original_relative_path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/parent/enzymes_parent_baseline.csv",
-      "sha256": "b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926",
-      "source_sha256": "b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926"
+      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/sha256-0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078-760fb53a_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078",
+      "source_sha256": "0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078",
+      "filename_components": {
+        "artifact_id": "sha256-0459d2a80f73704185d76385df1ddf9be4940e96f916ff43e867fc22448a6078-760fb53a",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "final_combined_results_1.csv",
+      "original_relative_path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/final_combined_results_1.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/parent/molprobity/candidate_summary.csv",
-      "sha256": "d2eae9f545a198fac3ba9a7900c2d83fca41504dabf326a2d9ea02373ffc273b",
-      "source_sha256": "93dd7b5d55b7b1bc48421dd9b10c4fa719d0632a18cf8cc0a74e0fd4c3323a6e"
+      "path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/sha256-e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c-91d874f9_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c",
+      "source_sha256": "e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c",
+      "filename_components": {
+        "artifact_id": "sha256-e6fb13b57a47cd6065525c3ad27a647a6e7c5cecea0413205368b39c3dfda14c-91d874f9",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0_alphafold_analysis.csv",
+      "original_relative_path": "artifacts/structure_evidence/final/multimer_R2_setD_3_correct/6908525f989512db60f7be03_6b0803667fb17f3eac9cf2f3/MultimerStructurePrediction20261126100110Z65f071_colabmult1_f2cc0_alphafold_analysis.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/parent/molprobity/invalid_candidates.csv",
-      "sha256": "28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627",
-      "source_sha256": "a4be1b9550e33f095037ee6fe76b52a30e2a1330df49e86fd9758e6579778c18"
+      "path": "artifacts/structure_evidence/final/sha256-f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c-bb437097_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c",
+      "source_sha256": "f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c",
+      "filename_components": {
+        "artifact_id": "sha256-f4eedda9a909c870f094eebe46aca44665b2fdc34997bcfdd50ac2251eec072c-bb437097",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "boltz2_paths.csv",
+      "original_relative_path": "artifacts/structure_evidence/final/boltz2_paths.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/parent/molprobity/validation_outliers.csv",
-      "sha256": "475409e034067f1f1ea0b8ccfb6fe746ff9c009e968a93c4ff49c1363ce1ee48",
-      "source_sha256": "de72ee36c61c57ff5d4837f1b80d40a84fc9ee69a46daf17c68ce5aa3bca3b9f"
-    },
-    {
-      "path": "artifacts/structure_evidence/parent/netsolp_parent.csv",
-      "sha256": "f02d581070fda9351bb234e735959fc2505d71af3519b4be914cc00347240fde",
-      "source_sha256": "f02d581070fda9351bb234e735959fc2505d71af3519b4be914cc00347240fde"
-    },
-    {
-      "path": "artifacts/structure_evidence/parent/prodigy_parent.csv",
+      "path": "artifacts/structure_evidence/parent/6b07edc28b9d410520f9d6d7-43dfcbf2_prodigy_20261126T082850Z_ebc611_unreported_metadata.csv",
       "sha256": "d07b0e215410e562d30477ab3484756c4f3cac5d535926ec95c3d9e02ab4fd81",
-      "source_sha256": "d07b0e215410e562d30477ab3484756c4f3cac5d535926ec95c3d9e02ab4fd81"
+      "source_sha256": "d07b0e215410e562d30477ab3484756c4f3cac5d535926ec95c3d9e02ab4fd81",
+      "filename_components": {
+        "artifact_id": "6b07edc28b9d410520f9d6d7-43dfcbf2",
+        "tool_name": "prodigy",
+        "timestamp_utc": "20261126T082850Z",
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "metadata"
+      },
+      "original_filename": "prodigy_parent.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/prodigy_parent.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07edc28b9d410520f9d6d7",
+      "parameters_reference": "../../../runs/task_002_leh_stability/run_003_20261126_081616_ebc611/jobs.json#entry-2",
+      "missing_source_fields": [
+        "model_identifier"
+      ],
+      "timestamp_basis": "Source job experiment timestamp"
     },
     {
-      "path": "artifacts/structure_evidence/parent/thermal_mpnn/1NWW.csv",
-      "sha256": "c1e48fb3ead77bf7be9298ff50a93e30d40ea8e4ea3c9c1ba55c2ce89d4bfb1a",
-      "source_sha256": "c1e48fb3ead77bf7be9298ff50a93e30d40ea8e4ea3c9c1ba55c2ce89d4bfb1a"
+      "path": "artifacts/structure_evidence/parent/6b07edd4b5e9e7e2abe202b1-a6b7dc0e_act-seek_20261126T082907Z_ebc611_unreported_metadata.csv",
+      "sha256": "a6eab44016dd47de22ebbcecc5140f9d1003d8bdcd127bd1716b1290a544e2fc",
+      "source_sha256": "a6eab44016dd47de22ebbcecc5140f9d1003d8bdcd127bd1716b1290a544e2fc",
+      "filename_components": {
+        "artifact_id": "6b07edd4b5e9e7e2abe202b1-a6b7dc0e",
+        "tool_name": "act-seek",
+        "timestamp_utc": "20261126T082907Z",
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "metadata"
+      },
+      "original_filename": "actseek_parent.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/actseek_parent.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07edd4b5e9e7e2abe202b1",
+      "parameters_reference": "../../../runs/task_002_leh_stability/run_003_20261126_081616_ebc611/jobs.json#entry-3",
+      "missing_source_fields": [
+        "model_identifier"
+      ],
+      "timestamp_basis": "Source job experiment timestamp"
     },
     {
-      "path": "artifacts/structure_evidence/round1/enzymes_screen_round1.csv",
-      "sha256": "71a2b9a6cd900c2c2db6983c850b637602ebe4138300134972f29c9775de521f",
-      "source_sha256": "71a2b9a6cd900c2c2db6983c850b637602ebe4138300134972f29c9775de521f"
+      "path": "artifacts/structure_evidence/parent/6b07ede38b9d410520f9d6ea-f6d309ef_netsolp_20261126T082923Z_ebc611_unreported_metadata.csv",
+      "sha256": "f02d581070fda9351bb234e735959fc2505d71af3519b4be914cc00347240fde",
+      "source_sha256": "f02d581070fda9351bb234e735959fc2505d71af3519b4be914cc00347240fde",
+      "filename_components": {
+        "artifact_id": "6b07ede38b9d410520f9d6ea-f6d309ef",
+        "tool_name": "netsolp",
+        "timestamp_utc": "20261126T082923Z",
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "metadata"
+      },
+      "original_filename": "netsolp_parent.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/netsolp_parent.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07ede38b9d410520f9d6ea",
+      "parameters_reference": "../../../runs/task_002_leh_stability/run_003_20261126_081616_ebc611/jobs.json#entry-4",
+      "missing_source_fields": [
+        "model_identifier"
+      ],
+      "timestamp_basis": "Source job experiment timestamp"
     },
     {
-      "path": "artifacts/structure_evidence/round1/molprobity/candidate_summary.csv",
-      "sha256": "97c20daceda99fef61b28724695aef63097d188675f5015161232bda191c0732",
-      "source_sha256": "36b8513a03e5cf9d750dd215bd43b947e44232c089b4bd7bccd888db200acce3"
-    },
-    {
-      "path": "artifacts/structure_evidence/round1/molprobity/invalid_candidates.csv",
+      "path": "artifacts/structure_evidence/parent/molprobity/sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-4ff41a22_unreported_unreported_ebc611_unreported_unreported.csv",
       "sha256": "28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627",
-      "source_sha256": "a4be1b9550e33f095037ee6fe76b52a30e2a1330df49e86fd9758e6579778c18"
+      "source_sha256": "a4be1b9550e33f095037ee6fe76b52a30e2a1330df49e86fd9758e6579778c18",
+      "filename_components": {
+        "artifact_id": "sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-4ff41a22",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "invalid_candidates.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/molprobity/invalid_candidates.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/round1/molprobity/validation_outliers.csv",
-      "sha256": "76916cc94f2caa12ff438ad76da2c854b00305ca7972f8e5066cf16989caa587",
-      "source_sha256": "2da5d4c3df8214cf5d218bc1588bbeb58b43673fed84b8285b6257a66ec88de5"
+      "path": "artifacts/structure_evidence/parent/molprobity/sha256-475409e034067f1f1ea0b8ccfb6fe746ff9c009e968a93c4ff49c1363ce1ee48-82236332_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "475409e034067f1f1ea0b8ccfb6fe746ff9c009e968a93c4ff49c1363ce1ee48",
+      "source_sha256": "de72ee36c61c57ff5d4837f1b80d40a84fc9ee69a46daf17c68ce5aa3bca3b9f",
+      "filename_components": {
+        "artifact_id": "sha256-475409e034067f1f1ea0b8ccfb6fe746ff9c009e968a93c4ff49c1363ce1ee48-82236332",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "validation_outliers.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/molprobity/validation_outliers.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/round1/netsolp_round1.csv",
+      "path": "artifacts/structure_evidence/parent/molprobity/sha256-d2eae9f545a198fac3ba9a7900c2d83fca41504dabf326a2d9ea02373ffc273b-432967fb_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "d2eae9f545a198fac3ba9a7900c2d83fca41504dabf326a2d9ea02373ffc273b",
+      "source_sha256": "93dd7b5d55b7b1bc48421dd9b10c4fa719d0632a18cf8cc0a74e0fd4c3323a6e",
+      "filename_components": {
+        "artifact_id": "sha256-d2eae9f545a198fac3ba9a7900c2d83fca41504dabf326a2d9ea02373ffc273b-432967fb",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_summary.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/molprobity/candidate_summary.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/parent/sha256-b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926-6cea8845_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926",
+      "source_sha256": "b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926",
+      "filename_components": {
+        "artifact_id": "sha256-b3e05334d2eedff1c6688dcf69ea248d67075d4233282ac8fea58fed6e34a926-6cea8845",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "enzymes_parent_baseline.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/enzymes_parent_baseline.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/parent/thermal_mpnn/6b07edf36a16f64f7a945129-1cdec71e_thermal-mpnn_20261126T082939Z_ebc611_unreported_metadata.csv",
+      "sha256": "c1e48fb3ead77bf7be9298ff50a93e30d40ea8e4ea3c9c1ba55c2ce89d4bfb1a",
+      "source_sha256": "c1e48fb3ead77bf7be9298ff50a93e30d40ea8e4ea3c9c1ba55c2ce89d4bfb1a",
+      "filename_components": {
+        "artifact_id": "6b07edf36a16f64f7a945129-1cdec71e",
+        "tool_name": "thermal-mpnn",
+        "timestamp_utc": "20261126T082939Z",
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "metadata"
+      },
+      "original_filename": "1NWW.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent/thermal_mpnn/1NWW.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07edf36a16f64f7a945129",
+      "parameters_reference": "../../../runs/task_002_leh_stability/run_003_20261126_081616_ebc611/jobs.json#entry-5",
+      "missing_source_fields": [
+        "model_identifier"
+      ],
+      "timestamp_basis": "Source job experiment timestamp"
+    },
+    {
+      "path": "artifacts/structure_evidence/round1/6b07f8688b9d410520f9dc2d-082e75e9_enzymes_unreported_ebc611_unreported_metadata.csv",
+      "sha256": "71a2b9a6cd900c2c2db6983c850b637602ebe4138300134972f29c9775de521f",
+      "source_sha256": "71a2b9a6cd900c2c2db6983c850b637602ebe4138300134972f29c9775de521f",
+      "filename_components": {
+        "artifact_id": "6b07f8688b9d410520f9dc2d-082e75e9",
+        "tool_name": "enzymes",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "metadata"
+      },
+      "original_filename": "enzymes_screen_round1.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/enzymes_screen_round1.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07f8688b9d410520f9dc2d",
+      "parameters_reference": "../../../runs/task_002_leh_stability/run_003_20261126_081616_ebc611/jobs.json#entry-11",
+      "missing_source_fields": [
+        "timestamp_utc",
+        "model_identifier"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/round1/6b07f9a8b5e9e7e2abe209cc-345d7a19_netsolp_unreported_ebc611_unreported_unreported.csv",
       "sha256": "899b04367b03505e4748dc4c62cd5dfbd478e092494d0e3f030fba5a26bc431e",
-      "source_sha256": "899b04367b03505e4748dc4c62cd5dfbd478e092494d0e3f030fba5a26bc431e"
+      "source_sha256": "899b04367b03505e4748dc4c62cd5dfbd478e092494d0e3f030fba5a26bc431e",
+      "filename_components": {
+        "artifact_id": "6b07f9a8b5e9e7e2abe209cc-345d7a19",
+        "tool_name": "netsolp",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "netsolp_round1.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/netsolp_round1.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07f9a8b5e9e7e2abe209cc",
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/round1/structure_summary.csv",
-      "sha256": "15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576",
-      "source_sha256": "15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576"
-    },
-    {
-      "path": "artifacts/structure_evidence/round1/tmalign_round1.csv",
+      "path": "artifacts/structure_evidence/round1/6b07ff17b5e9e7e2abe20c50-aa19456c_tm-align_unreported_ebc611_unreported_unreported.csv",
       "sha256": "b15242ae09f56c7e04df31382dff111b9f56aa25c493e2317e00c1d209811b84",
-      "source_sha256": "b15242ae09f56c7e04df31382dff111b9f56aa25c493e2317e00c1d209811b84"
+      "source_sha256": "b15242ae09f56c7e04df31382dff111b9f56aa25c493e2317e00c1d209811b84",
+      "filename_components": {
+        "artifact_id": "6b07ff17b5e9e7e2abe20c50-aa19456c",
+        "tool_name": "tm-align",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "tmalign_round1.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/tmalign_round1.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07ff17b5e9e7e2abe20c50",
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "artifacts/structure_evidence/round2/enzymes_screen_round2.csv",
+      "path": "artifacts/structure_evidence/round1/molprobity/sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-815bf43e_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627",
+      "source_sha256": "a4be1b9550e33f095037ee6fe76b52a30e2a1330df49e86fd9758e6579778c18",
+      "filename_components": {
+        "artifact_id": "sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-815bf43e",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "invalid_candidates.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/molprobity/invalid_candidates.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/round1/molprobity/sha256-76916cc94f2caa12ff438ad76da2c854b00305ca7972f8e5066cf16989caa587-5474d1ea_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "76916cc94f2caa12ff438ad76da2c854b00305ca7972f8e5066cf16989caa587",
+      "source_sha256": "2da5d4c3df8214cf5d218bc1588bbeb58b43673fed84b8285b6257a66ec88de5",
+      "filename_components": {
+        "artifact_id": "sha256-76916cc94f2caa12ff438ad76da2c854b00305ca7972f8e5066cf16989caa587-5474d1ea",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "validation_outliers.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/molprobity/validation_outliers.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/round1/molprobity/sha256-97c20daceda99fef61b28724695aef63097d188675f5015161232bda191c0732-ab6d7e52_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "97c20daceda99fef61b28724695aef63097d188675f5015161232bda191c0732",
+      "source_sha256": "36b8513a03e5cf9d750dd215bd43b947e44232c089b4bd7bccd888db200acce3",
+      "filename_components": {
+        "artifact_id": "sha256-97c20daceda99fef61b28724695aef63097d188675f5015161232bda191c0732-ab6d7e52",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_summary.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/molprobity/candidate_summary.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/round1/sha256-15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576-8832dc67_unreported_unreported_ebc611_unreported_unreported.csv",
+      "sha256": "15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576",
+      "source_sha256": "15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576",
+      "filename_components": {
+        "artifact_id": "sha256-15105a047b130d3559624d032b11e6e685267ae03d1ea9d47bcf43eb77ee4576-8832dc67",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "structure_summary.csv",
+      "original_relative_path": "artifacts/structure_evidence/round1/structure_summary.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "artifacts/structure_evidence/round2/6b07fee2c45f4015f0eb88fa-19d2ae88_enzymes_unreported_ebc611_unreported_unreported.csv",
       "sha256": "7291b126cfa015c21a6025445c4ab06eb6058fa3e91d74514c2f05d8259c5e4d",
-      "source_sha256": "7291b126cfa015c21a6025445c4ab06eb6058fa3e91d74514c2f05d8259c5e4d"
+      "source_sha256": "7291b126cfa015c21a6025445c4ab06eb6058fa3e91d74514c2f05d8259c5e4d",
+      "filename_components": {
+        "artifact_id": "6b07fee2c45f4015f0eb88fa-19d2ae88",
+        "tool_name": "enzymes",
+        "timestamp_utc": null,
+        "run_reference": "ebc611",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "enzymes_screen_round2.csv",
+      "original_relative_path": "artifacts/structure_evidence/round2/enzymes_screen_round2.csv",
+      "artifact_id_basis": "Native document ID with an export-path checksum suffix",
+      "source_job_id": "6b07fee2c45f4015f0eb88fa",
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     }
   ],
-  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained.",
   "run_folder": "run_003_20261126_081616_ebc611",
-  "run_number": 3
+  "run_number": 3,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
 }

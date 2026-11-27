@@ -1,6 +1,6 @@
 # RML stability — specialist-assisted workflow
 
-![Workflow tools](figures/workflow.jpg)
+![Workflow tools](figures/sha256-5aa9eeab044d4e7c508e41771f94c3eb6f3d71a5d4df3cbafd9e4da13b1f66ed-c36e6a7b_unreported_unreported_b986fa_unreported_unreported.jpg)
 
 The native proposer and critic reviewed planning and result batches. The main agent executed scientific tools and retained the outputs.
 

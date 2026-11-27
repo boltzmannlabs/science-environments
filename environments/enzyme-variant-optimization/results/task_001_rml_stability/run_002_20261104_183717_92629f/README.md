@@ -31,8 +31,8 @@ Closed with limitations. Design and independent review retained; qualification/c
 
 - [Benchmark report](../../../benchmark/evaluation/task_001_rml_stability/comparisons/benchmark_report.md)
 - [Published reference values](../../../benchmark/reference_data/task_001_rml_stability/references.md)
-- [Candidate sequences](sequences/candidates.fasta)
-- [Full-precision candidate predictions](reference_comparison/predictions.csv)
+- [Candidate sequences](sequences/sha256-54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1-b89bca6b_unreported_unreported_92629f_unreported_unreported.fasta)
+- [Full-precision candidate predictions](reference_comparison/sha256-bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174-ad5cb62c_unreported_unreported_92629f_unreported_unreported.csv)
 - [Our stability predictions](steps/07_ddgun_stability/README.md)
 
 ## Execution records

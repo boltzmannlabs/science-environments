@@ -1,6 +1,6 @@
 # Zhang cellulase / β-glucanase study — workflow
 
-![Final workflow tools](figures/workflow.jpg)
+![Final workflow tools](figures/sha256-a28e37046f2f45ad13f870d0c69db74617769fce1e49011d5dde37556b369660-c36e6a7b_unreported_unreported_09fec4_unreported_unreported.jpg)
 
 The WT branch uses AlphaFold2/ColabFold structures with Pythia. The separate M2/M5 branch uses sequence-based ESM-2 scoring. Python verifies and ranks the outputs while keeping these backgrounds separate; later benchmark calculations appear below.
 

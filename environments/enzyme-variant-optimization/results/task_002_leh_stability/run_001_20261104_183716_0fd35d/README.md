@@ -31,8 +31,8 @@ Closed: no supported final candidate. Reviewed empty selection retained.
 
 - [Benchmark report](../../../benchmark/evaluation/task_002_leh_stability/comparisons/benchmark_report.md)
 - [Published reference values](../../../benchmark/reference_data/task_002_leh_stability/references.md)
-- [Candidate sequences](sequences/candidates.fasta)
-- [Full-precision candidate predictions](reference_comparison/predictions.csv)
+- [Candidate sequences](sequences/sha256-2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85-b89bca6b_unreported_unreported_0fd35d_unreported_unreported.fasta)
+- [Full-precision candidate predictions](reference_comparison/sha256-aaba3d1b64c5fc66d63ecc6167f9d57ca0378f06da99ef281381b15d1cffbfae-ad5cb62c_unreported_unreported_0fd35d_unreported_unreported.csv)
 - [Our stability predictions](steps/07_ddgun_stability/README.md)
 
 ## Execution records

@@ -1,6 +1,6 @@
 # Sun LEH / Pythia — specialist-assisted workflow
 
-![Workflow tools](figures/workflow.jpg)
+![Workflow tools](figures/sha256-2a841262398a21e08210e7c593d4fd3eef89dc2cc2fb048b7fc9d13ee309552c-c36e6a7b_unreported_unreported_8cd64c_unreported_unreported.jpg)
 
 The native proposer and critic reviewed planning and result batches. The main agent executed scientific tools and retained the outputs.
 

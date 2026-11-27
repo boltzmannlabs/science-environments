@@ -4,5 +4,88 @@
   "comparison_scope": "Historical agent-alone comparison and separately identified post-selection assessments; does not silently include later assisted outputs.",
   "run_record": "../../../../runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/run.json",
   "result_record": "../../../../results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/provenance.json",
-  "layout_note": "Definitions, reference notes and execution comparisons are separated under benchmark/. Original scientific run identity is retained."
+  "layout_note": "Definitions, reference notes and execution comparisons are separated under benchmark/. Original scientific run identity is retained.",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9411cde5be37ac4a938c1d41b7421a9f107d3fd2937f628f25c0e87092794bc3"
+    },
+    {
+      "path": "benchmark_report.md",
+      "sha256": "9008206c1c201af471cc167593ae91facfc1fa8a6a82363ac42c17765dd0cecc"
+    },
+    {
+      "path": "figures/sha256-85e6d91fafb77bf112df7e657737060b416dee02a3dd7df872672a6cd68d8e3d-4bc672dc_unreported_unreported_f4aa65_unreported_unreported.png",
+      "sha256": "85e6d91fafb77bf112df7e657737060b416dee02a3dd7df872672a6cd68d8e3d",
+      "filename_components": {
+        "artifact_id": "sha256-85e6d91fafb77bf112df7e657737060b416dee02a3dd7df872672a6cd68d8e3d-4bc672dc",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "f4aa65",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_02.png",
+      "original_relative_path": "figures/comparison_02.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "figures/sha256-8ae34f198e042c7686d7d92cc9f1fa5639e7554c9a7b46136fc8d7eca32f06bf-d31fcad2_unreported_unreported_f4aa65_unreported_unreported.png",
+      "sha256": "8ae34f198e042c7686d7d92cc9f1fa5639e7554c9a7b46136fc8d7eca32f06bf",
+      "filename_components": {
+        "artifact_id": "sha256-8ae34f198e042c7686d7d92cc9f1fa5639e7554c9a7b46136fc8d7eca32f06bf-d31fcad2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "f4aa65",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_03.png",
+      "original_relative_path": "figures/comparison_03.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "figures/sha256-f4b66fdd4c9d5a758c3547d6d846098697c2467c1310e4f329045606b2c9570a-6402d66d_unreported_unreported_f4aa65_unreported_unreported.png",
+      "sha256": "f4b66fdd4c9d5a758c3547d6d846098697c2467c1310e4f329045606b2c9570a",
+      "filename_components": {
+        "artifact_id": "sha256-f4b66fdd4c9d5a758c3547d6d846098697c2467c1310e4f329045606b2c9570a-6402d66d",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "f4aa65",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_01.png",
+      "original_relative_path": "figures/comparison_01.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    }
+  ],
+  "artifact_naming_policy": "../../../../README.md#artifact-filenames"
 }

@@ -23,7 +23,7 @@ Source: [Fan et al., computational screening](https://pmc.ncbi.nlm.nih.gov/artic
 
 ### Candidate and reference property predictions
 
-![Candidate and reference property predictions](figures/comparison_01.png)
+![Candidate and reference property predictions](figures/sha256-b57fb2ca45db97b698c5e2b7faf517618f1291e1ded6156d855b938bba3d4c0f-6402d66d_unreported_unreported_7cf059_unreported_unreported.png)
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 
@@ -39,7 +39,7 @@ Method: EvoEF1 1.1. Units: kcal/mol. Protocol: common WT; protein-only; 3 repair
 
 ### Predicted folding stability change: reference and our sequences
 
-![Predicted folding stability change: reference and our sequences](figures/comparison_02.png)
+![Predicted folding stability change: reference and our sequences](figures/sha256-1b70a4ef251f8dc46ca466b1ba946f80850d8e410ad403071007cb225683562e-4bc672dc_unreported_unreported_7cf059_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
@@ -55,7 +55,7 @@ Method: PACKMAN 1.4.13. Units: J K^-1 mol^-1. Protocol: matched fixed backbone; 
 
 ### Packing-geometric entropy: reference and our sequences
 
-![Packing-geometric entropy: reference and our sequences](figures/comparison_03.png)
+![Packing-geometric entropy: reference and our sequences](figures/sha256-ea9473cc74d3522c6c9375b233f2af1a8d2fbdb93aba84929d238f23bd8d658b-d31fcad2_unreported_unreported_7cf059_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol. The plot shows changes from the evaluated parent.
 

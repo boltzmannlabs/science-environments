@@ -9,11 +9,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from run_paths import historical_result
+from run_paths import historical_result, resolve_artifact
 from markdown_report import MarkdownReport
 
 
 def rows(path):
+    path = resolve_artifact(path)
     with path.open() as stream:
         return list(csv.DictReader(stream))
 
@@ -23,7 +24,7 @@ def number(value, digits=4):
 
 
 def add_electrostatics(doc, folder, image, plt):
-    path = folder / 'steps/10_reaction_electrostatics/predictions.csv'
+    path = resolve_artifact(folder / 'steps/10_reaction_electrostatics/predictions.csv')
     if not path.exists():
         return
     data = rows(path)
@@ -58,7 +59,7 @@ def add_electrostatics(doc, folder, image, plt):
 
 def add_open_source_metrics(doc, folder, image, plt):
     """Render verified alternative-method results, distinct from published predictions."""
-    path = folder / 'reference_comparison/open_source_metrics.csv'
+    path = resolve_artifact(folder / 'reference_comparison/open_source_metrics.csv')
     if not path.exists():
         return
     from collections import defaultdict
@@ -70,7 +71,7 @@ def add_open_source_metrics(doc, folder, image, plt):
             continue
         if row['candidate_id'] in diagnostic_or_duplicate:
             continue
-        if row['method'].startswith('DDGun') and (folder / 'steps/07_ddgun_stability/predictions.csv').exists():
+        if row['method'].startswith('DDGun') and resolve_artifact(folder / 'steps/07_ddgun_stability/predictions.csv').exists():
             continue  # The original verified DDGun table and plot already show these rows.
         groups[(row['metric'], row['method'], row['unit'], row['protocol'])].append(row)
     for (metric, method, unit, protocol), group in groups.items():
@@ -145,7 +146,7 @@ def build_task(env, task):
             charts += 1
 
         if tid == 'task_006_zhang_hydrolases':
-            agreement = env / 'benchmark' / 'evaluation' / tid / 'comparisons/published_prediction_only.csv'
+            agreement = resolve_artifact(env / 'benchmark' / 'evaluation' / tid / 'comparisons/published_prediction_only.csv')
             if agreement.exists():
                 pairs = [dict(r, background=r['background'].replace('-', '_'),
                               method='ESM2' if r['method'] == 'ESM' else r['method'],
@@ -179,7 +180,7 @@ def build_task(env, task):
                 fig.tight_layout()
                 image(fig, 'Published versus recalculated scores', 'Each panel compares the same variants and scoring background. Scores are unitless; the dashed line marks equal values.')
 
-        energy_path = folder / 'steps/07_ddgun_stability/predictions.csv'
+        energy_path = resolve_artifact(folder / 'steps/07_ddgun_stability/predictions.csv')
         if energy_path.exists():
             energy = [r for r in rows(energy_path) if not r['candidate'].startswith('paper-control')]
             doc.add_heading('Our stability predictions', 1)
@@ -200,7 +201,7 @@ def build_task(env, task):
             image(fig, 'Stability change from our parent', 'All bars use DDGun_SEQ and the same selected parent within this task.')
 
         candidates = [dict(r, origin='our') for r in task.get('candidates', [])]
-        comparison_path = folder / 'reference_comparison/predictions.csv'
+        comparison_path = resolve_artifact(folder / 'reference_comparison/predictions.csv')
         if comparison_path.exists():
             # This file is an explicitly integrated, verified same-method comparison.
             candidates = rows(comparison_path)

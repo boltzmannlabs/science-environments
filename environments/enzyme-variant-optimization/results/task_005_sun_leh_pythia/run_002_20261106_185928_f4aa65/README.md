@@ -23,8 +23,8 @@ Computational execution completed. Sealed scoring/ranking and comparison retaine
 
 - [Benchmark report](../../../benchmark/evaluation/task_005_sun_leh_pythia/comparisons/benchmark_report.md)
 - [Published reference values](../../../benchmark/reference_data/task_005_sun_leh_pythia/references.md)
-- [Candidate sequences](sequences/candidates.fasta)
-- [Full-precision candidate predictions](reference_comparison/predictions.csv)
+- [Candidate sequences](sequences/sha256-7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768-b89bca6b_unreported_unreported_f4aa65_unreported_unreported.fasta)
+- [Full-precision candidate predictions](reference_comparison/sha256-88a4de0767188fe09361d8781f0fb782ff888d22304e0c6d7476c424af728eff-ad5cb62c_unreported_unreported_f4aa65_unreported_unreported.csv)
 
 ## Execution records
 

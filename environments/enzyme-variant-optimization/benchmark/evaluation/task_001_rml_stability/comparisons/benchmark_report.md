@@ -25,7 +25,7 @@ Change is relative to our selected parent. Positive DDGun unfolding ΔΔG indica
 
 ### Stability change from our parent
 
-![Stability change from our parent](figures/comparison_01.png)
+![Stability change from our parent](figures/sha256-bb64ab3b8b1990e3de3557214a25e8c1f3860c03a911d4903d5ec402489a2e0f-6402d66d_unreported_unreported_92629f_unreported_unreported.png)
 
 All bars use DDGun_SEQ and the same selected parent within this task.
 
@@ -38,7 +38,7 @@ All bars use DDGun_SEQ and the same selected parent within this task.
 
 ### Candidate and reference property predictions
 
-![Candidate and reference property predictions](figures/comparison_02.png)
+![Candidate and reference property predictions](figures/sha256-209eabed9105c627fd07aeb36040396e18f210e06b61a24008830fdee2039ffa-4bc672dc_unreported_unreported_92629f_unreported_unreported.png)
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 

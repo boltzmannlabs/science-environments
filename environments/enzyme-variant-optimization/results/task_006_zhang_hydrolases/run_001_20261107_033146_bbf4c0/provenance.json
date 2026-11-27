@@ -10,66 +10,266 @@
   "artifacts": [
     {
       "path": "README.md",
-      "sha256": "ce0fb1c6acb75814fdaac1324c90c631907ce02c65c52dc72b4dc5ba5055009e",
+      "sha256": "a67b5e9cec26f2d3335b2f7af2ac9566dc768a923c8f8ea64620097bc7980a1a",
       "source_sha256": null
     },
     {
       "path": "WORKFLOW.md",
-      "sha256": "aa06bd270395f0aaaf7b292432f45cf6507ccee3461a730977156e34dea56bbe",
+      "sha256": "9996cd25bb42ce11d84ada4f930d20220af6568b5601e4fae12c4f540c0e15ac",
       "source_sha256": null
     },
     {
-      "path": "figures/workflow.jpg",
+      "path": "figures/sha256-f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc-c36e6a7b_unreported_unreported_bbf4c0_unreported_unreported.jpg",
       "sha256": "f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc-c36e6a7b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "workflow.jpg",
+      "original_relative_path": "figures/workflow.jpg",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "sequences/backgrounds.fasta",
-      "sha256": "7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b",
-      "source_sha256": null
-    },
-    {
-      "path": "sequences/score_leaders.fasta",
+      "path": "sequences/sha256-6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed-493a42a8_unreported_unreported_bbf4c0_unreported_unreported.fasta",
       "sha256": "6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed-493a42a8",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "score_leaders.fasta",
+      "original_relative_path": "sequences/score_leaders.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/01_structure_prediction/models.csv",
+      "path": "sequences/sha256-7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b-2d9c0b7b_unreported_unreported_bbf4c0_unreported_unreported.fasta",
+      "sha256": "7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b-2d9c0b7b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "backgrounds.fasta",
+      "original_relative_path": "sequences/backgrounds.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "steps/01_structure_prediction/sha256-186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e-768aacf2_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e-768aacf2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "models.csv",
+      "original_relative_path": "steps/01_structure_prediction/models.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/02_pythia_scoring/beta-glucanase-WT.csv",
-      "sha256": "fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82",
-      "source_sha256": null
-    },
-    {
-      "path": "steps/02_pythia_scoring/cellulase-WT.csv",
+      "path": "steps/02_pythia_scoring/sha256-73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e-fb999593_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e-fb999593",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "cellulase-WT.csv",
+      "original_relative_path": "steps/02_pythia_scoring/cellulase-WT.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/03_esm_scoring/beta-glucanase-M5.csv",
+      "path": "steps/02_pythia_scoring/sha256-fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82-28a8e788_unreported_unreported_bbf4c0_unreported_unreported.csv",
+      "sha256": "fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82-28a8e788",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "beta-glucanase-WT.csv",
+      "original_relative_path": "steps/02_pythia_scoring/beta-glucanase-WT.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+    },
+    {
+      "path": "steps/03_esm_scoring/sha256-8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081-48815bbb_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081-48815bbb",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "beta-glucanase-M5.csv",
+      "original_relative_path": "steps/03_esm_scoring/beta-glucanase-M5.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/03_esm_scoring/cellulase-M2.csv",
+      "path": "steps/03_esm_scoring/sha256-9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f-e488d35a_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f-e488d35a",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "cellulase-M2.csv",
+      "original_relative_path": "steps/03_esm_scoring/cellulase-M2.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/04_ranking/paper_score_agreement.csv",
+      "path": "steps/04_ranking/sha256-264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80-465dfac9_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80-465dfac9",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "paper_score_agreement.csv",
+      "original_relative_path": "steps/04_ranking/paper_score_agreement.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     },
     {
-      "path": "steps/04_ranking/score_leaders.csv",
+      "path": "steps/04_ranking/sha256-2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f-70f88dec_unreported_unreported_bbf4c0_unreported_unreported.csv",
       "sha256": "2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f",
-      "source_sha256": null
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f-70f88dec",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "bbf4c0",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "score_leaders.csv",
+      "original_relative_path": "steps/04_ranking/score_leaders.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
     }
   ],
-  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained.",
   "run_folder": "run_001_20261107_033146_bbf4c0",
-  "run_number": 1
+  "run_number": 1,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
 }

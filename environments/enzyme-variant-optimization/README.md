@@ -57,3 +57,21 @@ Read the [environment specification](ENVIRONMENT_SPEC.md), select a task, and su
 Benchmark protocols, reference notes and calculations are separated under `benchmark/definitions/`, `benchmark/reference_data/` and `benchmark/evaluation/`. Comparisons retain their historical agent-alone scope; they do not silently combine later model runs.
 
 Run directories use `run_001_<session-id>`, numbered separately within each task in existing start order. The same name is used in runs, results and any run-specific source folder. Metadata retains the original native run/session identity. Future executions append without renumbering these records.
+
+## Artifact filenames
+
+Generated scientific tables, sequences, structures, arrays and figures use this component order:
+
+```text
+<artifact_id>_<tool_name>_<timestamp_utc>_<run_reference>_<model_identifier>_<parameters>.<original-extension>
+```
+
+Each result or benchmark `provenance.json` records the original exported filename/path, stored name, byte checksum, field sources and missing fields. Native session/job IDs and scientific contents are unchanged. Standard documentation, configuration, run records, provenance and evaluator-control JSON retain their documented conventional names.
+
+## Explicit fallback for historical exports
+
+When source metadata is absent, the filename uses the literal `unreported` in that position and metadata records the absence. This is not a model name, timestamp or parameter value. Never substitute the LLM name for a scientific predictor or infer artifact time from filesystem modification time. When a native job ID is absent, an export identity is constructed from the verified content SHA256 plus a checksum of its prior relative path. This identifies the exported file and is explicitly not an upstream job ID.
+
+Where a source payload is recorded, the parameter component is `metadata`; the artifact entry links to that exact existing job-ledger entry rather than embedding large molecular inputs in a filename or truncating parameter values. Otherwise parameters are `unreported`. A job match is accepted only when a document ID in the filename or an unambiguous recorded output filename establishes the link.
+
+This fallback is documented for the owner-requested historical normalization and must be included in maintainer review. It does not fill missing scientific provenance. Newly executed tools should retain their actual artifact identity, model, timestamp and parameters. Old file paths resolve through provenance mappings; altered scientific outputs require updated artifact records rather than reusing a stale checksum identity.

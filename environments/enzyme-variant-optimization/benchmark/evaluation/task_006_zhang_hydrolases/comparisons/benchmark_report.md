@@ -34,7 +34,7 @@ Source: [Zhang et al., original supplementary tables S1/S3/S5/S7](https://doi.or
 
 ### Published versus recalculated scores
 
-![Published versus recalculated scores](figures/comparison_01.png)
+![Published versus recalculated scores](figures/sha256-4fe7443699e786c445bd5dfa525dff0fd05ff49cb230e2c0ef57a1e58733b021-6402d66d_unreported_unreported_09fec4_unreported_unreported.png)
 
 Each panel compares the same variants and scoring background. Scores are unitless; the dashed line marks equal values.
 
@@ -53,7 +53,7 @@ Each panel compares the same variants and scoring background. Scores are unitles
 
 ### Candidate and reference property predictions
 
-![Candidate and reference property predictions](figures/comparison_02.png)
+![Candidate and reference property predictions](figures/sha256-a1b29c046e45b81a36b12041018d6a852a31d0d749fe50dfd6999fcaa0c835c6-4bc672dc_unreported_unreported_09fec4_unreported_unreported.png)
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 
@@ -74,7 +74,7 @@ Method: EvoEF1 1.1. Units: kcal/mol. Protocol: common WT; protein-only; 3 repair
 
 ### Predicted folding stability change: reference and our sequences
 
-![Predicted folding stability change: reference and our sequences](figures/comparison_03.png)
+![Predicted folding stability change: reference and our sequences](figures/sha256-2eb256e9ff365afab0bbd3c0dd62afef86626ce0806d64e8b83a93e080ec18a1-d31fcad2_unreported_unreported_09fec4_unreported_unreported.png)
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 

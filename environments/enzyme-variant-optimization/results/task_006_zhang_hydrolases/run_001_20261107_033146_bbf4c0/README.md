@@ -27,13 +27,13 @@ These are retrospective lowest scores under the listed conventions, not qualifie
 ## Records
 
 - [Workflow and tools](WORKFLOW.md)
-- [Exact scoring backgrounds](sequences/backgrounds.fasta)
-- [Retrospective score-leader sequences](sequences/score_leaders.fasta)
-- [Ten structure-model quality records](steps/01_structure_prediction/models.csv)
+- [Exact scoring backgrounds](sequences/sha256-7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b-2d9c0b7b_unreported_unreported_bbf4c0_unreported_unreported.fasta)
+- [Retrospective score-leader sequences](sequences/sha256-6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed-493a42a8_unreported_unreported_bbf4c0_unreported_unreported.fasta)
+- [Ten structure-model quality records](steps/01_structure_prediction/sha256-186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e-768aacf2_unreported_unreported_bbf4c0_unreported_unreported.csv)
 - [WT Pythia scans](steps/02_pythia_scoring)
 - [M2/M5 ESM-2 scans](steps/03_esm_scoring)
-- [Score-leader definitions](steps/04_ranking/score_leaders.csv)
-- [Published-score agreement](steps/04_ranking/paper_score_agreement.csv)
+- [Score-leader definitions](steps/04_ranking/sha256-2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f-70f88dec_unreported_unreported_bbf4c0_unreported_unreported.csv)
+- [Published-score agreement](steps/04_ranking/sha256-264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80-465dfac9_unreported_unreported_bbf4c0_unreported_unreported.csv)
 
 Proposer/critic reviews and final available-output checks were retained. Pythia and ESM-2 use different declared backgrounds. Original intermediate backgrounds were supplied retrospectively; no blind discovery or experimental gain is inferred. Agent-alone supplemental property predictions are not attributed to this arm.
 

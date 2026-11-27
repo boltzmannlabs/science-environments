@@ -1,6 +1,6 @@
 # Zhang hydrolases — specialist-assisted workflow
 
-![Workflow tools](figures/workflow.jpg)
+![Workflow tools](figures/sha256-f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc-c36e6a7b_unreported_unreported_bbf4c0_unreported_unreported.jpg)
 
 The native proposer and critic reviewed planning and result batches. The main agent executed scientific tools and retained the outputs.
 

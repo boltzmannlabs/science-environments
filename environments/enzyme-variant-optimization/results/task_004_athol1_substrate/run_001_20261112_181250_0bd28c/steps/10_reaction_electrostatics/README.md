@@ -2,7 +2,7 @@
 
 Completed separate post-selection assessment: evaluated parent, reconstructed V140T reference and retained ATH_R2_09 candidate. Each exact 235-residue construct has one 30 ns trajectory (first 5 ns discarded), 250 field snapshots and 25 explicit C–I localized-orbital calculations. Primary field contributions use residues 13–228; the full construct participates in dynamics.
 
-[predictions.csv](predictions.csv) retains numerical values, units, sample SD, conditional block intervals and source categories. Original published calculations, our alternative calculations, literature-converted measurements and uncomputed endpoints are explicitly separate. Only prediction rows are plotted in the benchmark.
+[predictions.csv](sha256-d3b9170840e9a3f906d3625d38a30ace1bcd3197134ccb02a163afe8ee70ed4d-420d706c_unreported_unreported_0bd28c_unreported_unreported.csv) retains numerical values, units, sample SD, conditional block intervals and source categories. Original published calculations, our alternative calculations, literature-converted measurements and uncomputed endpoints are explicitly separate. Only prediction rows are plotted in the benchmark.
 
 OpenMM 8.6.1 uses ff14SB protein, TIP3P water and the deposited GAFF/AM1-BCC SAH/ethyl-iodide parameters at 293.15 K with 2 fs constrained-hydrogen steps. Sampling retains the declared reaction-coordinate restraints. PySCF 2.15.0 uses DF-PBE0/def2-TZVP (iodine def2 ECP), grid level 3 and Pipek–Mezey localized occupied orbitals. Protein-only Coulomb fields are evaluated at the ethyl-iodide C–I midpoint, positive along C→I, with factor 1439.96454784255 MV/cm per e/Å².
 

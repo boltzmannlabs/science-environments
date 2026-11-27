@@ -1,6 +1,6 @@
 # LEH stability — specialist-assisted workflow
 
-![Workflow tools](figures/workflow.jpg)
+![Workflow tools](figures/sha256-2ff1b42d7ed0ed7fcefdc10f64e0eb1a66367f063dfdcbe42e1aa6443cc310a9-c36e6a7b_unreported_unreported_b2d404_unreported_unreported.jpg)
 
 The native proposer and critic reviewed planning and result batches. The main agent executed scientific tools and retained the outputs.
 
