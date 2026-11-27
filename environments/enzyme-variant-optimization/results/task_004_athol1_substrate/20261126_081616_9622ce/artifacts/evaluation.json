@@ -1,0 +1,173 @@
+{
+  "candidate_id": "R2D1",
+  "sequence_sha256": "52c70c523d15e63dbc1f31cac4ee0e3f04994cdd811c6615020ca1b0eb4f38b2",
+  "metric": "predicted_kcat",
+  "value": 1863.208,
+  "unit": "CatPred output units (undocumented; log10_species returned)",
+  "protocol_id": "CatPred_Seq_id_Sequences_CCI_v1",
+  "eligibility": "unknown",
+  "evidence_path": "retained-private-evidence/6b080496c45f4015f0eb8b3d_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-100613Z%20-%206f756e_output.csv",
+  "parent": {
+    "candidate_id": "PARENT_3LCC",
+    "sequence_sha256": "7a11b6534e3d4c598e2eabe3bb5b2c190400ffb83dd426d8b0b4a021895e4d52",
+    "metric": "predicted_kcat",
+    "value": 1598.691,
+    "unit": "CatPred output units (undocumented; log10_species returned)",
+    "protocol_id": "CatPred_Seq_id_Sequences_CCI_v1",
+    "eligibility": "true",
+    "evidence_path": "retained-private-evidence/6b080496c45f4015f0eb8b3d_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-100613Z%20-%206f756e_output.csv"
+  },
+  "signed_improvement": 264.517,
+  "numerically_improved": true,
+  "eligibility_basis": "eligibility reflects evidence completeness, NOT experimental catalysis: the predicted-kcat endpoint and the stability/solubility safeguards are complete and pass, but the mandatory candidate-specific structure/quality/geometry gate is unresolved (Boltz2 failed twice; no de novo R2D1 ternary complex; no candidate-specific MolProbity or Catalytic_Geometry; surrogate threading is not a candidate-specific predicted structure). Under frozen_evaluation.json ('eligibility separately gated by stability/quality/geometry') full eligibility cannot be certified, so the honest declaration is 'unknown', not 'true' or 'false'. This value is an in-silico CatPred prediction with undocumented units; it is NOT a measured activity, NOT a reaction barrier, and NOT an electric-field/transition-state quantity.",
+  "audit": {
+    "reviewer": "enzyme-evaluator (independent read-only sealed-evidence review)",
+    "review_mode": "read-only; no scientific job executed, submitted or retried",
+    "evidence_root": "retained-private-evidence/task_004_athol1_substrate",
+    "frozen_protocol": {
+      "file": "frozen_evaluation.json",
+      "metric": "predicted_kcat",
+      "direction": "maximize",
+      "unit": "CatPred output units (undocumented; log10_species returned)",
+      "protocol_id": "CatPred_Seq_id_Sequences_CCI_v1",
+      "min_improvement": 0.0,
+      "max_selected": 5,
+      "ratio_allowed": false
+    },
+    "seal_verification": {
+      "status": "met",
+      "selection_sha256_computed": "787517b827612a8fbed09c263795c4f16717418e1e2015a7881cf2682f81d5e8",
+      "selection_seal_recorded": "787517b827612a8fbed09c263795c4f16717418e1e2015a7881cf2682f81d5e8",
+      "match": true,
+      "selection_count": 1,
+      "selected_id": "R2D1",
+      "rank": 1,
+      "note": "Seal verified against raw selection.csv bytes before review; single candidate, no padding."
+    },
+    "requirements": [
+      {
+        "id": 1,
+        "name": "Parent identity, length, hash; R2D1 <=8 substitutions, protected positions/tag unchanged, sequence hash matches selection",
+        "status": "met",
+        "findings": [
+          "RUN_PLAN parent sequence length = 235; sha256 = 7a11b6534e3d4c598e2eabe3bb5b2c190400ffb83dd426d8b0b4a021895e4d52, recomputed exactly from the frozen sequence and matching candidates.fasta PARENT_3LCC.",
+          "R2D1 length = 235; recomputed sha256 = 52c70c523d15e63dbc1f31cac4ee0e3f04994cdd811c6615020ca1b0eb4f38b2, identical to selection.csv, candidate_history.csv and work/derived_round2.json.",
+          "R2D1 has exactly 8 substitutions: T30A;L71W;V72Y;V81N;V82P;S99F;L101H;A102E (<=8 budget).",
+          "All 56 protected positions unchanged; all 8 edits lie in the editable mask (0 outside); no edit in any protected position.",
+          "C-terminal LEHHHHHH tag identical to parent; observed residues 13-228 numbering consistent with 3LCC."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Generation provenance: R2D1 from native RCM doc 6b07fb977fb17f3eac9cf0c1 via documented difflib edit-list extraction; genuine results-driven revision",
+        "status": "met",
+        "findings": [
+          "Native RCM output 6b07fb977fb17f3eac9cf0c1.csv recomputed sha256 = 1f7c56710cea2f064ac14fd36ec3099f12e020e6e00b0a5afff0be4eb4b51ea7, matching lineage in candidate_history.csv and work/derived_round2.json.",
+          "Independently reproduced the documented extraction: difflib SequenceMatcher(autojunk=False), equal-length ('concat-mismatch') replace opcodes only, editable positions only, first 8 ascending; applied to the exact 235-aa parent. Source row 1 reproduces R2D1's edits and sha256 exactly (all 8 R2D1 substitutions are present in native row 1).",
+          "Lineage complete in candidate_history.csv / work/derived_round2.json (native job doc ID, source CSV hash, method, round, derived_reconstruction status).",
+          "Results-driven revision genuine: all 8 round-1 variants had negative predicted-kcat delta (best R1D5 -136.095); decisions.md records the observation->decision link and the mask changed from round1 (56 protected indices / 179 allowed positions, broad surface) to round2 (163 protected indices / 72 allowed positions, 9-15 A SAH focus shell). R2D1 edits fall inside the round-2 shell; within the 2 allowed revision rounds."
+        ],
+        "caveat": "R2D1 is a deterministic derived reconstruction of edit lists from a native RCM output whose whole-sequence products are task-ineligible (lengths 226-254, many indels/substitutions); it is NOT presented as a native full-length RCM output."
+      },
+      {
+        "id": 3,
+        "name": "Endpoint: same final CatPred batch, matched parent, SMILES=CCI, positive delta, units/sign, computational predictor",
+        "status": "met",
+        "findings": [
+          "Both R2D1 (kcat=1863.208, kcat_log10=3.270) and matched parent PARENT_3LCC (kcat=1598.691, kcat_log10=3.204) appear in the SAME native final CatPred output doc 6b080496c4 (work/reval_all_catpred.csv), with identical SMILES=CCI on every row.",
+          "Signed improvement = 1863.208 - 1598.691 = +264.517 > min_improvement 0; higher kcat is the frozen favorable direction; ratio_allowed=false so only the signed difference is used. R2D1 is the only selected candidate with a positive delta.",
+          "Unit/sign honestly recorded as 'CatPred output units (undocumented; log10_species returned)' per frozen protocol; the kcat column and the kcat_Prediction_log10 column are consistent (10^3.270 ~ 1862, 10^3.204 ~ 1600).",
+          "Confirmed computational predictor: CatPred is a sequence+substrate-conditioned ML estimate of steady-state kinetic parameters; NOT measured activity, NOT a reaction barrier, NOT an electric-field or transition-state quantity, and not validated for AtHOL1+ethyl iodide specifically."
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Stability/solubility safeguards: no material degradation vs parent",
+        "status": "met",
+        "findings": [
+          "Enzymes tmPred (native 6b0807d8b5): R2D1 Tm = 47.4387 degC vs parent 47.4371 degC (delta +0.0016 degC, negligible and within the replica SD ~2.67-2.93 degC).",
+          "Netsolp (native 6b0807eab5): R2D1 predicted_solubility = 0.6694 vs parent 0.6556 (delta +0.0138, no degradation); predicted_usability 0.4608 vs 0.4553; properties_status = ok.",
+          "Shortlist rule (declared frozen) satisfied: protected positions unchanged, <=8 substitutions, no severe stability/solubility flag."
+        ],
+        "caveat": "Tm and solubility are coarse computational screens; the source output explicitly states Tm is not measured and replica spread is not a confidence interval."
+      },
+      {
+        "id": 5,
+        "name": "Chemical state: both reacting partners consistently defined; reactant complex distinct from TS; chemistry caveat",
+        "status": "met_with_caveat",
+        "findings": [
+          "SAH isomeric SMILES in work/reactants/SAH_isomeric.smi recomputes sha256 7d52710c6e9039b66e9787df3f719ec646114f5768683a72efd01eec30755462, matching RUN_PLAN.",
+          "Ethyl iodide SMILES 'CCI' recomputes sha256 f127ecbec2b0d5c7ba89f07299228b28e52ac155437d5e39207dae9aeb302bdc, matching RUN_PLAN and the SMILES=CCI used on every CatPred row (baseline, round1, final).",
+          "RUN_PLAN explicitly models a REACTANT complex (protein+SAH+ethyl iodide), no modeled TS, no leaving-group placement; surface chloride CL301 (22.7 A from SAH SD) excluded as non-catalytic."
+        ],
+        "caveat": "The requested SAH+EtI ethylation is the reverse of the native HMT direction (halide + SAM -> CH3X + SAH). No transition-state or electric-field endpoint exists in the catalog; remains explicitly unresolved. The CatPred endpoint does not encode a TS or barrier."
+      },
+      {
+        "id": 6,
+        "name": "Structure/quality evidence: honest status per mandatory requirement for the sealed candidate",
+        "status": "partial_parent_only",
+        "per_requirement": [
+          {
+            "requirement": "Native Boltz2 candidate ternary complex (protein+SAH+ethyl iodide)",
+            "status": "unresolved",
+            "detail": "Boltz2 failed twice: doc 6b07ed071715676d03408b6d terminal failed, worker FileNotFoundError pre_affinity_1.npz (safe_to_retry=false, worker infrastructure); protein-only retry doc 6b07f19fc45f4015f0eb8206 produced empty PDB. No de novo candidate complex exists."
+          },
+          {
+            "requirement": "Candidate-specific structure with both reacting partners and verified chemistry",
+            "status": "unresolved",
+            "detail": "structure_evidence/ supplies a sequence-threaded SURROGATE on the experimental parent 3LCC (SAH bound) scaffold; ethyl iodide is not present in any experimental structure and was not co-predicted. README explicitly labels these surrogates NOT de novo predictions. Threading confirms sequence correspondence / edit positions only (R2D1 entry present), not an independent fold, ligand pose or energy."
+          },
+          {
+            "requirement": "Candidate-specific MolProbity quality report",
+            "status": "unresolved_for_candidate",
+            "detail": "Genuine measurement_only MolProbity exists ONLY for PARENT_3LCC_SAH_surrogate (clashscore 1.44, 5 clashes, 0% Ramachandran outliers, 98.13% favored). No R2D1 MolProbity run is claimed; README states no candidate-specific MolProbity from the surrogate alone."
+          },
+          {
+            "requirement": "Candidate-specific Catalytic_Geometry measurement",
+            "status": "unresolved_for_candidate",
+            "detail": "Genuine measurement_only Catalytic_Geometry exists ONLY for the parent: SAH SD -> HOH435 (W435) 3.292933 A; SAH SD -> surface chloride CL301 22.727596 A; template_id experiment_6b08064b, measurement_only, no pass/fail. No R2D1 geometry measurement exists."
+          }
+        ],
+        "findings": [
+          "Parent-only structure/quality/geometry evidence is genuine native output and correctly labelled; it establishes the reference scaffold is sound but is NOT candidate-specific.",
+          "The surrogate must NOT be treated as a candidate-specific predicted structure; per the frozen screening plan 'parent pose alone insufficient'."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Quarantine leak check: published winner identity / held-out outcome absent from design inputs, candidates, observations, selection",
+        "status": "met",
+        "findings": [
+          "Workspace-wide search found 'V140T', 'Tang et al.', 'Y139', 'C143', 'R214', 'W47', 'V23', 'L27', 'W36', 'hit-rate', 'winner' ONLY inside private/UNINTENDED_EXPOSURE.md; zero occurrences in RUN_PLAN.json, edit masks, payloads, candidates.fasta, candidate_history.csv, observations.csv, decisions.md or selection.csv/seal.",
+          "All 10 pocket-list residues except P20 are already in the frozen protected set; P20 (11.36 A from SAH SD) was never edited in R2D1, and R2D1's 8 edits (9.81-14.88 A shell) do not overlap the leaked pocket list at all.",
+          "Protected positions recompute from 3LCC geometry: the 32 protein residues within 9 A of SAH SD are all protected; derivation traces to PMID 20376845 and PDB 3LCC, not the leaked list."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Unresolved items reported honestly",
+        "status": "met",
+        "items": [
+          "No candidate-specific (R2D1) ternary complex with both reacting partners.",
+          "No transition-state / electric-field / electronic-structure reaction endpoint anywhere in the catalog; explicitly unresolved, not substituted with DFT or MD.",
+          "R1 and round2 RCM native outputs are ineligible (wrong lengths, indels, far too many substitutions) and were used only as edit-list sources; derived reconstructions are not native full-length outputs.",
+          "No candidate-specific MolProbity or Catalytic_Geometry measurement for R2D1; only genuine parent-only measurements exist.",
+          "CatPred units are undocumented and applicability to AtHOL1+ethyl iodide is unverified; the +264.517 delta is a numerical ML prediction, not experimental catalysis."
+        ]
+      }
+    ],
+    "failures": [
+      "Boltz2 doc 6b07ed071715676d03408b6d: terminal failed, worker FileNotFoundError (pre_affinity_1.npz), safe_to_retry=false.",
+      "Boltz2 doc 6b07f19fc45f4015f0eb8206 (protein-only retry): terminal failed, empty PDB.",
+      "Random_Controlled_Mutagenesis docs 6b07f1a77fb17f3eac9ce690 and 6b07fb977fb17f3eac9cf0c1: Success but whole-sequence outputs task-ineligible; used only as documented edit-list sources."
+    ],
+    "unresolved_items": [
+      "No de novo candidate-specific R2D1 ternary complex (protein + SAH + ethyl iodide).",
+      "No candidate-specific R2D1 MolProbity quality report.",
+      "No candidate-specific R2D1 Catalytic_Geometry measurement.",
+      "No transition-state / electric-field / electronic-structure reaction endpoint.",
+      "Ethyl iodide was not placed/predicted in any candidate structure (docking-derived placement kept separate)."
+    ],
+    "eligibility_statement": "Eligibility reflects evidence completeness, not experimental catalysis. The endpoint gate (predicted kcat +264.517 vs matched parent, same batch) and the stability/solubility gate are complete and pass; the mandatory candidate-specific structure/quality/geometry gate is unresolved from the sealed evidence. Full eligibility is therefore declared 'unknown' rather than 'true'. Even a fully eligible result would be an in-silico prediction, not proof of catalysis."
+  }
+}

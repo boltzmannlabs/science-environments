@@ -1,0 +1,122 @@
+{
+  "run_id": "run-20261120-001",
+  "task_id": "task_001_rml_stability",
+  "config_version": "v2",
+  "approach": "random-controlled-mutagenesis",
+  "started": "2026-11-20T00:00:00Z",
+  "parent": {
+    "id": "RML_PARENT",
+    "sequence_sha256": "",
+    "length": 269,
+    "construct": "mature Rhizomucor miehei lipase (RML), 269 aa",
+    "source": "inputs/parent.fasta",
+    "note": "Mature construct, not precursor. Parent identity verified from supplied FASTA."
+  },
+  "reaction": {
+    "type": "lipase hydrolysis",
+    "substrate": "4-nitrophenyl laurate (pNPL)",
+    "substrate_smiles": "Cc1ccc(cc1)[C@@]([O-])(=O)CCCCCCCC(=O)O",
+    "temperature_c": 50,
+    "ph": 7.0,
+    "note": "pNPL ester bond hydrolysis. Chemical state: neutral ester at pH 7. Reaction-specific water required for hydrolysis mechanism."
+  },
+  "protected_positions": {
+    "catalytic_triad": [144, 203, 257],
+    "catalytic_residues": {"144": "S", "203": "D", "257": "H"},
+    "oxyanion_hole": [34, 122],
+    "oxyanion_note": "Gly34 and Ser122 form the oxyanion hole in RML; verify exact positions from structure",
+    "lid_residues": "to be established from structure; lid domain typically residues ~100-160 in RML",
+    "disulfide_bonds": [
+      "C43-C176",
+      "C44-C175",
+      "C57-C135",
+      "C103-C234",
+      "C109-C236"
+    ],
+    "structural_ion_features": "to be established from structure (salt bridges, metal-coordinating residues)",
+    "note": "Protected positions will be finalized after parent structure assessment. Catalytic triad S144, D203, H257 and required disulfides are mandatory."
+  },
+  "editable_positions": {
+    "strategy": "Positions outside protected features, selected from parent structure, conservation and stability evidence",
+    "max_substitutions_per_variant": 8
+  },
+  "budgets": {
+    "max_unique_sequences_including_parent": 24,
+    "max_substitutions_per_variant": 8,
+    "max_sequence_revision_rounds": 2,
+    "max_scientific_submission_attempts": 60,
+    "max_final_candidates": 5,
+    "scientific_computes": "Boltzmann platform jobs only",
+    "model_tokens": "Not separately tracked in this run",
+    "wall_time": "No hard ceiling; monitored per job"
+  },
+  "methods": {
+    "sequence_generation": {
+      "tool": "Random_Controlled_Mutagenesis",
+      "provider": "Boltzmann",
+      "settings": {
+        "n_samples": 20,
+        "mutaions_per_epoch": 8,
+        "file_format": "csv",
+        "indices": "protected positions (zero-based), to be finalized"
+      }
+    },
+    "stability_screening": {
+      "tool": "Enzymes",
+      "provider": "Boltzmann",
+      "property": "Thermal stability (Tm prediction)",
+      "note": "Primary stability endpoint; matched parent and candidate settings"
+    },
+    "solubility_screening": {
+      "tool": "Netsolp",
+      "provider": "Boltzmann",
+      "property": "Solubility score"
+    },
+    "structure_prediction": {
+      "tool": "Boltz2",
+      "provider": "Boltzmann",
+      "settings": {
+        "protein_sequences": "candidate sequence",
+        "smiles": "pNPL SMILES"
+      },
+      "note": "Candidate-specific structures with pNPL complex"
+    },
+    "structural_quality": {
+      "tool": "Mol_Probity",
+      "provider": "Boltzmann",
+      "mode": "measurement_only"
+    },
+    "catalytic_assessment": {
+      "tool": "Catalytic_Geometry",
+      "provider": "Boltzmann",
+      "note": "Reaction-specific geometry assessment for lipase hydrolysis"
+    }
+  },
+  "evaluation_protocol": {
+    "parent_id": "RML_PARENT",
+    "metric": "Thermal stability score (Tm prediction)",
+    "unit": "predicted score (model-specific)",
+    "direction": "maximize",
+    "protocol_id": "rml-stability-v2-random-controlled-mutagenesis",
+    "min_improvement": 0.0,
+    "max_selected": 5,
+    "ratio_allowed": false,
+    "note": "Primary metric is the Enzymes tool thermal stability score. Higher is better. min_improvement=0 means any positive change qualifies as improvement; no significance test implied."
+  },
+  "authorization": {
+    "approved_tools": [
+      "Random_Controlled_Mutagenesis",
+      "Enzymes",
+      "Netsolp",
+      "Boltz2",
+      "Mol_Probity",
+      "Catalytic_Geometry",
+      "Protein_Structure_Prediction"
+    ],
+    "excluded_tools": ["MLDE", "Insilico_Directed_Evolution"],
+    "selection_boundary": "Up to 5 non-native candidates with complete evidence",
+    "held_out_results": "Published winning sequences/mutations and outcome tables are excluded"
+  },
+  "run_plan_status": "frozen",
+  "frozen_at": "2026-11-20T00:00:00Z"
+}

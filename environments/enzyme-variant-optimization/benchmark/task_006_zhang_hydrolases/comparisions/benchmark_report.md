@@ -2,8 +2,6 @@
 
 Agent-alone candidates, published prediction values and reference variants calculated in this work.
 
-Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
-
 ## Published predictions and our predictions
 
 | Property / predictor | Published prediction | Our candidates |
@@ -78,4 +76,4 @@ Method: EvoEF1 1.1. Units: kcal/mol. Protocol: common WT; protein-only; 3 repair
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
-[Results and preparation details](../../../results/task_006_zhang_hydrolases/agent-alone/README.md) · [Published reference](../references.md).
+[Results and preparation details](../../../results/task_006_zhang_hydrolases/20261107_144016_09fec4/README.md) · [Published reference](../references.md).

@@ -1,0 +1,243 @@
+{
+  "jobs": [
+    {
+      "job": "Enzymes",
+      "doc_id": "6b07edefc45f4015f0eb7fc3",
+      "experiment_name": "Enzymes - 20261126-082935Z - 2e7feb",
+      "purpose": "parent baseline primary endpoint",
+      "payload": {
+        "dataPath": "retained-private-storage/screen_parent.csv",
+        "property_name": [
+          "tmPred_enzymes",
+          "enzyme_solubility"
+        ]
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "be913c480a574589b7e54663a1c675fb"
+    },
+    {
+      "job": "Netsolp",
+      "doc_id": "6b07edf7c45f4015f0eb7fe7",
+      "experiment_name": "NetsolP (Solubility) - 20261126-082943Z - 446363",
+      "purpose": "parent baseline solubility/usability",
+      "payload": {
+        "input_path": "retained-private-storage/sol_parent.csv",
+        "prediction_type": "SU"
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "aac6a8ae06b24897b77e10516dd8a1e4"
+    },
+    {
+      "job": "Cat_Pred",
+      "doc_id": "6b07ee00c45f4015f0eb7ff5",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-082951Z - 3943fd",
+      "purpose": "parent baseline function proxy",
+      "payload": {
+        "input_path": "retained-private-storage/cat_parent.csv"
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "4cf926782e07415da41706de87bf4385"
+    },
+    {
+      "job": "Protein_Structure_Prediction",
+      "doc_id": "6b07ee076a16f64f7a945147",
+      "experiment_name": "Monomer Structure Prediction - 20261126-082959Z - fc8878",
+      "purpose": "parent structure model",
+      "payload": {
+        "input_csv": "retained-private-storage/struct_parent.csv"
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "caccf1f1755d43b7852b3205ff77dbba"
+    },
+    {
+      "job": "Thermal_MPNN",
+      "doc_id": "6b07f38d8b9d410520f9d9f4",
+      "experiment_name": "Thermal MPNN - 20261126-085333Z - 6e1791",
+      "purpose": "parent baseline orthogonal ddG",
+      "payload": {
+        "chain": "A",
+        "zip_path": "retained-private-storage/parent_model.zip"
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "52ffb8523a81459cb4456633bc7ae84e"
+    },
+    {
+      "job": "Mol_Probity",
+      "doc_id": "6b07f39db5e9e7e2abe206e9",
+      "experiment_name": "MolProbity - 20261126-085348Z - 7a849a",
+      "purpose": "parent holo structure quality",
+      "payload": {
+        "execution_mode": "measurement_only",
+        "input_path": "retained-private-storage/parent_holo.zip"
+      },
+      "status": "accepted",
+      "receipt_attempt_id": "11b6692ecd98461898661b49e5ed42b8"
+    },
+    {
+      "job": "Random_Controlled_Mutagenesis",
+      "doc_id": "6b07f3b4c45f4015f0eb82c7",
+      "experiment_name": "Random Controlled Mutagenesis - 20261126-085412Z - 8dcd8a",
+      "purpose": "initial generation round 0 (12 mutants)",
+      "status": "accepted",
+      "receipt_attempt_id": null,
+      "payload": {
+        "n_samples": 12,
+        "mutaions_per_epoch": 4,
+        "indices": "27 protected zero-based positions",
+        "seq": "parent 483 aa",
+        "file_format": "csv"
+      }
+    },
+    {
+      "job": "Ligand_MPNN",
+      "doc_id": "6b07f3bc7fb17f3eac9ce8b5",
+      "experiment_name": "Ligand MPNN - 20261126-085420Z - 0d230c",
+      "purpose": "initial generation round 0 (8 structure-conditioned)",
+      "status": "accepted",
+      "receipt_attempt_id": "b6f997ddaee0420cb249958cde871397",
+      "payload": {
+        "input_path": "retained-private-storage/parent_chainA_with_ions.pdb",
+        "num_sequences": 8
+      }
+    },
+    {
+      "job": "AntiBMPNN",
+      "doc_id": "6b0806727fb17f3eac9cf661",
+      "experiment_name": "AntiBMPNN - 20261126-101409Z - 18bbbb",
+      "purpose": "recovery generation validation: masked design on 18 positions",
+      "status": "accepted",
+      "payload": {
+        "chains_to_design": [
+          "A"
+        ],
+        "generation_count": 3,
+        "residue_positions_to_design": {
+          "A": "114,123,...,464 (18 positions)"
+        },
+        "input_path": "retained-private-storage/BLA_1BLI_parent.pdb"
+      },
+      "validation": "partial (YOLO; scientific suitability unverified)",
+      "receipt_attempt_id": "6544cb3b15bc4b219bbc3b5b1dc64139"
+    },
+    {
+      "job": "Enzymes",
+      "doc_id": "6b080817c45f4015f0eb8de4",
+      "experiment_name": "Enzymes - 20261126-102110Z - 5cdf61",
+      "purpose": "round0 screening primary tmPred",
+      "status": "accepted",
+      "payload": {
+        "dataPath": "retained-private-storage/screen_round0.csv",
+        "property_name": [
+          "tmPred_enzymes",
+          "enzyme_solubility"
+        ]
+      },
+      "receipt_attempt_id": "55a6f7c2db95486ebac89e07fc687978"
+    },
+    {
+      "job": "Netsolp",
+      "doc_id": "6b0808277fb17f3eac9cf7a0",
+      "experiment_name": "NetsolP (Solubility) - 20261126-102127Z - 767ad0",
+      "purpose": "round0 solubility/usability",
+      "status": "accepted",
+      "payload": {
+        "input_path": "retained-private-storage/sol_round0.csv",
+        "prediction_type": "SU"
+      },
+      "receipt_attempt_id": "a5c58e4d55e9471fa4cf8513f8d34ffa"
+    },
+    {
+      "job": "Cat_Pred",
+      "doc_id": "6b0808386a16f64f7a9464e7",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-102143Z - 4e379c",
+      "purpose": "round0 function proxy",
+      "status": "accepted",
+      "payload": {
+        "input_path": "retained-private-storage/cat_round0.csv"
+      },
+      "receipt_attempt_id": "e7e5180b224646a98e984d0db9816684"
+    },
+    {
+      "job": "Enzymes",
+      "doc_id": "6b080a7fc45f4015f0eb8f17",
+      "experiment_name": "Enzymes - 20261126-103126Z - d5aef2",
+      "purpose": "final common protocol primary endpoint",
+      "status": "accepted",
+      "receipt_attempt_id": "feb2a0abd4c441198eab05dd627acaf7"
+    },
+    {
+      "job": "Netsolp",
+      "doc_id": "6b080a906a16f64f7a946612",
+      "experiment_name": "NetsolP (Solubility) - 20261126-103143Z - d60354",
+      "purpose": "final common protocol solubility",
+      "status": "accepted",
+      "receipt_attempt_id": "f67352e7985b40f2b2eaf266f390081d"
+    },
+    {
+      "job": "Cat_Pred",
+      "doc_id": "6b080aa18b9d410520f9e6e1",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-103200Z - 9700b7",
+      "purpose": "final common protocol function proxy",
+      "status": "accepted",
+      "receipt_attempt_id": "a32edb1c1d68466e8dcac1cf0f15c6a6"
+    },
+    {
+      "job": "Protein_Structure_Prediction",
+      "doc_id": "6b080ab06a16f64f7a946628",
+      "experiment_name": "Monomer Structure Prediction - 20261126-103216Z - 39fdc0",
+      "purpose": "final candidate structures",
+      "status": "accepted",
+      "receipt_attempt_id": "86d774c182614d5d94e6b200ece35286"
+    },
+    {
+      "job": "Catalytic_Geometry",
+      "doc_id": "6b0827cf1715676d0340bb53",
+      "experiment_name": "Catalytic Geometry - 20261126-123628Z - d6e0e8",
+      "purpose": "catalytic/metal geometry measurement on candidates",
+      "status": "failed",
+      "validation": "partial (YOLO warnings: ZIP inventory unchecked, mapping refs unchecked)",
+      "receipt_attempt_id": "d3887c6f15cf41328cb95894e1bdd71b",
+      "error": "mutagenesis adapter: archive contains sequences but no all-atom reaction structure",
+      "safe_to_retry": false
+    },
+    {
+      "job": "act_seek",
+      "doc_id": null,
+      "experiment_name": "ActSeek - 20261126-123728Z - 946965",
+      "purpose": "active-site retention on candidates",
+      "status": "acceptance_unknown",
+      "error": "Internal server error: CastError Cast to Number failed for value \"NaN\" at path \"freezedCredits\"",
+      "receipt_attempt_id": "eb3ee1cc8ca14801a2607da4db3ab63c",
+      "note": "No doc_id returned; do NOT resubmit. Ambiguous submission preserved."
+    },
+    {
+      "job": "Mol_Probity",
+      "doc_id": "6b082830c45f4015f0ebaac0",
+      "experiment_name": "MolProbity - 20261126-123805Z - 6c77fb",
+      "purpose": "final candidate structure quality",
+      "status": "accepted",
+      "validation": "partial (YOLO; ZIP inventory unchecked)",
+      "receipt_attempt_id": "8d03f3a22fe24c78a57e49bd1beb2ecb"
+    },
+    {
+      "job": "Catalytic_Geometry",
+      "doc_id": "6b0828781715676d0340be80",
+      "experiment_name": "Catalytic Geometry - 20261126-123918Z - 05f418",
+      "purpose": "corrected generic-adapter geometry measurement",
+      "status": "accepted",
+      "validation": "partial (YOLO)",
+      "receipt_attempt_id": "eeda679805fc4ed3afc2ef2b3f82a0f1"
+    },
+    {
+      "job": "Boltz2",
+      "doc_id": "6b0828896a16f64f7a94828e",
+      "experiment_name": "Boltz-2 - 20261126-123937Z - 841aad",
+      "purpose": "parent-maltose proxy complex",
+      "status": "failed",
+      "payload": "Protein_Sequences=[parent], SMILES=[maltose]",
+      "error": "Boltz2 backend FileNotFoundError pre_affinity_1.npz; safe_to_retry=false",
+      "safe_to_retry": false
+    }
+  ],
+  "note": "Native platform receipts; credentials redacted. Each attempt recorded once."
+}

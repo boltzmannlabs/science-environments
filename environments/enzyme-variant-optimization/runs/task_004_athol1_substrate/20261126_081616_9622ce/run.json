@@ -1,0 +1,45 @@
+{
+  "task_id": "task_004_athol1_substrate",
+  "run_id": "20261126_081616_9622ce",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261126_081616_9622ce",
+  "config_version": 1,
+  "config_hash": "ca8f749b5e5bb6961b516561775679215bd9d1a62b023517a612182282c889b5",
+  "config_path": "../../../config/tasks/task_004_athol1_substrate/cfg_20261126_081616_9622ce.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261126_081616_9622ce"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "hy4-flash-free",
+  "provider": "opencode-go",
+  "status": "partial",
+  "status_basis": "Evaluator eligibility unknown; candidate-specific ternary structure/quality/geometry missing.",
+  "started_at": "2026-11-26T08:16:22.294452+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-26T10:35:12.618581+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_004_athol1_substrate/20261126_081616_9622ce",
+  "source_kind": "hy4_specialist_execution",
+  "code_commit": "2ecef925e090c61c106eb6342d402f76ccb1cf3e",
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Cat_Pred",
+    "Boltz2",
+    "Netsolp",
+    "Enzymes",
+    "Random_Controlled_Mutagenesis",
+    "Catalytic_Geometry",
+    "Mol_Probity"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 877231,
+    "output_tokens": 79018,
+    "cache_read_tokens": 22888704,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 24666,
+    "tool_call_count": 153
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261107_033146_bbf4c0",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261107_033146_bbf4c0",
+  "config_version": 1,
+  "config_hash": "7fffd54eafdb287f28578a2b4cbdf5f6e936d647f9d1b1b599ef7cbf511932ad",
+  "config_path": "../../../config/tasks/task_006_zhang_hydrolases/cfg_20261107_033146_bbf4c0.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261107_033146_bbf4c0"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "status": "completed",
+  "status_basis": "Existing exported outcome; operational closure is separate from scientific completion.",
+  "started_at": "2026-11-07T03:31:46.947825+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-07T07:46:11.136496+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
+  "source_kind": "historical_publication",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "delegate_task"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 272230,
+    "output_tokens": 92432,
+    "cache_read_tokens": 14734208,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 28654,
+    "tool_call_count": 123
+  },
+  "historical_cumulative_accounting": {
+    "arm": "zhang_hydrolases/agent-with-specialist",
+    "state": "closed/no live worker",
+    "session_id": "20261107_033146_bbf4c0",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reported_tokens": 69698364,
+    "elapsed_seconds": 46002,
+    "scope": "Full model inference/raw scans and review closed; partial paired comparison complete; original site eligibility/exact historical reproduction unresolved",
+    "last_activity": "",
+    "accuracy": "Published-predictor-score agreement only; no unbiased biological accuracy or measured improvement"
+  }
+}

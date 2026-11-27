@@ -1,5 +1,6 @@
 """Render compact JPG method diagrams; reads no raw jobs and starts no scientific tools."""
 from pathlib import Path
+from run_paths import historical_result
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -148,7 +149,7 @@ def build_zhang(env, spec):
     ax.text(.75, 1.4, spec.get("footer_title", "LATER BENCHMARK CALCULATIONS"), fontsize=10,
             weight="bold", color="#886627")
     ax.text(.75, .93, spec["later"], fontsize=11.5, color="#5b503d")
-    target = env / "results" / spec["task"] / spec.get("approach", "agent-alone") / "figures/workflow.jpg"
+    target = historical_result(env, spec["task"], spec.get("approach", "agent-alone")) / "figures/workflow.jpg"
     target.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(target, dpi=140, format="jpg", pil_kwargs={"quality": 93}, facecolor="white")
     plt.close(fig)
@@ -185,7 +186,7 @@ def build(env):
         ax.add_patch(FancyBboxPatch((.5,.55),11,1.5,boxstyle="round,pad=.04,rounding_size=.14",facecolor="#fbf5e9",edgecolor="#e9d9b5"))
         ax.text(.75,1.67,spec.get("footer_title", "LATER BENCHMARK CALCULATIONS"),fontsize=10,weight="bold",color="#886627")
         ax.text(.75,1.12,spec["later"],fontsize=12,color="#5b503d",va="center",linespacing=1.5)
-        target=env/"results"/spec["task"]/spec.get("approach", "agent-alone")/"figures"/"workflow.jpg"
+        target=historical_result(env, spec["task"], spec.get("approach", "agent-alone"))/"figures"/"workflow.jpg"
         target.parent.mkdir(parents=True,exist_ok=True)
         fig.savefig(target,dpi=140,format="jpg",pil_kwargs={"quality":93},facecolor="white")
         plt.close(fig)

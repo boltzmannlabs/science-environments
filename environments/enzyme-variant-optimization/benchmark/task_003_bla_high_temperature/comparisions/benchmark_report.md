@@ -2,8 +2,6 @@
 
 Agent-alone candidates, published prediction values and reference variants calculated in this work.
 
-Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
-
 ## Published predictions and our predictions
 
 | Property / predictor | Published prediction | Our candidates |
@@ -59,4 +57,4 @@ Method: PACKMAN 1.4.13. Units: J K^-1 mol^-1. Protocol: matched fixed backbone; 
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol. The plot shows changes from the evaluated parent.
 
-[Results and preparation details](../../../results/task_003_bla_high_temperature/agent-alone/README.md) · [Published reference](../references.md).
+[Results and preparation details](../../../results/task_003_bla_high_temperature/20261112_181250_7cf059/README.md) · [Published reference](../references.md).

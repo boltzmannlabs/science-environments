@@ -2,7 +2,7 @@
 
 **Task ID:** `task_002_leh_stability`
 
-**Task:** [LEH: thermal stability](../../tasks/task_002_leh_stability.md)
+**Task:** [LEH: thermal stability](../../tasks/task_002_leh_stability/task.md)
 
 Operator/evaluator reference. Withhold winner identities and outcome tables from design-agent inputs until selections are sealed.
 

@@ -1,0 +1,92 @@
+{
+  "schema": "usage.v1",
+  "llm_sci": {
+    "model": "hy4-flash-free",
+    "provider": "opencode-go",
+    "accounting": "session-level; final totals from native accounting",
+    "note": "Session-level native accounting not available as a single total; specialist tokens itemized above."
+  },
+  "specialists": {
+    "enzyme-method": [
+      {
+        "api_calls": 23,
+        "tokens": {
+          "input": 1282811,
+          "output": 24760
+        },
+        "receipt": "../METHOD_ROUTE_REVIEW.md"
+      },
+      {
+        "api_calls": 35,
+        "tokens": {
+          "input": 2555782,
+          "output": 18906
+        },
+        "receipt": "../evidence_brief.md"
+      }
+    ],
+    "enzyme-recovery": [
+      {
+        "api_calls": 5,
+        "tokens": {
+          "input": 105181,
+          "output": 8209
+        },
+        "receipt": "specialist_receipts/RECOVERY_REVIEW.md"
+      },
+      {
+        "api_calls": 8,
+        "tokens": {
+          "input": 136125,
+          "output": 6318
+        },
+        "receipt": "specialist_receipts/RECOVERY_ESM_REVIEW.md"
+      }
+    ],
+    "enzyme-evaluator": [
+      {
+        "api_calls": 24,
+        "tokens": {
+          "input": 1115753,
+          "output": 16592
+        },
+        "receipt": "specialist_receipts/EVALUATOR_RECEIPT.md"
+      }
+    ]
+  },
+  "scientific_models": {
+    "AlphaFold2_monomer_native": {
+      "doc_id": "6b07ee408b9d410520f9d79e",
+      "billing": {
+        "amount": 15,
+        "currency_units": "platform_credits",
+        "node": "private-compute-node",
+        "duration_seconds": 1014
+      }
+    },
+    "Pythia_C_P_source_pinned": {
+      "runs": [
+        "pythia_cellulase_004",
+        "pythia_beta_004"
+      ],
+      "forward_passes": 2,
+      "raw_model_seconds": 1.587,
+      "compute": "local CPU 4 threads, GPU untouched"
+    },
+    "ESM2_650M_source_pinned": {
+      "run": "esm_full_005",
+      "masked_passes": 527,
+      "model_runtime_seconds": 522.94,
+      "max_rss_KiB": 5603824,
+      "compute": "local CPU 4 threads, GPU untouched"
+    }
+  },
+  "remote_jobs": {
+    "Protein_Structure_Prediction": {
+      "doc_id": "6b07ee408b9d410520f9d79e",
+      "status": "completed",
+      "upload_receipt_id": "19739fa02a5a45318f241458d1b88735"
+    }
+  },
+  "notes": "Cumulative accounting preserved; no billing inference from missing summaries."
+}

@@ -1,0 +1,170 @@
+{
+  "scientific_jobs": {
+    "total_native_jobs": 12,
+    "by_job": {
+      "Cat_Pred": 3,
+      "Boltz2": 2,
+      "Netsolp": 2,
+      "Enzymes": 2,
+      "Random_Controlled_Mutagenesis": 1,
+      "Catalytic_Geometry": 1,
+      "Mol_Probity": 1
+    },
+    "billing": [
+      {
+        "job_name": "Cat_Pred",
+        "doc_id": "6b07ecfac45f4015f0eb7f53",
+        "node": "private-compute-node",
+        "duration_seconds": 274,
+        "tool_runtime_seconds": 76,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": null,
+        "amount_usd": 2
+      },
+      {
+        "job_name": "Cat_Pred",
+        "doc_id": "6b07fa71b5e9e7e2abe20a1e",
+        "node": "private-compute-node",
+        "duration_seconds": 72,
+        "tool_runtime_seconds": 70,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": null,
+        "amount_usd": 2
+      },
+      {
+        "job_name": "Netsolp",
+        "doc_id": "6b07fa811715676d03409609",
+        "node": "private-compute-node",
+        "duration_seconds": 123,
+        "tool_runtime_seconds": 121,
+        "rounded_minutes": 3,
+        "rate_per_hour_usd": null,
+        "amount_usd": 3
+      },
+      {
+        "job_name": "Enzymes",
+        "doc_id": "6b07fa8c7fb17f3eac9cee4f",
+        "node": "private-compute-node",
+        "duration_seconds": 79,
+        "tool_runtime_seconds": 78,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": null,
+        "amount_usd": 1
+      },
+      {
+        "job_name": "Cat_Pred",
+        "doc_id": "6b080496c45f4015f0eb8b3d",
+        "node": "private-compute-node",
+        "duration_seconds": 261,
+        "tool_runtime_seconds": 75,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": null,
+        "amount_usd": 2
+      },
+      {
+        "job_name": "Mol_Probity",
+        "doc_id": "6b08065d1715676d03409fb1",
+        "node": "private-compute-node",
+        "duration_seconds": 277,
+        "tool_runtime_seconds": 77,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": null,
+        "amount_usd": 1
+      },
+      {
+        "job_name": "Netsolp",
+        "doc_id": "6b0807eab5e9e7e2abe21147",
+        "node": "private-compute-node",
+        "duration_seconds": 413,
+        "tool_runtime_seconds": 272,
+        "rounded_minutes": 5,
+        "rate_per_hour_usd": null,
+        "amount_usd": 5
+      }
+    ],
+    "unreturned_billing_jobs": [
+      {
+        "job_name": "Boltz2",
+        "doc_id": "6b07ed071715676d03408b6d",
+        "status": "failed"
+      },
+      {
+        "job_name": "Boltz2",
+        "doc_id": "6b07f19fc45f4015f0eb8206",
+        "status": "failed"
+      },
+      {
+        "job_name": "Random_Controlled_Mutagenesis",
+        "doc_id": "6b07fb977fb17f3eac9cf0c1",
+        "status": "Success"
+      },
+      {
+        "job_name": "Catalytic_Geometry",
+        "doc_id": "6b08064b8b9d410520f9e2cc",
+        "status": "Success"
+      },
+      {
+        "job_name": "Enzymes",
+        "doc_id": "6b0807d8b5e9e7e2abe2113c",
+        "status": "Success"
+      }
+    ],
+    "known_amount_usd": 16,
+    "amount_note": "Sum of returned billing entries only; jobs without billing data are listed as unreturned, not assumed zero."
+  },
+  "specialist_usage": [
+    {
+      "role": "enzyme-method",
+      "delegation": "deleg_d0ce318c/task-0",
+      "model": "hy4-flash-free",
+      "input_tokens": 1269368,
+      "output_tokens": 24275,
+      "tool_calls": 32,
+      "duration_seconds": 250.52,
+      "cost_usd": 0.0,
+      "cost_status": "unknown"
+    },
+    {
+      "role": "enzyme-recovery",
+      "delegation": "deleg_34cad747/task-0",
+      "model": "hy4-flash-free",
+      "input_tokens": 345105,
+      "output_tokens": 7633,
+      "tool_calls": 6,
+      "duration_seconds": 66.48,
+      "cost_usd": 0.0,
+      "cost_status": "unknown"
+    },
+    {
+      "role": "enzyme-recovery",
+      "delegation": "deleg_7e1e94af/task-0",
+      "model": "hy4-flash-free",
+      "input_tokens": 870545,
+      "output_tokens": 17971,
+      "tool_calls": 19,
+      "duration_seconds": 168.34,
+      "cost_usd": 0.0,
+      "cost_status": "unknown"
+    },
+    {
+      "role": "enzyme-evaluator",
+      "delegation": "deleg_0e57868d/task-0",
+      "model": "hy4-flash-free",
+      "input_tokens": 2560616,
+      "output_tokens": 31295,
+      "tool_calls": 36,
+      "duration_seconds": 275.95,
+      "cost_usd": 0.0,
+      "cost_status": "unknown"
+    }
+  ],
+  "accounting_note": "Cumulative accounting includes all four specialist calls per coordinator instruction. Parent-agent model token usage is not separately metered by this session's tools and remains unknown; platform-credit totals are not exposed. No added token/financial/wall-time cap (settings).",
+  "specialist_totals": {
+    "input_tokens": 5045634,
+    "output_tokens": 81174,
+    "tool_calls": 93,
+    "duration_seconds": 761.29,
+    "cost_usd": 0.0,
+    "cost_status": "unknown"
+  }
+}

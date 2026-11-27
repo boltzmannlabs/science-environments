@@ -1,0 +1,16 @@
+{
+  "scientific_remote_attempts": 0,
+  "scientific_remote_billing": "none from remote scientific submissions; no submissions made",
+  "local_full_scan": {"wall_seconds":4.96,"user_cpu_seconds":11.07,"system_cpu_seconds":5.27,"maximum_resident_kib":504472,"device":"CPU","threads":4,"inference_loop_seconds":1.8584928512573242,"queue_seconds":0},
+  "specialist_model_usage": {
+    "sa-0-caf98776":{"role":"enzyme-method","input_tokens":45678,"output_tokens":1322,"cost_status":"unknown"},
+    "sa-0-74822eb1":{"role":"enzyme-method","input_tokens":59738,"output_tokens":1470,"cost_status":"unknown"},
+    "sa-0-a629470c":{"role":"enzyme-recovery","input_tokens":19847,"output_tokens":670,"cost_status":"unknown"},
+    "sa-0-2643dc6f":{"role":"enzyme-method","input_tokens":100524,"output_tokens":2297,"cost_status":"unknown"},
+    "sa-0-9f369aa7":{"role":"enzyme-recovery","input_tokens":5717,"output_tokens":231,"cost_status":"unknown"},
+    "sa-0-bf64daf8":{"role":"enzyme-evaluator","input_tokens":139570,"output_tokens":3479,"cost_status":"unknown"}
+  },
+  "parent_model_usage":"not provided by runtime",
+  "independent_evaluator_usage":"included under sa-0-bf64daf8",
+  "other_local_costs":"not reported"
+}

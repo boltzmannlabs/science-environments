@@ -1,0 +1,11 @@
+{
+  "parent_id": "LEH_parent_1NWW_149aa",
+  "metric": "tmPred_enzymes",
+  "unit": "degC",
+  "direction": "maximize",
+  "protocol_id": "v12_Enzymes_tmPred_enzymes_sameCSV_20261126",
+  "min_improvement": 2.82,
+  "min_improvement_rationale": "1 observed replica std (2.8223 degC) of TemBERTureTm on parent baseline; coarse-screen threshold, not significance test; predictor not calibrated for small delta-Tm",
+  "max_selected": 5,
+  "ratio_allowed": false
+}

@@ -1,0 +1,191 @@
+{
+  "submissions": [
+    {
+      "seq": 1,
+      "job_name": "Cat_Pred",
+      "doc_id": "6b07ecfac45f4015f0eb7f53",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-082529Z - 5e53eb",
+      "input_local": "work/baseline_catpred_parent.csv",
+      "input_s3": "retained-private-storage/baseline_catpred_parent.csv",
+      "upload_sha256": "03ecbeda40bc87ca90bc528d54a9ce34c778c441550b1d41b290958cfeb47c79",
+      "receipt_id": "5cc70d2552074ace91d389c8b1300f2c",
+      "status": "Success",
+      "stage": "baseline_parent_endpoint",
+      "attempt_id": "d5bec19c312d461e9b74d601b24d0e73",
+      "output_csv": "retained-private-evidence/6b07ecfac45f4015f0eb7f53_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-082529Z%20-%205e53eb_output.csv",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 274,
+        "tool_runtime_seconds": 76,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": 50,
+        "amount_usd": 2
+      }
+    },
+    {
+      "seq": 2,
+      "job_name": "Boltz2",
+      "doc_id": "6b07ed071715676d03408b6d",
+      "experiment_name": "Boltz-2 - 20261126-082543Z - cfd56f",
+      "stage": "baseline_parent_structure",
+      "status": "failed",
+      "error_class": "worker infrastructure FileNotFoundError (pre_affinity_1.npz missing in boltz affinity precomputation)",
+      "error_sanitized": "FileNotFoundError: [Errno 2] No such file or directory: 'boltz_results_1/predictions/1/pre_affinity_1.npz' during Boltz inferenceload_input -> StructureV2.load; predict loop aborted at 0/?.",
+      "safe_to_retry_flag_from_service": false,
+      "action": "sent to enzyme-recovery for diagnosis; no resubmission until evidence-based correction identified",
+      "billing": "not returned on failure"
+    },
+    {
+      "seq": 3,
+      "job_name": "Boltz2",
+      "doc_id": "6b07f19fc45f4015f0eb8206",
+      "experiment_name": "Boltz-2 - 20261126-084519Z - 1cacd8",
+      "stage": "structure_recovery_probe_protein_only",
+      "status": "failed",
+      "error_sanitized": "Boltz did not produce a nonempty PDB (1_model_0.pdb). safe_to_retry=false.",
+      "billing": "not returned"
+    },
+    {
+      "seq": 4,
+      "job_name": "Cat_Pred",
+      "doc_id": "6b07fa71b5e9e7e2abe20a1e",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-092256Z - 68e1db",
+      "stage": "round1_screen_endpoint",
+      "status": "Success",
+      "input_csv": "work/screen_round1_catpred.csv",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 72,
+        "tool_runtime_seconds": 70,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": 50,
+        "amount_usd": 2
+      }
+    },
+    {
+      "seq": 5,
+      "job_name": "Netsolp",
+      "doc_id": "6b07fa811715676d03409609",
+      "experiment_name": "NetsolP (Solubility) - 20261126-092312Z - 5fe63c",
+      "stage": "round1_screen_solubility",
+      "status": "Success",
+      "prediction_type": "SU",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 123,
+        "tool_runtime_seconds": 121,
+        "rounded_minutes": 3,
+        "rate_per_hour_usd": 50,
+        "amount_usd": 3
+      }
+    },
+    {
+      "seq": 6,
+      "job_name": "Enzymes",
+      "doc_id": "6b07fa8c7fb17f3eac9cee4f",
+      "experiment_name": "Enzymes - 20261126-092322Z - cdae95",
+      "stage": "round1_screen_stability",
+      "status": "Success",
+      "property_name": [
+        "tmPred_enzymes",
+        "enzyme_solubility"
+      ],
+      "submit_validation": "partial (reused dataPath receipt under different job_name; YOLO disclosed)",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 79,
+        "tool_runtime_seconds": 78,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": 20,
+        "amount_usd": 1
+      }
+    },
+    {
+      "seq": 7,
+      "job_name": "Random_Controlled_Mutagenesis",
+      "doc_id": "6b07fb977fb17f3eac9cf0c1",
+      "experiment_name": "Random Controlled Mutagenesis - 20261126-092750Z - 68b5a6",
+      "stage": "round2_revision_generation",
+      "status": "Success",
+      "note": "Success but whole-sequence output task-ineligible (wrong lengths/indels/excess substitutions); used only as edit-list source for R2D0-7.",
+      "billing": "not returned"
+    },
+    {
+      "seq": 8,
+      "job_name": "Cat_Pred",
+      "doc_id": "6b080496c45f4015f0eb8b3d",
+      "experiment_name": "Cat_Pred (Catalyst Prediction) - 20261126-100613Z - 6f756e",
+      "stage": "final_revaluation_all_candidates_matched_parent",
+      "status": "Success",
+      "input_csv": "work/reval_all_catpred.csv",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 261,
+        "tool_runtime_seconds": 75,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": 50,
+        "amount_usd": 2
+      }
+    },
+    {
+      "seq": 9,
+      "job_name": "Catalytic_Geometry",
+      "doc_id": "6b08064b8b9d410520f9e2cc",
+      "experiment_name": "Catalytic Geometry - 20261126-101329Z - 60367e",
+      "stage": "parent_geometry_measurement",
+      "status": "Success",
+      "execution_mode": "measurement_only",
+      "billing": "not returned"
+    },
+    {
+      "seq": 10,
+      "job_name": "Mol_Probity",
+      "doc_id": "6b08065d1715676d03409fb1",
+      "experiment_name": "MolProbity - 20261126-101348Z - 9e4299",
+      "stage": "parent_quality_measurement",
+      "status": "Success",
+      "execution_mode": "measurement_only",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 277,
+        "tool_runtime_seconds": 77,
+        "rounded_minutes": 2,
+        "rate_per_hour_usd": 20,
+        "amount_usd": 1
+      }
+    },
+    {
+      "seq": 11,
+      "job_name": "Enzymes",
+      "doc_id": "6b0807d8b5e9e7e2abe2113c",
+      "experiment_name": "Enzymes - 20261126-102008Z - 069a4c",
+      "stage": "final_screen_stability",
+      "status": "Success",
+      "property_name": [
+        "tmPred_enzymes",
+        "enzyme_solubility"
+      ],
+      "billing": "not returned"
+    },
+    {
+      "seq": 12,
+      "job_name": "Netsolp",
+      "doc_id": "6b0807eab5e9e7e2abe21147",
+      "experiment_name": "NetsolP (Solubility) - 20261126-102025Z - 41910b",
+      "stage": "final_screen_solubility",
+      "status": "Success",
+      "prediction_type": "SU",
+      "billing": {
+        "node": "private-compute-node",
+        "duration_seconds": 413,
+        "tool_runtime_seconds": 272,
+        "rounded_minutes": 5,
+        "rate_per_hour_usd": 50,
+        "amount_usd": 5
+      }
+    }
+  ],
+  "notes": "Native Boltzmann receipts. Credentials/signed URLs redacted.",
+  "submission_attempt_count": 17,
+  "note": "Scientific submission attempts (accepted or terminal) = 12 native jobs; plus 5 validation-time rejections that created no job (2 batched tool_call rejections, Catalytic_Geometry reaction_state maxLength, Catalytic_Geometry dependent-input, Enzymes wrong field/dependent input x2). All under the 60-attempt budget. No credentials/signed URLs retained."
+}

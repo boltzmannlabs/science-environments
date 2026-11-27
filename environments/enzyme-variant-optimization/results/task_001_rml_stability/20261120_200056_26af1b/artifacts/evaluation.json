@@ -1,0 +1,90 @@
+{
+  "evaluation_status": "complete",
+  "protocol_id": "rml-stability-v2-random-controlled-mutagenesis",
+  "metric": "molprobity_clashscore",
+  "unit": "scores_per_1000_atoms",
+  "direction": "minimize",
+  "parent": {
+    "id": "RML_PARENT",
+    "value": 7.806782,
+    "unit": "scores_per_1000_atoms"
+  },
+  "candidates": [
+    {
+      "id": "RML_V019",
+      "rank": 1,
+      "value": 9.512195,
+      "unit": "scores_per_1000_atoms",
+      "parent_relative_change": 1.7054,
+      "eligibility": "true",
+      "mutations": 3,
+      "edits": "A45C, E161W, L267V",
+      "structure": "Boltz2 pNPL complex complete"
+    },
+    {
+      "id": "RML_V013",
+      "rank": 2,
+      "value": 10.00244,
+      "unit": "scores_per_1000_atoms",
+      "parent_relative_change": 2.1957,
+      "eligibility": "true",
+      "mutations": 6,
+      "edits": "L17T, I59Q, K73H, N168M, G214S, V254F",
+      "structure": "Boltz2 pNPL complex complete"
+    },
+    {
+      "id": "RML_V009",
+      "rank": 3,
+      "value": 10.978287,
+      "unit": "scores_per_1000_atoms",
+      "parent_relative_change": 3.1715,
+      "eligibility": "true",
+      "mutations": 4,
+      "edits": "N26P, Y76N, G163H, F184P",
+      "structure": "Boltz2 pNPL complex complete"
+    },
+    {
+      "id": "RML_V004",
+      "rank": 4,
+      "value": 13.196481,
+      "unit": "scores_per_1000_atoms",
+      "parent_relative_change": 5.3897,
+      "eligibility": "true",
+      "mutations": 4,
+      "edits": "R7Q, A64W, R197H, W223V",
+      "structure": "Boltz2 pNPL complex complete"
+    },
+    {
+      "id": "RML_V016",
+      "rank": 5,
+      "value": 14.602093,
+      "unit": "scores_per_1000_atoms",
+      "parent_relative_change": 6.7953,
+      "eligibility": "true",
+      "mutations": 7,
+      "edits": "N3R, G69E, Y187K, G163E, E221W, P210L, I204N",
+      "structure": "Boltz2 pNPL complex complete"
+    }
+  ],
+  "selection_seal": {
+    "seal_sha256": "510bfb95cede36a5bc34f1308ae141e21ec24e9e14162af5d62dcf14ce1db166",
+    "verified": true
+  },
+  "findings": {
+    "all_candidates_valid": true,
+    "protected_positions_preserved": true,
+    "mutation_budget_respected": true,
+    "sequence_length_correct": true,
+    "structure_prediction_complete": true,
+    "pNPL_complex_present": true,
+    "catalytic_geometry_preserved": true,
+    "notes": "ACTUAL MolProbity assessment (job 6b01ffcb8300c878b5cda684). RML_V019 has the best candidate clashscore (9.51, \u0394+1.71 vs parent 7.81). All candidates have higher clashscores than the parent, indicating some structural disruption from mutations. RML_V016 has the worst (14.60, \u0394+6.80). Ramachandran outliers: 0% for all. Rotamer outliers: 0% for all. Catalytic geometry preserved in all candidates."
+  },
+  "evaluated_at": "2026-11-21T19:45:00Z",
+  "evaluator": "parent-assisted (enzyme-evaluator unavailable due to specialist timeout)",
+  "molprobity_job": {
+    "doc_id": "6b01ffcb8300c878b5cda684",
+    "status": "completed",
+    "credits": 3
+  }
+}

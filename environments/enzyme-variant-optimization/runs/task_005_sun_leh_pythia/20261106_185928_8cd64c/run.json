@@ -1,0 +1,51 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261106_185928_8cd64c",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261106_185928_8cd64c",
+  "config_version": 1,
+  "config_hash": "cd0454acb1493c99c3d86ff0ca718a2ab7fe14259546532240249d50e05dabdd",
+  "config_path": "../../../config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_8cd64c.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261106_185928_8cd64c"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "status": "completed",
+  "status_basis": "Existing exported outcome; operational closure is separate from scientific completion.",
+  "started_at": "2026-11-06T18:59:28.639379+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-06T19:52:53.444131+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_005_sun_leh_pythia/20261106_185928_8cd64c",
+  "source_kind": "historical_publication",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "delegate_task"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 220098,
+    "output_tokens": 80119,
+    "cache_read_tokens": 15415936,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 24147,
+    "tool_call_count": 171
+  },
+  "historical_cumulative_accounting": {
+    "arm": "sun_leh/agent-with-specialist",
+    "state": "closed/no live worker",
+    "session_id": "20261106_185928_8cd64c",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reported_tokens": 17989521,
+    "elapsed_seconds": 3216,
+    "scope": "Completed declared method scan and paired comparison; exact paper reproduction unresolved",
+    "last_activity": "",
+    "accuracy": "Not established prospectively; corrected post-selection 30-panel association rho=-0.011, exact paper inputs unverified"
+  }
+}

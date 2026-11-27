@@ -1,0 +1,73 @@
+{
+  "verified": true,
+  "expected_nonidentity": {
+    "monomer_A:A": 2755,
+    "dimer_AB:A": 2755,
+    "dimer_AB:B": 2774
+  },
+  "observed_nonidentity": {
+    "monomer_A:A": 2755,
+    "dimer_AB:A": 2755,
+    "dimer_AB:B": 2774
+  },
+  "identity_controls": 436,
+  "identity_max_abs": 0.0,
+  "unique_context_chain_position_mutant": 8720,
+  "positions": 436,
+  "nineteen_unique_nonidentity_each": true,
+  "max_probability_reconstruction_error": 9.145321264725226e-07,
+  "max_logit_reconstruction_error": 1.9073486328125e-06,
+  "max_aggregation_error": 0.0,
+  "finite_scores": true,
+  "softmax_sum_checked": true,
+  "score_threshold_and_best_per_position_checked": true,
+  "full_length_mutants_checked": true,
+  "selection_count": 33,
+  "primary_mean_sensitivity_count": 13,
+  "unscored": {
+    "monomer_A:A": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dimer_AB:A": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dimer_AB:B": [
+      1,
+      2,
+      3
+    ]
+  },
+  "file_sha256": {
+    "RUN_PLAN.json": "b691a7a8144cfe0e1a836fab29c525308c62eac8ff3d1716b149ba244e268533",
+    "INPUT_MANIFEST.json": "e07be628d1dddb2add2280bcf99cf9cd4e206642d771b3850d30753a103cc945",
+    "original_1NWW.pdb": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
+    "monomer_A.pdb": "f9c8b11e0705ab5c6ad2dae45ad6c22b3327631cb9f03c98a04db5c2e007feb7",
+    "parent.fasta": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080",
+    "residue_map.csv": "62453dc123e4c79fbc1a1b8edd924960b37c7ca54c2ba8da82374e009ca4fc29",
+    "missing_positions.csv": "c01b7af8cd4515874e16a58ecd26e6667aee6c95e247097dddf48073782bcd2b",
+    "preflight.json": "79f394c965888d3dbbd2d59d0d375f2adb3ef67bcd901675847e2de05f9f4d64",
+    "native_model_outputs.npz": "6ad475545145ecd0e8afd0cda5925dbbdccf20266e13a5e35e3b9569d4ea457d",
+    "all_scores.csv": "7da6afbd690f2365071646d5e674910aff753769e5556c1cd1fc4ff10a372d1c",
+    "all_scores_ranked.csv": "4d62d7ade75f19118adb68c40786429b5ee080b8adf1292fe298174e9b3a8ebd",
+    "identity_controls.csv": "ce2a56639b36acc48f664ddc9b11777b31f2d2f7e0cd52302ea54232788b0405",
+    "best_per_position.csv": "6109286a60045335bff16b7548ea0779d86c381f89b4f2a9c88184ad504d7107",
+    "library_sum_monomer_A.csv": "8ab91b44474635428c944191397679234972a728dbf88e4d905888ee49c6e632",
+    "library_mean_monomer_A.csv": "2a89d1f602f66cc8af22fed9e961cc708747223113a840fd7ad0f1382481dfdf",
+    "library_sum_dimer_AB_by_chain.csv": "9a694a265d1601d38e04ca8bea58b1a8e5b64ebc821268d9e17843f513d024d1",
+    "candidates.fasta": "cccc42c4e8e124124dcbc0649396337670b4647ae6213c51ebb6eb2ada0f775a",
+    "selection.csv": "08782c4bb5db4a83433e620dce5bec6cb2cc55c3b295a74f6589836ce29b36dc",
+    "selection_seal.json": "6bdd365e4be9a666ad50a08878bf3bd008dcdf46082db2be8300b0b3eeca6350",
+    "inference_receipt.json": "fd2d614d810c9d0f46e6d62049e80e02be8d592f97cc2e38eb765b0ee8ab1c03"
+  },
+  "numerical_tolerances": {
+    "probability_reconstruction": 2e-06,
+    "logit_reconstruction": 2e-05,
+    "aggregation": 1e-12
+  }
+}

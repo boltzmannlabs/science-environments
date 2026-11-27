@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from run_paths import historical_result
 from markdown_report import MarkdownReport
 
 
@@ -52,7 +53,7 @@ def add_electrostatics(doc, folder, image, plt):
     image(fig, 'Matched field, geometry and interaction predictions',
           'Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.')
     doc.add_paragraph('The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.')
-    doc.add_paragraph('[Protocol and sequence identities](../../../results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md).')
+    doc.add_paragraph('[Protocol and sequence identities](../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
 
 
 def add_open_source_metrics(doc, folder, image, plt):
@@ -106,7 +107,7 @@ def build_task(env, task):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     tid = task['id']
-    folder = env / 'results' / tid / 'agent-alone'
+    folder = historical_result(env, tid)
     doc = MarkdownReport(task['title'] + ' — benchmark report')
     table = doc.table
     source = doc.source
@@ -236,7 +237,7 @@ def build_task(env, task):
         add_open_source_metrics(doc, folder, image, plt)
         if tid == 'task_004_athol1_substrate':
             add_electrostatics(doc, folder, image, plt)
-        doc.add_paragraph(f'[Results and preparation details](../../../results/{tid}/agent-alone/README.md) · [Published reference](../references.md).')
+        doc.add_paragraph(f'[Results and preparation details](../../../results/{tid}/{folder.name}/README.md) · [Published reference](../references.md).')
 
     target = env / 'benchmark' / tid / 'comparisions/benchmark_report.md'
     target.parent.mkdir(parents=True, exist_ok=True)

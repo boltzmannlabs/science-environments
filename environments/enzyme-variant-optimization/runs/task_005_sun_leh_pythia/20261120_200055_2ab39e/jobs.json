@@ -1,0 +1,15 @@
+{
+  "assignment_id": "ae68253530b04acc8d3deeb60c71c6bb",
+  "remote_scientific_submissions": [],
+  "local_processes": [
+    {"stage":"environment_creation_python313","status":"failed_after_partial_venv_creation","reason":"Python 3.13 venv did not contain targeted Python 3.11 site-packages directory; no inference"},
+    {"stage":"python311_path_discovery","status":"failed","reason":"python3.11 not on PATH; subsequently found actual existing interpreter via sys._base_executable"},
+    {"stage":"environment_creation_python311","status":"completed","environment":".venv311","dependency_provenance":"shared read-only existing Python 3.11 site-packages"},
+    {"stage":"preflight","status":"completed","artifact":"preflight.json","note":"C model diagnostic on two monomer positions only; strict C/P checkpoint loading"},
+    {"stage":"full_Pythia_scan","status":"completed","pid":1195514,"exit_code":0,"receipt":"inference_receipt.json","contexts":["monomer_A","dimer_AB"],"models":["C","P"]},
+    {"stage":"numerical_verification","status":"completed","artifact":"verification.json"},
+    {"stage":"retrospective_supplement_pdf_download","status":"failed","reason":"HTML response, not PDF; text and figure independently retrieved","preserved_response":"supplement_fetch_response_NOT_PDF.html"}
+  ],
+  "specialist_receipts": ["sa-0-caf98776","sa-0-74822eb1","sa-0-a629470c","sa-0-2643dc6f","sa-0-9f369aa7","sa-0-bf64daf8"],
+  "independent_evaluator":{"receipt":"sa-0-bf64daf8","status":"completed","review":"evaluation.json"}
+}

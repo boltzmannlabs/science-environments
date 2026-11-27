@@ -1,0 +1,99 @@
+{
+  "submission_attempts": 6,
+  "jobs": [
+    {
+      "job_name": "Enzymes",
+      "doc_id": "6b00a82a4eb6cc87f0e231d7",
+      "experiment_name": "Enzymes - 20261120-200600Z - 01beb6",
+      "receipt_attempt_id": "72dbcff1ca184dc4a4734b4cb42f06f3",
+      "upload_receipt_id": "7072e7d03257427d9b49ac011f250e45",
+      "submitted_input": "parent_properties.csv",
+      "submitted_properties": [
+        "tmPred_enzymes",
+        "enzyme_solubility"
+      ],
+      "status": "Success",
+      "outputs": [
+        "6b00a82a4eb6cc87f0e231d7_pred.csv"
+      ],
+      "diagnostic_log": "HTTP 404 without JSON; optional diagnostic lookup failure; result CSV downloaded and read"
+    },
+    {
+      "job_name": "Thermal_MPNN",
+      "doc_id": "6b00aae00d6c3e1e11b8a393",
+      "experiment_name": "Thermal MPNN - 20261120-201734Z - 6182fd",
+      "receipt_attempt_id": "80c7c79a97184c70b7949a112f80d5c2",
+      "upload_receipt_id": "1ec1d0e775e34cf2a6dacbbad038f76c",
+      "input": "parent_3TGL.zip",
+      "chain": "A",
+      "status": "Success",
+      "outputs": [
+        "output.zip"
+      ],
+      "not_design": true
+    },
+    {
+      "job_name": "Boltz2",
+      "doc_id": "6b00b22d0d6c3e1e11b8a487",
+      "experiment_name": "Boltz-2 - 20261120-204844Z - 2a9f25",
+      "status": "Success",
+      "output_status": "downloaded",
+      "input": "parent FASTA and PubChem 74778 neutral SMILES",
+      "receipt_attempt_id": null,
+      "outputs": [
+        "outputs.zip",
+        "pdbs_outputs.zip",
+        "paths.csv"
+      ]
+    },
+    {
+      "job_name": "Mol_Probity",
+      "doc_id": "6b00b43c8300c878b5cd9647",
+      "experiment_name": "MolProbity - 20261120-205730Z - d4463b",
+      "receipt_attempt_id": "635819e1ffd34f228df0aee09182611a",
+      "upload_receipt_id": "c363365e060348468f171a4d616508f4",
+      "input": "parent_complex_molprobity.zip",
+      "execution_mode": "measurement_only",
+      "status": "Success",
+      "validation_warnings": [
+        "ligand chemistry, charges, CCTBX energy types and restraints remain unchecked locally",
+        "ZIP forwarding, billing and worker deployment unverified"
+      ],
+      "approval": "YOLO policy applied; historical job remained pending; possible charges",
+      "outputs": [
+        "results.zip"
+      ],
+      "output_evidence": "structure_evidence/molprobity_parent",
+      "download_recovery": "first signed download failed SignatureDoesNotMatch; refreshed status and used returned URL, downloaded successfully; no resubmission"
+    },
+    {
+      "job_name": "tm_align",
+      "doc_id": "6b00b5ac009896a24b274210",
+      "experiment_name": "TM Align - 20261120-210337Z - 54c0ad",
+      "receipt_attempt_id": "4fdaacbf7bcf443daea4fa3b412a83ff",
+      "input": "homologs/parent_homologs.zip",
+      "reference": "3TGL.pdb",
+      "status": "Success",
+      "validation_warning": "Structure inventory exceeds 256 KiB receipt budget; cross-file validation unchecked; YOLO policy applied",
+      "outputs": [
+        "results.csv"
+      ],
+      "interpretation": "summary only; residue-alignment mapping not reported; indexwise comparison cannot be called structure alignment"
+    },
+    {
+      "job_name": "Random_Controlled_Mutagenesis",
+      "doc_id": "6b0125a40d6c3e1e11b8a595",
+      "experiment_name": "Random Controlled Mutagenesis - 20261121-050122Z - 1d093c",
+      "receipt_attempt_id": null,
+      "payload": "initial_generation_request.json",
+      "status": "Success",
+      "outputs": [
+        "6b0125a40d6c3e1e11b8a595.csv"
+      ],
+      "validation": "12 unique draws, all violate fixed 269 residue length (267\u2013293); no draw qualifies; payload specified one mutation per epoch and protected indices; worker returned apparent insertion/deletion regions; no sequences repaired",
+      "output_qualification": "rejected_all",
+      "diagnostic_log": "HTTP 404 without JSON"
+    }
+  ],
+  "unknown_acceptance": []
+}

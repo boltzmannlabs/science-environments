@@ -1,0 +1,160 @@
+{
+  "schema": "INPUT_MANIFEST.v1",
+  "frozen_utc": "2026-11-26T08:30:26.177819+00:00",
+  "files": {
+    "supplement": {
+      "path": "refs/original_supplement.docx",
+      "bytes": 531934,
+      "sha256": "7eb9630743737d303c40e3753f87e5d7fd2ca0b9bc1f87598f2fdc09ea1a0eca"
+    },
+    "pythia_source_archive": {
+      "path": "local_runtime/source/pythia.tar.gz",
+      "bytes": 36000232,
+      "sha256": "acbbcaff6133c7ea14d2bc06942592aaa81b5cd6b3e8e347fcb4f4d38a07da75"
+    },
+    "pythia_model_py": {
+      "path": "local_runtime/source/Pythia-e1943402092295ae96cde0c93073ddc933ffc433/pythia/model.py",
+      "bytes": 5922,
+      "sha256": "1079d1f58ec06e72d7689b6f1c18cb6e99c05b6be2706f495d6b8872f4602e37"
+    },
+    "pythia_masked_ddg_scan_py": {
+      "path": "local_runtime/source/Pythia-e1943402092295ae96cde0c93073ddc933ffc433/pythia/masked_ddg_scan.py",
+      "bytes": 4917,
+      "sha256": "8c7aaf054fc88ff2d0458c7095e1497d8c20414304b7ecd267f1414adfc0aa5c"
+    },
+    "pythia_pdb_utils_py": {
+      "path": "local_runtime/source/Pythia-e1943402092295ae96cde0c93073ddc933ffc433/pythia/pdb_utils.py",
+      "bytes": 12835,
+      "sha256": "a5a8b756d9c1f07842cf9376cb27779861ede46dd5ba7e9245a36711b1b44234"
+    },
+    "pythia_c": {
+      "path": "local_runtime/checkpoints/pythia-c.pt",
+      "bytes": 5223871,
+      "sha256": "3cbfbfcc449ff810e662b3ae5e1ecc0f8636a62b92d10722b00a1931147f93af"
+    },
+    "pythia_p": {
+      "path": "local_runtime/checkpoints/pythia-p.pt",
+      "bytes": 5223871,
+      "sha256": "17523c65b0b8a36ec16dfa15d1e56154ead3394f907a189bc48d0bc9f7168b81"
+    },
+    "esm2_650M": {
+      "path": "local_runtime/checkpoints/esm2_t33_650M_UR50D.pt",
+      "bytes": 2604537549,
+      "sha256": "ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c"
+    },
+    "esm2_contact_regression": {
+      "path": "local_runtime/checkpoints/esm2_t33_650M_UR50D-contact-regression.pt",
+      "bytes": 3687,
+      "sha256": "8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575"
+    }
+  },
+  "constructs": {
+    "cellulase_WT": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTGTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENILGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d345d0fa5fd6c7a3c7bab7013e9b4f78efb3e76f8cc410cad11026ea88c6fd57",
+      "fasta_sha256": "cb600805ad0284099dd6ddd47cf75099bcc685b229045b42949e29fb73b25870",
+      "role": "WT_input",
+      "edits_from_WT": []
+    },
+    "cellulase_M5": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGMSSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKFLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRESDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "5d4723bdec030dce32183cb2063e534b998beddef7cf8c16818f3f7724c5cae4",
+      "fasta_sha256": "271d7fb814dcf7a0d213936235b11a7a25a8b3bac8795d83d89d2e192876f1c4",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "I34M",
+        "G177P",
+        "Y252F",
+        "L287E",
+        "L302R"
+      ]
+    },
+    "beta_glucanase_WT": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRANNVSVTSLGEMRLALTSPSYNKFDCGENRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDAANAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGSYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "1be527a773d049420b217cf4e7eded5f21468e74c9608033cdb34bec1184bb87",
+      "fasta_sha256": "4b7091e88a1fb0f6229d5c89b57510b750f426986d89c1b864bad1dbf0e70005",
+      "role": "WT_input",
+      "edits_from_WT": []
+    },
+    "beta_glucanase_M7": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGWSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAYYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "cfa75230f09b7f392dad5c09501e167fc27d586d4a18147657eab7056fd9d191",
+      "fasta_sha256": "ba0f83fdc0b8c05a63fd6d6e23d1f158a89f7b4cc2366b6becfe28c24b875f47",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "Y25W",
+        "N38S",
+        "L45E",
+        "N65I",
+        "A142S",
+        "S196K",
+        "H206Y"
+      ]
+    },
+    "cellulase_M2": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d1e2ad6d3703189900a7a006037d492964d2ce2cc21f202ab170f223fd92fdeb",
+      "fasta_sha256": "71e098ffe7046f030197c366876a53b0a69e93b2a4b4f4c655d77247573b5f9e",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "G177P",
+        "L302R"
+      ]
+    },
+    "beta_glucanase_M5": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "82b31bef7b7a00d881900c44de25da61b16ef31d5cb820c9cd5d85c43dc65a20",
+      "fasta_sha256": "da912128f9d2caa80a210d27b8f26312908f9c3e097678ad5f36265e0cb4fa16",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "N38S",
+        "L45E",
+        "N65I",
+        "A142S",
+        "S196K"
+      ]
+    }
+  },
+  "reference_tables": {
+    "count": 10,
+    "paths": [
+      "refs/Table_S1.csv",
+      "refs/Table_S2.csv",
+      "refs/Table_S3.csv",
+      "refs/Table_S4.csv",
+      "refs/Table_S5.csv",
+      "refs/Table_S6.csv",
+      "refs/Table_S7.csv",
+      "refs/Table_S8.csv",
+      "refs/Table_S9.csv",
+      "refs/Table_S10.csv"
+    ],
+    "use": "evaluator-only after seal",
+    "sha256": {
+      "Table_S1.csv": "1668fe859f9a9e2c7da9f361a66912b44ce61d79a927747b672572cfc18355d4",
+      "Table_S2.csv": "5f595c880250efd23af79a9297bf0dde227ec8d2395c8f403fb99c461b6b5269",
+      "Table_S3.csv": "0c19b6f395e0fc0d32e7dfd41b7e5fb0721ef4f896593d6a17314b449d43b8e2",
+      "Table_S4.csv": "de7048f08194cab9d602cb9f13238466ae03252415d3df688f18933787d9d002",
+      "Table_S5.csv": "aaf8fbef8c0019388431ca89f9f2d2eb580804163e1353df9ce2c19e174b3042",
+      "Table_S6.csv": "2451beb6f0406c79e3340dc362f4f3fe5c2c9bbb263a462a7e213750ec41963a",
+      "Table_S7.csv": "ee77203d7c2729630631df5e7d2ef1e1ac97ea04e6c02de53dae681fcc1d2e7e",
+      "Table_S8.csv": "9346a41d6f5e9edeee81614b3f1e60f1294570e3295db6157b71e0032361599a",
+      "Table_S9.csv": "a5b49ad1917bfae422b2438def08b486e0b7b5140991f9d5b3b6fdd502f7d437",
+      "Table_S10.csv": "3e7c761163dcc78ae87484934f4d0a9ca19d7ccc84a2569319208c8007f7b0df"
+    }
+  },
+  "environment": {
+    "python": "retained-private-evidence/python",
+    "torch": "2.9.1+cu128",
+    "fair_esm": "2.0.0",
+    "biopython": "1.84",
+    "numpy": "1.26.4",
+    "gpu_process_protected": true
+  }
+}

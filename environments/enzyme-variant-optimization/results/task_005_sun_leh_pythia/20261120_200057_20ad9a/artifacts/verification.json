@@ -1,0 +1,28 @@
+{
+  "total_rows": 5820,
+  "identity_rows": 291,
+  "nonidentity_rows": 5529,
+  "chains": [
+    0,
+    1
+  ],
+  "residues_per_chain": {
+    "0": 145,
+    "1": 146
+  },
+  "expected_nonidentity_per_chain": 12768,
+  "all_scores_finite": true,
+  "identity_sum_max_abs": 0.0,
+  "identity_mean_max_abs": 0.0,
+  "best_per_position_sum_count": 291,
+  "best_per_position_sum_cutoff_count": 59,
+  "best_per_position_mean_count": 291,
+  "best_per_position_mean_cutoff_count": 25,
+  "note": "Primary aggregation is sum_score; mean is sensitivity. Strict cutoff < -2.",
+  "context_A_rows": 2900,
+  "context_B_rows": 2920,
+  "context_A_cutoff_sum": 28,
+  "context_B_cutoff_sum": 31,
+  "context_A_cutoff_mean": 13,
+  "context_B_cutoff_mean": 12
+}

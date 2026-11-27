@@ -1,0 +1,279 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261126_081616_5ee44d",
+  "result_id": "result_20261126_081616_5ee44d",
+  "config_id": "cfg_20261126_081616_5ee44d",
+  "config_hash": "5342e457bbefda0a995c14546399f63b3fe48ea9110dbf59fd854a74ebf8da35",
+  "run_record": "../../../runs/task_006_zhang_hydrolases/20261126_081616_5ee44d/run.json",
+  "execution_status": "completed",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "d4860aab2f0805d019da355c325b9300740b8a734d9c00fce3a85b0211ef98b3",
+      "source_sha256": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "42efa26e3185087ce21e5dad09e2667b5678d5db7fcea22621c163ce4e2506a7",
+      "source_sha256": null
+    },
+    {
+      "path": "artifacts/REPORT.md",
+      "sha256": "9247b6821032ac1762bda2df038bbec27ce081a8df11d3930ed14ce0b246cb38",
+      "source_sha256": "9247b6821032ac1762bda2df038bbec27ce081a8df11d3930ed14ce0b246cb38"
+    },
+    {
+      "path": "artifacts/candidates.fasta",
+      "sha256": "ca11cea833ef4c3043ffabefff1002adb8dadae8984030f702d6f1cd2ae5e415",
+      "source_sha256": "ca11cea833ef4c3043ffabefff1002adb8dadae8984030f702d6f1cd2ae5e415"
+    },
+    {
+      "path": "artifacts/comparison_same_variant_ESM2_beta_glucanase_M5.csv",
+      "sha256": "ad15c51aa9409f8ef7f570a9954dfaad6c1265d22edd914f0ba84be674f40c53",
+      "source_sha256": "23b320ccaf2c1957cd6b305f599650711277818e576911818fee564330906563"
+    },
+    {
+      "path": "artifacts/comparison_same_variant_ESM2_cellulase_M2.csv",
+      "sha256": "9693ef931541161e92207881b7cfc3a8c69b1f0b077b441d591567d9432d0897",
+      "source_sha256": "d53551405a7bec800bce49dce76d437f6c0d114c6444325dd405bdd7ba68d32d"
+    },
+    {
+      "path": "artifacts/comparison_same_variant_Pythia_beta_glucanase_WT.csv",
+      "sha256": "e0425865a4acc850e8aa9dc9a4836f432f9fe85af5ebe1fb571cb73a56c321ca",
+      "source_sha256": "c7c70ac24d1b89c303166b6458a7b0607e746f6d2c56580f15e4008472d3aa85"
+    },
+    {
+      "path": "artifacts/comparison_same_variant_Pythia_cellulase_WT.csv",
+      "sha256": "9bc23634b57319222517ac421c270159fccf1fdb38c194235e30956ac44b6cd2",
+      "source_sha256": "d067416ef5461c67185764835290a6d500266a6953f23434cffecee2bf6f0d76"
+    },
+    {
+      "path": "artifacts/comparison_summary.json",
+      "sha256": "a71a04eb01b793b0bdca8c584c461a6e1f9f6ca6b8a1e9f1a5aa7f0386aeb0fd",
+      "source_sha256": "a71a04eb01b793b0bdca8c584c461a6e1f9f6ca6b8a1e9f1a5aa7f0386aeb0fd"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/all_scores_including_identity.csv",
+      "sha256": "30617428a5ec4c7e53fde7df6b3631f92a06dcbdb97807743c1996d8f0231328",
+      "source_sha256": "a7c8d518f1dddd30f4d60a49f3569e2bd69147ba6805b3b74dccd06800350d6f"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/all_substitutions.csv",
+      "sha256": "75e94ddda014f601f697e29db155375006a480b3132c17522e7f4f722172a453",
+      "source_sha256": "b0da297be52bf65d4e367e901443f5949923147b3eff6cf934c8161b7593c61b"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/best_per_position.csv",
+      "sha256": "bdde3053f95fba8a3b8ee7601da30d09dd96fa1f7ca3046cb16d42b9c04cdc16",
+      "source_sha256": "83e139b3a349b79b552f88505ea857a50c3df07a395826ba0164ca851ea61dc4"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/ranked_substitutions.csv",
+      "sha256": "499cf64601df63b3a9853c8f036e4cbf242e6cf86c25fc89167222ae33b891d6",
+      "source_sha256": "54a8669b96bc96cacd413f3596340a6aacc76fcd83509fa0adcfe58a4bb9f25b"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/thresholded_best_per_position.csv",
+      "sha256": "911622cf38fb02d24d9a8920ec4686d1dbe1ee5ecff62faab942082e9a23c6d2",
+      "source_sha256": "87ac763d35ce2ccf454ca971ad2e292018d16ccbec253b310ff4283b050e3e4c"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/beta_glucanase_M5/thresholded_substitutions.csv",
+      "sha256": "57569cd03d755c852c4bf785ac7081d8ce30d00b178132c84a619a371c4ec3ff",
+      "source_sha256": "201c743aa5e5ad77317b04be505134326964e63d893eb9001996ebbf5578c399"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/all_scores_including_identity.csv",
+      "sha256": "98b18bac46a5d255a22e975ff6e67e1653cfddfcde3f7085004ceb0d60e95a1b",
+      "source_sha256": "f013ea31b8acfd1a05901a707adcf6412ab941391797bdaab8c00d40cc6fed41"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/all_substitutions.csv",
+      "sha256": "f4a1c7060cd0f6de01fb70963a82bc9e20ef1bc098e1d2732e4899a03d346ccf",
+      "source_sha256": "2e6fe3d9d5a777030526efa5e9ad8d2efc061a9c2558db51df1b961e7bd4274a"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/best_per_position.csv",
+      "sha256": "f1c891051f443f2e70a8654fe1a8dbc98fc3fd5fd938ee7666627fe429a6fee5",
+      "source_sha256": "1ab44f051abafedcd738c3acf504364245b2f1b369adba2c2c9a5340686ff5ae"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/ranked_substitutions.csv",
+      "sha256": "27448079c81e644ea98bcd5e449dce10e5f1d66067a0b38c105cabc0a7b08479",
+      "source_sha256": "ce0f87f54cb8c75d1a1fd5acdbf76b7fb155da3ae2e959e601e0b5ee4d7cef37"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/thresholded_best_per_position.csv",
+      "sha256": "fb7d334126a3ec4a8f0948d59cb55187b5afddf28920031d2b02a1036a2bded5",
+      "source_sha256": "765b6f8284f7761144c965f0ee6ff1788b13dd952217c3375fa9eadf3ba1fdb8"
+    },
+    {
+      "path": "artifacts/esm_runs/esm_full_005/cellulase_M2/thresholded_substitutions.csv",
+      "sha256": "f13897dc27ba3867c6d7a7d36ae22007ed864c5e1f19e1da021d56f7a8d0e5bd",
+      "source_sha256": "0b1ec5da8e44ba1831733205a68f154b17521db3b1c772c5d9d24edff12af04a"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/all_scores_including_identity.csv",
+      "sha256": "921756c488f756341fe6d7b68670b9878293a3eddab03eae7bbf76e092b78577",
+      "source_sha256": "42cc448bc669f0d87eaec69fb3d1e4c68d54ab4364a1cb3639cecb244c1958b0"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/all_substitutions.csv",
+      "sha256": "a257d7acd805a4fec4644a4214709c89110b919fbfe0e3f7654a602dd6b12ec2",
+      "source_sha256": "2b264a13b8cda9e2c1ef8d93d67ba2d73be3ef885b1989b7474da81eff5762dd"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/best_per_position_unfiltered.csv",
+      "sha256": "b19e4459133ae80b9e4fee565c5952cbdf16399a8ee75030bc5591b1e4981a30",
+      "source_sha256": "9073151af83aee29e99f3fb4f39b634859285911325026c6585750f159d1d964"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/ranked_unfiltered_substitutions.csv",
+      "sha256": "db89187e72f30718783e9fdced94512a561f77f0932ae65f4fc5a4186065cd87",
+      "source_sha256": "9bed8a61baebe5d6d80255b56d3db8114c3cd91fa1c6104a80f0ca9d790456a0"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/thresholded_best_per_position_unfiltered.csv",
+      "sha256": "4ede67d602ab7974e95ac765068835ed20f34e2137d93df5b568c92987e69207",
+      "source_sha256": "008fb680988d2f03f92f748ec2f693261adfafa1e4a117b994fb12b56a27c36b"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_beta_004/thresholded_unfiltered_substitutions.csv",
+      "sha256": "5f516d866879fa16ef4af6aff63a907471f07841768533183ebbee9bcf4cf352",
+      "source_sha256": "07983bd52e4bca3f7652852265b7eb7e856b1f3439780927bcc415015057ccc4"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/all_scores_including_identity.csv",
+      "sha256": "d5d97137ed5c2be25b5de243d700c5038ebf51d158a2d22151c992c78dfe1c2a",
+      "source_sha256": "074abe0faa3a26882bf3ea8fabc40fe59dbd33e57611b8b3700167aed010557c"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/all_substitutions.csv",
+      "sha256": "80f3d95d4e149cd80db2a1f9b904d87479522101bcc2d730a99d5f22d5cb2daf",
+      "source_sha256": "25b5339efb7d24a50bf9f16f77a65f5126f0d8b7eb157df8f0c4fec3fe7b2c46"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/best_per_position_unfiltered.csv",
+      "sha256": "6a8d320cac3db4b05913bb24b8660fa8dd5a9e2e052b9d997b61d0ace385386d",
+      "source_sha256": "3b353fc3d687dd14e11c3373a2acdf4da2cc1394db7421fcdc22c14bef7e8a96"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/ranked_unfiltered_substitutions.csv",
+      "sha256": "f26d8ce6fd8cd3fb8f5963b38acb2cccb05170d1e0390fe1bedaeb8d584e1bab",
+      "source_sha256": "bb5488b2fb6a97fb3b2a5eb91f8483b45fbf52332393161dc92df4e67a75ee70"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/thresholded_best_per_position_unfiltered.csv",
+      "sha256": "03806166bfeeaed9b3e906f277dad0b417b8a05eecc7411c9429d5e244945bf7",
+      "source_sha256": "0c346a36f6a77706e26dd804b8cbfccbd29fc79fa05458e31264cc099de18647"
+    },
+    {
+      "path": "artifacts/pythia_runs/pythia_cellulase_004/thresholded_unfiltered_substitutions.csv",
+      "sha256": "598250159f7ecc7825f724df3572b78f0f5faf7af2a9e1c7c4856e45b2ea63a6",
+      "source_sha256": "ddc257426cb1fb2841e0681940317627fa7c58a5dd421d25c56102c01e2eb533"
+    },
+    {
+      "path": "artifacts/refs/Table_S1.csv",
+      "sha256": "22121b5216d1869ad66aa6cd610df751bf3f76156f52c457b41be6ceb2b1aca1",
+      "source_sha256": "1668fe859f9a9e2c7da9f361a66912b44ce61d79a927747b672572cfc18355d4"
+    },
+    {
+      "path": "artifacts/refs/Table_S10.csv",
+      "sha256": "5b5bcb6e264dde131434963ba76525e2de4d137dd0bda40a96a50ef42ff123be",
+      "source_sha256": "3e7c761163dcc78ae87484934f4d0a9ca19d7ccc84a2569319208c8007f7b0df"
+    },
+    {
+      "path": "artifacts/refs/Table_S2.csv",
+      "sha256": "e9a50010015556a7af47de57f03facdab7f976736f5ddfae7c9d738ff660750b",
+      "source_sha256": "5f595c880250efd23af79a9297bf0dde227ec8d2395c8f403fb99c461b6b5269"
+    },
+    {
+      "path": "artifacts/refs/Table_S3.csv",
+      "sha256": "bd0d5ac1b4fc5efbed76e9b69a688ebff1336a2f232276d97d689020db3954c6",
+      "source_sha256": "0c19b6f395e0fc0d32e7dfd41b7e5fb0721ef4f896593d6a17314b449d43b8e2"
+    },
+    {
+      "path": "artifacts/refs/Table_S4.csv",
+      "sha256": "da64b08b2b5b37c566e3f09b96b79d4344c0eed5e4cd444004f5508379046e60",
+      "source_sha256": "de7048f08194cab9d602cb9f13238466ae03252415d3df688f18933787d9d002"
+    },
+    {
+      "path": "artifacts/refs/Table_S5.csv",
+      "sha256": "2337048405b5a180eb2fc025dff64ce4ac2ca252325270f3073c6e95591f34c1",
+      "source_sha256": "aaf8fbef8c0019388431ca89f9f2d2eb580804163e1353df9ce2c19e174b3042"
+    },
+    {
+      "path": "artifacts/refs/Table_S6.csv",
+      "sha256": "501215bdcf2efc896f32a0e9d0efb188c86fd5ff1c3c3acc827d859b53432b9b",
+      "source_sha256": "2451beb6f0406c79e3340dc362f4f3fe5c2c9bbb263a462a7e213750ec41963a"
+    },
+    {
+      "path": "artifacts/refs/Table_S7.csv",
+      "sha256": "76972672b60355f8cec1af538672d35a5f9fb27ebc4d1608955a398dcaa353a4",
+      "source_sha256": "ee77203d7c2729630631df5e7d2ef1e1ac97ea04e6c02de53dae681fcc1d2e7e"
+    },
+    {
+      "path": "artifacts/refs/Table_S8.csv",
+      "sha256": "5702a20eea2e59f0c148b03e0f74920cf1fa8346d5bed16b7fb63f00d6d139e0",
+      "source_sha256": "9346a41d6f5e9edeee81614b3f1e60f1294570e3295db6157b71e0032361599a"
+    },
+    {
+      "path": "artifacts/refs/Table_S9.csv",
+      "sha256": "45f48c823ab5ea0d9036b27d4a23e434b0f3fed4106e337b6c51977a670135de",
+      "source_sha256": "a5b49ad1917bfae422b2438def08b486e0b7b5140991f9d5b3b6fdd502f7d437"
+    },
+    {
+      "path": "artifacts/selection.csv",
+      "sha256": "7d7e6a34b041ebcf79b020b2e8e5e2939c323faa0b7b716919e36426e4b4ad20",
+      "source_sha256": "596a87290ece1132ba91cb98a8b48e4fd27142c7fcd3ec400f5667e9ab45b89f"
+    },
+    {
+      "path": "artifacts/selection_raw.csv",
+      "sha256": "307b22e706ab2e62d196533871d8d5d8105669ce9f6faedd9475609e94e82d6c",
+      "source_sha256": "6446b4effe93e2db100932b736b429e760cb5ce50e4cbd52fe19738dc0f25e7f"
+    },
+    {
+      "path": "artifacts/selection_seal.json",
+      "sha256": "5ca721cef60948217c10d01e7fb315dc6622a3d6d6004b2979d871d0a2c78a44",
+      "source_sha256": "5ca721cef60948217c10d01e7fb315dc6622a3d6d6004b2979d871d0a2c78a44"
+    },
+    {
+      "path": "artifacts/specialist_receipts/EVALUATOR_RECEIPT.md",
+      "sha256": "3865a280577cfef9b61006333bf8ed3743cd245eef84addf5debf4ad88fe2b40",
+      "source_sha256": "3865a280577cfef9b61006333bf8ed3743cd245eef84addf5debf4ad88fe2b40"
+    },
+    {
+      "path": "artifacts/specialist_receipts/RECOVERY_ESM_REVIEW.md",
+      "sha256": "9e17362bfc2951578a99e326de178e06bc36d3541796f8faa72e4f8e30f4ea6f",
+      "source_sha256": "9e17362bfc2951578a99e326de178e06bc36d3541796f8faa72e4f8e30f4ea6f"
+    },
+    {
+      "path": "artifacts/specialist_receipts/RECOVERY_REVIEW.md",
+      "sha256": "92aed0e98ab0bd727b828862626a6813e4d55b16ca7e001dcc6216ae21b19b77",
+      "source_sha256": "92aed0e98ab0bd727b828862626a6813e4d55b16ca7e001dcc6216ae21b19b77"
+    },
+    {
+      "path": "artifacts/verification.json",
+      "sha256": "5c1bbe4c2a29a2351d66e336c6e16621971dfc3a5294f2514a1bfed9b46cf758",
+      "source_sha256": "5c1bbe4c2a29a2351d66e336c6e16621971dfc3a5294f2514a1bfed9b46cf758"
+    },
+    {
+      "path": "reviews/EVALUATOR_RECEIPT.md",
+      "sha256": "3865a280577cfef9b61006333bf8ed3743cd245eef84addf5debf4ad88fe2b40",
+      "source_sha256": "3865a280577cfef9b61006333bf8ed3743cd245eef84addf5debf4ad88fe2b40"
+    },
+    {
+      "path": "reviews/RECOVERY_ESM_REVIEW.md",
+      "sha256": "9e17362bfc2951578a99e326de178e06bc36d3541796f8faa72e4f8e30f4ea6f",
+      "source_sha256": "9e17362bfc2951578a99e326de178e06bc36d3541796f8faa72e4f8e30f4ea6f"
+    },
+    {
+      "path": "reviews/RECOVERY_REVIEW.md",
+      "sha256": "92aed0e98ab0bd727b828862626a6813e4d55b16ca7e001dcc6216ae21b19b77",
+      "source_sha256": "92aed0e98ab0bd727b828862626a6813e4d55b16ca7e001dcc6216ae21b19b77"
+    }
+  ],
+  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained."
+}

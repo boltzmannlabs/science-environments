@@ -1,0 +1,33 @@
+{
+  "task": "task_005_sun_leh_pythia",
+  "method": "Pythia source-pinned zero-shot stability prediction (Sun et al. 2025)",
+  "models": {
+    "C": "pythia-c.pt",
+    "P": "pythia-p.pt"
+  },
+  "contexts": {
+    "primary": "monomer (single chain)",
+    "sensitivity": "dimer context chain-specific"
+  },
+  "score_definitions": {
+    "C": "model C log-ratio",
+    "P": "model P log-ratio",
+    "sum": "C+P",
+    "mean": "(C+P)/2"
+  },
+  "selection": {
+    "threshold": "strict score < -2 on frozen primary aggregation",
+    "rule": "best nonidentity substitution per eligible position"
+  },
+  "grid": "19 alternative amino acids per eligible residue",
+  "identity_controls": "retain where emitted",
+  "coverage": "all supported coordinate positions; missing coordinates unscored",
+  "parent": "1NWW LEH, full sequence preserved",
+  "source_pin": "retained-private-evidence/Pythia-e1943402092295ae96cde0c93073ddc933ffc433",
+  "historical_uncertainties": [
+    "Paper mapping of summed vs mean score not fully explicit; both retained as distinct libraries."
+  ],
+  "excluded_tools": [
+    "MLDE"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "scientific_credits": 32,
+  "scientific_credits_breakdown": {
+    "Random_Controlled_Mutagenesis": 5,
+    "Enzymes": 6,
+    "Boltz2": 18,
+    "Mol_Probity": 3
+  },
+  "wall_time_minutes": 65,
+  "specialist_calls": 3,
+  "specialist_timeouts": 3,
+  "model_tokens": "Not separately tracked",
+  "queue_time": "Not separately tracked",
+  "missing_accounting": [
+    "model_tokens",
+    "queue_time",
+    "financial_cost"
+  ],
+  "jobs": [
+    {
+      "job_name": "Random_Controlled_Mutagenesis",
+      "credits": 5,
+      "status": "completed",
+      "purpose": "Initial batch: 20 point mutants (120 mutations)"
+    },
+    {
+      "job_name": "Enzymes",
+      "credits": 6,
+      "status": "completed",
+      "purpose": "Tm predictions for parent + 20 variants"
+    },
+    {
+      "job_name": "Boltz2",
+      "credits": 18,
+      "status": "completed",
+      "purpose": "Structure prediction: parent + 5 candidates with pNPL"
+    },
+    {
+      "job_name": "Mol_Probity",
+      "credits": 3,
+      "status": "completed",
+      "purpose": "MolProbity structural quality: parent + 5 candidates"
+    }
+  ],
+  "total_jobs": 4,
+  "notes": "Boltz2 credits: 6 structure predictions x 3 credits each. MolProbity: 1 batch job (3 credits). All jobs completed successfully."
+}

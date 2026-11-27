@@ -2,8 +2,6 @@
 
 Agent-alone candidates, published prediction values and reference variants calculated in this work.
 
-Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
-
 ## Published predictions and our predictions
 
 | Property / predictor | Published prediction | Our candidates |
@@ -60,6 +58,6 @@ Error bars show sample SD along a single trajectory, not independent experimenta
 
 The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.
 
-[Protocol and sequence identities](../../../results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md).
+[Protocol and sequence identities](../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).
 
-[Results and preparation details](../../../results/task_004_athol1_substrate/agent-alone/README.md) · [Published reference](../references.md).
+[Results and preparation details](../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/README.md) · [Published reference](../references.md).

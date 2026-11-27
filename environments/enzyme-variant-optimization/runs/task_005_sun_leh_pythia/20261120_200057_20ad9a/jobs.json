@@ -1,0 +1,16 @@
+{
+  "job_id": "local_cpu_pythia_scan",
+  "type": "local_execution",
+  "status": "completed",
+  "input_pdb": "inputs/1NWW.pdb",
+  "output_csv": "results/local/task_005_sun_leh_pythia/all_scores.csv",
+  "device": "cpu",
+  "source_pin": "retained-private-evidence/Pythia-e1943402092295ae96cde0c93073ddc933ffc433",
+  "models": ["pythia-c.pt", "pythia-p.pt"],
+  "command": ".venv_pythia/bin/python results/local/task_005_sun_leh_pythia/full_scan_driver.py --pdb inputs/1NWW.pdb --output_csv results/local/task_005_sun_leh_pythia/all_scores.csv --device cpu",
+  "rows_returned": 5820,
+  "identity_rows": 291,
+  "nonidentity_rows": 5529,
+  "all_scores_finite": true,
+  "identity_sum_max_abs": 0.0
+}

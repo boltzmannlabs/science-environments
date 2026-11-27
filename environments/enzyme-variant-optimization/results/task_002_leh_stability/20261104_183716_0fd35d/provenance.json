@@ -1,0 +1,174 @@
+{
+  "task_id": "task_002_leh_stability",
+  "run_id": "20261104_183716_0fd35d",
+  "result_id": "result_20261104_183716_0fd35d",
+  "config_id": "cfg_20261104_183716_0fd35d",
+  "config_hash": "05ee250ae045a0e68ea47662b9adaf713babb69396dd5dde04ab2fdae2eb96b8",
+  "run_record": "../../../runs/task_002_leh_stability/20261104_183716_0fd35d/run.json",
+  "execution_status": "partial",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "e9626e279a2398bed9b7a0b84725fad998fb73f22f154d35482430ebe30bd3ae",
+      "source_sha256": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "ed71ddf6e35ed72aeb945c54a67d03be0c8d6aa435336d70c1f9fa7844752bea",
+      "source_sha256": null
+    },
+    {
+      "path": "figures/workflow.jpg",
+      "sha256": "fad13faa3267db19d2f2ce8b10f6a66006adcb3837c9d05291d3056982898f0a",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/README.md",
+      "sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/ddgun/method.json",
+      "sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/open_source_metrics.csv",
+      "sha256": "e27c94d21f001bb142e6231b21f621daf38af9c917a86a82484b25900ffc9e2d",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/predictions.csv",
+      "sha256": "aaba3d1b64c5fc66d63ecc6167f9d57ca0378f06da99ef281381b15d1cffbfae",
+      "source_sha256": null
+    },
+    {
+      "path": "reference_comparison/predictor_outputs.csv",
+      "sha256": "5e89963d091da5891d7dd4a55e7914b0351e960be4f4b971b9dfad0a9830db24",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/all_candidates.fasta",
+      "sha256": "62dc029b7d1328d0fc9dc264d9bf7313484a6dee25e1df99c55e61651104f192",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidate_history.csv",
+      "sha256": "3f5ff3a2035d8517e6dfe782d6b8420db3ee101a3e729e0ac1f9e10765f9b864",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidate_sequences.csv",
+      "sha256": "4add25ee0ecdaca6f8433a815b3c6c36aa32c2a5d2512dbf412f9a9899cfd30a",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidate_sequences.fasta",
+      "sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidates.fasta",
+      "sha256": "2ca205df230cd9785a368d997eb59f8cf50d518a8303dd0d1fd221569a9a7a85",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/controls.fasta",
+      "sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/identities.json",
+      "sha256": "7eb367c2a55e13f1bd7737b1b4619ec86397f2a2beac44a4f54bab0d1641317d",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/parent.fasta",
+      "sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/00_execution_index/jobs.csv",
+      "sha256": "3a7d97826f4fd3fade30de3345087e96b061c52f86a4fd9390f4d7b0f91c3ffc",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_parent_preparation/README.md",
+      "sha256": "ca6e0ba4b18a2fcae5c39f2f09ec01dab614375b7f4837b368b64e885438b7ce",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_parent_preparation/settings.json",
+      "sha256": "2af84186c465dddd6d035d507907b8e2ee8e56e9b626deab0793749ebcc4c5e1",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_variant_generation/README.md",
+      "sha256": "97641efd4a5ea52707e780efbae3c4240bf99c288c92a265cbc99a1f51c09f59",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/03_property_screening/README.md",
+      "sha256": "77ab15a3939502f6ae08c92d7b668060c7da394e9fb864e9d85b5ba9f80e8bd6",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/03_property_screening/outputs.csv",
+      "sha256": "c82813dbe63c2010646d2d1d49bf8fbf16195482b03eadb60e236dd16a75d62c",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "08fa711d68bf39096ff5f4d44fa8bad29da6d7b798b2819d9ed735ac1410e3ef",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/outputs.csv",
+      "sha256": "4e9d49045293ab1e41fdfb0cf53ae09526ab80b458d7cdddbecb2c148431aa2f",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "b826876c2ddb033bbb63b45b2993604a5c00b43da3723ff0266703a1f2303ebc",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/06_post_selection_properties/predictions.csv",
+      "sha256": "f90ad2a1ce8aa6e8aeb0a58811e56361dbd199569134ebdd0e35465bad0091f1",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/07_ddgun_stability/README.md",
+      "sha256": "12820149c0c61c3f2c4a8a815fbdbf0c0793106f70656f32f20e5c213510799d",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/07_ddgun_stability/input.json",
+      "sha256": "96d6689cf27c3797a9410e08f3eba9050bf96bc0a4687a04e218e4ddd700a3f2",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/07_ddgun_stability/job.json",
+      "sha256": "b3e5c362825a76a93c725fc40202c64eec757401c0c96adaf5e6567330abffc8",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/07_ddgun_stability/output.txt",
+      "sha256": "8f29f33f663462abaef9e6ecd8a1f06c81bfee876df68b802461c252db7de0ad",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/07_ddgun_stability/predictions.csv",
+      "sha256": "3bddf8a7023e1c6f3f70efda17ba14447c4de281b4d855e5dc104171a86e6e98",
+      "source_sha256": null
+    }
+  ],
+  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained."
+}

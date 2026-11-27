@@ -1,0 +1,49 @@
+{
+  "task_id": "task_003_bla_high_temperature",
+  "run_id": "20261112_181250_7cf059",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261112_181250_7cf059",
+  "config_version": 1,
+  "config_hash": "13f25c47a699ef5dafae7a5c90893a7dc03c4666fba3ccdc0cafe4677db0b086",
+  "config_path": "../../../config/tasks/task_003_bla_high_temperature/cfg_20261112_181250_7cf059.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261112_181250_7cf059"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-alone",
+  "model": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "status": "partial",
+  "status_basis": "Existing exported outcome; operational closure is separate from scientific completion.",
+  "started_at": "2026-11-12T18:12:56.080597+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-16T19:40:29.408499+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_003_bla_high_temperature/20261112_181250_7cf059",
+  "source_kind": "historical_publication",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 16276654,
+    "output_tokens": 6228650,
+    "cache_read_tokens": 1105438976,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 3479707,
+    "tool_call_count": 101
+  },
+  "historical_cumulative_accounting": {
+    "arm": "bla/agent-alone",
+    "state": "idle",
+    "session_id": "20261112_181250_7cf059",
+    "model": "gpt-6.1-sol",
+    "provider": "openai-codex",
+    "reported_tokens": 1133896518,
+    "elapsed_seconds": 351305,
+    "scope": "Real end-to-end workflow launched; see actual stage records. Preparation is not molecular completion.",
+    "last_activity": "",
+    "accuracy": "Not evaluated; no experimental accuracy claim."
+  }
+}

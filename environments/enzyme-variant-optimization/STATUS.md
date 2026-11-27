@@ -20,7 +20,7 @@ The current publication package supports the weekly parent [#171](https://github
 
 | Sub-issue | Delivered evidence |
 |---|---|
-| [#172: tasks and configs](https://github.com/boltzmannlabs/science-environments/issues/172) | [Six task assignments](tasks/README.md) and [ten actual-run config summaries](configs/README.md). |
+| [#172: tasks and configs](https://github.com/boltzmannlabs/science-environments/issues/172) | [Six task assignments](tasks/README.md) and [ten actual-run config summaries](config/README.md). |
 | [#173: execution and evaluation](https://github.com/boltzmannlabs/science-environments/issues/173) | [Ten native-arm outcomes](results/README.md), sequences, scores and scientific limitations. |
 | [#174: benchmarks](https://github.com/boltzmannlabs/science-environments/issues/174) | [Six Markdown benchmarks](benchmark/README.md), 16 comparison figures and completed AtHOL1 field/LMO results. |
 | [#175: results publication](https://github.com/boltzmannlabs/science-environments/issues/175) | [Six agent-alone and four assisted result packages](results/README.md), ten compact workflow JPGs and readable usage summaries. |
@@ -38,3 +38,7 @@ Resolve remaining scientific evidence and exact-reproduction gaps; add further c
 New assisted runs use three reviewed specialist packages at version 1.2.0 and the environment-owned coordinator 1.2.0 skill. The native goal launcher binds task settings, profile, interpreter and workspace before starting SCI, preserves the 20-turn allowance and prevents a second fresh start in the same workspace.
 
 Local validation passed 12 focused tests, 11 actual model-driven specialist fixtures and a controlled synthetic workflow with compatible fallback execution and independent closure review. Historical scientific results retain their original execution settings. New real pipeline launches remain a separate execution decision. See [Agent Scientist PR #127](https://github.com/boltzmannlabs/agent-scientist/pull/127) for the native assignment-resume scope fix and package evidence.
+
+## Execution registry migration — 27 November 2026
+
+All six tasks now link separate run and result records for 23 workflow starts, including historical assisted campaigns, Codex/DiscoveryRSI attempts and HY4 assisted executions. The HY4 LEH and Zhang computational workflows completed with review; HY4 BLA and AtHOL1 remain partial because mandatory complex/chemical assessments are missing, despite native goal achievement messages. Original reports are retained as evidence rather than silently rewritten. See [migration notes](MIGRATION.md) for naming and historical-metadata gaps.

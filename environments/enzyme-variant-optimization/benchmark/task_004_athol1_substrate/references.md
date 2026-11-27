@@ -2,7 +2,7 @@
 
 **Task ID:** `task_004_athol1_substrate`
 
-**Task:** [AtHOL1: ethyl iodide activity](../../tasks/task_004_athol1_substrate.md)
+**Task:** [AtHOL1: ethyl iodide activity](../../tasks/task_004_athol1_substrate/task.md)
 
 Operator/evaluator reference. Withhold winner identities and outcome tables from design-agent inputs until selections are sealed.
 

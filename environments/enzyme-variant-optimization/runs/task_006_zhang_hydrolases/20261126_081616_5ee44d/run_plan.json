@@ -1,0 +1,208 @@
+{
+  "schema": "RUN_PLAN.v1",
+  "status": "frozen",
+  "frozen_utc": "2026-11-26T08:30:26.177819+00:00",
+  "task": "task_006_zhang_hydrolases",
+  "config_version": "v1",
+  "approach": "agent_with_specialist",
+  "settings_path": "retained-private-evidence/task_006_zhang_hydrolases.json",
+  "settings_sha256": "a90b16430b32e7011dc75853bd55cb88b3484380789a09df1a43bc044f737ed1",
+  "goal": {
+    "session_id": "20261126_081616_5ee44d",
+    "max_turns": 20,
+    "native_goal_verified": true
+  },
+  "llm": {
+    "model": "hy4-flash-free",
+    "provider": "opencode-go",
+    "reasoning_effort": "xhigh",
+    "role": "reasoning_and_orchestration_only",
+    "not_a_scientific_predictor": true
+  },
+  "constructs": {
+    "cellulase_WT": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTGTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENILGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d345d0fa5fd6c7a3c7bab7013e9b4f78efb3e76f8cc410cad11026ea88c6fd57",
+      "fasta_sha256": "cb600805ad0284099dd6ddd47cf75099bcc685b229045b42949e29fb73b25870",
+      "role": "WT_input",
+      "edits_from_WT": []
+    },
+    "cellulase_M5": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGMSSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKFLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRESDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "5d4723bdec030dce32183cb2063e534b998beddef7cf8c16818f3f7724c5cae4",
+      "fasta_sha256": "271d7fb814dcf7a0d213936235b11a7a25a8b3bac8795d83d89d2e192876f1c4",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "I34M",
+        "G177P",
+        "Y252F",
+        "L287E",
+        "L302R"
+      ]
+    },
+    "beta_glucanase_WT": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRANNVSVTSLGEMRLALTSPSYNKFDCGENRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDAANAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGSYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "1be527a773d049420b217cf4e7eded5f21468e74c9608033cdb34bec1184bb87",
+      "fasta_sha256": "4b7091e88a1fb0f6229d5c89b57510b750f426986d89c1b864bad1dbf0e70005",
+      "role": "WT_input",
+      "edits_from_WT": []
+    },
+    "beta_glucanase_M7": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGWSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAYYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "cfa75230f09b7f392dad5c09501e167fc27d586d4a18147657eab7056fd9d191",
+      "fasta_sha256": "ba0f83fdc0b8c05a63fd6d6e23d1f158a89f7b4cc2366b6becfe28c24b875f47",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "Y25W",
+        "N38S",
+        "L45E",
+        "N65I",
+        "A142S",
+        "S196K",
+        "H206Y"
+      ]
+    },
+    "cellulase_M2": {
+      "sequence": "MAGTKTPVAKNGQLSIKGTQLVNRDGKAVQLKGISSHGLQWYGEYVNKDSLKWLRDDWGITVFRAAMYTADGGYIDNPSVKNKVKEAVEAAKELGIYVIIDWHILNDGNPNQNKEKAKEFFKEMSSLYGNTPNVIYEIANEPNGDVNWKRDIKPYAEEVISVIRKNDPDNIIIVGTPTWSQDVNDAADDQLKDANVMYALHFYAGTHGQFLRDKANYALSKGAPIFVTEWGTSDASGNGGVFLDQSREWLKYLDSKTISWVNWNLSDKQESSSALKPGASKTGGWRLSDLSASGTFVRENIRGTKDSTKDIP",
+      "length": 312,
+      "sequence_sha256": "d1e2ad6d3703189900a7a006037d492964d2ce2cc21f202ab170f223fd92fdeb",
+      "fasta_sha256": "71e098ffe7046f030197c366876a53b0a69e93b2a4b4f4c655d77247573b5f9e",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "G177P",
+        "L302R"
+      ]
+    },
+    "beta_glucanase_M5": {
+      "sequence": "MQTGGSFFDPFNGYNSGFWQKADGYSNGNMFNCTWRASNVSVTSEGEMRLALTSPSYNKFDCGEIRSVQTYGYGLYEVRMKPAKNTGIVSSFFTYTGPTDGTPWDEIDIEFLGKDTTKVQFNYYTNGAGNHEKIVDLGFDASNAYHTYAFDWQPNSIKWYVDGQVKHTATNQIPTTPGKIMMNLWNGTGVDEWLGKYNGVNPLYAHYDWVRYTKK",
+      "length": 215,
+      "sequence_sha256": "82b31bef7b7a00d881900c44de25da61b16ef31d5cb820c9cd5d85c43dc65a20",
+      "fasta_sha256": "da912128f9d2caa80a210d27b8f26312908f9c3e097678ad5f36265e0cb4fa16",
+      "role": "retrospective_experimental_background",
+      "edits_from_WT": [
+        "N38S",
+        "L45E",
+        "N65I",
+        "A142S",
+        "S196K"
+      ]
+    }
+  },
+  "construct_source": {
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0141813024090858-mmc1.docx",
+    "file": "refs/original_supplement.docx",
+    "sha256": "7eb9630743737d303c40e3753f87e5d7fd2ca0b9bc1f87598f2fdc09ea1a0eca",
+    "section": "3.3 verbatim FASTA records; M2/M5 from Tables S2 and S6",
+    "verified": true
+  },
+  "scientific_stages": {
+    "structure": {
+      "route": "native_Protein_Structure_Prediction (AlphaFold monomer)",
+      "contract": "tool-contracts.v1.json#tools.Protein_Structure_Prediction; modules/protein-structure-prediction.md",
+      "status": "completed_independently_verified",
+      "new_model_not_original_paper_coordinates": true,
+      "confidence_is_not_a_property_benchmark": true
+    },
+    "pythia": {
+      "route": "source-pinned Wublab/Pythia commit e1943402 masked_ddg_scan",
+      "source_root": "local_runtime/source/Pythia-e1943402092295ae96cde0c93073ddc933ffc433",
+      "checkpoints": {
+        "C": "local_runtime/checkpoints/pythia-c.pt",
+        "P": "local_runtime/checkpoints/pythia-p.pt"
+      },
+      "runtime": "anaconda python3.12 torch 2.9.1+cu128 forced CPU",
+      "score": "per-component negative LLR -log(p/p_wt); aggregate C+P",
+      "cutoff": "strict C+P < -3.0",
+      "identity_control": true,
+      "all_19_substitutions": true,
+      "eligibility": "unresolved; no paper site exclusions invented",
+      "status": "completed_independently_verified"
+    },
+    "esm2": {
+      "route": "source-pinned fair-esm esm2_t33_650M_UR50D masked marginal",
+      "checkpoint": "local_runtime/checkpoints/esm2_t33_650M_UR50D.pt",
+      "runtime": "anaconda python3.12 CPU fp32 <=4 threads",
+      "score": "negative_log_likelihood_ratio = logp_wt - logp_mt; alternate sign mutant_minus_wt_logit retained",
+      "cutoff": "strict negative LLR < -1.5",
+      "paper_orientation": "negative-log-likelihood-ratio as declared; sign fixed before seeing results",
+      "identity_control": true,
+      "all_19_substitutions": true,
+      "status": "completed_independently_verified"
+    },
+    "verification": {
+      "scripts": "source-pinned verify_pythia_scan.py / verify_full_esm.py adapted to isolated workspace",
+      "checks": [
+        "grid completeness",
+        "finite values",
+        "WT identity 0",
+        "score arithmetic",
+        "strict-cutoff membership",
+        "reconstructed variant sequences",
+        "output hashes"
+      ],
+      "status": "completed_independently_verified"
+    },
+    "seal_and_compare": {
+      "independent_evaluator_required": true,
+      "reference_tables_used_only_after_seal": true,
+      "same_variant_vs_best_vs_best_separate": true,
+      "status": "completed_independently_verified"
+    }
+  },
+  "exclusions": {
+    "MLDE": true,
+    "docking_or_molprobity_or_redesign_gates": false,
+    "finite_monomer_substrate_activity_claim": false
+  },
+  "resource_policy": {
+    "local_heavy_cpu_gpu": false,
+    "protect_existing_competition_and_hosted_model_work": true,
+    "remote_resources": "Use authorized platform capabilities; reconcile resource availability before using other hosts."
+  },
+  "resource_decision": "No native Pythia/ESM-2 tool in catalog or ToolUniverse; native AF2 structure route selected. Local CPU inference is light per-case (4 threads, 12GiB cap); GPU untouched and competition process protected.",
+  "selection_rules": {
+    "pythia_raw": "strict C+P < -3.0 unfiltered; paper eligibility unresolved",
+    "esm2_raw": "strict neg-LLR < -1.5 unfiltered on M2/M5 backgrounds",
+    "labeling": "all additional mutations labeled relative to actual M2/M5 background"
+  },
+  "tool_hashes": {
+    "full_pythia_scan.py": "b179fd7696c1d0c84a16065eaf5145c90120a93ad0a20428818e7ab1f89495a6",
+    "full_esm_scan.py": "133577b01f4c9a7353daf9d4b90d0c6ce5c18ecdffce8e446ff96d8484756579"
+  },
+  "recovery": {
+    "event": "cpu_guard_build_vs_runtime_mismatch",
+    "failed_run": "pythia_runs/pythia_cellulase_003",
+    "error": "ValueError('Expected CPU-only Torch')",
+    "specialist_receipt": "specialist_receipts/RECOVERY_REVIEW.md",
+    "correction": "replace torch.version.cuda is None guard with runtime is_available/device_count guard",
+    "frozen_utc": "2026-11-26T08:52:06.405788+00:00",
+    "scientific_constraints_unchanged": true,
+    "gpu_untouched": true,
+    "second_event": {
+      "failed_run": "esm_runs/esm_full_004",
+      "error": "torch 2.9 weights_only default rejects argparse.Namespace in official checkpoint",
+      "correction": "call-scoped torch.serialization.safe_globals([argparse.Namespace])",
+      "checkpoint_bytes_unchanged": true,
+      "frozen_utc": "2026-11-26T08:54:40.694676+00:00"
+    }
+  },
+  "evaluation": {
+    "receipt": "specialist_receipts/EVALUATOR_RECEIPT.md",
+    "status": "independent_evaluation_complete",
+    "api_calls": 24,
+    "tokens": {
+      "input": 1115753,
+      "output": 16592
+    },
+    "verdict": "all_9_requirements_complete",
+    "qualification": "computational_completion_not_historical_reproduction_or_experimental_improvement"
+  },
+  "seal": {
+    "selection_sha256": "596a87290ece1132ba91cb98a8b48e4fd27142c7fcd3ec400f5667e9ab45b89f",
+    "sealed_utc": "2026-11-26T09:05:48.255306+00:00"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "status": "frozen_before_inference",
+  "created_utc": "2026-11-20T20:06:40Z",
+  "task": "task_005_sun_leh_pythia",
+  "approach": "assisted",
+  "sci_model": "codex",
+  "sci_provider": "boltzmann_models",
+  "scientific_model": "Pythia AMPNN C and P supplied checkpoints",
+  "input_manifest_sha256": "e07be628d1dddb2add2280bcf99cf9cd4e206642d771b3850d30753a103cc945",
+  "method": "upstream masked_ddg_scan.py read_pdb_to_protbb and get_neighbor; inspect native source for implementation",
+  "feature": {
+    "neighbor_count": 32,
+    "noise": 0.0,
+    "mask_center": true,
+    "upstream_cb_imputation": true,
+    "protein_only": true,
+    "native_eval_mode": true
+  },
+  "contexts": {
+    "primary": "monomer_A",
+    "secondary": "dimer_AB separate chain A and B, not simultaneous homodimer mutation"
+  },
+  "scoring": {
+    "component": "-log(p_mut/p_wt) = logit_wt-logit_mut",
+    "primary": "C+P",
+    "sensitivity": "(C+P)/2",
+    "units": "unitless",
+    "lower_better": true
+  },
+  "selection": {
+    "nonidentity_only": true,
+    "best_per_position": "minimum sum, alphabetical mutant tie",
+    "primary_cutoff": "strict sum < -2",
+    "sensitivity_cutoff": "strict mean < -2; separately labeled",
+    "functional_filter": "none; annotate Y53 N55 R99 D101 D132"
+  },
+  "retention": "logits, probabilities, model components, identity controls, full rankings and candidate sequences",
+  "historical_uncertainties": [
+    "paper application of aggregation cutoff and structure context unresolved",
+    "source revision is supplied directory claim without git history",
+    "checkpoints hashed but publisher identity not independently attested"
+  ],
+  "reference_boundary": "no benchmark outcomes or other-arm results before sealing",
+  "budget": {
+    "scientific_remote_submissions_max": 0,
+    "local_scans": "all eligible positions for both contexts, both models; no separate candidate cap truncating required raw library",
+    "cpu_threads": 4,
+    "device": "cpu",
+    "wall_time": "no user-specified numerical ceiling; foreground process execution",
+    "financial": "no user-specified numerical ceiling; no paid remote scientific submissions",
+    "model_tokens": "no user-specified numerical ceiling; specialist usage captured where available",
+    "intervention": "do not change method, cutoff, inputs, source or protected output constraints after selection"
+  },
+  "native_pythia_source_difference": "predict_ddg.py independently unmasks substitutions and uses another sign; not used",
+  "pdb_xray_b_factors": "not pLDDT",
+  "allowed_scope": "task-scoped computational reproduction only; no MLDE, docking, MolProbity, or experiments",
+  "specialist_reviews": [
+    "sa-0-caf98776",
+    "sa-0-74822eb1"
+  ],
+  "completion_vs_qualification": "scores are not biological qualification; catalytic concerns not excluded"
+}

@@ -1,0 +1,44 @@
+{
+  "task_id": "task_001_rml_stability",
+  "run_id": "20261120_200056_270fec",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261120_200056_270fec",
+  "config_version": 1,
+  "config_hash": "fdf18df81a6b330ccc0dd530aaf203198dd39b1a57e371bc917b365300e5112b",
+  "config_path": "../../../config/tasks/task_001_rml_stability/cfg_20261120_200056_270fec.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261120_200056_270fec"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "codex",
+  "provider": null,
+  "status": "partial",
+  "status_basis": "Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.",
+  "started_at": "2026-11-20T20:01:02.376424+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-23T06:48:44.184336+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_001_rml_stability/20261120_200056_270fec",
+  "source_kind": "native_specialist_execution",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Enzymes",
+    "Thermal_MPNN",
+    "Boltz2",
+    "Mol_Probity",
+    "tm_align",
+    "Random_Controlled_Mutagenesis"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 3063084,
+    "output_tokens": 41020,
+    "cache_read_tokens": 13263488,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 0,
+    "tool_call_count": 73
+  }
+}

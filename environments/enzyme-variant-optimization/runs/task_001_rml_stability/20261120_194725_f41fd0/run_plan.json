@@ -1,0 +1,24 @@
+{
+  "status": "preparation_incomplete_not_frozen_for_design",
+  "task": "task_001_rml_stability",
+  "approach": "assisted",
+  "run_workspace": ".",
+  "parent": {
+    "id": "RML_PARENT",
+    "path": "inputs/parent.fasta",
+    "file_sha256": "54255b2373fb257c75b32e7330db3782ec96c2048c6d0210ae450d3fa490e8eb",
+    "sequence_sha256": "6d120cb07f40cd383b33ce70bedb8b9adfdaa4346dacadfbaae42dc55073b684",
+    "length": 269,
+    "rcsb_3TGL_entity_sequence": "exact_match_all_269",
+    "uniprot_P19515_mature_differences": [{"position":3,"input":"N","uniprot":"D"},{"position":150,"input":"V","uniprot":"A"}]
+  },
+  "structure": {"reference":"evidence/3TGL.pdb","sha256":"8839baf5b84d32b7d71dbf677bde7ae294e86f3c63495b7c1e9572e718b3d898","chain":"A","residue_numbering":"mature","missing_coordinates":[1,2,3,4],"state":"closed","ion_question":"UniProt infers Ca binding at mature 256; 3TGL has water but no Ca. Biological requirement and matching model unresolved."},
+  "substrate": {"identifier":"PubChem CID 74778","property_evidence":"evidence/pubchem_74778.json","molecular_formula":"C18H27NO4","net_charge":0,"smiles":"CCCCCCCCCCCC(=O)OC1=CC=C(C=C1)[N+](=O)[O-]","complex_and_water_model":"unresolved"},
+  "known_protected_features": {"catalytic_triad":[144,203,257],"disulfide_pairs":[[29,268],[40,43],[235,244]],"electrostatic_network":[28,80,91,143,144,203,257,260],"lid_provisional":[82,96],"complete_mask":"not_frozen"},
+  "conditions":{"operating_temperature_C":50,"pH":"unspecified","model_temperature":"not established","other_conditions":"unresolved"},
+  "starting_limits":{"unique_sequences_including_parent":24,"mutations_per_variant":8,"sequence_revision_rounds":2,"scientific_submission_attempts":60,"final_candidates":5,"financial_model_token_wall_time_policy":"unspecified_by_available_brief; do not infer unbounded authorization"},
+  "tool_policy":{"permitted":["Boltzmann","ToolUniverse"],"excluded":["MLDE","Insilico_Directed_Evolution"],"chosen_candidate_baseline":"Enzymes: tmPred_enzymes and enzyme_solubility, conditional on final protocol and endpoint verification","actual_model_and_version":"not returned","final_endpoint":"not yet frozen: units, semantics and version unresolved","final_evaluator":"enzyme-evaluator separate read-only review after seal"},
+  "selection_boundary":"At most five non-parent unique full sequences; mandatory generation, revision, matched parent metrics, structure and pNPL evidence before ranking. A selection has not been made or sealed.",
+  "blind_boundary":"Do not access target-study winner mutations or outcome tables, benchmark material or other approach results.",
+  "blockers":["Required proposer and critic receipts absent; enzyme-method could not delegate and no saved proposer or critic is discoverable.","Full edit mask, source-verified endpoint semantics, numerical thresholds and full reaction-state mapping are not frozen.","Actual parent, generation, revision and structural calculations not performed."]
+}

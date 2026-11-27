@@ -2,8 +2,6 @@
 
 Agent-alone candidates, published prediction values and reference variants calculated in this work.
 
-Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
-
 ## Published predictions and our predictions
 
 | Property / predictor | Published prediction | Our candidates |
@@ -60,4 +58,4 @@ Method: DDGun SEQ. Units: kcal/mol. Protocol: sequence-based complete variant; p
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
-[Results and preparation details](../../../results/task_005_sun_leh_pythia/agent-alone/README.md) · [Published reference](../references.md).
+[Results and preparation details](../../../results/task_005_sun_leh_pythia/20261106_185928_f4aa65/README.md) · [Published reference](../references.md).

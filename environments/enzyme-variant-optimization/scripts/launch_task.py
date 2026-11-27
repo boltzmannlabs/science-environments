@@ -29,7 +29,7 @@ def main():
     if not re.fullmatch(r"task_\d{3}_[a-z0-9_]+", args.task):
         parser.error("Use a numbered task ID.")
     env = Path(__file__).resolve().parents[1]
-    if not (env / "tasks" / (args.task + ".md")).is_file():
+    if not (env / "tasks" / args.task / "task.md").is_file():
         parser.error("The numbered task does not exist in this environment.")
     if not args.sci_python.is_file() or not (args.sci_source / "cli.py").is_file():
         parser.error("Select an existing SCI interpreter and source checkout.")
@@ -50,7 +50,7 @@ def main():
     intent = workspace / "LAUNCH_INTENT.json"
     if intent.exists() or any(workspace.glob("jobs*.json")) or (workspace / "RUN_PLAN.json").exists():
         parser.error("Existing run workspace: use its native SCI resume ID; do not relaunch.")
-    body = (f"/goal Execute {env / 'tasks' / (args.task + '.md')} with {config}.\n"
+    body = (f"/goal Execute {env / 'tasks' / args.task / 'task.md'} with {config}.\n"
                      f"Read {env / 'ENVIRONMENT_SPEC.md'} and {env / 'MODELS_AND_TOOLS.md'}. Work only in {workspace}.\n"
                      "Consult current native tool contracts, freeze actual effective settings and inputs, "
                      "execute the full task-specific scope and preserve all outputs/failures/accounting. "

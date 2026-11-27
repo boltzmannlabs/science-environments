@@ -1,0 +1,75 @@
+{
+  "evaluator": "enzyme-evaluator (independent artifact-backed review)",
+  "review_scope": "All checks performed directly against workspace files and native tool outputs under retained-private-evidence/outputs; stage declarations were treated as claims, not evidence.",
+  "overall_status": "completed_with_limitations",
+  "completion_status": "protocol_complete; all 8 staged activities present in artifacts (freeze, generation recovery, structure build, primary endpoint, secondary safeguards, quality/function checks, results-driven round 1, final common-protocol re-score and sealed selection). Independent evaluation performed. No experimental improvement established.",
+  "eligible_candidates": {
+    "all_designed_candidates_eligible": 6,
+    "eligible_ids": ["BLA_R0A", "BLA_R0B", "BLA_R0C", "BLA_R1A", "BLA_R1B", "BLA_R1C"],
+    "selected_count": 5,
+    "selected_ids": ["BLA_R0A", "BLA_R0B", "BLA_R0C", "BLA_R1A", "BLA_R1B"],
+    "excluded_from_selection": ["BLA_R1C", "BLA_1BLI_parent (control)"],
+    "compliance": "Each designed sequence: length 483; substitutions R0A=8, R0B=5, R0C=3, R1A=8, R1B=5, R1C=3 (all <=8); every edited position within the 18-position mask {114,123,126,127,128,132,134,148,152,168,169,170,172,188,250,374,417,464}; zero of 27 protected positions touched (catalytic D231/E261/D328 intact in all); all sequences unique; cumulative unique incl. parent = 7 <= 24. Declared edits in candidate_history.csv exactly equal observed parent-vs-candidate differences."
+  },
+  "sealing_verified": {
+    "status": true,
+    "selection_csv_sha256": "d47598bc8b8ac3bd4738fe0a152721f6640c1789815a143c7b40771c807cf44e",
+    "matches_selection_seal": true,
+    "ranks": "1..5 unique and contiguous",
+    "selected_ids_match_seal_list": true,
+    "parent_excluded": true,
+    "no_duplicate_sequences": true,
+    "max_selected_respected": true,
+    "sequence_hashes_consistent": "selection.csv hashes == candidate_history.csv hashes == independently computed SHA256 of FASTA sequences",
+    "helper_seal_match": "evaluation_helper_output.json selection_sha256 identical to selection_seal.json"
+  },
+  "provenance_assessment": {
+    "status": "acceptable",
+    "basis": "Native Thermal_MPNN per-position ddG edit list, job 6b07f38d8b9d410520f9d9f4 (native file output-2.zip/BLA_1BLI_parent.csv, 9660 rows). All 18 mask positions in observations/thermompnn_parent_mask.json (54 substitutions, 3 choices each) independently verified to equal the native top-3 ddG rows at 0-based index = task position - 1; WT identities match parent; no protected overlap.",
+    "frozen_rule_reproduction": "Applying RUN_PLAN.generation_recovery round0_rule (best choice per position, rank by ddG desc, top 8, reject adjacent positions) reproduces BLA_R0A edits exactly; round1_rule (second choice, same filter) reproduces BLA_R1A exactly. R0B/R0C and R1B/R1C are strict prefixes/subsets of those deterministic top-N sets. No LLM-written substitutions detected.",
+    "failed_or_ineligible_generators": [
+      "Random_Controlled_Mutagenesis (6b07f3b4c45f4015f0eb82c7): 110-163 substitutions plus 15-72 indels, lengths 473-495; no contract field caps total mutations or preserves length; no corrective payload exists.",
+      "Ligand_MPNN (6b07f3bc7fb17f3eac9ce8b5): ~185-208 substitutions, length 481, catalytic E261/D328 edited; no mask field in contract.",
+      "AntiBMPNN (6b0806727fb17f3eac9cf661): accepted in jobs.json with partial/YOLO validation but recorded in RUN_PLAN as terminal validation failure (0 heavy/VHH domains); off-label antibody model; no native output artifact present in outputs."
+    ],
+    "section_32_basis": "ENVIRONMENT_SPEC.md (enzyme-variant-optimization) section 32: 'Plain Python may transfer files, apply a tool-generated edit list or deduplicate results. A language-model-written list of substitutions followed only by string replacement does not satisfy generation.' The recorded origin is a tool-generated edit list plus a frozen deterministic selection rule, so generation provenance is acceptable rather than unresolved. Caveat: the final application of the rule was executed in Python and its intermediate code is not archived; reproducibility relies on the unambiguous frozen rule text plus the native edit list, both of which were re-executed successfully in this review."
+  },
+  "safeguard_findings": {
+    "parent_identity": "VERIFIED: inputs/1bli.pdb, parent_chainA_with_ions.pdb and parent.fasta SHA256 all match RUN_PLAN.json declared hashes. 483 aa 1BLI chain A; engineered N190F/Q264S/N265Y retained; D231/E261/D328 = D/E/D; 0 Cys (no disulfides); holo PDB contains exactly 3 Ca (A500/A600/A700) + 1 Na (A800) and no chloride.",
+    "frozen_protocol": "VERIFIED: RUN_PLAN.json frozen_at pre-design with settings_sha256 a055...e81 (matches PREPARED_LAUNCH config_sha256); frozen_evaluation.json protocol_id BLA_stab_v1_Enzymes_tmPred_enzymes_holo483, metric tmPred_enzymes, maximize, min_improvement 0.0, max_selected 5, ratio_allowed false, unit degC — all internally consistent with RUN_PLAN.evaluation_protocol.",
+    "sequence_structure_correspondence": "VERIFIED: structure_evidence/sequence_verification.json reports 483-residue structures, matches_fasta true and catalytic 'DED' for all 7 entries; independently confirmed by extracting ATOM records from all 7 structure_evidence PDBs (residues 1-483, sequences identical to candidates.fasta, D231/E261/D328 intact). NOTE: the 'sha256' fields in sequence_verification.json are PDB file hashes (verified against BLA_1BLI_parent.pdb etc.), not sequence hashes — labeling is imprecise but the correspondence claim holds.",
+    "structure_confidence": "Native result_summary-3.csv: pLDDT 98.2-98.6, pTM 0.957-0.958 for parent and all six candidates — high model confidence. High confidence is not evidence of functional or thermostability improvement.",
+    "molprobity": "Native results-2.zip (parent holo) clashscore 5.67, Rama outliers 0%, favored 97.29%, rotamer outliers 6.48%, 1 Cbeta outlier. Native results-5.zip (final candidates): clashscores R0A 20.56, R0B 18.18, R0C 1.58, R1A 15.54, R1B 0.92, R1C 14.49; Rama outliers 0-0.42%; all 'measured', no invalid rows. High bond/angle outlier counts in R0C (3654/20) and R1B (3655/17) are reported in the native table and are not resolved by this review; MolProbity measures model quality, not function.",
+    "catalytic_geometry": "PARTIAL/INVALID for candidates: structure_evidence/catalytic_geometry_summary.json triad CG-CG distances match native results-6.zip geometry_measurements.csv exactly. However native candidate_summary.csv marks all six candidate models 'invalid' — Ca500/Ca600/Ca700 coordination checks rejected because the AlphaFold candidate models are ion-free (A:500/600/700 missing). Only the parent holo-with-ions model had all 6 checks measured. Therefore no metal-retention or catalytic pass/fail claim is supported for the candidates; only the three measured triad distances on ion-free models are available, and these were treated as descriptive measurements, not a pass.",
+    "evaluation_declarations_vs_helper": "VERIFIED: all seven evaluation_observations.csv values equal native 6b080a7fc45f4015f0eb8f17_pred.csv to full precision; hashes and protocol_id match; eligibility=true for all. Helper arithmetic independently reproduced: parent 51.93439483642578 degC; selected values [53.35557556152344, 52.470680236816406, 51.865763346354164, 51.71114730834961, 51.71041742960612]; signed improvements [+1.42118, +0.53629, -0.06863, -0.22325, -0.22398]; numerically improved count 2; mean signed improvement +0.28832194010416573; parent_ratio null for all rows (consistent with ratio_allowed=false). Helper status 'scored' and scope note 'Reviewed declarations only; not molecular validation or experimental proof' are honest."
+  },
+  "failures_unresolved": [
+    "act_seek: jobs.json status acceptance_unknown, doc_id null, CastError freezedCredits=NaN; usage.json preserves as 'unresolved_attempt'; not resubmitted (correct). No active-site retention result exists — safeguard remains unmeasured, not passed.",
+    "Boltz2: 6b0828896a16f64f7a94828e failed (FileNotFoundError pre_affinity_1.npz, safe_to_retry=false). Holo/binding sanity of candidate models not produced; metal retention rests on the parent holo PDB and on the frozen sequence-level protocol, not on Boltz2.",
+    "Catalytic_Geometry first attempt 6b0827cf1715676d0340bb53 failed terminal validation (mutagenesis adapter: sequences but no all-atom reaction structure); corrected generic-adapter job 6b0828781715676d0340be80 was accepted but candidate metal-coordination checks are invalid on ion-free models (see safeguard_findings.catalytic_geometry).",
+    "AntiBMPNN 6b0806727fb17f3eac9cf661: documented terminal validation failure (0 heavy/VHH domains), off-label and partial/YOLO; no usable native artifact. Generation proceeded via the permitted tool-generated-edit-list route instead.",
+    "Random_Controlled_Mutagenesis and Ligand_MPNN native outputs exist but are task-ineligible; correctly excluded, not silently substituted.",
+    "Numerical improvements (+1.42 and +0.54 degC) are much smaller than the predictor replica spread (parent 5.99 degC; candidates 5.94-6.90 degC) and the native output explicitly states the model is 'not calibrated for small mutant delta-Tm'. No statistical significance, no experimental Tm/activity validation, and no thermostability claim are supported."
+  ],
+  "resource_accounting_check": {
+    "status": "consistent",
+    "details": "jobs.json contains 21 job records (each attempted once, credentials redacted) and usage.json reports scientific_submissions=21; parent_agent model_calls=0, specialist enzyme-method 39 api_calls with tokens 2,889,414 in / 41,420 out, matching RUN_PLAN.specialist_receipts and decisions.md. An enzyme-recovery specialist receipt (29 api_calls, 2,386,941/55,996 tokens) is recorded in decisions.md but is not reflected in usage.json.model_calls.specialists — minor internal inconsistency in accounting. Cost total 0.0 USD with status 'unknown' is disclosed rather than asserted. Within frozen budgets: 6 designed + 1 parent = 7 unique <= 24; 2 rounds <= 2; 5 finalists <= 5; 21 submissions <= 60."
+  },
+  "numerical_summary": {
+    "primary_endpoint": "tmPred_enzymes (predicted melting temperature, degC; sequence-level computational prediction via TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1)",
+    "parent_degC": 51.93439483642578,
+    "parent_replica_std_degC": 5.98932374391138,
+    "selected": [
+      {"candidate_id": "BLA_R0A", "rank": 1, "degC": 53.35557556152344, "signed_delta": 1.4211807250976562, "numerically_improved": true},
+      {"candidate_id": "BLA_R0B", "rank": 2, "degC": 52.470680236816406, "signed_delta": 0.536285400390625, "numerically_improved": true},
+      {"candidate_id": "BLA_R0C", "rank": 3, "degC": 51.865763346354164, "signed_delta": -0.06863149007161695, "numerically_improved": false},
+      {"candidate_id": "BLA_R1A", "rank": 4, "degC": 51.71114730834961, "signed_delta": -0.22324752807617188, "numerically_improved": false},
+      {"candidate_id": "BLA_R1B", "rank": 5, "degC": 51.71041742960612, "signed_delta": -0.22397740681966383, "numerically_improved": false}
+    ],
+    "unselected_reference": {"candidate_id": "BLA_R1C", "degC": 51.69803110758463, "signed_delta": -0.2363637288411482},
+    "numerically_improved_count": 2,
+    "mean_signed_improvement_of_selected_degC": 0.28832194010416573,
+    "interpretation": "Numerical changes only. Three of five selected candidates are numerically below parent; the two positive deltas are within predictor replica spread and carry no significance or experimental claim."
+  },
+  "final_verdict_notes": "The sealed selection is cryptographically intact, the protocol was frozen before generation, every candidate satisfies the frozen edit/mask/budget safeguards, and generation provenance is acceptable via a native Thermal_MPNN edit list plus a reproducible frozen rule (all decisive claims re-verified from native files in this review). The run is methodologically complete and honestly reports its failures. Scientific conclusions are strictly limited to in-silico predictions: no measured high-temperature activity, Tm, half-life, or significance is established; two of five finalists show only sub-noise numerical gains; catalytic metal-geometry checks are invalid on ion-free candidate models; and the act_seek safeguard and Boltz2 sanity check produced no result. Do not present these variants as experimentally improved."
+}

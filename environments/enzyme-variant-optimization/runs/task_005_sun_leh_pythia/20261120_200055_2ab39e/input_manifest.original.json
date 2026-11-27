@@ -1,0 +1,64 @@
+{
+  "input_pdb_sha256": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
+  "monomer_A_pdb_sha256": "f9c8b11e0705ab5c6ad2dae45ad6c22b3327631cb9f03c98a04db5c2e007feb7",
+  "parent_sequence_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+  "parent_fasta_sha256": "234c357b9a941a5296fd7f19da3da86dc7aaa2d68d950e8471b5d33ed0e7d080",
+  "rcsb_fasta_sha256": "a60a3c61df36ad757dace7e586f68c14ada8034adeda8ee94b32148fd725acf6",
+  "uniprot_fasta_sha256": "747e2c9e4b3026950f8de33161cff7c181ed965582d4dfd9d392f6758571e027",
+  "all_sequence_sources_equal": true,
+  "sequence_length": 149,
+  "source_revision_claim": "e1943402092295ae96cde0c93073ddc933ffc433",
+  "source_revision_git_independently_verified": false,
+  "source_files_sha256": {
+    "pythia/masked_ddg_scan.py": "8c7aaf054fc88ff2d0458c7095e1497d8c20414304b7ecd267f1414adfc0aa5c",
+    "pythia/predict_ddg.py": "80e391f894413f01c2ac6a0131eb4972251f30150b9f52020002bc8cf3e23da7",
+    "pythia/pdb_utils.py": "a5a8b756d9c1f07842cf9376cb27779861ede46dd5ba7e9245a36711b1b44234",
+    "pythia/model.py": "1079d1f58ec06e72d7689b6f1c18cb6e99c05b6be2706f495d6b8872f4602e37",
+    "pyproject.toml": "90bdb45e205a96041cdeab6b71e134284dfd393b9f3afc6b21723ed3212775fe",
+    "requirements.txt": "72ff6ce0cc437375c2d4f99b24047dfd072982ef4a809d09624aa8ddfaf74e3b",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "checkpoints_sha256": {
+    "pythia/pythia-c.pt": "3cbfbfcc449ff810e662b3ae5e1ecc0f8636a62b92d10722b00a1931147f93af",
+    "pythia/pythia-p.pt": "17523c65b0b8a36ec16dfa15d1e56154ead3394f907a189bc48d0bc9f7168b81"
+  },
+  "residue_map_sha256": "62453dc123e4c79fbc1a1b8edd924960b37c7ca54c2ba8da82374e009ca4fc29",
+  "eligible": {
+    "monomer_A:A": 145,
+    "dimer_AB:A": 145,
+    "dimer_AB:B": 146
+  },
+  "unscored": {
+    "monomer_A:A": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dimer_AB:A": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dimer_AB:B": [
+      1,
+      2,
+      3
+    ]
+  },
+  "expected_nonidentity": {
+    "monomer_A:A": 2755,
+    "dimer_AB:A": 2755,
+    "dimer_AB:B": 2774
+  },
+  "dbref_anomaly": "PDB DBREF Q9ZAG3 0..148 vs current UniProt and SEQRES both 149 residues, exact positionwise sequence match 1..149; no 0-based DBREF offset used.",
+  "assembly": "PDB REMARK 350 identity operator applied to A,B; biological dimer",
+  "sources": [
+    "https://www.rcsb.org/structure/1NWW",
+    "https://www.rcsb.org/fasta/entry/1NWW/display",
+    "https://rest.uniprot.org/uniprotkb/Q9ZAG3.fasta",
+    "https://www.rcsb.org/annotations/1NWW",
+    "https://doi.org/10.1093/emboj/cdg275"
+  ]
+}

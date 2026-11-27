@@ -1,0 +1,12 @@
+{
+  "parent_id": "PARENT_3LCC",
+  "metric": "predicted_kcat",
+  "unit": "CatPred output units (undocumented; log10_species returned)",
+  "direction": "maximize",
+  "protocol_id": "CatPred_Seq_id_Sequences_CCI_v1",
+  "min_improvement": 0.0,
+  "max_selected": 5,
+  "ratio_allowed": false,
+  "common_protocol": "CatPred CSV Seq_id,Sequences,SMILES with SMILES=CCI for all; matched parent in same batch",
+  "rationale_min_improvement": "Any positive signed kcat change counts as numerical improvement; not a significance test. Eligibility separately gated by stability/quality/geometry."
+}

@@ -2,8 +2,6 @@
 
 Agent-alone candidates, published prediction values and reference variants calculated in this work.
 
-Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
-
 ## Published predictions and our predictions
 
 | Property / predictor | Published prediction | Our candidates |
@@ -41,4 +39,4 @@ All bars use DDGun_SEQ and the same selected parent within this task.
 
 Blue: our candidates. Amber: reference variants calculated in this work. Changes use the parents listed in the table.
 
-[Results and preparation details](../../../results/task_002_leh_stability/agent-alone/README.md) · [Published reference](../references.md).
+[Results and preparation details](../../../results/task_002_leh_stability/20261104_183716_0fd35d/README.md) · [Published reference](../references.md).

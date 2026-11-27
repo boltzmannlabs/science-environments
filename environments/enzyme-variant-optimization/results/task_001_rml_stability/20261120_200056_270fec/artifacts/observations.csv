@@ -1,0 +1,6 @@
+candidate_id,metric,value,unit,uncertainty,model_id,evidence_path
+RML_PARENT,tmPred_enzymes,46.97819264729818,degC,1.898791120882475,TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1,6b00a82a4eb6cc87f0e231d7_pred.csv
+RML_PARENT,enzyme_solubility,1,unknown,unknown,unknown,6b00a82a4eb6cc87f0e231d7_pred.csv
+RML_PARENT,molprobity_clashscore,8.676789587852495,clashes_per_1000_atoms,unknown,cctbx-base 2025.11,structure_evidence/molprobity_parent/candidate_summary.csv
+RML_PARENT,ramachandran_outlier_percent,0.37453183520599254,percent,unknown,cctbx-base 2025.11,structure_evidence/molprobity_parent/candidate_summary.csv
+RML_PARENT,Ser144_OG_to_substrate_carbonyl_C32,4.905618207728766,angstrom,unknown,Boltz2 model_0,structure_evidence/parent_geometry.json

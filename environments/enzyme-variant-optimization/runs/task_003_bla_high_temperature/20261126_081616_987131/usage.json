@@ -1,0 +1,70 @@
+{
+  "model_calls": {
+    "parent_agent": 0,
+    "specialists": {
+      "enzyme-method": {
+        "api_calls": 39,
+        "tokens": {
+          "input": 2889414,
+          "output": 41420
+        }
+      },
+      "enzyme-recovery": {
+        "api_calls": 29,
+        "tokens": {
+          "input": 2386941,
+          "output": 55996
+        }
+      },
+      "enzyme-evaluator": {
+        "api_calls": 30,
+        "tokens": {
+          "input": 1539737,
+          "output": 18775
+        }
+      },
+      "enzyme-method_round0_interpretation": {
+        "api_calls": 9,
+        "tokens": {
+          "input": 257041,
+          "output": 12598
+        }
+      }
+    }
+  },
+  "scientific_submissions": 21,
+  "cost": {
+    "currency": "USD",
+    "total": 0.0,
+    "status": "unknown"
+  },
+  "unresolved_attempts": [
+    "act_seek 20261126-123728Z ambiguous server error, no doc_id"
+  ],
+  "billing_summary": {
+    "currency": "USD",
+    "total_from_native_billing": {
+      "Enzymes_baseline": 1,
+      "Netsolp_baseline": 2,
+      "CatPred_baseline": 2,
+      "AF_parent": 20,
+      "RCM": 24,
+      "LigandMPNN": 1,
+      "ThermalMPNN": 1,
+      "MolProbity_parent": 2,
+      "AntiBMPNN_failed": null,
+      "Enzymes_r0": 1,
+      "Netsolp_r0": 5,
+      "CatPred_r0": 2,
+      "Enzymes_final": 1,
+      "Netsolp_final": 3,
+      "CatPred_final": 2,
+      "AF_final": 102,
+      "CatalyticGeometry_failed": null,
+      "CatalyticGeometry_corrected": 1,
+      "MolProbity_final": 9,
+      "Boltz2_failed": null
+    },
+    "note": "amounts returned by native billing receipts where present; failed/unknown jobs marked null; total not computed across all units"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "task_id": "task_001_rml_stability",
+  "run_id": "20261104_183716_b986fa",
+  "result_id": "result_20261104_183716_b986fa",
+  "config_id": "cfg_20261104_183716_b986fa",
+  "config_hash": "3e36a824af2b623fb39e2765772b61b6e0e4e49f68e020e94717ed7823efc72e",
+  "run_record": "../../../runs/task_001_rml_stability/20261104_183716_b986fa/run.json",
+  "execution_status": "partial",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "df2cc5eba84d98b10d15d09104c314bd5f25dc3090b8a288e09f709136ce00fd",
+      "source_sha256": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "ab8f7de437cf30ab4f61be2af31e5f4333dfa7d4b13d95b05d326d54a56b3b97",
+      "source_sha256": null
+    },
+    {
+      "path": "figures/workflow.jpg",
+      "sha256": "5aa9eeab044d4e7c508e41771f94c3eb6f3d71a5d4df3cbafd9e4da13b1f66ed",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidate_history.csv",
+      "sha256": "b7e06e4c55580bb6d56352b9f85173082f9158249b20c47a81c51cb4279ec054",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/candidates.fasta",
+      "sha256": "fe2a490c884c1464019f0973c850bbb4e1635b6510c43e698743650f9ce94d96",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/parent.fasta",
+      "sha256": "54255b2373fb257c75b32e7330db3782ec96c2048c6d0210ae450d3fa490e8eb",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_property_screening/candidate_summary.csv",
+      "sha256": "ac9bce8f7b35489060a98fcf7889769c19694d3199a444b92408b0db463e83fc",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_property_screening/measurements.csv",
+      "sha256": "30cfbf3db1e40ce73dbeeafda15433a88069b1236f19a815c800d62d63d0e689",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_structure_assessment/measurements.csv",
+      "sha256": "548dedf751cb233a9fe12c4fa9977fcb159e7650bfd2cc8b307c91b19bcff7ef",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/03_review/sealed_selection.csv",
+      "sha256": "a03e49ad8f8c7a2a55dd107eaed3ede49582f0a03ea8c50cda8541088b02a581",
+      "source_sha256": null
+    }
+  ],
+  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained."
+}

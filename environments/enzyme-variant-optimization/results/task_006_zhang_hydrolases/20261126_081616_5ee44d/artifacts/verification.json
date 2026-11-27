@@ -1,0 +1,146 @@
+{
+  "schema": "verification.v1",
+  "pythia": {
+    "cellulase_WT": {
+      "status": "passed",
+      "run_id": "pythia_cellulase_004",
+      "construct": "cellulase_WT",
+      "job_positions": 312,
+      "job_substitutions": 5928,
+      "raw_shapes": {
+        "C_logits": [
+          312,
+          21
+        ],
+        "C_probabilities": [
+          312,
+          21
+        ],
+        "C_negative_LLR": [
+          312,
+          21
+        ],
+        "P_logits": [
+          312,
+          21
+        ],
+        "P_probabilities": [
+          312,
+          21
+        ],
+        "P_negative_LLR": [
+          312,
+          21
+        ]
+      },
+      "probability_grid_finite_positive_and_llr_recomputed": true,
+      "grid_complete_unique": true,
+      "all_20_aa_per_position": true,
+      "identity_controls_zero": true,
+      "C_plus_P_arithmetic": true,
+      "substitutions": 5928,
+      "strict_minus_3_hits_recomputed": 91,
+      "flags_match_recompute": true,
+      "paper_site_eligibility": "unresolved_no_exclusions_invented",
+      "reconstructed_variants": true,
+      "all_native_checks_passed": true,
+      "artifact_sha256": {
+        "INPUT_MANIFEST.json": "1a317053b6ef7c4ddb5210a4cc89c281e6d3e112ce37a297a96da3f4ad09a629",
+        "all_scores_including_identity.csv": "074abe0faa3a26882bf3ea8fabc40fe59dbd33e57611b8b3700167aed010557c",
+        "all_substitutions.csv": "25b5339efb7d24a50bf9f16f77a65f5126f0d8b7eb157df8f0c4fec3fe7b2c46",
+        "best_per_position_unfiltered.csv": "3b353fc3d687dd14e11c3373a2acdf4da2cc1394db7421fcdc22c14bef7e8a96",
+        "job.json": "8cb05cac0dad52bb3fa5a11964879055c0ff9960164990bc74e3b001cc88df42",
+        "ranked_unfiltered_substitutions.csv": "bb5488b2fb6a97fb3b2a5eb91f8483b45fbf52332393161dc92df4e67a75ee70",
+        "raw_model_outputs.npz": "f20413e03ce4ac9802cda0ac9820140688623eea4d472dbf74ed50a86f9d05e8",
+        "thresholded_best_per_position_unfiltered.csv": "0c346a36f6a77706e26dd804b8cbfccbd29fc79fa05458e31264cc099de18647",
+        "thresholded_unfiltered_substitutions.csv": "ddc257426cb1fb2841e0681940317627fa7c58a5dd421d25c56102c01e2eb533"
+      }
+    },
+    "beta_glucanase_WT": {
+      "status": "passed",
+      "run_id": "pythia_beta_004",
+      "construct": "beta_glucanase_WT",
+      "job_positions": 215,
+      "job_substitutions": 4085,
+      "raw_shapes": {
+        "C_logits": [
+          215,
+          21
+        ],
+        "C_probabilities": [
+          215,
+          21
+        ],
+        "C_negative_LLR": [
+          215,
+          21
+        ],
+        "P_logits": [
+          215,
+          21
+        ],
+        "P_probabilities": [
+          215,
+          21
+        ],
+        "P_negative_LLR": [
+          215,
+          21
+        ]
+      },
+      "probability_grid_finite_positive_and_llr_recomputed": true,
+      "grid_complete_unique": true,
+      "all_20_aa_per_position": true,
+      "identity_controls_zero": true,
+      "C_plus_P_arithmetic": true,
+      "substitutions": 4085,
+      "strict_minus_3_hits_recomputed": 64,
+      "flags_match_recompute": true,
+      "paper_site_eligibility": "unresolved_no_exclusions_invented",
+      "reconstructed_variants": true,
+      "all_native_checks_passed": true,
+      "artifact_sha256": {
+        "INPUT_MANIFEST.json": "07f5e84c9bf4488fdea7cd0079d8ee7960840be5e0039bf3f6b591493d415ce6",
+        "all_scores_including_identity.csv": "42cc448bc669f0d87eaec69fb3d1e4c68d54ab4364a1cb3639cecb244c1958b0",
+        "all_substitutions.csv": "2b264a13b8cda9e2c1ef8d93d67ba2d73be3ef885b1989b7474da81eff5762dd",
+        "best_per_position_unfiltered.csv": "9073151af83aee29e99f3fb4f39b634859285911325026c6585750f159d1d964",
+        "job.json": "0d56c53cb09d0b7c69acb522117da4590c25cb97d11fd60a10e79dc274485c0f",
+        "ranked_unfiltered_substitutions.csv": "9bed8a61baebe5d6d80255b56d3db8114c3cd91fa1c6104a80f0ca9d790456a0",
+        "raw_model_outputs.npz": "21f9b3ee5264a6cc7113495f057edb0e1b144ec9790a0441f1953d07c0c19356",
+        "thresholded_best_per_position_unfiltered.csv": "008fb680988d2f03f92f748ec2f693261adfafa1e4a117b994fb12b56a27c36b",
+        "thresholded_unfiltered_substitutions.csv": "07983bd52e4bca3f7652852265b7eb7e856b1f3439780927bcc415015057ccc4"
+      }
+    }
+  },
+  "esm2": {
+    "status": "passed",
+    "run_id": "esm_full_005",
+    "model_identity": "esm2_t33_650M_UR50D",
+    "parameters": 651043254,
+    "cellulase_M2": {
+      "positions": 312,
+      "substitutions": 5928,
+      "positions_contiguous": true,
+      "single_mask_and_wt_match": true,
+      "score_arithmetic_recomputed": true,
+      "identity_controls_zero": true,
+      "both_signs_retained": true,
+      "strict_minus_1_5_hits": 41
+    },
+    "beta_glucanase_M5": {
+      "positions": 215,
+      "substitutions": 4085,
+      "positions_contiguous": true,
+      "single_mask_and_wt_match": true,
+      "score_arithmetic_recomputed": true,
+      "identity_controls_zero": true,
+      "both_signs_retained": true,
+      "strict_minus_1_5_hits": 55
+    },
+    "total_positions": 527,
+    "total_rows": 10540,
+    "all_native_checks_passed": true
+  },
+  "reference_tables_read": false,
+  "all_passed": true
+}
