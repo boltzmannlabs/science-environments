@@ -4,6 +4,12 @@
 
 Design retro-aldolases from a catalytic tetrad, build a substrate-accessible pocket and evaluate predicted structures, active-site dynamics and substrate/intermediate interaction geometry.
 
+## Publication basis and reproduction safeguards
+
+This task retains the RAD requirements from Braun et al., [*Computational enzyme design by catalytic motif scaffolding*](https://doi.org/10.1038/s41586-025-09747-9) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12727513/)), including Supplementary Figure 1, Figure 4, the supplementary metric definitions, and molecular-dynamics Methods. Use the deposited [catalytic arrays](https://doi.org/10.5281/zenodo.15979364), [design models](https://doi.org/10.5281/zenodo.15494858), and [author Riff-Diff/ProtFlow implementation](https://github.com/mabr3112/riff_diff_protflow); the reference motif derives from RA95.5-8F (PDB 5AN7).
+
+Recover metric definitions, released-model values, filtering denominators, and the historical structural-search scope before claiming reproduction. Keep predicted-structure scores distinct from design-to-crystal RMSDs and current-database novelty searches. Where reproducing the source MD condition, retain GROMACS 2023.4, amber99sb-ildn, SPC/E, and the remaining source setup/equilibration parameters; another engine or force field is an adapted condition. The reported activity for 32/35 expressed designs and Spearman correlation of −0.64 between an active-site metric and measured rates are mixed experimental validation context, not substitutes for the underlying computational outputs.
+
 ## Target
 
 **Reaction:** (R)-methodol → 6-methoxy-2-naphthaldehyde + acetone.\

@@ -4,6 +4,12 @@
 
 Design new serine hydrolases around the specified catalytic motif and evaluate the catalytic hydrogen-bond geometry across the ester-hydrolysis reaction states.
 
+## Publication basis and reproduction safeguards
+
+This task retains the filtering and multistate-assessment requirements from Lauko et al., [*Computational design of serine hydrolases*](https://doi.org/10.1126/science.adu2454) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12288761/)). Recover the selected design round from the [author repository](https://github.com/laukoag/serine-hydrolase-design), the [archived release](https://doi.org/10.5281/zenodo.14642126), Methods/Filtering, and the PLACER analysis. Do not merge substrates, design rounds, or ordinary sequence prediction with initial-guess/template-assisted prediction into one cohort.
+
+The source procedure includes three LigandMPNN/FastRelax cycles; AlphaFold2 model 4 with three recycles; filters of mean pLDDT >75, global Cα RMSD <1.5 Å, and catalytic-residue Cα RMSD <1.0 Å; and PLACER ensembles of 50 models for each of five states using the reported 600-atom active-site crop. Treat these as source method/filter definitions, not an observed pass rate. Retain every ensemble member and recover per-design score distributions and cohort counts before claiming quantitative reproduction. The reported maximum measured efficiency of 4.3×10³ M⁻¹s⁻¹ and experimental structure agreement below 1 Å Cα RMSD apply to source constructs and remain separate experimental context.
+
 ## Target
 
 **Reaction:** Hydrolysis of a 4-methylumbelliferyl ester to 4-methylumbelliferone and its corresponding carboxylate.\

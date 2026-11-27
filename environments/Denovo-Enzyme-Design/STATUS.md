@@ -16,7 +16,7 @@ The reviewed package and its full original regression suite are preserved in [pr
 
 ## Validation
 
-Reorganization checks on 27 November 2026: **256 specification checks passed; 64 regression tests ran, with 63 passed and one optional OpenMM test skipped**. No scientific or live-agent jobs were submitted. These are software and contract checks, not enzyme qualification.
+Reorganization and provenance checks on 27 November 2026: **280 specification checks passed; 64 regression tests ran, with 63 passed and one optional OpenMM test skipped**. No scientific or live-agent jobs were submitted. These are software and contract checks, not enzyme qualification.
 
 Reproduce current checks from this directory:
 

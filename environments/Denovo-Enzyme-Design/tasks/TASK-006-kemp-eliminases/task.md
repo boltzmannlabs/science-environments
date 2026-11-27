@@ -4,6 +4,12 @@
 
 Assess Des27 and Des27.7 for substrate retention, productive substrate orientations and reaction free-energy profiles. Begin with the specified designed starting models and preserve system identity throughout simulation.
 
+## Publication basis and reproduction safeguards
+
+This task retains the Des27/Des27.7 design and simulation requirements from Listov et al., [*Complete computational design of high-efficiency Kemp elimination enzymes*](https://doi.org/10.1038/s41586-025-09136-2) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12310539/)), including Figure 3, MD/EVB Methods, Supplementary Data 2, and source computational records. Recover the [design code and datasets](https://github.com/Fleishman-Lab/denovoKemp) and [deposited simulation files](https://doi.org/10.5281/zenodo.14563437) ([record](https://zenodo.org/records/14563437)), preserving exact sequences, mutation lineage, ligand topology, protonation, IN/OUT definitions, and the distinct MD and EVB parameterizations.
+
+The source comparison reports approximately fivefold greater substrate retention for Des27.7, a bound-state cutoff of ≤4 Å to the declared active-site centre of mass, five 1-µs MD replicas per system sampled for analysis every 400 ps, and 30 EVB trajectories per system/conformation. These are source outcomes/settings to reproduce with their exact atom definitions, not generic defaults. A different force field, MD engine, or QM/MM method replacing EVB is an adapted condition. The measured `kcat/KM` of 12,700 M⁻¹s⁻¹ and `kcat` of approximately 2.8 s⁻¹ for Des27.7 are experimental context and must remain separate from simulated barriers.
+
 ## Target
 
 **Reaction:** Kemp elimination of 5-nitrobenzisoxazole → 2-cyano-4-nitrophenol.\

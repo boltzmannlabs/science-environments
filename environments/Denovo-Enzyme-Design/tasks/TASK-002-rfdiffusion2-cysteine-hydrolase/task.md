@@ -4,6 +4,12 @@
 
 Design new cysteine hydrolases for 4-methylumbelliferyl butyrate hydrolysis. Scaffold the catalytic site in a modeled tetrahedral state, refine sequences while maintaining the reaction geometry, and assess structural recovery and active-site preorganization.
 
+## Publication basis and reproduction safeguards
+
+This task retains the cysteine-hydrolase requirements from Ahern et al., [*Atom-level enzyme active site scaffolding using RFdiffusion2*](https://doi.org/10.1038/s41592-025-02975-x) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12791007/)), especially Figure 4b, its linked source data, and supplementary methods. Recover the campaign-specific configuration from the [author implementation](https://github.com/RosettaCommons/RFdiffusion2). The motif derives from [PDB 1PPN](https://www.rcsb.org/structure/1PPN), but the reaction substrate is 4-methylumbelliferyl butyrate; substituting a peptide substrate is not the same task.
+
+The depicted design's reported TM-score of 0.53 to 5K7V is a computed structural outcome. Reproduce its chain selection and normalization separately from catalytic geometry and activity, and keep a historical search library distinct from a current-database search. AME thresholds and the number of experimentally screened proteins are not campaign filter values or computational denominators. The reported acylation-step efficiency of 248 ± 34 M⁻¹s⁻¹ (rounded to 250 in Figure 4b) is context for the published construct, not a replacement for source computational values or a target assigned to a new design.
+
 ## Target
 
 **Reaction:** 4-methylumbelliferyl butyrate + water → 4-methylumbelliferone + butyrate.\

@@ -1,4 +1,13 @@
-# Result report — TASK-001 / GLP1_p03_variable_s02
+# Result report — TASK-001 / RUN-HISTORICAL-001
+
+## Execution identity and provenance scope
+
+- Canonical run ID: `RUN-HISTORICAL-001`, assigned during repository migration because no verified original run ID or execution timestamp was retained.
+- Historical campaign label: `GLP1_p03_variable_s02`; this remains a campaign/candidate label and is not the run ID.
+- This report is a repository-repackaged summary, not an original execution output.
+- Raw original execution outputs—including the complete generated sequences, native model structures, logs, resolved configuration, and exact input snapshots—are not retained in this review package.
+- The CSV/JSON result tables, benchmark comparison, and figures are historical derived artifacts copied from an earlier package. The packaging audit also references a separate historical `lead_remeasurement.json`; that source is not committed here and must not be treated as an original model output. No model inference, scientific remeasurement, or plot generation was performed during the current migration.
+- `audit.json` preserves historical source hashes using source-reference URIs after removing machine-specific roots. `provenance.json` classifies every retained file group and distinguishes historical evidence from current repackaging metadata.
 
 ## Candidate and workflow
 
@@ -96,8 +105,14 @@ The reporting representative is selected for its retained catalytic-recovery res
 
 Substrate hydrogen-bond occupancies and candidate kinetic constants have no values in the retained records and are not assigned numerical substitutes.
 
+## Artifact naming status
+
+The retained scientific tables, comparison files, and figures predate the repository's generated-artifact filename convention. They are explicitly classified as `legacy_filename_exempt` in `provenance.json`. They were not renamed into the required component format because verified artifact IDs, UTC execution timestamps, canonical run references, model identifiers, and output-generating parameters are unavailable; inventing those components would create false provenance. No new scientific result artifact was generated in this migration. Future generated artifacts are not exempt.
+
+The fixed control names `REPORT.md`, `result.json`, `provenance.json`, and `audit.json` identify repository metadata rather than tool-generated scientific outputs.
+
 ## Evidence and saved outputs
 
-[Result index](result.json) · [Run record](../../../runs/TASK-001/GLP1_p03_variable_s02/run.json) · [Candidate inventory](candidates.csv) · [Assessed metrics](metrics.csv) · [Sample metrics](sample_metrics.csv) · [Comparison panel](shortlist.csv) · [Benchmark comparison](benchmark_comparison.csv) · [Benchmark evaluation](benchmark/comparison.md) · [Historical checksums](historical_sha256_manifest.json).
+[Result index](result.json) · [Result provenance](provenance.json) · [Packaging audit](audit.json) · [Run record](../../../runs/TASK-001/RUN-HISTORICAL-001/run.json) · [Configuration availability](../../../runs/TASK-001/RUN-HISTORICAL-001/configuration.json) · [Input availability manifest](../../../runs/TASK-001/RUN-HISTORICAL-001/input/manifest.json) · [Candidate inventory](candidates.csv) · [Assessed metrics](metrics.csv) · [Sample metrics](sample_metrics.csv) · [Comparison panel](shortlist.csv) · [Benchmark comparison](benchmark_comparison.csv) · [Benchmark evaluation](benchmark/comparison.md) · [Historical checksums](historical_sha256_manifest.json).
 
-Paper: [Atom-level enzyme active site scaffolding using RFdiffusion2](https://doi.org/10.1038/s41592-025-02975-x), Results AME benchmark and Figure4a. This package indexes the retained executed results; packaging does not add model runs.
+Paper: [Atom-level enzyme active site scaffolding using RFdiffusion2](https://doi.org/10.1038/s41592-025-02975-x), Results AME benchmark and Figure4a. This package indexes retained historical derived results; it does not establish that the unavailable original execution can be reproduced.

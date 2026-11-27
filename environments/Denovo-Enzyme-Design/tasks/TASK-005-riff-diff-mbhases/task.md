@@ -4,6 +4,12 @@
 
 Design new enzymes for the coupling of 2-cyclohexen-1-one and 4-nitrobenzaldehyde using two distinct catalytic arrays. Evaluate each array family separately.
 
+## Publication basis and reproduction safeguards
+
+This task retains the MBH requirements from Braun et al., [*Computational enzyme design by catalytic motif scaffolding*](https://doi.org/10.1038/s41586-025-09747-9) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12727513/)), especially Supplementary Figure 12 and Supplementary Table 6. Use the [author pipeline](https://github.com/mabr3112/riff_diff_protflow), deposited [catalytic arrays](https://doi.org/10.5281/zenodo.15979364), and [design models](https://doi.org/10.5281/zenodo.15494858). Recover and preserve the distinct BH32.14-derived and BH1.8-derived configurations and their different modeled chemical representations.
+
+Extract the actual per-design confidence, catalytic-array recovery, energy metrics, native labels/units, and selection definitions from source data before quantitative comparison; do not invent pLDDT or RMSD thresholds when the article points to the supplement. The published 0.78 Å backbone and 1.07 Å sidechain RMSDs for MBH48 compare a design to a crystal structure and are experimental structural validation, not the predicted-model baseline. Likewise, reported `kcat` values of 0.0077 and 0.025 min⁻¹ for MBH18 and MBH48 are construct-specific experimental context, not initial computational targets.
+
 ## Target
 
 **Reaction:** 2-cyclohexen-1-one + 4-nitrobenzaldehyde → 2-[hydroxy(4-nitrophenyl)methyl]cyclohex-2-en-1-one.\

@@ -1,0 +1,58 @@
+{
+  "schema_version": "historical-case-index-v2",
+  "record_type": "repository_repackaging_index",
+  "result_id": "RESULT-RUN-HISTORICAL-001",
+  "legacy_result_id": "RESULT-GLP1-P03-VARIABLE-S02",
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "selected_candidate_label": "GLP1_p03_variable_s02",
+  "selection_scope": "structural comparison representative",
+  "reporting_panel_candidates": [
+    "GLP1_p03_variable_s02",
+    "KCR1_s01",
+    "KCR1_s02"
+  ],
+  "reporting_panel_candidate_count": 3,
+  "retained_assessment_structure_count": 20,
+  "generated_sequences_in_parent_and_replacement_stages": 10,
+  "methods_reported_by_the_historical_package": [
+    "RFdiffusion2",
+    "LigandMPNN",
+    "Chai-1",
+    "Gemmi",
+    "Biopython",
+    "Foldseek",
+    "TM-align"
+  ],
+  "files": {
+    "report": "REPORT.md",
+    "provenance": "provenance.json",
+    "candidate_inventory": "candidates.csv",
+    "assessed_metrics": "metrics.csv",
+    "sample_metrics": "sample_metrics.csv",
+    "shortlist": "shortlist.csv",
+    "benchmark_comparison": "benchmark_comparison.csv",
+    "candidate_properties": "candidate_properties.json",
+    "residue_atom_mapping": "residue_atom_mapping.csv",
+    "packaging_audit": "audit.json",
+    "benchmark_evaluation": "benchmark/comparison.md",
+    "benchmark_figures": "benchmark/figures",
+    "historical_source_hashes": "historical_sha256_manifest.json",
+    "historical_benchmark_hashes": "benchmark/historical_sha256_manifest.json"
+  },
+  "provenance_summary": {
+    "original_execution_outputs": "The raw original model outputs, generated sequence set, structures, logs, and complete input/configuration snapshots are not retained in this repository package.",
+    "historical_source_artifacts": "Historical source references and hashes are preserved in audit.json and the two historical SHA-256 manifests. Those manifests describe the prior package and are not inventories of files currently committed here.",
+    "later_measurement_and_aggregation": "The retained CSV/JSON tables, comparison text, and figures are historical derived artifacts assembled from prior generation, prediction, measurement, and comparison records. Their per-file classification is in provenance.json. No measurement, model inference, or plot generation was performed during the current repository migration.",
+    "repository_repackaging": "run.json, configuration.json, input/manifest.json, result.json, provenance.json, audit.json, REPORT.md, and surrounding indexes were created or updated to establish repository-relative identity and provenance. Their edits do not constitute a scientific rerun."
+  },
+  "artifact_naming": {
+    "generated_during_current_migration": false,
+    "historical_scientific_artifacts": "legacy_filename_exempt",
+    "reason": "Verified artifact IDs, original execution timestamps, canonical run references, model identifiers, and output-generating parameters are unavailable, so convention-compliant generated filenames cannot be constructed without fabrication.",
+    "details": "provenance.json"
+  },
+  "scope": "Retained three-sequence reporting panel; not an inventory of all historical experiment branches.",
+  "current_migration_model_calls": 0
+}

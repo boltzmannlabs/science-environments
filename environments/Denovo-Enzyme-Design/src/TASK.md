@@ -1,4 +1,6 @@
-# Task: denovo_enzyme_001
+# Schema example task: TASK-EXAMPLE-001
+
+`TASK-EXAMPLE-001` is an interface example used to exercise the generic request schema. It is not a catalogue identifier and must not be interpreted as any of the scientific tasks `TASK-001` through `TASK-007`. Executions of a catalogue task must use that task's canonical identifier and task-specific chemistry.
 
 **Task family:** de novo enzyme design. **Status:** In Progress; resumable controller included, scientific qualification remains reaction-specific. This file follows the supplied BioDesignBench demo's task structure. Its tool-list section is replaced by **Required Execution Steps**, as requested; the enzyme-specific task text is original.
 

@@ -32,4 +32,4 @@ Workflow: catalytic theozyme → RFdiffusion2 scaffold generation → LigandMPNN
 
 ## Saved workflow results
 
-See the retained [comparison](../../../results/TASK-001/GLP1_p03_variable_s02/benchmark/comparison.md) and [result report](../../../results/TASK-001/GLP1_p03_variable_s02/REPORT.md).
+See the retained [comparison](../../../results/TASK-001/RUN-HISTORICAL-001/benchmark/comparison.md) and [result report](../../../results/TASK-001/RUN-HISTORICAL-001/REPORT.md).

@@ -370,10 +370,55 @@ def main() -> None:
                 for path in task_entries),
             'each task has a descriptive directory containing task.md')
     require(len(task_entries) == 7, 'seven unique task definitions are present')
-    require((ROOT / 'runs/TASK-001/GLP1_p03_variable_s02/run.json').is_file(),
+    require((ROOT / 'runs/TASK-001/RUN-HISTORICAL-001/run.json').is_file(),
             'retained Task 001 run record is organized by task and run ID')
-    require((ROOT / 'results/TASK-001/GLP1_p03_variable_s02/result.json').is_file(),
+    require((ROOT / 'results/TASK-001/RUN-HISTORICAL-001/result.json').is_file(),
             'retained Task 001 result record uses the matching task and run ID')
+    historical_run_dir = ROOT / 'runs/TASK-001/RUN-HISTORICAL-001'
+    historical_result_dir = ROOT / 'results/TASK-001/RUN-HISTORICAL-001'
+    historical_run = read_json('runs/TASK-001/RUN-HISTORICAL-001/run.json')
+    historical_result = read_json('results/TASK-001/RUN-HISTORICAL-001/result.json')
+    historical_provenance = read_json('results/TASK-001/RUN-HISTORICAL-001/provenance.json')
+    require(historical_run['task_id'] == historical_result['task_id'] == historical_provenance['task_id'] == 'TASK-001'
+            and historical_run['run_id'] == historical_result['run_id'] == historical_provenance['run_id'] == 'RUN-HISTORICAL-001',
+            'historical task and canonical run identifiers agree across run, result and provenance records')
+    require(historical_run['campaign_label'] == historical_result['campaign_label'] ==
+            historical_provenance['campaign_label'] == 'GLP1_p03_variable_s02',
+            'historical campaign label is preserved separately from the canonical run identifier')
+    require((historical_run_dir / historical_run['configuration_reference']).is_file()
+            and (historical_run_dir / historical_run['input_manifest']).is_file(),
+            'historical run links explicit configuration and input availability records')
+    historical_configuration = json.loads((historical_run_dir / historical_run['configuration_reference']).read_text())
+    historical_inputs = json.loads((historical_run_dir / historical_run['input_manifest']).read_text())
+    require(historical_configuration['availability'] == 'unavailable_in_retained_records'
+            and historical_configuration['resolved_configuration_path'] is None
+            and historical_inputs['availability'] == 'unavailable_in_retained_records'
+            and historical_inputs['retained_input_snapshots'] == [],
+            'unavailable historical configuration and inputs are explicit without assumed values')
+    require(historical_provenance['artifact_naming_decision']['new_scientific_artifacts_generated_by_migration'] is False
+            and all(group['naming_status'] in {
+                'legacy_filename_exempt', 'legacy_metadata_filename',
+                'prescribed_control_filename_or_explanatory_record'}
+                    for group in historical_provenance['artifact_groups']),
+            'historical artifact naming exemptions and migration metadata are explicitly classified')
+    for group in historical_provenance['artifact_groups']:
+        if isinstance(group['files'], dict):
+            for relative_path, expected_hash in group['files'].items():
+                artifact = historical_result_dir / relative_path
+                require(artifact.is_file()
+                        and hashlib.sha256(artifact.read_bytes()).hexdigest() == expected_hash,
+                        f'historical retained artifact hash matches provenance: {relative_path}')
+    machine_specific = []
+    for package_dir in [historical_run_dir, historical_result_dir]:
+        for path in package_dir.rglob('*'):
+            if path.is_file():
+                try:
+                    content = path.read_text()
+                except UnicodeDecodeError:
+                    continue
+                if '/home/' in content or '.sci/profiles/' in content:
+                    machine_specific.append(str(path.relative_to(ROOT)))
+    require(not machine_specific, 'retained historical run and result records contain no machine-specific local paths')
     require((ROOT / 'benchmark/definitions').is_dir() and
             (ROOT / 'benchmark/reference_data').is_dir(),
             'benchmark definitions and reference data are separated')

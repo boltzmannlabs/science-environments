@@ -4,6 +4,14 @@
 
 Design new enzyme scaffolds for retro-aldol cleavage of methodol. Preserve a minimal catalytic functional-group arrangement, then assess fold consistency, active-site preorganization and structural novelty.
 
+## Publication basis and reproduction safeguards
+
+This task retains the retroaldolase requirements from Ahern et al., [*Atom-level enzyme active site scaffolding using RFdiffusion2*](https://doi.org/10.1038/s41592-025-02975-x) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12791007/)), especially Figure 4a, its source data, and supplementary section D. Recover the campaign-specific settings from the [author implementation](https://github.com/RosettaCommons/RFdiffusion2) and bind them to a pinned revision. The catalytic source is [RA95.5-8F, PDB 5AN7](https://www.rcsb.org/structure/5AN7); the actual released motif, rather than the whole source structure, is the design input.
+
+For reproduction, keep the published-design metric, the historical filtering procedure, and fresh generation as three separate outcomes. The depicted design's reported TM-score of 0.47 to 6SU3 is a structural comparison, not a catalytic score; record chain selection, normalization, search library, and whether the comparison is fixed-pair or nearest-neighbour. Do not substitute AME benchmark settings or an activity value for unavailable campaign-specific prediction/filter values. The reported experimental `kcat/KM` of 6.34 ± 0.92 M⁻¹s⁻¹ applies only to the characterized published construct and is context, not a computational target for a new design.
+
+The retired `task_001_ame.md` described the paper's separate 41-case AME benchmark, not this retroaldolase campaign. Its relevant reference definitions are retained as comparison context: 100 backbones per case, eight sequences per backbone, five Chai-1 samples in the backbone-success definition, catalytic heavy-atom RMSD below 1.5 Å, and a 1.5 Å ligand-clash boundary. Those values must not be applied to this campaign unless the campaign source independently specifies them. A full 41-case AME reproduction requires its own future canonical task rather than silently expanding `TASK-001`.
+
 ## Target
 
 **Reaction:** Methodol → 6-methoxy-2-naphthaldehyde + acetone. Model (R)-methodol explicitly; identify any racemic assessment separately.\

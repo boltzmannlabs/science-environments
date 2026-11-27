@@ -4,6 +4,12 @@
 
 Calculate reaction free-energy surfaces and activation free energies for KE07, KE10(V131N), KE15 and KE16, using exact designed enzyme–substrate models and a consistent treatment of the bond-changing reaction.
 
+## Publication basis and reproduction safeguards
+
+This task retains the historical reaction-surface requirements from Alexandrova et al., [*Catalytic Mechanism and Performance of Computationally Designed Enzymes for Kemp Elimination*](https://doi.org/10.1021/ja804040s) ([open-access article](https://pmc.ncbi.nlm.nih.gov/articles/PMC2680199/)), including Table 1, system-specific surfaces, Methods, and supporting information. Recover designed-complex provenance from that study and the [original enzyme-design publication](https://www.nature.com/articles/nature06879); a natural scaffold or apo crystal structure alone does not encode the designed enzyme–substrate complex.
+
+The source protocol uses a truncated protein/environment representation, PDDG/PM3 QM/MM, Monte Carlo sampling, and free-energy perturbation over coupled proton-transfer and ring-opening coordinates. Recover the exact boundaries, force field, solvent, windows, constraints, and sampling rather than silently substituting a modern protocol. Published computed ΔG‡ values are 8.1 kcal/mol for KE07, 13.5 for KE10(V131N), 12.3 for KE15, and not determined for KE16. Preserve KE16 as unavailable rather than inventing a barrier. Keep these simulated barriers distinct from electronic energies and rate-derived barriers; for example, KE15's rate-derived value near 17.0 kcal/mol is experimental comparison context.
+
 ## Target
 
 **Reaction:** Kemp elimination of 5-nitrobenzisoxazole → 2-cyano-4-nitrophenol.\

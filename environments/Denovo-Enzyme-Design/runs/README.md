@@ -4,4 +4,4 @@ Execution records are organized as `runs/<task-id>/<run-id>/`. Each run must ide
 
 Currently retained:
 
-- [`TASK-001/GLP1_p03_variable_s02/`](TASK-001/GLP1_p03_variable_s02/) — historical RFdiffusion2 retroaldolase execution record.
+- [`TASK-001/RUN-HISTORICAL-001/`](TASK-001/RUN-HISTORICAL-001/) — historical RFdiffusion2 retroaldolase record. `RUN-HISTORICAL-001` is the migration-assigned canonical run ID; `GLP1_p03_variable_s02` remains its campaign label.
