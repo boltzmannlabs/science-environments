@@ -1,53 +1,47 @@
-# Published in-silico reproduction tasks
+# De novo enzyme-design tasks
 
-This folder contains tasks for an agent to reproduce published computational enzyme-design workflows and compare its calculated outputs with the literature. Papers containing experimental validation are included; the first comparison is against their computational results.
+This directory contains stable scientific task definitions. Each task has a unique `TASK-###` identifier, a descriptive directory, and a standard `task.md` definition. Execution records and outputs belong under `runs/` and `results/`, not in task directories.
 
 ## Task catalogue
 
-| Task | Reproduction target | Computational reference |
+| Task | Objective | Benchmark definition |
 | --- | --- | --- |
-| [001 — AME](task_001_ame.md) | Atomic motif scaffolding and predicted recovery | Case coverage, motif RMSD, and ligand clashes |
-| [002 — RFdiffusion2 retro-aldolase](task_002_rfdiffusion2_retroaldolase.md) | Reaction-specific generation and structural assessment | Reported TM-score; campaign-specific metrics from the supplement |
-| [003 — RFdiffusion2 cysteine hydrolase](task_003_rfdiffusion2_cysteine_hydrolase.md) | Esterase motif scaffolding and assessment | Reported TM-score; campaign-specific filtering and models |
-| [004 — Serine hydrolases](task_004_serine_hydrolases.md) | Fold filtering and multistate ensemble analysis | Published confidence/RMSD filters and state-specific contact statistics |
-| [005 — Riff-Diff retro-aldolases](task_005_riff_diff_retroaldolases.md) | Motif-to-sequence workflow and computational assessment | Predicted design metrics, structural novelty, and dynamics |
-| [006 — Riff-Diff MBHases](task_006_riff_diff_mbhases.md) | Reproduction for two MBH catalytic arrays | Per-design computational values in Supplementary Fig. 12 |
-| [007 — Kemp eliminases](task_007_kemp_eliminases.md) | TIM-barrel design, substrate dynamics, and EVB | Calculated substrate retention, geometries, and free-energy profiles |
-| [008 — Kemp QM/MM](task_008_kemp_qmmm.md) | Reaction free-energy surface calculations | Published computed activation barriers in kcal/mol |
+| [TASK-001 — RFdiffusion2 retroaldolase](TASK-001-rfdiffusion2-retroaldolase/task.md) | Design and assess retroaldolase candidates around the supplied active-site motif. | [TASK-001](../benchmark/definitions/TASK-001.md) |
+| [TASK-002 — RFdiffusion2 cysteine hydrolase](TASK-002-rfdiffusion2-cysteine-hydrolase/task.md) | Design and assess cysteine-hydrolase candidates. | [TASK-002](../benchmark/definitions/TASK-002.md) |
+| [TASK-003 — Serine hydrolases](TASK-003-serine-hydrolases/task.md) | Design and assess serine-hydrolase candidates. | [TASK-003](../benchmark/definitions/TASK-003.md) |
+| [TASK-004 — Riff-Diff retroaldolases](TASK-004-riff-diff-retroaldolases/task.md) | Scaffold and assess retroaldolase catalytic arrays. | [TASK-004](../benchmark/definitions/TASK-004.md) |
+| [TASK-005 — Riff-Diff MBHases](TASK-005-riff-diff-mbhases/task.md) | Scaffold and assess Morita–Baylis–Hillmanase catalytic arrays. | [TASK-005](../benchmark/definitions/TASK-005.md) |
+| [TASK-006 — Kemp eliminases](TASK-006-kemp-eliminases/task.md) | Assess substrate retention, productive orientation and reaction profiles. | [TASK-006](../benchmark/definitions/TASK-006.md) |
+| [TASK-007 — Kemp QM/MM](TASK-007-kemp-qmmm/task.md) | Assess Kemp-elimination reaction free-energy surfaces. | [TASK-007](../benchmark/definitions/TASK-007.md) |
 
-Tasks 001–003 share one paper; tasks 005–006 share another. Preserve these relationships when reporting the number of independent studies or reaction families. Tasks 002, 003, and 006 require recovery of additional campaign-specific reference data before full numerical comparison.
+## Retired publication-file review
 
-## How to execute a task
+The eight former flat publication-oriented task files were reviewed before removal. Seven described the same scientific cases as the canonical catalogue and their publication links, source datasets, numerical reference points, method-reproduction safeguards, and experimental/computational distinctions are retained in the corresponding `task.md` files. The identifier offset is recorded here so the deletion cannot be mistaken for deletion of seven scientific cases.
 
-1. Read the publication, supplement, released code, and the selected task. Recover the exact inputs and computational reference data identified there.
-2. Create a source manifest containing URLs, release/commit identities, local paths, SHA-256 hashes, and sample identities. Keep inputs, reference outputs, and newly calculated outputs separate.
-3. Declare the scope: reproduce calculations on published designs, rerun generation, or both. Existing designs used for reassessment remain imported examples; they are not fresh generated candidates.
-4. Record the allowed execution platforms, actual tool capabilities, sampling, resource limits, and evaluation definitions before dispatch. Use the [environment tool policy](../MODELS_AND_TOOLS.md); current scientific execution is restricted to Boltzmann and ToolUniverse, with small preparation/check/analysis scripts.
-5. Execute the published computational steps where supported, preserving raw results, invocation receipts, provider/job IDs, parameters, and usage.
-6. Compare identical quantities under matched definitions. Report missing reference data, unavailable methods, failed calculations, and protocol changes explicitly.
-7. Write the measurements and comparison report in a separate run directory. Keep task definitions in this folder.
-
-The [environment specification](../ENVIRONMENT_SPEC.md), [agent instruction](../src/TASK.md), and [runtime contracts](../src/CONTRACTS.md) govern execution and evidence. For a whole generation run, initialize through `scripts/run.py`, supply this index, the selected task, and prepared manifests through repeated `--input` arguments, then use the frozen controller. The current controller has no documented arbitrary-stage replay interface; a calculation-only reproduction needs a separately identified assessment invocation. Do not manufacture preceding stage acceptances.
-
-## Comparison rules
-
-Distinguish four kinds of numbers:
-
-| Kind | Use |
+| Retired file | Canonical disposition |
 | --- | --- |
-| Published computed result | Compare a matching calculation against the reported value or distribution. |
-| Published filter threshold | Reproduce the same predicate; also obtain actual pass counts or per-design outputs before claiming a matching result. |
-| Computational setting | Match sampling, temperature, model configuration, and other settings; matching a setting is not a successful outcome. |
-| Experimental measurement | Keep as supporting validation. It is not the initial in-silico reproduction target. |
+| `task_001_ame.md` | Separate 41-case AME benchmark, intentionally not represented as a canonical execution task. Its relevant benchmark definitions and the boundary against retroaldolase campaign settings are retained in `TASK-001`; a full AME reproduction requires a future separately reviewed task. |
+| `task_002_rfdiffusion2_retroaldolase.md` | Requirements and sources retained in `TASK-001-rfdiffusion2-retroaldolase/task.md`. |
+| `task_003_rfdiffusion2_cysteine_hydrolase.md` | Requirements and sources retained in `TASK-002-rfdiffusion2-cysteine-hydrolase/task.md`. |
+| `task_004_serine_hydrolases.md` | Requirements and sources retained in `TASK-003-serine-hydrolases/task.md`. |
+| `task_005_riff_diff_retroaldolases.md` | Requirements and sources retained in `TASK-004-riff-diff-retroaldolases/task.md`. |
+| `task_006_riff_diff_mbhases.md` | Requirements and sources retained in `TASK-005-riff-diff-mbhases/task.md`. |
+| `task_007_kemp_eliminases.md` | Requirements and sources retained in `TASK-006-kemp-eliminases/task.md`. |
+| `task_008_kemp_qmmm.md` | Requirements and sources retained in `TASK-007-kemp-qmmm/task.md`. |
 
-For missing numerical reference values, extract them from the specified source tables, files, or figures before scoring. Prefer raw source data. Label digitized figure values as approximate and include extraction uncertainty. Never substitute experimental activity for a missing computational baseline.
+This migration does not treat publication activity measurements as design acceptance criteria, substitute AME settings into campaign tasks, pool chemically different cohorts, or convert missing source baselines into assumed values.
 
-Each result row must identify the task, sample, metric, units, published value, calculated value, difference, uncertainty, source location, and whether protocols match. Preserve all scheduled samples and report denominators. A small pilot has a different scope from a published campaign.
+## Execution organization
 
-Exact-method reproduction requires the original implementations and conditioning. A substituted predictor, force field, sampling engine, or geometry definition creates an adapted reproduction. Report it separately. Do not install local prediction models or use an external chemistry engine to bypass the current platform restriction.
+For every execution, use the same stable task identifier throughout:
 
-These tasks assess specific published computational workflows. Their completion is separate from whole-enzyme qualification under every mandatory environment rule. Scope restrictions, controls, and missing evidence remain binding; the task list creates no new spending authorization.
+```text
+runs/<task-id>/<run-id>/
+results/<task-id>/<run-id>/
+```
 
-## Expected result bundle
+The task defines what must be done. Shared and task-specific configuration defines how it is done. A run records an execution, and its corresponding result directory stores the produced evidence and outputs.
 
-Return a source manifest, frozen method/settings record, raw computational outputs, normalized per-sample metrics, published-versus-calculated comparison table, resource accounting, and a readable comparison report. Include experimental context in a separate section when useful. Keep unsupported steps and unavailable reference values visible in the final comparison.
+Filenames listed in a task's expected-output section are logical output names. Newly generated scientific artifacts must use the repository's mandatory artifact filename convention, with the logical and stored names connected in result provenance.
+
+Use the [environment specification](../ENVIRONMENT_SPEC.md), [model and tool inventory](../MODELS_AND_TOOLS.md), [runtime contracts](../src/CONTRACTS.md), and root repository contribution guidance when preparing a run.

@@ -1,0 +1,18 @@
+{
+  "record_type": "historical_configuration_availability_record",
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "availability": "unavailable_in_retained_records",
+  "config_id": null,
+  "config_version": null,
+  "resolved_configuration_path": null,
+  "resolved_configuration_sha256": null,
+  "reason": "No original resolved execution configuration or immutable configuration hash was retained with this historical package.",
+  "non_substitute_references": [
+    "tasks/TASK-001-rfdiffusion2-retroaldolase/task.md",
+    "benchmark/definitions/TASK-001.md",
+    "runs/TASK-001/RUN-HISTORICAL-001/workflow_record.md"
+  ],
+  "warning": "The task, benchmark, workflow summary, and current shared request examples describe requirements or interfaces; they are not asserted to be the configuration used for the historical execution."
+}

@@ -1,0 +1,29 @@
+{
+  "record_type": "historical_input_availability_manifest",
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "manifest_provenance": "Created during repository repackaging; not emitted by the original execution.",
+  "retained_input_snapshots": [],
+  "availability": "unavailable_in_retained_records",
+  "unavailable_original_inputs": [
+    "resolved execution request and parameters",
+    "prepared catalytic motif coordinate input",
+    "original sequence-design input and generated sequence set",
+    "original ligand coordinate/topology input",
+    "complete original structure and per-candidate assessment inputs"
+  ],
+  "source_references": [
+    {
+      "logical_name": "task_definition",
+      "path": "tasks/TASK-001-rfdiffusion2-retroaldolase/task.md",
+      "role": "current canonical requirements; not an original input snapshot"
+    },
+    {
+      "logical_name": "benchmark_reference",
+      "path": "benchmark/reference_data/TASK-001/reference.md",
+      "role": "reference and comparison context; not an original input snapshot"
+    }
+  ],
+  "warning": "No checksum or value is supplied for an unavailable original input. The source references above must not be treated as proof of the exact original execution inputs."
+}

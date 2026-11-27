@@ -1,0 +1,638 @@
+{
+  "record_type": "historical_packaging_audit",
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "record_provenance": "Historical packaging audit updated during repository migration to remove machine-specific roots and add explicit source-reference schemes; not an original execution output.",
+  "verification_scope": "Hash/copy and package checks recorded by the prior packaging process against the historical sources then available. This does not verify the unavailable original configuration, complete inputs, or a rerunnable execution.",
+  "source_reference_schemes": {
+    "historical-workspace": "Path relative to the removed historical workspace root; source is not committed in this repository.",
+    "historical-package": "Path relative to the former historical package root; referenced files may be excluded from the current review package."
+  },
+  "status": "VERIFIED",
+  "candidate_count": 3,
+  "native_structure_count": 20,
+  "numeric_and_unavailable_metric_rows": 516,
+  "individually_preserved_sample_rows": 20,
+  "motif_coverage": {
+    "GLP1_p03_variable_s02": {
+      "below1p5": 10,
+      "models": 10
+    },
+    "KCR1_s01": {
+      "below1p5": 0,
+      "models": 5
+    },
+    "KCR1_s02": {
+      "below1p5": 0,
+      "models": 5
+    }
+  },
+  "images": [
+    {
+      "path": "benchmark/figures/workflow_results.png",
+      "size": [
+        3000,
+        880
+      ]
+    },
+    {
+      "path": "benchmark/figures/results_comparison.png",
+      "size": [
+        2800,
+        2000
+      ]
+    }
+  ],
+  "broken_local_links": [],
+  "source_copies_hash_matched": true,
+  "source_files": {
+    "historical-workspace://results/task_001/lead_completion_v1/analyze.py": "b942c779aa577c2cd2777ee7dcea77ec4e72db3e8324b41c6bfa3f9e594cfe09",
+    "historical-workspace://results/task_001/lead_completion_v1/execution.log": "d725438d7d72a8b8bef7db91aacae04cbc6c93c51cbf00141946dfb9574981f7",
+    "historical-workspace://results/task_001/lead_completion_v1/protocol.json": "0b8c115f57f1e6dccf0e06df852e6a92752b1ba74fb7289ae012fc905c2fdfc0",
+    "historical-workspace://results/task_001/lead_completion_v1/summary.json": "729f17bdd59a86f77a0e6240e555413866007000a4ee5d2a64ef9dec61ebd9b5",
+    "historical-workspace://results/task_001/lead_completion_v1/residue_atom_mapping.csv": "4de2aee448311e1d03e4e47dbf4ae176d6040c5dc43eb1195597a4478914dd18",
+    "historical-workspace://results/task_001/lead_completion_v1/verification.json": "6d7f4b19a15784b6bb92431d5ab3aa615cd65f09ec7e3d1e9badf71b5544c710",
+    "historical-workspace://results/task_001/lead_completion_v1/selection.csv": "0f2c479acaad70e361f165363d7a18ff6a627a642ba98650fba1e58ae449b67e",
+    "historical-workspace://results/task_001/lead_completion_v1/aligned_sidechains.csv": "a84fd8ef924129dc8c384927ea850e087a35b1445080d055062a6d8a941b8f20",
+    "historical-workspace://results/task_001/lead_completion_v1/metrics.json": "dd3474fb1e3a11c052c1da3fe99111ad36fad8b928d792f2c1b2473c18366446",
+    "historical-workspace://results/task_001/lead_completion_v1/verify_and_report.py": "1ccb74a3fde80147a37f1574a6e715d0d1fedc1c854fc3a6c9b24baae5a2a178",
+    "historical-workspace://results/task_001/lead_completion_v1/state_coverage.csv": "2f49350937f44fccc2c2f879af3ce7d3a12b859a751ae78ddd0ea5fefc05afbf",
+    "historical-workspace://results/task_001/lead_completion_v1/independent_verification.json": "d454ff3b11fbd2e2829b308c8ecd3ec875710d158fa40a906cbf0193b6b1a6c1",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/score_predictions.py": "879a28b0a8cd61d1e2e932037e1f25944a39a9ac05858b782f1a31e6ea8c273d",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/protocol.json": "04e2870645860911db495a26f1c753b386357b79495dc0b85dc4fabddc9a265b",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/verification.json": "ca45894309180d3ffe818146c4c667a787ab255591d3922e79a32a926877f8eb",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/selection.csv": "833b8489c7230b24fe8849c10a04b6aacb12dd1fd9f1a2ff7b6626f2f3f3f714",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/run_chai.py": "320a150f21447467bc8267df2f3de7a0d2046cbb5f261b470269c51bafda6c41",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/finalize.py": "fd030d5dfd3384d00dac9ac018048396bd36c9b630434a2639bad0df3e4c27d7",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/assess_restored.py": "e604251d6e9c93c006457b0f0fc2f5c4bd6606fd7cef8bfe47c5d1633276aaff",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/prediction_assessment.json": "f2d8ac589d948621aef50f83df987b18db6c3ef17bf045867506e2df599b99b1",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/run_sequences.py": "20c84681ffda42ab51d670c740e7b270da6bc32027234536d5aad9f27051adab",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/restored_assessment.json": "b00d8108480c73cf9c7ad7434dfd9553975094896cfb3512dc95d33f3d3270dc",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/sequence_design/registry.json": "01f2932ea7f2ccc4ae2739b316da8d2d7826cee5a97638230f529814993d3bbf",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/sequence_design/process_receipt.json": "485d64f39a83f2a947717e35e62498f340d99e2b3952273af3db27ca1d26ced4",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/cohort_receipt.json": "3422cdb0f105312b72cb18581a78b9a968d711112855f326a4491acfd36b3d4f",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/retrieval.json": "93d3f58dc9f59269fafb8a8b74fd619a870f54b68858bf630bd0189c27f41bdb",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/primary_evidence.json": "050e9f37f9b4c7c3d275ec365d2b33ac11ee712b9b22813c1fe62cea3259f24c",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/summary.json": "0ba45ee0c7369d027d2caf396a2297702b79149c1481bbddb8a6b6b6f4bb21c4",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/retrieve.py": "314b94276b4ed24458fbc75738e02f059e406b87541a3f6af567f8782f86a538",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/prepare_metrics.py": "83c6bb230fcd4040b44e0c6a6befca72f146ec9b388267354ee9e3e8a5f256b1",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/lead_remeasurement.json": "2a17bbaf3e821fed251f0597f2e83420f645a4e02e042366b262f930d468c50d",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/summary.json": "7381ed35bbb1fed0d03b127b1115022bc302d2a2640acfadbf4667e878e10a12",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/tmalign_top20.tsv": "3279caeb5f28a874bdfea036c62dc64526a972a0686edb76c1d64b2a919ace0a",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/commands.json": "ce72ad9254cc7401da89373737019c1bf8e62e01e78b31aa7508df9e5eee8a20",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/sequence_design/registry.json": "e2fbf0bd4dae2438555abb75aedd1f3897ce3300da05347cb20aff2d161c030e",
+    "historical-workspace://package_results_benchmark_v1.py": "3df1eb32d5d828dacd336b95a3304f0b62d72f25a02c75edc4a121480d320d64",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_0.cif": "c70d70740dae97588559ba52e93f9b1224cee114451b13e1ebd924ffe8d0487d",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_1.cif": "2be62e35cf239c649eba50a4124a8b79ebf7117f7ad43a9a237b758f877001f8",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_2.cif": "29a7fc75dd130870781e4705843be612b5e272a280239d7333dca4e271b34d08",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_3.cif": "2c5dcdae3c0edbc33d98b349e08143eeed9a225cd72193d074cc3d58d71f52e4",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_4.cif": "dd7bd2cfff698176bcd28f0ded17fa74896685e53f5984562b0745a99fa2ced4",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_0.cif": "07ff0f57ccf9379963978ed4a0d6c499d4a8938cbe9a2ac7aa36ee926be7b013",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_1.cif": "953bacb94936b6c8ac03b4249f622dd6429c2d34e614445ca8a42d7e65ab3d02",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_2.cif": "e0d16110bd914d9f22cd0bb9413a00da8a0b3021818415e1641df6587610c42c",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_3.cif": "a65321081d08793d1f8df20d2454d36404b95c4460879b79b3d5115550885d45",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_4.cif": "f514ccf6a530db28a104988e9e1fb502de8ce7905ec677a154ae21072d838f4f",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_0.cif": "14eadea5cff0922a04c48e09aa8856d2d41c2a057666bbdcf2a9fde3e276e524",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_1.cif": "f5ab643a41b049caf257a6f04f4a1a3be96ce8c5af6f246870ea3c64cb997422",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_2.cif": "49483a688066de8c083a88626436c1816b39d5f9e2fdab552432c520181f5679",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_3.cif": "29f38c59152ac27450a1971c3fd51f58c75a85d4de2a809d9e5a7887e305b026",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_4.cif": "53f113e2a1dd88b708267efc6cf22c25ce88be1b072d500965f8e1977d9fbf70",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_0.cif": "83fc31fb1a8d40013204643dce96caa2885b2bd41fa5f730f3cfb9e076e3d228",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_1.cif": "6a54619a73f13e3f62d9182b51c390660a78b40ab810911cb5dc4afc276413f3",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_2.cif": "09536d7c17aa0c8d30b0952ffe922df9a9f415ddb0e56ae79369bf9ed9d399b0",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_3.cif": "eeebb11d0c444d9e6010d2a74ac2c60313e79b6a38ed7d81722c23d783e10622",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_4.cif": "7be6d09385f4fb8ae9f393df9045098e31edc99f0c02c4ff9387bb26102874c4",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/launch_intent.json": "fe5e203b66b879aa26d86ef951048a8a5f24ba45b765166ccb1ae373ed82ddc0",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native.log": "73d58d1b51734f947a9c5ef6b2dcb7ec12749b2692c21127dcb5505ba55d7a10",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native_return_receipt.json": "3aab467f4342459917f384efcf48cd6a03c183bb8fafaaeccf6e89bca7f6a14e",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/full_confidence.npz": "714968f93feadd482b4f10c0ae1bddb281056974dfb97a1cde0811c73809b85f",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/process_receipt.json": "7eba52fbe9834a007899d7253059811b6c573b2457bcd19e6b8d055f6f68b968",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_3.npz": "b6999cb80ef17ca6256273dac7083385606e1214c44c85d32b67bddeaf057577",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_0.npz": "cecf76920fcf547081ab222adfa642879979c2c55096fcad09b94ddeac8af826",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_2.npz": "db3721ddef50a98e2bf20b01f49575671e62e73872e776df3b0f98847811fd84",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_1.npz": "e8ffe86e8fc9d1571eae37efb43379d54263d0c5b4cc6364a179c9d92cd1e1c5",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_4.npz": "c6dbfc0aa4898c30357fb8971e6154707f0eaaf422a6b4563d5d701be2c15f82",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/launch_intent.json": "e997c53445ff649d85849f6899b7eaf658a328e83105488ccc076a1a745cb2a5",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native.log": "009627b8c079e58f0f1ccf3d4c478d9e5a795706638851501b39fc76958b8c5a",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native_return_receipt.json": "b4c847db2a3803c85a1f8331b507cf8f96d3a26d4ab7064062ec8c6bdedb6d1d",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/full_confidence.npz": "9a0ad691ee80ca5a2aad3e0eb14a13fd47d8a2dd35f26f88f62eece3e4796d43",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/process_receipt.json": "e849ca75a52c445c9d652d6974a6a864995524c7de1b3e350746caedfcbcf647",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_3.npz": "2e5580f7e756ab5be04d10fe2f29745025f722e2130e9a8a48cf5b8afc9a087b",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_0.npz": "b4228492cc127dc65c3cc1c693e63c7de403a8e78de6f9444868e4113c0ccad6",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_2.npz": "1e63a187c441b3eb962a3f6d98b8b7ffa32faf84d4fb6741b1628d5de0b2cf1e",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_1.npz": "e7ffaaf07b9e2b352357b523cca4aa5ff8a97594f4a50a19bebd8df2e409b468",
+    "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_4.npz": "7b286421dfd87eb07249789535b83cddb10a2a70566e88d2555bee0f9e49087a",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/launch_intent.json": "9d2425d8f6891dfe737eaf18cd8628c43c0a5ac36f0fa989260cfec7a44c753d",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native.log": "26873d51b2dcd5f1707f2e1021d4154e154c319f09210659017e0796891b1aba",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native_return_receipt.json": "eb1f8b30a99763ce2dfef404def1735969c0ab77981a91bca9722448d5c1c6ed",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/full_confidence.npz": "8e53b0a9d5bd68bf9413ffc250f2336a81ec9af8f83a32fd45a0a18651d54d7d",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/process_receipt.json": "721bd371db09bd599d5f794b781aa7a757bd3a218d8ef1d6abb739b2512539c9",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_3.npz": "83eea00b603e62350add5eeb3598249706653760b9dd3cc015f70cd3665cb494",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_0.npz": "aaafc35d330731e9ce47caf1b32e5de6a84a617b14cb90053062ac5ce8a64a6f",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_2.npz": "c6ccd0e60f21d77e5a66320d67e0b800be53efcc39b53c88cdb62adb8d29031e",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_1.npz": "254f8a53053ff0d6592cb8190c64e5e55cd09167ce2ff14fd8f2f62fd39ec254",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_4.npz": "2a8f4225f462d4b391414b26cffa3688e2e28544c922638e00a9ef42ca9097ca",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/launch_intent.json": "5dec1003c52a4a3c19e62ce31b3257d691513449a6a42298a61a5443d44c6ab3",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native.log": "b9bc30bb8eb02847dca45b3491dd928bacbde966036fc28d9d87aa6381832277",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native_return_receipt.json": "2bd66d316a85385b40b1f450098cadf9922235bb81a23f12ca1c81d6a312c59a",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/full_confidence.npz": "a083d5d3cdef1a3eebdf8304b2f0992f550e958b19d81602edc73ce298b56243",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/process_receipt.json": "dce60d2919165a207ffaf3297495927af6701577802dd4e50b62e85a9b737817",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_3.npz": "06e78897f72d5aa898210850c0aa38d3304b7d7b34e231ecc8256461447c90bb",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_0.npz": "c85c915e52dfb25f1d2c280c5e89c0ba2dd302dc3e4133820d4a660f8d7669f3",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_2.npz": "4686ae0db3ccfda527e94df50a5fc426b1778224fddde386f2546000d3608caf",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_1.npz": "70e8051c354c7e3f426e04cc3af78aa0cc119c90e0582590f50715082bd5ffc4",
+    "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_4.npz": "0e361ae6e28f83be972dce206d5484829c98c773c2e0a0841906d9a8a1505b09"
+  },
+  "copies": [
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/analyze.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/analyze.py",
+      "sha256": "b942c779aa577c2cd2777ee7dcea77ec4e72db3e8324b41c6bfa3f9e594cfe09"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/execution.log",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/execution.log",
+      "sha256": "d725438d7d72a8b8bef7db91aacae04cbc6c93c51cbf00141946dfb9574981f7"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/protocol.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/protocol.json",
+      "sha256": "0b8c115f57f1e6dccf0e06df852e6a92752b1ba74fb7289ae012fc905c2fdfc0"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/summary.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/summary.json",
+      "sha256": "729f17bdd59a86f77a0e6240e555413866007000a4ee5d2a64ef9dec61ebd9b5"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/residue_atom_mapping.csv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/residue_atom_mapping.csv",
+      "sha256": "4de2aee448311e1d03e4e47dbf4ae176d6040c5dc43eb1195597a4478914dd18"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/verification.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/verification.json",
+      "sha256": "6d7f4b19a15784b6bb92431d5ab3aa615cd65f09ec7e3d1e9badf71b5544c710"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/selection.csv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/selection.csv",
+      "sha256": "0f2c479acaad70e361f165363d7a18ff6a627a642ba98650fba1e58ae449b67e"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/aligned_sidechains.csv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/aligned_sidechains.csv",
+      "sha256": "a84fd8ef924129dc8c384927ea850e087a35b1445080d055062a6d8a941b8f20"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/metrics.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/metrics.json",
+      "sha256": "dd3474fb1e3a11c052c1da3fe99111ad36fad8b928d792f2c1b2473c18366446"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/verify_and_report.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/verify_and_report.py",
+      "sha256": "1ccb74a3fde80147a37f1574a6e715d0d1fedc1c854fc3a6c9b24baae5a2a178"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/state_coverage.csv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/state_coverage.csv",
+      "sha256": "2f49350937f44fccc2c2f879af3ce7d3a12b859a751ae78ddd0ea5fefc05afbf"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lead_completion_v1/independent_verification.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/lead_completion/independent_verification.json",
+      "sha256": "d454ff3b11fbd2e2829b308c8ecd3ec875710d158fa40a906cbf0193b6b1a6c1"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/score_predictions.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/score_predictions.py",
+      "sha256": "879a28b0a8cd61d1e2e932037e1f25944a39a9ac05858b782f1a31e6ea8c273d"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/protocol.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/protocol.json",
+      "sha256": "04e2870645860911db495a26f1c753b386357b79495dc0b85dc4fabddc9a265b"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/verification.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/verification.json",
+      "sha256": "ca45894309180d3ffe818146c4c667a787ab255591d3922e79a32a926877f8eb"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/selection.csv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/selection.csv",
+      "sha256": "833b8489c7230b24fe8849c10a04b6aacb12dd1fd9f1a2ff7b6626f2f3f3f714"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/run_chai.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/run_chai.py",
+      "sha256": "320a150f21447467bc8267df2f3de7a0d2046cbb5f261b470269c51bafda6c41"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/finalize.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/finalize.py",
+      "sha256": "fd030d5dfd3384d00dac9ac018048396bd36c9b630434a2639bad0df3e4c27d7"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/assess_restored.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/assess_restored.py",
+      "sha256": "e604251d6e9c93c006457b0f0fc2f5c4bd6606fd7cef8bfe47c5d1633276aaff"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/prediction_assessment.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/prediction_assessment.json",
+      "sha256": "f2d8ac589d948621aef50f83df987b18db6c3ef17bf045867506e2df599b99b1"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/run_sequences.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/run_sequences.py",
+      "sha256": "20c84681ffda42ab51d670c740e7b270da6bc32027234536d5aad9f27051adab"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/restored_assessment.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/restored_assessment.json",
+      "sha256": "b00d8108480c73cf9c7ad7434dfd9553975094896cfb3512dc95d33f3d3270dc"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/sequence_design/registry.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/sequence_design/registry.json",
+      "sha256": "01f2932ea7f2ccc4ae2739b316da8d2d7826cee5a97638230f529814993d3bbf"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/sequence_design/process_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/sequence_design/process_receipt.json",
+      "sha256": "485d64f39a83f2a947717e35e62498f340d99e2b3952273af3db27ca1d26ced4"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/cohort_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/replacement_cohort/chai_predictions/cohort_receipt.json",
+      "sha256": "3422cdb0f105312b72cb18581a78b9a968d711112855f326a4491acfd36b3d4f"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/retrieval.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/retrieval.json",
+      "sha256": "93d3f58dc9f59269fafb8a8b74fd619a870f54b68858bf630bd0189c27f41bdb"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/primary_evidence.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/primary_evidence.json",
+      "sha256": "050e9f37f9b4c7c3d275ec365d2b33ac11ee712b9b22813c1fe62cea3259f24c"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/summary.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/summary.json",
+      "sha256": "0ba45ee0c7369d027d2caf396a2297702b79149c1481bbddb8a6b6b6f4bb21c4"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/retrieve.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/retrieve.py",
+      "sha256": "314b94276b4ed24458fbc75738e02f059e406b87541a3f6af567f8782f86a538"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/prepare_metrics.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/prepare_metrics.py",
+      "sha256": "83c6bb230fcd4040b44e0c6a6befca72f146ec9b388267354ee9e3e8a5f256b1"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/lead_remeasurement.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/lead_remeasurement.json",
+      "sha256": "2a17bbaf3e821fed251f0597f2e83420f645a4e02e042366b262f930d468c50d"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/summary.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/novelty/summary.json",
+      "sha256": "7381ed35bbb1fed0d03b127b1115022bc302d2a2640acfadbf4667e878e10a12"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/tmalign_top20.tsv",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/novelty/tmalign_top20.tsv",
+      "sha256": "3279caeb5f28a874bdfea036c62dc64526a972a0686edb76c1d64b2a919ace0a"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/reference_comparison_v1/novelty/commands.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/paper_comparison/novelty/commands.json",
+      "sha256": "ce72ad9254cc7401da89373737019c1bf8e62e01e78b31aa7508df9e5eee8a20"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/sequence_design/registry.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/original_sequence_registry.json",
+      "sha256": "e2fbf0bd4dae2438555abb75aedd1f3897ce3300da05347cb20aff2d161c030e"
+    },
+    {
+      "source": "historical-workspace://package_results_benchmark_v1.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/audit_method.py",
+      "sha256": "3df1eb32d5d828dacd336b95a3304f0b62d72f25a02c75edc4a121480d320d64"
+    },
+    {
+      "source": "historical-workspace://package_results_benchmark_v1.py",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/audit_method.py",
+      "sha256": "3df1eb32d5d828dacd336b95a3304f0b62d72f25a02c75edc4a121480d320d64"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_0.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/original/pred.model_idx_0.cif",
+      "sha256": "c70d70740dae97588559ba52e93f9b1224cee114451b13e1ebd924ffe8d0487d"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_1.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/original/pred.model_idx_1.cif",
+      "sha256": "2be62e35cf239c649eba50a4124a8b79ebf7117f7ad43a9a237b758f877001f8"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_2.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/original/pred.model_idx_2.cif",
+      "sha256": "29a7fc75dd130870781e4705843be612b5e272a280239d7333dca4e271b34d08"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_3.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/original/pred.model_idx_3.cif",
+      "sha256": "2c5dcdae3c0edbc33d98b349e08143eeed9a225cd72193d074cc3d58d71f52e4"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_4.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/original/pred.model_idx_4.cif",
+      "sha256": "dd7bd2cfff698176bcd28f0ded17fa74896685e53f5984562b0745a99fa2ced4"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_0.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/confirmation/pred.model_idx_0.cif",
+      "sha256": "07ff0f57ccf9379963978ed4a0d6c499d4a8938cbe9a2ac7aa36ee926be7b013"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_1.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/confirmation/pred.model_idx_1.cif",
+      "sha256": "953bacb94936b6c8ac03b4249f622dd6429c2d34e614445ca8a42d7e65ab3d02"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_2.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/confirmation/pred.model_idx_2.cif",
+      "sha256": "e0d16110bd914d9f22cd0bb9413a00da8a0b3021818415e1641df6587610c42c"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_3.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/confirmation/pred.model_idx_3.cif",
+      "sha256": "a65321081d08793d1f8df20d2454d36404b95c4460879b79b3d5115550885d45"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/pred.model_idx_4.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/GLP1_p03_variable_s02/confirmation/pred.model_idx_4.cif",
+      "sha256": "f514ccf6a530db28a104988e9e1fb502de8ce7905ec677a154ae21072d838f4f"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_0.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s01/restored/pred.model_idx_0.cif",
+      "sha256": "14eadea5cff0922a04c48e09aa8856d2d41c2a057666bbdcf2a9fde3e276e524"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_1.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s01/restored/pred.model_idx_1.cif",
+      "sha256": "f5ab643a41b049caf257a6f04f4a1a3be96ce8c5af6f246870ea3c64cb997422"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_2.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s01/restored/pred.model_idx_2.cif",
+      "sha256": "49483a688066de8c083a88626436c1816b39d5f9e2fdab552432c520181f5679"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_3.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s01/restored/pred.model_idx_3.cif",
+      "sha256": "29f38c59152ac27450a1971c3fd51f58c75a85d4de2a809d9e5a7887e305b026"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/pred.model_idx_4.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s01/restored/pred.model_idx_4.cif",
+      "sha256": "53f113e2a1dd88b708267efc6cf22c25ce88be1b072d500965f8e1977d9fbf70"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_0.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s02/restored/pred.model_idx_0.cif",
+      "sha256": "83fc31fb1a8d40013204643dce96caa2885b2bd41fa5f730f3cfb9e076e3d228"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_1.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s02/restored/pred.model_idx_1.cif",
+      "sha256": "6a54619a73f13e3f62d9182b51c390660a78b40ab810911cb5dc4afc276413f3"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_2.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s02/restored/pred.model_idx_2.cif",
+      "sha256": "09536d7c17aa0c8d30b0952ffe922df9a9f415ddb0e56ae79369bf9ed9d399b0"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_3.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s02/restored/pred.model_idx_3.cif",
+      "sha256": "eeebb11d0c444d9e6010d2a74ac2c60313e79b6a38ed7d81722c23d783e10622"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/pred.model_idx_4.cif",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/structures/KCR1_s02/restored/pred.model_idx_4.cif",
+      "sha256": "7be6d09385f4fb8ae9f393df9045098e31edc99f0c02c4ff9387bb26102874c4"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/launch_intent.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/launch_intent.json",
+      "sha256": "fe5e203b66b879aa26d86ef951048a8a5f24ba45b765166ccb1ae373ed82ddc0"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native.log",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native.log",
+      "sha256": "73d58d1b51734f947a9c5ef6b2dcb7ec12749b2692c21127dcb5505ba55d7a10"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native_return_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native_return_receipt.json",
+      "sha256": "3aab467f4342459917f384efcf48cd6a03c183bb8fafaaeccf6e89bca7f6a14e"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/full_confidence.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/full_confidence.npz",
+      "sha256": "714968f93feadd482b4f10c0ae1bddb281056974dfb97a1cde0811c73809b85f"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/process_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/process_receipt.json",
+      "sha256": "7eba52fbe9834a007899d7253059811b6c573b2457bcd19e6b8d055f6f68b968"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_3.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native/scores.model_idx_3.npz",
+      "sha256": "b6999cb80ef17ca6256273dac7083385606e1214c44c85d32b67bddeaf057577"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_0.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native/scores.model_idx_0.npz",
+      "sha256": "cecf76920fcf547081ab222adfa642879979c2c55096fcad09b94ddeac8af826"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_2.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native/scores.model_idx_2.npz",
+      "sha256": "db3721ddef50a98e2bf20b01f49575671e62e73872e776df3b0f98847811fd84"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_1.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native/scores.model_idx_1.npz",
+      "sha256": "e8ffe86e8fc9d1571eae37efb43379d54263d0c5b4cc6364a179c9d92cd1e1c5"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s01/native/scores.model_idx_4.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s01/restored/native/scores.model_idx_4.npz",
+      "sha256": "c6dbfc0aa4898c30357fb8971e6154707f0eaaf422a6b4563d5d701be2c15f82"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/launch_intent.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/launch_intent.json",
+      "sha256": "e997c53445ff649d85849f6899b7eaf658a328e83105488ccc076a1a745cb2a5"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native.log",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native.log",
+      "sha256": "009627b8c079e58f0f1ccf3d4c478d9e5a795706638851501b39fc76958b8c5a"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native_return_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native_return_receipt.json",
+      "sha256": "b4c847db2a3803c85a1f8331b507cf8f96d3a26d4ab7064062ec8c6bdedb6d1d"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/full_confidence.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/full_confidence.npz",
+      "sha256": "9a0ad691ee80ca5a2aad3e0eb14a13fd47d8a2dd35f26f88f62eece3e4796d43"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/process_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/process_receipt.json",
+      "sha256": "e849ca75a52c445c9d652d6974a6a864995524c7de1b3e350746caedfcbcf647"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_3.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native/scores.model_idx_3.npz",
+      "sha256": "2e5580f7e756ab5be04d10fe2f29745025f722e2130e9a8a48cf5b8afc9a087b"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_0.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native/scores.model_idx_0.npz",
+      "sha256": "b4228492cc127dc65c3cc1c693e63c7de403a8e78de6f9444868e4113c0ccad6"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_2.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native/scores.model_idx_2.npz",
+      "sha256": "1e63a187c441b3eb962a3f6d98b8b7ffa32faf84d4fb6741b1628d5de0b2cf1e"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_1.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native/scores.model_idx_1.npz",
+      "sha256": "e7ffaaf07b9e2b352357b523cca4aa5ff8a97594f4a50a19bebd8df2e409b468"
+    },
+    {
+      "source": "historical-workspace://results/task_001/lysine_constraint_restore_v1/chai_predictions/KCR1_s02/native/scores.model_idx_4.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/KCR1_s02/restored/native/scores.model_idx_4.npz",
+      "sha256": "7b286421dfd87eb07249789535b83cddb10a2a70566e88d2555bee0f9e49087a"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/launch_intent.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/launch_intent.json",
+      "sha256": "9d2425d8f6891dfe737eaf18cd8628c43c0a5ac36f0fa989260cfec7a44c753d"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native.log",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native.log",
+      "sha256": "26873d51b2dcd5f1707f2e1021d4154e154c319f09210659017e0796891b1aba"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native_return_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native_return_receipt.json",
+      "sha256": "eb1f8b30a99763ce2dfef404def1735969c0ab77981a91bca9722448d5c1c6ed"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/full_confidence.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/full_confidence.npz",
+      "sha256": "8e53b0a9d5bd68bf9413ffc250f2336a81ec9af8f83a32fd45a0a18651d54d7d"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/process_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/process_receipt.json",
+      "sha256": "721bd371db09bd599d5f794b781aa7a757bd3a218d8ef1d6abb739b2512539c9"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_3.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native/scores.model_idx_3.npz",
+      "sha256": "83eea00b603e62350add5eeb3598249706653760b9dd3cc015f70cd3665cb494"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_0.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native/scores.model_idx_0.npz",
+      "sha256": "aaafc35d330731e9ce47caf1b32e5de6a84a617b14cb90053062ac5ce8a64a6f"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_2.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native/scores.model_idx_2.npz",
+      "sha256": "c6ccd0e60f21d77e5a66320d67e0b800be53efcc39b53c88cdb62adb8d29031e"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_1.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native/scores.model_idx_1.npz",
+      "sha256": "254f8a53053ff0d6592cb8190c64e5e55cd09167ce2ff14fd8f2f62fd39ec254"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/GLP1_p03_variable/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_4.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/original/native/scores.model_idx_4.npz",
+      "sha256": "2a8f4225f462d4b391414b26cffa3688e2e28544c922638e00a9ef42ca9097ca"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/launch_intent.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/launch_intent.json",
+      "sha256": "5dec1003c52a4a3c19e62ce31b3257d691513449a6a42298a61a5443d44c6ab3"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native.log",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native.log",
+      "sha256": "b9bc30bb8eb02847dca45b3491dd928bacbde966036fc28d9d87aa6381832277"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native_return_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native_return_receipt.json",
+      "sha256": "2bd66d316a85385b40b1f450098cadf9922235bb81a23f12ca1c81d6a312c59a"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/full_confidence.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/full_confidence.npz",
+      "sha256": "a083d5d3cdef1a3eebdf8304b2f0992f550e958b19d81602edc73ce298b56243"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/process_receipt.json",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/process_receipt.json",
+      "sha256": "dce60d2919165a207ffaf3297495927af6701577802dd4e50b62e85a9b737817"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_3.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native/scores.model_idx_3.npz",
+      "sha256": "06e78897f72d5aa898210850c0aa38d3304b7d7b34e231ecc8256461447c90bb"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_0.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native/scores.model_idx_0.npz",
+      "sha256": "c85c915e52dfb25f1d2c280c5e89c0ba2dd302dc3e4133820d4a660f8d7669f3"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_2.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native/scores.model_idx_2.npz",
+      "sha256": "4686ae0db3ccfda527e94df50a5fc426b1778224fddde386f2546000d3608caf"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_1.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native/scores.model_idx_1.npz",
+      "sha256": "70e8051c354c7e3f426e04cc3af78aa0cc119c90e0582590f50715082bd5ffc4"
+    },
+    {
+      "source": "historical-workspace://fresh_design_round_v1/gap_layout_pilot_v1/positive_confirmation_v1/chai_predictions/GLP1_p03_variable_s02/native/scores.model_idx_4.npz",
+      "destination": "historical-package://TASK-001/GLP1_p03_variable_s02/raw/native_predictions/GLP1_p03_variable_s02/confirmation/native/scores.model_idx_4.npz",
+      "sha256": "0e361ae6e28f83be972dce206d5484829c98c773c2e0a0841906d9a8a1505b09"
+    }
+  ],
+  "packaging_only": true,
+  "packaging_model_calls": 0,
+  "verification_method": "audit_finalize_method.py",
+  "packaging_recovery": "Initial local-link check preceded manifest creation. Finished manifests and verification without rerunning models, measurements or plots."
+}

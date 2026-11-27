@@ -1,0 +1,75 @@
+{
+  "schema_version": "historical-result-provenance-v1",
+  "result_id": "RESULT-RUN-HISTORICAL-001",
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "record_provenance": "Created during repository migration to classify retained files; not emitted by the original scientific execution.",
+  "original_execution_outputs": {
+    "retained_in_current_package": false,
+    "examples_not_retained": [
+      "complete generated sequence set",
+      "native model structures and confidence arrays",
+      "original execution logs and receipts",
+      "resolved configuration and exact input snapshots"
+    ]
+  },
+  "artifact_groups": [
+    {
+      "classification": "historical_derived_measurement_or_aggregation",
+      "description": "Retained tables derived before the current repository migration from historical generation, prediction, measurement, and selection records. The exact original creation timestamps, artifact IDs, model/checkpoint identifiers, and full output-generating parameters are unavailable.",
+      "naming_status": "legacy_filename_exempt",
+      "files": {
+        "benchmark_comparison.csv": "0be7887b5ca7d6f9c6d42bb1144a0cfcac99eb9f9d3e18e7c0258acc10d05b9d",
+        "candidate_properties.json": "158a26531e090e38b7105dce31f0a7198b98e46c36be1199fb19c46994740ba8",
+        "candidates.csv": "88f60beb76203a1bb3bca8b674074727d17934a2a654c4e7721f964577d2fc18",
+        "metrics.csv": "58c5bd55f421ecd47d390e4e8e8bd1316cfed419497f2be874c7e384dcdb8b87",
+        "residue_atom_mapping.csv": "4de2aee448311e1d03e4e47dbf4ae176d6040c5dc43eb1195597a4478914dd18",
+        "sample_metrics.csv": "47911942038ee641295c497845a93a4e7687e5dea419bd34495d9f4f4b391a21",
+        "shortlist.csv": "1d10c93898996665695756aa9b547d7de925660ac4037c9592cad67366e95a54"
+      }
+    },
+    {
+      "classification": "historical_comparison_and_visualization",
+      "description": "Comparison narrative and figures created before the current repository migration. They were retained without remeasurement or plot regeneration.",
+      "naming_status": "legacy_filename_exempt",
+      "files": {
+        "benchmark/comparison.md": "941f34b3f04475249d8ac7570401d43477c8c218282c1b24b924ec03989d9edd",
+        "benchmark/figures/results_comparison.png": "eb6fc034e9ac1c6e67fd040ec9720ccb6436f438136caf01850b2042e435ca6c",
+        "benchmark/figures/results_comparison.svg": "93145018e0e9d263497d329f9dea708850b2b207a4bd001c5be49e4169ea6181",
+        "benchmark/figures/workflow_results.png": "5581e6c695a7c81caf15507c3f4ebf28a6996a6b225399252f4fd3e490db6686",
+        "benchmark/figures/workflow_results.svg": "3287ad069242f105c56dea1db2dfddd3806c816ee349126971393975f702bc12"
+      }
+    },
+    {
+      "classification": "historical_source_index",
+      "description": "Checksums copied from the prior package. These files describe historical source/package holdings, including files not committed in the current package; they are not current-directory integrity manifests.",
+      "naming_status": "legacy_metadata_filename",
+      "files": {
+        "historical_sha256_manifest.json": "f174e2e1349ce186502a8fb67a99f10d39b27e388c86c20450a546cb786f4787",
+        "benchmark/historical_sha256_manifest.json": "03bf0a1345f316c63f4db5b04af166a055a0ee4c9db76a7d9ceb438fb424ca27"
+      }
+    },
+    {
+      "classification": "repository_repackaging_metadata",
+      "description": "Control and explanatory records created or edited for repository organization. They report historical evidence but are not original execution outputs or new scientific measurements.",
+      "naming_status": "prescribed_control_filename_or_explanatory_record",
+      "files": [
+        "REPORT.md",
+        "audit.json",
+        "provenance.json",
+        "result.json"
+      ]
+    }
+  ],
+  "artifact_naming_decision": {
+    "new_scientific_artifacts_generated_by_migration": false,
+    "legacy_files_renamed_to_generated_artifact_format": false,
+    "reason": "Renaming requires verified artifact IDs, UTC execution timestamps, run references, model identifiers, and parameters. Those components are unavailable, and fabricating them would create false provenance.",
+    "future_rule": "Any newly generated scientific artifact must use the repository-mandated component order and must be registered with its verified metadata and checksum."
+  },
+  "historical_source_reference_schemes": {
+    "historical-workspace": "Location relative to the removed machine-specific historical workspace root; the referenced source is not committed here.",
+    "historical-package": "Location relative to the former historical result-package root; the referenced file may be absent from the retained review package."
+  }
+}

@@ -6,7 +6,7 @@
 
 Tracking: [issue #86](https://github.com/boltzmannlabs/science-environments/issues/86). Publish the latest execution-policy and scientific-contract changes together with the standard environment layout. The CLI is `scripts/run.py`, supporting code is in `src/`, schemas/examples are in `config/`, and validation entrypoints are in `scripts/`. The generic agent instruction is `src/TASK.md`.
 
-`tasks/` contains [eight published in-silico reproduction tasks](tasks/README.md). `tests/`, `benchmark/` and `results/` retain only empty `.gitkeep` markers. Run outputs belong in a separate user-selected run directory.
+`tasks/` contains [seven scientific task definitions](tasks/README.md). Configuration, task definitions, run records, results and benchmark materials follow the repository-wide separation of responsibilities. One retained Task 001 execution is organized under matching task and run identities in `runs/` and `results/`.
 
 ## Preserved implementation and test history
 
@@ -16,7 +16,7 @@ The reviewed package and its full original regression suite are preserved in [pr
 
 ## Validation
 
-Publication checks on 31 October 2026: **198 specification checks passed; 63 regression tests passed and one optional OpenMM test was skipped**. Controller initialization and frozen-snapshot doctor/status checks passed using a synthetic command backend. No scientific or live-agent jobs were submitted. The tracking issue records the publication evidence. Historical checks are not treated as fresh evidence: the previous package recorded 209 specification checks and 64 unit tests (63 passed, one OpenMM-dependent skip). The initial reorganized filesystem copy passed 197 specification checks and the same location-adapted regression suite. These are software/contract results, not enzyme qualification.
+Reorganization and provenance checks on 27 November 2026: **280 specification checks passed; 64 regression tests ran, with 63 passed and one optional OpenMM test skipped**. No scientific or live-agent jobs were submitted. These are software and contract checks, not enzyme qualification.
 
 Reproduce current checks from this directory:
 
@@ -30,14 +30,16 @@ Both scripts accept an optional `--report` path outside the environment; they le
 ## Acceptance
 
 - Schemas, examples, documentation links and the requested top-level entries resolve.
-- `tasks/` contains Markdown task definitions; `tests/`, `benchmark/` and `results/` contain only empty `.gitkeep` markers.
+- `tasks/` contains one descriptive directory and standard `task.md` file per stable task ID.
+- `config/` separates schemas from shared examples; `runs/` and `results/` use matching task and run identities.
+- `benchmark/` contains definitions and reference data; run-specific benchmark comparisons are retained with the corresponding result.
 - Initialization freezes executable and instruction dependencies; resume uses the frozen `scripts/run.py`.
 - Evidence binding, independent assessment, invalidation, recovery and resource boundaries remain intact.
 - Scientific qualification needs applicable controls and all mandatory chemistry, folding, assembly and property evidence. Software checks, confidence, docking and classical MD do not replace that evidence.
 
-## Literature reproduction tasks
+## Scientific tasks
 
-The task catalogue covers AME, RFdiffusion2 retro-aldolase and cysteine-hydrolase design, serine hydrolases, Riff-Diff retro-aldolases and MBHases, modern Kemp eliminases, and historical Kemp QM/MM calculations. Each task identifies published computational steps, inputs, reference values, comparison procedures and outputs. Experimental observations are supporting context. Some campaign-specific computational baselines require supplementary-data extraction before quantitative comparison.
+The task catalogue covers RFdiffusion2 retroaldolase and cysteine-hydrolase design, serine hydrolases, Riff-Diff retroaldolases and MBHases, modern Kemp eliminases, and historical Kemp QM/MM calculations. Each task identifies its scientific objective, constraints, evaluation requirements and expected outputs. Experimental observations remain supporting context where applicable.
 
 These task definitions establish no scientific result and do not configure scientific adapters or change execution permissions, budgets or qualification gates. The validator accepts Markdown task definitions while preserving the other reserved directories.
 
