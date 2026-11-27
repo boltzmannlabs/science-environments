@@ -1,6 +1,8 @@
 # Task 04 — saved blind-optimization results
 
-[Task and inputs](../../tasks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Literature benchmark](../../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Focused comparison](comparison_report.md)
+[Task and inputs](../../tasks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Literature benchmark](../../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Focused comparison](comparison_report.md) · [Comprehensive summary](comprehensive_summary.md)
+
+> **Start here for the full overview:** [comprehensive_summary.md](comprehensive_summary.md) consolidates every run, comparison table, metric, gap and next step.
 
 ## Output inventory
 
@@ -13,6 +15,7 @@
 | [achievements_and_comparison.md](achievements_and_comparison.md) | Objective-by-objective achievements and limitations | Post hoc |
 | [gaps_and_improvement_plan.md](gaps_and_improvement_plan.md) | Performance gaps, reasons and next steps | Post hoc |
 | [run_log.md](run_log.md) | Ordered tool-call log with validation and failure statuses | Derived from tool trace |
+| [comprehensive_summary.md](comprehensive_summary.md) | Consolidated outcomes, comparisons, metrics, gaps and next steps | Post-hoc synthesis of all recorded outputs |
 
 ## Actual achievements
 

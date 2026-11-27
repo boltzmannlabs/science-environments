@@ -11,3 +11,4 @@
 - Secret/private-data scan: no tokens, signed URLs, credentials or account-scoped exports present in new files. Personal installation paths are not included in public task outputs.
 - Previous tasks: no files under task-01, task-02 or task-03 directories were modified.
 - Scope note: packaging ran no model job and no laboratory experiment; all results are recorded tool outputs from the originating session or post-hoc documentary review.
+- Update 2026-11-27: added `comprehensive_summary.md` consolidating all outcomes, comparisons, metrics, gaps and next steps; results README and `task_record.json` updated with the new artifact. Revalidated below.
