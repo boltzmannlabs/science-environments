@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | codex |
-| Execution status | completed |
 
 Full computational scan and returned independent evaluation.
 

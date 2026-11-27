@@ -44,3 +44,7 @@ The complete configuration layout now contains environment.yaml, real schemas, o
 All 23 existing executions now use run_001_<original-session-id> style names, numbered independently by task/start order. Matching runs/results/source folders have identical names. Native run IDs, session lineage and scientific outputs remain unchanged. The run_prefix_mappings entries in migration_map.json preserve previous paths. Append future run numbers; do not renumber existing records.
 
 Validation for numbered folders: all 23 records and 467 artifact checksums pass; all Markdown links and source-export hashes resolve; all six benchmark reports rebuild; 313 scientific output/source files are byte-identical to the preceding commit. No scientific jobs were launched.
+
+## Run-level status field removal
+
+At the owner’s request, execution-status fields and status columns were removed from the published run registry, run records and result summaries. Original tool job statuses, evaluator findings, frozen inputs and factual reports are unchanged. No replacement completed/partial label was added.

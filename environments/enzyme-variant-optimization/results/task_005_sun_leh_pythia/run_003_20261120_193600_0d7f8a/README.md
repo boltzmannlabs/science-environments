@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | gpt-6.1-sol |
-| Execution status | partial |
 
 Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.
 

@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | hy4-flash-free |
-| Execution status | completed |
 
 Independent evaluation confirms empty selection and frozen negative outcome.
 

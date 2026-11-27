@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | hy4-flash-free |
-| Execution status | completed |
 
 Full computational scans and independent evaluator receipt retained.
 

@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | discoveryrsi |
-| Execution status | partial |
 
 Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.
 

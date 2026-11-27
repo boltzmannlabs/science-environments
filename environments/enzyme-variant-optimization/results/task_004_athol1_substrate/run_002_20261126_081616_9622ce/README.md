@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | hy4-flash-free |
-| Execution status | partial |
 
 Evaluator eligibility unknown; candidate-specific ternary structure/quality/geometry missing.
 

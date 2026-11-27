@@ -81,8 +81,6 @@ def validate(env: Path) -> dict:
                 raise ValueError(f'Numbered folder metadata mismatch: {folder}')
         if result.name != run_folder:
             raise ValueError(f'Run/result folder mismatch: {folder}')
-        if run['status'] != provenance['execution_status']:
-            raise ValueError(f'Status mismatch: {folder}')
         if not (folder / run['input_manifest']).is_file():
             raise ValueError(f'Missing input manifest: {folder}')
         if run.get('launch_settings_snapshot'):

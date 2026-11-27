@@ -4,7 +4,6 @@
 |---|---|
 | Approach | agent-with-specialist |
 | Model | hy4-flash-free |
-| Execution status | partial |
 
 Required candidate substrate-complex and calcium coordination evidence unresolved despite native completion claim.
 
