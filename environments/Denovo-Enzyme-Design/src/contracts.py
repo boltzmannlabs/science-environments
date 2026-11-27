@@ -85,7 +85,7 @@ def verify_nested(value: Any, base: Path) -> None:
 
 
 def schema_check(value: dict, name: str) -> None:
-    Draft202012Validator(load_json(ROOT / 'config' / name), format_checker=FORMAT_CHECKER).validate(value)
+    Draft202012Validator(load_json(ROOT / 'config' / 'schemas' / name), format_checker=FORMAT_CHECKER).validate(value)
 
 
 def check_execution_evidence(value: dict, stage: str, policy: dict,

@@ -131,7 +131,7 @@ def check_generation_contracts(schemas: dict) -> None:
                 require(True, f'{kind} generation check: {label}')
             else:
                 raise AssertionError(label)
-        mismatch = read_json('config/request.example.json' if kind == 'homodimer' else 'config/homodimer.request.example.json')
+        mismatch = read_json('config/shared/request.example.json' if kind == 'homodimer' else 'config/shared/homodimer.request.example.json')
         try:
             validate_generation(profile, schemas['generation'], mismatch)
         except ValueError:
@@ -269,7 +269,7 @@ def synthetic_protocol(schema: dict, kind: str) -> dict:
 
 
 def check_assembly_contracts(schemas: dict) -> None:
-    request = read_json('config/homodimer.request.example.json')
+    request = read_json('config/shared/homodimer.request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'homodimer request is structurally valid; scientific inputs remain unqualified')
     implicit = copy.deepcopy(request)
@@ -335,7 +335,7 @@ def check_assembly_contracts(schemas: dict) -> None:
         else:
             raise AssertionError(name)
     for protocol, req, name in [
-        (base, read_json('config/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
+        (base, read_json('config/shared/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
         (synthetic_protocol(schemas['protocol'], 'monomer'), request, 'explicit homodimer request cannot silently use a monomer profile'),
     ]:
         try:
@@ -349,10 +349,10 @@ def check_assembly_contracts(schemas: dict) -> None:
 def main() -> None:
     required_files = [
         'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
-        'config/environment.yaml', 'config/request.schema.json',
-        'config/protocol.schema.json', 'config/generation.schema.json', 'src/TASK.md',
-        'config/request.example.json', 'STATUS.md',
-        'config/homodimer.request.example.json',
+        'config/environment.yaml', 'config/schemas/request.schema.json',
+        'config/schemas/protocol.schema.json', 'config/schemas/generation.schema.json', 'src/TASK.md',
+        'config/shared/request.example.json', 'STATUS.md',
+        'config/shared/homodimer.request.example.json',
         'src/CONTRACTS.md',
         'scripts/run.py', 'src/agents.py', 'src/contracts.py', 'src/reporting.py',
         'scripts/validate_environment.py', 'scripts/check_regressions.py',
@@ -361,23 +361,70 @@ def main() -> None:
     ]
     require(all((ROOT / name).is_file() for name in required_files), 'required package files exist')
     expected_entries = {'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
-                        'config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results'}
+                        'config', 'tasks', 'runs', 'results', 'tests', 'scripts', 'src', 'benchmark'}
     require({p.name for p in ROOT.iterdir()} == expected_entries, 'environment has exactly the requested top-level layout')
     task_directory = ROOT / 'tasks'
     require(task_directory.is_dir(), 'tasks directory exists')
-    require(all(path.is_file() and not path.is_symlink() and path.suffix == '.md'
-                for path in task_directory.iterdir()),
-            'tasks contains only Markdown task definitions, not execution artifacts')
-    for name in ('tests', 'benchmark', 'results'):
-        directory = ROOT / name
-        entries = list(directory.iterdir()) if directory.is_dir() else []
-        reserved = not entries or (len(entries) == 1 and entries[0].name == '.gitkeep'
-                                  and entries[0].is_file() and not entries[0].is_symlink()
-                                  and entries[0].stat().st_size == 0)
-        require(directory.is_dir() and reserved, f'{name} is reserved with at most an empty .gitkeep')
+    task_entries = [path for path in task_directory.iterdir() if path.name != 'README.md']
+    require(all(path.is_dir() and not path.is_symlink() and (path / 'task.md').is_file()
+                for path in task_entries),
+            'each task has a descriptive directory containing task.md')
+    require(len(task_entries) == 7, 'seven unique task definitions are present')
+    require((ROOT / 'runs/TASK-001/RUN-HISTORICAL-001/run.json').is_file(),
+            'retained Task 001 run record is organized by task and run ID')
+    require((ROOT / 'results/TASK-001/RUN-HISTORICAL-001/result.json').is_file(),
+            'retained Task 001 result record uses the matching task and run ID')
+    historical_run_dir = ROOT / 'runs/TASK-001/RUN-HISTORICAL-001'
+    historical_result_dir = ROOT / 'results/TASK-001/RUN-HISTORICAL-001'
+    historical_run = read_json('runs/TASK-001/RUN-HISTORICAL-001/run.json')
+    historical_result = read_json('results/TASK-001/RUN-HISTORICAL-001/result.json')
+    historical_provenance = read_json('results/TASK-001/RUN-HISTORICAL-001/provenance.json')
+    require(historical_run['task_id'] == historical_result['task_id'] == historical_provenance['task_id'] == 'TASK-001'
+            and historical_run['run_id'] == historical_result['run_id'] == historical_provenance['run_id'] == 'RUN-HISTORICAL-001',
+            'historical task and canonical run identifiers agree across run, result and provenance records')
+    require(historical_run['campaign_label'] == historical_result['campaign_label'] ==
+            historical_provenance['campaign_label'] == 'GLP1_p03_variable_s02',
+            'historical campaign label is preserved separately from the canonical run identifier')
+    require((historical_run_dir / historical_run['configuration_reference']).is_file()
+            and (historical_run_dir / historical_run['input_manifest']).is_file(),
+            'historical run links explicit configuration and input availability records')
+    historical_configuration = json.loads((historical_run_dir / historical_run['configuration_reference']).read_text())
+    historical_inputs = json.loads((historical_run_dir / historical_run['input_manifest']).read_text())
+    require(historical_configuration['availability'] == 'unavailable_in_retained_records'
+            and historical_configuration['resolved_configuration_path'] is None
+            and historical_inputs['availability'] == 'unavailable_in_retained_records'
+            and historical_inputs['retained_input_snapshots'] == [],
+            'unavailable historical configuration and inputs are explicit without assumed values')
+    require(historical_provenance['artifact_naming_decision']['new_scientific_artifacts_generated_by_migration'] is False
+            and all(group['naming_status'] in {
+                'legacy_filename_exempt', 'legacy_metadata_filename',
+                'prescribed_control_filename_or_explanatory_record'}
+                    for group in historical_provenance['artifact_groups']),
+            'historical artifact naming exemptions and migration metadata are explicitly classified')
+    for group in historical_provenance['artifact_groups']:
+        if isinstance(group['files'], dict):
+            for relative_path, expected_hash in group['files'].items():
+                artifact = historical_result_dir / relative_path
+                require(artifact.is_file()
+                        and hashlib.sha256(artifact.read_bytes()).hexdigest() == expected_hash,
+                        f'historical retained artifact hash matches provenance: {relative_path}')
+    machine_specific = []
+    for package_dir in [historical_run_dir, historical_result_dir]:
+        for path in package_dir.rglob('*'):
+            if path.is_file():
+                try:
+                    content = path.read_text()
+                except UnicodeDecodeError:
+                    continue
+                if '/home/' in content or '.sci/profiles/' in content:
+                    machine_specific.append(str(path.relative_to(ROOT)))
+    require(not machine_specific, 'retained historical run and result records contain no machine-specific local paths')
+    require((ROOT / 'benchmark/definitions').is_dir() and
+            (ROOT / 'benchmark/reference_data').is_dir(),
+            'benchmark definitions and reference data are separated')
 
 
-    schemas = {name: read_json(f'config/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
+    schemas = {name: read_json(f'config/schemas/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
     for name, schema in schemas.items():
         Draft202012Validator.check_schema(schema)
         require(True, f'{name} JSON Schema is structurally valid')
@@ -387,7 +434,7 @@ def main() -> None:
                 target = target[part.replace('~1', '/').replace('~0', '~')]
         require(True, f'{name} schema internal references resolve')
 
-    request = read_json('config/request.example.json')
+    request = read_json('config/shared/request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'example request passes structural and declared budget/range checks')
     for basis in ['subunit_equivalents', 'assembled_complexes']:
@@ -588,7 +635,7 @@ def main() -> None:
             if link.startswith(('https://', 'http://', '#', 'mailto:')):
                 continue
             target = (document.parent / link.split('#', 1)[0]).resolve()
-            require(target.is_file() or (REPORT is not None and target == REPORT.resolve()), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
+            require(target.exists() or (REPORT is not None and target == REPORT.resolve()), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
             local_links += 1
     require(local_links > 0, 'package contains navigable local documentation links')
 
@@ -629,5 +676,5 @@ if __name__ == '__main__':
     if args.report is not None:
         REPORT = args.report.resolve()
         if REPORT == ROOT or ROOT in REPORT.parents:
-            parser.error('--report must be outside the environment to preserve its empty directories')
+            parser.error('--report must be outside the environment')
     main()

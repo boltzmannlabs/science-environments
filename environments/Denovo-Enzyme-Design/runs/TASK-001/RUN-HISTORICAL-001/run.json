@@ -1,0 +1,34 @@
+{
+  "schema_version": "historical-run-index-v2",
+  "record_type": "repository_repackaging_record",
+  "executable": false,
+  "task_id": "TASK-001",
+  "run_id": "RUN-HISTORICAL-001",
+  "run_id_provenance": "Assigned during repository migration because the original execution did not retain a canonical run identifier or a verified execution timestamp.",
+  "campaign_label": "GLP1_p03_variable_s02",
+  "target": "Retroaldolase (GLP1 p03 variable scaffold)",
+  "configuration_reference": "configuration.json",
+  "input_manifest": "input/manifest.json",
+  "source_task": "tasks/TASK-001-rfdiffusion2-retroaldolase/task.md",
+  "benchmark_definition": "benchmark/definitions/TASK-001.md",
+  "benchmark_reference": "benchmark/reference_data/TASK-001/reference.md",
+  "result_directory": "results/TASK-001/RUN-HISTORICAL-001",
+  "result_provenance": "results/TASK-001/RUN-HISTORICAL-001/provenance.json",
+  "aggregate_results": [
+    "results/TASK-001/RUN-HISTORICAL-001/metrics.csv",
+    "results/TASK-001/RUN-HISTORICAL-001/REPORT.md",
+    "results/TASK-001/RUN-HISTORICAL-001/benchmark_comparison.csv",
+    "results/TASK-001/RUN-HISTORICAL-001/shortlist.csv",
+    "results/TASK-001/RUN-HISTORICAL-001/candidate_properties.json",
+    "results/TASK-001/RUN-HISTORICAL-001/historical_sha256_manifest.json"
+  ],
+  "excluded_from_package": [
+    "generated_sequences.fasta",
+    "structures/",
+    "runnable_workflows",
+    "raw/per_candidate_assessment",
+    "audit_scripts"
+  ],
+  "historical_execution_metadata_availability": "The retained records do not provide the original resolved configuration, complete input snapshot, canonical run ID, execution timestamps, code commit, model checkpoints, or random seeds.",
+  "purpose": "Non-executable repository index for a historical result package. It records the migration-assigned identity and points to explicit availability records; it is not an original execution manifest and cannot rerun the design."
+}
