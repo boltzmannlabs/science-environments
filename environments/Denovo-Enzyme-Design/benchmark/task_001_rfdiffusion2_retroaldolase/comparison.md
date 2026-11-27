@@ -41,7 +41,7 @@ The panel retains20 free-CCD-LLK structures for three sequence variants on one s
 
 ## Saved results
 
-[Report](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md) · [Candidate inventory](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/candidates.csv) · [Metrics](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/metrics.csv) · [Sample metrics](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sample_metrics.csv) · [Comparison panel](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/shortlist.csv) · [Sequences](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sequences.fasta) · [Benchmark table](../../Results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/benchmark_comparison.csv).
+[Report](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/report.md) · [Candidate inventory](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/candidates.csv) · [Metrics](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/metrics.csv) · [Sample metrics](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sample_metrics.csv) · [Comparison panel](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/shortlist.csv) · [Sequences](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/sequences.fasta) · [Benchmark table](../../results/task_001_rfdiffusion2_retroaldolase/GLP1_p03_variable_s02/benchmark_comparison.csv).
 
 ## Results figures
 
