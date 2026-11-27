@@ -1,7 +1,7 @@
 # Completed computational benchmarks
 
 This directory holds **benchmark definitions, evaluation criteria and the registry** for completed
-native-model/endpoint evaluations are included. No heuristic rule, missing-feature
+native-model/endpoint evaluations. No heuristic rule, missing-feature
 imputation or surrogate endpoint was added. A completed model benchmark is **not**
 validation of the full design application and not experimental safety — scientifically
 material limitations (weak transfer, source-protocol differences, label-threshold
@@ -26,7 +26,8 @@ Machine-readable ledger (drives `tests/test_completed_benchmarks.py` and
 
 ## Run layout and provenance
 
-Each definition lives at `00N_<Model>/README.md` and describes its endpoint,
+Task benchmarks live at `00N_<task-name>/README.md`, matching the task definition
+filenames. Each task index links its shared evaluation definitions and describes endpoint
 evaluation scope, primary sources and scientific limitations. Execution outputs live
 at `../results/benchmarks/00N_<Model>/Run-4_2026-11-12/`: reports, predictions, metrics,
 benchmark records, execution logs and exact protocol/model snapshots. Original
@@ -50,12 +51,17 @@ older documentation. That archive is [absent from this checkout](../results/HIST
 Its preservation is unverified here. No wet-lab validation or calibrated design-gate
 freeze is claimed anywhere in this package.
 
-## Evaluation definitions
+## Task benchmarks
 
-- [001_RS3_Sequence](001_RS3_Sequence/README.md)
-- [002_CRISPRon](002_CRISPRon/README.md)
-- [003_CFD2016](003_CFD2016/README.md)
-- [004_BEHive_BE4](004_BEHive_BE4/README.md)
-- [005_PRIDICT2](005_PRIDICT2/README.md)
-- [006_DeepPrime_PE2](006_DeepPrime_PE2/README.md)
-- [007_RFcombined](007_RFcombined/README.md)
+- [001_crispr_design_general](001_crispr_design_general/README.md)
+- [002_crispr_knockout](002_crispr_knockout/README.md)
+- [003_crispr_therapeutic-in-vivo](003_crispr_therapeutic-in-vivo/README.md)
+- [004_crispr_variant-correction](004_crispr_variant-correction/README.md)
+- [005_crispr_base-editing](005_crispr_base-editing/README.md)
+- [006_crispr_prime-editing](006_crispr_prime-editing/README.md)
+- [009_crispr_rna-targeting-cas13](009_crispr_rna-targeting-cas13/README.md)
+- [011_crispr_library-screen-design](011_crispr_library-screen-design/README.md)
+
+Only tasks supported by completed evaluations have benchmark directories. Other task
+statuses remain in the [task index](../tasks/README.md). Model names identify the
+underlying evaluations and execution artifacts within the registry.

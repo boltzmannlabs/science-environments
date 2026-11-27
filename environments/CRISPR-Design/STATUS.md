@@ -121,3 +121,7 @@ all stated as limitations in the registry and task files.
   [evidence availability](results/HISTORY.md). No scientific workflow was rerun.
 - Work remains on the existing `imran/crispr-design` task branch. Issue assignment,
   commit, PR, manual review and merge remain pending under the contribution workflow.
+
+- Benchmark directories now follow task filenames (`00N_<task-name>/`); eight task
+  indexes reference the seven shared evaluations. Execution records and hashes retain
+  their existing model identifiers.

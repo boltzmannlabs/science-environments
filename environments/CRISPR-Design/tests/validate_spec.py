@@ -278,8 +278,10 @@ def check_benchmark_docs():
             raise AssertionError(f"benchmark report outside standard results layout: {row['report']}")
         if not re.fullmatch(r"Run-[1-9]\d*_\d{4}-\d{2}-\d{2}", row["run_id"]):
             raise AssertionError(f"invalid benchmark run name: {row['run_id']}")
-        if not os.path.isfile(os.path.join(ENV, "benchmark", parts[2], "README.md")):
-            raise AssertionError(f"missing benchmark definition: {parts[2]}")
+        for task_id in row["tasks_supported"]:
+            task_name = os.path.splitext(TASK_FILES[int(task_id) - 1])[0]
+            if not os.path.isfile(os.path.join(ENV, "benchmark", task_name, "README.md")):
+                raise AssertionError(f"missing task benchmark definition: {task_name}")
         if row.get("heuristic_or_surrogate_scores_added") is not False:
             raise AssertionError(f"surrogate/heuristic score admitted: {row['model']}")
     for marker in ["NOT_EXECUTED", "Future slot", "BLOCKED_MATCHED"]:

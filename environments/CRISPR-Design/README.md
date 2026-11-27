@@ -96,7 +96,7 @@ CRISPR-Design/
 │   ├── README.md
 │   ├── BENCHMARK_RUNS.md
 │   ├── completed_benchmarks.{json,csv}
-│   └── 00N_<Model>/README.md        # evaluation definitions and scientific limits
+│   └── 00N_<task-name>/README.md    # task indexes, evaluation definitions and limits
 └── results/
     ├── README.md
     ├── HISTORY.md                  # run-name mapping and missing-evidence notes
