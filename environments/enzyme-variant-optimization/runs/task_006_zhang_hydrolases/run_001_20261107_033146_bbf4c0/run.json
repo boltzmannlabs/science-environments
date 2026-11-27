@@ -1,0 +1,107 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261107_033146_bbf4c0",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261107_033146_bbf4c0",
+  "config_version": 1,
+  "config_hash": "ec4ac5507777d6bb5963d0d2d4999e1eb602e177acbfa24a52c21b569103664c",
+  "config_path": "../../../config/tasks/task_006_zhang_hydrolases/01_gpt_6_1_sol_assisted.json",
+  "native_session_ids": [
+    "20261107_033146_bbf4c0"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "started_at": "2026-11-07T03:31:46.947825+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-07T07:46:11.136496+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0",
+  "source_kind": "historical_publication",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "delegate_task"
+  ],
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
+  "run_folder": "run_001_20261107_033146_bbf4c0",
+  "run_number": 1,
+  "outcome_notes": "Existing exported outcome; operational closure is separate from scientific completion.",
+  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261107_033146_bbf4c0"
+    ],
+    "tokens": {
+      "input_tokens": 272230,
+      "output_tokens": 92432,
+      "cache_read_tokens": 14734208,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 28654,
+      "tool_call_count": 123
+    }
+  },
+  "historical_reported_accounting": {
+    "scope": "Earlier operator-reported campaign snapshot; counting coverage is not reconstructed. Not additive with native session totals or usage_summary.json.",
+    "record": {
+      "arm": "zhang_hydrolases/agent-with-specialist",
+      "state": "closed/no live worker",
+      "session_id": "20261107_033146_bbf4c0",
+      "model": "gpt-6.1-sol",
+      "provider": "openai-codex",
+      "reported_tokens": 69698364,
+      "elapsed_seconds": 46002,
+      "scope": "Full model inference/raw scans and review closed; partial paired comparison complete; original site eligibility/exact historical reproduction unresolved",
+      "last_activity": "",
+      "accuracy": "Published-predictor-score agreement only; no unbiased biological accuracy or measured improvement"
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "boltzymereview",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261107_033146_bbf4c0"
+    ],
+    "specialist_session_ids": [
+      "20261107_072235_2c87c1",
+      "20261107_073131_404df4"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 272230,
+      "output_tokens": 92432,
+      "cache_read_tokens": 14734208,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 28654,
+      "tool_call_count": 123,
+      "token_total_excluding_reasoning_subset": 15098870,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 124527,
+      "output_tokens": 13102,
+      "cache_read_tokens": 354432,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 5480,
+      "tool_call_count": 72,
+      "token_total_excluding_reasoning_subset": 492061,
+      "session_count": 2
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 396757,
+      "output_tokens": 105534,
+      "cache_read_tokens": 15088640,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 34134,
+      "tool_call_count": 195,
+      "token_total_excluding_reasoning_subset": 15590931,
+      "session_count": 3
+    }
+  }
+}

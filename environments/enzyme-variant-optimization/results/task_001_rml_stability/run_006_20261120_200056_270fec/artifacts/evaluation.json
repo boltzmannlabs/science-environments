@@ -1,0 +1,24 @@
+{
+  "reviewer": "enzyme-evaluator",
+  "review_receipt": "sa-0-12c7894f",
+  "review_scope": "Read-only independent review of the sealed empty selection and staged evidence at the stopping boundary; not the offline numerical helper output.",
+  "selection_sha256": "634bb912bd7062c74519e2a2b59168cd7fd5091430d108b375f6c51842d9223b",
+  "selected_candidate_count": 0,
+  "generated_draws": 12,
+  "generated_draws_rejected_for_parent_length": 12,
+  "parent_predicted_tm_c": 46.97819264729818,
+  "parent_replica_spread_c": 1.898791120882475,
+  "comparison": "No candidate primary-endpoint values or parent-relative changes are available. This is not a fully evaluated negative outcome.",
+  "workflow": "Unfinished: no admissible candidate, candidate-specific measurements, results-driven revision, revision re-evaluation or matched numerical final comparison.",
+  "findings": [
+    "Generation job success is execution status, not output eligibility; all 12 returned sequences differ in length from the 269-residue parent.",
+    "Parent replica spread is not a confidence interval; the operational 1.899 C screen is not experimental significance.",
+    "Parent Ser144-to-substrate distance is descriptive and does not establish catalysis; pH and reaction water remain unresolved and 50 C is not parameterized in the stability model.",
+    "Parent MolProbity was measured, not passed; ligand chemistry and restraints have caveats, and solubility label semantics are unknown.",
+    "The reviewer could not independently compute sequence/checksum hashes or execute the comparison helper with available tools; the reported seal alone does not establish chronology.",
+    "The underlying parent structural mapping was not included in the review; exact target-study construct identity remains unresolved and the parent is not substituted.",
+    "Budget accounting conservatively includes parent plus all 12 rejected draws, 13 of 24 unique sequences; total parent-model tokens, total cost, wall time and billing units are unknown."
+  ],
+  "reviewer_statement": "No files were created or modified. No new jobs were submitted. The available tools did not permit independent checksum computation or execution of the comparison helper.",
+  "written_by": "coordinator, transcribing the separate evaluator report; not claimed as evaluator-created artifact"
+}

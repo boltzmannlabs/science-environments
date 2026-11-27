@@ -1,0 +1,44 @@
+{
+  "Pythia_cellulase_WT": {
+    "paper_rows_with_score": 47,
+    "matched": 47,
+    "MAE": 1.7855,
+    "RMSE": 2.8911,
+    "mean_difference": 1.4172,
+    "max_abs_difference": 11.2494,
+    "our_best": -11.648,
+    "paper_best": -12.587
+  },
+  "ESM2_cellulase_M2": {
+    "paper_rows_with_score": 20,
+    "matched": 20,
+    "MAE": 0.0002,
+    "RMSE": 0.0003,
+    "mean_difference": -0.0,
+    "max_abs_difference": 0.0005,
+    "our_best": -8.872,
+    "paper_best": -8.872
+  },
+  "Pythia_beta_glucanase_WT": {
+    "paper_rows_with_score": 24,
+    "matched": 24,
+    "MAE": 1.3352,
+    "RMSE": 1.9411,
+    "mean_difference": 0.9657,
+    "max_abs_difference": 5.1908,
+    "our_best": -8.849,
+    "paper_best": -10.762
+  },
+  "ESM2_beta_glucanase_M5": {
+    "paper_rows_with_score": 17,
+    "matched": 17,
+    "MAE": 0.4174,
+    "RMSE": 1.4262,
+    "mean_difference": 0.373,
+    "max_abs_difference": 5.8621,
+    "our_best": -6.707,
+    "paper_best": -8.583
+  },
+  "convention_note": "Declared negative_log_likelihood_ratio and Pythia C+P sum reproduce the negative paper scores directly; the opposite sign is retained only as a diagnostic column in full grids.",
+  "setting_uncertainty": "New AF2 WT structures, not original paper coordinates; original structural settings and exact ESM checkpoint unknown. Score reproduction is not experimental accuracy."
+}

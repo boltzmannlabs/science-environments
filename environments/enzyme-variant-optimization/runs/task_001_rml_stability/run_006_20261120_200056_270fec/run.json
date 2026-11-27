@@ -1,0 +1,106 @@
+{
+  "task_id": "task_001_rml_stability",
+  "run_id": "20261120_200056_270fec",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261120_200056_270fec",
+  "config_version": 1,
+  "config_hash": "3b399e871673bdcd60db0d687d1552310b758820f10abc2867f509beef682218",
+  "config_path": "../../../config/tasks/task_001_rml_stability/06_codex_assisted.json",
+  "native_session_ids": [
+    "20261120_200056_270fec"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "codex",
+  "provider": null,
+  "started_at": "2026-11-20T20:01:02.376424+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-23T06:48:44.184336+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_001_rml_stability/run_006_20261120_200056_270fec",
+  "source_kind": "native_specialist_execution",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Enzymes",
+    "Thermal_MPNN",
+    "Boltz2",
+    "Mol_Probity",
+    "tm_align",
+    "Random_Controlled_Mutagenesis"
+  ],
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
+  "run_folder": "run_006_20261120_200056_270fec",
+  "run_number": 6,
+  "outcome_notes": "Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.",
+  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261120_200056_270fec"
+    ],
+    "tokens": {
+      "input_tokens": 3063084,
+      "output_tokens": 41020,
+      "cache_read_tokens": 13263488,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 73
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "enzyme-package-test",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261120_200056_270fec"
+    ],
+    "specialist_session_ids": [
+      "20261120_200346_a13697",
+      "20261120_201553_bacafe",
+      "20261120_204632_ad734b",
+      "20261120_204741_c6c4b4",
+      "20261120_210027_0a0974",
+      "20261120_210528_0e7f24",
+      "20261121_045933_bd0dd8",
+      "20261121_053952_d6c0b7",
+      "20261121_054452_0db468",
+      "20261121_191522_0a530e",
+      "20261121_191617_ee4809"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 3063084,
+      "output_tokens": 41020,
+      "cache_read_tokens": 13263488,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 73,
+      "token_total_excluding_reasoning_subset": 16367592,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 351648,
+      "output_tokens": 14258,
+      "cache_read_tokens": 52864,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 112,
+      "token_total_excluding_reasoning_subset": 418770,
+      "session_count": 11
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 3414732,
+      "output_tokens": 55278,
+      "cache_read_tokens": 13316352,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 185,
+      "token_total_excluding_reasoning_subset": 16786362,
+      "session_count": 12
+    }
+  }
+}

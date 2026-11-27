@@ -1,0 +1,146 @@
+{
+  "scientific_submission_attempts": 6,
+  "specialist_calls": [
+    {
+      "specialist": "enzyme-method",
+      "run_id": "sa-0-1e030cdb",
+      "input_tokens": 65685,
+      "output_tokens": 1955,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-method",
+      "run_id": "sa-0-3767b6d0",
+      "input_tokens": 50240,
+      "output_tokens": 1628,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-method",
+      "run_id": "sa-0-ee40f0f7",
+      "input_tokens": 46932,
+      "output_tokens": 1733,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-recovery",
+      "run_id": "sa-0-1e1a2eed",
+      "input_tokens": 41967,
+      "output_tokens": 1185,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-recovery",
+      "run_id": "sa-0-76784ecd",
+      "input_tokens": 5517,
+      "output_tokens": 226,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-recovery",
+      "run_id": "sa-0-1f729071",
+      "input_tokens": 19067,
+      "output_tokens": 581,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-method",
+      "run_id": "sa-0-a32df9d0",
+      "input_tokens": 40858,
+      "output_tokens": 1856,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-recovery",
+      "run_id": "sa-0-53582fd7",
+      "input_tokens": 35240,
+      "output_tokens": 1080,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-evaluator",
+      "run_id": "sa-0-12c7894f",
+      "input_tokens": 42774,
+      "output_tokens": 2364,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-recovery",
+      "run_id": "sa-0-5c4628b4",
+      "input_tokens": 25389,
+      "output_tokens": 791,
+      "cost": "unknown"
+    },
+    {
+      "specialist": "enzyme-method",
+      "run_id": "sa-0-ed25fdb8",
+      "input_tokens": 30843,
+      "output_tokens": 859,
+      "cost": "unknown"
+    }
+  ],
+  "parent_model_tokens": "unknown",
+  "cumulative_cost": "unknown",
+  "wall_time": "unknown",
+  "science_billing_returned": {
+    "duration_seconds": 200,
+    "total_tool_runtime_seconds": 41,
+    "rounded_minutes": 1,
+    "rate_per_hour": 20,
+    "amount": 1,
+    "billing_units": "unspecified"
+  },
+  "thermompnn_billing": {
+    "duration_seconds": 77,
+    "total_tool_runtime_seconds": 68,
+    "tool_lifetime_seconds": 1638,
+    "rounded_minutes": 2,
+    "rate_per_hour": 50,
+    "amount": 2,
+    "billing_units": "unspecified"
+  },
+  "boltz2_billing": {
+    "duration_seconds": 175,
+    "total_tool_runtime_seconds": 174,
+    "rounded_minutes": 3,
+    "rate_per_hour": 50,
+    "amount": 3,
+    "billing_units": "unspecified"
+  },
+  "molprobity_billing": {
+    "duration_seconds": 133,
+    "total_tool_runtime_seconds": 132,
+    "rounded_minutes": 3,
+    "rate_per_hour": 20,
+    "amount": 1,
+    "billing_units": "unspecified"
+  },
+  "tm_align_billing": {
+    "duration_seconds": 32,
+    "total_tool_runtime_seconds": 13,
+    "rounded_minutes": 1,
+    "rate_per_hour": 20,
+    "amount": 1,
+    "billing_units": "unspecified"
+  },
+  "initial_generation_billing": {
+    "duration_seconds": 2225,
+    "total_tool_runtime_seconds": 2224,
+    "rounded_minutes": 38,
+    "rate_per_hour": 20,
+    "amount": 13,
+    "billing_units": "unspecified"
+  },
+  "unique_sequence_budget": {
+    "limit_including_parent": 24,
+    "parent": 1,
+    "rejected_generator_outputs": 12,
+    "used_conservative": 13,
+    "remaining": 11
+  },
+  "specialist_token_totals": {
+    "input": 404512,
+    "output": 14258,
+    "note": "reported calls only; parent model usage remains unknown"
+  }
+}

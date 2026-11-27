@@ -1,0 +1,97 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261126_081616_5ee44d",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261126_081616_5ee44d",
+  "config_version": 1,
+  "config_hash": "e1e10e378684f8be67774d80dea4bb1d7570b5f1bfdd6b302aeaa5ed84006ce3",
+  "config_path": "../../../config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261126_081616_5ee44d"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "hy4-flash-free",
+  "provider": "opencode-go",
+  "started_at": "2026-11-26T08:16:22.171263+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-26T09:10:34.672761+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d",
+  "source_kind": "hy4_specialist_execution",
+  "code_commit": "2ecef925e090c61c106eb6342d402f76ccb1cf3e",
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Protein_Structure_Prediction"
+  ],
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
+  "launch_settings_snapshot": "launch_settings.json",
+  "launch_settings_sha256": "a90b16430b32e7011dc75853bd55cb88b3484380789a09df1a43bc044f737ed1",
+  "run_folder": "run_003_20261126_081616_5ee44d",
+  "run_number": 3,
+  "outcome_notes": "Full computational scans and independent evaluator receipt retained.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261126_081616_5ee44d"
+    ],
+    "tokens": {
+      "input_tokens": 336516,
+      "output_tokens": 57984,
+      "cache_read_tokens": 10483200,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 12732,
+      "tool_call_count": 108
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "enzyme-autonomy-v12",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261126_081616_5ee44d"
+    ],
+    "specialist_session_ids": [
+      "20261126_081822_8f0f09",
+      "20261126_081822_c5a662",
+      "20261126_085047_12c4cf",
+      "20261126_085305_f2a2df",
+      "20261126_090704_238227"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 336516,
+      "output_tokens": 57984,
+      "cache_read_tokens": 10483200,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 12732,
+      "tool_call_count": 108,
+      "token_total_excluding_reasoning_subset": 10877700,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 328836,
+      "output_tokens": 74785,
+      "cache_read_tokens": 4866816,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 39077,
+      "tool_call_count": 156,
+      "token_total_excluding_reasoning_subset": 5270437,
+      "session_count": 5
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 665352,
+      "output_tokens": 132769,
+      "cache_read_tokens": 15350016,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 51809,
+      "tool_call_count": 264,
+      "token_total_excluding_reasoning_subset": 16148137,
+      "session_count": 6
+    }
+  }
+}

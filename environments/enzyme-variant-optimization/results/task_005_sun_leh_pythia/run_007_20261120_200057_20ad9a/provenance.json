@@ -1,0 +1,1035 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261120_200057_20ad9a",
+  "result_id": "result_20261120_200057_20ad9a",
+  "config_id": "cfg_20261120_200057_20ad9a",
+  "config_hash": "c386f2f10d7cf0d6989c9c0edc8bb30a2c6aca784da69c9b72f7d2c13492b539",
+  "run_record": "../../../runs/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/run.json",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "c10e31652880c46506841b3327ee6da023aaf6b24de7d02f7f49dbe1321db2fd",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/README.md",
+        "original_sha256": "ca96bc2347a7eb8b8a553c94818a6d6e291de14146eb1bfe626256f0d3868327",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "7cfcb85b32202ead05f13263bb9660dea39fe4326878e67467a4b9b4098a5c19",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/WORKFLOW.md",
+        "original_sha256": "19af7f6a6908f7667495ceee8264332cf0e02f450893cedb24a9dba2a84aa6b3",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "artifacts/REPORT.md",
+      "sha256": "fc6ff0ce844c3bc941445d9cf6fc9b978894b91ed44d07869991b6dbc6b2e1e9",
+      "source_sha256": "fc40a5703e324ad8c114f1040ecdf6aefdf868fc99b37addaf61daaa9bf0b49e",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/REPORT.md",
+        "original_sha256": "fc6ff0ce844c3bc941445d9cf6fc9b978894b91ed44d07869991b6dbc6b2e1e9",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/selection_seal.json",
+      "sha256": "a823e505246c9b9598363012cbbdd4122136dcc7ef0af9a518e8d29b5c345229",
+      "source_sha256": "a823e505246c9b9598363012cbbdd4122136dcc7ef0af9a518e8d29b5c345229",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/selection_seal.json",
+        "original_sha256": "a823e505246c9b9598363012cbbdd4122136dcc7ef0af9a518e8d29b5c345229",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-0daf27068ffbfff7420db3d646fce4f0cd0c3844053b9761faa0131aeea36fa2-667c0b86_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "0daf27068ffbfff7420db3d646fce4f0cd0c3844053b9761faa0131aeea36fa2",
+      "source_sha256": "0daf27068ffbfff7420db3d646fce4f0cd0c3844053b9761faa0131aeea36fa2",
+      "filename_components": {
+        "artifact_id": "sha256-0daf27068ffbfff7420db3d646fce4f0cd0c3844053b9761faa0131aeea36fa2-667c0b86",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_context_B_sum.csv",
+      "original_relative_path": "artifacts/best_per_position_context_B_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_context_B_sum.csv",
+        "original_sha256": "0daf27068ffbfff7420db3d646fce4f0cd0c3844053b9761faa0131aeea36fa2",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-1b72477e_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "source_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "filename_components": {
+        "artifact_id": "sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-1b72477e",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_monomer_B_mean.csv",
+      "original_relative_path": "artifacts/best_per_position_monomer_B_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_monomer_B_mean.csv",
+        "original_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-637fbf10_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "source_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "filename_components": {
+        "artifact_id": "sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-637fbf10",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_monomer_A_sum.csv",
+      "original_relative_path": "artifacts/best_per_position_monomer_A_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_monomer_A_sum.csv",
+        "original_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-ca4b08d3_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "source_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+      "filename_components": {
+        "artifact_id": "sha256-179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc-ca4b08d3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_monomer_A_mean.csv",
+      "original_relative_path": "artifacts/best_per_position_monomer_A_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_monomer_A_mean.csv",
+        "original_sha256": "179f1adb771f6749308627f1e69b3cc5582d71a929e660a73ac6f01f24d88bbc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-19bd1a7fd768778f9c9db57e2054f1cdc76373a1d7fd51fad8c8152cf91f55a0-c22debd3_unreported_unreported_20ad9a_unreported_unreported.fasta",
+      "sha256": "19bd1a7fd768778f9c9db57e2054f1cdc76373a1d7fd51fad8c8152cf91f55a0",
+      "source_sha256": "19bd1a7fd768778f9c9db57e2054f1cdc76373a1d7fd51fad8c8152cf91f55a0",
+      "filename_components": {
+        "artifact_id": "sha256-19bd1a7fd768778f9c9db57e2054f1cdc76373a1d7fd51fad8c8152cf91f55a0-c22debd3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "parent.fasta",
+      "original_relative_path": "artifacts/parent.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/parent.fasta",
+        "original_sha256": "19bd1a7fd768778f9c9db57e2054f1cdc76373a1d7fd51fad8c8152cf91f55a0",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-2d283f26e4aac15b03428df088730abdff16441dbc3f3a7fdab7e083001b7cdc-4f537451_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "2d283f26e4aac15b03428df088730abdff16441dbc3f3a7fdab7e083001b7cdc",
+      "source_sha256": "2d283f26e4aac15b03428df088730abdff16441dbc3f3a7fdab7e083001b7cdc",
+      "filename_components": {
+        "artifact_id": "sha256-2d283f26e4aac15b03428df088730abdff16441dbc3f3a7fdab7e083001b7cdc-4f537451",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_monomer_B_sum.csv",
+      "original_relative_path": "artifacts/best_per_position_monomer_B_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_monomer_B_sum.csv",
+        "original_sha256": "2d283f26e4aac15b03428df088730abdff16441dbc3f3a7fdab7e083001b7cdc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-31f1c7aedc3912da3b414a8d1348af99192fdc03bbd15b114a7cf1ff49d7dac7-35fd4eda_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "31f1c7aedc3912da3b414a8d1348af99192fdc03bbd15b114a7cf1ff49d7dac7",
+      "source_sha256": "31f1c7aedc3912da3b414a8d1348af99192fdc03bbd15b114a7cf1ff49d7dac7",
+      "filename_components": {
+        "artifact_id": "sha256-31f1c7aedc3912da3b414a8d1348af99192fdc03bbd15b114a7cf1ff49d7dac7-35fd4eda",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_context_B_sum.csv",
+      "original_relative_path": "artifacts/candidates_context_B_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_context_B_sum.csv",
+        "original_sha256": "31f1c7aedc3912da3b414a8d1348af99192fdc03bbd15b114a7cf1ff49d7dac7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-43e2fcc5df830e0300c0fb653e971a43ed8c8253517abf4dd20de24ec44fc1d1-7a33e5e2_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "43e2fcc5df830e0300c0fb653e971a43ed8c8253517abf4dd20de24ec44fc1d1",
+      "source_sha256": "43e2fcc5df830e0300c0fb653e971a43ed8c8253517abf4dd20de24ec44fc1d1",
+      "filename_components": {
+        "artifact_id": "sha256-43e2fcc5df830e0300c0fb653e971a43ed8c8253517abf4dd20de24ec44fc1d1-7a33e5e2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_sum.csv",
+      "original_relative_path": "artifacts/best_per_position_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_sum.csv",
+        "original_sha256": "43e2fcc5df830e0300c0fb653e971a43ed8c8253517abf4dd20de24ec44fc1d1",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-5539acc48403b4b7d02b2dba1d1e110d83c69479cfd2ba047c8a3090d4dd3f65-b4a2ae37_unreported_unreported_20ad9a_unreported_unreported.fasta",
+      "sha256": "5539acc48403b4b7d02b2dba1d1e110d83c69479cfd2ba047c8a3090d4dd3f65",
+      "source_sha256": "5539acc48403b4b7d02b2dba1d1e110d83c69479cfd2ba047c8a3090d4dd3f65",
+      "filename_components": {
+        "artifact_id": "sha256-5539acc48403b4b7d02b2dba1d1e110d83c69479cfd2ba047c8a3090d4dd3f65-b4a2ae37",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates.fasta",
+      "original_relative_path": "artifacts/candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates.fasta",
+        "original_sha256": "5539acc48403b4b7d02b2dba1d1e110d83c69479cfd2ba047c8a3090d4dd3f65",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-5a84bb5e41f73e5c9dfa5d40baff15f3cb0caad870f7af4be95d3bbe44275546-a0491ac2_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "5a84bb5e41f73e5c9dfa5d40baff15f3cb0caad870f7af4be95d3bbe44275546",
+      "source_sha256": "5a84bb5e41f73e5c9dfa5d40baff15f3cb0caad870f7af4be95d3bbe44275546",
+      "filename_components": {
+        "artifact_id": "sha256-5a84bb5e41f73e5c9dfa5d40baff15f3cb0caad870f7af4be95d3bbe44275546-a0491ac2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_nonidentity.csv",
+      "original_relative_path": "artifacts/all_scores_nonidentity.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores_nonidentity.csv",
+        "original_sha256": "5a84bb5e41f73e5c9dfa5d40baff15f3cb0caad870f7af4be95d3bbe44275546",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-0e10e8a9_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "source_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "filename_components": {
+        "artifact_id": "sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-0e10e8a9",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_context_A_mean.csv",
+      "original_relative_path": "artifacts/best_per_position_context_A_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_context_A_mean.csv",
+        "original_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-2f1a3db4_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "source_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "filename_components": {
+        "artifact_id": "sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-2f1a3db4",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_context_B_mean.csv",
+      "original_relative_path": "artifacts/best_per_position_context_B_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_context_B_mean.csv",
+        "original_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-e2fb47a3_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "source_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+      "filename_components": {
+        "artifact_id": "sha256-6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131-e2fb47a3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_context_A_sum.csv",
+      "original_relative_path": "artifacts/best_per_position_context_A_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_context_A_sum.csv",
+        "original_sha256": "6a3861c5c20d02b977c8ddc699cd17d7fbfbb5e4ed00e955e03ea95448d54131",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-701fb8e73e91857a91f0a9576779568b9f1b186c1ea5fd00d9b38edcfc7591d1-50a7459b_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "701fb8e73e91857a91f0a9576779568b9f1b186c1ea5fd00d9b38edcfc7591d1",
+      "source_sha256": "701fb8e73e91857a91f0a9576779568b9f1b186c1ea5fd00d9b38edcfc7591d1",
+      "filename_components": {
+        "artifact_id": "sha256-701fb8e73e91857a91f0a9576779568b9f1b186c1ea5fd00d9b38edcfc7591d1-50a7459b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_context_B.csv",
+      "original_relative_path": "artifacts/all_scores_context_B.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores_context_B.csv",
+        "original_sha256": "701fb8e73e91857a91f0a9576779568b9f1b186c1ea5fd00d9b38edcfc7591d1",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-87d95d149bd8c5786b2485bc110d56c77c1126762b50810aec059bc4a88e8bd0-4eb96f13_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "87d95d149bd8c5786b2485bc110d56c77c1126762b50810aec059bc4a88e8bd0",
+      "source_sha256": "87d95d149bd8c5786b2485bc110d56c77c1126762b50810aec059bc4a88e8bd0",
+      "filename_components": {
+        "artifact_id": "sha256-87d95d149bd8c5786b2485bc110d56c77c1126762b50810aec059bc4a88e8bd0-4eb96f13",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_monomer_A.csv",
+      "original_relative_path": "artifacts/all_scores_monomer_A.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores_monomer_A.csv",
+        "original_sha256": "87d95d149bd8c5786b2485bc110d56c77c1126762b50810aec059bc4a88e8bd0",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b-56def0f9_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+      "source_sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+      "filename_components": {
+        "artifact_id": "sha256-885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b-56def0f9",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_monomer_A_mean.csv",
+      "original_relative_path": "artifacts/candidates_monomer_A_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_monomer_A_mean.csv",
+        "original_sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b-7810da0c_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+      "source_sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+      "filename_components": {
+        "artifact_id": "sha256-885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b-7810da0c",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_monomer_B_mean.csv",
+      "original_relative_path": "artifacts/candidates_monomer_B_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_monomer_B_mean.csv",
+        "original_sha256": "885ceb6033922f5feca3d9d8ed9bc9a39db283425db814bc6c85dc887e15257b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-8bfe973fe1f7ec8766205ecc3e9547c19c22b1104e8166dbaac26d723c27d2c3-7312ee2b_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "8bfe973fe1f7ec8766205ecc3e9547c19c22b1104e8166dbaac26d723c27d2c3",
+      "source_sha256": "8bfe973fe1f7ec8766205ecc3e9547c19c22b1104e8166dbaac26d723c27d2c3",
+      "filename_components": {
+        "artifact_id": "sha256-8bfe973fe1f7ec8766205ecc3e9547c19c22b1104e8166dbaac26d723c27d2c3-7312ee2b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores.csv",
+      "original_relative_path": "artifacts/all_scores.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores.csv",
+        "original_sha256": "8bfe973fe1f7ec8766205ecc3e9547c19c22b1104e8166dbaac26d723c27d2c3",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-918a7045407e482c81c48d52631d3c1158b1ca59ffd12ee316eab06e0182258a-d9a08d16_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "918a7045407e482c81c48d52631d3c1158b1ca59ffd12ee316eab06e0182258a",
+      "source_sha256": "918a7045407e482c81c48d52631d3c1158b1ca59ffd12ee316eab06e0182258a",
+      "filename_components": {
+        "artifact_id": "sha256-918a7045407e482c81c48d52631d3c1158b1ca59ffd12ee316eab06e0182258a-d9a08d16",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_mean.csv",
+      "original_relative_path": "artifacts/candidates_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_mean.csv",
+        "original_sha256": "918a7045407e482c81c48d52631d3c1158b1ca59ffd12ee316eab06e0182258a",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-ab819da66779fc362289eec1e7cb7db4785c6ae29aa8caed8b2ec1690163c2d2-95293c72_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "ab819da66779fc362289eec1e7cb7db4785c6ae29aa8caed8b2ec1690163c2d2",
+      "source_sha256": "ab819da66779fc362289eec1e7cb7db4785c6ae29aa8caed8b2ec1690163c2d2",
+      "filename_components": {
+        "artifact_id": "sha256-ab819da66779fc362289eec1e7cb7db4785c6ae29aa8caed8b2ec1690163c2d2-95293c72",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "identity_controls.csv",
+      "original_relative_path": "artifacts/identity_controls.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/identity_controls.csv",
+        "original_sha256": "ab819da66779fc362289eec1e7cb7db4785c6ae29aa8caed8b2ec1690163c2d2",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-c21d65f181c845a5de1c915de7c0bc7188c782e94ee5457a8e431247723448ea-f0987f94_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "c21d65f181c845a5de1c915de7c0bc7188c782e94ee5457a8e431247723448ea",
+      "source_sha256": "c21d65f181c845a5de1c915de7c0bc7188c782e94ee5457a8e431247723448ea",
+      "filename_components": {
+        "artifact_id": "sha256-c21d65f181c845a5de1c915de7c0bc7188c782e94ee5457a8e431247723448ea-f0987f94",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_monomer_A_sum.csv",
+      "original_relative_path": "artifacts/candidates_monomer_A_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_monomer_A_sum.csv",
+        "original_sha256": "c21d65f181c845a5de1c915de7c0bc7188c782e94ee5457a8e431247723448ea",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5-7a2b9ae6_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+      "source_sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+      "filename_components": {
+        "artifact_id": "sha256-cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5-7a2b9ae6",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_context_B_mean.csv",
+      "original_relative_path": "artifacts/candidates_context_B_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_context_B_mean.csv",
+        "original_sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5-c1f8be8f_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+      "source_sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+      "filename_components": {
+        "artifact_id": "sha256-cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5-c1f8be8f",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_context_A_mean.csv",
+      "original_relative_path": "artifacts/candidates_context_A_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_context_A_mean.csv",
+        "original_sha256": "cf4ea0844b25058577c00f8f560def6d6d07245fb39dd5a5e132ad02276f31b5",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-d3078a3ffa65e16c38a124d6ae0c256aa4ed9cdd0f9396cca091b1c34a5ca3d1-34f97562_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "d3078a3ffa65e16c38a124d6ae0c256aa4ed9cdd0f9396cca091b1c34a5ca3d1",
+      "source_sha256": "d3078a3ffa65e16c38a124d6ae0c256aa4ed9cdd0f9396cca091b1c34a5ca3d1",
+      "filename_components": {
+        "artifact_id": "sha256-d3078a3ffa65e16c38a124d6ae0c256aa4ed9cdd0f9396cca091b1c34a5ca3d1-34f97562",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_sum.csv",
+      "original_relative_path": "artifacts/candidates_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_sum.csv",
+        "original_sha256": "d3078a3ffa65e16c38a124d6ae0c256aa4ed9cdd0f9396cca091b1c34a5ca3d1",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-d59ca9131bd231c0167847c1c36a2c0637eb3e2c433c56f9c5c9add3d7322f77-9381f194_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "d59ca9131bd231c0167847c1c36a2c0637eb3e2c433c56f9c5c9add3d7322f77",
+      "source_sha256": "d59ca9131bd231c0167847c1c36a2c0637eb3e2c433c56f9c5c9add3d7322f77",
+      "filename_components": {
+        "artifact_id": "sha256-d59ca9131bd231c0167847c1c36a2c0637eb3e2c433c56f9c5c9add3d7322f77-9381f194",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "selection.csv",
+      "original_relative_path": "artifacts/selection.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/selection.csv",
+        "original_sha256": "d59ca9131bd231c0167847c1c36a2c0637eb3e2c433c56f9c5c9add3d7322f77",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-dcefb80665b2ecb9c68ddedbd2a229a87e785cae7c705d9f09c44435219e3a5c-35f20d73_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "dcefb80665b2ecb9c68ddedbd2a229a87e785cae7c705d9f09c44435219e3a5c",
+      "source_sha256": "dcefb80665b2ecb9c68ddedbd2a229a87e785cae7c705d9f09c44435219e3a5c",
+      "filename_components": {
+        "artifact_id": "sha256-dcefb80665b2ecb9c68ddedbd2a229a87e785cae7c705d9f09c44435219e3a5c-35f20d73",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_monomer_B_sum.csv",
+      "original_relative_path": "artifacts/candidates_monomer_B_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_monomer_B_sum.csv",
+        "original_sha256": "dcefb80665b2ecb9c68ddedbd2a229a87e785cae7c705d9f09c44435219e3a5c",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-e69f1c563c5ecf1f04a0fb565aea47781ec2be8fd9500bc7ad3a29ac1dfce9e2-b9b561b5_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "e69f1c563c5ecf1f04a0fb565aea47781ec2be8fd9500bc7ad3a29ac1dfce9e2",
+      "source_sha256": "e69f1c563c5ecf1f04a0fb565aea47781ec2be8fd9500bc7ad3a29ac1dfce9e2",
+      "filename_components": {
+        "artifact_id": "sha256-e69f1c563c5ecf1f04a0fb565aea47781ec2be8fd9500bc7ad3a29ac1dfce9e2-b9b561b5",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_monomer_B.csv",
+      "original_relative_path": "artifacts/all_scores_monomer_B.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores_monomer_B.csv",
+        "original_sha256": "e69f1c563c5ecf1f04a0fb565aea47781ec2be8fd9500bc7ad3a29ac1dfce9e2",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-f6780e6fd6765e4f6f6830a7095001a7751e3515bd0100b8c643182cc261f4c7-05847260_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "f6780e6fd6765e4f6f6830a7095001a7751e3515bd0100b8c643182cc261f4c7",
+      "source_sha256": "f6780e6fd6765e4f6f6830a7095001a7751e3515bd0100b8c643182cc261f4c7",
+      "filename_components": {
+        "artifact_id": "sha256-f6780e6fd6765e4f6f6830a7095001a7751e3515bd0100b8c643182cc261f4c7-05847260",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "best_per_position_mean.csv",
+      "original_relative_path": "artifacts/best_per_position_mean.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/best_per_position_mean.csv",
+        "original_sha256": "f6780e6fd6765e4f6f6830a7095001a7751e3515bd0100b8c643182cc261f4c7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-fd5704c983e68f316a10eeecb6f47d988fe4fef069cdee2c81c9de8c43fb3624-4fcfff32_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "fd5704c983e68f316a10eeecb6f47d988fe4fef069cdee2c81c9de8c43fb3624",
+      "source_sha256": "fd5704c983e68f316a10eeecb6f47d988fe4fef069cdee2c81c9de8c43fb3624",
+      "filename_components": {
+        "artifact_id": "sha256-fd5704c983e68f316a10eeecb6f47d988fe4fef069cdee2c81c9de8c43fb3624-4fcfff32",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_scores_context_A.csv",
+      "original_relative_path": "artifacts/all_scores_context_A.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/all_scores_context_A.csv",
+        "original_sha256": "fd5704c983e68f316a10eeecb6f47d988fe4fef069cdee2c81c9de8c43fb3624",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-ffab73516b2028bb1d4e5e19a8b3a22a5e66b044f00c707156db0176b1eb0698-6bc616d0_unreported_unreported_20ad9a_unreported_unreported.csv",
+      "sha256": "ffab73516b2028bb1d4e5e19a8b3a22a5e66b044f00c707156db0176b1eb0698",
+      "source_sha256": "ffab73516b2028bb1d4e5e19a8b3a22a5e66b044f00c707156db0176b1eb0698",
+      "filename_components": {
+        "artifact_id": "sha256-ffab73516b2028bb1d4e5e19a8b3a22a5e66b044f00c707156db0176b1eb0698-6bc616d0",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "20ad9a",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates_context_A_sum.csv",
+      "original_relative_path": "artifacts/candidates_context_A_sum.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/candidates_context_A_sum.csv",
+        "original_sha256": "ffab73516b2028bb1d4e5e19a8b3a22a5e66b044f00c707156db0176b1eb0698",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/verification.json",
+      "sha256": "3e1ff0194a45260384aea3a0b514cdfaf53d65034722160ad78d716b0b55c460",
+      "source_sha256": "3e1ff0194a45260384aea3a0b514cdfaf53d65034722160ad78d716b0b55c460",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/20261120_200057_20ad9a/artifacts/verification.json",
+        "original_sha256": "3e1ff0194a45260384aea3a0b514cdfaf53d65034722160ad78d716b0b55c460",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    }
+  ],
+  "run_folder": "run_007_20261120_200057_20ad9a",
+  "run_number": 7,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
+}

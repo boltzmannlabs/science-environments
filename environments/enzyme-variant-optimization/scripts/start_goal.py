@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import sys
 
@@ -15,7 +16,7 @@ def main():
     parser.add_argument("--goal-file", type=Path, required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--provider", required=True)
-    parser.add_argument("--reasoning", default="xhigh")
+    parser.add_argument("--reasoning", required=True)
     parser.add_argument("--assisted", action="store_true")
     args = parser.parse_args()
     if not sys.stdin.isatty():
@@ -28,12 +29,14 @@ def main():
         parser.error("The prepared run directory does not exist.")
     os.chdir(workspace)
     sys.path.insert(0, str(source))
+    import sci_bootstrap  # Standard SCI dependency/runtime bootstrap, including managed interpreters.
     from sci_cli.profiles import get_profile_dir, profile_exists
     if args.profile in {"default", "main"} or not profile_exists(args.profile):
         parser.error("Select an existing dedicated execution profile.")
     os.environ["SCI_HOME"] = str(get_profile_dir(args.profile))
     from sci_cli.config import load_config_readonly
-    if (load_config_readonly().get("goals") or {}).get("max_turns", 20) != 20:
+    config = load_config_readonly()
+    if (config.get("goals") or {}).get("max_turns", 20) != 20:
         parser.error("This launch requires the retained goals.max_turns=20 setting.")
     if args.assisted:
         from agent.specialist_store import load
@@ -77,10 +80,17 @@ def main():
     if Path(cli_module.__file__).resolve() != source / "cli.py":
         parser.error("SCI imported a different source checkout. Reconcile this attempt before retrying.")
     from cli import _build_cli_from_args
+    toolsets = ["web", "file", "terminal", "skills", "todo", "code_execution", "boltzmann"]
+    # MCP names are profile-specific: preserve the configured spelling, e.g. tool_universe.
+    for name, entry in (config.get("mcp_servers") or {}).items():
+        if (isinstance(entry, dict) and entry.get("enabled", True)
+                and re.sub(r"[^a-z0-9]", "", name.lower()) == "tooluniverse"):
+            toolsets.append(name)
+    if args.assisted:
+        toolsets.append("delegation")
     cli = _build_cli_from_args(
         model=args.model, provider=args.provider, reasoning=args.reasoning,
-        toolsets="web,file,terminal,skills,todo,code_execution,boltzmann,tooluniverse" +
-                 (",delegation" if args.assisted else ""),
+        toolsets=",".join(toolsets),
         api_key=None, base_url=None, max_turns=None, run_budget=None,
         verbose=None, compact=None, resume=None, checkpoints=False,
         pass_session_id=True, ignore_rules=False,

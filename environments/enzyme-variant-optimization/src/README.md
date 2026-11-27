@@ -11,3 +11,7 @@ Archived workspace paths are parameterized through ENZYME_CAMPAIGN_ROOT, ENZYME_
 [Executed static packing-entropy code](shared/packing_entropy/README.md) contains the actual FASPR/PACKMAN completion driver and input/warning-validation helpers.
 
 `workflow_figures.py` rebuilds the ten compact JPG workflow diagrams from the recorded method labels. It does not run scientific tools.
+
+## Later specialist-assisted executions
+
+Task subdirectories also retain per-native-run generated Python runners where found, with original/export checksums. Internal path literals are sanitized. These snapshots record what was used; they are not independently validated portable replay commands. Match each directory to [the run registry](../runs/registry.json).

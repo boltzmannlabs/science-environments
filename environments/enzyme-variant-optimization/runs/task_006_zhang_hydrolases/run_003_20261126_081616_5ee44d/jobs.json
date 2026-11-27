@@ -1,0 +1,139 @@
+{
+  "schema": "jobs.v1",
+  "entries": [
+    {
+      "stage": "structure",
+      "job_name": "Protein_Structure_Prediction",
+      "doc_id": "6b07ee408b9d410520f9d79e",
+      "experiment_name": "Monomer Structure Prediction - 20261126-083056Z - 118604",
+      "status": "completed",
+      "submitted_utc": "2026-11-26T08:31:05.624996+00:00",
+      "upload_receipt_id": "19739fa02a5a45318f241458d1b88735",
+      "upload_sha256": "8853fab9d4324c907a44afe079934d1d5a5727dff29dcea34c2009e31ba79ebd",
+      "submit_receipt_attempt_id": "a07b95d0d53b4710b05c12b5a71f9083",
+      "inputs": [
+        "inputs/af2_input.csv"
+      ],
+      "no_duplicate_submission": true,
+      "outputs": [
+        "predicted_structures.zip",
+        "result_summary.csv"
+      ],
+      "billing_amount": 15
+    },
+    {
+      "stage": "method_review",
+      "specialist": "enzyme-method",
+      "delivery": "intermediate",
+      "receipt": "METHOD_ROUTE_REVIEW.md",
+      "status": "completed",
+      "api_calls": 23,
+      "tokens": {
+        "input": 1282811,
+        "output": 24760
+      }
+    },
+    {
+      "stage": "construct_discovery",
+      "specialist": "enzyme-method",
+      "delivery": "intermediate",
+      "receipt": "evidence_brief.md",
+      "status": "completed",
+      "api_calls": 35,
+      "tokens": {
+        "input": 2555782,
+        "output": 18906
+      }
+    },
+    {
+      "stage": "recovery",
+      "specialist": "enzyme-recovery",
+      "delivery": "intermediate",
+      "receipt": "specialist_receipts/RECOVERY_REVIEW.md",
+      "status": "completed",
+      "api_calls": 5,
+      "tokens": {
+        "input": 105181,
+        "output": 8209
+      },
+      "applied": true
+    },
+    {
+      "stage": "pythia",
+      "run_id": "pythia_cellulase_003",
+      "status": "failed",
+      "error": "ValueError('Expected CPU-only Torch')",
+      "recovered_by": "pythia_cellulase_004"
+    },
+    {
+      "stage": "recovery_esm",
+      "specialist": "enzyme-recovery",
+      "delivery": "intermediate",
+      "receipt": "specialist_receipts/RECOVERY_ESM_REVIEW.md",
+      "status": "completed",
+      "api_calls": 8,
+      "tokens": {
+        "input": 136125,
+        "output": 6318
+      },
+      "applied": true
+    },
+    {
+      "stage": "esm2",
+      "run_id": "esm_full_004",
+      "status": "failed",
+      "error": "UnpicklingError argparse.Namespace (torch weights_only default)",
+      "recovered_by": "esm_full_005"
+    },
+    {
+      "stage": "pythia",
+      "run_id": "pythia_cellulase_004",
+      "status": "completed",
+      "subs": 5928,
+      "identity_controls": 312,
+      "strict_hits": 91
+    },
+    {
+      "stage": "pythia",
+      "run_id": "pythia_beta_004",
+      "status": "completed",
+      "subs": 4085,
+      "identity_controls": 215,
+      "strict_hits": 64
+    },
+    {
+      "stage": "esm2",
+      "run_id": "esm_full_005",
+      "status": "completed",
+      "masked_passes": 527,
+      "subs": 10013,
+      "strict_hits": {
+        "cellulase_M2": 41,
+        "beta_glucanase_M5": 55
+      }
+    },
+    {
+      "stage": "verification",
+      "tool": "tools/verify_all.py",
+      "status": "passed",
+      "all_passed": true
+    },
+    {
+      "stage": "seal",
+      "selection_sha256": "596a87290ece1132ba91cb98a8b48e4fd27142c7fcd3ec400f5667e9ab45b89f",
+      "status": "sealed_before_reference_use"
+    },
+    {
+      "stage": "evaluation",
+      "specialist": "enzyme-evaluator",
+      "delivery": "intermediate",
+      "receipt": "specialist_receipts/EVALUATOR_RECEIPT.md",
+      "status": "completed",
+      "api_calls": 24,
+      "tokens": {
+        "input": 1115753,
+        "output": 16592
+      }
+    }
+  ]
+}

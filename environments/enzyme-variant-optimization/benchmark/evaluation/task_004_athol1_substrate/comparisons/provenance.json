@@ -1,0 +1,117 @@
+{
+  "task_id": "task_004_athol1_substrate",
+  "run_id": "20261112_181250_0bd28c",
+  "comparison_scope": "Historical agent-alone comparison and separately identified post-selection assessments; does not silently include later assisted outputs.",
+  "run_record": "../../../../runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/run.json",
+  "result_record": "../../../../results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/provenance.json",
+  "layout_note": "Definitions, reference notes and execution comparisons are separated under benchmark/. Original scientific run identity is retained.",
+  "artifacts": [
+    {
+      "path": "benchmark_report.md",
+      "sha256": "1d23a243e835045ac75db2b2204500773097b237e1e0054863e5cd76b06c41f7",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md",
+        "original_sha256": "27c3cee41059957a10160dcb98dc94465b6bc4d6d75d12e27e4b27a69e518471",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "figures/sha256-31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191-6402d66d_unreported_unreported_0bd28c_unreported_unreported.png",
+      "sha256": "31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191",
+      "filename_components": {
+        "artifact_id": "sha256-31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191-6402d66d",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "0bd28c",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_01.png",
+      "original_relative_path": "figures/comparison_01.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_01.png",
+        "original_sha256": "31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "figures/sha256-d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4-4bc672dc_unreported_unreported_0bd28c_unreported_unreported.png",
+      "sha256": "d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4",
+      "filename_components": {
+        "artifact_id": "sha256-d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4-4bc672dc",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "0bd28c",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_02.png",
+      "original_relative_path": "figures/comparison_02.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_02.png",
+        "original_sha256": "d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "figures/sha256-f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7-d31fcad2_unreported_unreported_0bd28c_unreported_unreported.png",
+      "sha256": "f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7",
+      "filename_components": {
+        "artifact_id": "sha256-f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7-d31fcad2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "0bd28c",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "comparison_03.png",
+      "original_relative_path": "figures/comparison_03.png",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_03.png",
+        "original_sha256": "f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    }
+  ],
+  "artifact_naming_policy": "../../../../README.md#artifact-filenames",
+  "approach": "agent-alone",
+  "source_kind": "historical_publication"
+}

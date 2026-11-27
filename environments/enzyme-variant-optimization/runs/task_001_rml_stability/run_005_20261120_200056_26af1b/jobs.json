@@ -1,0 +1,63 @@
+{
+  "jobs": [
+    {
+      "job_name": "Random_Controlled_Mutagenesis",
+      "doc_id": "6b00ae770d6c3e1e11b8a417",
+      "experiment_name": "rml-stability-v2-initial-generation",
+      "status": "Success",
+      "submitted": "2026-11-20T20:48:36Z",
+      "completed": "2026-11-20T21:02:07Z",
+      "duration_seconds": 931,
+      "output": "retained-private-evidence/6b00ae770d6c3e1e11b8a417.csv",
+      "issues": "All 20 sequences had incorrect length (258-273 aa) and excessive mutations (161-196). Tool appears to generate random full-length sequences rather than constrained point mutations.",
+      "billing": {"amount": 5, "unit": "credits"}
+    },
+    {
+      "job_name": "Enzymes",
+      "doc_id": "6b00b5660d6c3e1e11b8a4c6",
+      "experiment_name": "rml-stability-v2-parent-baseline",
+      "status": "Success",
+      "submitted": "2026-11-20T21:03:22Z",
+      "completed": "2026-11-20T21:03:22Z",
+      "duration_seconds": 38,
+      "output": "retained-private-evidence/6b00b5660d6c3e1e11b8a4c6_pred.csv",
+      "billing": {"amount": 1, "unit": "credits"}
+    },
+    {
+      "job_name": "Enzymes",
+      "doc_id": "6b00b9964eb6cc87f0e233a7",
+      "experiment_name": "rml-stability-v2-point-mutants-screening",
+      "status": "Success",
+      "submitted": "2026-11-20T21:22:08Z",
+      "completed": "2026-11-20T21:22:08Z",
+      "duration_seconds": 98,
+      "output": "retained-private-evidence/6b00b9964eb6cc87f0e233a7_pred.csv",
+      "billing": {"amount": 1, "unit": "credits"}
+    },
+    {
+      "job_name": "Boltz2",
+      "doc_id": "6b00ba7e009896a24b274247",
+      "experiment_name": "rml-stability-v2-parent-pNPL-complex",
+      "status": "Success",
+      "submitted": "2026-11-20T21:27:26Z",
+      "completed": "2026-11-20T21:30:18Z",
+      "duration_seconds": 176,
+      "output": "retained-private-evidence/1_model_0.pdb",
+      "billing": {"amount": 3, "unit": "credits"}
+    },
+    {
+      "job_name": "Boltz2",
+      "doc_id": "6b00bbd02e63f2bb9bacf9c3",
+      "experiment_name": "rml-stability-v2-RML_V013-pNPL",
+      "status": "Success",
+      "submitted": "2026-11-20T21:32:56Z",
+      "completed": "2026-11-20T21:35:48Z",
+      "duration_seconds": 176,
+      "output": "retained-private-evidence/1_model_0.pdb",
+      "billing": {"amount": 3, "unit": "credits"}
+    }
+  ],
+  "total_scientific_credits": 13,
+  "failed_jobs": [],
+  "ambiguous_submissions": []
+}

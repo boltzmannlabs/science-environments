@@ -1,0 +1,459 @@
+{
+  "run_id": "20261126T0816",
+  "submission_attempts": 23,
+  "max_submission_attempts": 60,
+  "jobs": [
+    {
+      "attempt": 1,
+      "job_name": "Enzymes",
+      "doc_id": "6b07eca71715676d03408b58",
+      "experiment_name": "Enzymes - 20261126-082406Z - 388354",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "dataPath": "retained-private-storage/parent_properties.csv",
+        "property_name": [
+          "tmPred_enzymes",
+          "enzyme_solubility",
+          "pHPred"
+        ]
+      },
+      "output_path": "retained-private-evidence/6b07eca71715676d03408b58_pred.csv",
+      "billing": {
+        "node": "private-compute-node",
+        "tool_name": "ENZ_PROP",
+        "job_name": "task-enzymeproppred-kkjhg",
+        "duration_seconds": 189,
+        "total_tool_runtime": 30,
+        "rounded_minutes": 1,
+        "rate_per_hour": 20,
+        "amount": 1
+      },
+      "number_of_tries": 0,
+      "notes": "units degC confirmed; tmPred parent 52.1827, replica std 2.8223"
+    },
+    {
+      "attempt": 2,
+      "job_name": "Mol_Probity",
+      "doc_id": "6b07edbcb5e9e7e2abe2029d",
+      "experiment_name": "MolProbity - 20261126-082842Z - 84093c",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "input_path": "users/.../1795681715258/parent_clean_AB.pdb",
+        "execution_mode": "measurement_only"
+      },
+      "output_path": "retained-private-evidence/candidate_summary.csv",
+      "billing": null,
+      "notes": "clashscore 3.34, Rama outliers 0%, rotamer outliers 1.24%; 291 residues measured"
+    },
+    {
+      "attempt": 3,
+      "job_name": "Prodigy",
+      "doc_id": "6b07edc28b9d410520f9d6d7",
+      "experiment_name": "Prodigy - 20261126-082850Z - 9f84e8",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "chain_list": [
+          "A",
+          "B"
+        ]
+      },
+      "output_path": "retained-private-evidence/prodigy_parent.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      },
+      "notes": "binding affinity AB = -14.8 kcal/mol (descriptive); partial-validation warning on reused s3 path (own upload, other job_name) under YOLO"
+    },
+    {
+      "attempt": 4,
+      "job_name": "act_seek",
+      "doc_id": "6b07edd4b5e9e7e2abe202b1",
+      "experiment_name": "ActSeek - 20261126-082907Z - 8e17c0",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "active_sites": "99_A,101_A,132_A"
+      },
+      "output_path": "retained-private-evidence/actseek_parent.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      },
+      "notes": "confirmed triad mapping 99_A_ARG/101_A_ASP/132_A_ASP; cavity includes 53_TYR,55_ASN"
+    },
+    {
+      "attempt": 5,
+      "job_name": "Netsolp",
+      "doc_id": "6b07ede38b9d410520f9d6ea",
+      "experiment_name": "NetsolP - 20261126-082923Z - af1f02",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "prediction_type": "SU"
+      },
+      "output_path": "retained-private-evidence/netsolp_parent.csv",
+      "billing": {
+        "amount": 2,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      },
+      "notes": "solubility 0.8955, usability 0.7532"
+    },
+    {
+      "attempt": 6,
+      "job_name": "Thermal_MPNN",
+      "doc_id": "6b07edf36a16f64f7a945129",
+      "experiment_name": "Thermal MPNN - 20261126-082939Z - b2b894",
+      "status": "terminal_success",
+      "stage": "parent_baseline",
+      "payload": {
+        "chain": "A"
+      },
+      "output_path": "retained-private-evidence/1NWW.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      },
+      "notes": "per-position ddG screen only"
+    },
+    {
+      "attempt": 7,
+      "job_name": "Random_Controlled_Mutagenesis",
+      "doc_id": "6b07efa61715676d03408d5c",
+      "experiment_name": "Random Controlled Mutagenesis - 20261126-083654Z - 641d7c",
+      "status": "terminal_success_but_task_ineligible",
+      "stage": "initial_generation",
+      "payload": {
+        "seq": "149aa parent",
+        "n_samples": 10,
+        "file_format": "csv",
+        "indices": [
+          52,
+          54,
+          98,
+          100,
+          131
+        ],
+        "mutaions_per_epoch": 4
+      },
+      "output_path": "retained-private-evidence/6b07efa61715676d03408d5c.csv",
+      "billing": {
+        "amount": 9,
+        "rate_per_hour": 20,
+        "node": "private-compute-node",
+        "rounded_minutes": 25
+      },
+      "number_of_tries": 0,
+      "notes": "10 sequences lengths 135-159 (not 149), 117-145 substitutions (not <=8), protected positions altered. enzyme-recovery receipt: results/specialist_receipts/enzyme-recovery_mutagenesis_failure.json. Corrective action: switch to stability-binding-ddg.",
+      "recovery": {
+        "reason": "contract/backend mismatch, no documented parameter enforces length/mask/count",
+        "action": "tool change to stability-binding-ddg",
+        "identical_retry": false
+      }
+    },
+    {
+      "attempt": 8,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07f6f97fb17f3eac9ce9bd",
+      "status": "failed",
+      "stage": "initial_generation_test",
+      "payload": {
+        "chain": "A",
+        "mutations": [
+          "7",
+          "44"
+        ],
+        "num_mutations": "2",
+        "sequence": "149aa"
+      },
+      "notes": "backend subprocess CalledProcessError; fault likely numbering mismatch (PDB starts at 5); fetch_tool_log 404; corrected by renumbering PDB 1-145",
+      "recovery": "input correction: renumber PDB and use observed 145-aa chain sequence"
+    },
+    {
+      "attempt": 9,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07f7c3c45f4015f0eb845c",
+      "status": "terminal_success",
+      "stage": "initial_generation",
+      "payload": {
+        "chain": "A",
+        "mutations": [
+          "3",
+          "40",
+          "57",
+          "81"
+        ],
+        "num_mutations": "4",
+        "sequence": "145aa observed"
+      },
+      "output_path": "retained-private-evidence/stability_binding_ddg_setA_raw.csv",
+      "billing": {
+        "node": "private-compute-node"
+      },
+      "notes": "4 variants, restored MTSK prefix -> 149aa"
+    },
+    {
+      "attempt": 10,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07f7fb8b9d410520f9dbcf",
+      "status": "terminal_success",
+      "stage": "initial_generation",
+      "payload": {
+        "chain": "A",
+        "mutations": [
+          "20",
+          "66",
+          "101",
+          "120"
+        ],
+        "num_mutations": "4"
+      },
+      "output_path": "retained-private-evidence/stability_binding_ddg_setB_raw.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 11,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07f8226a16f64f7a94563e",
+      "status": "terminal_success",
+      "stage": "initial_generation",
+      "payload": {
+        "chain": "A",
+        "mutations": [
+          "31",
+          "57",
+          "116",
+          "142"
+        ],
+        "num_mutations": "4"
+      },
+      "output_path": "retained-private-evidence/stability_binding_ddg_setC_raw.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 12,
+      "job_name": "Enzymes",
+      "doc_id": "6b07f8688b9d410520f9dc2d",
+      "status": "terminal_success",
+      "stage": "round1_screen",
+      "payload": {
+        "property_name": [
+          "tmPred_enzymes",
+          "enzyme_solubility",
+          "pHPred"
+        ],
+        "dataPath": "users/.../1795684431293/screen_round1.csv"
+      },
+      "output_path": "retained-private-evidence/enzymes_screen_round1.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      },
+      "notes": "13 rows; no variant clears frozen bar 55.003C; transient credential/service error on prior identical submission (operation not started, no job created) then successful retry"
+    },
+    {
+      "attempt": 13,
+      "job_name": "Netsolp",
+      "doc_id": "6b07f9a8b5e9e7e2abe209cc",
+      "status": "terminal_success",
+      "stage": "round1_screen",
+      "output_path": "retained-private-evidence/netsolp_round1.csv",
+      "billing": {
+        "amount": 2,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 14,
+      "job_name": "Protein_Structure_Prediction",
+      "doc_id": "6b07fb261715676d03409abb",
+      "status": "terminal_success",
+      "stage": "round1_structures",
+      "output_path": "retained-private-evidence/predicted_structures",
+      "billing": {
+        "amount": 14,
+        "rate_per_hour": 50,
+        "node": "private-compute-node",
+        "rounded_minutes": 16
+      },
+      "notes": "2 candidate structures pLDDT 96.2/96.0"
+    },
+    {
+      "attempt": 15,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07fb2e8b9d410520f9de17",
+      "status": "terminal_success",
+      "stage": "revision_generation",
+      "payload": {
+        "mutations": [
+          "48",
+          "85",
+          "94",
+          "125"
+        ],
+        "num_mutations": "8"
+      },
+      "output_path": "retained-private-evidence/stability_binding_ddg_setD_raw.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 16,
+      "job_name": "stability-binding-ddg",
+      "doc_id": "6b07fb641715676d03409b26",
+      "status": "terminal_success",
+      "stage": "revision_generation",
+      "payload": {
+        "mutations": [
+          "69",
+          "114",
+          "111",
+          "73"
+        ],
+        "num_mutations": "4"
+      },
+      "output_path": "retained-private-evidence/stability_binding_ddg_setE_raw.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 17,
+      "job_name": "Enzymes",
+      "doc_id": "6b07fee2c45f4015f0eb88fa",
+      "status": "terminal_success",
+      "stage": "round2_reevaluation",
+      "output_path": "retained-private-evidence/enzymes_screen_round2.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node",
+        "rounded_minutes": 3
+      },
+      "notes": "24 rows; top R2_setD_3 +1.081C below frozen 2.82C bar"
+    },
+    {
+      "attempt": 18,
+      "job_name": "Mol_Probity",
+      "doc_id": "6b07fefe1715676d03409c2d",
+      "status": "terminal_success",
+      "stage": "round1_structures",
+      "output_path": "retained-private-evidence/candidate_summary.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node",
+        "rounded_minutes": 3
+      },
+      "notes": "clashscore 22.1/30.3 vs parent 3.34; signature mismatch then refreshed link used"
+    },
+    {
+      "attempt": 19,
+      "job_name": "tm_align",
+      "doc_id": "6b07ff17b5e9e7e2abe20c50",
+      "status": "terminal_success",
+      "stage": "round1_structures",
+      "output_path": "retained-private-evidence/tmalign_round1.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      }
+    },
+    {
+      "attempt": 20,
+      "job_name": "Boltz2",
+      "doc_id": "6b0800b2b5e9e7e2abe20d13",
+      "status": "terminal_success",
+      "stage": "round1_substrate_complex",
+      "payload": {
+        "Protein_Sequences": [
+          "parent",
+          "parent"
+        ],
+        "SMILES": [
+          "CC(=C)C1CCC2(C)OC2C1"
+        ]
+      },
+      "output_path": "retained-private-evidence/boltz2_parent_substrate_complex",
+      "billing": {
+        "amount": 5,
+        "rate_per_hour": 50,
+        "node": "private-compute-node",
+        "rounded_minutes": 6
+      },
+      "notes": "parent dimer + authentic epoxide; LIG present; no explicit catalytic water"
+    },
+    {
+      "attempt": 21,
+      "job_name": "Multimer_Structure_Prediction",
+      "doc_id": "6b0800b98b9d410520f9e016",
+      "status": "terminal_success_but_input_invalid",
+      "stage": "round2_assembly_discarded",
+      "notes": "malformed sequence pasted by operator; output NOT used as evidence; no identical resubmission of bad payload",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node",
+        "rounded_minutes": 7
+      }
+    },
+    {
+      "attempt": 22,
+      "job_name": "Multimer_Structure_Prediction",
+      "doc_id": "6b0803667fb17f3eac9cf2f3",
+      "status": "terminal_success",
+      "stage": "round2_assembly",
+      "output_path": "retained-private-evidence/multimer_R2_setD_3_correct",
+      "billing": {
+        "node": "private-compute-node",
+        "rounded_minutes": 6
+      },
+      "notes": "correct R2_setD_3 dimer"
+    },
+    {
+      "attempt": 23,
+      "job_name": "Prodigy",
+      "doc_id": "6b080705c45f4015f0eb8d1d",
+      "status": "terminal_success",
+      "stage": "round2_assembly",
+      "output_path": "retained-private-evidence/prodigy_R2_setD_3_dimer.csv",
+      "billing": {
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      },
+      "notes": "R2_setD_3 dimer -13.1 vs parent -14.8 kcal/mol"
+    }
+  ],
+  "ambiguous_or_pending": [],
+  "notes": "No jobs submitted yet. Specialist planning pass made no submissions.",
+  "credential_check_failures": [
+    {
+      "attempt": "pre-12",
+      "job_name": "Enzymes",
+      "outcome": "operation not started, no job created, same request retried once"
+    }
+  ]
+}

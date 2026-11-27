@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "purpose": "Trace old published paths to current locations; directory mappings also cover unchanged descendants.",
+  "path_mappings": [
+    {
+      "previous_path": "benchmark/report_data.json",
+      "current_path": "benchmark/reference_data/report_data.json"
+    },
+    {
+      "previous_path": "benchmark/task_001_rml_stability/comparisions",
+      "current_path": "benchmark/evaluation/task_001_rml_stability/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_001_rml_stability/references.md",
+      "current_path": "benchmark/reference_data/task_001_rml_stability/references.md"
+    },
+    {
+      "previous_path": "benchmark/task_002_leh_stability/comparisions",
+      "current_path": "benchmark/evaluation/task_002_leh_stability/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_002_leh_stability/references.md",
+      "current_path": "benchmark/reference_data/task_002_leh_stability/references.md"
+    },
+    {
+      "previous_path": "benchmark/task_003_bla_high_temperature/comparisions",
+      "current_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_003_bla_high_temperature/references.md",
+      "current_path": "benchmark/reference_data/task_003_bla_high_temperature/references.md"
+    },
+    {
+      "previous_path": "benchmark/task_004_athol1_substrate/comparisions",
+      "current_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_004_athol1_substrate/references.md",
+      "current_path": "benchmark/reference_data/task_004_athol1_substrate/references.md"
+    },
+    {
+      "previous_path": "benchmark/task_005_sun_leh_pythia/comparisions",
+      "current_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_005_sun_leh_pythia/references.md",
+      "current_path": "benchmark/reference_data/task_005_sun_leh_pythia/references.md"
+    },
+    {
+      "previous_path": "benchmark/task_006_zhang_hydrolases/comparisions",
+      "current_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons"
+    },
+    {
+      "previous_path": "benchmark/task_006_zhang_hydrolases/references.md",
+      "current_path": "benchmark/reference_data/task_006_zhang_hydrolases/references.md"
+    },
+    {
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261104_183716_b986fa.json",
+      "current_path": "config/tasks/task_001_rml_stability/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261104_183717_92629f.json",
+      "current_path": "config/tasks/task_001_rml_stability/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_26af1b.json",
+      "current_path": "config/tasks/task_001_rml_stability/05_discoveryrsi_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_270fec.json",
+      "current_path": "config/tasks/task_001_rml_stability/06_codex_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261104_183716_0fd35d.json",
+      "current_path": "config/tasks/task_002_leh_stability/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261104_183717_b2d404.json",
+      "current_path": "config/tasks/task_002_leh_stability/02_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261126_081616_ebc611.json",
+      "current_path": "config/tasks/task_002_leh_stability/03_hy4_flash_free_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_003_bla_high_temperature/cfg_20261112_181250_7cf059.json",
+      "current_path": "config/tasks/task_003_bla_high_temperature/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_003_bla_high_temperature/cfg_20261126_081616_987131.json",
+      "current_path": "config/tasks/task_003_bla_high_temperature/02_hy4_flash_free_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_004_athol1_substrate/cfg_20261112_181250_0bd28c.json",
+      "current_path": "config/tasks/task_004_athol1_substrate/01_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_004_athol1_substrate/cfg_20261126_081616_9622ce.json",
+      "current_path": "config/tasks/task_004_athol1_substrate/02_hy4_flash_free_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_8cd64c.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_f4aa65.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_194624_a336c7.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200055_2ab39e.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/06_codex_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200057_20ad9a.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/07_discoveryrsi_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_033146_bbf4c0.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/01_gpt_6_1_sol_assisted.json"
+    },
+    {
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_144016_09fec4.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/02_gpt_6_1_sol_agent_alone.json"
+    },
+    {
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261126_081616_5ee44d.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json"
+    },
+    {
+      "previous_path": "configs",
+      "current_path": "config"
+    },
+    {
+      "previous_path": "configs/task_001_rml_stability",
+      "current_path": "config/tasks/task_001_rml_stability"
+    },
+    {
+      "previous_path": "configs/task_001_rml_stability/run_001_agent_alone.json",
+      "current_path": "runs/task_001_rml_stability/run_002_20261104_183717_92629f/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_001_rml_stability/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_001_rml_stability/run_001_20261104_183716_b986fa/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_002_leh_stability",
+      "current_path": "config/tasks/task_002_leh_stability"
+    },
+    {
+      "previous_path": "configs/task_002_leh_stability/run_001_agent_alone.json",
+      "current_path": "runs/task_002_leh_stability/run_001_20261104_183716_0fd35d/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_002_leh_stability/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_002_leh_stability/run_002_20261104_183717_b2d404/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_003_bla_high_temperature",
+      "current_path": "config/tasks/task_003_bla_high_temperature"
+    },
+    {
+      "previous_path": "configs/task_003_bla_high_temperature/run_001_agent_alone.json",
+      "current_path": "runs/task_003_bla_high_temperature/run_001_20261112_181250_7cf059/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_004_athol1_substrate",
+      "current_path": "config/tasks/task_004_athol1_substrate"
+    },
+    {
+      "previous_path": "configs/task_004_athol1_substrate/run_001_agent_alone.json",
+      "current_path": "runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_005_sun_leh_pythia",
+      "current_path": "config/tasks/task_005_sun_leh_pythia"
+    },
+    {
+      "previous_path": "configs/task_005_sun_leh_pythia/run_001_agent_alone.json",
+      "current_path": "runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_005_sun_leh_pythia/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_006_zhang_hydrolases",
+      "current_path": "config/tasks/task_006_zhang_hydrolases"
+    },
+    {
+      "previous_path": "configs/task_006_zhang_hydrolases/run_001_agent_alone.json",
+      "current_path": "runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/usage_summary.json"
+    },
+    {
+      "previous_path": "configs/task_006_zhang_hydrolases/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0/usage_summary.json"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/20261104_183716_b986fa",
+      "current_path": "results/task_001_rml_stability/run_001_20261104_183716_b986fa"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/20261104_183717_92629f",
+      "current_path": "results/task_001_rml_stability/run_002_20261104_183717_92629f"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/20261120_200056_26af1b",
+      "current_path": "results/task_001_rml_stability/run_005_20261120_200056_26af1b"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "results/task_001_rml_stability/run_006_20261120_200056_270fec"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/agent-alone",
+      "current_path": "results/task_001_rml_stability/run_002_20261104_183717_92629f"
+    },
+    {
+      "previous_path": "results/task_001_rml_stability/agent-with-specialist",
+      "current_path": "results/task_001_rml_stability/run_001_20261104_183716_b986fa"
+    },
+    {
+      "previous_path": "results/task_002_leh_stability/20261104_183716_0fd35d",
+      "current_path": "results/task_002_leh_stability/run_001_20261104_183716_0fd35d"
+    },
+    {
+      "previous_path": "results/task_002_leh_stability/20261104_183717_b2d404",
+      "current_path": "results/task_002_leh_stability/run_002_20261104_183717_b2d404"
+    },
+    {
+      "previous_path": "results/task_002_leh_stability/20261126_081616_ebc611",
+      "current_path": "results/task_002_leh_stability/run_003_20261126_081616_ebc611"
+    },
+    {
+      "previous_path": "results/task_002_leh_stability/agent-alone",
+      "current_path": "results/task_002_leh_stability/run_001_20261104_183716_0fd35d"
+    },
+    {
+      "previous_path": "results/task_002_leh_stability/agent-with-specialist",
+      "current_path": "results/task_002_leh_stability/run_002_20261104_183717_b2d404"
+    },
+    {
+      "previous_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059",
+      "current_path": "results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
+    },
+    {
+      "previous_path": "results/task_003_bla_high_temperature/20261126_081616_987131",
+      "current_path": "results/task_003_bla_high_temperature/run_002_20261126_081616_987131"
+    },
+    {
+      "previous_path": "results/task_003_bla_high_temperature/agent-alone",
+      "current_path": "results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
+    },
+    {
+      "previous_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c",
+      "current_path": "results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
+    },
+    {
+      "previous_path": "results/task_004_athol1_substrate/20261126_081616_9622ce",
+      "current_path": "results/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
+    },
+    {
+      "previous_path": "results/task_004_athol1_substrate/agent-alone",
+      "current_path": "results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c",
+      "current_path": "results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65",
+      "current_path": "results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_194624_a336c7",
+      "current_path": "results/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "results/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "results/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/agent-alone",
+      "current_path": "results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
+    },
+    {
+      "previous_path": "results/task_005_sun_leh_pythia/agent-with-specialist",
+      "current_path": "results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
+    },
+    {
+      "previous_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
+      "current_path": "results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
+    },
+    {
+      "previous_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4",
+      "current_path": "results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
+    },
+    {
+      "previous_path": "results/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "results/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
+    },
+    {
+      "previous_path": "results/task_006_zhang_hydrolases/agent-alone",
+      "current_path": "results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
+    },
+    {
+      "previous_path": "results/task_006_zhang_hydrolases/agent-with-specialist",
+      "current_path": "results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
+    },
+    {
+      "previous_path": "runs/task_001_rml_stability/20261104_183716_b986fa",
+      "current_path": "runs/task_001_rml_stability/run_001_20261104_183716_b986fa"
+    },
+    {
+      "previous_path": "runs/task_001_rml_stability/20261104_183717_92629f",
+      "current_path": "runs/task_001_rml_stability/run_002_20261104_183717_92629f"
+    },
+    {
+      "previous_path": "runs/task_001_rml_stability/20261120_200056_26af1b",
+      "current_path": "runs/task_001_rml_stability/run_005_20261120_200056_26af1b"
+    },
+    {
+      "previous_path": "runs/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "runs/task_001_rml_stability/run_006_20261120_200056_270fec"
+    },
+    {
+      "previous_path": "runs/task_002_leh_stability/20261104_183716_0fd35d",
+      "current_path": "runs/task_002_leh_stability/run_001_20261104_183716_0fd35d"
+    },
+    {
+      "previous_path": "runs/task_002_leh_stability/20261104_183717_b2d404",
+      "current_path": "runs/task_002_leh_stability/run_002_20261104_183717_b2d404"
+    },
+    {
+      "previous_path": "runs/task_002_leh_stability/20261126_081616_ebc611",
+      "current_path": "runs/task_002_leh_stability/run_003_20261126_081616_ebc611"
+    },
+    {
+      "previous_path": "runs/task_003_bla_high_temperature/20261112_181250_7cf059",
+      "current_path": "runs/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
+    },
+    {
+      "previous_path": "runs/task_003_bla_high_temperature/20261126_081616_987131",
+      "current_path": "runs/task_003_bla_high_temperature/run_002_20261126_081616_987131"
+    },
+    {
+      "previous_path": "runs/task_004_athol1_substrate/20261112_181250_0bd28c",
+      "current_path": "runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
+    },
+    {
+      "previous_path": "runs/task_004_athol1_substrate/20261126_081616_9622ce",
+      "current_path": "runs/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
+    },
+    {
+      "previous_path": "runs/task_005_sun_leh_pythia/20261106_185928_8cd64c",
+      "current_path": "runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
+    },
+    {
+      "previous_path": "runs/task_005_sun_leh_pythia/20261106_185928_f4aa65",
+      "current_path": "runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
+    },
+    {
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_194624_a336c7",
+      "current_path": "runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
+    },
+    {
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "runs/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
+    },
+    {
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "runs/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
+    },
+    {
+      "previous_path": "runs/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
+      "current_path": "runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
+    },
+    {
+      "previous_path": "runs/task_006_zhang_hydrolases/20261107_144016_09fec4",
+      "current_path": "runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
+    },
+    {
+      "previous_path": "runs/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "runs/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
+    },
+    {
+      "previous_path": "src/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "src/task_001_rml_stability/run_006_20261120_200056_270fec"
+    },
+    {
+      "previous_path": "src/task_001_rml_stability/20261120_200056_270fec/results/local/task_001_rml_stability/fresh/assisted/run-001/homologs/align_homologs.py",
+      "current_path": "src/task_001_rml_stability/run_006_20261120_200056_270fec/align_homologs.py"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "src/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/context_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/context_scan_driver.py"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/fix_sequences.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/fix_sequences.py"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/full_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/full_scan_driver.py"
+    },
+    {
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/monomer_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/monomer_scan_driver.py"
+    },
+    {
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
+    },
+    {
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_esm_scan.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/full_esm_scan.py"
+    },
+    {
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_pythia_scan.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/full_pythia_scan.py"
+    },
+    {
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/verify_all.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/verify_all.py"
+    },
+    {
+      "previous_path": "tasks/task_001_rml_stability.md",
+      "current_path": "tasks/task_001_rml_stability/task.md"
+    },
+    {
+      "previous_path": "tasks/task_002_leh_stability.md",
+      "current_path": "tasks/task_002_leh_stability/task.md"
+    },
+    {
+      "previous_path": "tasks/task_003_bla_high_temperature.md",
+      "current_path": "tasks/task_003_bla_high_temperature/task.md"
+    },
+    {
+      "previous_path": "tasks/task_004_athol1_substrate.md",
+      "current_path": "tasks/task_004_athol1_substrate/task.md"
+    },
+    {
+      "previous_path": "tasks/task_005_sun_leh_pythia.md",
+      "current_path": "tasks/task_005_sun_leh_pythia/task.md"
+    },
+    {
+      "previous_path": "tasks/task_006_zhang_hydrolases.md",
+      "current_path": "tasks/task_006_zhang_hydrolases/task.md"
+    }
+  ],
+  "artifact_filename_mapping": "Each result/benchmark provenance.json maps original_relative_path to path and records naming components."
+}

@@ -1,0 +1,847 @@
+{
+  "task_id": "task_001_rml_stability",
+  "run_id": "20261104_183717_92629f",
+  "result_id": "result_20261104_183717_92629f",
+  "config_id": "cfg_20261104_183717_92629f",
+  "config_hash": "087f50c365fad470e8e0c5622a4bc6965f6dcd800ada48fe7c4fcc1441a30c7d",
+  "run_record": "../../../runs/task_001_rml_stability/run_002_20261104_183717_92629f/run.json",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "757c5e263790a4d1969930e3a0c44f81c2fa2781c1cb9b211645e9615525440a",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/README.md",
+        "original_sha256": "dec95a76608d3004502be8d0349bce455da07b42278a23111edf30b266f724ac",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "be2c32d7bc2a51eb2b7dfa54f9ed195c20322c2df53c1c2f9bd652a11ecb3a2e",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/WORKFLOW.md",
+        "original_sha256": "257e7f436fc691404bc4ec996a9bcf11cc1e7ac1ce9deabb4048a318f40db606",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "figures/sha256-a17e445cdcaed454be25fbdf3d39f37dd8519d553cf4ba7c615ff00e2b18ec70-c36e6a7b_unreported_unreported_92629f_unreported_unreported.jpg",
+      "sha256": "a17e445cdcaed454be25fbdf3d39f37dd8519d553cf4ba7c615ff00e2b18ec70",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-a17e445cdcaed454be25fbdf3d39f37dd8519d553cf4ba7c615ff00e2b18ec70-c36e6a7b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "workflow.jpg",
+      "original_relative_path": "figures/workflow.jpg",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/figures/workflow.jpg",
+        "original_sha256": "a17e445cdcaed454be25fbdf3d39f37dd8519d553cf4ba7c615ff00e2b18ec70",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reference_comparison/README.md",
+      "sha256": "a8b40875cb9ac04f2513d7b064fa3938766bec14ea0e358d355d6f05a4a257c4",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/README.md",
+        "original_sha256": "59ea5bb704c665198abfe124166172b44a5df149c5d02a5d539a4f950966df5d",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "reference_comparison/ddgun/method.json",
+      "sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/ddgun/method.json",
+        "original_sha256": "e4aaadba802ced5e20bb2a95f01e9acadfb24a4c1c51fa178f278fc9f4f4cbbf",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reference_comparison/jobs.json",
+      "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/jobs.json",
+        "original_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reference_comparison/sha256-14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d-600acec4_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d-600acec4",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "open_source_metrics.csv",
+      "original_relative_path": "reference_comparison/open_source_metrics.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/open_source_metrics.csv",
+        "original_sha256": "14b3508baa5132b19121880e17819f3815d85c93c88d7ebf49d78c2f3440254d",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reference_comparison/sha256-b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a-c01c6ad4_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a-c01c6ad4",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "predictor_outputs.csv",
+      "original_relative_path": "reference_comparison/predictor_outputs.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/predictor_outputs.csv",
+        "original_sha256": "b1b502cd5d745421c81cf07e7741c823544c27defdddaae27929d353b0f1376a",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reference_comparison/sha256-bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174-ad5cb62c_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174-ad5cb62c",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "predictions.csv",
+      "original_relative_path": "reference_comparison/predictions.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/reference_comparison/predictions.csv",
+        "original_sha256": "bcca74cc9947fde0d317995462ca7f278be1f18f2f5b689cc554dff084f66174",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/identities.json",
+      "sha256": "12673e0aa67b146e6e81f245c878c1c40f35b50f8d477645c8a0a1a3547a6116",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/identities.json",
+        "original_sha256": "12673e0aa67b146e6e81f245c878c1c40f35b50f8d477645c8a0a1a3547a6116",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d-2d3da9ba_unreported_unreported_92629f_unreported_unreported.fasta",
+      "sha256": "0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d-2d3da9ba",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "all_candidates.fasta",
+      "original_relative_path": "sequences/all_candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/all_candidates.fasta",
+        "original_sha256": "0c0c925e9e84ce40c2f8a3e890a8ea34df2d0c3c837427ed51cb40751f2a760d",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1-23aeb267_unreported_unreported_92629f_unreported_unreported.fasta",
+      "sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1-23aeb267",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_sequences.fasta",
+      "original_relative_path": "sequences/candidate_sequences.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.fasta",
+        "original_sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1-b89bca6b_unreported_unreported_92629f_unreported_unreported.fasta",
+      "sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1-b89bca6b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates.fasta",
+      "original_relative_path": "sequences/candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/candidates.fasta",
+        "original_sha256": "54b38dda9b894abf177686071b3a7418cc34a9e22774a8b1aef2a9a9ed620cb1",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44-0e8270ce_unreported_unreported_92629f_unreported_unreported.fasta",
+      "sha256": "87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44-0e8270ce",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "controls.fasta",
+      "original_relative_path": "sequences/controls.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/controls.fasta",
+        "original_sha256": "87aef4b55d19d4c6b55e70087592c7963793550d84e2f90c67f62aa722ad3f44",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad-127fe4ae_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad-127fe4ae",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_sequences.csv",
+      "original_relative_path": "sequences/candidate_sequences.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.csv",
+        "original_sha256": "9196d27941219d45d4fd84c7382d92d4de14536d1588ec4fe71ca5b10646efad",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877-22c94851_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877-22c94851",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_history.csv",
+      "original_relative_path": "sequences/candidate_history.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/candidate_history.csv",
+        "original_sha256": "d803a54148c855912e14524b6682e0d1ddd5b95b92107ef2b8ddc9739ba7c877",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "sequences/sha256-fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62-e29eefc5_unreported_unreported_92629f_unreported_unreported.fasta",
+      "sha256": "fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62-e29eefc5",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "parent.fasta",
+      "original_relative_path": "sequences/parent.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/sequences/parent.fasta",
+        "original_sha256": "fde57e33f6632ddc0bcbe27a5410deb61d431f06a1c265f9d85a25fab2c22b62",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/00_execution_index/sha256-002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7-d28eec60_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7-d28eec60",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "jobs.csv",
+      "original_relative_path": "steps/00_execution_index/jobs.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/00_execution_index/jobs.csv",
+        "original_sha256": "002ae80d814791acb7ca22426dc96efc6163db14ec45295c11e24d5a9ce195b7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/01_parent_preparation/README.md",
+      "sha256": "8bcbb29fe66d3ff9cda1ec196c9c76bfe3391f36d9d8e371d61dba3e15990566",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/README.md",
+        "original_sha256": "8bcbb29fe66d3ff9cda1ec196c9c76bfe3391f36d9d8e371d61dba3e15990566",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/01_parent_preparation/settings.json",
+      "sha256": "fc1f583127e22c50d672b4341476bc48171f3b3e9ee295ec8fc2af3c3eab7254",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/settings.json",
+        "original_sha256": "fc1f583127e22c50d672b4341476bc48171f3b3e9ee295ec8fc2af3c3eab7254",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/02_variant_generation/README.md",
+      "sha256": "8486373bfef6ff530981c0f1bb1f5cd6d167ec114d3fc68931f4dde9eb9ea30d",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/02_variant_generation/README.md",
+        "original_sha256": "8486373bfef6ff530981c0f1bb1f5cd6d167ec114d3fc68931f4dde9eb9ea30d",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/03_property_screening/README.md",
+      "sha256": "60df70de279e3a83fa85510c57721228345d1960851bfca8aa1a0b261b878b26",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/03_property_screening/README.md",
+        "original_sha256": "99647b3121725d57a4a583388c14f818c6bfb2048d9fcadb5d31991709abf232",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "steps/03_property_screening/sha256-99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb-7c944909_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb-7c944909",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "outputs.csv",
+      "original_relative_path": "steps/03_property_screening/outputs.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/03_property_screening/outputs.csv",
+        "original_sha256": "99cc3971aba1a65a2a82a273aabe69cdcc804b827c003def05eefe6817502fbb",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/README.md",
+      "sha256": "75b0c32b08903875909e4ea6fa55de42cf4c3b90f6cc015f731ac2603e91a327",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
+        "original_sha256": "f7b5b176796efaa54088bbd32d5e349d84a2667e6b3c2b2ea6e0c9b0f014bbc6",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/docking_scores/sha256-1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b-5cf48fff_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b-5cf48fff",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "RML_R2_01.csv",
+      "original_relative_path": "steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv",
+        "original_sha256": "1127e082d372a2e906567ee06db69c3b4688f837917a86427f0b438e6577f38b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/docking_scores/sha256-6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283-942c3554_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283-942c3554",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "RML_WT.csv",
+      "original_relative_path": "steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv",
+        "original_sha256": "6bb5ccd1a33c1369875a704a87771782809275f5ab4df58fd35c0e7ada6fe283",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/docking_scores/sha256-d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682-d89c1779_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682-d89c1779",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "RML_R2_02.csv",
+      "original_relative_path": "steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv",
+        "original_sha256": "d0f59e6611e21b821c5429a9d7dd60c221d41be6de86f6180e1ef71c8a2ca682",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/04_structure_and_chemical_assessment/sha256-8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84-7c0b819f_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84-7c0b819f",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "outputs.csv",
+      "original_relative_path": "steps/04_structure_and_chemical_assessment/outputs.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
+        "original_sha256": "8aba45a443964fbdf48492b4816ebe8c7fc22194c1e8d5bb38fcbb98870adb84",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/05_revision_and_re_evaluation/README.md",
+      "sha256": "6c94cd636fd291a1fc1e8eaefb53e13829f50506178b94245ce91451e0fe01fb",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
+        "original_sha256": "7125c0d4cdcd52e163f0a36229081841a6383f32a770b0e8ac93babaeea4bfcd",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "steps/05_revision_and_re_evaluation/sha256-55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9-5ec5a5cb_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9-5ec5a5cb",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "outputs.csv",
+      "original_relative_path": "steps/05_revision_and_re_evaluation/outputs.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/outputs.csv",
+        "original_sha256": "55e2ac2b4a4be39602f54fd32ea6b436ad829584ebe0c7f81b29f55dee3bc6c9",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/06_post_selection_properties/sha256-98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc-6243b766_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc-6243b766",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "predictions.csv",
+      "original_relative_path": "steps/06_post_selection_properties/predictions.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
+        "original_sha256": "98ea443dcbc225282876da89c2cd5f9dc464e5c919639635022b131835d4acdc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/07_ddgun_stability/README.md",
+      "sha256": "9da47a8e0788024dc1a56243a37abb39f2ee931d6ff3244337d6aacf1d414db8",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/README.md",
+        "original_sha256": "add7fd0b9f54469e3f968aa83252a234582558146a6c00f54f63b66f4a7b9f79",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "steps/07_ddgun_stability/input.json",
+      "sha256": "67a402adefdb7d9035c490f961bcd9d3d362c8eba70036273aecc9446d4c6921",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/input.json",
+        "original_sha256": "67a402adefdb7d9035c490f961bcd9d3d362c8eba70036273aecc9446d4c6921",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/07_ddgun_stability/job.json",
+      "sha256": "5bcca9021129c2e4cec135094ae19b94e1a9a41f6d9f4084bbe7b8988205ea80",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/job.json",
+        "original_sha256": "5bcca9021129c2e4cec135094ae19b94e1a9a41f6d9f4084bbe7b8988205ea80",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/07_ddgun_stability/output.txt",
+      "sha256": "2ece065255f4b99ec5982dedb4eba59b59b4d431d4d210c545ff429196cc6e72",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/output.txt",
+        "original_sha256": "2ece065255f4b99ec5982dedb4eba59b59b4d431d4d210c545ff429196cc6e72",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "steps/07_ddgun_stability/sha256-84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b-742c532a_unreported_unreported_92629f_unreported_unreported.csv",
+      "sha256": "84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b",
+      "source_sha256": null,
+      "filename_components": {
+        "artifact_id": "sha256-84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b-742c532a",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "92629f",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "predictions.csv",
+      "original_relative_path": "steps/07_ddgun_stability/predictions.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
+        "original_sha256": "84a0e14d5913e5bc70c071c58666bf4db5f5a3ed87e04ea81a6f14349f6ae94b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    }
+  ],
+  "run_folder": "run_002_20261104_183717_92629f",
+  "run_number": 2,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
+}

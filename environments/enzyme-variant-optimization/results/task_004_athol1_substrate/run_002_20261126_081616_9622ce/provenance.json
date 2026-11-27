@@ -1,0 +1,727 @@
+{
+  "task_id": "task_004_athol1_substrate",
+  "run_id": "20261126_081616_9622ce",
+  "result_id": "result_20261126_081616_9622ce",
+  "config_id": "cfg_20261126_081616_9622ce",
+  "config_hash": "4b588dd764ccb55257c6e31d6f41674711ce1b5fd15034421c3e8cd25078c5fb",
+  "run_record": "../../../runs/task_004_athol1_substrate/run_002_20261126_081616_9622ce/run.json",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "959075419bdbf4c094f2ec6a841588af70531b7ff6d278d4a776cf07b4e2a36e",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/README.md",
+        "original_sha256": "cd170c116f889f3aea1ba2d645d14adf6ce9ce3f9a2c6618bcfd9f0d0bac9d19",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "270d3289f2fadb7ce2f04616e221f68e5d2f05c724de41bd724e74a7ccaa923d",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/WORKFLOW.md",
+        "original_sha256": "be042723197683249d3d407b8012342535b003d0ceb9b567903460dc6146fc52",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "artifacts/REPORT.md",
+      "sha256": "42b5a19f7251b791d4f7b264a938d22672075ec69f27d0bda2e0ea6c0e718d8c",
+      "source_sha256": "6e8108701897a049ef5419d561240720d79cc8e5f402c3750d690b83e650e335",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/REPORT.md",
+        "original_sha256": "b8b52ad39d61ff3d1446a98e3ae8e32c7ad003b36b63b39372f8fc31f9544e1d",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
+    },
+    {
+      "path": "artifacts/decisions.md",
+      "sha256": "dd0f5175a397038565047168f85482a1878633b86dec2fd3d8244166c70fad48",
+      "source_sha256": "dd0f5175a397038565047168f85482a1878633b86dec2fd3d8244166c70fad48",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/decisions.md",
+        "original_sha256": "dd0f5175a397038565047168f85482a1878633b86dec2fd3d8244166c70fad48",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/evaluation.json",
+      "sha256": "ab6a7c27c41b8925b3f261caff4659aea6da2011215a941303a4c4bcd0ae7029",
+      "source_sha256": "14d5e075c4fb1ca026e0409ddde51ed2d632f6d835619b2090255e5296183920",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/evaluation.json",
+        "original_sha256": "ab6a7c27c41b8925b3f261caff4659aea6da2011215a941303a4c4bcd0ae7029",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/native_receipts/evaluator_receipt.md",
+      "sha256": "95ec4fba3b385572666419dcbad81394624785256e2f1dc8033bd5f549a3326d",
+      "source_sha256": "6901c062dbbbe69412ec045f427f7b2e41f38712525062ca84e1b74ec277ba22",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/native_receipts/evaluator_receipt.md",
+        "original_sha256": "95ec4fba3b385572666419dcbad81394624785256e2f1dc8033bd5f549a3326d",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/native_receipts/method_receipt.md",
+      "sha256": "a08a38a7eb1152c69b31bb88b710219699ab6bbc61d262041c1c5857ebf14c4a",
+      "source_sha256": "38fd0eed8dbaa44d3bba3418e0d590441bf7a91a2fc53f350de3e7ae3ec1c97e",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/native_receipts/method_receipt.md",
+        "original_sha256": "a08a38a7eb1152c69b31bb88b710219699ab6bbc61d262041c1c5857ebf14c4a",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/native_receipts/recovery_receipts.md",
+      "sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+      "source_sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/native_receipts/recovery_receipts.md",
+        "original_sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/planning_report.md",
+      "sha256": "d705ca93a8ca7a48294f05c27845e5347d35450411031afd0ddfaa2d6e3b616b",
+      "source_sha256": "d705ca93a8ca7a48294f05c27845e5347d35450411031afd0ddfaa2d6e3b616b",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/planning_report.md",
+        "original_sha256": "d705ca93a8ca7a48294f05c27845e5347d35450411031afd0ddfaa2d6e3b616b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/private/UNINTENDED_EXPOSURE.md",
+      "sha256": "3459877030dc554d4cecff20976ccda353e5ded01d469ddadbec326614a6832b",
+      "source_sha256": "3459877030dc554d4cecff20976ccda353e5ded01d469ddadbec326614a6832b",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/private/UNINTENDED_EXPOSURE.md",
+        "original_sha256": "3459877030dc554d4cecff20976ccda353e5ded01d469ddadbec326614a6832b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/selection_seal.json",
+      "sha256": "88f20a4dd6a4d9d54ccec782774c97064f9bfd71e9f00d8cf9544f9867dd50f5",
+      "source_sha256": "88f20a4dd6a4d9d54ccec782774c97064f9bfd71e9f00d8cf9544f9867dd50f5",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/selection_seal.json",
+        "original_sha256": "88f20a4dd6a4d9d54ccec782774c97064f9bfd71e9f00d8cf9544f9867dd50f5",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-333698c3e4c90bb26deeeb93521831317b97ca94e75c97bce1c335d97f25d074-9381f194_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "333698c3e4c90bb26deeeb93521831317b97ca94e75c97bce1c335d97f25d074",
+      "source_sha256": "787517b827612a8fbed09c263795c4f16717418e1e2015a7881cf2682f81d5e8",
+      "filename_components": {
+        "artifact_id": "sha256-333698c3e4c90bb26deeeb93521831317b97ca94e75c97bce1c335d97f25d074-9381f194",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "selection.csv",
+      "original_relative_path": "artifacts/selection.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/selection.csv",
+        "original_sha256": "333698c3e4c90bb26deeeb93521831317b97ca94e75c97bce1c335d97f25d074",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-4f61f95b2068f66c5febe4ec19683aff695bc9451fb24105a9275e9f354981fe-b4a2ae37_unreported_unreported_9622ce_unreported_unreported.fasta",
+      "sha256": "4f61f95b2068f66c5febe4ec19683aff695bc9451fb24105a9275e9f354981fe",
+      "source_sha256": "4f61f95b2068f66c5febe4ec19683aff695bc9451fb24105a9275e9f354981fe",
+      "filename_components": {
+        "artifact_id": "sha256-4f61f95b2068f66c5febe4ec19683aff695bc9451fb24105a9275e9f354981fe-b4a2ae37",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidates.fasta",
+      "original_relative_path": "artifacts/candidates.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/candidates.fasta",
+        "original_sha256": "4f61f95b2068f66c5febe4ec19683aff695bc9451fb24105a9275e9f354981fe",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-8757f31d1f8c64e007fbebded7d9a7f8c7dd639301fc5a2e93148dd29b1ea488-d8c476ba_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "8757f31d1f8c64e007fbebded7d9a7f8c7dd639301fc5a2e93148dd29b1ea488",
+      "source_sha256": "f3635523aac72b4301551a47cba70cbd73b8fd49c65f7c1c66be35805a9f669b",
+      "filename_components": {
+        "artifact_id": "sha256-8757f31d1f8c64e007fbebded7d9a7f8c7dd639301fc5a2e93148dd29b1ea488-d8c476ba",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "observations.csv",
+      "original_relative_path": "artifacts/observations.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/observations.csv",
+        "original_sha256": "8757f31d1f8c64e007fbebded7d9a7f8c7dd639301fc5a2e93148dd29b1ea488",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-a748b3e802767bf372482211a42abfeeb83f23f82456ec509c7da1ee88fae21f-a5b43c40_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "a748b3e802767bf372482211a42abfeeb83f23f82456ec509c7da1ee88fae21f",
+      "source_sha256": "9ac7a6cb6beda11db4d097a6a28b53310f7549aa5b16e08b4ddb757049f1a115",
+      "filename_components": {
+        "artifact_id": "sha256-a748b3e802767bf372482211a42abfeeb83f23f82456ec509c7da1ee88fae21f-a5b43c40",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_history.csv",
+      "original_relative_path": "artifacts/candidate_history.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/candidate_history.csv",
+        "original_sha256": "a748b3e802767bf372482211a42abfeeb83f23f82456ec509c7da1ee88fae21f",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/sha256-d82f333b5876e684fc99a6a3b8abcc752252645a94ae7cf4cee667579ffd2e59-12640e36_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "d82f333b5876e684fc99a6a3b8abcc752252645a94ae7cf4cee667579ffd2e59",
+      "source_sha256": "1441fbc32cbbaf49add163a9f3076f5f0a8e24638a92a4ea2196b526006c2544",
+      "filename_components": {
+        "artifact_id": "sha256-d82f333b5876e684fc99a6a3b8abcc752252645a94ae7cf4cee667579ffd2e59-12640e36",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "evaluation_observations.csv",
+      "original_relative_path": "artifacts/evaluation_observations.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/evaluation_observations.csv",
+        "original_sha256": "d82f333b5876e684fc99a6a3b8abcc752252645a94ae7cf4cee667579ffd2e59",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_geometry/sha256-2e2476bb04feb3913ec164ee009c0a7d91766a18356dcc420ecf768e06810936-e3744ec6_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "2e2476bb04feb3913ec164ee009c0a7d91766a18356dcc420ecf768e06810936",
+      "source_sha256": "0fa5effd770e0395b9590d65f9d81726040cf77e028b01e072d9777dd6a89beb",
+      "filename_components": {
+        "artifact_id": "sha256-2e2476bb04feb3913ec164ee009c0a7d91766a18356dcc420ecf768e06810936-e3744ec6",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_summary.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_geometry/candidate_summary.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_geometry/candidate_summary.csv",
+        "original_sha256": "2e2476bb04feb3913ec164ee009c0a7d91766a18356dcc420ecf768e06810936",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_geometry/sha256-310086492f49042abf4ad61b72b5b30e82b8b9362c679e0dc762847a661475fe-14acf4d4_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "310086492f49042abf4ad61b72b5b30e82b8b9362c679e0dc762847a661475fe",
+      "source_sha256": "5876abb512435eb78280024f3ea883fc3d179e4876306eda9b4340b9b11b4f9b",
+      "filename_components": {
+        "artifact_id": "sha256-310086492f49042abf4ad61b72b5b30e82b8b9362c679e0dc762847a661475fe-14acf4d4",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "geometry_measurements.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_geometry/geometry_measurements.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_geometry/geometry_measurements.csv",
+        "original_sha256": "310086492f49042abf4ad61b72b5b30e82b8b9362c679e0dc762847a661475fe",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_geometry/sha256-4fbc67422e65ed58578565d3c41691f2e4e1418007e9389a315c8ac6deaae718-ffb068f2_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "4fbc67422e65ed58578565d3c41691f2e4e1418007e9389a315c8ac6deaae718",
+      "source_sha256": "b95d64136264e87aaaee646021e6b5456c7698dc6cf8917a696cf934bfb43b07",
+      "filename_components": {
+        "artifact_id": "sha256-4fbc67422e65ed58578565d3c41691f2e4e1418007e9389a315c8ac6deaae718-ffb068f2",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "invalid_candidates.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_geometry/invalid_candidates.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_geometry/invalid_candidates.csv",
+        "original_sha256": "4fbc67422e65ed58578565d3c41691f2e4e1418007e9389a315c8ac6deaae718",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_molprobity/sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-3a9f9099_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627",
+      "source_sha256": "a4be1b9550e33f095037ee6fe76b52a30e2a1330df49e86fd9758e6579778c18",
+      "filename_components": {
+        "artifact_id": "sha256-28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627-3a9f9099",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "invalid_candidates.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_molprobity/invalid_candidates.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_molprobity/invalid_candidates.csv",
+        "original_sha256": "28f89b179b21992c22db707662132ae93f73e6073503aa9b4858e802a09b1627",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_molprobity/sha256-c447ddafd823882425490c064f34ead56a6f5a5cf9d3d7c9362ba0c8ae1d8e50-93b175b3_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "c447ddafd823882425490c064f34ead56a6f5a5cf9d3d7c9362ba0c8ae1d8e50",
+      "source_sha256": "82b2e1b14f7a9f12112ac463b080f676b9c3f8c2443cd25e03da602448051421",
+      "filename_components": {
+        "artifact_id": "sha256-c447ddafd823882425490c064f34ead56a6f5a5cf9d3d7c9362ba0c8ae1d8e50-93b175b3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "validation_outliers.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_molprobity/validation_outliers.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_molprobity/validation_outliers.csv",
+        "original_sha256": "c447ddafd823882425490c064f34ead56a6f5a5cf9d3d7c9362ba0c8ae1d8e50",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/structure_evidence/parent_molprobity/sha256-d79f946d58608e1ba2b23639e15bf6c282dbf1681c80c5c8c41ec94c01bf6ac2-0420eaf3_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "d79f946d58608e1ba2b23639e15bf6c282dbf1681c80c5c8c41ec94c01bf6ac2",
+      "source_sha256": "a1ba351c9ef764cb08f979609f9e736859c09983e26b3038be2787f7272348da",
+      "filename_components": {
+        "artifact_id": "sha256-d79f946d58608e1ba2b23639e15bf6c282dbf1681c80c5c8c41ec94c01bf6ac2-0420eaf3",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "candidate_summary.csv",
+      "original_relative_path": "artifacts/structure_evidence/parent_molprobity/candidate_summary.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/structure_evidence/parent_molprobity/candidate_summary.csv",
+        "original_sha256": "d79f946d58608e1ba2b23639e15bf6c282dbf1681c80c5c8c41ec94c01bf6ac2",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/parent/sha256-a3deb4cceefa041ac768d36ee1b07e550e02614e994ee7ffc6b2c31e8b9facc9-c1303435_unreported_unreported_9622ce_unreported_unreported.fasta",
+      "sha256": "a3deb4cceefa041ac768d36ee1b07e550e02614e994ee7ffc6b2c31e8b9facc9",
+      "source_sha256": "a3deb4cceefa041ac768d36ee1b07e550e02614e994ee7ffc6b2c31e8b9facc9",
+      "filename_components": {
+        "artifact_id": "sha256-a3deb4cceefa041ac768d36ee1b07e550e02614e994ee7ffc6b2c31e8b9facc9-c1303435",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "parent_seqres.fasta",
+      "original_relative_path": "artifacts/work/parent/parent_seqres.fasta",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/parent/parent_seqres.fasta",
+        "original_sha256": "a3deb4cceefa041ac768d36ee1b07e550e02614e994ee7ffc6b2c31e8b9facc9",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/sha256-8ed4cba99cf9d15ddc332960b904e8b81dc7aeb8fa37c8ce12ed89459f1145ce-3a01ba9a_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "8ed4cba99cf9d15ddc332960b904e8b81dc7aeb8fa37c8ce12ed89459f1145ce",
+      "source_sha256": "fb79d7c7b8827e76a5dbead3afc0abe7c26a34ff31b6b4620a3a284abbc41093",
+      "filename_components": {
+        "artifact_id": "sha256-8ed4cba99cf9d15ddc332960b904e8b81dc7aeb8fa37c8ce12ed89459f1145ce-3a01ba9a",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "screen_round1_catpred.csv",
+      "original_relative_path": "artifacts/work/screen_round1_catpred.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/screen_round1_catpred.csv",
+        "original_sha256": "8ed4cba99cf9d15ddc332960b904e8b81dc7aeb8fa37c8ce12ed89459f1145ce",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/sha256-a3eab550759292212833dfc21b6179c0428248bfa958a8a3e5b1e66eb6ea3c6c-6731654b_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "a3eab550759292212833dfc21b6179c0428248bfa958a8a3e5b1e66eb6ea3c6c",
+      "source_sha256": "f92f3386d4e7bd0e77f010438b1f8bd278d9805755ea207a6843fb37c87081cc",
+      "filename_components": {
+        "artifact_id": "sha256-a3eab550759292212833dfc21b6179c0428248bfa958a8a3e5b1e66eb6ea3c6c-6731654b",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "reval_all_catpred.csv",
+      "original_relative_path": "artifacts/work/reval_all_catpred.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/reval_all_catpred.csv",
+        "original_sha256": "a3eab550759292212833dfc21b6179c0428248bfa958a8a3e5b1e66eb6ea3c6c",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/sha256-ad606d43e35b10f0291cdaf42228ec8753b2ca5263b6c4e7a70952c2a9bd9ed7-304e134d_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "ad606d43e35b10f0291cdaf42228ec8753b2ca5263b6c4e7a70952c2a9bd9ed7",
+      "source_sha256": "03ecbeda40bc87ca90bc528d54a9ce34c778c441550b1d41b290958cfeb47c79",
+      "filename_components": {
+        "artifact_id": "sha256-ad606d43e35b10f0291cdaf42228ec8753b2ca5263b6c4e7a70952c2a9bd9ed7-304e134d",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "baseline_catpred_parent.csv",
+      "original_relative_path": "artifacts/work/baseline_catpred_parent.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/baseline_catpred_parent.csv",
+        "original_sha256": "ad606d43e35b10f0291cdaf42228ec8753b2ca5263b6c4e7a70952c2a9bd9ed7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/sha256-cf1fd458b51ee46c296c3c6b05f1bbabf7b70fcc6559192b9c44d405682c2436-f20354b6_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "cf1fd458b51ee46c296c3c6b05f1bbabf7b70fcc6559192b9c44d405682c2436",
+      "source_sha256": "10e80d0077b2ea078b337201f8a14bbbc76c0c4d2eefa05d97ba09df59603181",
+      "filename_components": {
+        "artifact_id": "sha256-cf1fd458b51ee46c296c3c6b05f1bbabf7b70fcc6559192b9c44d405682c2436-f20354b6",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "screen_round1_netsolp.csv",
+      "original_relative_path": "artifacts/work/screen_round1_netsolp.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/screen_round1_netsolp.csv",
+        "original_sha256": "cf1fd458b51ee46c296c3c6b05f1bbabf7b70fcc6559192b9c44d405682c2436",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "artifacts/work/sha256-d61b045fa9d0c0af20688630fd80f04e65fc832207bdd7639e399c0970e9a0a7-ebff13e4_unreported_unreported_9622ce_unreported_unreported.csv",
+      "sha256": "d61b045fa9d0c0af20688630fd80f04e65fc832207bdd7639e399c0970e9a0a7",
+      "source_sha256": "efa73f64bd2d1958ec0ce070cc592296957d032b58159052471d8e1c8ec8ffdf",
+      "filename_components": {
+        "artifact_id": "sha256-d61b045fa9d0c0af20688630fd80f04e65fc832207bdd7639e399c0970e9a0a7-ebff13e4",
+        "tool_name": "unreported",
+        "timestamp_utc": null,
+        "run_reference": "9622ce",
+        "model_identifier": "unreported",
+        "parameters": "unreported"
+      },
+      "original_filename": "reval_netsolp.csv",
+      "original_relative_path": "artifacts/work/reval_netsolp.csv",
+      "artifact_id_basis": "Verified content SHA256 with an export-path checksum suffix; not an upstream job ID",
+      "source_job_id": null,
+      "parameters_reference": null,
+      "missing_source_fields": [
+        "tool_name",
+        "timestamp_utc",
+        "model_identifier",
+        "parameters"
+      ],
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/artifacts/work/reval_netsolp.csv",
+        "original_sha256": "d61b045fa9d0c0af20688630fd80f04e65fc832207bdd7639e399c0970e9a0a7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reviews/evaluator_receipt.md",
+      "sha256": "95ec4fba3b385572666419dcbad81394624785256e2f1dc8033bd5f549a3326d",
+      "source_sha256": "6901c062dbbbe69412ec045f427f7b2e41f38712525062ca84e1b74ec277ba22",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/reviews/evaluator_receipt.md",
+        "original_sha256": "95ec4fba3b385572666419dcbad81394624785256e2f1dc8033bd5f549a3326d",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reviews/method_receipt.md",
+      "sha256": "a08a38a7eb1152c69b31bb88b710219699ab6bbc61d262041c1c5857ebf14c4a",
+      "source_sha256": "38fd0eed8dbaa44d3bba3418e0d590441bf7a91a2fc53f350de3e7ae3ec1c97e",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/reviews/method_receipt.md",
+        "original_sha256": "a08a38a7eb1152c69b31bb88b710219699ab6bbc61d262041c1c5857ebf14c4a",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    },
+    {
+      "path": "reviews/recovery_receipts.md",
+      "sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+      "source_sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+      "migration_evidence": {
+        "source_git_commit": "5c9ed9a548cfde08a5c6122934e7044c152648f1",
+        "original_path": "environments/enzyme-variant-optimization/results/task_004_athol1_substrate/20261126_081616_9622ce/reviews/recovery_receipts.md",
+        "original_sha256": "0225483e746f425fbbc1d5019bfbbb51c8bf9538692c960120da0eead5ad9adf",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
+    }
+  ],
+  "run_folder": "run_002_20261126_081616_9622ce",
+  "run_number": 2,
+  "artifact_naming_policy": "../../../README.md#artifact-filenames"
+}

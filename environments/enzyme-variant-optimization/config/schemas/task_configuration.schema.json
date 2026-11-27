@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "task_configuration.schema.json",
+  "title": "Recorded task configuration",
+  "type": "object",
+  "required": [
+    "config_id",
+    "task_id",
+    "config_version",
+    "title",
+    "model",
+    "approach",
+    "launch_ready",
+    "reconstruction_complete"
+  ],
+  "properties": {
+    "config_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^task_[0-9]{3}_[a-z0-9_]+$"
+    },
+    "config_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "object"
+    },
+    "approach": {
+      "enum": [
+        "agent-alone",
+        "agent-with-specialist"
+      ]
+    },
+    "launch_ready": {
+      "type": "boolean"
+    },
+    "reconstruction_complete": {
+      "type": "boolean"
+    },
+    "llm": {
+      "type": "object",
+      "required": [
+        "model",
+        "provider",
+        "reasoning_effort"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reasoning_effort": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "shared_policy_ref": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "launch_ready": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "llm",
+          "budgets",
+          "goal"
+        ],
+        "properties": {
+          "reconstruction_complete": {
+            "const": true
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

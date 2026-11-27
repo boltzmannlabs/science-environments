@@ -12,7 +12,7 @@ Each task identifies the parent, reaction, target property and relevant conditio
 
 Use SCI's existing search and reading tools to research chemistry and prepare a source-backed reaction description. Read mechanism references, not the target study's winning mutations or outcome tables. Resolve chemistry that changes the calculation before using it; otherwise mark that assessment unresolved. Do not create an extra chemistry service or require an external template registry.
 
-Freeze the public input bundle, task, conditions, budgets and final evaluation protocol in the run's `RUN_PLAN.json`, with their hashes and actual software versions. Parent preparation is shared; candidate generation and design results are not. The compact records under [configs](configs/README.md) summarize historical runs. Fresh execution requires a separate frozen settings file and scientific protocol.
+Freeze the public input bundle, task, conditions, budgets and final evaluation protocol in the run's `RUN_PLAN.json`, with their hashes and actual software versions. Parent preparation is shared; candidate generation and design results are not. [Task configurations](config/README.md) record recovered or frozen settings. [Execution records](runs/README.md) retain historical usage, input references and native session lineage. Fresh execution requires explicitly frozen settings and a scientific protocol.
 
 ## Computational tool capabilities
 
@@ -70,7 +70,7 @@ Keep each approach and repeat in its own run directory:
 | `jobs.json` | Native job IDs, submitted payload references, statuses, outputs, failures and unresolved requests. Redact credentials. |
 | `usage.json` | Available model/scientific runtime, queue time, resources, billing units and missing accounting fields. |
 | `selection.csv` | Final `candidate_id,rank,sequence_sha256` rows; exclude the parent and hash before independent evaluation. |
-| `REPORT.md` | Completion status, numerical findings, limitations, trade-offs and next experimental questions. |
+| `REPORT.md` | Executed steps, numerical findings, limitations, trade-offs and next experimental questions. |
 
 The evaluator separately writes `evaluation.json`. The helper's expected input is described in [the common comparison protocol](#common-comparison-protocol). Native tool schemas and result formats are unchanged.
 

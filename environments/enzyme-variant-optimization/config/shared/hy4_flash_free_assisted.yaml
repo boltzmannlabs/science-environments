@@ -1,0 +1,18 @@
+policy_id: hy4_flash_free_assisted
+scope: Explicit opt-in for the four recorded 26-November HY4 runs; not a historical
+  default
+llm:
+  model: hy4-flash-free
+  provider: opencode-go
+  reasoning_effort: xhigh
+budgets:
+  aggregate_model_tokens: null
+  platform_credits: null
+  added_wall_time_cap: null
+  policy: No added aggregate token, financial or wall-time cap; retain usage accounting.
+goal:
+  max_turns: 20
+tool_exclusions:
+- MLDE
+scientific_requirements: Read ENVIRONMENT_SPEC.md and the selected task; this shared
+  settings file does not weaken scientific requirements.

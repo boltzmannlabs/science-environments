@@ -1,0 +1,16 @@
+{
+  "reviewer":"enzyme-evaluator",
+  "receipt":"sa-0-bf64daf8",
+  "review_type":"independent read-only task-scoped evidence review; not an independent re-execution",
+  "reviewed_staged_evidence":"../../../../../../review-inputs/final/handoff_manifest.json",
+  "computational_execution":"staged records support completion of the declared Pythia C/P scan and library construction",
+  "biological_qualification":"unknown; scores do not establish retained activity or improved thermostability",
+  "historical_reproduction":"unresolved; paper sign equation differs from source scoring; aggregation, structural context, revision and checkpoint publisher attestation uncertain",
+  "coverage_recorded":{"monomer_A_nonidentity":2755,"dimer_A_nonidentity":2755,"dimer_B_nonidentity":2774,"identity_controls":436},
+  "selection_recorded":{"primary_count":33,"mean_sensitivity_count":13,"dimer_chainwise_count":59,"catalytic_concerns":["D101V","N55I"]},
+  "paper_prediction_comparison":"unavailable, no explicit compatible candidate-specific numeric predictions found in inspected evidence",
+  "independent_review_limitations":["The evaluator could not independently recompute all hashes, inspect native NPZ binary arrays, recalculate all scores or verify every selection and sequence hash with the tools available.","The evaluator did not independently verify current UniProt sequence or review the actual retrospective paper figure/supplement.","A hash seal establishes file integrity if verified, not when it was created or absence of prior information exposure.","Accounting is incomplete because parent model use and model costs are unavailable."],
+  "sequence_budget_conflict_disclosed_after_review":"Task-specific full cutoff libraries generated 46 unique variants and 47 unique sequences including parent, above the generic environment starting ceiling of 24. On 2026-11-21 the owner explicitly approved a post-execution amendment to 47 for this run. Evaluator sa-0-bf64daf8 did not review the discrepancy or subsequent amendment; equal-budget comparability remains unestablished.",
+  "required_followup":"Do not claim biological qualification or exact agreement; obtain independently attested source/checkpoints and explicit compatible per-variant paper predictions for stronger claims.",
+  "full_review":"evaluator_review.md"
+}

@@ -1,0 +1,37 @@
+candidate_id,stage,metric,value,unit,method,evidence_path,note
+BLA_1BLI_parent,baseline,tmPred_enzymes,51.93439483642578,degC,Enzymes/TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1,outputs/6b07edefc45f4015f0eb7fc3_pred.csv,replica_std=5.989 degC; predicted Tm not measured
+BLA_1BLI_parent,baseline,enzyme_solubility,1,model score,Enzymes,outputs/6b07edefc45f4015f0eb7fc3_pred.csv,secondary
+BLA_1BLI_parent,baseline,predicted_solubility,0.5751012078944844,mean of 5 models,Netsolp SU,outputs/6b07edf7c45f4015f0eb7fe7.csv,
+BLA_1BLI_parent,baseline,predicted_usability,0.4446202844452154,mean of 5 models,Netsolp SU,outputs/6b07edf7c45f4015f0eb7fe7.csv,
+BLA_1BLI_parent,baseline,kcat_proxy,101.269,s^-1 (CatPred),Cat_Pred/maltose,outputs/6b07ee00c45f4015f0eb7ff5_*.csv,log10=2.005 SD=0.294; Km=1.076; Ki=21.119
+BLA_1BLI_parent,baseline,pLDDT,98.5,score,Protein_Structure_Prediction,outputs/result_summary-1.csv,pTM=0.957
+BLA_1BLI_parent,baseline,clashscore,5.67357171130756,score,Mol_Probity measurement_only,outputs/results-2.zip/candidate_summary.csv,"Rama outliers 0%, favored 97.286%, rotamer outliers 6.484%, 1 Cbeta outlier"
+BLA_1BLI_parent,baseline,ThermoMPNN_ddG,per-position table,kcal/mol (model),Thermal_MPNN chain A,outputs/output-2.zip,9660 rows; positive = stabilizing in ThermoMPNN convention; used for mask selection
+BLA_1BLI_parent,final_common_protocol,tmPred_enzymes,51.9344,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=5.989; computational prediction only
+BLA_1BLI_parent,final_common_protocol,Netsolp_solubility,0.5751,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.445
+BLA_1BLI_parent,final_common_protocol,CatPred_kcat_maltose,101.269,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_1BLI_parent,final_common_protocol,structure_pLDDT,98.5,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R0A,final_common_protocol,tmPred_enzymes,53.3556,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=6.896; computational prediction only
+BLA_R0A,final_common_protocol,Netsolp_solubility,0.5545,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.432
+BLA_R0A,final_common_protocol,CatPred_kcat_maltose,86.266,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R0A,final_common_protocol,structure_pLDDT,98.2,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R0B,final_common_protocol,tmPred_enzymes,52.4707,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=6.245; computational prediction only
+BLA_R0B,final_common_protocol,Netsolp_solubility,0.5562,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.437
+BLA_R0B,final_common_protocol,CatPred_kcat_maltose,87.097,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R0B,final_common_protocol,structure_pLDDT,98.5,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R0C,final_common_protocol,tmPred_enzymes,51.8658,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=5.938; computational prediction only
+BLA_R0C,final_common_protocol,Netsolp_solubility,0.5568,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.429
+BLA_R0C,final_common_protocol,CatPred_kcat_maltose,91.721,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R0C,final_common_protocol,structure_pLDDT,98.4,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R1A,final_common_protocol,tmPred_enzymes,51.7111,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=6.299; computational prediction only
+BLA_R1A,final_common_protocol,Netsolp_solubility,0.5673,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.439
+BLA_R1A,final_common_protocol,CatPred_kcat_maltose,91.608,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R1A,final_common_protocol,structure_pLDDT,98.6,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R1B,final_common_protocol,tmPred_enzymes,51.7104,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=6.430; computational prediction only
+BLA_R1B,final_common_protocol,Netsolp_solubility,0.5752,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.436
+BLA_R1B,final_common_protocol,CatPred_kcat_maltose,98.081,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R1B,final_common_protocol,structure_pLDDT,98.6,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained
+BLA_R1C,final_common_protocol,tmPred_enzymes,51.698,degC,Enzymes job 6b080a7fc45f4015f0eb8f17,outputs/6b080a7fc45f4015f0eb8f17_pred.csv,replica_std=6.108; computational prediction only
+BLA_R1C,final_common_protocol,Netsolp_solubility,0.5733,mean model score,Netsolp job 6b080a906a16f64f7a946612,outputs/6b080a906a16f64f7a946612.csv,usability=0.440
+BLA_R1C,final_common_protocol,CatPred_kcat_maltose,95.3,s^-1 (predicted),Cat_Pred job 6b080aa18b9d410520f9e6e1,outputs/6b080aa18b9d410520f9e6e1_Cat_Pred%20%28Catalyst%20Prediction%29%20-%2020261126-103200Z%20-%209700b7_output.csv,proxy on maltose; not experimental kinetics
+BLA_R1C,final_common_protocol,structure_pLDDT,98.6,score,Protein_Structure_Prediction job 6b080ab06a16f64f7a946628,outputs/result_summary-3.csv,sequence verified 483 aa; catalytic DED retained

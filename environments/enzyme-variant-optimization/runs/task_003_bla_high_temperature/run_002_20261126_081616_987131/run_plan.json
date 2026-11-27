@@ -1,0 +1,256 @@
+{
+  "task": "task_003_bla_high_temperature",
+  "approach": "agent_with_specialist",
+  "profile": "enzyme-autonomy-v12",
+  "frozen_at": "2026-11-26 (pre-design)",
+  "goal": {
+    "max_turns": 20,
+    "native_session_id": "20261126_081616_987131",
+    "verified_active": true
+  },
+  "settings_path": "retained-private-evidence/task_003_bla_high_temperature.json",
+  "settings_sha256": "a055007d8a6aaccaf4c8338b5b9dae7cca776ac64b376d9ff155045226930e81",
+  "parent": {
+    "pdb_id": "1BLI",
+    "chain": "A",
+    "length": 483,
+    "construct": "PDB 1BLI chain A, engineered N190F/Q264S/N265Y; 1BLI numbering = task numbering",
+    "files": {
+      "source_pdb": "inputs/1bli.pdb",
+      "holo_with_ions": "inputs/parent_chainA_with_ions.pdb",
+      "protein_only": "inputs/parent_chainA_proteinonly.pdb",
+      "fasta": "inputs/parent.fasta",
+      "chemistry": "inputs/CHEMISTRY.md"
+    },
+    "sha256": {
+      "1bli.pdb": "1372f6f2b13778843cb2e137c4485de0fd6bfab584183fd6bc3d0f9bee7f5d57",
+      "parent_chainA_with_ions.pdb": "74512aa65e2bf7c8eb25074e2a094d1ff75e5e9eaaa20256c46ee1a919c3757b",
+      "parent.fasta": "bc1a88977140aeae107d7913e0820250ca1d72ff4a3b8b6e87627d85bc522e77",
+      "WP_061576039.1.fasta": "c1b417533f33f43d3ded129bdbbf30ec0f75b091aad92f4d9e3637108b0d8d8e"
+    },
+    "mapping": "DBREF 1BLI A 1-483 <-> UniProt P06278 30-512; catalytic/metal/sugar positions in 1BLI PDB numbering (verified D231/E261/D328); WP_061576039.1 (512 aa) = signal peptide (1-29) + mature sequence with 5 substitutions vs 1BLI",
+    "catalytic": {
+      "D231": "nucleophile",
+      "E261": "acid/base",
+      "D328": "substrate 2-OH/3-OH distortion"
+    },
+    "metal_ions": {
+      "Ca": [
+        "A500",
+        "A600",
+        "A700"
+      ],
+      "Na": [
+        "A800"
+      ],
+      "policy": "retain all four ions in every evaluation; no protein-only score as substitute"
+    },
+    "disulfides": "none (0 Cys in 1BLI chain A)"
+  },
+  "protected_positions": {
+    "list": [
+      13,
+      56,
+      104,
+      105,
+      161,
+      181,
+      183,
+      190,
+      194,
+      200,
+      201,
+      202,
+      204,
+      231,
+      235,
+      261,
+      263,
+      264,
+      265,
+      300,
+      302,
+      327,
+      328,
+      335,
+      406,
+      407,
+      430
+    ],
+    "rationale": "catalytic triad + LINK-record metal ligands + sugar-contact residues + engineered identities"
+  },
+  "editable_mask": {
+    "positions": [
+      114,
+      123,
+      126,
+      127,
+      128,
+      132,
+      134,
+      148,
+      152,
+      168,
+      169,
+      170,
+      172,
+      188,
+      250,
+      374,
+      417,
+      464
+    ],
+    "rationale": "surface-exposed (SASA), high B-factor, >=8A from ions, >=10A from sugar contacts, >=12-15A from catalytic atoms; domain B and domain A periphery; independent SASA/B-factor verification performed",
+    "rcm_zero_based_indices": [
+      12,
+      55,
+      103,
+      104,
+      160,
+      180,
+      182,
+      189,
+      193,
+      199,
+      200,
+      201,
+      203,
+      230,
+      234,
+      260,
+      262,
+      263,
+      264,
+      299,
+      301,
+      326,
+      327,
+      334,
+      405,
+      406,
+      429
+    ]
+  },
+  "substrate_proxy": {
+    "name": "maltose",
+    "identity": "alpha-D-glucopyranosyl-(1->4)-D-glucopyranose",
+    "smiles": "O[C@@H]1[C@@H](O)[C@H](O)[C@@H](CO)O[C@@H]1O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O",
+    "scope": "defined starch fragment; not whole starch polymer; no transition-state claim"
+  },
+  "modeled_conditions": {
+    "state": "holo metal-containing BLA as in 1BLI (3 Ca2+ + 1 Na+)",
+    "pH": "not merged across assay reports; computational models sequence/structure state only",
+    "temperature": "high-temperature application declared; no simulated assay temperature nor measured Tm/half-life claimed",
+    "consistency": "identical for parent and all candidates"
+  },
+  "endpoint": {
+    "primary": {
+      "job": "Enzymes",
+      "property": "tmPred_enzymes",
+      "direction": "maximize",
+      "unit": "predicted melting temperature (model units, verify from output)",
+      "rationale": "sequence-level stability predictor, same method/settings for all sequences"
+    },
+    "orthogonal": {
+      "job": "Thermal_MPNN",
+      "metric": "ddG_pred",
+      "note": "verify sign convention from output/worker metadata before ranking"
+    },
+    "secondary": [
+      "Netsolp solubility/usability",
+      "Cat_Pred kcat/Km/Ki proxy",
+      "MolProbity quality",
+      "Catalytic_Geometry geometry preservation",
+      "act_seek active-site retention"
+    ]
+  },
+  "evaluation_protocol": {
+    "protocol_id": "BLA_stab_v1_Enzymes_tmPred_enzymes_holo483",
+    "parent_id": "BLA_1BLI_parent",
+    "metric": "tmPred_enzymes",
+    "direction": "maximize",
+    "min_improvement": 0.0,
+    "min_improvement_rationale": "no significance threshold frozen; any positive signed change labeled numerical improvement only, not significance",
+    "max_selected": 5,
+    "ratio_allowed": false,
+    "tie_breakers": [
+      "orthogonal Thermal_MPNN ddG (verified sign)",
+      "MolProbity quality",
+      "candidate_id lexical"
+    ],
+    "eligibility": "all mandatory safeguards satisfied, <=8 substitutions, no protected edits, length 483, unique non-parent"
+  },
+  "budgets": {
+    "max_unique_sequences_including_parent": 24,
+    "max_substitutions_per_variant": 8,
+    "max_revision_rounds": 2,
+    "max_submission_attempts": 60,
+    "max_final_candidates": 5,
+    "min_results_driven_revisions": 1,
+    "model_tokens": null,
+    "platform_credits": null,
+    "wall_time_cap": null,
+    "policy": "No added token, financial or wall-time cap; cumulative accounting preserved"
+  },
+  "exclusions": [
+    "Insilico_Directed_Evolution (MLDE) and aliases"
+  ],
+  "methods": {
+    "generation_initial": [
+      "Random_Controlled_Mutagenesis",
+      "Ligand_MPNN"
+    ],
+    "generation_revision": [
+      "Ligand_MPNN",
+      "Random_Controlled_Mutagenesis",
+      "Function_Based_Enzyme_Generation (filtered to parent scaffold)"
+    ],
+    "screening": [
+      "Enzymes",
+      "Thermal_MPNN",
+      "Netsolp",
+      "Cat_Pred"
+    ],
+    "structure": [
+      "Protein_Structure_Prediction",
+      "Boltz2"
+    ],
+    "quality": [
+      "Mol_Probity"
+    ],
+    "function": [
+      "Catalytic_Geometry",
+      "act_seek"
+    ],
+    "evaluation_helper": "environments/enzyme-variant-optimization/scripts/evaluate_results.py"
+  },
+  "specialist_receipts": {
+    "method": {
+      "file": "method_route.md",
+      "delivery": "intermediate",
+      "subagent_id": "deleg_a6775571/task-0",
+      "receipt": "completed",
+      "api_calls": 39,
+      "tokens": {
+        "input": 2889414,
+        "output": 41420
+      }
+    }
+  },
+  "notes": "Frozen before any candidate generation or scoring; paper winner/reference files and other-arm outputs excluded from design inputs.",
+  "generation_recovery": {
+    "status": "frozen_pre_generation",
+    "reason": "RCM and Ligand_MPNN outputs task-ineligible; AntiBMPNN terminal validation failure (0 heavy/VHH domains); no native generator can enforce the frozen mask + <=8 substitutions + length 483",
+    "authority": "ENVIRONMENT_SPEC.md: 'Plain Python may transfer files, apply a tool-generated edit list or deduplicate results'",
+    "edit_list_source": {
+      "job": "Thermal_MPNN",
+      "doc_id": "6b07f38d8b9d410520f9d9f4",
+      "file": "observations/thermompnn_parent_mask.json",
+      "verified": "54 substitutions at 18 mask positions, WT identities match parent, no protected overlap"
+    },
+    "round0_rule": "For each of the 18 mask positions, take the single highest-ddg_pred substitution (stabilizing direction per ThermoMPNN convention). Rank positions by that ddG descending; take the top 8. Reject a candidate if any two edited positions are adjacent in sequence (avoid Pro stacking) - replace the lower-ranked of the pair with the next-ranked non-adjacent position. Deterministic tie-break: lower residue number.",
+    "round1_rule": "Use the second-highest-ddg_pred substitution at each mask position (distinct from round 0), rank positions by second-choice ddG descending, take top 8 with same adjacency filter. This is the results-driven revision: different substitutions at the same structurally justified sites, derived from the same native per-position scan, with round-0 screening evidence to motivate exclusions.",
+    "provenance": "algorithmic origin = Thermal_MPNN native per-position ddG scan (job ID above) + frozen deterministic Python selection; no LLM-written substitutions",
+    "safeguard": "every generated sequence validated for length 483, edits subset of mask, <=8 substitutions, all 27 protected identities unchanged, uniqueness"
+  }
+}

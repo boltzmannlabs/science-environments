@@ -1,0 +1,31 @@
+# Sun LEH Pythia: assisted computational reproduction
+
+## Execution and coverage
+
+The full source-faithful masked scan executed locally using Pythia-C and Pythia-P on the supplied 1NWW structure. The complete coordinate-supported nonidentity grids contain 2,755 monomer A, 2,755 dimer-context A, and 2,774 dimer-context B scores. The 436 identity controls were retained separately. The 149-residue SEQRES sequence exactly matches both retrieved RCSB and current UniProt Q9ZAG3 FASTA strings; sequence SHA256 is a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845. The PDB DBREF 0–148 annotation is anomalous and was not used to impose an offset. A:1–4 and B:1–3 lack coordinates and remain unscored. The complete PDB SHA256 is c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe.
+
+The primary context is chain A monomer. The secondary A+B context is a sensitivity analysis with separate chain A/B predictions, not a simultaneous homodimer mutation. Original 1NWW REMARK 350 identifies the dimer with identity operator; 895 feature-neighbor links across chains were counted in preflight. The implementation retains only protein residues with N, CA, C, O and synthesizes CB when absent, as in upstream source. X-ray B factors are not pLDDT.
+
+The 33 primary candidates and sensitivity libraries contain 46 distinct variant sequences (47 including the parent) across contexts. The run interpreted the task-specific instruction to retain the entire cutoff library as governing over the generic environment's starting ceiling of 24 unique sequences. On 2026-11-21, after execution, the owner explicitly approved an amendment to 47 sequences for this run. The original sequence generation preceded that approval; an equal-budget comparison remains unestablished because no matching amendment for the other approach is recorded. The owner also stated there is no financial limit on token spending or wall-time; see RESOURCE_AMENDMENT_20261121.json. The original frozen run plan and selection remain unchanged.
+
+## Scores and libraries
+
+For each model the source masked scan computes −log(p_mut/p_wt), equivalently logit_wt − logit_mut; lower is favorable and the score is unitless. The frozen primary score is C + P, with one best nonidentity replacement per eligible position, ties alphabetical by alternative residue, and strictly sum < −2. The resulting sealed library has 33 full-length variants. A separate strict mean < −2 sensitivity library has 13; the dimer chain-context sum < −2 libraries have 28 A and 31 B entries. No catalytic-site filter was applied.
+
+The 10 highest-ranked primary mutations and summed model scores are D101V −12.9369, T85V −7.9347, M52W −7.7828, N55I −7.7401, M32L −6.3121, T97V −6.1447, A19K −5.5984, L114V −5.1905, S15P −4.9000 and Y96V −4.6020. D101V and N55I are annotated catalytic-site concerns based on the RCSB M-CSA annotation; all raw hits remain present. No candidate has been shown to retain catalytic activity or experimentally improve stability.
+
+The full raw logits/probabilities and component scores are retained in native_model_outputs.npz and all_scores.csv; identity controls, rankings, missing positions, full sequences, selection and hash seal have separate files. verification.json records checks of exact 19-alternative grids, finite values, softmax sums, score reconstruction, identity-zero controls, strict cutoff, best-per-position and full-length sequence hashes. Maximum observed probability-ratio reconstruction error was 9.15e−7, logit-difference error 1.91e−6, and identity and aggregation error 0.
+
+## Historical comparison and limitations
+
+Selection was sealed before retrospective inspection. The Sun supplement section 2 expresses the masked score as log(p_mut/p_wt), opposite in sign to the upstream masked_ddg_scan.py output used here. Its LEH selection text specifies < −2 but does not resolve that sign difference, the exact C/P aggregation or structural context. We found no explicit candidate-specific numerical Pythia prediction for the 33 selected variants in the inspected article, supplement text or Fig. 4; paper_score_comparison.csv leaves those values and differences blank. Figure 4's mutation-specific temperature results are experimental measurements, not Pythia scores. Thus numerical paper-score agreement and exact historical reproduction are unresolved. A hash seal does not prove chronology or information isolation.
+
+The supplied source directory is labeled revision e1943402092295ae96cde0c93073ddc933ffc433 but lacks Git metadata, so the revision was not independently verified; checkpoint hashes are recorded but publisher identity is not independently attested. The Python environment reuses read-only dependencies from a separate existing environment; it is not a fully self-contained dependency lock or an exact upstream historical environment. The initial Python 3.13 setup failed; enzyme-recovery diagnosed the issue, and a separate Python 3.11 environment passed preflight before inference. A direct supplemental PDF fetch returned HTML; extracted text and the actual published figure were separately inspected, with the failure preserved.
+
+Enzyme-method reviewed the method and result batch; enzyme-recovery advised on setup and retrieval failures; independent enzyme-evaluator receipt sa-0-bf64daf8 reviewed staged artifacts. The evaluator did not independently recompute hashes or every numerical score, inspect binary NPZ contents, or re-read the actual paper figure/supplement; these limitations are preserved in evaluation.json. Computational completion is separate from biological qualification.
+
+## Usage and sources
+
+Full scan: 4.96 s elapsed wall time, 11.07 s user CPU, 5.27 s system CPU, peak RSS 504,472 KiB, 4 CPU threads; inference-loop elapsed 1.858 s. No remote scientific submissions. Specialist usage totals 371,074 input and 9,469 output tokens across six receipts; parent model tokens and model costs are unavailable. This run performed no wet-lab screening.
+
+Sources: https://www.rcsb.org/structure/1NWW ; https://www.rcsb.org/annotations/1NWW ; https://rest.uniprot.org/uniprotkb/Q9ZAG3.fasta ; Arand et al. https://doi.org/10.1093/emboj/cdg275 ; Sun et al. https://pmc.ncbi.nlm.nih.gov/articles/PMC11763918/ and supplement https://pmc.ncbi.nlm.nih.gov/articles/instance/11763918/bin/mmc1.pdf .

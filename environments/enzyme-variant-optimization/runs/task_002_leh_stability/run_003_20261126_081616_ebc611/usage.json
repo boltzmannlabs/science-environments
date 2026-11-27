@@ -1,0 +1,213 @@
+{
+  "run_id": "20261126T0816",
+  "specialist_model_usage": {
+    "enzyme-method": {
+      "input_tokens": 764890,
+      "output_tokens": 10445,
+      "api_calls": 9,
+      "duration_seconds": 114.23,
+      "cost_usd": null,
+      "cost_status": "unknown"
+    },
+    "enzyme-recovery": {
+      "input_tokens": 914616,
+      "output_tokens": 12474,
+      "api_calls": 23,
+      "duration_seconds": 169.4,
+      "cost_usd": null,
+      "cost_status": "unknown"
+    },
+    "enzyme-method_round1": {
+      "input_tokens": 1079634,
+      "output_tokens": 40569,
+      "api_calls": 14,
+      "duration_seconds": 311.05,
+      "cost_usd": null,
+      "cost_status": "unknown"
+    },
+    "enzyme-evaluator_pass1": {
+      "input_tokens": 1356105,
+      "output_tokens": 20041,
+      "api_calls": 24,
+      "duration_seconds": 197.79,
+      "cost_usd": null,
+      "cost_status": "unknown",
+      "receipt": "results/specialist_receipts/enzyme-evaluator_final_receipt.json"
+    },
+    "enzyme-evaluator_correction_pass": {
+      "input_tokens": 399155,
+      "output_tokens": 12035,
+      "api_calls": 12,
+      "duration_seconds": 87.52,
+      "cost_usd": null,
+      "cost_status": "unknown"
+    }
+  },
+  "scientific_jobs": {
+    "submitted": 23,
+    "terminal": 22,
+    "failed": 1,
+    "input_invalid_discarded": 1,
+    "pending": 0,
+    "unknown": 0,
+    "cost_usd": null,
+    "cost_status": "unknown",
+    "billing_units": [
+      {
+        "job": "Enzymes",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Prodigy",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "act_seek",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Netsolp",
+        "amount": 2,
+        "rate_per_hour": 50,
+        "rounded_minutes": 2,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Thermal_MPNN",
+        "amount": 1,
+        "rate_per_hour": 50,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Mol_Probity",
+        "amount": null,
+        "cost_status": "no billing block returned"
+      },
+      {
+        "job": "Random_Controlled_Mutagenesis",
+        "amount": 9,
+        "rate_per_hour": 20,
+        "rounded_minutes": 25,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "stability-binding-ddg test",
+        "amount": null,
+        "cost_status": "failure no billing block"
+      },
+      {
+        "job": "stability-binding-ddg setA",
+        "amount": null,
+        "cost_status": "no billing block returned"
+      },
+      {
+        "job": "stability-binding-ddg setB",
+        "amount": 1,
+        "rate_per_hour": 50,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "stability-binding-ddg setC",
+        "amount": 1,
+        "rate_per_hour": 50,
+        "rounded_minutes": 1,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Enzymes round1",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 2,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Netsolp round1",
+        "amount": 2,
+        "rate_per_hour": 50,
+        "rounded_minutes": 2,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Protein_Structure_Prediction",
+        "amount": 14,
+        "rate_per_hour": 50,
+        "rounded_minutes": 16,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "stability-binding-ddg revision D",
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "stability-binding-ddg revision E",
+        "amount": 1,
+        "rate_per_hour": 50,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Enzymes round2",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 3,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Mol_Probity round1",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "rounded_minutes": 3,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "tm_align",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Boltz2",
+        "amount": 5,
+        "rate_per_hour": 50,
+        "rounded_minutes": 6,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Multimer discarded",
+        "amount": 6,
+        "rate_per_hour": 50,
+        "rounded_minutes": 7,
+        "node": "private-compute-node"
+      },
+      {
+        "job": "Multimer correct",
+        "amount": null,
+        "cost_status": "no billing block returned"
+      },
+      {
+        "job": "Prodigy round2",
+        "amount": 1,
+        "rate_per_hour": 20,
+        "node": "private-compute-node"
+      }
+    ]
+  },
+  "note": "No numeric caps; preserve cumulative accounting. Unknown costs not imputed as zero.",
+  "specialist_model_total": {
+    "input_tokens": 4514400,
+    "output_tokens": 95564,
+    "note": "self-reported specialist usage; main-agent tokens not included"
+  }
+}

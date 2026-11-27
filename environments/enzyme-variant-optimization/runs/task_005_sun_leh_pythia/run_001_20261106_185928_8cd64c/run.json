@@ -1,0 +1,109 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261106_185928_8cd64c",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261106_185928_8cd64c",
+  "config_version": 1,
+  "config_hash": "89432f1648bf33e0f70dfe6859d0806640f21ed3667cc3895cc0f9073acfa86b",
+  "config_path": "../../../config/tasks/task_005_sun_leh_pythia/01_gpt_6_1_sol_assisted.json",
+  "native_session_ids": [
+    "20261106_185928_8cd64c"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "gpt-6.1-sol",
+  "provider": "openai-codex",
+  "started_at": "2026-11-06T18:59:28.639379+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-06T19:52:53.444131+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c",
+  "source_kind": "historical_publication",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "delegate_task"
+  ],
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
+  "run_folder": "run_001_20261106_185928_8cd64c",
+  "run_number": 1,
+  "outcome_notes": "Existing exported outcome; operational closure is separate from scientific completion.",
+  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261106_185928_8cd64c"
+    ],
+    "tokens": {
+      "input_tokens": 220098,
+      "output_tokens": 80119,
+      "cache_read_tokens": 15415936,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24147,
+      "tool_call_count": 171
+    }
+  },
+  "historical_reported_accounting": {
+    "scope": "Earlier operator-reported campaign snapshot; counting coverage is not reconstructed. Not additive with native session totals or usage_summary.json.",
+    "record": {
+      "arm": "sun_leh/agent-with-specialist",
+      "state": "closed/no live worker",
+      "session_id": "20261106_185928_8cd64c",
+      "model": "gpt-6.1-sol",
+      "provider": "openai-codex",
+      "reported_tokens": 17989521,
+      "elapsed_seconds": 3216,
+      "scope": "Completed declared method scan and paired comparison; exact paper reproduction unresolved",
+      "last_activity": "",
+      "accuracy": "Not established prospectively; corrected post-selection 30-panel association rho=-0.011, exact paper inputs unverified"
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "boltzymereview",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261106_185928_8cd64c"
+    ],
+    "specialist_session_ids": [
+      "20261106_190352_c52e85",
+      "20261106_191346_3a6b4b",
+      "20261106_193404_1bea98",
+      "20261106_193956_ac5246"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 220098,
+      "output_tokens": 80119,
+      "cache_read_tokens": 15415936,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24147,
+      "tool_call_count": 171,
+      "token_total_excluding_reasoning_subset": 15716153,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 358242,
+      "output_tokens": 28367,
+      "cache_read_tokens": 959232,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 13997,
+      "tool_call_count": 134,
+      "token_total_excluding_reasoning_subset": 1345841,
+      "session_count": 4
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 578340,
+      "output_tokens": 108486,
+      "cache_read_tokens": 16375168,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 38144,
+      "tool_call_count": 305,
+      "token_total_excluding_reasoning_subset": 17061994,
+      "session_count": 5
+    }
+  }
+}

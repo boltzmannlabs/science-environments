@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Environment configuration index",
+  "type": "object",
+  "required": [
+    "environment_id",
+    "schema_version",
+    "task_catalog",
+    "configuration_catalog",
+    "run_registry",
+    "configuration_schema",
+    "launch_schema",
+    "shared_settings",
+    "apply_shared_settings_automatically",
+    "path_base",
+    "results_index",
+    "specification"
+  ],
+  "properties": {
+    "environment_id": {
+      "const": "enzyme-variant-optimization"
+    },
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "apply_shared_settings_automatically": {
+      "const": false
+    },
+    "shared_settings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "path_base": {
+      "const": "environment_file_directory"
+    },
+    "task_catalog": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration_catalog": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_registry": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration_schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "launch_schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results_index": {
+      "type": "string",
+      "minLength": 1
+    },
+    "specification": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

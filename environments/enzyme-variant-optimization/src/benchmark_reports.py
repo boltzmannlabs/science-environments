@@ -9,10 +9,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from run_paths import historical_result, resolve_artifact
 from markdown_report import MarkdownReport
 
 
 def rows(path):
+    path = resolve_artifact(path)
     with path.open() as stream:
         return list(csv.DictReader(stream))
 
@@ -22,7 +24,7 @@ def number(value, digits=4):
 
 
 def add_electrostatics(doc, folder, image, plt):
-    path = folder / 'steps/10_reaction_electrostatics/predictions.csv'
+    path = resolve_artifact(folder / 'steps/10_reaction_electrostatics/predictions.csv')
     if not path.exists():
         return
     data = rows(path)
@@ -52,12 +54,12 @@ def add_electrostatics(doc, folder, image, plt):
     image(fig, 'Matched field, geometry and interaction predictions',
           'Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.')
     doc.add_paragraph('The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.')
-    doc.add_paragraph('[Protocol and sequence identities](../../../results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md).')
+    doc.add_paragraph('[Protocol and sequence identities](../../../../results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
 
 
 def add_open_source_metrics(doc, folder, image, plt):
     """Render verified alternative-method results, distinct from published predictions."""
-    path = folder / 'reference_comparison/open_source_metrics.csv'
+    path = resolve_artifact(folder / 'reference_comparison/open_source_metrics.csv')
     if not path.exists():
         return
     from collections import defaultdict
@@ -69,7 +71,7 @@ def add_open_source_metrics(doc, folder, image, plt):
             continue
         if row['candidate_id'] in diagnostic_or_duplicate:
             continue
-        if row['method'].startswith('DDGun') and (folder / 'steps/07_ddgun_stability/predictions.csv').exists():
+        if row['method'].startswith('DDGun') and resolve_artifact(folder / 'steps/07_ddgun_stability/predictions.csv').exists():
             continue  # The original verified DDGun table and plot already show these rows.
         groups[(row['metric'], row['method'], row['unit'], row['protocol'])].append(row)
     for (metric, method, unit, protocol), group in groups.items():
@@ -106,18 +108,16 @@ def build_task(env, task):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     tid = task['id']
-    folder = env / 'results' / tid / 'agent-alone'
+    folder = historical_result(env, tid)
     doc = MarkdownReport(task['title'] + ' — benchmark report')
     table = doc.table
     source = doc.source
 
     doc.add_heading(task['title'] + ' — benchmark report', 0)
-    doc.add_paragraph('Agent-alone candidates, published prediction values and reference variants calculated in this work.')
-    run_config = env / 'configs' / tid / 'run_001_agent_alone.json'
-    if run_config.exists():
-        model = json.loads(run_config.read_text())
-        model_name = model['llm_model'] + '-' + model['llm_version']
-        doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
+    doc.add_paragraph('Comparison scope: historical agent-alone candidates only. Published predictions and reference variants recalculated here are labelled separately. Specialist-assisted results are available in the results index and are not pooled into these tables.')
+    run_record = env / 'runs' / tid / folder.name / 'run.json'
+    model_name = json.loads(run_record.read_text())['model']
+    doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
 
     if task.get('metrics'):
         doc.add_heading('Published predictions and our predictions', 1)
@@ -146,7 +146,7 @@ def build_task(env, task):
             charts += 1
 
         if tid == 'task_006_zhang_hydrolases':
-            agreement = env / 'benchmark' / tid / 'comparisions/published_prediction_only.csv'
+            agreement = resolve_artifact(env / 'benchmark' / 'evaluation' / tid / 'comparisons/published_prediction_only.csv')
             if agreement.exists():
                 pairs = [dict(r, background=r['background'].replace('-', '_'),
                               method='ESM2' if r['method'] == 'ESM' else r['method'],
@@ -180,7 +180,7 @@ def build_task(env, task):
                 fig.tight_layout()
                 image(fig, 'Published versus recalculated scores', 'Each panel compares the same variants and scoring background. Scores are unitless; the dashed line marks equal values.')
 
-        energy_path = folder / 'steps/07_ddgun_stability/predictions.csv'
+        energy_path = resolve_artifact(folder / 'steps/07_ddgun_stability/predictions.csv')
         if energy_path.exists():
             energy = [r for r in rows(energy_path) if not r['candidate'].startswith('paper-control')]
             doc.add_heading('Our stability predictions', 1)
@@ -201,7 +201,7 @@ def build_task(env, task):
             image(fig, 'Stability change from our parent', 'All bars use DDGun_SEQ and the same selected parent within this task.')
 
         candidates = [dict(r, origin='our') for r in task.get('candidates', [])]
-        comparison_path = folder / 'reference_comparison/predictions.csv'
+        comparison_path = resolve_artifact(folder / 'reference_comparison/predictions.csv')
         if comparison_path.exists():
             # This file is an explicitly integrated, verified same-method comparison.
             candidates = rows(comparison_path)
@@ -236,32 +236,46 @@ def build_task(env, task):
         add_open_source_metrics(doc, folder, image, plt)
         if tid == 'task_004_athol1_substrate':
             add_electrostatics(doc, folder, image, plt)
-        doc.add_paragraph(f'[Results and preparation details](../../../results/{tid}/agent-alone/README.md) · [Published reference](../references.md).')
+        doc.add_paragraph(f'[Results and preparation details](../../../../results/{tid}/{folder.name}/README.md) · [Published reference](../../../reference_data/{tid}/references.md).')
 
-    target = env / 'benchmark' / tid / 'comparisions/benchmark_report.md'
+    target = env / 'benchmark' / 'evaluation' / tid / 'comparisons/benchmark_report.md'
     target.parent.mkdir(parents=True, exist_ok=True)
     doc.save(target)
     print(f'{tid}: {charts} linked figures; {len(doc.tables)} tables')
 
 
 def build(env):
-    tasks = json.loads((env / 'benchmark/report_data.json').read_text())['tasks']
+    tasks = json.loads((env / 'benchmark/reference_data/report_data.json').read_text())['tasks']
     for task in tasks:
         if task.get('executed'):
             build_task(env, task)
-    index = ['# Benchmark comparisons', '', 'Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
+    index = ['# Benchmark comparisons', '', 'These six comparison reports use historical agent-alone runs only. Specialist-assisted runs have separate result records; they are not pooled into the benchmark tables. Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
-        link = task['id'] + ('/comparisions/benchmark_report.md' if task.get('executed') else '/references.md')
+        link = ('evaluation/' + task['id'] + '/comparisons/benchmark_report.md' if task.get('executed') else 'reference_data/' + task['id'] + '/references.md')
         index.append(f"| {task['title']} | [{'Comparison and figures' if task.get('executed') else 'Published reference'}]({link}) |")
-    index += ['', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
+    index += ['', '[Benchmark definitions](definitions/README.md) · [Reference data](reference_data/README.md) · [Evaluation records](evaluation/README.md) · [All approaches and run results](../results/README.md)', '', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
     (env / 'benchmark/README.md').write_text('\n'.join(index))
+    # Reports are regenerated documentation; scientific/image bytes keep their identities.
+    for record in (env / 'benchmark/evaluation').glob('*/comparisons/provenance.json'):
+        provenance = json.loads(record.read_text())
+        for artifact in provenance['artifacts']:
+            digest = hashlib.sha256((record.parent / artifact['path']).read_bytes()).hexdigest()
+            if artifact.get('filename_components') and digest != artifact['sha256']:
+                raise ValueError('A scientific benchmark artifact changed; review its identity before publishing.')
+            artifact['sha256'] = digest
+            evidence = artifact.get('migration_evidence')
+            if evidence:
+                same = digest == evidence['original_sha256']
+                evidence['content_preserved'] = same
+                evidence['change_kind'] = 'byte_preserving_move_or_rename' if same else 'documentation_or_metadata_update'
+        record.write_text(json.dumps(provenance, indent=2) + '\n')
     manifest_path = env / 'benchmark/DATA_PROVENANCE.json'
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())
         manifest['files'] = [
             {'path': str(path.relative_to(env)),
              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
-            for folder in ('benchmark', 'results', 'configs')
+            for folder in ('benchmark', 'results', 'config', 'runs')
             for path in sorted((env / folder).rglob('*'))
             if path.is_file() and path != manifest_path
         ]

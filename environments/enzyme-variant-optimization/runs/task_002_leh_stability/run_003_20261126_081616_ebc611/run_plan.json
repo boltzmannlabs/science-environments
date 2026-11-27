@@ -1,0 +1,194 @@
+{
+  "task": "task_002_leh_stability",
+  "config_version": "v12",
+  "approach": "agent_with_specialist",
+  "run_id": "20261126T0816",
+  "status": "frozen_before_design",
+  "native_goal": {
+    "session_id": "20261126_081616_ebc611",
+    "profile": "enzyme-autonomy-v12",
+    "max_turns": 20,
+    "verified_active": true,
+    "config_path": "retained-private-evidence/config.yaml"
+  },
+  "settings": {
+    "path": "retained-private-evidence/task_002_leh_stability.json",
+    "sha256": "15faba00e69de911a8f0e0c7bfb8c052b94a2595c948e1999db9a251885ac5f7",
+    "model": "hy4-flash-free",
+    "provider": "opencode-go",
+    "reasoning": "xhigh",
+    "yolo": true,
+    "tool_exclusions": [
+      "MLDE"
+    ],
+    "resource_policy": {
+      "local_heavy_cpu_gpu": false,
+      "remote": "authorized platform capabilities only"
+    }
+  },
+  "frozen_inputs": {
+    "parent": {
+      "id": "LEH_parent_1NWW_149aa",
+      "source": "PDB 1NWW SEQRES chains A/B; UniProt Q9ZAG3; wild type (RCSB mutation count 0)",
+      "sequence": "MTSKIEQPRWASKDSAAGAASTPDEKIVLEFMDALTSNDAAKLIEYFAEDTMYQNMPLPPAYGRDAVEQTLAGLFTVMSIDAVETFHIGSSNGLVYTERVDVLRALPTGKSYNLSILGVFQLTEGKITGWRDYFDLREFEEAVDLPLRG",
+      "length": 149,
+      "sequence_sha256": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+      "pdb_path": "inputs/raw/1NWW.pdb",
+      "pdb_sha256": "c3c3b27a3da81fff3ad1f8961f48b404e1a95bbab27387a13a4c1127c146fcbe",
+      "fasta_path": "inputs/raw/1NWW.fasta",
+      "fasta_sha256": "a60a3c61df36ad757dace7e586f68c14ada8034adeda8ee94b32148fd725acf6",
+      "chains": [
+        "A",
+        "B"
+      ],
+      "missing_density": "residues 1-4 (MTSK) in both chains per REMARK 465; design uses full 149-aa SEQRES construct",
+      "tags_or_background": "none declared; no engineered background",
+      "assembly": "homodimer A/B (REMARK 350/PISA, buried area 3320 A^2, dGsol -2.0 kcal/mol)"
+    },
+    "substrate": {
+      "name": "limonene 1,2-epoxide",
+      "chebi": "CHEBI:16431",
+      "rhea": "RHEA:10700",
+      "generic_smiles": "CC(=C)C1CCC2(C)OC2C1",
+      "product": "limonene-1,2-diol (CHEBI:17219)",
+      "stereochemistry": "(1S,2R,4S) and (1R,2S,4S) -> (1R,2R,4S)-diol; (1S,2R,4R) and (1R,2S,4R) -> (1S,2S,4R)-diol",
+      "crystallographic_ligand": "HPN heptanamide in 1NWW is a surrogate, NOT the natural substrate",
+      "sources": [
+        "https://www.rhea-db.org/rhea/10700",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC156771/",
+        "BRENDA EC 3.3.2.8",
+        "van der Werf et al. 1999b doi:10.1007/s002530051535"
+      ]
+    },
+    "chemistry_file": "inputs/chemistry.md",
+    "mechanism": "one-step acid-catalysed push-pull: Asp132 activates catalytic water, Asp101 protonates epoxide O, Arg99 positions both aspartates, Tyr53/Asn55 position water",
+    "conditions": "crystallisation pH 6.0 / 277 K (REMARK 280); literature optimum pH 7 / 50 C. No condition-dependent computational predictor available -> frozen single computational state; condition dependence unsupported and reported descriptively.",
+    "protected_positions": {
+      "1based": [
+        53,
+        55,
+        99,
+        101,
+        132
+      ],
+      "zerobased": [
+        52,
+        54,
+        98,
+        100,
+        131
+      ],
+      "features": "Asp132/Arg99/Asp101 triad, Tyr53/Asn55 water positioning, A/B interface"
+    }
+  },
+  "design_constraints": {
+    "max_unique_sequences_including_parent": 24,
+    "max_substitutions_per_variant": 8,
+    "max_revision_rounds": 2,
+    "max_submission_attempts": 60,
+    "max_final_candidates": 5,
+    "min_actual_results_driven_revisions": 1,
+    "disulfide_policy": "only with suitable design method and explicit structural checks; no arbitrary cysteine pairs",
+    "edits": "outside protected mask only; parent length 149 preserved; no silent tag/background change",
+    "excluded_tools": [
+      "Insilico_Directed_Evolution / MLDE"
+    ]
+  },
+  "budget_policy": {
+    "aggregate_model_tokens": null,
+    "platform_credits": null,
+    "added_wall_time_cap": null,
+    "policy": "No added aggregate token, financial or wall-time cap; preserve cumulative accounting of all specialist and parent usage.",
+    "local_heavy_cpu_gpu": false
+  },
+  "primary_endpoint": {
+    "job": "Enzymes",
+    "property": "tmPred_enzymes",
+    "quantity": "predicted whole-variant melting temperature (computational, NOT measured)",
+    "direction": "maximize",
+    "unit": "degC",
+    "min_improvement": 2.82,
+    "min_improvement_note": "= 1 observed replica std (2.8223 degC) of TemBERTureTm from the parent baseline CSV; a coarse-screen threshold, NOT a significance test. Predictor is not calibrated for small mutant delta-Tm.",
+    "protocol": "all parent and candidate sequences in same job request with identical CSV headers and property list",
+    "tie_breaker": "candidate_id ascending",
+    "model_id": "TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1"
+  },
+  "orthogonal_safeguards": [
+    {
+      "job": "Thermal_MPNN",
+      "role": "per-point-mutation ddG screen only, never summed to whole-variant"
+    },
+    {
+      "job": "Enzymes",
+      "property": [
+        "enzyme_solubility",
+        "pHPred"
+      ],
+      "role": "expression/pH risk"
+    },
+    {
+      "job": "Netsolp",
+      "prediction_type": "SU",
+      "role": "solubility/usability"
+    },
+    {
+      "job": "Pep_Patch",
+      "role": "surface hydrophobic/electrostatic patches"
+    },
+    {
+      "job": "Mol_Probity",
+      "mode": "measurement_only",
+      "role": "clashscore, Ramachandran/rotamer outliers"
+    },
+    {
+      "job": "tm_align",
+      "role": "fold retention vs parent"
+    },
+    {
+      "job": "Multimer_Structure_Prediction",
+      "role": "candidate-specific dimer"
+    },
+    {
+      "job": "Prodigy",
+      "chain_list": [
+        "A",
+        "B"
+      ],
+      "role": "assembly affinity"
+    },
+    {
+      "job": "act_seek",
+      "role": "catalytic network identification"
+    },
+    {
+      "job": "Catalytic_Geometry",
+      "role": "measurement_only descriptive geometry; no invented pass/fail ranges"
+    }
+  ],
+  "common_evaluation_protocol": {
+    "parent_id": "LEH_parent_1NWW_149aa",
+    "metric": "tmPred_enzymes",
+    "unit": "degC",
+    "direction": "maximize",
+    "protocol_id": "v12_Enzymes_tmPred_enzymes_sameCSV_20261126",
+    "min_improvement": 2.82,
+    "max_selected": 5,
+    "ratio_allowed": false,
+    "evaluation_observations_header": "candidate_id,sequence_sha256,metric,value,unit,protocol_id,eligibility,evidence_path"
+  },
+  "specialist_usage": {
+    "enzyme-method": {
+      "delivery": "intermediate",
+      "receipt": "results/specialist_receipts/enzyme-method_planning_receipt.json",
+      "tokens": {
+        "input": 764890,
+        "output": 10445
+      },
+      "api_calls": 9,
+      "duration_seconds": 114.23
+    },
+    "enzyme-recovery": "to be added if meaningful failure occurs",
+    "enzyme-evaluator": "final sealed independent review pending"
+  },
+  "notes": "Frozen before any candidate generation. Catalyst water correspondence and substrate stereochemistry from primary sources. Historical paper winners, benchmark and other-arm results excluded from all design inputs."
+}

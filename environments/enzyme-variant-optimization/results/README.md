@@ -1,16 +1,10 @@
-# Enzyme workflow results
+# Results by task and execution
 
-Each run folder contains a short results summary, workflow JPG, exact sequences and step-level numerical outputs. Agent-alone and specialist-assisted executions remain separate.
+Each task index lists agent-alone and specialist-assisted runs separately, including different models and interrupted or partial workflows. Reports retain actual outputs; a native completion claim does not override missing required evidence.
 
-| Task | Agent alone | With specialists |
-|---|---|---|
-| task_001_rml_stability | [Results](task_001_rml_stability/agent-alone/README.md) | [Results](task_001_rml_stability/agent-with-specialist/README.md) |
-| task_002_leh_stability | [Results](task_002_leh_stability/agent-alone/README.md) | [Results](task_002_leh_stability/agent-with-specialist/README.md) |
-| task_003_bla_high_temperature | [Results](task_003_bla_high_temperature/agent-alone/README.md) | Not run |
-| task_004_athol1_substrate | [Results](task_004_athol1_substrate/agent-alone/README.md) | Not run |
-| task_005_sun_leh_pythia | [Results](task_005_sun_leh_pythia/agent-alone/README.md) | [Results](task_005_sun_leh_pythia/agent-with-specialist/README.md) |
-| task_006_zhang_hydrolases | [Results](task_006_zhang_hydrolases/agent-alone/README.md) | [Results](task_006_zhang_hydrolases/agent-with-specialist/README.md) |
-
-Start with each run’s `README.md` and `WORKFLOW.md`. `sequences/` retains construct identities; `steps/` retains the actual scores and measurements. Agent-alone `reference_comparison/` folders contain separate post-selection calculations. Those calculations are not attributed to assisted runs.
-
-All ten native arms are operationally closed. Individual summaries distinguish completed computational execution from outcomes with unresolved scientific assessments. Private operational logs are excluded.
+- [task_001_rml_stability](task_001_rml_stability/README.md)
+- [task_002_leh_stability](task_002_leh_stability/README.md)
+- [task_003_bla_high_temperature](task_003_bla_high_temperature/README.md)
+- [task_004_athol1_substrate](task_004_athol1_substrate/README.md)
+- [task_005_sun_leh_pythia](task_005_sun_leh_pythia/README.md)
+- [task_006_zhang_hydrolases](task_006_zhang_hydrolases/README.md)

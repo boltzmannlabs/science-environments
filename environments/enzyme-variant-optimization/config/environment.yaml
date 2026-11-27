@@ -1,0 +1,16 @@
+environment_id: enzyme-variant-optimization
+schema_version: 1
+path_base: environment_file_directory
+title: Enzyme Variant Optimization
+task_catalog: ../tasks/README.md
+configuration_catalog: tasks/README.md
+run_registry: ../runs/registry.json
+results_index: ../results/README.md
+specification: ../ENVIRONMENT_SPEC.md
+configuration_schema: schemas/task_configuration.schema.json
+launch_schema: schemas/launch_settings.schema.json
+shared_settings:
+  hy4_flash_free_assisted: shared/hy4_flash_free_assisted.yaml
+apply_shared_settings_automatically: false
+historical_policy: Preserve original run settings; do not apply current shared settings
+  retrospectively.

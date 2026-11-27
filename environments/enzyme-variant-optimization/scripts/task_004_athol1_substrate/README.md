@@ -1,6 +1,18 @@
-# AtHOL1 substrate expansion: launch and continuation
+# AtHOL1 substrate expansion — execution entry point
 
-Prepare a fresh run with `python scripts/launch_task.py --task task_004_athol1_substrate --approach agent_alone --run-dir /path/to/new-run` from the environment directory.
-Use `agent_with_specialist` for reviewed native proposer/critic assistance; inspect/freeze settings and contracts before adding `--start`.
-For an existing run, use `sci --resume <native-session-id>` in its original profile/workspace; do not execute archived source against it.
-Offline benchmark regeneration: `python scripts/build_reports.py`. This performs no scientific or network calls.
+From the environment directory, prepare this assignment with explicitly selected settings:
+
+```bash
+python scripts/launch_task.py \
+  --task task_004_athol1_substrate \
+  --settings /path/to/frozen_settings.json \
+  --approach agent_with_specialist \
+  --profile your-dedicated-profile \
+  --run-dir /path/to/empty-run-directory \
+  --sci-python /path/to/reviewed-sci-python \
+  --sci-source /path/to/reviewed-agent-scientist
+```
+
+Use `agent_alone` to run without specialists. Run the printed command in an interactive terminal; confirm SCI saved an active goal with the retained 20-turn allowance. For an existing run, use its original profile and native session ID through SCI resume instead of launching again.
+
+[Task assignment](../../tasks/task_004_athol1_substrate/task.md) · [Full script instructions](../README.md) · [Recorded workflows](../../results/task_004_athol1_substrate/README.md).

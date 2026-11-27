@@ -1,0 +1,222 @@
+{
+  "review_role": "enzyme-evaluator (independent final review)",
+  "review_version": "2 (corrected re-review after duplicate-parent fix)",
+  "run": {
+    "task": "task_002_leh_stability",
+    "config_version": "v12",
+    "approach": "agent_with_specialist",
+    "run_id": "20261126T0816",
+    "sealed_run_dir": "retained-private-evidence/20261126T0816",
+    "parent_id": "LEH_parent_1NWW_149aa",
+    "endpoint": "Enzymes/tmPred_enzymes (degC, maximize)",
+    "min_improvement_degC": 2.82,
+    "bar_degC": 55.003,
+    "parent_value_degC": 52.18267059326172,
+    "parent_replica_std_degC": 2.8223460562074507
+  },
+  "review_scope": "Read-only review of sealed artifacts. No scientific jobs submitted and no scientific artifacts modified. evaluation.json was updated to reflect the corrected clean helper run; selection.csv, selection_seal.json, frozen_evaluation.json and the corrected evaluation_observations.csv were left untouched.",
+  "helper_output": {
+    "invocation": "python -B environment/environments/enzyme-variant-optimization/scripts/evaluate_results.py --protocol <RUN>/frozen_evaluation.json --observations <RUN>/evaluation_observations.csv --selection <RUN>/selection.csv --seal <RUN>/selection_seal.json",
+    "repo_root": "retained-private-evidence/enzyme-v12-integrated.9PApPU",
+    "helper_path": "retained-private-evidence/evaluate_results.py",
+    "exact_files": {
+      "protocol": "<RUN>/frozen_evaluation.json",
+      "observations": "<RUN>/evaluation_observations.csv",
+      "selection": "<RUN>/selection.csv",
+      "seal": "<RUN>/selection_seal.json"
+    },
+    "as_run": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout_json": {
+        "status": "no_selection",
+        "metric": "tmPred_enzymes",
+        "unit": "degC",
+        "protocol_id": "v12_Enzymes_tmPred_enzymes_sameCSV_20261126",
+        "parent_value": 52.18267059326172,
+        "selected_count": 0,
+        "evaluated_eligible_count": 0,
+        "numerically_improved_count": 0,
+        "mean_signed_improvement": null,
+        "rows": [],
+        "scope": "Reviewed declarations only; not molecular validation or experimental proof.",
+        "selection_sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3"
+      },
+      "note": "Re-run on the corrected evaluation_observations.csv (24 unique candidate IDs, parent once, all from the final matched round-2 screen CSV 6b07fee2c45f4015f0eb88fa_pred.csv). The helper exited 0 with status=no_selection and emitted a scored JSON. selected_count=0, evaluated_eligible_count=0 and rows=[] follow from the empty selection (the helper scores only selected candidates, per evaluation.evaluate()); they do NOT mean the observations lacked eligible data. The parent is read from the observations (eligibility=true) to give parent_value=52.18267059326172, and the emitted selection_sha256 matches the seal exactly. No scratch/deduplicated copy was needed."
+    },
+    "empty_selection_interpretation": {
+      "basis": "evaluation.evaluate() returns status='no_selection' when the selection table has zero rows, which is the case here (selection.csv is header-only, 0 data rows, hash matches selection_seal.json). The empty selection is the frozen, sealed decision, not a helper failure.",
+      "helper_scores_only_selected_candidates": true,
+      "evaluated_eligible_count_zero_reason": "empty selection, not missing/ineligible observations"
+    }
+  },
+  "correction_history": {
+    "earlier_defect": "In review version 1, evaluation_observations.csv contained a duplicate parent row (LEH_parent_1NWW_149aa appeared twice: round1 baseline job 6b07eca7 and round2 re-evaluation job 6b07fee2). evaluate.evaluate() rejects duplicate candidate IDs, so the as-run helper exited 2 with 'Comparison error: LEH_parent_1NWW_149aa: duplicate observation' and emitted no JSON. Version 1 therefore recorded only a de-duplicated scratch diagnostic (scratch copy retained-private-evidence/eval_obs_dedup.csv) that returned status=no_selection.",
+    "correction": "The parent row was de-duped upstream: evaluation_observations.csv now has exactly 24 rows / 24 unique candidate IDs with the parent appearing once, sourced only from the final matched round-2 screen CSV 6b07fee2c45f4015f0eb88fa_pred.csv. Re-running the helper at its actual path on the exact sealed files now exits 0 with status=no_selection.",
+    "sealed_artifacts_unchanged": "selection.csv and selection_seal.json were NOT changed across the correction; the selection_sha256 (16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3) is identical before and after, confirming the seal and the empty decision are intact.",
+    "effect_on_findings": "The earlier duplicate-parent blocker is resolved. All substantive scientific findings, completion/qualification status, and the negative-outcome justification from version 1 are unchanged; only the helper as-run result and the observation-row accounting were corrected."
+  },
+  "workflow_completion": {
+    "completed": true,
+    "qualification_achieved": false,
+    "explanation": "The workflow ran to a complete, frozen terminal state: parent baseline, two design rounds with an actual-results-driven revision, orthogonal structural/functional safeguards, and a sealed empty selection. Completion (workflow executed and closed) is distinct from qualification (a candidate met the frozen improvement bar). Zero candidates qualified; a complete workflow with zero qualifying candidates is a valid negative outcome, not an execution failure.",
+    "requirements": [
+      {
+        "requirement": "149-aa parent from PDB 1NWW with protected catalytic residues",
+        "status": "met",
+        "artifact": "RUN_PLAN.json, inputs/parent.fasta, candidates.fasta"
+      },
+      {
+        "requirement": "<=8 substitutions per variant, protected mask preserved",
+        "status": "met",
+        "artifact": "candidates.fasta, candidate_history.csv, inputs/generation_round*/variants_full149.json"
+      },
+      {
+        "requirement": "<=24 unique sequences including parent",
+        "status": "met",
+        "artifact": "candidate_history.csv (25 records incl. parent; 24 evaluated incl. parent; setC_1 retained but excluded from endpoint evaluation)"
+      },
+      {
+        "requirement": "MLDE excluded",
+        "status": "met",
+        "artifact": "RUN_PLAN.json settings.tool_exclusions, decisions.md"
+      },
+      {
+        "requirement": "frozen single same-CSV tmPred endpoint, parent+candidates",
+        "status": "met",
+        "artifact": "frozen_evaluation.json, evaluation_observations.csv (24 unique rows, parent once), jobs.json attempts 1/12/17"
+      },
+      {
+        "requirement": ">=1 actual-results-driven revision",
+        "status": "met",
+        "artifact": "decisions.md, enzyme-method_round1_interpretation.json, generation round2 raw files"
+      },
+      {
+        "requirement": "orthogonal safeguards (structure/solubility/assembly/active site)",
+        "status": "met",
+        "artifact": "structure_evidence/{parent,round1,round2,final}/"
+      },
+      {
+        "requirement": "frozen selection sealed before independent evaluation",
+        "status": "met",
+        "artifact": "selection.csv, selection_seal.json (unchanged across correction)"
+      }
+    ]
+  },
+  "independent_findings": {
+    "sequence_and_constraints": {
+      "candidates_fasta_count": 25,
+      "all_length_149": true,
+      "parent_sha256_recomputed": "a6cec520e1351c1b2bd8526049845c3a6b1a1ecf43ff90b273dc1dc5e8cb4845",
+      "parent_sha256_matches_RUN_PLAN": true,
+      "all_history_sequence_hashes_recomputed_match": true,
+      "protected_positions_1based": [53, 55, 99, 101, 132],
+      "parent_identities_at_protected_positions": {
+        "53": "Y",
+        "55": "N",
+        "99": "R",
+        "101": "D",
+        "132": "D"
+      },
+      "all_variants_preserve_protected_identities": true,
+      "max_substitutions_observed": 8,
+      "all_edit_counts_le_8": true,
+      "note": "history 'edits' strings match FASTA-derived 1-based substitutions exactly for all 24 variants; generator num_mutations=8 for setD rows resolves to 4 actual LacY numbering edits after MTSK-prefix restoration."
+    },
+    "generation_provenance": {
+      "raw_native_outputs_present": true,
+      "setA_setB_setC_setD_setE_raw_csvs_present": true,
+      "raw_sequence_to_candidate_match_after_MTSK_prefix_restore": "24/24",
+      "variants_full149_json_verified": "round1 12/12 and round2 12/12: seq, sha256 and protected_ok all consistent with candidates.fasta",
+      "candidate_history_native_evidence_paths_exist": "all variant paths exist; parent path 'inputs/raw/1NWW.fasta' referenced in history is not present in the run dir, but the parent sequence is independently available at inputs/parent.fasta and matches candidates.fasta parent byte-for-byte."
+    },
+    "seal_integrity": {
+      "selection_csv_bytes": "candidate_id,rank,sequence_sha256\\n",
+      "selection_data_rows": 0,
+      "sha256_recomputed": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3",
+      "seal_recorded_sha256": "16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3",
+      "match": true,
+      "seal_candidate_count": 0,
+      "unchanged_across_correction": true
+    },
+    "endpoint_facts": {
+      "parent_tmPred_degC": 52.18267059326172,
+      "bar_degC_computed": 55.00267059326172,
+      "bar_degC_seal_rounded": 55.003,
+      "best_variant": "LEH_R2_setD_3",
+      "best_value_degC": 53.264156341552734,
+      "best_improvement_degC": 1.081486,
+      "any_variant_at_or_above_bar": false,
+      "best_improvement_vs_parent_replica_std": "1.081 < 2.822",
+      "all_eval_obs_evidence_paths_exist": true
+    },
+    "accounting": {
+      "jobs_json_attempts": 23,
+      "jobs_json_entries": 23,
+      "attempt_numbers_contiguous": true,
+      "status_breakdown": {
+        "terminal_success": 20,
+        "terminal_success_but_task_ineligible": 1,
+        "failed": 1,
+        "terminal_success_but_input_invalid": 1
+      },
+      "ambiguous_or_pending": [],
+      "usage_submitted": 23,
+      "usage_terminal": 22,
+      "usage_failed": 1,
+      "usage_input_invalid_discarded": 1,
+      "usage_pending": 0,
+      "usage_unknown": 0,
+      "billing_units": 23,
+      "max_submission_attempts": 60,
+      "credential_check_failure_attempt_pre12_documented": true
+    },
+    "structure_evidence_present": {
+      "parent": true,
+      "round1": true,
+      "round2": true,
+      "final": true,
+      "notable_values_cross_checked": {
+        "actseek_parent": "Arg99/Asp101/Asp132 mapped; cavity includes Tyr53/Asn55",
+        "prodigy_parent_kcal_per_mol": -14.8,
+        "prodigy_R2_setD_3_kcal_per_mol": -13.1,
+        "molprobity_parent_clashscore": 3.34075723830735,
+        "enzymes_parent_baseline_model": "TemBERTureTm.mean3.3c17a7a2.encoder6c5c8a55.v1 (provenance verified)"
+      }
+    },
+    "negative_outcome_justification": {
+      "empty_selection_is_justified": true,
+      "basis": "Every eligible same-protocol tmPred observation is below the frozen bar; the best variant (+1.081 C) is within one parent replica standard deviation (2.822 C) and below the frozen min_improvement (2.82 C). No orthogonal measure establishes a qualifying improvement. decisions.md records the failed generator attempt, its recovery, and the results-driven revision; the empty selection was sealed before review. The helper's status=no_selection is a direct consequence of this sealed empty selection and its selection_sha256 matches the seal.",
+      "valid_final_outcome": true
+    }
+  },
+  "eligibility_summary": {
+    "evaluation_observations_rows": 24,
+    "unique_candidate_ids": 24,
+    "duplicate_parent_rows_in_evaluation_observations": 0,
+    "eligibility_true": 1,
+    "eligibility_false": 23,
+    "selected_candidates": 0,
+    "eligible_selected": 0,
+    "numerically_improved_selected": 0,
+    "frozen_bar_degC": 55.003,
+    "candidate_ids_at_or_above_bar": []
+  },
+  "limitations": [
+    "CORRECTED: In review version 1 the as-sealed evaluation_observations.csv had a duplicate parent row (two same-protocol parent observations from jobs 6b07eca7 and 6b07fee2), so evaluate.evaluate() raised 'duplicate observation', the helper exited 2 and emitted no JSON; only a de-duplicated scratch diagnostic could be reported. This defect was corrected upstream: the file now holds 24 unique candidate IDs with the parent once (from the final matched round-2 screen CSV 6b07fee2c45f4015f0eb88fa_pred.csv), and the helper runs cleanly (exit 0, status=no_selection). The sealed selection.csv and selection_seal.json were not changed and the seal hash is identical before and after.",
+    "The helper's evaluated_eligible_count=0, selected_count=0 and rows=[] reflect the empty sealed selection; the helper scores only selected candidates. They do not assert that the observations lacked eligible or numerically available measurements.",
+    "tmPred_enzymes is a computational predictor, not a measured melting temperature; the 2.82 C bar is one replica std, explicitly a coarse-screen threshold and not a significance test. The predictor is not calibrated for small mutant delta-Tm, so small positive deltas are not interpretable as real stabilization.",
+    "The generator stability-binding-ddg DDG sign convention is documented as inconsistent; it was used only as a sequence generator, never as a stability score. Correlation of generator DDG with deltaTm was ~-0.115 (round 1).",
+    "Whole-variant folding DDG (EvoEF1/DDGun/PACKMAN) was not available (no connector; local heavy compute disabled) and was not imputed.",
+    "Condition dependence (crystallization pH 6.0/277 K vs literature pH 7/50 C) is unsupported by an available predictor and is reported descriptively only.",
+    "No explicit catalytic water was modeled in the Boltz2 substrate complex; catalytic geometry remains descriptive.",
+    "Cost figures (USD) for model usage and jobs are null/unknown in usage.json and were not imputed.",
+    "Candidate history parent evidence path inputs/raw/1NWW.fasta is absent in the run dir; parent sequence verified via inputs/parent.fasta instead."
+  ],
+  "conclusion": {
+    "empty_selection_justified": true,
+    "workflow_complete": true,
+    "qualified_candidates": 0,
+    "statement": "Independent re-review confirms the workflow completed to a frozen terminal state and the empty selection is justified: no variant reached the frozen 55.003 C bar, and the best observed variant (+1.081 C) is within replica noise of the parent. Completion is recorded separately from qualification - the run is complete but produced zero qualifying candidates, a valid negative outcome. On the corrected evaluation_observations.csv the offline helper now runs cleanly (exit 0, status=no_selection) and emits a seal-matching selection_sha256 (16d352ebcad822e213327d18d99bf82dd951bf693149348270d92efbb5c489d3). The earlier duplicate-parent defect that blocked version 1 is resolved; sealed selection artifacts are unchanged."
+  }
+}

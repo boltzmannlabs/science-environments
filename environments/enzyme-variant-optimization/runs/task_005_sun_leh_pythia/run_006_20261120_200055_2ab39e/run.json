@@ -1,0 +1,94 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261120_200055_2ab39e",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261120_200055_2ab39e",
+  "config_version": 1,
+  "config_hash": "c968c534eeed8bf6b663d74ffae61abde52c2762bd82cddaf96996161e24cd83",
+  "config_path": "../../../config/tasks/task_005_sun_leh_pythia/06_codex_assisted.json",
+  "native_session_ids": [
+    "20261120_200055_2ab39e"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "codex",
+  "provider": null,
+  "started_at": "2026-11-20T20:01:01.412819+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-21T04:57:05.408034+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e",
+  "source_kind": "native_specialist_execution",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [],
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
+  "run_folder": "run_006_20261120_200055_2ab39e",
+  "run_number": 6,
+  "outcome_notes": "Full computational scan and returned independent evaluation.",
+  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261120_200055_2ab39e"
+    ],
+    "tokens": {
+      "input_tokens": 1183036,
+      "output_tokens": 26373,
+      "cache_read_tokens": 5918080,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 113
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "enzyme-package-test",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261120_200055_2ab39e"
+    ],
+    "specialist_session_ids": [
+      "20261120_200248_febad9",
+      "20261120_200443_92f18b",
+      "20261120_200707_b88f34",
+      "20261120_201708_422e32",
+      "20261120_201935_c76475",
+      "20261120_202248_d7e68f"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 1183036,
+      "output_tokens": 26373,
+      "cache_read_tokens": 5918080,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 113,
+      "token_total_excluding_reasoning_subset": 7127489,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 330626,
+      "output_tokens": 9469,
+      "cache_read_tokens": 40448,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 89,
+      "token_total_excluding_reasoning_subset": 380543,
+      "session_count": 6
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 1513662,
+      "output_tokens": 35842,
+      "cache_read_tokens": 5958528,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 202,
+      "token_total_excluding_reasoning_subset": 7508032,
+      "session_count": 7
+    }
+  }
+}
