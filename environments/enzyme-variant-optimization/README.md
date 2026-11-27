@@ -52,7 +52,7 @@ Read the [environment specification](ENVIRONMENT_SPEC.md), select a task, and su
 
 ## Provenance and migration
 
-[Migration notes](MIGRATION.md) and [path mapping](migration_map.json) preserve prior identifiers and evidence. Each result package links its run record and configuration. Large/private artifacts and complete native transcripts remain in retained private archives; the repository keeps concise execution metadata rather than per-call activity logs. Missing original settings or artifact naming components are reported, not invented. No empty tests directory is added; environment-owned validation is available through `python scripts/validate_run_records.py`.
+[The path mapping](migration_map.json) preserves links from historical names to current locations. Each result package links its run record and configuration. Large/private artifacts and complete native transcripts remain in retained private archives; the repository keeps concise execution metadata rather than per-call activity logs. Missing original settings or artifact naming components are reported, not invented. No empty tests directory is added; environment-owned validation is available through `python scripts/validate_run_records.py`.
 
 Benchmark protocols, reference notes and calculations are separated under `benchmark/definitions/`, `benchmark/reference_data/` and `benchmark/evaluation/`. Comparisons retain their historical agent-alone scope; they do not silently combine later model runs.
 

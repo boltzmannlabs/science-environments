@@ -36,12 +36,27 @@ def main():
     config = args.settings.resolve()
     if not config.is_file():
         parser.error("The supplied frozen settings file does not exist.")
-    settings = json.loads(config.read_text())
+    try:
+        settings = json.loads(config.read_text())
+    except (OSError, ValueError) as exc:
+        parser.error(f"Cannot read frozen JSON settings: {exc}")
+    if not isinstance(settings, dict):
+        parser.error("Frozen settings must be a JSON object.")
     if settings.get("launch_ready") is False:
         parser.error("This is an incomplete historical configuration, not executable launch settings.")
-    model = settings.get("llm", {}).get("model")
-    if not model:
-        parser.error("The configuration has no selected model; choose and freeze settings first.")
+    llm = settings.get("llm")
+    if not isinstance(llm, dict) or any(
+        not isinstance(llm.get(key), str) or not llm[key].strip()
+        for key in ("model", "provider", "reasoning_effort")
+    ):
+        parser.error("Explicitly select llm.model, llm.provider and llm.reasoning_effort; no model defaults are added.")
+    model, provider, reasoning = (llm[key] for key in ("model", "provider", "reasoning_effort"))
+    if settings.get("task_id", settings.get("task", args.task)) != args.task:
+        parser.error("Frozen settings belong to a different task.")
+    if settings.get("approach", args.approach).replace("-", "_") != args.approach:
+        parser.error("Frozen settings belong to a different approach.")
+    if (settings.get("goal") or {}).get("max_turns", 20) != 20:
+        parser.error("The frozen settings must retain the authorized native goal allowance of 20 turns.")
     contract_roots = args.contract_root or [args.sci_source / "plugins/boltzmann/skills/boltzmann-tools/references"]
     if args.approach == "agent_with_specialist" and any(not p.is_dir() for p in contract_roots):
         parser.error("Supply existing approved catalog directories with --contract-root.")
@@ -57,7 +72,6 @@ def main():
                      "Consult current native tool contracts, freeze actual effective settings and inputs, "
                      "execute the full task-specific scope and preserve all outputs/failures/accounting. "
                      "Exclude MLDE. Do not duplicate pending or acceptance-unknown jobs. "
-                     "Agent-alone uses no specialists. "
                      "Keep paper winner/reference files and other-arm outputs outside design inputs. "
                      "Do not claim improvement or completion without actual evidence.\n")
     if args.approach == "agent_with_specialist":
@@ -65,6 +79,8 @@ def main():
                  "Use intermediate delivery for actionable reviews and save their actual receipts. "
                  "Discover authorized tools from the current catalog and contracts. "
                  "Finish all mandatory stages and independent evidence review, including honest negative outcomes.\n")
+    else:
+        body += "Agent-alone uses no specialists.\n"
     if args.approach == "agent_with_specialist":
         body += "Approved read-only catalog and contract directories: " + ", ".join(str(p.resolve()) for p in contract_roots) + ".\n"
     body += "Retain SCI goals.max_turns=20 and verify the saved native goal is active.\n"
@@ -80,15 +96,15 @@ def main():
         query.write_text(body)
         prepared.write_text(json.dumps({"task": args.task, "approach": args.approach,
                                        "profile": args.profile, "settings_path": str(config), "model": model,
-                                       "provider": settings["llm"].get("provider", "openai-codex"),
-                                       "reasoning": settings["llm"].get("reasoning_effort", "xhigh"), "sci_source": str(args.sci_source.resolve()),
+                                       "provider": provider,
+                                       "reasoning": reasoning, "sci_source": str(args.sci_source.resolve()),
                                        "sci_python": str(args.sci_python.absolute()),
                                        "goal_sha256": hashlib.sha256(body.encode()).hexdigest(), "config_sha256": hashlib.sha256(config.read_bytes()).hexdigest()}, indent=2) + "\n")
     command = [str(args.sci_python.absolute()), str(env / "scripts" / "start_goal.py"),
                "--sci-source", str(args.sci_source.resolve()), "--profile", args.profile,
                "--goal-file", str(query), "--run-dir", str(workspace), "--model", model,
-               "--provider", settings["llm"].get("provider", "openai-codex"),
-               "--reasoning", settings["llm"].get("reasoning_effort", "xhigh")]
+               "--provider", provider,
+               "--reasoning", reasoning]
     if args.approach == "agent_with_specialist":
         command.append("--assisted")
     print(shlex.join(command))

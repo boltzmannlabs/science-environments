@@ -1,22 +1,54 @@
-# Execution and report entry points
+# Scripts
 
-`launch_task.py` prepares a fresh native SCI prompt from a task/approach and an explicitly supplied frozen settings file (`--settings`); it starts SCI only with `--start` and rejects existing run workspaces.
-Each task folder explains launch/resume use. SCI owns scientific execution, permissions, tools and saved-specialist lifecycle; JSON files do not configure SCI automatically.
-`evaluate_results.py` is the existing sealed-endpoint helper. `build_reports.py` rebuilds a separate Markdown benchmark report for each completed task, with linked PNG figures (requires Matplotlib).
-The original RUN_AGENT_ALONE.txt and RUN_WITH_SPECIALIST.txt remain available for the original full optimization workflow. Use task-specific reproduction scope for tasks005/006.
+Run commands from the environment directory. These scripts use native SCI for execution; they do not implement a separate scientific runner.
 
-Historical configuration exports under `config/` identify unknown fields; execution usage is under `runs/`. Only complete, explicitly frozen settings are launch settings. Supply approved settings with `launch_task.py --settings /path/to/frozen_settings.json ...`.
+| Script | Purpose | Dependencies |
+|---|---|---|
+| `launch_task.py` | Prepare a new task and print its native goal command; starts only with explicit `--start`. | Python standard library; reviewed SCI needed to start. |
+| `start_goal.py` | Start the prepared `/goal` in an interactive terminal with the selected SCI runtime/profile. | Reviewed SCI runtime and enabled capabilities; assisted runs require the three 1.2.0 packages and coordinator. |
+| `evaluate_results.py` | Compare sealed selections and reviewer-supplied numerical observations. | Python standard library. |
+| `build_reports.py` | Rebuild six historical comparison reports and linked figures from saved data. | Matplotlib. |
+| `validate_run_records.py` | Check configuration schemas, input references, run/result links and artifact hashes. | PyYAML and jsonschema. |
 
-## Assisted workflow startup
+## Prepare a fresh execution
 
-Install enzyme-method, enzyme-recovery and enzyme-evaluator 1.2.0 through SCI's reviewed catalog installer in a dedicated execution profile. Copy the reviewed src/skills/enzyme-coordinator directory into that profile's skills directory. Existing conversations keep their snapshots; start a new task only after verifying installed versions. The launcher verifies all three package versions and the coordinator before execution.
+Choose a task and freeze its settings first. Supply the model, provider and reasoning level explicitly; the launcher does not choose them. Historical configurations marked `launch_ready: false` cannot be used to launch.
 
-Use launch_task.py with explicit --profile, --sci-source and --sci-python from the reviewed installation, plus --task, --settings, --approach and --run-dir. Its default prepares the request and prints the command. --start requires an interactive terminal. start_goal.py queues a plain native /goal command, so SCI persists the goal and handles continuation. Query-file prompts alone bypass slash handling. Confirm /goal status reports active and the retained 20-turn allowance. Use /goal resume in the same session after that allowance is exhausted, and SCI's native /background for persistent execution. Reuse accepted job IDs and native assignment IDs after interruptions.
+```bash
+python scripts/launch_task.py \
+  --task task_002_leh_stability \
+  --settings /path/to/frozen_settings.json \
+  --approach agent_with_specialist \
+  --profile your-dedicated-profile \
+  --run-dir /path/to/empty-run-directory \
+  --sci-python /path/to/reviewed-sci-python \
+  --sci-source /path/to/reviewed-agent-scientist
+```
 
-The specialist definitions are distributed in Agent Scientist's subagent catalog. Public source searches require task approval, and no new scientific service credentials are copied by these scripts. Existing runs must use their saved native resume identities rather than this fresh-workspace launcher.
+Run the printed command in an interactive terminal, or add `--start` to the preparation command there. The starter applies SCI’s normal bootstrap, uses the actual configured ToolUniverse MCP name, verifies frozen settings and prevents a second fresh start in the same workspace. It queues the native `/goal` command and retains `goals.max_turns=20`. Use `agent_alone` for a run without specialists. SCI owns job execution, delegation, permissions and history.
 
-## Execution record validation
+Assisted runs use reviewed `enzyme-method`, `enzyme-recovery` and `enzyme-evaluator` 1.2.0 packages and the environment’s `enzyme-coordinator` skill. Install them through SCI’s reviewed package workflow before starting. The native selected profile determines credentials and enabled connectors; no secrets belong in this repository.
 
-Run `python scripts/validate_run_records.py` to check task/config/run/result identity, backlinks and artifact hashes. This check does not establish scientific completion, full historical reconstruction or approval of legacy artifact filenames.
+## Continue an existing execution
 
-Configuration validation additionally uses installed `PyYAML` and `jsonschema` packages. These are validation dependencies; the standard-library scientific endpoint helper remains unchanged.
+```bash
+sci -p your-original-profile --resume ORIGINAL_NATIVE_SESSION_ID
+```
+
+Use the original profile/workspace and saved native assignment identities. After the retained goal allowance, use native `/goal resume` in that conversation. Reconcile accepted or unknown jobs before any new submission. Preparation scripts do not replay historical runs.
+
+## Offline checks and reports
+
+```bash
+python scripts/validate_run_records.py
+python scripts/build_reports.py
+python scripts/evaluate_results.py --help
+```
+
+Report generation uses already-saved measurements; it does not run scientific predictors. The endpoint helper checks declared observations and seals, not molecular validity or experimental improvement. Validation supports populated input manifests and concise input-provenance notes in run.json. Original per-call SCI histories remain outside the repository.
+
+Task-specific entry points below use the full required flags. The two prompt text files are optional manual templates; the explicit launcher is the reproducible starting point.
+
+## Checks performed — 27 November 2026
+
+All script modules compile and CLI help works. All six reports rebuild; 19 configuration/run packages and 461 output hashes validate. A saved sealed LEH comparison runs successfully. Fresh launch preparation, malformed/mismatched settings rejection, and native-runtime imports were checked. A controlled CLI substitute verified `/goal` handoff, the configured ToolUniverse name and duplicate-start rejection; this was a software test, not live scientific execution.

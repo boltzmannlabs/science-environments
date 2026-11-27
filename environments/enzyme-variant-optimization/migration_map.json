@@ -1,1475 +1,466 @@
 {
-  "created_at": "2026-11-27T10:24:42.688439+00:00",
-  "mappings": [
+  "schema_version": 1,
+  "purpose": "Trace old published paths to current locations; directory mappings also cover unchanged descendants.",
+  "path_mappings": [
     {
-      "old_path": "configs",
-      "new_path": "config"
+      "previous_path": "benchmark/report_data.json",
+      "current_path": "benchmark/reference_data/report_data.json"
     },
     {
-      "old_path": "configs/README.md",
-      "new_path": "config/README.md"
+      "previous_path": "benchmark/task_001_rml_stability/comparisions",
+      "current_path": "benchmark/evaluation/task_001_rml_stability/comparisons"
     },
     {
-      "old_path": "configs/task_001_rml_stability",
-      "new_path": "config/tasks/task_001_rml_stability"
+      "previous_path": "benchmark/task_001_rml_stability/references.md",
+      "current_path": "benchmark/reference_data/task_001_rml_stability/references.md"
     },
     {
-      "old_path": "configs/task_001_rml_stability/run_001_agent_alone.json",
-      "new_path": "runs/task_001_rml_stability/20261104_183717_92629f/usage_summary.json"
+      "previous_path": "benchmark/task_002_leh_stability/comparisions",
+      "current_path": "benchmark/evaluation/task_002_leh_stability/comparisons"
     },
     {
-      "old_path": "configs/task_001_rml_stability/run_002_agent_with_specialist.json",
-      "new_path": "runs/task_001_rml_stability/20261104_183716_b986fa/usage_summary.json"
+      "previous_path": "benchmark/task_002_leh_stability/references.md",
+      "current_path": "benchmark/reference_data/task_002_leh_stability/references.md"
     },
     {
-      "old_path": "configs/task_002_leh_stability",
-      "new_path": "config/tasks/task_002_leh_stability"
+      "previous_path": "benchmark/task_003_bla_high_temperature/comparisions",
+      "current_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons"
     },
     {
-      "old_path": "configs/task_002_leh_stability/run_001_agent_alone.json",
-      "new_path": "runs/task_002_leh_stability/20261104_183716_0fd35d/usage_summary.json"
+      "previous_path": "benchmark/task_003_bla_high_temperature/references.md",
+      "current_path": "benchmark/reference_data/task_003_bla_high_temperature/references.md"
     },
     {
-      "old_path": "configs/task_002_leh_stability/run_002_agent_with_specialist.json",
-      "new_path": "runs/task_002_leh_stability/20261104_183717_b2d404/usage_summary.json"
+      "previous_path": "benchmark/task_004_athol1_substrate/comparisions",
+      "current_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons"
     },
     {
-      "old_path": "configs/task_003_bla_high_temperature",
-      "new_path": "config/tasks/task_003_bla_high_temperature"
+      "previous_path": "benchmark/task_004_athol1_substrate/references.md",
+      "current_path": "benchmark/reference_data/task_004_athol1_substrate/references.md"
     },
     {
-      "old_path": "configs/task_003_bla_high_temperature/run_001_agent_alone.json",
-      "new_path": "runs/task_003_bla_high_temperature/20261112_181250_7cf059/usage_summary.json"
+      "previous_path": "benchmark/task_005_sun_leh_pythia/comparisions",
+      "current_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons"
     },
     {
-      "old_path": "configs/task_004_athol1_substrate",
-      "new_path": "config/tasks/task_004_athol1_substrate"
+      "previous_path": "benchmark/task_005_sun_leh_pythia/references.md",
+      "current_path": "benchmark/reference_data/task_005_sun_leh_pythia/references.md"
     },
     {
-      "old_path": "configs/task_004_athol1_substrate/run_001_agent_alone.json",
-      "new_path": "runs/task_004_athol1_substrate/20261112_181250_0bd28c/usage_summary.json"
+      "previous_path": "benchmark/task_006_zhang_hydrolases/comparisions",
+      "current_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons"
     },
     {
-      "old_path": "configs/task_005_sun_leh_pythia",
-      "new_path": "config/tasks/task_005_sun_leh_pythia"
+      "previous_path": "benchmark/task_006_zhang_hydrolases/references.md",
+      "current_path": "benchmark/reference_data/task_006_zhang_hydrolases/references.md"
     },
     {
-      "old_path": "configs/task_005_sun_leh_pythia/run_001_agent_alone.json",
-      "new_path": "runs/task_005_sun_leh_pythia/20261106_185928_f4aa65/usage_summary.json"
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261104_183716_b986fa.json",
+      "current_path": "config/tasks/task_001_rml_stability/01_gpt_6_1_sol_assisted.json"
     },
     {
-      "old_path": "configs/task_005_sun_leh_pythia/run_002_agent_with_specialist.json",
-      "new_path": "runs/task_005_sun_leh_pythia/20261106_185928_8cd64c/usage_summary.json"
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261104_183717_92629f.json",
+      "current_path": "config/tasks/task_001_rml_stability/02_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "configs/task_006_zhang_hydrolases",
-      "new_path": "config/tasks/task_006_zhang_hydrolases"
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_26af1b.json",
+      "current_path": "config/tasks/task_001_rml_stability/05_discoveryrsi_assisted.json"
     },
     {
-      "old_path": "configs/task_006_zhang_hydrolases/run_001_agent_alone.json",
-      "new_path": "runs/task_006_zhang_hydrolases/20261107_144016_09fec4/usage_summary.json"
+      "previous_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_270fec.json",
+      "current_path": "config/tasks/task_001_rml_stability/06_codex_assisted.json"
     },
     {
-      "old_path": "configs/task_006_zhang_hydrolases/run_002_agent_with_specialist.json",
-      "new_path": "runs/task_006_zhang_hydrolases/20261107_033146_bbf4c0/usage_summary.json"
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261104_183716_0fd35d.json",
+      "current_path": "config/tasks/task_002_leh_stability/01_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f"
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261104_183717_b2d404.json",
+      "current_path": "config/tasks/task_002_leh_stability/02_gpt_6_1_sol_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/README.md"
+      "previous_path": "config/tasks/task_002_leh_stability/cfg_20261126_081616_ebc611.json",
+      "current_path": "config/tasks/task_002_leh_stability/03_hy4_flash_free_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/WORKFLOW.md"
+      "previous_path": "config/tasks/task_003_bla_high_temperature/cfg_20261112_181250_7cf059.json",
+      "current_path": "config/tasks/task_003_bla_high_temperature/01_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/figures/workflow.jpg"
+      "previous_path": "config/tasks/task_003_bla_high_temperature/cfg_20261126_081616_987131.json",
+      "current_path": "config/tasks/task_003_bla_high_temperature/02_hy4_flash_free_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/README.md"
+      "previous_path": "config/tasks/task_004_athol1_substrate/cfg_20261112_181250_0bd28c.json",
+      "current_path": "config/tasks/task_004_athol1_substrate/01_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/ddgun/method.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/ddgun/method.json"
+      "previous_path": "config/tasks/task_004_athol1_substrate/cfg_20261126_081616_9622ce.json",
+      "current_path": "config/tasks/task_004_athol1_substrate/02_hy4_flash_free_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/jobs.json"
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_8cd64c.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/01_gpt_6_1_sol_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/open_source_metrics.csv"
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_f4aa65.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/02_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/predictions.csv"
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_194624_a336c7.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/reference_comparison/predictor_outputs.csv"
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200055_2ab39e.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/06_codex_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/all_candidates.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/all_candidates.fasta"
+      "previous_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200057_20ad9a.json",
+      "current_path": "config/tasks/task_005_sun_leh_pythia/07_discoveryrsi_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/candidate_history.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/candidate_history.csv"
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_033146_bbf4c0.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/01_gpt_6_1_sol_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/candidate_sequences.csv"
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_144016_09fec4.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/02_gpt_6_1_sol_agent_alone.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/candidate_sequences.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/candidate_sequences.fasta"
+      "previous_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261126_081616_5ee44d.json",
+      "current_path": "config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/candidates.fasta"
+      "previous_path": "configs",
+      "current_path": "config"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/controls.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/controls.fasta"
+      "previous_path": "configs/task_001_rml_stability",
+      "current_path": "config/tasks/task_001_rml_stability"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/identities.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/identities.json"
+      "previous_path": "configs/task_001_rml_stability/run_001_agent_alone.json",
+      "current_path": "runs/task_001_rml_stability/run_002_20261104_183717_92629f/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/sequences/parent.fasta"
+      "previous_path": "configs/task_001_rml_stability/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_001_rml_stability/run_001_20261104_183716_b986fa/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/00_execution_index/jobs.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/00_execution_index/jobs.csv"
+      "previous_path": "configs/task_002_leh_stability",
+      "current_path": "config/tasks/task_002_leh_stability"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/01_parent_preparation/README.md"
+      "previous_path": "configs/task_002_leh_stability/run_001_agent_alone.json",
+      "current_path": "runs/task_002_leh_stability/run_001_20261104_183716_0fd35d/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/01_parent_preparation/settings.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/01_parent_preparation/settings.json"
+      "previous_path": "configs/task_002_leh_stability/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_002_leh_stability/run_002_20261104_183717_b2d404/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/02_variant_generation/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/02_variant_generation/README.md"
+      "previous_path": "configs/task_003_bla_high_temperature",
+      "current_path": "config/tasks/task_003_bla_high_temperature"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/03_property_screening/README.md"
+      "previous_path": "configs/task_003_bla_high_temperature/run_001_agent_alone.json",
+      "current_path": "runs/task_003_bla_high_temperature/run_001_20261112_181250_7cf059/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/03_property_screening/outputs.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/03_property_screening/outputs.csv"
+      "previous_path": "configs/task_004_athol1_substrate",
+      "current_path": "config/tasks/task_004_athol1_substrate"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/04_structure_and_chemical_assessment/README.md"
+      "previous_path": "configs/task_004_athol1_substrate/run_001_agent_alone.json",
+      "current_path": "runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_01.csv"
+      "previous_path": "configs/task_005_sun_leh_pythia",
+      "current_path": "config/tasks/task_005_sun_leh_pythia"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/04_structure_and_chemical_assessment/docking_scores/RML_R2_02.csv"
+      "previous_path": "configs/task_005_sun_leh_pythia/run_001_agent_alone.json",
+      "current_path": "runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/04_structure_and_chemical_assessment/docking_scores/RML_WT.csv"
+      "previous_path": "configs/task_005_sun_leh_pythia/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/04_structure_and_chemical_assessment/outputs.csv"
+      "previous_path": "configs/task_006_zhang_hydrolases",
+      "current_path": "config/tasks/task_006_zhang_hydrolases"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/05_revision_and_re_evaluation/README.md"
+      "previous_path": "configs/task_006_zhang_hydrolases/run_001_agent_alone.json",
+      "current_path": "runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/05_revision_and_re_evaluation/outputs.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/05_revision_and_re_evaluation/outputs.csv"
+      "previous_path": "configs/task_006_zhang_hydrolases/run_002_agent_with_specialist.json",
+      "current_path": "runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0/usage_summary.json"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/06_post_selection_properties/predictions.csv"
+      "previous_path": "results/task_001_rml_stability/20261104_183716_b986fa",
+      "current_path": "results/task_001_rml_stability/run_001_20261104_183716_b986fa"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/07_ddgun_stability/README.md"
+      "previous_path": "results/task_001_rml_stability/20261104_183717_92629f",
+      "current_path": "results/task_001_rml_stability/run_002_20261104_183717_92629f"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/input.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/07_ddgun_stability/input.json"
+      "previous_path": "results/task_001_rml_stability/20261120_200056_26af1b",
+      "current_path": "results/task_001_rml_stability/run_005_20261120_200056_26af1b"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/job.json",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/07_ddgun_stability/job.json"
+      "previous_path": "results/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "results/task_001_rml_stability/run_006_20261120_200056_270fec"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/output.txt",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/07_ddgun_stability/output.txt"
+      "previous_path": "results/task_001_rml_stability/agent-alone",
+      "current_path": "results/task_001_rml_stability/run_002_20261104_183717_92629f"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183717_92629f/steps/07_ddgun_stability/predictions.csv"
+      "previous_path": "results/task_001_rml_stability/agent-with-specialist",
+      "current_path": "results/task_001_rml_stability/run_001_20261104_183716_b986fa"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa"
+      "previous_path": "results/task_002_leh_stability/20261104_183716_0fd35d",
+      "current_path": "results/task_002_leh_stability/run_001_20261104_183716_0fd35d"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/README.md",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/README.md"
+      "previous_path": "results/task_002_leh_stability/20261104_183717_b2d404",
+      "current_path": "results/task_002_leh_stability/run_002_20261104_183717_b2d404"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/WORKFLOW.md",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/WORKFLOW.md"
+      "previous_path": "results/task_002_leh_stability/20261126_081616_ebc611",
+      "current_path": "results/task_002_leh_stability/run_003_20261126_081616_ebc611"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/figures/workflow.jpg",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/figures/workflow.jpg"
+      "previous_path": "results/task_002_leh_stability/agent-alone",
+      "current_path": "results/task_002_leh_stability/run_001_20261104_183716_0fd35d"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/sequences/candidate_history.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/sequences/candidate_history.csv"
+      "previous_path": "results/task_002_leh_stability/agent-with-specialist",
+      "current_path": "results/task_002_leh_stability/run_002_20261104_183717_b2d404"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/sequences/candidates.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/sequences/candidates.fasta"
+      "previous_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059",
+      "current_path": "results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/sequences/parent.fasta",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/sequences/parent.fasta"
+      "previous_path": "results/task_003_bla_high_temperature/20261126_081616_987131",
+      "current_path": "results/task_003_bla_high_temperature/run_002_20261126_081616_987131"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/candidate_summary.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/steps/01_property_screening/candidate_summary.csv"
+      "previous_path": "results/task_003_bla_high_temperature/agent-alone",
+      "current_path": "results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/measurements.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/steps/01_property_screening/measurements.csv"
+      "previous_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c",
+      "current_path": "results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/steps/02_structure_assessment/measurements.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/steps/02_structure_assessment/measurements.csv"
+      "previous_path": "results/task_004_athol1_substrate/20261126_081616_9622ce",
+      "current_path": "results/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
     },
     {
-      "old_path": "results/task_001_rml_stability/agent-with-specialist/steps/03_review/sealed_selection.csv",
-      "new_path": "results/task_001_rml_stability/20261104_183716_b986fa/steps/03_review/sealed_selection.csv"
+      "previous_path": "results/task_004_athol1_substrate/agent-alone",
+      "current_path": "results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d"
+      "previous_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c",
+      "current_path": "results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/README.md"
+      "previous_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65",
+      "current_path": "results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/WORKFLOW.md"
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_194624_a336c7",
+      "current_path": "results/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/figures/workflow.jpg"
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "results/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/README.md"
+      "previous_path": "results/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "results/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/ddgun/method.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/ddgun/method.json"
+      "previous_path": "results/task_005_sun_leh_pythia/agent-alone",
+      "current_path": "results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/jobs.json"
+      "previous_path": "results/task_005_sun_leh_pythia/agent-with-specialist",
+      "current_path": "results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/open_source_metrics.csv"
+      "previous_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
+      "current_path": "results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/predictions.csv"
+      "previous_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4",
+      "current_path": "results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/reference_comparison/predictor_outputs.csv"
+      "previous_path": "results/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "results/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/all_candidates.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/all_candidates.fasta"
+      "previous_path": "results/task_006_zhang_hydrolases/agent-alone",
+      "current_path": "results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/candidate_history.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/candidate_history.csv"
+      "previous_path": "results/task_006_zhang_hydrolases/agent-with-specialist",
+      "current_path": "results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/candidate_sequences.csv"
+      "previous_path": "runs/task_001_rml_stability/20261104_183716_b986fa",
+      "current_path": "runs/task_001_rml_stability/run_001_20261104_183716_b986fa"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/candidate_sequences.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/candidate_sequences.fasta"
+      "previous_path": "runs/task_001_rml_stability/20261104_183717_92629f",
+      "current_path": "runs/task_001_rml_stability/run_002_20261104_183717_92629f"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/candidates.fasta"
+      "previous_path": "runs/task_001_rml_stability/20261120_200056_26af1b",
+      "current_path": "runs/task_001_rml_stability/run_005_20261120_200056_26af1b"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/controls.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/controls.fasta"
+      "previous_path": "runs/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "runs/task_001_rml_stability/run_006_20261120_200056_270fec"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/identities.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/identities.json"
+      "previous_path": "runs/task_002_leh_stability/20261104_183716_0fd35d",
+      "current_path": "runs/task_002_leh_stability/run_001_20261104_183716_0fd35d"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/sequences/parent.fasta"
+      "previous_path": "runs/task_002_leh_stability/20261104_183717_b2d404",
+      "current_path": "runs/task_002_leh_stability/run_002_20261104_183717_b2d404"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/00_execution_index/jobs.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/00_execution_index/jobs.csv"
+      "previous_path": "runs/task_002_leh_stability/20261126_081616_ebc611",
+      "current_path": "runs/task_002_leh_stability/run_003_20261126_081616_ebc611"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/01_parent_preparation/README.md"
+      "previous_path": "runs/task_003_bla_high_temperature/20261112_181250_7cf059",
+      "current_path": "runs/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/01_parent_preparation/settings.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/01_parent_preparation/settings.json"
+      "previous_path": "runs/task_003_bla_high_temperature/20261126_081616_987131",
+      "current_path": "runs/task_003_bla_high_temperature/run_002_20261126_081616_987131"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/02_variant_generation/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/02_variant_generation/README.md"
+      "previous_path": "runs/task_004_athol1_substrate/20261112_181250_0bd28c",
+      "current_path": "runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/03_property_screening/README.md"
+      "previous_path": "runs/task_004_athol1_substrate/20261126_081616_9622ce",
+      "current_path": "runs/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/03_property_screening/outputs.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/03_property_screening/outputs.csv"
+      "previous_path": "runs/task_005_sun_leh_pythia/20261106_185928_8cd64c",
+      "current_path": "runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/04_structure_and_chemical_assessment/README.md"
+      "previous_path": "runs/task_005_sun_leh_pythia/20261106_185928_f4aa65",
+      "current_path": "runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/04_structure_and_chemical_assessment/outputs.csv"
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_194624_a336c7",
+      "current_path": "runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/05_revision_and_re_evaluation/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/05_revision_and_re_evaluation/README.md"
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "runs/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/06_post_selection_properties/predictions.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/06_post_selection_properties/predictions.csv"
+      "previous_path": "runs/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "runs/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/07_ddgun_stability/README.md"
+      "previous_path": "runs/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
+      "current_path": "runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/input.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/07_ddgun_stability/input.json"
+      "previous_path": "runs/task_006_zhang_hydrolases/20261107_144016_09fec4",
+      "current_path": "runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/job.json",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/07_ddgun_stability/job.json"
+      "previous_path": "runs/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "runs/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/output.txt",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/07_ddgun_stability/output.txt"
+      "previous_path": "src/task_001_rml_stability/20261120_200056_270fec",
+      "current_path": "src/task_001_rml_stability/run_006_20261120_200056_270fec"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-alone/steps/07_ddgun_stability/predictions.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183716_0fd35d/steps/07_ddgun_stability/predictions.csv"
+      "previous_path": "src/task_001_rml_stability/20261120_200056_270fec/results/local/task_001_rml_stability/fresh/assisted/run-001/homologs/align_homologs.py",
+      "current_path": "src/task_001_rml_stability/run_006_20261120_200056_270fec/align_homologs.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200055_2ab39e",
+      "current_path": "src/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/README.md",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/README.md"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/WORKFLOW.md",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/WORKFLOW.md"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/context_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/context_scan_driver.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/figures/workflow.jpg",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/figures/workflow.jpg"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/fix_sequences.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/fix_sequences.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/sequences/candidate_history.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/sequences/candidate_history.csv"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/full_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/full_scan_driver.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/sequences/candidates.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/sequences/candidates.fasta"
+      "previous_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/monomer_scan_driver.py",
+      "current_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a/monomer_scan_driver.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/sequences/parent.fasta",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/sequences/parent.fasta"
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/steps/01_property_screening/candidate_summary.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/steps/01_property_screening/candidate_summary.csv"
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_esm_scan.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/full_esm_scan.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/steps/01_property_screening/measurements.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/steps/01_property_screening/measurements.csv"
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_pythia_scan.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/full_pythia_scan.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/steps/02_structure_assessment/measurements.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/steps/02_structure_assessment/measurements.csv"
+      "previous_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/verify_all.py",
+      "current_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d/verify_all.py"
     },
     {
-      "old_path": "results/task_002_leh_stability/agent-with-specialist/steps/03_review/sealed_selection.csv",
-      "new_path": "results/task_002_leh_stability/20261104_183717_b2d404/steps/03_review/sealed_selection.csv"
+      "previous_path": "tasks/task_001_rml_stability.md",
+      "current_path": "tasks/task_001_rml_stability/task.md"
     },
     {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059"
+      "previous_path": "tasks/task_002_leh_stability.md",
+      "current_path": "tasks/task_002_leh_stability/task.md"
     },
     {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/README.md"
+      "previous_path": "tasks/task_003_bla_high_temperature.md",
+      "current_path": "tasks/task_003_bla_high_temperature/task.md"
     },
     {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/WORKFLOW.md"
+      "previous_path": "tasks/task_004_athol1_substrate.md",
+      "current_path": "tasks/task_004_athol1_substrate/task.md"
     },
     {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/figures/workflow.jpg"
+      "previous_path": "tasks/task_005_sun_leh_pythia.md",
+      "current_path": "tasks/task_005_sun_leh_pythia/task.md"
     },
     {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/README.md"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/method.json",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/evoef/method.json"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/evoef/paired_energies.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/evoef/paired_energies.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/jobs.json"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/open_source_metrics.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/method.json",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/packman/method.json"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/packman/predictions.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/packman/predictions.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/predictions.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/predictor_outputs.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/reference_comparison/reference_sequences.fasta",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/reference_comparison/reference_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/sequences/all_generated_sequences.fasta",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/sequences/all_generated_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/sequences/candidate_history.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/sequences/candidate_history.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/sequences/candidates.fasta"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/sequences/identities.json",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/sequences/identities.json"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/sequences/parent.fasta"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/00_execution_index/jobs.json",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/00_execution_index/jobs.json"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/01_parent_preparation/README.md"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/02_variant_generation/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/02_variant_generation/README.md"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/03_property_screening/README.md"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/03_property_screening/outputs.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/03_property_screening/outputs.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/04_structure_and_chemical_assessment/README.md"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/04_structure_and_chemical_assessment/outputs.csv"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/agent-alone/steps/05_revision_and_re_evaluation/README.md",
-      "new_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059/steps/05_revision_and_re_evaluation/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/WORKFLOW.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/figures/workflow.jpg"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/method.json",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/evoef/method.json"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/evoef/paired_energies.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/evoef/paired_energies.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/jobs.json"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/open_source_metrics.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/predictions.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/predictor_outputs.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/reference_comparison/reference_sequences.fasta",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/reference_comparison/reference_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/sequences/all_generated_sequences.fasta",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/sequences/all_generated_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/sequences/candidate_history.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/sequences/candidate_history.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/sequences/candidates.fasta"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/sequences/identities.json",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/sequences/identities.json"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/sequences/parent.fasta"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/00_execution_index/jobs.json",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/00_execution_index/jobs.json"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/01_parent_preparation/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/02_variant_generation/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/02_variant_generation/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/03_property_screening/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/03_property_screening/outputs.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/03_property_screening/outputs.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/04_structure_and_chemical_assessment/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/04_structure_and_chemical_assessment/outputs.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/04_structure_and_chemical_assessment/outputs.csv"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/05_revision_and_re_evaluation/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/05_revision_and_re_evaluation/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/PROVENANCE.json",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/PROVENANCE.json"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/README.md",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/agent-alone/steps/10_reaction_electrostatics/predictions.csv",
-      "new_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/predictions.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/WORKFLOW.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/figures/workflow.jpg"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/method.json",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/ddgun/method.json"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/predictions.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/ddgun/predictions.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/jobs.json"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/open_source_metrics.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/predictions.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/predictor_outputs.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/reference_comparison/reference_sequences.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/reference_comparison/reference_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/candidate_sequences.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/candidate_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/candidates.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/controls.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/controls.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/identities.json",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/identities.json"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/parent.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/sequences/selected_mutant_sequences.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/sequences/selected_mutant_sequences.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/01_parent_preparation/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/settings.json",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/01_parent_preparation/settings.json"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/02_pythia_scoring/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/02_pythia_scoring/all_scores.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores_ranked.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/02_pythia_scoring/all_scores_ranked.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/03_ranking/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_mean_lt_minus2.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/03_ranking/selected_mean_lt_minus2.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_sum_lt_minus2.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/03_ranking/selected_sum_lt_minus2.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-alone/steps/06_post_selection_properties/predictions.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65/steps/06_post_selection_properties/predictions.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/README.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/README.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/WORKFLOW.md",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/WORKFLOW.md"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/figures/workflow.jpg",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/figures/workflow.jpg"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/sequences/parent.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/sequences/parent.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/sequences/selected_mutations.fasta",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/sequences/selected_mutations.fasta"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/01_pythia_scoring/all_scores.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/steps/01_pythia_scoring/all_scores.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/02_ranking/selected_mean_lt_minus2.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/steps/02_ranking/selected_mean_lt_minus2.csv"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/agent-with-specialist/steps/02_ranking/selected_sum_lt_minus2.csv",
-      "new_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c/steps/02_ranking/selected_sum_lt_minus2.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/WORKFLOW.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/WORKFLOW.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/figures/workflow.jpg",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/figures/workflow.jpg"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/method.json",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/evoef/method.json"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/evoef/paired_energies.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/evoef/paired_energies.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/jobs.json",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/jobs.json"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/open_source_metrics.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/open_source_metrics.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictions.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/predictions.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/predictor_outputs.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/predictor_outputs.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/reference_comparison/reference_sequences.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/reference_comparison/reference_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/candidate_sequences.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidate_sequences.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/candidate_sequences.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/candidates.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/candidates.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/controls.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/controls.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/identities.json",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/identities.json"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/sequences/parent.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/sequences/parent.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/01_parent_preparation/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/01_parent_preparation/settings.json",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/01_parent_preparation/settings.json"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_beta_glucanase_WT.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/02_pythia_scoring/Pythia_beta_glucanase_WT.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/Pythia_cellulase_WT.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/02_pythia_scoring/Pythia_cellulase_WT.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/02_pythia_scoring/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/02_pythia_scoring/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_beta_glucanase_M5.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/03_esm_scoring/ESM2_beta_glucanase_M5.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/ESM2_cellulase_M2.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/03_esm_scoring/ESM2_cellulase_M2.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/03_esm_scoring/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/03_esm_scoring/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/04_ranking/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/04_ranking/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-alone/steps/06_post_selection_properties/predictions.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4/steps/06_post_selection_properties/predictions.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/README.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/README.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/WORKFLOW.md",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/WORKFLOW.md"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/figures/workflow.jpg",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/figures/workflow.jpg"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/sequences/backgrounds.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/sequences/backgrounds.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/sequences/score_leaders.fasta",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/sequences/score_leaders.fasta"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/01_structure_prediction/models.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/01_structure_prediction/models.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/beta-glucanase-WT.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/02_pythia_scoring/beta-glucanase-WT.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/cellulase-WT.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/02_pythia_scoring/cellulase-WT.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/beta-glucanase-M5.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/03_esm_scoring/beta-glucanase-M5.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/cellulase-M2.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/03_esm_scoring/cellulase-M2.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/paper_score_agreement.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/04_ranking/paper_score_agreement.csv"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/score_leaders.csv",
-      "new_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0/steps/04_ranking/score_leaders.csv"
-    },
-    {
-      "old_path": "tasks/task_001_rml_stability.md",
-      "new_path": "tasks/task_001_rml_stability/task.md"
-    },
-    {
-      "old_path": "tasks/task_002_leh_stability.md",
-      "new_path": "tasks/task_002_leh_stability/task.md"
-    },
-    {
-      "old_path": "tasks/task_003_bla_high_temperature.md",
-      "new_path": "tasks/task_003_bla_high_temperature/task.md"
-    },
-    {
-      "old_path": "tasks/task_004_athol1_substrate.md",
-      "new_path": "tasks/task_004_athol1_substrate/task.md"
-    },
-    {
-      "old_path": "tasks/task_005_sun_leh_pythia.md",
-      "new_path": "tasks/task_005_sun_leh_pythia/task.md"
-    },
-    {
-      "old_path": "tasks/task_006_zhang_hydrolases.md",
-      "new_path": "tasks/task_006_zhang_hydrolases/task.md"
-    }
-  ],
-  "historical_native_ids_preserved": true,
-  "original_workspaces_unchanged": true,
-  "followup_mappings": [
-    {
-      "old_path": "benchmark/report_data.json",
-      "new_path": "benchmark/reference_data/report_data.json"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/README.md",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/README.md"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/comparisions/reference_predictions.csv",
-      "new_path": "benchmark/evaluation/task_001_rml_stability/comparisons/reference_predictions.csv"
-    },
-    {
-      "old_path": "benchmark/task_001_rml_stability/references.md",
-      "new_path": "benchmark/reference_data/task_001_rml_stability/references.md"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/README.md",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/README.md"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
-      "new_path": "benchmark/evaluation/task_002_leh_stability/comparisons/reference_predictions.csv"
-    },
-    {
-      "old_path": "benchmark/task_002_leh_stability/references.md",
-      "new_path": "benchmark/reference_data/task_002_leh_stability/references.md"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/figures/comparison_03.png",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/figures/comparison_03.png"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_003_bla_high_temperature/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_003_bla_high_temperature/references.md",
-      "new_path": "benchmark/reference_data/task_003_bla_high_temperature/references.md"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions/figures/comparison_03.png",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/figures/comparison_03.png"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_004_athol1_substrate/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_004_athol1_substrate/references.md",
-      "new_path": "benchmark/reference_data/task_004_athol1_substrate/references.md"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/README.md",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/README.md"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/figures/comparison_03.png",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/figures/comparison_03.png"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_005_sun_leh_pythia/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_005_sun_leh_pythia/references.md",
-      "new_path": "benchmark/reference_data/task_005_sun_leh_pythia/references.md"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/README.md",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/README.md"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/benchmark_report.md",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/benchmark_report.md"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_01.png",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_01.png"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_02.png",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_02.png"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/figures/comparison_03.png",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/figures/comparison_03.png"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/provenance.json",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/provenance.json"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/comparisions/published_prediction_only.csv",
-      "new_path": "benchmark/evaluation/task_006_zhang_hydrolases/comparisons/published_prediction_only.csv"
-    },
-    {
-      "old_path": "benchmark/task_006_zhang_hydrolases/references.md",
-      "new_path": "benchmark/reference_data/task_006_zhang_hydrolases/references.md"
-    },
-    {
-      "old_path": "config/tasks/task_001_rml_stability/cfg_20261104_183716_b986fa.json",
-      "new_path": "config/tasks/task_001_rml_stability/01_gpt_6_1_sol_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_001_rml_stability/cfg_20261104_183717_92629f.json",
-      "new_path": "config/tasks/task_001_rml_stability/02_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_26af1b.json",
-      "new_path": "config/tasks/task_001_rml_stability/05_discoveryrsi_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_001_rml_stability/cfg_20261120_200056_270fec.json",
-      "new_path": "config/tasks/task_001_rml_stability/06_codex_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_002_leh_stability/cfg_20261104_183716_0fd35d.json",
-      "new_path": "config/tasks/task_002_leh_stability/01_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_002_leh_stability/cfg_20261104_183717_b2d404.json",
-      "new_path": "config/tasks/task_002_leh_stability/02_gpt_6_1_sol_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_002_leh_stability/cfg_20261126_081616_ebc611.json",
-      "new_path": "config/tasks/task_002_leh_stability/03_hy4_flash_free_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_003_bla_high_temperature/cfg_20261112_181250_7cf059.json",
-      "new_path": "config/tasks/task_003_bla_high_temperature/01_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_003_bla_high_temperature/cfg_20261126_081616_987131.json",
-      "new_path": "config/tasks/task_003_bla_high_temperature/02_hy4_flash_free_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_004_athol1_substrate/cfg_20261112_181250_0bd28c.json",
-      "new_path": "config/tasks/task_004_athol1_substrate/01_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_004_athol1_substrate/cfg_20261126_081616_9622ce.json",
-      "new_path": "config/tasks/task_004_athol1_substrate/02_hy4_flash_free_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_8cd64c.json",
-      "new_path": "config/tasks/task_005_sun_leh_pythia/01_gpt_6_1_sol_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261106_185928_f4aa65.json",
-      "new_path": "config/tasks/task_005_sun_leh_pythia/02_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_194624_a336c7.json",
-      "new_path": "config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200055_2ab39e.json",
-      "new_path": "config/tasks/task_005_sun_leh_pythia/06_codex_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_005_sun_leh_pythia/cfg_20261120_200057_20ad9a.json",
-      "new_path": "config/tasks/task_005_sun_leh_pythia/07_discoveryrsi_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_033146_bbf4c0.json",
-      "new_path": "config/tasks/task_006_zhang_hydrolases/01_gpt_6_1_sol_assisted.json"
-    },
-    {
-      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261107_144016_09fec4.json",
-      "new_path": "config/tasks/task_006_zhang_hydrolases/02_gpt_6_1_sol_agent_alone.json"
-    },
-    {
-      "old_path": "config/tasks/task_006_zhang_hydrolases/cfg_20261126_081616_5ee44d.json",
-      "new_path": "config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json"
-    },
-    {
-      "old_path": "src/task_001_rml_stability/20261120_200056_270fec/results/local/task_001_rml_stability/fresh/assisted/run-001/homologs/align_homologs.py",
-      "new_path": "src/task_001_rml_stability/20261120_200056_270fec/align_homologs.py"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/context_scan_driver.py",
-      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/context_scan_driver.py"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/fix_sequences.py",
-      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/fix_sequences.py"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/full_scan_driver.py",
-      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/full_scan_driver.py"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/results/local/task_005_sun_leh_pythia/monomer_scan_driver.py",
-      "new_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a/monomer_scan_driver.py"
-    },
-    {
-      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_esm_scan.py",
-      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/full_esm_scan.py"
-    },
-    {
-      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/full_pythia_scan.py",
-      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/full_pythia_scan.py"
-    },
-    {
-      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/run/v1/agent_with_specialist/tools/verify_all.py",
-      "new_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d/verify_all.py"
-    }
-  ],
-  "run_prefix_mappings": [
-    {
-      "old_path": "results/task_001_rml_stability/20261104_183716_b986fa",
-      "new_path": "results/task_001_rml_stability/run_001_20261104_183716_b986fa"
-    },
-    {
-      "old_path": "results/task_001_rml_stability/20261104_183717_92629f",
-      "new_path": "results/task_001_rml_stability/run_002_20261104_183717_92629f"
-    },
-    {
-      "old_path": "results/task_001_rml_stability/20261120_200056_26af1b",
-      "new_path": "results/task_001_rml_stability/run_005_20261120_200056_26af1b"
-    },
-    {
-      "old_path": "results/task_001_rml_stability/20261120_200056_270fec",
-      "new_path": "results/task_001_rml_stability/run_006_20261120_200056_270fec"
-    },
-    {
-      "old_path": "results/task_002_leh_stability/20261104_183716_0fd35d",
-      "new_path": "results/task_002_leh_stability/run_001_20261104_183716_0fd35d"
-    },
-    {
-      "old_path": "results/task_002_leh_stability/20261104_183717_b2d404",
-      "new_path": "results/task_002_leh_stability/run_002_20261104_183717_b2d404"
-    },
-    {
-      "old_path": "results/task_002_leh_stability/20261126_081616_ebc611",
-      "new_path": "results/task_002_leh_stability/run_003_20261126_081616_ebc611"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/20261112_181250_7cf059",
-      "new_path": "results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
-    },
-    {
-      "old_path": "results/task_003_bla_high_temperature/20261126_081616_987131",
-      "new_path": "results/task_003_bla_high_temperature/run_002_20261126_081616_987131"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/20261112_181250_0bd28c",
-      "new_path": "results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
-    },
-    {
-      "old_path": "results/task_004_athol1_substrate/20261126_081616_9622ce",
-      "new_path": "results/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/20261106_185928_8cd64c",
-      "new_path": "results/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/20261106_185928_f4aa65",
-      "new_path": "results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/20261120_194624_a336c7",
-      "new_path": "results/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/20261120_200055_2ab39e",
-      "new_path": "results/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
-    },
-    {
-      "old_path": "results/task_005_sun_leh_pythia/20261120_200057_20ad9a",
-      "new_path": "results/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
-      "new_path": "results/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/20261107_144016_09fec4",
-      "new_path": "results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
-    },
-    {
-      "old_path": "results/task_006_zhang_hydrolases/20261126_081616_5ee44d",
-      "new_path": "results/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
-    },
-    {
-      "old_path": "runs/task_001_rml_stability/20261104_183716_b986fa",
-      "new_path": "runs/task_001_rml_stability/run_001_20261104_183716_b986fa"
-    },
-    {
-      "old_path": "runs/task_001_rml_stability/20261104_183717_92629f",
-      "new_path": "runs/task_001_rml_stability/run_002_20261104_183717_92629f"
-    },
-    {
-      "old_path": "runs/task_001_rml_stability/20261120_200056_26af1b",
-      "new_path": "runs/task_001_rml_stability/run_005_20261120_200056_26af1b"
-    },
-    {
-      "old_path": "runs/task_001_rml_stability/20261120_200056_270fec",
-      "new_path": "runs/task_001_rml_stability/run_006_20261120_200056_270fec"
-    },
-    {
-      "old_path": "runs/task_002_leh_stability/20261104_183716_0fd35d",
-      "new_path": "runs/task_002_leh_stability/run_001_20261104_183716_0fd35d"
-    },
-    {
-      "old_path": "runs/task_002_leh_stability/20261104_183717_b2d404",
-      "new_path": "runs/task_002_leh_stability/run_002_20261104_183717_b2d404"
-    },
-    {
-      "old_path": "runs/task_002_leh_stability/20261126_081616_ebc611",
-      "new_path": "runs/task_002_leh_stability/run_003_20261126_081616_ebc611"
-    },
-    {
-      "old_path": "runs/task_003_bla_high_temperature/20261112_181250_7cf059",
-      "new_path": "runs/task_003_bla_high_temperature/run_001_20261112_181250_7cf059"
-    },
-    {
-      "old_path": "runs/task_003_bla_high_temperature/20261126_081616_987131",
-      "new_path": "runs/task_003_bla_high_temperature/run_002_20261126_081616_987131"
-    },
-    {
-      "old_path": "runs/task_004_athol1_substrate/20261112_181250_0bd28c",
-      "new_path": "runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c"
-    },
-    {
-      "old_path": "runs/task_004_athol1_substrate/20261126_081616_9622ce",
-      "new_path": "runs/task_004_athol1_substrate/run_002_20261126_081616_9622ce"
-    },
-    {
-      "old_path": "runs/task_005_sun_leh_pythia/20261106_185928_8cd64c",
-      "new_path": "runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c"
-    },
-    {
-      "old_path": "runs/task_005_sun_leh_pythia/20261106_185928_f4aa65",
-      "new_path": "runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65"
-    },
-    {
-      "old_path": "runs/task_005_sun_leh_pythia/20261120_194624_a336c7",
-      "new_path": "runs/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7"
-    },
-    {
-      "old_path": "runs/task_005_sun_leh_pythia/20261120_200055_2ab39e",
-      "new_path": "runs/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
-    },
-    {
-      "old_path": "runs/task_005_sun_leh_pythia/20261120_200057_20ad9a",
-      "new_path": "runs/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
-    },
-    {
-      "old_path": "runs/task_006_zhang_hydrolases/20261107_033146_bbf4c0",
-      "new_path": "runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0"
-    },
-    {
-      "old_path": "runs/task_006_zhang_hydrolases/20261107_144016_09fec4",
-      "new_path": "runs/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4"
-    },
-    {
-      "old_path": "runs/task_006_zhang_hydrolases/20261126_081616_5ee44d",
-      "new_path": "runs/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
-    },
-    {
-      "old_path": "src/task_001_rml_stability/20261120_200056_270fec",
-      "new_path": "src/task_001_rml_stability/run_006_20261120_200056_270fec"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200055_2ab39e",
-      "new_path": "src/task_005_sun_leh_pythia/run_006_20261120_200055_2ab39e"
-    },
-    {
-      "old_path": "src/task_005_sun_leh_pythia/20261120_200057_20ad9a",
-      "new_path": "src/task_005_sun_leh_pythia/run_007_20261120_200057_20ad9a"
-    },
-    {
-      "old_path": "src/task_006_zhang_hydrolases/20261126_081616_5ee44d",
-      "new_path": "src/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d"
+      "previous_path": "tasks/task_006_zhang_hydrolases.md",
+      "current_path": "tasks/task_006_zhang_hydrolases/task.md"
     }
   ]
 }
