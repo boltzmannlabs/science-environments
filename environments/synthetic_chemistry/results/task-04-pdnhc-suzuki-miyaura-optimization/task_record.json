@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "task_id": "task-04-pdnhc-suzuki-miyaura-optimization",
+  "title": "Pd-NHC Suzuki-Miyaura blind optimization",
+  "task_definition": "../../tasks/task-04-pdnhc-suzuki-miyaura-optimization/README.md",
+  "benchmark_definition": "../../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md",
+  "metrics": "../../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/achieved_metrics.json",
+  "paper_catalog": "../../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/papers.md",
+  "results": [
+    "prediction_summary.json",
+    "pdnhc_loading_candidates.csv",
+    "comparison_report.md",
+    "achievements_and_comparison.md",
+    "gaps_and_improvement_plan.md",
+    "run_log.md",
+    "validation_receipt.md"
+  ],
+  "status": "blind computational predictions and design hypotheses; no experimental superiority",
+  "scope": "Direct Suzuki branch plus five retrosynthesis routes, ten internal conditions, fifteen Parrot predictions, eight Pd-NHC design candidates, and a loading-aware frozen-yield design set with a persisted campaign reservation",
+  "experimental_data_available": false,
+  "new_model_or_wet_lab_execution_during_packaging": false,
+  "note": "Tool jobs were executed in the originating session; packaging this folder ran no model job or laboratory experiment. Raw service exports, signed URLs and credentials are excluded."
+}

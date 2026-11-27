@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "task_id": "task-04-pdnhc-suzuki-miyaura-optimization",
+  "metric_type": "blind computational predictions and design hypotheses; not experimental performance",
+  "target": {
+    "reactant_1": "COc1ccc(Cl)cc1",
+    "reactant_2": "OB(O)c1ccc(C(F)(F)F)cc1",
+    "product": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+    "reaction_class": "Suzuki-Miyaura cross-coupling",
+    "catalyst_constraint": "Pd-NHC precatalyst"
+  },
+  "forward_prediction": {
+    "top1_exact_target_match": true,
+    "top1_native_model_score": 1,
+    "top1_native_feasibility_score": 0.9934252567071588,
+    "candidate_count_returned": 30,
+    "score_semantics": "model score and feasibility score; not percentage yield"
+  },
+  "retrosynthesis": {
+    "routes_reviewed": 5,
+    "suzuki_routes": 3,
+    "negishi_routes": 2,
+    "exact_supplied_pair_in_top5": false,
+    "partial_compatibility_routes": ["R2"],
+    "native_scores": null,
+    "native_score_note": "returned route score fields were placeholders/strings and were not used for ranking"
+  },
+  "condition_recommendation": {
+    "internal_calls": 4,
+    "failed_calls": 3,
+    "failure_reason": "GLM HTTP 429 on all configured tokens; one Discovery RSI backup timeout",
+    "successful_call_id": "6b07c97cc45f4015f0eb7561",
+    "conditions_returned": 10,
+    "recommended_condition_id": "C1",
+    "recommended_temperature_c": [100, 110],
+    "recommended_solvents": ["water", "1,4-dioxane"],
+    "recommended_native_predicted_yield_percent": 32.33824074268341,
+    "recommended_native_feasibility_score": 0.78,
+    "recommended_native_score": 0.6170267877447652,
+    "nominal_highest_yield_percent": 47.446632385253906,
+    "nominal_highest_yield_condition_id": "C9",
+    "nominal_highest_yield_feasibility_score": 0.2,
+    "unique_yield_values_percent": [31.285274028778076, 32.33824074268341, 47.446632385253906],
+    "catalyst_identity": "generic string 'palladium catalyst'; no NHC identity",
+    "base_identity": "generic string 'base'",
+    "catalyst_loading_mol_percent": null,
+    "water_volume_percent": null,
+    "time_h": null,
+    "amount_units": null
+  },
+  "order_sensitivity": {
+    "reversed_order_call_id": "6b07dac07fb17f3eac9ce04b",
+    "valid_run_yield_range_percent": [31.285274028778076, 47.446632385253906],
+    "reversed_run_yield_range_percent": [22.06626534461975, 77.41950750350952],
+    "reversed_run_catalyst_and_base_present": false,
+    "interpretation": "higher reversed-order yields describe invalid catalyst-free reactions; discarded"
+  },
+  "external_condition_prediction": {
+    "tool": "Parrot",
+    "paper_doi": "10.34133/research.0231",
+    "model": "USPTO-Condition pretrained weights",
+    "predictions_returned": 15,
+    "top1_log_score": -1.3208,
+    "top1_solvent": "toluene",
+    "pd_in_top6": false,
+    "adopted": false,
+    "reason": "chemically implausible for Pd-NHC aryl-chloride Suzuki"
+  },
+  "pd_nhc_design": {
+    "tool": "reaction_optimizer_tool local pipeline",
+    "source": "compiled Suzuki template space with explicit Pd-NHC condition_space",
+    "candidate_count": 1944,
+    "recommendations": 8,
+    "all_recommendations_pd_nhc": true,
+    "catalyst_families": ["Pd(NHC)(allyl)Cl", "Pd-PEPPSI-IPent", "trans-[Pd(NHC)Cl2(DMS)]", "[Pd(NHC)Cl(1-tBu-indenyl)]", "[Pd(NHC)(mu-Cl)Cl]2", "Pd-PEPPSI-IPr"],
+    "prior_scores": [0.55],
+    "domain_scores": [0.75],
+    "score_semantics": "heuristic design scores; not calibrated yields or success probabilities",
+    "experimental_precedents_found": 0
+  },
+  "loading_aware_frozen_yield": {
+    "tool": "reaction_optimizer_tool + frozen ReactionT5-yield advisor",
+    "candidate_count": 144,
+    "recommendations": 8,
+    "loading_levels_mol_percent": [0.5, 2.0, 5.0],
+    "loading_encoding": "catalyst equivalents relative to aryl chloride 1.0 equiv",
+    "yield_predictions_available": 9,
+    "yield_predictions_percent": [8.105627059936523, 7.971233367919922, 8.401947975158691, 8.61068344116211, 7.452487945556641, 8.885693550109863, 8.105627059936523, 7.971233367919922, 7.866925239562988],
+    "highest_recommended_yield_percent": 8.885693550109863,
+    "highest_recommended_catalyst": "Pd-PEPPSI-IPr",
+    "highest_recommended_base": "K2CO3",
+    "highest_recommended_loading_mol_percent": 5.0,
+    "loading_sensitive_yield": false,
+    "loading_blindness_evidence": "Pd-PEPPSI-IPent/K2CO3 gave 8.106% at both 0.5 and 5 mol%; Pd-PEPPSI-IPr/K3PO4 gave 7.971% at both",
+    "tool_limitation_source": "pipeline.py:74: ReactionT5 yield interface does not encode equivalents, solvent, temperature, time, concentration or workup"
+  },
+  "persistent_campaign": {
+    "status": "created_and_reserved_no_measurements",
+    "campaign_id": "a19bfc948594490f9e8f992db4f77af7",
+    "batch_id": "6783580bb5ee4016a3619ea9ae9f19de",
+    "batch_size_reserved": 6,
+    "reviewed_measurements": 0,
+    "baybe_fit_performed": false
+  },
+  "experimental_comparison": {
+    "project_measured_yield": null,
+    "matched_literature_yield": null,
+    "yield_mae": null,
+    "yield_improvement_percent_points": null,
+    "experimental_best_catalyst_in_top3": null,
+    "experimental_optimum_in_top5": null,
+    "loading_reduction_percent": null,
+    "yield_retention_percent": null,
+    "chemical_superiority_demonstrated": false
+  },
+  "literature_reported_only": {
+    "Zhou_2020_iScience": {
+      "doi": "10.1016/j.isci.2020.101377",
+      "claim": "Pd(II)-NHC chloro-dimers described as highly reactive Suzuki precatalysts including aryl chlorides",
+      "exact_substrate_match": false,
+      "measured_value_for_this_pair": null,
+      "caveat": "catalyst-family analogy, not a benchmark result"
+    }
+  },
+  "overall_status": "partial"
+}

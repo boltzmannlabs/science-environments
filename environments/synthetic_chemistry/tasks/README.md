@@ -16,3 +16,7 @@ Each numbered folder represents one complete scientific task, not one tool call.
 ## Task 03 — Indole forward prediction
 
 [Task and reactants](task-03-indole-forward-prediction/README.md) · [Literature references](../benchmarks/task-03-indole-forward-prediction/README.md) · [Results and all transcribed candidates](../results/task-03-indole-forward-prediction/README.md).
+
+## Task 04 — Pd-NHC Suzuki–Miyaura blind optimization
+
+[Task and inputs](task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Literature benchmark](../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Results and comparisons](../results/task-04-pdnhc-suzuki-miyaura-optimization/README.md). Product prediction, Pd-NHC design candidates and a loading-aware frozen-yield study; no experimental validation.
