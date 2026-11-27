@@ -20,3 +20,7 @@ Benchmark definitions, reference notes and execution comparisons are separate. O
 - Legacy artifact naming remains subject to source-verified model/tool/parameter metadata; no unavailable components were fabricated.
 
 This removes the attempts from the current environment tree and its indexes. It does not rewrite Git commit history or delete original native SCI conversations.
+
+## Lean execution records
+
+Per-call activity files were removed from all 19 published runs. Fourteen empty input-manifest exports were removed; their missing-input note is recorded in run.json. Five manifests with actual input identities/checksums remain. Original SCI histories and scientific outputs were not modified.

@@ -81,8 +81,16 @@ def validate(env: Path) -> dict:
                 raise ValueError(f'Numbered folder metadata mismatch: {folder}')
         if result.name != run_folder:
             raise ValueError(f'Run/result folder mismatch: {folder}')
-        if not (folder / run['input_manifest']).is_file():
-            raise ValueError(f'Missing input manifest: {folder}')
+        if run.get('input_manifest'):
+            manifest_path = folder / run['input_manifest']
+            if not manifest_path.is_file():
+                raise ValueError(f'Missing input manifest: {folder}')
+            manifest = json.loads(manifest_path.read_text())
+            if not manifest or (set(manifest) <= {'task_id', 'run_id', 'inputs', 'coverage'}
+                                and not manifest.get('inputs')):
+                raise ValueError(f'Empty input manifest should be consolidated into run.json: {folder}')
+        elif not run.get('input_provenance_note'):
+            raise ValueError(f'Missing input references or provenance note: {folder}')
         if run.get('launch_settings_snapshot'):
             from jsonschema import Draft202012Validator
             snapshot = folder / run['launch_settings_snapshot']
