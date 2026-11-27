@@ -1,6 +1,10 @@
 # Task 06 — saved green-solvent Suzuki optimization results
 
-[Task and inputs](../../tasks/task-06-green-solvent-suzuki-optimization/README.md) · [Literature benchmark](../../benchmarks/task-06-green-solvent-suzuki-optimization/README.md) · [Focused comparison](comparison_report.md)
+[Task and inputs](../../tasks/task-06-green-solvent-suzuki-optimization/README.md) · [Literature benchmark](../../benchmarks/task-06-green-solvent-suzuki-optimization/README.md) · [Focused comparison](comparison_report.md) · [Comprehensive summary](summary.md)
+
+## Comprehensive summary
+
+[summary.md](summary.md) consolidates all executed stages, comparison tables against literature, improvements, gaps, reasons for underperformance, key metrics, limitations and next steps.
 
 ## Output inventory
 
@@ -20,6 +24,7 @@
 | [comparison_report.md](comparison_report.md) | Quantitative comparison with literature | Post hoc, after freeze |
 | [achievements_and_comparison.md](achievements_and_comparison.md) | Objective-by-objective achievements and limitations | Post hoc |
 | [gaps_and_improvement_plan.md](gaps_and_improvement_plan.md) | Gaps, reasons and next steps | Post hoc |
+| [summary.md](summary.md) | Consolidated outcomes, comparison tables, improvements, gaps and future work | Post hoc, all stages |
 
 ## Actual achievements
 
