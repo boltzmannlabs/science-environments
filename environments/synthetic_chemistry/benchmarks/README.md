@@ -6,5 +6,6 @@ The matching task folders below contain the literature catalogs and evaluation c
 - [Task 02 — impurity and parent ibuprofen](task-02-impurity-retrosynthesis/README.md): A/M literature review and recovered parent-route comparator evidence.
 - [Task 03 — indole forward prediction](task-03-indole-forward-prediction/README.md): supplied reference products and literature evaluation.
 - [Task 04 — Pd-NHC Suzuki–Miyaura optimization](task-04-pdnhc-suzuki-miyaura-optimization/README.md): general catalyst-family references, baseline models, achieved metrics and evaluation boundaries.
+- [Task 05 — microwave catalytic amidation](task-05-microwave-catalytic-amidation/README.md): verified contextual amidation sources, baseline comparators, achieved software metrics and evaluation boundaries.
 
 [Task index](../tasks/README.md) · [Results index](../results/README.md) · [Historical benchmark index](task-01-fluorinated-quinoline-retrosynthesis/legacy_index.md) · [Folder standard](../TASK_STRUCTURE.md)

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "task_id": "task-05-microwave-catalytic-amidation",
+  "title": "Microwave-assisted catalytic amidation blind study",
+  "task_definition": "../../tasks/task-05-microwave-catalytic-amidation/README.md",
+  "benchmark_definition": "../../benchmarks/task-05-microwave-catalytic-amidation/README.md",
+  "metrics": "../../benchmarks/task-05-microwave-catalytic-amidation/achieved_metrics.json",
+  "paper_catalog": "../../benchmarks/task-05-microwave-catalytic-amidation/papers.md",
+  "results": [
+    "condition_summary.json",
+    "optimizer_campaigns.json",
+    "comparison_report.md",
+    "achievements_and_comparison.md",
+    "gaps_and_improvement_plan.md",
+    "run_log.md",
+    "validation_receipt.md"
+  ],
+  "status": "blind computational predictions, constraint audit and design hypotheses; no experimental superiority",
+  "scope": "Ten internal condition recommendations for the illustrative hindered anilide pair, a post-hoc verification of five contextual literature sources, and two local optimizer campaigns including an excluded/QC-flagged prior-yield seed",
+  "experimental_data_available": false,
+  "new_model_or_wet_lab_execution_during_packaging": false,
+  "note": "One internal condition job was submitted and polled in the originating session; the local optimizer was executed there. Packaging this folder ran no model job or laboratory experiment. Raw service exports, signed URLs, credentials and personal paths are excluded."
+}
