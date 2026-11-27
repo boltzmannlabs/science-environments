@@ -9,4 +9,4 @@ Interrupted start or mandatory generation/revision/independent-review evidence u
 
 [Execution record](../../../runs/task_005_sun_leh_pythia/run_005_20261120_195207_caf486/run.json) · [Configuration](../../../config/tasks/task_005_sun_leh_pythia/05_discoveryrsi_assisted.json) · [Actual workflow](WORKFLOW.md) · [Output provenance](provenance.json)
 
-Original reports are retained under `artifacts/` where available. Their completion claims are historical statements; the execution status above reflects the evidence assessment. Missing stages are not treated as passed.
+Reports, measurements and review findings are retained under `artifacts/` and `reviews/` where available.

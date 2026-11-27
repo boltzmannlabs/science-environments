@@ -48,3 +48,5 @@ Validation for numbered folders: all 23 records and 467 artifact checksums pass;
 ## Run-level status field removal
 
 At the owner’s request, execution-status fields and status columns were removed from the published run registry, run records and result summaries. Original tool job statuses, evaluator findings, frozen inputs and factual reports are unchanged. No replacement completed/partial label was added.
+
+Remaining run-status headings, obsolete status explanations and overall classification fields in exported summaries were removed. Findings, unmet requirements, qualification evidence and native tool-job statuses remain intact.

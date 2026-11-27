@@ -16,8 +16,7 @@ Pythia scores are unitless. The original scan used summed C/P scores with mean-s
 
 The benchmark keeps published numbers and values calculated in this work separately labeled. Parent-relative changes use the exact parent recorded for each candidate.
 
-## Run status
-
+## Findings
 Computational execution completed. Sealed scoring/ranking and comparison retained; exact paper provenance unresolved.
 
 ## Files

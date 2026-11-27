@@ -16,8 +16,7 @@ Reference mutations must be mapped to the correct mature numbering. Newly calcul
 
 The benchmark keeps published numbers and values calculated in this work separately labeled. Parent-relative changes use the exact parent recorded for each candidate.
 
-## Run status
-
+## Findings
 Completed with unresolved blockers. Attempt81reached topology+manager; report warning stopped remaining assessment; empty selection.
 
 ## Files

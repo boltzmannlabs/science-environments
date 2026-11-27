@@ -24,8 +24,7 @@ Vina scores depend on the receptor, ligand preparation and search settings. DDGu
 
 The benchmark keeps published numbers and values calculated in this work separately labeled. Parent-relative changes use the exact parent recorded for each candidate.
 
-## Run status
-
+## Findings
 Closed with limitations. Design and independent review retained; qualification/common metric gaps remain.
 
 ## Files

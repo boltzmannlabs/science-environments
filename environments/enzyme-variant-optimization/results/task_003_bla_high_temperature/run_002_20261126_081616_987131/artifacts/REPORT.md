@@ -1,6 +1,6 @@
 # task_003_bla_high_temperature — BLA high-temperature variant optimization
 
-**Status:** all 8 required stages executed; independent artifact-backed review completed (`evaluation.json`: `completed_with_limitations`). **No experimental improvement is claimed.**
+all 8 required stages executed; independent artifact-backed review completed (`evaluation.json`: `completed_with_limitations`). **No experimental improvement is claimed.**
 
 ## Parent and frozen protocol
 

@@ -70,7 +70,7 @@ Keep each approach and repeat in its own run directory:
 | `jobs.json` | Native job IDs, submitted payload references, statuses, outputs, failures and unresolved requests. Redact credentials. |
 | `usage.json` | Available model/scientific runtime, queue time, resources, billing units and missing accounting fields. |
 | `selection.csv` | Final `candidate_id,rank,sequence_sha256` rows; exclude the parent and hash before independent evaluation. |
-| `REPORT.md` | Completion status, numerical findings, limitations, trade-offs and next experimental questions. |
+| `REPORT.md` | Executed steps, numerical findings, limitations, trade-offs and next experimental questions. |
 
 The evaluator separately writes `evaluation.json`. The helper's expected input is described in [the common comparison protocol](#common-comparison-protocol). Native tool schemas and result formats are unchanged.
 

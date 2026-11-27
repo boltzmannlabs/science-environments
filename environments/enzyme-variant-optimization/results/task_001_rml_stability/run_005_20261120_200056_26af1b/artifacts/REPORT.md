@@ -2,7 +2,6 @@
 
 ## Run: run-20261120-001
 ## Task: task_001_rml_stability
-## Status: COMPLETE (audited against TASK.md)
 
 ## Summary
 

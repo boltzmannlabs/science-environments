@@ -9,7 +9,7 @@ Evaluator eligibility unknown; candidate-specific ternary structure/quality/geom
 
 [Execution record](../../../runs/task_004_athol1_substrate/run_002_20261126_081616_9622ce/run.json) · [Configuration](../../../config/tasks/task_004_athol1_substrate/02_hy4_flash_free_assisted.json) · [Actual workflow](WORKFLOW.md) · [Output provenance](provenance.json)
 
-Original reports are retained under `artifacts/` where available. Their completion claims are historical statements; the execution status above reflects the evidence assessment. Missing stages are not treated as passed.
+Reports, measurements and review findings are retained under `artifacts/` and `reviews/` where available.
 
 ## Remaining assessment
 

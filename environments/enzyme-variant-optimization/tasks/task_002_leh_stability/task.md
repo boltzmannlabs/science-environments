@@ -73,7 +73,7 @@ Freeze the primary endpoint, safeguards and tie-breakers before design. Rank eli
 - `decisions.md`: exclusions, shortlisting and revision reasons, including actual specialist receipt references for assisted runs.
 - `jobs.json` and `usage.json`: submissions, known IDs, statuses, outputs, failures/unknowns and available runtime/resource/cost records, without credentials.
 - `selection.csv`: final `candidate_id,rank,sequence_sha256` rows excluding the parent, with `selection_seal.json` before independent evaluation.
-- `REPORT.md`: completion status, numerical parent comparison, final candidates or shortfall, rejected false positives and limitations. A separate evaluator writes `evaluation.json`.
+- `REPORT.md`: executed steps, numerical parent comparison, final candidates or shortfall, rejected false positives and limitations. A separate evaluator writes `evaluation.json`.
 
 ## Important Instructions
 

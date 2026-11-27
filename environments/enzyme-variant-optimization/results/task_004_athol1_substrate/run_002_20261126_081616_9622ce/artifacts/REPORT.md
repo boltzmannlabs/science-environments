@@ -25,7 +25,7 @@
 
 R2D1 edits: T30A, L71W, V72Y, V81N, V82P, S99F, L101H, A102E (8 substitutions; focus shell 9-15 A from SAH SD; no protected position or tag changed).
 
-## Stage completion status
+## Findings
 - Completed: parent preparation/baseline, tool generation (both rounds), property screening, results-driven revision and re-evaluation including direct combined mutant, endpoint comparison, sealing, independent sealed evidence review.
 - Partial/unresolved: candidate-specific reaction-complex structures with both reacting partners; candidate-specific MolProbity; candidate-specific Catalytic_Geometry; transition-state/electric-field reaction endpoint. These are reported as unresolved, not substituted or assigned zero.
 - No qualifying improvement in experimental catalysis is claimed; the +264.5 delta is an in-silico predictor value with undocumented units and unverified applicability to AtHOL1 + ethyl iodide.

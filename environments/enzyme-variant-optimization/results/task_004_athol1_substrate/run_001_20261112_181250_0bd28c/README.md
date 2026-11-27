@@ -16,8 +16,7 @@ New sequence-based Tm/solubility predictions are separate from the paper’s ele
 
 The benchmark keeps published numbers and values calculated in this work separately labeled. Parent-relative changes use the exact parent recorded for each candidate.
 
-## Run status
-
+## Findings
 Closed with limitations. Existing execution/review retained; CatPred definitions/build, A025 and historical protocol gap unresolved.
 
 ## Files

@@ -18,8 +18,7 @@ The benchmark keeps published numbers and values calculated in this work separat
 
 The report shows leaders under the common negative-log-likelihood score convention. E158C/G74P opposite-sign diagnostic entries remain in the original candidate CSVs.
 
-## Run status
-
+## Findings
 Computational execution completed. Sealed structure/inference/scoring outputs retained; historical settings/eligibility gaps remain.
 
 ## Files

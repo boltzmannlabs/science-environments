@@ -1,6 +1,6 @@
 # task_002_leh_stability — Final Report (v12, agent_with_specialist)
 
-## Completion status
+## Findings
 All eight required stages executed with native Boltzmann tools and specialist reviews. Workflow complete. **No qualifying candidate**: a valid negative outcome, not an execution failure.
 
 Parent: LEH from *Rhodococcus erythropolis* DCL14, PDB 1NWW, 149-aa SEQRES construct, chains A/B biological dimer. Chemistry from primary sources (RHEA:10700, CHEBI:16431, EMBO J 2003 PMC156771). HPN heptanamide in 1NWW is a surrogate, not the substrate; the authentic epoxide SMILES was used for complex modeling. Protected: Arg99/Asp101/Asp132 catalytic triad, Tyr53/Asn55 water positioning, A/B interface. MLDE excluded.

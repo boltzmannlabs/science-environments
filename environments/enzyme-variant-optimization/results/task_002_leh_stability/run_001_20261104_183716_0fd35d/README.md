@@ -24,8 +24,7 @@ DDGun values are unfolding ΔΔG in kcal/mol; published FoldX examples are foldi
 
 The benchmark keeps published numbers and values calculated in this work separately labeled. Parent-relative changes use the exact parent recorded for each candidate.
 
-## Run status
-
+## Findings
 Closed: no supported final candidate. Reviewed empty selection retained.
 
 ## Files

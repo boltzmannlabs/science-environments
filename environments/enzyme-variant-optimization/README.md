@@ -29,7 +29,7 @@ enzyme-variant-optimization/
 |---|---|
 | [Tasks](tasks/README.md) | Stable assignments, scientific constraints and acceptance criteria. |
 | [Configuration](config/README.md) | Recovered or frozen task settings, with unknown historical fields explicit. |
-| [Runs](runs/README.md) | Each independent execution, native continuation identity, inputs, usage, calls and status. |
+| [Runs](runs/README.md) | Each independent execution, native continuation identity, inputs, usage and calls. |
 | [Results](results/README.md) | Per-run workflow, reports, sequences, predictions and specialist reviews. |
 | [Benchmarks](benchmark/README.md) | Published references and explicitly identified historical comparisons. |
 | [Source](src/README.md) | Retained implementation and environment coordinator skill. |
