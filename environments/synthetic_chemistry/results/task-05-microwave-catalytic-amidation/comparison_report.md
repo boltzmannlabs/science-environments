@@ -1,6 +1,6 @@
 # Task 05 — prediction versus literature comparison
 
-[Task](../../tasks/task-05-microwave-catalytic-amidation/README.md) · [Benchmark](../../benchmarks/task-05-microwave-catalytic-amidation/README.md) · [Results inventory](README.md)
+[Task](../../tasks/task-05-microwave-catalytic-amidation/README.md) · [Benchmark](../../benchmarks/task-05-microwave-catalytic-amidation/README.md) · [Results inventory](README.md) · [Comprehensive summary](summary.md)
 
 ## Comparison basis
 

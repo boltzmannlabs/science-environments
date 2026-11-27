@@ -14,6 +14,7 @@
 | [gaps_and_improvement_plan.md](gaps_and_improvement_plan.md) | Performance gaps, reasons and next steps | Post hoc |
 | [run_log.md](run_log.md) | Ordered tool-call log with validation and rejection statuses | Derived from tool trace |
 | [validation_receipt.md](validation_receipt.md) | Structure, link and hygiene checks | Packaging-time validation |
+| [summary.md](summary.md) | Comprehensive all-outcomes summary, consolidated literature comparison, metrics, gaps and improvements | Consolidated post hoc from all artifacts above |
 
 ## Actual achievements
 
