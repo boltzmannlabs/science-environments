@@ -24,3 +24,7 @@ Each numbered folder represents one complete scientific task, not one tool call.
 ## Task 05 — microwave catalytic amidation
 
 [Task and inputs](task-05-microwave-catalytic-amidation/README.md) · [Literature benchmark](../benchmarks/task-05-microwave-catalytic-amidation/README.md) · [Results and comparisons](../results/task-05-microwave-catalytic-amidation/README.md). Blind condition audit, verified contextual amidation literature and a catalytic local design campaign with QC-flagged prior yields; benchmark NOT_EVALUABLE without the designated 2025 HTE paper.
+
+## Task 06 — Green-solvent Suzuki–Miyaura optimization
+
+[Task](task-06-green-solvent-suzuki-optimization/README.md) · [Literature benchmark](../benchmarks/task-06-green-solvent-suzuki-optimization/README.md) · [Results and comparisons](../results/task-06-green-solvent-suzuki-optimization/README.md). Blind solvent comparison against a verified 2025 ChemistryOpen paper; condition-aware design with a solvent-blind yield model; no experimental validation.

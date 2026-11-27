@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "task_id": "task-06-green-solvent-suzuki-optimization",
+  "title": "Green-solvent Suzuki–Miyaura microwave optimization",
+  "task_definition": "../../tasks/task-06-green-solvent-suzuki-optimization/README.md",
+  "benchmark_definition": "../../benchmarks/task-06-green-solvent-suzuki-optimization/README.md",
+  "paper_catalog": "../../benchmarks/task-06-green-solvent-suzuki-optimization/papers.md",
+  "metrics": "../../benchmarks/task-06-green-solvent-suzuki-optimization/achieved_metrics.json",
+  "results": [
+    "run_log.md", "structure_validation.json", "forward_predictions.json",
+    "condition_candidates.json", "impurity_candidates.json", "optimizer_campaigns.json",
+    "condition_recommendations.csv", "solvent_predictions.csv", "green_tradeoffs.csv",
+    "impurity_shifts.csv", "comparison_report.md", "achievements_and_comparison.md",
+    "gaps_and_improvement_plan.md"
+  ],
+  "status": "blind computational predictions and design; no experimental performance",
+  "scope": "Benchmark Suzuki coupling with conventional, greener and betaine/glycerol DES media; blinded prediction followed by post-hoc literature comparison",
+  "experimental_data_available": false,
+  "new_model_or_wet_lab_execution_during_packaging": false,
+  "literature_yields_used_as_prediction_inputs": false,
+  "user_reported_yields_used_as_prediction_inputs": false
+}

@@ -1,0 +1,59 @@
+{
+  "task_id": "SC03",
+  "status": "PARTIAL \u2014 optimization design achieved; yield-based solvent ranking NOT achieved",
+  "tool": "local reaction_optimizer_tool (BayBE v1 + frozen ReactionT5 yield)",
+  "real_outputs": {
+    "campaign_candidates_compiled": 480,
+    "batch_size_returned": 12,
+    "des_conditions_in_batch": 4,
+    "all_three_des_ratios_covered": true,
+    "greener_solvents_in_batch": [
+      "2-MeTHF",
+      "CPME",
+      "ethanol/water",
+      "glycerol"
+    ],
+    "conventional_controls_in_batch": [
+      "1,4-dioxane/water",
+      "DMF",
+      "acetonitrile"
+    ],
+    "yield_model_calls": 13,
+    "curated_ord_recipes_matching_benchmark": 0
+  },
+  "confirmed_limitations": {
+    "reactiont5_yield_is_solvent_temp_time_blind": true,
+    "evidence": "model_input strings contain only REACTANT/REAGENT/PRODUCT; repeated catalyst+base pairs across up to 4 different solvents, 29C and 2x time differ by <=0.12 pp, while catalyst/base identity spans 39.7 pp",
+    "heuristic_prior_not_calibrated_yield": true,
+    "no_curated_experimental_precedent_for_exact_pair": true,
+    "bo_learning_requires_real_reviewed_lab_measurements": true
+  },
+  "objective_assessment": {
+    "ACHIEVED": [
+      "condition space with full solvent/DES/catalyst/temp/time dimensions compiled",
+      "diverse initial design batch covering DES 1:2/1:4/1:8 and all greener candidates",
+      "frozen catalyst/base yield estimates generated"
+    ],
+    "NOT_ACHIEVED": [
+      "rank solvents by comparable predicted yield",
+      "measure MAE vs literature Table1",
+      "select final green protocol from predictions",
+      "impurity shifts",
+      "E-factor from measured masses"
+    ],
+    "reason": "No available model encodes solvent/temp/time into yield; BO needs real lab measurements; literature values were not fed into predictions"
+  },
+  "files": [
+    "sc03_campaign.json",
+    "sc03_plan_round1.json",
+    "sc03_plan_yieldmodel2.json",
+    "condition_recommendations_local.csv",
+    "local_tool_vs_literature.csv"
+  ],
+  "source_artifacts": [
+    "sc03_campaign.json",
+    "sc03_plan_round1.json",
+    "sc03_plan_yieldmodel2.json",
+    "sc03_plan_curated2.json"
+  ]
+}
