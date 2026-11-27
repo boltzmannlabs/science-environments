@@ -35,14 +35,17 @@ Computational execution completed. Sealed scoring/ranking and comparison retaine
 
 ## Usage and time
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output | 238,313 |
-| Cache-read tokens | 9,045,760 |
-| Reported cumulative total, lower bound | 9,284,073 |
-| Recorded activity span, hours | 0.65 |
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 1 | 9,283,442 |
+| Delegated specialists | 0 | 0 |
+| Parent + specialists, deduplicated | 1 | 9,283,442 |
+
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 0.65 hours, including pauses and follow-ups.
 
 ## Execution identity
 

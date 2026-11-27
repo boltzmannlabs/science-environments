@@ -10,13 +10,27 @@
   "artifacts": [
     {
       "path": "README.md",
-      "sha256": "a67b5e9cec26f2d3335b2f7af2ac9566dc768a923c8f8ea64620097bc7980a1a",
-      "source_sha256": null
+      "sha256": "9e1b8667855054c001666e91ad2af62e605c9a733ec910d6f4973210a06ce7c8",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/README.md",
+        "original_sha256": "8b81deb2af45172a45090a70642f43e42f2e7ebf085095b6736be92a80f21675",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "WORKFLOW.md",
       "sha256": "9996cd25bb42ce11d84ada4f930d20220af6568b5601e4fae12c4f540c0e15ac",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/WORKFLOW.md",
+        "original_sha256": "5d630d13d63d020cb9ee383510c5ac174f424a3e1b255c4be19f8ef201889d08",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "figures/sha256-f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc-c36e6a7b_unreported_unreported_bbf4c0_unreported_unreported.jpg",
@@ -41,7 +55,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/figures/workflow.jpg",
+        "original_sha256": "f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed-493a42a8_unreported_unreported_bbf4c0_unreported_unreported.fasta",
@@ -66,7 +87,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/sequences/score_leaders.fasta",
+        "original_sha256": "6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b-2d9c0b7b_unreported_unreported_bbf4c0_unreported_unreported.fasta",
@@ -91,7 +119,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/sequences/backgrounds.fasta",
+        "original_sha256": "7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/01_structure_prediction/sha256-186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e-768aacf2_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -116,7 +151,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/01_structure_prediction/models.csv",
+        "original_sha256": "186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/02_pythia_scoring/sha256-73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e-fb999593_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -141,7 +183,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/cellulase-WT.csv",
+        "original_sha256": "73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/02_pythia_scoring/sha256-fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82-28a8e788_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -166,7 +215,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/02_pythia_scoring/beta-glucanase-WT.csv",
+        "original_sha256": "fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/03_esm_scoring/sha256-8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081-48815bbb_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -191,7 +247,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/beta-glucanase-M5.csv",
+        "original_sha256": "8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/03_esm_scoring/sha256-9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f-e488d35a_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -216,7 +279,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/03_esm_scoring/cellulase-M2.csv",
+        "original_sha256": "9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/04_ranking/sha256-264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80-465dfac9_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -241,7 +311,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/paper_score_agreement.csv",
+        "original_sha256": "264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/04_ranking/sha256-2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f-70f88dec_unreported_unreported_bbf4c0_unreported_unreported.csv",
@@ -266,7 +343,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_006_zhang_hydrolases/agent-with-specialist/steps/04_ranking/score_leaders.csv",
+        "original_sha256": "2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     }
   ],
   "run_folder": "run_001_20261107_033146_bbf4c0",

@@ -1,6 +1,6 @@
 # Benchmark evaluations
 
-Each task comparison retains its own execution provenance and linked figures. These are computational/reference comparisons, not new experimental validation.
+Each comparison below uses its declared historical agent-alone run. [Specialist-assisted results](../../results/README.md) are recorded separately and do not enter these tables. Each task comparison retains its own execution provenance and linked figures. These are computational/reference comparisons, not new experimental validation.
 
 - [RML lipase — stability](task_001_rml_stability/comparisons/benchmark_report.md)
 - [Limonene epoxide hydrolase — stability](task_002_leh_stability/comparisons/benchmark_report.md)

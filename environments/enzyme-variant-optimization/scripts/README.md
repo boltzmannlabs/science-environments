@@ -8,7 +8,9 @@ Run commands from the environment directory. These scripts use native SCI for ex
 | `start_goal.py` | Start the prepared `/goal` in an interactive terminal with the selected SCI runtime/profile. | Reviewed SCI runtime and enabled capabilities; assisted runs require the three 1.2.0 packages and coordinator. |
 | `evaluate_results.py` | Compare sealed selections and reviewer-supplied numerical observations. | Python standard library. |
 | `build_reports.py` | Rebuild six historical comparison reports and linked figures from saved data. | Matplotlib. |
-| `validate_run_records.py` | Check configuration schemas, input references, run/result links and artifact hashes. | PyYAML and jsonschema. |
+| `validate_run_records.py` | Check schemas, safe declaring-directory references, usage scopes, benchmark approach and artifact provenance/hashes. | PyYAML and jsonschema. |
+| `check_record_validation.py` | Regression checks for invalid paths, provenance, usage and benchmark attribution. | PyYAML and jsonschema. |
+| `verify_migrated_artifacts.py` | Recompute original Git-blob and current-file checksums for every exported result/benchmark artifact. | Python standard library and Git with PR history. |
 
 ## Prepare a fresh execution
 
@@ -41,6 +43,8 @@ Use the original profile/workspace and saved native assignment identities. After
 
 ```bash
 python scripts/validate_run_records.py
+python scripts/check_record_validation.py
+python scripts/verify_migrated_artifacts.py
 python scripts/build_reports.py
 python scripts/evaluate_results.py --help
 ```
@@ -51,6 +55,8 @@ Task-specific entry points below use the full required flags. The two prompt tex
 
 ## Checks performed — 27 November 2026
 
-All script modules compile and CLI help works. All six reports rebuild; 19 configuration/run packages and 461 output hashes validate. A saved sealed LEH comparison runs successfully. Fresh launch preparation, malformed/mismatched settings rejection, and native-runtime imports were checked. A controlled CLI substitute verified `/goal` handoff, the configured ToolUniverse name and duplicate-start rejection; this was a software test, not live scientific execution.
+All 19 configuration/run packages, 461 result artifact hashes and 322 scientific filename declarations validate. Nineteen regression checks pass, including traversal/symlink rejection, missing-field mismatches, wrong native parameter references, duplicate usage and assisted/agent-alone benchmark mixing. Validation also passes from an unrelated working directory. All six saved-data reports rebuild.
 
-Scientific artifact names and explicit historical fallbacks are checked by the validator. Legacy input names are resolved through per-result provenance, and a changed rendered figure cannot silently overwrite its checksum-based identity. The naming policy is documented in the environment README.
+Native launch and bootstrap tests ran against the actual installed SCI runtime, including a real evaluator delegation, output-file verification and persisted native goal verdicts. These replace the earlier controlled CLI-only handoff evidence. The tests used an isolated profile and software-only fixtures; no scientific jobs were launched. See [review validation evidence](REVIEW_VALIDATION_20261127.md) for source revision, session IDs, checksums and the initial test interruption.
+
+The migration verifier checks 490 original/current artifact pairs using immutable source Git commits: 414 files are byte-preserved and 76 are declared documentation/metadata updates. All 322 scientific artifacts are byte-preserved. Original and current paths/hashes are stored in each package's provenance; generate an optional review CSV with `python scripts/verify_migrated_artifacts.py --report /tmp/enzyme-migration-checksums.csv`. The destination must not already exist. Historical `source_sha256` values concern earlier source exports; the new `migration_evidence` explicitly identifies the published Git originals checked here.

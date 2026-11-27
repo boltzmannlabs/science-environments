@@ -10,3 +10,7 @@ This session ran the Pythia scan and verification before its conversation was in
 - [Output provenance](provenance.json)
 
 The files preserve the calculations that occurred. They do not by themselves establish that every requested final review or paper comparison was performed.
+
+## Usage accounting
+
+The execution record separates parent continuation usage, delegated-specialist usage and their deduplicated sum. Earlier exported usage files keep their original scope and snapshot.

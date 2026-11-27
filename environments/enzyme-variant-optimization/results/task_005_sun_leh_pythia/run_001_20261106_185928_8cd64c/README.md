@@ -27,15 +27,17 @@ The saved proposer and critic reviewed the initial plan and final result batches
 
 ## Usage and time
 
-Model: GPT-6.1-Sol via Codex. Final recorded snapshot: 16 November 2026.
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output tokens | 708,625 |
-| Cache-read tokens | 17,280,896 |
-| Recorded activity span, hours | 0.89 |
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 1 | 15,716,153 |
+| Delegated specialists | 4 | 1,345,841 |
+| Parent + specialists, deduplicated | 5 | 17,061,994 |
 
-The span includes pauses and follow-ups. Cached context is counted across calls; these numbers are not monetary charges or continuous scientific compute time.
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 0.89 hours, including pauses and follow-ups.
 
 ## Execution identity
 

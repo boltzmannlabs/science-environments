@@ -10,13 +10,27 @@
   "artifacts": [
     {
       "path": "README.md",
-      "sha256": "bd41b2e8ddd927d7121fa673fb9f739442974d16eebf7e3b6733a66e0822f212",
-      "source_sha256": null
+      "sha256": "271a30668ac2cd2008986b9d8f24fc61813a1e7f9a86ad2ba9b134b5eb418b7f",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/README.md",
+        "original_sha256": "da275c6b6aa55e872f2502a4c1e172e195cdb368eec978278a8cf8ab264e3288",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "WORKFLOW.md",
       "sha256": "817b0dfb7682b93a0006ef00e82efb83adc30f36d9f34e3ee379320b7b85fad9",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/WORKFLOW.md",
+        "original_sha256": "19aa2813043cfd71cd7b1e790db7bb76143ded790c18f6c546295fb6dfc56c45",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "figures/sha256-5aa9eeab044d4e7c508e41771f94c3eb6f3d71a5d4df3cbafd9e4da13b1f66ed-c36e6a7b_unreported_unreported_b986fa_unreported_unreported.jpg",
@@ -41,7 +55,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/figures/workflow.jpg",
+        "original_sha256": "5aa9eeab044d4e7c508e41771f94c3eb6f3d71a5d4df3cbafd9e4da13b1f66ed",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-54255b2373fb257c75b32e7330db3782ec96c2048c6d0210ae450d3fa490e8eb-e29eefc5_unreported_unreported_b986fa_unreported_unreported.fasta",
@@ -66,7 +87,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/sequences/parent.fasta",
+        "original_sha256": "54255b2373fb257c75b32e7330db3782ec96c2048c6d0210ae450d3fa490e8eb",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-b7e06e4c55580bb6d56352b9f85173082f9158249b20c47a81c51cb4279ec054-22c94851_unreported_unreported_b986fa_unreported_unreported.csv",
@@ -91,7 +119,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/sequences/candidate_history.csv",
+        "original_sha256": "b7e06e4c55580bb6d56352b9f85173082f9158249b20c47a81c51cb4279ec054",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-fe2a490c884c1464019f0973c850bbb4e1635b6510c43e698743650f9ce94d96-b89bca6b_unreported_unreported_b986fa_unreported_unreported.fasta",
@@ -116,7 +151,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/sequences/candidates.fasta",
+        "original_sha256": "fe2a490c884c1464019f0973c850bbb4e1635b6510c43e698743650f9ce94d96",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/01_property_screening/sha256-30cfbf3db1e40ce73dbeeafda15433a88069b1236f19a815c800d62d63d0e689-da3318d7_unreported_unreported_b986fa_unreported_unreported.csv",
@@ -141,7 +183,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/measurements.csv",
+        "original_sha256": "30cfbf3db1e40ce73dbeeafda15433a88069b1236f19a815c800d62d63d0e689",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/01_property_screening/sha256-ac9bce8f7b35489060a98fcf7889769c19694d3199a444b92408b0db463e83fc-2df4c0d9_unreported_unreported_b986fa_unreported_unreported.csv",
@@ -166,7 +215,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/steps/01_property_screening/candidate_summary.csv",
+        "original_sha256": "ac9bce8f7b35489060a98fcf7889769c19694d3199a444b92408b0db463e83fc",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/02_structure_assessment/sha256-548dedf751cb233a9fe12c4fa9977fcb159e7650bfd2cc8b307c91b19bcff7ef-f6ac94aa_unreported_unreported_b986fa_unreported_unreported.csv",
@@ -191,7 +247,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/steps/02_structure_assessment/measurements.csv",
+        "original_sha256": "548dedf751cb233a9fe12c4fa9977fcb159e7650bfd2cc8b307c91b19bcff7ef",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/03_review/sha256-a03e49ad8f8c7a2a55dd107eaed3ede49582f0a03ea8c50cda8541088b02a581-b6175ded_unreported_unreported_b986fa_unreported_unreported.csv",
@@ -216,7 +279,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_001_rml_stability/agent-with-specialist/steps/03_review/sealed_selection.csv",
+        "original_sha256": "a03e49ad8f8c7a2a55dd107eaed3ede49582f0a03ea8c50cda8541088b02a581",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     }
   ],
   "run_folder": "run_001_20261104_183716_b986fa",

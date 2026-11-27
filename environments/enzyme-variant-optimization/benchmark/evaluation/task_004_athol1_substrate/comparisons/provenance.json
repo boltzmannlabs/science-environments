@@ -8,7 +8,14 @@
   "artifacts": [
     {
       "path": "benchmark_report.md",
-      "sha256": "ddb0c8bcfc796cfbaa0b9ffdaa3d27a1f98e9fdec96e5f43cf5b30a29a1a4516"
+      "sha256": "1d23a243e835045ac75db2b2204500773097b237e1e0054863e5cd76b06c41f7",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/benchmark_report.md",
+        "original_sha256": "27c3cee41059957a10160dcb98dc94465b6bc4d6d75d12e27e4b27a69e518471",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "figures/sha256-31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191-6402d66d_unreported_unreported_0bd28c_unreported_unreported.png",
@@ -32,7 +39,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_01.png",
+        "original_sha256": "31e0d89a40b741cb269e8f14bd3ab778852184b30a63f923be9ac005f6a47191",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "figures/sha256-d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4-4bc672dc_unreported_unreported_0bd28c_unreported_unreported.png",
@@ -56,7 +70,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_02.png",
+        "original_sha256": "d645757e8f621c90d6f624b83e9f69e898fbec5d0fb585c09c9fab53911639b4",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "figures/sha256-f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7-d31fcad2_unreported_unreported_0bd28c_unreported_unreported.png",
@@ -80,8 +101,17 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_004_athol1_substrate/comparisions/figures/comparison_03.png",
+        "original_sha256": "f085b31d3d4fe7952aea334b10d75fc4c1bf79527889738cff634d719c3a72e7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     }
   ],
-  "artifact_naming_policy": "../../../../README.md#artifact-filenames"
+  "artifact_naming_policy": "../../../../README.md#artifact-filenames",
+  "approach": "agent-alone",
+  "source_kind": "historical_publication"
 }

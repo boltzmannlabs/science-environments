@@ -83,7 +83,7 @@ def main():
         body += "Agent-alone uses no specialists.\n"
     if args.approach == "agent_with_specialist":
         body += "Approved read-only catalog and contract directories: " + ", ".join(str(p.resolve()) for p in contract_roots) + ".\n"
-    body += "Retain SCI goals.max_turns=20 and verify the saved native goal is active.\n"
+    body += "Retain SCI goals.max_turns=20. The launcher checks this setting and native SCI displays goal activity; application/profile inspection is not part of the task.\n"
     if prepared.exists():
         saved = json.loads(prepared.read_text())
         if (saved.get("task"), saved.get("approach"), saved.get("profile")) != (args.task, args.approach, args.profile):

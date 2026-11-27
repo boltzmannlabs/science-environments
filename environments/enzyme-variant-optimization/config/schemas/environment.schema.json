@@ -11,7 +11,10 @@
     "configuration_schema",
     "launch_schema",
     "shared_settings",
-    "apply_shared_settings_automatically"
+    "apply_shared_settings_automatically",
+    "path_base",
+    "results_index",
+    "specification"
   ],
   "properties": {
     "environment_id": {
@@ -29,6 +32,37 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "path_base": {
+      "const": "environment_file_directory"
+    },
+    "task_catalog": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration_catalog": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_registry": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration_schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "launch_schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results_index": {
+      "type": "string",
+      "minLength": 1
+    },
+    "specification": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "additionalProperties": true

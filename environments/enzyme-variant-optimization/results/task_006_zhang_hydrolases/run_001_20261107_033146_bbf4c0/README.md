@@ -39,15 +39,17 @@ Proposer/critic reviews and final available-output checks were retained. Pythia 
 
 ## Usage and time
 
-Model: GPT-6.1-Sol via Codex. Final recorded snapshot: 16 November 2026.
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output tokens | 1,622,460 |
-| Cache-read tokens | 68,075,904 |
-| Recorded activity span, hours | 12.78 |
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 1 | 15,098,870 |
+| Delegated specialists | 2 | 492,061 |
+| Parent + specialists, deduplicated | 3 | 15,590,931 |
 
-The span includes pauses and follow-ups. Cached context is counted across calls; these numbers are not monetary charges or continuous scientific compute time.
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 12.78 hours, including pauses and follow-ups.
 
 ## Execution identity
 

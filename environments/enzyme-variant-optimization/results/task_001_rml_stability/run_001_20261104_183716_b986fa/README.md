@@ -32,15 +32,17 @@ The sealed shortlist and raw screen ranking are separate. Successful tool execut
 
 ## Usage and time
 
-Model: GPT-6.1-Sol via Codex. Final recorded snapshot: 16 November 2026.
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output tokens | 42,831,469 |
-| Cache-read tokens | 1,000,794,112 |
-| Recorded activity span, hours | 275.04 |
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 11 | 950,502,857 |
+| Delegated specialists | 124 | 46,338,648 |
+| Parent + specialists, deduplicated | 135 | 996,841,505 |
 
-The span includes pauses and follow-ups. Cached context is counted across calls; these numbers are not monetary charges or continuous scientific compute time.
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_001_rml_stability/run_001_20261104_183716_b986fa/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 275.04 hours, including pauses and follow-ups.
 
 ## Execution identity
 

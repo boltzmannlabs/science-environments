@@ -10,3 +10,7 @@ Interrupted start or mandatory generation/revision/independent-review evidence u
 [Execution record](../../../runs/task_001_rml_stability/run_005_20261120_200056_26af1b/run.json) · [Configuration](../../../config/tasks/task_001_rml_stability/05_discoveryrsi_assisted.json) · [Actual workflow](WORKFLOW.md) · [Output provenance](provenance.json)
 
 Reports, measurements and review findings are retained under `artifacts/` and `reviews/` where available.
+
+## Usage accounting
+
+The execution record separates parent continuation usage, delegated-specialist usage and their deduplicated sum. Earlier exported usage files keep their original scope and snapshot.

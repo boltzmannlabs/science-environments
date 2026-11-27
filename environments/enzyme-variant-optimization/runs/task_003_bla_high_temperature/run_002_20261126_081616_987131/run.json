@@ -36,18 +36,73 @@
     "act_seek",
     "Boltz2"
   ],
-  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
-  "persisted_parent_usage": {
-    "input_tokens": 1046741,
-    "output_tokens": 68861,
-    "cache_read_tokens": 34305536,
-    "cache_write_tokens": 0,
-    "reasoning_tokens": 4931,
-    "tool_call_count": 225
-  },
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
   "launch_settings_snapshot": "launch_settings.json",
   "launch_settings_sha256": "a055007d8a6aaccaf4c8338b5b9dae7cca776ac64b376d9ff155045226930e81",
   "run_folder": "run_002_20261126_081616_987131",
   "run_number": 2,
-  "outcome_notes": "Required candidate substrate-complex and calcium coordination evidence unresolved despite native completion claim."
+  "outcome_notes": "Required candidate substrate-complex and calcium coordination evidence unresolved despite native completion claim.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261126_081616_987131"
+    ],
+    "tokens": {
+      "input_tokens": 1046741,
+      "output_tokens": 68861,
+      "cache_read_tokens": 34305536,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 4931,
+      "tool_call_count": 225
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "enzyme-autonomy-v12",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261126_081616_987131"
+    ],
+    "specialist_session_ids": [
+      "20261126_082014_88b16e",
+      "20261126_100456_f62d3c",
+      "20261126_101658_895c5d",
+      "20261126_102926_049fdb",
+      "20261126_130935_0728a5"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 1046741,
+      "output_tokens": 68861,
+      "cache_read_tokens": 34305536,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 4931,
+      "tool_call_count": 225,
+      "token_total_excluding_reasoning_subset": 35421138,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 413539,
+      "output_tokens": 147682,
+      "cache_read_tokens": 7287296,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 101003,
+      "tool_call_count": 159,
+      "token_total_excluding_reasoning_subset": 7848517,
+      "session_count": 5
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 1460280,
+      "output_tokens": 216543,
+      "cache_read_tokens": 41592832,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 105934,
+      "tool_call_count": 384,
+      "token_total_excluding_reasoning_subset": 43269655,
+      "session_count": 6
+    }
+  }
 }

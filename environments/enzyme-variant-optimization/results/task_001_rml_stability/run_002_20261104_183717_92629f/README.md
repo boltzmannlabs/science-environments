@@ -44,14 +44,17 @@ Closed with limitations. Design and independent review retained; qualification/c
 
 ## Usage and time
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output | 8,430,372 |
-| Cache-read tokens | 648,343,296 |
-| Reported cumulative total, lower bound | 656,773,668 |
-| Recorded activity span, hours | 77.00 |
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 9 | 647,551,665 |
+| Delegated specialists | 0 | 0 |
+| Parent + specialists, deduplicated | 9 | 647,551,665 |
+
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_001_rml_stability/run_002_20261104_183717_92629f/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 77.00 hours, including pauses and follow-ups.
 
 ## Execution identity
 

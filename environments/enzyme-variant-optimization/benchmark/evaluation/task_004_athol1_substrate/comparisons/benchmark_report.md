@@ -1,6 +1,6 @@
 # AtHOL1 substrate expansion — benchmark report
 
-Agent-alone candidates, published prediction values and reference variants calculated in this work.
+Comparison scope: historical agent-alone candidates only. Published predictions and reference variants recalculated here are labelled separately. Specialist-assisted results are available in the results index and are not pooled into these tables.
 
 Agent Scientist: gpt-6.1-sol. Predictor names and units are listed with each measurement.
 

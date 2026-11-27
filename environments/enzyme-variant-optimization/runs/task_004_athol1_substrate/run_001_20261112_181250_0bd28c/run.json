@@ -22,29 +22,81 @@
   "code_commit": null,
   "code_commit_note": "Original execution revision not independently reconstructed for this export.",
   "tools_submitted": [],
-  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
-  "persisted_parent_usage": {
-    "input_tokens": 3323439,
-    "output_tokens": 905609,
-    "cache_read_tokens": 193175040,
-    "cache_write_tokens": 0,
-    "reasoning_tokens": 490723,
-    "tool_call_count": 113
-  },
-  "historical_cumulative_accounting": {
-    "arm": "athol1/agent-alone",
-    "state": "stopped",
-    "session_id": "20261112_181250_0bd28c",
-    "model": "gpt-6.1-sol",
-    "provider": "openai-codex",
-    "reported_tokens": 203090578,
-    "elapsed_seconds": 351305,
-    "scope": "Real end-to-end workflow launched; see actual stage records. Preparation is not molecular completion.",
-    "last_activity": "",
-    "accuracy": "Not evaluated; no experimental accuracy claim."
-  },
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
   "run_folder": "run_001_20261112_181250_0bd28c",
   "run_number": 1,
   "outcome_notes": "Existing exported outcome; operational closure is separate from scientific completion.",
-  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered."
+  "input_provenance_note": "Original input references were not reconstructed in this export. Available run plans and result sequences retain the evidence that was recovered.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261112_181250_0bd28c"
+    ],
+    "tokens": {
+      "input_tokens": 3323439,
+      "output_tokens": 905609,
+      "cache_read_tokens": 193175040,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 490723,
+      "tool_call_count": 113
+    }
+  },
+  "historical_reported_accounting": {
+    "scope": "Earlier operator-reported campaign snapshot; counting coverage is not reconstructed. Not additive with native session totals or usage_summary.json.",
+    "record": {
+      "arm": "athol1/agent-alone",
+      "state": "stopped",
+      "session_id": "20261112_181250_0bd28c",
+      "model": "gpt-6.1-sol",
+      "provider": "openai-codex",
+      "reported_tokens": 203090578,
+      "elapsed_seconds": 351305,
+      "scope": "Real end-to-end workflow launched; see actual stage records. Preparation is not molecular completion.",
+      "last_activity": "",
+      "accuracy": "Not evaluated; no experimental accuracy claim."
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "boltzymereview",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261112_181250_0bd28c"
+    ],
+    "specialist_session_ids": [],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 3323439,
+      "output_tokens": 905609,
+      "cache_read_tokens": 193175040,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 490723,
+      "tool_call_count": 113,
+      "token_total_excluding_reasoning_subset": 197404088,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "tool_call_count": 0,
+      "token_total_excluding_reasoning_subset": 0,
+      "session_count": 0
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 3323439,
+      "output_tokens": 905609,
+      "cache_read_tokens": 193175040,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 490723,
+      "tool_call_count": 113,
+      "token_total_excluding_reasoning_subset": 197404088,
+      "session_count": 1
+    }
+  }
 }

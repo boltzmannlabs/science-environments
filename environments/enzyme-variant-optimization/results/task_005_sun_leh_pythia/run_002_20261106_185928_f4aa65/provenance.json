@@ -10,13 +10,27 @@
   "artifacts": [
     {
       "path": "README.md",
-      "sha256": "35b59efd0e49525bbc54906ec8d4fd5a630d52c6c760037cf30820f47fbaf6a7",
-      "source_sha256": null
+      "sha256": "1b06ed163b072f0ab21cba2798adec10d6d456d5fd1bae8328d5f1cb40f2f20a",
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/README.md",
+        "original_sha256": "1aa5ea7808379672a54ecd413f3fae754465d227de7c159292962e25b0caa2b7",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "WORKFLOW.md",
       "sha256": "2809ba2f34ed03e3ba14fce35a1edb9c631d396c27d41e7f29e6fc22cb1af8f0",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/WORKFLOW.md",
+        "original_sha256": "6b70b96a999af165dbc41a297886af5ea57d0b58901daecca843ba3c1caa49dd",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "figures/sha256-abf6b6a6b12aa496a8edb13847c59b5c4b1bd7297fe04d889cc7d30338cd4ed9-c36e6a7b_unreported_unreported_f4aa65_unreported_unreported.jpg",
@@ -41,17 +55,38 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/figures/workflow.jpg",
+        "original_sha256": "abf6b6a6b12aa496a8edb13847c59b5c4b1bd7297fe04d889cc7d30338cd4ed9",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/README.md",
       "sha256": "ec985baaacac3529871972fc12eec589900a23f7a204ac198ff8729efb4c893f",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/README.md",
+        "original_sha256": "512dfe231cd0371284f210e48b54e7dc61c7fdcfb69d16ec89f03e31bd7961ff",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "reference_comparison/ddgun/method.json",
       "sha256": "79fa0f7ac50bd616dead68467e11c8424c0edad6d882614bdb63e9e81ac8fdac",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/method.json",
+        "original_sha256": "79fa0f7ac50bd616dead68467e11c8424c0edad6d882614bdb63e9e81ac8fdac",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/ddgun/sha256-4a06fff25da3f0ba0060a61bf60fd95036b5d0abe609e851d08a2e9ac0c253ff-9df2b29d_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -76,12 +111,26 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/ddgun/predictions.csv",
+        "original_sha256": "4a06fff25da3f0ba0060a61bf60fd95036b5d0abe609e851d08a2e9ac0c253ff",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/jobs.json",
       "sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/jobs.json",
+        "original_sha256": "8f0dbdbbe73b30ee891a8e9cc9f196fcca6753c8fefc6f93d763371a478d00ed",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/sha256-1bca6a6f5e9185d22c6909b0dfc0ed323c2d0cb65105a19a1ff69c4febe21185-600acec4_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -106,7 +155,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/open_source_metrics.csv",
+        "original_sha256": "1bca6a6f5e9185d22c6909b0dfc0ed323c2d0cb65105a19a1ff69c4febe21185",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/sha256-88a4de0767188fe09361d8781f0fb782ff888d22304e0c6d7476c424af728eff-ad5cb62c_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -131,7 +187,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictions.csv",
+        "original_sha256": "88a4de0767188fe09361d8781f0fb782ff888d22304e0c6d7476c424af728eff",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/sha256-a4f7625404262efcc085bd461c3f111e2923e5400e23a1e8f89e5fdbee31ca1b-77b645c6_unreported_unreported_f4aa65_unreported_unreported.fasta",
@@ -156,7 +219,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/reference_sequences.fasta",
+        "original_sha256": "a4f7625404262efcc085bd461c3f111e2923e5400e23a1e8f89e5fdbee31ca1b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "reference_comparison/sha256-f0e73ea0c34cf6f406c02755dd6c3282fda0305b4003b999691609b9cfac0e6b-c01c6ad4_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -181,12 +251,26 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/reference_comparison/predictor_outputs.csv",
+        "original_sha256": "f0e73ea0c34cf6f406c02755dd6c3282fda0305b4003b999691609b9cfac0e6b",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/identities.json",
       "sha256": "a1b3629e9cdf5e1f2eaebf0afc922639c3b571e568f3321b889e1afe413eef83",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/identities.json",
+        "original_sha256": "a1b3629e9cdf5e1f2eaebf0afc922639c3b571e568f3321b889e1afe413eef83",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-60f1d8ff2e0307be379da583c7cdace2c546b2fd5e2c676d25e9c3e483e0891c-08854c44_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -211,7 +295,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/selected_mutant_sequences.csv",
+        "original_sha256": "60f1d8ff2e0307be379da583c7cdace2c546b2fd5e2c676d25e9c3e483e0891c",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768-23aeb267_unreported_unreported_f4aa65_unreported_unreported.fasta",
@@ -236,7 +327,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.fasta",
+        "original_sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768-b89bca6b_unreported_unreported_f4aa65_unreported_unreported.fasta",
@@ -261,7 +359,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/candidates.fasta",
+        "original_sha256": "7dd9f096134c417dfec9b412034015f34a36358ebbb832605ce21750ba337768",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-8fd7dac59fe0246bd826d3c8bd49e73344a9d10069715b643f250e97c35bff77-127fe4ae_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -286,7 +391,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/candidate_sequences.csv",
+        "original_sha256": "8fd7dac59fe0246bd826d3c8bd49e73344a9d10069715b643f250e97c35bff77",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9-0e8270ce_unreported_unreported_f4aa65_unreported_unreported.fasta",
@@ -311,7 +423,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/controls.fasta",
+        "original_sha256": "abef23ac230c699128f0555162e264f55b35d2e38959611f29ab4e130c7328b9",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sequences/sha256-fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99-e29eefc5_unreported_unreported_f4aa65_unreported_unreported.fasta",
@@ -336,22 +455,50 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/sequences/parent.fasta",
+        "original_sha256": "fdf35691a502ea7a1848a530552d43f3997b7b9c082d69e8d557b34a97a99b99",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/01_parent_preparation/README.md",
       "sha256": "33633b128fc3cab7a021e131bd08a3697b60435ac0e6ea9c258dcadd20bea0e6",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/README.md",
+        "original_sha256": "33633b128fc3cab7a021e131bd08a3697b60435ac0e6ea9c258dcadd20bea0e6",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/01_parent_preparation/settings.json",
       "sha256": "d021148aaf5305a31e94f71476870b4764cc77aa8c1b79017f65ff7f19382f90",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/01_parent_preparation/settings.json",
+        "original_sha256": "d021148aaf5305a31e94f71476870b4764cc77aa8c1b79017f65ff7f19382f90",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/02_pythia_scoring/README.md",
       "sha256": "7466e4d8b94af7ca39d01580f715c83d4be6dc7d18c4bfce3b9d0677c7c82165",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/README.md",
+        "original_sha256": "7855ade8bd5a0c7b1bc3cbfbb87521c02ceaa0ace6df712249e663066fb48804",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "steps/02_pythia_scoring/sha256-2f54de045ec36a7b7d21d2dedd019e0f4d754638b26ed5c07a2ac71db1bdb8bd-ca2d1aec_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -376,7 +523,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores.csv",
+        "original_sha256": "2f54de045ec36a7b7d21d2dedd019e0f4d754638b26ed5c07a2ac71db1bdb8bd",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/02_pythia_scoring/sha256-7fc771d2134795dcd8c3622b5ac6b603bbe66ef5d0cd059bb8dc259f94939248-af64a189_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -401,12 +555,26 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/02_pythia_scoring/all_scores_ranked.csv",
+        "original_sha256": "7fc771d2134795dcd8c3622b5ac6b603bbe66ef5d0cd059bb8dc259f94939248",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/03_ranking/README.md",
       "sha256": "233175feb4b09545981645398eca0ebe16426731f48a5497b5b2cddee13151ed",
-      "source_sha256": null
+      "source_sha256": null,
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/README.md",
+        "original_sha256": "48363dde7ca6d7a438bea9e26193b5d7157e71c4b9f160865b3ea51a95dd2838",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "steps/03_ranking/sha256-597b571f9e3e5840cc11afc12f45d39be97b1435b2e1266b4e304f5a0513c20a-75754b85_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -431,7 +599,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_mean_lt_minus2.csv",
+        "original_sha256": "597b571f9e3e5840cc11afc12f45d39be97b1435b2e1266b4e304f5a0513c20a",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/03_ranking/sha256-958bc7afff76943f46e55eb67f5482795b9dfb95f73fad3c003f6fd8435450e7-7f997322_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -456,7 +631,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/03_ranking/selected_sum_lt_minus2.csv",
+        "original_sha256": "958bc7afff76943f46e55eb67f5482795b9dfb95f73fad3c003f6fd8435450e7",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "steps/06_post_selection_properties/sha256-5f4e35be072a0b9714a93fd2e669d589eb982d1ff4df16a32fbc5f3ee20a82de-6243b766_unreported_unreported_f4aa65_unreported_unreported.csv",
@@ -481,7 +663,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/results/task_005_sun_leh_pythia/agent-alone/steps/06_post_selection_properties/predictions.csv",
+        "original_sha256": "5f4e35be072a0b9714a93fd2e669d589eb982d1ff4df16a32fbc5f3ee20a82de",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     }
   ],
   "run_folder": "run_002_20261106_185928_f4aa65",

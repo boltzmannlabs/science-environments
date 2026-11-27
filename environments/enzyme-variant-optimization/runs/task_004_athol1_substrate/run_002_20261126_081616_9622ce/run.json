@@ -31,18 +31,72 @@
     "Catalytic_Geometry",
     "Mol_Probity"
   ],
-  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
-  "persisted_parent_usage": {
-    "input_tokens": 877231,
-    "output_tokens": 79018,
-    "cache_read_tokens": 22888704,
-    "cache_write_tokens": 0,
-    "reasoning_tokens": 24666,
-    "tool_call_count": 153
-  },
+  "usage_scope": "See usage_accounting: parent lineage, linked delegated specialists and their deduplicated sum are separate. Legacy snapshots are not added.",
   "launch_settings_snapshot": "launch_settings.json",
   "launch_settings_sha256": "d7f12b8c143cfdd3ec98d50fe8a196c7a1f4ce9e0d907c59fe9016fef7e26edd",
   "run_folder": "run_002_20261126_081616_9622ce",
   "run_number": 2,
-  "outcome_notes": "Evaluator eligibility unknown; candidate-specific ternary structure/quality/geometry missing."
+  "outcome_notes": "Evaluator eligibility unknown; candidate-specific ternary structure/quality/geometry missing.",
+  "legacy_parent_snapshot": {
+    "scope": "One saved parent session only; not the full parent continuation lineage or specialist usage.",
+    "matching_native_session_ids": [
+      "20261126_081616_9622ce"
+    ],
+    "tokens": {
+      "input_tokens": 877231,
+      "output_tokens": 79018,
+      "cache_read_tokens": 22888704,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24666,
+      "tool_call_count": 153
+    }
+  },
+  "usage_accounting": {
+    "source": "Native SCI persisted sessions table, read-only snapshot",
+    "profile": "enzyme-autonomy-v12",
+    "snapshot_at": "2026-11-27T13:11:45.975562+00:00",
+    "scope": "Listed parent continuation sessions plus their recursively linked source=subagent sessions, deduplicated by profile/session ID. Not a bill or a claim of complete auxiliary-call accounting.",
+    "token_definition": "Uncached input + output + cache reads + cache writes. Reasoning is reported separately as a subset of output; never added again.",
+    "parent_session_ids": [
+      "20261126_081616_9622ce"
+    ],
+    "specialist_session_ids": [
+      "20261126_081935_008bd3",
+      "20261126_084332_84ddce",
+      "20261126_091925_776f44",
+      "20261126_102902_08b1df"
+    ],
+    "excluded_associated_session_ids": [],
+    "excluded_non_specialist_descendants": [],
+    "parent_lineage": {
+      "input_tokens": 877231,
+      "output_tokens": 79018,
+      "cache_read_tokens": 22888704,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24666,
+      "tool_call_count": 153,
+      "token_total_excluding_reasoning_subset": 23844953,
+      "session_count": 1
+    },
+    "delegated_specialists": {
+      "input_tokens": 346754,
+      "output_tokens": 81174,
+      "cache_read_tokens": 4698880,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 47035,
+      "tool_call_count": 110,
+      "token_total_excluding_reasoning_subset": 5126808,
+      "session_count": 4
+    },
+    "parent_plus_specialists": {
+      "input_tokens": 1223985,
+      "output_tokens": 160192,
+      "cache_read_tokens": 27587584,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 71701,
+      "tool_call_count": 263,
+      "token_total_excluding_reasoning_subset": 28971761,
+      "session_count": 5
+    }
+  }
 }

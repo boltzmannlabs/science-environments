@@ -14,3 +14,7 @@ Reports, measurements and review findings are retained under `artifacts/` and `r
 ## Remaining assessment
 
 Candidate metal-coordination measurements were invalid because the predicted models lacked required ions. A parent–maltose Boltz2 job failed. Candidate substrate-complex and metal-environment evidence remains incomplete; the original completion claim is not accepted as full qualification.
+
+## Usage accounting
+
+The execution record separates parent continuation usage, delegated-specialist usage and their deduplicated sum. Earlier exported usage files keep their original scope and snapshot.

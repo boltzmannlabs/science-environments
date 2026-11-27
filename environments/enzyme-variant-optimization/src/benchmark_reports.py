@@ -114,7 +114,7 @@ def build_task(env, task):
     source = doc.source
 
     doc.add_heading(task['title'] + ' — benchmark report', 0)
-    doc.add_paragraph('Agent-alone candidates, published prediction values and reference variants calculated in this work.')
+    doc.add_paragraph('Comparison scope: historical agent-alone candidates only. Published predictions and reference variants recalculated here are labelled separately. Specialist-assisted results are available in the results index and are not pooled into these tables.')
     run_record = env / 'runs' / tid / folder.name / 'run.json'
     model_name = json.loads(run_record.read_text())['model']
     doc.add_paragraph('Agent Scientist: ' + model_name + '. Predictor names and units are listed with each measurement.')
@@ -249,12 +249,26 @@ def build(env):
     for task in tasks:
         if task.get('executed'):
             build_task(env, task)
-    index = ['# Benchmark comparisons', '', 'Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
+    index = ['# Benchmark comparisons', '', 'These six comparison reports use historical agent-alone runs only. Specialist-assisted runs have separate result records; they are not pooled into the benchmark tables. Each task report contains published predictions, method-labeled comparisons and embedded figures. Open-source recalculations score reported reference variants and our retained candidates under a shared protocol within each panel. Parent identity and calculation details are in the corresponding results folder.', '', '| Task | Report |', '|---|---|']
     for task in tasks:
         link = ('evaluation/' + task['id'] + '/comparisons/benchmark_report.md' if task.get('executed') else 'reference_data/' + task['id'] + '/references.md')
         index.append(f"| {task['title']} | [{'Comparison and figures' if task.get('executed') else 'Published reference'}]({link}) |")
-    index += ['', '[Benchmark definitions](definitions/README.md) · [Reference data](reference_data/README.md) · [Evaluation records](evaluation/README.md)', '', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
+    index += ['', '[Benchmark definitions](definitions/README.md) · [Reference data](reference_data/README.md) · [Evaluation records](evaluation/README.md) · [All approaches and run results](../results/README.md)', '', 'Rebuild from saved data with `python scripts/build_reports.py`. Requires `matplotlib`. Report generation does not run predictors.', '']
     (env / 'benchmark/README.md').write_text('\n'.join(index))
+    # Reports are regenerated documentation; scientific/image bytes keep their identities.
+    for record in (env / 'benchmark/evaluation').glob('*/comparisons/provenance.json'):
+        provenance = json.loads(record.read_text())
+        for artifact in provenance['artifacts']:
+            digest = hashlib.sha256((record.parent / artifact['path']).read_bytes()).hexdigest()
+            if artifact.get('filename_components') and digest != artifact['sha256']:
+                raise ValueError('A scientific benchmark artifact changed; review its identity before publishing.')
+            artifact['sha256'] = digest
+            evidence = artifact.get('migration_evidence')
+            if evidence:
+                same = digest == evidence['original_sha256']
+                evidence['content_preserved'] = same
+                evidence['change_kind'] = 'byte_preserving_move_or_rename' if same else 'documentation_or_metadata_update'
+        record.write_text(json.dumps(provenance, indent=2) + '\n')
     manifest_path = env / 'benchmark/DATA_PROVENANCE.json'
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())

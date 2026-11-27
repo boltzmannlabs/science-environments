@@ -8,11 +8,25 @@
   "artifacts": [
     {
       "path": "README.md",
-      "sha256": "1c376b28614fa969872fb064661074260dfed37cec41c9c542d81c5d9bfc553d"
+      "sha256": "1c376b28614fa969872fb064661074260dfed37cec41c9c542d81c5d9bfc553d",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_002_leh_stability/comparisions/README.md",
+        "original_sha256": "bd053bd95619054f19b21d72756cbcf2800243531d60b4640e6c2f7a2c3ace82",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "benchmark_report.md",
-      "sha256": "3512d93217962b80bd9494c01a27e658ba7d439481dc4b6286dc5df7bf830e85"
+      "sha256": "465ace4970ce0e85aa6029c15b251b11fe5d209b48e9194597a7e94e63a22b2d",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_002_leh_stability/comparisions/benchmark_report.md",
+        "original_sha256": "a1cf2725eaf861ef50b9cfce88aeea6815a8310592e0f3b5100e7b3f3e8feb92",
+        "content_preserved": false,
+        "change_kind": "documentation_or_metadata_update"
+      }
     },
     {
       "path": "figures/sha256-832917de3f3b611534630539d51c2bc9aa1a6dd3d0ddae7223d0003d978bb304-4bc672dc_unreported_unreported_0fd35d_unreported_unreported.png",
@@ -36,7 +50,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_002_leh_stability/comparisions/figures/comparison_02.png",
+        "original_sha256": "832917de3f3b611534630539d51c2bc9aa1a6dd3d0ddae7223d0003d978bb304",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "figures/sha256-e7eff1f1bc4a5307efd89447fe5ed65e55c570f70c51dedc0b5febe4ecaf15db-6402d66d_unreported_unreported_0fd35d_unreported_unreported.png",
@@ -60,7 +81,14 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_002_leh_stability/comparisions/figures/comparison_01.png",
+        "original_sha256": "e7eff1f1bc4a5307efd89447fe5ed65e55c570f70c51dedc0b5febe4ecaf15db",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     },
     {
       "path": "sha256-d9ebbeb5e907d003f236c79e959d819ef391e3260ebeef7592d6f0f062ffe5b2-61976b90_unreported_unreported_0fd35d_unreported_unreported.csv",
@@ -84,8 +112,17 @@
         "model_identifier",
         "parameters"
       ],
-      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted."
+      "timestamp_basis": "Not recorded for this artifact; no filesystem/run-start timestamp substituted.",
+      "migration_evidence": {
+        "source_git_commit": "9d78cf578f5921fd6ef0f240bd87af04fde9f47c",
+        "original_path": "environments/enzyme-variant-optimization/benchmark/task_002_leh_stability/comparisions/reference_predictions.csv",
+        "original_sha256": "d9ebbeb5e907d003f236c79e959d819ef391e3260ebeef7592d6f0f062ffe5b2",
+        "content_preserved": true,
+        "change_kind": "byte_preserving_move_or_rename"
+      }
     }
   ],
-  "artifact_naming_policy": "../../../../README.md#artifact-filenames"
+  "artifact_naming_policy": "../../../../README.md#artifact-filenames",
+  "approach": "agent-alone",
+  "source_kind": "historical_publication"
 }

@@ -14,3 +14,7 @@ Reports, measurements and review findings are retained under `artifacts/` and `r
 ## Remaining assessment
 
 Two Boltz2 attempts failed. Parent-based sequence threading was explicitly a surrogate; candidate-specific ternary structures, quality and reaction geometry remain missing. The evaluator marked eligibility unknown.
+
+## Usage accounting
+
+The execution record separates parent continuation usage, delegated-specialist usage and their deduplicated sum. Earlier exported usage files keep their original scope and snapshot.

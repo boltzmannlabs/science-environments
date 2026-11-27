@@ -33,14 +33,17 @@ Closed with limitations. Existing execution/review retained; CatPred definitions
 
 ## Usage and time
 
-| Measurement | Value |
-|---|---:|
-| Uncached input + output | 4,922,898 |
-| Cache-read tokens | 198,167,680 |
-| Reported cumulative total, lower bound | 203,090,578 |
-| Recorded activity span, hours | 83.45 |
+Native persisted usage snapshot: 27 November 2026. Parent continuations and linked specialists are counted separately.
 
-Recorded native activity includes pauses and follow-ups. Token totals include repeated cached context; these are not compute hours or cost estimates. Snapshot: 16 November 2026.
+| Counting scope | Sessions | Tokens (input + output + cache) |
+|---|---:|---:|
+| Parent continuation lineage | 1 | 197,404,088 |
+| Delegated specialists | 0 | 0 |
+| Parent + specialists, deduplicated | 1 | 197,404,088 |
+
+Reasoning tokens are already included in output. These are persisted session counts, not monetary charges or continuous compute time. Earlier usage files retain their original snapshot and are not added to this table. See the [execution record](../../../runs/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/run.json) for session membership, exclusions and component totals.
+
+Recorded activity span: 83.45 hours, including pauses and follow-ups.
 
 ## Execution identity
 
