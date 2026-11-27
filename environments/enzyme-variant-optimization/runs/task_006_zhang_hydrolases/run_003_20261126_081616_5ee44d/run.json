@@ -1,0 +1,43 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261126_081616_5ee44d",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261126_081616_5ee44d",
+  "config_version": 1,
+  "config_hash": "e1e10e378684f8be67774d80dea4bb1d7570b5f1bfdd6b302aeaa5ed84006ce3",
+  "config_path": "../../../config/tasks/task_006_zhang_hydrolases/03_hy4_flash_free_assisted.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261126_081616_5ee44d"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "hy4-flash-free",
+  "provider": "opencode-go",
+  "status": "completed",
+  "status_basis": "Full computational scans and independent evaluator receipt retained.",
+  "started_at": "2026-11-26T08:16:22.171263+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-26T09:10:34.672761+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_006_zhang_hydrolases/run_003_20261126_081616_5ee44d",
+  "source_kind": "hy4_specialist_execution",
+  "code_commit": "2ecef925e090c61c106eb6342d402f76ccb1cf3e",
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Protein_Structure_Prediction"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 336516,
+    "output_tokens": 57984,
+    "cache_read_tokens": 10483200,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 12732,
+    "tool_call_count": 108
+  },
+  "launch_settings_snapshot": "launch_settings.json",
+  "launch_settings_sha256": "a90b16430b32e7011dc75853bd55cb88b3484380789a09df1a43bc044f737ed1",
+  "run_folder": "run_003_20261126_081616_5ee44d",
+  "run_number": 3
+}

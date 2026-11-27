@@ -38,3 +38,9 @@ The complete configuration layout now contains environment.yaml, real schemas, o
 - All six benchmark reports rebuild from the relocated reference/evaluation paths.
 - 23 native run identities and 467 output checksums remain validated; documentation links pass.
 - Native run IDs remain unchanged. Task/config/result indexes provide model and approach labels so users do not need to decode session IDs.
+
+## Numbered run folders
+
+All 23 existing executions now use run_001_<original-session-id> style names, numbered independently by task/start order. Matching runs/results/source folders have identical names. Native run IDs, session lineage and scientific outputs remain unchanged. The run_prefix_mappings entries in migration_map.json preserve previous paths. Append future run numbers; do not renumber existing records.
+
+Validation for numbered folders: all 23 records and 467 artifact checksums pass; all Markdown links and source-export hashes resolve; all six benchmark reports rebuild; 313 scientific output/source files are byte-identical to the preceding commit. No scientific jobs were launched.

@@ -1,0 +1,76 @@
+{
+  "task_id": "task_006_zhang_hydrolases",
+  "run_id": "20261107_033146_bbf4c0",
+  "result_id": "result_20261107_033146_bbf4c0",
+  "config_id": "cfg_20261107_033146_bbf4c0",
+  "config_hash": "ec4ac5507777d6bb5963d0d2d4999e1eb602e177acbfa24a52c21b569103664c",
+  "run_record": "../../../runs/task_006_zhang_hydrolases/run_001_20261107_033146_bbf4c0/run.json",
+  "execution_status": "completed",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "ce0fb1c6acb75814fdaac1324c90c631907ce02c65c52dc72b4dc5ba5055009e",
+      "source_sha256": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "aa06bd270395f0aaaf7b292432f45cf6507ccee3461a730977156e34dea56bbe",
+      "source_sha256": null
+    },
+    {
+      "path": "figures/workflow.jpg",
+      "sha256": "f1162f5cde5119df19f7f266f1f2fcb98c2107171ccc6556678faa6f2cdd9bdc",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/backgrounds.fasta",
+      "sha256": "7da35e0547e4cd0bafaf7d13496b4880bc95ddc2bd3eb3adbb05818c0aebe71b",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/score_leaders.fasta",
+      "sha256": "6e9d5fb27a08fada539d796a5ee64b94854fc71be630dc38f58cfca8b44839ed",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_structure_prediction/models.csv",
+      "sha256": "186d2563db2aa046f4aa35e7f991446ccd71876d4a45596374aab719904c8e8e",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_pythia_scoring/beta-glucanase-WT.csv",
+      "sha256": "fc9774b445f31a7af87b78a1ebae41cbfed686301e4381383054df99d52b8b82",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_pythia_scoring/cellulase-WT.csv",
+      "sha256": "73ae079bdc056969497cac488e0df9c880cf86010169fa27e9e1228d9c65ab6e",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/03_esm_scoring/beta-glucanase-M5.csv",
+      "sha256": "8952a952de5b7b57dc72504381249c4b143e21355d15e80c5943fb3e3cc00081",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/03_esm_scoring/cellulase-M2.csv",
+      "sha256": "9a167a81c857fcd3b5a16082439da270e3632342850e320feb7294d15cfdf73f",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/04_ranking/paper_score_agreement.csv",
+      "sha256": "264fc8577fcec58059dbc8b0752faa3b44978495190065764fab7239c0086b80",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/04_ranking/score_leaders.csv",
+      "sha256": "2bd104e43303cb73d44b27cddf3b4299a3c439b380fa85369384705b50e28e7f",
+      "source_sha256": null
+    }
+  ],
+  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained.",
+  "run_folder": "run_001_20261107_033146_bbf4c0",
+  "run_number": 1
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261106_185928_8cd64c",
+  "result_id": "result_20261106_185928_8cd64c",
+  "config_id": "cfg_20261106_185928_8cd64c",
+  "config_hash": "89432f1648bf33e0f70dfe6859d0806640f21ed3667cc3895cc0f9073acfa86b",
+  "run_record": "../../../runs/task_005_sun_leh_pythia/run_001_20261106_185928_8cd64c/run.json",
+  "execution_status": "completed",
+  "evidence_type": "computational_evaluation",
+  "exported_at": "2026-11-27T10:24:42.688439+00:00",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "bb5d494010a47fb4ed66289e36c5bf116dd6e54166d9d145cd1f519490359840",
+      "source_sha256": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "24e21c3b3c9e8923bed4051edd29d3edf7a584d3e6632173542f63d064b440b6",
+      "source_sha256": null
+    },
+    {
+      "path": "figures/workflow.jpg",
+      "sha256": "2a841262398a21e08210e7c593d4fd3eef89dc2cc2fb048b7fc9d13ee309552c",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/parent.fasta",
+      "sha256": "463e2a8309e362f0cec6109553902d3c6362627d9781bd233258b7564b7937a3",
+      "source_sha256": null
+    },
+    {
+      "path": "sequences/selected_mutations.fasta",
+      "sha256": "48428d7469cba1d5c48d0f187896a4383b69fefdd8a39c6e096664457b37bf9d",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/01_pythia_scoring/all_scores.csv",
+      "sha256": "8415d11a2d455dc56aa085505f7f77df19e84801b87cb42ef5b3f1ce760edf8d",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_ranking/selected_mean_lt_minus2.csv",
+      "sha256": "0b7eb01cf31b1822098e2e06d1e1abbe80bc02acb0fb8c3e0804c1be5575065f",
+      "source_sha256": null
+    },
+    {
+      "path": "steps/02_ranking/selected_sum_lt_minus2.csv",
+      "sha256": "2d999a852ef63883924554f75fbc087e172b0b79280ca281eef7bba14722c998",
+      "source_sha256": null
+    }
+  ],
+  "naming_deviation": "Legacy scientific artifact names are preserved pending reviewed source-metadata normalization. Standard report/metadata names are retained.",
+  "run_folder": "run_001_20261106_185928_8cd64c",
+  "run_number": 1
+}

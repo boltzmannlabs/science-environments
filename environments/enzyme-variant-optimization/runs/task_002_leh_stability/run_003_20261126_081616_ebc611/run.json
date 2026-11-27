@@ -1,0 +1,56 @@
+{
+  "task_id": "task_002_leh_stability",
+  "run_id": "20261126_081616_ebc611",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261126_081616_ebc611",
+  "config_version": 1,
+  "config_hash": "f71f658fd6c43178cb76678f03495118a81e2507151c8df6123d9efbf923e30e",
+  "config_path": "../../../config/tasks/task_002_leh_stability/03_hy4_flash_free_assisted.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261126_081616_ebc611"
+  ],
+  "associated_session_ids": [
+    "20261126_081646_298432"
+  ],
+  "approach": "agent-with-specialist",
+  "model": "hy4-flash-free",
+  "provider": "opencode-go",
+  "status": "completed",
+  "status_basis": "Independent evaluation confirms empty selection and frozen negative outcome.",
+  "started_at": "2026-11-26T08:16:21.738348+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-26T10:23:11.919344+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_002_leh_stability/run_003_20261126_081616_ebc611",
+  "source_kind": "hy4_specialist_execution",
+  "code_commit": "2ecef925e090c61c106eb6342d402f76ccb1cf3e",
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "Enzymes",
+    "Mol_Probity",
+    "Prodigy",
+    "act_seek",
+    "Netsolp",
+    "Thermal_MPNN",
+    "Random_Controlled_Mutagenesis",
+    "stability-binding-ddg",
+    "Protein_Structure_Prediction",
+    "tm_align",
+    "Boltz2",
+    "Multimer_Structure_Prediction"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 343728,
+    "output_tokens": 73274,
+    "cache_read_tokens": 20751616,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 12109,
+    "tool_call_count": 177
+  },
+  "launch_settings_snapshot": "launch_settings.json",
+  "launch_settings_sha256": "15faba00e69de911a8f0e0c7bfb8c052b94a2595c948e1999db9a251885ac5f7",
+  "run_folder": "run_003_20261126_081616_ebc611",
+  "run_number": 3
+}

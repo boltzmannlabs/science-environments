@@ -53,7 +53,7 @@ def add_electrostatics(doc, folder, image, plt):
     image(fig, 'Matched field, geometry and interaction predictions',
           'Error bars show sample SD along a single trajectory, not independent experimental uncertainty. Only calculations from our declared 30 ns protocol share these axes.')
     doc.add_paragraph('The candidate field is less negative than the evaluated parent. Its mean interaction change is +0.177 kcal/mol; the conditional temporal-block interval [−0.124, +0.478] includes zero. This assessment does not resolve an interaction improvement. The LMO interaction is a pre-reaction coupling estimate, not an activation barrier or a measured activity.')
-    doc.add_paragraph('[Protocol and sequence identities](../../../../results/task_004_athol1_substrate/20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
+    doc.add_paragraph('[Protocol and sequence identities](../../../../results/task_004_athol1_substrate/run_001_20261112_181250_0bd28c/steps/10_reaction_electrostatics/README.md).')
 
 
 def add_open_source_metrics(doc, folder, image, plt):

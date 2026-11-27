@@ -10,4 +10,4 @@ Source: [Zhang et al., Two-step computational redesign of Bacillus subtilis cell
 | β-glucanase M5 / ESM | S7 | M5 + I65Y | −8.583 |
 | β-glucanase M5 / ESM | S7 | M5 + P10D | −6.767 |
 
-Scores are unitless. WT is the Pythia background; cellulase M2 and β-glucanase M5 are the ESM backgrounds. [Sequence and calculation details](../../../results/task_006_zhang_hydrolases/20261107_144016_09fec4/README.md).
+Scores are unitless. WT is the Pythia background; cellulase M2 and β-glucanase M5 are the ESM backgrounds. [Sequence and calculation details](../../../results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/README.md).

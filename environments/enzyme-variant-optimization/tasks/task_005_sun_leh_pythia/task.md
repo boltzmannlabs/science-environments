@@ -63,7 +63,7 @@ Historical model and usage summaries are in [run configs](../../config/tasks/tas
 
 **Format:** `enzyme_computational_reproduction_bundle`
 
-**Directory:** `results/local/task_005_sun_leh_pythia/<config-version>/<approach>/<run-id>/`, or a declared isolated workspace. Historical exports remain under `results/task_005_sun_leh_pythia/20261106_185928_f4aa65/` without retroactively assigning v1/v2.
+**Directory:** `results/local/task_005_sun_leh_pythia/<config-version>/<approach>/<run-id>/`, or a declared isolated workspace. Historical exports remain under `results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/` without retroactively assigning v1/v2.
 
 - `RUN_PLAN.json` and `INPUT_MANIFEST.json`: full parent/context identities, source/checkpoint hashes, score definitions, selection rules and actual effective settings.
 - `all_scores.csv` and a ranked view: exact mutation/context mapping, C/P values, declared aggregations and all supported nonidentity scores.

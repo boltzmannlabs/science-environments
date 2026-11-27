@@ -7,4 +7,4 @@ def historical_result(env, task_id, approach="agent-alone"):
                and r["approach"] == approach and r["source_kind"] == "historical_publication"]
     if len(matches) != 1:
         raise ValueError("Expected one explicitly identified historical execution")
-    return env / "results" / task_id / matches[0]["run_id"]
+    return env / "results" / task_id / matches[0]["run_folder"]

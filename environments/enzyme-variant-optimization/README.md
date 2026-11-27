@@ -15,8 +15,8 @@ enzyme-variant-optimization/
 │   ├── schemas/
 │   ├── shared/
 │   └── tasks/<task-id>/<model-and-approach>.json
-├── runs/<task-id>/<native-logical-run-id>/
-├── results/<task-id>/<same-run-id>/
+├── runs/<task-id>/run_<number>_<session-id>/
+├── results/<task-id>/run_<same-number>_<same-session-id>/
 ├── benchmark/
 │   ├── definitions/
 │   ├── reference_data/
@@ -55,3 +55,5 @@ Read the [environment specification](ENVIRONMENT_SPEC.md), select a task, and su
 [Migration notes](MIGRATION.md) and [path mapping](migration_map.json) preserve prior identifiers and evidence. Each result package links its run record and configuration. Large/private artifacts and complete native transcripts remain in retained private archives; public activity logs contain metadata only. Missing original settings or artifact naming components are reported, not invented. No empty tests directory is added; environment-owned validation is available through `python scripts/validate_run_records.py`.
 
 Benchmark protocols, reference notes and calculations are separated under `benchmark/definitions/`, `benchmark/reference_data/` and `benchmark/evaluation/`. Comparisons retain their historical agent-alone scope; they do not silently combine later model runs.
+
+Run directories use `run_001_<session-id>`, numbered separately within each task in existing start order. The same name is used in runs, results and any run-specific source folder. Metadata retains the original native run/session identity. Future executions append without renumbering these records.

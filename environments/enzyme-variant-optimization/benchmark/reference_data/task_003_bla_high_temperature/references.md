@@ -8,7 +8,7 @@ Source: [Fan et al., 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC10883975/).
 | Substitutions screened | 399 |
 | Selected single substitutions | 14 |
 
-The cutoff describes screening rather than a candidate prediction. K319W and E336S are the reference variants chosen for the new property comparison. Their full sequences, selection rationale and calculation details belong in [results](../../../results/task_003_bla_high_temperature/20261112_181250_7cf059/README.md).
+The cutoff describes screening rather than a candidate prediction. K319W and E336S are the reference variants chosen for the new property comparison. Their full sequences, selection rationale and calculation details belong in [results](../../../results/task_003_bla_high_temperature/run_001_20261112_181250_7cf059/README.md).
 
 ## Candidate-specific published predictions
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 import hashlib
 import json
+import re
 from pathlib import Path
 
 
@@ -44,6 +45,7 @@ def validate(env: Path) -> dict:
     configuration_checks = validate_configuration_layout(env)
     registry = json.loads((env / 'runs/registry.json').read_text())
     seen = set()
+    numbers = set()
     artifacts = 0
     for entry in registry['runs']:
         key = (entry['task_id'], entry['run_id'])
@@ -53,7 +55,16 @@ def validate(env: Path) -> dict:
         task, run_id = key
         if not (env / 'tasks' / task / 'task.md').is_file():
             raise ValueError(f'Missing task: {task}')
-        folder = env / 'runs' / task / run_id
+        number = entry['run_number']
+        run_folder = entry['run_folder']
+        if not re.fullmatch(r'run_[0-9]{3}_' + re.escape(run_id), run_folder):
+            raise ValueError(f'Invalid numbered run folder: {run_folder}')
+        if number < 1 or not run_folder.startswith(f'run_{number:03d}_'):
+            raise ValueError(f'Run number/folder mismatch: {run_folder}')
+        if (task, number) in numbers:
+            raise ValueError(f'Duplicate task-local run number: {task}/{number}')
+        numbers.add((task, number))
+        folder = env / 'runs' / task / run_folder
         run = json.loads((folder / 'run.json').read_text())
         config_path = (folder / run['config_path']).resolve()
         config = json.loads(config_path.read_text())
@@ -66,6 +77,10 @@ def validate(env: Path) -> dict:
         for item in (run, provenance):
             if item['run_id'] != run_id or item['config_hash'] != digest:
                 raise ValueError(f'Run/config mismatch: {folder}')
+            if item['run_folder'] != run_folder or item['run_number'] != number:
+                raise ValueError(f'Numbered folder metadata mismatch: {folder}')
+        if result.name != run_folder:
+            raise ValueError(f'Run/result folder mismatch: {folder}')
         if run['status'] != provenance['execution_status']:
             raise ValueError(f'Status mismatch: {folder}')
         if not (folder / run['input_manifest']).is_file():

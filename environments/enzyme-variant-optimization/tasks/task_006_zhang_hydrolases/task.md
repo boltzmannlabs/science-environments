@@ -65,7 +65,7 @@ Historical model and usage summaries are in [run configs](../../config/tasks/tas
 
 **Format:** `enzyme_computational_reproduction_bundle`
 
-**Directory:** `results/local/task_006_zhang_hydrolases/<config-version>/<approach>/<run-id>/`, or a declared isolated workspace. Retained historical exports are under `results/task_006_zhang_hydrolases/20261107_144016_09fec4/` without assigning them to a newly written configuration.
+**Directory:** `results/local/task_006_zhang_hydrolases/<config-version>/<approach>/<run-id>/`, or a declared isolated workspace. Retained historical exports are under `results/task_006_zhang_hydrolases/run_002_20261107_144016_09fec4/` without assigning them to a newly written configuration.
 
 - `RUN_PLAN.json` and `INPUT_MANIFEST.json`: exact constructs/backgrounds, model and source versions, score definitions, selection/exclusion rules, resource policies and authorized amendments.
 - `inputs/` and `structures/`: full WT/M2/M5 sequences, prepared WT coordinate files, chain/residue mapping and actual structure-prediction provenance.

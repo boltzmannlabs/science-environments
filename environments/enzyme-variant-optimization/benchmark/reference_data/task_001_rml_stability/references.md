@@ -24,4 +24,4 @@ Source: [Teng et al., Foods 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11727
 
 FoldX single-mutant values (kcal/mol): N120M **−0.35775**, E230I **−1.59876**, N264M **−0.77627**. The full table remains available here; the PDF report focuses on selected comparisons.
 
-[Parent and method details](../../../results/task_001_rml_stability/20261104_183717_92629f/README.md).
+[Parent and method details](../../../results/task_001_rml_stability/run_002_20261104_183717_92629f/README.md).

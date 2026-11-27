@@ -1,0 +1,41 @@
+{
+  "task_id": "task_005_sun_leh_pythia",
+  "run_id": "20261120_194624_a336c7",
+  "environment": "enzyme-variant-optimization",
+  "config_id": "cfg_20261120_194624_a336c7",
+  "config_version": 1,
+  "config_hash": "bf8f1cbfcf48b1ab0a1402b1ce603b4fbb999110cacfe3e9f286fa06bb703027",
+  "config_path": "../../../config/tasks/task_005_sun_leh_pythia/04_codex_assisted.json",
+  "input_manifest": "input_manifest.json",
+  "native_session_ids": [
+    "20261120_194624_a336c7"
+  ],
+  "associated_session_ids": [],
+  "approach": "agent-with-specialist",
+  "model": "codex",
+  "provider": null,
+  "status": "partial",
+  "status_basis": "Interrupted start or mandatory generation/revision/independent-review evidence unresolved; retain original report separately.",
+  "started_at": "2026-11-20T19:46:55.683361+00:00",
+  "completed_at": null,
+  "last_recorded_activity_at": "2026-11-20T19:58:52.014265+00:00",
+  "timestamp_note": "Exact completion timestamp not independently established.",
+  "result_path": "../../../results/task_005_sun_leh_pythia/run_004_20261120_194624_a336c7",
+  "source_kind": "native_specialist_execution",
+  "code_commit": null,
+  "code_commit_note": "Original execution revision not independently reconstructed for this export.",
+  "tools_submitted": [
+    "delegate_task"
+  ],
+  "usage_scope": "Persisted parent session only unless original usage record says otherwise; not automatically specialist-inclusive.",
+  "persisted_parent_usage": {
+    "input_tokens": 350002,
+    "output_tokens": 10753,
+    "cache_read_tokens": 1594624,
+    "cache_write_tokens": 0,
+    "reasoning_tokens": 0,
+    "tool_call_count": 50
+  },
+  "run_folder": "run_004_20261120_194624_a336c7",
+  "run_number": 4
+}

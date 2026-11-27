@@ -60,4 +60,4 @@ Method: DDGun SEQ. Units: kcal/mol. Protocol: sequence-based complete variant; p
 
 Amber: reported reference variants recalculated here. Blue: our retained candidates. All rows in this panel use the stated method and protocol.
 
-[Results and preparation details](../../../../results/task_005_sun_leh_pythia/20261106_185928_f4aa65/README.md) · [Published reference](../../../reference_data/task_005_sun_leh_pythia/references.md).
+[Results and preparation details](../../../../results/task_005_sun_leh_pythia/run_002_20261106_185928_f4aa65/README.md) · [Published reference](../../../reference_data/task_005_sun_leh_pythia/references.md).
