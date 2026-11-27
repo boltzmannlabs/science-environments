@@ -14,11 +14,12 @@ Denovo-Enzyme-Design/
 ├── MODELS_AND_TOOLS.md
 ├── config/
 ├── tasks/
+├── runs/
+├── results/
+├── benchmark/
 ├── scripts/
 ├── src/
-├── tests/
-├── benchmark/
-└── results/
+└── tests/
 ```
 
 | Location | Information |
@@ -26,11 +27,14 @@ Denovo-Enzyme-Design/
 | [ENVIRONMENT_SPEC.md](ENVIRONMENT_SPEC.md) | Scientific scope, end-to-end workflow, catalytic constraints, reaction-state preparation, chemistry evaluation and qualification criteria. |
 | [STATUS.md](STATUS.md) | Implemented work, current limitations and validation requirements. |
 | [MODELS_AND_TOOLS.md](MODELS_AND_TOOLS.md) | Required scientific capabilities, execution policy and tool-selection requirements. |
-| [config/](config/) | Request, generation and reaction-profile schemas, environment policy and illustrative request files. |
-| [tasks/](tasks/README.md) | Reaction-specific scientific assignments and published computational reproduction cases. |
+| [config/](config/) | Environment policy, schemas under `schemas/`, and shared request examples under `shared/`. |
+| [tasks/](tasks/README.md) | Stable scientific task definitions organized by task ID. |
+| [runs/](runs/) | Execution records and run-specific workflow documentation, organized by task and run ID. |
+| [results/](results/) | Scientific outputs and result records organized by the same task and run IDs. |
+| [benchmark/](benchmark/) | Benchmark definitions and reference data; benchmark execution outputs remain with their corresponding results. |
 | [scripts/](scripts/) | Controller launch, resume, status and package-validation entry points. |
 | [src/](src/) | Shared workflow code, agent instructions and runtime/evidence contracts. |
-| [tests/](tests/), [benchmark/](benchmark/) and [results/](results/) | Reserved locations in the current repository layout; scientific run artifacts are retained in separate run directories. |
+| [tests/](tests/) | Technical and scientific validation resources. |
 
 ## Prerequisites and start
 
@@ -38,7 +42,7 @@ Use an available SCI installation, a configured execution harness and access to 
 
 1. Read the selected task, [environment specification](ENVIRONMENT_SPEC.md) and [tool policy](MODELS_AND_TOOLS.md).
 2. Resolve the reaction, assembly and available reference inputs; prepare the stage-specific molecular inputs and record the evaluation conditions and resource limits.
-3. Initialize a new controller run using the [runtime contracts](src/CONTRACTS.md), then execute and resume through its frozen environment snapshot. Keep task definitions and run outputs separate.
+3. Initialize a new controller run using the [runtime contracts](src/CONTRACTS.md), then record execution metadata under `runs/<task-id>/<run-id>/` and outputs under `results/<task-id>/<run-id>/`.
 
 ## Evaluation and results
 

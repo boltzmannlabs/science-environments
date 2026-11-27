@@ -131,7 +131,7 @@ def check_generation_contracts(schemas: dict) -> None:
                 require(True, f'{kind} generation check: {label}')
             else:
                 raise AssertionError(label)
-        mismatch = read_json('config/request.example.json' if kind == 'homodimer' else 'config/homodimer.request.example.json')
+        mismatch = read_json('config/shared/request.example.json' if kind == 'homodimer' else 'config/shared/homodimer.request.example.json')
         try:
             validate_generation(profile, schemas['generation'], mismatch)
         except ValueError:
@@ -269,7 +269,7 @@ def synthetic_protocol(schema: dict, kind: str) -> dict:
 
 
 def check_assembly_contracts(schemas: dict) -> None:
-    request = read_json('config/homodimer.request.example.json')
+    request = read_json('config/shared/homodimer.request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'homodimer request is structurally valid; scientific inputs remain unqualified')
     implicit = copy.deepcopy(request)
@@ -335,7 +335,7 @@ def check_assembly_contracts(schemas: dict) -> None:
         else:
             raise AssertionError(name)
     for protocol, req, name in [
-        (base, read_json('config/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
+        (base, read_json('config/shared/request.example.json'), 'explicit monomer request cannot silently use a homodimer profile'),
         (synthetic_protocol(schemas['protocol'], 'monomer'), request, 'explicit homodimer request cannot silently use a monomer profile'),
     ]:
         try:
@@ -349,10 +349,10 @@ def check_assembly_contracts(schemas: dict) -> None:
 def main() -> None:
     required_files = [
         'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
-        'config/environment.yaml', 'config/request.schema.json',
-        'config/protocol.schema.json', 'config/generation.schema.json', 'src/TASK.md',
-        'config/request.example.json', 'STATUS.md',
-        'config/homodimer.request.example.json',
+        'config/environment.yaml', 'config/schemas/request.schema.json',
+        'config/schemas/protocol.schema.json', 'config/schemas/generation.schema.json', 'src/TASK.md',
+        'config/shared/request.example.json', 'STATUS.md',
+        'config/shared/homodimer.request.example.json',
         'src/CONTRACTS.md',
         'scripts/run.py', 'src/agents.py', 'src/contracts.py', 'src/reporting.py',
         'scripts/validate_environment.py', 'scripts/check_regressions.py',
@@ -361,23 +361,25 @@ def main() -> None:
     ]
     require(all((ROOT / name).is_file() for name in required_files), 'required package files exist')
     expected_entries = {'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md',
-                        'config', 'tasks', 'tests', 'scripts', 'src', 'benchmark', 'results'}
+                        'config', 'tasks', 'runs', 'results', 'tests', 'scripts', 'src', 'benchmark'}
     require({p.name for p in ROOT.iterdir()} == expected_entries, 'environment has exactly the requested top-level layout')
     task_directory = ROOT / 'tasks'
     require(task_directory.is_dir(), 'tasks directory exists')
-    require(all(path.is_file() and not path.is_symlink() and path.suffix == '.md'
-                for path in task_directory.iterdir()),
-            'tasks contains only Markdown task definitions, not execution artifacts')
-    for name in ('tests', 'benchmark', 'results'):
-        directory = ROOT / name
-        entries = list(directory.iterdir()) if directory.is_dir() else []
-        reserved = not entries or (len(entries) == 1 and entries[0].name == '.gitkeep'
-                                  and entries[0].is_file() and not entries[0].is_symlink()
-                                  and entries[0].stat().st_size == 0)
-        require(directory.is_dir() and reserved, f'{name} is reserved with at most an empty .gitkeep')
+    task_entries = [path for path in task_directory.iterdir() if path.name != 'README.md']
+    require(all(path.is_dir() and not path.is_symlink() and (path / 'task.md').is_file()
+                for path in task_entries),
+            'each task has a descriptive directory containing task.md')
+    require(len(task_entries) == 7, 'seven unique task definitions are present')
+    require((ROOT / 'runs/TASK-001/GLP1_p03_variable_s02/run.json').is_file(),
+            'retained Task 001 run record is organized by task and run ID')
+    require((ROOT / 'results/TASK-001/GLP1_p03_variable_s02/result.json').is_file(),
+            'retained Task 001 result record uses the matching task and run ID')
+    require((ROOT / 'benchmark/definitions').is_dir() and
+            (ROOT / 'benchmark/reference_data').is_dir(),
+            'benchmark definitions and reference data are separated')
 
 
-    schemas = {name: read_json(f'config/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
+    schemas = {name: read_json(f'config/schemas/{name}.schema.json') for name in ['request', 'protocol', 'generation']}
     for name, schema in schemas.items():
         Draft202012Validator.check_schema(schema)
         require(True, f'{name} JSON Schema is structurally valid')
@@ -387,7 +389,7 @@ def main() -> None:
                 target = target[part.replace('~1', '/').replace('~0', '~')]
         require(True, f'{name} schema internal references resolve')
 
-    request = read_json('config/request.example.json')
+    request = read_json('config/shared/request.example.json')
     validate_request(request, schemas['request'])
     require(True, 'example request passes structural and declared budget/range checks')
     for basis in ['subunit_equivalents', 'assembled_complexes']:
@@ -588,7 +590,7 @@ def main() -> None:
             if link.startswith(('https://', 'http://', '#', 'mailto:')):
                 continue
             target = (document.parent / link.split('#', 1)[0]).resolve()
-            require(target.is_file() or (REPORT is not None and target == REPORT.resolve()), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
+            require(target.exists() or (REPORT is not None and target == REPORT.resolve()), f'local link resolves: {document.relative_to(ROOT.parents[1])} -> {link}')
             local_links += 1
     require(local_links > 0, 'package contains navigable local documentation links')
 
@@ -629,5 +631,5 @@ if __name__ == '__main__':
     if args.report is not None:
         REPORT = args.report.resolve()
         if REPORT == ROOT or ROOT in REPORT.parents:
-            parser.error('--report must be outside the environment to preserve its empty directories')
+            parser.error('--report must be outside the environment')
     main()

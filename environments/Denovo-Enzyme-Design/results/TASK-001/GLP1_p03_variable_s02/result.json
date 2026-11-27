@@ -1,0 +1,43 @@
+{
+  "schema_version": "archived-case-index-v1",
+  "result_id": "RESULT-GLP1-P03-VARIABLE-S02",
+  "task_id": "TASK-001",
+  "run_id": "GLP1_p03_variable_s02",
+  "selected_candidate_label": "GLP1_p03_variable_s02",
+  "selection_scope": "structural comparison representative",
+  "reporting_panel_candidates": [
+    "GLP1_p03_variable_s02",
+    "KCR1_s01",
+    "KCR1_s02"
+  ],
+  "reporting_panel_candidate_count": 3,
+  "retained_assessment_structure_count": 20,
+  "generated_sequences_in_parent_and_replacement_stages": 10,
+  "methods": [
+    "RFdiffusion2",
+    "LigandMPNN",
+    "Chai-1",
+    "Gemmi",
+    "Biopython",
+    "Foldseek",
+    "TM-align"
+  ],
+  "files": {
+    "report": "REPORT.md",
+    "candidate_inventory": "candidates.csv",
+    "assessed_metrics": "metrics.csv",
+    "sample_metrics": "sample_metrics.csv",
+    "shortlist": "shortlist.csv",
+    "benchmark_comparison": "benchmark_comparison.csv",
+    "candidate_properties": "candidate_properties.json",
+    "residue_atom_mapping": "residue_atom_mapping.csv",
+    "audit": "audit.json",
+    "benchmark_evaluation": "benchmark/comparison.md",
+    "benchmark_figures": "benchmark/figures",
+    "historical_source_hashes": "historical_sha256_manifest.json",
+    "historical_benchmark_hashes": "benchmark/historical_sha256_manifest.json"
+  },
+  "scope": "Retained three-sequence reporting panel; not an inventory of all historical experiment branches.",
+  "packaging_model_calls": 0,
+  "original_sources_unchanged": true
+}

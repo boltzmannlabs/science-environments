@@ -38,11 +38,11 @@ TERMINAL = {'QUALIFIED', 'PARTIAL', 'NO_QUALIFYING_DESIGNS', 'BLOCKED',
             'NEEDS_INPUT', 'BUDGET_EXHAUSTED'}
 IMPLEMENTATION_FILES = ['scripts/run.py', 'src/agents.py', 'src/contracts.py', 'src/reporting.py',
                         'src/assessment.py', 'src/structure_preparation.py',
-                        'config/environment.yaml', 'config/request.schema.json',
-                        'config/generation.schema.json', 'config/protocol.schema.json',
+                        'config/environment.yaml', 'config/schemas/request.schema.json',
+                        'config/schemas/generation.schema.json', 'config/schemas/protocol.schema.json',
                         'README.md', 'ENVIRONMENT_SPEC.md', 'STATUS.md', 'MODELS_AND_TOOLS.md', 'src/CONTRACTS.md',
-                        'src/TASK.md', 'config/request.example.json',
-                        'config/homodimer.request.example.json']
+                        'src/TASK.md', 'config/shared/request.example.json',
+                        'config/shared/homodimer.request.example.json']
 USER_INPUT_ITEMS = {
     'essential_goal_or_reaction_ambiguity_unresolvable_from_evidence':
         ['reaction', 'substrate', 'product', 'stereochemistry', 'scientific_objective'],

@@ -18,9 +18,9 @@ scope:
   infrastructure_status: BLOCKED
 
 contracts:
-  request: config/request.schema.json
-  generation: config/generation.schema.json
-  protocol: config/protocol.schema.json
+  request: config/schemas/request.schema.json
+  generation: config/schemas/generation.schema.json
+  protocol: config/schemas/protocol.schema.json
   task: src/TASK.md
 
 autonomy:

@@ -6,7 +6,7 @@
 
 Design new enzyme sequences and structures for the conversion in the resolved request. Preserve the requested chemistry and the selected profile's catalytic groups. Return up to the requested number of diverse candidates that pass every mandatory chemistry, assembly/interface, folding, solubility, aggregation and operating-condition rule.
 
-Use the [environment specification](../ENVIRONMENT_SPEC.md) and [controller](../scripts/run.py) for execution. Own preparation, discovery, review and bounded recovery through the existing harness. A reviewed [generation contract](../config/generation.schema.json) permits exploratory generation; the complete qualified profile is required for final qualification. Build missing later requirements progressively. Do not manufacture motifs, thresholds, chemistry evidence or successful results.
+Use the [environment specification](../ENVIRONMENT_SPEC.md) and [controller](../scripts/run.py) for execution. Own preparation, discovery, review and bounded recovery through the existing harness. A reviewed [generation contract](../config/schemas/generation.schema.json) permits exploratory generation; the complete qualified profile is required for final qualification. Build missing later requirements progressively. Do not manufacture motifs, thresholds, chemistry evidence or successful results.
 
 For a whole-run user request, initialize and run the controller using the existing harness configuration and available inputs; follow [runtime usage](../src/CONTRACTS.md#start-and-resume). Reading these files alone does not start the controller. If invoked by the controller with an assigned stage/role, execute only that assignment and return its response; do not start a nested controller. Use internal resolution for routine settings and missing chemistry preparation. A user question requires the structured, reviewed reason defined in the runtime contract.
 
@@ -27,7 +27,7 @@ Resolve these fields independently for the requested enzyme. Example identifiers
 - **Conditions:** resolved pH, temperature, host, solvent and salt composition; protein concentration and its basis when relevant to the requested claim.
 - **Profile identity:** generation-contract ID/version/hash at generation; full-profile ID/version/hash and qualification evidence at final qualification.
 
-The agent and harness resolve these fields from the request, policy and evidence. [request.example.json](../config/request.example.json) and [homodimer.request.example.json](../config/homodimer.request.example.json) illustrate syntax only. Their conditions and budgets are not policy defaults or runtime estimates. Each operation requires its own verified scientific inputs and working capabilities; neither example supplies those artifacts or proves enzyme qualification.
+The agent and harness resolve these fields from the request, policy and evidence. [request.example.json](../config/shared/request.example.json) and [homodimer.request.example.json](../config/shared/homodimer.request.example.json) illustrate syntax only. Their conditions and budgets are not policy defaults or runtime estimates. Each operation requires its own verified scientific inputs and working capabilities; neither example supplies those artifacts or proves enzyme qualification.
 
 ## Design Constraints
 
