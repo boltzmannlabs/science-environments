@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "task_id": "task-06-green-solvent-suzuki-optimization",
+  "metric_type": "blind computational predictions, design hypotheses and scenario calculations; not experimental performance",
+  "target": {
+    "reactant_1": "Brc1ccccc1",
+    "reactant_2": "COc1ccc(B(O)O)cc1",
+    "product": "COc1ccc(-c2ccccc2)cc1",
+    "reaction_class": "Suzuki\u2013Miyaura",
+    "heating_mode_required": "microwave",
+    "input_mode": "benchmark"
+  },
+  "literature_reported_only": {
+    "doi": "10.1002/open.202500138",
+    "table1_nmr_yield_percent": {
+      "water": 69,
+      "DMF": 62,
+      "choline_chloride_ethylene_glycol_1_2": 83,
+      "choline_chloride_glycerol_1_2": 69,
+      "choline_chloride_urea_1_2": 50,
+      "glycerol_urea_4_1": 75,
+      "betaine_glycerol_1_2": 72,
+      "betaine_glycerol_1_4": 72,
+      "betaine_glycerol_1_8": 64,
+      "glycerol": 64
+    },
+    "table2_catalysts_nmr_percent": {
+      "PdCl2dppf": 80,
+      "PdCl2dppf_CH2Cl2": 82,
+      "Pd(OAc)2": 72,
+      "Pd(PPh3)4": 49
+    },
+    "optimized_protocol": {
+      "nmr_yield_percent_1mmol": 85,
+      "isolated_yield_percent_1mmol": 75,
+      "isolated_yield_percent_8mmol": 66,
+      "temperature_c": 129,
+      "time_min": 15
+    },
+    "matched_DES_minus_DMF_pp_table1": 10,
+    "ich_classes_stated": {
+      "DMF": 2,
+      "acetonitrile": 2,
+      "ethanol": 3
+    }
+  },
+  "model_outputs": {
+    "structures_validated": 17,
+    "retrosynthesis_route_count": 55,
+    "forward_top1_exact_target_string_match": true,
+    "forward_top1_model_score": 0.9999999844872713,
+    "condition_recommendation_candidates": 10,
+    "condition_recommendation_solvents": [
+      "1,4-dioxane",
+      "water"
+    ],
+    "condition_recommendation_yield_field_percent": 52.626657485961914,
+    "yield_field_basis_documented": false,
+    "local_optimizer_candidates_compiled": 480,
+    "local_optimizer_batch_size": 12,
+    "des_conditions_in_batch": 4,
+    "reactiont5_yield_predictions": 13,
+    "reactiont5_solvent_blind_verified": true,
+    "within_pair_solvent_temp_time_yield_spread_pp": 0.117,
+    "across_catalyst_pair_mean_spread_pp": 39.73,
+    "curated_ord_recipes_matching_benchmark": 0
+  },
+  "project_measured": {
+    "experimental_yield_percent": null,
+    "e_factor_measured": null,
+    "e_factor_scenario_reaction_charge_only": 22.54,
+    "e_factor_scenario_at_95_percent_solvent_recovery": 3.29,
+    "mae_pp_vs_table1": null,
+    "matched_rows": 0,
+    "impurity_direction_correct": null
+  },
+  "objective_status": {
+    "structure_validation": "PASS",
+    "route_consistency": "PASS",
+    "DES_top3_ranking": "NOT ACHIEVABLE",
+    "yield_mae": "NOT EVALUABLE",
+    "green_vs_conventional_yield": "NOT EVALUABLE",
+    "protocol_match": "PARTIAL",
+    "impurity_direction": "NOT EVALUABLE",
+    "ich_exclusion": "UNRESOLVED",
+    "e_factor": "SCENARIO ONLY",
+    "substrate_scope": "NOT EVALUABLE",
+    "blinding": "COMPROMISED",
+    "self_assessed_completion": "6/14 items (~43%)"
+  },
+  "integrity": {
+    "literature_yields_used_as_prediction_inputs": false,
+    "user_reported_yields_used_as_prediction_inputs": false,
+    "laboratory_experiments_performed": false,
+    "training_data_provenance_known": false
+  },
+  "experimental_comparison": {
+    "project_measured_yield": null,
+    "matched_literature_yield": null,
+    "yield_mae": null,
+    "des_top3": null,
+    "green_vs_conventional": null,
+    "side_product_match": null,
+    "chemical_superiority_demonstrated": false
+  },
+  "overall_status": "partial_not_evaluable"
+}

@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "task_id": "task-04-pdnhc-suzuki-miyaura-optimization",
+  "status": "partial",
+  "reactants": [
+    "COc1ccc(Cl)cc1",
+    "OB(O)c1ccc(C(F)(F)F)cc1"
+  ],
+  "target_product": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+  "rdkit_parse": {
+    "reactant_1": true,
+    "reactant_2": true,
+    "target": true,
+    "canonical_matches_input": true
+  },
+  "routes": [
+    {
+      "route_id": "R1",
+      "rank": 1,
+      "reaction_class": "c-c coupling",
+      "reaction_name": "suzuki coupling with boronic acids",
+      "compatible_with_initial_reactants": false,
+      "step_reactant_smiles": [
+        "COc1ccc(B(O)O)cc1",
+        "FC(F)(F)c1ccc(Br)cc1"
+      ]
+    },
+    {
+      "route_id": "R2",
+      "rank": 2,
+      "reaction_class": "c-c coupling",
+      "reaction_name": "suzuki coupling with boronic acids",
+      "compatible_with_initial_reactants": true,
+      "step_reactant_smiles": [
+        "COc1ccc(Br)cc1",
+        "OB(O)c1ccc(C(F)(F)F)cc1"
+      ]
+    },
+    {
+      "route_id": "R3",
+      "rank": 3,
+      "reaction_class": "c-c coupling",
+      "reaction_name": "negishi",
+      "compatible_with_initial_reactants": false,
+      "step_reactant_smiles": [
+        "COc1ccc(Cl)cc1",
+        "FC(F)(F)c1ccc(Cl)cc1"
+      ]
+    },
+    {
+      "route_id": "R4",
+      "rank": 4,
+      "reaction_class": "c-c coupling",
+      "reaction_name": "suzuki coupling with boronic esters",
+      "compatible_with_initial_reactants": false,
+      "step_reactant_smiles": [
+        "CC1(C)OB(c2ccc(C(F)(F)F)cc2)OC1(C)C",
+        "COc1ccc(Br)cc1"
+      ]
+    },
+    {
+      "route_id": "R5",
+      "rank": 5,
+      "reaction_class": "c-c coupling",
+      "reaction_name": "negishi",
+      "compatible_with_initial_reactants": false,
+      "step_reactant_smiles": [
+        "COc1ccc(I)cc1",
+        "FC(F)(F)c1ccc(Br)cc1"
+      ]
+    }
+  ],
+  "forward": {
+    "validated_product": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+    "target_match": true,
+    "top_candidates": [
+      {
+        "rank": 1,
+        "smiles": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+        "model_score": 1,
+        "feasibility_score": 0.9934252567071588
+      },
+      {
+        "rank": 2,
+        "smiles": "Oc1ccc(-c2ccc(C(F)(F)F)cc2)cc1",
+        "model_score": 0.6247762181998447,
+        "feasibility_score": 0.9681070417706402
+      },
+      {
+        "rank": 3,
+        "smiles": "COc1ccccc1-c1ccc(C(F)(F)F)cc1",
+        "model_score": 0.5479150561988616,
+        "feasibility_score": 0.9996159770031943
+      },
+      {
+        "rank": 4,
+        "smiles": "COc1ccc(-c2ccccc2C(F)(F)F)cc1",
+        "model_score": 0.529297203349829,
+        "feasibility_score": 0.9931580770067062
+      },
+      {
+        "rank": 5,
+        "smiles": "COc1cccc(-c2ccc(C(F)(F)F)cc2)c1",
+        "model_score": 0.5065004128922409,
+        "feasibility_score": 0.9955898193317214
+      },
+      {
+        "rank": 6,
+        "smiles": "COc1ccc(-c2cccc(C(F)(F)F)c2)cc1",
+        "model_score": 0.4981267554400869,
+        "feasibility_score": 0.9964853847303039
+      }
+    ]
+  },
+  "conditions": [
+    {
+      "rank": 1,
+      "condition_id": "C1",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.78,
+      "score": 0.6170267877447652
+    },
+    {
+      "rank": 2,
+      "condition_id": "C2",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.56,
+      "score": 0.5140717604281234
+    },
+    {
+      "rank": 3,
+      "condition_id": "C3",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.52,
+      "score": 0.49260328686366606
+    },
+    {
+      "rank": 4,
+      "condition_id": "C4",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.47,
+      "score": 0.5010109634171891
+    },
+    {
+      "rank": 5,
+      "condition_id": "C5",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.42,
+      "score": 0.5007439489866109
+    },
+    {
+      "rank": 6,
+      "condition_id": "C6",
+      "temperature_c": [
+        20,
+        30
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.38,
+      "score": 0.50563423249292
+    },
+    {
+      "rank": 7,
+      "condition_id": "C7",
+      "temperature_c": [
+        20,
+        30
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.31,
+      "score": 0.565355424326784
+    },
+    {
+      "rank": 8,
+      "condition_id": "C8",
+      "temperature_c": [
+        20,
+        30
+      ],
+      "solvents": [
+        "water",
+        "1,2-dimethoxyethane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 31.285274028778076,
+      "feasibility": 0.27,
+      "score": 0.4989531202458038
+    },
+    {
+      "rank": 9,
+      "condition_id": "C9",
+      "temperature_c": [
+        100,
+        110
+      ],
+      "solvents": [
+        "water"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 47.446632385253906,
+      "feasibility": 0.2,
+      "score": 0.5223435785115486
+    },
+    {
+      "rank": 10,
+      "condition_id": "C10",
+      "temperature_c": [
+        20,
+        30
+      ],
+      "solvents": [
+        "water",
+        "1,4-dioxane"
+      ],
+      "catalyst": "palladium catalyst (native string; no NHC/ligand identity returned)",
+      "base": "base (native string; specific base identity not returned)",
+      "native_yield_percent": 32.33824074268341,
+      "feasibility": 0.12,
+      "score": 0.4793297198058886
+    }
+  ],
+  "recommended_condition": "C1",
+  "side_products": [
+    {
+      "smiles": "Oc1ccc(Cl)cc1",
+      "mode": "normal reaction",
+      "feasibility_score": 0.3
+    },
+    {
+      "smiles": "COc1ccccc1.Cl",
+      "mode": "normal reaction",
+      "feasibility_score": 0.48
+    },
+    {
+      "smiles": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1Cl",
+      "mode": "over reaction",
+      "feasibility_score": 0.46
+    },
+    {
+      "smiles": "COc1ccc(-c2ccc(Cl)cc2)cc1",
+      "mode": "over reaction",
+      "feasibility_score": 0.42
+    },
+    {
+      "smiles": "COc1ccc(Oc2ccc(Cl)cc2)cc1",
+      "mode": "over reaction",
+      "feasibility_score": 0.54
+    },
+    {
+      "smiles": "COc1ccc(Cl)cc1CCl",
+      "mode": "over reaction",
+      "feasibility_score": 0.35
+    },
+    {
+      "smiles": "COc1ccc(-c2ccc(C(F)(F)F)cc2)cc1C",
+      "mode": "dimer reaction",
+      "feasibility_score": 0.45
+    },
+    {
+      "smiles": "Oc1ccc(Cl)cc1Cl",
+      "mode": "dimer reaction,solvent adducts",
+      "feasibility_score": 0.4
+    },
+    {
+      "smiles": "CCl.COc1ccccc1.O",
+      "mode": "dimer reaction",
+      "feasibility_score": 0.46
+    }
+  ],
+  "parrot": {
+    "predictions": 15,
+    "top3_log_scores": [
+      -1.3208,
+      -2.0265,
+      -2.1494
+    ],
+    "adopted": false
+  },
+  "pd_nhc_design": {
+    "candidate_count": 1944,
+    "recommendations": [
+      {
+        "catalyst": "Pd(NHC)(allyl)Cl",
+        "base": "Cs2CO3",
+        "solvent": "1,4-dioxane/water",
+        "temperature_c": 60.0,
+        "time_h": 2.0
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPent",
+        "base": "K2CO3",
+        "solvent": "DMF/water",
+        "temperature_c": 110.0,
+        "time_h": 12.0
+      },
+      {
+        "catalyst": "trans-[Pd(NHC)Cl2(DMS)]",
+        "base": "K3PO4",
+        "solvent": "toluene/water",
+        "temperature_c": 110.0,
+        "time_h": 6.0
+      },
+      {
+        "catalyst": "[Pd(NHC)Cl(1-tBu-indenyl)]",
+        "base": "K2CO3",
+        "solvent": "toluene/water",
+        "temperature_c": 60.0,
+        "time_h": 2.0
+      },
+      {
+        "catalyst": "[Pd(NHC)(mu-Cl)Cl]2",
+        "base": "K3PO4",
+        "solvent": "1,4-dioxane/water",
+        "temperature_c": 60.0,
+        "time_h": 12.0
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPr",
+        "base": "Cs2CO3",
+        "solvent": "toluene/water",
+        "temperature_c": 100.0,
+        "time_h": 12.0
+      },
+      {
+        "catalyst": "[Pd(NHC)(mu-Cl)Cl]2",
+        "base": "Cs2CO3",
+        "solvent": "DMF/water",
+        "temperature_c": 110.0,
+        "time_h": 6.0
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPr",
+        "base": "K3PO4",
+        "solvent": "DMF/water",
+        "temperature_c": 60.0,
+        "time_h": 2.0
+      }
+    ]
+  },
+  "loading_aware": {
+    "candidate_count": 144,
+    "loading_levels_mol_percent": [
+      0.5,
+      2.0,
+      5.0
+    ],
+    "predictions": [
+      {
+        "catalyst": "Pd-PEPPSI-IPent",
+        "base": "K2CO3",
+        "loading_mol_percent": 0.5,
+        "yield_percent": 8.105627059936523
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPr",
+        "base": "K3PO4",
+        "loading_mol_percent": 5.0,
+        "yield_percent": 7.971233367919922
+      },
+      {
+        "catalyst": "[Pd(NHC)(mu-Cl)Cl]2",
+        "base": "K2CO3",
+        "loading_mol_percent": 0.5,
+        "yield_percent": 8.401947975158691
+      },
+      {
+        "catalyst": "[Pd(NHC)(mu-Cl)Cl]2",
+        "base": "K3PO4",
+        "loading_mol_percent": 5.0,
+        "yield_percent": 8.61068344116211
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPent",
+        "base": "K3PO4",
+        "loading_mol_percent": 0.5,
+        "yield_percent": 7.452487945556641
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPr",
+        "base": "K2CO3",
+        "loading_mol_percent": 5.0,
+        "yield_percent": 8.885693550109863
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPent",
+        "base": "K2CO3",
+        "loading_mol_percent": 5.0,
+        "yield_percent": 8.105627059936523
+      },
+      {
+        "catalyst": "Pd-PEPPSI-IPr",
+        "base": "K3PO4",
+        "loading_mol_percent": 0.5,
+        "yield_percent": 7.971233367919922
+      }
+    ],
+    "loading_sensitive_yield": false
+  },
+  "experimental_comparison": "A loading-aware design set with frozen-model yield estimates was produced, but yield retention at reduced loading cannot be assessed because the yield model is blind to loading. A measured campaign (lab HTE with reviewed yields) is required to validate any loading optimization."
+}

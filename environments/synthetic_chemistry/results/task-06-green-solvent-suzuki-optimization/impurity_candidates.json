@@ -1,0 +1,36 @@
+{
+  "doc_id": "6b058ae6c45f4015f0eb48e1",
+  "candidates": [
+    {
+      "prd_smiles": "COc1ccc(-c2ccccc2)cc1",
+      "modes_name": "normal reaction",
+      "insp_score": 1.0,
+      "feasibility": 1.0
+    },
+    {
+      "prd_smiles": "c1ccc(-c2ccccc2)cc1",
+      "modes_name": "normal reaction",
+      "insp_score": 0.9999705102897228,
+      "feasibility": 0.56
+    },
+    {
+      "prd_smiles": "Oc1ccc(-c2ccccc2)cc1",
+      "modes_name": "normal reaction",
+      "insp_score": 0.6779421947030527,
+      "feasibility": 0.77
+    },
+    {
+      "prd_smiles": "COc1ccc(-c2ccccc2)cc1-c1ccccc1",
+      "modes_name": "over reaction",
+      "insp_score": 0.9768616244691589,
+      "feasibility": 0.77
+    },
+    {
+      "prd_smiles": "COc1ccc(-c2ccccc2)cc1Br",
+      "modes_name": "over reaction",
+      "insp_score": 0.7700989698215377,
+      "feasibility": 0.54
+    }
+  ],
+  "note": "illustrative candidates from a condition-blind SMILES-only call; Pd-black cannot be represented"
+}

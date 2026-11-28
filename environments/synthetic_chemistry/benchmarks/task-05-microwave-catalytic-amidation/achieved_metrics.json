@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "task_id": "task-05-microwave-catalytic-amidation",
+  "metric_type": "blind computational predictions, constraint audit and design hypotheses; not experimental performance",
+  "target": {
+    "reactant_1": "Nc1c(C)cccc1C",
+    "reactant_2": "O=C(O)c1ccccc1C",
+    "product": "O=C(Nc1c(C)cccc1C)c1ccccc1C",
+    "reaction_class": "direct catalytic amidation",
+    "steric_class": "hindered",
+    "heating_mode_required": "microwave",
+    "catalyst_required": true,
+    "input_mode": "illustrative"
+  },
+  "condition_recommendation": {
+    "job_name": "condition_recommendation",
+    "doc_id": "6b05bcdf8b9d410520f9a7b3",
+    "experiment_name": "Condition Recommendation - 20261124-163541Z - deb04e",
+    "status": "completed",
+    "conditions_returned": 10,
+    "all_catalyst_name_empty": true,
+    "temperature_c_range": [20, 80],
+    "heating_mode_returned": false,
+    "time_returned": false,
+    "predicted_yield_percent_range": [53.516221046447754, 60.66560745239258],
+    "top1_score": 0.6664484692000867,
+    "top1_feasibility_score": 0.86,
+    "top1_predicted_yield_percent": 56.81290030479431,
+    "top1_reagent": ["pyridine"],
+    "top1_solvent": ["pyridine"],
+    "unique_yield_values_percent": [53.516221046447754, 55.742329359054565, 56.81290030479431, 57.69190788269043, 60.66560745239258],
+    "catalyst_constraint_met": false,
+    "microwave_constraint_met": false,
+    "score_semantics": "model score, feasibility score and native predicted yield; not measured yield"
+  },
+  "literature_comparison": {
+    "sources_verified": ["L1", "L2", "L3", "L4", "L5"],
+    "designated_2025_hte_paper_identified": false,
+    "exact_pair_yield_available": false,
+    "literature_yield_mae": null,
+    "literature_basis": "contextual catalytic amidation sources only; L1 solvent-free, L2 thermal, L3 heating mode unspecified"
+  },
+  "local_optimizer": {
+    "tool": "reaction_optimizer_tool local pipeline",
+    "backend": "baybe_v1",
+    "catalytic_campaign": {
+      "candidate_count": 192,
+      "support_level": "template",
+      "precedent_count": 0,
+      "batch_selected": 6,
+      "persistent_campaign_id": "cc551cb41f4143d883437224126702c4",
+      "batch_reserved": 4,
+      "reviewed_measurements": 0,
+      "baybe_fit_performed": false
+    },
+    "prior_seeded_campaign": {
+      "prior_rows": 10,
+      "prior_status": "excluded",
+      "prior_qc_flags": ["model_predicted_yield_not_measured", "prior_prediction_seed"],
+      "priors_treated_as_reviewed": false,
+      "candidate_count": 32,
+      "batch_selected": 8,
+      "reviewed_measurements": 0,
+      "baybe_fit_performed": false
+    },
+    "score_semantics": "heuristic prior_score 0.35 and domain_score 0.75; not calibrated yields"
+  },
+  "experimental_comparison": {
+    "project_measured_yield": null,
+    "matched_literature_yield": null,
+    "yield_mae": null,
+    "experimental_optimum_in_top5": null,
+    "best_three_solvents_recovered": null,
+    "worst_steric_class_correct": null,
+    "microwave_time_vs_reference": null,
+    "side_product_match": null,
+    "chemical_superiority_demonstrated": false
+  },
+  "overall_status": "partial_not_evaluable"
+}
