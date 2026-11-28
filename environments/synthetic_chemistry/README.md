@@ -19,6 +19,12 @@ results/task-02-impurity-retrosynthesis/
 tasks/task-03-indole-forward-prediction/
 benchmarks/task-03-indole-forward-prediction/
 results/task-03-indole-forward-prediction/
+tasks/task-04-pdnhc-suzuki-miyaura-optimization/
+benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/
+results/task-04-pdnhc-suzuki-miyaura-optimization/
+tasks/task-06-green-solvent-suzuki-optimization/
+benchmarks/task-06-green-solvent-suzuki-optimization/
+results/task-06-green-solvent-suzuki-optimization/
 ```
 
 Use the same `task-NN-descriptive-topic` name in all three sections. `benchmarks/` is the sole benchmark directory; source catalogs and metrics were moved there from the former singular directory, and maintained scripts and internal links now use the new path. See the [task-folder standard](TASK_STRUCTURE.md). The three Task 01 phases are not separate target tasks.
@@ -57,3 +63,11 @@ No live Boltzmann job is run by these scripts. See [specification](ENVIRONMENT_S
 ## Task 03 — Indole forward prediction
 
 [Task and supplied inputs](tasks/task-03-indole-forward-prediction/README.md) · [Literature benchmark](benchmarks/task-03-indole-forward-prediction/README.md) · [Saved results](results/task-03-indole-forward-prediction/README.md). This is a forward-reaction evaluation, not a retrosynthesis run. Candidate files are transcribed derivatives, not original machine-readable service outputs.
+
+## Task 04 — Pd-NHC Suzuki–Miyaura blind optimization
+
+[Task](tasks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Benchmark](benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Results](results/task-04-pdnhc-suzuki-miyaura-optimization/README.md). Multi-tool blind product prediction, Pd-NHC-constrained design and loading-aware frozen-yield analysis; no experimental validation.
+
+## Task 06 — Green-solvent Suzuki–Miyaura optimization
+
+[Task](tasks/task-06-green-solvent-suzuki-optimization/README.md) · [Benchmark](benchmarks/task-06-green-solvent-suzuki-optimization/README.md) · [Results](results/task-06-green-solvent-suzuki-optimization/README.md). Blind solvent comparison against a verified 2025 ChemistryOpen paper; condition-aware design with a solvent-blind yield model; no experimental validation.

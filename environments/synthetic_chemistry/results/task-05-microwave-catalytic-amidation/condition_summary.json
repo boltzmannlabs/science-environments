@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "task_id": "task-05-microwave-catalytic-amidation",
+  "job_name": "condition_recommendation",
+  "doc_id": "6b05bcdf8b9d410520f9a7b3",
+  "experiment_name": "Condition Recommendation - 20261124-163541Z - deb04e",
+  "reaction": "Nc1c(C)cccc1C.O=C(O)c1ccccc1C>>O=C(Nc1c(C)cccc1C)c1ccccc1C",
+  "conditions": [
+    {"rank": 1, "reagent": ["pyridine"], "solvent": ["pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 56.81290030479431, "score": 0.6664484692000867, "feasibility_score": 0.86},
+    {"rank": 2, "reagent": ["pyridine"], "solvent": ["pyridine"], "temperature_c": [70, 80], "catalyst_name": [], "predicted_yield_percent": 56.81290030479431, "score": 0.5262110685341846, "feasibility_score": 0.75},
+    {"rank": 3, "reagent": ["hydrochloric acid"], "solvent": ["1,4-dioxane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 60.66560745239258, "score": 0.5145953445482078, "feasibility_score": 0.66},
+    {"rank": 4, "reagent": ["pyridine"], "solvent": ["dichloromethane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 53.516221046447754, "score": 0.49010145109027253, "feasibility_score": 0.62},
+    {"rank": 5, "reagent": ["Potassium carbonate", "hydrochloric acid"], "solvent": ["1,4-dioxane"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 57.69190788269043, "score": 0.48875589920363544, "feasibility_score": 0.57},
+    {"rank": 6, "reagent": ["pyridine"], "solvent": ["dichloromethane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 53.516221046447754, "score": 0.4862726569296528, "feasibility_score": 0.56},
+    {"rank": 7, "reagent": ["Potassium carbonate", "hydrochloric acid"], "solvent": ["1,4-dioxane"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 57.69190788269043, "score": 0.4839096172622724, "feasibility_score": 0.53},
+    {"rank": 8, "reagent": ["Trifluoroacetic acid"], "solvent": ["dichloromethane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 55.742329359054565, "score": 0.47934994224354716, "feasibility_score": 0.5},
+    {"rank": 9, "reagent": ["Trifluoroacetic acid"], "solvent": ["dichloromethane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 55.742329359054565, "score": 0.471601577836466, "feasibility_score": 0.47},
+    {"rank": 10, "reagent": ["hydrochloric acid"], "solvent": ["1,4-dioxane", "pyridine"], "temperature_c": [20, 30], "catalyst_name": [], "predicted_yield_percent": 60.66560745239258, "score": 0.4362345220152164, "feasibility_score": 0.41}
+  ],
+  "audit": {
+    "catalyst_constraint_met": false,
+    "microwave_mode_returned": false,
+    "time_returned": false,
+    "yield_values_are_condition_invariant": true,
+    "validation_reason_strings_are_model_self_justifications": true
+  },
+  "note": "Sanitized from the completed tool result; all numbers are native model outputs, not measured yields."
+}

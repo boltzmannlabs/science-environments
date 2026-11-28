@@ -1,0 +1,6 @@
+comparison,condition,tool_value,literature_value,error_pp,valid_comparison,reason
+DES 1:4 yield,betaine:glycerol 1:4 / Pd(PPh3)4 / K2CO3 / 100C / 0.5h,68.43,,,NO,"Lit 72% is Table1 Pd(OAc)2/120C/0.5h/NMR; tool is solvent-blind, different catalyst"
+DES 1:2 yield,betaine:glycerol 1:2 / PdCl2(dppf) / K2CO3 / 129C / 0.25h,49.15,,,NO,Lit 72% is different catalyst/temp; model has no solvent encoding
+DMF yield,DMF / PdCl2(dppf) / Na2CO3 / 129C / 0.5h,35.01,,,NO,Lit DMF 62% under Table1 conditions
+catalyst-family check,Pd(dppf) variants vs Pd(OAc)2,tool prior favors Pd+carbonate,"Table2: PdCl2dppf=80, PdCl2dppf.CH2Cl2=82, Pd(OAc)2=72",,QUALITATIVE,"heuristic prior, not calibrated yield"
+solvent sensitivity diagnostic,"same catalyst+base, different solvent/temp/time",<=0.12 pp variation,,,DIAGNOSTIC,proves ReactionT5 yield cannot rank solvents

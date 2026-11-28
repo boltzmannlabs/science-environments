@@ -1,0 +1,39 @@
+{
+  "first_attempt": {
+    "job_name": "condition_recommendation",
+    "doc_id": "6b0588c27fb17f3eac9cb206",
+    "status": "failed",
+    "error": "Problem in Result Fetching: All 3 configured GLM tokens failed: GLM request failed with HTTP 429 | GLM request failed with HTTP 429 | GLM request failed with HTTP 429 | Discovery RSI backup: Discovery RSI request timed out (configured timeout: 300 seconds)",
+    "note": "Transient failure; not resubmitted at the time."
+  },
+  "retry": {
+    "job_name": "condition_recommendation",
+    "doc_id": "6b07cb3fb5e9e7e2abe1fade",
+    "experiment_name": "Condition Recommendation - 20261126-060135Z - e2ae68",
+    "status": "completed",
+    "candidate_count": 10,
+    "top_ranked": {
+      "rerank_rank": 1,
+      "catalyst": "Pd(dppf)Cl2",
+      "reagent": "sodium carbonate",
+      "solvent": [
+        "1,4-dioxane",
+        "water"
+      ],
+      "temperature_c": [
+        100,
+        110
+      ],
+      "feasibility_score": 0.9,
+      "model_score": 0.5460652863122903,
+      "predicted_yield_percent": 52.626657485961914,
+      "yield_basis": "not documented in tool output"
+    },
+    "solvents_returned": [
+      "1,4-dioxane",
+      "water"
+    ],
+    "greener_or_des_solvents_returned": [],
+    "limitation": "The tool accepts only reactants and products; solvent, ratio and water constraints cannot be supplied. All 10 returned candidates use the conventional comparator dioxane, so no matched comparison with 2-MeTHF, CPME, ethanol/water or betaine/glycerol DES is possible from this output."
+  }
+}

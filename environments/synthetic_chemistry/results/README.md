@@ -13,3 +13,11 @@ Every output for Task 01 is under `task-01-fluorinated-quinoline-retrosynthesis/
 ## Task 03 — Indole forward prediction
 
 [Saved results and candidate files](task-03-indole-forward-prediction/README.md) · [Task](../tasks/task-03-indole-forward-prediction/README.md) · [Literature benchmark](../benchmarks/task-03-indole-forward-prediction/README.md).
+
+## Task 04 — Pd-NHC Suzuki–Miyaura blind optimization
+
+[Outputs and comparisons](task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Task](../tasks/task-04-pdnhc-suzuki-miyaura-optimization/README.md) · [Benchmark](../benchmarks/task-04-pdnhc-suzuki-miyaura-optimization/README.md). Model predictions and design hypotheses only; no experimental validation.
+
+## Task 05 — microwave catalytic amidation
+
+[Outputs and comparisons](task-05-microwave-catalytic-amidation/README.md) · [Task](../tasks/task-05-microwave-catalytic-amidation/README.md) · [Benchmark](../benchmarks/task-05-microwave-catalytic-amidation/README.md). Condition audit, literature comparison and catalytic design campaigns; no measured yields or experimental superiority.
